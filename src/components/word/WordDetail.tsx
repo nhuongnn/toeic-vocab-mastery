@@ -129,7 +129,7 @@ export function WordDetail({ word, previousWordId, nextWordId }: WordDetailProps
       <NativeMindset nativeMindset={word.nativeMindset} deepMeaning={word.deepMeaning} />
 
       {/* 4. Visual Anchor */}
-      <VisualAssociation visual={word.visual} word={word.word} />
+      <VisualAssociation visual={word.visual} word={word.word} wordId={word.id} />
 
       {/* 5. Real-World Sentences */}
       <SentenceExamples examples={word.examples} word={word.word} />

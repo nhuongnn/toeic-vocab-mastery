@@ -5,97 +5,62 @@ export async function GET(request: Request) {
   const word = searchParams.get('word') || '';
   const query = searchParams.get('query') || word || 'business';
   const description = searchParams.get('description') || '';
+  const style = searchParams.get('style') || '3d';
   const refresh = searchParams.get('refresh') === 'true';
 
-  const unsplashKey = process.env.UNSPLASH_ACCESS_KEY;
-  const pexelsKey = process.env.PEXELS_API_KEY;
+  // 1. Core visual scene description is the primary anchor of the prompt
+  const scenePrompt = description || query || word;
 
-  // 1. Try Unsplash if API key is provided
-  if (unsplashKey) {
-    try {
-      const searchTerm = word || query.split(' ').slice(0, 2).join(' ');
-      const res = await fetch(
-        `https://api.unsplash.com/search/photos?query=${encodeURIComponent(
-          searchTerm
-        )}&per_page=3&orientation=landscape`,
-        {
-          headers: { Authorization: `Client-ID ${unsplashKey}` },
-          next: { revalidate: 3600 },
-        }
-      );
-      if (res.ok) {
-        const data = await res.json();
-        if (data.results && data.results.length > 0) {
-          return NextResponse.json(data);
-        }
-      }
-    } catch (e) {
-      console.warn('Unsplash search failed, falling back to AI visual:', e);
-    }
+  let styleModifier = '';
+  if (style === 'realistic') {
+    styleModifier =
+      'Award-winning documentary editorial photography, realistic workplace and daily life setting, natural cinematic lighting, 35mm lens, sharp focus, 8k resolution, no text, no watermark, no blur';
+  } else {
+    // Default: 3D Conceptual Anchor
+    styleModifier =
+      'Crisp 3D isometric conceptual illustration, educational visual anchor, Pixar Blender clay style, clean studio rim lighting, vibrant colors, shallow depth of field, 8k render, no text, no letters, no watermark';
   }
 
-  // 2. Try Pexels if API key is provided
-  if (pexelsKey) {
-    try {
-      const searchTerm = word || query.split(' ').slice(0, 2).join(' ');
-      const res = await fetch(
-        `https://api.pexels.com/v1/search?query=${encodeURIComponent(searchTerm)}&per_page=3`,
-        {
-          headers: { Authorization: pexelsKey },
-          next: { revalidate: 3600 },
-        }
-      );
-      if (res.ok) {
-        const data = await res.json();
-        if (data.photos && data.photos.length > 0) {
-          return NextResponse.json({
-            results: data.photos.map((p: any) => ({
-              id: String(p.id),
-              urls: { regular: p.src.large2x || p.src.large, small: p.src.medium },
-              alt_description: p.alt || word,
-              user: { name: p.photographer, links: { html: p.photographer_url } },
-            })),
-          });
-        }
-      }
-    } catch (e) {
-      console.warn('Pexels search failed, falling back:', e);
-    }
-  }
+  const fullPrompt = `${scenePrompt}. ${styleModifier}`;
 
-  // 3. High-quality AI contextual illustration tailored specifically to the vocabulary word
-  const cleanKeyword = query.replace(/[^\w\s-]/g, '').slice(0, 80);
-  const promptParts = [
-    word ? `English vocabulary word "${word}"` : '',
-    cleanKeyword,
-    'high quality educational photography, clear workplace and real life context'
-  ].filter(Boolean);
-
-  const prompt = promptParts.join(', ');
-
-  // Deterministic seed based on word string so image remains consistent per word,
-  // or random seed if the user clicks "Làm mới ảnh" (refresh=true)
+  // Deterministic seed based on word + style so it remains consistent per word per style,
+  // or random seed if user clicks "Đổi ảnh" (refresh=true)
   const seed = refresh
-    ? Math.floor(Math.random() * 100000)
+    ? Math.floor(Math.random() * 1000000)
     : Math.abs(
-        (word || query).split('').reduce((acc, char) => (acc * 31 + char.charCodeAt(0)) | 0, 0) % 100000
+        `${word}-${style}`.split('').reduce((acc, char) => (acc * 31 + char.charCodeAt(0)) | 0, 0) % 1000000
       );
 
-  const aiImageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=800&height=450&nologo=true&seed=${seed}`;
+  const polliKey = process.env.POLLINATIONS_API_KEY;
+
+  let aiImageUrl: string;
+  if (polliKey) {
+    // Official Authenticated API endpoint with API Key (ultra-fast FLUX.1-schnell, no logo, no IP throttling)
+    aiImageUrl = `https://gen.pollinations.ai/image/${encodeURIComponent(
+      fullPrompt
+    )}?width=800&height=450&seed=${seed}&model=black-forest-labs/flux.1-schnell&key=${polliKey}`;
+  } else {
+    // Fallback anonymous FLUX endpoint
+    aiImageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(
+      fullPrompt
+    )}?width=800&height=450&nologo=true&seed=${seed}&model=flux`;
+  }
 
   return NextResponse.json({
     results: [
       {
-        id: `ai-${word || 'vocab'}-${seed}`,
+        id: `flux-${word}-${style}-${seed}`,
         urls: {
           regular: aiImageUrl,
           small: aiImageUrl,
         },
         alt_description: description || `Visual illustration of ${word}`,
         user: {
-          name: 'AI Contextual Illustration',
+          name: style === 'realistic' ? 'AI Realistic Photography (FLUX)' : 'AI 3D Conceptual Anchor (FLUX)',
           links: { html: 'https://pollinations.ai' },
         },
+        style,
+        seed,
       },
     ],
   });

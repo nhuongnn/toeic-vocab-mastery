@@ -1,31 +1,37 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { Image as ImageIcon, Sparkles, Lightbulb, RotateCw, Languages, Loader2 } from 'lucide-react';
+import {
+  Image as ImageIcon,
+  Sparkles,
+  Lightbulb,
+  RotateCw,
+  Languages,
+  Loader2,
+  Camera,
+} from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
 
 interface VisualAssociationProps {
   visual: VocabularyWord['visual'];
   word: string;
+  wordId?: string;
 }
 
+export type ImageVisualPreset = '3d' | 'realistic';
+
 export function VisualAssociation({ visual, word }: VisualAssociationProps) {
-  const [imageUrl, setImageUrl] = useState<string | null>(visual.imageUrl || null);
+  const [style, setStyle] = useState<ImageVisualPreset>('3d');
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [photographer, setPhotographer] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(!visual.imageUrl);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isImgLoaded, setIsImgLoaded] = useState<boolean>(false);
   const [hasImgError, setHasImgError] = useState<boolean>(false);
   const [showSceneTranslation, setShowSceneTranslation] = useState<boolean>(false);
   const [sceneTranslation, setSceneTranslation] = useState<string | null>(null);
 
   const fetchImage = useCallback(
-    async (isRefresh = false) => {
-      if (visual.imageUrl && !isRefresh) {
-        setImageUrl(visual.imageUrl);
-        setIsLoading(false);
-        return;
-      }
-
+    async (isRefresh = false, activeStyle: ImageVisualPreset = style) => {
       setIsLoading(true);
       setHasImgError(false);
       setIsImgLoaded(false);
@@ -35,6 +41,7 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
           word,
           query: visual.imageKeyword || word,
           description: visual.imageDescription || '',
+          style: activeStyle,
           ...(isRefresh ? { refresh: 'true' } : {}),
         });
 
@@ -46,22 +53,37 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
           const photo = data.results[0];
           setImageUrl(photo.urls?.regular || photo.urls?.small || null);
           setPhotographer(photo.user?.name || null);
+        } else if (visual.imageUrl && !isRefresh) {
+          // Fallback if API returned empty
+          setImageUrl(visual.imageUrl);
+          setPhotographer('Reference Visual');
         } else {
           setHasImgError(true);
         }
       } catch (err) {
         console.error('Error fetching visual image:', err);
-        setHasImgError(true);
+        if (visual.imageUrl && !isRefresh) {
+          setImageUrl(visual.imageUrl);
+          setPhotographer('Reference Visual');
+        } else {
+          setHasImgError(true);
+        }
       } finally {
         setIsLoading(false);
       }
     },
-    [word, visual.imageKeyword, visual.imageDescription, visual.imageUrl]
+    [word, visual.imageKeyword, visual.imageDescription, visual.imageUrl, style]
   );
 
   useEffect(() => {
-    fetchImage(false);
+    fetchImage(false, '3d');
   }, [fetchImage]);
+
+  const handleStyleChange = (newStyle: ImageVisualPreset) => {
+    if (newStyle === style && !hasImgError) return;
+    setStyle(newStyle);
+    fetchImage(false, newStyle);
+  };
 
   const toggleTranslateScene = async () => {
     if (showSceneTranslation) {
@@ -73,7 +95,9 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
 
     setSceneTranslation('loading');
     try {
-      const res = await fetch(`/api/translate?text=${encodeURIComponent(visual.imageDescription)}&from=en&to=vi`);
+      const res = await fetch(
+        `/api/translate?text=${encodeURIComponent(visual.imageDescription)}&from=en&to=vi`
+      );
       if (res.ok) {
         const data = await res.json();
         setSceneTranslation(data.translatedText || 'Không có bản dịch');
@@ -87,8 +111,8 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
 
   return (
     <div className="rounded-2xl bg-gradient-to-br from-slate-900/90 to-slate-900/40 border border-slate-800 p-6 space-y-4">
-      {/* Header */}
-      <div className="flex items-center justify-between">
+      {/* Header with Style Switcher & Refresh Button */}
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2 text-amber-400">
           <ImageIcon className="w-5 h-5" />
           <h3 className="text-base font-bold uppercase tracking-wider text-slate-200">
@@ -96,16 +120,50 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
           </h3>
         </div>
 
-        {/* Regenerate / Refresh Button */}
-        <button
-          onClick={() => fetchImage(true)}
-          disabled={isLoading}
-          title="Tạo lại hoặc đổi ảnh minh họa"
-          className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-800/80 hover:bg-slate-750 text-slate-300 hover:text-white border border-slate-700/80 transition-all disabled:opacity-50"
-        >
-          <RotateCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin' : ''}`} />
-          <span>{isLoading ? 'Đang tạo...' : 'Đổi ảnh'}</span>
-        </button>
+        <div className="flex items-center gap-2">
+          {/* Style Selector Toggle */}
+          <div className="inline-flex p-0.5 rounded-lg bg-slate-950/80 border border-slate-800 text-xs font-medium">
+            <button
+              type="button"
+              onClick={() => handleStyleChange('3d')}
+              className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md transition-all ${
+                style === '3d'
+                  ? 'bg-amber-500/20 text-amber-300 font-semibold shadow-sm border border-amber-500/30'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+              title="Minh họa 3D Conceptual (Dễ nhớ nghĩa, tạo điểm neo thị giác)"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>3D Conceptual</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => handleStyleChange('realistic')}
+              className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md transition-all ${
+                style === 'realistic'
+                  ? 'bg-indigo-500/20 text-indigo-300 font-semibold shadow-sm border border-indigo-500/30'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+              title="Ảnh chụp thực tế bám sát bối cảnh công sở / đời sống"
+            >
+              <Camera className="w-3.5 h-3.5" />
+              <span>Ảnh thực tế</span>
+            </button>
+          </div>
+
+          {/* Regenerate / Refresh Button */}
+          <button
+            type="button"
+            onClick={() => fetchImage(true, style)}
+            disabled={isLoading}
+            title="Tạo lại hoặc đổi ảnh minh họa theo mô tả kịch bản"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-800/80 hover:bg-slate-750 text-slate-300 hover:text-white border border-slate-700/80 transition-all disabled:opacity-50"
+          >
+            <RotateCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin text-amber-400' : ''}`} />
+            <span>{isLoading ? 'Đang tạo...' : 'Đổi ảnh'}</span>
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
@@ -113,9 +171,14 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
         <div className="relative rounded-2xl overflow-hidden aspect-video bg-slate-950 border border-slate-800 flex items-center justify-center group">
           {/* Loading Skeleton */}
           {isLoading && (
-            <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm flex flex-col items-center justify-center gap-2 z-10 animate-pulse">
-              <RotateCw className="w-6 h-6 text-indigo-400 animate-spin" />
-              <span className="text-xs text-slate-400">Đang chuẩn bị ảnh minh họa cho &ldquo;{word}&rdquo;...</span>
+            <div className="absolute inset-0 bg-slate-950/85 backdrop-blur-sm flex flex-col items-center justify-center gap-2 z-10 p-4 text-center">
+              <RotateCw className="w-7 h-7 text-amber-400 animate-spin" />
+              <span className="text-xs font-medium text-slate-200">
+                Đang tạo ảnh {style === '3d' ? '3D' : 'thực tế'} theo Visual Scene cho &ldquo;{word}&rdquo;...
+              </span>
+              <p className="text-[11px] text-slate-400 line-clamp-2 max-w-xs italic">
+                &ldquo;{visual.imageDescription}&rdquo;
+              </p>
             </div>
           )}
 
@@ -136,13 +199,19 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
               />
 
               {/* Source Attribution Badge */}
-              {photographer && isImgLoaded && (
-                <div className="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-black/70 backdrop-blur-sm text-[10px] text-slate-300 font-medium">
-                  {photographer.includes('Unsplash')
-                    ? 'Photo via Unsplash'
-                    : photographer.includes('Pexels')
-                    ? 'Photo via Pexels'
-                    : 'AI Visual Anchor'}
+              {isImgLoaded && (
+                <div className="absolute bottom-2 right-2 px-2.5 py-1 rounded-md bg-black/75 backdrop-blur-md text-[11px] text-slate-200 font-medium border border-white/10 flex items-center gap-1.5 shadow-md">
+                  {style === '3d' ? (
+                    <>
+                      <Sparkles className="w-3 h-3 text-amber-400" />
+                      <span>FLUX 3D Anchor</span>
+                    </>
+                  ) : (
+                    <>
+                      <Camera className="w-3 h-3 text-indigo-400" />
+                      <span>FLUX Realistic Photo</span>
+                    </>
+                  )}
                 </div>
               )}
             </>
@@ -159,7 +228,8 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
                 {visual.imageDescription}
               </p>
               <button
-                onClick={() => fetchImage(true)}
+                type="button"
+                onClick={() => fetchImage(true, style)}
                 className="mt-3 text-xs text-indigo-400 hover:text-indigo-300 underline"
               >
                 Thử tải lại ảnh
@@ -176,6 +246,7 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
                 Visual Scene Description
               </div>
               <button
+                type="button"
                 onClick={toggleTranslateScene}
                 className="text-[11px] text-indigo-400 hover:text-indigo-300 flex items-center gap-1 transition-colors"
                 title="Dịch mô tả hình ảnh sang tiếng Việt"

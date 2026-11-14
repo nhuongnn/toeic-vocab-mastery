@@ -146,7 +146,7 @@ export function WordDetail({ word, previousWordId, nextWordId }: WordDetailProps
       <ToeicTipsSection toeicContext={word.toeicContext} frequency={word.toeicFrequency} />
 
       {/* 8. Video & Multimedia Immersion */}
-      <VideoSection video={word.video} word={word.word} category={word.category} />
+      <VideoSection key={word.id} video={word.video} word={word.word} category={word.category} />
 
       {/* SRS Recall Self-Check Bar */}
       <section className="rounded-2xl bg-slate-900 border border-slate-800 p-6 space-y-4">

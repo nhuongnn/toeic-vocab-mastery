@@ -19,6 +19,11 @@ import {
   Scissors,
   Headphones,
   AlertTriangle,
+  BookOpenCheck,
+  PenTool,
+  Mail,
+  FileSignature,
+  Send,
 } from 'lucide-react';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useSpeech } from '@/hooks/useSpeech';
@@ -54,7 +59,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-            No word-by-word Vietnamese translation. Master vocabulary through root etymology, spatial perception, and corporate contexts to reach 700+ TOEIC naturally.
+            No word-by-word Vietnamese translation. Master vocabulary, practical grammar, native pronunciation, speed reading, and corporate business writing to reach 700+ TOEIC naturally.
           </p>
 
           {/* Quick Metrics Bar */}
@@ -454,7 +459,191 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. 13 TOEIC Categories Showcase */}
+      {/* 7. Featured Native Reading Mastery Hub (TOEIC Part 6 & 7) */}
+      <section className="rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950/40 to-slate-900 border border-indigo-500/30 p-6 sm:p-8 space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-indigo-400">
+              <BookOpenCheck className="w-4 h-4" />
+              <span>Chiến Thuật Đọc Hiểu & Bắt Bài TOEIC Part 7</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+              Tư Duy Đọc Lướt Bản Xứ • Bẻ Khóa Email, Hóa Đơn & Đọc Kép
+            </h2>
+            <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
+              Xóa bỏ hoàn toàn tật dịch thầm từng từ sang tiếng Việt. Rèn luyện phản xạ khối nghĩa (Thought Groups), nắm bắt cấu trúc BLUF (Mục đích câu 1, Hành động câu cuối) và săn trọn điểm bẫy đề thi Part 7.
+            </p>
+          </div>
+
+          <Link
+            href="/reading"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-indigo-600/30 flex-shrink-0"
+          >
+            <span>Luyện Đọc Ngay</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+          <Link
+            href="/reading"
+            className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 hover:border-indigo-500/40 transition-all space-y-2 group"
+          >
+            <div className="flex items-center gap-2 text-indigo-400 text-xs font-bold">
+              <Mail className="w-4 h-4" />
+              <span>Email & Memo BLUF</span>
+            </div>
+            <p className="text-xs text-slate-300 group-hover:text-white transition-colors">
+              Bắt trọn mục đích trong 10 giây, định vị người nhận CC vs To và tóm gọn hạn chót.
+            </p>
+            <span className="text-[11px] text-indigo-400 font-semibold block pt-1">
+              Đọc siêu tốc 20s →
+            </span>
+          </Link>
+
+          <Link
+            href="/reading"
+            className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 hover:border-amber-500/40 transition-all space-y-2 group"
+          >
+            <div className="flex items-center gap-2 text-amber-400 text-xs font-bold">
+              <Zap className="w-4 h-4" />
+              <span>Quy Chế & Ngoại Lệ</span>
+            </div>
+            <p className="text-xs text-slate-300 group-hover:text-white transition-colors">
+              Săn từ khóa điều kiện (unless, except, provided that) bẻ khóa bẫy câu hỏi NOT/TRUE.
+            </p>
+            <span className="text-[11px] text-amber-400 font-semibold block pt-1">
+              Bắt bài ngoại lệ →
+            </span>
+          </Link>
+
+          <Link
+            href="/reading"
+            className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 hover:border-emerald-500/40 transition-all space-y-2 group"
+          >
+            <div className="flex items-center gap-2 text-emerald-400 text-xs font-bold">
+              <CheckCircle2 className="w-4 h-4" />
+              <span>Quét Hóa Đơn & Bảng</span>
+            </div>
+            <p className="text-xs text-slate-300 group-hover:text-white transition-colors">
+              Định vị cột số liệu, mã giảm giá và phí giao hàng hỏa tốc mà không cần đọc hết chữ.
+            </p>
+            <span className="text-[11px] text-emerald-400 font-semibold block pt-1">
+              Tính nhẩm 5 giây →
+            </span>
+          </Link>
+
+          <Link
+            href="/reading"
+            className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 hover:border-rose-500/40 transition-all space-y-2 group"
+          >
+            <div className="flex items-center gap-2 text-rose-400 text-xs font-bold">
+              <Sparkles className="w-4 h-4" />
+              <span>Nối Dữ Liệu Đọc Kép</span>
+            </div>
+            <p className="text-xs text-slate-300 group-hover:text-white transition-colors">
+              Tuyệt chiêu xử lý 2 câu hỏi suy luận chéo giữa Lịch trình sự kiện và Email phản hồi.
+            </p>
+            <span className="text-[11px] text-rose-400 font-semibold block pt-1">
+              Chinh phục 700-900 →
+            </span>
+          </Link>
+        </div>
+      </section>
+
+      {/* 8. Featured Native Workplace Writing Hub (Email & Proposals) */}
+      <section className="rounded-3xl bg-gradient-to-r from-slate-900 via-purple-950/40 to-slate-900 border border-purple-500/30 p-6 sm:p-8 space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-purple-400">
+              <PenTool className="w-4 h-4" />
+              <span>Kỹ Năng Viết Email & Soạn Thảo Công Sở Chuẩn Bản Xứ</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+              Viết Gãy Gọn, Tinh Tế & Ngoại Giao Chuẩn Doanh Nghiệp Quốc Tế
+            </h2>
+            <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
+              Áp dụng nguyên tắc K.I.S.S (Keep It Short & Simple): Khung email 4 bước, từ chối khéo léo, nhắc hạn chót tinh tế (Gentle Nudge) và lượng hóa báo cáo thuyết phục bằng số liệu.
+            </p>
+          </div>
+
+          <Link
+            href="/writing"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-purple-600/30 flex-shrink-0"
+          >
+            <span>Luyện Viết Ngay</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+          <Link
+            href="/writing"
+            className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 hover:border-purple-500/40 transition-all space-y-2 group"
+          >
+            <div className="flex items-center gap-2 text-purple-400 text-xs font-bold">
+              <Mail className="w-4 h-4" />
+              <span>Khung Email 4 Bước</span>
+            </div>
+            <p className="text-xs text-slate-300 group-hover:text-white transition-colors">
+              Mở đầu nêu mục đích, dẫn dắt tệp đính kèm, gắn hạn chót và câu chào chuẩn quốc tế.
+            </p>
+            <span className="text-[11px] text-purple-400 font-semibold block pt-1">
+              Xem mẫu email →
+            </span>
+          </Link>
+
+          <Link
+            href="/writing"
+            className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 hover:border-amber-500/40 transition-all space-y-2 group"
+          >
+            <div className="flex items-center gap-2 text-amber-400 text-xs font-bold">
+              <Sparkles className="w-4 h-4" />
+              <span>Từ Chối Khéo Léo</span>
+            </div>
+            <p className="text-xs text-slate-300 group-hover:text-white transition-colors">
+              Cách nói "Không" và báo sai sót ngân sách mà không chỉ trích, giữ trọn quan hệ đối tác.
+            </p>
+            <span className="text-[11px] text-amber-400 font-semibold block pt-1">
+              Ngoại giao tinh tế →
+            </span>
+          </Link>
+
+          <Link
+            href="/writing"
+            className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 hover:border-sky-500/40 transition-all space-y-2 group"
+          >
+            <div className="flex items-center gap-2 text-sky-400 text-xs font-bold">
+              <Send className="w-4 h-4" />
+              <span>Nhắc Việc Gentle Nudge</span>
+            </div>
+            <p className="text-xs text-slate-300 group-hover:text-white transition-colors">
+              Thúc giục deadline hợp đồng khéo léo, không gây khó chịu hay mang giọng điệu ra lệnh.
+            </p>
+            <span className="text-[11px] text-sky-400 font-semibold block pt-1">
+              Cú hích nhẹ nhàng →
+            </span>
+          </Link>
+
+          <Link
+            href="/writing"
+            className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 hover:border-emerald-500/40 transition-all space-y-2 group"
+          >
+            <div className="flex items-center gap-2 text-emerald-400 text-xs font-bold">
+              <FileSignature className="w-4 h-4" />
+              <span>Báo Cáo Lượng Hóa</span>
+            </div>
+            <p className="text-xs text-slate-300 group-hover:text-white transition-colors">
+              Trình bày gạch đầu dòng, tỷ lệ ROI và thời gian thu hồi vốn thuyết phục lãnh đạo.
+            </p>
+            <span className="text-[11px] text-emerald-400 font-semibold block pt-1">
+              Soạn thảo cấp cao →
+            </span>
+          </Link>
+        </div>
+      </section>
+
+      {/* 9. 13 TOEIC Categories Showcase */}
       <section className="space-y-4">
         <div className="flex items-center justify-between">
           <div>

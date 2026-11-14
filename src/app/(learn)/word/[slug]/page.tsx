@@ -43,6 +43,7 @@ async function WordDetailContent({ params }: Props) {
 
   return (
     <WordDetail
+      key={word.id}
       word={word}
       previousWordId={previousWord?.id}
       nextWordId={nextWord?.id}

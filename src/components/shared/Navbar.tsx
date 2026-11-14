@@ -12,6 +12,8 @@ import {
   Dumbbell,
   BookOpen,
   Headphones,
+  BookOpenCheck,
+  PenTool,
   Search,
   Flame,
   Menu,
@@ -40,11 +42,13 @@ export function Navbar() {
   };
 
   const navItems = [
-    { href: '/', label: 'Dashboard', icon: Compass },
-    { href: '/categories', label: 'Categories', icon: Layers },
+    { href: '/', label: 'Home', icon: Compass },
+    { href: '/categories', label: 'Vocab', icon: Layers },
     { href: '/grammar', label: 'Grammar', icon: BookOpen },
-    { href: '/pronunciation', label: 'Pronunciation', icon: Headphones },
-    { href: '/flashcards', label: 'Flashcards', icon: Sparkles, badge: dueCount > 0 ? dueCount : undefined },
+    { href: '/pronunciation', label: 'Pronounce', icon: Headphones },
+    { href: '/reading', label: 'Reading', icon: BookOpenCheck },
+    { href: '/writing', label: 'Writing', icon: PenTool },
+    { href: '/flashcards', label: 'Cards', icon: Sparkles, badge: dueCount > 0 ? dueCount : undefined },
     { href: '/quiz', label: 'Practice', icon: Dumbbell },
     { href: '/dashboard', label: 'Stats', icon: Trophy },
   ];
@@ -69,17 +73,17 @@ export function Navbar() {
           </Link>
 
           {/* Quick Search */}
-          <div className="relative flex-1 max-w-xs md:max-w-md hidden sm:block">
+          <div className="relative flex-1 max-w-44 lg:max-w-56 xl:max-w-xs hidden sm:block">
             <div className="relative">
               <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Search words by etymology, concept..."
+                placeholder="Search words..."
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
                 onFocus={() => setSearchFocused(true)}
                 onBlur={() => setTimeout(() => setSearchFocused(false), 200)}
-                className="w-full bg-slate-900 border border-slate-800 rounded-lg pl-9 pr-4 py-1.5 text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+                className="w-full bg-slate-900 border border-slate-800 rounded-lg pl-9 pr-3 py-1.5 text-xs lg:text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
               />
             </div>
 
@@ -110,7 +114,7 @@ export function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = pathname === item.href;
@@ -118,16 +122,16 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors relative ${
+                  className={`flex items-center gap-1 px-2 xl:px-2.5 py-1.5 rounded-lg text-xs xl:text-sm font-medium transition-colors relative ${
                     isActive
                       ? 'text-indigo-400 bg-indigo-500/10'
                       : 'text-slate-300 hover:text-slate-100 hover:bg-slate-900'
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-3.5 h-3.5 xl:w-4 xl:h-4 flex-shrink-0" />
                   <span>{item.label}</span>
                   {item.badge !== undefined && (
-                    <span className="px-1.5 py-0.2 rounded-full text-[11px] font-bold bg-pink-500 text-white animate-pulse">
+                    <span className="px-1.5 py-0.2 rounded-full text-[10px] xl:text-[11px] font-bold bg-pink-500 text-white animate-pulse">
                       {item.badge}
                     </span>
                   )}
@@ -151,7 +155,7 @@ export function Navbar() {
             {/* Mobile menu toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-900 md:hidden"
+              className="p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-900 lg:hidden"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -161,7 +165,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-800 bg-slate-950 p-4 space-y-1">
+        <div className="lg:hidden border-t border-slate-800 bg-slate-950 p-4 space-y-1">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = pathname === item.href;

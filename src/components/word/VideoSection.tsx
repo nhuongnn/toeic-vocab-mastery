@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { usePathname } from 'next/navigation';
 import { Film, Play, ExternalLink, Sparkles, Volume2, Globe, RefreshCw, Languages, X, Search } from 'lucide-react';
 import { useSpeech } from '@/hooks/useSpeech';
 
@@ -17,6 +18,7 @@ interface VideoSectionProps {
 type AccentType = 'all' | 'us' | 'uk' | 'aus';
 
 export function VideoSection({ video, word, category }: VideoSectionProps) {
+  const pathname = usePathname();
   const [isPlaying, setIsPlaying] = useState(false);
   const [accent, setAccent] = useState<AccentType>('all');
   const [activeTab, setActiveTab] = useState<'immersion' | 'custom'>('immersion');
@@ -26,7 +28,79 @@ export function VideoSection({ video, word, category }: VideoSectionProps) {
   const [isTranslating, setIsTranslating] = useState(false);
   const [iframeKey, setIframeKey] = useState(0);
 
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const prevWordRef = useRef(word);
+  const prevPathnameRef = useRef(pathname);
+
   const { speak } = useSpeech();
+
+  // Safely and completely stop the playing video/audio
+  const stopVideo = useCallback(() => {
+    if (iframeRef.current) {
+      try {
+        // Send pause/stop command via YouTube iframe API
+        iframeRef.current.contentWindow?.postMessage(
+          JSON.stringify({ event: 'command', func: 'stopVideo', args: [] }),
+          '*'
+        );
+        iframeRef.current.contentWindow?.postMessage(
+          JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }),
+          '*'
+        );
+        // Blank out the src to immediately kill the audio/video thread in the browser
+        iframeRef.current.src = 'about:blank';
+      } catch {
+        // Ignore cross-origin errors
+      }
+    }
+    setIsPlaying(false);
+  }, []);
+
+  // Automatically stop video whenever the word or pathname changes
+  useEffect(() => {
+    if (prevWordRef.current !== word || prevPathnameRef.current !== pathname) {
+      prevWordRef.current = word;
+      prevPathnameRef.current = pathname;
+      stopVideo();
+      setCustomVideoId(video?.youtubeId || null);
+      setCustomUrl('');
+      setTranslatedDesc(null);
+    }
+  }, [word, pathname, video?.youtubeId, stopVideo]);
+
+  // Clean up and stop video on component unmount
+  useEffect(() => {
+    return () => {
+      stopVideo();
+    };
+  }, [stopVideo]);
+
+  // Intercept navigation link clicks (e.g. Next/Prev word, Navbar items) to instantly stop audio
+  useEffect(() => {
+    const handleLinkClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement)?.closest('a');
+      if (
+        target &&
+        target.href &&
+        !target.href.startsWith('#') &&
+        target.target !== '_blank'
+      ) {
+        stopVideo();
+      }
+    };
+
+    const handlePopState = () => {
+      stopVideo();
+    };
+
+    document.addEventListener('click', handleLinkClick, { capture: true });
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      document.removeEventListener('click', handleLinkClick, { capture: true });
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [stopVideo]);
 
   // Parse YouTube video ID from URL or ID
   const extractYouTubeId = (url: string): string | null => {
@@ -198,6 +272,7 @@ export function VideoSection({ video, word, category }: VideoSectionProps) {
             <div className="relative w-full h-full">
               {currentEmbedUrl ? (
                 <iframe
+                  ref={iframeRef}
                   key={`${activeTab}-${accent}-${iframeKey}-${customVideoId}`}
                   src={currentEmbedUrl}
                   title={`Native usage of ${word}`}
@@ -226,7 +301,7 @@ export function VideoSection({ video, word, category }: VideoSectionProps) {
                   <RefreshCw className="w-3.5 h-3.5" />
                 </button>
                 <button
-                  onClick={() => setIsPlaying(false)}
+                  onClick={stopVideo}
                   className="p-1.5 rounded-lg bg-slate-900/90 hover:bg-slate-800 text-slate-300 border border-slate-700/60 shadow-md backdrop-blur transition-colors"
                   title="Đóng video"
                   aria-label="Close video"

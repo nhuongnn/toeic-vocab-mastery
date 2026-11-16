@@ -38,7 +38,7 @@ export const categories: Category[] = [
     name: 'Travel & Transport',
     description: 'Itineraries, accommodations, boarding logistics, transit delays, and conventions.',
     icon: 'Plane',
-    wordCount: 287,
+    wordCount: 288,
     color: 'from-sky-500 to-cyan-600',
   },
   {

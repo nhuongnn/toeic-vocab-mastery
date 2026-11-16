@@ -1,9 +1,21 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+  useRef,
+} from 'react';
 import { UserProgressData, SRSCard, ExerciseSessionResult } from '@/types/progress';
 import { DEFAULT_PROGRESS, loadUserProgress, saveUserProgress, updateStreak } from '@/lib/storage';
 import { calculateSM2, createNewCard, calculateEstimatedScore } from '@/lib/srs';
+import { useAuth } from './AuthContext';
+import { supabase } from '@/lib/supabase';
+import { mergeUserProgress } from '@/lib/sync';
+
+export type SyncStatus = 'idle' | 'syncing' | 'synced' | 'error';
 
 interface ProgressContextType {
   progress: UserProgressData;
@@ -14,24 +26,173 @@ interface ProgressContextType {
   getCard: (wordId: string) => SRSCard | undefined;
   dueCount: number;
   dueWordIds: string[];
+  syncStatus: SyncStatus;
+  lastSyncedAt: Date | null;
+  forceSync: () => Promise<void>;
 }
 
 const ProgressContext = createContext<ProgressContextType | undefined>(undefined);
 
 export function ProgressProvider({ children }: { children: React.ReactNode }) {
+  const { user } = useAuth();
   const [progress, setProgress] = useState<UserProgressData>(DEFAULT_PROGRESS);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [syncStatus, setSyncStatus] = useState<SyncStatus>('idle');
+  const [lastSyncedAt, setLastSyncedAt] = useState<Date | null>(null);
 
+  const syncTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Load from localStorage on mount
   useEffect(() => {
     const loaded = loadUserProgress();
     setProgress(loaded);
     setIsLoaded(true);
   }, []);
 
-  const save = useCallback((updated: UserProgressData) => {
-    setProgress(updated);
-    saveUserProgress(updated);
-  }, []);
+  // Schedule background debounced sync to Supabase
+  const scheduleCloudSync = useCallback(
+    (updatedData: UserProgressData) => {
+      if (!user || !supabase) return;
+
+      setSyncStatus('syncing');
+      if (syncTimerRef.current) {
+        clearTimeout(syncTimerRef.current);
+      }
+
+      syncTimerRef.current = setTimeout(async () => {
+        if (!supabase || !user) return;
+        try {
+          const { error } = await supabase
+            .from('user_progress')
+            .upsert({
+              user_id: user.id,
+              data: updatedData,
+              updated_at: new Date().toISOString(),
+            });
+
+          if (error) {
+            console.error('Cloud sync error:', error);
+            setSyncStatus('error');
+          } else {
+            setSyncStatus('synced');
+            setLastSyncedAt(new Date());
+          }
+        } catch (err) {
+          console.error('Failed to sync to cloud:', err);
+          setSyncStatus('error');
+        }
+      }, 1500);
+    },
+    [user]
+  );
+
+  // Initial sync & merge when user logs in
+  useEffect(() => {
+    if (!user || !supabase) {
+      setSyncStatus('idle');
+      return;
+    }
+
+    let isMounted = true;
+
+    async function syncOnLogin() {
+      setSyncStatus('syncing');
+      try {
+        const { data, error } = await supabase!
+          .from('user_progress')
+          .select('data')
+          .eq('user_id', user!.id)
+          .maybeSingle();
+
+        if (error) {
+          console.error('Error fetching remote progress:', error);
+          if (isMounted) setSyncStatus('error');
+          return;
+        }
+
+        const localData = loadUserProgress();
+        if (data && data.data) {
+          const merged = mergeUserProgress(localData, data.data as UserProgressData);
+          saveUserProgress(merged);
+          if (isMounted) {
+            setProgress(merged);
+            setSyncStatus('synced');
+            setLastSyncedAt(new Date());
+          }
+          await supabase!
+            .from('user_progress')
+            .upsert({
+              user_id: user!.id,
+              data: merged,
+              updated_at: new Date().toISOString(),
+            });
+        } else {
+          // First time user: save existing local progress to cloud
+          await supabase!
+            .from('user_progress')
+            .upsert({
+              user_id: user!.id,
+              data: localData,
+              updated_at: new Date().toISOString(),
+            });
+          if (isMounted) {
+            setSyncStatus('synced');
+            setLastSyncedAt(new Date());
+          }
+        }
+      } catch (err) {
+        console.error('Sync failed:', err);
+        if (isMounted) setSyncStatus('error');
+      }
+    }
+
+    syncOnLogin();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [user]);
+
+  // Force manual sync on demand
+  const forceSync = useCallback(async () => {
+    if (!user || !supabase) return;
+    setSyncStatus('syncing');
+    try {
+      const { data, error } = await supabase
+        .from('user_progress')
+        .select('data')
+        .eq('user_id', user.id)
+        .maybeSingle();
+
+      if (error) {
+        setSyncStatus('error');
+        return;
+      }
+
+      const localData = loadUserProgress();
+      let finalData = localData;
+
+      if (data && data.data) {
+        finalData = mergeUserProgress(localData, data.data as UserProgressData);
+      }
+
+      saveUserProgress(finalData);
+      setProgress(finalData);
+
+      await supabase
+        .from('user_progress')
+        .upsert({
+          user_id: user.id,
+          data: finalData,
+          updated_at: new Date().toISOString(),
+        });
+
+      setSyncStatus('synced');
+      setLastSyncedAt(new Date());
+    } catch {
+      setSyncStatus('error');
+    }
+  }, [user]);
 
   const recordReview = useCallback(
     (wordId: string, quality: number) => {
@@ -50,7 +211,6 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
           prev.stats.lastStudyDate
         );
 
-        // Calculate mastery estimate
         const cardList = Object.values({ ...prev.cards, [wordId]: updatedCard });
         const masteredCount = cardList.filter((c) => c.interval >= 14).length;
         const masteryRate = cardList.length > 0 ? masteredCount / cardList.length : 0;
@@ -74,52 +234,61 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         };
 
         saveUserProgress(updated);
+        scheduleCloudSync(updated);
         return updated;
       });
     },
-    []
+    [scheduleCloudSync]
   );
 
-  const recordExerciseSession = useCallback((session: ExerciseSessionResult) => {
-    setProgress((prev) => {
-      const { newStreak, newLongest, todayStr } = updateStreak(
-        prev.stats.currentStreak,
-        prev.stats.longestStreak,
-        prev.stats.lastStudyDate
-      );
+  const recordExerciseSession = useCallback(
+    (session: ExerciseSessionResult) => {
+      setProgress((prev) => {
+        const { newStreak, newLongest, todayStr } = updateStreak(
+          prev.stats.currentStreak,
+          prev.stats.longestStreak,
+          prev.stats.lastStudyDate
+        );
 
-      const updated: UserProgressData = {
-        ...prev,
-        history: [session, ...prev.history].slice(0, 50),
-        stats: {
-          ...prev.stats,
-          currentStreak: newStreak,
-          longestStreak: newLongest,
-          lastStudyDate: todayStr,
-        },
-      };
+        const updated: UserProgressData = {
+          ...prev,
+          history: [session, ...prev.history].slice(0, 50),
+          stats: {
+            ...prev.stats,
+            currentStreak: newStreak,
+            longestStreak: newLongest,
+            lastStudyDate: todayStr,
+          },
+        };
 
-      saveUserProgress(updated);
-      return updated;
-    });
-  }, []);
+        saveUserProgress(updated);
+        scheduleCloudSync(updated);
+        return updated;
+      });
+    },
+    [scheduleCloudSync]
+  );
 
-  const toggleBookmark = useCallback((wordId: string) => {
-    setProgress((prev) => {
-      const exists = prev.bookmarkedWordIds.includes(wordId);
-      const updatedBookmarks = exists
-        ? prev.bookmarkedWordIds.filter((id) => id !== wordId)
-        : [...prev.bookmarkedWordIds, wordId];
+  const toggleBookmark = useCallback(
+    (wordId: string) => {
+      setProgress((prev) => {
+        const exists = prev.bookmarkedWordIds.includes(wordId);
+        const updatedBookmarks = exists
+          ? prev.bookmarkedWordIds.filter((id) => id !== wordId)
+          : [...prev.bookmarkedWordIds, wordId];
 
-      const updated = {
-        ...prev,
-        bookmarkedWordIds: updatedBookmarks,
-      };
+        const updated = {
+          ...prev,
+          bookmarkedWordIds: updatedBookmarks,
+        };
 
-      saveUserProgress(updated);
-      return updated;
-    });
-  }, []);
+        saveUserProgress(updated);
+        scheduleCloudSync(updated);
+        return updated;
+      });
+    },
+    [scheduleCloudSync]
+  );
 
   const isBookmarked = useCallback(
     (wordId: string) => progress.bookmarkedWordIds.includes(wordId),
@@ -152,6 +321,9 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         getCard,
         dueCount: dueWordIds.length,
         dueWordIds,
+        syncStatus,
+        lastSyncedAt,
+        forceSync,
       }}
     >
       {children}

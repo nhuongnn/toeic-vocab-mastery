@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useProgress } from '@/contexts/ProgressContext';
+import { AuthButton } from './AuthButton';
 import {
   Compass,
   Layers,
@@ -140,17 +141,19 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* User Streak & Score Badge */}
-          <div className="flex items-center gap-3">
+          {/* User Streak, Target & Auth */}
+          <div className="flex items-center gap-2 sm:gap-3">
             <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold">
               <Flame className="w-3.5 h-3.5 fill-amber-400" />
               <span>{progress.stats.currentStreak}d</span>
             </div>
 
-            <div className="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold">
+            <div className="hidden xl:flex items-center gap-1 px-2.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold">
               <span>Target:</span>
               <span className="text-indigo-400 font-bold">700+</span>
             </div>
+
+            <AuthButton />
 
             {/* Mobile menu toggle */}
             <button

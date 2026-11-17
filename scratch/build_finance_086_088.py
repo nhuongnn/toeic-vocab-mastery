@@ -1,0 +1,357 @@
+import json
+import re
+
+words_data = [
+    {
+        "id": "finance-086",
+        "word": "bondholder",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/ˈbɑːndˌhoʊl.dɚ/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/bondholder--_us_1.mp3",
+            "syllableBreakdown": "bond·hold·er",
+            "stressPattern": "●○○",
+            "commonMistakes": "Learners often drop the 'd' sound at the end of 'bond', articulating it incorrectly as 'bon-holder' (/ˈbɑːnˌhoʊl.dɚ/), or confuse the short open back vowel /ɑː/ with the diphthong /aʊ/ (saying 'bound-holder'). Conceptually, non-native candidates frequently confuse a 'bondholder' (a creditor holding debt instruments with senior repayment claims and fixed interest) with a 'shareholder' (an equity investor holding voting shares and claiming residual dividends). In TOEIC contexts, remember that bondholders do not typically hold equity voting rights."
+        },
+        "etymology": {
+            "origin": "Compound of Middle English 'bond' (from Old Norse 'band', meaning 'fetter, covenant, or binding agreement') and 'holder' (from Old English 'healdan', meaning 'to keep, guard, or retain').",
+            "rootWord": "Old Norse band (covenant, tie, obligation) + Old English healdan (to hold, possess)",
+            "rootMeaning": "'A person or entity possessing a legally binding covenant of debt repayment'",
+            "evolution": "In medieval English common law, a 'bond' was a formal written deed obligating one party to perform an act or pay a penalty sum. During the commercial revolution of the 17th and 18th centuries, governments and joint-stock corporations began issuing transferable debt annuities and loan debentures. The compound noun 'bondholder' gained widespread adoption in late 18th-century Britain and early 19th-century America to identify investors lending capital to state treasuries and canal companies, establishing a distinct legal class of secured creditors separate from equity proprietors.",
+            "relatedLanguages": [
+                "Dutch: obligatiehouder (bondholder) / band (bond)",
+                "German: Anleihegläubiger (bond creditor) / Inhaber (holder)",
+                "French: porteur d'obligations / obligataire (bondholder)",
+                "Spanish: tenedor de bonos / obligacionista (bondholder)",
+                "Italian: obbligazionista / possessore di obbligazioni (bondholder)"
+            ],
+            "firstRecordedUse": "Late 18th century (c. 1792, in British parliamentary records debating public debt and annuity holders)"
+        },
+        "deepMeaning": {
+            "coreConcept": "An individual investor or institutional entity (such as a pension fund, insurance company, or mutual fund) that owns debt securities issued by a corporation, municipality, or sovereign government, entitling them to periodic coupon interest payments and principal redemption at par value upon maturity.",
+            "spatialContext": "Fixed-income trading desks, institutional asset management firms, pension fund boardrooms, debt advisory conferences, and creditor restructuring negotiations.",
+            "temporalContext": "Semi-annual or annual coupon payment dates, multi-year bond maturity intervals, debt restructuring voting periods, and quarterly credit rating reviews.",
+            "emotionalTone": "Prudent, legally protective, risk-conscious, and objective.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To a native financial practitioner, 'bondholder' evokes senior creditor status and steady cash-flow certainty rather than speculative capital appreciation. Native speakers instinctively view bondholders through the lens of downside risk: unlike shareholders who cheer for aggressive corporate expansion and stock buybacks, bondholders prioritize cash liquidity, debt-service coverage ratios, and strict covenant compliance to protect their principal. In corporate insolvency, bondholders are known for holding senior lien rights over company assets, meaning they must be satisfied before common equity receives any liquidation payout.",
+            "mentalImage": "A fixed-income portfolio manager reviewing a corporate debt indenture on dual monitors, analyzing coupon payment schedules and covenant provisions to safeguard institutional holdings against credit downgrades.",
+            "whenToUse": "Use when discussing fixed-income securities, institutional debt ownership, creditor claims, corporate debt refinancing, municipal infrastructure bonds, or bankruptcy proceedings (e.g., 'protecting the interests of bondholders', 'seeking bondholder consent for debt restructuring').",
+            "whenNotToUse": "Do not confuse with 'shareholder' or 'stockholder' (who own equity and have voting stakes in corporate governance). Avoid confusing with 'bond issuer' (the corporation or government agency that borrows the funds and issues the bond).",
+            "culturalContext": "In Anglo-American capital markets, institutional bondholders (such as pension funds, insurance syndicates, and sovereign wealth managers) control trillions of dollars in fixed-income debt, exercising immense disciplinary influence over corporate spending and national monetary policy. In TOEIC test scenarios (especially Parts 5 and 7), bondholders appear in corporate press releases regarding debt refinancing, restructuring proposals, or annual investor briefings."
+        },
+        "examples": {
+            "daily": [
+                "My grandfather chose to become a municipal bondholder to secure predictable, tax-free interest payments during his retirement.",
+                "She checked her brokerage statement to confirm that the semi-annual coupon distribution had been deposited into her account as a bondholder.",
+                "The local newspaper interviewed an individual bondholder who expressed concern over the school district's proposed bond restructuring."
+            ],
+            "business": [
+                "Following the corporate restructuring announcement, the chief financial officer scheduled a conference call to reassure institutional bondholders regarding cash reserves.",
+                "The energy conglomerate required two-thirds approval from senior bondholders before issuing additional convertible debentures.",
+                "Credit rating analysts warned that continuing operating losses could trigger a sell-off among conservative municipal bondholders."
+            ],
+            "conversation": [
+                "\"Why did the corporate treasurer arrange a closed-door briefing with our major bondholders this morning?\" / \"They wanted to verify that our operating cash flow remains sufficient to meet next quarter's coupon payments.\"",
+                "\"Did the telecommunications firm obtain permission to extend its loan repayment window?\" / \"Yes, after offering a 50-basis-point yield sweetener, nearly eighty percent of bondholders voted in favor of the extension.\""
+            ],
+            "collocations": [
+                "institutional bondholder",
+                "senior bondholder",
+                "bondholder approval",
+                "bondholder meeting",
+                "registered bondholder",
+                "rights of bondholders"
+            ]
+        },
+        "wordFamily": {
+            "noun": "bondholder, bond, bonding",
+            "verb": "bond",
+            "adjective": "bonded",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "institutional bondholder reviewing fixed income portfolio debt securities terminal",
+            "imageDescription": "An institutional bondholder and investment analyst seated at a multi-monitor trading desk, examining fixed-income yield curves, debt maturities, and corporate credit ratings.",
+            "mnemonic": "BOND-HOLDER: You HOLD the corporate BOND in your hand, expecting interest payments until maturity!"
+        },
+        "video": {
+            "description": "An instructional finance video explaining the fundamental differences between bondholders and equity stockholders, detailing how coupon payments are calculated and what rights bondholders possess during corporate debt reorganizations."
+        },
+        "toeicContext": {
+            "commonParts": [
+                5,
+                6,
+                7
+            ],
+            "exampleQuestion": "Before authorizing the issue of additional long-term debentures, the manufacturing corporation must obtain formal written consent from existing _____.\n(A) bondholders\n(B) bondholding\n(C) bonded\n(D) bond",
+            "tips": "In TOEIC Part 5, determine the correct noun form and number required by the context. Preceded by the adjective 'existing', the blank functions as the object of the preposition 'from'. The sentence describes seeking formal written consent, which can only be given by people or legal entities: the plural agent noun (A) 'bondholders'. Choice (B) 'bondholding' is an abstract noun or gerund; choice (C) 'bonded' is an adjective or past participle; and choice (D) 'bond' is a singular non-person noun that would require a determiner ('a bond') and cannot provide consent. In Part 7, look for notices of bondholder meetings regarding proposed debt restructurings or dividend restrictions."
+        },
+        "synonyms": [
+            "creditor",
+            "debt holder",
+            "fixed-income investor",
+            "noteholder",
+            "debenture holder"
+        ],
+        "antonyms": [
+            "shareholder",
+            "stockholder",
+            "equity holder",
+            "debtor",
+            "issuer"
+        ],
+        "relatedWords": [
+            "coupon payment",
+            "maturity date",
+            "debenture",
+            "indenture",
+            "credit rating",
+            "fixed income",
+            "principal repayment"
+        ]
+    },
+    {
+        "id": "finance-087",
+        "word": "bookkeeping",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+            "ipa": "/ˈbʊkˌkiː.pɪŋ/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/bookkeeping--_us_1.mp3",
+            "syllableBreakdown": "book·keep·ing",
+            "stressPattern": "●○○",
+            "commonMistakes": "Learners often pronounce the initial vowel with a tense /uː/ ('boo-keeping' like 'boot') instead of the lax near-back vowel /ʊ/ as in 'look' or 'book'. Another common error is neglecting the double 'k' transition, either blurring the two syllables together or over-pausing. In corporate settings, non-native speakers frequently confuse 'bookkeeping' (the routine, chronological recording of financial transactions, invoices, and receipts) with 'accounting' (the higher-level analysis, interpretation, auditing, and strategic reporting of financial data)."
+        },
+        "etymology": {
+            "origin": "Compound of Middle English 'book' (from Old English 'bōc', from Proto-Germanic '*bōks', meaning 'written record or volume') and 'keeping' (from Old English 'cēpan', meaning 'to retain, watch over, observe, or maintain').",
+            "rootWord": "Old English bōc (written document, book) + cēpan (to keep, preserve, maintain)",
+            "rootMeaning": "'The systematic act of maintaining and preserving recorded financial ledger books'",
+            "evolution": "Formalized in northern Italy during the Renaissance, where Luca Pacioli published the first treatise on double-entry bookkeeping in 1494 ('Summa de arithmetica'). English merchants adopted the terminology during the 16th century to describe the daily recording of debits, credits, invoices, and journal entries into physical daybooks and ledgers. In the modern era, physical paper ledgers have been replaced by computerized enterprise accounting software (such as QuickBooks, SAP, and Xero), yet the term 'bookkeeping' remains the standard universal designation for transaction recording and reconciliation.",
+            "relatedLanguages": [
+                "Dutch: boekhouding (bookkeeping / book-holding)",
+                "German: Buchhaltung / Buchführung (bookkeeping / ledger-keeping)",
+                "French: tenue de livres (holding of books / bookkeeping)",
+                "Spanish: teneduría de libros / contabilidad básica (bookkeeping)",
+                "Italian: tenuta dei libri contabili (keeping of account books)"
+            ],
+            "firstRecordedUse": "Late 16th century (c. 1590, in early English trade manuals instructing merchants in Italian double-entry recording)"
+        },
+        "deepMeaning": {
+            "coreConcept": "The systematic, continuous process of recording, categorizing, and verifying an organization's daily financial transactions—including sales receipts, supplier invoices, cash disbursements, and payroll—to maintain an accurate, balanced general ledger and support formal accounting.",
+            "spatialContext": "Corporate accounting departments, small business back offices, bookkeeping service firms, cloud software interfaces (QuickBooks, NetSuite), and accounts payable/receivable workstations.",
+            "temporalContext": "Daily transaction journalizing, weekly payroll postings, end-of-month bank reconciliations, and quarterly preparation of closing trial balances.",
+            "emotionalTone": "Meticulous, methodical, orderly, and detail-oriented.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native business speakers, 'bookkeeping' represents the essential ground-level operational hygiene of finance: entering every receipt, reconciling bank statements, and tracking sales invoices so that records balance down to the penny. Native speakers draw a sharp functional boundary between 'bookkeeping' and 'accounting': a bookkeeper records what happened (inputs and balances), while an accountant or CPA interprets why it happened, advises on tax strategy, and drafts financial statements. Idiomatically, 'clean bookkeeping' signals transparent, dependable record-keeping free from discrepancies or audit vulnerabilities.",
+            "mentalImage": "A certified bookkeeper seated at a dual-monitor workstation cross-checking electronic vendor receipts against general ledger entries in QuickBooks, ensuring that every debit matches its corresponding credit.",
+            "whenToUse": "Use when referring to transactional recording, ledger maintenance, bank reconciliation, receipt processing, or day-to-day accounts payable and receivable operations (e.g., 'accurate bookkeeping', 'outsourced bookkeeping services', 'double-entry bookkeeping').",
+            "whenNotToUse": "Do not use 'bookkeeping' when referring to high-level financial analysis, corporate valuation, budgeting forecasts, or tax structuring; those fall under 'accounting' or 'financial planning'. Avoid confusing with 'auditing' (the independent verification of financial statements).",
+            "culturalContext": "In English-speaking business environments, small-to-medium enterprises (SMEs) routinely outsource their routine bookkeeping to external specialists or use automated cloud platforms, while maintaining internal accounting oversight. In the TOEIC exam, bookkeeping frequently appears in job postings for administrative finance roles, office software invoices, and memos detailing procedural changes for expense report submissions."
+        },
+        "examples": {
+            "daily": [
+                "By maintaining meticulous bookkeeping for her freelance graphic design business, she had no trouble filing her annual tax return.",
+                "The retail shop owner dedicated Sunday afternoons to routine bookkeeping and bank reconciliation.",
+                "A simple spreadsheet was sufficient for her personal bookkeeping until her online sales volume tripled."
+            ],
+            "business": [
+                "The engineering firm outsourced its payroll and routine bookkeeping to a certified business advisory service.",
+                "A comprehensive review of the company's internal bookkeeping uncovered several unrecorded vendor invoices from the previous quarter.",
+                "Upgrading to cloud-based bookkeeping software allowed the international branches to synchronize general ledger entries in real time."
+            ],
+            "conversation": [
+                "\"Are our monthly financial statements ready for the executive review?\" / \"Almost; our accounts team is completing the final bookkeeping entries and reconciling the supplier invoices today.\"",
+                "\"Why did the new branch office hire an outside firm for bookkeeping?\" / \"They needed a specialist to handle daily debit and credit entries so the internal staff could focus on business development.\""
+            ],
+            "collocations": [
+                "double-entry bookkeeping",
+                "routine bookkeeping",
+                "accurate bookkeeping",
+                "bookkeeping software",
+                "bookkeeping service",
+                "flawed bookkeeping"
+            ]
+        },
+        "wordFamily": {
+            "noun": "bookkeeping, bookkeeper, book",
+            "verb": "book, keep",
+            "adjective": "bookkeeping",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "bookkeeper reconciling ledger electronic invoices computer spreadsheet office",
+            "imageDescription": "A professional bookkeeper in a modern office reconciling digital invoices and vendor receipts against an electronic general ledger on a dual-screen computer.",
+            "mnemonic": "BOOK-KEEPING: The only English word with three consecutive double letters (oo-kk-ee), KEEPING every transaction in the account BOOK!"
+        },
+        "video": {
+            "description": "An introductory accounting tutorial demonstrating the mechanics of double-entry bookkeeping, showing how debits and credits balance within journals and general ledgers."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                7
+            ],
+            "exampleQuestion": "Due to rapid expansion across multiple regional markets, the hospitality chain decided to automate its daily _____ procedures.\n(A) bookkeeping\n(B) bookkeep\n(C) bookkeeper\n(D) bookkept",
+            "tips": "In TOEIC Part 5, identify the correct noun form modifying or completing the noun phrase. In the phrase 'its daily _____ procedures', the blank requires a noun adjunct or gerund functioning attributively to describe the type of procedures: (A) 'bookkeeping'. Choice (B) 'bookkeep' is an uninflected back-formed verb; choice (C) 'bookkeeper' refers to the human person performing the job, which would make *bookkeeper procedures semantically unnatural here; and choice (D) 'bookkept' is a non-standard verb form. In Part 7, notice common collocations like 'bookkeeping software', 'bookkeeping records', and 'routine bookkeeping'."
+        },
+        "synonyms": [
+            "record keeping",
+            "ledger maintenance",
+            "accounting administration",
+            "journalizing",
+            "financial record keeping"
+        ],
+        "antonyms": [
+            "financial neglect",
+            "disorganized accounting",
+            "off-the-books accounting"
+        ],
+        "relatedWords": [
+            "general ledger",
+            "double-entry",
+            "trial balance",
+            "reconciliation",
+            "accounts payable",
+            "accounts receivable",
+            "journal entry"
+        ]
+    },
+    {
+        "id": "finance-088",
+        "word": "borrower",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/ˈbɑːr.oʊ.ɚ/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/borrower--_us_1.mp3",
+            "syllableBreakdown": "bor·row·er",
+            "stressPattern": "●○○",
+            "commonMistakes": "Learners often mispronounce the vowel in the first syllable by using a long /oʊ/ (saying 'boh-rower') or confuse it with 'bother'. In American English, the initial syllable is pronounced with an open vowel /ɑː/ or /ɔː/ followed by rhotic /r/ (/ˈbɑːr.oʊ.ɚ/). Conceptually and grammatically, ESL learners frequently confuse the agent noun 'borrower' (the person or business receiving borrowed money who must repay it) with 'lender' (the bank or creditor providing the funds). Another common error is confusing the direction of 'borrow' (to receive temporarily) and 'lend' (to give temporarily)."
+        },
+        "etymology": {
+            "origin": "Formed in Middle English from 'borrow' (from Old English 'borgian', meaning 'to lend, borrow, give pledge or security', from Proto-Germanic '*burgōną', related to 'beorgan' meaning 'to protect, save, or secure') plus the agent suffix '-er'.",
+            "rootWord": "Old English borgian (to pledge, borrow, lend) + -ere (agent suffix)",
+            "rootMeaning": "'A person who receives something of value upon giving a pledge or promise of return'",
+            "evolution": "In Anglo-Saxon legal tradition, 'borg' was a formal security, pledge, or bail given to guarantee an obligation. The verb 'borgian' originally encompassed both borrowing and lending under pledge. By the 13th and 14th centuries in Middle English, 'borrow' specifically meant receiving an item or money with a promise of return, while 'lend' became its transactional counterpart. The agent noun 'borrower' appeared in late 14th-century literature (notably in Geoffrey Chaucer's works and later in Shakespeare's aphorism 'Neither a borrower nor a lender be'), evolving into a standard commercial banking term for debt obligors.",
+            "relatedLanguages": [
+                "Dutch: lener (borrower) / borgen (to guarantee, secure)",
+                "German: Kreditnehmer (credit taker / borrower) / borgen (to borrow/lend)",
+                "French: emprunteur (borrower)",
+                "Spanish: prestatario (borrower)",
+                "Italian: mutuatario / debitore (borrower / debtor)"
+            ],
+            "firstRecordedUse": "Late 14th century (c. 1380, in Middle English translations and literary texts)"
+        },
+        "deepMeaning": {
+            "coreConcept": "An individual, commercial enterprise, or public entity that obtains capital, credit, or property from a lender under a legally binding contract, obligating them to repay the principal amount along with accrued interest according to an agreed repayment schedule.",
+            "spatialContext": "Retail bank branch loan desks, commercial lending offices, mortgage brokerage firms, credit underwriting departments, and online peer-to-peer lending portals.",
+            "temporalContext": "Loan origination and application periods, monthly amortization payment cycles, interest rate reset dates, and ultimate loan maturity payoff dates.",
+            "emotionalTone": "Contractual, obligated, accountable, and financial.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native speakers, 'borrower' immediately designates the debtor in a credit relationship, standing in direct contrast to 'lender' or 'creditor'. In commercial finance and banking, native speakers evaluate a 'borrower' through creditworthiness: debt-to-income ratio (DTI), credit score, collateral, repayment history, and debt-service capacity. A 'prime borrower' is trusted with lower interest rates and flexible terms, whereas a 'subprime borrower' carries perceived default risk requiring higher interest margins or additional security pledges.",
+            "mentalImage": "A commercial borrower in a sharp business suit sitting across from a loan officer at a bank desk, reviewing amortization schedules and signing mortgage agreement papers.",
+            "whenToUse": "Use when discussing commercial loans, residential mortgages, personal credit, interest rate obligations, loan underwriting, or debt refinancing (e.g., 'prospective borrower', 'qualified borrower', 'borrower default').",
+            "whenNotToUse": "Never use 'borrower' to refer to the financial institution providing the money; that is the 'lender' or 'creditor'. Avoid using 'borrower' when referring to an equity investor or shareholder.",
+            "culturalContext": "In modern credit economies, borrowers form the backbone of retail banking, mortgage lending, and corporate bond markets. In TOEIC scenarios (especially Parts 3, 4, and 7), borrowers are featured in banking correspondence, loan approval notices, mortgage pre-qualification letters, and credit counseling brochures."
+        },
+        "examples": {
+            "daily": [
+                "As a first-time homebuyer, she qualified as an eligible borrower for a government-backed fixed-rate mortgage.",
+                "The loan officer explained that each borrower must submit two years of federal tax returns and recent pay stubs.",
+                "The credit union sent an automated payment reminder to the borrower three days before the monthly auto loan was due."
+            ],
+            "business": [
+                "Commercial banks tightened their lending standards, requiring corporate borrowers to maintain higher liquidity reserves.",
+                "The syndicated loan agreement stipulates that the corporate borrower cannot incur additional debt without creditor consent.",
+                "If the commercial borrower fails to meet the specified debt-service coverage ratio, the lender may accelerate the repayment timetable."
+            ],
+            "conversation": [
+                "\"Why did the mortgage underwriter request additional documentation from the borrower?\" / \"They needed verification of employment because the borrower recently changed jobs during the underwriting period.\"",
+                "\"Are commercial interest rates expected to affect prospective business borrowers this quarter?\" / \"Yes, rising benchmark rates will likely increase borrowing costs, leading many borrowers to postpone capital expansion projects.\""
+            ],
+            "collocations": [
+                "qualified borrower",
+                "commercial borrower",
+                "prime borrower",
+                "borrower default",
+                "prospective borrower",
+                "eligible borrower"
+            ]
+        },
+        "wordFamily": {
+            "noun": "borrower, borrowing",
+            "verb": "borrow",
+            "adjective": "borrowed",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "commercial borrower signing mortgage loan agreement bank officer desk",
+            "imageDescription": "A prospective commercial borrower reviewing loan terms and signing a formal credit agreement alongside a bank loan officer in a professional consultation room.",
+            "mnemonic": "BORROW-ER: A person who BORROWS funds from the lender must repay what was borrowed with interest!"
+        },
+        "video": {
+            "description": "An educational banking guide explaining how commercial lenders evaluate a borrower's credit profile, debt-to-income ratio, and collateral during the loan underwriting process."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                7
+            ],
+            "exampleQuestion": "To protect the bank against potential default, the loan agreement requires the _____ to maintain comprehensive property insurance on the mortgaged facility.\n(A) borrower\n(B) borrowing\n(C) borrow\n(D) borrowed",
+            "tips": "In TOEIC Part 5, determine the grammatical role and semantic requirement of the blank. Following the definite article 'the' and preceding the infinitive 'to maintain', the blank requires an agent noun capable of performing the action of maintaining insurance: (A) 'borrower'. Choice (B) 'borrowing' is an abstract noun or gerund; choice (C) 'borrow' is a base verb; and choice (D) 'borrowed' is a past tense verb or past participle. Pay close attention in Parts 3 and 7 to conversations between bank representatives and prospective 'borrowers' discussing loan terms and interest rates."
+        },
+        "synonyms": [
+            "debtor",
+            "loan recipient",
+            "obligor",
+            "credit recipient",
+            "mortgagor"
+        ],
+        "antonyms": [
+            "lender",
+            "creditor",
+            "loaner",
+            "mortgagee"
+        ],
+        "relatedWords": [
+            "lender",
+            "creditor",
+            "collateral",
+            "debt service",
+            "amortization",
+            "principal",
+            "interest rate"
+        ]
+    }
+]
+
+with open("scratch/finance_086_088.json", "w", encoding="utf-8") as f:
+    json.dump({"words": words_data}, f, indent=2, ensure_ascii=False)
+
+print("Saved scratch/finance_086_088.json successfully.")

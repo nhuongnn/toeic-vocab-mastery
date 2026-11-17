@@ -1,0 +1,349 @@
+{
+    "words": [
+        {
+            "id": "finance-176",
+            "word": "internal audit",
+            "partOfSpeech": [
+                "noun"
+            ],
+            "category": "finance",
+            "level": "advanced",
+            "toeicFrequency": 7,
+            "pronunciation": {
+                "ipa": "/ɪnˌtɜːr.nəl ˈɔː.dɪt/",
+                "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/internal_audit--_us_1.mp3",
+                "syllableBreakdown": "in-ter-nal au-dit",
+                "stressPattern": "Secondary stress on second syllable of internal, primary stress on first syllable of audit: in-TER-nal AU-dit (/ɪnˌtɜːr.nəl ˈɔː.dɪt/, ○●○ ●○)",
+                "commonMistakes": "Learners frequently confuse an 'internal audit' (conducted by in-house corporate staff reporting directly to the board's audit committee to evaluate operational controls and governance) with an 'external audit' (conducted by an independent CPA firm like the Big Four to certify statutory financial statements for shareholders and regulators). Phonetically, non-native speakers often mispronounce the first vowel of 'audit' as a short /aʊ/ or /ʌ/ rather than the open-mid back rounded vowel /ɔː/, or shift primary stress onto the second syllable (*au-DIT*)."
+            },
+            "etymology": {
+                "origin": "Compound noun combining 'internal' (from Medieval Latin internalis, from Latin internus 'within, inside') and 'audit' (from Latin auditus 'a hearing, listening', from audire 'to hear').",
+                "rootWord": "Latin internus (inward, internal) + audire (to hear, listen formally)",
+                "rootMeaning": "'An internal hearing or examination conducted from within an organization'",
+                "evolution": "The Latin verb audire gave rise to Medieval Latin auditus (an official listening), referring to feudal treasury hearings where estate bailiffs presented oral accounts of revenues before royal barons. While external statutory auditing developed in 19th-century Britain with chartered accountancy, the concept of a formalized 'internal audit' emerged in early 20th-century American corporations as operations expanded across multiple branches, requiring management to monitor internal accounting controls. In 1941, the establishment of the Institute of Internal Auditors (IIA) in New York formalized internal auditing as an independent assurance discipline. The passage of the Foreign Corrupt Practices Act (1977) and the Sarbanes-Oxley Act (SOX Section 404 in 2002) codified internal audit as a mandatory governance function reporting directly to corporate audit committees.",
+                "relatedLanguages": [
+                    "French: audit interne (internal audit, internal accounting inspection)",
+                    "Spanish: auditoría interna (internal audit, operational control review)",
+                    "Italian: revisione interna / audit interno (internal audit, corporate review)",
+                    "German: interne Revision / internes Audit (internal audit, corporate inspection)"
+                ],
+                "firstRecordedUse": "1930s (formalized in US management accounting treatises and codified by the founding of the IIA in 1941)"
+            },
+            "deepMeaning": {
+                "coreConcept": "An independent, objective appraisal and assurance function established within a corporation or institution to examine, evaluate, and test the adequacy of operational workflows, financial reporting controls, data integrity, and regulatory compliance, reporting its findings and remedial recommendations directly to executive leadership and the board's audit committee.",
+                "spatialContext": "Corporate headquarters, dedicated internal audit department suites, executive boardroom committee presentations, branch inspection sites, and enterprise resource planning (ERP) audit log consoles.",
+                "temporalContext": "Scheduled under an annual audit plan approved by the board, executing phased rotational audits quarterly or semi-annually across operational units, culminating in formal audit reports and remediation follow-ups.",
+                "emotionalTone": "Objective, rigorous, impartial, inquisitive, and compliance-driven.",
+                "formalityLevel": "formal",
+                "connotation": "neutral"
+            },
+            "nativeMindset": {
+                "howNativesThink": "To native corporate executives and employees, an 'internal audit' is not an antagonistic policing action, but rather a vital organizational health check and governance safeguard. While line managers may feel apprehensive about auditors identifying control deficiencies or process deviations in their units, senior leadership views internal audit as an indispensable defense against fraud, operational inefficiencies, and devastating regulatory penalties. Native speakers instinctively associate internal audit with 'SOX testing', 'internal controls', 'deficiency notices', and 'remediation plans'.",
+                "mentalImage": "A senior internal auditor reviewing sample purchase orders and procurement approvals on a laptop with an operations manager in a glass-walled conference room, cross-checking ERP digital signatures against corporate delegation-of-authority thresholds.",
+                "whenToUse": "Use when discussing organizational governance, internal control testing, operational risk evaluations, fraud investigations, or corporate readiness for statutory external reviews (e.g., 'internal audit findings', 'annual internal audit plan', 'internal audit charter').",
+                "whenNotToUse": "Do not confuse with an 'external audit', which is an independent statutory financial statement verification performed by third-party accounting firms for public filing. Do not use for routine managerial supervisory check-ins or everyday supervisor proofreading.",
+                "culturalContext": "In Anglo-American corporate governance, the internal audit department operates under the 'Three Lines of Defense' model, functioning as the third line of assurance. Under post-Enron Sarbanes-Oxley legislation (SOX 404), public companies traded on the NYSE or NASDAQ must maintain robust internal controls over financial reporting, making internal audit teams central to corporate survival and executive certification."
+            },
+            "examples": {
+                "daily": [
+                    "Before the state inspectors visited our non-profit clinic, our director organized an internal audit of all patient intake logs.",
+                    "She spent the afternoon gathering travel receipts and mileage sheets after learning her department was selected for an internal audit.",
+                    "The university conducted an internal audit of research grant spending to confirm that lab supplies were billed correctly."
+                ],
+                "business": [
+                    "The chief audit executive presented the quarterly internal audit report to the board's audit committee, highlighting notable improvements in IT access controls.",
+                    "Following the internal audit of the regional distribution hub, executive leadership implemented mandatory dual authorization for all inventory write-offs exceeding ten thousand dollars.",
+                    "The internal audit revealed several compliance gaps in vendor onboarding files, prompting a comprehensive overhaul of procurement guidelines."
+                ],
+                "conversation": [
+                    "\"Why is the accounting team working late every evening this week?\" / \"They are compiling supporting invoices and purchase records to prepare for the upcoming internal audit of capital expenditures.\"",
+                    "\"Did the internal audit of payroll uncover any significant discrepancies?\" / \"No material errors were found, though the auditors recommended automating overtime approvals to reduce manual processing times.\""
+                ],
+                "collocations": [
+                    "conduct an internal audit",
+                    "internal audit department",
+                    "internal audit report",
+                    "internal audit findings",
+                    "internal audit team",
+                    "annual internal audit plan"
+                ]
+            },
+            "wordFamily": {
+                "noun": "internal audit, internal auditor, internal auditing",
+                "verb": "internal-audit",
+                "adjective": "internal-audit",
+                "adverb": ""
+            },
+            "visual": {
+                "imageKeyword": "internal audit corporate conference room laptop spreadsheet review compliance risk",
+                "imageDescription": "Two professional auditors seated across from an operations manager in a well-lit boardroom, comparing transaction spreadsheets on a laptop screen with printed compliance checklists and flowcharts.",
+                "mnemonic": "INTERNAL AUDIT: Look INSIDE (internal) and LISTEN (audit) to fix errors before external inspectors knock on your door!"
+            },
+            "video": {
+                "description": "An educational corporate governance video illustrating how an internal audit department maps business risks, tests internal control systems, and reports deficiency findings to the board of directors."
+            },
+            "toeicContext": {
+                "commonParts": [
+                    3,
+                    4,
+                    5,
+                    7
+                ],
+                "exampleQuestion": "Following a comprehensive _____ audit of its supply chain operations, NexaCorp replaced three regional freight carriers to cut transit delays. (A) internal (B) internally (C) internalize (D) internalization",
+                "tips": "In TOEIC Part 5, test writers frequently test adjective modifiers preceding compound business nouns. Preceding the noun 'audit', the blank requires the adjective (A) 'internal' to create the high-frequency compound term 'internal audit'. Choice (B) is an adverb, (C) is a verb, and (D) is a noun."
+            },
+            "synonyms": [
+                "operational audit",
+                "compliance review",
+                "in-house audit",
+                "internal examination",
+                "internal control assessment"
+            ],
+            "antonyms": [
+                "external audit",
+                "independent statutory audit",
+                "third-party inspection"
+            ],
+            "relatedWords": [
+                "internal auditor",
+                "internal control",
+                "compliance",
+                "audit committee",
+                "deficiency",
+                "remediation",
+                "Sarbanes-Oxley"
+            ]
+        },
+        {
+            "id": "finance-177",
+            "word": "inventory valuation",
+            "partOfSpeech": [
+                "noun"
+            ],
+            "category": "finance",
+            "level": "advanced",
+            "toeicFrequency": 7,
+            "pronunciation": {
+                "ipa": "/ˈɪn.vənˌtɔːr.i ˌvæl.juˈeɪ.ʃən/",
+                "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/inventory_valuation--_us_1.mp3",
+                "syllableBreakdown": "in-ven-to-ry val-u-a-tion",
+                "stressPattern": "Primary stress on first syllable of inventory, primary stress on fourth syllable of valuation: IN-ven-to-ry val-u-A-tion (/ˈɪn.vənˌtɔːr.i ˌvæl.juˈeɪ.ʃən/, ●○○○ ○○●○)",
+                "commonMistakes": "Learners frequently stumble over the syllable count and stress in 'valuation', incorrectly stressing the second syllable (*val-U-a-tion*) or omitting the glide /ju/ in /ˌvæl.juˈeɪ.ʃən/. In accounting contexts, non-native speakers often confuse 'inventory valuation' (the aggregate balance-sheet dollar figure assigned to unsold merchandise) with 'physical inventory count' (the manual headcount or barcode scanning of physical items in a warehouse)."
+            },
+            "etymology": {
+                "origin": "Compound noun combining 'inventory' (from Medieval Latin inventorium 'a list of what is found', from Latin invenire 'to find, discover') and 'valuation' (from French évaluation and Latin valere 'to be worth, be strong').",
+                "rootWord": "Latin invenire (in- 'upon' + venire 'to come, find') + valere (to be of worth, be strong)",
+                "rootMeaning": "'Determining the financial worth of discovered physical goods on hand'",
+                "evolution": "In Classical Latin, invenire meant to find or discover; its Medieval Latin derivative inventorium denoted a detailed catalog or register of found chattels and estates upon an owner's death. In Early Modern English (15th-16th century), merchant guilds used 'inventory' for written rolls of warehouse stock. Meanwhile, 'valuation' derived from Old French value / valoir and Latin valere (to be worth), emerging in English commerce by the 16th century to denote the formal appraisal of property. As industrial mass production evolved during the late 19th and early 20th centuries, calculating Cost of Goods Sold (COGS) required standardized costing methodologies. Accounting standard setters (US GAAP and later IFRS) formalized 'inventory valuation' through methods like FIFO, LIFO, and weighted average, anchoring balance sheet asset valuation to the lower of cost or market.",
+                "relatedLanguages": [
+                    "French: valorisation des stocks (inventory valuation, stock appraisal)",
+                    "Spanish: valoración de existencias / valuación de inventario (inventory valuation)",
+                    "Italian: valutazione delle rimanenze / valorizzazione del magazzino (inventory valuation)",
+                    "German: Vorratsbewertung / Inventarbewertung (inventory valuation, stock appraisal)"
+                ],
+                "firstRecordedUse": "Late 19th to early 20th century (codified in industrial cost accounting textbooks and manufacturing ledgers)"
+            },
+            "deepMeaning": {
+                "coreConcept": "The systematic accounting calculation and cost-assignment method used to determine the total financial dollar value of unsold raw materials, work-in-process, and finished goods held in stock at the close of a fiscal period, directly determining the Cost of Goods Sold (COGS) on the income statement and current asset value on the balance sheet.",
+                "spatialContext": "Corporate cost accounting offices, warehouse management system (WMS) inventory consoles, manufacturing plant ledgers, balance sheet current asset schedules, and fiscal year-end auditor stocktake reconciliation sheets.",
+                "temporalContext": "Calculated monthly during cost accounting closes, and scrutinized rigorously during quarterly and fiscal year-end audit reconciliations to account for price fluctuations and obsolescence.",
+                "emotionalTone": "Analytical, precise, methodical, prudent, and valuation-conscious.",
+                "formalityLevel": "formal",
+                "connotation": "neutral"
+            },
+            "nativeMindset": {
+                "howNativesThink": "To native accountants, CFOs, and supply chain managers, 'inventory valuation' is not just counting boxes; it is the critical financial lever connecting physical warehouse inventory to net income and tax liabilities. Because inventory valuation directly affects Cost of Goods Sold (COGS), selecting an accounting method (such as FIFO vs. LIFO vs. Weighted Average) fundamentally alters reported gross margins and taxable earnings during periods of inflation. Native speakers instantly think of 'lower of cost or net realizable value', 'inventory write-downs', 'phantom profits', and 'FIFO versus LIFO'.",
+                "mentalImage": "A plant cost controller walking through rows of pallet racking in an illuminated warehouse with a tablet computer, reconciling electronic RFID stock counts with unit purchase invoices to calculate the closing inventory valuation.",
+                "whenToUse": "Use when discussing cost accounting, balance sheet asset disclosures, warehouse costing methods, inventory write-downs, or the calculation of Cost of Goods Sold (e.g., 'FIFO inventory valuation', 'inventory valuation adjustment', 'year-end inventory valuation').",
+                "whenNotToUse": "Do not use to describe the mere physical count of boxes (say 'physical stock count' or 'inventory audit'). Do not use for valuing intangible assets, customer goodwill, or intellectual property.",
+                "culturalContext": "In US corporate taxation and GAAP, the choice of inventory valuation method is highly strategic. Under the 'LIFO conformity rule' in the United States, if a company uses LIFO to lower taxable income during inflationary periods, it must also use LIFO in its financial reports to shareholders. Conversely, International Financial Reporting Standards (IFRS) strictly prohibit LIFO, making inventory valuation a primary point of reconciliation for multinational firms."
+            },
+            "examples": {
+                "daily": [
+                    "During the annual clearance sale, the boutique owner adjusted her inventory valuation to reflect unsold winter coats.",
+                    "Before listing the family hardware store for sale, the owners hired an appraiser to complete an accurate inventory valuation.",
+                    "She updated the inventory valuation spreadsheet after receiving the final shipment of ceramic tiles from the distributor."
+                ],
+                "business": [
+                    "The multinational retailer reported a five-million-dollar decline in gross margin following an inventory valuation write-down on obsolete electronics.",
+                    "Switching from the average cost method to FIFO for inventory valuation provided a more accurate reflection of current replacement costs during the inflationary cycle.",
+                    "External auditors reviewed the warehouse stock records to verify that the corporate inventory valuation complied with the lower of cost or net realizable value rule."
+                ],
+                "conversation": [
+                    "\"Why did our cost of goods sold increase so significantly in the third quarter?\" / \"Rising component prices increased our inventory valuation under the weighted average method, which pushed up unit production costs.\"",
+                    "\"Has the finance committee approved the fiscal year-end balance sheet?\" / \"Not yet; they are waiting for the final inventory valuation report from our logistics center in Memphis.\""
+                ],
+                "collocations": [
+                    "inventory valuation method",
+                    "year-end inventory valuation",
+                    "inventory valuation adjustment",
+                    "FIFO inventory valuation",
+                    "inventory valuation write-down",
+                    "lower of cost inventory valuation"
+                ]
+            },
+            "wordFamily": {
+                "noun": "inventory valuation, inventory, valuation, value",
+                "verb": "value, inventory",
+                "adjective": "inventoried, valued",
+                "adverb": ""
+            },
+            "visual": {
+                "imageKeyword": "inventory valuation warehouse pallets barcode scanner cost accounting clipboard balance sheet",
+                "imageDescription": "A cost accountant in a high-visibility vest standing in a modern distribution warehouse holding a tablet, reviewing barcode-scanned inventory figures against itemized costing tables on a digital clipboard.",
+                "mnemonic": "INVENTORY VALUATION: Don't just count the INVENTORY in the bins; assign a VALUE to find where profit begins!"
+            },
+            "video": {
+                "description": "A financial accounting tutorial explaining how different inventory valuation methods—FIFO, LIFO, and weighted average—impact cost of goods sold, gross margin, and corporate tax liability during inflationary periods."
+            },
+            "toeicContext": {
+                "commonParts": [
+                    3,
+                    5,
+                    6,
+                    7
+                ],
+                "exampleQuestion": "Due to fluctuations in raw material prices, the manufacturing division adopted the FIFO method for all year-end inventory _____ . (A) valuation (B) value (C) evaluate (D) valuable",
+                "tips": "In TOEIC Part 5, test takers must recognize specialized compound business noun terms. Following the noun adjunct 'inventory', the sentence requires the noun (A) 'valuation' to create the standard accounting term 'inventory valuation' (the process/result of calculating inventory worth). Choice (B) 'value' does not form the standard accounting practice collocation, (C) is a verb, and (D) is an adjective."
+            },
+            "synonyms": [
+                "stock valuation",
+                "inventory costing",
+                "inventory appraisal",
+                "stock appraisal",
+                "merchandise valuation"
+            ],
+            "antonyms": [
+                "inventory write-off",
+                "asset liquidation",
+                "inventory derecognition"
+            ],
+            "relatedWords": [
+                "FIFO",
+                "LIFO",
+                "weighted average cost",
+                "cost of goods sold",
+                "obsolescence",
+                "net realizable value",
+                "stocktake"
+            ]
+        },
+        {
+            "id": "finance-178",
+            "word": "invest",
+            "partOfSpeech": [
+                "noun"
+            ],
+            "category": "finance",
+            "level": "essential",
+            "toeicFrequency": 9,
+            "pronunciation": {
+                "ipa": "/ɪnˈvɛst/",
+                "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/invest--_us_1.mp3",
+                "syllableBreakdown": "in-vest",
+                "stressPattern": "Two syllables with primary stress on the second syllable: in-VEST (/ɪnˈvɛst/, ○●)",
+                "commonMistakes": "Learners frequently misplace stress onto the initial syllable (*IN-vest*), which distorts the natural rhythm of English verbs. Additionally, learners often misuse prepositions, saying 'invest to' or 'invest for' instead of the standard collocation 'invest in' (e.g., 'invest in real estate', 'invest in employee training'). In grammar sections, non-native speakers also confuse the verb 'invest' with the noun 'investment' or adjective 'invested'."
+            },
+            "etymology": {
+                "origin": "Middle English investen, borrowed from Middle French investir ('to vest, clothe, give legal possession of') and directly from Latin investire ('to clothe, cover, surround'), compounded from in- ('in, into, upon') + vestire ('to clothe, dress'), from vestis ('garment, robe').",
+                "rootWord": "Latin investire (in- 'into, upon' + vestire 'to clothe, dress', from vestis 'garment')",
+                "rootMeaning": "'To clothe, robe, or envelop; originally conferring office, power, or fiefdom by dressing someone in formal garments'",
+                "evolution": "In medieval feudal Europe, when a lord granted a fiefdom or monarch installed a bishop or magistrate, the ceremony culminated in 'investiture'—the symbolic dressing of the individual in vestments or robes of office, symbolizing the transfer of authority and land rights. In 16th-century Italian commercial centers (Venice, Florence), merchants metaphorically applied 'investire' to mercantile ventures, meaning to clothe abstract liquidity in tangible trading goods, merchant ships, or real property. The term entered English finance through merchant shipping charters and the East India Company in the early 17th century (circa 1610s), defining the placement of capital into productive commercial enterprises to yield dividends and capital appreciation.",
+                "relatedLanguages": [
+                    "French: investir (to invest capital, allocate funds)",
+                    "Spanish: invertir (to invest, allocate funds)",
+                    "Italian: investire (to invest capital, allocate resources)",
+                    "German: investieren (to invest capital, commit resources)"
+                ],
+                "firstRecordedUse": "Late 16th to early 17th century (circa 1590s–1610s in English maritime trade and commercial correspondence)"
+            },
+            "deepMeaning": {
+                "coreConcept": "To commit monetary capital, financial assets, time, or organizational resources to an enterprise, financial instrument, facility, or strategic initiative with the explicit commercial expectation of recovering the principal along with generating an ongoing income stream, interest, or capital gain.",
+                "spatialContext": "Corporate capital allocation meetings, investment banking trading floors, venture capital partner boardrooms, wealth management advisory suites, and corporate treasury dashboards.",
+                "temporalContext": "Decided during annual capital budgeting cycles, multi-year strategic planning reviews, or executed instantly across electronic equity, bond, and derivative exchanges.",
+                "emotionalTone": "Strategic, ambitious, calculated, forward-looking, and value-oriented.",
+                "formalityLevel": "formal",
+                "connotation": "positive"
+            },
+            "nativeMindset": {
+                "howNativesThink": "To native speakers, 'invest' fundamentally conveys a calculated commitment of present resources for future growth and security. Unlike 'spending' or 'consuming'—which depletes capital without residual value—'investing' implies intentionality, risk assessment, and expected return on investment (ROI). In corporate environments, managers advocate for budget allocations by framing expenses as investments ('we need to invest in automation'). Individually, native speakers instinctively think of 'investing in a 401(k)', 'investing in mutual funds', or 'investing in your career'.",
+                "mentalImage": "A young professional reviewing investment portfolio options on a laptop at a café table while sipping coffee, allocating a percentage of monthly earnings into a low-cost index fund, alongside a notebook outlining a five-year retirement plan.",
+                "whenToUse": "Use when discussing capital allocation, purchasing equities or bonds, funding business startups, expanding production facilities, or dedicating resources to long-term improvements like technology or personnel training (e.g., 'invest in renewable energy', 'invest heavily in R&D', 'invest capital wisely').",
+                "whenNotToUse": "Do not use 'invest' when simply paying for immediate consumable operational expenses or everyday administrative overhead (say 'spend on supplies' or 'pay utility bills', not 'invest in electricity bills'). Do not use for purely recreational spending unless humorously intended.",
+                "culturalContext": "In English-speaking capitalist economies, personal investing is deeply embedded in the social contract. In the United States, the transition from defined-benefit corporate pensions to defined-contribution 401(k) and IRA plans placed the responsibility of retirement investing squarely on individual workers, creating widespread cultural familiarity with equity markets, portfolio diversification, and long-term compound growth."
+            },
+            "examples": {
+                "daily": [
+                    "She decided to invest ten percent of her monthly paycheck into a low-cost S&P 500 index fund for her retirement.",
+                    "Many young families choose to invest in solar panels to reduce their long-term electricity bills.",
+                    "He decided to invest his weekend hours into learning data analysis to improve his promotion prospects."
+                ],
+                "business": [
+                    "The board of directors voted unanimously to invest fifty million dollars in a state-of-the-art semiconductor fabrication plant.",
+                    "To maintain its competitive edge against agile startups, the enterprise plans to invest heavily in artificial intelligence research.",
+                    "The multinational conglomerate formed a joint venture with local partners to invest in offshore wind energy projects across East Asia."
+                ],
+                "conversation": [
+                    "\"Has the executive committee approved our capital expenditure proposal?\" / \"Yes, they agreed to invest two million dollars in warehouse automation software over the next eighteen months.\"",
+                    "\"Why is our company shifting so much capital into regional data centers?\" / \"Leadership believes we must invest in cloud infrastructure now to support our expanding enterprise clientele.\""
+                ],
+                "collocations": [
+                    "invest in stocks",
+                    "invest heavily in",
+                    "invest capital",
+                    "invest in research and development",
+                    "plan to invest",
+                    "invest in the future"
+                ]
+            },
+            "wordFamily": {
+                "noun": "investment, investor, divestment",
+                "verb": "invest, reinvest, divest",
+                "adjective": "invested, investing",
+                "adverb": ""
+            },
+            "visual": {
+                "imageKeyword": "invest financial growth stock market portfolio green chart seedling coins modern office",
+                "imageDescription": "A professional investor analyzing financial market performance charts on a tablet screen next to a small green plant sprouting beside neat stacks of coins on a sunlit wooden desk.",
+                "mnemonic": "INVEST: Put your money in a VEST (pocket)—not to hide it away, but to let it grow every single day!"
+            },
+            "video": {
+                "description": "An engaging personal finance and corporate strategy video explaining how companies and individuals allocate capital across stocks, bonds, and infrastructure to compound wealth over time."
+            },
+            "toeicContext": {
+                "commonParts": [
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ],
+                "exampleQuestion": "OmniTech Corporation announced plans to _____ heavily in automated packaging machinery to boost factory throughput by twenty percent. (A) invest (B) investment (C) investor (D) investing",
+                "tips": "In TOEIC Part 5, following the infinitive marker 'to' in the verbal predicate 'plans to _____', the sentence requires the base form of the verb: (A) 'invest'. Choices (B) 'investment' and (C) 'investor' are nouns, and (D) 'investing' is a participle or gerund. Notice also the frequent TOEIC collocation 'invest heavily in'."
+            },
+            "synonyms": [
+                "allocate capital",
+                "commit funds",
+                "put money into",
+                "plow back",
+                "sink capital into",
+                "venture capital"
+            ],
+            "antonyms": [
+                "divest",
+                "liquidate",
+                "disinvest",
+                "squander"
+            ],
+            "relatedWords": [
+                "investment",
+                "investor",
+                "capital expenditure",
+                "return on investment",
+                "portfolio",
+                "asset allocation",
+                "equity"
+            ]
+        }
+    ]
+}

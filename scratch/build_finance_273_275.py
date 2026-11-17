@@ -1,0 +1,333 @@
+import json
+
+data = {
+  "result": {
+    "words": [
+      {
+        "id": "finance-273",
+        "word": "stipend",
+        "partOfSpeech": ["noun"],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+          "ipa": "/ˈstaɪ.pend/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/stipend--_us_1.mp3",
+          "syllableBreakdown": "sti-pend",
+          "stressPattern": "Primary stress on first syllable: STI-pend (/ˈstaɪ.pɛnd/, ● ○)",
+          "commonMistakes": "Non-native speakers frequently pronounce the first syllable with a short vowel /ɪ/ (as in */ˈstɪp.ənd/*) by false analogy with 'stipulate' or 'stiff'. The first vowel must be articulated as the long diphthong /aɪ/ (rhyming with 'sky'). Additionally, avoid overstressing the second syllable or reducing it to an indistinct blur."
+        },
+        "etymology": {
+          "origin": "From Latin stipendium (military pay, tribute, tax), a compound contracted from stipi- (combining form of stips, meaning a small coin or donation) + -pendium (from pendere, meaning to weigh out, hang, or pay).",
+          "rootWord": "Latin stips (small coin, cash gift) + pendere (to weigh out money by balance scales)",
+          "rootMeaning": "'Weighing out small coins as payment'; historically paying an allowance or subsistence provision to sustain service",
+          "evolution": "In ancient Rome, before standardized coinage denominations were widespread, uncoined metallic silver was physically weighed on scales (stips + pendere) to disburse soldiers' daily rations and maintenance. In late 14th-century Middle English, it entered via Anglo-Norman and Old French stipendie, specifically denoting a fixed subsistence allowance paid to scholars, clergy, and apprentices rather than commercial profits. Modern English retains this exact distinction: an allowance provided to defray living costs for fellows, trainees, or interns.",
+          "relatedLanguages": [
+            "French: stipendier (to hire or pay an allowance)",
+            "Italian: stipendio (salary, pay, wages)",
+            "Spanish: estipendio (stipend, allowance, fee)",
+            "German: Stipendium (scholarship, fellowship grant, academic bursary)"
+          ],
+          "firstRecordedUse": "c. 1400 in Middle English administrative and ecclesiastical records, referring to church livings and academic allowances."
+        },
+        "deepMeaning": {
+          "coreConcept": "A predetermined, periodic lump-sum allowance or subsidy paid to an individual—such as a researcher, intern, fellow, trainee, or volunteer board member—to defray necessary living, travel, or incidental expenses while engaged in education, research, or public service, distinct from standard commercial hourly wages or full-time salaried payroll.",
+          "spatialContext": "University research laboratories, academic hospital fellowship departments, corporate internship pods, non-profit foundation offices, and grant committee suites.",
+          "temporalContext": "Disbursed on a recurring calendar schedule (monthly, biweekly, or once per academic semester); aligned with the finite duration of a grant, fellowship, or internship term.",
+          "emotionalTone": "Supportive, institutional, and dignified; conveys financial assistance and encouragement for scholarly or vocational growth without commercial commodification.",
+          "formalityLevel": "formal",
+          "connotation": "positive"
+        },
+        "nativeMindset": {
+          "howNativesThink": "Native English speakers make an immediate mental distinction between a 'stipend' and a 'salary'. A salary implies standard full-time employment with hourly expectations, direct commercial productivity, payroll tax withholdings, and employee benefits. A stipend, conversely, signifies an expense allowance provided to enable an activity—such as academic research, an internship, or public service—where the primary focus is learning, development, or civic contribution rather than corporate profit.",
+          "mentalImage": "A graduate research fellow receiving an official university fellowship letter outlining a monthly living allowance of $2,400 to support fieldwork and rent while completing laboratory investigations.",
+          "whenToUse": "Use when referring to fixed allowances provided to student interns, postdoctoral fellows, medical residents, visiting scholars, clergy members, or advisory committee participants who receive expense support rather than standard hourly wages.",
+          "whenNotToUse": "Do not use 'stipend' to describe standard corporate full-time salaries, executive performance bonuses, hourly overtime compensation, or commercial contract invoices for freelance services.",
+          "culturalContext": "In American and British labor law (including Fair Labor Standards Act provisions), offering a 'stipend' rather than wages is legally sensitive. It defines whether an intern or fellow is an educational trainee receiving subsistence support or a formal employee entitled to minimum wage, overtime protections, and corporate benefits."
+        },
+        "examples": {
+          "daily": [
+            "The museum's summer curatorial program offers undergraduate interns a monthly stipend of $1,800 to help cover metropolitan living expenses.",
+            "As a graduate teaching assistant, she receives a full tuition waiver alongside a modest biweekly stipend for grading examinations.",
+            "The research foundation provided a one-time relocation stipend of $1,200 to assist the postdoctoral fellow with moving costs."
+          ],
+          "business": [
+            "The biotechnology corporation awarded incoming clinical research fellows an annual stipend of $62,000 to investigate gene therapies.",
+            "Members of the corporate advisory board receive a per-meeting travel stipend to reimburse transit and lodging accommodations.",
+            "Under the restructured human resources policy, employees working remotely in rural regions are eligible for a monthly home-office stipend."
+          ],
+          "conversation": [
+            "\"Does the medical residency program include a housing stipend in addition to the standard allowance?\" — \"Yes, all incoming residents receive an extra monthly lodging stipend to offset local rental rates.\"",
+            "\"Are the junior software engineering interns paid an hourly wage or a flat stipend?\" — \"They receive a flat monthly living stipend of $2,500 that is disbursed on the first of each month.\"",
+            "\"Did the grant committee approve your travel stipend application?\" — \"Fortunately, yes; they granted a $1,500 travel stipend so I can present our findings at the international symposium in Berlin.\""
+          ],
+          "collocations": [
+            "monthly stipend",
+            "living stipend",
+            "receive a stipend",
+            "modest stipend",
+            "research stipend",
+            "travel stipend"
+          ]
+        },
+        "wordFamily": {
+          "noun": "stipend",
+          "adjective": "stipendiary"
+        },
+        "visual": {
+          "imageKeyword": "graduate researcher receiving fellowship award stipend letter laboratory",
+          "imageDescription": "A smiling young postgraduate researcher in a modern laboratory holding an official fellowship acceptance document that confirms a research grant and monthly living stipend.",
+          "mnemonic": "STIPEND comes from Latin STIPS (small coin) + PEND (to weigh, as in penny or pendulum). Picture a balance scale weighing out coins to provide students an allowance to live on while they study!"
+        },
+        "video": {
+          "description": "An educational university human resources seminar explaining the legal distinction between hourly employee wages and academic fellowship stipends for graduate student researchers."
+        },
+        "toeicContext": {
+          "commonParts": [3, 4, 7],
+          "exampleQuestion": "To attract promising scientists, the botanical institute offers incoming postdoctoral fellows subsidized laboratory space and a generous monthly _______ to defray living expenses.\n(A) stipulate\n(B) stipend\n(C) stipulating\n(D) stipulation",
+          "tips": "In TOEIC Part 5, test writers often test lexical differentiation among words sharing the initial prefix 'stip-'. Preceded by the indefinite article 'a' and the adjectives 'generous monthly', a countable singular noun denoting monetary compensation or allowance is required. Choice (B) stipend is the correct noun. Choice (D) stipulation means a prerequisite condition in a contract, while (A) stipulate is a verb and (C) is a present participle."
+        },
+        "synonyms": [
+          "allowance",
+          "grant",
+          "subsidy",
+          "honorarium",
+          "per diem",
+          "bursary"
+        ],
+        "antonyms": [
+          "deduction",
+          "forfeiture",
+          "assessment",
+          "clawback"
+        ],
+        "relatedWords": [
+          "fellowship",
+          "internship",
+          "remuneration",
+          "disbursement",
+          "per diem",
+          "scholarship",
+          "endowment"
+        ]
+      },
+      {
+        "id": "finance-274",
+        "word": "stock",
+        "partOfSpeech": ["noun"],
+        "category": "finance",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+          "ipa": "/stɑːk/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/stock--_us_1.mp3",
+          "syllableBreakdown": "stock",
+          "stressPattern": "Single stressed syllable: STOCK (/stɑːk/, ●)",
+          "commonMistakes": "Learners often diphthongize the open back vowel /ɑː/ into */stoʊk/ ('stoke') or round it excessively. Furthermore, speakers from language backgrounds without word-final unvoiced plosives (such as Vietnamese or Thai) frequently drop the final /k/ sound or replace it with a glottal stop, making 'stock' sound identical to 'stop' or 'star'."
+        },
+        "etymology": {
+          "origin": "From Middle English stok, stocke, from Old English stocc (tree trunk, log, wooden post, stake), from Proto-Germanic *stukkaz (stick, piece of wood), from PIE *(s)teuk- (to push, strike, pierce).",
+          "rootWord": "Old English stocc (tree trunk, main stem, foundation post)",
+          "rootMeaning": "'A sturdy tree trunk or stem'; metaphorically broadening to an ancestral lineage, a physical store of goods on hand, and the collective invested capital pool of an enterprise",
+          "evolution": "In medieval England, 'stock' referred to a solid wooden trunk from which new shoots sprouted. In medieval commerce and accounting, wooden 'tally sticks' were notched to record loans and taxes; the main notched hazel stick retained by the creditor was called the 'stock', giving legal claim to money. By the 15th century, merchants used 'stock' to mean stored inventory. With the creation of early joint-stock chartered companies like the British East India Company in the 1600s, the pooled permanent capital was called the 'company's stock', and individual units became shares of stock.",
+          "relatedLanguages": [
+            "Dutch: stok (stick, cane, stock)",
+            "German: Stock (stick, story, inventory stock) / Aktie (stock share)",
+            "French: stock (inventory supply; borrowed from English) / action (equity stock share)",
+            "Spanish: existencias (inventory stock) / acción (equity stock share)"
+          ],
+          "firstRecordedUse": "Before 1000 in Old English for 'tree trunk'; commercial merchandise sense by c. 1440; financial equity capital sense by 1610."
+        },
+        "deepMeaning": {
+          "coreConcept": "The foundational equity capital of a corporation divided into fractional transferable shares that represent proportional ownership, conferring on shareholders voting rights in governance, rights to residual assets, and entitlements to corporate earnings distributed as dividends; also denotes physical merchandise or raw materials held in inventory.",
+          "spatialContext": "Securities exchanges (NYSE, NASDAQ, LSE), electronic algorithmic trading platforms, institutional investment trading floors, brokerage firms, and retail warehouse inventory facilities.",
+          "temporalContext": "Traded in real time during standard stock exchange market hours; revalued through continuous bid-ask auctions; audited quarterly via corporate 10-Q filings and annual shareholder reports.",
+          "emotionalTone": "Dynamic, volatile, and commercially focused; conveys equity value, capital ownership, speculative potential, and market sentiment.",
+          "formalityLevel": "formal",
+          "connotation": "neutral"
+        },
+        "nativeMindset": {
+          "howNativesThink": "To native English speakers in business and daily life, 'stock' immediately brings to mind two primary concepts: financial equity ('investing in the stock market') and physical inventory ('is this item in stock?'). In financial contexts, natives view stock as direct corporate ownership carrying market risk and potential dividends, contrasting sharply with 'bonds' (fixed loans). They instinctively associate stock with share price fluctuations, retirement funds (401k portfolios), and corporate equity grants.",
+          "mentalImage": "An electronic stock exchange ticker wall displaying fluctuating ticker symbols in green and red numerals, while an equity research analyst evaluates a company's price-to-earnings ratio on a multi-monitor terminal.",
+          "whenToUse": "Use when discussing corporate shares, equity capital, public securities markets, stock ownership, or warehouse retail inventory levels.",
+          "whenNotToUse": "Do not confuse 'stock' with 'bonds' (bonds represent company debt obligations, not equity ownership). In British English, note that 'shares' is commonly preferred when referring to specific individual units of corporate equity, while 'stock' historically referred to government debt or aggregate capital.",
+          "culturalContext": "In American culture, the stock market is seen as a central indicator of the economy and a cornerstone of personal retirement wealth. Concepts such as employee stock ownership, blue-chip stocks, and market bull/bear runs are deeply embedded in popular culture and everyday conversation."
+        },
+        "examples": {
+          "daily": [
+            "She decided to invest a portion of her savings in an index fund that tracks top-performing technology stocks.",
+            "I checked with three different department stores, but the popular kitchen appliance was completely out of stock.",
+            "The retail clerk checked the warehouse computer to verify that the replacement parts were in stock."
+          ],
+          "business": [
+            "Following the announcement of record quarterly profits, the software company's stock jumped seven percent in pre-market trading.",
+            "The board of directors authorized a multi-million-dollar program to repurchase shares of common stock to boost shareholder value.",
+            "The automotive manufacturer resolved supply chain bottlenecks by increasing its safety stock of critical semiconductor components."
+          ],
+          "conversation": [
+            "\"Did you hear how the energy sector stock reacted to the new trade agreement?\" — \"Yes, energy stocks rallied across the board, posting their highest gains of the fiscal quarter.\"",
+            "\"Why has our fulfillment center been unable to ship those ergonomic chairs?\" — \"We are currently out of stock of the hydraulic cylinders, but a bulk replenishment shipment arrives tomorrow.\"",
+            "\"Is the executive compensation package tied to corporate performance?\" — \"Yes, a significant portion consists of restricted stock units that vest over a four-year period.\""
+          ],
+          "collocations": [
+            "common stock",
+            "stock market",
+            "in stock",
+            "out of stock",
+            "stock option",
+            "blue-chip stock"
+          ]
+        },
+        "wordFamily": {
+          "noun": "stock / stockholder / stockholding",
+          "verb": "stock",
+          "adjective": "stocked"
+        },
+        "visual": {
+          "imageKeyword": "stock market electronic ticker screen financial trading floor",
+          "imageDescription": "A vibrant digital stock exchange display showcasing rising green ticker values and market indices behind an analyst monitoring candlestick equity charts on multiple screens.",
+          "mnemonic": "STOCK comes from an ancient tree trunk (stocc). Like a sturdy tree trunk branching out into leaves, a company's capital STOCK splits into thousands of branches called SHARES!"
+        },
+        "video": {
+          "description": "A comprehensive corporate finance explainer demonstrating how a private company issues common stock during an initial public offering (IPO) to raise growth capital without taking on bank debt."
+        },
+        "toeicContext": {
+          "commonParts": [3, 4, 5, 7],
+          "exampleQuestion": "Due to unexpectedly high seasonal demand, several flagship television models are currently out of _______ until next Tuesday's warehouse delivery.\n(A) store\n(B) stock\n(C) shelf\n(D) supply",
+          "tips": "In TOEIC listening and reading sections, 'out of stock' and 'in stock' are staple business idioms tested relentlessly in Part 5, 6, and 7. Beware of related retail nouns like 'store' or 'shelf' which fit general shopping environments but fail to form the correct idiomatic compound 'out of stock' (unavailable in inventory)."
+        },
+        "synonyms": [
+          "shares",
+          "equity",
+          "securities",
+          "inventory",
+          "holdings",
+          "merchandise"
+        ],
+        "antonyms": [
+          "bond",
+          "debt",
+          "liability",
+          "deficit"
+        ],
+        "relatedWords": [
+          "shareholder",
+          "dividend",
+          "portfolio",
+          "ticker",
+          "brokerage",
+          "capitalization",
+          "equity"
+        ]
+      },
+      {
+        "id": "finance-275",
+        "word": "stockbroker",
+        "partOfSpeech": ["noun"],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+          "ipa": "/ˈstɑːkˌbroʊ.kər/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/stockbroker--_us_1.mp3",
+          "syllableBreakdown": "stock-bro-ker",
+          "stressPattern": "Primary stress on first syllable, secondary stress on second syllable: STOCK-bro-ker (/ˈstɑːkˌbroʊ.kər/, ● ˌ○ ○)",
+          "commonMistakes": "Learners often shorten or distort the diphthong /oʊ/ in the second syllable, pronouncing it as a flat monophthong */ˈstɑːk.brɒk.ər/ ('stock-brocker'). Another frequent error is dropping the consonant /r/ glide in 'broker', pronouncing */ˈstɑːk.boʊ.kər/*. Keep the compound stress clearly on the first element 'stock'."
+        },
+        "etymology": {
+          "origin": "Compound of stock (shares of corporate equity) + broker (middleman, commission agent). 'Broker' comes from Anglo-Norman brocour, broggour (a retail dealer, wine tap inspector), from Old French brocheor (one who broaches or pierces wine casks to test and sell wine), from brochier (to pierce), from Vulgar Latin *brocca (pointed spike).",
+          "rootWord": "stock (equity capital) + Old French brocheor (wine tapper, authorized intermediary/middleman)",
+          "rootMeaning": "'An authorized intermediary who taps into and trades shares of corporate stock on behalf of buyers and sellers'",
+          "evolution": "In 13th-century England, an Anglo-Norman 'brocour' was an authorized official who pierced (broached) wine casks to assess quality and broker fair sales between merchants. The term expanded to mean any licensed commercial intermediary. By the 1690s, with securities transactions expanding in London coffeehouses near Exchange Alley, licensed dealers mediating trade in chartered company stocks and government annuities were formally termed 'stock-brokers'. In modern times, the profession represents licensed financial intermediaries governed by securities regulatory bodies (such as FINRA in the US).",
+          "relatedLanguages": [
+            "French: courtier en bourse (stock exchange broker)",
+            "Spanish: corredor de bolsa (stock exchange broker/runner)",
+            "Italian: agente di borsa (stock market agent/broker)",
+            "German: Börsenmakler (stock exchange broker/agent)"
+          ],
+          "firstRecordedUse": "c. 1690s in English commercial pamphlets and parliamentary records regulating securities trading in London."
+        },
+        "deepMeaning": {
+          "coreConcept": "A certified and registered financial professional or brokerage firm authorized to execute buy and sell orders for corporate stocks, bonds, mutual funds, and derivative securities on behalf of retail or institutional investors, often providing investment guidance, market analysis, and portfolio execution services in exchange for commissions or management fees.",
+          "spatialContext": "Investment brokerage offices, wealth management suites, trading floors, bank advisory branches, and regulated securities exchange dealing rooms.",
+          "temporalContext": "Conducts intensive client consultations and order executions during open market hours; monitors pre-market economic indicators and performs post-close trade reconciliations daily.",
+          "emotionalTone": "Advisory, analytical, and commercially decisive; conveys financial acumen, fiduciary obligation, and calculated risk management.",
+          "formalityLevel": "formal",
+          "connotation": "neutral"
+        },
+        "nativeMindset": {
+          "howNativesThink": "Native speakers regard a 'stockbroker' as a licensed human intermediary between an investor and the capital markets. While automated online trading platforms have democratized simple self-directed trades, the term 'stockbroker' still evokes an experienced financial advisor who holds professional securities licenses (such as Series 7), advises affluent clients, analyzes company fundamentals, and executes strategic trades to preserve and grow personal wealth.",
+          "mentalImage": "A licensed securities broker in business attire sitting before three high-resolution financial screens displaying live order books, discussing portfolio diversification over a headset with a client before executing an equity trade.",
+          "whenToUse": "Use when designating licensed individuals or brokerage agents whose primary role is executing stock transactions and advising individual or institutional clients on buying and selling securities.",
+          "whenNotToUse": "Do not confuse a 'stockbroker' with an 'investment banker' (who assists corporations in raising capital through IPOs, issuing debt, or executing corporate mergers) or an 'independent day trader' (who trades their own personal capital for short-term speculative gains).",
+          "culturalContext": "In Anglo-American financial culture, stockbrokers have long occupied a prominent place—often portrayed in film and literature as fast-paced Wall Street dealmakers. In reality, modern stockbrokers (often titled financial advisors or registered representatives) are strictly regulated by oversight bodies like FINRA and the SEC to ensure ethical trading, anti-churning compliance, and client suitability."
+        },
+        "examples": {
+          "daily": [
+            "After receiving an inheritance, she contacted a reputable stockbroker to establish a well-balanced retirement portfolio.",
+            "My stockbroker called this morning to advise reallocating our capital away from speculative technology shares into dividend-paying utility stocks.",
+            "Before opening an investment account, you should review your stockbroker's credentials and disciplinary history on the national registry."
+          ],
+          "business": [
+            "Institutional stockbrokers coordinated across multiple financial exchanges to execute the large block trade without creating market slippage.",
+            "The regional brokerage house recruited twenty experienced stockbrokers to lead its expanded private client wealth management division.",
+            "Securities regulations require every licensed stockbroker to ensure that investment recommendations match their client's documented risk tolerance."
+          ],
+          "conversation": [
+            "\"Do you still consult a full-service stockbroker for your stock portfolio?\" — \"Yes, although I manage an automated index fund myself, I rely on my stockbroker for complex estate planning and tax-advantaged municipal bonds.\"",
+            "\"What caused the regulatory inquiry into that brokerage branch?\" — \"Auditors discovered that an individual stockbroker was executing unauthorized trades without written client consent.\"",
+            "\"What qualifications are required to become a licensed stockbroker at an investment firm?\" — \"Candidates must pass rigorous securities examinations, including the Series 7 and Series 66 licensing credentials.\""
+          ],
+          "collocations": [
+            "licensed stockbroker",
+            "consult a stockbroker",
+            "registered stockbroker",
+            "full-service stockbroker",
+            "independent stockbroker",
+            "stockbroker commission"
+          ]
+        },
+        "wordFamily": {
+          "noun": "stockbroker / stockbroking / stockbrokerage",
+          "adjective": "stockbroking"
+        },
+        "visual": {
+          "imageKeyword": "stockbroker financial advisor multi screen trading desk headset",
+          "imageDescription": "A focused financial stockbroker wearing a communication headset sitting at a trading desk surrounded by multiple monitors displaying real-time stock charts, order books, and financial news feeds.",
+          "mnemonic": "A STOCKBROKER BROKES (brokers/mediates) the exchange of STOCKS between buyers and sellers, making sure your portfolio grows so you don't go BROKE!"
+        },
+        "video": {
+          "description": "A documentary overview detailing the rigorous certification and daily workflow of registered stockbrokers, from morning market analysis to executing client trades on financial exchange networks."
+        },
+        "toeicContext": {
+          "commonParts": [3, 4, 7],
+          "exampleQuestion": "Investors who lack the time to analyze volatile market movements often hire a licensed _______ to manage their portfolios and execute equity transactions.\n(A) stockbroker\n(B) stockholding\n(C) stockpile\n(D) stakeholder",
+          "tips": "In TOEIC Part 5, test questions frequently test precision among compound words beginning with 'stock-'. Look for the contextual role: 'hire a licensed _______ to manage... and execute equity transactions'. The blank requires a person/professional agent. Choice (A) stockbroker is the only choice that represents a licensed agent. Choice (B) stockholding refers to share ownership, (C) stockpile refers to an accumulated reserve of goods, and (D) stakeholder refers to any party with an interest in an organization."
+        },
+        "synonyms": [
+          "broker",
+          "securities dealer",
+          "investment advisor",
+          "registered representative",
+          "financial advisor",
+          "wealth manager"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+          "brokerage",
+          "commission",
+          "securities",
+          "portfolio",
+          "Series 7",
+          "equity",
+          "execution"
+        ]
+      }
+    ]
+  }
+}
+
+with open("scratch/finance_273_275.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+
+print("Saved scratch/finance_273_275.json")

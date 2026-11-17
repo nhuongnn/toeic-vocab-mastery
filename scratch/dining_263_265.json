@@ -1,0 +1,348 @@
+{
+  "words": [
+    {
+      "id": "dining-263",
+      "word": "supper",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/\u02c8s\u028cp.\u0259r/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/supper--_us_1.mp3",
+        "syllableBreakdown": "sup\u00b7per",
+        "stressPattern": "\u25cf\u25cb",
+        "commonMistakes": "Learners frequently confuse the vowel sound /\u02c8s\u028cp.\u0259r/ with /\u02c8su\u02d0.p\u0259r/ ('super'), using an elongated tense /u\u02d0/ instead of the short, central lax vowel /\u028c/. In meaning, non-native speakers often treat 'supper' as identical to 'dinner'. However, in contemporary English, 'dinner' is typically the principal, formal, or multi-course evening meal, whereas 'supper' designates an informal, lighter, often later evening meal or relaxed domestic repast (e.g., 'a light supper'). Additionally, while 'dinner' historically could refer to a midday feast, 'supper' strictly refers to an evening meal."
+      },
+      "etymology": {
+        "origin": "Middle English 'soper' / 'souper', borrowed from Anglo-Norman and Old French 'soper' (evening meal), derived from the Old French verb 'soper' (to eat the evening meal), which traces to Frankish and Proto-Germanic '*s\u016bpijan' (to sip, sup, drink, take liquid food) and Proto-Indo-European '*seue-' / '*sub-' (to take juice or liquid).",
+        "rootWord": "Old French soper / Proto-Germanic *s\u016bpan\u0105 (to sup, sip) + -er",
+        "rootMeaning": "The act of supping; originally a light evening broth, pottage, or soup eaten by dipping bread, consumed after the heavier midday dinner",
+        "evolution": "In medieval society, 'dinner' was the main heavy meal eaten around midday, while 'supper' was a lighter evening repast consisting of broth or bread soaked in soup (a 'sop'). As industrialization shifted the main meal to the evening hours, 'supper' evolved to mean an informal, intimate evening meal, or a late-night light meal following evening entertainment or business meetings. In modern hospitality, 'supper' describes relaxed evening dining, buffet spreads, or late-night corporate hospitality.",
+        "relatedLanguages": [
+          "French: souper (evening meal / to eat supper)",
+          "Spanish: sopa (soup) / cenar (to eat supper)",
+          "German: Suppe (soup) / Abendbrot (evening meal)",
+          "Italian: zuppa (soup) / cena (supper)",
+          "Dutch: soep (soup) / avondeten (evening meal)"
+        ],
+        "firstRecordedUse": "Mid-13th century (c. 1250 in Middle English as 'soper')"
+      },
+      "deepMeaning": {
+        "coreConcept": "An evening meal, traditionally characterized by an informal, comforting, or lighter culinary profile than a formal dinner; in hospitality and corporate event planning, it denotes a late-evening dining session, post-conference buffet, or relaxed communal food service.",
+        "spatialContext": "Hotel bistros, dining halls, late-night hotel lounges, banquet breakout pavilions, and casual dining rooms.",
+        "temporalContext": "Typically between 7:30 PM and 10:30 PM, often following evening plenary sessions, trade show floors, or social gatherings.",
+        "emotionalTone": "Relaxed, convivial, comforting, informal, and hospitable.",
+        "formalityLevel": "informal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers associate 'supper' with warmth, comfort, and an unhurried, informal atmosphere. While 'dinner' often implies dressing up, multiple courses, or formal business protocols, 'supper' suggests shedding corporate formalities, enjoying comforting foods like soups, warm casseroles, or cold cuts, and having intimate conversations. When an event schedule advertises a 'light buffet supper,' attendees know they can attend in business casual attire without expecting formal speeches or rigid seating arrangements.",
+        "mentalImage": "A welcoming hotel mezzanine terrace bathed in warm twilight, where conference attendees unwind around small cocktail tables, enjoying an informal buffet supper of artisan breads, carved roasted meats, warm pasta dishes, and salads while chatting casually.",
+        "whenToUse": "Use 'supper' when referring to an informal evening meal ('casual Sunday supper'), a late-night light repast after an event ('post-theater supper', 'late supper'), or an unpretentious catered evening buffet ('buffet supper').",
+        "whenNotToUse": "Do not use 'supper' for formal state dinners, corporate awards banquets, or high-level gala events; use 'dinner' or 'banquet' instead. Never use it for midday meals (lunch).",
+        "culturalContext": "Historically rooted in agrarian schedules where the heavy meal was eaten at noon and a modest 'supper' at sunset, the term remains common across Britain, Canada, and regions of the United States. In corporate and hotel hospitality, a 'welcome supper' or 'buffet supper' serves as an icebreaker on the opening night of multiday conventions, allowing tired travelers to eat flexibly at their own pace."
+      },
+      "examples": {
+        "daily": [
+          "After working late at the branch office, David prepared a simple, comforting supper of vegetable soup and toasted sourdough.",
+          "Our family gathers around the kitchen table every Sunday for an early supper and relaxed conversation.",
+          "Would you like to come over to our apartment for an informal supper this Thursday evening?"
+        ],
+        "business": [
+          "The conference itinerary concludes with an informal buffet supper in the grand atrium, providing delegates an opportunity to network.",
+          "Our executive team hosted the visiting regional managers for a late supper at an upscale bistro near the convention center.",
+          "The corporate retreat package includes breakfast, a working lunch, and a three-course evening supper in the dining hall."
+        ],
+        "conversation": [
+          "\"Are business suits required for the evening reception?\" / \"No, the organizers are serving a casual buffet supper, so business casual attire is encouraged.\"",
+          "\"We missed the main banquet because our flight was delayed.\" / \"Don't worry, the hotel restaurant is keeping a light supper available for late arrivals until ten o'clock.\"",
+          "\"Would you like to grab a quick supper before we head back to review the client presentation?\" / \"That sounds perfect\u2014there is a quiet noodle bar right around the corner.\""
+        ],
+        "collocations": [
+          "buffet supper",
+          "light supper",
+          "late supper",
+          "Sunday supper",
+          "informal supper",
+          "supper club"
+        ]
+      },
+      "wordFamily": {
+        "noun": "supper",
+        "verb": "sup",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "informal buffet supper hotel dining event guests evening meal",
+        "imageDescription": "An inviting hotel dining area illuminated by soft ambient lighting, featuring a long buffet station arranged with warm dishes, salad bowls, and artisan rolls, with guests conversing in a relaxed atmosphere.",
+        "mnemonic": "SUPPER: When you SUP on SOUP and a warm meal in the evening to wind down after a busy workday!"
+      },
+      "video": {
+        "description": "A hospitality catering video illustrating how banquet managers design and execute an informal post-conference buffet supper with self-service carving stations and comfortable lounge seating."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Delegates arriving on the evening shuttle will be offered a complimentary buffet _____ in the executive lounge until 10:00 P.M.\n(A) supper\n(B) sup\n(C) suppered\n(D) supping",
+        "tips": "In TOEIC Part 5, sentence completion questions often test noun recognition following compound adjective modifiers like 'complimentary buffet _____'. Choice (A) 'supper' correctly functions as the head noun denoting an evening meal. Choice (B) 'sup' is an archaic verb; (C) 'suppered' is a nonstandard past participle; and (D) 'supping' is a participle/gerund that does not fit the catering context."
+      },
+      "synonyms": [
+        "evening meal",
+        "dinner",
+        "repast",
+        "buffet meal",
+        "light meal"
+      ],
+      "antonyms": [
+        "breakfast",
+        "brunch",
+        "lunch"
+      ],
+      "relatedWords": [
+        "banquet",
+        "buffet",
+        "catering",
+        "course",
+        "refreshments",
+        "dining hall",
+        "supper club"
+      ]
+    },
+    {
+      "id": "dining-264",
+      "word": "sweet",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/swi\u02d0t/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/sweet--_us_1.mp3",
+        "syllableBreakdown": "sweet",
+        "stressPattern": "\u25cf",
+        "commonMistakes": "Learners sometimes shorten the tense vowel /i\u02d0/ into a lax /\u026a/ or confuse it with 'sweat' /sw\u025bt/. In grammar, non-native speakers familiar mainly with American English often do not recognize that 'sweet' functions as a countable and uncountable noun in British, Commonwealth, and international catering contexts to mean 'dessert' or 'a dessert course' (e.g., 'What would you like for sweet?', 'a selection of sweets'). They may also overlook that the plural noun 'sweets' encompasses confectionery, candies, and after-dinner chocolates."
+      },
+      "etymology": {
+        "origin": "Middle English 'swete', from Old English 'sw\u0113te' (pleasing to the senses, sugary, fragrant), from Proto-Germanic '*sw\u014dtuz' (sweet, pleasant to taste), from Proto-Indo-European '*sw\u0101d-' / '*swehd-' (sweet, pleasant). The noun usage denoting sugary confectionery and dessert courses developed in Middle English and crystallized in 17th- and 18th-century British dining traditions.",
+        "rootWord": "Old English sw\u0113te / Proto-Germanic *sw\u014dtuz / Proto-Indo-European *sw\u0101d- (sweet, pleasing to taste)",
+        "rootMeaning": "That which tastes sugary, rich, or pleasing to the palate; a confection, sugary treat, or the dessert course concluding a meal",
+        "evolution": "In Old English, the word functioned as an adjective describing pleasant flavors and honeyed drinks. By the 14th century, it was nominalized to describe sweet dishes and cherished things. In the 17th century, as refined cane sugar imports surged, 'sweet' became a concrete noun for crystallized candies and sweetmeats. During the 18th and 19th centuries in British culinary etiquette, 'sweet' became established as the formal designation for the dessert course concluding a multi-course dinner (contrasted with savory courses). Today, in hospitality, 'sweets' refers to plated desserts, pastries, and confectionery.",
+        "relatedLanguages": [
+          "German: s\u00fc\u00df (sweet adj.) / S\u00fc\u00dfigkeit (sweet/confectionery)",
+          "Dutch: zoet (sweet adj.) / snoepgoed (sweets/candies)",
+          "French: suave (sweet/agreeable) / sucreries (sweets)",
+          "Latin: suavis (sweet, pleasant)",
+          "Italian: soave (gentle, sweet) / dolce (sweet/dessert)"
+        ],
+        "firstRecordedUse": "Before 12th century (Old English as adjective); 14th century (Middle English as noun for sweet foods and confections)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A sweet food item, sugary confection, candy, or pastry; in British, Commonwealth, and professional hospitality terminology, it specifically denotes the dessert course served at the conclusion of a formal lunch or dinner, or a curated assortment of petits fours, chocolates, and pastries served with after-dinner coffee.",
+        "spatialContext": "Restaurant dessert stations, pastry display cases, dessert trolleys, banquet service buffets, and hospitality coffee stations.",
+        "temporalContext": "Served during the final course of a luncheon or dinner, during afternoon tea service, or as an amenity upon hotel check-in.",
+        "emotionalTone": "Indulgent, celebratory, satisfying, pleasant, and hospitable.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers understand 'sweet' as a noun in two main contexts. In British and international dining, a host or waiter asking 'Would you care for a sweet?' refers directly to the dessert menu\u2014such as a fruit tart, chocolate mousse, or pudding. In general and American usage, the plural 'sweets' evokes a vibrant assortment of confections, chocolates, truffles, and candies displayed in bowls or gift boxes. It represents culinary indulgence, hospitality warmth, and a rewarding finish to a savory meal.",
+        "mentalImage": "A tiered silver dessert trolley wheeled to a dining table by a waiter, showcasing an assortment of artisanal sweets including raspberry macarons, chocolate truffles dusted with cocoa, and miniature glazed fruit tartlets.",
+        "whenToUse": "Use 'sweet' as a noun when referring to confectionery, candies, or sugar-based treats ('a box of handmade sweets'), or in British/hospitality dining contexts when referring to the dessert course ('order a sweet after the main course', 'a trolley of sweets').",
+        "whenNotToUse": "Do not confuse the noun 'sweet' (a dessert or confection) with the adjective 'sweet' (sugary or pleasing in taste, e.g. 'sweet wine'). In North American casual dining, guests typically use 'dessert' for the final course rather than the singular 'sweet', reserving 'sweets' for candy and pastries.",
+        "culturalContext": "In traditional British dining, multi-course meals concluded with a distinct 'sweet' course, often juxtaposed with a 'savory' (such as cheese or Welsh rarebit). In modern corporate hospitality, providing premium sweets\u2014such as Belgian chocolates, macarons, or local confections\u2014is a standard amenity at conference registration desks, VIP suites, and executive luncheons. In TOEIC test items, 'sweet' as a noun appears in Part 1 dining photographs, Part 3 restaurant dialogues, and Part 7 catering menus."
+      },
+      "examples": {
+        "daily": [
+          "At the end of our three-course dinner, the waiter wheeled over a cart offering an impressive selection of sweets.",
+          "Grandmother always kept a crystal bowl filled with hard peppermint sweets on the living room credenza.",
+          "For those dining on the terrace, the bistro offers a choice of artisanal cheese or a seasonal fruit sweet."
+        ],
+        "business": [
+          "The corporate catering contract includes after-dinner coffee accompanied by an assortment of handcrafted Belgian sweets.",
+          "As an expression of appreciation, the marketing agency sent gift baskets loaded with gourmet sweets to all enterprise clients.",
+          "The banquet package features a three-course seated dinner followed by a buffet station displaying freshly baked sweets."
+        ],
+        "conversation": [
+          "\"Would anyone care for a sweet before we request the bill?\" / \"I really shouldn't, but the lemon meringue tartlet sounds wonderful.\"",
+          "\"Does the banquet package include vegetarian options for the final course?\" / \"Yes, several of the sweets on our dessert cart are vegan and gluten-free.\"",
+          "\"Are coffee and sweets included in the luncheon fee?\" / \"Yes, a dessert trolley with mini pastries and chocolates will be served alongside espresso.\""
+        ],
+        "collocations": [
+          "selection of sweets",
+          "gourmet sweets",
+          "sweets trolley",
+          "handmade sweets",
+          "traditional sweet",
+          "assortment of sweets"
+        ]
+      },
+      "wordFamily": {
+        "noun": "sweet, sweetness, sweetmeat, sweetener",
+        "verb": "sweeten",
+        "adjective": "sweet, bittersweet",
+        "adverb": "sweetly"
+      },
+      "visual": {
+        "imageKeyword": "gourmet sweets dessert pastries chocolates display dining table",
+        "imageDescription": "An elegant dessert presentation on a marble stand displaying fine artisanal sweets, including French macarons, dark chocolate truffles, and delicate miniature fruit tarts garnished with mint.",
+        "mnemonic": "SWEET: After your savory meal is complete, treat yourself to a delicious SWEET!"
+      },
+      "video": {
+        "description": "A pastry chef tutorial demonstrating the art of presenting a restaurant dessert cart, arranging an assortment of gourmet sweets such as opera cakes, fruit tartlets, and handcrafted confectionery."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "The executive luncheon concludes with freshly brewed coffee and a choice of a traditional _____ prepared by the hotel's head pastry chef.\n(A) sweet\n(B) sweetly\n(C) sweeten\n(D) sweetness",
+        "tips": "In TOEIC Part 5, questions frequently test noun recognition in positions following determiners and adjectives ('a traditional _____'). Choice (A) 'sweet' is correct, functioning in culinary and British contexts as a countable noun meaning a dessert or confection. Choice (B) 'sweetly' is an adverb; (C) 'sweeten' is a verb; and (D) 'sweetness' is an abstract uncountable noun describing flavor rather than a concrete plated item."
+      },
+      "synonyms": [
+        "dessert",
+        "confection",
+        "sweetmeat",
+        "pudding",
+        "candy",
+        "pastry"
+      ],
+      "antonyms": [
+        "savory",
+        "starter",
+        "appetizer"
+      ],
+      "relatedWords": [
+        "confectionery",
+        "pastry",
+        "truffle",
+        "dessert trolley",
+        "petit four",
+        "praline",
+        "pudding"
+      ]
+    },
+    {
+      "id": "dining-265",
+      "word": "table",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/\u02c8te\u026a.b\u0259l/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/table--_us_1.mp3",
+        "syllableBreakdown": "ta\u00b7ble",
+        "stressPattern": "\u25cf\u25cb",
+        "commonMistakes": "Learners often over-enunciate or distort the final syllabic /l/ in /\u02c8te\u026a.b\u0259l/, pronouncing it like /be\u026a.b\u028al/ or /te\u026a.b\u0254\u02d0l/. In dining situations, non-native speakers sometimes translate directly from their native tongue by saying 'we want a place for four' rather than the idiomatic English 'a table for four' or 'reserve a table'. In TOEIC Part 1 listening, test-takers occasionally confuse a dining 'table' with a service 'counter' (which is fixed and elongated without individual dining chairs) or an office 'desk'."
+      },
+      "etymology": {
+        "origin": "Middle English 'table', borrowed from Old French 'table' (board, slab, flat writing tablet), directly from Latin 'tabula' (a board, plank, slab of wood or stone, flat gaming surface, tablet), of uncertain Proto-Indo-European origin.",
+        "rootWord": "Latin tabula (board, plank, gaming board, tablet, flat surface) via Old French table",
+        "rootMeaning": "A flat, horizontal surface of wood or stone supported by legs, used for eating, writing, or displaying goods",
+        "evolution": "In classical Latin, 'tabula' referred to a board, plank, or writing tablet, while the eating table was called 'mensa'. In Late Latin, 'tabula' displaced 'mensa' for domestic furniture. Following the Norman Conquest, Anglo-Norman 'table' entered Middle English around the 12th century, gradually replacing native Old English 'bord' (board). By the 14th century, 'table' became the universal English term for dining furniture, as well as the meals served upon it ('a generous table'). In modern restaurant management, 'table' represents the primary unit of dining floor capacity, reservation allocation, and service turnover.",
+        "relatedLanguages": [
+          "French: table (table)",
+          "Spanish: tabla (board/plank) / mesa (dining table)",
+          "Italian: tavola (dining table) / tabella (table/chart)",
+          "Portuguese: t\u00e1bua (board) / mesa (table)",
+          "German: Tafel (dining board/table) / Tisch (table)"
+        ],
+        "firstRecordedUse": "12th century (c. 1175 in Middle English as 'table', supplanting Old English 'bord')"
+      },
+      "deepMeaning": {
+        "coreConcept": "A piece of furniture featuring a flat, horizontal surface supported by one or more legs or a pedestal, designed to hold meals, tableware, and drinks; in restaurant and hospitality operations, it serves as the foundational unit of dining room layout, guest seating, reservation scheduling, and customer service delivery.",
+        "spatialContext": "Restaurant dining rooms, banquet halls, outdoor patios, executive dining suites, bistros, and hotel breakfast rooms.",
+        "temporalContext": "Active throughout dining operating hours (breakfast, lunch, dinner); managed on 60-to-120 minute dining intervals (table turns).",
+        "emotionalTone": "Hospitable, communal, structured, social, and welcoming.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers view a dining 'table' both as a physical piece of furniture and as an intimate social territory. When dining out, native speakers immediately evaluate table placement\u2014preferring a quiet window table, a comfortable booth table, or a central round table over a table situated near the kitchen doors or restrooms. Operationally, 'table' signifies service flow: patrons ask 'could we get a table for four?', while staff manage 'table turnover' and 'clear the table'. Gathering 'around the table' symbolizes camaraderie, business negotiation, and hospitality.",
+        "mentalImage": "An elegantly appointed round dining table in an upscale restaurant, dressed in a crisp white linen tablecloth, set with polished silverware, crystal wine goblets, white porcelain plates, folded napkins, and a warm candlelight centerpiece.",
+        "whenToUse": "Use 'table' when referring to dining furniture ('banquet table', 'dining table', 'bistro table'), reservation bookings ('reserve a table for six', 'table for two'), restaurant floor arrangements ('window table', 'outdoor table'), or meal service tasks ('set the table', 'clear the table', 'table service').",
+        "whenNotToUse": "Do not confuse a dining 'table' with a 'counter' or 'bar' where patrons sit in a line on elevated stools along a continuous counter. In professional office settings, do not confuse a dining table with an office 'desk' designed with drawers and computer equipment.",
+        "culturalContext": "In Western hospitality, table allocation reflects status, celebration, and comfort. Hosts and ma\u00eetred's assign prominent 'head tables' for executive honors and VIP guests, while quiet corner tables are favored for confidential business discussions. Tipping and table service standards are central to restaurant operations. On the TOEIC exam, 'table' is one of the most frequently tested concrete nouns in Part 1 (waiters serving tables, diners seated around a table), Part 3 (booking and seating dialogues), and Part 7 (banquet reservation correspondence)."
+      },
+      "examples": {
+        "daily": [
+          "We called the French bistro three days in advance to reserve a quiet window table for our dinner.",
+          "Could you please help me set the table with forks, knives, and wine glasses before the guests arrive?",
+          "The bussing staff promptly cleared the table and wiped down the surface after the diners departed."
+        ],
+        "business": [
+          "For the corporate gala, the banquet coordinator reserved a ten-seat head table directly facing the presentation stage.",
+          "The restaurant implemented a digital floor management system that allows servers to track table status in real time.",
+          "Due to the international trade summit, every table in the hotel's fine-dining restaurant was fully booked weeks in advance."
+        ],
+        "conversation": [
+          "\"Good evening, welcome to The Oak Room. Do you have a reservation?\" / \"Yes, we reserved a table for three under Henderson at seven o'clock.\"",
+          "\"Would it be possible to move to that outdoor table on the patio?\" / \"Certainly, let me check with the host stand to ensure it hasn't been assigned yet.\"",
+          "\"Has table nine received their dessert order?\" / \"Yes, the server just delivered their coffee and sweets a few moments ago.\""
+        ],
+        "collocations": [
+          "reserve a table",
+          "table for two",
+          "dining table",
+          "set the table",
+          "table service",
+          "clear the table"
+        ]
+      },
+      "wordFamily": {
+        "noun": "table, tablecloth, tableware, tabletop",
+        "verb": "table",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "restaurant dining table elegant white tablecloth place setting silverware glasses",
+        "imageDescription": "A beautifully set restaurant dining table covered with a pristine white linen cloth, featuring fine china dinner plates, polished stainless steel cutlery, stemmed wine glasses, and a fresh flower centerpiece.",
+        "mnemonic": "TABLE: A flat Top And Base for Lunch and Entertaining guests!"
+      },
+      "video": {
+        "description": "A fine-dining service training video demonstrating proper European banquet table setting techniques, including tablecloth alignment, silverware placement, and stemware spacing."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "The ma\u00eetre d' apologized for the brief delay and assured the client that their reserved _____ would be ready within five minutes.\n(A) table\n(B) tabular\n(C) tabulate\n(D) tabulation",
+        "tips": "In TOEIC Part 5, vocabulary and part-of-speech questions test recognition of concrete nouns following possessive determiners and participial modifiers ('their reserved _____'). Choice (A) 'table' is the correct concrete noun fitting the dining reservation context. Choice (B) 'tabular' is an adjective meaning organized in columns/rows; (C) 'tabulate' is a verb meaning to arrange data systematically; and (D) 'tabulation' is an abstract noun denoting the act of compiling figures."
+      },
+      "synonyms": [
+        "dining table",
+        "banquet table",
+        "booth",
+        "bistro table",
+        "seating"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "tablecloth",
+        "tableware",
+        "place setting",
+        "centerpiece",
+        "booth",
+        "ma\u00eetre d'",
+        "table turnover"
+      ]
+    }
+  ]
+}

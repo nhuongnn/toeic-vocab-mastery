@@ -1,0 +1,360 @@
+{
+  "words": [
+    {
+      "id": "finance-136",
+      "word": "embargo",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ɪmˈbɑːr.ɡoʊ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/embargo--_us_1.mp3",
+        "syllableBreakdown": "em-bar-go",
+        "stressPattern": "Second syllable stress: /ɪmˈbɑːr.ɡoʊ/ (○●○)",
+        "commonMistakes": "Learners frequently misplace primary stress onto the initial syllable (*EM-bar-go* instead of /ɪmˈbɑːr.ɡoʊ/) or truncate the diphthong in the final syllable into a short /ɒ/ or /ɔ/ rather than the rounded /oʊ/ (or UK /əʊ/). Another frequent error is confusing the plural form: the regular plural in financial and legal English is 'embargoes' (with -es), not 'embargos'. Additionally, non-native speakers frequently confuse an 'embargo' (a total official prohibition on trade, port entry, or specific transactions) with a 'tariff' (a tax on imports) or a 'sanction' (a broad coercive penalty that may include targeted financial asset freezes rather than total trade bans)."
+      },
+      "etymology": {
+        "origin": "Spanish (embargo), derived from the Spanish verb embargar ('to impede, arrest, distrain, restrain, sequester'), from Vulgar Latin *imbarricāre ('to bar, shut in with bars'), from prefix in- ('in, into') + Vulgar Latin *barra ('barrier, crossbar').",
+        "rootWord": "Spanish embargar / Vulgar Latin *imbarricāre (from in- + *barra)",
+        "rootMeaning": "to impede, arrest, restrain, or barricade with bars",
+        "evolution": "The word originated in medieval Iberian maritime and civil law as 'embargo', designating the legal detention, seizure, or sequestration of merchant vessels and their cargoes in port by sovereign authority to prevent navigation or confiscate contraband. It was formally adopted into English maritime and international law during the late 16th to early 17th century (first recorded in the late 1580s/1590s during Anglo-Spanish maritime conflicts). Over the 18th and 19th centuries, its scope broadened from physical port detentions of merchant ships to governmental decrees prohibiting trade, export, or commerce with foreign nations. In modern global finance, commercial shipping, and trade law, 'embargo' encompasses comprehensive trade bans, arms embargoes, oil/commodity export bans, and journalistic/information release holds ('news embargoes').",
+        "relatedLanguages": [
+          "Spanish: embargo (seizure, attachment, trade embargo; from embargar)",
+          "Portuguese: embargo (seizure, impediment, embargo; embargos judiciais)",
+          "French: embargo (m.) (trade embargo, prohibition on commerce; e.g., lever un embargo, embargo commercial)",
+          "Italian: embargo (m.) (trade embargo; e.g., porre l'embargo, revoca dell'embargo)",
+          "German: Embargo (n.) (trade ban; e.g., Handelsembargo, Ölembargo)"
+        ],
+        "firstRecordedUse": "Late 16th century (c. 1591, in English maritime state papers and naval records concerning merchant ship detentions in Iberian ports)"
+      },
+      "deepMeaning": {
+        "coreConcept": "An authoritative government decree, sovereign order, or international mandate that legally prohibits trade, maritime transport, commercial shipping, financial transactions, or the exchange of specific commodities with a designated country, territory, or entity.",
+        "spatialContext": "International commercial ports, container terminals, customs clearing houses, central bank compliance departments, maritime freight shipping lanes, trade ministry headquarters, and foreign exchange compliance clearing hubs.",
+        "temporalContext": "Enacted during geopolitical conflicts, bilateral disputes, or international security crises; enforced continuously at border checkpoints and maritime customs checkpoints; lifted or renewed through diplomatic treaties or legislative ratifications.",
+        "emotionalTone": "Authoritative, punitive, restrictive, and solemn.",
+        "formalityLevel": "formal",
+        "connotation": "negative"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native English speakers, international trade managers, and supply chain directors, an 'embargo' represents the ultimate regulatory roadblock—a total, legally enforced halt to commerce backed by federal law and sovereign enforcement agencies. Unlike a 'tariff' (which merely increases the landed cost of goods through import taxes) or a targeted 'sanction' (which may freeze specific individuals' bank accounts or block specific high-tech exports), an embargo is perceived as a commercial blackout: merchant ships cannot dock, banks cannot clear wire transfers, and freight forwarders cannot legally move consignments across borders without risking criminal prosecution, asset forfeiture, and catastrophic regulatory fines. In corporate trade compliance, hearing that a country or commodity is under an embargo triggers immediate protocol: all open purchase orders must be frozen, customs declarations put on legal hold, and alternate sourcing routes secured.",
+        "mentalImage": "Dozens of loaded commercial cargo ships anchored motionless outside the territorial waters of a major seaport under foggy morning skies, while customs agents in high-visibility vests inspect locked steel shipping containers marked with red federal quarantine and trade-restriction seals at the dockside terminal.",
+        "whenToUse": "Use when referring to government-mandated prohibitions on trade, export, import, or shipping involving designated nations, regions, or strategic commodities (e.g., 'impose an arms embargo', 'oil embargo', 'trade embargo', 'lift an embargo', 'violate a trade embargo'). Also used in corporate communications and journalism for an agreed-upon ban on publishing information prior to a designated deadline ('news embargo', 'press embargo').",
+        "whenNotToUse": "Do not use when describing routine import duties, excise taxes, or tariffs (which tax items rather than prohibiting them). Do not confuse with temporary commercial strikes, port closures due to weather or labor disputes, or private corporate boycotts (which are voluntary consumer actions rather than government-enforced legal bans).",
+        "culturalContext": "In modern international relations and economic statecraft, trade embargoes are among the most powerful non-military coercive instruments employed by sovereign states and multilateral bodies like the United Nations and the European Union. In North American and British corporate environments, strict compliance with trade embargoes overseen by regulatory bodies like OFAC (the U.S. Treasury's Office of Foreign Assets Control) is mandatory; corporate violations result in multi-million-dollar penalties and severe reputational damage."
+      },
+      "examples": {
+        "daily": [
+          "The maritime logistics company rerouted its container vessels around the peninsula after neighboring nations declared a total naval embargo on the port.",
+          "Because of the prolonged agricultural embargo, local supermarkets struggled to stock fresh tropical fruits, forcing grocery prices higher.",
+          "The investigative journalist honored the press embargo and waited until 8:00 AM Eastern Time before releasing the confidential product review."
+        ],
+        "business": [
+          "Our legal compliance division issued an urgent advisory warning suppliers that all direct and indirect shipments to the sanctioned region must cease immediately due to the federal trade embargo.",
+          "Multinational manufacturers experienced severe component shortages after the bilateral economic embargo halted shipments of rare earth minerals from overseas refineries.",
+          "Corporate treasury officers conducted an immediate audit of outstanding export letters of credit to ensure no transactions breached the newly ratified oil embargo."
+        ],
+        "conversation": [
+          "\"Has customs released our consignment of precision machinery at the Hamburg terminal?\" / \"Unfortunately, no; port authorities placed the entire shipment on hold pending verification that none of the components originate from countries subject to the trade embargo.\"",
+          "\"Why did our freight shipping costs double for the third-quarter European routes?\" / \"The unexpected maritime embargo forced commercial vessels to bypass the canal and take the much longer southern route around the cape.\"",
+          "\"Are we legally permitted to fulfill software licensing contracts signed prior to the treaty?\" / \"Our trade sanctions counsel confirmed that the strict terms of the executive embargo void all existing support agreements with immediate effect.\""
+        ],
+        "collocations": [
+          "impose an embargo",
+          "lift an embargo",
+          "trade embargo",
+          "arms embargo",
+          "oil embargo",
+          "breach an embargo"
+        ]
+      },
+      "wordFamily": {
+        "noun": "embargo (singular), embargoes (plural)",
+        "verb": "embargo (past: embargoed, present participle: embargoing)",
+        "adjective": "embargoed",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "cargo container ship docked port trade customs inspection seal maritime border",
+        "imageDescription": "A massive commercial container ship docked at an industrial port terminal with cranes standing idle, while a customs enforcement inspector fastens a heavy red security seal and regulatory notice onto a shipping container latch.",
+        "mnemonic": "EMBARGO: Picture an 'EMBAR-cade' or metal BAR barring the port gate—no cargo goes in, and no cargo goes out!"
+      },
+      "video": {
+        "description": "A Financial Times geopolitical analysis documentary demonstrating how international trade embargoes alter global shipping routes, redirect crude oil tanker fleets, and require multinational corporations to adjust their supply chains."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "In response to newly enacted international trade regulations, the transport ministry announced that the commercial _____ on imported electronics will remain in effect until the end of the fiscal year. (A) embargo (B) embargoes (C) embargoed (D) embargoing",
+        "tips": "In TOEIC Part 5 and 6 reading passages involving international trade, customs, and logistics, 'embargo' frequently tests part-of-speech discernment after determiners and adjectives. Here, the singular definite article 'the' and the modifying adjective 'commercial' require a singular count noun as the subject of the clause ('the commercial embargo ... will remain in effect'). Choice (A) 'embargo' is the correct singular noun. Choice (B) is the plural form (which would require the plural-compatible context or plural verb agreement if present), while choices (C) and (D) are past and present participle forms that cannot serve as head nouns after 'the commercial'."
+      },
+      "synonyms": [
+        "trade ban",
+        "prohibition",
+        "blockade",
+        "sanction",
+        "interdict",
+        "moratorium"
+      ],
+      "antonyms": [
+        "free trade",
+        "open commerce",
+        "deregulation",
+        "trade agreement",
+        "liberalization"
+      ],
+      "relatedWords": [
+        "sanctions",
+        "customs",
+        "export control",
+        "blockade",
+        "tariffs",
+        "contraband",
+        "compliance"
+      ]
+    },
+    {
+      "id": "finance-137",
+      "word": "endorsement",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ɪnˈdɔːrs.mənt/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/endorsement--_us_1.mp3",
+        "syllableBreakdown": "en-dorse-ment",
+        "stressPattern": "Second syllable stress: /ɪnˈdɔːrs.mənt/ (○●○)",
+        "commonMistakes": "Learners frequently misplace the primary stress onto the initial syllable (*EN-dorse-ment* instead of /ɪnˈdɔːrs.mənt/) or pronounce the vowel in the second syllable as an open /ɒ/ or /ʌ/ rather than the long rhotic mid-back vowel /ɔːr/. In business writing and banking, learners also confuse the noun 'endorsement' with 'signature' or 'authorization'; an endorsement is specifically a legal signing or stamp on a negotiable instrument or insurance policy rider that transfers title or alters terms, whereas a standard signature merely acknowledges execution."
+      },
+      "etymology": {
+        "origin": "Anglo-Norman and Middle French endossement ('the act of signing or writing on the back of a document'), from Old French endosser ('to put on the back, endorse'), from en- ('in, on') + dos ('back', from Latin dorsum 'back of the body, ridge').",
+        "rootWord": "Latin dorsum (back, ridge) / Old French endosser (to write on the back)",
+        "rootMeaning": "to write, sign, or register upon the back of a document",
+        "evolution": "In medieval Roman-canon law and European merchant practice, commercial bills of exchange and promissory notes carried payment orders on their face; merchants transferred ownership of the debt or ordered payment to a third party by writing instructions and signing their names directly on the reverse side (in dorso) of the parchment. In 16th-century England, the term entered English legal jurisprudence through the Law Merchant (lex mercatoria) as 'indorsement' or 'endorsement'. By the 18th century, it was codified in Anglo-American commercial law to govern negotiable instruments. In the 19th and 20th centuries, insurance underwriters adopted 'endorsement' for riders modifying an existing policy, and marketing expanded the term to signify public celebrity or institutional approval of products.",
+        "relatedLanguages": [
+          "French: endossement (m.) (endorsement of a check or bill; e.g., endossement d'un chèque, endossement en blanc)",
+          "Spanish: endoso (m.) (negotiation of a commercial bill or check; e.g., endoso en blanco, endoso en garantía)",
+          "Italian: girata (f.) / avallo (m.) (endorsement of a draft or check; e.g., girata per incasso)",
+          "Portuguese: endosso (m.) (financial endorsement, transfer of commercial paper)",
+          "German: Indossament (n.) / Bestätigung (f.) (commercial bill endorsement; e.g., Blankoindossament)"
+        ],
+        "firstRecordedUse": "Late 16th century (c. 1580s, in English merchant banking, judicial court records, and commercial debt transfer documents)"
+      },
+      "deepMeaning": {
+        "coreConcept": "In banking and commercial law, the act of signing or stamping the reverse side of a negotiable financial instrument (such as a check, draft, or promissory note) to transfer legal ownership, negotiate payment, or specify deposit instructions; in insurance, a written amendment (rider) modifying policy terms or coverage; in business, a formal public approval or corporate sponsorship.",
+        "spatialContext": "Retail bank teller counters, corporate treasury check-scanning operations, insurance underwriting desks, legal compliance suites, and automated mobile deposit digital processing apps.",
+        "temporalContext": "Executed daily during corporate accounts receivable check processing, completed instantly via mobile banking optical capture, or issued annually upon insurance policy renewal cycles.",
+        "emotionalTone": "Legalistic, authoritative, validating, and formal.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native English speakers in banking, real estate, and finance, 'endorsement' triggers a concrete physical and legal reflex: turning a check over to inspect the signature line, bank stamp, or the restrictive phrase 'For Deposit Only.' In commercial paper law, native speakers recognize that signing the back of a draft changes who is legally entitled to cash it and imposes secondary liability on the signer. Outside of commercial banking, native executives think of an insurance endorsement as a formal 'rider' that adds protection (like cyber liability or flood coverage) to an existing commercial policy, or as a career-defining public validation when an influential board member or industry leader endorses a strategic initiative.",
+        "mentalImage": "A bank teller examining the reverse side of an enterprise settlement check under a desk lamp, confirming the stamped restrictive corporate endorsement 'For Deposit Only to Account #84920' alongside the treasurer's signature before feeding it into an electronic MICR scanner.",
+        "whenToUse": "Use when discussing the legal signing or transfer of negotiable instruments (e.g., 'restrictive endorsement', 'blank endorsement', 'require an authorized endorsement'), insurance policy amendments and riders (e.g., 'property damage endorsement', 'flood insurance endorsement'), and formal institutional or executive recommendations (e.g., 'receive the board's unanimous endorsement', 'celebrity endorsement deal').",
+        "whenNotToUse": "Do not use to describe a standard signature on an ordinary contract or employment agreement (use 'signature' or 'execution'). Do not confuse with 'indemnity' (which is protection against loss) or 'collateral' (assets pledged as security).",
+        "culturalContext": "Under the Uniform Commercial Code (UCC Article 3) in the United States and the Bills of Exchange Act in the UK and Commonwealth, endorsement rules govern millions of daily financial transactions. Furthermore, in American banking culture, mobile deposit apps require consumers and businesses to write specific endorsement verbiage ('For Mobile Deposit at [Bank] Only') on the back of every paper check to prevent duplicate presentment fraud."
+      },
+      "examples": {
+        "daily": [
+          "Before depositing my tax refund check at the ATM, I had to provide my endorsement on the designated line on the back.",
+          "The credit union rejected the mobile check deposit because the photo of the endorsement on the reverse side was blurry and unsigned.",
+          "Our homeowners insurance policy required a special windstorm endorsement to cover hurricane damage to the detached garage."
+        ],
+        "business": [
+          "The corporate treasury department uses an automated mechanical stamp to imprint a restrictive endorsement on all incoming customer remittance checks before bank deposit.",
+          "To protect the firm against expanding ransomware threats, the risk manager purchased a comprehensive cyber liability endorsement for our existing commercial insurance policy.",
+          "The merger proposal gained decisive momentum after securing the enthusiastic public endorsement of the company's two largest institutional shareholders."
+        ],
+        "conversation": [
+          "\"Why was the vendor's reimbursement check returned by the clearing house?\" / \"The accounting clerk forgot to include an authorized corporate endorsement on the back before mailing it.\"",
+          "\"Does our commercial property policy cover flooding caused by burst municipal pipes?\" / \"Not under standard coverage; we had to add a water-damage endorsement to the policy during last month's annual renewal.\"",
+          "\"Are we ready to present the five-year capital expansion plan to the board of directors?\" / \"Yes, the chief operating officer gave her full endorsement to the financial projections yesterday afternoon.\""
+        ],
+        "collocations": [
+          "restrictive endorsement",
+          "blank endorsement",
+          "insurance endorsement",
+          "require an endorsement",
+          "unanimous endorsement",
+          "endorsement stamp"
+        ]
+      },
+      "wordFamily": {
+        "noun": "endorsement, endorser, endorsee",
+        "verb": "endorse (past: endorsed, present participle: endorsing)",
+        "adjective": "endorsed, endorsable",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "bank check reverse side endorsement signature stamp business banking transaction",
+        "imageDescription": "The back of a high-value commercial check resting on a mahogany bank counter, clearly showing a crisp black ink stamp reading 'For Deposit Only' followed by an authorized executive cursive signature across the top edge.",
+        "mnemonic": "ENDORSEMENT: Think of 'EN DORSE' -> on the 'DORSEL' (back). You sign on the BACK (dorsal side) of the check to endorse it for deposit!"
+      },
+      "video": {
+        "description": "A commercial banking tutorial video demonstrating the legal requirements for blank, restrictive, and special check endorsements under commercial banking law, illustrating how mobile deposit optical verification verifies payee signatures."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Any reimbursement check issued by the corporate treasury office must bear an authorized _____ on the back before it can be deposited into a commercial account. (A) endorse (B) endorses (C) endorsement (D) endorsing",
+        "tips": "In TOEIC Part 5 and 6 banking or accounting contexts, the indefinite article 'an' combined with the participial adjective 'authorized' demands a singular countable noun as the direct object of the transitive verb 'bear'. Choice (C) 'endorsement' correctly functions as the head noun. Choice (A) 'endorse' is a base verb, (B) 'endorses' is a third-person singular present verb, and (D) 'endorsing' is a present participle/gerund which cannot follow the adjective 'authorized' in this grammatical context."
+      },
+      "synonyms": [
+        "indorsement",
+        "signature",
+        "ratification",
+        "policy rider",
+        "sanction",
+        "approval"
+      ],
+      "antonyms": [
+        "disapproval",
+        "rejection",
+        "disavowal",
+        "repudiation",
+        "cancellation"
+      ],
+      "relatedWords": [
+        "negotiable instrument",
+        "payee",
+        "check",
+        "promissory note",
+        "rider",
+        "commercial paper",
+        "escrow"
+      ]
+    },
+    {
+      "id": "finance-138",
+      "word": "enterprise value",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˈen.tər.praɪz ˌvæl.juː/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/enterprise_value--_us_1.mp3",
+        "syllableBreakdown": "en-ter-prise val-ue",
+        "stressPattern": "Primary stress on first syllable of enterprise, secondary stress on first syllable of value: EN-ter-prise VAL-ue (/ˈen.tər.praɪz ˌvæl.juː/, ●○○ ●○)",
+        "commonMistakes": "Learners frequently confuse 'enterprise value' (EV) with 'equity value' (market capitalization). Equity value only measures the market worth of common shares, whereas enterprise value accounts for the entire capital structure by adding total debt and deducting cash equivalents. In pronunciation, non-native speakers often stress the second syllable of 'enterprise' (*en-TER-prise*) rather than the first (/ˈen.tər.praɪz/), or drop the glide in the second syllable of 'value' (/ˈvæl.juː/), saying */ˈvæl.uː/."
+      },
+      "etymology": {
+        "origin": "Compound noun uniting Middle English enterprise (from Old French entreprise, past participle of entreprendre 'to undertake', from Latin inter 'between, among' + prendere / prehendere 'to grasp, take') and Middle English value (from Old French valoir 'to be worth', from Latin valēre 'to be strong, be well, be worth').",
+        "rootWord": "Latin prehendere (to seize, undertake) + Latin valēre (to be worth, be strong)",
+        "rootMeaning": "undertaking / firm of initiative + intrinsic commercial worth or strength",
+        "evolution": "The noun 'enterprise' entered English in the 15th century signifying an adventurous, daring undertaking, evolving during the Industrial Revolution to denote a commercial company or commercial firm. 'Value' entered English in the 14th century denoting monetary or exchange worth. The compound financial metric 'enterprise value' (EV) was formalized in Wall Street investment banking, corporate valuation literature, and securities analysis during the mid-to-late 20th century (promoted by finance pioneers such as Benjamin Graham, David Dodd, and later practitioners of discounted cash flow and LBO modeling). EV was developed to provide an un-levered valuation of a corporation's operating business that remains neutral to whether the firm is funded primarily through debt or equity.",
+        "relatedLanguages": [
+          "French: valeur d'entreprise (f.) (enterprise value, corporate total valuation; e.g., ratio valeur d'entreprise sur EBITDA)",
+          "Spanish: valor de empresa (m.) / valor de la empresa (enterprise value; e.g., cálculo del valor de empresa)",
+          "Italian: enterprise value (m.) / valore dell'impresa (m.) (corporate valuation; e.g., multiplo di enterprise value)",
+          "German: Unternehmenswert (m.) (firm valuation / enterprise value; e.g., EV/EBITDA-Multiplikator)",
+          "Portuguese: valor da empresa (m.) / enterprise value (EV, total business capitalization)"
+        ],
+        "firstRecordedUse": "Mid-20th century (c. 1960s-1970s, in corporate finance texts, investment banking merger pitch books, and security valuation handbooks)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A comprehensive financial valuation metric representing the theoretical total cost of acquiring an entire operating company, calculated as market capitalization plus short-term and long-term debt, preferred equity, and minority interest, minus total cash and cash equivalents.",
+        "spatialContext": "Investment banking trading floors, private equity boardroom presentations, corporate merger negotiation conference rooms, equity research analyst terminals, and financial model spreadsheets.",
+        "temporalContext": "Calculated daily across publicly traded equities; updated quarterly following 10-Q and 10-K balance sheet filings; referenced during active merger bids and leveraged buyout (LBO) transactions.",
+        "emotionalTone": "Rigorous, quantitative, strategic, and definitive.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native investment bankers, M&A corporate attorneys, and portfolio managers, 'enterprise value' is the gold-standard figure representing the 'takeover price tag' of a business. Native financial analysts think of enterprise value as: 'If I were to buy every single share of this company today, pay off every penny owed to banks and bondholders, but pocket all the cash sitting in the company's checking accounts, how much would the operating engine actually cost me?' Because it treats companies neutrally regardless of debt leverage, native analysts instinctively use EV-based multiples like EV/EBITDA rather than the Price-to-Earnings (P/E) ratio when comparing competitors across global capital markets.",
+        "mentalImage": "An M&A analyst working late on a dual-screen Bloomberg Terminal, adjusting a discounted cash flow valuation model where cells linking market cap, long-term bonds, and cash reserves calculate an enterprise value of $4.2 billion for an impending pharmaceutical acquisition.",
+        "whenToUse": "Use when discussing mergers and acquisitions (M&A), corporate buyout negotiations, valuation multiples (e.g., EV/EBITDA, EV/Revenue), private equity transactions, and debt-adjusted balance sheet appraisals.",
+        "whenNotToUse": "Do not confuse with 'equity value' or 'market capitalization' (which excludes debt and cash), 'book value' (an accounting net asset figure), or 'liquidation value' (what physical assets fetch in a forced bankruptcy sale). Do not use for small retail products or personal asset pricing.",
+        "culturalContext": "In Anglo-American corporate finance and Wall Street investment banking, EV is the universal lingua franca for valuing businesses. When business news outlets (like Bloomberg, The Wall Street Journal, or Reuters) report that a firm was acquired in an 'all-cash transaction valued at $10 billion,' that headline number almost invariably represents the enterprise value, including the assumption or settlement of the target company's corporate debt."
+      },
+      "examples": {
+        "daily": [
+          "Financial analysts on the morning news explained that while the tech startup had a modest stock price, its low debt and massive cash reserves gave it a remarkably healthy enterprise value.",
+          "Before making an investment in the retail chain, she checked its enterprise value to see how much outstanding debt the company was carrying relative to its stock market cap.",
+          "The financial newsletter noted that the streaming platform's enterprise value had doubled following its rapid subscriber expansion and bond retirement."
+        ],
+        "business": [
+          "The investment bank advised the board that the competitor's acquisition bid undervalued the company's enterprise value by failing to account for projected patent royalties and operational synergies.",
+          "Private equity partners evaluated the acquisition target at an enterprise value of 8.5 times trailing twelve-month EBITDA.",
+          "By retiring two hundred million dollars in high-yield debt and generating positive free cash flow, the multinational conglomerate successfully lowered its enterprise value multiple."
+        ],
+        "conversation": [
+          "\"Why does our valuation presentation focus on enterprise value rather than market cap?\" / \"Because the target company holds over three billion dollars in long-term debt, and enterprise value reflects the true total cost of acquiring and unburdening the business.\"",
+          "\"How will the proposed dividend payout affect our enterprise value?\" / \"Distributing excess cash reduces our balance sheet cash reserves, which mathematically increases our net enterprise value while lowering our cash cushion.\"",
+          "\"What multiple is the bidding firm offering for our manufacturing subsidiary?\" / \"Their opening offer is based on an enterprise value of twelve times EBITDA, which our advisory team considers very attractive.\""
+        ],
+        "collocations": [
+          "enterprise value multiple",
+          "calculate enterprise value",
+          "enterprise value to EBITDA",
+          "total enterprise value",
+          "implied enterprise value",
+          "enterprise value to sales"
+        ]
+      },
+      "wordFamily": {
+        "noun": "enterprise value, enterprise, valuation, value",
+        "verb": "value, evaluate (functional equivalent)",
+        "adjective": "value-oriented, enterprise-wide",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "investment banking financial modeling valuation chart enterprise value balance sheet laptop",
+        "imageDescription": "A modern financial analyst's desk with an open laptop showing an Excel corporate valuation model, with color-coded bar charts dividing equity value, total debt, and cash deduction to visually calculate total enterprise value.",
+        "mnemonic": "ENTERPRISE VALUE: Think of buying the ENTIRE ENTERPRISE: You pay for the equity, pay off all the DEBT, and pocket the CASH!"
+      },
+      "video": {
+        "description": "An educational corporate finance video lecture illustrating how investment bankers calculate enterprise value from a balance sheet and use EV/EBITDA multiples to assess acquisition targets."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Although the target firm's stock price experienced volatility this quarter, its underlying _____ value remains robust due to strong operational cash flows and minimal outstanding debt. (A) enter (B) enterprise (C) enterprisingly (D) enterprising",
+        "tips": "In TOEIC Part 5 and Part 7 financial reading passages, compound nouns are a classic testing point. The blank precedes the noun 'value'. In financial analysis terminology, 'enterprise value' is a fixed compound noun (noun adjunct + noun) denoting the total theoretical takeover value of a firm. Choice (B) 'enterprise' correctly completes the compound noun. Choice (A) 'enter' is a verb, choice (C) 'enterprisingly' is an adverb, and choice (D) 'enterprising' is an adjective meaning energetic or showing initiative (which would describe a person or ambitious venture, not the financial valuation metric)."
+      },
+      "synonyms": [
+        "total firm value",
+        "takeover value",
+        "firm valuation",
+        "aggregate corporate value",
+        "unlevered firm value",
+        "entity value"
+      ],
+      "antonyms": [
+        "equity value",
+        "market capitalization",
+        "book value",
+        "liquidation value",
+        "tangible net worth"
+      ],
+      "relatedWords": [
+        "market capitalization",
+        "EBITDA",
+        "valuation multiple",
+        "capital structure",
+        "net debt",
+        "leveraged buyout",
+        "mergers and acquisitions"
+      ]
+    }
+  ]
+}

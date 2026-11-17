@@ -1,0 +1,350 @@
+{
+    "result": {
+        "words": [
+            {
+                "id": "finance-234",
+                "word": "rally",
+                "partOfSpeech": [
+                    "noun"
+                ],
+                "category": "finance",
+                "level": "essential",
+                "toeicFrequency": 9,
+                "pronunciation": {
+                    "ipa": "/ˈræl.i/",
+                    "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/rally--_us_1.mp3",
+                    "syllableBreakdown": "ral-ly",
+                    "stressPattern": "Primary stress on first syllable: RAL-ly (/ˈræl.i/, ●○)",
+                    "commonMistakes": "Learners frequently substitute the open front vowel /æ/ (as in 'apple' or 'trap') with /e/ (producing */ˈrel.i/ like 'rely' or 'relay') or fail to articulate the double 'l' cleanly. In business English, take special care not to confuse the noun 'rally' (a sharp market recovery or surge in asset prices) with the verb 'rely' (/rɪˈlaɪ/, to depend upon), which has second-syllable stress and a diphthong /aɪ/."
+                },
+                "etymology": {
+                    "origin": "Old French rallier (to reassemble, reunite, bring together again), formed from re- (again) + alier (to bind, ally, join together), ultimately from Latin alligare (to tie to, bind to, from ad- + ligare, 'to bind').",
+                    "rootWord": "Latin alligare (to bind to, tie together) via Old French rallier (to regroup or reassemble scattered troops in battle)",
+                    "rootMeaning": "'To regroup, reassemble, or recover strength after disruption or retreat'",
+                    "evolution": "Originally a 15th-century military term describing the regrouping of scattered troops after being driven back in combat ('rally the troops'). In the 1880s, the term was adopted by stock exchange traders and financial journalists on Wall Street and the London Stock Exchange to describe a sudden, robust rebound in stock or commodity prices following a sharp sell-off or protracted bear market. Today, it denotes any marked upward price movement in equity, bond, or currency markets, whether brief ('bear market rally', 'relief rally') or sustained ('year-end rally', 'Santa Claus rally').",
+                    "relatedLanguages": [
+                        "French: ralliement (rallying, gathering), rallier (to rally, unite)",
+                        "Spanish: repunte (rally, rebound), recuperación (recovery)",
+                        "Italian: rimbalzo (rebound, rally), rialzo (rise, rally)",
+                        "Portuguese: recuperação (recovery), repique (short rally)",
+                        "German: Kurserholung (price rally, recovery), Aufschwung (upswing)"
+                    ],
+                    "firstRecordedUse": "Mid-19th century in commercial financial reporting (circa 1880 on the New York Stock Exchange)"
+                },
+                "deepMeaning": {
+                    "coreConcept": "A sustained or sharp recovery and upward movement in asset prices, market indices, or overall economic activity following a period of decline, stagnation, or market correction.",
+                    "spatialContext": "Equity trading floors, broker-dealer trading desks, financial news broadcasts (e.g. Bloomberg, CNBC), electronic order-book charts, and investment portfolio review presentations.",
+                    "temporalContext": "Occurs dynamically during trading sessions (intraday rallies), across sequential trading weeks or quarters, or seasonally at fiscal year-end (e.g., fourth-quarter earnings rallies).",
+                    "emotionalTone": "Energetic, optimistic, and revitalizing; reflects resurgent investor confidence, bullish buying momentum, and market sentiment shifting from fear to risk appetite.",
+                    "formalityLevel": "formal",
+                    "connotation": "positive"
+                },
+                "nativeMindset": {
+                    "howNativesThink": "To a native speaker in business and finance, 'rally' instantly triggers an image of green candlestick charts surging upward after a nerve-racking drop. It conveys active resurgence—buyers stepping in en masse to bid up prices because sentiment has decisively flipped from panic to opportunistic buying. Native speakers distinguish a 'rally' (dynamic upward surge following a drop) from simple steady growth ('steady increase') or a speculative bubble.",
+                    "mentalImage": "A high-frequency trading floor filled with traders looking up at massive wall displays as line graphs reverse their downward trajectory and climb sharply in vibrant green, with volume spikes indicating institutional buy orders pouring in.",
+                    "whenToUse": "Use when describing a notable turnaround and upward surge in asset prices, market averages (Dow Jones, S&P 500), currency values, or commodity futures after a downturn. Also common in financial earnings calls when discussing a stock's post-earnings price surge.",
+                    "whenNotToUse": "Do not use 'rally' for a gradual, unremarkable routine increase (use 'modest gain' or 'incremental rise'). Do not confuse with 'rely' (/rɪˈlaɪ/, to depend on) or 'relay' (/ˈriː.leɪ/, to pass information along). Avoid using it to describe a planned corporate budget expansion.",
+                    "culturalContext": "In Anglo-American equity markets, market commentators frequently personify rallies with colorful market lore—such as the 'Santa Claus rally' (the historic tendency for equities to rise during the final five trading days of December and first two of January), 'relief rally' (surge after political or regulatory uncertainty clears), or 'dead cat bounce' (a short-lived, illusory rally during a prolonged bear decline)."
+                },
+                "examples": {
+                    "daily": [
+                        "Tech stocks staged an impressive late-afternoon rally, erasing earlier losses caused by interest rate rumors.",
+                        "Investor optimism sparked a broad market rally after the central bank hinted at halting its rate hikes.",
+                        "Retirees watched their pension portfolios recover substantial value during the spring equity rally."
+                    ],
+                    "business": [
+                        "The benchmark index surged 3.5% yesterday in a broad-based rally driven by stronger-than-expected semiconductor revenue.",
+                        "Treasury yields tumbled as bond prices mounted a vigorous rally following the release of benign consumer price index data.",
+                        "Analysts caution that the recent rally in retail equities may falter if consumer spending declines during the next quarter."
+                    ],
+                    "conversation": [
+                        "\"Did you see the morning trading session? The index was down two hundred points, but oil shares led a massive rally before lunch.\" — \"Yes, institutional investors evidently treated the early morning dip as an attractive buying opportunity.\"",
+                        "\"Our portfolio gained nearly four percent this week thanks to the unexpected rally in green energy stocks.\" — \"That is a welcome turnaround, but let's rebalance our allocations before volatility returns.\"",
+                        "\"Do market strategists believe this current stock rally has lasting momentum?\" — \"Most analysts describe it as a relief rally triggered by the trade agreement, though fundamental corporate earnings will determine if it endures.\""
+                    ],
+                    "collocations": [
+                        "stage a rally",
+                        "market rally",
+                        "relief rally",
+                        "bear market rally",
+                        "spark a rally",
+                        "sustained rally"
+                    ]
+                },
+                "wordFamily": {
+                    "noun": "rally",
+                    "verb": "rally",
+                    "adjective": "rallying"
+                },
+                "visual": {
+                    "imageKeyword": "stock market rally trading floor screen green candlestick chart upward surge",
+                    "imageDescription": "A modern financial trading desk with dual monitors showing green stock market candlestick charts breaking above a downward resistance trendline, accompanied by surging buy volume bars.",
+                    "mnemonic": "RALLY: Think of troops RE-ALLIED after a retreat, charging forward again—just like stock prices regrouping to surge upward!"
+                },
+                "video": {
+                    "description": "A financial news segment breaking down an afternoon Wall Street market rally, showing how institutional buying volume and positive macroeconomic indicators reversed an opening sell-off."
+                },
+                "toeicContext": {
+                    "commonParts": [
+                        3,
+                        4,
+                        5,
+                        7
+                    ],
+                    "exampleQuestion": "Shares of Nexus Energy staged a remarkable _______ yesterday after the company announced a multi-billion-dollar offshore wind contract.\n(A) rally\n(B) rallied\n(C) rallyingly\n(D) rallier",
+                    "tips": "In TOEIC business news broadcasts (Part 4) and financial reading passages (Part 7), 'stage a rally' is an exceptionally common financial collocation meaning to mount a sharp recovery. In Part 5 grammatical questions, the blank preceded by the indefinite article 'a' and adjective 'remarkable' requires the singular noun (A) rally."
+                },
+                "synonyms": [
+                    "rebound",
+                    "upsurge",
+                    "recovery",
+                    "resurgence",
+                    "upturn"
+                ],
+                "antonyms": [
+                    "sell-off",
+                    "slump",
+                    "plunge",
+                    "decline",
+                    "downturn"
+                ],
+                "relatedWords": [
+                    "bull market",
+                    "correction",
+                    "bear market",
+                    "momentum",
+                    "surge",
+                    "volatility"
+                ]
+            },
+            {
+                "id": "finance-235",
+                "word": "rate of return",
+                "partOfSpeech": [
+                    "noun"
+                ],
+                "category": "finance",
+                "level": "advanced",
+                "toeicFrequency": 7,
+                "pronunciation": {
+                    "ipa": "/ˌreɪt əv rɪˈtɜːrn/",
+                    "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/rate_of_return--_us_1.mp3",
+                    "syllableBreakdown": "rate of re-turn",
+                    "stressPattern": "Compound stress on first and third content elements: RATE of re-TURN (/ˌreɪt əv rɪˈtɜːrn/, ●○●)",
+                    "commonMistakes": "Learners often drop the unstressed preposition 'of' (saying */reɪt rɪˈtɜːrn/*) or over-stress 'of' with a strong /ɒv/ instead of the reduced schwa /əv/. Non-native speakers also frequently mispronounce the stressed vowel in 'return' (/ɜːr/) as /uːr/ (*re-TOORN*) or /ɔːr/ (*re-TORN*). In financial presentations, maintain smooth rhythm with liaison: 'rate-ov-re-turn'."
+                },
+                "etymology": {
+                    "origin": "English noun phrase composed of 'rate' (from Anglo-French rate, Medieval Latin rata, from Latin pro rata parte - according to calculated proportion, from reor - to reckon/calculate) + 'of' + 'return' (from Anglo-Norman retourner, Old French retorner, Latin re- + tornare - to turn on a lathe, come back).",
+                    "rootWord": "Latin ratus (reckoned, calculated, fixed) + tornare (to turn around, bring back)",
+                    "rootMeaning": "'The calculated proportion or percentage of gain or profit brought back from an invested principal sum'",
+                    "evolution": "The individual terms 'rate' (a proportional calculation or ratio) and 'return' (the profit coming back from an investment venture) coexisted in commercial English since the Renaissance. During the 19th-century expansion of British joint-stock companies, railways, and municipal bond underwriting, chartered accountants formalized 'rate of return' as the definitive metric measuring annual net earnings or yield relative to total invested capital. In 20th-century portfolio theory and corporate finance (formalized by Irving Fisher and later modern portfolio theorists), it was differentiated into specific standardized methodologies such as Internal Rate of Return (IRR), Annualized Rate of Return, and Real vs. Nominal Rate of Return.",
+                    "relatedLanguages": [
+                        "French: taux de rendement (rate of return, yield), taux de rentabilité (profitability rate)",
+                        "Spanish: tasa de rendimiento (rate of return), tasa de retorno (rate of return)",
+                        "Italian: tasso di rendimento (rate of return, yield), saggio di rendimento",
+                        "Portuguese: taxa de retorno (rate of return), taxa de rendimento (yield rate)",
+                        "German: Rendite (rate of return, yield), Ertragsrate (return rate)"
+                    ],
+                    "firstRecordedUse": "Late 19th century (circa 1885 in British and American actuarial and accounting treatises)"
+                },
+                "deepMeaning": {
+                    "coreConcept": "The net gain or loss generated on an investment over a designated time period, expressed as a percentage proportion of the initial capital outlay or investment cost.",
+                    "spatialContext": "Corporate treasury models, investment pitch decks, capital expenditure (CapEx) committee reports, wealth management portfolio statements, and actuarial appraisal spreadsheets.",
+                    "temporalContext": "Calculated periodically—monthly, quarterly, or annually—to benchmark investment performance against hurdle rates, index benchmarks, or competing capital allocation opportunities.",
+                    "emotionalTone": "Analytical, rigorous, and performance-driven; represents the ultimate quantitative scorecard determining whether capital has been deployed productively or squandered.",
+                    "formalityLevel": "formal",
+                    "connotation": "positive"
+                },
+                "nativeMindset": {
+                    "howNativesThink": "To a native financial analyst or corporate executive, 'rate of return' is the universal yardstick of capital efficiency. Whenever capital is committed—whether buying commercial property, expanding a factory, or purchasing government bonds—the very first question asked is: 'What's the expected rate of return?' Natives instinctively compare this percentage against the risk-free rate (e.g. Treasury bills) or the company's cost of capital to decide if the risk is worth taking.",
+                    "mentalImage": "An investment committee gathered around a boardroom conference screen comparing two capital proposals: Project Alpha with an estimated 14% annual rate of return against Project Beta with an 8% return, weighing project risk against capital yield.",
+                    "whenToUse": "Use in investment analysis, asset management, capital budgeting proposals, retirement planning discussions, and corporate earnings disclosures when stating investment performance as a percentage.",
+                    "whenNotToUse": "Do not use 'rate of return' to refer to a raw monetary profit amount (e.g., '$50,000 profit' is a dollar gain, not a 'rate'; the rate is the percentage ratio like '12%'). Do not confuse with 'turnover' (sales volume) or 'revenue' (gross top-line receipts).",
+                    "culturalContext": "In Anglo-American corporate governance, delivering an adequate 'rate of return' on invested capital (ROIC) is the primary fiduciary duty of corporate boards to public shareholders. Pension funds and university endowments in the US and UK rely on maintaining target annual rates of return (typically 7-8%) to remain actuarially solvent and fund retiree benefits."
+                },
+                "examples": {
+                    "daily": [
+                        "Her financial advisor recommended a diversified index fund that has delivered an average annual rate of return of eight percent over the past two decades.",
+                        "Before locking her savings into a five-year certificate of deposit, she compared the guaranteed rate of return across several local credit unions.",
+                        "High inflation can significantly erode the real rate of return on fixed-income savings accounts."
+                    ],
+                    "business": [
+                        "The chief financial officer rejected the automated warehouse expansion because its projected rate of return fell below our corporate hurdle rate of twelve percent.",
+                        "Due to disciplined cost controls and strong licensing royalties, the venture capital fund achieved an annualized rate of return exceeding twenty-two percent.",
+                        "The capital allocation memo outlines three potential plant modernization projects along with their estimated internal rates of return and payback horizons."
+                    ],
+                    "conversation": [
+                        "\"Why is the executive committee hesitating on the software acquisition?\" — \"While the strategic rationale is solid, analysts estimate the internal rate of return at only six percent, which fails to justify the integration risk.\"",
+                        "\"How did our commercial real estate portfolio perform over the last fiscal year?\" — \"Despite rising tenant vacancies downtown, suburban distribution centers boosted our overall rate of return to nine point four percent.\"",
+                        "\"Should we reinvest our surplus operating cash into short-term corporate paper?\" — \"Yes, current money market yields offer a risk-adjusted rate of return that easily surpasses our overnight bank depository rates.\""
+                    ],
+                    "collocations": [
+                        "annual rate of return",
+                        "expected rate of return",
+                        "internal rate of return",
+                        "high rate of return",
+                        "calculate the rate of return",
+                        "risk-adjusted rate of return"
+                    ]
+                },
+                "wordFamily": {
+                    "noun": "rate of return"
+                },
+                "visual": {
+                    "imageKeyword": "investment rate of return financial performance percentage chart analysis calculator desk",
+                    "imageDescription": "A financial analyst using a dual-display terminal showing a capital budgeting model with percentage rate of return comparisons highlighted next to a financial calculator and bar charts.",
+                    "mnemonic": "RATE OF RETURN: It's the RATE (%) at which your invested money RETURNS to your wallet as profit!"
+                },
+                "video": {
+                    "description": "An executive finance tutorial demonstrating how corporate managers calculate internal rate of return (IRR) versus return on investment (ROI) to evaluate capital expenditure projects."
+                },
+                "toeicContext": {
+                    "commonParts": [
+                        4,
+                        5,
+                        6,
+                        7
+                    ],
+                    "exampleQuestion": "The investment committee will not approve capital expenditure for the overseas facility unless the projected _______ of return exceeds ten percent.\n(A) rate\n(B) rating\n(C) rated\n(D) rateable",
+                    "tips": "In TOEIC Part 5 business finance items, 'rate of return' is a fixed financial compound noun. Look out for the structure '_______ of return', which requires the base noun (A) rate. Distractors like (B) rating (an evaluation or credit score) or (C) rated (verb/participle) are grammatically incorrect in this compound."
+                },
+                "synonyms": [
+                    "yield",
+                    "return on investment",
+                    "profitability rate",
+                    "percentage yield",
+                    "capital return"
+                ],
+                "antonyms": [
+                    "rate of loss",
+                    "capital depreciation",
+                    "negative return"
+                ],
+                "relatedWords": [
+                    "hurdle rate",
+                    "internal rate of return",
+                    "capital gain",
+                    "dividend yield",
+                    "cost of capital",
+                    "benchmark"
+                ]
+            },
+            {
+                "id": "finance-236",
+                "word": "recession",
+                "partOfSpeech": [
+                    "noun"
+                ],
+                "category": "finance",
+                "level": "intermediate",
+                "toeicFrequency": 8,
+                "pronunciation": {
+                    "ipa": "/rɪˈseʃ.ən/",
+                    "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/recession--_us_1.mp3",
+                    "syllableBreakdown": "re-ces-sion",
+                    "stressPattern": "Primary stress on second syllable: re-CES-sion (/rɪˈseʃ.ən/, ○●○)",
+                    "commonMistakes": "Learners frequently place stress on the first syllable (saying */ˈrɛs.ə.ʃən/* or */ˈriː.sɛʃ.ən/*) or substitute the voiceless palato-alveolar fricative /ʃ/ ('sh') with an /s/ or /z/ sound (*re-sess-ion*). Ensure the first syllable has a reduced /rɪ/ or /rə/, strong second syllable stress on /-ˈseʃ-/, and an unstressed reduced suffix /-ən/."
+                },
+                "etymology": {
+                    "origin": "Latin recessio (a receding, withdrawal, going back), noun of action from recessus, past participle of recedere (to go back, retreat, retire, withdraw), composed of re- (back, away) + cedere (to yield, withdraw, go).",
+                    "rootWord": "Latin recedere (to withdraw, retreat, step backward) from re- (back) + cedere (to go)",
+                    "rootMeaning": "'The act of stepping back, withdrawing, or retreating from an advanced position'",
+                    "evolution": "In Classical Latin and 17th-century English, 'recession' referred strictly to physical or astronomical withdrawal (such as the recession of floodwaters or the precession/recession of equinoxes). In the 1920s and 1930s, American macroeconomists and government officials sought a milder, less panic-inducing euphemism than the terrifying terms 'panic', 'crash', or 'depression' (which had come to define the 1929 Great Depression). In 1937-1938, President Franklin D. Roosevelt's administration popularized 'recession' to describe the temporary economic downturn during that period. It subsequently became the standardized macroeconomic term, defined technically as two consecutive quarters of negative real GDP growth.",
+                    "relatedLanguages": [
+                        "French: récession (economic recession, downturn)",
+                        "Spanish: recesión (economic recession, slowdown)",
+                        "Italian: recessione (recession, economic decline)",
+                        "Portuguese: recessão (economic recession)",
+                        "German: Rezession (economic recession, slump)"
+                    ],
+                    "firstRecordedUse": "Mid-17th century in physical senses; 1937 in modern macroeconomic context"
+                },
+                "deepMeaning": {
+                    "coreConcept": "A significant, widespread, and sustained contraction in an economy's overall economic activity, typically marked by declining real Gross Domestic Product (GDP) over two or more consecutive quarters, rising unemployment, falling industrial production, and curtailed retail sales.",
+                    "spatialContext": "Central bank policy chambers, national treasury departments, corporate executive suites during budget retrenchment, economic research institutes, and headline financial news media.",
+                    "temporalContext": "Occurs cyclically as the contractionary phase of the macroeconomic business cycle, typically persisting for six to eighteen months before monetary or fiscal stimulus facilitates recovery.",
+                    "emotionalTone": "Sober, cautious, apprehensive, and defensive; prompts corporate belt-tightening, hiring freezes, capex reductions, and heightened risk aversion among consumers and business leaders.",
+                    "formalityLevel": "formal",
+                    "connotation": "negative"
+                },
+                "nativeMindset": {
+                    "howNativesThink": "To native speakers in corporate leadership and society, 'recession' triggers an immediate instinct for fiscal self-defense: freeze discretionary spending, postpone capital expansions, shore up cash reserves, and prepare for potential layoffs. Unlike an informal 'slowdown', 'recession' sounds official, serious, and macro-level—it conjures images of economic barometers blinking red, factories curtailing shifts, and consumers tightening purse strings.",
+                    "mentalImage": "A corporate boardroom where executives review declining sales forecasts across regional divisions, with a slide presenting a downward-trending Gross Domestic Product line and a contingency budget labeled 'Recession Mitigation Plan: Hiring and Travel Freeze'.",
+                    "whenToUse": "Use when discussing national or global macroeconomic downturns, negative GDP growth, economic contractions, or corporate business strategies designed to withstand economic downturns (e.g. 'recession-proof industries').",
+                    "whenNotToUse": "Do not use 'recession' to describe a single company's declining sales (use 'downturn', 'slump', or 'decline'). Do not use it for a brief 1-2 week drop in stock prices (use 'pullback' or 'market correction'). Reserve it for broad-based macroeconomic contractions.",
+                    "culturalContext": "In the United States, the National Bureau of Economic Research (NBER) is the official arbiter that dates the onset and end of recessions. In presidential election cycles in the US and UK, the occurrence or threat of a recession is often the single most decisive factor determining whether an incumbent administration retains power."
+                },
+                "examples": {
+                    "daily": [
+                        "Many young couples postponed purchasing their first home during the recession because mortgage lending criteria tightened sharply.",
+                        "During the last economic recession, families cut back on dining out and prioritized building emergency savings.",
+                        "Local small businesses struggled to stay afloat as consumer spending dropped during the eighteen-month recession."
+                    ],
+                    "business": [
+                        "Anticipating an impending global recession, the manufacturing conglomerate instituted an immediate hiring freeze and deferred all non-essential equipment upgrades.",
+                        "Companies with strong balance sheets and minimal debt often acquire distressed competitors at discounted valuations during a severe recession.",
+                        "The central bank lowered benchmark interest rates by fifty basis points in an aggressive bid to prevent the economy from slipping into a deep recession."
+                    ],
+                    "conversation": [
+                        "\"Has senior management finalized the operating budget for the coming fiscal year?\" — \"Not yet; they are waiting for the central bank's quarterly forecast to determine whether we need to brace for a mild recession.\"",
+                        "\"Why is the logistics division delaying the purchase of twenty new delivery vans?\" — \"Due to fears of an economic recession, the board has instructed all departments to preserve liquidity until freight demand rebounds.\"",
+                        "\"How is our consulting practice performing compared to the broader market?\" — \"Fortunately, our restructuring and cost-optimization services are counter-cyclical and actually expand during a recession.\""
+                    ],
+                    "collocations": [
+                        "economic recession",
+                        "slide into a recession",
+                        "recession-proof",
+                        "deep recession",
+                        "brace for a recession",
+                        "emerge from a recession"
+                    ]
+                },
+                "wordFamily": {
+                    "noun": "recession",
+                    "adjective": "recessionary",
+                    "verb": "recede"
+                },
+                "visual": {
+                    "imageKeyword": "economic recession financial crisis chart declining gdp corporate boardroom meeting",
+                    "imageDescription": "A somber executive meeting room where business managers evaluate a projected economic recession chart displaying consecutive quarters of falling GDP and rising unemployment rates.",
+                    "mnemonic": "RECESSION: When the economy RECEDES (moves backward instead of forward), it falls into a RECESSION!"
+                },
+                "video": {
+                    "description": "An educational macroeconomic explainer illustrating the phases of the business cycle, showing how consecutive quarters of GDP contraction define an official recession and trigger central bank intervention."
+                },
+                "toeicContext": {
+                    "commonParts": [
+                        4,
+                        5,
+                        6,
+                        7
+                    ],
+                    "exampleQuestion": "Economists warn that without substantial fiscal stimulus, the regional economy is at risk of sliding into a prolonged _______.\n(A) recession\n(B) recessed\n(C) recessional\n(D) recessionary",
+                    "tips": "In TOEIC Part 5 passages dealing with economic forecasts and corporate strategy, 'recession' is frequently tested in noun positions preceded by adjectives such as 'prolonged', 'deep', or 'global'. In this sentence, the noun phrase 'a prolonged _______' requires the singular noun (A) recession. Distractor (D) recessionary is an adjective (e.g., 'recessionary pressures')."
+                },
+                "synonyms": [
+                    "economic downturn",
+                    "contraction",
+                    "slump",
+                    "slowdown",
+                    "depression"
+                ],
+                "antonyms": [
+                    "expansion",
+                    "economic boom",
+                    "growth",
+                    "upswing",
+                    "prosperity"
+                ],
+                "relatedWords": [
+                    "gross domestic product",
+                    "inflation",
+                    "unemployment rate",
+                    "stagflation",
+                    "monetary policy",
+                    "fiscal stimulus"
+                ]
+            }
+        ]
+    }
+}

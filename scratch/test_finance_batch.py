@@ -1,0 +1,478 @@
+import json
+import re
+import sys
+
+words_data = {
+  "words": [
+    {
+      "id": "finance-059",
+      "word": "accountant",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/əˈkaʊn.tənt/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/accountant--_us_1.mp3",
+        "syllableBreakdown": "ac-coun-tant",
+        "stressPattern": "○●○",
+        "commonMistakes": "Learners often place primary stress incorrectly on the first syllable (pronouncing it like */ˈæ.kaʊn.tənt/* instead of /əˈkaʊn.tənt/). Another frequent error is mispronouncing the diphthong /aʊ/ in the second syllable as a flat /oʊ/ or /ɔː/ (sounding like 'uh-CONE-tunt'). Additionally, non-native speakers often over-enunciate the final unstressed syllable with a strong short /æ/ vowel rather than a reduced schwa /tənt/ with a soft or unreleased final alveolar stop /t/. In professional corporate contexts, learners also confuse an 'accountant' (a credentialed professional who analyzes, audits, and interprets financial statements) with a 'bookkeeper' (who primarily records day-to-day clerical transactions) or an 'auditor' (an independent evaluator inspecting books for statutory compliance)."
+      },
+      "etymology": {
+        "origin": "Middle English 'accountant' / 'accomptant', borrowed from Anglo-Norman and Old French 'acompter' (to reckon, compute, render an account), derived from Latin 'computāre' (to calculate together).",
+        "rootWord": "Latin computāre (from com- 'together' + putāre 'to prune, reckon, think, clear up')",
+        "rootMeaning": "'One who is held responsible or legally liable to render a formal reckoning or financial account'",
+        "evolution": "In 14th-century Anglo-Norman legal and royal administrative records, the word originated as an adjective designating a person liable to render an account of monies, goods, or estate revenues entrusted to them. By the mid-16th century, it had nominalized into an occupational title for a designated officer or clerk who audited and maintained municipal or mercantile accounts. During the 19th-century Industrial Revolution, the rise of joint-stock corporations and railways created complex capital structures and corporate tax legislation, prompting practitioners to organize professional regulatory institutes (such as the Institute of Chartered Accountants in England and Wales in 1880 and the American Institute of Certified Public Accountants). This transformed traditional ledger clerks into licensed, state-certified financial fiduciaries.",
+        "relatedLanguages": [
+          "French: comptable (accountant, bookkeeper; from compter / computāre)",
+          "Spanish: contador (accountant; from contar / computāre)",
+          "Italian: contabile / ragioniere (accountant, bookkeeper; from conto)",
+          "German: Buchhalter (bookkeeper/accountant) / Wirtschaftsprüfer (certified public accountant / auditor)"
+        ],
+        "firstRecordedUse": "Late 14th century (as an adjective meaning 'liable to render an account'); mid-16th century (c. 1550s in Tudor merchant company records as an occupational noun)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A credentialed or designated financial professional responsible for maintaining, inspecting, and reconciling financial ledgers, preparing tax returns, compiling corporate financial statements, and ensuring regulatory compliance with accounting standards such as GAAP or IFRS.",
+        "spatialContext": "Corporate finance suites, cubicles and glass-partitioned offices within public accounting firms (including the Big Four), multi-monitor desktop workstations running enterprise ERP software (SAP, Oracle NetSuite, QuickBooks) and Excel financial models, or client corporate offices during on-site fiscal audits.",
+        "temporalContext": "Operating on rigid corporate reporting cycles: intense peak activity during monthly and quarterly fiscal closings, corporate year-end audits, and statutory tax filing seasons (such as January through mid-April in the United States and Canada).",
+        "emotionalTone": "Meticulous, objective, analytical, prudent, and integrity-driven.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native English speakers, an 'accountant' represents precision, financial order, and regulatory safeguards. In personal life, native speakers immediately associate an accountant with filing personal tax returns, maximizing tax deductions, and avoiding penalties ('I'll drop off my W-2 forms with my accountant this weekend'). In corporate environments, native executives distinguish between entry-level staff accountants (who post journal entries and balance ledgers), senior cost accountants, and Certified Public Accountants (CPAs) or Chartered Accountants who possess the statutory authority to audit balance sheets and sign official regulatory filings. The profession carries a strong cultural association with conscientiousness, high ethics, and grueling work schedules during spring 'tax season'.",
+        "mentalImage": "A focused corporate accountant in professional business attire seated before dual monitors, cross-referencing digitized vendor invoices with an enterprise general ledger spreadsheet, checking balance totals with a ten-key desktop calculator and a fine-tip pen.",
+        "whenToUse": "Use when referring to qualified individuals who prepare, verify, or audit financial accounts and tax documentation (e.g., 'certified public accountant', 'corporate tax accountant', 'forensic accountant', 'staff accountant', 'consult an accountant').",
+        "whenNotToUse": "Do not use 'accountant' when referring to a bank teller or store cashier who merely handles physical cash at a register. Do not confuse with 'investment banker' or 'portfolio manager' (who trade securities and raise capital). Distinguish from an entry-level 'bookkeeper' who performs basic clerical entry without formal professional accreditation.",
+        "culturalContext": "In the United States, Britain, Canada, and Australia, public accounting is a heavily regulated and prestigious profession. Attaining credentials like the CPA (Certified Public Accountant) or ACCA/ACA (Chartered Accountant) requires an accounting degree, grueling multi-section exams, and rigorous continuous professional education. In Anglo-American workplace humor, accountants are often playfully stereotyped as conservative and laser-focused on spreadsheets. In TOEIC test scenarios, accountants feature prominently in Part 3 conversations regarding travel expense reimbursement approvals, Part 4 business announcements about quarterly audits, and Part 7 hiring advertisements for corporate finance roles."
+      },
+      "examples": {
+        "daily": [
+          "David met with his personal accountant to calculate deductions for his home office before filing his state income taxes.",
+          "The small bakery owner hired an experienced accountant to organize her payroll taxes and monthly operating expenses.",
+          "After passing her final CPA examination, Sarah accepted a full-time position as a tax accountant at a regional firm."
+        ],
+        "business": [
+          "Our senior accountant discovered an unrecorded supplier invoice while reconciling the accounts payable ledger at the close of the third quarter.",
+          "The corporation hired an independent forensic accountant to inspect procurement logs after internal auditors detected irregular billing entries.",
+          "Corporate staff accountants worked extended hours through the weekend to complete the consolidated financial statements required for the annual shareholders' report."
+        ],
+        "conversation": [
+          "\"Did the accountant finish reviewing our department's travel expense claims for the Chicago trade show?\" / \"Yes, she approved all eligible hotel and transportation receipts but requested itemized invoices for the client dinner.\"",
+          "\"Our boutique retail business is opening two new branch locations, and our bookkeeping is becoming unmanageable.\" / \"You should definitely hire a certified public accountant to establish an automated payroll system and handle sales tax compliance.\"",
+          "\"Why are all the finance department offices illuminated so late this week?\" / \"It is the annual fiscal closing, so the accountants are working overtime alongside the external auditors.\""
+        ],
+        "collocations": [
+          "certified public accountant",
+          "chartered accountant",
+          "forensic accountant",
+          "staff accountant",
+          "corporate accountant",
+          "consult an accountant"
+        ]
+      },
+      "wordFamily": {
+        "noun": "accountant, accountancy, account, accounting",
+        "verb": "account",
+        "adjective": "accountable",
+        "adverb": "accountably"
+      },
+      "visual": {
+        "imageKeyword": "certified public accountant analyzing corporate ledger dual monitors spreadsheet",
+        "imageDescription": "A professional corporate accountant in formal business attire working at a clean office desk with dual monitors displaying balance sheets and financial models, using a ten-key calculator to reconcile ledger totals.",
+        "mnemonic": "An ACCOUNTANT is the trusted professional who meticulously COUNTS, verifies, and keeps corporate ACCOUNTS in perfect balance!"
+      },
+      "video": {
+        "description": "A day-in-the-life corporate documentary highlighting a certified public accountant navigating a month-end close, conducting ledger reconciliations, and presenting financial summaries to senior management."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "To ensure compliance with updated tax regulations, the board of directors retained an independent ______ to review the quarterly financial statements. (A) accountant (B) accounting (C) accountable (D) accountancy",
+        "tips": "A high-frequency Part 5 word-form item. The blank is preceded by the article 'an' and adjective 'independent', and followed by the infinitive 'to review', which requires an agentive person noun capable of performing an audit. Choice (A) 'accountant' correctly identifies the person. Choice (B) 'accounting' is the department or methodology, (C) 'accountable' is an adjective, and (D) 'accountancy' is the abstract profession."
+      },
+      "synonyms": [
+        "CPA (certified public accountant)",
+        "chartered accountant",
+        "auditor",
+        "controller",
+        "bookkeeper",
+        "financial analyst"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "bookkeeping",
+        "general ledger",
+        "reconciliation",
+        "tax return",
+        "balance sheet",
+        "controller",
+        "audit"
+      ]
+    },
+    {
+      "id": "finance-060",
+      "word": "accounting",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/əˈkaʊn.tɪŋ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/accounting--_us_1.mp3",
+        "syllableBreakdown": "ac-count-ing",
+        "stressPattern": "○●○",
+        "commonMistakes": "Learners often place primary stress on the first syllable (saying */ˈæ.kaʊn.tɪŋ/* instead of /əˈkaʊn.tɪŋ/). Another common error is mispronouncing the diphthong /aʊ/ as a monophthong /ɔː/ or /oʊ/ (sounding like 'uh-CONE-ting'). Non-native speakers also frequently drop the final velar nasal /ŋ/, pronouncing it with an alveolar /n/ ('accountin''). In TOEIC questions, candidates frequently confuse 'accounting' (the discipline, procedure, or organizational department) with 'accountant' (the professional person) and 'account' (the financial ledger record or customer relationship)."
+      },
+      "etymology": {
+        "origin": "Middle English 'acountyng', derived from the verb 'accounten' (from Anglo-Norman 'acompter' and Old French 'aconter'), rooted in Latin 'computāre' (to calculate, reckon together), combined with the English verbal noun suffix '-ing'.",
+        "rootWord": "Latin computāre (com- 'together' + putāre 'to reckon, prune, calculate')",
+        "rootMeaning": "'The systematic act or process of calculating, calculating up, and presenting an official reckoning of accounts'",
+        "evolution": "In late 14th-century Middle English, 'acountyng' referred to the oral or written rendering of a reckoning or explanation of steward expenditures on medieval manors. The discipline underwent a major conceptual transformation in late 15th-century Renaissance Italy, where Venetian merchant practices were formalized by the mathematician Fra Luca Pacioli in 1494 with the invention of double-entry bookkeeping (matching debits and credits). As industrial manufacturing, cross-border shipping, and railroad networks expanded throughout the 18th and 19th centuries, accounting evolved from simple single-entry ledger keeping into an advanced corporate information system encompassing cost accounting, depreciation schedules, and managerial decision support. In the 20th and 21st centuries, global capital markets led to codified statutory frameworks including US GAAP and International Financial Reporting Standards (IFRS).",
+        "relatedLanguages": [
+          "French: comptabilité (accounting, bookkeeping; from compter)",
+          "Spanish: contabilidad (accounting, book-keeping; from contar)",
+          "Italian: contabilità (accounting; from conto)",
+          "German: Rechnungswesen (accounting, financial accounting) / Buchführung (bookkeeping)"
+        ],
+        "firstRecordedUse": "Late 14th century (c. 1380s in Middle English texts as 'the act of reckoning or rendering an account'); 19th century in the modern corporate discipline sense"
+      },
+      "deepMeaning": {
+        "coreConcept": "The systematic process of identifying, recording, measuring, classifying, verifying, summarizing, interpreting, and communicating financial transactions and status for an organization; also, the functional corporate department or academic discipline charged with these activities.",
+        "spatialContext": "Corporate administrative back offices, enterprise accounting departments, secure financial data servers running ERP software (SAP S/4HANA, NetSuite), billing processing centers, and university business school lecture halls.",
+        "temporalContext": "Continuous and cyclical: transactional journal entries recorded daily; ledger reconciliations performed weekly or monthly; financial statements compiled quarterly; comprehensive audits completed at fiscal year-end.",
+        "emotionalTone": "Systematic, rigorous, objective, methodical, and compliance-focused.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers treat 'accounting' in three distinct contexts: (1) As the functional corporate department ('Send your receipts down to Accounting'); (2) As the standardized methodology of tracking corporate wealth ('accrual accounting', 'creative accounting', 'accounting principles'); and (3) As an academic field of study ('She graduated with a bachelor's in accounting'). Native business leaders universally refer to accounting as 'the language of business' because it converts complex day-to-day operations into standardized numerical statements that banks, investors, and regulatory bodies can independently evaluate.",
+        "mentalImage": "A well-organized corporate accounting department where team members review automated digital invoices, reconcile bank statements against general ledger accounts, and finalize quarterly financial summary spreadsheets.",
+        "whenToUse": "Use when referring to the methodology or system of tracking money (e.g., 'accrual accounting', 'cost accounting', 'accounting methods', 'creative accounting'), the administrative division of a firm ('accounting department', 'contact accounting'), or the academic field.",
+        "whenNotToUse": "Do not use 'accounting' when referring to high-level strategic capital allocation, mergers, or securities underwriting (use 'finance' or 'corporate finance'). Do not use 'accounting' when referring to an individual employee (use 'accountant'). Do not use for basic retail counter register operation (use 'cash handling' or 'cashier duties').",
+        "culturalContext": "In American, British, and global commerce, accounting integrity is the foundation of public market trust. Corporate scandals (such as Enron and Lehman Brothers) centered on fraudulent or 'creative accounting', leading to strict statutory mandates like the Sarbanes-Oxley Act (SOX) in the United States. In TOEIC examinations, 'accounting department' is a standard corporate location in Part 3 and Part 4 dialogues regarding vendor invoices, payroll delays, and expense claim reimbursement policies."
+      },
+      "examples": {
+        "daily": [
+          "Please submit all original travel receipts to accounting by the twenty-fifth of the month to receive your reimbursement.",
+          "He took an introductory evening course in accounting to help manage the cash flow of his landscaping startup.",
+          "After completing her degree in accounting, Jennifer joined an international consulting group as an audit associate."
+        ],
+        "business": [
+          "The corporation updated its accounting software across all European subsidiaries to streamline consolidated financial reporting.",
+          "Under international financial reporting standards, public companies are required to apply accrual-basis accounting rather than cash accounting.",
+          "The annual external audit confirmed that the company's accounting practices fully comply with generally accepted accounting principles."
+        ],
+        "conversation": [
+          "\"Who should I contact to verify whether the client's international wire transfer has been processed?\" / \"You should call someone in accounting; they reconcile all incoming electronic bank deposits each morning at nine.\"",
+          "\"Why did our quarterly operating income decrease when gross revenue was higher than ever?\" / \"That is an outcome of accrual accounting—we recognized the manufacturing overhead costs immediately, while customer payments will arrive next quarter.\"",
+          "\"Has accounting issued the new purchase order numbers for the office furniture requisition?\" / \"Not yet, the departmental supervisor is still awaiting formal sign-off from the procurement director.\""
+        ],
+        "collocations": [
+          "accounting department",
+          "accounting principles",
+          "accrual accounting",
+          "creative accounting",
+          "accounting software",
+          "accounting standards"
+        ]
+      },
+      "wordFamily": {
+        "noun": "accounting, accountant, accountancy, account",
+        "verb": "account",
+        "adjective": "accountable",
+        "adverb": "accountably"
+      },
+      "visual": {
+        "imageKeyword": "corporate accounting department invoice ledger reconciliation ERP system",
+        "imageDescription": "A modern corporate accounting office with financial analysts reviewing balance sheet spreadsheets and digital transaction records across multiple computer monitors.",
+        "mnemonic": "ACCOUNTING: The system of actively COUNTING, recording, and organiz-ING corporate accounts so that numbers never lie!"
+      },
+      "video": {
+        "description": "An instructional business lecture explaining the core mechanisms of double-entry accounting, showing how debits and credits maintain equilibrium across balance sheets and income statements."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "All department managers are requested to forward their finalized quarterly budget proposals to the ______ division by Friday afternoon. (A) account (B) accountant (C) accounting (D) accounted",
+        "tips": "A classic TOEIC Part 5 compound noun and modifier question. The blank modifies the noun 'division' to describe the functional corporate branch handling corporate finances. In business English, the established noun adjunct is 'accounting division' (or 'accounting department'). Choice (A) 'account' refers to a single ledger, (B) 'accountant' is an individual person, and (D) 'accounted' is a past participle."
+      },
+      "synonyms": [
+        "bookkeeping",
+        "financial reporting",
+        "accountancy",
+        "auditing",
+        "financial administration",
+        "ledger maintenance"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "general ledger",
+        "balance sheet",
+        "reconciliation",
+        "accounts payable",
+        "accounts receivable",
+        "GAAP",
+        "IFRS"
+      ]
+    },
+    {
+      "id": "finance-061",
+      "word": "accrual",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/əˈkruː.əl/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/accrual--_us_1.mp3",
+        "syllableBreakdown": "ac-cru-al",
+        "stressPattern": "○●○",
+        "commonMistakes": "Learners often misplace the primary stress onto the initial syllable (saying */ˈæ.kruː.əl/* instead of /əˈkruː.əl/). Another frequent mistake is pronouncing the stressed root vowel as a short /ʌ/ (sounding like 'uh-cruel') rather than a tense, elongated /uː/. Non-native speakers also frequently swallow or blur the final unstressed syllable, collapsing the word into two syllables ('uh-crool') rather than distinctly articulating the schwa-liquid ending /əl/. In business contexts, learners often confuse an 'accrual' (recognizing an expense or revenue before cash is exchanged) with a 'deferral' (where cash is exchanged before goods or services are delivered)."
+      },
+      "etymology": {
+        "origin": "Formed in late 19th-century commercial English from the verb 'accrue' (borrowed via Anglo-Norman and Old French 'acreue' from Latin 'accrescere') combined with the nominal suffix '-al' (signifying an act, process, or instance of).",
+        "rootWord": "Latin accrescere (from ad- 'to, toward' + crescere 'to grow, increase')",
+        "rootMeaning": "'That which grows or accumulates continuously over time; an accumulated right, claim, or liability'",
+        "evolution": "The base verb 'accrue' entered Middle English in the 15th century from Old French 'acreue' (something that has grown or increased, the feminine past participle of 'acreistre'), derived from Latin 'accrescere' (to increase or grow by addition). In early English common law, it referred to property, titles, or legal claims that fell or attached naturally to someone over time. In the late 19th century, as industrial corporations and utility companies engaged in complex ongoing commercial contracts that crossed arbitrary accounting cutoff dates, the nominal form 'accrual' was coined in commercial accounting. It formalized the 'accrual concept'—recognizing economic rights and liabilities at the exact moment they are earned or incurred, rather than when cash settlements physically transpire—which became the foundation of modern accounting frameworks.",
+        "relatedLanguages": [
+          "French: régularisation (accounting accrual) / accumulation (accrual, buildup)",
+          "Spanish: devengo (accrual accounting) / acumulación (accumulation)",
+          "Italian: rateo / riscontro (accrual, adjusting entry) / maturazione (accrual of interest)",
+          "German: Periodenabgrenzung (accrual accounting adjustment) / Rückstellung (accrued liability / provision)"
+        ],
+        "firstRecordedUse": "Late 19th century (c. 1880s in commercial accounting textbooks and legal corporate reporting)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The accounting recognition and recording of revenues when earned and expenses when incurred, irrespective of when cash is physically received or paid; also, any specific financial liability, asset, interest amount, or employee benefit (such as paid time off) that accumulates incrementally over elapsed time.",
+        "spatialContext": "Corporate balance sheets under current assets (accrued receivables) or current liabilities (accrued expenses), adjusting journal entry modules within enterprise ERP financial software (SAP, NetSuite), and employee self-service human resources portals tracking accrued leave.",
+        "temporalContext": "Calculated continuously with elapsed time (such as interest or hourly employee leave); formally recorded during adjusting journal entries at the end of each monthly, quarterly, or annual accounting close.",
+        "emotionalTone": "Technical, exact, disciplined, prudent, and equitable.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native English speakers, 'accrual' operates in two key professional realms: corporate accounting and employee human resources. In accounting, native professionals contrast 'accrual basis' with 'cash basis'. An accountant thinks of an accrual as an essential adjustment ensuring expenses match the revenues they generated (e.g., recording December utility costs even if the electric bill won't arrive until January). In employee human resources, native professionals universally think of their 'vacation accrual' or 'PTO accrual'—how many hours of paid vacation time they accumulate for every two-week pay period worked.",
+        "mentalImage": "A corporate accountant reviewing an enterprise ledger at year-end, entering an adjusting journal entry to record an expense accrual for unpaid supplier services delivered in December, ensuring the corporate income statement reflects true operating costs.",
+        "whenToUse": "Use when discussing the accounting method of recognizing financial transactions when they happen rather than when cash moves ('accrual basis', 'accrual accounting'), specific balance sheet adjusting entries ('tax accrual', 'expense accrual', 'accrual of interest'), or employee benefit calculations ('vacation accrual', 'sick leave accrual').",
+        "whenNotToUse": "Do not use 'accrual' to describe immediate lump-sum cash payments or settlements. Do not confuse with 'deferral' (where cash is received before the revenue is earned, such as an annual software subscription paid upfront). Do not use for physical stockpiles of raw warehouse materials (use 'inventory' or 'accumulation of stock').",
+        "culturalContext": "Under statutory securities regulations (such as SEC rules in the US and international IFRS mandates), public corporations are legally required to report under accrual accounting. Cash-basis accounting is restricted to small sole proprietorships because it can easily distort profitability by timing payments. In corporate employment contracts, vacation accrual rules and rollover caps are strictly codified, and in many jurisdictions (such as California and the UK), accrued vacation pay is legally treated as earned wages that must be paid out upon employee departure. In TOEIC tests, 'accrual basis' appears in Part 5 grammar and Part 7 corporate financial statements and HR benefit policy notices."
+      },
+      "examples": {
+        "daily": [
+          "Full-time customer service representatives receive a paid vacation accrual of ten hours for every completed month of service.",
+          "The online banking portal displays both your current loan balance and the daily interest accrual since your last statement.",
+          "Employees may carry over a maximum of forty hours of unused sick leave accrual into the following calendar year."
+        ],
+        "business": [
+          "The corporate finance department recorded an accrual of three million dollars to account for estimated annual performance bonuses before year-end.",
+          "Because the enterprise operates on an accrual basis, revenues from the multi-year software contract were recognized upon delivery of services rather than upon billing.",
+          "External auditors reviewed the environmental liability accrual on the balance sheet to verify that future cleanup costs were accurately estimated."
+        ],
+        "conversation": [
+          "\"Why did our departmental operating expenses increase sharply on this month's financial report?\" / \"We posted a significant accrual for anticipated legal fees connected to the pending trademark litigation.\"",
+          "\"How often does my paid time off accumulate under the company's new benefits schedule?\" / \"The HR portal calculates your vacation accrual automatically at the end of each bi-weekly payroll cycle.\"",
+          "\"Has the contractor submitted an invoice for the office renovation work completed in November?\" / \"Not yet, but the controller recorded an expense accrual of forty thousand dollars so our monthly financial statements remain accurate.\""
+        ],
+        "collocations": [
+          "accrual basis",
+          "accrual accounting",
+          "expense accrual",
+          "accrual of interest",
+          "vacation accrual",
+          "year-end accrual"
+        ]
+      },
+      "wordFamily": {
+        "noun": "accrual, accrue",
+        "verb": "accrue",
+        "adjective": "accrued",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "accrual accounting adjusting journal entry balance sheet corporate finance",
+        "imageDescription": "A financial balance sheet infographic showing matching revenue and expense columns aligned within a single fiscal quarter, labeled 'Accrual Accounting Method: Matching Principle'.",
+        "mnemonic": "ACCRUAL: ACCUMULATING and ALLOCATING revenues and expenses to the exact period they occur, not when cash changes hands!"
+      },
+      "video": {
+        "description": "A corporate training video explaining the accrual accounting mechanism, illustrating how adjusting entries for accrued expenses and accrued revenues ensure accurate financial statements."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Because the corporation maintains its financial records on an ______ basis, revenues are recorded when earned rather than when payment is received. (A) accrue (B) accrual (C) accrued (D) accrues",
+        "tips": "A classic TOEIC Part 5 financial terminology question. The compound term 'accrual basis' (or 'accrual accounting') is standard business English for the accounting methodology contrasted with 'cash basis'. In this phrase, 'accrual' functions as an attributive noun modifying 'basis'. While 'accrued' (C) is a valid participial adjective used in phrases like 'accrued interest' or 'accrued expenses', 'accrual basis' is the established institutional collocation."
+      },
+      "synonyms": [
+        "accumulation",
+        "increment",
+        "addition",
+        "buildup",
+        "reserve",
+        "provision"
+      ],
+      "antonyms": [
+        "cash basis",
+        "cash disbursement",
+        "immediate settlement"
+      ],
+      "relatedWords": [
+        "accrued expense",
+        "accrued revenue",
+        "matching principle",
+        "adjusting entry",
+        "balance sheet",
+        "amortization",
+        "deferred income"
+      ]
+    }
+  ]
+}
+
+# Save to scratch/finance_059_061.json
+with open("scratch/finance_059_061.json", "w", encoding="utf-8") as f:
+    json.dump(words_data, f, indent=2, ensure_ascii=False)
+
+print("Saved scratch/finance_059_061.json successfully.")
+
+words = words_data["words"]
+assert len(words) == 3, f"Expected 3 words, got {len(words)}"
+
+required_top = [
+    "id", "word", "partOfSpeech", "category", "level", "toeicFrequency",
+    "pronunciation", "etymology", "deepMeaning", "nativeMindset",
+    "examples", "wordFamily", "visual", "video", "toeicContext",
+    "synonyms", "antonyms", "relatedWords"
+]
+required_pron = ["ipa", "syllableBreakdown", "stressPattern", "commonMistakes"]
+required_etym = ["origin", "rootWord", "rootMeaning", "evolution", "relatedLanguages", "firstRecordedUse"]
+required_deep = ["coreConcept", "spatialContext", "temporalContext", "emotionalTone", "formalityLevel", "connotation"]
+required_native = ["howNativesThink", "mentalImage", "whenToUse", "whenNotToUse", "culturalContext"]
+required_ex = ["daily", "business", "conversation", "collocations"]
+required_vis = ["imageKeyword", "imageDescription", "mnemonic"]
+required_vid = ["description"]
+required_toeic = ["commonParts", "exampleQuestion", "tips"]
+
+FORBIDDEN_PHRASES = [
+    "factor", "management team invested", "documentation for",
+    "is ready for the board meeting", "strategic workflows and operational accountability",
+    "core Germanic commercial root signifying foundational operational practice",
+    "account factor", "accounting factor", "accrual factor", "accountant factor",
+    "manage the..."
+]
+
+errors = []
+
+for w in words:
+    wid = w['id']
+    wname = w['word']
+    print(f"\n--- Validating {wid}: {wname} ---")
+    for fld in required_top:
+        if fld not in w or w[fld] is None:
+            errors.append(f"[{wid}] Missing top field {fld}")
+
+    dumped = json.dumps(w)
+    for phrase in FORBIDDEN_PHRASES:
+        if phrase in dumped:
+            errors.append(f"[{wid}] Found forbidden phrase '{phrase}'")
+
+    if w.get("category") != "finance":
+        errors.append(f"[{wid}] Category must be 'finance', got {w.get('category')}")
+    if w.get("level") != "intermediate":
+        errors.append(f"[{wid}] Level must be 'intermediate', got {w.get('level')}")
+    if w.get("toeicFrequency") != 8:
+        errors.append(f"[{wid}] toeicFrequency must be 8, got {w.get('toeicFrequency')}")
+
+    for fld in required_pron:
+        if fld not in w["pronunciation"] or not w["pronunciation"][fld]:
+            errors.append(f"[{wid}] Missing pron {fld}")
+    if not (w["pronunciation"]["ipa"].startswith("/") and w["pronunciation"]["ipa"].endswith("/")):
+        errors.append(f"[{wid}] IPA must start and end with /")
+
+    for fld in required_etym:
+        if fld not in w["etymology"] or not w["etymology"][fld]:
+            errors.append(f"[{wid}] Missing etym {fld}")
+    if len(w["etymology"]["relatedLanguages"]) < 4:
+        errors.append(f"[{wid}] Too few related languages: {len(w['etymology']['relatedLanguages'])}")
+
+    for fld in required_deep:
+        if fld not in w["deepMeaning"] or not w["deepMeaning"][fld]:
+            errors.append(f"[{wid}] Missing deep {fld}")
+    if w["deepMeaning"]["formalityLevel"] not in ["formal", "neutral", "informal"]:
+        errors.append(f"[{wid}] Invalid formalityLevel")
+    if w["deepMeaning"]["connotation"] not in ["positive", "neutral", "negative"]:
+        errors.append(f"[{wid}] Invalid connotation")
+
+    for fld in required_native:
+        if fld not in w["nativeMindset"] or not w["nativeMindset"][fld]:
+            errors.append(f"[{wid}] Missing native {fld}")
+
+    for fld in required_ex:
+        if fld not in w["examples"] or len(w["examples"][fld]) == 0:
+            errors.append(f"[{wid}] Missing ex {fld}")
+    if len(w["examples"]["daily"]) != 3:
+        errors.append(f"[{wid}] Expected 3 daily examples, got {len(w['examples']['daily'])}")
+    if len(w["examples"]["business"]) != 3:
+        errors.append(f"[{wid}] Expected 3 business examples, got {len(w['examples']['business'])}")
+    if len(w["examples"]["conversation"]) not in [2, 3]:
+        errors.append(f"[{wid}] Expected 2 or 3 conversation examples, got {len(w['examples']['conversation'])}")
+    for conv_item in w["examples"]["conversation"]:
+        if " / " not in conv_item:
+            errors.append(f"[{wid}] Conversation entry must contain ' / ': {conv_item}")
+    if len(w["examples"]["collocations"]) not in [5, 6]:
+        errors.append(f"[{wid}] Expected 5 or 6 collocations, got {len(w['examples']['collocations'])}")
+
+    for fld in required_vis:
+        if fld not in w["visual"] or not w["visual"][fld]:
+            errors.append(f"[{wid}] Missing visual {fld}")
+
+    for fld in required_vid:
+        if fld not in w["video"] or not w["video"][fld]:
+            errors.append(f"[{wid}] Missing video {fld}")
+
+    for fld in required_toeic:
+        if fld not in w["toeicContext"] or not w["toeicContext"][fld]:
+            errors.append(f"[{wid}] Missing toeic {fld}")
+    if not re.search(r"\(A\).+\(B\).+\(C\).+\(D\)", w["toeicContext"]["exampleQuestion"]):
+        errors.append(f"[{wid}] Malformed example question")
+
+    if not (4 <= len(w["synonyms"]) <= 6):
+        errors.append(f"[{wid}] Expected 4 to 6 synonyms, got {len(w['synonyms'])}")
+    for syn in w["synonyms"]:
+        if "factor" in syn.lower() or "management" in syn.lower():
+            errors.append(f"[{wid}] Synonym '{syn}' contains forbidden word")
+
+    if not (5 <= len(w["relatedWords"]) <= 7):
+        errors.append(f"[{wid}] Expected 5 to 7 relatedWords, got {len(w['relatedWords'])}")
+    for rw in w["relatedWords"]:
+        if "factor" in rw.lower() or "management" in rw.lower():
+            errors.append(f"[{wid}] Related word '{rw}' contains forbidden word")
+
+    if not isinstance(w["antonyms"], list):
+        errors.append(f"[{wid}] Antonyms must be a list")
+
+if errors:
+    print("\n❌ VALIDATION ERRORS FOUND:")
+    for err in errors:
+        print(" -", err)
+    sys.exit(1)
+else:
+    print("\n✨ ALL THREE WORDS VALIDATED 100% PERFECTLY! NO ERRORS!")

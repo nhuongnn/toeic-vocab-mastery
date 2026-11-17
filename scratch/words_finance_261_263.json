@@ -1,0 +1,357 @@
+{
+  "result": {
+    "words": [
+      {
+        "id": "finance-261",
+        "word": "shareholder",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+          "ipa": "/ˈʃerˌhoʊl.dɚ/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/shareholder--_us_1.mp3",
+          "syllableBreakdown": "share-hold-er",
+          "stressPattern": "Primary stress on the first syllable, secondary stress on the second syllable: SHARE-hold-er (/ˈʃerˌhoʊl.dɚ/, ●ˌ○○)",
+          "commonMistakes": "Learners often drop or elide the aspirated /h/ at the compound juncture, erroneously pronouncing */ˈʃer.oʊl.dɚ/*. Phonologically, ensure the /r/ in 'share' cleanly precedes the distinct /h/ in '-holder'. Conceptually, non-native speakers frequently conflate 'shareholder' with 'stakeholder'; a shareholder strictly holds legal equity/shares in a corporation, whereas a stakeholder encompasses any party impacted by corporate operations (employees, local communities, vendors, customers) who may possess zero stock ownership."
+        },
+        "etymology": {
+          "origin": "English compound formed from 'share' (from Old English scearu 'division, portion, part', from Proto-Germanic *skarō) + 'holder' (agent noun from Old English healdan 'to hold, keep, possess, guard').",
+          "rootWord": "Old English scearu ('division, allocated portion') + healdan ('to hold, possess')",
+          "rootMeaning": "'One who legally holds an allocated portion of a joint-stock company's capital'",
+          "evolution": "The commercial application of 'share' emerged alongside 16th- and 17th-century English chartered trading ventures (such as the Muscovy Company and the East India Company), where joint-stock capital was divided into transferable units. By the late 17th century (circa 1680s–1690s), as organized equity trading coalesced around London's Exchange Alley, individuals holding equity certificates were specifically termed 'shareholders' (predominating in British commerce, alongside 'stockholders' in North America).",
+          "relatedLanguages": [
+            "French: actionnaire",
+            "Spanish: accionista",
+            "German: Aktionär / Anteilsinhaber",
+            "Italian: azionista"
+          ],
+          "firstRecordedUse": "Late 17th century (circa 1680–1690 in early English commercial and joint-stock company records)"
+        },
+        "deepMeaning": {
+          "coreConcept": "An individual, institutional investment fund, or corporate entity that legally owns at least one share of a corporation's capital stock, thereby holding fractional equity ownership, voting rights on corporate governance matters, and rights to residual earnings (dividends) and assets.",
+          "spatialContext": "Annual general meeting (AGM) auditoriums, proxy voting online portals, institutional investment desks, custodial brokerage accounts, and boardroom presentations.",
+          "temporalContext": "Equity ownership durations span from high-frequency intra-day trades to multi-decade institutional buy-and-hold horizons; formal governance interactions (proxy voting, dividend disbursements, AGM attendance) recur quarterly, semi-annually, or annually.",
+          "emotionalTone": "Authoritative, invested, legally empowered, value-maximizing, and fiduciary-minded.",
+          "formalityLevel": "formal",
+          "connotation": "neutral"
+        },
+        "nativeMindset": {
+          "howNativesThink": "In corporate finance and business law, native speakers view the 'shareholder' as the ultimate legal constituent of a corporation, to whom the board of directors owes primary fiduciary duties under the doctrine of shareholder primacy. Native speakers instinctively associate shareholders not just with market speculators, but with voting power, dividend yields, capital preservation, and governance leverage over executive leadership and mergers.",
+          "mentalImage": "An expansive conference auditorium during a corporation's annual general meeting, where institutional and retail shareholders raise electronic voting keypads while executive board members present audited financial statements on stage.",
+          "whenToUse": "Use when specifically referring to individuals or entities that possess equity shares or capital stock in an incorporated enterprise, giving them statutory ownership claims, voting rights, and dividend entitlements.",
+          "whenNotToUse": "Do not use when referring broadly to anyone affected by corporate activities (use 'stakeholder'). Do not use for partners in an unincorporated professional partnership such as a law firm (use 'partner') or sole proprietors (use 'business owner').",
+          "culturalContext": "In Anglo-American corporate governance, shareholder rights are protected under rigorous securities statutes (such as the SEC framework in the United States and the Companies Act in the United Kingdom). The tension between 'shareholder primacy' (maximizing total shareholder return) and modern 'stakeholder capitalism' (considering environmental, social, and labor impacts) forms the center of contemporary corporate governance debates."
+        },
+        "examples": {
+          "daily": [
+            "As an individual shareholder holding fifty shares in the renewable energy utility, she logged into the investor portal to cast her proxy votes online.",
+            "My grandfather received quarterly dividend checks in the mail for over three decades as a long-term shareholder of the telecommunications company.",
+            "Every registered shareholder was sent a proxy packet containing biographical statements for nominees running for the board of directors."
+          ],
+          "business": [
+            "The board of directors convened an extraordinary general meeting to secure formal shareholder approval for the proposed six-billion-dollar cross-border acquisition.",
+            "Activist shareholders possessing an eight percent equity stake petitioned corporate management to divest non-core industrial assets and initiate an aggressive share repurchase program.",
+            "During the quarterly earnings call, executive officers reiterated their commitment to generating sustainable long-term value for all shareholders."
+          ],
+          "conversation": [
+            "\"Did you review the proxy materials for next week's annual shareholder meeting?\" — \"Yes, I intend to vote in favor of the independent auditor appointment, but I am voting against the proposed executive compensation package.\"",
+            "\"Why did senior management schedule a closed-door briefing with institutional shareholders this morning?\" — \"They are addressing concerns regarding recent operating margin compression ahead of the formal quarterly earnings release.\"",
+            "\"Can a retail shareholder submit an advisory proposal to be included on the annual ballot?\" — \"Yes, provided they satisfy regulatory equity holding minimums and meet statutory submission deadlines.\""
+          ],
+          "collocations": [
+            "annual shareholder meeting",
+            "shareholder value",
+            "majority shareholder",
+            "minority shareholder",
+            "institutional shareholder",
+            "activist shareholder"
+          ]
+        },
+        "wordFamily": {
+          "noun": "shareholder, shareholding, share",
+          "verb": "share",
+          "adjective": "shareholding",
+          "adverb": "N/A"
+        },
+        "visual": {
+          "imageKeyword": "annual general meeting shareholders voting corporate auditorium boardroom presentation",
+          "imageDescription": "A large corporate auditorium filled with shareholders holding up blue voting placards during an annual general meeting, facing a raised stage where executive board members conduct the formal proceedings.",
+          "mnemonic": "A SHAREHOLDER literally HOLDS a SHARE of corporate equity—giving them legal ownership and a voting seat at the table!"
+        },
+        "video": {
+          "description": "A corporate governance instructional video explaining the rights and duties of corporate shareholders, demonstrating how proxy voting, dividend distributions, and board resolutions function at an annual general meeting."
+        },
+        "toeicContext": {
+          "commonParts": [
+            3,
+            4,
+            5,
+            7
+          ],
+          "exampleQuestion": "At next month's annual meeting, the board of directors will invite each _______ to cast a vote on the proposed expansion into international markets.\n(A) share\n(B) shareholder\n(C) shareable\n(D) shareholding",
+          "tips": "In TOEIC Part 5 corporate governance questions, sentence context often requires choosing between a noun denoting a human agent versus an abstract concept or non-human entity. The singular countable agent noun 'shareholder' (B) correctly follows the quantifier 'each' and fits the semantic requirement of someone who can 'cast a vote'. Distractor (A) 'share' refers to a financial unit of stock, (C) 'shareable' is an adjective, and (D) 'shareholding' is an abstract noun denoting the total ownership stake rather than the individual voter."
+        },
+        "synonyms": [
+          "stockholder",
+          "shareowner",
+          "equity holder",
+          "equity owner",
+          "investor"
+        ],
+        "antonyms": [
+          "debt holder",
+          "bondholder",
+          "creditor",
+          "non-shareholder"
+        ],
+        "relatedWords": [
+          "proxy voting",
+          "dividend",
+          "annual general meeting",
+          "fiduciary duty",
+          "board of directors",
+          "equity capital",
+          "stock split"
+        ]
+      },
+      {
+        "id": "finance-262",
+        "word": "shareholder equity",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+          "ipa": "/ˈʃerˌhoʊl.dɚ ˈek.wə.t̬i/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/shareholder_equity--_us_1.mp3",
+          "syllableBreakdown": "share-hold-er eq-ui-ty",
+          "stressPattern": "Primary stress on the first syllable of 'shareholder' and the first syllable of 'equity': SHARE-hold-er EQ-ui-ty (/ˈʃerˌhoʊl.dɚ ˈek.wə.t̬i/, ●ˌ○○ ●○○)",
+          "commonMistakes": "Learners often stress the second syllable of 'equity' (mispronouncing it as */ɪˈkwɪti/* or */iːˈkwɪti/* instead of the correct /ˈek.wə.t̬i/). Conceptually, many candidates confuse shareholder equity with total market capitalization; shareholder equity is an accounting balance-sheet metric representing net book value (Assets minus Liabilities), whereas market capitalization reflects the fluctuating public market valuation (share price multiplied by outstanding shares)."
+        },
+        "etymology": {
+          "origin": "Compound financial term uniting 'shareholder' (from Old English scearu 'portion' + healdan 'to hold') and 'equity' (from Old French equite, from Latin aequitatem 'equality, fairness, uniform relation', from aequus 'level, even, equal').",
+          "rootWord": "Old English scearu + healdan + Latin aequus ('equal, fair, level')",
+          "rootMeaning": "'The fair residual value belonging to corporate share owners once all external liabilities are satisfied'",
+          "evolution": "In English common law and Chancery courts, 'equity' initially signified natural justice and fair dealing. In 17th- and 18th-century commercial law, it evolved into 'equity of redemption'—the residual monetary value retained by a debtor after satisfying a mortgage. By the late 19th and early 20th centuries, as standardized corporate accounting codified the fundamental balance sheet equation (Assets = Liabilities + Equity), 'shareholder equity' (or 'stockholders' equity') became the standard term representing net book worth.",
+          "relatedLanguages": [
+            "French: capitaux propres / fonds propres",
+            "Spanish: patrimonio neto / capital contable",
+            "German: Eigenkapital",
+            "Italian: patrimonio netto"
+          ],
+          "firstRecordedUse": "Late 19th to early 20th century (codified in corporate accounting practice and regulatory balance sheet standards, circa 1895–1910)"
+        },
+        "deepMeaning": {
+          "coreConcept": "The residual interest or net book value attributable to the owners of a corporation after total liabilities are subtracted from total assets; reported on the balance sheet and comprising contributed capital (common stock, preferred stock, additional paid-in capital) and retained earnings, minus treasury stock.",
+          "spatialContext": "Corporate balance sheets (Form 10-K and 10-Q SEC filings), certified public accounting audit workpapers, investment banking financial models, and statutory financial disclosure notes.",
+          "temporalContext": "Computed continuously and formally recorded at the close of every fiscal accounting period (monthly, quarterly, annually); expands when a corporation earns net income or issues shares, and contracts upon net losses, dividend distributions, or share buybacks.",
+          "emotionalTone": "Analytical, foundational, solvency-focused, rigorous, and prudent.",
+          "formalityLevel": "formal",
+          "connotation": "positive"
+        },
+        "nativeMindset": {
+          "howNativesThink": "To corporate accountants, treasurers, and financial analysts, 'shareholder equity' represents the net worth and ultimate solvency buffer of an enterprise. It answers the fundamental question: 'If the company liquidated all its assets at book value and settled every creditor obligation today, what tangible capital would remain for the equity owners?' Native speakers associate it with structural financial health, retained profits, and capital strength.",
+          "mentalImage": "A corporate financial controller pointing at the lower section of an audited balance sheet displayed on a dual-screen monitor, explaining to executive directors how steady retained earnings have driven consistent year-over-year growth in total shareholder equity.",
+          "whenToUse": "Use in corporate accounting, financial analysis, corporate law, and credit assessment to denote the net accounting book value belonging to shareholders (Total Assets minus Total Liabilities).",
+          "whenNotToUse": "Do not use as a synonym for 'market capitalization' (market cap is based on current share price on an exchange, not balance-sheet book value). Do not use to describe immediate liquid cash or working capital, since shareholder equity is largely tied up in fixed assets, inventory, and retained operations.",
+          "culturalContext": "In American and international corporate finance, shareholder equity is the denominator of Return on Equity (ROE = Net Income / Shareholder Equity), a premier profitability ratio monitored by institutional value investors. In severe downturns where cumulative operating losses exceed contributed capital, companies enter negative shareholder equity, signaling technical insolvency."
+        },
+        "examples": {
+          "daily": [
+            "When examining long-term investment opportunities, the financial advisor prioritized companies that demonstrated steady growth in shareholder equity over the past decade.",
+            "The introductory finance textbook explained how retaining annual corporate profits directly builds shareholder equity on the balance sheet.",
+            "Before purchasing shares in the manufacturing firm, the investor verified that its balance sheet maintained healthy, positive shareholder equity."
+          ],
+          "business": [
+            "Driven by four consecutive quarters of record profit margins, the industrial conglomerate reported a nine percent increase in total shareholder equity on its annual balance sheet.",
+            "The certified audit report verified that common stock, additional paid-in capital, and retained earnings were correctly categorized under shareholder equity.",
+            "Aggressive debt-financed stock buybacks combined with goodwill impairment charges significantly reduced the corporation's reported shareholder equity."
+          ],
+          "conversation": [
+            "\"Why does our balance sheet show shareholder equity of five hundred million dollars when our market capitalization exceeds three billion?\" — \"Shareholder equity reflects historical accounting book value, whereas our market cap represents current investor valuation and future earnings growth expectations.\"",
+            "\"How will the issuance of two million new common shares impact our balance sheet?\" — \"It will inject forty million dollars in net cash proceeds into current assets while proportionately expanding our contributed capital under shareholder equity.\"",
+            "\"What caused the sudden five percent drop in shareholder equity during the fourth quarter?\" — \"The board approved a large one-time special dividend payout, which directly reduced our accumulated retained earnings.\""
+          ],
+          "collocations": [
+            "statement of shareholder equity",
+            "return on shareholder equity",
+            "total shareholder equity",
+            "growth in shareholder equity",
+            "dilute shareholder equity",
+            "book value of shareholder equity"
+          ]
+        },
+        "wordFamily": {
+          "noun": "shareholder equity, equity, shareholder",
+          "verb": "N/A",
+          "adjective": "equitable",
+          "adverb": "equitably"
+        },
+        "visual": {
+          "imageKeyword": "balance sheet shareholder equity accounting audit financial statement report",
+          "imageDescription": "A close-up view of an open corporate annual report on a desk, showing a neatly formatted balance sheet where the Shareholder Equity section is clearly highlighted with green pen, detailing common stock and retained earnings.",
+          "mnemonic": "SHAREHOLDER EQUITY is what remains EQUAL and fair for the SHAREHOLDERS after every debt and liability has been subtracted from total assets!"
+        },
+        "video": {
+          "description": "An executive MBA finance video lecture breaking down the components of shareholder equity on a consolidated balance sheet, highlighting how retained earnings, common stock, and additional paid-in capital reflect corporate book value."
+        },
+        "toeicContext": {
+          "commonParts": [
+            3,
+            4,
+            5,
+            7
+          ],
+          "exampleQuestion": "According to the preliminary audit report, sustained profitability and disciplined debt reduction led to an eight percent increase in total shareholder _______.\n(A) equitable\n(B) equity\n(C) equitably\n(D) equitize",
+          "tips": "In TOEIC Part 5 financial accounting questions, fixed compound nouns are frequently tested. 'Shareholder equity' (B) is a recognized accounting compound term functioning here as the object of the preposition 'in'. Distractor (A) 'equitable' is an adjective, (C) 'equitably' is an adverb, and (D) 'equitize' is a verb form, none of which can function grammatically as the head noun completing the phrase 'total shareholder _______'."
+        },
+        "synonyms": [
+          "stockholders' equity",
+          "shareholders' funds",
+          "net worth",
+          "book value",
+          "owners' equity",
+          "capital and reserves"
+        ],
+        "antonyms": [
+          "total liabilities",
+          "corporate debt",
+          "negative net worth",
+          "insolvency"
+        ],
+        "relatedWords": [
+          "balance sheet",
+          "retained earnings",
+          "paid-in capital",
+          "return on equity (ROE)",
+          "treasury stock",
+          "book value per share",
+          "capital structure"
+        ]
+      },
+      {
+        "id": "finance-263",
+        "word": "shortfall",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+          "ipa": "/ˈʃɔːrt.fɑːl/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/shortfall--_us_1.mp3",
+          "syllableBreakdown": "short-fall",
+          "stressPattern": "Primary stress on the first syllable, secondary stress on the second syllable: SHORT-fall (/ˈʃɔːrt.fɑːl/, ●ˌ○)",
+          "commonMistakes": "Learners often confuse 'shortfall' with 'shortage'. While a 'shortage' refers to a general physical scarcity or lack of physical materials in the market (e.g., 'a microchip shortage', 'a water shortage'), a 'shortfall' specifically designates a quantitative deficit or mathematical gap between a projected, budgeted, or required amount and the lower actual amount realized (e.g., 'a revenue shortfall', 'a budget shortfall')."
+        },
+        "etymology": {
+          "origin": "English compound formed from the adjective 'short' (from Old English sceort 'short, of small extent', from Proto-Germanic *skurta-) and the noun/verb 'fall' (from Old English feallan 'to fall, decline, drop', from Proto-Germanic *fallaną).",
+          "rootWord": "Old English sceort ('short, lacking') + feallan ('to fall, decline')",
+          "rootMeaning": "'A failure to reach an expected target, mark, or required quota'",
+          "evolution": "The verbal phrase 'to fall short' (meaning to fail to reach an intended target or moral standard) had long been established in Middle and Early Modern English (prominently used in archery and in the King James Bible). In late 19th-century British parliamentary debates and commercial bookkeeping (circa 1890–1895), the verbal idiom was nominalized into the compound noun 'shortfall' to quantify budgetary deficiencies where collected revenues or yields failed to meet statutory appropriations.",
+          "relatedLanguages": [
+            "French: déficit / insuffisance / manque",
+            "Spanish: déficit / desfase / saldo negativo",
+            "German: Fehlbetrag / Unterdeckung / Defizit",
+            "Italian: disavanzo / deficit / ammanco"
+          ],
+          "firstRecordedUse": "Late 19th century (circa 1890–1895 in British parliamentary budgetary records and commercial financial reviews)"
+        },
+        "deepMeaning": {
+          "coreConcept": "A quantitative deficit or variance representing the numerical gap between an actual amount collected, earned, or produced and a higher target amount that was budgeted, expected, or legally required.",
+          "spatialContext": "Executive boardrooms, municipal budget committee hearings, corporate FP&A (financial planning and analysis) spreadsheets, and quarterly earnings conference calls.",
+          "temporalContext": "Identified during variance analyses at the conclusion of budgeting cycles (monthly, quarterly, or fiscal year-end), triggering urgent corrective actions such as budget reallocations, cost freezes, or reserve withdrawals.",
+          "emotionalTone": "Consequential, vigilant, urgent, analytical, and problem-solving.",
+          "formalityLevel": "formal",
+          "connotation": "negative"
+        },
+        "nativeMindset": {
+          "howNativesThink": "When native speakers hear 'shortfall', they instinctively think of an accounting ledger where actual performance misses an established financial benchmark. Unlike vague terms for 'lack', 'shortfall' always implies an explicit benchmark or expectation that was missed. Native speakers immediately associate it with the need to take corrective action, typically using established collocations like 'bridge the shortfall', 'cover the shortfall', or 'make up for the shortfall'.",
+          "mentalImage": "A financial director presenting a variance chart on a boardroom screen, pointing with a red digital marker to a bar where actual quarterly operating revenue falls four million dollars below the forecast line, necessitating a plan to reallocate contingency reserves.",
+          "whenToUse": "Use when describing a measurable numerical difference between a target, budget, or required quota and the lower amount actually achieved or available (e.g., 'revenue shortfall', 'budget shortfall', 'pension funding shortfall').",
+          "whenNotToUse": "Do not use to describe general physical absence of goods across a supply chain without a defined target (use 'shortage', e.g., 'fuel shortage'). Do not use to describe a lack of physical height or geographic distance.",
+          "culturalContext": "In Anglo-American municipal governance and corporate operations, budget shortfalls trigger statutory and fiduciary constraints. In public school districts or city councils, a projected revenue shortfall legally mandates public hearings, spending reductions, or voter-approved municipal bond measures to balance the budget."
+        },
+        "examples": {
+          "daily": [
+            "After calculating the proceeds from the charity silent auction, the committee discovered a modest four-hundred-dollar shortfall in their community playground fund.",
+            "Because her freelance consulting revenue fluctuated from month to month, she kept three months of living expenses in an emergency account to cover any income shortfall.",
+            "The homeowners association had to draw funds from its contingency reserve to make up the shortfall caused by unexpected roof repairs."
+          ],
+          "business": [
+            "To offset a projected fifteen-million-dollar tax revenue shortfall, the city council voted to postpone several non-urgent road resurfacing contracts.",
+            "The chief financial officer instituted an immediate freeze on travel expenditures and external hiring following an unexpected second-quarter revenue shortfall.",
+            "An independent actuarial audit revealed that the corporate pension fund faces a substantial shortfall over the next decade unless annual sponsor contributions are raised."
+          ],
+          "conversation": [
+            "\"How does the executive committee plan to handle the five-million-dollar budget shortfall for the upcoming fiscal quarter?\" — \"We intend to reallocate surplus funds from completed software development projects and renegotiate vendor service contracts.\"",
+            "\"Did our overseas branches achieve their quarterly sales targets?\" — \"Unfortunately, the European division experienced an eight percent revenue shortfall due to unfavorable currency exchange rates.\"",
+            "\"Who is responsible for covering the shortfall if production costs exceed our guaranteed maximum price estimate?\" — \"Under the terms of our fixed-price agreement, our firm must absorb the entire shortfall unless a formal client change order is approved.\""
+          ],
+          "collocations": [
+            "budget shortfall",
+            "revenue shortfall",
+            "funding shortfall",
+            "bridge a shortfall",
+            "cover a shortfall",
+            "projected shortfall"
+          ]
+        },
+        "wordFamily": {
+          "noun": "shortfall, shortage, shortness",
+          "verb": "fall short",
+          "adjective": "short",
+          "adverb": "shortly"
+        },
+        "visual": {
+          "imageKeyword": "budget shortfall variance chart red financial deficit presentation boardroom",
+          "imageDescription": "A financial analyst standing next to a large digital screen in a conference room, presenting a revenue graph where a prominent red bracket marks the shortfall between projected revenue and actual collections.",
+          "mnemonic": "A SHORTFALL is when your financial performance literally FALLS SHORT of the target, leaving an empty gap you must quickly bridge!"
+        },
+        "video": {
+          "description": "A financial management webinar detailing how corporate treasurers identify early revenue shortfalls using monthly variance analysis and implement spending controls to prevent year-end fiscal deficits."
+        },
+        "toeicContext": {
+          "commonParts": [
+            3,
+            4,
+            5,
+            7
+          ],
+          "exampleQuestion": "To compensate for the unanticipated tax revenue _______, the municipal finance committee voted to postpone several scheduled downtown renovation projects.\n(A) shortfall\n(B) shortly\n(C) shorten\n(D) shortness",
+          "tips": "In TOEIC Part 5 vocabulary and compound noun questions, 'revenue shortfall' is a very high-frequency business collocation denoting a financial deficit between expected and actual income. The countable noun 'shortfall' (A) correctly completes the compound noun phrase 'tax revenue shortfall'. Distractor (B) 'shortly' is a time adverb meaning 'soon', (C) 'shorten' is a verb meaning 'to reduce length', and (D) 'shortness' is an abstract noun referring to physical stature or brevity, none of which collocates with revenue."
+        },
+        "synonyms": [
+          "deficit",
+          "deficiency",
+          "gap",
+          "underage",
+          "insufficiency",
+          "arrears"
+        ],
+        "antonyms": [
+          "surplus",
+          "excess",
+          "windfall",
+          "overage",
+          "abundance"
+        ],
+        "relatedWords": [
+          "variance analysis",
+          "budget deficit",
+          "contingency fund",
+          "reallocation",
+          "underfunding",
+          "fiscal gap",
+          "austerity measure"
+        ]
+      }
+    ]
+  }
+}

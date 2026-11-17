@@ -1,0 +1,354 @@
+import json
+
+words = [
+    {
+        "id": "finance-056",
+        "word": "account",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/account--_us_1.mp3",
+            "commonMistakes": "Learners often misplace the primary stress on the initial syllable, producing /ˈæ.kaʊnt/ instead of the unstressed schwa /əˈkaʊnt/. Non-native speakers, particularly East Asian learners, may drop or glottalize the final alveolar stop /t/ or fail to produce the gliding diphthong /aʊ/ properly, rendering it as a monophthong /ɔː/ or /ʌ/. Additionally, in business writing and speaking, learners frequently confuse the noun collocations ('open an account with/at a bank', 'bill to an account') with the phrasal verb 'account for'.",
+            "ipa": "/əˈkaʊnt/",
+            "stressPattern": "○●",
+            "syllableBreakdown": "ac·count"
+        },
+        "etymology": {
+            "evolution": "In 12th-century Anglo-Norman administrative practice, an 'aconte' was an official reckoning or audit rendered by bailiffs and sheriffs to the King's Exchequer. By the early 14th century, it entered Middle English as 'acount' or 'a-compt', denoting a formal financial ledger entry or calculation of debits and credits. During the Italian and Flemish Renaissance mercantile expansions (15th–16th centuries), with Luca Pacioli's codification of double-entry bookkeeping, 'account' became the formal term for individual balances tracking assets, liabilities, and trading counterparts. By the 18th and 19th centuries, it expanded to commercial retail and banking relationships ('checking account', 'current account', 'account executive'), and in the digital era to online commercial client profiles.",
+            "firstRecordedUse": "c. 1300 (Middle English, in the sense of a formal reckoning of money received and spent; late 13th century in Anglo-Norman legal rolls)",
+            "origin": "Derived from Anglo-Norman and Old French 'aconte' / 'acont' (reckoning, calculation), from Old French 'aconter' ('to count, reckon, calculate, report'), formed from 'a-' (from Latin 'ad-', 'to, toward') + 'conter' ('to tell, relate, count'), from Latin 'computare' ('to calculate, count up, sum together', from 'com-' 'together' + 'putare' 'to reckon, think').",
+            "relatedLanguages": [
+                "French: compte (m.) (bank account, account balance; e.g., compte bancaire, compte d'épargne) / décompte (breakdown, itemized calculation)",
+                "Spanish: cuenta (f.) (account, bill, ledger; e.g., cuenta bancaria, estado de cuenta, cuenta corriente)",
+                "Italian: conto (m.) (bank account, bill, statement; e.g., conto corrente, estratto conto, resoconto)",
+                "German: Konto (n.) (bank account; e.g., Girokonto, Bankkonto) / Abrechnung (f.) (settlement of accounts, itemized billing)"
+            ],
+            "rootMeaning": "A reckoning, calculation, or detailed statement of monies owed, kept, or paid",
+            "rootWord": "Latin computare (to calculate, compute, sum up) / Old French aconte (reckoning, computation)"
+        },
+        "deepMeaning": {
+            "connotation": "neutral",
+            "coreConcept": "A formal record, register, or ongoing financial relationship maintained by a financial institution, vendor, or corporate treasury that records monetary transactions, balances owed or deposited, debits, credits, and commercial activities between parties; also, by extension, a major corporate client or business contract managed by a firm.",
+            "emotionalTone": "Formal, fiduciary, systematic, transactional, and precise.",
+            "formalityLevel": "formal",
+            "spatialContext": "Commercial banking branches, corporate treasury back-offices, enterprise resource planning (ERP) ledger interfaces, accounting software dashboards (e.g., SAP, QuickBooks), accounts payable/receivable desks, and corporate client suites.",
+            "temporalContext": "Monitored continuously during banking business hours, reconciled daily or monthly at billing close, audited quarterly and annually at financial year-end."
+        },
+        "nativeMindset": {
+            "culturalContext": "In Anglo-American commerce, having an 'account' is the fundamental prerequisite for financial existence and corporate legitimacy. Opening commercial accounts requires stringent 'Know Your Customer' (KYC) and Anti-Money Laundering (AML) documentation. In corporate life, the term is central to organizational departments: AP (Accounts Payable) handles outgoing payments, AR (Accounts Receivable) handles customer collections, and AM (Account Management) handles client retention. In TOEIC test scenarios, 'account' ubiquitously appears in bank statements, billing inquiries, client contract negotiations, and corporate travel expense reimbursements.",
+            "howNativesThink": "To a native speaker in commercial and financial environments, 'account' operates along three distinct but linked mental tracks: First, as a financial depository or credit facility (e.g., 'bank account', 'checking account', 'escrow account') where capital resides. Second, in bookkeeping, as a specific ledger category (e.g., 'accounts payable', 'accounts receivable', 'expense account') reflecting the mathematical balance of credits and debits. Third, in corporate B2B sales and agency settings, as an important client relationship or contracted portfolio (e.g., 'our biggest corporate account', 'an account executive'). Natives instinctively distinguish between the physical/digital repository ('funds deposited into the account') and the relational contract ('retaining the account').",
+            "mentalImage": "A corporate treasury officer reviewing a multi-column banking ledger on dual monitors, comparing incoming automated clearing house (ACH) wire transfers against client account numbers, while a customer statement displays running balances, transaction dates, and account codes.",
+            "whenNotToUse": "Do not confuse with 'bill' or 'invoice' (an invoice is a single document requesting payment; an account is the ongoing relationship or ledger tracking balances). Do not confuse with 'budget' (a forward-looking spending plan). When used as a narrative, 'an account of events' means a story or report, not a financial ledger.",
+            "whenToUse": "Use when referring to an official financial record or depository with a bank, brokerage, or creditor (e.g., 'corporate savings account', 'escrow account', 'investment account'), double-entry bookkeeping balance categories ('accounts payable', 'accounts receivable'), commercial charge/credit arrangements ('put this on our corporate account'), or a managed corporate client relationship ('manage key client accounts')."
+        },
+        "examples": {
+            "business": [
+                "The accounts receivable team noticed an outstanding balance of $45,000 on the overseas distributor's credit account that is now thirty days past due.",
+                "Senior management promoted Ms. Larson to senior account director after her team successfully renewed the firm's largest multinational technology account.",
+                "All corporate travel expenses must be charged directly to the departmental charge account using the pre-approved project billing code."
+            ],
+            "collocations": [
+                "bank account",
+                "accounts payable",
+                "accounts receivable",
+                "open an account",
+                "charge account",
+                "corporate account"
+            ],
+            "conversation": [
+                "\"Did the wire transfer from the Munich office clear into our merchant account yet?\" / \"Yes, I verified the ledger ten minutes ago; the funds are fully posted and available for drawdown.\"",
+                "\"We need to reconcile the discrepancies in the client billing account before issuing the revised monthly statement.\" / \"Understood. I will cross-reference the shipping manifests against our general ledger entries this afternoon.\"",
+                "\"How many new business accounts did the commercial lending team open during the third quarter?\" / \"They onboarded forty-two corporate accounts, surpassing our regional target by twelve percent.\""
+            ],
+            "daily": [
+                "I logged into my mobile banking app this morning to transfer funds from my checking account to my high-yield savings account.",
+                "Please make sure the utility bills are paid automatically from our shared household account every month.",
+                "The customer service representative helped me reset the password on my online retail account so I could track my order."
+            ]
+        },
+        "wordFamily": {
+            "adjective": "accountable",
+            "adverb": "accountably",
+            "noun": "account, accounting, accountant, accountancy",
+            "verb": "account"
+        },
+        "visual": {
+            "imageDescription": "A high-angle photograph of a polished office desk with a laptop screen displaying a secure banking dashboard with credit and debit transaction columns, an official bank statement document stamped 'Reconciled', a calculator, and a sleek pen.",
+            "imageKeyword": "commercial banking dashboard ledger financial statement account reconciliation",
+            "mnemonic": "ACCOUNT: Think of 'A COUNT' of your cash! An account keeps an accurate count of all credits, debits, and funds."
+        },
+        "video": {
+            "description": "A corporate financial tutorial illustrating how multinational businesses set up segregated escrow accounts and general ledger accounts to track operating cash flow and client billing."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                7
+            ],
+            "exampleQuestion": "To ensure timely processing of vendor invoices, all purchase orders must clearly indicate the department's authorized _____ number. (A) accounting (B) account (C) accountable (D) accounted",
+            "tips": "In TOEIC Part 5, compound nouns involving 'account' frequently appear, such as 'account number', 'account holder', 'account balance', 'checking account', and 'accounts payable'. Choice (B) 'account' correctly forms the standard compound noun 'account number'. Choice (A) 'accounting' refers to the discipline or department; Choice (C) 'accountable' is an adjective meaning responsible; Choice (D) 'accounted' is a past participle."
+        },
+        "synonyms": [
+            "record",
+            "ledger",
+            "balance",
+            "register",
+            "client portfolio",
+            "credit facility"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "ledger",
+            "debit",
+            "credit",
+            "balance",
+            "statement",
+            "reconciliation",
+            "invoice"
+        ]
+    },
+    {
+        "id": "finance-057",
+        "word": "accountability",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/accountability--_us_1.mp3",
+            "commonMistakes": "Learners frequently struggle with the rhythm and stress shifts of this six-syllable word. The primary stress falls on the fourth syllable (-bil-), /əˌkaʊn.təˈbɪl.ə.ti/, but learners often incorrectly stress the second syllable (*ac-COUNT-ability*) or drop unstressed syllables (*ac-coun-t'bility*). In North American English, the intervocalic /t/ sounds undergo flapping (turning into [ɾ]), which non-native speakers may over-enunciate or articulate harshly. In writing, learners sometimes misspell the suffix as *-ability* vs *-ibility* or confuse 'accountability' (the structural obligation/answerability) with 'responsibility' (the duty to complete a task).",
+            "ipa": "/əˌkaʊn.təˈbɪl.ə.ti/",
+            "stressPattern": "○ˌ○●○○",
+            "syllableBreakdown": "ac·count·a·bil·i·ty"
+        },
+        "etymology": {
+            "evolution": "First documented in English political and legal treatises in the late 18th century (c. 1770–1794) during the Enlightenment and parliamentary reform movements, where it denoted the obligation of public officials to present accounting records to legislature. In the 20th century, modern corporate management theory (especially following the development of managerial accounting and separation of ownership and control) established 'accountability' as a core pillar of corporate governance. Following corporate scandals and the passage of the Sarbanes-Oxley Act in 2002, 'financial accountability' became a mandatory legal framework enforcing executive verification of financial statements.",
+            "firstRecordedUse": "Late 18th century (c. 1770 in British political and financial treatises; 1794 in American constitutional and fiscal debates)",
+            "origin": "Formed in English by suffixation from the adjective 'accountable' (from Anglo-Norman/Old French 'aconter' + '-able') combined with the Latin-derived abstract noun suffix '-ity' (from Latin '-itas', denoting condition, state, or quality).",
+            "relatedLanguages": [
+                "French: responsabilité (financière) (f.) / obligation de rendre compte (obligation to report/account)",
+                "Spanish: rendición de cuentas (f.) (obligation to account/audit) / responsabilidad (f.)",
+                "Italian: responsabilità (f.) / obbligo di rendiconto (m.) (obligation to render an account)",
+                "German: Rechenschaftspflicht (f.) (duty to render account) / Verantwortlichkeit (f.)"
+            ],
+            "rootMeaning": "The state or quality of being liable to render a reckoning or justify one's actions and expenditures",
+            "rootWord": "Latin computare (to calculate) -> Anglo-Norman aconter + -able + -ity"
+        },
+        "deepMeaning": {
+            "connotation": "positive",
+            "coreConcept": "The state, condition, or institutional requirement of being answerable and liable to render a transparent, verifiable reckoning for financial decisions, fiscal management, budgetary allocations, and corporate governance compliance; the ultimate obligation to justify actions and accept consequences for financial performance.",
+            "emotionalTone": "Solemn, authoritative, transparent, ethical, and uncompromising.",
+            "formalityLevel": "formal",
+            "spatialContext": "Boardrooms, audit committee meetings, regulatory oversight hearings (e.g., SEC, FCA), corporate governance offices, investor relations conferences, and executive suites.",
+            "temporalContext": "Enforced during annual shareholder meetings, internal and external fiscal audit cycles, quarterly earnings releases, and project post-mortems."
+        },
+        "nativeMindset": {
+            "culturalContext": "In Western corporate governance, particularly in US and UK public companies, accountability is an indispensable legal and operational cornerstone. Landmark legislation such as the Sarbanes-Oxley Act (SOX), Dodd-Frank, and International Financial Reporting Standards (IFRS) mandate rigorous internal controls where CEOs and CFOs must personally certify accounting accuracy under penalty of perjury. Institutional investors, proxy advisory firms, and pension funds constantly demand executive accountability through clawback provisions and performance-based equity. In TOEIC test scenarios, 'accountability' frequently appears in corporate memos, annual reports, audit compliance announcements, and leadership communications.",
+            "howNativesThink": "Native speakers in executive and finance environments view 'accountability' as distinctly different from mere 'responsibility'. While responsibility can be delegated or shared across a project team (doing the work), accountability cannot be delegated: it rests with the person who holds the ultimate answerability for the final outcome and budget ('the buck stops here'). Native speakers instinctively connect accountability with transparency, independent audits, metric tracking, and consequences if numbers fail to reconcile. A phrase like 'holding leadership to account' or 'establishing accountability' signifies instituting clear reporting structures and audit trails so fraud, waste, or negligence cannot be hidden.",
+            "mentalImage": "A corporate audit committee seated at a dark mahogany boardroom table examining an independent auditor's report, questioning a chief executive on revenue shortfalls and internal control mechanisms while financial projections are displayed on a presentation screen.",
+            "whenNotToUse": "Do not use interchangeably with simple day-to-day work tasks ('It is my responsibility to clean the whiteboard' - NOT 'my accountability'). Avoid using when referring merely to arithmetic computation (use 'calculation' or 'accounting'). Do not confuse with 'liability' (which often refers specifically to legal debts or tort obligations).",
+            "whenToUse": "Use when discussing corporate governance, ethical compliance, financial oversight, fiscal stewardship, regulatory audit requirements, or management systems where individuals or departments must report results and take ownership of performance (e.g., 'fiscal accountability', 'corporate accountability', 'demand greater accountability', 'holding management to strict accountability')."
+        },
+        "examples": {
+            "business": [
+                "The board of directors implemented stricter internal controls to strengthen financial accountability following discrepancies uncovered during the annual audit.",
+                "The new enterprise software assigns unique tracking tags to every purchase requisition, fostering departmental accountability across all regional branch offices.",
+                "In his address to institutional shareholders, the CEO emphasized that transparent governance and fiscal accountability remain the corporation's paramount priorities."
+            ],
+            "collocations": [
+                "financial accountability",
+                "corporate accountability",
+                "fiscal accountability",
+                "demand accountability",
+                "hold someone to accountability",
+                "lines of accountability"
+            ],
+            "conversation": [
+                "\"Why did the compliance committee mandate two separate signatures for capital expenditures exceeding $10,000?\" / \"To enforce fiscal accountability and eliminate the possibility of unauthorized departmental purchases.\"",
+                "\"Who bears the ultimate accountability if the commercial property acquisition falls below projected return metrics?\" / \"The senior investment committee retains sole accountability for approving that underwriting risk.\"",
+                "\"Has the restructuring improved accountability within the regional sales teams?\" / \"Substantially; each regional director now delivers monthly revenue reports directly to the Chief Operating Officer.\""
+            ],
+            "daily": [
+                "Sharing my monthly budget with my partner provided the accountability I needed to curb unnecessary impulse spending.",
+                "The personal trainer insisted on weekly weigh-ins to maintain consistent accountability throughout my fitness program.",
+                "Our community garden committee established transparent accountability so every member knew exactly how association dues were spent."
+            ]
+        },
+        "wordFamily": {
+            "adjective": "accountable",
+            "adverb": "accountably",
+            "noun": "accountability, account, accounting, accountant",
+            "verb": "account"
+        },
+        "visual": {
+            "imageDescription": "A serious executive audit committee seated in an executive boardroom reviewing binder-bound financial audit reports and compliance charts, highlighting transparency and corporate oversight.",
+            "imageKeyword": "corporate governance audit committee corporate financial accountability boardroom oversight",
+            "mnemonic": "ACCOUNTABILITY: The ABILITY to ACCOUNT for every dollar! If you have accountability, you can show where every cent went."
+        },
+        "video": {
+            "description": "A documentary excerpt detailing how major corporate accounting scandals led to stringent regulatory frameworks that mandate board-level fiscal accountability and independent oversight."
+        },
+        "toeicContext": {
+            "commonParts": [
+                5,
+                6,
+                7
+            ],
+            "exampleQuestion": "The newly appointed comptroller introduced automated auditing tools to improve fiscal _____ throughout all overseas subsidiaries. (A) accountable (B) accountability (C) accountably (D) accounts",
+            "tips": "In TOEIC Part 5, questions testing parts of speech often present 'accountability' following adjectives like 'fiscal', 'financial', or 'corporate'. The blank follows the adjective 'fiscal' and requires an abstract noun meaning the quality of answerability or transparency: Choice (B) 'accountability'. Choice (A) is an adjective; Choice (C) is an adverb; Choice (D) 'accounts' is a concrete plural noun that does not fit the context of improving governance standards."
+        },
+        "synonyms": [
+            "answerability",
+            "responsibility",
+            "liability",
+            "transparency",
+            "oversight",
+            "stewardship"
+        ],
+        "antonyms": [
+            "irresponsibility",
+            "unaccountability",
+            "impunity",
+            "non-accountability"
+        ],
+        "relatedWords": [
+            "governance",
+            "compliance",
+            "audit",
+            "transparency",
+            "fiduciary",
+            "stewardship",
+            "internal control"
+        ]
+    },
+    {
+        "id": "finance-058",
+        "word": "accountable",
+        "partOfSpeech": [
+            "adjective"
+        ],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/accountable--_us_1.mp3",
+            "commonMistakes": "Learners frequently misplace the primary stress onto the first or third syllable (*ˈæ.kəʊn.tə.bəl* or *ə.kaʊn.ˈteɪ.bəl*) instead of keeping it firmly on the diphthong in the second syllable /əˈkaʊn.tə.bəl/. Non-native speakers often over-pronounce the final syllable as /-beɪl/ (rhyming with 'table') rather than a reduced syllabic dark 'l' with a schwa [bəl]. Additionally, learners often misuse the prepositional patterns: the correct grammatical constructions are 'held accountable for [actions/results]' and 'accountable to [a person, board, or authority]'.",
+            "ipa": "/əˈkaʊn.tə.bəl/",
+            "stressPattern": "○●○○",
+            "syllableBreakdown": "ac·count·a·ble"
+        },
+        "etymology": {
+            "evolution": "In 14th-century Anglo-Norman English common law and royal chancery records, an official who managed manor estates or royal tax revenues was designated as 'acountable' to the King's exchequer. By the 16th century, William Shakespeare and Elizabethan legal writers used it to denote moral and legal answerability ('we are all accountable to heaven'). In 19th-century commercial jurisprudence, the term became firmly anchored in agency and partnership law, denoting an agent's binding duty to account for profits and property received. In contemporary corporate finance and managerial hierarchy, it characterizes executives, budget holders, and fiduciary managers who must justify results to investors, boards of directors, and regulatory bodies.",
+            "firstRecordedUse": "Late 14th century (c. 1380–1390 in Middle English legal charters and John Wycliffe's writings, meaning subject to rendering a reckoning)",
+            "origin": "Formed in late Middle English from Anglo-Norman and Old French 'acontable', from 'aconter' ('to count, reckon, calculate') + '-able' (from Latin '-abilis', capable of, subject to).",
+            "relatedLanguages": [
+                "French: responsable (financièrement) (accountable, answerable) / comptable (legally bound to render account; e.g., comptable de ses actes)",
+                "Spanish: responsable (accountable) / sujeto a rendición de cuentas (obligated to render account)",
+                "Italian: responsabile (accountable) / tenuto a rendere conto (bound to give an account)",
+                "German: rechenschaftspflichtig (accountable, answerable) / verantwortlich (responsible)"
+            ],
+            "rootMeaning": "Liable to give an account; answerable for financial assets or actions",
+            "rootWord": "Latin computare (to calculate, compute) -> Old French aconter + suffix -able"
+        },
+        "deepMeaning": {
+            "connotation": "neutral",
+            "coreConcept": "Required or legally bound to report, justify, and answer for financial transactions, stewardship of resources, operational results, or corporate decisions to a designated authority; liable to face consequences for errors, deficits, or non-compliance.",
+            "emotionalTone": "Authoritative, binding, grave, ethical, and demanding.",
+            "formalityLevel": "formal",
+            "spatialContext": "Executive conference rooms, corporate accounting divisions, government oversight committees, courtroom hearings, and shareholder meeting stages.",
+            "temporalContext": "Continuous during budgetary management; explicitly invoked during quarterly performance appraisals, post-project financial evaluations, and statutory audits."
+        },
+        "nativeMindset": {
+            "culturalContext": "In Anglo-American business culture, personal accountability is celebrated as a hallmark of leadership and fiduciary integrity. The idiom 'to hold someone's feet to the fire' or 'the buck stops here' captures this core value. Following financial scandals, regulatory statutes enforce personal accountability by imposing civil and criminal penalties directly on corporate officers who sign off on fraudulent statements. In TOEIC test scenarios, 'accountable' frequently tests the collocation 'held accountable for' or the distinction between 'accountable to' and 'accountable for' in Part 5 and 6 questions.",
+            "howNativesThink": "To a native speaker in corporate, legal, and financial environments, 'accountable' is an exacting, weighty term. It implies direct personal or organizational answerability. Natives recognize the distinct syntax: one is held accountable to an oversight entity (e.g., 'accountable to the board of directors', 'accountable to shareholders') for a specific outcome or asset (e.g., 'accountable for budget variances', 'accountable for capital allocation'). Unlike 'responsible' which can mean simply handling everyday tasks or having good character ('She is a responsible worker'), 'accountable' always implies an external reckoning or potential sanction if performance falls short.",
+            "mentalImage": "A division director standing before a company board of directors and investment analysts, holding a laser pointer and addressing a projected slide showing operational expenditure variance, answering pointed questions regarding project budget overruns.",
+            "whenNotToUse": "Do not use to describe a person's general reliability or maturity in everyday casual contexts (use 'reliable' or 'responsible', e.g., 'He is a reliable babysitter', NOT 'an accountable babysitter'). Do not confuse with 'countable' (which refers to items that can be counted numerically, e.g., countable nouns).",
+            "whenToUse": "Use when an employee, executive, committee, or vendor is bound to explain, answer for, and take ownership of financial performance, resource allocation, ethical compliance, or organizational goals (e.g., 'held accountable for quarterly earnings', 'directly accountable to the CFO', 'make managers accountable for cost overruns')."
+        },
+        "examples": {
+            "business": [
+                "The project director will be held strictly accountable for any cost overruns that exceed five percent of the approved capital budget.",
+                "Under the revised corporate governance framework, the chief investment officer is directly accountable to the audit committee for all asset allocation decisions.",
+                "Branch managers are accountable for maintaining rigorous compliance with federal anti-money laundering regulations during client onboarding."
+            ],
+            "collocations": [
+                "held accountable",
+                "accountable for",
+                "accountable to",
+                "strictly accountable",
+                "personally accountable",
+                "make someone accountable"
+            ],
+            "conversation": [
+                "\"Who is ultimately accountable for the inventory discrepancies discovered during last Friday's warehouse count?\" / \"The logistics supervisor signed off on the shipment, so he will need to provide a formal explanation to management.\"",
+                "\"Our department heads are resistant to the new quarterly expenditure caps.\" / \"We must remind them that leadership holds every division head accountable for staying within allocated operational limits.\"",
+                "\"Is the third-party marketing agency accountable for meeting specific lead generation numbers?\" / \"Yes, their contract features performance clauses that tie billing rates to verified conversion benchmarks.\""
+            ],
+            "daily": [
+                "My study partner and I check in every evening to keep each other accountable for finishing our exam preparations.",
+                "Parents often teach teenagers to manage their allowance so they become accountable for their personal discretionary expenses.",
+                "By logging all my grocery receipts into a spending tracker, I made myself accountable for sticking to my weekly food budget."
+            ]
+        },
+        "wordFamily": {
+            "adjective": "accountable",
+            "adverb": "accountably",
+            "noun": "accountability, account, accountant, accounting",
+            "verb": "account"
+        },
+        "visual": {
+            "imageDescription": "A corporate executive standing in front of a modern boardroom display showing financial quarterly charts, gesturing transparently while responding to inquiries from board members.",
+            "imageKeyword": "corporate executive presentation board of directors financial accountability question",
+            "mnemonic": "ACCOUNTABLE: Able to give an ACCOUNT of your results! If you are accountable, you can explain and justify every decision."
+        },
+        "video": {
+            "description": "A business leadership masterclass detailing how top multinational organizations structure management roles to keep division heads directly accountable for departmental profitability and compliance."
+        },
+        "toeicContext": {
+            "commonParts": [
+                5,
+                6,
+                7
+            ],
+            "exampleQuestion": "Department heads will be held directly _____ for ensuring that all travel expenditures remain within the approved fiscal year budget. (A) account (B) accountability (C) accountable (D) accountably",
+            "tips": "In TOEIC Part 5, the passive structure 'held + [adjective]' is an extremely common testing pattern. The idiom 'hold someone accountable (for something)' becomes 'be held accountable (for something)' in the passive voice. The verb 'held' requires the predicate adjective 'accountable' (Choice C). Choice (A) is a noun/verb; Choice (B) is a noun; Choice (D) is an adverb."
+        },
+        "synonyms": [
+            "answerable",
+            "responsible",
+            "liable",
+            "subject to oversight",
+            "beholden",
+            "culpable"
+        ],
+        "antonyms": [
+            "unaccountable",
+            "irresponsible",
+            "exempt",
+            "immune",
+            "unanswerable"
+        ],
+        "relatedWords": [
+            "fiduciary",
+            "oversight",
+            "compliance",
+            "stewardship",
+            "liability",
+            "reporting line",
+            "audit"
+        ]
+    }
+]
+
+with open('scratch/finance_056_058.json', 'w', encoding='utf-8') as f:
+    json.dump(words, f, indent=2, ensure_ascii=False)
+
+print("Generated scratch/finance_056_058.json with", len(words), "words.")

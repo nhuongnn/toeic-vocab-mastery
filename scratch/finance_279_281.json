@@ -1,0 +1,356 @@
+{
+  "words": [
+    {
+      "id": "finance-279",
+      "word": "tax",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/tæks/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tax--_us_1.mp3",
+        "syllableBreakdown": "tax",
+        "stressPattern": "Monosyllabic: stressed (/tæks/, ●)",
+        "commonMistakes": "Learners from Asian language backgrounds often drop the final consonant cluster /ks/ or add an epenthetic vowel, pronouncing it as /tæk/ or /tæksə/. Additionally, non-native speakers frequently confuse the short front vowel /æ/ (as in cat and tax) with /ʌ/ (as in tuck) or /ɑː/ (as in British task). In commercial terminology, non-native speakers often confuse tax (a compulsory government levy) with tariff (a customs duty on traded merchandise) or fee (a direct administrative charge for a specific service)."
+      },
+      "etymology": {
+        "origin": "Middle English (verb taxen, noun taxe), borrowed from Anglo-Norman and Old French taxer / taxe (to assess, impose a rate or tax), derived from Latin taxāre (to evaluate, compute, appraise, value), a frequentative form of tangere (to touch).",
+        "rootWord": "taxare",
+        "rootMeaning": "to appraise, evaluate, assess value, or touch repeatedly",
+        "evolution": "Originally in Classical Latin, taxāre denoted assessing the value of property or computing legal damages. Passed into Old French as taxer with the legal sense of assessing a monetary levy. Entered Middle English in the early 14th century, replacing the Old English term gafol (tribute/rent), and eventually became the universal English term for compulsory levies imposed by the sovereign or state on income, property, and transactions.",
+        "relatedLanguages": [
+          "Old French: taxe / taxer (to evaluate, assess, impose a levy)",
+          "Latin: taxāre / taxa (to appraise, charge; assessment)",
+          "Italian: tassa (tax, duty, tuition fee)",
+          "Spanish: tasa (rate, tariff, tax assessment)",
+          "German: Taxe (assessed fee, official tariff, rate)"
+        ],
+        "firstRecordedUse": "Early 14th century (circa 1300–1325)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A compulsory financial contribution or levy imposed by a government agency (municipal, state, or federal) on personal income, business profits, commercial transactions, or real estate property, primarily utilized to fund public infrastructure, defense, healthcare, and civil administration without a direct reciprocal exchange of goods or services.",
+        "spatialContext": "Government revenue bureaus (e.g., IRS, HMRC), corporate accounting departments, payroll software interfaces, retail point-of-sale registers, and municipal treasury archives.",
+        "temporalContext": "Annual tax filing deadlines (such as April 15 in the US), quarterly estimated corporate tax remittances, monthly payroll tax withholdings, and real-time transaction levies at point of sale.",
+        "emotionalTone": "Sober, legally binding, mandatory, and civic; frequently evokes fiscal caution, regulatory compliance vigilance, and corporate cost-control focus.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native English speakers, tax represents an inevitable reality of organized society, epitomized by Benjamin Franklin's maxim that nothing is certain except death and taxes. In employment, natives intuitively distinguish gross income from net take-home pay because taxes are automatically withheld at source. Within enterprise operations, taxes are viewed simultaneously as an uncompromising statutory compliance requirement and as a substantial operational cost to be systematically minimized via legal deductions, capital allowances, and tax-efficient structuring.",
+        "mentalImage": "A certified corporate accountant seated before dual widescreen monitors displaying multi-column financial ledgers, cross-referencing digitized quarterly expense receipts with tax compliance software before submitting the final corporate filing.",
+        "whenToUse": "Use when designating statutory government-imposed levies on individual earnings, corporate net income, retail consumer transactions, property holdings, or capital gains (e.g., income tax, corporate tax, sales tax, after-tax profit, levy a tax).",
+        "whenNotToUse": "Do not confuse with fee (a voluntary or service-specific administrative payment like a passport renewal fee), fare (passenger transit payment), toll (road or bridge usage fee), or fine (a punitive sanction for statutory non-compliance).",
+        "culturalContext": "Tax filing season (January to mid-April in the US and Canada) is a major cultural and commercial fixture. In Anglo-American corporate governance, an uncompromising legal boundary is drawn between tax avoidance (the fully legal utilization of tax statutes to minimize tax burden) and tax evasion (the criminal misrepresentation or concealment of income to avoid paying taxes)."
+      },
+      "examples": {
+        "daily": [
+          "The price tag on the shelf showed forty dollars, but the cashier added state sales tax at checkout, bringing the total to forty-three.",
+          "Every year in early March, my parents gather their mortgage interest statements and donation receipts to file their income tax return before the April deadline.",
+          "Freelance designers must remember to set aside approximately thirty percent of every client payment to cover their self-employment tax."
+        ],
+        "business": [
+          "The multinational technology firm relocated its regional intellectual property holding subsidiary to Ireland to benefit from a lower corporate income tax rate.",
+          "Chief financial officers must review statutory tax provisions and deferred tax liabilities prior to certifying the audited quarterly balance sheet.",
+          "Recent changes in federal tax legislation allow manufacturing enterprises to write off the total depreciation of new equipment within the first year."
+        ],
+        "conversation": [
+          "\"Are lunch expenses incurred during client sales pitches subject to value-added tax?\" — \"Yes, but our finance department can reclaim the input tax if you submit the digitized itemized VAT receipt.\"",
+          "\"Did the controller finalize our estimated quarterly corporate tax payment for the third quarter?\" — \"She submitted the electronic wire transfer this morning to ensure we avoid late-filing statutory penalties.\"",
+          "\"Is this bonus payment credited as gross compensation or net of tax?\" — \"It is the net amount; payroll already withheld federal and state taxes before direct-depositing the funds.\""
+        ],
+        "collocations": [
+          "income tax",
+          "corporate tax",
+          "sales tax",
+          "tax return",
+          "tax liability",
+          "levy a tax"
+        ]
+      },
+      "wordFamily": {
+        "noun": "tax, taxation, taxpayer, taxability",
+        "verb": "tax",
+        "adjective": "taxable, taxing, untaxed",
+        "adverb": "taxingly"
+      },
+      "visual": {
+        "imageKeyword": "corporate income tax return documents calculator pen laptop",
+        "imageDescription": "A high-angle desk view of standard tax return forms (Form 1120/1040), a financial calculator showing multi-digit numbers, an open laptop displaying financial spreadsheets, and a black fountain pen beside a coffee cup.",
+        "mnemonic": "Remember: The government TAXES you by evaluating your TASKS and assets—root taxare means to appraise and assess!"
+      },
+      "video": {
+        "description": "A corporate accounting masterclass detailing the fundamentals of corporate income tax versus payroll tax, illustrating how accountants calculate gross profit, deduct allowable business expenses, and determine net tax liability."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "All freelance consultants hired by the agency must submit a completed W-9 form before their invoices can be processed for payment without federal _______ withholding.\n(A) tax\n(B) taxable\n(C) taxing\n(D) taxation",
+        "tips": "In TOEIC Part 5, tax frequently serves as a noun adjunct in common financial compounds such as tax return, tax deduction, tax exemption, tax bracket, or tax withholding. Test-takers often mistakenly choose the adjective taxable or the abstract noun taxation. When paired with withholding to describe the statutory monetary deduction taken from earnings, the compound noun tax withholding (A) is correct."
+      },
+      "synonyms": [
+        "levy",
+        "tariff",
+        "duty",
+        "assessment",
+        "excise",
+        "impost"
+      ],
+      "antonyms": [
+        "subsidy",
+        "rebate",
+        "tax credit",
+        "tax exemption",
+        "allowance"
+      ],
+      "relatedWords": [
+        "taxation",
+        "taxpayer",
+        "tax liability",
+        "revenue service",
+        "withholding",
+        "audit",
+        "fiscal policy"
+      ]
+    },
+    {
+      "id": "finance-280",
+      "word": "tax bracket",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˈtæks ˌbræk.ɪt/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tax_bracket--_us_1.mp3",
+        "syllableBreakdown": "tax brack-et",
+        "stressPattern": "Compound stress: primary stress on first element, secondary stress on second: TAX brack-et (/ˈtæks ˌbræk.ɪt/, ● · ○)",
+        "commonMistakes": "Learners often pronounce bracket as /ˈbrɑːk.et/ or /ˈbræk.et/ with an over-enunciated, tense second syllable instead of the natural reduced vowel /ɪ/ or /ə/ (/ˈbræk.ɪt/). Conceptually, the single most widespread misconception—even among native speakers—is believing that entering a higher tax bracket causes all previous earnings to be taxed at that higher rate, failing to understand the progressive marginal tax rate system where only the income within each specific tier is taxed at that bracket rate."
+      },
+      "etymology": {
+        "origin": "Compound noun formed in mid-20th-century Anglo-American fiscal economics from tax (Anglo-Norman/Old French taxe, from Latin taxāre) + bracket (from Middle French braguette, an architectural corbel or support, from Old Provençal braga, Celtic root *brāca for trousers/breeches; transferred to typographical enclosing marks [ ], and subsequently to categorized statistical tiers or income ranges).",
+        "rootWord": "taxare + braguette",
+        "rootMeaning": "to assess/evaluate + enclosing architectural or typographical support denoting an income range",
+        "evolution": "In the early 20th century, as modern graduated income tax frameworks were established following the 16th Amendment (US, 1913) and People’s Budget (UK, 1909), public finance economists needed a clear term for discrete income intervals subject to specific progressive marginal rates. The typographical and mechanical term bracket was adopted during the 1920s and 1930s to describe these statutory income tiers, forming the compound tax bracket.",
+        "relatedLanguages": [
+          "French: tranche d'imposition (tax bracket / slice of taxation)",
+          "German: Steuerklasse / Steuertarif (tax class / bracket scale)",
+          "Spanish: tramo impositivo / escala tributaria (tax bracket / tier)",
+          "Italian: scaglione di reddito / aliquota fiscale (income bracket / tax tier)"
+        ],
+        "firstRecordedUse": "Circa 1925–1935 (during interwar codification of graduated federal income tax tables)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A statutory division or tier of taxable income within a progressive taxation schedule that is taxed at a specific marginal percentage rate, wherein higher rates apply exclusively to the incremental portion of income that exceeds the threshold of the preceding tier rather than to aggregate total income.",
+        "spatialContext": "Tax rate schedules issued by national revenue agencies (e.g., IRS Form 1040 rate tables), executive wealth planning suites, financial planning spreadsheets, and payroll enterprise resource software.",
+        "temporalContext": "Annual statutory inflation adjustments announced by treasury departments each autumn (to counteract bracket creep), year-end fiscal planning cycles in November and December, and annual tax return filings.",
+        "emotionalTone": "Analytical, strategic, cautious, and calculating; reflects personal financial progression tempered by an acute awareness of marginal tax diminishing returns.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native professionals and wealth managers, tax bracket is central to compensation structuring and retirement planning. Employees frequently express concern about a promotion or bonus pushing them into a higher tax bracket (bracket creep). Sophisticated native speakers understand marginality: earning an extra $1,000 that spills into the 32% bracket only incurs 32% tax on that specific $1,000, leaving prior earnings taxed at lower rates. Consequently, maximizing pre-tax 401(k), pension, or health savings contributions is viewed as a vital tactic to keep top-slice earnings within a lower tax bracket.",
+        "mentalImage": "A step-chart graphic or staircase diagram displayed on a wealth advisor tablet screen, showing colored vertical bars labeled 10%, 12%, 22%, 24%, 32%, 35%, and 37%, illustrating how an executive salary fills each progressive bracket from bottom to top.",
+        "whenToUse": "Use when discussing progressive income taxation tiers, marginal tax percentages, fiscal bracket creep, income deferral strategies, and tax-deferred retirement deductions (e.g., upper tax bracket, drop into a lower tax bracket, pushed into the next tax bracket).",
+        "whenNotToUse": "Do not use for flat-rate taxes that do not vary by income level, such as value-added tax (VAT), sales tax, or flat capital gains withholding. Do not use when referring solely to filing status (e.g., married filing jointly is a filing category, not a bracket).",
+        "culturalContext": "Tax brackets are at the center of fierce political debate in the United States and the United Kingdom over progressive taxation, income inequality, and tax reform legislation. The concept of bracket creep (where inflation pushes workers into higher tax brackets without any real increase in purchasing power) led to statutory annual inflation adjustments in modern tax codes."
+      },
+      "examples": {
+        "daily": [
+          "Because Marcus earned substantial overtime pay this year, the extra income pushed the top slice of his salary into the twenty-four percent tax bracket.",
+          "Contributing the maximum permissible amount to a traditional retirement account allowed Sarah to reduce her taxable income and remain in a lower tax bracket.",
+          "Many people mistakenly believe that crossing into a higher tax bracket reduces total net earnings, unaware that marginal rates only apply to income above that threshold."
+        ],
+        "business": [
+          "Senior executives frequently choose to defer a portion of their annual performance bonuses into non-qualified deferred compensation plans to avoid triggering the highest tax bracket.",
+          "Corporate tax reform proposals currently before parliament aim to compress the three middle tax brackets into a single flat twenty percent rate for small businesses.",
+          "Our human resources department offers specialized financial wellness seminars to educate high-earning employees on how moving up a tax bracket affects executive stock option vesting."
+        ],
+        "conversation": [
+          "\"If I accept the promotion and the accompanying fifteen-thousand-dollar raise, won't it just bump me into a higher tax bracket?\" — \"Yes, but remember that only the additional money above the bracket cutoff will be taxed at the higher marginal rate, so your take-home pay still increases.\"",
+          "\"Why did our financial advisor suggest making an additional charitable donation before December thirty-first?\" — \"She pointed out that lowering our adjusted gross income by just three thousand dollars keeps our household within the twenty-two percent tax bracket.\"",
+          "\"Did the government adjust the federal tax brackets for inflation this year?\" — \"Yes, the IRS raised the income thresholds across all brackets by roughly four percent to protect workers from bracket creep.\""
+        ],
+        "collocations": [
+          "higher tax bracket",
+          "lower tax bracket",
+          "marginal tax bracket",
+          "push into a tax bracket",
+          "fall into a tax bracket",
+          "tax bracket threshold"
+        ]
+      },
+      "wordFamily": {
+        "noun": "tax bracket, tax bracket creep",
+        "verb": "",
+        "adjective": "bracketed",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "progressive tax bracket staircase diagram financial planning chart",
+        "imageDescription": "A clean infographic diagram of graduated steps representing marginal tax brackets with income percentages labeled on each riser, next to a calculator, pencil, and financial advisory portfolio binder.",
+        "mnemonic": "Think of tax BRACKETS like steps on a staircase: each STEP holds a specific bracket of money, and you only pay the higher toll for the steps your feet actually climb!"
+      },
+      "video": {
+        "description": "An animated visual explanation produced by a financial education channel breaking down the mechanics of marginal tax brackets versus effective tax rates, demonstrating with clear bucket graphics why higher brackets never decrease net income."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "By contributing eight percent of his salary to the company's pre-tax retirement plan, Mr. Chen effectively lowered his adjusted gross income enough to remain in the 22 percent tax _______.\n(A) bracket\n(B) bracketed\n(C) bracketting\n(D) brackets",
+        "tips": "In TOEIC Part 5, collocations involving financial and compensation terms are common. The fixed compound noun tax bracket (A) specifically denotes an income tier subject to a particular marginal tax rate. Grammatically, the singular form bracket is required here because it is preceded by the definite article the and the specific singular modifier 22 percent. Choice (D) brackets is plural, while (B) and (C) are participle/verb forms."
+      },
+      "synonyms": [
+        "income bracket",
+        "tax tier",
+        "marginal rate band",
+        "tax band",
+        "income threshold",
+        "tax category"
+      ],
+      "antonyms": [
+        "flat tax rate",
+        "unified tax schedule",
+        "single rate tier"
+      ],
+      "relatedWords": [
+        "marginal tax rate",
+        "effective tax rate",
+        "bracket creep",
+        "progressive taxation",
+        "taxable income",
+        "adjusted gross income",
+        "standard deduction"
+      ]
+    },
+    {
+      "id": "finance-281",
+      "word": "tax deductible",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˌtæks dɪˈdʌk.tə.bəl/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tax_deductible--_us_1.mp3",
+        "syllableBreakdown": "tax de-duct-i-ble",
+        "stressPattern": "Compound stress: primary stress on third syllable of second element: tax de-DUCT-i-ble (/ˌtæks dɪˈdʌk.tə.bəl/, ○ · ○ ● ○ ○)",
+        "commonMistakes": "Learners frequently misplace the stress on the suffix or first syllable (e.g., saying /ˌtæks ˈded.ʌk.tɪ.bəl/ or /dɪˈdʌk.tɪ.bəl/ with an exaggerated tense vowel) instead of placing primary stress on the root duct (/dɪˈdʌk.tə.bəl/). Non-native speakers also frequently confuse tax-deductible (expenses subtracted from gross income before calculating tax) with tax credit (direct dollar-for-dollar subtractions from the final tax bill itself). In spelling, learners often write -able (*tax deductable) instead of the etymologically correct Latinate suffix -ible."
+      },
+      "etymology": {
+        "origin": "Compound term originating in mid-20th-century Anglo-American corporate accounting and tax law, combining tax (Anglo-Norman/Old French taxe, from Latin taxāre) + deductible (from Latin dēdūcere, meaning to lead down, draw off, or subtract, formed from prefix dē- meaning down/away + dūcere meaning to lead/conduct, plus suffix -ibilis meaning capable of).",
+        "rootWord": "taxare + deducere",
+        "rootMeaning": "to assess + to lead down or draw away from a total",
+        "evolution": "Classical Latin dēdūcere evolved from physical leading/drawing down into legal and mathematical subtraction (deduction). When modern income tax statutes were established in the early 20th century, legislatures specified which operating expenses, depreciation costs, and charitable gifts could be legally deducted from gross revenue. By the 1940s, the compound adjective and nominalized noun tax-deductible became standard in commercial law to denote qualified expenses that reduce taxable income.",
+        "relatedLanguages": [
+          "French: déductible d'impôt / déductible fiscalement (tax-deductible)",
+          "Spanish: deducible de impuestos (deductible from taxes)",
+          "Italian: deducibile dalle tasse / detraibile fiscalmente (tax-deductible)",
+          "German: steuerlich absetzbar (tax-deductible / deductible from tax)"
+        ],
+        "firstRecordedUse": "Circa 1940–1945 (during World War II expansion of corporate and personal tax deduction schedules)"
+      },
+      "deepMeaning": {
+        "coreConcept": "An expenditure, business expense, interest payment, depreciation allowance, or charitable donation that statutory revenue laws permit a taxpayer or corporation to subtract directly from gross income, thereby decreasing the total taxable income baseline against which tax liabilities are calculated.",
+        "spatialContext": "Corporate expense reporting portals, audited accounting ledgers, receipt scanning mobile apps, non-profit donor solicitation receipts, and tax return schedules (such as Schedule C or Schedule A of US Form 1040).",
+        "temporalContext": "Incurred throughout the operating fiscal year; verified during monthly accounting reconciliation; compiled and claimed during annual statutory tax return filings.",
+        "emotionalTone": "Prudent, legally compliant, incentivizing, and fiscally advantageous; turns necessary expenditures or charitable gifts into tangible balance sheet savings.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native business professionals and consumers, hearing that an expenditure is tax deductible is an immediate psychological trigger that reduces the perceived cost of the expense. However, native accountants caution against the classic amateur fallacy that tax deductible means free. Natives understand that if a company in a 25% tax bracket spends $1,000 on a tax-deductible conference, it does not get $1,000 back from the government; rather, its taxable income is reduced by $1,000, saving $250 in taxes while still incurring a net cash outflow of $750. In non-profit culture, charitable organizations constantly highlight their 501(c)(3) tax-deductible status to incentivize corporate sponsorships and private endowments.",
+        "mentalImage": "A sales executive submitting an itemized dinner receipt with prospective clients into an enterprise expense management app, checking the digital box labeled Qualified Tax-Deductible Business Meal alongside the corporate account code.",
+        "whenToUse": "Use to describe legitimate business operating costs, equipment depreciation, mortgage interest, business travel, professional development seminars, or approved non-profit donations that can be subtracted from gross revenues before taxation (e.g., tax-deductible donation, tax-deductible business expense, is this purchase tax deductible?).",
+        "whenNotToUse": "Do not use to describe personal living expenses (e.g., personal groceries, commuting to work, personal leisure) which are not deductible under the tax code. Do not confuse with tax-free or tax-exempt (which means no tax is paid on the income earned, like municipal bond interest), nor with a tax credit (which directly reduces the tax bill dollar-for-dollar).",
+        "culturalContext": "The tax deductibility of charitable donations is the financial backbone of the United States non-profit sector, encouraging billions of dollars in philanthropic giving annually. In business, corporate travel, entertainment, and client meals are subjected to stringent IRS scrutiny regarding deductibility rules (e.g., standard 50% deduction for client business meals versus 100% deduction for office holiday parties)."
+      },
+      "examples": {
+        "daily": [
+          "The animal shelter provided a stamped official receipt confirming that my five-hundred-dollar donation is fully tax deductible.",
+          "Homeowners who itemize their deductions can include mortgage interest payments, making home loans partially tax deductible.",
+          "Before purchasing that expensive computer for your freelance graphic design work, verify with an accountant whether it qualifies as a tax deductible business expense."
+        ],
+        "business": [
+          "The corporate legal team confirmed that travel expenses incurred while attending the international trade symposium are entirely tax deductible as legitimate operating overhead.",
+          "Commercial real estate developers structure long-term capital leases to maximize tax deductible depreciation write-offs over the property's useful life.",
+          "All monetary contributions made to the corporate philanthropic foundation are certified as tax deductible under section 501(c)(3) of the internal revenue code."
+        ],
+        "conversation": [
+          "\"Can our company write off the entire cost of the annual client appreciation dinner?\" — \"Under current tax regulations, business meals with clients are only fifty percent tax deductible, provided business matters were actively discussed.\"",
+          "\"Are tuition fees for employee leadership certification courses considered tax deductible?\" — \"Yes, as long as the coursework directly maintains or improves skills required in the employee's current professional role.\"",
+          "\"Does our charity qualify to issue tax-deductible receipts to corporate sponsors?\" — \"Yes, our non-profit status was officially approved by the revenue board last month, so all donor contributions are now deductible.\""
+        ],
+        "collocations": [
+          "fully tax deductible",
+          "tax deductible expense",
+          "tax deductible contribution",
+          "tax deductible donation",
+          "qualify as tax deductible",
+          "partially tax deductible"
+        ]
+      },
+      "wordFamily": {
+        "noun": "tax deduction, deductible",
+        "verb": "deduct",
+        "adjective": "tax-deductible, deductible",
+        "adverb": "deductively"
+      },
+      "visual": {
+        "imageKeyword": "tax deductible business expense receipt calculator accounting desk",
+        "imageDescription": "A professional desk setting featuring an itemized corporate travel invoice stamped APPROVED - TAX DEDUCTIBLE in blue ink, accompanied by an electronic calculator, a corporate credit card, and an organized ledger.",
+        "mnemonic": "Remember: TAX DEDUCTIBLE expenses DEDUCT (subtract) dollars directly from your taxable income BEFORE the taxman calculates his share!"
+      },
+      "video": {
+        "description": "A small business tax accounting webinar explaining the legal boundary between deductible business expenses and non-deductible personal costs, detailing proper documentation and receipt storage requirements for tax audits."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Donations made to the environmental conservation foundation are fully tax _______, provided donors retain their official confirmation letters for auditing purposes.\n(A) deductible\n(B) deduction\n(C) deductively\n(D) deduct",
+        "tips": "In TOEIC Part 5, predicative adjective structures following the linking verb are and modifying adverbs like fully tax require the adjective form. Here, fully tax deductible (A) is the correct predicate adjective meaning eligible to be deducted from taxable income. Choice (B) deduction is a noun, (C) deductively is an adverb, and (D) deduct is a base verb."
+      },
+      "synonyms": [
+        "write-off eligible",
+        "allowable expense",
+        "exemptible",
+        "non-taxable",
+        "deductible expenditure",
+        "pre-tax allowable"
+      ],
+      "antonyms": [
+        "non-deductible",
+        "taxable",
+        "disallowed expense",
+        "after-tax"
+      ],
+      "relatedWords": [
+        "tax deduction",
+        "itemized deduction",
+        "business expense",
+        "tax credit",
+        "write-off",
+        "operating cost",
+        "depreciation"
+      ]
+    }
+  ]
+}

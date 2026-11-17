@@ -1,0 +1,356 @@
+{
+  "words": [
+    {
+      "id": "finance-126",
+      "word": "discount",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈdɪs.kaʊnt/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/discount--_us_1.mp3",
+        "syllableBreakdown": "dis·count",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners often place stress on the second syllable (/dɪsˈkaʊnt/), which is typical for the verb form, rather than stressing the first syllable (/ˈdɪs.kaʊnt/) for the noun. In business and finance, confusing the noun pronunciation with the verb pronunciation is common. Additionally, learners sometimes pronounce the diphthong /aʊ/ as a monophthong /ɔː/ or /oʊ/ (sounding like 'dis-cont' or 'dis-count' with flat vowels), or drop the final /t/ consonant cluster."
+      },
+      "etymology": {
+        "origin": "Old French 'desconter' (to count off, deduct) via Medieval Latin 'discomputare', composed of prefix 'dis-' (away, off) + 'computare' (to calculate, count).",
+        "rootWord": "Latin prefix dis- (away, apart) + computare (to count, reckon, calculate together)",
+        "rootMeaning": "'To calculate off' or 'deduct from an account or reckon a lower sum'",
+        "evolution": "In medieval European commerce and Italian banking ('scontare'), merchant bankers deducted a fee or interest charge upfront when advancing cash on promissory notes or bills of exchange before their maturity date. This practice entered Anglo-Norman and Middle English commercial parlance as 'discompt' or 'discount' in the 17th century. Over time, it broadened from banking discounts on negotiable commercial paper to general retail price reductions, early payment allowances, and capital asset valuation deductions (such as discounted cash flow).",
+        "relatedLanguages": [
+          "French: escompte (financial discount / bank discounting) / réduction / rabais (retail discount)",
+          "Spanish: descuento (discount / price reduction)",
+          "Italian: sconto (discount / deduction)",
+          "German: Diskont (financial/bill discount) / Rabatt (price discount)",
+          "Dutch: disconto (financial discount) / korting (retail discount)"
+        ],
+        "firstRecordedUse": "Early 17th century (c. 1620s, in mercantile correspondence concerning bills of exchange)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A deduction from the nominal value, regular price, or future worth of an item, financial instrument, or service; in finance specifically, the amount by which a security or bond sells below its face value, or the reduction applied when paying an invoice early or calculating the present value of future cash flows.",
+        "spatialContext": "Retail checkout counters, point-of-sale terminals, corporate accounts payable departments processing trade invoices, bond trading desks, investment banking valuation models (DCF spreadsheets), and wholesale trade show negotiation tables.",
+        "temporalContext": "Promotional sales cycles (Black Friday, end-of-season clearances), trade credit windows (e.g., '2/10 net 30' early payment discounts), and bond issuance dates when market interest rates exceed coupon rates.",
+        "emotionalTone": "Incentivizing, advantageous, value-oriented, and commercially attractive.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'discount' functions across two distinct tiers: in everyday consumer contexts, it represents a bargain, promotional markdown, or special price concession that makes a purchase appealing. In corporate finance and banking, however, 'discount' has a precise mathematical meaning: a bond trading 'at a discount' trades below its $1,000 par value because prevailing interest rates have risen; an 'early settlement discount' rewards cash flow acceleration; and 'discount rate' denotes the hurdle rate or cost of capital used to discount future cash flows back to present value. Natives instinctively distinguish a consumer discount from a bond discount or cash discount.",
+        "mentalImage": "A commercial procurement director reviewing a vendor invoice stamped '2% discount applied for payment within 10 days', alongside an accounting ledger reflecting reduced net cash outflow.",
+        "whenToUse": "Use when referring to price reductions on goods/services (e.g., 'volume discount', 'employee discount', 'promotional discount'), trade credit terms (e.g., 'cash discount', 'early payment discount'), or fixed-income securities trading below face value (e.g., 'trading at a deep discount').",
+        "whenNotToUse": "Do not use 'discount' when you mean 'rebate' (which is returned after payment upon submitting proof of purchase) or 'refund' (reimbursement for returned merchandise or canceled services). Also avoid confusing the noun with the verb meaning 'to disregard or dismiss as unimportant' (e.g., 'to discount rumors').",
+        "culturalContext": "In Anglo-American commerce, discounting is foundational to retail sales velocity and corporate working capital management. Standard B2B payment terms like '2/10 net 30' incentivize prompt payment, saving working capital. In TOEIC, 'discount' appears constantly across Part 3 dialogues, Part 4 store announcements, and Part 7 order forms, invoices, and promotional flyers."
+      },
+      "examples": {
+        "daily": [
+          "Subscribers who renew their annual gym membership before the end of the month receive a 15% discount.",
+          "The bookstore offers a ten percent discount to students and educators who show a valid school ID at checkout.",
+          "We received an unexpected discount on our hotel reservation because the rooftop pool was temporarily closed for renovation."
+        ],
+        "business": [
+          "The supplier granted our purchasing department a five percent volume discount for placing an order exceeding ten thousand units.",
+          "To accelerate cash collections, the controller introduced a two percent cash discount for clients who settle invoices within ten business days.",
+          "When newly issued corporate bonds carried higher coupon rates, the company's existing bonds began trading at a noticeable discount on the secondary market."
+        ],
+        "conversation": [
+          "\"Did the supplier agree to offer us any discount for ordering in bulk?\" / \"Yes, they agreed to a tiered discount: eight percent off for five hundred units and twelve percent for one thousand.\"",
+          "\"Our accounting department paid the vendor invoice within seven days to take advantage of the early payment discount.\" / \"That small deduction will save the company nearly twenty thousand dollars across the fiscal year.\"",
+          "\"Are promotional codes eligible for an additional discount on clearance items?\" / \"No, store policy states that the promotional discount cannot be combined with existing markdowns.\""
+        ],
+        "collocations": [
+          "volume discount",
+          "steep discount",
+          "early payment discount",
+          "trade at a discount",
+          "offer a discount",
+          "substantial discount"
+        ]
+      },
+      "wordFamily": {
+        "noun": "discount, discounter, discounting",
+        "verb": "discount",
+        "adjective": "discounted, discountable",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "retail invoice volume discount percentage deduction corporate procurement receipt",
+        "imageDescription": "A clear itemized commercial invoice displaying a prominent subtotal deduction labeled '10% Corporate Volume Discount' next to a pen and a digital calculator.",
+        "mnemonic": "DIS-COUNT: DIS (take away / deduct) + COUNT (the price or sum). You 'count away' dollars from the total!"
+      },
+      "video": {
+        "description": "A corporate finance tutorial illustrating how cash discounts in supplier payment terms ('2/10 net 30') improve working capital and how bonds trade at a discount when market yields rise."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Clients who order office supplies in quantities of five hundred units or more are eligible for a ten percent _____ on their total invoice.\n(A) discount\n(B) discounted\n(C) discounter\n(D) discounting",
+        "tips": "In TOEIC Part 5, identify the noun requirement following the compound modifier 'ten percent' and preceding the prepositional phrase 'on their total invoice'. Choice (A) 'discount' correctly functions as the countable head noun meaning price reduction. Choice (B) 'discounted' is an adjective or past participle; choice (C) 'discounter' refers to a retailer or person that sells at reduced prices; and choice (D) 'discounting' is the gerund/present participle. Look out for the phrase 'at a discount' and 'volume discount' in Part 7 order forms and Part 3 business discussions."
+      },
+      "synonyms": [
+        "markdown",
+        "price reduction",
+        "concession",
+        "deduction",
+        "rebate",
+        "allowance"
+      ],
+      "antonyms": [
+        "premium",
+        "surcharge",
+        "markup",
+        "price increase"
+      ],
+      "relatedWords": [
+        "rebate",
+        "par value",
+        "yield",
+        "cash discount",
+        "invoice",
+        "margin",
+        "procurement"
+      ]
+    },
+    {
+      "id": "finance-127",
+      "word": "diversification",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/daɪˌvɝː.sə.fəˈkeɪ.ʃən/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/diversification--_us_1.mp3",
+        "syllableBreakdown": "di·ver·si·fi·ca·tion",
+        "stressPattern": "ˌ○○○●○",
+        "commonMistakes": "Learners often struggle with the syllable count and stress placement in this six-syllable word. A frequent mistake is placing primary stress on the third or fourth syllable (*di-VER-si-fi-ca-tion) rather than on the penultimate syllable /-ˈkeɪ-/. Additionally, non-native speakers may reduce the initial syllable to /dɪ-/ or mispronounce the /-ʃən/ suffix as /-si-on/."
+      },
+      "etymology": {
+        "origin": "Late Latin 'diversificare' (to make diverse, vary), from Latin 'diversus' (turned in different directions, various, diverse) + combining form '-ficare' (from 'facere', to make, do) + suffix '-tion' (action or condition).",
+        "rootWord": "Latin diversus (turned different ways, diverse) + facere (to make/do) + -tio (nominal suffix)",
+        "rootMeaning": "'The act of making things diverse or varied in multiple directions'",
+        "evolution": "In Classical Latin, 'diversus' meant 'turned in contrary directions'. By the late Middle Ages, the Medieval Latin verb 'diversificare' meant altering or introducing variety into an array of things. During the mid-20th century, with the development of Modern Portfolio Theory by Harry Markowitz (1952) and postwar corporate conglomerate growth, 'diversification' was formalized as a core strategic and mathematical discipline in finance, referring to the reduction of unsystematic risk by spreading capital across non-correlated asset classes, industries, or geographic markets.",
+        "relatedLanguages": [
+          "French: diversification (portfolio/business diversification)",
+          "Spanish: diversificación (diversification)",
+          "Italian: diversificazione (diversification)",
+          "German: Diversifikation / Diversifizierung (diversification)",
+          "Portuguese: diversificação (diversification)"
+        ],
+        "firstRecordedUse": "Late 16th to early 17th century (c. 1590s as general variation; specialized in corporate strategy and financial economics in the 1950s)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The strategic practice of allocating investments, operational activities, or product lines across a wide variety of assets, industries, or geographic sectors to minimize exposure to any single asset vulnerability, market shock, or operational downturn.",
+        "spatialContext": "Asset management boardrooms, wealth advisory offices, multi-asset trading terminals (e.g. Bloomberg terminals), corporate strategic planning sessions, and global conglomerate headquarters.",
+        "temporalContext": "Quarterly portfolio rebalancing sessions, macroeconomic shifts (e.g., inflation spikes or geopolitical tensions), corporate multi-year strategic expansion plans, and cyclical market downturns.",
+        "emotionalTone": "Prudent, calculated, defensive, strategic, and protective.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers immediately associate 'diversification' with the adage 'Don't put all your eggs in one basket.' In wealth management, it is often celebrated as 'the only free lunch in investing' because it reduces portfolio volatility without necessarily sacrificing expected returns. In corporate boardrooms, native executives distinguish between 'horizontal diversification' (adding related products for existing markets), 'vertical diversification' (entering supply chain steps), and 'conglomerate diversification' (entering completely unrelated industries). It conveys foresight, risk-management rigor, and institutional prudence.",
+        "mentalImage": "An investment advisor presenting a colorful pie chart on a tablet to clients, showcasing an asset allocation spread across domestic equities, international bonds, real estate, and commodities.",
+        "whenToUse": "Use when discussing investment portfolios, risk management strategies, expanding product offerings, entering new geographical markets, or reducing corporate dependency on a single revenue stream.",
+        "whenNotToUse": "Do not use 'diversification' to refer simply to workplace diversity or demographic representation (which is 'diversity' or 'inclusion'). Avoid using it as a synonym for random clutter or unfocused expansion (which native financial analysts criticize as 'diworsification').",
+        "culturalContext": "Diversification is the bedrock principle taught in Western business schools and personal finance literature (such as 401(k) and pension fund allocation). In TOEIC readings (Part 7 corporate profiles, annual reports, shareholder letters), companies frequently cite product or geographic diversification as their primary buffer against regional economic recessions."
+      },
+      "examples": {
+        "daily": [
+          "Her financial advisor recommended greater diversification across stock index funds and government treasury bonds.",
+          "Retirees often seek portfolio diversification to safeguard their accumulated wealth against stock market volatility.",
+          "Investing in both residential real estate and tech equities provided the family with healthy financial diversification."
+        ],
+        "business": [
+          "The multinational conglomerate pursued geographic diversification to mitigate revenue losses caused by regional economic downturns.",
+          "Through product line diversification, the software company expanded beyond desktop operating systems into cloud computing and cyber security.",
+          "The chief risk officer warned that lack of sector diversification made the investment fund overly vulnerable to shocks in the energy sector."
+        ],
+        "conversation": [
+          "\"Why is the executive committee expanding our operations into renewable energy?\" / \"It's part of our long-term diversification strategy to reduce our company's heavy reliance on fossil fuel revenues.\"",
+          "\"Is our corporate pension fund sufficiently protected against inflation?\" / \"Yes, our wealth managers achieved optimal diversification by increasing our holdings in infrastructure assets and inflation-protected securities.\"",
+          "\"Should a startup pursue market diversification immediately?\" / \"No, most venture capitalists suggest mastering a single niche before attempting product diversification.\""
+        ],
+        "collocations": [
+          "portfolio diversification",
+          "geographic diversification",
+          "product diversification",
+          "achieve diversification",
+          "diversification strategy",
+          "risk diversification"
+        ]
+      },
+      "wordFamily": {
+        "noun": "diversification, diversity",
+        "verb": "diversify",
+        "adjective": "diversified",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "portfolio diversification pie chart asset allocation investment advisor tablet",
+        "imageDescription": "An executive financial advisor pointing to a multicolored asset allocation pie chart on an interactive display showing a well-balanced distribution between stocks, bonds, real estate, and cash.",
+        "mnemonic": "DIVERSE + FACERE (to make diverse): Spread your financial investments across DIVERSE assets to protect your capital!"
+      },
+      "video": {
+        "description": "An executive seminar on Modern Portfolio Theory illustrating how asset diversification lowers portfolio risk and smoothes investment returns over economic cycles."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "To protect the firm against cyclical downturns in the domestic automotive sector, the board voted in favor of product _____ into aerospace components.\n(A) diversification\n(B) diversified\n(C) diversify\n(D) diversifyingly",
+        "tips": "In TOEIC Part 5, recognize compound noun patterns. Following the noun adjunct 'product', the sentence requires a head noun to form the compound phrase 'product diversification' as the object of the preposition 'of'. Choice (A) 'diversification' is the noun. Choice (B) 'diversified' is an adjective/past participle; choice (C) 'diversify' is a verb; and choice (D) 'diversifyingly' is an adverb. In Part 7, look for companies discussing their 'diversification strategy' when entering overseas markets or acquiring subsidiaries in different sectors."
+      },
+      "synonyms": [
+        "asset allocation",
+        "broadening",
+        "risk spreading",
+        "expansion",
+        "varied allocation",
+        "portfolio variety"
+      ],
+      "antonyms": [
+        "concentration",
+        "specialization",
+        "consolidation",
+        "centralization"
+      ],
+      "relatedWords": [
+        "portfolio",
+        "risk management",
+        "asset class",
+        "volatility",
+        "correlation",
+        "hedging",
+        "conglomerate"
+      ]
+    },
+    {
+      "id": "finance-128",
+      "word": "divestment",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/daɪˈvɛst.mənt/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/divestment--_us_1.mp3",
+        "syllableBreakdown": "di·vest·ment",
+        "stressPattern": "○●○",
+        "commonMistakes": "Learners often stress the first syllable (*DI-vest-ment) or confuse the initial vowel, alternating inconsistently between /daɪ-/ and /dɪ-/. Both /daɪˈvɛst.mənt/ and /dɪˈvɛst.mənt/ are accepted, with /daɪ-/ more common in American business English. ESL learners also frequently misspell it as 'divestiture' or confuse 'divestment' (the broader act or policy of selling off assets) with 'investment' (its polar opposite), occasionally mishearing the prefix in fast speech."
+      },
+      "etymology": {
+        "origin": "Old French 'desvestir' (to strip of clothing, dispossess) from Medieval Latin 'disvestire', composed of Latin prefix 'dis-' (away, off, reversal) + 'vestire' (to clothe, garment, invest with robes or office), from 'vestis' (garment).",
+        "rootWord": "Latin dis- (away, stripping) + vestire (to clothe, bestow authority or property) + -ment (noun suffix)",
+        "rootMeaning": "'The act of stripping away or removing clothing, property, or bestowed assets'",
+        "evolution": "Historically, 'divest' meant literally stripping someone of their official robes, vestments, or title of office. By the 16th and 17th centuries, legal parlance used it for stripping an individual of property or legal rights ('divested of title'). In 20th-century corporate finance and political economy, 'divestment' (alternatively 'disinvestment' or corporate 'divestiture') came to denote the deliberate liquidation or sale of subsidiaries, business units, or securities—often driven by corporate restructuring, antitrust compliance, or ethical shareholder campaigns (such as the historic 1980s South Africa anti-apartheid divestment movement and modern fossil fuel divestment).",
+        "relatedLanguages": [
+          "French: désinvestissement (financial divestment) / dessaisissement (relinquishment)",
+          "Spanish: desinversión (divestment / disinvestment)",
+          "Italian: disinvestimento (divestment / disinvestment)",
+          "German: Desinvestition / Veräußerung (divestment / asset sale)",
+          "Portuguese: desinvestimento (divestment)"
+        ],
+        "firstRecordedUse": "Early 17th century (c. 1610s in legal and property stripping contexts; modern corporate and financial usage established in the mid-20th century)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The reduction or complete sale of an asset, subsidiary division, or investment portfolio for strategic, operational, financial, or ethical reasons; the direct corporate opposite of investment.",
+        "spatialContext": "Corporate boardroom M&A discussions, regulatory antitrust hearings (e.g. FTC or European Commission filings), sovereign wealth fund oversight committees, university endowment trustee meetings, and private equity deal rooms.",
+        "temporalContext": "Corporate restructuring phases following over-expansion, mandatory regulatory compliance deadlines for merger approvals, spin-off transaction closings, and fiscal year-end asset write-downs.",
+        "emotionalTone": "Decisive, strategic, calculated, corrective, and formal.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'divestment' conveys a purposeful unwinding or shedding of assets. In corporate strategy, native executives do not view divestment as failure; rather, it is viewed as disciplined capital reallocation—shedding 'non-core' or underperforming assets to free up cash, streamline focus, or satisfy regulatory monopoly concerns. In ethical or ESG (Environmental, Social, and Governance) contexts, native speakers associate divestment with collective shareholder pressure, such as universities or pension funds pulling money out of weapons, tobacco, or fossil fuel corporations.",
+        "mentalImage": "A corporate board of directors voting around a conference table to approve the sale and carve-out of a legacy manufacturing division to a private equity firm.",
+        "whenToUse": "Use when an enterprise or institution sells off a business unit, subsidiary, real estate holdings, or securities (e.g., 'corporate divestment', 'divestment of non-core assets', 'fossil fuel divestment campaign').",
+        "whenNotToUse": "Do not use 'divestment' when referring to routine consumer sales of items, temporary shutdowns, or bankruptcy liquidations where the entire firm dissolves. Also, while 'divestiture' is closely synonymous, 'divestiture' usually refers to the specific transaction or legal order, whereas 'divestment' often describes the broader strategy, policy, or campaign.",
+        "culturalContext": "In Anglo-American capitalism, divestment is an indispensable tool for unlocking shareholder value through corporate spin-offs and carve-outs. In TOEIC Part 7, letters to shareholders, press releases, and business news articles routinely announce corporate divestments undertaken to streamline operations, reduce debt, or satisfy antitrust regulators before an acquisition."
+      },
+      "examples": {
+        "daily": [
+          "Student activists successfully urged the university trustees to commit to full divestment from fossil fuel companies.",
+          "The philanthropic foundation announced its phased divestment of tobacco stocks over the next two fiscal quarters.",
+          "Local council members debated whether municipal pension fund divestment from foreign defense contractors would harm long-term yields."
+        ],
+        "business": [
+          "The telecommunications giant announced the strategic divestment of its legacy cable operations to concentrate capital on 5G wireless networks.",
+          "Antitrust regulators approved the merger on the strict condition of immediate divestment of thirty regional retail branches.",
+          "Proceeds generated from the subsidiary divestment will be utilized to retire long-term debt and fund share repurchases."
+        ],
+        "conversation": [
+          "\"Why is the executive team pursuing the divestment of the consumer electronics division?\" / \"That division has suffered declining operating margins, so management wants to refocus our capital on high-growth enterprise software.\"",
+          "\"Did the regulatory commission approve the pharmaceutical acquisition?\" / \"Yes, but only after both corporations agreed to the divestment of two competing generic drug lines.\"",
+          "\"Has the university endowment completed its divestment program?\" / \"Almost; the finance committee reported that ninety-five percent of targeted energy holdings have already been sold off.\""
+        ],
+        "collocations": [
+          "divestment of assets",
+          "strategic divestment",
+          "complete divestment",
+          "fossil fuel divestment",
+          "order the divestment",
+          "plan a divestment"
+        ]
+      },
+      "wordFamily": {
+        "noun": "divestment, divestiture, divester",
+        "verb": "divest",
+        "adjective": "divested",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "corporate divestment selling subsidiary business carve out M&A contract signing",
+        "imageDescription": "An executive signing a formal corporate divestment agreement transferring ownership of a subsidiary business unit, flanked by legal advisors and corporate ledgers.",
+        "mnemonic": "DI-VEST-MENT: DIS (take off) + VEST (clothing/assets). Like taking off an old coat, the company takes off and sells non-core assets!"
+      },
+      "video": {
+        "description": "A business documentary segment detailing how global corporations execute strategic divestments to spin off non-core subsidiaries and generate shareholder value."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "To satisfy antitrust authorities and finalize the corporate merger, Apex Media agreed to the _____ of its regional radio stations.\n(A) divestment\n(B) divested\n(C) divest\n(D) divesting",
+        "tips": "In TOEIC Part 5, analyze the syntactic structure following the definite article 'the' and preceding the prepositional phrase 'of its regional radio stations'. The blank requires a noun denoting the act of selling off assets: (A) 'divestment'. Choice (B) 'divested' is a past participle or past tense verb; choice (C) 'divest' is a base verb; and choice (D) 'divesting' is a present participle/gerund, which is not preferred when an established nominal form exists following 'the'. In Part 7, watch for press releases outlining corporate restructuring and the 'divestment of non-core assets'."
+      },
+      "synonyms": [
+        "divestiture",
+        "disinvestment",
+        "sell-off",
+        "asset sale",
+        "liquidation",
+        "spinoff"
+      ],
+      "antonyms": [
+        "investment",
+        "acquisition",
+        "capital injection",
+        "asset purchase"
+      ],
+      "relatedWords": [
+        "divestiture",
+        "merger",
+        "acquisition",
+        "spin-off",
+        "carve-out",
+        "restructuring",
+        "non-core asset"
+      ]
+    }
+  ]
+}

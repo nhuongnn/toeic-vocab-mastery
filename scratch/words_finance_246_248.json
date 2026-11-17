@@ -1,0 +1,353 @@
+{
+  "words": [
+    {
+      "id": "finance-246",
+      "word": "restructuring",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˌriːˈstrʌk.tʃɚ.ɪŋ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/restructuring--_us_1.mp3",
+        "syllableBreakdown": "re-struc-tur-ing",
+        "stressPattern": "ˌ●○○",
+        "commonMistakes": "Learners frequently misplace primary stress onto the initial prefix (*RE-struc-tur-ing*) or pronounce the third syllable with an unreduced diphthong (/tjuːər/) rather than the unstressed r-colored vowel /tʃɚ/ or /tʃər/. In professional business contexts, non-native speakers commonly confuse 'restructuring' (a fundamental, comprehensive reorganization of debt covenants, corporate legal entities, operational units, or balance sheets to escape insolvency) with mere 'renovation' (physical refurbishment of buildings) or simple 'reorganizing' (routine rescheduling or filing adjustments)."
+      },
+      "etymology": {
+        "origin": "Formed by combining the Latin prefix 're-' (again, anew, back) with the verb 'structure' (derived through Old French 'structure' from Latin 'structura', meaning 'a fitting together, arrangement, construction', from 'structus', the past participle of 'struere', 'to build, assemble, pile together') and the English verbal action suffix '-ing'.",
+        "rootWord": "Latin struere (to build, assemble, pile up) + Latin prefix re- (again, anew)",
+        "rootMeaning": "'The process of rebuilding, dismantling, and reassembling an established operational or financial framework anew'",
+        "evolution": "The noun 'structure' entered Middle English during the 15th century via Old French legal and architectural writing. Its verb form appeared in the mid-17th century. The compound verb 'restructure' emerged in mid-20th-century economic and organizational literature (c. 1940s–1950s). In the late 1970s and 1980s, amidst the expansion of high-yield corporate bonds, leveraged buyouts, and widespread industrial divestitures, 'restructuring' became a dominant corporate finance discipline designating the systemic renegotiation of debt obligations, rationalization of business units, and balance sheet recapitalization.",
+        "relatedLanguages": [
+          "French: restructuration (f.)",
+          "Spanish: reestructuración (f.)",
+          "German: Restrukturierung / Umstrukturierung (f.)",
+          "Italian: ristrutturazione (f.)"
+        ],
+        "firstRecordedUse": "Mid-20th century (c. 1948 in institutional economics; formalized in corporate finance and bankruptcy law by the late 1970s)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A comprehensive and strategic modification of a corporation's financial, operational, or legal architecture—encompassing debt rescheduling, asset divestitures, divisional consolidation, or workforce rationalization—undertaken to alleviate acute financial distress, avoid insolvency, or restore long-term economic competitiveness.",
+        "spatialContext": "Corporate turnaround advisory offices, debt workout division boardrooms, bankruptcy court proceedings, investment bank restructuring syndicates, and executive steering committee rooms.",
+        "temporalContext": "Severe cash flow crunches, impending debt maturity cliffs, post-merger integration phases, major macroeconomic downturns, and multi-year corporate recovery programs.",
+        "emotionalTone": "High-stakes, rigorous, urgent, strategic, and transformative.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native English speakers in the corporate world, 'restructuring' operates on two distinct levels. In the executive suite and banking community, it is viewed as an indispensable, surgical financial tool—restructuring debt covenants, spinning off non-core assets, or swapping debt for equity to prevent Chapter 11 bankruptcy. Among rank-and-file employees, however, it is recognized as a widely used corporate euphemism that almost invariably signals impending layoffs, branch consolidations, and frozen capital expenditures.",
+        "mentalImage": "A specialized turnaround advisory team gathered around a large mahogany boardroom table littered with financial spreadsheets late in the evening, analyzing a Gantt chart detailing bondholder debt-for-equity swaps alongside planned factory consolidations.",
+        "whenToUse": "Use when referring to systemic overhauls of corporate capital structure (debt restructuring, recapitalization), the divestment of major business segments, or deep organizational realignments aimed at returning an enterprise to profitability.",
+        "whenNotToUse": "Do not use to describe minor operational schedule tweaks, cosmetic office refurbishments (use 'renovation' or 'remodeling'), small team task reassortments, or standard annual department budget adjustments.",
+        "culturalContext": "In Anglo-American capital markets and securities filings (SEC Forms 10-K and 10-Q), publicly listed corporations must separately disclose 'restructuring charges' (such as severance payments, facility closing costs, and contract termination penalties) to allow equity analysts to differentiate recurring operational profitability from one-off turnaround expenses."
+      },
+      "examples": {
+        "daily": [
+          "Speculation regarding an impending company-wide restructuring spread across the office after regional managers were summoned to an emergency headquarters meeting.",
+          "Following the operational restructuring, her regional division was merged with the customer logistics department on the second floor.",
+          "The electronics retailer announced an extensive restructuring that will shutter forty underperforming storefronts before the winter holiday season."
+        ],
+        "business": [
+          "The multinational manufacturer recorded a $65 million pre-tax restructuring charge related to severance outlays and factory lease terminations.",
+          "Creditors approved a consensual debt restructuring plan that converted $120 million in senior notes into preferred equity, extending repayment deadlines by five years.",
+          "The board hired an independent turnaround consultancy to lead the comprehensive restructuring of its European distribution network."
+        ],
+        "conversation": [
+          "\"Did the bondholders agree to the proposed debt restructuring?\" / \"Yes, they approved the proposal after management offered higher equity participation in the restructured entity.\"",
+          "\"Why are two complete floors of the corporate campus being vacated?\" / \"The enterprise is undergoing a major operational restructuring to centralize administrative functions into our regional hub.\"",
+          "\"How will the factory closures be reported in next month's earnings presentation?\" / \"Our CFO confirmed that all decommission expenses will be itemized under non-recurring restructuring costs.\""
+        ],
+        "collocations": [
+          "corporate restructuring",
+          "debt restructuring",
+          "operational restructuring",
+          "restructuring charge",
+          "restructuring plan",
+          "undergo a restructuring"
+        ]
+      },
+      "wordFamily": {
+        "noun": "restructuring",
+        "verb": "restructure",
+        "adjective": "restructured",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "corporate restructuring turnaround chart organizational realignment executive conference room",
+        "imageDescription": "A corporate conference room where senior turnaround consultants review a wall-mounted digital Gantt chart and financial flow diagrams outlining corporate restructuring, debt renegotiation milestones, and asset divestiture schedules.",
+        "mnemonic": "RE-STRUCTURING: Rebuilding a company's financial and operational STRUCTURE from the ground up so it won't collapse under heavy debt!"
+      },
+      "video": {
+        "description": "A corporate finance documentary tracking how a legacy manufacturing conglomerate successfully navigated a multi-billion-dollar operational and debt restructuring to avert liquidation and regain solvency."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "In response to protracted revenue shortfalls across overseas branches, the board of directors retained an advisory firm to oversee comprehensive corporate _____.\n(A) restructure\n(B) restructured\n(C) restructuring\n(D) restructures",
+        "tips": "In TOEIC Part 5, parts-of-speech questions frequently test whether test-takers can identify the appropriate noun following a modifying adjective such as 'corporate'. Although 'restructure' can function as an informal countable noun, 'restructuring' (choice C) is the established, formally recognized corporate finance noun representing the continuous process or program of organizational realignment. Choices (A), (B), and (D) represent verbal inflectional forms."
+      },
+      "synonyms": [
+        "corporate reorganization",
+        "debt rescheduling",
+        "operational overhaul",
+        "recapitalization",
+        "corporate realignment",
+        "balance sheet restructuring"
+      ],
+      "antonyms": [
+        "status quo preservation",
+        "corporate inertia",
+        "non-intervention"
+      ],
+      "relatedWords": [
+        "turnaround",
+        "divestiture",
+        "insolvency",
+        "debt-for-equity swap",
+        "covenant",
+        "liquidation",
+        "haircut"
+      ]
+    },
+    {
+      "id": "finance-247",
+      "word": "retainer",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/rɪˈteɪ.nɚ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/retainer--_us_1.mp3",
+        "syllableBreakdown": "re-tain-er",
+        "stressPattern": "○●○",
+        "commonMistakes": "Learners often mispronounce the unstressed initial syllable with a tense /iː/ (*REE-tain-er*) instead of the reduced short vowel /rɪ/, or misplace the primary stress onto the initial syllable. In corporate finance and professional services billing, non-native speakers frequently confuse a 'retainer' (an upfront advance fee deposited to secure priority access or drawn down against hourly services) with a 'contingency fee' (remuneration paid strictly upon achieving a specific legal or financial outcome) or a 'commission' (a percentage-based cut of a completed sales transaction)."
+      },
+      "etymology": {
+        "origin": "Derived from the Middle English verb 'reteinen' / 'retainen', borrowed from Anglo-Norman French 'reteigner' and Old French 'retenir' ('to hold back, keep in service, restrain'), which stems from Latin 'retinēre' ('to hold fast, keep back, maintain'), composed of the prefix 're-' (back) and 'tenēre' (to hold, grasp). The English agent noun suffix '-er' was appended during the Middle English period.",
+        "rootWord": "Latin retinēre (to hold back, restrain, keep in service) + Latin tenēre (to hold)",
+        "rootMeaning": "'That which holds, secures, or binds a professional in continuous service to a client'",
+        "evolution": "In 14th-century feudal England, a 'retainer' denoted a gentleman follower, domestic dependent, or knight bound to a nobleman through formal indentures of livery and maintenance. By the 16th century (c. 1540s), the English legal fraternity repurposed the term to describe the preliminary fee paid by a litigant to engage a barrister, which legally precluded that barrister from advising the opposing party. During the 19th and 20th centuries, the term broadened into standard corporate finance, management consulting, public relations, and investment banking to denote advance deposits or recurring subscription fees paid to guarantee professional advisory availability.",
+        "relatedLanguages": [
+          "French: provision pour honoraires (advance fee) / convention d'honoraires",
+          "Spanish: provisión de fondos / anticipo de honorarios / iguala",
+          "German: Honorarvorschuss (m.) / Bereitstellungshonorar (n.) / Vorschuss (m.)",
+          "Italian: acconto su parcella / fondo spese / compenso pattuito"
+        ],
+        "firstRecordedUse": "Late 14th century (c. 1380 for feudal dependents); mid-16th century (c. 1540s for legal retainers and retaining fees)"
+      },
+      "deepMeaning": {
+        "coreConcept": "An advance monetary deposit or recurring fee paid to a professional service provider (such as an attorney, management consultant, public relations agency, or boutique investment banker) to secure their ongoing availability, reserve their professional capacity, and serve as a pre-funded credit balance against future billable hours.",
+        "spatialContext": "Corporate law firm partner offices, boutique investment banking advisory suites, enterprise legal department billing portals, client conference suites, and corporate accounting departments.",
+        "temporalContext": "Execution of professional engagement letters, monthly recurring billing cycles, milestone retainers in mergers and acquisitions advisory mandates, and fiscal year-end retainer replenishments.",
+        "emotionalTone": "Professional, fiduciary, reassuring, contractual, and committed.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers distinguish between two primary usages: the physical payment ('we wired a $15,000 retainer') and the operational status ('we keep an elite labor law firm on retainer'). Having an expert firm 'on retainer' communicates corporate sophistication, proactive risk management, and prestige—it means when a crisis erupts, immediate counsel is already legally bound to assist without having to negotiate fees, undergo conflict clearance, or risk having the rival firm hire them first.",
+        "mentalImage": "A corporate general counsel signing an engagement agreement at an executive desk, beside a wire transfer confirmation indicating a $30,000 upfront retainer deposited into an attorney escrow trust account.",
+        "whenToUse": "Use when describing upfront deposits or recurring monthly fees paid to lawyers, consultants, accountants, lobbyists, or financial advisers to ensure dedicated availability or cover anticipated billable work.",
+        "whenNotToUse": "Do not use for routine commercial product down payments (use 'deposit' or 'down payment'), standard employee wage withholdings, or orthodontic dental devices unless specifically writing in a medical context.",
+        "culturalContext": "Under legal ethics rules across common law jurisdictions (such as the American Bar Association Model Rules), a client retainer must be deposited directly into a designated client trust account (IOLTA in the US) and cannot be transferred to the firm's operating revenue until services are rendered and an itemized billing invoice is issued."
+      },
+      "examples": {
+        "daily": [
+          "Before reviewing the commercial lease agreement, the independent contract attorney requested an initial retainer of fifteen hundred dollars.",
+          "The freelance digital marketing consultant agreed to oversee the startup's ad campaigns for a fixed monthly retainer of two thousand dollars.",
+          "To protect the family business during property disputes, the founders decided to keep a seasoned local attorney on retainer."
+        ],
+        "business": [
+          "The multinational enterprise remits a monthly retainer of $25,000 to an international public relations agency to manage crisis communications.",
+          "According to the engagement letter, the M&A advisory firm required an upfront retainer that will be credited against the transaction completion fee.",
+          "Corporate accounting guidelines require that unearned retainer balances remain held in an escrow trust account until services are formally invoiced."
+        ],
+        "conversation": [
+          "\"Does our legal department retain outside environmental counsel?\" / \"Yes, we pay a boutique environmental law firm an annual retainer so they are on call for immediate compliance reviews.\"",
+          "\"Why does the advisory firm require payment before starting the feasibility study?\" / \"That initial retainer reserves their senior team and covers early research hours prior to milestone deliverables.\"",
+          "\"What happens to our remaining retainer deposit if negotiations conclude early?\" / \"Per the signed agreement, any unbilled hours left in the trust account will be refunded in full within thirty days.\""
+        ],
+        "collocations": [
+          "on retainer",
+          "retainer fee",
+          "monthly retainer",
+          "upfront retainer",
+          "pay a retainer",
+          "retainer agreement"
+        ]
+      },
+      "wordFamily": {
+        "noun": "retainer",
+        "verb": "retain",
+        "adjective": "retained",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "legal retainer agreement signed contract fountain pen escrow deposit check desk",
+        "imageDescription": "A close-up view of an attorney's mahogany desk showing a signed formal engagement contract open to the retainer fee clause, a luxury fountain pen, and a client deposit voucher beside a leather portfolio.",
+        "mnemonic": "RETAINER: You pay a fee in advance to RETAIN their top talent and ensure they are ready to act the moment you call!"
+      },
+      "video": {
+        "description": "A corporate legal billing seminar breaking down the structural differences between evergreen retainer accounts, monthly fixed retainers, and traditional billable-hour drawdowns in enterprise engagements."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Before commencement of legal due diligence on the acquisition, prospective clients must deposit an initial _____ into the firm's trust account.\n(A) retain\n(B) retainer\n(C) retaining\n(D) retained",
+        "tips": "In TOEIC Part 5, questions frequently test your ability to select the correct noun form following an article and adjective ('an initial _____'). 'Retainer' (choice B) is the specific professional noun denoting an advance fee or deposit. Choice (A) is a base verb, (C) is a participle/gerund, and (D) is a past participle or adjective."
+      },
+      "synonyms": [
+        "advance fee",
+        "engagement fee",
+        "holding fee",
+        "advance deposit",
+        "preliminary retainer",
+        "availability fee"
+      ],
+      "antonyms": [
+        "final settlement",
+        "completion payout",
+        "post-payment",
+        "full refund"
+      ],
+      "relatedWords": [
+        "engagement letter",
+        "billable hours",
+        "trust account",
+        "escrow",
+        "contingency fee",
+        "hourly rate",
+        "disbursement"
+      ]
+    },
+    {
+      "id": "finance-248",
+      "word": "return on asset",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/rɪˈtɝːn ɑːn ˈæs.et/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/return_on_asset--_us_1.mp3",
+        "syllableBreakdown": "re-turn on as-set",
+        "stressPattern": "○● ○ ●○",
+        "commonMistakes": "Learners frequently mispronounce the noun 'asset' by voicing the medial 's' as /z/ (*az-zet*) rather than the correct unvoiced alveolar fricative /s/ (/ˈæs.et/), or placing primary stress on the wrong syllable in 'return'. In financial analysis, non-native speakers commonly conflate 'return on asset' (ROA, which evaluates overall managerial asset efficiency irrespective of capital financing structure) with 'return on equity' (ROE, which measures profitability solely relative to shareholders' equity) or 'return on investment' (ROI, which measures gain relative to a specific capital outlay)."
+      },
+      "etymology": {
+        "origin": "A composite financial term formed from 'return' (from Anglo-Norman 'retourner' / Old French 'retorner', 'to come back, yield an accounting or profit', from Latin 'retornāre', from 're-' 'back' + 'tornāre' 'to turn on a lathe'), the preposition 'on' (Old English 'on/an'), and 'asset' (from Anglo-Norman 'asez' / Old French 'assez', 'enough, sufficient', from Vulgar Latin '*ad satis' / Latin 'ad satis', 'to sufficiency').",
+        "rootWord": "Latin retornāre (to turn back, yield) + Latin ad satis (to sufficiency, enough goods to satisfy obligations)",
+        "rootMeaning": "'The profit or financial yield returned upon the total sufficient economic property controlled by an organization'",
+        "evolution": "The noun 'assets' entered English legal jurisprudence via Anglo-Norman during the 16th century, designating property in the hands of an executor sufficient to discharge debts. 'Return' in the sense of financial gain emerged in mercantile English by the 18th century. In 1914–1919, Donaldson Brown, an electrical engineer and financial officer at the DuPont Corporation, developed the DuPont Model (DuPont Analysis), mathematically decomposing 'return on assets' (ROA) into operating profit margin multiplied by total asset turnover. This breakthrough institutionalized return on asset as the premier benchmark for evaluating internal operational efficiency across global corporate finance.",
+        "relatedLanguages": [
+          "French: rentabilité des actifs (f.) / rendement des actifs (m.)",
+          "Spanish: rentabilidad sobre activos (f.) / rendimiento sobre activos (m.)",
+          "German: Gesamtkapitalrentabilität (f.) / Gesamtkapitalrendite (f.) / Asset-Rendite",
+          "Italian: redditività del capitale investito (f.) / rendimento delle attività (m.)"
+        ],
+        "firstRecordedUse": "Early 20th century (c. 1919 in DuPont corporate financial control manuals and subsequent American accounting literature)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A fundamental financial profitability metric—expressed as a percentage—that measures the net income generated relative to a corporation's total average balance-sheet assets, demonstrating how productively executive management deploys resources to produce bottom-line earnings.",
+        "spatialContext": "Equity research analyst workstations, investment committee conference rooms, corporate treasury financial modeling suites, annual shareholder presentations, and commercial bank credit underwriting desks.",
+        "temporalContext": "Quarterly 10-Q earnings reports, annual 10-K fiscal year-end filings, multi-year capital expenditure appraisals, and executive performance bonus evaluations.",
+        "emotionalTone": "Analytical, objective, quantitative, rigorous, and performance-oriented.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native corporate finance professionals, 'return on asset' (universally known by its acronym ROA) is the purest barometer of operational stewardship. While management can artificially boost Return on Equity (ROE) through aggressive financial leverage and debt-financed share buybacks, Return on Asset cuts through financial leverage gimmicks. It answers the fundamental operational question: For every single dollar locked up in factory machines, office buildings, software licenses, and warehouse inventory, exactly how many cents of clear net profit is management squeezing out?",
+        "mentalImage": "A senior equity analyst scrutinizing a DuPont formula breakdown across three computer monitors, noting that a logistics firm's return on asset jumped from 6.5% to 9.2% due to rapid inventory turnover rather than borrowed debt leverage.",
+        "whenToUse": "Use when evaluating operational productivity, comparing competitive efficiency across firms within capital-intensive industries (such as manufacturing, logistics, or utilities), or conducting corporate valuation modeling.",
+        "whenNotToUse": "Do not use when analyzing individual personal investment returns (use 'return on investment' or 'total return'), or when measuring shareholder capital productivity isolated from debt obligations (use 'return on equity').",
+        "culturalContext": "In Anglo-American capital markets and corporate reporting, benchmark return on asset figures vary dramatically by sector. Software and asset-light consulting firms routinely deliver ROAs exceeding 15% to 20%, whereas asset-heavy businesses like airlines and electric utilities often operate efficiently at ROA levels between 3% and 6% due to massive fixed balance-sheet infrastructure."
+      },
+      "examples": {
+        "daily": [
+          "By selling off idle delivery trucks and leasing smaller warehouses, the regional bakery chain substantially increased its return on asset.",
+          "Before approving the commercial credit line, the loan officer reviewed the manufacturing startup's return on asset over the prior three fiscal quarters.",
+          "In business school, students learned to calculate each retail competitor's return on asset by dividing net profit by total balance-sheet assets."
+        ],
+        "business": [
+          "The chief financial officer highlighted that the company's return on asset expanded by 180 basis points following the automation of its main assembly plants.",
+          "Institutional investors favor logistics operators that maintain an industry-leading return on asset without taking on excessive debt leverage.",
+          "Through rigorous DuPont analysis, equity analysts determined that the firm's improved return on asset was driven primarily by faster inventory turnover."
+        ],
+        "conversation": [
+          "\"Why did the equity analysts praise the airline despite sluggish passenger growth?\" / \"Because their return on asset reached an eight-year high after they retired older, fuel-inefficient aircraft.\"",
+          "\"How does our division's return on asset compare to the industry median?\" / \"We are currently tracking at 8.7%, which puts us in the top quartile of regional industrial suppliers.\"",
+          "\"Will the multi-million-dollar warehouse modernization deliver acceptable results?\" / \"Management expects the efficiency gains to elevate our corporate return on asset by at least two full percentage points.\""
+        ],
+        "collocations": [
+          "calculate return on asset",
+          "average return on asset",
+          "improve return on asset",
+          "return on asset ratio",
+          "annualized return on asset",
+          "benchmark return on asset"
+        ]
+      },
+      "wordFamily": {
+        "noun": "return on asset",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "financial analyst audited balance sheet return on assets chart calculator quarterly report",
+        "imageDescription": "An equity research desk displaying an audited financial balance sheet, a financial calculator, and a high-resolution bar graph illustrating five-year historical return on asset performance against industry peers.",
+        "mnemonic": "RETURN ON ASSET: How much net income RETURNS to the company for every dollar of ASSETS invested on its balance sheet!"
+      },
+      "video": {
+        "description": "A corporate accounting masterclass illustrating DuPont analysis, demonstrating how to isolate the exact drivers of return on asset through profit margin and asset turnover metrics."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "By streamlining distribution logistics and divesting underperforming facilities, Harborside Cargo achieved a 9.2% return _____ total assets last fiscal year.\n(A) in\n(B) on\n(C) of\n(D) at",
+        "tips": "In TOEIC Part 5 and Part 6, questions testing business terminology often assess prepositional combinations in standard financial ratios. The established financial expression is 'return on assets' (ROA), parallel to 'return on equity' and 'return on investment'. Therefore, the preposition 'on' (choice B) is the only correct answer. Prepositions like 'in', 'of', and 'at' fail to form the idiomatic financial metric."
+      },
+      "synonyms": [
+        "return on assets",
+        "ROA",
+        "asset efficiency ratio",
+        "asset productivity ratio",
+        "return on total assets",
+        "operating yield on assets"
+      ],
+      "antonyms": [
+        "asset impairment rate",
+        "capital erosion rate",
+        "asset write-down ratio"
+      ],
+      "relatedWords": [
+        "return on equity",
+        "asset turnover",
+        "DuPont analysis",
+        "net income",
+        "total assets",
+        "balance sheet",
+        "capital expenditure"
+      ]
+    }
+  ]
+}

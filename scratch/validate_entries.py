@@ -1,474 +1,413 @@
 import json
 
-words_data = [
+data = {
+  "words": [
     {
-        "id": "dining-057",
-        "word": "beef",
-        "partOfSpeech": ["noun"],
-        "category": "dining",
-        "level": "essential",
-        "toeicFrequency": 9,
-        "pronunciation": {
-            "ipa": "/biːf/",
-            "syllableBreakdown": "beef",
-            "stressPattern": "single stressed syllable (BEEF)",
-            "commonMistakes": "Learners sometimes shorten the long, tense vowel /iː/ to a lax /ɪ/ (sounding like 'biff') or fail to articulate the final voiceless labiodental fricative /f/ cleanly. Non-native speakers also frequently treat 'beef' as a countable noun when referring to meat (*'we ordered two beefs'* instead of *'two servings of beef'* or *'two beef dishes'*). Note that the plural 'beefs' is exclusively reserved for informal contexts meaning grievances or disputes."
-        },
-        "etymology": {
-            "origin": "Middle English 'beef' / 'beof', borrowed from Anglo-Norman and Old French 'buef' (modern French 'bœuf'), from Latin 'bōs' (stem 'bov-'), meaning 'ox', 'bull', or 'cow', ultimately descending from Proto-Indo-European *gʷou- ('ox, cow'). This reflects the classic post-1066 Norman Conquest linguistic dichotomy in English: Anglo-Saxon words were retained for living farm animals (cow, ox, swine, sheep), while Norman-French terms were adopted for the prepared culinary meats served to the nobility (beef, pork, mutton, veal).",
-            "rootWord": "Latin 'bōs' (genitive 'bovis') / Old French 'buef' (cattle, ox)",
-            "rootMeaning": "'buef' / 'bōs' — domestic bovine cattle; specifically the culinary flesh of cattle dressed for consumption",
-            "evolution": "Introduced into Middle English around 1300 through Norman aristocratic dining culture, 'beef' established itself as the standard term for the edible meat of cattle. During the industrial revolution and 19th-century American expansion, cattle ranching solidified beef as a dominant dietary and commercial staple. In late 19th-century American slang, 'beef' developed colloquial senses meaning a complaint or grievance, as well as the phrasal verb 'to beef up' (to strengthen or reinforce).",
-            "relatedLanguages": [
-                "French: bœuf",
-                "Spanish: buey (ox), carne de res (beef)",
-                "Italian: bue (ox), carne bovina (beef)",
-                "German: Rindfleisch (Germanic compound; cf. archaic English 'neat's flesh')"
-            ],
-            "firstRecordedUse": "c. 1300 (Middle English, in culinary rolls and household accounts of the English nobility)"
-        },
-        "deepMeaning": {
-            "coreConcept": "The culinary flesh of domestic bovine cattle (steers, heifers, or cows), encompassing diverse primal and subprimal cuts such as tenderloin, sirloin, ribeye, and brisket, prized across global gastronomy for its rich umami flavor, marbling, high protein content, and adaptability to dry-heat roasting, grilling, braising, and banquet catering.",
-            "spatialContext": "Steakhouse dining rooms, commercial hotel banquet kitchens, butcher counters, corporate gala carving stations, and airline meal preparation commissaries.",
-            "temporalContext": "Featured prominently on daily lunch and dinner menus, executive business dining itineraries, and corporate banquet entrée RSVP deadlines.",
-            "emotionalTone": "Hearty, substantial, prestigious, and culinary.",
-            "formalityLevel": "neutral",
-            "connotation": "positive"
-        },
-        "nativeMindset": {
-            "howNativesThink": "Native English speakers view beef as the classic, hearty centerpiece protein of Western culinary dining. In corporate hospitality and event planning, offering a beef option (such as filet mignon or prime rib) immediately signals a premium, upscale banquet experience compared to standard chicken or pasta. Business professionals also routinely recognize metaphorical extensions like 'beefing up security' (substantially reinforcing) or asking 'where's the beef?' (questioning whether an initiative possesses actual substance).",
-            "mentalImage": "An executive banquet chef in a crisp white jacket slicing a roasted, herb-crusted prime rib of beef under warm carving-station lamps, revealing a succulent pink center alongside miniature silver sauceboats of au jus and horseradish cream.",
-            "whenToUse": "Use when discussing culinary choices, restaurant orders, banquet catering options, food procurement, cuts of meat, or dietary selections (e.g., 'Conference delegates must indicate whether they prefer the braised beef short ribs or the herb-crusted cod').",
-            "whenNotToUse": "Do not use 'beef' when referring to live pasture livestock (use 'cattle', 'cows', or 'steers'). Do not pluralize as 'beefs' when ordering multiple servings at a dining table (use 'beef entrées' or 'orders of beef'). Avoid informal slang usages ('a beef with a coworker') in formal business writing.",
-            "culturalContext": "In American and British corporate dining, steakhouse dinners and beef carving stations are traditional venues for closing high-stakes commercial deals. However, modern international hospitality requires careful accommodation of cultural, religious, and dietary guidelines—such as Hindu vegetarianism or veneration of cattle, kosher/halal dietary specifications, and health-conscious alternatives—making entrée selection slips a ubiquitous feature in TOEIC event coordination passages."
-        },
-        "examples": {
-            "daily": [
-                "We bought two pounds of ground beef at the local grocery store to make homemade chili for our weekend gathering.",
-                "He ordered the beef tenderloin cooked medium-rare, accompanied by roasted asparagus and garlic mashed potatoes.",
-                "The family enjoyed a hearty beef stew with carrots and potatoes after spending the afternoon outdoors in the cold."
-            ],
-            "business": [
-                "Due to recent inflationary pressures in agricultural commodity markets, the catering supplier revised its per-plate cost for the roast beef banquet package.",
-                "The corporate events coordinator sent a reminder requesting that all summit attendees confirm whether they prefer the beef medallion entrée or the vegetarian risotto.",
-                "The regional restaurant chain signed an exclusive procurement agreement with local ranches to ensure a dependable supply of grass-fed beef."
-            ],
-            "conversation": [
-                "\"Have you gathered all the dinner entrée selections for Thursday's client reception?\" \"Almost all of them; fourteen guests chose the roasted beef filet, nine selected the pan-seared salmon, and three requested vegan meals.\"",
-                "\"How would you like your beef cooked this evening, ma'am?\" \"Medium, please, and could I substitute steamed vegetables for the french fries?\"",
-                "\"Did you see the catering menu for the regional sales conference?\" \"Yes, the hotel is offering a prime rib of beef carving station alongside an extensive salad bar during the networking mixer.\""
-            ],
-            "collocations": [
-                "roast beef",
-                "ground beef",
-                "beef tenderloin",
-                "lean beef",
-                "beef stew",
-                "beef cattle"
-            ]
-        },
-        "wordFamily": {
-            "noun": "beef",
-            "verb": "beef (phrasal: beef up)",
-            "adjective": "beefy",
-            "adverb": ""
-        },
-        "visual": {
-            "imageKeyword": "roast beef prime rib carving station banquet catering restaurant",
-            "imageDescription": "A hotel banquet carving station displaying a rosemary-seasoned prime rib roast of beef with a rich browned crust and tender pink center, flanked by a carving knife, sprigs of fresh herbs, and small ramekins of jus.",
-            "mnemonic": "BEEF was the feast of the Norman CHIEF: French lords dined on 'beef' while Saxon farmers herded the 'cow' in grief!"
-        },
-        "video": {
-            "description": "A professional culinary arts video demonstrating high-volume banquet preparation, showcasing a head chef seasoning, slow-roasting, and slicing prime rib of beef for a four-hundred-seat corporate convention."
-        },
-        "toeicContext": {
-            "commonParts": [1, 3, 4, 7],
-            "exampleQuestion": "Delegates attending the awards banquet are requested to indicate their preferred main course—herb-roasted _____ tenderloin, grilled sea bass, or roasted butternut squash—on the enclosed RSVP card.\n(A) beef\n(B) beefs\n(C) beefy\n(D) beefing",
-            "tips": "In TOEIC Part 5, a noun can serve as a noun adjunct (a noun acting like an adjective to modify another noun, such as 'beef tenderloin', 'catering service', or 'dinner banquet'). Here, the singular noun 'beef' directly modifies 'tenderloin'. Choice (B) 'beefs' is incorrect because culinary meat is an uncountable mass noun; Choice (C) 'beefy' is an informal adjective meaning muscular or heavily built; and Choice (D) 'beefing' is a participle/gerund that does not fit."
-        },
-        "synonyms": [
-            "bovine meat",
-            "cattle meat",
-            "red meat",
-            "steak",
-            "prime rib"
+      "id": "finance-246",
+      "word": "restructuring",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˌriːˈstrʌk.tʃɚ.ɪŋ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/restructuring--_us_1.mp3",
+        "syllableBreakdown": "re-struc-tur-ing",
+        "stressPattern": "ˌ●○○",
+        "commonMistakes": "Learners frequently misplace primary stress onto the initial prefix (*RE-struc-tur-ing*) or pronounce the third syllable with an unreduced diphthong (/tjuːər/) rather than the unstressed r-colored vowel /tʃɚ/ or /tʃər/. In professional business contexts, non-native speakers commonly confuse 'restructuring' (a fundamental, comprehensive reorganization of debt covenants, corporate legal entities, operational units, or balance sheets to escape insolvency) with mere 'renovation' (physical refurbishment of buildings) or simple 'reorganizing' (routine rescheduling or filing adjustments)."
+      },
+      "etymology": {
+        "origin": "Formed by combining the Latin prefix 're-' (again, anew, back) with the verb 'structure' (derived through Old French 'structure' from Latin 'structura', meaning 'a fitting together, arrangement, construction', from 'structus', the past participle of 'struere', 'to build, assemble, pile together') and the English verbal action suffix '-ing'.",
+        "rootWord": "Latin struere (to build, assemble, pile up) + Latin prefix re- (again, anew)",
+        "rootMeaning": "'The process of rebuilding, dismantling, and reassembling an established operational or financial framework anew'",
+        "evolution": "The noun 'structure' entered Middle English during the 15th century via Old French legal and architectural writing. Its verb form appeared in the mid-17th century. The compound verb 'restructure' emerged in mid-20th-century economic and organizational literature (c. 1940s–1950s). In the late 1970s and 1980s, amidst the expansion of high-yield corporate bonds, leveraged buyouts, and widespread industrial divestitures, 'restructuring' became a dominant corporate finance discipline designating the systemic renegotiation of debt obligations, rationalization of business units, and balance sheet recapitalization.",
+        "relatedLanguages": [
+          "French: restructuration (f.)",
+          "Spanish: reestructuración (f.)",
+          "German: Restrukturierung / Umstrukturierung (f.)",
+          "Italian: ristrutturazione (f.)"
         ],
-        "antonyms": [],
-        "relatedWords": [
-            "veal",
-            "tenderloin",
-            "sirloin",
-            "poultry",
-            "entrée",
-            "marbling",
-            "butcher"
+        "firstRecordedUse": "Mid-20th century (c. 1948 in institutional economics; formalized in corporate finance and bankruptcy law by the late 1970s)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A comprehensive and strategic modification of a corporation's financial, operational, or legal architecture—encompassing debt rescheduling, asset divestitures, divisional consolidation, or workforce rationalization—undertaken to alleviate acute financial distress, avoid insolvency, or restore long-term economic competitiveness.",
+        "spatialContext": "Corporate turnaround advisory offices, debt workout division boardrooms, bankruptcy court proceedings, investment bank restructuring syndicates, and executive steering committee rooms.",
+        "temporalContext": "Severe cash flow crunches, impending debt maturity cliffs, post-merger integration phases, major macroeconomic downturns, and multi-year corporate recovery programs.",
+        "emotionalTone": "High-stakes, rigorous, urgent, strategic, and transformative.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native English speakers in the corporate world, 'restructuring' operates on two distinct levels. In the executive suite and banking community, it is viewed as an indispensable, surgical financial tool—restructuring debt covenants, spinning off non-core assets, or swapping debt for equity to prevent Chapter 11 bankruptcy. Among rank-and-file employees, however, it is recognized as a widely used corporate euphemism that almost invariably signals impending layoffs, branch consolidations, and frozen capital expenditures.",
+        "mentalImage": "A specialized turnaround advisory team gathered around a large mahogany boardroom table littered with financial spreadsheets late in the evening, analyzing a Gantt chart detailing bondholder debt-for-equity swaps alongside planned factory consolidations.",
+        "whenToUse": "Use when referring to systemic overhauls of corporate capital structure (debt restructuring, recapitalization), the divestment of major business segments, or deep organizational realignments aimed at returning an enterprise to profitability.",
+        "whenNotToUse": "Do not use to describe minor operational schedule tweaks, cosmetic office refurbishments (use 'renovation' or 'remodeling'), small team task reassortments, or standard annual department budget adjustments.",
+        "culturalContext": "In Anglo-American capital markets and securities filings (SEC Forms 10-K and 10-Q), publicly listed corporations must separately disclose 'restructuring charges' (such as severance payments, facility closing costs, and contract termination penalties) to allow equity analysts to differentiate recurring operational profitability from one-off turnaround expenses."
+      },
+      "examples": {
+        "daily": [
+          "Speculation regarding an impending company-wide restructuring spread across the office after regional managers were summoned to an emergency headquarters meeting.",
+          "Following the operational restructuring, her regional division was merged with the customer logistics department on the second floor.",
+          "The electronics retailer announced an extensive restructuring that will shutter forty underperforming storefronts before the winter holiday season."
+        ],
+        "business": [
+          "The multinational manufacturer recorded a $65 million pre-tax restructuring charge related to severance outlays and factory lease terminations.",
+          "Creditors approved a consensual debt restructuring plan that converted $120 million in senior notes into preferred equity, extending repayment deadlines by five years.",
+          "The board hired an independent turnaround consultancy to lead the comprehensive restructuring of its European distribution network."
+        ],
+        "conversation": [
+          "\"Did the bondholders agree to the proposed debt restructuring?\" / \"Yes, they approved the proposal after management offered higher equity participation in the restructured entity.\"",
+          "\"Why are two complete floors of the corporate campus being vacated?\" / \"The enterprise is undergoing a major operational restructuring to centralize administrative functions into our regional hub.\"",
+          "\"How will the factory closures be reported in next month's earnings presentation?\" / \"Our CFO confirmed that all decommission expenses will be itemized under non-recurring restructuring costs.\""
+        ],
+        "collocations": [
+          "corporate restructuring",
+          "debt restructuring",
+          "operational restructuring",
+          "restructuring charge",
+          "restructuring plan",
+          "undergo a restructuring"
         ]
+      },
+      "wordFamily": {
+        "noun": "restructuring",
+        "verb": "restructure",
+        "adjective": "restructured",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "corporate restructuring turnaround chart organizational realignment executive conference room",
+        "imageDescription": "A corporate conference room where senior turnaround consultants review a wall-mounted digital Gantt chart and financial flow diagrams outlining corporate restructuring, debt renegotiation milestones, and asset divestiture schedules.",
+        "mnemonic": "RE-STRUCTURING: Rebuilding a company's financial and operational STRUCTURE from the ground up so it won't collapse under heavy debt!"
+      },
+      "video": {
+        "description": "A corporate finance documentary tracking how a legacy manufacturing conglomerate successfully navigated a multi-billion-dollar operational and debt restructuring to avert liquidation and regain solvency."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "In response to protracted revenue shortfalls across overseas branches, the board of directors retained an advisory firm to oversee comprehensive corporate _____.\n(A) restructure\n(B) restructured\n(C) restructuring\n(D) restructures",
+        "tips": "In TOEIC Part 5, parts-of-speech questions frequently test whether test-takers can identify the appropriate noun following a modifying adjective such as 'corporate'. Although 'restructure' can function as an informal countable noun, 'restructuring' (choice C) is the established, formally recognized corporate finance noun representing the continuous process or program of organizational realignment. Choices (A), (B), and (D) represent verbal inflectional forms."
+      },
+      "synonyms": [
+        "corporate reorganization",
+        "debt rescheduling",
+        "operational overhaul",
+        "recapitalization",
+        "corporate realignment",
+        "balance sheet restructuring"
+      ],
+      "antonyms": [
+        "status quo preservation",
+        "corporate inertia",
+        "non-intervention"
+      ],
+      "relatedWords": [
+        "turnaround",
+        "divestiture",
+        "insolvency",
+        "debt-for-equity swap",
+        "covenant",
+        "liquidation",
+        "haircut"
+      ]
     },
     {
-        "id": "dining-058",
-        "word": "beer",
-        "partOfSpeech": ["noun"],
-        "category": "dining",
-        "level": "essential",
-        "toeicFrequency": 9,
-        "pronunciation": {
-            "ipa": "/bɪər/",
-            "syllableBreakdown": "beer",
-            "stressPattern": "single stressed syllable (BEER)",
-            "commonMistakes": "Learners often confuse the centering diphthong or rhotic vowel /ɪər/ with /bɛər/ ('bear' or 'bare'), /bɪəd/ ('beard'), or /bɜːrd/ ('bird'). Pay close attention to keeping the vowel close and front /ɪ/ gliding toward /ər/. Non-native speakers also occasionally confuse 'beer' (an umbrella term for fermented malt grain beverages) with 'ale' (a top-fermented subtype of beer) or 'cider' (fermented apple juice)."
-        },
-        "etymology": {
-            "origin": "Old English 'bēor', cognate with Old Frisian 'biār', Old Saxon 'bior', Middle Dutch 'bier', and Old High German 'bior' (modern German 'Bier'). Originates from Proto-West Germanic *beura- (beer, malt beverage), traditionally traced to Proto-Indo-European *bʰer- ('to brew, bubble, boil') or related to Vulgar Latin 'biber' ('a beverage, drink', from Classical Latin 'bibere' [to drink]).",
-            "rootWord": "Proto-West Germanic *beura- (brewed malt beverage) / Old English 'bēor'",
-            "rootMeaning": "'beura-' — fermented malt drink brewed from grain, water, and yeast; historically differentiated from ancient unhopped ale",
-            "evolution": "In medieval England, 'ale' was unhopped, fermented purely from malted grain, water, and yeast, while 'bēor' referred to a sweeter, fermented malt drink. During the 14th and 15th centuries, Flemish and Dutch brewers introduced hops to the British Isles, yielding a bitter, aromatic, and bacterially stable beverage called 'beer'. By the 16th and 17th centuries, hoppy brewing became standard, and 'beer' transformed into the universal category term encompassing lagers, ales, porters, and stouts across international beverage industries.",
-            "relatedLanguages": [
-                "German: Bier",
-                "Dutch: bier",
-                "French: bière",
-                "Italian: birra",
-                "Spanish: cerveza (derived from Latin 'cervisia', unlike French/Italian which borrowed Germanic 'bier')"
-            ],
-            "firstRecordedUse": "Before 1000 (Old English 'bēor', in early herbal, medical, and monastic texts)"
-        },
-        "deepMeaning": {
-            "coreConcept": "An alcoholic beverage brewed by steeping malted cereal grains (principally barley, wheat, rye, or oats) in hot water, boiling the resulting wort with hops for bitterness and aroma, and fermenting the liquid with brewer's yeast to produce alcohol and natural carbonation.",
-            "spatialContext": "Hotel lounge bars, casual dining bistros, microbreweries, convention center reception lounges, and outdoor company picnic pavilions.",
-            "temporalContext": "Commonly served during late-afternoon happy hours (typically 5:00 PM – 7:00 PM), post-conference networking receptions, dinner services, and weekend social mixers.",
-            "emotionalTone": "Convivial, relaxed, informal-to-semiformal, sociable, and collegial.",
-            "formalityLevel": "neutral",
-            "connotation": "positive"
-        },
-        "nativeMindset": {
-            "howNativesThink": "In native English-speaking corporate and social environments, 'grabbing a beer' or 'having a cold beer' is the universally understood shorthand for informal decompression, camaraderie, and low-stakes professional networking. Unlike hard liquor, beer carries a casual, approachable, and social connotation. In modern dining, the global craft beer renaissance has elevated beer to an artisanal beverage evaluated for tasting notes, food pairings (like wine), and regional provenance.",
-            "mentalImage": "A chilled, condensation-slick glass of golden amber draft beer topped with a thick collar of creamy white foam, resting on a polished mahogany pub counter beside a platter of gourmet appetizers during an evening networking session.",
-            "whenToUse": "Use when referencing fermented malt beverages, beverage service packages, restaurant drink menus, casual after-work gatherings, or catering bar setups (e.g., 'The registration package includes two complimentary drink tickets valid for draft beer, house wine, or soft drinks').",
-            "whenNotToUse": "Do not use 'beer' in formal legal, statutory, or compliance documents that require technical phrasing (use 'malt alcoholic beverages'). Avoid assuming all colleagues consume alcohol; when proposing social outings, inclusive terms like 'after-work drinks' or 'joining us for refreshments' are preferred in professional corporate culture.",
-            "culturalContext": "In North American, British, German, and Australasian corporate life, Friday afternoon 'desk beers' or offsite pub socials are longstanding team-building traditions. In TOEIC Parts 3 and 7, dialogues and announcements frequently involve banquet contracts featuring 'beer and wine bars', company anniversary celebrations at local craft breweries, or catering drink orders."
-        },
-        "examples": {
-            "daily": [
-                "After spending all Saturday afternoon working in the yard, he relaxed on the porch with a cold glass of beer.",
-                "The downtown bistro features an extensive beverage menu showcasing twelve distinct varieties of regional craft beer.",
-                "Would you prefer a light pilsner or a rich, dark beer to go with your smoked barbecue platter?"
-            ],
-            "business": [
-                "Admission to the corporate alumni mixer includes two drink vouchers redeemable for craft beer, house wine, or non-alcoholic beverages.",
-                "A regional microbrewery signed a multi-year partnership with the convention center to serve its locally crafted beer during trade exhibitions.",
-                "Human resources updated the employee handbook to clarify that moderate consumption of beer and wine is permissible only at company-sponsored evening events."
-            ],
-            "conversation": [
-                "\"A few members of the marketing team are meeting at the corner pub for a beer to celebrate finishing the client audit—would you like to join us?\" \"That sounds great; I just need to send one final email and I'll meet you over there.\"",
-                "\"What beverage options did you select for the post-symposium reception?\" \"We chose the standard beverage package, which includes imported and domestic draft beer, red and white wines, and sparkling water.\"",
-                "\"Could you recommend a beverage that pairs well with the spicy grilled shrimp?\" \"Certainly, our pale ale beer has bright citrus notes that balance the spice of the seafood beautifully.\""
-            ],
-            "collocations": [
-                "craft beer",
-                "draft beer",
-                "cold beer",
-                "beer tap",
-                "local beer",
-                "bottled beer"
-            ]
-        },
-        "wordFamily": {
-            "noun": "beer",
-            "verb": "",
-            "adjective": "beery",
-            "adverb": ""
-        },
-        "visual": {
-            "imageKeyword": "craft beer pint glass bar counter tap foam restaurant",
-            "imageDescription": "A clear pint glass filled with glowing golden craft beer, exhibiting fine effervescent bubbles and a dense crown of white foam, positioned on a dark wooden bar counter with illuminated brass taps in the blurred background.",
-            "mnemonic": "BEER brings CHEER at the end of the year: barley, hops, and water clear!"
-        },
-        "video": {
-            "description": "An instructional hospitality beverage management video detailing how banquet bar staff tap kegs, regulate CO2 pressure, and pour draft beer with the optimal foam collar for corporate gala receptions."
-        },
-        "toeicContext": {
-            "commonParts": [2, 3, 4, 7],
-            "exampleQuestion": "Complimentary refreshments, including soft drinks, chilled mineral water, and locally brewed _____, will be served during the networking session in the courtyard.\n(A) beer\n(B) beers\n(C) beery\n(D) beering",
-            "tips": "In TOEIC Part 5, names of beverages (such as beer, wine, coffee, tea) act as uncountable mass nouns when denoting the beverage category in parallel lists ('soft drinks, chilled mineral water, and locally brewed beer'). Choice (A) is correct. While (B) 'beers' can colloquially mean individual glasses or servings, standard professional written English utilizes the singular mass noun. (C) 'beery' is an adjective, and (D) 'beering' is a non-existent verb form."
-        },
-        "synonyms": [
-            "brew",
-            "ale",
-            "lager",
-            "malt beverage",
-            "fermented drink"
+      "id": "finance-247",
+      "word": "retainer",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/rɪˈteɪ.nɚ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/retainer--_us_1.mp3",
+        "syllableBreakdown": "re-tain-er",
+        "stressPattern": "○●○",
+        "commonMistakes": "Learners often mispronounce the unstressed initial syllable with a tense /iː/ (*REE-tain-er*) instead of the reduced short vowel /rɪ/, or misplace the primary stress onto the initial syllable. In corporate finance and professional services billing, non-native speakers frequently confuse a 'retainer' (an upfront advance fee deposited to secure priority access or drawn down against hourly services) with a 'contingency fee' (remuneration paid strictly upon achieving a specific legal or financial outcome) or a 'commission' (a percentage-based cut of a completed sales transaction)."
+      },
+      "etymology": {
+        "origin": "Derived from the Middle English verb 'reteinen' / 'retainen', borrowed from Anglo-Norman French 'reteigner' and Old French 'retenir' ('to hold back, keep in service, restrain'), which stems from Latin 'retinēre' ('to hold fast, keep back, maintain'), composed of the prefix 're-' (back) and 'tenēre' (to hold, grasp). The English agent noun suffix '-er' was appended during the Middle English period.",
+        "rootWord": "Latin retinēre (to hold back, restrain, keep in service) + Latin tenēre (to hold)",
+        "rootMeaning": "'That which holds, secures, or binds a professional in continuous service to a client'",
+        "evolution": "In 14th-century feudal England, a 'retainer' denoted a gentleman follower, domestic dependent, or knight bound to a nobleman through formal indentures of livery and maintenance. By the 16th century (c. 1540s), the English legal fraternity repurposed the term to describe the preliminary fee paid by a litigant to engage a barrister, which legally precluded that barrister from advising the opposing party. During the 19th and 20th centuries, the term broadened into standard corporate finance, management consulting, public relations, and investment banking to denote advance deposits or recurring subscription fees paid to guarantee professional advisory availability.",
+        "relatedLanguages": [
+          "French: provision pour honoraires (advance fee) / convention d'honoraires",
+          "Spanish: provisión de fondos / anticipo de honorarios / iguala",
+          "German: Honorarvorschuss (m.) / Bereitstellungshonorar (n.) / Vorschuss (m.)",
+          "Italian: acconto su parcella / fondo spese / compenso pattuito"
         ],
-        "antonyms": [],
-        "relatedWords": [
-            "brewery",
-            "hops",
-            "malt",
-            "fermentation",
-            "tap",
-            "pub",
-            "bartender"
+        "firstRecordedUse": "Late 14th century (c. 1380 for feudal dependents); mid-16th century (c. 1540s for legal retainers and retaining fees)"
+      },
+      "deepMeaning": {
+        "coreConcept": "An advance monetary deposit or recurring fee paid to a professional service provider (such as an attorney, management consultant, public relations agency, or boutique investment banker) to secure their ongoing availability, reserve their professional capacity, and serve as a pre-funded credit balance against future billable hours.",
+        "spatialContext": "Corporate law firm partner offices, boutique investment banking advisory suites, enterprise legal department billing portals, client conference suites, and corporate accounting departments.",
+        "temporalContext": "Execution of professional engagement letters, monthly recurring billing cycles, milestone retainers in mergers and acquisitions advisory mandates, and fiscal year-end retainer replenishments.",
+        "emotionalTone": "Professional, fiduciary, reassuring, contractual, and committed.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers distinguish between two primary usages: the physical payment ('we wired a $15,000 retainer') and the operational status ('we keep an elite labor law firm on retainer'). Having an expert firm 'on retainer' communicates corporate sophistication, proactive risk management, and prestige—it means when a crisis erupts, immediate counsel is already legally bound to assist without having to negotiate fees, undergo conflict clearance, or risk having the rival firm hire them first.",
+        "mentalImage": "A corporate general counsel signing an engagement agreement at an executive desk, beside a wire transfer confirmation indicating a $30,000 upfront retainer deposited into an attorney escrow trust account.",
+        "whenToUse": "Use when describing upfront deposits or recurring monthly fees paid to lawyers, consultants, accountants, lobbyists, or financial advisers to ensure dedicated availability or cover anticipated billable work.",
+        "whenNotToUse": "Do not use for routine commercial product down payments (use 'deposit' or 'down payment'), standard employee wage withholdings, or orthodontic dental devices unless specifically writing in a medical context.",
+        "culturalContext": "Under legal ethics rules across common law jurisdictions (such as the American Bar Association Model Rules), a client retainer must be deposited directly into a designated client trust account (IOLTA in the US) and cannot be transferred to the firm's operating revenue until services are rendered and an itemized billing invoice is issued."
+      },
+      "examples": {
+        "daily": [
+          "Before reviewing the commercial lease agreement, the independent contract attorney requested an initial retainer of fifteen hundred dollars.",
+          "The freelance digital marketing consultant agreed to oversee the startup's ad campaigns for a fixed monthly retainer of two thousand dollars.",
+          "To protect the family business during property disputes, the founders decided to keep a seasoned local attorney on retainer."
+        ],
+        "business": [
+          "The multinational enterprise remits a monthly retainer of $25,000 to an international public relations agency to manage crisis communications.",
+          "According to the engagement letter, the M&A advisory firm required an upfront retainer that will be credited against the transaction completion fee.",
+          "Corporate accounting guidelines require that unearned retainer balances remain held in an escrow trust account until services are formally invoiced."
+        ],
+        "conversation": [
+          "\"Does our legal department retain outside environmental counsel?\" / \"Yes, we pay a boutique environmental law firm an annual retainer so they are on call for immediate compliance reviews.\"",
+          "\"Why does the advisory firm require payment before starting the feasibility study?\" / \"That initial retainer reserves their senior team and covers early research hours prior to milestone deliverables.\"",
+          "\"What happens to our remaining retainer deposit if negotiations conclude early?\" / \"Per the signed agreement, any unbilled hours left in the trust account will be refunded in full within thirty days.\""
+        ],
+        "collocations": [
+          "on retainer",
+          "retainer fee",
+          "monthly retainer",
+          "upfront retainer",
+          "pay a retainer",
+          "retainer agreement"
         ]
+      },
+      "wordFamily": {
+        "noun": "retainer",
+        "verb": "retain",
+        "adjective": "retained",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "legal retainer agreement signed contract fountain pen escrow deposit check desk",
+        "imageDescription": "A close-up view of an attorney's mahogany desk showing a signed formal engagement contract open to the retainer fee clause, a luxury fountain pen, and a client deposit voucher beside a leather portfolio.",
+        "mnemonic": "RETAINER: You pay a fee in advance to RETAIN their top talent and ensure they are ready to act the moment you call!"
+      },
+      "video": {
+        "description": "A corporate legal billing seminar breaking down the structural differences between evergreen retainer accounts, monthly fixed retainers, and traditional billable-hour drawdowns in enterprise engagements."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Before commencement of legal due diligence on the acquisition, prospective clients must deposit an initial _____ into the firm's trust account.\n(A) retain\n(B) retainer\n(C) retaining\n(D) retained",
+        "tips": "In TOEIC Part 5, questions frequently test your ability to select the correct noun form following an article and adjective ('an initial _____'). 'Retainer' (choice B) is the specific professional noun denoting an advance fee or deposit. Choice (A) is a base verb, (C) is a participle/gerund, and (D) is a past participle or adjective."
+      },
+      "synonyms": [
+        "advance fee",
+        "engagement fee",
+        "holding fee",
+        "advance deposit",
+        "preliminary retainer",
+        "availability fee"
+      ],
+      "antonyms": [
+        "final settlement",
+        "completion payout",
+        "post-payment",
+        "full refund"
+      ],
+      "relatedWords": [
+        "engagement letter",
+        "billable hours",
+        "trust account",
+        "escrow",
+        "contingency fee",
+        "hourly rate",
+        "disbursement"
+      ]
     },
     {
-        "id": "dining-059",
-        "word": "bill",
-        "partOfSpeech": ["noun"],
-        "category": "dining",
-        "level": "essential",
-        "toeicFrequency": 9,
-        "pronunciation": {
-            "ipa": "/bɪl/",
-            "syllableBreakdown": "bill",
-            "stressPattern": "single stressed syllable (BILL)",
-            "commonMistakes": "Learners often pronounce the short lax vowel /ɪ/ as a tense /iː/ (*beel*), or substitute a light 'clear L' [l] or a 'w' sound for the velarized 'dark L' [ɫ] at the coda, making it sound like 'biw' or 'beeyo'. In hospitality vocabulary, learners also struggle with regional differences: 'bill' is standard British and international English for the total restaurant charge, whereas American English predominantly uses 'check' in casual dining, though both are tested in TOEIC."
-        },
-        "etymology": {
-            "origin": "Middle English 'bille' (written document, formal petition, itemized statement of debt), borrowed from Anglo-Norman and Old French 'bille', from Medieval Latin 'bulla' (sealed document, decree, formal edict), originally from Classical Latin 'bulla' (bubble, swelling, round metal amulet or seal). The meaning shifted historically from the round lead seal attached to an official document, to the document itself, to an itemized account of goods supplied or debts owed.",
-            "rootWord": "Latin 'bulla' (seal, bubble) via Medieval Latin 'bulla' / Old French 'bille'",
-            "rootMeaning": "'bulla' — an authenticated, sealed written instrument; an official accounting specifying goods, charges, or legal petitions",
-            "evolution": "In the 14th century, 'bille' signified any formal written instrument, declaration, or legal petition submitted to parliament or a court. By the 15th century, merchant guilds and innkeepers adapted the word to denote an itemized list of charges or merchandise supplied ('bill of parcels', 'bill of charges', 'restaurant bill'). Over centuries, 'bill' branched into legislation (parliamentary bill), finance (bill of exchange, treasury bill), paper currency (ten-dollar bill), and commercial invoicing.",
-            "relatedLanguages": [
-                "French: billet (note, ticket, bank note, historically diminutive of 'bille')",
-                "Spanish: billete (banknote, ticket)",
-                "Italian: bolla (papal seal/edict), biglietto (ticket, note)",
-                "German: Rechnung (the direct conceptual translation for an itemized commercial/dining bill)"
-            ],
-            "firstRecordedUse": "c. 1380 (Middle English, in legal petitions and financial debt accounts)"
-        },
-        "deepMeaning": {
-            "coreConcept": "A printed or written itemized statement presented to a patron or customer specifying the quantities, descriptions, and individual prices of food, beverages, and services consumed in a dining establishment, alongside taxes and gratuities, functioning as a formal demand for settlement.",
-            "spatialContext": "Restaurant dining rooms presented inside padded leather check folios, hotel room-service trays, banquet management billing offices, and corporate expense auditing desks.",
-            "temporalContext": "Presented at the conclusion of a dining service upon customer request ('Could we have the bill, please?'), or billed on monthly net-30 terms for corporate dining accounts.",
-            "emotionalTone": "Commercial, transactional, formal, and precise.",
-            "formalityLevel": "neutral",
-            "connotation": "neutral"
-        },
-        "nativeMindset": {
-            "howNativesThink": "Native speakers regard requesting the bill as the customary conclusion of a restaurant meal. In professional and business travel settings, receiving the bill triggers immediate considerations of expense accountability: ensuring it is itemized, verifying that discounts or corporate vouchers were applied, calculating an appropriate tip, and obtaining a formal receipt for corporate accounting reimbursement. Phrases like 'footing the bill' (paying for everyone) and 'splitting the bill' (sharing expenses equally) are deeply ingrained corporate dining idioms.",
-            "mentalImage": "An open black faux-leather presenter folder resting on a white tablecloth, holding a neatly printed thermal-paper dining slip that lists appetizers, main courses, sparkling water, tax, and a blank tip line beside a company credit card.",
-            "whenToUse": "Use when asking for the dining total at a restaurant or café, reviewing charges for catering services, verifying travel expense reports, or discussing recurring utility or vendor statements (e.g., 'The server brought the bill promptly after clearing our dessert plates').",
-            "whenNotToUse": "Do not confuse 'bill' with 'receipt'. The 'bill' is the demand for payment presented before funds are transferred; the 'receipt' is the written proof of payment issued after the money has been paid. In informal American spoken English, patrons frequently say 'check, please' rather than 'bill, please', though both are universally understood.",
-            "culturalContext": "Business dining etiquette dictates that the host who extended the invitation quietly pays the bill without awkward debate or visible calculation at the table. In TOEIC Parts 3 and 7, dialogues and email correspondence frequently revolve around reviewing dining bills, resolving billing discrepancies, requesting separate checks, or submitting itemized receipts for travel expense reimbursement."
-        },
-        "examples": {
-            "daily": [
-                "When everyone had finished their coffee, we asked the waiter for the bill so we could catch our evening train.",
-                "The three coworkers decided to split the lunch bill evenly rather than having the cashier ring up separate orders.",
-                "She checked the restaurant bill carefully and noticed that they had accidentally charged her for two desserts instead of one."
-            ],
-            "business": [
-                "The corporate finance policy stipulates that employees must submit the detailed, itemized dining bill alongside the credit card receipt for expense reimbursement.",
-                "Our managing director offered to foot the dinner bill as a gesture of appreciation for the visiting overseas delegates.",
-                "The catering department issued an invoice bill for the executive luncheon, with payment terms set at net thirty days."
-            ],
-            "conversation": [
-                "\"Excuse me, could we have the bill whenever you're ready?\" \"Certainly, sir. Will you be paying together, or would you like me to split it onto separate cards?\"",
-                "\"Did you review the catering bill for Friday's client luncheon?\" \"Yes, everything looks accurate except for the beverage count, which includes six extra bottles of sparkling water.\"",
-                "\"Can I charge this business dinner directly to the corporate account?\" \"Only if the restaurant has a billing arrangement with us; otherwise, pay with your company credit card and save the itemized bill.\""
-            ],
-            "collocations": [
-                "foot the bill",
-                "split the bill",
-                "itemized bill",
-                "restaurant bill",
-                "pay the bill",
-                "request the bill"
-            ]
-        },
-        "wordFamily": {
-            "noun": "bill",
-            "verb": "bill",
-            "adjective": "billable",
-            "adverb": ""
-        },
-        "visual": {
-            "imageKeyword": "restaurant bill check presenter credit card dining receipt",
-            "imageDescription": "A sleek black leather check presenter folder open on a restaurant table, revealing an itemized dining bill listing food items, sales tax, and total balance next to a corporate platinum credit card and a silver pen.",
-            "mnemonic": "A BILL is a formal BILL-board of charges: look before you leap, check the bill before you weep!"
-        },
-        "video": {
-            "description": "A fine-dining hospitality service training video demonstrating the discreet presentation of the bill folio to the host, handling split payments, and generating itemized merchant receipts."
-        },
-        "toeicContext": {
-            "commonParts": [2, 3, 4, 7],
-            "exampleQuestion": "Corporate travelers must retain the original itemized _____ from all business meals in order to qualify for full reimbursement under company policy.\n(A) bill\n(B) bills\n(C) billing\n(D) billable",
-            "tips": "Following the singular definite article 'the' and adjectives 'original itemized', a singular countable noun is needed to represent the individual dining statement. Choice (A) 'bill' is correct. Choice (B) 'bills' is plural; Choice (C) 'billing' refers to the invoicing process or accounting operation; and Choice (D) 'billable' is an adjective (e.g., 'billable hours')."
-        },
-        "synonyms": [
-            "check",
-            "invoice",
-            "statement of charges",
-            "account",
-            "reckoning",
-            "tab"
+      "id": "finance-248",
+      "word": "return on asset",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/rɪˈtɝːn ɑːn ˈæs.et/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/return_on_asset--_us_1.mp3",
+        "syllableBreakdown": "re-turn on as-set",
+        "stressPattern": "○● ○ ●○",
+        "commonMistakes": "Learners frequently mispronounce the noun 'asset' by voicing the medial 's' as /z/ (*az-zet*) rather than the correct unvoiced alveolar fricative /s/ (/ˈæs.et/), or placing primary stress on the wrong syllable in 'return'. In financial analysis, non-native speakers commonly conflate 'return on asset' (ROA, which evaluates overall managerial asset efficiency irrespective of capital financing structure) with 'return on equity' (ROE, which measures profitability solely relative to shareholders' equity) or 'return on investment' (ROI, which measures gain relative to a specific capital outlay)."
+      },
+      "etymology": {
+        "origin": "A composite financial term formed from 'return' (from Anglo-Norman 'retourner' / Old French 'retorner', 'to come back, yield an accounting or profit', from Latin 'retornāre', from 're-' 'back' + 'tornāre' 'to turn on a lathe'), the preposition 'on' (Old English 'on/an'), and 'asset' (from Anglo-Norman 'asez' / Old French 'assez', 'enough, sufficient', from Vulgar Latin '*ad satis' / Latin 'ad satis', 'to sufficiency').",
+        "rootWord": "Latin retornāre (to turn back, yield) + Latin ad satis (to sufficiency, enough goods to satisfy obligations)",
+        "rootMeaning": "'The profit or financial yield returned upon the total sufficient economic property controlled by an organization'",
+        "evolution": "The noun 'assets' entered English legal jurisprudence via Anglo-Norman during the 16th century, designating property in the hands of an executor sufficient to discharge debts. 'Return' in the sense of financial gain emerged in mercantile English by the 18th century. In 1914–1919, Donaldson Brown, an electrical engineer and financial officer at the DuPont Corporation, developed the DuPont Model (DuPont Analysis), mathematically decomposing 'return on assets' (ROA) into operating profit margin multiplied by total asset turnover. This breakthrough institutionalized return on asset as the premier benchmark for evaluating internal operational efficiency across global corporate finance.",
+        "relatedLanguages": [
+          "French: rentabilité des actifs (f.) / rendement des actifs (m.)",
+          "Spanish: rentabilidad sobre activos (f.) / rendimiento sobre activos (m.)",
+          "German: Gesamtkapitalrentabilität (f.) / Gesamtkapitalrendite (f.) / Asset-Rendite",
+          "Italian: redditività del capitale investito (f.) / rendimento delle attività (m.)"
         ],
-        "antonyms": [],
-        "relatedWords": [
-            "receipt",
-            "gratuity",
-            "tip",
-            "subtotal",
-            "expense report",
-            "reimbursement",
-            "voucher"
-        ]
-    },
-    {
-        "id": "dining-060",
-        "word": "biscuit",
-        "partOfSpeech": ["noun"],
-        "category": "dining",
-        "level": "intermediate",
-        "toeicFrequency": 8,
-        "pronunciation": {
-            "ipa": "/ˈbɪs.kɪt/",
-            "syllableBreakdown": "bis-cuit",
-            "stressPattern": "primary stress on the first syllable (BIS-cuit)",
-            "commonMistakes": "Learners frequently mispronounce the silent 'ui' as /kjuːɪt/ or /kwɪt/ (*bis-kweet* or *bis-kyoot*). The digraph 'ui' is pronounced as a simple short /kɪt/. A major lexical challenge is the transatlantic divergence: in British and Commonwealth English, a 'biscuit' is a crisp, flat baked treat (what Americans call a 'cookie' or 'cracker'), whereas in American English, a 'biscuit' is a soft, flaky, leavened quick bread typically served warm with butter or savory dishes at breakfast."
-        },
-        "etymology": {
-            "origin": "Middle English 'bisquite', borrowed from Old French 'bescuit' (modern French 'biscuit'), derived from Medieval Latin 'biscoctus', from Classical Latin 'bis' ('twice') + 'coctus' (past participle of 'coquere', 'to cook' or 'to bake'). The term originally described hard, dry flat bread that was baked twice to eliminate all moisture so it could be stored indefinitely for military campaigns and long sea voyages.",
-            "rootWord": "Latin 'bis' (twice) + 'coctus' (cooked, baked, from 'coquere' [to cook])",
-            "rootMeaning": "'bis-coctus' — baked twice; dehydrated durable bread crafted to resist spoilage on extended journeys",
-            "evolution": "In ancient Rome and medieval Europe, 'panis biscoctus' served as standard naval rations ('hardtack' or 'ship's biscuit'). During the Renaissance, with increased availability of butter, sugar, and fine flour, British bakers adapted the technique to create crisp, sweet or savory treats eaten with afternoon tea. Meanwhile, in 19th-century North America, the term was applied to a quick-leavened, single-baked bread made with baking powder or soda, buttermilk, and butter or lard, resulting in a soft, flaky morning bread roll.",
-            "relatedLanguages": [
-                "French: biscuit (cookie, cracker, dry pastry, sponge cake base)",
-                "Italian: biscotto (twice-baked cookie/biscuit; direct reflex of 'biscoctus')",
-                "Spanish: bizcocho (sponge cake, sweet pastry, or biscuit)",
-                "German: Biskuit (sponge cake / ladyfinger; German uses 'Keks' for British biscuits)"
-            ],
-            "firstRecordedUse": "Early 14th century (Middle English, appearing in royal naval provisioning accounts as 'bisquite')"
-        },
-        "deepMeaning": {
-            "coreConcept": "A small flour-based baked food item characterized by two primary regional culinary standards: in British and Commonwealth tradition, a flat, dry, crisp sweet or savory confection served as a tea accompaniment or snack; in North American tradition, a soft, tender, flaky leavened quick bread roll served warm with butter, preserves, or savory breakfast fare.",
-            "spatialContext": "Hotel breakfast buffet stations, conference breakroom beverage counters, traditional afternoon tea trays, executive hospitality coffee stations, and bakery display cases.",
-            "temporalContext": "Served during morning continental breakfasts (7:00 AM – 9:00 AM), mid-morning coffee breaks (10:00 AM – 10:30 AM), and traditional afternoon tea services (3:30 PM – 5:00 PM).",
-            "emotionalTone": "Comforting, warm, welcoming, and hospitable.",
-            "formalityLevel": "neutral",
-            "connotation": "positive"
-        },
-        "nativeMindset": {
-            "howNativesThink": "Native speakers instantly interpret 'biscuit' through their regional cultural lens. A British speaker reflexively associates it with a cup of tea, digestive biscuits, or shortbread during an office tea break—where offering 'a cup of tea and a biscuit' is the gold standard of welcoming hospitality. A North American speaker instinctively envisions a warm, flaky, golden-crusted quick bread fresh from the oven, served with whipped honey butter or alongside scrambled eggs. In international business contexts, native speakers are mindful of these distinct culinary traditions.",
-            "mentalImage": "A tiered catering tray prepared for a conference coffee intermission, displaying freshly baked, golden-brown flaky buttermilk biscuits alongside glass dishes of sweet cream butter, strawberry preserves, and orange blossom honey.",
-            "whenToUse": "Use when referencing breakfast breads, conference coffee break refreshments, afternoon tea assortments, or bakery goods on catering orders (e.g., 'The catering service will provide hot coffee, tea, and an assortment of fresh biscuits during the morning workshop break').",
-            "whenNotToUse": "In North American dining, do not use 'biscuit' when you intend to describe a sweet, chewy chocolate-chip baked treat (use 'cookie'). Conversely, when dining in the UK, do not expect a warm bread roll if you order a biscuit with your meal.",
-            "culturalContext": "In British business life, serving tea and biscuits is a foundational social ritual when welcoming clients or job candidates to an office. In North American corporate hospitality, hot biscuits and breakfast spreads are staple offerings at breakfast seminars and hotel conference buffets. In TOEIC Part 7, meeting agendas, hotel breakfast descriptions, and catering invoices frequently feature biscuits in refreshment schedules."
-        },
-        "examples": {
-            "daily": [
-                "She sat down by the window with a fresh cup of tea and a chocolate-covered biscuit.",
-                "The server brought a basket of warm buttermilk biscuits to our table along with whipped honey butter.",
-                "He packed a small tin of savory oat biscuits in his briefcase to snack on during his train commute."
-            ],
-            "business": [
-                "The corporate events manager arranged for coffee, herbal tea, and gourmet biscuits to be served outside the auditorium during the mid-morning intermission.",
-                "The hotel's executive continental breakfast includes freshly baked buttermilk biscuits, seasonal fruit, and Greek yogurt.",
-                "An artisan bakery secured a supply agreement to provide branded gift boxes of butter biscuits for the corporate holiday gift catalog."
-            ],
-            "conversation": [
-                "\"Would you care for a biscuit while we wait for the client to join the video conference?\" \"Thank you very much; the ginger biscuit looks wonderful with this green tea.\"",
-                "\"Does the hotel catering package provide breakfast items for early arrivals?\" \"Yes, there is a hot breakfast buffet offering scrambled eggs, link sausages, and warm buttermilk biscuits with preserves.\"",
-                "\"Should we order pastries or biscuits for the afternoon break at the seminar?\" \"Let's order a mixed platter of gourmet biscuits; they're less messy for attendees who are walking around and networking.\""
-            ],
-            "collocations": [
-                "buttermilk biscuit",
-                "tea and biscuits",
-                "biscuit tin",
-                "digestive biscuit",
-                "warm biscuit",
-                "assorted biscuits"
-            ]
-        },
-        "wordFamily": {
-            "noun": "biscuit",
-            "verb": "",
-            "adjective": "",
-            "adverb": ""
-        },
-        "visual": {
-            "imageKeyword": "freshly baked buttermilk biscuits breakfast catering table butter",
-            "imageDescription": "A stack of freshly baked, golden-brown flaky buttermilk biscuits with distinct flaky layers, arranged on a rustic white ceramic plate alongside a small dish of whipped butter and fresh blackberries on a sunny table.",
-            "mnemonic": "BIS-CUIT means 'BIS' (twice) + 'CUIT' (cooked): originally baked twice for sailors, now baked once for morning savor!"
-        },
-        "video": {
-            "description": "A hotel catering culinary demonstration video showing a pastry chef cutting and baking tall, multi-layered buttermilk biscuits for a large-scale corporate convention breakfast service."
-        },
-        "toeicContext": {
-            "commonParts": [3, 4, 7],
-            "exampleQuestion": "Complimentary morning refreshments, including freshly brewed Colombian coffee, herbal teas, and assorted _____, will be available in the reception lobby starting at 8:00 A.M.\n(A) biscuit\n(B) biscuits\n(C) biscuity\n(D) biscuiting",
-            "tips": "In TOEIC Part 5 and Part 7 texts, the adjective 'assorted' (meaning consisting of various sorts or kinds) modifies a plural countable noun. Therefore, the plural noun form (B) 'biscuits' is grammatically correct. Choice (A) 'biscuit' is singular; Choice (C) 'biscuity' is an informal adjective; and Choice (D) 'biscuiting' is a non-existent verb form."
-        },
-        "synonyms": [
-            "cookie (British biscuit equivalent)",
-            "cracker (for dry/savory biscuit)",
-            "scone (closely related British quick bread)",
-            "quick bread",
-            "baked treat",
-            "pastry"
+        "firstRecordedUse": "Early 20th century (c. 1919 in DuPont corporate financial control manuals and subsequent American accounting literature)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A fundamental financial profitability metric—expressed as a percentage—that measures the net income generated relative to a corporation's total average balance-sheet assets, demonstrating how productively executive management deploys resources to produce bottom-line earnings.",
+        "spatialContext": "Equity research analyst workstations, investment committee conference rooms, corporate treasury financial modeling suites, annual shareholder presentations, and commercial bank credit underwriting desks.",
+        "temporalContext": "Quarterly 10-Q earnings reports, annual 10-K fiscal year-end filings, multi-year capital expenditure appraisals, and executive performance bonus evaluations.",
+        "emotionalTone": "Analytical, objective, quantitative, rigorous, and performance-oriented.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native corporate finance professionals, 'return on asset' (universally known by its acronym ROA) is the purest barometer of operational stewardship. While management can artificially boost Return on Equity (ROE) through aggressive financial leverage and debt-financed share buybacks, Return on Asset cuts through financial leverage gimmicks. It answers the fundamental operational question: For every single dollar locked up in factory machines, office buildings, software licenses, and warehouse inventory, exactly how many cents of clear net profit is management squeezing out?",
+        "mentalImage": "A senior equity analyst scrutinizing a DuPont formula breakdown across three computer monitors, noting that a logistics firm's return on asset jumped from 6.5% to 9.2% due to rapid inventory turnover rather than borrowed debt leverage.",
+        "whenToUse": "Use when evaluating operational productivity, comparing competitive efficiency across firms within capital-intensive industries (such as manufacturing, logistics, or utilities), or conducting corporate valuation modeling.",
+        "whenNotToUse": "Do not use when analyzing individual personal investment returns (use 'return on investment' or 'total return'), or when measuring shareholder capital productivity isolated from debt obligations (use 'return on equity').",
+        "culturalContext": "In Anglo-American capital markets and corporate reporting, benchmark return on asset figures vary dramatically by sector. Software and asset-light consulting firms routinely deliver ROAs exceeding 15% to 20%, whereas asset-heavy businesses like airlines and electric utilities often operate efficiently at ROA levels between 3% and 6% due to massive fixed balance-sheet infrastructure."
+      },
+      "examples": {
+        "daily": [
+          "By selling off idle delivery trucks and leasing smaller warehouses, the regional bakery chain substantially increased its return on asset.",
+          "Before approving the commercial credit line, the loan officer reviewed the manufacturing startup's return on asset over the prior three fiscal quarters.",
+          "In business school, students learned to calculate each retail competitor's return on asset by dividing net profit by total balance-sheet assets."
         ],
-        "antonyms": [],
-        "relatedWords": [
-            "pastry",
-            "bakery",
-            "buttermilk",
-            "flour",
-            "confectionery",
-            "baking powder",
-            "shortbread"
+        "business": [
+          "The chief financial officer highlighted that the company's return on asset expanded by 180 basis points following the automation of its main assembly plants.",
+          "Institutional investors favor logistics operators that maintain an industry-leading return on asset without taking on excessive debt leverage.",
+          "Through rigorous DuPont analysis, equity analysts determined that the firm's improved return on asset was driven primarily by faster inventory turnover."
+        ],
+        "conversation": [
+          "\"Why did the equity analysts praise the airline despite sluggish passenger growth?\" / \"Because their return on asset reached an eight-year high after they retired older, fuel-inefficient aircraft.\"",
+          "\"How does our division's return on asset compare to the industry median?\" / \"We are currently tracking at 8.7%, which puts us in the top quartile of regional industrial suppliers.\"",
+          "\"Will the multi-million-dollar warehouse modernization deliver acceptable results?\" / \"Management expects the efficiency gains to elevate our corporate return on asset by at least two full percentage points.\""
+        ],
+        "collocations": [
+          "calculate return on asset",
+          "average return on asset",
+          "improve return on asset",
+          "return on asset ratio",
+          "annualized return on asset",
+          "benchmark return on asset"
         ]
+      },
+      "wordFamily": {
+        "noun": "return on asset",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "financial analyst audited balance sheet return on assets chart calculator quarterly report",
+        "imageDescription": "An equity research desk displaying an audited financial balance sheet, a financial calculator, and a high-resolution bar graph illustrating five-year historical return on asset performance against industry peers.",
+        "mnemonic": "RETURN ON ASSET: How much net income RETURNS to the company for every dollar of ASSETS invested on its balance sheet!"
+      },
+      "video": {
+        "description": "A corporate accounting masterclass illustrating DuPont analysis, demonstrating how to isolate the exact drivers of return on asset through profit margin and asset turnover metrics."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "By streamlining distribution logistics and divesting underperforming facilities, Harborside Cargo achieved a 9.2% return _____ total assets last fiscal year.\n(A) in\n(B) on\n(C) of\n(D) at",
+        "tips": "In TOEIC Part 5 and Part 6, questions testing business terminology often assess prepositional combinations in standard financial ratios. The established financial expression is 'return on assets' (ROA), parallel to 'return on equity' and 'return on investment'. Therefore, the preposition 'on' (choice B) is the only correct answer. Prepositions like 'in', 'of', and 'at' fail to form the idiomatic financial metric."
+      },
+      "synonyms": [
+        "return on assets",
+        "ROA",
+        "asset efficiency ratio",
+        "asset productivity ratio",
+        "return on total assets",
+        "operating yield on assets"
+      ],
+      "antonyms": [
+        "asset impairment rate",
+        "capital erosion rate",
+        "asset write-down ratio"
+      ],
+      "relatedWords": [
+        "return on equity",
+        "asset turnover",
+        "DuPont analysis",
+        "net income",
+        "total assets",
+        "balance sheet",
+        "capital expenditure"
+      ]
     }
-]
+  ]
+}
 
-output_payload = {"result": {"words": words_data}}
-
-with open("scratch/dining_057_060.json", "w", encoding="utf-8") as f:
-    json.dump(output_payload, f, indent=2, ensure_ascii=False)
-
-print("Saved successfully. Validating structure...")
-
-# Validate schema against finish tool declaration
-required_word_keys = [
+# Validation checks
+required_top_keys = [
     "id", "word", "partOfSpeech", "category", "level", "toeicFrequency",
     "pronunciation", "etymology", "deepMeaning", "nativeMindset",
     "examples", "wordFamily", "visual", "video", "toeicContext",
     "synonyms", "antonyms", "relatedWords"
 ]
 
-pronunciation_req = ["ipa", "syllableBreakdown", "stressPattern", "commonMistakes"]
-etymology_req = ["origin", "rootWord", "rootMeaning", "evolution", "relatedLanguages", "firstRecordedUse"]
-deepMeaning_req = ["coreConcept", "spatialContext", "temporalContext", "emotionalTone", "formalityLevel", "connotation"]
-nativeMindset_req = ["howNativesThink", "mentalImage", "whenToUse", "whenNotToUse", "culturalContext"]
-examples_req = ["daily", "business", "conversation", "collocations"]
-visual_req = ["imageKeyword", "imageDescription", "mnemonic"]
-video_req = ["description"]
-toeicContext_req = ["commonParts", "exampleQuestion", "tips"]
+required_pronunciation = ["ipa", "syllableBreakdown", "stressPattern", "commonMistakes"]
+required_etymology = ["origin", "rootWord", "rootMeaning", "evolution", "relatedLanguages", "firstRecordedUse"]
+required_deepMeaning = ["coreConcept", "spatialContext", "temporalContext", "emotionalTone", "formalityLevel", "connotation"]
+required_nativeMindset = ["howNativesThink", "mentalImage", "whenToUse", "whenNotToUse", "culturalContext"]
+required_examples = ["daily", "business", "conversation", "collocations"]
+required_wordFamily = ["noun", "verb", "adjective", "adverb"]
+required_visual = ["imageKeyword", "imageDescription", "mnemonic"]
+required_video = ["description"]
+required_toeicContext = ["commonParts", "exampleQuestion", "tips"]
 
-for w in words_data:
-    for k in required_word_keys:
-        assert k in w, f"Missing key {k} in word {w['word']}"
-    for k in pronunciation_req:
-        assert k in w["pronunciation"], f"Missing pronunciation key {k} in {w['word']}"
-    for k in etymology_req:
-        assert k in w["etymology"], f"Missing etymology key {k} in {w['word']}"
-    for k in deepMeaning_req:
-        assert k in w["deepMeaning"], f"Missing deepMeaning key {k} in {w['word']}"
-    for k in nativeMindset_req:
-        assert k in w["nativeMindset"], f"Missing nativeMindset key {k} in {w['word']}"
-    for k in examples_req:
-        assert k in w["examples"], f"Missing examples key {k} in {w['word']}"
-    for k in visual_req:
-        assert k in w["visual"], f"Missing visual key {k} in {w['word']}"
-    for k in video_req:
-        assert k in w["video"], f"Missing video key {k} in {w['word']}"
-    for k in toeicContext_req:
-        assert k in w["toeicContext"], f"Missing toeicContext key {k} in {w['word']}"
-    assert w["deepMeaning"]["formalityLevel"] in ["formal", "neutral", "informal"]
-    assert w["deepMeaning"]["connotation"] in ["positive", "neutral", "negative"]
-    assert w["level"] in ["essential", "intermediate", "advanced"]
-    assert len(w["examples"]["daily"]) == 3
-    assert len(w["examples"]["business"]) == 3
-    assert len(w["examples"]["conversation"]) >= 2
-    assert len(w["examples"]["collocations"]) >= 5
-    assert len(w["synonyms"]) >= 4
-    assert len(w["relatedWords"]) >= 5
-
-print("ALL VALIDATION CHECKS PASSED PERFECTLY!")
+for idx, w in enumerate(data["words"]):
+    word_id = w.get("id", f"index-{idx}")
+    for k in required_top_keys:
+        assert k in w, f"Missing {k} in {word_id}"
+    
+    assert w["level"] in ["essential", "intermediate", "advanced"], f"Invalid level in {word_id}"
+    assert w["deepMeaning"]["formalityLevel"] in ["formal", "neutral", "informal"], f"Invalid formalityLevel in {word_id}"
+    assert w["deepMeaning"]["connotation"] in ["positive", "neutral", "negative"], f"Invalid connotation in {word_id}"
+    
+    for pk in required_pronunciation:
+        assert pk in w["pronunciation"], f"Missing pronunciation.{pk} in {word_id}"
+    for ek in required_etymology:
+        assert ek in w["etymology"], f"Missing etymology.{ek} in {word_id}"
+    for dk in required_deepMeaning:
+        assert dk in w["deepMeaning"], f"Missing deepMeaning.{dk} in {word_id}"
+    for nk in required_nativeMindset:
+        assert nk in w["nativeMindset"], f"Missing nativeMindset.{nk} in {word_id}"
+    for exk in required_examples:
+        assert exk in w["examples"], f"Missing examples.{exk} in {word_id}"
+    for wfk in required_wordFamily:
+        assert wfk in w["wordFamily"], f"Missing wordFamily.{wfk} in {word_id}"
+    for vk in required_visual:
+        assert vk in w["visual"], f"Missing visual.{vk} in {word_id}"
+    for vdk in required_video:
+        assert vdk in w["video"], f"Missing video.{vdk} in {word_id}"
+    for tk in required_toeicContext:
+        assert tk in w["toeicContext"], f"Missing toeicContext.{tk} in {word_id}"
+    
+    assert len(w["examples"]["daily"]) == 3, f"daily examples must be 3, got {len(w['examples']['daily'])} in {word_id}"
+    assert len(w["examples"]["business"]) == 3, f"business examples must be 3, got {len(w['examples']['business'])} in {word_id}"
+    assert len(w["examples"]["conversation"]) in [2, 3], f"conversation examples must be 2-3 in {word_id}"
+    assert len(w["examples"]["collocations"]) in [5, 6], f"collocations must be 5-6 in {word_id}"
+    assert len(w["synonyms"]) >= 4, f"synonyms must be >= 4 in {word_id}"
+    assert len(w["relatedWords"]) >= 5, f"relatedWords must be >= 5 in {word_id}"
+    
+print("All validations passed successfully!")
+with open("scratch/words_finance_246_248.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+print("Saved to scratch/words_finance_246_248.json")

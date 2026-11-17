@@ -1,0 +1,365 @@
+import json
+import re
+
+words_data = [
+    {
+        "id": "finance-179",
+        "word": "investment",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/ɪnˈvɛst.mənt/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/investment--_us_1.mp3",
+            "syllableBreakdown": "in-vest-ment",
+            "stressPattern": "Three syllables with primary stress on the second syllable: in-VEST-ment (/ɪnˈvɛst.mənt/, ○●○)",
+            "commonMistakes": "Non-native speakers sometimes shift primary stress onto the initial syllable (*IN-vest-ment*) or articulate the final consonant cluster '-st-m-' too sluggishly, dropping the /t/ entirely or inserting an intrusive epenthetic schwa (*in-vest-e-ment*). In professional business contexts, ensure the second syllable features a crisp short /ɛ/ vowel and the final syllable reduces smoothly to an unstressed schwa /mənt/."
+        },
+        "etymology": {
+            "origin": "Latin investire via Middle French investissement and Italian investire",
+            "rootWord": "investire (compounded from in- 'into, in' + vestire 'to clothe, dress, surround with garments')",
+            "rootMeaning": "'To clothe or envelop'; originally referring to dressing a feudal vassal in ceremonial robes to confer land, title, or sovereign office (feudal investiture)",
+            "evolution": "Derived from Classical Latin vestis ('garment') through the verb investire ('to clothe, adorn, surround'). In medieval feudal law, granting an estate or office was enacted through the symbolic clothing of the recipient in formal robes of state, termed investiture. In 16th-century Italian commercial merchant networks across Venice, Florence, and Genoa, the verb 'investire' shifted metaphorically to describe putting mercantile capital 'into' trading expeditions, ships, or commodities—literally 'clothing' fluid capital in tangible, revenue-generating property. English adopted this financial usage through mercantile charters in the early 17th century (first noted in East India Company documentation circa 1610s), formally distinguishing productive capital deployment from ordinary operational expenditure.",
+            "relatedLanguages": [
+                "French: investissement (investment, capital expenditure)",
+                "Spanish: inversión (investment, asset allocation)",
+                "Italian: investimento (investment, capital placement)",
+                "German: Investition (capital investment, funding placement)",
+                "Portuguese: investimento (investment, asset deployment)"
+            ],
+            "firstRecordedUse": "Early 17th century (circa 1610-1615 in English mercantile charters and colonial trade records)"
+        },
+        "deepMeaning": {
+            "coreConcept": "The strategic commitment of monetary capital, organizational assets, or resources to an enterprise, physical asset, security, or capital expenditure project with the explicit expectation of generating recurring income, dividends, interest yields, or long-term capital appreciation.",
+            "spatialContext": "Asset management trading desks, corporate boardroom capital allocation presentations, venture capital pitch sessions, institutional portfolio management portals, and audited financial statements (specifically categorized under non-current assets and cash flows from investing activities).",
+            "temporalContext": "Multi-year corporate capital budgeting cycles, quarterly earnings release presentations, annual return on investment (ROI) reconciliations, and long-term asset holding periods typically spanning three to ten or more years.",
+            "emotionalTone": "Forward-looking, strategic, calculated, and value-oriented; balances commercial ambition against rigorous risk management.",
+            "formalityLevel": "formal",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native English speakers, 'investment' carries a distinct psychological weight that sharply separates it from 'expense' or 'cost'. An expense represents capital permanently consumed to sustain day-to-day operations; an investment is capital deliberately planted like a seed with the active expectation of a harvest (an ROI, yield, or capital gain). In corporate leadership, labeling an outlay an 'investment' reframes it from a financial burden into a source of competitive advantage. Idiomatically, native speakers also extend the concept to personal development, speaking of an 'investment of time', an 'investment in education', or an 'investment in physical wellness'.",
+            "mentalImage": "An executive committee seated in a sunlit glass boardroom reviewing a live digital heatmap of proposed capital projects, evaluating projected internal rates of return (IRR) across cloud infrastructure modernization and automated distribution centers against the company's weighted average cost of capital.",
+            "whenToUse": "Use when describing capital outlays in securities (equities, bonds), real estate, production machinery, research and development (R&D), or corporate acquisitions where tangible monetary returns or sustained productivity gains are anticipated.",
+            "whenNotToUse": "Do not use 'investment' to describe routine operating expenses (OPEX) like office utility bills, stationery supplies, or janitorial services. Do not confuse with 'speculation' (short-term wagering on price volatility without underlying fundamental cash flow or asset evaluation).",
+            "culturalContext": "In Anglo-American capitalism, 'investment' is culturally celebrated as the primary vehicle for personal wealth accumulation (through employer-matched 401(k) plans and index funds) and economic growth. Public corporations face intense quarterly scrutiny from capital markets to demonstrate high return on invested capital (ROIC) while avoiding value-destroying capital expenditures."
+        },
+        "examples": {
+            "daily": [
+                "Upgrading their home's thermal insulation and installing high-efficiency heat pumps proved to be an excellent investment that reduced annual utility bills by thirty percent.",
+                "Consistently contributing ten percent of each paycheck to a diversified index fund portfolio is widely regarded as one of the most dependable personal investments for retirement.",
+                "She considered the tuition and grueling schedule of the executive MBA program an essential long-term investment in her leadership career."
+            ],
+            "business": [
+                "The semiconductor manufacturer announced a $12 billion capital investment to construct an advanced microchip fabrication plant in central Ohio.",
+                "Before committing funds to the European logistics hub, the finance committee requested a revised sensitivity analysis on the expected return on investment.",
+                "Foreign direct investment in domestic renewable energy infrastructure expanded significantly following the ratification of long-term federal clean energy tax credits."
+            ],
+            "conversation": [
+                "\"Should we lease the new fleet of delivery vans or make a full capital investment to purchase them outright?\" — \"Given our current cash reserves and the favorable tax depreciation schedule, an outright investment will lower our total operating costs over five years.\"",
+                "\"Why has the venture fund delayed closing the Series A financing round?\" — \"They are conducting final technical due diligence to verify that our proprietary software platform justifies their valuation and initial investment.\""
+            ],
+            "collocations": [
+                "capital investment",
+                "return on investment",
+                "foreign direct investment",
+                "investment portfolio",
+                "initial investment",
+                "sound investment"
+            ]
+        },
+        "wordFamily": {
+            "noun": "investment, investor",
+            "verb": "invest",
+            "adjective": "invested, investment-grade",
+            "adverb": "investingly"
+        },
+        "visual": {
+            "imageKeyword": "corporate capital investment strategy growth tablet boardroom",
+            "imageDescription": "A financial strategist in a modern corporate office analyzing an interactive tablet dashboard that displays upward green ROI trajectories, capital allocation pie charts, and asset performance metrics.",
+            "mnemonic": "INVEST-MENT: When you INVEST, you 'clothe' (Latin vestire) your raw cash in productive assets, transforming bare capital into long-term wealth."
+        },
+        "video": {
+            "description": "An instructional Wall Street educational feature demonstrating how multinational corporations evaluate major capital expenditure proposals using discounted cash flow analysis and hurdle rate benchmarks."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                7
+            ],
+            "exampleQuestion": "Due to surging global demand for electric commercial vehicles, Apex Automotive decided to make a substantial ______ in automated assembly lines at its Detroit plant. (A) invest (B) investor (C) investment (D) investable",
+            "tips": "In TOEIC Part 5, test-takers frequently encounter sentence blanks preceded by an indefinite article ('a') and an evaluative adjective ('substantial', 'heavy', 'modest', 'smart'). The blank requires the abstract noun denoting the monetary allocation ('investment'), not the agent who invests ('investor') or the verb root ('invest'). In Part 7 passages, look for financial acronyms like 'ROI' (return on investment) and collocations like 'make an investment in'."
+        },
+        "synonyms": [
+            "capital outlay",
+            "asset allocation",
+            "capital commitment",
+            "financial venture",
+            "endowment",
+            "funding allocation"
+        ],
+        "antonyms": [
+            "divestment",
+            "disinvestment",
+            "divestiture",
+            "expenditure",
+            "capital depletion"
+        ],
+        "relatedWords": [
+            "capital expenditure",
+            "portfolio",
+            "dividend",
+            "yield",
+            "rate of return",
+            "asset class",
+            "equity stake"
+        ]
+    },
+    {
+        "id": "finance-180",
+        "word": "investor",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/ɪnˈvɛs.tər/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/investor--_us_1.mp3",
+            "syllableBreakdown": "in-ves-tor",
+            "stressPattern": "Three syllables with primary stress on the second syllable: in-VES-tor (/ɪnˈvɛs.tər/, ○●○)",
+            "commonMistakes": "Learners frequently over-pronounce the terminal Latin suffix '-or' as a heavy, fully rounded open vowel (*in-vest-OR*); in standard professional English, this suffix is reduced to an unstressed schwa-r /tər/ in North American English or /tə/ in Received Pronunciation. Additionally, some non-native speakers mistakenly spell it with an '-er' (*inwester*) or confuse the person noun 'investor' with the corporate noun 'investment'."
+        },
+        "etymology": {
+            "origin": "Latin investire via Anglo-Norman and Middle English with the Latin agentive suffix -or",
+            "rootWord": "investire (to clothe, endow, establish) + agent suffix -or (one who performs the action)",
+            "rootMeaning": "'One who clothes capital in enterprise'; an individual, legal institution, or syndicate that deploys funds in expectations of financial yield",
+            "evolution": "Derived from the Latin stem investire ('to clothe, surround, confer possession') compounded with the agent noun suffix -or. As public financial markets took shape in 17th- and 18th-century Europe through chartered joint-stock corporations (such as the Dutch and British East India Companies) and organized equity bourses, the noun 'investor' became standardized in commercial English to denote capital providers who acquired lasting equity ownership stakes. This term deliberately contrasted with short-term jobbers, dealers, and speculative brokers. By the late 19th century, corporate law and securities regulation established the statutory rights, fiduciary protections, and reporting mechanisms owed to public investors.",
+            "relatedLanguages": [
+                "French: investisseur (investor, financier)",
+                "Spanish: inversionista / inversor (investor, financial backer)",
+                "Italian: investitore (investor, capital provider)",
+                "German: Investor / Kapitalanleger (investor, asset allocator)",
+                "Portuguese: investidor (investor, venture funder)"
+            ],
+            "firstRecordedUse": "Late 18th to early 19th century (circa 1780s in commercial treatises, gaining widespread adoption in 19th-century corporate railway prospectuses)"
+        },
+        "deepMeaning": {
+            "coreConcept": "An individual person, investment syndicate, or institutional organization (such as a pension fund, mutual fund, hedge fund, or sovereign wealth fund) that commits financial resources to enterprises, debt instruments, or real estate with the primary objective of securing monetary returns through dividends, interest, or equity appreciation.",
+            "spatialContext": "Investor relations suites, annual general meeting (AGM) auditoriums, earnings call webcast studios, venture capital pitch stages, and regulatory reporting filings (e.g., SEC Schedule 13D and Form 13F institutional holding reports).",
+            "temporalContext": "Quarterly earnings conference calls, annual shareholder proxy voting dates, investor day presentations, IPO roadshow schedules, and scheduled quarterly dividend distribution dates.",
+            "emotionalTone": "Discerning, analytical, prudent, and return-driven; exercises vigilant governance and fiduciary oversight over corporate managers.",
+            "formalityLevel": "formal",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native speakers, 'investor' signifies ownership, financial agency, and market leverage. Native speakers instinctively distinguish between 'retail investors' (individual everyday citizens managing personal brokerage or retirement accounts) and 'institutional investors' (massive financial institutions like BlackRock or CalPERS deploying billions). In the corporate realm, investors represent the ultimate stakeholders to whom executive leadership is accountable. The widespread collocation 'Investor Relations' (IR) immediately identifies the specialized corporate team that manages shareholder communication and compliance.",
+            "mentalImage": "A senior portfolio manager representing an institutional pension fund seated in an auditorium during an investor briefing, reviewing a quarterly balance sheet on a tablet while questioning the chief executive officer on capital allocation strategy.",
+            "whenToUse": "Use when referring to parties who supply equity or debt capital to corporations, purchase public stocks and bonds, finance startup ventures, or manage portfolios of yield-bearing assets.",
+            "whenNotToUse": "Do not confuse an 'investor' with a 'lender' or 'creditor' (who provides loans that must be repaid with fixed interest regardless of company performance, without acquiring ownership), a 'customer' (who buys products), or a 'day trader' (who flips contracts rapidly based on intraday price momentum).",
+            "culturalContext": "In American and British corporate governance, 'shareholder value' places the investor at the center of managerial fiduciary responsibility. Millions of private citizens in Anglo-American economies participate directly in financial markets as retail investors through employer-sponsored 401(k) plans, IRAs, and low-cost index funds, making investor sentiment a key barometer of broader economic health."
+        },
+        "examples": {
+            "daily": [
+                "As a cautious retail investor planning for his daughter's education, he chose a low-cost target-date index fund rather than speculative individual stocks.",
+                "She attended an evening wealth-management seminar to understand how novice real estate investors evaluate rental property yields.",
+                "Many everyday investors now utilize smartphone brokerage apps to purchase fractional shares of multinational companies without paying trading commissions."
+            ],
+            "business": [
+                "During the annual earnings broadcast, the chief financial officer addressed institutional investors directly, reaffirming the company's commitment to raising dividend payouts.",
+                "The biotech startup secured thirty-five million dollars in Series B financing from a syndicate of prominent healthcare venture capital investors.",
+                "Shares in the aerospace supplier jumped four percent after a prominent activist investor acquired an eight percent equity stake and pushed for cost restructuring."
+            ],
+            "conversation": [
+                "\"Who is responsible for distributing the proxy voting materials ahead of the shareholder summit?\" — \"That is coordinated directly by our investor relations department on the twentieth floor.\"",
+                "\"How was the presentation received during the initial public offering roadshow?\" — \"Several sovereign wealth funds and institutional investors submitted substantial bids before the book closed.\""
+            ],
+            "collocations": [
+                "institutional investor",
+                "retail investor",
+                "investor relations",
+                "potential investor",
+                "angel investor",
+                "investor confidence"
+            ]
+        },
+        "wordFamily": {
+            "noun": "investor, investment",
+            "verb": "invest",
+            "adjective": "invested, investable",
+            "adverb": "investingly"
+        },
+        "visual": {
+            "imageKeyword": "institutional investor conference earnings call financial presentation",
+            "imageDescription": "A professional institutional investor in business attire taking analytical notes on a tablet during an executive earnings conference in a corporate amphitheater.",
+            "mnemonic": "INVEST-OR: The person (-or) who puts capital IN to become an OWNER receiving returns."
+        },
+        "video": {
+            "description": "A documentary segment exploring how major institutional investors conduct rigorous due diligence, site visits, and governance assessments before committing hundreds of millions of dollars to corporate equity offerings."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                7
+            ],
+            "exampleQuestion": "To bolster ______ confidence following the unexpected departure of the chief executive, the board of directors issued an open letter detailing their corporate restructuring plan. (A) investor (B) invest (C) investable (D) investing",
+            "tips": "In TOEIC Part 5, noun-noun compound phrases are frequently tested. The phrase 'investor confidence' is an authentic, high-frequency corporate term referring to market trust in a company or economy. Notice that 'investor' acts as an attributive noun modifying 'confidence', whereas 'investment confidence' is far less idiomatic. Be vigilant in distinguishing the person noun ('investor') from the action noun ('investment')."
+        },
+        "synonyms": [
+            "shareholder",
+            "equity holder",
+            "financier",
+            "capital backer",
+            "venture funder",
+            "underwriter"
+        ],
+        "antonyms": [
+            "debtor",
+            "borrower",
+            "issuer",
+            "fundraiser",
+            "debt issuer"
+        ],
+        "relatedWords": [
+            "shareholder",
+            "venture capitalist",
+            "stakeholder",
+            "portfolio manager",
+            "limited partner",
+            "angel backer",
+            "equity stake"
+        ]
+    },
+    {
+        "id": "finance-181",
+        "word": "issuance",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/ˈɪʃ.uː.əns/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/issuance--_us_1.mp3",
+            "syllableBreakdown": "is-su-ance",
+            "stressPattern": "Three syllables with primary stress on the first syllable: IS-su-ance (/ˈɪʃ.uː.əns/, ●○○)",
+            "commonMistakes": "Non-native speakers frequently misplace the primary stress onto the middle syllable (*is-SU-ance*), which is incorrect in standard English. In North American business English, the first syllable is typically pronounced with an unvoiced postalveolar fricative /ˈɪʃ-/, sounding like 'ISH-oo-uns', while British speakers often articulate /ˈɪs-ju-əns/. Avoid substituting the verb 'issue' where the formal legal or financial noun 'issuance' is required, and do not confuse 'issuance' (the procedural act of distributing securities or certificates) with 'issue' (a specific controversy, problem, or journal publication)."
+        },
+        "etymology": {
+            "origin": "Anglo-Norman and Old French issue via Latin exire, with the English noun suffix -ance",
+            "rootWord": "issue (from Old French eissue / issue, feminine past participle of issir 'to go out', from Classical Latin exire 'to exit, go forth, emerge')",
+            "rootMeaning": "'The act of sending out or going forth into public circulation'; the formal administrative release of binding documents, currency, or corporate securities",
+            "evolution": "Derived from Classical Latin exire (formed from ex- 'out' + ire 'to go'), which developed in Old French into the verb issir ('to go out') and the noun issue ('an exit, birth, or progeny'). In 13th-century Anglo-Norman administrative law, an 'issue' referred to royal writs, tax mandates, and the circulation of official currency. During the mid-19th century, with the rapid growth of joint-stock banking, rail transit debt financing, and modern capital markets, the specific noun 'issuance' was formed using the Latinate suffix -ance to designate the formal, legally binding act of releasing, registering, and placing securities—such as corporate bonds, stock shares, promissory notes, and letters of credit—into primary market circulation.",
+            "relatedLanguages": [
+                "French: émission (issuance of securities), délivrance (issuance of documents/permits)",
+                "Spanish: emisión (issuance of shares/bonds), expedición (issuance of permits/certificates)",
+                "Italian: emissione (issuance of bonds/stocks), rilascio (issuance of licenses/visas)",
+                "German: Ausgabe / Emission (issuance of securities, banknotes, or authorizations)",
+                "Portuguese: emissão (issuance of debt/equity), expedição (issuance of legal documents)"
+            ],
+            "firstRecordedUse": "Mid-19th century (circa 1850s-1860s in Anglo-American commercial jurisprudence, banking charters, and treasury statutes)"
+        },
+        "deepMeaning": {
+            "coreConcept": "The formal administrative, legal, or financial act of authorizing, registering, creating, and releasing financial instruments (such as common stock, corporate debt, municipal bonds, or commercial paper) or official binding instruments (such as letters of credit, building permits, licenses, or invoices) into authorized circulation or to designated recipients.",
+            "spatialContext": "Debt capital market (DCM) syndicate desks, investment bank underwriting floors, corporate treasury suites, securities depository systems (e.g., DTC / Euroclear), and central banking authority offices.",
+            "temporalContext": "Tied to corporate debt refinancing milestones, favorable interest-rate market windows, board authorization schedules, and regulatory registration cooling-off periods following the filing of a formal prospectus.",
+            "emotionalTone": "Authoritative, formal, procedural, and regulatory; signifies binding institutional execution and strict legal compliance.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native English speakers, 'issuance' is a formal, high-register term specifically reserved for official, structured processes. In finance, it represents the primary market birth of a security—when a corporation or government entity creates and sells new bonds or equity shares to raise capital before secondary trading begins. In global commerce, natives instinctively pair 'issuance' with critical legal documentation, notably 'the issuance of a letter of credit' (L/C) or 'the issuance of an operating license'. Natives consciously differentiate 'issuance' (the procedural act of floating securities or releasing official records) from 'issue' (a problem, topic of debate, or an edition of a magazine).",
+            "mentalImage": "An investment banking syndicate team on a high-floor trading desk monitoring live multi-screen book-building software as institutional subscription orders fill an order book during the final pricing and primary issuance of a $750 million corporate green bond.",
+            "whenToUse": "Use when discussing the primary offering or flotation of corporate bonds, equity shares, municipal notes, letters of credit, promissory bills, visas, certificates, and commercial operating licenses.",
+            "whenNotToUse": "Do not use 'issuance' to refer to a controversy, debate, or problem (use 'issue'). Do not use it for informal, everyday handing out of items (such as distributing flyers or passing around snacks—use 'distribution'). Do not confuse with 'emission' when referring to industrial greenhouse gases or radiant heat.",
+            "culturalContext": "In modern global finance, capital issuance is strictly overseen by securities authorities such as the US Securities and Exchange Commission (SEC) and the UK Financial Conduct Authority (FCA). Corporations must prepare comprehensive prospectuses disclosing audited financial statements and material risks prior to any public issuance. In international supply chain logistics, the formal issuance of an irrevocable Letter of Credit by a commercial bank serves as the universal financial guarantee underpinning cross-border maritime trade."
+        },
+        "examples": {
+            "daily": [
+                "The municipal planning office informed the property developer that the final issuance of the commercial building permit would occur within ten business days.",
+                "Due to a technical backlog at the regional consulate, the issuance of foreign travel visas was delayed by nearly three weeks.",
+                "The university registrar confirmed the prompt issuance of official digital transcripts to graduating seniors applying for graduate programs."
+            ],
+            "business": [
+                "To take advantage of historically low long-term borrowing costs, the corporation executed a $750 million bond issuance to refinance maturing short-term debt.",
+                "Before proceeding with the public issuance of secondary shares, the board of directors submitted an updated shelf registration with regulatory authorities.",
+                "The overseas manufacturer postponed shipping the industrial machinery pending the formal issuance of an irrevocable letter of credit by the buyer's bank."
+            ],
+            "conversation": [
+                "\"Has the debt capital markets syndicate finalized the pricing for our ten-year bond issuance?\" — \"Yes, the order book was twice oversubscribed, allowing us to price twenty-five basis points tighter than initial guidance.\"",
+                "\"Why has our overseas supplier delayed the dispatch of the container cargo?\" — \"Their credit risk team is waiting for formal confirmation regarding the issuance of the bank guarantee.\""
+            ],
+            "collocations": [
+                "bond issuance",
+                "share issuance",
+                "debt issuance",
+                "issuance of permits",
+                "issuance date",
+                "public issuance"
+            ]
+        },
+        "wordFamily": {
+            "noun": "issuance, issue, issuer",
+            "verb": "issue",
+            "adjective": "issued",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "corporate bond issuance capital markets investment bank syndicate desk",
+            "imageDescription": "Corporate treasurers and investment bankers gathered around multiple glowing monitors reviewing bond order books, yield spreads, and prospectus documents during a major debt issuance.",
+            "mnemonic": "IS-SUANCE: The formal act of SUING (issuing) forth new stocks or bonds out (ex-ire) into the financial markets."
+        },
+        "video": {
+            "description": "A comprehensive corporate banking case study examining how an international corporation structures and executes an investment-grade debt issuance, from underwriting syndicate selection to primary market pricing."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                5,
+                6,
+                7
+            ],
+            "exampleQuestion": "The overseas equipment manufacturer will dispatch the container shipment immediately upon ______ of an irrevocable letter of credit by the importer's commercial bank. (A) issuance (B) issuing (C) issued (D) issuer",
+            "tips": "In TOEIC Part 5, sentence structures featuring prepositions such as 'upon', 'prior to', 'following', or 'pending' frequently test nominal derivation. When the blank is followed by a prepositional phrase ('of an irrevocable letter...'), the formal abstract noun 'issuance' is required to denote the administrative release. Avoid choosing the participle/gerund 'issuing' when an established noun exists, and do not confuse the process noun ('issuance') with the agent noun ('issuer')."
+        },
+        "synonyms": [
+            "floatation",
+            "offering",
+            "distribution",
+            "release",
+            "circulation",
+            "promulgation"
+        ],
+        "antonyms": [
+            "redemption",
+            "retirement",
+            "repurchase",
+            "cancellation",
+            "revocation",
+            "withdrawal"
+        ],
+        "relatedWords": [
+            "underwriting",
+            "prospectus",
+            "letter of credit",
+            "debt instrument",
+            "commercial paper",
+            "syndicate",
+            "primary market"
+        ]
+    }
+]
+
+with open("scratch/finance_179_181.json", "w", encoding="utf-8") as f:
+    json.dump({"words": words_data}, f, indent=4, ensure_ascii=False)
+
+print("Saved scratch/finance_179_181.json successfully.")

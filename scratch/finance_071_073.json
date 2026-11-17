@@ -1,0 +1,338 @@
+{
+  "words": [
+    {
+      "id": "finance-071",
+      "word": "annually",
+      "partOfSpeech": [
+        "adverb"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈæn.ju.ə.li/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/annually--_us_1.mp3",
+        "syllableBreakdown": "an-nu-al-ly",
+        "stressPattern": "primary stress on the first syllable (AN-nu-al-ly)",
+        "commonMistakes": "Learners frequently misplace the primary stress onto the second syllable (*an-NU-al-ly*) by false analogy with words like 'continually'. Another common error is slurring or dropping the medial glide vowel (/j/), pronouncing the word as */ˈæn.li/* or */ˈæn.əl.i/*. In written examinations and corporate correspondence, learners frequently misspell the word by omitting either the double 'n' (*anually*) or the double 'l' (*annualy*). Additionally, learners often confuse 'annually' (occurring once every year) with 'biannually' (occurring twice a year) or 'biennially' (occurring once every two years)."
+      },
+      "etymology": {
+        "origin": "Formed in Middle English from the adjective 'annual' (from Old French 'annuel', from Late Latin 'annuālis') combined with the adverbial suffix '-ly' (from Old English '-līce').",
+        "rootWord": "Latin 'annus' (year), derived from Proto-Indo-European *at-no- ('going, year', from the root *at- 'to go, pass').",
+        "rootMeaning": "'Occurring or recurring once every complete cycle of the year'",
+        "evolution": "Entered Middle English in the late 14th century via Anglo-Norman administrative and legal rolls to specify annual land rents, tithes, and royal pensions. In 16th- and 17th-century merchant bookkeeping and maritime trade charters, 'annually' became the formal standard adverb to denote regular fiscal year-end accounting, recurring contractual renewals, and statutory dividend distributions. In contemporary corporate finance, it is the standard temporal marker for 12-month auditing cycles, annual general meetings (AGMs), and annual percentage yield (APY) calculations.",
+        "relatedLanguages": [
+          "French: annuellement",
+          "Spanish: anualmente",
+          "Italian: annualmente",
+          "German: jährlich (loan-word Latinate adjective: annuell)"
+        ],
+        "firstRecordedUse": "Late 14th century (Middle English)"
+      },
+      "deepMeaning": {
+        "coreConcept": "Occurring, calculated, administered, published, or recurring once per calendar or fiscal year; on a year-by-year recurring cadence.",
+        "spatialContext": "Corporate finance departments, investor relations offices, human resources compensation suites, tax accounting firms, and government regulatory filing portals where statutory 12-month statements, annual audits, and yearly budget reallocations take place.",
+        "temporalContext": "Occurring on a fixed 12-month recurring rhythm—typically coinciding with fiscal year-end reconciliations (Q4 close), statutory corporate tax filing deadlines, annual performance reviews, or annual general meetings (AGMs).",
+        "emotionalTone": "Methodical, predictable, regulatory, and routine.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers in corporate and financial domains, 'annually' represents the macro-rhythm of business governance. While operational metrics are monitored daily or weekly and financial statements are released quarterly, true strategic alignment, tax liabilities, compensation adjustments, and balance-sheet audits are benchmarked annually. It signals stability, statutory legitimacy, and systematic cadence rather than sporadic or ad hoc timing.",
+        "mentalImage": "A corporate controller standing beside a conference table covered with audited balance sheets, comparing 12-month multi-year bar charts on an interactive digital display during a year-end board review.",
+        "whenToUse": "Use to describe actions, evaluations, payments, reports, or events that take place once every year, such as annual shareholder meetings, recurring enterprise software licensing renewals, tax filings, or insurance premium installments.",
+        "whenNotToUse": "Do not confuse with 'biannually' (twice a year) or 'biennially' (every two years). Avoid using 'annually' to modify a noun directly (use the adjective 'annual', e.g., 'annual revenue', not *annually revenue*). Do not use 'annually' for erratic or unscheduled events that merely happen to occur once in a given twelve-month span.",
+        "culturalContext": "In Anglo-American corporate governance, the annual cadence is institutionalized by securities regulations (such as SEC Form 10-K filings in the United States and Companies House accounts in the United Kingdom). The annual general meeting (AGM) serves as the primary formal forum where shareholders exercise voting rights on board appointments and executive remuneration."
+      },
+      "examples": {
+        "daily": [
+          "Our neighborhood homeowner association convenes annually every November to review communal maintenance expenditures and vote on next year's dues.",
+          "Many auto insurance policyholders opt to pay their coverage premiums annually rather than monthly to secure a ten-percent policy discount.",
+          "The municipal library holds a massive charitable book sale annually to raise funds for local children's literacy programs."
+        ],
+        "business": [
+          "Independent certified public accountants must audit the multinational corporation's consolidated financial statements annually to ensure compliance with IFRS standards.",
+          "The compensation committee convenes annually in December to evaluate executive key performance indicators and establish merit-based bonus allocations.",
+          "Enterprise software subscription fees are adjusted annually based on the headline consumer price index and tier-based server seat utilization."
+        ],
+        "conversation": [
+          "A: 'How frequently does the internal audit team review our regional branch ledgers?'\nB: 'They conduct sample audits quarterly, but the comprehensive compliance audit is executed annually in September.'",
+          "A: 'Should we offer the new SaaS client an option for monthly billing or insist on an annual upfront contract?'\nB: 'We can offer both, but let's give them a fifteen percent discount if they agree to pay annually in advance.'"
+        ],
+        "collocations": [
+          "review annually",
+          "audit annually",
+          "recur annually",
+          "held annually",
+          "compounded annually",
+          "updated annually"
+        ]
+      },
+      "wordFamily": {
+        "noun": "anniversary / annuity / annual",
+        "verb": "",
+        "adjective": "annual",
+        "adverb": "annually"
+      },
+      "visual": {
+        "imageKeyword": "corporate annual report audit calendar financial review boardroom",
+        "imageDescription": "A clean mahogany boardroom table displaying an open 10-K annual report with glossy revenue infographics beside a desk calendar showing the month of December with the year-end date circled in blue pen.",
+        "mnemonic": "AN-NU-AL-LY: Contains 'ANNUAL' (once a year) + '-LY' (adverb of frequency). Think of an ANNIVERSARY: you celebrate it ANNUALLY, once every twelve months!"
+      },
+      "video": {
+        "description": "A corporate accounting masterclass demonstrating how an enterprise controller reconciles twelve monthly ledgers, closes year-end books, and prepares financial statements audited annually for institutional stakeholders."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "To ensure strict compliance with federal regulatory standards, the chemical manufacturer's safety protocols and emissions data are evaluated _____ by an external environmental inspection agency.\n(A) annual\n(B) annually\n(C) annals\n(D) annuitant",
+        "tips": "In TOEIC Part 5, questions testing the distinction between 'annual' (adjective) and 'annually' (adverb) are common. When a blank sits between a passive verb phrase ('are evaluated _____ by an external agency') or follows a complete clause, an adverb of frequency is required to modify the verb. Choice (B) 'annually' is the correct adverb. Choice (A) 'annual' is an adjective that would require a noun to modify; Choice (C) 'annals' is a plural noun meaning historical records; and Choice (D) 'annuitant' is a noun referring to the recipient of an annuity."
+      },
+      "synonyms": [
+        "yearly",
+        "each year",
+        "per annum",
+        "every year",
+        "once a year"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "fiscal year",
+        "quarterly",
+        "semiannually",
+        "biennial",
+        "annual report",
+        "amortization",
+        "annuity"
+      ]
+    },
+    {
+      "id": "finance-072",
+      "word": "appreciation",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/əˌpriː.ʃiˈeɪ.ʃən/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/appreciation--_us_1.mp3",
+        "syllableBreakdown": "ap-pre-ci-a-tion",
+        "stressPattern": "primary stress on the fourth syllable, secondary stress on the second syllable (ap-pre-ci-A-tion)",
+        "commonMistakes": "Learners frequently stress the second syllable (*ap-PRE-ci-a-tion*) or the third syllable (*ap-pre-CI-a-tion*) instead of the fourth syllable (/-ˈeɪ.ʃən/). In listening and reading comprehension, learners often know 'appreciation' solely as a synonym for gratitude or artistic enjoyment (e.g., 'a gift of appreciation', 'art appreciation'), failing to recognize its critical financial definition as the growth in monetary value of real estate, equities, or foreign exchange. Some learners also drop the fourth vowel syllable, compressing it into four syllables (*ap-pre-shey-shun*) rather than five distinct syllables."
+      },
+      "etymology": {
+        "origin": "From Late Latin 'appretiātiō' (appraisal, valuation), noun of action from the past-participle stem of 'appretiāre' (to set a price to, assess, appraise), composed of the prefix 'ad-' (to, toward) and 'pretium' (price, value, worth).",
+        "rootWord": "Latin 'pretium' (price, value), originating from Proto-Indo-European *pret- / *per- (to sell, traffic, trade, set a price).",
+        "rootMeaning": "'Setting a price upon an item; an incremental growth in market value over time'",
+        "evolution": "In Late Latin and Old French ('apreciation'), the term denoted formal appraisal or tax valuation. During the 17th century in English, it broadened to include intellectual estimation and gratitude. In late 18th- and early 19th-century classical economics (notably in the monetary treatises of David Ricardo and John Stuart Mill), 'appreciation' was formally established as the technical counterpart to 'depreciation'—defining a market-driven increase in the exchange value of currency, land, or capital assets without additional physical investment.",
+        "relatedLanguages": [
+          "French: appréciation",
+          "Spanish: apreciación",
+          "Italian: apprezzamento",
+          "German: Wertsteigerung (or loan term: Appreziation in forex macroeconomics)"
+        ],
+        "firstRecordedUse": "Late 16th century (general appraisal); late 18th century (economic asset value growth)"
+      },
+      "deepMeaning": {
+        "coreConcept": "An increase in the economic market value or purchasing power of an asset, real property, security, or currency over time, driven by market demand, scarcity, favorable inflation trends, or strengthening economic fundamentals.",
+        "spatialContext": "Commercial real estate brokerages, institutional asset management suites, foreign exchange trading desks, central bank monetary policy research units, and private wealth advisory offices.",
+        "temporalContext": "Evaluated across medium- to long-term investment holding periods (e.g., 3- to 30-year property or equity horizons), or tracked instantaneously in real-time currency trading on foreign exchange markets.",
+        "emotionalTone": "Rewarding, favorable, strategic, and analytical.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "In financial discourse, native speakers clearly bifurcate total return into two distinct components: 'cash yield' (dividends or rental income) and 'capital appreciation' (the underlying asset becoming worth more on paper or upon sale). When an investor buys real estate in an emerging tech hub, they accept lower rental yields specifically because they anticipate high capital appreciation. In macroeconomics, when a currency undergoes appreciation, native speakers immediately associate it with cheaper foreign imports but headwinds for domestic exporters.",
+        "mentalImage": "An institutional portfolio manager presenting a multi-line performance chart to trustees, highlighting how an allocation to prime urban logistics centers generated sixteen percent capital appreciation over a five-year holding period.",
+        "whenToUse": "Use in investment, real estate, accounting, and macroeconomic contexts to describe an asset, property, stock, or currency gaining market value over time (e.g., 'capital appreciation', 'property appreciation', 'currency appreciation').",
+        "whenNotToUse": "Do not use 'appreciation' to describe cash disbursements like dividends, coupon payments, or operating profits—those are income or yields, not appreciation. Do not confuse with 'inflation' (a general increase in consumer prices that erodes purchasing power) or 'appraisal' (the formal estimation report or process conducted by a licensed surveyor).",
+        "culturalContext": "In Anglo-American economic culture, capital appreciation is the bedrock of middle-class wealth creation through homeownership and retirement 401(k) portfolios. Western tax codes differentiate sharply between ordinary income and long-term capital gains derived from asset appreciation, incentivizing investors to hold assets for extended periods."
+      },
+      "examples": {
+        "daily": [
+          "Thanks to the expansion of the light rail line into our suburb, homeowners in the area have enjoyed substantial property appreciation over the past five years.",
+          "Financial planners encourage young savers to invest in diversified index funds to harness long-term capital appreciation before retirement.",
+          "The vintage automobile bought at auction twenty years ago has seen remarkable appreciation due to its rare manual transmission and pristine condition."
+        ],
+        "business": [
+          "The real estate investment trust attributed forty percent of its annual portfolio growth to capital appreciation across its industrial warehousing holdings.",
+          "Rapid currency appreciation of the domestic dollar against the pound made foreign raw material imports significantly cheaper for automotive assemblers.",
+          "Institutional pension funds allocate a designated portion of capital to venture equities with the primary objective of long-term asset appreciation."
+        ],
+        "conversation": [
+          "A: 'Should we sell our downtown commercial building now or hold on for another three years?'\nB: 'With the city's new waterfront rezoning initiative underway, holding the asset will likely yield another twenty percent in capital appreciation.'",
+          "A: 'How did the unexpected appreciation of the euro impact our Q3 export earnings?'\nB: 'It compressed our profit margins on German machinery exported to North American buyers because our prices became less competitive in dollar terms.'"
+        ],
+        "collocations": [
+          "capital appreciation",
+          "property appreciation",
+          "currency appreciation",
+          "asset appreciation",
+          "appreciate in value",
+          "rate of appreciation"
+        ]
+      },
+      "wordFamily": {
+        "noun": "appreciation",
+        "verb": "appreciate",
+        "adjective": "appreciated / appreciative",
+        "adverb": "appreciatively"
+      },
+      "visual": {
+        "imageKeyword": "commercial real estate investment capital appreciation upward chart",
+        "imageDescription": "A sleek glass skyscraper reflecting blue sky and clouds, with a translucent green vector graph in the foreground curving sharply upward past financial dollar milestones.",
+        "mnemonic": "AP-PRECI-ATION: Notice the root 'PRECI' from 'PRICE' (Latin pretium). When an asset enjoys APPRECIATION, its PRICE climbs higher and higher!"
+      },
+      "video": {
+        "description": "A chartered financial analyst explaining the mechanics of total return, contrasting annual dividend yield with long-term capital appreciation across equities, fixed income, and real estate assets."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Commercial property owners in the tech corridor have benefited from rapid asset _____ following municipal investments in public transit and fiber-optic infrastructure.\n(A) appreciates\n(B) appreciative\n(C) appreciation\n(D) appreciatively",
+        "tips": "In TOEIC Part 5, test writers frequently test the collocation 'asset appreciation' or 'capital appreciation'. The blank follows the compound modifier 'rapid asset' and serves as the object of the preposition 'from'. Therefore, a noun is required. Choice (C) 'appreciation' is the correct financial noun. Choice (A) 'appreciates' is a third-person singular verb; Choice (B) 'appreciative' is an adjective expressing gratefulness; and Choice (D) 'appreciatively' is an adverb."
+      },
+      "synonyms": [
+        "capital growth",
+        "gain in value",
+        "value increase",
+        "enhancement of value",
+        "strengthening"
+      ],
+      "antonyms": [
+        "depreciation",
+        "devaluation",
+        "loss of value",
+        "impairment"
+      ],
+      "relatedWords": [
+        "depreciation",
+        "capital gains",
+        "valuation",
+        "equity",
+        "portfolio",
+        "dividend yield",
+        "inflation"
+      ]
+    },
+    {
+      "id": "finance-073",
+      "word": "arbitrage",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈɑːr.bɪ.trɑːʒ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/arbitrage--_us_1.mp3",
+        "syllableBreakdown": "ar-bi-trage",
+        "stressPattern": "primary stress on the first syllable (AR-bi-trage); the final syllable carries a voiced postalveolar fricative /ʒ/",
+        "commonMistakes": "Learners commonly make two severe errors. Phonetically, they often pronounce the suffix '-age' as an English affricate /dʒ/ (*AR-bi-trahdge* or *AR-bi-trij*) rather than retaining the authentic French voiced postalveolar fricative /ʒ/ (*AR-bi-trahzh*). Conceptually and semantically, learners frequently confuse 'arbitrage' (a financial trading mechanism exploiting price discrepancies across markets) with 'arbitration' (an alternative dispute resolution method where an arbitrator settles a legal disagreement outside court). In listening tests, this semantic confusion often leads to incorrect answer choices."
+      },
+      "etymology": {
+        "origin": "Borrowed from French 'arbitrage' (the judgment of an arbitrator; calculation of exchange parities), from Middle French 'arbitrer' (to judge, decide, give judgment), from Latin 'arbitrārī' (to give judgment, perceive, act as umpire), from 'arbiter' (a judge, witness, onlooker, umpire).",
+        "rootWord": "Latin 'arbiter' (witness, judge, onlooker), composed of 'ad-' (to) and 'baetere' (to come, go) — literally 'one who goes to see or judge a dispute'.",
+        "rootMeaning": "'The act of an umpire judging relative worth; in finance, calculating and exploiting the disparity in price between two markets'",
+        "evolution": "Originally used in medieval French law for legal dispute settlement by an arbitrator. In late 18th-century French banking ('arbitrage de change'), the word began designating calculations to determine whether paying a commercial debt via Amsterdam, London, or Frankfurt bills of exchange was cheaper. It crossed into English financial usage around the 1840s on the London Stock Exchange and Paris Bourse, designating simultaneous operations in two different bourses to pocket price differences. With modern computerized finance, it encompasses statistical arbitrage, index arbitrage, and high-frequency quantitative market-neutral strategies.",
+        "relatedLanguages": [
+          "French: arbitrage",
+          "Spanish: arbitraje",
+          "Italian: arbitraggio",
+          "German: Arbitrage"
+        ],
+        "firstRecordedUse": "1840s (English financial markets); 18th century (French mercantile foreign exchange)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The simultaneous or near-simultaneous purchase and sale of an identical or equivalent asset, commodity, currency, or financial derivative in different markets to lock in a profit from temporary price discrepancies without incurring net directional market risk.",
+        "spatialContext": "Quantitative hedge fund offices, algorithmic trading desks, server colocation facilities adjacent to exchange data centers (such as Secaucus, NJ and Slough, UK), commodities exchange pits, and foreign exchange dealing rooms.",
+        "temporalContext": "Executed in sub-millisecond or microsecond intervals by automated high-frequency trading algorithms, or managed across weeks and months in corporate event-driven trades such as merger arbitrage.",
+        "emotionalTone": "Opportunistic, calculated, analytical, and market-neutral.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers in finance, 'arbitrage' is the theoretical ideal of 'risk-free profit'—the financial equivalent of an efficiency check that forces disjointed markets back into equilibrium under the 'Law of One Price'. Native finance professionals distinguish sharply between pure arbitrage (where two identical assets trade at different prices in two venues, allowing instantaneous riskless profit) and practical arbitrage (such as merger arbitrage or convertible arbitrage, which involves credit or regulatory risk). An arbitrageur is viewed not as a directional speculator betting on market movements, but as a sophisticated market liquidity provider.",
+        "mentalImage": "A quantitative proprietary trader monitoring multiple high-resolution screens displaying real-time order books, watching automated algorithms buy undervalued gold futures in London while simultaneously shorting overvalued contracts in New York to capture a four-cent spread.",
+        "whenToUse": "Use when discussing trading strategies that profit from price discrepancies of identical or equivalent instruments across different markets or time horizons (e.g., 'statistical arbitrage', 'risk arbitrage', 'triangular currency arbitrage', 'retail arbitrage').",
+        "whenNotToUse": "DO NOT confuse 'arbitrage' with 'arbitration' (the legal dispute resolution process overseen by an arbitrator). Do not use 'arbitrage' to describe standard directional speculation (e.g., buying a stock because you believe the company will grow is an investment, not arbitrage). Do not use it for simple wholesale buying unless cross-market price discrepancies are actively being exploited.",
+        "culturalContext": "In Wall Street history, arbitrage has been the engine of legendary financial developments, from 19th-century courier pigeons carrying stock prices between London and Paris to 1980s corporate takeover risk arbitrageurs, to modern high-frequency trading firms spending hundreds of millions laying dedicated straight-line fiber-optic cables and microwave towers across mountain ranges to exploit microsecond exchange spreads."
+      },
+      "examples": {
+        "daily": [
+          "Entrepreneurs engaged in retail arbitrage purchase clearance items at local department stores and resell them at full retail value on global online marketplaces.",
+          "International tourists often practice a form of price arbitrage by buying designer apparel in Italy where wholesale prices and tax rebates make goods twenty percent cheaper than in Tokyo.",
+          "Astute cryptocurrency traders monitor multiple digital exchanges to identify momentary token price differentials that permit profitable cross-platform arbitrage."
+        ],
+        "business": [
+          "Quantitative trading firms employ high-frequency algorithms to capture microsecond statistical arbitrage opportunities across interconnected equity venues.",
+          "During large corporate takeovers, risk arbitrage desks purchase shares of the target firm at a modest discount to the announced acquisition price.",
+          "Foreign exchange dealers conduct triangular arbitrage by rapidly exchanging three currencies across international money centers until theoretical rate parity is restored."
+        ],
+        "conversation": [
+          "A: 'Why is the quantitative fund investing millions in low-latency microwave links between Chicago and New York?'\nB: 'They need to execute index futures arbitrage before competing institutional trading desks can close the spread.'",
+          "A: 'Are the dual-listed mining company's shares trading at different prices in London and Johannesburg today?'\nB: 'There was a half-percent pricing mismatch at market open, but automated arbitrage trading closed the window almost instantaneously.'"
+        ],
+        "collocations": [
+          "statistical arbitrage",
+          "merger arbitrage",
+          "risk arbitrage",
+          "regulatory arbitrage",
+          "triangular arbitrage",
+          "arbitrage opportunity"
+        ]
+      },
+      "wordFamily": {
+        "noun": "arbitrage / arbitrageur",
+        "verb": "arbitrage",
+        "adjective": "arbitraged / arbitrageable",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "algorithmic trading multi screen financial arbitrage order book",
+        "imageDescription": "A high-tech trading terminal glowing with real-time financial charts and multi-exchange order books, showing green and red tick bars where automated algorithms match cross-market price spreads.",
+        "mnemonic": "ARBI-TRAGE: Sounds like 'ARBITER of TRADE'—a trader who acts like an impartial judge spotting price mismatches between two markets and instantly capturing the gap for profit!"
+      },
+      "video": {
+        "description": "An instructional finance documentary demonstrating how automated algorithms identify spatial arbitrage between exchange-traded funds (ETFs) and their underlying basket of securities."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "By simultaneously buying and selling dual-listed securities across international exchanges, quantitative investment desks generate consistent returns through automated _____ strategies.\n(A) arbitrate\n(B) arbitration\n(C) arbitrage\n(D) arbitrary",
+        "tips": "In TOEIC Part 5, exam designers frequently construct vocabulary traps around morphologically related words derived from the Latin root 'arbiter'. In a finance context describing 'simultaneously buying and selling securities across international exchanges', the required noun modifier before 'strategies' is Choice (C) 'arbitrage'. Choice (A) 'arbitrate' is a verb meaning to judge a dispute; Choice (B) 'arbitration' is a noun referring to legal dispute settlement; and Choice (D) 'arbitrary' is an adjective meaning based on whim rather than reason."
+      },
+      "synonyms": [
+        "cross-market trading",
+        "price discrepancy trading",
+        "spread trading",
+        "basis trading",
+        "market exploitation"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "arbitrageur",
+        "hedge fund",
+        "market efficiency",
+        "spread",
+        "liquidity",
+        "high-frequency trading",
+        "derivatives"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+import json
+
+words = [
+    {
+        "id": "finance-188",
+        "word": "liquidity",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/lɪˈkwɪd.ə.ti/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/liquidity--_us_1.mp3",
+            "syllableBreakdown": "li-quid-i-ty",
+            "stressPattern": "Unstressed first syllable, primary stress on second syllable, unstressed third and fourth syllables: li-QUID-i-ty (/lɪˈkwɪd.ə.ti/, ○●○○)",
+            "commonMistakes": "Learners frequently misplace primary stress onto the third syllable (*li-qui-DI-ty*) or fail to pronounce the /w/ glide after the /k/ sound, saying /*lɪˈkɪd.ə.ti/*. Another frequent error is flapping the medial /d/ into an unclear sound or omitting the reduction of the final unstressed syllables. In corporate and banking English, non-native speakers also confuse 'liquidity' (the ease of converting an asset into cash quickly without significant discount) with 'solvency' (having assets exceeding total liabilities over the long term), or 'profitability' (generating excess revenue over costs)."
+        },
+        "etymology": {
+            "origin": "Late Latin (liquiditas), from Classical Latin liquidus (flowing, clear, fluid), from liquere (to be fluid or liquid)",
+            "rootWord": "liquidus (fluid, flowing, clear) + -itas (abstract noun suffix denoting state or condition)",
+            "rootMeaning": "'The quality or state of being fluid, flowing, or easily convertible without friction'",
+            "evolution": "Originating in Classical Latin liquidus, meaning 'fluid, moist, or flowing', the term liquiditas entered Late Latin to describe the physical fluidity of liquids. By the 16th century, Middle French adapted it as liquidité. During the 17th and 18th centuries, Italian, French, and English banking institutions adopted the term metaphorically to describe accounts, securities, or debts that were 'clear, settled, and readily payable' rather than encumbered or tied up in fixed assets like land. By the early 20th century, John Maynard Keynes formalized the concept in macroeconomic theory through his 'Liquidity Preference' framework (1936), cementing liquidity as a fundamental metric of corporate treasury health, describing how rapidly an asset can be converted into standard currency with minimal loss in value.",
+            "relatedLanguages": [
+                "French: liquidité (liquidity, cash resources)",
+                "Spanish: liquidez (liquidity, cash availability)",
+                "Italian: liquidità (liquidity, cash on hand)",
+                "Portuguese: liquidez (liquidity, cash flow)",
+                "German: Liquidität (liquidity, solvency)"
+            ],
+            "firstRecordedUse": "Early 17th century (circa 1600s in legal and financial treaties; formalized in modern monetary economics in the 1920s–1930s)"
+        },
+        "deepMeaning": {
+            "coreConcept": "The degree to which an asset, security, or financial instrument can be quickly bought or sold in the market at stable, transparent prices and converted into readily available cash without incurring prohibitive transaction costs or substantial capital losses; in corporate treasury, the capacity of an enterprise to meet immediate, short-term debt obligations using cash and near-cash equivalents.",
+            "spatialContext": "Corporate treasury control rooms, central bank trading desks, commercial bank asset-liability committees (ALCO), investment banking syndicate trading floors, and executive financial dashboards.",
+            "temporalContext": "Monitored in real time across interbank money markets; analyzed on daily cash-position worksheets and reported in quarterly corporate financial statements and regulatory filings.",
+            "emotionalTone": "Cautious, prudent, analytical, and stability-focused; safeguards enterprise survival against unforeseen market dislocations.",
+            "formalityLevel": "formal",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native financial analysts and treasury officers treat liquidity as corporate oxygen: an enterprise can survive being temporarily unprofitable, but it cannot survive running out of cash to meet payroll and immediate supplier liabilities. Native speakers instinctively associate liquidity with liquid assets (cash, Treasury bills, commercial paper) and financial ratios like the Current Ratio or Quick Ratio. Furthermore, native market traders distinguish between asset liquidity (how quickly an individual holding can be sold) and market liquidity (the depth and trading volume of an exchange where large blocks can be traded without swinging prices).",
+            "mentalImage": "A corporate treasurer staring at a dual-monitor trading workstation showing real-time cash balances across foreign exchange accounts, short-term money market funds, and revolving credit facilities to ensure working capital buffers remain robust.",
+            "whenToUse": "Use when evaluating working capital, cash conversion cycles, money market reserves, secondary market trading volume, central bank monetary injections, and corporate insolvency defense.",
+            "whenNotToUse": "Do not interchange with 'solvency' (long-term balance sheet health where total assets exceed liabilities) or 'revenue'/'turnover' (the gross inflow of income from core operations).",
+            "culturalContext": "In Western corporate finance and regulatory oversight (such as Basel III banking accords and SEC disclosures), liquidity metrics—specifically the Liquidity Coverage Ratio (LCR) and Net Stable Funding Ratio (NSFR)—are strictly mandated covenants. Corporate CFOs in Anglo-American markets prioritize maintaining revolving credit lines with syndicates of commercial lenders as a liquidity backstop against cyclical revenue shocks."
+        },
+        "examples": {
+            "daily": [
+                "Before committing all their savings to a locked five-year certificate of deposit, the couple kept three months of living expenses in a high-yield savings account to maintain personal liquidity.",
+                "Selling the rare vintage car took nearly eight months because collector automobiles suffer from low liquidity compared to exchange-traded shares.",
+                "He transferred money from his investment brokerage into his checking account to restore liquidity before paying his quarterly property taxes."
+            ],
+            "business": [
+                "To preserve operational liquidity during the supply chain disruption, the chief financial officer drew down fifty million dollars from the syndicate's revolving credit facility.",
+                "The audit committee noted that while the manufacturer remained profitable on paper, its liquidity had deteriorated due to excessive capital tied up in unsold warehouse inventory.",
+                "Commercial banks are required by regulatory authorities to maintain a liquidity coverage ratio high enough to withstand a thirty-day acute stress scenario."
+            ],
+            "conversation": [
+                "\"Why is the treasury team shifting short-term capital out of corporate bonds and into Treasury bills?\" — \"They want to maximize liquidity ahead of next month's substantial dividend distribution and debt maturity.\"",
+                "\"Did the acquisition impair our working capital?\" — \"Our liquidity buffer remains healthy because we funded sixty percent of the purchase price through an equity offering rather than cash reserves.\"",
+                "\"How liquid is the secondary market for these municipal bonds?\" — \"Trading volume is relatively thin, so dumping a large block could depress the price unless we execute the sale in smaller tranches.\""
+            ],
+            "collocations": [
+                "maintain adequate liquidity",
+                "liquidity crisis",
+                "boost operational liquidity",
+                "market liquidity",
+                "preserve corporate liquidity",
+                "liquidity coverage ratio"
+            ]
+        },
+        "wordFamily": {
+            "noun": "liquidity, liquid, liquidation, liquidator",
+            "verb": "liquidate",
+            "adjective": "liquid, illiquid",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "treasury management liquidity cash flow balance monitor corporate desk",
+            "imageDescription": "An executive corporate treasurer reviewing electronic financial dashboards showing bar charts of daily cash flows, liquid short-term investments, and available credit facilities on widescreen monitors.",
+            "mnemonic": "LIQUID-ITY: Think of water flowing smoothly; financial LIQUIDITY lets cash FLOW freely to pay bills before your accounts freeze!"
+        },
+        "video": {
+            "description": "A corporate treasury specialist explaining the crucial difference between solvency and liquidity, detailing how multinational corporations manage working capital to prevent liquidity crunches."
+        },
+        "toeicContext": {
+            "commonParts": [
+                4,
+                5,
+                6,
+                7
+            ],
+            "exampleQuestion": "In response to unpredictable fluctuations in raw material pricing, the executive committee voted to increase cash reserves to ensure sufficient _______ for pending capital projects.\n(A) liquid\n(B) liquidity\n(C) liquidate\n(D) liquidating",
+            "tips": "In TOEIC Part 5, distinguishing between nouns, adjectives, and verbs following an adjective modifier is a frequent test pattern. Here, the adjective 'sufficient' requires the abstract noun 'liquidity' (B) to act as the direct object of the infinitive verb 'to ensure'. Choice (A) 'liquid' is an adjective or concrete physical noun, (C) 'liquidate' is a verb meaning to settle debts or dissolve an entity, and (D) 'liquidating' is a present participle or gerund."
+        },
+        "synonyms": [
+            "cash availability",
+            "solvency margin",
+            "fluidity",
+            "cash flow",
+            "working capital",
+            "liquid assets"
+        ],
+        "antonyms": [
+            "illiquidity",
+            "insolvency",
+            "cash starvation",
+            "capital tie-up"
+        ],
+        "relatedWords": [
+            "working capital",
+            "cash equivalent",
+            "current ratio",
+            "revolving credit",
+            "treasury",
+            "liquid asset",
+            "quick ratio"
+        ]
+    },
+    {
+        "id": "finance-189",
+        "word": "loan",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/loʊn/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/loan--_us_1.mp3",
+            "syllableBreakdown": "loan",
+            "stressPattern": "Monosyllabic, single stressed syllable: LOAN (/loʊn/, ●)",
+            "commonMistakes": "Learners often produce a short open /ɒ/ or /ɔː/ vowel (sounding like 'lawn' /lɔːn/) rather than the proper closed American diphthong /oʊ/ (rhyming with 'alone' /əˈloʊn/ or 'stone' /stoʊn/). Additionally, non-native speakers frequently confuse the noun 'loan' with the verb 'borrow' (taking money) versus 'lend' (providing money), or misuse the verb form 'to loan' in formal British English contexts where 'to lend' is traditionally preferred."
+        },
+        "etymology": {
+            "origin": "Middle English (lone, lane), borrowed from Old Norse lán (a loan, lending), related to Proto-Germanic *laihnwiz, derived from the Proto-Indo-European root *leikw- (to leave, yield, entrust)",
+            "rootWord": "lán (Old Norse: loan, gift, fief), cognate with Old English lǣn (loan, grant)",
+            "rootMeaning": "'Something granted, lent, or yielded for temporary possession with the explicit expectation of return'",
+            "evolution": "In Old English, the native noun was lǣn (which survives dialectally and gave rise to the modern verb 'lend' via lǣnan). During the 12th-century Scandinavian settlements in northern England, Anglo-Saxon speakers assimilated the Old Norse cognate lán, which entered Middle English as lone. Initially applied to feudal land grants, grazing concessions, or borrowed goods, the term rapidly specialized in legal and merchant terminology to denote a sum of borrowed money subject to agreed repayment schedules and, eventually, legally sanctioned interest charges. By the 18th and 19th centuries, the rise of commercial banking institutionalized structured term loans, mortgage instruments, and promissory notes.",
+            "relatedLanguages": [
+                "German: Lehn / Anleihe (fief, feudal grant / bond, loan)",
+                "Dutch: lening (loan, borrowing)",
+                "Swedish: lån (loan, borrowing)",
+                "Danish: lån (loan, advance)",
+                "Icelandic: lán (loan, credit)"
+            ],
+            "firstRecordedUse": "Early 13th century (circa 1200 in early Middle English homilies and municipal debt records)"
+        },
+        "deepMeaning": {
+            "coreConcept": "A contractual financial transaction and legal obligation wherein a lender (such as a commercial bank, credit union, or private creditor) advances a specified principal sum of money or property to a borrower, who commits to repay the full principal along with agreed-upon interest according to predetermined installment schedules or at a specified maturity date.",
+            "spatialContext": "Retail bank branch lending desks, commercial underwriting departments, credit committee meeting rooms, mortgage brokerage suites, and notary closing offices.",
+            "temporalContext": "Structured across short-term horizons (90-day bridging loans), medium-term notes (3 to 5 years), or long-term amortization schedules (15 to 30-year commercial and residential mortgages), characterized by monthly debt servicing schedules.",
+            "emotionalTone": "Binding, contractual, analytical, and structured; represents trust and creditworthiness balanced against debt liability.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native speakers immediately associate loan with structural mechanics: principal (the borrowed sum), interest rate (fixed or variable APR), collateral (assets pledged in a secured loan), term/amortization (duration of repayment), and default (failure to pay). Natives distinguish sharply between consumer loans (student, auto, personal), mortgages (real estate loans), and corporate financing (syndicated loans, working capital lines, equipment financing). Grammatically, natives recognize loan as a countable noun ('take out a loan', 'repay a loan', 'apply for a loan'), while keeping clear boundaries between borrowing (the debtor's action) and lending (the creditor's action).",
+            "mentalImage": "A prospective small business owner seated across from a commercial loan officer in a glass-walled bank office, reviewing a five-year equipment loan agreement detailing interest rates, collateral liens, and monthly payment schedules.",
+            "whenToUse": "Use when referring to formal debt arrangements, bank financing, credit applications, commercial borrowing, mortgages, term debt, and sovereign debt facilities.",
+            "whenNotToUse": "Do not use 'loan' to refer to a non-repayable monetary transfer (which is a 'grant', 'subsidy', or 'endowment'), or to equity capital raised through selling corporate shares.",
+            "culturalContext": "In English-speaking business and consumer environments, access to loans is heavily governed by credit underwriting criteria, such as corporate debt-service coverage ratios (DSCR) or personal credit scores (FICO). Anglo-American commercial real estate and business expansion are overwhelmingly debt-financed, making loan origination, underwriting covenants, and default remedies central to corporate jurisprudence."
+        },
+        "examples": {
+            "daily": [
+                "After comparing interest rates across four major lenders, Sarah secured a thirty-year fixed-rate mortgage loan to purchase her first townhome.",
+                "He set up automated monthly transfers from his payroll account to repay his undergraduate student loan ahead of schedule.",
+                "The dealership offered a low-interest auto loan with zero down payment to attract qualified buyers during the holiday clearance."
+            ],
+            "business": [
+                "The regional manufacturing company applied for a seven-million-dollar commercial loan to finance the construction of an automated assembly facility.",
+                "Under the terms of the syndicated loan, the borrower must maintain a minimum debt-service coverage ratio of 1.25 throughout the five-year term.",
+                "Following a thorough review of the firm's balance sheet, the bank's credit underwriting committee unanimously approved the working capital loan."
+            ],
+            "conversation": [
+                "\"Has the branch manager received our documentation for the commercial bridge loan?\" — \"Yes, the underwriters are reviewing our tax returns and expect to issue a formal approval letter by Thursday.\"",
+                "\"Did the company secure favorable terms on the equipment loan?\" — \"We locked in a fixed interest rate of four point five percent, which will protect our cash flow against anticipated rate hikes.\"",
+                "\"Why did the lender decline the initial loan application?\" — \"The debt-to-income ratio exceeded the bank's risk threshold, so we need to either recruit a guarantor or pledge additional collateral.\""
+            ],
+            "collocations": [
+                "secure a commercial loan",
+                "loan application",
+                "repay a bank loan",
+                "loan interest rate",
+                "default on a loan",
+                "approve a loan"
+            ]
+        },
+        "wordFamily": {
+            "noun": "loan, lender, lending, loaner",
+            "verb": "loan, lend",
+            "adjective": "loanable",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "commercial bank loan application contract signature handshake banker",
+            "imageDescription": "A formal bank office setting showing a signed commercial loan document placed on a wooden table alongside an ink pen, keys, and an executive shaking hands with a loan officer.",
+            "mnemonic": "L-O-A-N: Lenders Offer Assets Now, expecting scheduled repayments with interest later!"
+        },
+        "video": {
+            "description": "A banking professional explaining the complete lifecycle of a commercial business loan, from loan origination and risk assessment to amortization and final debt payoff."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                7
+            ],
+            "exampleQuestion": "Small business owners seeking to expand their operations must submit audited financial statements before their commercial _______ application can be evaluated.\n(A) loan\n(B) loanable\n(C) loaned\n(D) loaning",
+            "tips": "In TOEIC Part 5, compound noun collocations involving financial terms are frequently evaluated. Preceding the noun 'application', the blank requires the noun 'loan' (A) to form the compound noun phrase 'commercial loan application' (đơn xin vay vốn thương mại). Choice (B) 'loanable' is an adjective, (C) 'loaned' is a past participle, and (D) 'loaning' is a gerund/participle."
+        },
+        "synonyms": [
+            "advance",
+            "credit facility",
+            "financing",
+            "mortgage",
+            "accommodation",
+            "debt instrument"
+        ],
+        "antonyms": [
+            "repayment",
+            "grant",
+            "equity",
+            "gift"
+        ],
+        "relatedWords": [
+            "principal",
+            "interest rate",
+            "collateral",
+            "amortization",
+            "underwriting",
+            "creditor",
+            "debtor"
+        ]
+    },
+    {
+        "id": "finance-190",
+        "word": "loss",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/lɔːs/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/loss--_us_1.mp3",
+            "syllableBreakdown": "loss",
+            "stressPattern": "Monosyllabic, single stressed syllable: LOSS (/lɔːs/, ●)",
+            "commonMistakes": "Learners frequently confuse the pronunciation and spelling of three closely related words: the noun 'loss' (/lɔːs/, with a voiceless /s/), the verb 'lose' (/luːz/, with a long vowel /uː/ and voiced /z/), and the adjective 'loose' (/luːs/, with a long vowel /uː/ and voiceless /s/). Non-native speakers also sometimes mispronounce the vowel in 'loss' as a close /oʊ/ (sounding like 'lows' or 'loas'). In financial reporting, learners often confuse 'operating loss' (negative earnings from core operations) with 'capital loss' (loss on the sale of an investment or asset)."
+        },
+        "etymology": {
+            "origin": "Old English los (destruction, damage, perdition), reinforced by and merged with Old Norse los (a breaking of ranks, disbanding), related to the verb losian (to be lost, perish)",
+            "rootWord": "los (Old English: destruction, harm) from Proto-Germanic *lausa- (loose, free, lost), from PIE *leu- (to loosen, divide, cut off)",
+            "rootMeaning": "'The state of being detached, taken away, destroyed, or diminished in amount or value'",
+            "evolution": "In Old English, los denoted ruin, bodily perdition, or spiritual destruction. Through Middle English (los, loos), it broadened to encompass the deprivation or involuntary parting with possessions, persons, or advantages. By the 14th and 15th centuries, merchant law and maritime shipping contracts in England and Flanders adopted 'loss' to signify cargo damaged at sea (giving rise to concepts like 'loss and salvage' and maritime average). With the formalization of double-entry bookkeeping and financial accounting in the 18th and 19th centuries, 'loss' gained its definitive financial meaning on the income statement: an excess of total expenses and revenue deductions over gross revenues earned during an accounting period, enshrined in the universal accounting term 'Profit and Loss' (P&L).",
+            "relatedLanguages": [
+                "German: Verlust (loss, damage, forfeiture)",
+                "Dutch: verlies (loss, deficit)",
+                "Swedish: förlust (loss, casualty)",
+                "Danish: tab / forlis (loss / shipwreck, ruin)",
+                "Old Norse: los (disbanding, dissolution)"
+            ],
+            "firstRecordedUse": "Before the 12th century (Old English los; 14th century in commercial accounting records)"
+        },
+        "deepMeaning": {
+            "coreConcept": "An unrecovered financial decrement, deficit, or negative balance occurring when total operating expenses, cost of goods sold, and non-operating charges exceed gross revenues generated during a defined fiscal accounting period; alternatively, the decline in market value realized when an asset or capital holding is sold for less than its initial acquisition cost or adjusted book value.",
+            "spatialContext": "Income statements (Profit and Loss statements), financial audit summaries, quarterly earnings press releases, boardroom presentation slides, and corporate taxation schedules.",
+            "temporalContext": "Computed at monthly accounting closes, consolidated at quarterly reporting periods (Q1-Q4), and formalized in annual fiscal tax filings.",
+            "emotionalTone": "Sobering, negative, analytical, and urgent; demands remedial operational measures, cost containment, or asset restructuring.",
+            "formalityLevel": "formal",
+            "connotation": "negative"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native business executives, loss is the ultimate red-ink metric that triggers immediate managerial scrutiny. Natives immediately analyze the taxonomy of loss: Is it a gross loss (revenue below COGS), an operating loss (EBIT is negative), or a net loss (the bottom line after taxes and interest)? Alternatively, is it an unrealized loss (paper loss on mark-to-market assets) versus a realized loss (crystallized upon selling)? In everyday business idiom, native speakers frequently deploy expressions such as 'cut your losses' (stop a failing project before losing more), 'at a loss' (selling below cost or bewildered), and 'operate at a loss' (subsidizing operations to buy market share).",
+            "mentalImage": "A CFO pointing a red laser at a downward red bar chart during a quarterly investor earnings webcast, explaining how rising supply chain expenses caused an operating loss despite strong top-line revenue growth.",
+            "whenToUse": "Use when reporting negative net earnings, asset devaluation, portfolio impairment, inventory shrinkage, unrecoverable capital expenditures, or damage claims.",
+            "whenNotToUse": "Do not confuse the noun 'loss' with the verb 'lose' (e.g. *we must not loss money* is ungrammatical) or the adjective 'loose' (e.g. *loose bolts*). Also avoid using 'loss' when referring to a simple planned operating expenditure or intentional investment.",
+            "culturalContext": "In Anglo-American equity markets, public corporations that report unexpected quarterly losses face immediate shareholder backlash and steep declines in share prices. Conversely, early-stage venture-backed technology startups in Silicon Valley often deliberately operate at a substantial net loss ('cash burn') for years to achieve market dominance before achieving profitability."
+        },
+        "examples": {
+            "daily": [
+                "After reviewing their monthly bank statements, the family realized that dining out frequently had caused a noticeable loss in their discretionary savings.",
+                "Selling his used laptop for three hundred dollars less than what he bought it for was a frustrating financial loss.",
+                "The homeowner filed an insurance claim to recover the property loss resulting from the storm damage to his roof."
+            ],
+            "business": [
+                "The multinational airline reported a quarterly net loss of four hundred million dollars due to surging jet fuel costs and foreign exchange headwinds.",
+                "To prevent further operating loss, the executive leadership team decided to decommission three underperforming regional production facilities.",
+                "The tax accountant advised the firm to carry forward its capital loss from the failed joint venture to offset capital gains in future tax years."
+            ],
+            "conversation": [
+                "\"Did the logistics department manage to contain the inventory shrinkage this quarter?\" — \"Unfortunately no; unrecorded transit damage and warehouse theft resulted in an inventory loss of nearly eighty thousand dollars.\"",
+                "\"Why did the board decide to cancel the European subsidiary rollout?\" — \"The project was projected to operate at a heavy loss for at least three consecutive years, which exceeded our risk tolerance.\"",
+                "\"How bad was the impact of the bond market downturn on our pension fund?\" — \"Most of the impairment is an unrealized paper loss, so the portfolio should recover as the bonds approach maturity.\""
+            ],
+            "collocations": [
+                "suffer a net loss",
+                "report an operating loss",
+                "cut one's losses",
+                "incur a heavy loss",
+                "prevent financial loss",
+                "profit and loss statement"
+            ]
+        },
+        "wordFamily": {
+            "noun": "loss, loser",
+            "verb": "lose",
+            "adjective": "lost, losing",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "financial loss red arrow downward profit chart executive desk",
+            "imageDescription": "A corporate conference room with an executive reviewing a quarterly profit and loss ledger displaying highlighted red deficit figures and a downward-sloping trendline chart on a tablet screen.",
+            "mnemonic": "LOSS: Less Output Surpassed by Spending produces a financial LOSS!"
+        },
+        "video": {
+            "description": "A corporate accounting tutor breaking down a standard Profit and Loss (P&L) statement, explaining how revenue deductions lead from gross profit down to net loss."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                7
+            ],
+            "exampleQuestion": "Despite rigorous cost-cutting initiatives implemented in the second quarter, the manufacturing division still reported an unexpected operating _______ of two million dollars.\n(A) lose\n(B) loss\n(C) loser\n(D) loosely",
+            "tips": "In TOEIC Part 5, distinguishing between the verb 'lose', the noun 'loss', the personal noun 'loser', and the adjective/adverb 'loose'/'loosely' is a classic trap. Following the compound adjective phrase 'an unexpected operating', the blank requires the abstract noun 'loss' (B) to form the financial compound 'operating loss' (khoản lỗ hoạt động). Choice (A) 'lose' is a verb, (C) 'loser' is a person/entity that loses, and (D) 'loosely' is an adverb."
+        },
+        "synonyms": [
+            "deficit",
+            "shortfall",
+            "financial deficit",
+            "negative balance",
+            "depletion",
+            "impairment"
+        ],
+        "antonyms": [
+            "profit",
+            "gain",
+            "surplus",
+            "net income"
+        ],
+        "relatedWords": [
+            "deficit",
+            "operating loss",
+            "profit and loss statement",
+            "impairment",
+            "write-down",
+            "shrinkage",
+            "depreciation"
+        ]
+    }
+]
+
+with open("scratch/finance_188_190.json", "w", encoding="utf-8") as f:
+    json.dump({"words": words}, f, indent=4, ensure_ascii=False)
+
+print("Saved scratch/finance_188_190.json successfully!")

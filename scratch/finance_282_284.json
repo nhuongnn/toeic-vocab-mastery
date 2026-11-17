@@ -1,0 +1,350 @@
+{
+  "words": [
+    {
+      "id": "finance-282",
+      "word": "tax evasion",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˈtæks ɪˌveɪ.ʒən/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tax_evasion--_us_1.mp3",
+        "syllableBreakdown": "tax e-va-sion",
+        "stressPattern": "Primary stress on the second syllable of evasion with strong stress on tax: TAX e-VA-sion (/ˈtæks ɪˌveɪ.ʒən/, ● · ○●○)",
+        "commonMistakes": "Non-native speakers frequently confuse 'tax evasion' (the illegal non-payment or deliberate underpayment of taxes through fraud, deceit, or concealment) with 'tax avoidance' (the lawful minimization of tax liabilities using statutory allowances, deductions, and exemptions). Phonetically, learners often mispronounce the second syllable of 'evasion' with an unvoiced fricative */ɪˈveɪ.ʃən/* instead of the correct voiced postalveolar fricative /ʒ/ (/ɪˈveɪ.ʒən/). Additionally, learners may drop the final consonant cluster in 'tax' (/tæks/ mispronounced as */tæk/ or */tæs/) or pronounce the initial unstressed syllable of 'evasion' as a heavy /e/ rather than a natural, reduced near-close front unrounded vowel /ɪ/."
+      },
+      "etymology": {
+        "origin": "Compound noun combining 'tax' (from Anglo-Norman and Old French taxer, from Classical Latin taxare 'to assess, evaluate, rate', frequentative of tangere 'to touch') and 'evasion' (from Middle French évasion, from Late Latin evasionem / evasio 'an escape or dodging', noun of action from the past participle stem of evadere 'to get away, escape', from ex- 'out' + vadere 'to go, walk')",
+        "rootWord": "Latin taxare ('to evaluate, assess') + evadere ('to escape, flee out')",
+        "rootMeaning": "'Illegally escaping or fleeing from assessed public tax obligations'",
+        "evolution": "In Classical and Late Latin, 'evadere' literally signified escaping physical peril or confinement. The noun 'evasion' entered Middle English during the 15th century to describe physical escape or equivocal speech designed to dodge an issue. Concurrently, 'tax' entered Middle English during the 14th century via Anglo-Norman to describe sovereign revenue assessments. The formal legal compound 'tax evasion' emerged in Anglo-American statutory jurisprudence during the mid-19th century as modern income taxation systems (such as the British Income Tax Act of 1842 and the US Civil War Revenue Acts) established distinct criminal penalties for intentional fraud and concealment, formally separating unlawful tax evasion from legitimate tax mitigation.",
+        "relatedLanguages": [
+          "French: fraude fiscale (tax evasion / tax fraud) / évasion fiscale (capital flight / aggressive avoidance)",
+          "Spanish: evasión fiscal / evasión tributaria (tax evasion, unlawful non-payment of taxes)",
+          "Italian: evasione fiscale (tax evasion, illegal concealment of income)",
+          "German: Steuerhinterziehung (tax evasion, fraudulent concealment of taxable income)",
+          "Portuguese: evasão fiscal / sonegação fiscal (tax evasion, fraudulent underreporting of income)"
+        ],
+        "firstRecordedUse": "Mid-19th century (circa 1840s–1860s in British Parliamentary tax debates and US federal revenue statutes)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The intentional, illegal, and fraudulent practice of an individual, corporation, or entity failing to pay taxes owed to the government, committed through deceptive actions such as deliberately concealing taxable income, inflating deductible expenses, hiding assets in offshore secrecy jurisdictions, maintaining unrecorded cash transactions, or falsifying corporate accounting records. Under civil and criminal law, tax evasion strictly requires willful intent (mens rea), distinguishing it from unintentional clerical mistakes or lawful tax planning.",
+        "spatialContext": "Forensic accounting offices, corporate audit rooms, federal courthouse chambers, criminal investigation divisions of revenue authorities (such as the IRS Criminal Investigation Division or HMRC Fraud Investigation Service), and international banking scrutiny desks.",
+        "temporalContext": "Uncovered through multi-year forensic audits; flagged via automated statistical discrepancy algorithms in corporate filings; prosecuted over statutory limitation periods (often 3 to 6 years or indefinitely in cases of civil fraud); resulting in extended legal proceedings and asset forfeitures.",
+        "emotionalTone": "Grave, accusatory, legally perilous, and condemnatory; carries profound corporate reputational damage, heavy financial penalties, and the imminent threat of criminal imprisonment.",
+        "formalityLevel": "formal",
+        "connotation": "negative"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native English speaker, 'tax evasion' immediately evokes criminal fraud, audits, FBI or IRS raids, handcuffs, and offshore shell companies. There is a sharp, unambiguous legal and psychological boundary: 'tax avoidance' is smart, legitimate financial planning (utilizing 401(k) accounts, claiming research credits, deducting equipment depreciation), whereas 'tax evasion' is a serious felony (concealing cash, falsifying invoices, keeping double books). Native speakers never use the term casually to describe someone simply paying low taxes; it always denotes a deliberate breach of criminal law.",
+        "mentalImage": "An intense conference room scene where forensic accountants and federal revenue investigators examine complex flowcharts and subpoenaed bank records, comparing undeclared wire transfers routed through Caribbean shell corporations against falsified corporate income statements.",
+        "whenToUse": "Use exclusively when referring to unlawful actions, fraudulent financial schemes, criminal indictments, or intentional non-compliance involving the evasion of statutory tax obligations (e.g., 'charged with corporate tax evasion', 'convicted of tax evasion', 'combating international tax evasion').",
+        "whenNotToUse": "Never use 'tax evasion' to describe legitimate tax planning, deductions, tax credits, or standard tax-saving strategies—use 'tax avoidance', 'tax minimization', or 'tax planning'. Avoid using it for inadvertent clerical or math errors on a return where there was no fraudulent intent.",
+        "culturalContext": "In American and British legal and cultural history, tax evasion is treated as an egregious violation of the social contract. American popular culture often remembers that Chicago gangster Al Capone was never convicted of bootlegging or racketeering, but was ultimately sentenced to eleven years in federal prison for income tax evasion. In modern corporate governance, companies implicated in tax evasion face disastrous shareholder divestment, disqualification from government contracts, and severe regulatory sanctions."
+      },
+      "examples": {
+        "daily": [
+          "The local restaurant owner faced steep financial penalties and possible imprisonment after an audit revealed he had committed tax evasion by failing to report cash transactions.",
+          "Financial advisors strongly warn their clients that concealing foreign investment gains constitutes criminal tax evasion rather than legal wealth preservation.",
+          "Following an investigative report on tax evasion, the revenue authority published strict guidelines regarding the declaration of income earned from online sales."
+        ],
+        "business": [
+          "The former chief financial officer was formally indicted on federal tax evasion charges after investigators discovered millions of dollars routed through undisclosed offshore accounts.",
+          "Following allegations of systemic tax evasion within the overseas subsidiary, the board of directors retained an independent forensic auditing firm to review all vendor invoices.",
+          "Commercial lenders immediately froze the contractor's revolving credit facility when regulatory authorities filed statutory tax liens against the company for willful tax evasion."
+        ],
+        "conversation": [
+          "\"Did you see the morning news about why the competitor's chief executive resigned so suddenly?\" — \"Yes, federal prosecutors indicted him for tax evasion after discovering five years of undeclared capital gains held in foreign shell entities.\"",
+          "\"Is claiming our home office as an enterprise expense considered aggressive tax avoidance or tax evasion?\" — \"As long as you meet the statutory square-footage requirements and retain your utility receipts, it is lawful tax avoidance; claiming personal living space as commercial offices would cross into tax evasion.\"",
+          "\"Why is the compliance department demanding five years of banking records from our potential joint-venture partner?\" — \"We need to guarantee that the partner has no undisclosed liabilities or ongoing investigations for cross-border tax evasion before finalizing the merger.\""
+        ],
+        "collocations": [
+          "charge with tax evasion",
+          "guilty of tax evasion",
+          "conviction for tax evasion",
+          "commit tax evasion",
+          "crack down on tax evasion",
+          "corporate tax evasion"
+        ]
+      },
+      "wordFamily": {
+        "noun": "tax evasion, tax evader",
+        "verb": "evade taxes",
+        "adjective": "tax-evading, evasive",
+        "adverb": "evasively"
+      },
+      "visual": {
+        "imageKeyword": "tax evasion forensic accounting corporate fraud audit documents courtroom",
+        "imageDescription": "A conference room table covered with financial ledgers, audit worksheets bearing red 'NON-COMPLIANT' stamps, a digital calculator, and open folders revealing cross-border wire transfer slips next to a pair of reading glasses.",
+        "mnemonic": "EVAsion is an EVIL ESCAPE: You illegally ESCAPE your taxes by hiding income, but you cannot escape the auditor's pen!"
+      },
+      "video": {
+        "description": "A documentary segment on white-collar crime illustrating how forensic accountants trace complex networks of offshore shell companies and bank secrecy jurisdictions to prove willful intent in federal tax evasion prosecutions."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Following an exhaustive forensic audit of the subsidiary's overseas transactions, the former executive was formally indicted for _______ evasion after investigators uncovered millions of dollars in undeclared revenue.\n(A) tax\n(B) taxable\n(C) taxation\n(D) taxing",
+        "tips": "In TOEIC Part 5, test questions frequently target established compound nouns in corporate governance and business law. The compound noun 'tax evasion' (A) is a fixed legal and financial term denoting the crime of fraudulently avoiding tax payments. Choice (B) 'taxable' is an adjective modifying items subject to assessment (e.g., 'taxable income'). Choice (C) 'taxation' is an abstract noun describing the overall governmental system or process of levying taxes, which cannot form this specific criminal compound. Choice (D) 'taxing' is either a participle or an adjective meaning arduous or demanding."
+      },
+      "synonyms": [
+        "tax fraud",
+        "fiscal fraud",
+        "unlawful tax avoidance",
+        "illegal tax dodging",
+        "revenue fraud"
+      ],
+      "antonyms": [
+        "tax compliance",
+        "tax adherence",
+        "lawful tax mitigation",
+        "tax fulfillment"
+      ],
+      "relatedWords": [
+        "tax avoidance",
+        "forensic audit",
+        "offshore account",
+        "shell corporation",
+        "internal revenue service",
+        "statutory penalty",
+        "unreported income"
+      ]
+    },
+    {
+      "id": "finance-283",
+      "word": "tax return",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈtæks rɪˌtɜːrn/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tax_return--_us_1.mp3",
+        "syllableBreakdown": "tax re-turn",
+        "stressPattern": "Primary stress on the second syllable of return with secondary stress on tax: TAX re-TURN (/ˈtæks rɪˌtɜːrn/, ● · ○●)",
+        "commonMistakes": "Learners frequently confuse a 'tax return' (the official form or electronic filing document submitted to a revenue agency reporting income, deductions, and tax calculations) with a 'tax refund' (the reimbursement money paid back to a taxpayer when they have overpaid). Saying *'I received a large tax return this year'* is a common conversational error; one prepares and files a *tax return*, and one receives a *tax refund*. Phonetically, non-native speakers often misplace the primary stress onto the first syllable of return (*RE-turn*) instead of stressing the second syllable (/rɪˈtɜːrn/), or fail to reduce the unstressed prefix vowel to /rɪ/."
+      },
+      "etymology": {
+        "origin": "Compound noun combining 'tax' (from Old French taxer, from Latin taxare 'to assess, evaluate, rate') and 'return' (from Anglo-Norman and Old French retorner / retourner, from re- 'back' + torner 'to turn', from Latin tornare 'to turn on a lathe, round off')",
+        "rootWord": "Latin taxare ('to assess, evaluate') + tornare ('to turn, return')",
+        "rootMeaning": "'An official report returned back to authorities assessing taxable liability'",
+        "evolution": "In medieval English legal practice from the 13th and 14th centuries, a 'return' referred to the official written answer or certificate endorsed by a royal sheriff or commissioner 'returned' to a court of law or the Exchequer, explaining how an inquest, election, or tax writ had been carried out. When modern statutory income taxation was introduced in Great Britain in 1799 under William Pitt the Younger and later in the United States under the Revenue Act of 1862 and the 16th Amendment (1913), the term 'tax return' became the standardized technical designation for the formal document and schedules that taxpayers are legally required to deliver back ('return') to the government to declare their income and liabilities.",
+        "relatedLanguages": [
+          "French: déclaration d'impôts / déclaration fiscale (tax return, declaration of taxes)",
+          "Spanish: declaración de impuestos / declaración de la renta (tax return, income tax statement)",
+          "Italian: dichiarazione dei redditi (tax return, declaration of income)",
+          "German: Steuererklärung (tax return, declaration of taxes)",
+          "Portuguese: declaração de imposto de renda (tax return, declaration of income tax)"
+        ],
+        "firstRecordedUse": "Early 19th century (circa 1800–1815 in British Parliamentary tax legislation; mid-19th century in American statutory finance)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The standardized, legally required form, schedule, or electronic filing submitted annually by an individual, corporation, partnership, or trust to a government revenue agency (such as the Internal Revenue Service or HM Revenue and Customs), documenting gross earnings, deductible expenses, capital gains, tax credits, and exemptions to calculate the precise net tax liability owed or refund due.",
+        "spatialContext": "Certified public accounting (CPA) offices, corporate tax departments, secure electronic tax software platforms (such as TurboTax or Thomson Reuters ONESOURCE), and national revenue processing centers.",
+        "temporalContext": "Prepared annually following the close of the calendar or fiscal year; strictly governed by statutory submission deadlines (e.g., April 15th for US individual returns, March 15th for corporate pass-through entities, or October extensions).",
+        "emotionalTone": "Meticulous, procedural, compliance-oriented, and exacting; frequently accompanied by organizational urgency and a sense of relief upon successful submission.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native English speaker, a 'tax return' is an inescapable annual civic and financial obligation. In informal speech, 'doing my taxes' refers specifically to the preparation of one's tax return. Native speakers maintain a clear conceptual difference between the 'return' (the multi-page paperwork, schedules, W-2s, and 1099s sent into the revenue department) and the 'refund' (the check or direct deposit sent back if excess tax was withheld). For corporate controllers, an annual tax return represents months of meticulous reconciliation between financial accounting net income (book income) and taxable income under statutory tax codes.",
+        "mentalImage": "An organized office desk illuminated by a desk lamp, featuring a laptop displaying tax preparation software with a green 'Ready to E-file' status bar, next to neatly tabbed folders containing W-2 forms, 1099 statements, charitable donation receipts, and a signed Form 1040.",
+        "whenToUse": "Use when referring to the actual documentation, schedules, or electronic submission sent to a tax revenue authority detailing taxable income and deductions (e.g., 'file an annual tax return', 'joint tax return', 'amended tax return', 'corporate tax return deadline').",
+        "whenNotToUse": "Never use 'tax return' when referring to the money reimbursed to you by the government after overpayment—that payment is a 'tax refund'. Do not use it to refer to the tax rate, the tax law, or the general concept of taxation.",
+        "culturalContext": "In the United States, 'Tax Day' (traditionally April 15) is an iconic cultural deadline that dominates national news, with postal stations and online filing servers experiencing peak traffic. In commercial banking and consumer lending, providing two to three years of verified tax returns is a universal prerequisite for securing commercial mortgages, business loans, or personal home financing, serving as the ultimate verification of declared income."
+      },
+      "examples": {
+        "daily": [
+          "Before approving the mortgage application, the bank requested copies of our signed federal tax returns for the past two years.",
+          "Sarah spent the weekend gathering her medical receipts and freelance invoices so her accountant could finalize her annual tax return.",
+          "If you discover that you omitted an allowable deduction, you can submit an amended tax return to the revenue department within three years."
+        ],
+        "business": [
+          "The corporate accounting department filed a formal request for a six-month filing extension on the multinational's consolidated tax return.",
+          "Prior to submitting the annual tax return, the financial controller cross-referenced all claimed equipment depreciation against the fixed-asset ledger.",
+          "Failure to file the partnership's corporate tax return by the statutory March 15 deadline triggers automatic monthly penalties for each partner."
+        ],
+        "conversation": [
+          "\"Have you already submitted your annual tax return, or are you waiting until the April deadline?\" — \"I filed mine electronically last week through my accountant's secure portal and already received the confirmation receipt.\"",
+          "\"Why is the commercial loan underwriter asking for our company's last three tax returns?\" — \"Lenders insist on reviewing official tax returns because they provide verified, sworn documentation of our actual historical profitability.\"",
+          "\"I just got a letter from the tax agency saying there was a mathematical discrepancy on my previous year's tax return.\" — \"Don't worry; you can review the schedule with your CPA and file a corrected return if necessary.\""
+        ],
+        "collocations": [
+          "file a tax return",
+          "annual tax return",
+          "corporate tax return",
+          "amended tax return",
+          "submit a tax return",
+          "joint tax return"
+        ]
+      },
+      "wordFamily": {
+        "noun": "tax return, return",
+        "verb": "return (in legal/revenue sense), file a return",
+        "adjective": "returnable",
+        "adverb": "in return"
+      },
+      "visual": {
+        "imageKeyword": "tax return form 1040 financial documents filing calculator corporate accountant",
+        "imageDescription": "A professional desk setting featuring an official Form 1040 tax return document with highlighted line items, accompanied by a modern silver calculator, a fountain pen, organized expense receipts, and a laptop showing tax software.",
+        "mnemonic": "You RETURN the completed forms BACK to the government! (Remember: The RETURN is the form you file; the REFUND is the funds you receive!)"
+      },
+      "video": {
+        "description": "An instructional business accounting tutorial walking corporate bookkeepers through the step-by-step process of preparing a corporate tax return, explaining how to reconcile book income to taxable income and e-file through government gateways."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Small business owners are strongly advised to retain supporting expense receipts and payroll records for at least seven years after filing their annual tax _______.\n(A) return\n(B) returns\n(C) returning\n(D) returnable",
+        "tips": "In TOEIC Part 5, questions frequently test common compound nouns in administrative and financial environments. In this sentence, the possessive pronoun 'their' and the compound modifier 'annual tax' require the singular countable noun 'return' (A) to form the established collocation 'annual tax return' (referring to the single annual filing per business entity). Choice (B) 'returns' is plural and does not fit the singular distributive sense established by 'annual tax'. Choice (C) 'returning' is a gerund/participle, and choice (D) 'returnable' is an adjective meaning capable of being returned."
+      },
+      "synonyms": [
+        "tax filing",
+        "income tax return",
+        "tax declaration",
+        "statement of taxable income",
+        "revenue return"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "tax refund",
+        "filing deadline",
+        "tax deduction",
+        "tax credit",
+        "withholding",
+        "internal revenue service",
+        "tax audit"
+      ]
+    },
+    {
+      "id": "finance-284",
+      "word": "taxation",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/tækˈseɪ.ʃən/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/taxation--_us_1.mp3",
+        "syllableBreakdown": "tax-a-tion",
+        "stressPattern": "Primary stress on the second syllable: tax-A-tion (/tækˈseɪ.ʃən/, ○●○)",
+        "commonMistakes": "Learners frequently misplace the primary stress onto the first syllable (*TAX-a-tion*) instead of stressing the penultimate second syllable (/tækˈseɪ.ʃən/). Another common mistake is smoothing or omitting the /ks/ consonant cluster of 'tax', pronouncing it erroneously as */təˈzeɪ.ʃən/* or */tæˈseɪ.ʃən/*. Additionally, learners often confuse 'taxation' (the overarching system, policy, or act of levying taxes) with an individual 'tax' (a specific assessment or levy on a transaction or asset) or 'tax rate' (the percentage at which taxes are assessed)."
+      },
+      "etymology": {
+        "origin": "Anglo-Norman and Middle French taxacion ('assessment, imposition of taxes, valuation'), from Classical Latin taxatio (genitive taxationis, 'a rating, appraisal, estimating of value'), noun of action formed from the past participle stem of taxare ('to evaluate, assess, rate, censure')",
+        "rootWord": "Latin taxatio (from taxare 'to appraise, assess, value')",
+        "rootMeaning": "'The systematic process of appraising, rating, or levying financial assessments'",
+        "evolution": "In Classical Roman law, 'taxatio' referred to a magistrate's judicial appraisal of damages or assessment of property values. Entering Middle English in the early 14th century via Anglo-Norman administrative exchequer rolls, 'taxation' denoted royal imposts levied by the Crown and Parliament on land, hearths, and wool exports. In 17th- and 18th-century political philosophy, the concept became central to constitutional debates over parliamentary consent and citizen rights, immortalized in the American revolutionary slogan 'no taxation without representation' (1765). In modern macroeconomics and public finance, 'taxation' refers to the comprehensive legal system, economic policy, and institutional mechanisms through which governments raise public revenues through income taxes, corporate excise levies, value-added taxes (VAT), and customs duties.",
+        "relatedLanguages": [
+          "French: taxation (taxation, levying of taxes, price-fixing)",
+          "Spanish: tributación / tasación (taxation, system of taxes / valuation, appraisal)",
+          "Italian: tassazione (taxation, system of levying taxes)",
+          "German: Besteuerung (taxation, imposition of taxes)",
+          "Portuguese: tributação / taxação (taxation, levying of taxes)"
+        ],
+        "firstRecordedUse": "Early 14th century (circa 1300–1325 in Middle English legal treatises and exchequer accounts)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The institutional system, governmental policy, or sovereign process through which a public authority imposes and collects compulsory financial contributions, levies, or duties from individuals, businesses, and property owners to finance public services, infrastructure, national defense, and civil administration. The term also encompasses the total revenues raised through this process and the academic study of tax structures in public finance (such as direct versus indirect taxation, or progressive versus regressive taxation).",
+        "spatialContext": "Legislative budget chambers, ministries of finance, corporate tax planning departments, international macroeconomic research bodies (such as the OECD or IMF), and multinational treasury offices evaluating cross-border tax treaties.",
+        "temporalContext": "Enacted through annual legislative finance acts and long-term statutory tax reforms; levied continuously on commercial transactions and payroll; reconciled during quarterly corporate estimated tax filings and annual fiscal audits.",
+        "emotionalTone": "Formal, authoritative, institutional, and civic; frequently invoked in serious discussions regarding economic competitiveness, corporate compliance, regulatory burdens, and social equity.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native English speakers, 'taxation' is the macro-level economic architecture of government funding. While an individual bill or fee is a 'tax', the entire governmental power and system is 'taxation'. It carries deep historical and philosophical resonance in the English-speaking world, where battles over sovereign taxation shaped the Magna Carta, the English Civil War, and the American Revolution. In executive boardrooms, corporate leadership views taxation as a pivotal macroeconomic factor that determines plant location, international capital investment, dividend distribution, and supply-chain routing.",
+        "mentalImage": "An imposing view of a national treasury building flanked by classical stone pillars, with a sleek conference room inside where economic advisors review interactive charts comparing direct and indirect corporate taxation rates across member nations.",
+        "whenToUse": "Use when discussing the overall system, rate structure, governmental authority, or economic policy of levying taxes (e.g., 'system of progressive taxation', 'bilateral treaties to prevent double taxation', 'exempt from municipal taxation', 'corporate taxation policy').",
+        "whenNotToUse": "Do not use 'taxation' when referring to a single specific tax payment, invoice line-item, or tariff bill—use 'a tax' or 'tax charge'. Do not use it to describe the paperwork submitted by a taxpayer (use 'tax return').",
+        "culturalContext": "The principle that taxation requires democratic consent is foundational to Anglo-American political philosophy. Benjamin Franklin famously wrote in 1789 that 'in this world, nothing can be said to be certain, except death and taxes.' In modern international trade and global business, multinational corporations actively negotiate bilateral tax treaties to avoid 'double taxation'—the scenario where two separate countries tax the same corporate earnings."
+      },
+      "examples": {
+        "daily": [
+          "Local economists argued that reducing commercial taxation in the downtown core would encourage entrepreneurs to open new retail storefronts.",
+          "During the town hall meeting, city council members explained how increased property taxation would directly fund road repairs and school improvements.",
+          "Civic organizations remind citizens that fair and transparent taxation is necessary to maintain public transit, parks, and healthcare services."
+        ],
+        "business": [
+          "The multinational technology corporation established its regional headquarters in Singapore to benefit from competitive rates of corporate taxation.",
+          "Bilateral treaties signed between the two trading partners protect cross-border enterprises from the financial burden of double taxation on foreign earnings.",
+          "The executive committee retained an international advisory firm to evaluate how proposed carbon taxation would impact the company's manufacturing supply chain."
+        ],
+        "conversation": [
+          "\"How will the proposed reforms in corporate taxation affect our capital expenditure budget next year?\" — \"If the new legislation allows immediate expensing of equipment purchases, our after-tax cash flow will improve significantly.\"",
+          "\"Why are our cross-border consulting fees being subjected to withholding tax by the overseas subsidiary?\" — \"Unless we provide a certificate of residency under the bilateral taxation treaty, the foreign revenue authority is legally required to deduct local withholding tax.\"",
+          "\"Does this executive compensation package include tax equalization for expatriate staff?\" — \"Yes, the human resources policy guarantees that expatriates will not suffer financially from higher rates of local taxation while working abroad.\""
+        ],
+        "collocations": [
+          "corporate taxation",
+          "double taxation",
+          "system of taxation",
+          "rates of taxation",
+          "direct and indirect taxation",
+          "exempt from taxation"
+        ]
+      },
+      "wordFamily": {
+        "noun": "taxation, tax, taxpayer",
+        "verb": "tax",
+        "adjective": "taxable, taxing",
+        "adverb": "taxingly"
+      },
+      "visual": {
+        "imageKeyword": "corporate taxation government treasury fiscal policy finance economics chart",
+        "imageDescription": "A dignified view of a national ministry of finance boardroom, featuring an open macroeconomic policy report with colorful charts detailing corporate taxation models, beside a fountain pen, a digital tablet, and a financial ledger.",
+        "mnemonic": "TAX-A-TION is the NATION'S TAX SYSTEM! The whole NATION is funded by TAXATION!"
+      },
+      "video": {
+        "description": "An educational macroeconomic video explaining the fundamental principles of public finance, illustrating how national taxation systems generate revenue for public infrastructure and how international tax treaties eliminate double taxation."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Under the newly ratified bilateral trade agreement, commercial equipment imported exclusively for scientific research is completely exempt from local _______.\n(A) taxation\n(B) tax\n(C) taxing\n(D) taxable",
+        "tips": "In TOEIC Part 5, prepositional phrases such as 'exempt from' followed by an adjective ('local') require an abstract uncountable noun describing an overarching system, status, or policy. The noun 'taxation' (A) correctly completes the established legal and financial phrase 'exempt from local taxation' (excused from the levying of taxes). Choice (B) 'tax' is a countable noun that would require an article (e.g., 'a local tax') in this context. Choice (C) 'taxing' is an adjective meaning demanding or burdensome, and choice (D) 'taxable' is an adjective meaning subject to tax, neither of which can serve as the noun object of the preposition."
+      },
+      "synonyms": [
+        "levying of taxes",
+        "fiscal assessment",
+        "tax regime",
+        "revenue assessment",
+        "imposition of duties"
+      ],
+      "antonyms": [
+        "tax exemption",
+        "tax immunity",
+        "tax relief",
+        "zero taxation"
+      ],
+      "relatedWords": [
+        "corporate tax",
+        "double taxation treaty",
+        "direct taxation",
+        "indirect taxation",
+        "value-added tax",
+        "fiscal policy",
+        "tax bracket"
+      ]
+    }
+  ]
+}

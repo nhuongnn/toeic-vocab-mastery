@@ -1,0 +1,347 @@
+{
+  "words": [
+    {
+      "id": "finance-108",
+      "word": "cost-effective",
+      "partOfSpeech": [
+        "adjective"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˌkɑːst.ɪˈfek.tɪv/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/cost-effective--_us_1.mp3",
+        "syllableBreakdown": "cost·ef·fec·tive",
+        "stressPattern": "◐○●○",
+        "commonMistakes": "Learners frequently conflate 'cost-effective' with simply 'cheap' or 'low-cost'; however, 'cheap' implies low purchase price regardless of durability or quality, whereas 'cost-effective' denotes delivering substantial value, productivity, or return relative to total expenditure. Phonetically, non-native speakers often elide the final /t/ of 'cost' before the vowel /ɪ/, pronouncing it as 'cos-effective' (/kɑːs.ɪˈfek.tɪv/), or mistakenly shift primary stress to the first syllable (*COST-effective) instead of stressing the third syllable ('-fec-')."
+      },
+      "etymology": {
+        "origin": "Modern English compound formed from 'cost' (via Old French couster from Latin constāre, 'to stand together, to cost') and 'effective' (from Latin effectīvus, from efficere, 'to accomplish, bring about').",
+        "rootWord": "constāre / efficere",
+        "rootMeaning": "to stand at a price / to bring about an effect",
+        "evolution": "Coined during mid-20th-century systems analysis and defense procurement operations research (prominently within the RAND Corporation and US Department of Defense during the 1960s) to evaluate military systems where budget caps demanded maximum operational performance per dollar spent. It transitioned swiftly into general corporate finance, healthcare economics, and management accounting to denote capital expenditures justified by measurable returns.",
+        "relatedLanguages": [
+          "French: rentable / coût-efficacité",
+          "Spanish: rentable / costo-efectivo",
+          "Italian: vantaggioso / costo-efficace",
+          "German: kostengünstig / wirtschaftlich"
+        ],
+        "firstRecordedUse": "c. 1960 (in military logistics, systems economics, and operations research literature)"
+      },
+      "deepMeaning": {
+        "coreConcept": "Producing optimal, high-quality results or substantial return on investment in proportion to the financial outlay, operational time, or resources expended; economically worthwhile and justifiable.",
+        "spatialContext": "Corporate executive boardrooms, procurement departments, capital expenditure (CapEx) review sessions, RFP evaluation committees, and financial modeling software dashboards.",
+        "temporalContext": "Annual departmental budgeting, quarterly CapEx reviews, major procurement contract cycles, and post-implementation ROI audits.",
+        "emotionalTone": "Prudent, strategic, fiscally responsible, and value-oriented.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native corporate executive, calling a solution 'cost-effective' is a rigorous endorsement of strategic efficiency, not an admission of frugality. It implies that a higher upfront capital investment is entirely justified because reduced operating expenses, durability, automation, or productivity gains will create superior total-cost-of-ownership savings. It contrasts sharply with 'cheap', which carries connotations of corner-cutting and sub-par quality.",
+        "mentalImage": "A procurement director delivering a slide presentation to an executive committee, displaying a total-cost-of-ownership comparison where a cloud-based ERP with a higher upfront license fee breaks even in nine months and slashes recurring IT maintenance by forty percent.",
+        "whenToUse": "Use when justifying operational decisions, equipment upgrades, software migrations, outsourcing contracts, or process optimizations that offer superior value relative to their total financial expense.",
+        "whenNotToUse": "Do not use to describe personal retail bargains, everyday grocery discounts, or cheap disposable products. Avoid using when expense reductions undermine critical safety, regulatory compliance, or fundamental operational standards.",
+        "culturalContext": "In Western corporate governance, demonstrating that a capital appropriation request is cost-effective is mandatory under fiduciary duty. The term is ubiquitous across Fortune 500 corporate RFPs, public-sector procurement statutes, and consulting case studies."
+      },
+      "examples": {
+        "daily": [
+          "Switching to LED smart lightbulbs proved to be a highly cost-effective upgrade that visibly lowered our monthly utility bill.",
+          "Preparing home-cooked meals in large batches on Sundays is far more cost-effective than ordering weekday takeout lunches.",
+          "Scheduling routine seasonal servicing for the home furnace is the most cost-effective way to prevent costly mid-winter breakdowns."
+        ],
+        "business": [
+          "Migrating legacy on-premise databases to a serverless cloud infrastructure proved to be a cost-effective decision that cut data warehousing expenses by thirty-five percent.",
+          "The procurement panel selected the hybrid delivery vans over diesel models after concluding they were the most cost-effective option on a total-cost-of-ownership basis.",
+          "The marketing division reallocated its quarterly ad spend toward programmatic search campaigns after finding them significantly more cost-effective than billboard placements."
+        ],
+        "conversation": [
+          "\"Why did the committee approve leasing the specialized diagnostic machinery rather than buying it outright?\" / \"Leasing includes full maintenance and biennial upgrades, making it far more cost-effective over a five-year lifecycle.\"",
+          "\"Are we ready to present the new vendor contract to the chief financial officer?\" / \"Yes, our side-by-side analysis clearly proves that switching to Apex Logistics is the most cost-effective solution for regional freight.\""
+        ],
+        "collocations": [
+          "cost-effective solution",
+          "cost-effective alternative",
+          "cost-effective measure",
+          "cost-effective approach",
+          "highly cost-effective",
+          "prove cost-effective"
+        ]
+      },
+      "wordFamily": {
+        "noun": "cost-effectiveness",
+        "verb": "",
+        "adjective": "cost-effective",
+        "adverb": "cost-effectively"
+      },
+      "visual": {
+        "imageKeyword": "corporate executive presenting return on investment bar chart financial efficiency boardroom",
+        "imageDescription": "A senior financial analyst standing beside an interactive digital display in a conference room, presenting an ROI trajectory showing declining operational expenses beside rising net margins.",
+        "mnemonic": "COST-EFFECTIVE: The real EFFECT of your investment far outweighs the initial COST—it pays for itself in value!"
+      },
+      "video": {
+        "description": "An executive business case study examining how an international logistics carrier digitized warehouse operations to achieve a cost-effective supply chain with twenty percent higher throughput."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Upgrading to automated sorting machinery proved to be a _____ investment that reduced shipping fulfillment errors by forty percent. (A) cost-effective (B) cost-effectively (C) cost-effectiveness (D) cost-effect",
+        "tips": "In TOEIC Part 5, following an indefinite article ('a') and preceding a head noun ('investment'), the position requires an attributive adjective. Choice (A) 'cost-effective' is the correct compound adjective modifying 'investment'. Choice (B) is an adverb, (C) is a noun, and (D) is an ungrammatical compound. Look for high-frequency collocations like 'cost-effective solution' and 'cost-effective alternative' in Part 7 corporate memos."
+      },
+      "synonyms": [
+        "economical",
+        "cost-efficient",
+        "financially viable",
+        "value-for-money",
+        "remunerative",
+        "budget-friendly"
+      ],
+      "antonyms": [
+        "uneconomical",
+        "cost-ineffective",
+        "wasteful",
+        "exorbitant",
+        "prohibitive"
+      ],
+      "relatedWords": [
+        "return on investment",
+        "capital expenditure",
+        "operating expenses",
+        "cost-benefit analysis",
+        "total cost of ownership",
+        "break-even analysis"
+      ]
+    },
+    {
+      "id": "finance-109",
+      "word": "coupon",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˈkuː.pɑːn/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/coupon--_us_1.mp3",
+        "syllableBreakdown": "cou·pon",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners frequently mispronounce the first syllable by inserting a /j/ glide, saying 'kew-pon' (/ˈkjuː.pɑːn/), which is considered colloquial or dialectal in many corporate contexts compared to standard General American /ˈkuː.pɑːn/ ('koo-pahn'). Additionally, learners often obscure the second syllable as an unstressed schwa 'coo-pun' (/ˈkuː.pən/) or mimic French nasalization (/ku.pɔ̃/), rather than pronouncing the distinct open /ɑː/ or /ɒ/ vowel."
+      },
+      "etymology": {
+        "origin": "Borrowed from French coupon ('a piece cut off, voucher'), from the Old French verb couper ('to cut'), from coup ('a blow, stroke, cut'), from Vulgar Latin *colpus, from Late Latin colaphus ('a cuff, slap'), from Ancient Greek κόλαφος (kolaphos).",
+        "rootWord": "couper / coup",
+        "rootMeaning": "to cut, a piece cut off",
+        "evolution": "In 18th-century French finance, bearer bonds were issued with small detachable certificates printed along the margins. When periodic interest fell due, the bondholder literally clipped off ('coupa') one certificate and presented it at the banking counter for cash payment. The term entered English finance during the 1820s to describe bond interest payments. By the late 19th century (popularized by Coca-Cola's complimentary soda tickets in 1887), the mechanism was adopted by commercial merchants as detachable discount certificates for retail advertising.",
+        "relatedLanguages": [
+          "French: coupon (ticket remnant / bond interest coupon)",
+          "Spanish: cupón (voucher / interest coupon)",
+          "Italian: cedola (bond coupon) / buono sconto (voucher)",
+          "German: Kupon (bond coupon / discount coupon)"
+        ],
+        "firstRecordedUse": "1822 (in English bond and debenture finance); 1887 (in commercial retail promotions)"
+      },
+      "deepMeaning": {
+        "coreConcept": "In fixed-income finance, the annual interest payment or nominal rate paid by a bond issuer to the bondholder based on face value; in retail and commerce, a printed voucher, promotional certificate, or digital discount code granting a price deduction or rebate on goods or services.",
+        "spatialContext": "Bond trading desks, institutional custodian bank vaults, fixed-income investor roadshows, e-commerce checkout payment gateways, and retail point-of-sale cash registers.",
+        "temporalContext": "Semi-annual bond coupon disbursement dates, corporate bond issuance schedules, holiday promotional marketing seasons, and e-commerce flash discount campaigns.",
+        "emotionalTone": "Incentivizing, lucrative, contractual, and yield-bearing.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers operate across two well-defined domains depending on the setting. In consumer commerce, 'coupon' instinctively triggers thoughts of cutting prices, scanning mobile barcodes, or entering promo codes at checkout. In corporate finance and wealth management, however, 'coupon' or 'coupon rate' carries rigorous technical weight: it is the guaranteed contractual cash flow a debt security yields to its holder, historically evoking the phrase 'clipping coupons' as a metaphor for living off steady bond interest.",
+        "mentalImage": "In finance, an investment portfolio manager analyzing a corporate debt prospectus specifying a 5.75% semi-annual coupon on a 10-year senior secured note; in retail, a shopper scanning a 20% discount barcode on a smartphone at a department store checkout register.",
+        "whenToUse": "Use in investment finance when discussing fixed-income securities, bond yields, debt structures, or interest disbursements. Use in retail and e-commerce when referring to discount vouchers, barcode slips, or digital promotional codes.",
+        "whenNotToUse": "In consumer retail, do not confuse with a 'gift card' or 'voucher' that represents stored monetary currency rather than a conditional discount. In bond finance, do not confuse 'coupon rate' with 'yield to maturity (YTM)', which accounts for secondary market price fluctuations.",
+        "culturalContext": "In Anglo-American consumer culture, clipping retail coupons has been a celebrated budgeting tradition featured in newspapers and mobile applications. In financial history, European and Wall Street bearer bonds gave rise to the wealthy class of 'coupon clippers' who survived comfortably on passive bond interest receipts."
+      },
+      "examples": {
+        "daily": [
+          "Don't forget to apply the discount coupon at checkout to save fifteen dollars on your online grocery order.",
+          "The local hardware store sent out a circular with a printable coupon for twenty percent off all gardening tools.",
+          "She scanned the digital manufacturer coupon from her mobile wallet right before paying at the supermarket register."
+        ],
+        "business": [
+          "The multinational conglomerate issued ten-year corporate notes carrying an annual coupon of 4.75 percent payable semi-annually.",
+          "To reduce customer churn, the subscription software company emailed lapsed clients a promotional coupon granting three months at half price.",
+          "Secondary market prices for older utility bonds fell sharply after newly issued bonds offered substantially higher coupons."
+        ],
+        "conversation": [
+          "\"Did the corporate bond offering attract institutional buyers?\" / \"Yes, despite market volatility, the competitive 5.5 percent coupon ensured the entire tranche was oversubscribed within hours.\"",
+          "\"Why did our e-commerce conversion rate jump by twelve percent this weekend?\" / \"We rolled out a sitewide ten-dollar coupon for first-time shoppers who registered an account.\""
+        ],
+        "collocations": [
+          "coupon code",
+          "coupon rate",
+          "redeem a coupon",
+          "clip a coupon",
+          "semi-annual coupon",
+          "zero-coupon bond"
+        ]
+      },
+      "wordFamily": {
+        "noun": "coupon, couponing, couponer",
+        "verb": "coupon",
+        "adjective": "couponless",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "retail discount coupon code alongside corporate fixed income bond certificate",
+        "imageDescription": "A dual-focus composition depicting a modern digital smartphone screen displaying a 20 percent discount barcode coupon beside a classic physical bond certificate detailing a fixed interest coupon rate.",
+        "mnemonic": "COUPON comes from French 'couper' (to cut): whether you CLIP a paper discount from a flyer or CUT an interest slip from a bond, you extract immediate monetary value!"
+      },
+      "video": {
+        "description": "A financial education explainer demonstrating how fixed-income bond coupons work in institutional debt markets, contrasted with how digital coupon promotions drive e-commerce checkout conversions."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "To receive the discounted conference registration fee, attendees must submit the promotional _____ found in the informational brochure. (A) coupon (B) couponing (C) coupons (D) couponed",
+        "tips": "In TOEIC Part 7, promotional advertisements, conference booking slips, and customer emails regularly test terms like 'coupon' and 'voucher'. In Part 5 grammar questions, preceded by the definite article ('the') and modifying adjective ('promotional'), the blank requires the singular head noun (A) 'coupon'. Choice (B) is a gerund/participle, (C) is plural, and (D) is a past participle. Watch for collocations like 'redeem a coupon' and 'enter a coupon code'."
+      },
+      "synonyms": [
+        "voucher",
+        "discount certificate",
+        "promo code",
+        "rebate ticket",
+        "bond interest payment"
+      ],
+      "antonyms": [
+        "surcharge",
+        "penalty fee",
+        "full price"
+      ],
+      "relatedWords": [
+        "bondholder",
+        "yield to maturity",
+        "debenture",
+        "par value",
+        "redemption",
+        "promotional code",
+        "face value"
+      ]
+    },
+    {
+      "id": "finance-110",
+      "word": "covenant",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈkʌv.ə.nənt/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/covenant--_us_1.mp3",
+        "syllableBreakdown": "cov·e·nant",
+        "stressPattern": "●○○",
+        "commonMistakes": "Learners frequently mispronounce the first vowel by analogy with words like 'cove' or 'clove', pronouncing it as /oʊ/ (*KOH-veh-nant* /ˈkoʊv.ə.nənt/) rather than the short central vowel /ʌ/ as in 'cup' or 'govern' (/ˈkʌv.ə.nənt/). Another error is failing to reduce the second syllable vowel to a weak schwa /ə/, artificially stressing it as /e/ or /æ/ ('cov-en-ant')."
+      },
+      "etymology": {
+        "origin": "Middle English covenant / convenant, borrowed from Anglo-Norman and Old French covenant ('agreement, pact, treaty'), the substantivized present participle of convenir ('to agree, suit, come together'), from Latin convenīre ('to assemble, come together, agree'), from com- ('together') + venīre ('to come').",
+        "rootWord": "convenīre (com- + venīre)",
+        "rootMeaning": "to come together, to agree solemnly",
+        "evolution": "In Roman law, convenīre referred to physical assembly or meeting of minds. After the Norman Conquest, Anglo-Norman common law established 'covenant' as a formal contract entered under seal. By the late 19th and 20th centuries, Anglo-American commercial banking and syndicated lending formalized debt covenants as legally binding clauses in indentures and loan agreements to safeguard creditors against borrower risk and asset stripping.",
+        "relatedLanguages": [
+          "French: convention (formal pact) / convenir (to agree)",
+          "Spanish: convenio (pact, covenant) / convenir",
+          "Italian: convenzione (formal agreement) / patto",
+          "German: Kreditauflage (loan covenant) / Klausel"
+        ],
+        "firstRecordedUse": "Early 14th century (c. 1300 in Middle English legal deeds, charters, and formal pacts)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A formal, legally binding commitment or contractual stipulation inserted into a loan agreement, bond indenture, or property deed that obligates the borrower or signer either to perform specific acts (affirmative covenant) or refrain from designated activities (negative/restrictive covenant) to protect the interests of creditors or grantors.",
+        "spatialContext": "Commercial bank credit committee rooms, syndicated lending syndicate desks, corporate legal departments, commercial real estate title closings, and financial auditing firms.",
+        "temporalContext": "Syndicated credit facility structuring, quarterly financial compliance certificate submissions, annual credit rating reviews, and debt restructuring proceedings.",
+        "emotionalTone": "Binding, formal, protective, restrictive, and legally authoritative.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To banking professionals, treasurers, and corporate lawyers, a 'covenant' is an indispensable financial guardrail. Lenders do not simply hand over hundreds of millions of dollars based on goodwill; they install covenants as early warning tripwires. If a corporate borrower's leverage ratio exceeds an agreed multiple of EBITDA or liquidity falls below a floor, a 'covenant breach' occurs, granting lenders legal leverage to demand penalty interest, request collateral, or accelerate debt repayment.",
+        "mentalImage": "A corporate treasurer and an external bank auditor seated before spread-out financial statements and a thick credit agreement binder, recalculating the interest coverage ratio to ensure the company remains comfortably above its loan covenant threshold.",
+        "whenToUse": "Use in corporate finance, debt underwriting, bond indentures, commercial property deeds, and banking credit agreements when referring to legally binding stipulations, restrictions, or minimum operational benchmarks.",
+        "whenNotToUse": "Do not use for everyday casual promises, verbal handshakes, or standard customer sales transactions (use 'agreement', 'terms', or 'promise'). Do not confuse with a generic contract clause that does not impose an ongoing financial or behavioral obligation.",
+        "culturalContext": "Rooted deep in Anglo-American legal and religious history (from biblical covenants to feudal land deeds), modern financial covenants are the bedrock of credit risk management in New York and London syndicated loan markets, where the proliferation of 'covenant-lite loans' often signals market overheating."
+      },
+      "examples": {
+        "daily": [
+          "Before installing a privacy fence, the homeowner consulted the neighborhood deed covenant to verify height restrictions.",
+          "The historic preservation covenant on the downtown brownstone prevents owners from modifying the original brick facade.",
+          "Residents formed a committee to ensure that the commercial developer adhered to the environmental green-space covenant."
+        ],
+        "business": [
+          "Under the terms of the revolving credit facility, the manufacturer must maintain a minimum cash liquidity covenant of twenty-five million dollars.",
+          "Following a sudden drop in quarterly operating income, the airline requested a temporary covenant waiver from its syndicate of commercial lenders.",
+          "The bond indenture features a negative covenant prohibiting the company from paying common share dividends if its leverage ratio exceeds 3.5 times EBITDA."
+        ],
+        "conversation": [
+          "\"Did the credit rating agency downgrade our corporate debt?\" / \"No, but they issued a caution because our cash reserves are hovering close to our minimum liquidity covenant.\"",
+          "\"Can the enterprise take on additional mezzanine debt to fund the overseas expansion?\" / \"Not under our existing loan agreement; our senior lender covenant explicitly forbids additional borrowing without prior written approval.\""
+        ],
+        "collocations": [
+          "debt covenant",
+          "restrictive covenant",
+          "affirmative covenant",
+          "breach a covenant",
+          "covenant waiver",
+          "covenant-lite loan"
+        ]
+      },
+      "wordFamily": {
+        "noun": "covenant, covenantor, covenantee",
+        "verb": "covenant",
+        "adjective": "covenanted, covenantal",
+        "adverb": "covenantally"
+      },
+      "visual": {
+        "imageKeyword": "corporate loan agreement credit facility covenant contract fountain pen signing",
+        "imageDescription": "A formal corporate loan facility contract open to a debt covenant schedule detailing financial ratio thresholds, resting beside an ink fountain pen and financial calculator on a polished boardroom table.",
+        "mnemonic": "COVENANT comes from 'con-venire' (to come together): borrower and lender COME TOGETHER to set strict guardrails that protect the capital!"
+      },
+      "video": {
+        "description": "A corporate banking masterclass lecture explaining the mechanics of debt covenants in syndicated loans, detailing the consequences of technical defaults and covenant waivers."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "To prevent defaulting on its multi-million-dollar credit facility, the logistics company must strictly adhere to the financial _____ outlined in the lending agreement. (A) covenant (B) covenanted (C) covenanting (D) covenants",
+        "tips": "In TOEIC Part 5, following the compound adjective 'financial' and preceded by the singular determiner 'the', the sentence requires a head noun. While (A) and (D) are noun forms, singular context ('the financial _____ outlined') in reference to a singular legal stipulation requires (A) 'covenant'. Choices (B) and (C) are participle/verb forms. In Part 7, look for debt covenants in business contracts, banking correspondence, and corporate financial report disclosures."
+      },
+      "synonyms": [
+        "binding stipulation",
+        "contractual clause",
+        "legal pledge",
+        "indenture requirement",
+        "protective condition",
+        "formal pact"
+      ],
+      "antonyms": [
+        "breach",
+        "nullification",
+        "cancellation",
+        "waiver"
+      ],
+      "relatedWords": [
+        "indenture",
+        "technical default",
+        "debt facility",
+        "liquidity ratio",
+        "credit agreement",
+        "syndicated loan",
+        "waiver"
+      ]
+    }
+  ]
+}

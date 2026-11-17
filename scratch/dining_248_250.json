@@ -1,0 +1,346 @@
+{
+  "words": [
+    {
+      "id": "dining-248",
+      "word": "slice",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/slaɪs/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/slice--_us_1.mp3",
+        "syllableBreakdown": "slice",
+        "stressPattern": "●",
+        "commonMistakes": "Learners often drop the final unvoiced /s/ consonant or shorten the diphthong /aɪ/ to /ɪ/ (sounding like \"sliss\"). Ensure a smooth vocalic glide from open /a/ to /ɪ/ before releasing a clean, unvoiced alveolar sibilant /s/ without an extraneous trailing vowel sound."
+      },
+      "etymology": {
+        "origin": "Old French / Old High German",
+        "rootWord": "esclice (from Old High German *slīzan: to split, cleave)",
+        "rootMeaning": "*slīzan (to tear, cleave, or break off a flat piece)",
+        "evolution": "Entered Middle English in the late 14th century from Old French \"esclice\" (a flat splinter or fragment), a derivative of \"esclicier\" (to splinter, break into pieces) borrowed from Frankish or Old High German \"*slīzan\" (cognate with Old English \"slītan\", the source of modern English \"slit\"). By the 15th century, the word specialized in culinary terminology to mean a broad, thin piece cut cleanly from a whole food item such as bread, meat, cheese, or fruit. In the 20th century, it acquired its prevalent commercial metaphor of a portion or percentage of a market, budget, or profit pool.",
+        "relatedLanguages": [
+          "French: éclisse (splint / wicker strip)",
+          "German: schleissen (to slit / split)",
+          "Dutch: slijten (to wear down / split)",
+          "Old English: slītan (to tear / slit)"
+        ],
+        "firstRecordedUse": "Late 14th century (Middle English)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A broad, relatively thin piece cleanly cut or carved across a larger whole food item (such as bread, roast meat, cheese, cake, pie, pizza, or citrus fruit); figuratively, an allocated portion, fraction, or share of an undivided commercial entity (such as market share, revenue, or budgetary funding).",
+        "spatialContext": "Banquet carving stations, commercial deli counters, bakery display vitrines, cafeteria sandwich assembly lines, and corporate event dessert tables.",
+        "temporalContext": "Portioned during commercial food preparation shifts, carved to order at live buffet carving stations during evening galas, or served as individual dessert portions at conference luncheons.",
+        "emotionalTone": "Objective, appetizing, culinary, precise, and portion-conscious.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, \"a slice\" immediately triggers a geometric visual of a clean, flat cut produced by a sharp knife blade (a slice of roast beef, cheddar, sourdough, or pie). In hospitality, it represents a standard single serving. In corporate discourse, natives instinctively use it metaphorically (\"a slice of the market/budget\") to signify an allocated piece of a pie.",
+        "mentalImage": "A culinary chef in a white chef coat and tall hat using a long, polished carving knife to cut a warm, tender slice of roast prime rib beneath glowing buffet heat lamps.",
+        "whenToUse": "Use when specifying individual cut portions of bread, meat, cheese, cake, pie, pizza, citrus fruit, or melon. Also use in corporate business idioms describing fractional shares of revenue, data, or market share.",
+        "whenNotToUse": "Do not use for irregular chunks or rough cubes of vegetables and meat (use \"chunk\", \"cube\", or \"diced pieces\"), nor for liquid portions (use \"bowl\" or \"cup\"), nor for whole uncut loaves.",
+        "culturalContext": "A cornerstone of everyday dining and corporate banquet service. Pizza \"by the slice\" is a staple of urban working lunches, while prime rib carving stations are traditional hallmarks of celebratory corporate galas. Common in TOEIC Part 1 photo descriptions (food on cutting boards, chefs slicing bread) and Part 7 catering contracts."
+      },
+      "examples": {
+        "daily": [
+          "She toasted a thick slice of artisanal sourdough bread and topped it with smashed avocado for breakfast.",
+          "Could I have a tall glass of sparkling water with a fresh slice of lemon, please?",
+          "He asked the server for a warm slice of Dutch apple pie served with vanilla bean ice cream."
+        ],
+        "business": [
+          "The conference catering package includes a gourmet sandwich, seasonal side salad, and a generous slice of dark chocolate cake per attendee.",
+          "To reduce food waste and accommodate lighter appetites, the company cafeteria began offering artisanal pizza by the individual slice.",
+          "The banquet coordinator instructed kitchen staff to prepare thirty extra pre-plated slices of roast turkey for the executive seating area."
+        ],
+        "conversation": [
+          "\"Would you care for another slice of the raspberry cheesecake before the banquet staff clears the dessert station?\" / \"Thank you, I would love one—the pastry chef did a fantastic job balancing the citrus and cream.\"",
+          "\"How many slices of quiche can we expect from each customized breakfast catering tray?\" / \"Each ten-inch quiche is divided evenly into eight generous slices, perfect for morning boardroom meetings.\"",
+          "\"Did the chef prepare the roast beef carving station for tonight's reception?\" / \"Yes, each guest will receive a warm, tender slice of prime rib with rosemary au jus.\""
+        ],
+        "collocations": [
+          "a slice of bread",
+          "a slice of pizza",
+          "a slice of cake",
+          "a thin slice",
+          "a thick slice",
+          "a slice of lemon"
+        ]
+      },
+      "wordFamily": {
+        "noun": "slice, slicer",
+        "verb": "slice",
+        "adjective": "sliced",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "chef carving slice prime rib roast beef catering buffet",
+        "imageDescription": "A professional chef in a white chef uniform using a long, slender carving knife to carve a uniform slice of prime rib beef under warm lamps at a luxury banquet buffet.",
+        "mnemonic": "SLICE: The sharp knife SLID smoothly through the loaf, creating a perfect SLICE for lunch!"
+      },
+      "video": {
+        "description": "Culinary arts and catering tutorial: professional knife handling techniques for slicing uniform portions of roasted meats and artisan breads for event banquets."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          7
+        ],
+        "exampleQuestion": "The banquet manager instructed the culinary team to place a fresh _____ of lemon on each chilled glass of iced tea before guests arrived. (A) slice (B) slicing (C) sliced (D) slicer",
+        "tips": "Preceded by the indefinite article \"a\" and adjective \"fresh\", the blank requires a singular count noun representing a food portion: (A) slice. \"Slicer\" (D) refers to a mechanical cutter or tool, \"slicing\" (B) is a participle/gerund, and \"sliced\" (C) is a participial adjective."
+      },
+      "synonyms": [
+        "piece",
+        "portion",
+        "wedge",
+        "slab",
+        "shaving",
+        "segment"
+      ],
+      "antonyms": [
+        "whole",
+        "entirety",
+        "loaf"
+      ],
+      "relatedWords": [
+        "carve",
+        "portion",
+        "knife",
+        "platter",
+        "crust",
+        "deli"
+      ]
+    },
+    {
+      "id": "dining-249",
+      "word": "snack",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/snæk/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/snack--_us_1.mp3",
+        "syllableBreakdown": "snack",
+        "stressPattern": "●",
+        "commonMistakes": "Learners often substitute the short open vowel /æ/ (as in \"cat\") with /e/ (as in \"neck\") or /ɑː/ (as in \"sock\"). Ensure the jaw lowers noticeably for /æ/ and end with a clean unvoiced velar plosive /k/ without devoicing or adding an unnecessary vowel."
+      },
+      "etymology": {
+        "origin": "Middle Dutch / Middle Low German",
+        "rootWord": "snacken (to snatch, bite, snap at)",
+        "rootMeaning": "snacken (to make a snapping sound with the mouth or jaws)",
+        "evolution": "Derived from Middle Dutch or Middle Low German \"snacken\" (to snap, bite), cognate with \"snappen\" (to snatch up). Entering Early Modern English in the late 16th century, it first meant a sudden bite or a share snatched up in haste (preserved in the old idiom \"go snacks\"). By the mid-18th century (c. 1757), the noun shifted definitively to describe a light, quick meal or small food portion consumed informally between scheduled meal times.",
+        "relatedLanguages": [
+          "Dutch: snack / versnapering (snack / delicacy)",
+          "German: schnappen (to snap / snatch)",
+          "Swedish: snacka (to chatter / snap)"
+        ],
+        "firstRecordedUse": "Mid-18th century (culinary sense); 14th century (for snap/bite)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A small quantity of food or light refreshment eaten informally between scheduled daily meals, typically requiring little or no culinary preparation and designed for quick consumption.",
+        "spatialContext": "Office breakrooms, corporate pantry kitchenettes, conference networking corridors, airport business lounges, and vending kiosks.",
+        "temporalContext": "Mid-morning (10:00–11:00 AM) or mid-afternoon (3:00–4:00 PM) during work breaks, seminar intermissions, or late-night overtime work sessions.",
+        "emotionalTone": "Casual, energizing, comforting, restorative.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, \"snack\" is defined in direct contrast to a formal sit-down \"meal\". It suggests speed, portability, and low ceremony—handheld foods (nuts, fruit, granola bars, crackers) eaten to satisfy hunger and maintain energy without stopping work or setting a table. In contemporary corporate culture, free healthy office snacks are viewed as an indispensable perk for employee satisfaction.",
+        "mentalImage": "An office worker taking a break in a sunlit breakroom kitchen to pour a cup of green tea and select an almond granola bar and a fresh red apple from a fruit basket.",
+        "whenToUse": "Use when referring to light bites, packaged nibbles, finger foods, or midday refreshments eaten between main meals (e.g., \"afternoon snack\", \"healthy snacks\", \"snack bar\").",
+        "whenNotToUse": "Do not use to describe a multi-course seated lunch or dinner banquet (use \"meal\", \"dinner\", or \"banquet\"). Do not confuse with \"snake\" in pronunciation or spelling.",
+        "culturalContext": "Ubiquitous in Western corporate workplace culture and professional conference scheduling (\"light snacks and beverages will be served during the afternoon intermission\"). Frequently tested in TOEIC Part 3 workplace dialogues, Part 4 venue announcements, and Part 7 company memos regarding employee lounge amenities."
+      },
+      "examples": {
+        "daily": [
+          "I always pack a small snack, like raw almonds or a banana, to eat during my afternoon train commute.",
+          "The children were ravenous after soccer practice, so their father handed them sliced oranges and string cheese as a quick snack.",
+          "Before heading to bed, she fixed herself a midnight snack of whole-wheat crackers and cheddar cheese."
+        ],
+        "business": [
+          "The operations director announced that the corporate headquarters would provide complimentary organic fruit and snacks in all department kitchens.",
+          "During the twenty-minute symposium intermission, attendees gathered in the hotel gallery where coffee, tea, and light snacks were provided.",
+          "Because the outbound flight experienced a three-hour mechanical delay, the ground staff distributed complimentary snack boxes to all stranded passengers."
+        ],
+        "conversation": [
+          "\"Do you want to step down to the courtyard café for a quick snack before the client presentation starts?\" / \"I would appreciate that—I missed breakfast during my commute and could use an iced coffee and a pastry.\"",
+          "\"Will there be any food provided during the orientation seminar?\" / \"Yes, the training team has organized coffee, bottled water, and light afternoon snacks for everyone.\"",
+          "\"The pantry seems out of healthy snack options today.\" / \"I just spoke with office administration, and the fresh fruit delivery arrives at noon.\""
+        ],
+        "collocations": [
+          "healthy snack",
+          "light snack",
+          "afternoon snack",
+          "midnight snack",
+          "snack bar",
+          "grab a snack"
+        ]
+      },
+      "wordFamily": {
+        "noun": "snack",
+        "verb": "snack",
+        "adjective": "snackable",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "healthy office snack breakroom fruit nuts employee refreshment",
+        "imageDescription": "A contemporary office kitchen breakroom island stocked with bowls of fresh apples, granola bars, trail mix, and carafes of water, where two colleagues pause for a quick afternoon break.",
+        "mnemonic": "SNACK: When hunger SNAPS at your concentration at work, take a SNACK in a SNAP!"
+      },
+      "video": {
+        "description": "Corporate wellness training: designing nutritious breakroom snack programs to maintain employee energy and workplace productivity throughout the workday."
+      },
+      "toeicContext": {
+        "commonParts": [
+          2,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Complimentary beverages and light _____ will be available in the third-floor reception hall throughout the afternoon conference intermission. (A) snacking (B) snacked (C) snacks (D) snack",
+        "tips": "In event catering descriptions, the adjective \"light\" coordinates with plural food offerings alongside plural \"beverages\": (C) snacks. \"Snack\" (D) is singular and would require an article (\"a light snack\"), while (A) and (B) are verb inflections."
+      },
+      "synonyms": [
+        "refreshment",
+        "bite",
+        "nibble",
+        "treat",
+        "morsel",
+        "finger food"
+      ],
+      "antonyms": [
+        "feast",
+        "banquet",
+        "full meal"
+      ],
+      "relatedWords": [
+        "refreshments",
+        "breakroom",
+        "vending machine",
+        "appetizer",
+        "pantry",
+        "finger food"
+      ]
+    },
+    {
+      "id": "dining-250",
+      "word": "soup",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/suːp/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/soup--_us_1.mp3",
+        "syllableBreakdown": "soup",
+        "stressPattern": "●",
+        "commonMistakes": "Do not pronounce the vowel like the diphthong in \"south\" (/aʊ/) or confuse it with \"soap\" (/soʊp/). It uses a pure, tense, long high back vowel /uː/ as in \"group\" and \"loop\"."
+      },
+      "etymology": {
+        "origin": "Old French / Late Latin / Proto-Germanic",
+        "rootWord": "soupe (from Late Latin suppa: bread soaked in broth)",
+        "rootMeaning": "suppa (broth-soaked bread, from Proto-Germanic *sūpaną: to sip, drink)",
+        "evolution": "Adopted into Middle English in the 17th century from French \"soupe\" (broth, soup), tracing back to Late Latin \"suppa\" (bread steeped in seasoned liquid). The Latin term borrowed from Germanic origins (Proto-Germanic \"*sūpaną\", source of English \"sup\" and \"sop\"). In traditional European cookery, liquid broth was ladled directly over sliced bread (\"sop\"); over the centuries, the noun transitioned to describe the savory liquid broth, purée, or stew itself.",
+        "relatedLanguages": [
+          "French: soupe",
+          "Spanish: sopa",
+          "Italian: zuppa",
+          "German: Suppe",
+          "Dutch: soep"
+        ],
+        "firstRecordedUse": "Mid-17th century (in modern culinary sense)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A savory liquid dish, customarily served hot though occasionally served chilled, prepared by simmering vegetables, meat, poultry, seafood, or legumes in stock, water, or milk with aromatic herbs and spices.",
+        "spatialContext": "Restaurant dining tables, commercial kitchen stockpots, cafeteria steam wells with ladles, hotel banquet service stations, and catering buffet tureens.",
+        "temporalContext": "Served as the first course or appetizer in formal luncheon and dinner banquets, or ordered alongside sandwiches and salads for quick corporate lunches.",
+        "emotionalTone": "Comforting, warm, nourishing, wholesome, restorative.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, \"soup\" is the quintessential culinary comfort food and the standard opening course of a traditional meal (\"soup or salad?\"). In casual workplace dining, the \"soup and sandwich\" or \"soup and salad\" lunch combo is an established cultural staple. Native English speakers routinely say they \"eat soup\" with a spoon rather than \"drink soup\" when dining from a bowl.",
+        "mentalImage": "A steaming, wide ceramic bowl of roasted butternut squash soup garnished with a spiral of cream and roasted pumpkin seeds, accompanied by a silver soup spoon and warm artisan bread.",
+        "whenToUse": "Use when referring to savory liquid meal dishes (broths, bisques, chowders, minestrones, purées, stews) served in bowls or mugs.",
+        "whenNotToUse": "Do not confuse phonetically or semantically with \"soap\" (cleansing detergent). Do not use for solid casseroles lacking broth, nor for sweet beverages like fruit punch or tea.",
+        "culturalContext": "A universal fixture on Western lunch and dinner menus. Restaurant waitstaff frequently introduce the daily special with \"Our soup of the day is...\". Prominently featured in TOEIC Part 3 lunch order dialogues, Part 4 cafeteria menu announcements, and Part 7 restaurant critique passages."
+      },
+      "examples": {
+        "daily": [
+          "When the weather turned chilly, she simmered a large pot of homemade chicken noodle soup on the stove.",
+          "The server inquired whether I preferred a cup of New England clam chowder or the French onion soup to begin the meal.",
+          "During the hot summer months, the restaurant serves a refreshing chilled tomato and cucumber gazpacho soup."
+        ],
+        "business": [
+          "The corporate dining hall features a rotating \"soup of the day\" offered alongside freshly baked artisan rolls.",
+          "For the executive lunch buffet, hotel caterers set up stainless steel warming tureens containing tomato bisque and lentil soup.",
+          "The banquet agreement specified that the three-course corporate dinner would open with a creamy wild mushroom soup."
+        ],
+        "conversation": [
+          "\"Good afternoon! Today's featured soup is roasted tomato basil served with parmesan croutons.\" / \"That sounds delicious—I will have a bowl of that along with the grilled chicken Caesar salad.\"",
+          "\"Can the chef prepare a vegetarian option for the first-course soup?\" / \"Yes, we offer a rich vegetable minestrone as an alternative to the seafood bisque.\"",
+          "\"Should we include a hot soup station for the November product launch lunch?\" / \"Yes, a warm seasonal squash soup would be very well received on an autumn afternoon.\""
+        ],
+        "collocations": [
+          "soup of the day",
+          "bowl of soup",
+          "hot soup",
+          "homemade soup",
+          "chicken noodle soup",
+          "soup and salad"
+        ]
+      },
+      "wordFamily": {
+        "noun": "soup",
+        "verb": "soup (e.g., soup up)",
+        "adjective": "soupy",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "bowl of gourmet soup restaurant starter spoon cream herbs",
+        "imageDescription": "An artfully plated porcelain bowl of velvety tomato basil soup decorated with a swirl of fresh cream and basil leaves, set on a dark wooden table beside a soup spoon.",
+        "mnemonic": "SOUP: You SUP (sip) delicious hot SOUP from a SPOON to soothe your SOUL!"
+      },
+      "video": {
+        "description": "Hospitality service training: standard front-of-house etiquette for serving hot soup courses and describing daily chef specials to restaurant patrons."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Before making selections for their main entrée, luncheon guests were invited to sample the chef's award-winning _____ of the day. (A) soup (B) soupy (C) soups (D) souping",
+        "tips": "In restaurant dining passages, the phrase \"_____ of the day\" is a fixed idiomatic collocation referring to the featured daily preparation. Following the possessive \"chef's\" and modifier \"award-winning\", the singular count noun (A) \"soup\" completes the phrase \"soup of the day\"."
+      },
+      "synonyms": [
+        "broth",
+        "bisque",
+        "chowder",
+        "consommé",
+        "potage",
+        "stew"
+      ],
+      "antonyms": [
+        "solid food"
+      ],
+      "relatedWords": [
+        "broth",
+        "ladle",
+        "tureen",
+        "starter",
+        "stock",
+        "spoon"
+      ]
+    }
+  ]
+}

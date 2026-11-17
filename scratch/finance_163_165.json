@@ -1,0 +1,355 @@
+{
+  "words": [
+    {
+      "id": "finance-163",
+      "word": "guarantor",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˌɡær.ənˈtɔːr/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/guarantor--_us_1.mp3",
+        "syllableBreakdown": "guar-an-tor",
+        "stressPattern": "○○●",
+        "commonMistakes": "Learners often misplace the primary stress onto the initial syllable, saying /ˈɡær.ən.tər/ by analogy with 'guarantee', whereas in standard legal and commercial English the suffix '-or' receives primary stress /ˌɡær.ənˈtɔːr/. Another frequent mistake is pronouncing the silent 'u' as a /w/ glide (producing 'gwar-an-tor' /ɡwær-/), confusing the term with 'warrantor' or 'warranty'."
+      },
+      "etymology": {
+        "origin": "Anglo-Norman French 'garantour' / Middle French 'garantor', an agent noun derived from 'garantir' ('to warrant, defend, guarantee'), ultimately originating from Frankish *warjan ('to defend, protect'), from Proto-Germanic *warōną ('to watch over, defend'). Cognate with English warrantor.",
+        "rootWord": "garant + -or",
+        "rootMeaning": "one who protects, warrants, or provides legal surety for another",
+        "evolution": "During the 16th century, the word entered English legal terminology from Anglo-Norman commercial courts. In northern Gallo-Romance dialects, Germanic initial 'w-' was preserved (yielding Anglo-Norman 'warrant' and 'warrantor'), whereas in central French, initial 'w-' transformed into 'gu-' (giving 'garant' and 'guarantor'). By the 18th century, English mercantile jurisprudence formalized 'guarantor' as an independent third party who enters a collateral undertaking to answer for the debt or default of another person who remains primarily liable.",
+        "relatedLanguages": [
+          "French: garant",
+          "Spanish: garante / fiador",
+          "Italian: garante / fideiussore",
+          "German: Bürge / Garant",
+          "Dutch: borgsteller / garant"
+        ],
+        "firstRecordedUse": "Late 16th century (c. 1590s, in English mercantile statutes and legal treatises)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A person, corporation, or financial institution that formally promises to accept secondary legal liability for the debt, default, or contractual failure of a borrower or contracting counterparty under a legally binding deed of guarantee.",
+        "spatialContext": "Commercial bank credit departments, mortgage underwriting suites, corporate boardroom credit committees, notary legal chambers, and commercial leasing offices.",
+        "temporalContext": "Required during loan origination, debt covenant structuring, tenant onboarding, bond issuance, or secondary debt collection proceedings following default.",
+        "emotionalTone": "Solemn, legally binding, authoritative, protective, and risk-bearing.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native English speakers, a 'guarantor' represents a high-stakes financial backstop. Agreeing to act as someone's guarantor is recognized as a heavy, irreversible commitment because lenders can legally pursue the guarantor's assets if the primary debtor defaults. In everyday domestic life, young tenants or first-time buyers in the US and UK frequently need parents to act as rent or mortgage guarantors. In commercial finance, creditworthy parent corporations routinely sign as corporate guarantors to back credit facilities issued to subsidiaries.",
+        "mentalImage": "A commercial lending director reviewing a loan covenant at a conference table, indicating the co-signatory section where a corporate guarantor affixes an embossed corporate seal and authorized signature.",
+        "whenToUse": "Use when identifying an external individual or institution that legally pledges secondary liability to honor a debt or contractual obligation should the primary debtor default (e.g., 'rent guarantor', 'personal guarantor', 'corporate guarantor on a credit line').",
+        "whenNotToUse": "Do not confuse with 'primary borrower' (the person directly receiving loan funds and holding primary liability), 'underwriter' (the financial institution evaluating credit risk and issuing the loan), or a simple 'witness' (who attests to signature authenticity without incurring liability).",
+        "culturalContext": "Guarantorship is deeply embedded in the credit architecture of English-speaking countries. Strict underwriting standards and soaring urban housing costs have made parental rent guarantors and guarantor-backed mortgages essential social and economic safety valves for young professionals entering the workforce."
+      },
+      "examples": {
+        "daily": [
+          "Because Liam had only recently started his freelance business, the landlord insisted that his parents sign as a guarantor on the apartment lease.",
+          "She agreed to stand as a guarantor for her brother's auto loan so that the credit union would approve his financing at a competitive rate.",
+          "Before handing over the house keys, the property manager verified the bank balances and credit score of the tenant's guarantor."
+        ],
+        "business": [
+          "The regional development bank approved the capital expansion facility on the condition that the multinational parent company serve as an unconditional guarantor.",
+          "Under clause 18 of the syndicated credit agreement, the lending consortium may initiate legal recovery against the corporate guarantor within ten days of borrower default.",
+          "The engineering firm presented an international bank guarantor capable of issuing performance bonds covering up to fifteen million dollars in construction costs."
+        ],
+        "conversation": [
+          "\"Has the credit risk committee cleared our equipment lease application?\" / \"Not yet; they are requesting an audited balance sheet from our designated corporate guarantor before issuing approval.\"",
+          "\"Why has the tenancy agreement for the downtown office suite stalled?\" / \"The property owner is waiting for the startup's primary investor to execute the official guarantor covenant.\"",
+          "\"What recourse does the bank have if the franchisee defaults on the commercial loan?\" / \"The credit agreement explicitly permits the lender to demand full debt service directly from the personal guarantor.\""
+        ],
+        "collocations": [
+          "act as a guarantor",
+          "corporate guarantor",
+          "financial guarantor",
+          "loan guarantor",
+          "personal guarantor",
+          "require a guarantor"
+        ]
+      },
+      "wordFamily": {
+        "noun": "guarantor, guarantee, guaranty",
+        "verb": "guarantee",
+        "adjective": "guaranteed",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "commercial loan contract agreement signing guarantor bank desk fountain pen",
+        "imageDescription": "A high-angle close-up of a legal credit agreement opened to the signature line marked 'Signature of Guarantor', beside a fountain pen and official corporate verification stamp on a mahogany desk.",
+        "mnemonic": "GUAR-an-tor: A legal GUARdian of someone's debt who steps in with assets if the primary debtor defaults!"
+      },
+      "video": {
+        "description": "A commercial banking tutorial explaining the legal responsibilities, liability exposure, and underwriting documentation required when designating a personal or corporate guarantor on a credit line."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "To secure financing for the factory modernization project, the industrial venture was required to designate an institutional _____ with an investment-grade credit rating.\n(A) guarantee\n(B) guarantor\n(C) guaranteed\n(D) guaranteeing",
+        "tips": "Analyze the grammatical structure: the transitive verb phrase 'designate an institutional _____' followed by the prepositional modifier 'with an investment-grade credit rating' requires a singular countable noun referring to a financial entity or person capable of holding a credit rating. Choice (B) 'guarantor' (the backing entity) correctly fulfills both the syntax and meaning. Choice (A) 'guarantee' refers to the contractual promise itself, while choices (C) and (D) are verb participle forms."
+      },
+      "synonyms": [
+        "surety",
+        "bondsman",
+        "cosigner",
+        "sponsor",
+        "warrantor",
+        "indemnifier"
+      ],
+      "antonyms": [
+        "debtor",
+        "borrower",
+        "obligor",
+        "principal debtor"
+      ],
+      "relatedWords": [
+        "collateral",
+        "default",
+        "underwriting",
+        "creditworthiness",
+        "indemnity",
+        "covenant",
+        "liability"
+      ]
+    },
+    {
+      "id": "finance-164",
+      "word": "hedge",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/hɛdʒ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/hedge--_us_1.mp3",
+        "syllableBreakdown": "hedge",
+        "stressPattern": "●",
+        "commonMistakes": "Learners frequently devoice the final voiced postalveolar affricate /dʒ/ to a voiceless /tʃ/ (sounding like 'hatch' or 'fetch') or replace it with a fricative /ʒ/. Non-native speakers also occasionally drop the initial aspirated /h/, causing 'hedge' to sound like 'edge'."
+      },
+      "etymology": {
+        "origin": "Old English 'hecg' ('fence, boundary enclosure formed by bushes'), from Proto-Germanic *hagjō ('hedge, enclosure'), from PIE *kagh- ('to enclose, wickerwork').",
+        "rootWord": "hecg",
+        "rootMeaning": "a protective boundary, barrier, or vegetative enclosure",
+        "evolution": "In Anglo-Saxon agrarian life, 'hecg' described densely planted rows of thorny bushes cultivated around pastures to contain livestock and deter trespassers. By the 1590s, the noun took on figurative usage denoting any defensive barrier against misfortune or financial hardship ('a hedge against poverty'). Wagering culture in the late 17th century introduced 'hedging bets' to describe balancing wagers on opposing outcomes to avoid catastrophic loss. In the 19th century, with the emergence of organized grain futures on the Chicago Board of Trade, 'hedge' became the standard financial term for an offsetting derivative or asset position that counterbalances price risks in an underlying holding.",
+        "relatedLanguages": [
+          "German: Hecke (physical hedge) / Schutzposition (financial hedge)",
+          "Dutch: heg / haag (hedge)",
+          "Swedish: häck (hedge)",
+          "French cognate concept: couverture (financial hedge) / haie (physical hedge)",
+          "Spanish cognate concept: cobertura (financial hedge) / seto (physical hedge)"
+        ],
+        "firstRecordedUse": "Before 12th century (Old English hecg); financial risk-offsetting sense established late 17th century (c. 1670s–1690s)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A financial transaction, derivative contract, or asset allocation deliberately entered into to counterbalance and neutralize the risk of adverse price movements in an underlying security, commodity, interest rate, or foreign currency.",
+        "spatialContext": "Institutional treasury desks, commodity trading floors, airline procurement offices, investment banking dealing rooms, and quantitative risk management facilities.",
+        "temporalContext": "Constructed during quarterly budgeting periods, before major geopolitical events, prior to volatile earnings announcements, or during sudden spikes in market volatility.",
+        "emotionalTone": "Prudent, defensive, calculated, stabilizing, and risk-averse.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers in financial and business settings, a 'hedge' is fundamentally a protective shock absorber or insurance policy. It is not an offensive gamble designed to extract extraordinary speculative profits, but a prudent counterweight to ensure stability. When native speakers hear 'fuel hedge', they think of airlines locking in future jet fuel prices so fluctuating crude oil prices cannot ruin annual profitability. The phrase 'a hedge against inflation' instantly evokes gold, real estate, or inflation-protected treasury bonds.",
+        "mentalImage": "A financial risk manager at a dual-monitor trading workstation: one screen showing an airline's projected fuel consumption alongside rising oil prices, and the adjacent screen showing an offsetting futures contract locking in wholesale kerosene prices at a fixed strike price.",
+        "whenToUse": "Use when discussing an investment instrument or derivative structure created to offset financial downside or market exposure (e.g., 'a hedge against inflation', 'foreign exchange hedge', 'commodity hedge', 'natural hedge').",
+        "whenNotToUse": "Do not confuse with a speculative investment intended to amplify risk for profit. Avoid confusing this financial noun with the botanical noun (a decorative boundary bush) or the linguistic rhetorical device 'hedge' (cautious qualifying language like 'possibly' or 'somewhat').",
+        "culturalContext": "Hedging is a standard fiduciary expectation in Anglo-American corporate governance. Public shareholders and credit rating agencies view unhedged commodity or currency exposures as poor risk management when unexpected macroeconomic swings jeopardize quarterly dividends and capital expenditure."
+      },
+      "examples": {
+        "daily": [
+          "Many long-term savers include gold coins and inflation-indexed bonds in their portfolios as a reliable hedge against rising consumer prices.",
+          "Securing a thirty-year fixed-rate mortgage served as an effective hedge against potential central bank rate increases.",
+          "The freelance consultant maintained a secondary bank account in euros as a practical hedge against the volatility of his local currency."
+        ],
+        "business": [
+          "The airline entered into a substantial crude oil hedge by purchasing forward swap contracts when prices dipped below sixty-five dollars a barrel.",
+          "Corporate treasury managers deployed currency futures as an operational hedge to protect overseas sales revenue from euro fluctuations.",
+          "The commercial bank recommended an interest rate cap as a cost-effective hedge for the borrower's variable-rate construction credit facility."
+        ],
+        "conversation": [
+          "\"Did the recent spike in aviation fuel prices hurt our second-quarter operating margins?\" / \"No, because the procurement department had locked in an eighty-percent commodity hedge six months earlier.\"",
+          "\"Why is the board insisting on entering into European currency forwards?\" / \"They want a reliable hedge against currency depreciation before we finalize the acquisition of the manufacturing plant in Munich.\"",
+          "\"Are our floating-rate bank loans exposed if interest rates continue climbing?\" / \"Not significantly, as our treasury department executed an interest rate collar as a hedge last month.\""
+        ],
+        "collocations": [
+          "hedge against inflation",
+          "currency hedge",
+          "effective hedge",
+          "fuel hedge",
+          "natural hedge",
+          "portfolio hedge"
+        ]
+      },
+      "wordFamily": {
+        "noun": "hedge, hedger, hedging",
+        "verb": "hedge",
+        "adjective": "hedged",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "financial futures contract derivative risk management hedge trading chart",
+        "imageDescription": "A split-screen financial trading terminal showing a volatile market index mirrored by an opposing derivative contract, flattening the overall portfolio volatility line.",
+        "mnemonic": "HEDGE: Just like a garden HEDGE shelters delicate plants from harsh winds, a financial HEDGE shields investments from market storms!"
+      },
+      "video": {
+        "description": "An educational financial markets video illustrating how commercial airlines utilize crude oil futures contracts as a hedge to stabilize operating expenses during volatile energy cycles."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "To safeguard its quarterly profit margins against sudden raw material cost increases, the automotive manufacturer established a commodity _____ using futures contracts.\n(A) hedge\n(B) hedged\n(C) hedger\n(D) hedgingly",
+        "tips": "Notice the grammatical context: the verb 'established' takes a direct object introduced by the indefinite article 'a' and the noun modifier 'commodity'. The blank requires a singular countable noun referring to the risk-mitigation contract. Choice (A) 'hedge' is correct. Choice (B) is a verb participle or adjective, choice (C) 'hedger' denotes the trader or company executing the strategy, and choice (D) is an adverb."
+      },
+      "synonyms": [
+        "safeguard",
+        "protection",
+        "buffer",
+        "cushion",
+        "shield",
+        "counterbalance"
+      ],
+      "antonyms": [
+        "exposure",
+        "speculation",
+        "gamble",
+        "uncovered risk"
+      ],
+      "relatedWords": [
+        "derivative",
+        "futures",
+        "options",
+        "forward contract",
+        "volatility",
+        "offset",
+        "swap"
+      ]
+    },
+    {
+      "id": "finance-165",
+      "word": "hedging",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈhɛdʒ.ɪŋ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/hedging--_us_1.mp3",
+        "syllableBreakdown": "hedg-ing",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners commonly reduce the final velar nasal /ŋ/ to an alveolar /n/ ('hedg-in' /ˈhɛdʒ.ɪn/). Non-native speakers also sometimes misarticulate the affricate /dʒ/ as a fricative /ʒ/ or glide /j/."
+      },
+      "etymology": {
+        "origin": "Middle to Early Modern English verbal noun formed from 'hedge' (verb) + '-ing' (suffix denoting action, practice, or process), from Old English hecg.",
+        "rootWord": "hedge + -ing",
+        "rootMeaning": "the ongoing practice or activity of erecting a defensive barrier or protective enclosure",
+        "evolution": "Dating back to 14th-century English agriculture, 'hedging' originally referred to the seasonal maintenance and planting of living hedgerows around arable land to prevent erosion and straying cattle. By the late 17th century, merchants applied the word figuratively to distributing shipping risks across diverse ventures. With the formalization of agricultural futures exchanges in the late 19th century and the development of modern derivatives pricing models (such as Black-Scholes) in the 20th century, 'hedging' became a recognized corporate accounting and financial engineering discipline regulated under global standards such as IFRS 9 and ASC 815.",
+        "relatedLanguages": [
+          "French: couverture de risque (hedging)",
+          "Spanish: cobertura de riesgos (hedging)",
+          "German: Kurssicherung / Absicherung",
+          "Italian: copertura finanziaria",
+          "Dutch: risico-afdekking / indekking"
+        ],
+        "firstRecordedUse": "14th century (agricultural fence-making); late 17th to early 18th century (systematic commercial risk management, c. 1690–1705)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The systematic practice, strategy, or operational process of taking offsetting positions in financial derivatives or countervailing assets to minimize or eliminate exposure to adverse market price fluctuations, interest rate shifts, or currency movements.",
+        "spatialContext": "Corporate treasury rooms, institutional asset management suites, quantitative risk analysis desks, agricultural commodity clearing exchanges, and compliance audit departments.",
+        "temporalContext": "Conducted continuously via algorithmic portfolio rebalancing, upon signing cross-border trade contracts, or during scheduled quarterly risk management reviews.",
+        "emotionalTone": "Strategic, methodical, disciplined, proactive, and risk-conscious.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native financial executives, 'hedging' is not a single contract (which is 'a hedge'), but an ongoing corporate discipline and board-level risk management strategy. A Chief Financial Officer discussing 'our foreign exchange hedging program' conveys operational prudence, assuring investors that net earnings reflect core commercial execution rather than exposure to macroeconomic currency swings. In linguistics, 'hedging' denotes cautious qualifying language, but in business and TOEIC contexts, it almost exclusively refers to institutional financial risk containment.",
+        "mentalImage": "A Chief Financial Officer presenting an annual treasury review on an interactive boardroom screen, pointing to a multi-year graph showing how disciplined currency and commodity hedging smoothed earnings volatility across six international subsidiaries.",
+        "whenToUse": "Use when discussing the ongoing practice, corporate policy, or strategic discipline of risk management using derivatives or offsetting investments (e.g., 'currency hedging', 'hedging strategy', 'hedging costs', 'dynamic hedging', 'commodity hedging').",
+        "whenNotToUse": "Do not use 'hedging' when referring to a single discrete transaction where the countable noun 'a hedge' is grammatically required (e.g., say 'they established a hedge', not 'they established a hedging'). Avoid confusing it with speculative trading or unhedged market exposures.",
+        "culturalContext": "Modern corporate governance strictly evaluates institutional hedging. Public companies that neglect currency or commodity hedging often face severe downgrades by credit rating agencies and shareholder class-action scrutiny if unhedged market shocks erode earnings."
+      },
+      "examples": {
+        "daily": [
+          "The financial adviser explained how systematic hedging can insulate an individual retirement portfolio from sudden economic downturns.",
+          "The private property investor utilized interest rate hedging to prevent variable mortgage payments from exceeding rental income.",
+          "By adopting a basic currency hedging technique, the small e-commerce merchant eliminated pricing uncertainty on his imported European goods."
+        ],
+        "business": [
+          "The company's corporate treasury guidelines mandate active foreign exchange hedging for any commercial transaction exceeding five million dollars.",
+          "Due to comprehensive commodity hedging, the logistics group preserved its operational margins despite acute volatility in international fuel markets.",
+          "External financial auditors confirmed that the multinational manufacturer adhered strictly to international hedge accounting standards across all its hedging activities."
+        ],
+        "conversation": [
+          "\"Why did our raw material expenditure remain stable despite the recent surge in global copper prices?\" / \"The treasury department executed commodity hedging six months ago to lock in wholesale rates for the entire fiscal year.\"",
+          "\"Does the board need to review our international currency hedging strategy?\" / \"Yes, the risk committee examines all forward currency hedging positions at each quarterly audit meeting.\"",
+          "\"Are we protected against potential interest rate increases on our construction facility?\" / \"Our finance team initiated interest rate hedging through an interest rate swap agreement last quarter.\""
+        ],
+        "collocations": [
+          "commodity hedging",
+          "currency hedging",
+          "hedging costs",
+          "hedging policy",
+          "hedging strategy",
+          "interest rate hedging"
+        ]
+      },
+      "wordFamily": {
+        "noun": "hedge, hedger, hedging",
+        "verb": "hedge",
+        "adjective": "hedged",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "corporate treasury finance risk management hedging strategy derivatives display",
+        "imageDescription": "A corporate risk officer analyzing financial charts on a tablet, showing a smoothed revenue line achieved through strategic hedging against volatile raw material prices.",
+        "mnemonic": "HEDGING: The continuous build-ING of a protective shield around corporate profits to keep wild market risks out!"
+      },
+      "video": {
+        "description": "A corporate finance case study exploring how multinational food processing enterprises use agricultural commodity hedging to maintain price stability and ensure predictable consumer pricing."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Through disciplined foreign exchange _____, the international distributor successfully protected its operating margins from unpredictable currency valuations.\n(A) hedge\n(B) hedges\n(C) hedging\n(D) hedged",
+        "tips": "Analyze the grammatical structure: preceded by the preposition 'Through' and the modifier phrase 'disciplined foreign exchange', the blank requires a head noun denoting the general practice or ongoing strategy of risk management. The uncountable verbal noun 'hedging' (Choice C) is grammatically and contextually correct. Choice (A) 'hedge' is a countable noun that would require an article ('a hedge'), choice (B) refers to multiple individual contracts rather than the overall discipline, and choice (D) 'hedged' is a verb participle/adjective."
+      },
+      "synonyms": [
+        "risk mitigation",
+        "risk management",
+        "counterbalancing",
+        "portfolio protection",
+        "exposure reduction",
+        "financial insulation"
+      ],
+      "antonyms": [
+        "speculation",
+        "risk exposure",
+        "unhedged positioning",
+        "gambling"
+      ],
+      "relatedWords": [
+        "derivatives",
+        "treasury",
+        "swap",
+        "exposure",
+        "options",
+        "futures",
+        "volatility"
+      ]
+    }
+  ]
+}

@@ -233,7 +233,7 @@ async def process_chunk(chunk):
         items_desc.append(f'- id: "{e["id"]}", word: "{e["word"]}", partOfSpeech: {json.dumps(e["partOfSpeech"])}, category: "{e["category"]}", level: "{e["level"]}", toeicFrequency: {e["toeicFrequency"]}')
     prompt = BASE_PROMPT + "\n\nWords to generate:\n" + "\n".join(items_desc)
     
-    a = agent(prompt, schema=SCHEMA, role=f"Lexicographer for {chunk[0]['word']}..{chunk[-1]['word']}", model="flash")
+    a = agent(prompt, schema=SCHEMA, role=f"Lexicographer for {chunk[0]['word']}..{chunk[-1]['word']}", model="flash_lite")
     res = await a
     return res.get("words", [])
 

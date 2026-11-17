@@ -26568,2773 +26568,3179 @@ export const diningWords: VocabularyWord[] = [
     ]
 },
   {
-      "id": "dining-248",
-      "word": "slice",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/slice/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/slice--_us_1.mp3",
-          "syllableBreakdown": "sli·ce",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "slice",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of slice",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: slic...",
-              "Dutch: slic..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating slice in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"slice\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving slice in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the slice before the evening corporate reception.",
-              "Please ensure that the slice meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the slice."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the slice across all dining venues.",
-              "Annual quality audits confirmed that every slice complies with industry health regulations.",
-              "Standardizing operational procedures for the slice improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the slice is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the slice and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the slice",
-              "modern slice",
-              "corporate slice",
-              "standard slice",
-              "quality slice"
-          ]
-      },
-      "wordFamily": {
-          "noun": "slice",
-          "adjective": "slice-related"
-      },
-      "visual": {
-          "imageKeyword": "slice dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting slice.",
-          "mnemonic": "SLICE: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of slice."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) slice (B) slices (C) slice's (D) slices'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) slice. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "slice factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "slice management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-248",
+    "word": "slice",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/slice--_us_1.mp3",
+        "commonMistakes": "Learners often drop the final unvoiced /s/ consonant or shorten the diphthong /a\u026a/ to /\u026a/ (sounding like \"sliss\"). Ensure a smooth vocalic glide from open /a/ to /\u026a/ before releasing a clean, unvoiced alveolar sibilant /s/ without an extraneous trailing vowel sound.",
+        "ipa": "/sla\u026as/",
+        "stressPattern": "\u25cf",
+        "syllableBreakdown": "slice"
+    },
+    "etymology": {
+        "evolution": "Entered Middle English in the late 14th century from Old French \"esclice\" (a flat splinter or fragment), a derivative of \"esclicier\" (to splinter, break into pieces) borrowed from Frankish or Old High German \"*sl\u012bzan\" (cognate with Old English \"sl\u012btan\", the source of modern English \"slit\"). By the 15th century, the word specialized in culinary terminology to mean a broad, thin piece cut cleanly from a whole food item such as bread, meat, cheese, or fruit. In the 20th century, it acquired its prevalent commercial metaphor of a portion or percentage of a market, budget, or profit pool.",
+        "firstRecordedUse": "Late 14th century (Middle English)",
+        "origin": "Old French / Old High German",
+        "relatedLanguages": [
+            "French: \u00e9clisse (splint / wicker strip)",
+            "German: schleissen (to slit / split)",
+            "Dutch: slijten (to wear down / split)",
+            "Old English: sl\u012btan (to tear / slit)"
+        ],
+        "rootMeaning": "*sl\u012bzan (to tear, cleave, or break off a flat piece)",
+        "rootWord": "esclice (from Old High German *sl\u012bzan: to split, cleave)"
+    },
+    "deepMeaning": {
+        "connotation": "neutral",
+        "coreConcept": "A broad, relatively thin piece cleanly cut or carved across a larger whole food item (such as bread, roast meat, cheese, cake, pie, pizza, or citrus fruit); figuratively, an allocated portion, fraction, or share of an undivided commercial entity (such as market share, revenue, or budgetary funding).",
+        "emotionalTone": "Objective, appetizing, culinary, precise, and portion-conscious.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Banquet carving stations, commercial deli counters, bakery display vitrines, cafeteria sandwich assembly lines, and corporate event dessert tables.",
+        "temporalContext": "Portioned during commercial food preparation shifts, carved to order at live buffet carving stations during evening galas, or served as individual dessert portions at conference luncheons."
+    },
+    "nativeMindset": {
+        "culturalContext": "A cornerstone of everyday dining and corporate banquet service. Pizza \"by the slice\" is a staple of urban working lunches, while prime rib carving stations are traditional hallmarks of celebratory corporate galas. Common in TOEIC Part 1 photo descriptions (food on cutting boards, chefs slicing bread) and Part 7 catering contracts.",
+        "howNativesThink": "To native speakers, \"a slice\" immediately triggers a geometric visual of a clean, flat cut produced by a sharp knife blade (a slice of roast beef, cheddar, sourdough, or pie). In hospitality, it represents a standard single serving. In corporate discourse, natives instinctively use it metaphorically (\"a slice of the market/budget\") to signify an allocated piece of a pie.",
+        "mentalImage": "A culinary chef in a white chef coat and tall hat using a long, polished carving knife to cut a warm, tender slice of roast prime rib beneath glowing buffet heat lamps.",
+        "whenNotToUse": "Do not use for irregular chunks or rough cubes of vegetables and meat (use \"chunk\", \"cube\", or \"diced pieces\"), nor for liquid portions (use \"bowl\" or \"cup\"), nor for whole uncut loaves.",
+        "whenToUse": "Use when specifying individual cut portions of bread, meat, cheese, cake, pie, pizza, citrus fruit, or melon. Also use in corporate business idioms describing fractional shares of revenue, data, or market share."
+    },
+    "examples": {
+        "business": [
+            "The conference catering package includes a gourmet sandwich, seasonal side salad, and a generous slice of dark chocolate cake per attendee.",
+            "To reduce food waste and accommodate lighter appetites, the company cafeteria began offering artisanal pizza by the individual slice.",
+            "The banquet coordinator instructed kitchen staff to prepare thirty extra pre-plated slices of roast turkey for the executive seating area."
+        ],
+        "collocations": [
+            "a slice of bread",
+            "a slice of pizza",
+            "a slice of cake",
+            "a thin slice",
+            "a thick slice",
+            "a slice of lemon"
+        ],
+        "conversation": [
+            "\"Would you care for another slice of the raspberry cheesecake before the banquet staff clears the dessert station?\" / \"Thank you, I would love one\u2014the pastry chef did a fantastic job balancing the citrus and cream.\"",
+            "\"How many slices of quiche can we expect from each customized breakfast catering tray?\" / \"Each ten-inch quiche is divided evenly into eight generous slices, perfect for morning boardroom meetings.\"",
+            "\"Did the chef prepare the roast beef carving station for tonight's reception?\" / \"Yes, each guest will receive a warm, tender slice of prime rib with rosemary au jus.\""
+        ],
+        "daily": [
+            "She toasted a thick slice of artisanal sourdough bread and topped it with smashed avocado for breakfast.",
+            "Could I have a tall glass of sparkling water with a fresh slice of lemon, please?",
+            "He asked the server for a warm slice of Dutch apple pie served with vanilla bean ice cream."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "sliced",
+        "adverb": "",
+        "noun": "slice, slicer",
+        "verb": "slice"
+    },
+    "visual": {
+        "imageDescription": "A professional chef in a white chef uniform using a long, slender carving knife to carve a uniform slice of prime rib beef under warm lamps at a luxury banquet buffet.",
+        "imageKeyword": "chef carving slice prime rib roast beef catering buffet",
+        "mnemonic": "SLICE: The sharp knife SLID smoothly through the loaf, creating a perfect SLICE for lunch!"
+    },
+    "video": {
+        "description": "Culinary arts and catering tutorial: professional knife handling techniques for slicing uniform portions of roasted meats and artisan breads for event banquets."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            3,
+            7
+        ],
+        "exampleQuestion": "The banquet manager instructed the culinary team to place a fresh _____ of lemon on each chilled glass of iced tea before guests arrived. (A) slice (B) slicing (C) sliced (D) slicer",
+        "tips": "Preceded by the indefinite article \"a\" and adjective \"fresh\", the blank requires a singular count noun representing a food portion: (A) slice. \"Slicer\" (D) refers to a mechanical cutter or tool, \"slicing\" (B) is a participle/gerund, and \"sliced\" (C) is a participial adjective."
+    },
+    "synonyms": [
+        "piece",
+        "portion",
+        "wedge",
+        "slab",
+        "shaving",
+        "segment"
+    ],
+    "antonyms": [
+        "whole",
+        "entirety",
+        "loaf"
+    ],
+    "relatedWords": [
+        "carve",
+        "portion",
+        "knife",
+        "platter",
+        "crust",
+        "deli"
+    ]
+},
   {
-      "id": "dining-249",
-      "word": "snack",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/snack/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/snack--_us_1.mp3",
-          "syllableBreakdown": "sna·ck",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "snack",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of snack",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: snac...",
-              "Dutch: snac..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating snack in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"snack\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving snack in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the snack before the evening corporate reception.",
-              "Please ensure that the snack meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the snack."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the snack across all dining venues.",
-              "Annual quality audits confirmed that every snack complies with industry health regulations.",
-              "Standardizing operational procedures for the snack improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the snack is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the snack and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the snack",
-              "modern snack",
-              "corporate snack",
-              "standard snack",
-              "quality snack"
-          ]
-      },
-      "wordFamily": {
-          "noun": "snack",
-          "adjective": "snack-related"
-      },
-      "visual": {
-          "imageKeyword": "snack dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting snack.",
-          "mnemonic": "SNACK: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of snack."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) snack (B) snacks (C) snack's (D) snacks'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) snack. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "snack factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "snack management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-249",
+    "word": "snack",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/snack--_us_1.mp3",
+        "commonMistakes": "Learners often substitute the short open vowel /\u00e6/ (as in \"cat\") with /e/ (as in \"neck\") or /\u0251\u02d0/ (as in \"sock\"). Ensure the jaw lowers noticeably for /\u00e6/ and end with a clean unvoiced velar plosive /k/ without devoicing or adding an unnecessary vowel.",
+        "ipa": "/sn\u00e6k/",
+        "stressPattern": "\u25cf",
+        "syllableBreakdown": "snack"
+    },
+    "etymology": {
+        "evolution": "Derived from Middle Dutch or Middle Low German \"snacken\" (to snap, bite), cognate with \"snappen\" (to snatch up). Entering Early Modern English in the late 16th century, it first meant a sudden bite or a share snatched up in haste (preserved in the old idiom \"go snacks\"). By the mid-18th century (c. 1757), the noun shifted definitively to describe a light, quick meal or small food portion consumed informally between scheduled meal times.",
+        "firstRecordedUse": "Mid-18th century (culinary sense); 14th century (for snap/bite)",
+        "origin": "Middle Dutch / Middle Low German",
+        "relatedLanguages": [
+            "Dutch: snack / versnapering (snack / delicacy)",
+            "German: schnappen (to snap / snatch)",
+            "Swedish: snacka (to chatter / snap)"
+        ],
+        "rootMeaning": "snacken (to make a snapping sound with the mouth or jaws)",
+        "rootWord": "snacken (to snatch, bite, snap at)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A small quantity of food or light refreshment eaten informally between scheduled daily meals, typically requiring little or no culinary preparation and designed for quick consumption.",
+        "emotionalTone": "Casual, energizing, comforting, restorative.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Office breakrooms, corporate pantry kitchenettes, conference networking corridors, airport business lounges, and vending kiosks.",
+        "temporalContext": "Mid-morning (10:00\u201311:00 AM) or mid-afternoon (3:00\u20134:00 PM) during work breaks, seminar intermissions, or late-night overtime work sessions."
+    },
+    "nativeMindset": {
+        "culturalContext": "Ubiquitous in Western corporate workplace culture and professional conference scheduling (\"light snacks and beverages will be served during the afternoon intermission\"). Frequently tested in TOEIC Part 3 workplace dialogues, Part 4 venue announcements, and Part 7 company memos regarding employee lounge amenities.",
+        "howNativesThink": "To native speakers, \"snack\" is defined in direct contrast to a formal sit-down \"meal\". It suggests speed, portability, and low ceremony\u2014handheld foods (nuts, fruit, granola bars, crackers) eaten to satisfy hunger and maintain energy without stopping work or setting a table. In contemporary corporate culture, free healthy office snacks are viewed as an indispensable perk for employee satisfaction.",
+        "mentalImage": "An office worker taking a break in a sunlit breakroom kitchen to pour a cup of green tea and select an almond granola bar and a fresh red apple from a fruit basket.",
+        "whenNotToUse": "Do not use to describe a multi-course seated lunch or dinner banquet (use \"meal\", \"dinner\", or \"banquet\"). Do not confuse with \"snake\" in pronunciation or spelling.",
+        "whenToUse": "Use when referring to light bites, packaged nibbles, finger foods, or midday refreshments eaten between main meals (e.g., \"afternoon snack\", \"healthy snacks\", \"snack bar\")."
+    },
+    "examples": {
+        "business": [
+            "The operations director announced that the corporate headquarters would provide complimentary organic fruit and snacks in all department kitchens.",
+            "During the twenty-minute symposium intermission, attendees gathered in the hotel gallery where coffee, tea, and light snacks were provided.",
+            "Because the outbound flight experienced a three-hour mechanical delay, the ground staff distributed complimentary snack boxes to all stranded passengers."
+        ],
+        "collocations": [
+            "healthy snack",
+            "light snack",
+            "afternoon snack",
+            "midnight snack",
+            "snack bar",
+            "grab a snack"
+        ],
+        "conversation": [
+            "\"Do you want to step down to the courtyard caf\u00e9 for a quick snack before the client presentation starts?\" / \"I would appreciate that\u2014I missed breakfast during my commute and could use an iced coffee and a pastry.\"",
+            "\"Will there be any food provided during the orientation seminar?\" / \"Yes, the training team has organized coffee, bottled water, and light afternoon snacks for everyone.\"",
+            "\"The pantry seems out of healthy snack options today.\" / \"I just spoke with office administration, and the fresh fruit delivery arrives at noon.\""
+        ],
+        "daily": [
+            "I always pack a small snack, like raw almonds or a banana, to eat during my afternoon train commute.",
+            "The children were ravenous after soccer practice, so their father handed them sliced oranges and string cheese as a quick snack.",
+            "Before heading to bed, she fixed herself a midnight snack of whole-wheat crackers and cheddar cheese."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "snackable",
+        "adverb": "",
+        "noun": "snack",
+        "verb": "snack"
+    },
+    "visual": {
+        "imageDescription": "A contemporary office kitchen breakroom island stocked with bowls of fresh apples, granola bars, trail mix, and carafes of water, where two colleagues pause for a quick afternoon break.",
+        "imageKeyword": "healthy office snack breakroom fruit nuts employee refreshment",
+        "mnemonic": "SNACK: When hunger SNAPS at your concentration at work, take a SNACK in a SNAP!"
+    },
+    "video": {
+        "description": "Corporate wellness training: designing nutritious breakroom snack programs to maintain employee energy and workplace productivity throughout the workday."
+    },
+    "toeicContext": {
+        "commonParts": [
+            2,
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "Complimentary beverages and light _____ will be available in the third-floor reception hall throughout the afternoon conference intermission. (A) snacking (B) snacked (C) snacks (D) snack",
+        "tips": "In event catering descriptions, the adjective \"light\" coordinates with plural food offerings alongside plural \"beverages\": (C) snacks. \"Snack\" (D) is singular and would require an article (\"a light snack\"), while (A) and (B) are verb inflections."
+    },
+    "synonyms": [
+        "refreshment",
+        "bite",
+        "nibble",
+        "treat",
+        "morsel",
+        "finger food"
+    ],
+    "antonyms": [
+        "feast",
+        "banquet",
+        "full meal"
+    ],
+    "relatedWords": [
+        "refreshments",
+        "breakroom",
+        "vending machine",
+        "appetizer",
+        "pantry",
+        "finger food"
+    ]
+},
   {
-      "id": "dining-250",
-      "word": "soup",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/soup/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/soup--_us_1.mp3",
-          "syllableBreakdown": "soup",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "soup",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of soup",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: soup...",
-              "Dutch: soup..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating soup in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"soup\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving soup in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the soup before the evening corporate reception.",
-              "Please ensure that the soup meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the soup."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the soup across all dining venues.",
-              "Annual quality audits confirmed that every soup complies with industry health regulations.",
-              "Standardizing operational procedures for the soup improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the soup is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the soup and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the soup",
-              "modern soup",
-              "corporate soup",
-              "standard soup",
-              "quality soup"
-          ]
-      },
-      "wordFamily": {
-          "noun": "soup",
-          "adjective": "soup-related"
-      },
-      "visual": {
-          "imageKeyword": "soup dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting soup.",
-          "mnemonic": "SOUP: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of soup."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) soup (B) soups (C) soup's (D) soups'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) soup. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "soup factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "soup management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-250",
+    "word": "soup",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/soup--_us_1.mp3",
+        "commonMistakes": "Do not pronounce the vowel like the diphthong in \"south\" (/a\u028a/) or confuse it with \"soap\" (/so\u028ap/). It uses a pure, tense, long high back vowel /u\u02d0/ as in \"group\" and \"loop\".",
+        "ipa": "/su\u02d0p/",
+        "stressPattern": "\u25cf",
+        "syllableBreakdown": "soup"
+    },
+    "etymology": {
+        "evolution": "Adopted into Middle English in the 17th century from French \"soupe\" (broth, soup), tracing back to Late Latin \"suppa\" (bread steeped in seasoned liquid). The Latin term borrowed from Germanic origins (Proto-Germanic \"*s\u016bpan\u0105\", source of English \"sup\" and \"sop\"). In traditional European cookery, liquid broth was ladled directly over sliced bread (\"sop\"); over the centuries, the noun transitioned to describe the savory liquid broth, pur\u00e9e, or stew itself.",
+        "firstRecordedUse": "Mid-17th century (in modern culinary sense)",
+        "origin": "Old French / Late Latin / Proto-Germanic",
+        "relatedLanguages": [
+            "French: soupe",
+            "Spanish: sopa",
+            "Italian: zuppa",
+            "German: Suppe",
+            "Dutch: soep"
+        ],
+        "rootMeaning": "suppa (broth-soaked bread, from Proto-Germanic *s\u016bpan\u0105: to sip, drink)",
+        "rootWord": "soupe (from Late Latin suppa: bread soaked in broth)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A savory liquid dish, customarily served hot though occasionally served chilled, prepared by simmering vegetables, meat, poultry, seafood, or legumes in stock, water, or milk with aromatic herbs and spices.",
+        "emotionalTone": "Comforting, warm, nourishing, wholesome, restorative.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Restaurant dining tables, commercial kitchen stockpots, cafeteria steam wells with ladles, hotel banquet service stations, and catering buffet tureens.",
+        "temporalContext": "Served as the first course or appetizer in formal luncheon and dinner banquets, or ordered alongside sandwiches and salads for quick corporate lunches."
+    },
+    "nativeMindset": {
+        "culturalContext": "A universal fixture on Western lunch and dinner menus. Restaurant waitstaff frequently introduce the daily special with \"Our soup of the day is...\". Prominently featured in TOEIC Part 3 lunch order dialogues, Part 4 cafeteria menu announcements, and Part 7 restaurant critique passages.",
+        "howNativesThink": "To native speakers, \"soup\" is the quintessential culinary comfort food and the standard opening course of a traditional meal (\"soup or salad?\"). In casual workplace dining, the \"soup and sandwich\" or \"soup and salad\" lunch combo is an established cultural staple. Native English speakers routinely say they \"eat soup\" with a spoon rather than \"drink soup\" when dining from a bowl.",
+        "mentalImage": "A steaming, wide ceramic bowl of roasted butternut squash soup garnished with a spiral of cream and roasted pumpkin seeds, accompanied by a silver soup spoon and warm artisan bread.",
+        "whenNotToUse": "Do not confuse phonetically or semantically with \"soap\" (cleansing detergent). Do not use for solid casseroles lacking broth, nor for sweet beverages like fruit punch or tea.",
+        "whenToUse": "Use when referring to savory liquid meal dishes (broths, bisques, chowders, minestrones, pur\u00e9es, stews) served in bowls or mugs."
+    },
+    "examples": {
+        "business": [
+            "The corporate dining hall features a rotating \"soup of the day\" offered alongside freshly baked artisan rolls.",
+            "For the executive lunch buffet, hotel caterers set up stainless steel warming tureens containing tomato bisque and lentil soup.",
+            "The banquet agreement specified that the three-course corporate dinner would open with a creamy wild mushroom soup."
+        ],
+        "collocations": [
+            "soup of the day",
+            "bowl of soup",
+            "hot soup",
+            "homemade soup",
+            "chicken noodle soup",
+            "soup and salad"
+        ],
+        "conversation": [
+            "\"Good afternoon! Today's featured soup is roasted tomato basil served with parmesan croutons.\" / \"That sounds delicious\u2014I will have a bowl of that along with the grilled chicken Caesar salad.\"",
+            "\"Can the chef prepare a vegetarian option for the first-course soup?\" / \"Yes, we offer a rich vegetable minestrone as an alternative to the seafood bisque.\"",
+            "\"Should we include a hot soup station for the November product launch lunch?\" / \"Yes, a warm seasonal squash soup would be very well received on an autumn afternoon.\""
+        ],
+        "daily": [
+            "When the weather turned chilly, she simmered a large pot of homemade chicken noodle soup on the stove.",
+            "The server inquired whether I preferred a cup of New England clam chowder or the French onion soup to begin the meal.",
+            "During the hot summer months, the restaurant serves a refreshing chilled tomato and cucumber gazpacho soup."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "soupy",
+        "adverb": "",
+        "noun": "soup",
+        "verb": "soup (e.g., soup up)"
+    },
+    "visual": {
+        "imageDescription": "An artfully plated porcelain bowl of velvety tomato basil soup decorated with a swirl of fresh cream and basil leaves, set on a dark wooden table beside a soup spoon.",
+        "imageKeyword": "bowl of gourmet soup restaurant starter spoon cream herbs",
+        "mnemonic": "SOUP: You SUP (sip) delicious hot SOUP from a SPOON to soothe your SOUL!"
+    },
+    "video": {
+        "description": "Hospitality service training: standard front-of-house etiquette for serving hot soup courses and describing daily chef specials to restaurant patrons."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "Before making selections for their main entr\u00e9e, luncheon guests were invited to sample the chef's award-winning _____ of the day. (A) soup (B) soupy (C) soups (D) souping",
+        "tips": "In restaurant dining passages, the phrase \"_____ of the day\" is a fixed idiomatic collocation referring to the featured daily preparation. Following the possessive \"chef's\" and modifier \"award-winning\", the singular count noun (A) \"soup\" completes the phrase \"soup of the day\"."
+    },
+    "synonyms": [
+        "broth",
+        "bisque",
+        "chowder",
+        "consomm\u00e9",
+        "potage",
+        "stew"
+    ],
+    "antonyms": [
+        "solid food"
+    ],
+    "relatedWords": [
+        "broth",
+        "ladle",
+        "tureen",
+        "starter",
+        "stock",
+        "spoon"
+    ]
+},
   {
-      "id": "dining-251",
-      "word": "sour",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/sour/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/sour--_us_1.mp3",
-          "syllableBreakdown": "sour",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "sour",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of sour",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: sour...",
-              "Dutch: sour..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating sour in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"sour\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving sour in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the sour before the evening corporate reception.",
-              "Please ensure that the sour meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the sour."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the sour across all dining venues.",
-              "Annual quality audits confirmed that every sour complies with industry health regulations.",
-              "Standardizing operational procedures for the sour improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the sour is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the sour and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the sour",
-              "modern sour",
-              "corporate sour",
-              "standard sour",
-              "quality sour"
-          ]
-      },
-      "wordFamily": {
-          "noun": "sour",
-          "adjective": "sour-related"
-      },
-      "visual": {
-          "imageKeyword": "sour dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting sour.",
-          "mnemonic": "SOUR: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of sour."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) sour (B) sours (C) sour's (D) sours'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) sour. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "sour factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "sour management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-251",
+    "word": "sour",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "",
+        "commonMistakes": "Learners often mispronounce the diphthong /a\u028a/ as /\u0254\u02d0/ (making it sound like 'sore') or /u\u02d0/ ('soor'), or fail to articulate the subtle schwa off-glide before the rhotic coda, confusing 'sour' with 'sore'.",
+        "ipa": "/\u02c8sa\u028a.\u0259r/",
+        "stressPattern": "Monosyllabic / Disyllabic glide (Primary stress: /\u02c8sa\u028a.\u0259r/)",
+        "syllableBreakdown": "sour"
+    },
+    "etymology": {
+        "evolution": "Old English 's\u016br' denoted tart or fermented food and drink. In Middle English ('sour'), it retained this gustatory sense. In the mid-19th century, with the rise of American cocktail culture and documented in Jerry Thomas's 1862 bartending guide, 'sour' emerged as a dedicated countable noun designating a family of iced mixed drinks balancing spirit, citrus acid, and sugar.",
+        "firstRecordedUse": "c. 1000 for the taste in Old English; 1862 as a noun for the mixed drink in American cocktail manuals.",
+        "origin": "Old English 's\u016br' (sour, acid, tart, fermented), from Proto-Germanic '*s\u016braz' (sour).",
+        "relatedLanguages": [
+            "German 'sauer' (sour, tart)",
+            "Dutch 'zuur' (sour, acid)",
+            "Old Norse 's\u016brr' (sour, sour milk)",
+            "Swedish 'sur' (sour, acid)",
+            "Old Church Slavonic 'syr\u044a' (moist, raw; cheese)"
+        ],
+        "rootMeaning": "Sharp, acid, fermented, curdled.",
+        "rootWord": "Proto-Indo-European '*s\u016bro-' (sour, salty, bitter)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A classic family of mixed drinks consisting of a base spirit (such as whiskey, bourbon, gin, or pisco), fresh citrus juice (acid), and a sweetening agent (simple syrup or liqueur), shaken with ice and often topped with egg white foam; or culinary acidic element that balances rich flavors.",
+        "emotionalTone": "Refreshing, sophisticated, convivial, and sensory.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Cocktail bars, dining room beverage stations, hotel banquet bars, mixology lounges, and fine-dining service areas.",
+        "temporalContext": "Evening dinner service, aperitif hours, happy hour networking receptions, and cocktail tasting menus during corporate banquets."
+    },
+    "nativeMindset": {
+        "culturalContext": "The 'sour' is one of the historic pillars of classic Anglo-American cocktail taxonomy dating back to 19th-century British Royal Navy grog and punch traditions. In modern executive hospitality, ordering a classic sour (such as a Whiskey Sour or New York Sour) conveys an appreciation for balanced mixology and sophisticated cocktail craft.",
+        "howNativesThink": "When a native speaker orders 'a sour' at a bar or restaurant (such as a whiskey sour or pisco sour), they anticipate a vibrant, palate-cleansing cocktail with a bright citrus punch balanced by sweetness, often picturing a dense egg-white head dotted with aromatic bitters. In culinary gastronomy, 'the sour' is viewed as an indispensable structural taste note that cuts through richness and unifies complex sauces.",
+        "mentalImage": "A heavy crystal coupe glass sitting on a polished dark mahogany bar; golden-amber whiskey liquor capped with a velvety, one-centimeter layer of snow-white foam, adorned with three precise drops of crimson Angostura bitters dragged into heart shapes, beside a freshly expressed lemon twist.",
+        "whenNotToUse": "Do not confuse the countable noun 'sour' (a mixed drink) or singular culinary mass noun with the abstract noun 'sourness' (the general taste sensation or quality). Also, do not use 'sour' as a noun when referring to spoiled milk or spoiled wine, where 'sour' functions strictly as an adjective ('the milk has turned sour').",
+        "whenToUse": "Use 'sour' as a noun when ordering or describing this specific cocktail category ('order a bourbon sour', 'a refreshing pisco sour') or when referring in gastronomy to the acidic taste component ('balancing the sweet and the sour')."
+    },
+    "examples": {
+        "business": [
+            "During the opening reception of the global biotechnology symposium, the hotel bar featured a signature bourbon sour crafted specifically for the executive delegation.",
+            "The banquet invoice reflected an itemized charge for craft cocktails, including eighty servings of a house-infused pisco sour.",
+            "Beverage directors across the luxury hospitality group reported a substantial rise in orders for artisanal sours among corporate dinner guests."
+        ],
+        "collocations": [
+            "whiskey sour",
+            "pisco sour",
+            "amaretto sour",
+            "signature sour",
+            "frothy sour",
+            "craft sour"
+        ],
+        "conversation": [
+            "A: 'Are you going with wine for dinner, or would you prefer starting with a mixed drink?'\\nB: 'I think I'll try their house sour; the menu mentions they use fresh Meyer lemons and barrel-aged rye.'",
+            "A: 'What signature cocktail should we feature at the client appreciation banquet next Thursday?'\\nB: 'A well-balanced gin sour is always an ideal crowd-pleaser\u2014crisp, refreshing, and universally appealing.'",
+            "A: 'The pan-roasted duck breast has such a vibrant balance of flavors.'\\nB: 'Yes, the executive chef used pomegranate molasses to introduce an assertive sour that cuts through the rich meat.'"
+        ],
+        "daily": [
+            "After a demanding shift at the clinic, Marcus ordered a classic whiskey sour with a velvety egg-white foam at the neighborhood lounge.",
+            "The bartender recommended their signature passionfruit sour to complement our spicy seafood appetizers.",
+            "She adjusted the homemade vinaigrette by adding a spoonful of wildflower honey to soften the sharp sour of the unfiltered apple cider vinegar."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "sour",
+        "adverb": "sourly",
+        "noun": "sour, sourness",
+        "verb": "sour"
+    },
+    "visual": {
+        "imageDescription": "A crystal coupe glass filled with a golden-amber whiskey sour cocktail, crowned with dense, velvety egg-white foam and three drops of Angostura bitters, resting on a polished mahogany bar with fresh lemon peels.",
+        "imageKeyword": "whiskey sour cocktail coupe glass foam bitters",
+        "mnemonic": "A SOUR SOARS with citrus! Spirit, citrus, sweet\u2014three elements that make a classic cocktail sour take flight."
+    },
+    "video": {
+        "description": "A certified master mixologist demonstrates the reverse-dry-shake technique behind a hotel bar counter, creating a dense, silky foam head on a classic bourbon sour garnished with aromatic bitters."
+    },
+    "toeicContext": {
+        "commonParts": [
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "For the executive reception on Friday evening, the banquet manager recommended serving a signature bourbon ------- alongside the passed hors d'oeuvres.\\n(A) sour\\n(B) sourness\\n(C) sourly\\n(D) soured",
+        "tips": "Test-takers frequently assume 'sour' is exclusively an adjective describing acidic lemons or spoiled dairy. In TOEIC hospitality, catering, and restaurant scenarios (Parts 3 and 7), 'sour' often functions as a countable noun referring to the cocktail family (e.g., 'a signature bourbon sour'). Notice the determiner 'a' and adjective 'bourbon' modifying the singular head noun 'sour' in choice (A)."
+    },
+    "synonyms": [
+        "cocktail",
+        "mixed drink",
+        "aperitif",
+        "citrus cocktail",
+        "tart beverage"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "mixology",
+        "citrus",
+        "simple syrup",
+        "bourbon",
+        "coupe",
+        "bitters",
+        "aperitif"
+    ]
+},
   {
-      "id": "dining-252",
-      "word": "sparkling",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "intermediate",
-      "toeicFrequency": 8,
-      "pronunciation": {
-          "ipa": "/sparkling/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/sparkling--_us_1.mp3",
-          "syllableBreakdown": "spa·rkl·ing",
-          "stressPattern": "○●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "sparkling",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of sparkling",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: spar...",
-              "Dutch: spar..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating sparkling in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"sparkling\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving sparkling in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the sparkling before the evening corporate reception.",
-              "Please ensure that the sparkling meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the sparkling."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the sparkling across all dining venues.",
-              "Annual quality audits confirmed that every sparkling complies with industry health regulations.",
-              "Standardizing operational procedures for the sparkling improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the sparkling is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the sparkling and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the sparkling",
-              "modern sparkling",
-              "corporate sparkling",
-              "standard sparkling",
-              "quality sparkling"
-          ]
-      },
-      "wordFamily": {
-          "noun": "sparkling",
-          "adjective": "sparkling-related"
-      },
-      "visual": {
-          "imageKeyword": "sparkling dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting sparkling.",
-          "mnemonic": "SPARKL: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of sparkling."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) sparkling (B) sparklings (C) sparkling's (D) sparklings'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) sparkling. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "sparkling factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "sparkling management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-252",
+    "word": "sparkling",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+        "audioUrl": "",
+        "commonMistakes": "Learners often insert an extra syllable, pronouncing it as three syllables (/\u02c8sp\u0251\u02d0r.k\u0259.l\u026a\u014b/) instead of two (/\u02c8sp\u0251\u02d0r.kl\u026a\u014b/), or mispronounce the final nasal /\u014b/ as a hard /\u014bk/ or alveolar /n/.",
+        "ipa": "/\u02c8sp\u0251\u02d0r.kl\u026a\u014b/",
+        "stressPattern": "Primary stress on the first syllable: /\u02c8sp\u0251\u02d0r.kl\u026a\u014b/",
+        "syllableBreakdown": "spar-kling"
+    },
+    "etymology": {
+        "evolution": "From the verbal root 'sparkle' in Middle English ('sparklen', to emit sparks or flash), derived from Old English 'spearcian'. In the late 17th century, it was applied to effervescent wine releasing buoyant bubbles resembling tiny sparks of light. In 20th-century restaurant service, viticulture, and catering, nominal ellipsis converted the adjective 'sparkling' into an accepted standalone noun for carbonated water or sparkling wine ('Still or sparkling?').",
+        "firstRecordedUse": "Late 14th century for the verbal sense; mid-20th century as a nominalized ellipsis in beverage and restaurant service.",
+        "origin": "Middle English 'sparklen', frequentative of Old English 'spearcian' (to sparkle, emit sparks), from Proto-Germanic '*spark\u014dn\u0105'.",
+        "relatedLanguages": [
+            "Dutch 'sparkelen' (to sparkle)",
+            "Middle Low German 'sparkelen' (to spark)",
+            "German 'Sekt' (sparkling wine concept)",
+            "French 'p\u00e9tillant' (sparkling/effervescent concept)",
+            "Italian 'frizzante' / 'spumante' (sparkling concept)"
+        ],
+        "rootMeaning": "To throw off small flashes of light or tiny bursts.",
+        "rootWord": "Proto-Indo-European '*sper-g-' / '*sper-' (to scatter, strew, sprinkle)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "An effervescent carbonated beverage\u2014specifically sparkling wine (such as Prosecco, Champagne, or Cava) or carbonated mineral water\u2014served chilled in dining, catering, and hospitality settings to stimulate the appetite or conduct celebratory toasts.",
+        "emotionalTone": "Celebratory, invigorating, refined, and hospitable.",
+        "formalityLevel": "formal",
+        "spatialContext": "Fine-dining dining rooms, executive banquet halls, corporate hospitality suites, catering beverage carts, and sommelier tasting stations.",
+        "temporalContext": "Table greeting and water service, commencement of formal corporate luncheons, welcome receptions, and commemorative toasts."
+    },
+    "nativeMindset": {
+        "culturalContext": "In professional Anglo-American table service and international business dining, offering guests 'Still or sparkling?' is the ubiquitous first verbal interaction from servers. Furthermore, on wine lists across the UK, Australia, and North America, 'Sparkling' or 'Sparklings' functions as a formal category heading encompassing non-Champagne bubbly (like Prosecco, Cava, and Cr\u00e9mant).",
+        "howNativesThink": "When a native speaker hears 'Still or sparkling?' at a restaurant table, they instinctively process 'sparkling' as an ellipsis noun denoting carbonated mineral water. In a bar or vineyard setting, saying 'I'll have a glass of sparkling' immediately denotes sparkling wine. It conjures immediate sensory images of energetic bubbles, refreshing acidity, and celebratory hospitality.",
+        "mentalImage": "A slender, polished crystal flute standing on an ironed white linen tablecloth; continuous microscopic streams of effervescent carbonation ascending in fine beads toward a creamy mousse, reflecting warm ambient dining room lighting.",
+        "whenNotToUse": "Avoid using 'sparkling' as a noun outside culinary, dining, and beverage settings. Do not use 'sparkling' as a noun when describing glitter, reflections, or jewelry (use 'sparkle', 'shimmer', or 'brilliance' instead).",
+        "whenToUse": "Use 'sparkling' as a noun when ordering table water or effervescent wine in dining and hospitality contexts ('A bottle of sparkling, please', 'Do you prefer still or sparkling?')."
+    },
+    "examples": {
+        "business": [
+            "Before seating the board members for the annual gala dinner, the catering staff poured a complimentary glass of regional sparkling.",
+            "Our executive dining agreement stipulates that both premium still water and imported sparkling must be continuously available throughout the conference.",
+            "The lead sommelier recommended pairing the opening seafood course with an award-winning domestic sparkling from the Willamette Valley."
+        ],
+        "collocations": [
+            "still or sparkling",
+            "glass of sparkling",
+            "bottle of sparkling",
+            "chilled sparkling",
+            "domestic sparkling",
+            "premium sparkling"
+        ],
+        "conversation": [
+            "A: 'Good evening, ladies and gentlemen. May I start you off with still or sparkling this evening?'\\nB: 'Sparkling for both of us, please, with a twist of lemon on the side.'",
+            "A: 'Should we order French Champagne for the closing toast, or would another sparkling be acceptable?'\\nB: 'A dry domestic sparkling from Sonoma would be exceptional and keeps us strictly within our allocated event budget.'",
+            "A: 'What would you recommend from your by-the-glass selections prior to our main courses?'\\nB: 'Our crisp Tasmanian sparkling is vibrant, minerally, and pairs beautifully with the chilled oysters.'"
+        ],
+        "daily": [
+            "When the waiter approached our table at the trattoria, my colleague requested tap water while I opted for a bottle of chilled sparkling.",
+            "We celebrated our manager's milestone promotion by sharing a bottle of crisp Australian sparkling on the terrace.",
+            "The host stocked the banquet bar with artisanal sodas, still spring water, and several cases of local sparkling."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "sparkling, sparkly",
+        "adverb": "sparklingly",
+        "noun": "sparkling, sparkle, sparkler",
+        "verb": "sparkle"
+    },
+    "visual": {
+        "imageDescription": "A tall crystal flute filled with pale golden sparkling wine, showing fine, energetic ribbons of rising carbonation bubbles, positioned next to a silver ice bucket on a fine-dining restaurant table.",
+        "imageKeyword": "sparkling wine flute glass bubbles fine dining",
+        "mnemonic": "SPARK-LING: Tiny SPARKS of bubbles SINGING in your flute\u2014the ultimate bubbly beverage for dining toasts!"
+    },
+    "video": {
+        "description": "A certified sommelier demonstrates the proper technique for chilling, opening without popping noise, and pouring a bottle of fine sparkling at an upscale banquet table."
+    },
+    "toeicContext": {
+        "commonParts": [
+            2,
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "Upon being seated in the executive dining suite, the international delegation was asked whether they preferred still mineral water or ------- for the table.\\n(A) sparkling\\n(B) sparkled\\n(C) sparkles\\n(D) sparkler",
+        "tips": "In TOEIC Part 2 and Part 3 dining dialogues, the phrase 'Still or sparkling?' is a staple question used by waitstaff. In this construction, 'sparkling' functions as a noun by ellipsis, parallel to 'still mineral water'. Test-takers who only know 'sparkling' as an adjective often hesitate; remember that dining contexts routinely use 'sparkling' as a noun."
+    },
+    "synonyms": [
+        "sparkling wine",
+        "effervescent water",
+        "bubbly",
+        "carbonated water",
+        "fizzy wine"
+    ],
+    "antonyms": [
+        "still",
+        "flat water",
+        "tap water"
+    ],
+    "relatedWords": [
+        "effervescence",
+        "carbonation",
+        "flute",
+        "perlage",
+        "sommelier",
+        "prosecco",
+        "champagne"
+    ]
+},
   {
-      "id": "dining-253",
-      "word": "special",
-      "partOfSpeech": [
-          "adjective"
-      ],
-      "category": "dining",
-      "level": "intermediate",
-      "toeicFrequency": 8,
-      "pronunciation": {
-          "ipa": "/special/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/special--_us_1.mp3",
-          "syllableBreakdown": "spe·cial",
-          "stressPattern": "○●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Latin",
-          "rootWord": "specere",
-          "rootMeaning": "to look at, observe, examine",
-          "evolution": "Formed from specere (to look at, observe, examine). Formed technical specifications, market speculation, and inspectorial audits.",
-          "relatedLanguages": [
-              "French: specifier / spectacle",
-              "Spanish: inspeccion"
-          ],
-          "firstRecordedUse": "14th-16th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A critical qualifying attribute describing operations, systems, or criteria that are special under professional culinary arts, dining, and restaurant hospitality benchmarks.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "positive"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"special\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving special in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "Please verify that all submitted files are fully special and up to date.",
-              "The supervisor confirmed that the proposed timeline is completely special for the team.",
-              "Staff members must maintain a special approach when communicating with clients."
-          ],
-          "business": [
-              "The executive committee concluded that the expansion plan remains financially special.",
-              "Management established a special framework to ensure compliance with industry standards.",
-              "The annual performance report highlighted several special achievements across departments."
-          ],
-          "conversation": [
-              "\"Do you believe the draft proposal is special enough for the executive review?\"",
-              "\"Yes, it appears completely special and aligns with our departmental goals.\""
-          ],
-          "collocations": [
-              "highly special",
-              "fully special",
-              "strictly special",
-              "remain special",
-              "deemed special"
-          ]
-      },
-      "wordFamily": {
-          "adjective": "special",
-          "adverb": "specially"
-      },
-      "visual": {
-          "imageKeyword": "special dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting special.",
-          "mnemonic": "SPECIA: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of special."
-      },
-      "toeicContext": {
-          "commonParts": [
-              5,
-              6,
-              7
-          ],
-          "exampleQuestion": "Senior leadership concluded that the proposed strategic initiative remains completely _____ under current guidelines. (A) special (B) specially (C) more special (D) most special",
-          "tips": "Following the linking verb context and modifying adverb, the predicate requires an adjective: (A) special. Do not confuse with the adverbial form (B) specially or comparative forms (C, D)."
-      },
-      "synonyms": [
-          "special factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "special management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-253",
+    "word": "special",
+    "partOfSpeech": [
+        "adjective"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+        "audioUrl": "",
+        "commonMistakes": "Learners often mispronounce the second syllable with a hard 'c' or tri-syllabic sound (*spe-see-al* or *spe-shi-al*), rather than reducing the unstressed ending to a clean /\u0283\u0259l/.",
+        "ipa": "/\u02c8spe\u0283.\u0259l/",
+        "stressPattern": "Primary stress on the first syllable: /\u02c8spe\u0283.\u0259l/",
+        "syllableBreakdown": "spe-cial"
+    },
+    "etymology": {
+        "evolution": "From Latin 'speci\u0101lis' (belonging to a particular species or kind), derived from 'speci\u0113s'. In Old French, it became 'especial' / 'special', meaning particular or distinct. Borrowed into Middle English around 1200 to designate specific rights or appointments. By the 18th and 19th centuries, it became standard in gastronomy and hospitality to describe bespoke culinary preparations, customized menus, and specialized dietary accommodations.",
+        "firstRecordedUse": "c. 1200 in Middle English; established in dining and catering contexts by the 18th century.",
+        "origin": "Old French 'special', from Latin 'speci\u0101lis' (individual, particular, of a given kind), from 'speci\u0113s' (appearance, sort, kind).",
+        "relatedLanguages": [
+            "French 'sp\u00e9cial' (special, particular)",
+            "Spanish 'especial' (special)",
+            "Italian 'speciale' (special)",
+            "Portuguese 'especial' (special)",
+            "German 'speziell' (special, specific)"
+        ],
+        "rootMeaning": "Pertaining to a distinct kind or appearance; set apart to be seen.",
+        "rootWord": "Latin 'speci\u0113s', from Proto-Indo-European '*spe\u1e31-' (to look, observe)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "Designed for a distinctive purpose, particular dietary requirement, individual guest preference, or exceptional dining occasion; departing from standard or routine offerings to deliver tailored hospitality.",
+        "emotionalTone": "Accommodating, attentive, distinguished, and bespoke.",
+        "formalityLevel": "formal",
+        "spatialContext": "Banquet kitchens, restaurant reservation desks, convention catering halls, private dining rooms, and airline meal preparation facilities.",
+        "temporalContext": "Advance event registration, pre-service kitchen briefings, dietary intake confirmation prior to banquets, and commemorative corporate dinners."
+    },
+    "nativeMindset": {
+        "culturalContext": "In modern professional hospitality, convention management, and corporate dining, proactively accommodating 'special dietary requirements' (such as gluten-free, halal, kosher, vegan, and allergen-free) is both a fundamental professional courtesy and an essential operational standard. Documenting and fulfilling special requests accurately is a key hospitality performance indicator.",
+        "howNativesThink": "In dining and hospitality, native speakers instinctively link 'special' to two main concepts: (1) attentive accommodation of personal needs ('special dietary requests', 'special arrangements'), and (2) distinctive, bespoke culinary offerings that deviate from everyday menus ('special tasting menu', 'special anniversary dessert'). It signals individualized care, deliberate preparation, and enhanced quality.",
+        "mentalImage": "An executive chef in a spotless double-breasted white uniform standing at a stainless-steel plating line, reviewing a printed catering ticket highlighted in bright yellow with the bold heading 'Special Dietary Order: Gluten-Free & Shellfish Allergy'.",
+        "whenNotToUse": "Do not confuse the adjective 'special' with the adverb 'specially' (which modifies verbs or participles, as in 'specially prepared meals'). Also, distinguish the adjective from the noun 'specialty' (a restaurant's signature dish) and the plural noun 'specials' (the dishes offered outside the printed menu on a given day).",
+        "whenToUse": "Use 'special' as an adjective before nouns denoting accommodations, occasions, or custom preparations in dining ('special dietary requirements', 'special event', 'special menu', 'special table arrangements')."
+    },
+    "examples": {
+        "business": [
+            "The event planner circulated an electronic survey to conference attendees to record any special dietary restrictions before confirming the catering numbers.",
+            "In honor of the corporate merger, the executive chef designed a special five-course tasting menu paired with regional estate wines.",
+            "Airline passengers requiring special meal preparations, including low-sodium and vegan options, must submit requests at least twenty-four hours before departure."
+        ],
+        "collocations": [
+            "special dietary requirements",
+            "special dietary restrictions",
+            "special requests",
+            "special menu",
+            "special occasion",
+            "special instructions"
+        ],
+        "conversation": [
+            "A: 'Did the catering sales manager note our guest of honor's special dietary requirements?'\\nB: 'Yes, the head chef confirmed they will prepare a separate dairy-free, nut-free plate for her table.'",
+            "A: 'Our department is hosting the annual awards banquet next month; do we have a special allocation for wine pairings?'\\nB: 'The director approved a supplementary budget specifically for a special vintage reserve.'",
+            "A: 'There's an asterisk beside reservation number forty-two\u2014what are their special instructions?'\\nB: 'The host asked that the champagne be served precisely when the keynote speech concludes.'"
+        ],
+        "daily": [
+            "Please inform the banquet staff if anyone in your dinner party has special dietary restrictions such as peanut allergies or celiac disease.",
+            "The neighborhood bistro created a special three-course menu to commemorate the town's seasonal harvest festival.",
+            "We reserved a private alcove at the French brasserie for our grandparents' special fiftieth wedding anniversary dinner."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "special",
+        "adverb": "specially",
+        "noun": "specialty, specialist, specialization",
+        "verb": "specialize"
+    },
+    "visual": {
+        "imageDescription": "An executive banquet chef in a commercial kitchen meticulously finishing a colorful allergy-safe dinner plate, cross-referencing a clipboard order marked 'Special Dietary Requirements'.",
+        "imageKeyword": "chef preparing special dietary plate hotel banquet kitchen",
+        "mnemonic": "SPECIES & SPECIFY: A SPECIAL request is SPECIFICALLY created for an individual's unique needs!"
+    },
+    "video": {
+        "description": "A convention center banquet captain conducts a pre-function service briefing, instructing servers on cross-contamination avoidance and proper delivery protocols for special dietary meals."
+    },
+    "toeicContext": {
+        "commonParts": [
+            3,
+            4,
+            5,
+            7
+        ],
+        "exampleQuestion": "Attendees with ------- dietary requirements are advised to notify the banquet coordinator at least forty-eight hours prior to the symposium dinner.\\n(A) special\\n(B) specially\\n(C) specialize\\n(D) specialty",
+        "tips": "A classic TOEIC Part 5 trap involves choosing between the adjective 'special', the adverb 'specially', the verb 'specialize', and the noun 'specialty'. Look closely at what follows the blank: before a noun phrase such as 'dietary requirements', you must select the descriptive adjective 'special' (choice A). 'Specially' would only modify an adjective or past participle (e.g., 'specially requested meals')."
+    },
+    "synonyms": [
+        "customized",
+        "tailored",
+        "distinctive",
+        "particular",
+        "exceptional",
+        "bespoke"
+    ],
+    "antonyms": [
+        "standard",
+        "regular",
+        "routine",
+        "ordinary",
+        "generic"
+    ],
+    "relatedWords": [
+        "dietary",
+        "customization",
+        "allergy",
+        "banquet",
+        "catering",
+        "preference",
+        "accommodation"
+    ]
+},
   {
-      "id": "dining-254",
-      "word": "spice",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/spice/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/spice--_us_1.mp3",
-          "syllableBreakdown": "spi·ce",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "spice",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of spice",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: spic...",
-              "Dutch: spic..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating spice in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"spice\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving spice in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the spice before the evening corporate reception.",
-              "Please ensure that the spice meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the spice."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the spice across all dining venues.",
-              "Annual quality audits confirmed that every spice complies with industry health regulations.",
-              "Standardizing operational procedures for the spice improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the spice is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the spice and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the spice",
-              "modern spice",
-              "corporate spice",
-              "standard spice",
-              "quality spice"
-          ]
-      },
-      "wordFamily": {
-          "noun": "spice",
-          "adjective": "spice-related"
-      },
-      "visual": {
-          "imageKeyword": "spice dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting spice.",
-          "mnemonic": "SPICE: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of spice."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) spice (B) spices (C) spice's (D) spices'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) spice. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "spice factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "spice management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-254",
+    "word": "spice",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/spice--_us_1.mp3",
+        "commonMistakes": "Learners often substitute the unvoiced alveolar sibilant /s/ with a voiced /z/ at the end, mispronouncing 'spice' as /spa\u026az/ (spies). Another common error is shortening the diphthong /a\u026a/ to a pure /a/ or /\u028c/, resulting in a sound closer to 'spus'. In hospitality terminology, non-native speakers frequently confuse 'spice' (aromatic seasonings derived from seeds, bark, roots, or fruit) with 'herb' (leafy green plant parts) or use 'spices' when referring strictly to table salt, which is a mineral seasoning rather than a spice.",
+        "ipa": "/spa\u026as/",
+        "stressPattern": "\u25cf",
+        "syllableBreakdown": "spice"
+    },
+    "etymology": {
+        "evolution": "In Classical Latin, 'species' meant appearance or specific kind. During Late Latin and medieval Mediterranean commerce, merchant guilds used 'species' to designate high-value imported commodities\u2014specifically dried aromatics from the Orient. Old French adapted this as 'espice', which entered Middle English around 1200 as 'spice'. Spices drove global maritime trade routes during the Age of Discovery and remain foundational to commercial gastronomy.",
+        "firstRecordedUse": "Early 13th century (c. 1200 in Early Middle English texts)",
+        "origin": "Middle English 'spice', borrowed from Old French 'espice' (Modern French '\u00e9pice'), from Late Latin 'species' (spices, goods, wares; specifically aromatic plant merchandise), from Classical Latin 'species' (appearance, form, kind, sort, commodity).",
+        "relatedLanguages": [
+            "French: \u00e9pice (spice, aromatic seasoning)",
+            "Spanish: especia (spice, aromatic culinary ingredient)",
+            "Italian: spezia (spice, aromatic substance)",
+            "Portuguese: especiaria (spice, seasonings, dry aromatics)",
+            "German: Spezerei (spicery, historic grocer's goods; modern: Gew\u00fcrz)"
+        ],
+        "rootMeaning": "A particular sort of merchandise; commodities, specifically dried aromatic substances of plant origin used in cooking and trade",
+        "rootWord": "Latin species (appearance, kind, sort, merchandise, grocer's wares)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A strongly flavored or aromatic dried substance of plant origin\u2014such as seeds, bark, roots, flower buds, or berries (e.g., cinnamon, pepper, cumin, cloves, nutmeg)\u2014employed in commercial culinary arts, catering, and beverage production to season, preserve, and enhance food and drinks.",
+        "emotionalTone": "Aromatic, vibrant, culinary, invigorating, and warm.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Commercial restaurant kitchens, dry spice racks, hotel banquet preparation stations, climate-controlled dry storage pantries, seasoning bins, and food manufacturing facilities.",
+        "temporalContext": "Daily culinary mise en place before service, flavor balancing during cooking shifts, and weekly or monthly dry-goods inventory procurement cycles."
+    },
+    "nativeMindset": {
+        "culturalContext": "In modern English-speaking dining culture, diverse culinary influences have made exotic spice blends (garam masala, za'atar, jerk seasoning) household staples. Seasonal marketing heavily features warm spices (such as the widespread autumn commercial phenomenon of 'pumpkin spice'). In TOEIC exams, spices appear in restaurant inventory invoices, kitchen supply orders, dietary advisory notices for banquet guests, and culinary shipping manifests across Parts 1, 3, and 7.",
+        "howNativesThink": "Native speakers perceive 'spice' both as discrete botanical ingredients (cinnamon, cumin, cloves) and collectively as the foundation of savory depth. They instinctively draw a sharp distinction between spices (harvested from non-leafy plant parts like bark, seeds, and roots) and herbs (the leafy greens such as basil, oregano, and parsley). In kitchen operations, native chefs view spices as deliberate flavor enhancers that require roasting or blooming in hot oil to unlock essential volatile oils. Metaphorically, natives use 'spice' to denote zest, novelty, or added excitement in activities.",
+        "mentalImage": "A restaurant line chef standing before a stainless steel prep table in an open-concept kitchen, measuring freshly toasted cumin seeds, ground coriander, and smoked paprika from sealed glass jars into a copper seasoning bowl.",
+        "whenNotToUse": "Do not use 'spice' to refer to fresh leafy greens (use 'herbs'). Do not use 'spice' to refer strictly to table salt, which is an inorganic mineral seasoning. Avoid confusing the count noun 'spice' with the adjective 'spicy', which denotes pungency or capsaicin heat.",
+        "whenToUse": "Use when identifying dried aromatic plant seasonings used in recipes ('a blend of whole spices', 'add aromatic spice to the broth', 'spice grinder'). Use in culinary purchasing orders, recipe documentation, and menu descriptions highlighting flavor profiles."
+    },
+    "examples": {
+        "business": [
+            "The restaurant hospitality group signed an exclusive procurement agreement with an organic spice distributor to stabilize wholesale costs.",
+            "To comply with food safety standards, the central bakery kitchen maintains strict humidity controls inside the dry spice storage area.",
+            "The executive chef developed a proprietary blend of spice to distinguish the hotel's signature grilled steaks from rival steakhouses."
+        ],
+        "collocations": [
+            "aromatic spice",
+            "spice rack",
+            "spice blend",
+            "exotic spices",
+            "ground spice",
+            "spice grinder"
+        ],
+        "conversation": [
+            "\"Do we have enough ground cumin and smoked paprika in the prep station for the evening rush?\" / \"I just refilled both spice containers from the dry pantry, so we are well stocked.\"",
+            "\"Does this braised beef recipe require any whole spice that we need to order in advance?\" / \"Yes, our catering order needs whole star anise and cardamom pods from our dry-goods distributor.\""
+        ],
+        "daily": [
+            "She organized her kitchen cabinet by placing every aromatic spice into labeled glass containers on a tiered wooden rack.",
+            "Adding a pinch of cinnamon and ground nutmeg provided the perfect holiday spice to the simmering apple cider.",
+            "The specialty neighborhood grocery store carries an exceptional selection of imported spice blends from around the world."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "spicy, spiced, spiceless",
+        "adverb": "spicily",
+        "noun": "spice, spiciness, spicing",
+        "verb": "spice"
+    },
+    "visual": {
+        "imageDescription": "A photorealistic close-up of vibrant whole and ground culinary spices\u2014including cinnamon sticks, star anise, turmeric powder, and black peppercorns\u2014artistically arranged in small rustic wooden bowls on a dark slate kitchen counter.",
+        "imageKeyword": "aromatic spices cinnamon star anise peppercorns wooden bowls market",
+        "mnemonic": "SPICE adds Special Plant Ingredients to Create Exceptional flavor!"
+    },
+    "video": {
+        "description": "A professional culinary masterclass demonstrating proper techniques for blooming whole spices in hot oil to extract rich aromatics for restaurant sauces."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            3,
+            7
+        ],
+        "exampleQuestion": "The executive chef instructed the procurement department to purchase organic _____ in airtight containers to preserve their aromatic oils. (A) spice (B) spices (C) spicy (D) spiciness",
+        "tips": "In TOEIC Part 5 questions testing number and form, look ahead for agreement clues: the plural possessive determiner 'their' in 'preserve their aromatic oils' indicates that the countable antecedent must be plural, making (B) spices the correct answer. Option (A) is a singular count noun that would require an article; (C) is an adjective; and (D) is an uncountable noun denoting pungency."
+    },
+    "synonyms": [
+        "seasoning",
+        "flavoring",
+        "aromatic",
+        "condiment",
+        "herb blend"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "cinnamon",
+        "peppercorn",
+        "paprika",
+        "seasoning",
+        "marinade",
+        "aromatics",
+        "culinary"
+    ]
+},
   {
-      "id": "dining-255",
-      "word": "spicy",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/spicy/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/spicy--_us_1.mp3",
-          "syllableBreakdown": "spi·cy",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "spicy",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of spicy",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: spic...",
-              "Dutch: spic..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating spicy in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"spicy\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving spicy in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the spicy before the evening corporate reception.",
-              "Please ensure that the spicy meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the spicy."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the spicy across all dining venues.",
-              "Annual quality audits confirmed that every spicy complies with industry health regulations.",
-              "Standardizing operational procedures for the spicy improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the spicy is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the spicy and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the spicy",
-              "modern spicy",
-              "corporate spicy",
-              "standard spicy",
-              "quality spicy"
-          ]
-      },
-      "wordFamily": {
-          "noun": "spicy",
-          "adjective": "spicy-related"
-      },
-      "visual": {
-          "imageKeyword": "spicy dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting spicy.",
-          "mnemonic": "SPICY: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of spicy."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) spicy (B) spicies (C) spicy's (D) spicies'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) spicy. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "spicy factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "spicy management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-255",
+    "word": "spicy",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/spicy--_us_1.mp3",
+        "commonMistakes": "Learners sometimes mispronounce the second syllable with an open lax /e/ or /\u026a/ instead of a clear, tense terminal /i/ sound (saying /\u02c8spa\u026a.se/ or /\u02c8spa\u026a.s\u026a/). Another common mistake is pronouncing the 'c' as a plosive /k/ ('spy-kee') rather than the soft voiceless fricative /s/. Grammatically, learners must recognize that while 'spicy' primarily functions as an adjective in everyday discourse ('spicy soup'), it is also deployed substantively in menu indexing and hospitality categorization to designate the piquant flavor category ('mild versus spicy').",
+        "ipa": "/\u02c8spa\u026a.si/",
+        "stressPattern": "\u25cf\u25cb",
+        "syllableBreakdown": "spi\u00b7cy"
+    },
+    "etymology": {
+        "evolution": "Emerging in late 16th-century English (c. 1560s), 'spicy' initially described foods, wines, and perfumes rich with fragrant aromatics. Over subsequent centuries, with the global dispersion of New World chili peppers (capsicum), 'spicy' evolved to emphasize sharp tongue-tingling pungency and capsaicin heat in international cuisine, alongside its substantive use on menus to classify spicy flavor selections.",
+        "firstRecordedUse": "Late 16th century (c. 1560s\u20131570s)",
+        "origin": "Formed in Middle English from the noun 'spice' (from Old French 'espice', from Late Latin 'species') combined with the Germanic adjectival suffix '-y' (from Old English '-i\u0121', signifying characterized by, full of, or possessing the qualities of).",
+        "relatedLanguages": [
+            "French: \u00e9pic\u00e9 (spiced, spicy, piquant)",
+            "Spanish: especiado (spiced) / picante (spicy, hot, pungent)",
+            "Italian: speziato (spiced) / piccante (spicy, sharp, hot)",
+            "German: w\u00fcrzig (spicy, savory) / scharf (spicy-hot, pungent)",
+            "Dutch: kruidig (spicy, seasoned) / pittig (spicy, zesty, hot)"
+        ],
+        "rootMeaning": "Abounding in, seasoned with, or possessing the aromatic heat and pungency of spices",
+        "rootWord": "Old French espice / Latin species + English suffix -y"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "In culinary arts, restaurant dining, and catering classification, designating food, beverages, or seasoning preparations characterized by the pungent heat of chili peppers (capsaicin) or the fragrant intensity of aromatic spices; used as a dining classification heading or flavor attribute distinguishing piquant, tongue-stimulating dishes from mild culinary preparations.",
+        "emotionalTone": "Bold, zesty, stimulating, lively, and piquant.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Restaurant dining rooms, printed and digital menu boards, buffet allergen and flavor labeling displays, commercial sauce preparation lines, and specialty dining bistros.",
+        "temporalContext": "Guest ordering and table consultations, entr\u00e9e tasting evaluations, banquet menu selection reviews, and culinary recipe formulation."
+    },
+    "nativeMindset": {
+        "culturalContext": "Anglo-American hospitality relies heavily on standardized heat scales (often indicated by one, two, or three chili pepper symbols on menus) to prevent guest dissatisfaction or digestive discomfort. Corporate event planners typically mandate that buffets offer both mild and spicy selections. In TOEIC scenarios, 'spicy' appears in Part 3 restaurant dialogues where patrons inquire about menu ingredients, Part 4 banquet announcements, and Part 7 customer reviews evaluating meal seasoning.",
+        "howNativesThink": "To native English speakers, 'spicy' immediately connotes tongue-tingling heat derived from chili peppers, jalape\u00f1os, peppercorns, or wasabi, though in bakery and beverage contexts it can also evoke warm autumnal spices like ginger and cloves. Front-of-house staff routinely check spice tolerance with patrons ('How spicy do you like your curry? Mild, medium, or spicy?'), recognizing that guests' heat thresholds vary dramatically. In catering logistics, culinary teams always balance spicy dishes with mild alternatives to accommodate diverse banquet attendees.",
+        "mentalImage": "A restaurant server gesturing toward a bold red chili icon on a laminated dinner menu, explaining the heat level of a spicy Thai seafood noodle dish to dinner patrons.",
+        "whenNotToUse": "Do not confuse with 'salty' (containing excess sodium) or 'sour' (acidic and tart like citrus or vinegar). When food is rich with herbs like rosemary or basil but possesses no burning heat, native speakers say 'flavorful', 'savory', or 'well-seasoned' rather than 'spicy'.",
+        "whenToUse": "Use when describing dishes containing noticeable heat, pungency, or concentrated spice seasonings ('spicy chicken wings', 'spicy tuna roll', 'spicy dipping sauce'). Use as a flavor category indicator on dining menus, catering forms, and food packaging."
+    },
+    "examples": {
+        "business": [
+            "To satisfy diverse conference attendees, the banquet buffet offered clearly designated mild, medium, and spicy chicken curries.",
+            "Consumer feedback indicated that launching a spicy grilled sandwich significantly boosted the fast-casual chain's midday sales volume.",
+            "The corporate catering contract required the kitchen to provide visible flavor placards identifying all spicy sauces."
+        ],
+        "collocations": [
+            "spicy food",
+            "spicy sauce",
+            "mildly spicy",
+            "spicy kick",
+            "spicy aroma",
+            "authentically spicy"
+        ],
+        "conversation": [
+            "\"Would you recommend the massaman curry or the green curry for a client who dislikes spicy entr\u00e9es?\" / \"The massaman is sweet and mild, whereas the green curry is notably spicy.\"",
+            "\"Could the kitchen prepare a slightly less spicy version of the blackened salmon for our guest?\" / \"Certainly, the chef can adjust the seasoning to ensure a much milder flavor profile.\""
+        ],
+        "daily": [
+            "He requested extra diced jalapenos on his breakfast burrito because he enjoys very spicy Mexican food.",
+            "If you have a low tolerance for culinary heat, you should choose the mild garlic sauce rather than the spicy salsa.",
+            "The enticing aroma of spicy noodles drifted through the dining room as soon as the kitchen doors opened."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "spicy, spiced",
+        "adverb": "spicily",
+        "noun": "spiciness, spice",
+        "verb": "spice"
+    },
+    "visual": {
+        "imageDescription": "A steaming ceramic bowl of rich red Thai coconut curry garnished with fresh bird's eye chilies and sliced red peppers, displayed beside bamboo tableware in an upscale restaurant.",
+        "imageKeyword": "spicy red chili peppers curry dish steam restaurant dining",
+        "mnemonic": "SPICY foods Spark Pungent Intensity that Captivates Your taste buds!"
+    },
+    "video": {
+        "description": "An instructional hospitality training video demonstrating how restaurant servers explain menu heat ratings and recommend cooling beverage pairings for spicy dishes."
+    },
+    "toeicContext": {
+        "commonParts": [
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "To accommodate international attendees with different taste preferences, the banquet buffet features both a mild vegetable stew and a _____ seafood pasta. (A) spicy (B) spicily (C) spice (D) spiciness",
+        "tips": "In TOEIC Part 5 sentences with parallel structure ('both a mild vegetable stew and a _____ seafood pasta'), the blank precedes the compound noun 'seafood pasta' and parallels the adjective 'mild'. Therefore, the adjective (A) spicy is required. Choice (B) is an adverb, (C) is a base noun, and (D) is an abstract noun of quality."
+    },
+    "synonyms": [
+        "piquant",
+        "pungent",
+        "hot",
+        "peppery",
+        "zesty",
+        "seasoned"
+    ],
+    "antonyms": [
+        "mild",
+        "bland",
+        "insipid",
+        "unseasoned",
+        "tame"
+    ],
+    "relatedWords": [
+        "capsaicin",
+        "piquancy",
+        "chili",
+        "heat level",
+        "curry",
+        "flavoring",
+        "palate"
+    ]
+},
   {
-      "id": "dining-256",
-      "word": "spoon",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/spoon/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/spoon--_us_1.mp3",
-          "syllableBreakdown": "spo·on",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "spoon",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of spoon",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: spoo...",
-              "Dutch: spoo..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating spoon in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"spoon\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving spoon in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the spoon before the evening corporate reception.",
-              "Please ensure that the spoon meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the spoon."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the spoon across all dining venues.",
-              "Annual quality audits confirmed that every spoon complies with industry health regulations.",
-              "Standardizing operational procedures for the spoon improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the spoon is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the spoon and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the spoon",
-              "modern spoon",
-              "corporate spoon",
-              "standard spoon",
-              "quality spoon"
-          ]
-      },
-      "wordFamily": {
-          "noun": "spoon",
-          "adjective": "spoon-related"
-      },
-      "visual": {
-          "imageKeyword": "spoon dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting spoon.",
-          "mnemonic": "SPOON: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of spoon."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) spoon (B) spoons (C) spoon's (D) spoons'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) spoon. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "spoon factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "spoon management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-256",
+    "word": "spoon",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/spoon--_us_1.mp3",
+        "commonMistakes": "Learners frequently shorten the long close back rounded vowel /u\u02d0/ to a lax near-close /\u028a/, pronouncing 'spoon' like 'spun' or 'spook' with a short vowel. Another common issue is inserting an epenthetic vowel before the initial consonant cluster /sp/ (common among native Spanish speakers who pronounce it as /es\u02c8pu\u02d0n/). In flatware terminology, non-native speakers also sometimes confuse a 'soup spoon' (round, deep bowl) with a 'tablespoon' (oval, larger) or 'teaspoon' (smaller, for tea and coffee).",
+        "ipa": "/spu\u02d0n/",
+        "stressPattern": "\u25cf",
+        "syllableBreakdown": "spoon"
+    },
+    "etymology": {
+        "evolution": "In Anglo-Saxon times, personal eating utensils were whittled from chips of wood ('sp\u014dn'). By Middle English ('spone' / 'spoon', c. 1300), the term referred specifically to a handled utensil with a concave bowl. As metallurgy developed in Europe, spoons evolved from pewter and brass to sterling silver and stainless steel, becoming central components of formalized Western flatware sets (soup spoons, teaspoons, dessert spoons).",
+        "firstRecordedUse": "Before 12th century (Old English c. 900 as 'sp\u014dn')",
+        "origin": "Old English 'sp\u014dn' (a chip of wood, sliver, shaving; later an eating utensil whittled from wood), from Proto-Germanic '*sp\u0113nuz' (chip of wood, flake, sliver), from Proto-Indo-European '*(s)ph\u2082-en-' / '*(s)peh\u2081-' (a flat piece of wood).",
+        "relatedLanguages": [
+            "Old Norse: sp\u00e1nn / sp\u00f3nn (chip of wood, spoon)",
+            "Dutch: spaan (wood shaving, chip) / lepel (eating spoon)",
+            "German: Span (wood shaving, splinter) / L\u00f6ffel (spoon)",
+            "Swedish: sp\u00e5n (wood chip) / sked (spoon)",
+            "Danish: sp\u00e5n (shaving, wood sliver) / ske (spoon)"
+        ],
+        "rootMeaning": "A carved chip or thin piece of wood shaped into a concave utensil for scooping and eating liquids",
+        "rootWord": "Old English sp\u014dn / Proto-Germanic *sp\u0113nuz (chip of wood, sliver)"
+    },
+    "deepMeaning": {
+        "connotation": "neutral",
+        "coreConcept": "A dining utensil and item of flatware consisting of a shallow, concave circular or oval bowl mounted on a handle, designed specifically for scooping, tasting, stirring, and consuming liquids, semi-solid dishes (soups, stews, pur\u00e9es, puddings), and hot beverages.",
+        "emotionalTone": "Practical, functional, refined, hospitable, and orderly.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Banquet table settings (positioned to the right of the dinner knives or above the plate), restaurant service stations, dishwashing sorting racks, and commercial beverage counters.",
+        "temporalContext": "Pre-event table setting shifts, dessert course service resetting, morning coffee service, and post-service flatware polishing."
+    },
+    "nativeMindset": {
+        "culturalContext": "Formal place setting etiquette in English-speaking corporate banquets requires exact positioning of spoons according to course order. Etiquette protocols dictate that soup should be spooned away from the diner rather than toward oneself, and spoons should never be left standing upright in finished coffee cups or soup bowls. In TOEIC exams, spoons appear frequently in Part 1 dining photographs ('A server is arranging flatware on a table'), Part 3 restaurant service dialogues, and Part 7 catering supply purchase orders.",
+        "howNativesThink": "Native speakers instantly distinguish spoons by their designated culinary function and place-setting position. In formal Western dining etiquette, flatware is utilized 'from the outside in': a round soup spoon rests on the far right outside the dinner knives, while smaller teaspoons accompany tea saucers, and dessert spoons may be placed horizontally above the charger plate. Native chefs treat heavy-duty kitchen spoons (slotted or solid) as essential extensions of their hands for basting, tasting, and plating.",
+        "mentalImage": "A banquet waiter in a tailored black vest carefully placing polished silver soup spoons to the right of the dinner knives on a pressed white tablecloth, aligning each utensil precisely one inch from the table edge.",
+        "whenNotToUse": "Do not confuse with 'fork' (pronged utensil for spearing solid food) or 'knife' (bladed utensil for cutting). When referring to the complete set of table utensils collectively, use 'flatware', 'cutlery', or 'silverware' rather than referring solely to 'spoon'.",
+        "whenToUse": "Use when referring to the concave flatware piece or eating tool ('soup spoon', 'teaspoon', 'dessert spoon', 'serving spoon'). Use in recipe preparation to denote measuring units ('tablespoon', 'teaspoon') or the physical action of scooping ('spoon the sauce over the entr\u00e9e')."
+    },
+    "examples": {
+        "business": [
+            "The hotel banquet department purchased six hundred sets of heavy-gauge stainless steel soup spoons to replace damaged flatware before the annual gala.",
+            "During the pre-dinner inspection, the banquet captain verified that each soup spoon was positioned precisely one inch from the edge of the tablecloth.",
+            "A kitchen supply audit revealed an immediate shortage of large slotted serving spoons needed for the executive luncheon buffet stations."
+        ],
+        "collocations": [
+            "soup spoon",
+            "dessert spoon",
+            "wooden spoon",
+            "serving spoon",
+            "tablespoon",
+            "silver spoon"
+        ],
+        "conversation": [
+            "\"Excuse me, our place setting appears to be missing a soup spoon for the chowder course.\" / \"I apologize for the oversight; I will bring you a polished silver spoon right away.\"",
+            "\"Should we lay the dessert spoon horizontally above the charger plate or bring it with the dessert?\" / \"Corporate banquet protocol requires setting the dessert spoon above the charger during initial table prep.\""
+        ],
+        "daily": [
+            "She selected a round stainless steel soup spoon from the drawer to enjoy her bowl of hot minestrone.",
+            "He measured precisely two level teaspoons of brown sugar with a small silver spoon before stirring his morning tea.",
+            "The dessert server delivered a slice of warm berry cobbler accompanied by a clean dessert spoon."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "spoonable, spooned",
+        "adverb": "",
+        "noun": "spoon, spoonful",
+        "verb": "spoon"
+    },
+    "visual": {
+        "imageDescription": "An elegant formal dining table arrangement showcasing a polished silver soup spoon neatly positioned beside a folded white linen napkin and fine porcelain soup bowl.",
+        "imageKeyword": "polished silverware soup spoon formal dining table setting banquet",
+        "mnemonic": "A SPOON is Shaped Perfectly to Open Our Nourishment\u2014scooping soups and sweets with ease!"
+    },
+    "video": {
+        "description": "A formal banquet service training video illustrating proper table setting protocols, flatware alignment, and soup spoon dining etiquette."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            3,
+            7
+        ],
+        "exampleQuestion": "Before the doors opened for the dinner gala, banquet staff made sure that a polished dessert _____ was positioned horizontally above each plate. (A) spoon (B) spoons (C) spooned (D) spooning",
+        "tips": "In TOEIC Part 5, following the singular indefinite article 'a' and modifying noun 'dessert', the singular countable noun (A) spoon correctly serves as the head noun of the subject clause. Choice (B) is plural, while (C) and (D) are verb participle forms."
+    },
+    "synonyms": [
+        "flatware piece",
+        "cutlery utensil",
+        "soup spoon",
+        "teaspoon",
+        "eating utensil"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "flatware",
+        "cutlery",
+        "fork",
+        "knife",
+        "soup bowl",
+        "place setting",
+        "silverware"
+    ]
+},
   {
-      "id": "dining-257",
-      "word": "steak",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/steak/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/steak--_us_1.mp3",
-          "syllableBreakdown": "ste·ak",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "steak",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of steak",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: stea...",
-              "Dutch: stea..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating steak in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"steak\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving steak in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the steak before the evening corporate reception.",
-              "Please ensure that the steak meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the steak."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the steak across all dining venues.",
-              "Annual quality audits confirmed that every steak complies with industry health regulations.",
-              "Standardizing operational procedures for the steak improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the steak is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the steak and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the steak",
-              "modern steak",
-              "corporate steak",
-              "standard steak",
-              "quality steak"
-          ]
-      },
-      "wordFamily": {
-          "noun": "steak",
-          "adjective": "steak-related"
-      },
-      "visual": {
-          "imageKeyword": "steak dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting steak.",
-          "mnemonic": "STEAK: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of steak."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) steak (B) steaks (C) steak's (D) steaks'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) steak. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "steak factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "steak management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-257",
+    "word": "steak",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/steak--_us_1.mp3",
+        "commonMistakes": "Learners often pronounce 'steak' with a short monophthong /st\u025bk/ (rhyming with 'speck' or 'neck') or confuse it with 'stick' /st\u026ak/; it should always be pronounced with the long diphthong /e\u026a/ (rhyming with 'bake', 'cake', and 'make'). In written correspondence, learners occasionally confuse 'steak' with its exact homophone 'stake' (a wooden post, or financial interest/risk, as in 'stakeholder'). In restaurant contexts, non-native speakers also sometimes mistakenly use 'steak' to refer to ground beef patties; a hamburger patty is not called a 'steak' in English unless explicitly designated as 'Salisbury steak'.",
+        "ipa": "/ste\u026ak/",
+        "stressPattern": "\u25cf",
+        "syllableBreakdown": "steak"
+    },
+    "etymology": {
+        "evolution": "In Old Norse culinary practice, 'steik' referred specifically to thick meat cuts impaled upon pointed skewers ('stakes') and roasted over open flames. Scandinavian settlers introduced the term into northern Middle English during the 15th century. By the 18th century, with the emergence of London chophouses, 'steak' specialized into prime beef cuts (rump, loin, rib) cooked quickly over glowing charcoal grills. During the 19th and 20th centuries, as commercial butchery standardized specific primal cuts (ribeye, T-bone, tenderloin), the term expanded to include thick-cut transverse steaks of dense fish such as salmon, halibut, and swordfish.",
+        "firstRecordedUse": "Mid-15th century (c. 1450 in the 'Fifteenth-Century Cookery-Boke' as 'steike')",
+        "origin": "Middle English 'steike' or 'steyke', borrowed in the mid-15th century from Old Norse 'steik' (a slice of meat roasted on a spit or skewer), which derives from Proto-Germanic '*staik\u014d' (something stuck or affixed to a spit), related to Old Norse 'steikja' (to roast on a spit) and Proto-Germanic '*stikana' (to stick, prick, pierce), tracing back to Proto-Indo-European '*steyg-' (to prick, be sharp, pierce).",
+        "relatedLanguages": [
+            "Old Norse: steik (roast meat) / steikja (to roast on a spit)",
+            "Icelandic: steik (steak / roast meat)",
+            "Danish: steg (roast) / stege (to fry, roast)",
+            "Swedish: stek (roast meat) / steka (to fry, broil)",
+            "Norwegian: steik / stek (roast meat)",
+            "German: stechen (to prick, pierce - from shared PIE root *steyg-)"
+        ],
+        "rootMeaning": "A thick slab or slice of meat impaled upon a skewer or spit for roasting over direct fire",
+        "rootWord": "Old Norse steik (meat roasted on a spit) / steikja (to roast on a spit) / Proto-Germanic *staik\u014d"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A high-grade, thick-cut portion of meat\u2014most commonly prime beef butchered perpendicularly across the muscle grain, but also extending to thick transverse cross-sections of fish or dense vegetables\u2014prepared using rapid direct-heat methods such as grilling, broiling, or cast-iron searing, and served to precise degrees of culinary doneness (rare, medium-rare, medium, well-done).",
+        "emotionalTone": "Substantial, prestigious, savory, celebratory, and satisfying.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Fine-dining dining rooms, upscale chophouses, open-flame restaurant grill stations, butcher display cases, and banquet carving boards.",
+        "temporalContext": "Dinner service, executive client entertainment evenings, celebratory banquet meals, and precise cooking times ranging from four to twelve minutes depending on customer preference and cut thickness."
+    },
+    "nativeMindset": {
+        "culturalContext": "In North American, British, and Australian corporate dining, hosting clients for a steak dinner is an established convention for sealing commercial agreements, celebrating quarterly achievements, or welcoming senior delegates. Waitstaff are trained to clarify cooking temperatures immediately upon ordering. In TOEIC test scenarios, steak appears frequently on restaurant menus, dining billing receipts, waitstaff ordering conversations in Parts 2 and 3, and event catering selections in Part 7.",
+        "howNativesThink": "Native speakers regard a steak as the definitive celebratory or executive dinner entree. It is associated with indulgence, personal culinary agency, and premium hospitality. Ordering a steak triggers an automatic mental protocol regarding doneness ('rare', 'medium-rare', 'medium', 'well-done') and cut preference ('ribeye' for marbling and flavor, 'filet mignon' for tenderness, 'New York strip' for firm texture). In professional networking, treating a business associate to a steak dinner signals genuine esteem and meaningful investment in the commercial relationship.",
+        "mentalImage": "A thick, center-cut prime ribeye resting on an oval sizzling ceramic platter, showing defined cross-hatch char marks from the grill, topped with melting herb butter that mingles with savory meat juices beside grilled asparagus spears and roasted fingerling potatoes.",
+        "whenNotToUse": "Do not use for thin sandwich deli meats, sliced roast beef, shredded beef, or standard ground beef hamburger patties. Do not confuse with 'chop' (which typically applies to pork or lamb containing a rib bone) or 'roast' (a large whole cut cooked slowly for multiple servings).",
+        "whenToUse": "Use when ordering, serving, or discussing thick cuts of beef (ribeye, sirloin, tenderloin, T-bone), hearty fish cross-sections (salmon steak, tuna steak), or specialized vegetable cuts (cauliflower steak). Essential in dining dialogues, menu descriptions, and corporate meal expense documentation."
+    },
+    "examples": {
+        "business": [
+            "The regional director hosted the international delegates for a steak dinner at the harbor club to mark the contract signing.",
+            "The banquet contract specifies that attendees may choose between a grilled beef steak and a vegetarian risotto.",
+            "According to company travel policy, an itemized dining receipt showing individual steak entrees must accompany the reimbursement claim."
+        ],
+        "collocations": [
+            "medium-rare steak",
+            "ribeye steak",
+            "sirloin steak",
+            "filet mignon steak",
+            "grilled steak",
+            "prime steak"
+        ],
+        "conversation": [
+            "\"Good evening, how would you like your sirloin steak prepared tonight?\" / \"Medium-rare, please, with the peppercorn sauce on the side.\"",
+            "\"Are we covering dinner for the visiting auditors tonight?\" / \"Yes, I made reservations at the grill downtown so we can offer them a proper steak dinner.\"",
+            "\"Did the catering coordinator confirm our dietary selections for the gala?\" / \"Yes, seventy guests chose the beef steak, forty chose the salmon, and fifteen requested vegetarian plates.\""
+        ],
+        "daily": [
+            "He ordered an eight-ounce ribeye steak cooked medium-rare with a side of garlic mashed potatoes.",
+            "Before placing the steak on the hot grill, she seasoned both sides generously with coarse salt and cracked black pepper.",
+            "The local butcher recommended a thick sirloin steak for our family dinner over the weekend."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "",
+        "adverb": "",
+        "noun": "steak, steakhouse",
+        "verb": ""
+    },
+    "visual": {
+        "imageDescription": "A perfectly seared ribeye steak resting on a warm white ceramic plate, displaying dark crisscrossed grill marks, a pat of herb butter melting across the browned crust, and garnished with rosemary sprigs and roasted garlic.",
+        "imageKeyword": "grilled ribeye steak sear marks restaurant dinner plate rosemary",
+        "mnemonic": "A STEAK is meat pierced on a wooden STAKE (spit) over fire\u2014a sizzling, prime cut served to your exact taste!"
+    },
+    "video": {
+        "description": "A professional culinary masterclass demonstrating how an executive chef trims, seasons, and sears prime dry-aged beef steaks on a high-heat commercial broiler while explaining internal cooking temperatures."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            2,
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "Waitstaff at the Grandview Bistro are instructed to ask patrons how they would like their _____ prepared before sending the order to the kitchen. (A) steak (B) steaked (C) steaking (D) steaks",
+        "tips": "In TOEIC Part 5, culinary nouns after possessive pronouns ('their') followed by singular verb or singular reference can test noun form. Here, 'their _____ prepared' refers to the patron's individual entree choice, where the singular base noun 'steak' (Choice A) functions correctly. Option (B) 'steaked' is an incorrect participial form, (C) 'steaking' is not a culinary noun, and (D) 'steaks' is an unnatural plural for an individual guest's entree in this construction."
+    },
+    "synonyms": [
+        "cut of beef",
+        "beef cut",
+        "sirloin",
+        "filet",
+        "tenderloin cut",
+        "strip cut"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "marbling",
+        "medium-rare",
+        "doneness",
+        "grill",
+        "tenderloin",
+        "meat thermometer",
+        "dry-aging"
+    ]
+},
   {
-      "id": "dining-258",
-      "word": "steakhouse",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "intermediate",
-      "toeicFrequency": 8,
-      "pronunciation": {
-          "ipa": "/steakhouse/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/steakhouse--_us_1.mp3",
-          "syllableBreakdown": "ste·akh·ouse",
-          "stressPattern": "○●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "steakhouse",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of steakhouse",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: stea...",
-              "Dutch: stea..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating steakhouse in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"steakhouse\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving steakhouse in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the steakhouse before the evening corporate reception.",
-              "Please ensure that the steakhouse meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the steakhouse."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the steakhouse across all dining venues.",
-              "Annual quality audits confirmed that every steakhouse complies with industry health regulations.",
-              "Standardizing operational procedures for the steakhouse improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the steakhouse is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the steakhouse and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the steakhouse",
-              "modern steakhouse",
-              "corporate steakhouse",
-              "standard steakhouse",
-              "quality steakhouse"
-          ]
-      },
-      "wordFamily": {
-          "noun": "steakhouse",
-          "adjective": "steakhouse-related"
-      },
-      "visual": {
-          "imageKeyword": "steakhouse dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting steakhouse.",
-          "mnemonic": "STEAKH: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of steakhouse."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) steakhouse (B) steakhouses (C) steakhouse's (D) steakhouses'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) steakhouse. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "steakhouse factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "steakhouse management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-258",
+    "word": "steakhouse",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/steakhouse--_us_1.mp3",
+        "commonMistakes": "Learners sometimes place primary stress on the second syllable (/ste\u026ak\u02c8ha\u028as/), but as a standard English compound noun, primary stress falls firmly on the first syllable: /\u02c8ste\u026ak.ha\u028as/. Another frequent issue is vowel reduction; learners may reduce '-house' to /h\u0259s/ or /h\u028as/ instead of articulating the full diphthong /ha\u028as/. When pluralized ('steakhouses'), the final 's' is pronounced with a voiced /z/ (/\u02c8ste\u026ak.ha\u028a.z\u026az/). Non-native speakers also occasionally confuse a 'steakhouse' (an upscale sit-down restaurant specializing in steaks) with a 'butcher shop' (a retail store selling raw meat cuts).",
+        "ipa": "/\u02c8ste\u026ak.ha\u028as/",
+        "stressPattern": "\u25cf\u25cb",
+        "syllableBreakdown": "steak\u00b7house"
+    },
+    "etymology": {
+        "evolution": "In 17th- and 18th-century London, traditional taverns known as 'chophouses' served grilled mutton and beef chops to merchant traders. During the late 19th century in commercial hubs like New York and Chicago, establishments like Keens and Peter Luger transformed this tradition into the American 'steak house', emphasizing prime dry-aged beef, extensive wine cellars, leather booths, and dark wood architecture. The combined compound 'steakhouse' became prevalent in American print during the 1880s and 1890s. Throughout the 20th century, the steakhouse expanded internationally as a symbol of executive dining, client entertaining, and celebration.",
+        "firstRecordedUse": "Late 19th century (c. 1885 in American commercial directories and newspaper advertisements)",
+        "origin": "An English compound noun formed from 'steak' (from Middle English 'steike', from Old Norse 'steik', meat roasted on a spit) and 'house' (from Old English 'h\u016bs', dwelling, shelter, commercial establishment, from Proto-Germanic '*h\u016bs\u0105').",
+        "relatedLanguages": [
+            "German: Steakhaus (steakhouse - loan compound) / Haus (house)",
+            "Dutch: steakhouse (steak restaurant) / huis (house)",
+            "Old Norse: steik (roast meat) / h\u00fas (house, dwelling)",
+            "Danish: b\u00f8fhus (beef house) / steakhouse",
+            "Swedish: stekhus / steakhouse (meat specialty restaurant)",
+            "French: steakhouse / restaurant de grillades (borrowed dining genre)"
+        ],
+        "rootMeaning": "A commercial hospitality establishment or restaurant dedicated to the grilling and service of beef steaks and chops",
+        "rootWord": "Old Norse steik (meat roasted on a spit) + Old English h\u016bs (dwelling, building, establishment)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A specialized, traditionally upscale restaurant that focuses on serving high-quality cuts of beef, chops, poultry, and seafood alongside classic accompaniment dishes, characterized by formal table service, curated wine programs, subdued lighting, and private dining options.",
+        "emotionalTone": "Sophisticated, warm, prestigious, convivial, and hospitable.",
+        "formalityLevel": "formal",
+        "spatialContext": "Metropolitan financial districts, luxury hotel properties, entertainment quarters, executive private dining salons, and wine cellar dining rooms.",
+        "temporalContext": "Evening dinner service, corporate business lunches, celebratory retirement or promotion dinners, and peak weekend dining periods requiring advance reservations."
+    },
+    "nativeMindset": {
+        "culturalContext": "In corporate North America and the UK, the steakhouse is deeply intertwined with deal-making and milestone celebrations. Companies routinely reserve private dining rooms in high-end steakhouses for board dinners and client presentations. In the TOEIC exam, steakhouses frequently appear in Part 3 conversations about organizing client dinners, Part 4 voice messages concerning dinner reservation adjustments, and Part 7 restaurant evaluations, booking confirmations, and expense vouchers.",
+        "howNativesThink": "For native English speakers, a 'steakhouse' is not merely a restaurant that serves meat; it is a distinct dining institution associated with prestige, celebratory indulgence, and executive networking. The mental picture evokes white linen tablecloths, leather club chairs, vintage dark mahogany paneling, and an extensive wine list. Native professionals instinctively view the steakhouse as an ideal venue to entertain prospective clients, host retirement dinners, or celebrate closing an important business acquisition.",
+        "mentalImage": "An upscale steakhouse interior featuring warm amber lighting, plush burgundy leather booths, dark wood wainscoting, and a climate-controlled glass wine cellar, as a tuxedo-vested server delivers sizzling plates to a celebratory corporate table.",
+        "whenNotToUse": "Do not use for casual burger stands, fast-food counters, generic barbecue joints, or family diners that happen to list steak on their menu. Do not confuse with a retail butcher shop or meat market.",
+        "whenToUse": "Use when identifying or referring specifically to restaurants whose primary culinary identity and menu revolve around prime beef steaks, chops, and upscale side dishes. Common in travel itineraries, business entertaining conversations, dinner reservations, and corporate reimbursement documentation."
+    },
+    "examples": {
+        "business": [
+            "The senior partners reserved the private dining room at a premier steakhouse to host visiting executives from Tokyo.",
+            "Our hospitality expense guidelines stipulate that all dinner receipts from the steakhouse must itemize food and beverage totals.",
+            "The conference organizers compiled a list of recommended local steakhouses within walking distance of the convention center."
+        ],
+        "collocations": [
+            "upscale steakhouse",
+            "downtown steakhouse",
+            "steakhouse reservation",
+            "steakhouse menu",
+            "traditional steakhouse",
+            "steakhouse chain"
+        ],
+        "conversation": [
+            "\"Have you finalized where we will take the visiting delegation tomorrow evening?\" / \"Yes, I booked a private room at the steakhouse near the riverfront.\"",
+            "\"Will the steakhouse be able to accommodate our party of twelve without an advance deposit?\" / \"They only require a credit card on file to secure the reservation for large groups.\"",
+            "\"Did you submit the dinner receipt from the steakhouse with your travel expense claim?\" / \"Yes, along with the itemized bill and the full list of client attendees.\""
+        ],
+        "daily": [
+            "We reserved a booth at the downtown steakhouse to celebrate our parents' wedding anniversary.",
+            "The new steakhouse on Elm Street has received stellar reviews for its forty-day dry-aged ribeye.",
+            "Even though she does not eat red meat, the steakhouse menu offered several grilled seafood and vegetarian options."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "",
+        "adverb": "",
+        "noun": "steakhouse, steak",
+        "verb": ""
+    },
+    "visual": {
+        "imageDescription": "An elegant, dimly lit steakhouse dining room with polished dark hardwood floors, round leather booths, white cloth tables set with wine glasses, and a visible glass-walled wine cellar in the background.",
+        "imageKeyword": "upscale steakhouse dining room leather booths wine cellar dark wood",
+        "mnemonic": "STEAK + HOUSE = A HOUSE dedicated entirely to serving the finest STEAKS for celebrations and executive dining!"
+    },
+    "video": {
+        "description": "A hospitality documentary showcasing the front-of-house operations, table staging, and private client dining service at a legendary metropolitan steakhouse during a busy Friday dinner rush."
+    },
+    "toeicContext": {
+        "commonParts": [
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "Due to exceptionally high customer volume during the convention, tables at the waterfront _____ should be reserved at least one week in advance. (A) steak (B) steaks (C) steakhouse (D) steakhouses",
+        "tips": "In TOEIC Part 5, distinguishing between the food item ('steak') and the physical dining venue ('steakhouse') is essential. The singular noun modifier 'the waterfront _____' followed by the singular auxiliary construction 'should be reserved' specifies an individual establishment: Choice (C) 'steakhouse'. Options (A) 'steak' and (B) 'steaks' refer to the food cut rather than the dining venue, while (D) 'steakhouses' is plural and does not fit the singular context following the singular definite noun phrase."
+    },
+    "synonyms": [
+        "chophouse",
+        "grill room",
+        "beef restaurant",
+        "asador",
+        "meat restaurant"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "dry-aged beef",
+        "wine cellar",
+        "private dining",
+        "prime rib",
+        "sommelier",
+        "ma\u00eetre d'",
+        "table reservation"
+    ]
+},
   {
-      "id": "dining-259",
-      "word": "steam",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/steam/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/steam--_us_1.mp3",
-          "syllableBreakdown": "ste·am",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "steam",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of steam",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: stea...",
-              "Dutch: stea..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating steam in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"steam\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving steam in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the steam before the evening corporate reception.",
-              "Please ensure that the steam meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the steam."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the steam across all dining venues.",
-              "Annual quality audits confirmed that every steam complies with industry health regulations.",
-              "Standardizing operational procedures for the steam improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the steam is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the steam and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the steam",
-              "modern steam",
-              "corporate steam",
-              "standard steam",
-              "quality steam"
-          ]
-      },
-      "wordFamily": {
-          "noun": "steam",
-          "adjective": "steam-related"
-      },
-      "visual": {
-          "imageKeyword": "steam dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting steam.",
-          "mnemonic": "STEAM: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of steam."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) steam (B) steams (C) steam's (D) steams'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) steam. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "steam factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "steam management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-259",
+    "word": "steam",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/steam--_us_1.mp3",
+        "commonMistakes": "Learners often shorten the tense high front vowel /i\u02d0/ to a lax /\u026a/ (pronouncing it like 'stim'), failing to lengthen the vowel sound as in 'team' or 'dream'. In culinary and hospitality contexts, non-native speakers also sometimes confuse 'steam' (water vapor at boiling point used for moist-heat cooking or food warming) with 'smoke' (particulate by-product of wood or charcoal combustion) or 'mist' (cool liquid water droplets suspended in ambient air). In equipment terms, learners sometimes misinterpret 'steam table' as a dining table made of steam, rather than a heated water-bath counter designed to hold food pans at safe temperatures.",
+        "ipa": "/sti\u02d0m/",
+        "stressPattern": "\u25cf",
+        "syllableBreakdown": "steam"
+    },
+    "etymology": {
+        "evolution": "In Old English, 'st\u0113am' referred broadly to vapors, mist, or exhalations rising from heated liquids, the earth, or breath. In Middle English, it narrowed specifically to the gaseous vapor produced when water reaches its boiling point. In culinary and restaurant history, the controlled use of steam evolved from ancient bamboo steamer baskets into 19th-century cafeteria 'steam tables' designed to maintain hot buffet food, and modern commercial combi-steam ovens that cook vegetables, poultry, and seafood quickly while locking in nutrients, color, and natural moisture.",
+        "firstRecordedUse": "Before 1000 (Old English 'st\u0113am' in early medical and theological manuscripts)",
+        "origin": "Middle English 'stem' or 'steem' (vapor, exhalation, warm breath, steam), from Old English 'st\u0113am' (vapor, smoke, fume, exhalation), from Proto-Germanic '*staumaz' (vapor, steam, breath), derived from Proto-Indo-European '*stow-mo-', from the root '*stew-' (to blow, billow, rise in vapor, mist).",
+        "relatedLanguages": [
+            "Old English: st\u0113am (vapor, smoke, exhalation)",
+            "Dutch: stoom (steam, vapor)",
+            "Middle Low German: st\u014dm (steam, vapor)",
+            "West Frisian: steam (steam)",
+            "Old High German: stoum (steam, vapor, smoke)",
+            "German: Dunst (vapor, haze) / Dampf (steam - semantic cognate)"
+        ],
+        "rootMeaning": "Hot vapor, misty exhalation, or breath rising from boiling water or heated moist bodies",
+        "rootWord": "Old English st\u0113am (vapor, exhalation, fume) / Proto-Germanic *staumaz (vapor, steam)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "The hot, gaseous vapor produced when water boils at 100\u00b0C (212\u00b0F), utilized in dining and commercial food service as a clean moist-heat cooking medium, a thermodynamic heat source for buffet warming tables and chafing wells, and the visible vapor rising from freshly served hot dishes and beverages.",
+        "emotionalTone": "Invigorating, fresh, nourishing, comforting, and functional.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Commercial restaurant kitchens, cafeteria buffet serving lines, banquet chafing stations, dishwashing sanitation areas, and espresso beverage stations.",
+        "temporalContext": "Continuous operation during buffet meal shifts, rapid two-to-eight minute vegetable and seafood steaming cycles, and food-holding windows adhering to health code temperature guidelines."
+    },
+    "nativeMindset": {
+        "culturalContext": "Steam is central to global dining traditions, spanning Asian dim sum bamboo basket cookery, European combi-steam culinary techniques, and North American institutional buffet service. Food safety regulations in commercial hospitality strictly require that steam tables keep hot food above 140\u00b0F (60\u00b0C) to inhibit bacterial growth. In TOEIC examinations, 'steam' appears in Part 1 listening photos depicting kitchen staff operating equipment or hot buffet lines, Part 3 catering dialogues, and Part 7 equipment maintenance orders.",
+        "howNativesThink": "In dining contexts, native speakers associate 'steam' with two primary sensations: immediate sensory freshness (a steaming bowl of chowder or fragrant coffee signaling hot, freshly made food) and efficient, healthy cooking (steaming vegetables or dumplings to preserve crunch, vibrant color, and nutrients without heavy cooking oils). In catering and hospitality operations, 'steam' is synonymous with temperature control, specifically via 'steam tables' that use hot water vapor to keep buffet dishes above mandatory health-code safety thresholds.",
+        "mentalImage": "A commercial kitchen banquet line where a line cook lifts the polished stainless steel cover of a hotel pan on the steam table, releasing a billowing plume of clean white steam revealing tender, glistening steamed broccoli and roasted baby potatoes.",
+        "whenNotToUse": "Do not confuse with 'smoke' (which arises from combustion and carries an acrid scent) or 'steamers' (clams or mechanical devices). Do not use to describe dry-heat cooking methods such as roasting, grilling, or frying.",
+        "whenToUse": "Use when describing moist-heat culinary preparation ('steam cooking', 'steamed vegetables'), the visible vapor rising from hot food or drinks ('steam rising from the tea'), or commercial kitchen holding equipment ('steam table', 'combi oven', 'steam wand')."
+    },
+    "examples": {
+        "business": [
+            "The catering staff checked the water level beneath the steam table to keep the banquet entrees at the required serving temperature.",
+            "The kitchen supervisor scheduled a technician to descale the commercial steam oven before the busy conference weekend.",
+            "Health department regulations require cafeteria steam tables to maintain prepared foods at sixty degrees Celsius or higher."
+        ],
+        "collocations": [
+            "plume of steam",
+            "steam table",
+            "steam cooker",
+            "cloud of steam",
+            "gentle steam",
+            "steam wand"
+        ],
+        "conversation": [
+            "\"Why are the vegetables on the buffet line cooling down so quickly?\" / \"The steam table's heating element malfunctioned, but our maintenance crew is replacing it now.\"",
+            "\"How would you like the chef to prepare the side of asparagus?\" / \"Please ask if they can cook it with light steam and a drizzle of olive oil instead of butter.\"",
+            "\"Did the catering shipment include the extra inserts for the hot food counter?\" / \"Yes, all the stainless steel pans are ready to be placed directly into the steam table.\""
+        ],
+        "daily": [
+            "Be careful when removing the saucepan lid, as the escaping steam can cause severe burns.",
+            "A delicate plume of steam rose from the mug of freshly brewed coffee on the kitchen counter.",
+            "She prefers cooking vegetables using gentle steam because it preserves their vibrant color and vitamins."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "steamed, steamy",
+        "adverb": "steamily",
+        "noun": "steam, steamer",
+        "verb": "steam"
+    },
+    "visual": {
+        "imageDescription": "A commercial kitchen chef lifting a stainless steel lid from a steam table insert, as a billowing cloud of white steam rises over freshly cooked vegetables and warm banquet entrees.",
+        "imageKeyword": "steam rising hot buffet food warmer commercial kitchen restaurant",
+        "mnemonic": "STEAM is boiling water's hot team\u2014cooking food cleanly and keeping buffet dishes warm in a gleam!"
+    },
+    "video": {
+        "description": "A commercial kitchen safety and operations video demonstrating proper moisture control, temperature calibration on buffet steam tables, and maintenance of high-pressure commercial steamers."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "Before the lunch rush begins, cafeteria attendants must ensure the water reservoirs under the _____ table are filled to the designated line. (A) steam (B) steamed (C) steaming (D) steamer",
+        "tips": "In TOEIC Part 5, recognizing common compound nouns in hospitality and facilities management is critical. The term 'steam table' is an established compound noun designating a water-heated food-holding counter. Choice (A) 'steam' functions correctly as a noun adjunct modifier. Option (B) 'steamed' is a past participle modifier for cooked food (e.g., 'steamed dumplings'), (C) 'steaming' is a participial adjective, and (D) 'steamer' refers to the appliance itself."
+    },
+    "synonyms": [
+        "water vapor",
+        "vapor",
+        "condensation",
+        "exhalation",
+        "mist plume"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "steam table",
+        "combi oven",
+        "bamboo steamer",
+        "moist-heat cooking",
+        "chafing dish",
+        "food warmer",
+        "buffet line"
+    ]
+},
   {
-      "id": "dining-260",
-      "word": "stew",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/stew/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/stew--_us_1.mp3",
-          "syllableBreakdown": "stew",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "stew",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of stew",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: stew...",
-              "Dutch: stew..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating stew in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"stew\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving stew in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the stew before the evening corporate reception.",
-              "Please ensure that the stew meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the stew."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the stew across all dining venues.",
-              "Annual quality audits confirmed that every stew complies with industry health regulations.",
-              "Standardizing operational procedures for the stew improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the stew is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the stew and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the stew",
-              "modern stew",
-              "corporate stew",
-              "standard stew",
-              "quality stew"
-          ]
-      },
-      "wordFamily": {
-          "noun": "stew",
-          "adjective": "stew-related"
-      },
-      "visual": {
-          "imageKeyword": "stew dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting stew.",
-          "mnemonic": "STEW: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of stew."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) stew (B) stews (C) stew's (D) stews'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) stew. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "stew factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "stew management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-260",
+    "word": "stew",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/stew--_us_1.mp3",
+        "commonMistakes": "Non-native speakers frequently struggle with the vowel sound, specifically the contrast between General American /stu\u02d0/ (with yod-dropping) and British Received Pronunciation /stju\u02d0/ (with the palatal on-glide /j/). Asian learners often insert an epenthetic vowel between the initial consonant cluster 'st' (producing /s\u0259\u02c8tu\u02d0/ or /s\u026a\u02c8tju\u02d0/), or confuse the vowel with 'stay' (/ste\u026a/) or 'store' (/st\u0254\u02d0r/). Romance language speakers tend to under-lengthen the monophthongal /u\u02d0/.",
+        "ipa": "/stu\u02d0/",
+        "stressPattern": "\u25cf",
+        "syllableBreakdown": "stew"
+    },
+    "etymology": {
+        "evolution": "In 13th-century England, the word originally designated a heated vapor bathhouse or steam room. By the late 14th century, the term extended to closed cauldrons used to simmer liquids with steam, and subsequently to the culinary preparation of simmering meat and vegetables slowly in covered liquid over prolonged low heat. By the 18th century, 'stew' became firmly established as a definitive English culinary category, while also generating figurative senses of simmering emotional agitation ('in a stew').",
+        "firstRecordedUse": "Late 14th century (c. 1390, in Middle English cookery scrolls such as 'The Forme of Cury')",
+        "origin": "Middle English 'stuwe' / 'stewe' ('heated room, steam bath, cauldron for boiling, stewed meat'), borrowed from Old French 'estuve' ('bath, steam room'), from Vulgar Latin *ext\u016bf\u0101re ('to evaporate, steam'), ultimately derived from Ancient Greek \u03c4\u1fe6\u03c6\u03bf\u03c2 (t\u00fbphos, 'smoke, vapor, steam').",
+        "relatedLanguages": [
+            "French: \u00e9tuve (drying oven / incubator) / \u00e9touff\u00e9e (smothered stew)",
+            "Spanish: estufa (stove / heater) / estofado (stewed dish)",
+            "Italian: stufa (stove / heater) / stufato (stew)",
+            "German: stoven (Low German: to stew)",
+            "Portuguese: estufa (greenhouse / heater) / estufado (stew)"
+        ],
+        "rootMeaning": "smoke, steam, or heated vapor",
+        "rootWord": "*ext\u016bf\u0101re / \u03c4\u1fe6\u03c6\u03bf\u03c2 (t\u00fbphos)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A hearty, thick culinary dish composed of solid ingredients such as meat, poultry, seafood, or root vegetables cut into uniform pieces and simmered gently in a measured quantity of seasoned liquid (such as stock, wine, or tomato sauce) in a covered pot over low heat for an extended duration, yielding fork-tender ingredients and a rich, thickened gravy.",
+        "emotionalTone": "Hearty, comforting, wholesome, rustic, and warming.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Bistro kitchens, restaurant steam tables, catering banquet chafing dishes, buffet carving stations, cafeteria hot-entree lines, and commercial prep kitchens utilizing heavy cast-iron enameled Dutch ovens.",
+        "temporalContext": "Daily lunch and dinner service specials, seasonal autumn and winter menu rollouts, and extended early morning kitchen prep shifts where large batches simmer for 3 to 6 hours prior to service."
+    },
+    "nativeMindset": {
+        "culturalContext": "In Anglo-American dining culture and traditional European pub fare, stews (such as Irish stew, American beef stew, and French boeuf bourguignon) represent quintessential comfort cuisine. From an operational hospitality standpoint, offering a daily signature stew is a time-tested, high-margin kitchen strategy that optimizes food cost by utilizing flavorful secondary meat cuts (chuck, brisket, shank) tenderized through slow cooking.",
+        "howNativesThink": "To native speakers, 'stew' immediately evokes feelings of rustic comfort food\u2014rich, aromatic, and steaming, ideal for cold weather. Unlike a thin soup, a stew is perceived as an unpretentious, filling main course where chunky solids dominate and the cooking liquid has reduced into a spoonable, savory gravy. Linguistically, native speakers draw a sharp distinction between 'soup' (primarily liquid, eaten from a bowl with a soup spoon) and 'stew' (dense, chunk-heavy, often served over potatoes, rice, or with crusty bread). Figuratively, natives also recognize 'in a stew' (in a state of anxious agitation) or the verb 'to stew over something' (ruminating resentfully).",
+        "mentalImage": "A heavy crimson enameled cast-iron Dutch oven placed on a rustic bistro wooden board, bubbling with fork-tender braised beef chunks, glazed carrots, pearl onions, and button mushrooms in a glossy red wine reduction, garnished with fresh thyme.",
+        "whenNotToUse": "Do not use for clear, watery broths (use 'broth' or 'consomm\u00e9'), smooth blended liquids (use 'bisque' or 'pur\u00e9e'), or large whole roasts cooked in a small amount of liquid (use 'pot roast' or 'braised shank').",
+        "whenToUse": "Use when describing thick, slow-simmered dishes featuring chunky ingredients in rich gravy (e.g., beef stew, Irish lamb stew, seafood stew, lentil stew), buffet hot-bar selections, or winter comfort-food restaurant promotions. Also used metaphorically in workplace contexts to express simmering frustration or prolonged deliberation."
+    },
+    "examples": {
+        "business": [
+            "The hotel banquet team added a rich venison and mushroom stew to the seasonal corporate gala menu to satisfy requests for hearty winter entrees.",
+            "By featuring a chef's daily beef stew on the lunch menu, the executive chef effectively optimized kitchen food cost by utilizing premium braising cuts.",
+            "The corporate cafeteria rotated three distinct stew options\u2014Proven\u00e7al seafood, beef bourguignon, and Moroccan tagine\u2014to cater to diverse dietary preferences among staff."
+        ],
+        "collocations": [
+            "beef stew",
+            "hearty stew",
+            "lamb stew",
+            "simmer a stew",
+            "seafood stew",
+            "thick vegetable stew"
+        ],
+        "conversation": [
+            "\"What is the soup and hot entree special at the bistro today?\" / \"We have a creamy wild mushroom soup as a starter and a slow-braised beef and barley stew served with warm dinner rolls.\"",
+            "\"Would you recommend the seafood stew or the pan-seared salmon for our client dinner?\" / \"The seafood stew is outstanding\u2014it comes packed with fresh mussels, clams, and shrimp in a saffron-tomato broth.\""
+        ],
+        "daily": [
+            "On chilly winter evenings, the family loved gathering around the kitchen table for hearty bowls of slow-cooked beef stew and crusty sourdough bread.",
+            "The neighborhood pub's chalkboard menu featured a traditional Irish lamb stew garnished with fresh parsley and served with mashed potatoes.",
+            "She left the vegetable and chickpea stew to simmer gently on low heat while finishing her afternoon chores."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "stewed",
+        "adverb": "",
+        "noun": "stew",
+        "verb": "stew"
+    },
+    "visual": {
+        "imageDescription": "A steaming ceramic bowl of rustic beef stew filled with tender braised meat cubes, glazed carrots, tender potatoes, and fresh rosemary sprigs, accompanied by a thick slice of crusty artisan bread on a dark wooden bistro table.",
+        "imageKeyword": "hearty beef stew ceramic bowl rustic crusty bread steam dining table",
+        "mnemonic": "STEW simmered in STEAM until TENDER: when you STEW meat low and slow, the STEAM softens every bite into savory perfection!"
+    },
+    "video": {
+        "description": "A culinary masterclass video by an executive chef demonstrating the technique of searing beef chuck, deglazing the Dutch oven with red wine, and simmering a classic beef stew until the reduction thickens naturally."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            2,
+            3,
+            7
+        ],
+        "exampleQuestion": "To accommodate attendees at the winter conference, the catering department agreed to include a hearty vegetable _____ alongside the roasted chicken entree. (A) stew (B) stewed (C) stewing (D) stews",
+        "tips": "In Part 5, determine the grammatical part of speech required by syntactic clues. Following the indefinite article 'a' and modifying adjectives 'hearty vegetable', a singular countable noun is needed. Option (A) 'stew' is the correct singular noun. Choice (B) is a past participle/verb, (C) is a gerund/participle, and (D) is a plural noun which contradicts the singular article 'a'."
+    },
+    "synonyms": [
+        "casserole",
+        "rago\u00fbt",
+        "braise",
+        "potage",
+        "hotpot",
+        "goulash"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "simmer",
+        "Dutch oven",
+        "broth",
+        "braise",
+        "mirepoix",
+        "gravy",
+        "comfort food"
+    ]
+},
   {
-      "id": "dining-261",
-      "word": "stomach",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "intermediate",
-      "toeicFrequency": 8,
-      "pronunciation": {
-          "ipa": "/stomach/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/stomach--_us_1.mp3",
-          "syllableBreakdown": "sto·mach",
-          "stressPattern": "○●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "stomach",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of stomach",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: stom...",
-              "Dutch: stom..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating stomach in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"stomach\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving stomach in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the stomach before the evening corporate reception.",
-              "Please ensure that the stomach meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the stomach."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the stomach across all dining venues.",
-              "Annual quality audits confirmed that every stomach complies with industry health regulations.",
-              "Standardizing operational procedures for the stomach improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the stomach is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the stomach and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the stomach",
-              "modern stomach",
-              "corporate stomach",
-              "standard stomach",
-              "quality stomach"
-          ]
-      },
-      "wordFamily": {
-          "noun": "stomach",
-          "adjective": "stomach-related"
-      },
-      "visual": {
-          "imageKeyword": "stomach dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting stomach.",
-          "mnemonic": "STOMAC: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of stomach."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) stomach (B) stomaches (C) stomach's (D) stomaches'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) stomach. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "stomach factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "stomach management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-261",
+    "word": "stomach",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/stomach--_us_1.mp3",
+        "commonMistakes": "The spelling 'ach' at the end frequently causes non-native speakers to mispronounce the final sound as /t\u0283/ ('stom-aitch') or /\u0283/ ('stom-ash') rather than the correct unvoiced velar stop /k/ ('stom-uk'). Additionally, the first vowel 'o' represents the short central vowel /\u028c/ (as in 'cup' or 'sun'), but learners often mispronounce it as an open back vowel /\u0252/ or diphthong /o\u028a/ based on the orthographic 'o'.",
+        "ipa": "/\u02c8st\u028cm.\u0259k/",
+        "stressPattern": "\u25cf\u25cb",
+        "syllableBreakdown": "stom\u00b7ach"
+    },
+    "etymology": {
+        "evolution": "In Ancient Greek, 'stoma' denoted 'mouth'; 'st\u00f3machos' originally designated the esophagus or opening of the stomach before expanding to mean the internal digestive organ itself. The Romans borrowed it as 'stomachus', which carried both anatomical meaning and psychological senses of appetite, liking, distaste, or indignation (a usage echoed in Cicero's writings). Entering Anglo-Norman and Old French as 'estomac' and Middle English in the 14th century, the word gradually replaced Old English 'maga' (the ancestor of modern English 'maw'). Over centuries in English, 'stomach' developed both literal medical/gastronomic meanings (digestion, capacity to tolerate food) and figurative senses related to courage or endurance ('have the stomach for a fight/risk').",
+        "firstRecordedUse": "Late 14th century (c. 1380, in John Wycliffe's Bible translation and Geoffrey Chaucer's 'The Canterbury Tales')",
+        "origin": "Middle English 'stomak', borrowed from Old French 'estomac', from Latin 'stomachus' ('stomach, gullet; taste, inclination, displeasure, indignation'), from Ancient Greek \u03c3\u03c4\u03cc\u03bc\u03b1\u03c7\u03bf\u03c2 (st\u00f3machos, 'gullet, opening, stomach, throat'), derived from \u03c3\u03c4\u03cc\u03bc\u03b1 (st\u00f3ma, 'mouth, opening').",
+        "relatedLanguages": [
+            "French: estomac",
+            "Spanish: est\u00f3mago",
+            "Italian: stomaco",
+            "Portuguese: est\u00f4mago",
+            "Greek: \u03c3\u03c4\u03bf\u03bc\u03ac\u03c7\u03b9 (stom\u00e1chi)"
+        ],
+        "rootMeaning": "mouth, opening, or entrance to the digestive tract",
+        "rootWord": "\u03c3\u03c4\u03cc\u03bc\u03b1 (st\u00f3ma) / \u03c3\u03c4\u03cc\u03bc\u03b1\u03c7\u03bf\u03c2 (st\u00f3machos)"
+    },
+    "deepMeaning": {
+        "connotation": "neutral",
+        "coreConcept": "The internal muscular, bean-shaped digestive organ situated between the esophagus and small intestine that secretes gastric juices to break down food; by extension in dining and hospitality contexts, a person's physical tolerance, digestive comfort, or appetite for specific foods and beverages.",
+        "emotionalTone": "Visceral, physiological, sensitive, and cautious.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Restaurant dining rooms (patron inquiries regarding digestive sensitivities, rich creams, or spices), hospitality first-aid and guest care stations, airline in-flight passenger service, corporate banquet hospitality desks, and hotel health/wellness facilities.",
+        "temporalContext": "Pre-meal dining consultations (noting sensitive stomachs before ordering multi-course menus), during or after banquets and business dining events (addressing upset stomachs or motion sickness during travel), and scheduling executive lunch breaks to avoid working 'on an empty stomach'."
+    },
+    "nativeMindset": {
+        "culturalContext": "In Anglo-American business culture, the physical state of one's stomach is intimately tied to productivity and dining etiquette. The phrase 'never negotiate on an empty stomach' reflects corporate conventional wisdom. Furthermore, flight attendants, hotel concierges, and corporate event planners are routinely trained to offer bland foods (such as crackers, broth, or herbal mint teas) for guests complaining of an upset stomach.",
+        "howNativesThink": "Native speakers use 'stomach' in two distinct culinary and dining registers: first, as the physical barometer of appetite and digestion ('an empty stomach', 'a full stomach', 'a sensitive stomach', 'settle one's stomach'); second, as an instinctive metaphor for endurance, taste, or psychological tolerance. If someone 'doesn't have the stomach for' something, they cannot tolerate or endure it. In restaurant interactions, mentioning a 'sensitive stomach' is a polite, widely accepted euphemism to explain dietary caution without disclosing detailed medical specifics.",
+        "mentalImage": "A business traveler on an international flight politely declining a heavily spiced curry from the flight attendant, holding a soothing cup of ginger tea and sparkling water to settle an unsettled stomach before an important client conference.",
+        "whenNotToUse": "In formal medical or clinical pathology contexts, use 'gastric' (e.g., 'gastric mucosa', 'gastric bypass') rather than colloquial phrasing. Avoid using 'belly' or 'tummy' in professional or customer-service settings, as they sound juvenile or overly informal. Do not confuse with 'abdomen' when referring specifically to external anatomical body regions in emergency protocols.",
+        "whenToUse": "Use when discussing food digestion, appetite, dietary sensitivities in restaurant and catering orders (e.g., 'gentle on the stomach', 'do not consume alcohol on an empty stomach'), travel-related gastrointestinal comfort, and idiomatic expressions concerning appetite, endurance, or resolve ('have no stomach for financial volatility')."
+    },
+    "examples": {
+        "business": [
+            "During the cross-border merger negotiations, the hospitality coordinator ensured light, easily digestible lunch platters were served so executives would not feel sluggish on a heavy stomach.",
+            "The hotel concierge promptly dispatched a thermos of hot chamomile tea and mineral water to the guest suite after the conference attendee reported an upset stomach.",
+            "Risk analysts warned the investment committee that conservative board members might not have the stomach for such an aggressive international acquisition."
+        ],
+        "collocations": [
+            "empty stomach",
+            "upset stomach",
+            "sensitive stomach",
+            "settle one's stomach",
+            "full stomach",
+            "stomach ache"
+        ],
+        "conversation": [
+            "\"I noticed you didn't finish your entr\u00e9e\u2014was there an issue with the preparation?\" / \"No, the flavor was wonderful, but my stomach has been acting up since my long flight from London.\"",
+            "\"Would you like another glass of red wine before our dinner arrives?\" / \"Thank you, but I prefer not to drink on an empty stomach; I'll wait until the appetizers are served.\""
+        ],
+        "daily": [
+            "Drinking black coffee on an empty stomach first thing in the morning often causes slight nausea or acidity.",
+            "The server recommended peppermint tea and plain crackers to help settle her upset stomach after the bumpy boat tour.",
+            "He has a sensitive stomach, so he avoids dishes prepared with excessive chili oil or heavy dairy creams."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "stomachic",
+        "adverb": "",
+        "noun": "stomach",
+        "verb": "stomach"
+    },
+    "visual": {
+        "imageDescription": "A delicate white porcelain teacup filled with clear golden chamomile tea alongside sliced fresh ginger and lemon slices on a polished wooden restaurant table, symbolizing digestive relief.",
+        "imageKeyword": "soothing herbal tea chamomile cup ceramic white dining table calm",
+        "mnemonic": "STOMACH ends in 'ACH' but sounds like 'ACK': think of your digestive sack (STOM-ACK) that holds your food on TRACK!"
+    },
+    "video": {
+        "description": "A wellness seminar clip presented to corporate travelers outlining practical strategies to prevent stomach discomfort and jet-lag indigestion during international business banquets."
+    },
+    "toeicContext": {
+        "commonParts": [
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "Flight attendants are instructed to provide passengers complaining of an upset _____ with ginger ale, crackers, and warm chamomile tea. (A) stomach (B) stomached (C) stomaching (D) stomachs",
+        "tips": "In TOEIC listening (Part 3/4) and reading (Part 7), health and travel comfort scenarios often feature common collocations. Following the compound modifier 'an upset', a singular noun is required to complete the idiomatic expression 'an upset stomach'. Option (A) is correct. Choices (B) and (C) are verb forms, and choice (D) is plural, which conflicts with the singular article 'an'."
+    },
+    "synonyms": [
+        "belly",
+        "abdomen",
+        "gut",
+        "tummy (informal)",
+        "digestive tract",
+        "appetite"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "digestion",
+        "gastric",
+        "appetite",
+        "nausea",
+        "acid reflux",
+        "indigestion",
+        "dietary"
+    ]
+},
   {
-      "id": "dining-262",
-      "word": "sugar",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/sugar/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/sugar--_us_1.mp3",
-          "syllableBreakdown": "sug·ar",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "sugar",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of sugar",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: suga...",
-              "Dutch: suga..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating sugar in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"sugar\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving sugar in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the sugar before the evening corporate reception.",
-              "Please ensure that the sugar meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the sugar."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the sugar across all dining venues.",
-              "Annual quality audits confirmed that every sugar complies with industry health regulations.",
-              "Standardizing operational procedures for the sugar improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the sugar is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the sugar and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the sugar",
-              "modern sugar",
-              "corporate sugar",
-              "standard sugar",
-              "quality sugar"
-          ]
-      },
-      "wordFamily": {
-          "noun": "sugar",
-          "adjective": "sugar-related"
-      },
-      "visual": {
-          "imageKeyword": "sugar dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting sugar.",
-          "mnemonic": "SUGAR: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of sugar."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) sugar (B) sugars (C) sugar's (D) sugars'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) sugar. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "sugar factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "sugar management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-262",
+    "word": "sugar",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/sugar--_us_1.mp3",
+        "commonMistakes": "Despite being spelled with an initial 's', the onset is pronounced as the voiceless postalveolar fricative /\u0283/ ('sh-') rather than /s/ (pronouncing 'soo-gar' is a frequent mistake among beginners). Additionally, non-native speakers often substitute a tense long /u\u02d0/ for the short near-close near-back rounded vowel /\u028a/ (pronouncing it like 'shoo-gar' rather than rhyming with 'book' or 'look'). In non-rhotic dialects, the final 'r' is vocalized as a schwa /\u0259/.",
+        "ipa": "/\u02c8\u0283\u028a\u0261.\u0259r/",
+        "stressPattern": "\u25cf\u25cb",
+        "syllableBreakdown": "sug\u00b7ar"
+    },
+    "etymology": {
+        "evolution": "Originating in ancient India where sugarcane was first domesticated and processed into crystal 'grit' (\u015barkar\u0101), the technology and commodity spread through Persia and the Arab world, where Arab agriculturalists cultivated cane across the Mediterranean and established large-scale refineries producing 'sukkar'. Venetian and Crusader merchants introduced the sweet crystalline substance to Western Europe in the 11th and 12th centuries. Entering Middle English around 1289 via Old French 'sucre', the spelling shifted to 'sugar' while retaining its distinctive historical palatalized pronunciation /\u02c8\u0283\u028a\u0261.\u0259r/ that evolved during Early Modern English.",
+        "firstRecordedUse": "Late 13th century (c. 1289, in Anglo-Norman records and Middle English monastic account rolls detailing luxury spice imports)",
+        "origin": "Middle English 'sugre' / 'sucre', borrowed from Anglo-Norman and Old French '\u00e7ucre' / 'sucre', through Medieval Latin 'succarum', from Arabic \u0633\u064f\u0643\u064e\u0651\u0631 (sukkar), via Persian \u0634\u06a9\u0631 (shekar), ultimately from Sanskrit \u0936\u0930\u094d\u0915\u0930\u093e (\u015barkar\u0101, 'gravel, grit, ground candied sugar').",
+        "relatedLanguages": [
+            "French: sucre",
+            "Spanish: az\u00facar",
+            "Italian: zucchero",
+            "German: Zucker",
+            "Portuguese: a\u00e7\u00facar"
+        ],
+        "rootMeaning": "grit, gravel, or granulated sweet crystals",
+        "rootWord": "\u015barkar\u0101 (\u0936\u0930\u094d\u0915\u0930\u093e) / sukkar (\u0633\u064f\u0643\u064e\u0651\u0631)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A sweet crystalline substance obtained predominantly from the juice of the sugarcane or sugar beet plant, consisting essentially of sucrose, processed in granulated, powdered, cube, or syrup forms and used universally as a culinary sweetener, preservative, beverage condiment, and foundational baking ingredient.",
+        "emotionalTone": "Sweet, indulgent, essential, energizing, and comforting.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Restaurant coffee service stations, hotel buffet beverage bars, commercial pastry bakeries, corporate conference breakrooms, bar cocktail stations (syrups and glass rimmers), and dining table caddies.",
+        "temporalContext": "Morning breakfast and coffee rush hours, mid-afternoon conference coffee breaks, dessert service at the conclusion of dinner banquets, and daily replenishment shifts for dining condiment caddies."
+    },
+    "nativeMindset": {
+        "culturalContext": "In Anglo-American hospitality etiquette, servers never add sugar directly to a customer's hot beverage unless explicitly requested; instead, condiment trays featuring an array of sugar packets (white, turbinado cane, and sweeteners) and a small spoon are placed within easy reach. Furthermore, modern corporate catering contracts frequently mandate explicit nutritional disclosures highlighting total and added sugar content for health-conscious delegates.",
+        "howNativesThink": "For native speakers, 'sugar' is both a universal dietary staple and a key focal point of modern dining customization. In everyday hospitality, native speakers instantly associate sugar with coffee and tea ritual questions ('Do you take milk or sugar?'). Culturally, it has evolved from an uninhibited table sweetener to a carefully navigated ingredient due to wellness trends, giving rise to distinct packet color codes recognized across North American dining (white for granulated sugar, brown for raw sugar/turbinado, blue/pink/yellow/green for specific artificial and natural zero-calorie substitutes). Figuratively, 'sugar' carries connotations of affection ('sweetheart') or superficial disguise ('sugarcoat').",
+        "mentalImage": "A sleek ceramic condiment caddy on a polished conference boardroom table, neatly holding brown raw cane sugar packets, white sugar sachets, and natural sweetener packets beside a steaming French press of dark roast coffee.",
+        "whenNotToUse": "Do not use 'sugar' to refer to chemical sugar alcohols or non-caloric artificial sweeteners without qualification (use 'sweetener', 'sugar substitute', or specific names like 'stevia' or 'sucralose'). In formal nutritional or biochemical labeling, use 'carbohydrates' or 'sucrose/fructose' when precise chemical classification is required.",
+        "whenToUse": "Use when discussing food ingredients, beverage service condiments ('one lump of sugar', 'sugar and cream'), pastry and dessert preparations, dietary specifications ('low in sugar', 'sugar-free options'), or agricultural commodity supply chains. Figuratively, use in idioms such as 'sugarcoat bad news' or 'sugar rush'."
+    },
+    "examples": {
+        "business": [
+            "The banquet coordinator instructed the staff to restock the coffee stations with brown sugar cubes and organic sweeteners before the morning keynote session.",
+            "In response to wellness initiatives, the corporate dining hall pledged to reduce added sugar across all packaged grab-and-go snack items by twenty percent.",
+            "Global beverage manufacturers faced tighter profit margins following sudden price spikes in raw commodity sugar futures."
+        ],
+        "collocations": [
+            "brown sugar",
+            "granulated sugar",
+            "sugar cube",
+            "powdered sugar",
+            "sugar packet",
+            "added sugar"
+        ],
+        "conversation": [
+            "\"Would you like any cream or sugar with your Americano?\" / \"Just a packet of raw brown sugar, please, and a wooden stirrer.\"",
+            "\"Has the breakroom refreshment station been refreshed for our 2:00 PM seminar?\" / \"Yes, I replaced the empty sugar canisters and replenished the assorted sweetener packets.\""
+        ],
+        "daily": [
+            "She stirred half a packet of raw cane sugar and a splash of oat milk into her morning latte.",
+            "The pastry recipe calls for two cups of granulated sugar beaten with unsalted butter until fluffy.",
+            "He switched from white sugar to honey to sweeten his afternoon chamomile tea."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "sugary",
+        "adverb": "",
+        "noun": "sugar",
+        "verb": "sugar"
+    },
+    "visual": {
+        "imageDescription": "A gleaming white porcelain sugar bowl filled with raw brown sugar cubes, resting beside miniature silver serving tongs and a porcelain cup of espresso on a caf\u00e9 marble tabletop.",
+        "imageKeyword": "white porcelain sugar bowl brown sugar cubes silver tongs coffee service",
+        "mnemonic": "SUGAR sounds like 'SHUG-ar': remember the SHining white grains that make tea Unbelievably Good And Refreshing!"
+    },
+    "video": {
+        "description": "A hospitality training module showing hotel banquet staff how to set up, organize, and sanitize a five-star executive coffee station, highlighting proper placement of sugar bowls, tongs, and portioned sweetener sachets."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            2,
+            3,
+            7
+        ],
+        "exampleQuestion": "To accommodate employees who are monitoring their caloric intake, the cafeteria offers a variety of beverage condiments, including raw _____ and plant-based sweeteners. (A) sugar (B) sugary (C) sugars (D) sugared",
+        "tips": "In Part 5, pay close attention to noun compounding and parallel structures. The adjective 'raw' modifies the uncountable noun 'sugar' when referring to the standard culinary condiment ('raw sugar'). Option (A) is correct. Option (B) is an adjective, option (D) is a past participle/verb, and while 'sugars' (C) can refer to multiple chemical types of sugar in biochemistry, as a coffee station condiment modified by 'raw', the standard mass noun 'sugar' is required."
+    },
+    "synonyms": [
+        "sweetener",
+        "sucrose",
+        "cane sugar",
+        "granulated sugar",
+        "powdered sugar",
+        "syrup"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "sweetener",
+        "caramelize",
+        "confectionery",
+        "molasses",
+        "condiment",
+        "syrup",
+        "pastry"
+    ]
+},
   {
-      "id": "dining-263",
-      "word": "supper",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/supper/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/supper--_us_1.mp3",
-          "syllableBreakdown": "sup·per",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Latin",
-          "rootWord": "sub- (under, secondary, supporting)",
-          "rootMeaning": "underneath, subordinate rank, or lower tier",
-          "evolution": "Used in Roman governance hierarchy; adopted into corporate reporting tiers, subcontracting, and supporting infrastructure.",
-          "relatedLanguages": [
-              "French: sous- / sub-",
-              "Spanish: sub-"
-          ],
-          "firstRecordedUse": "15th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating supper in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"supper\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving supper in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the supper before the evening corporate reception.",
-              "Please ensure that the supper meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the supper."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the supper across all dining venues.",
-              "Annual quality audits confirmed that every supper complies with industry health regulations.",
-              "Standardizing operational procedures for the supper improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the supper is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the supper and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the supper",
-              "modern supper",
-              "corporate supper",
-              "standard supper",
-              "quality supper"
-          ]
-      },
-      "wordFamily": {
-          "noun": "supper",
-          "adjective": "supper-related"
-      },
-      "visual": {
-          "imageKeyword": "supper dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting supper.",
-          "mnemonic": "SUPPER: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of supper."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) supper (B) suppers (C) supper's (D) suppers'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) supper. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "supper factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "supper management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-263",
+    "word": "supper",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/supper--_us_1.mp3",
+        "commonMistakes": "Learners frequently confuse the vowel sound /\u02c8s\u028cp.\u0259r/ with /\u02c8su\u02d0.p\u0259r/ ('super'), using an elongated tense /u\u02d0/ instead of the short, central lax vowel /\u028c/. In meaning, non-native speakers often treat 'supper' as identical to 'dinner'. However, in contemporary English, 'dinner' is typically the principal, formal, or multi-course evening meal, whereas 'supper' designates an informal, lighter, often later evening meal or relaxed domestic repast (e.g., 'a light supper'). Additionally, while 'dinner' historically could refer to a midday feast, 'supper' strictly refers to an evening meal.",
+        "ipa": "/\u02c8s\u028cp.\u0259r/",
+        "stressPattern": "\u25cf\u25cb",
+        "syllableBreakdown": "sup\u00b7per"
+    },
+    "etymology": {
+        "evolution": "In medieval society, 'dinner' was the main heavy meal eaten around midday, while 'supper' was a lighter evening repast consisting of broth or bread soaked in soup (a 'sop'). As industrialization shifted the main meal to the evening hours, 'supper' evolved to mean an informal, intimate evening meal, or a late-night light meal following evening entertainment or business meetings. In modern hospitality, 'supper' describes relaxed evening dining, buffet spreads, or late-night corporate hospitality.",
+        "firstRecordedUse": "Mid-13th century (c. 1250 in Middle English as 'soper')",
+        "origin": "Middle English 'soper' / 'souper', borrowed from Anglo-Norman and Old French 'soper' (evening meal), derived from the Old French verb 'soper' (to eat the evening meal), which traces to Frankish and Proto-Germanic '*s\u016bpijan' (to sip, sup, drink, take liquid food) and Proto-Indo-European '*seue-' / '*sub-' (to take juice or liquid).",
+        "relatedLanguages": [
+            "French: souper (evening meal / to eat supper)",
+            "Spanish: sopa (soup) / cenar (to eat supper)",
+            "German: Suppe (soup) / Abendbrot (evening meal)",
+            "Italian: zuppa (soup) / cena (supper)",
+            "Dutch: soep (soup) / avondeten (evening meal)"
+        ],
+        "rootMeaning": "The act of supping; originally a light evening broth, pottage, or soup eaten by dipping bread, consumed after the heavier midday dinner",
+        "rootWord": "Old French soper / Proto-Germanic *s\u016bpan\u0105 (to sup, sip) + -er"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "An evening meal, traditionally characterized by an informal, comforting, or lighter culinary profile than a formal dinner; in hospitality and corporate event planning, it denotes a late-evening dining session, post-conference buffet, or relaxed communal food service.",
+        "emotionalTone": "Relaxed, convivial, comforting, informal, and hospitable.",
+        "formalityLevel": "informal",
+        "spatialContext": "Hotel bistros, dining halls, late-night hotel lounges, banquet breakout pavilions, and casual dining rooms.",
+        "temporalContext": "Typically between 7:30 PM and 10:30 PM, often following evening plenary sessions, trade show floors, or social gatherings."
+    },
+    "nativeMindset": {
+        "culturalContext": "Historically rooted in agrarian schedules where the heavy meal was eaten at noon and a modest 'supper' at sunset, the term remains common across Britain, Canada, and regions of the United States. In corporate and hotel hospitality, a 'welcome supper' or 'buffet supper' serves as an icebreaker on the opening night of multiday conventions, allowing tired travelers to eat flexibly at their own pace.",
+        "howNativesThink": "Native speakers associate 'supper' with warmth, comfort, and an unhurried, informal atmosphere. While 'dinner' often implies dressing up, multiple courses, or formal business protocols, 'supper' suggests shedding corporate formalities, enjoying comforting foods like soups, warm casseroles, or cold cuts, and having intimate conversations. When an event schedule advertises a 'light buffet supper,' attendees know they can attend in business casual attire without expecting formal speeches or rigid seating arrangements.",
+        "mentalImage": "A welcoming hotel mezzanine terrace bathed in warm twilight, where conference attendees unwind around small cocktail tables, enjoying an informal buffet supper of artisan breads, carved roasted meats, warm pasta dishes, and salads while chatting casually.",
+        "whenNotToUse": "Do not use 'supper' for formal state dinners, corporate awards banquets, or high-level gala events; use 'dinner' or 'banquet' instead. Never use it for midday meals (lunch).",
+        "whenToUse": "Use 'supper' when referring to an informal evening meal ('casual Sunday supper'), a late-night light repast after an event ('post-theater supper', 'late supper'), or an unpretentious catered evening buffet ('buffet supper')."
+    },
+    "examples": {
+        "business": [
+            "The conference itinerary concludes with an informal buffet supper in the grand atrium, providing delegates an opportunity to network.",
+            "Our executive team hosted the visiting regional managers for a late supper at an upscale bistro near the convention center.",
+            "The corporate retreat package includes breakfast, a working lunch, and a three-course evening supper in the dining hall."
+        ],
+        "collocations": [
+            "buffet supper",
+            "light supper",
+            "late supper",
+            "Sunday supper",
+            "informal supper",
+            "supper club"
+        ],
+        "conversation": [
+            "\"Are business suits required for the evening reception?\" / \"No, the organizers are serving a casual buffet supper, so business casual attire is encouraged.\"",
+            "\"We missed the main banquet because our flight was delayed.\" / \"Don't worry, the hotel restaurant is keeping a light supper available for late arrivals until ten o'clock.\"",
+            "\"Would you like to grab a quick supper before we head back to review the client presentation?\" / \"That sounds perfect\u2014there is a quiet noodle bar right around the corner.\""
+        ],
+        "daily": [
+            "After working late at the branch office, David prepared a simple, comforting supper of vegetable soup and toasted sourdough.",
+            "Our family gathers around the kitchen table every Sunday for an early supper and relaxed conversation.",
+            "Would you like to come over to our apartment for an informal supper this Thursday evening?"
+        ]
+    },
+    "wordFamily": {
+        "adjective": "",
+        "adverb": "",
+        "noun": "supper",
+        "verb": "sup"
+    },
+    "visual": {
+        "imageDescription": "An inviting hotel dining area illuminated by soft ambient lighting, featuring a long buffet station arranged with warm dishes, salad bowls, and artisan rolls, with guests conversing in a relaxed atmosphere.",
+        "imageKeyword": "informal buffet supper hotel dining event guests evening meal",
+        "mnemonic": "SUPPER: When you SUP on SOUP and a warm meal in the evening to wind down after a busy workday!"
+    },
+    "video": {
+        "description": "A hospitality catering video illustrating how banquet managers design and execute an informal post-conference buffet supper with self-service carving stations and comfortable lounge seating."
+    },
+    "toeicContext": {
+        "commonParts": [
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "Delegates arriving on the evening shuttle will be offered a complimentary buffet _____ in the executive lounge until 10:00 P.M.\n(A) supper\n(B) sup\n(C) suppered\n(D) supping",
+        "tips": "In TOEIC Part 5, sentence completion questions often test noun recognition following compound adjective modifiers like 'complimentary buffet _____'. Choice (A) 'supper' correctly functions as the head noun denoting an evening meal. Choice (B) 'sup' is an archaic verb; (C) 'suppered' is a nonstandard past participle; and (D) 'supping' is a participle/gerund that does not fit the catering context."
+    },
+    "synonyms": [
+        "evening meal",
+        "dinner",
+        "repast",
+        "buffet meal",
+        "light meal"
+    ],
+    "antonyms": [
+        "breakfast",
+        "brunch",
+        "lunch"
+    ],
+    "relatedWords": [
+        "banquet",
+        "buffet",
+        "catering",
+        "course",
+        "refreshments",
+        "dining hall",
+        "supper club"
+    ]
+},
   {
-      "id": "dining-264",
-      "word": "sweet",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/sweet/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/sweet--_us_1.mp3",
-          "syllableBreakdown": "swe·et",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "sweet",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of sweet",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: swee...",
-              "Dutch: swee..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating sweet in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"sweet\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving sweet in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the sweet before the evening corporate reception.",
-              "Please ensure that the sweet meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the sweet."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the sweet across all dining venues.",
-              "Annual quality audits confirmed that every sweet complies with industry health regulations.",
-              "Standardizing operational procedures for the sweet improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the sweet is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the sweet and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the sweet",
-              "modern sweet",
-              "corporate sweet",
-              "standard sweet",
-              "quality sweet"
-          ]
-      },
-      "wordFamily": {
-          "noun": "sweet",
-          "adjective": "sweet-related"
-      },
-      "visual": {
-          "imageKeyword": "sweet dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting sweet.",
-          "mnemonic": "SWEET: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of sweet."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) sweet (B) sweets (C) sweet's (D) sweets'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) sweet. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "sweet factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "sweet management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-264",
+    "word": "sweet",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/sweet--_us_1.mp3",
+        "commonMistakes": "Learners sometimes shorten the tense vowel /i\u02d0/ into a lax /\u026a/ or confuse it with 'sweat' /sw\u025bt/. In grammar, non-native speakers familiar mainly with American English often do not recognize that 'sweet' functions as a countable and uncountable noun in British, Commonwealth, and international catering contexts to mean 'dessert' or 'a dessert course' (e.g., 'What would you like for sweet?', 'a selection of sweets'). They may also overlook that the plural noun 'sweets' encompasses confectionery, candies, and after-dinner chocolates.",
+        "ipa": "/swi\u02d0t/",
+        "stressPattern": "\u25cf",
+        "syllableBreakdown": "sweet"
+    },
+    "etymology": {
+        "evolution": "In Old English, the word functioned as an adjective describing pleasant flavors and honeyed drinks. By the 14th century, it was nominalized to describe sweet dishes and cherished things. In the 17th century, as refined cane sugar imports surged, 'sweet' became a concrete noun for crystallized candies and sweetmeats. During the 18th and 19th centuries in British culinary etiquette, 'sweet' became established as the formal designation for the dessert course concluding a multi-course dinner (contrasted with savory courses). Today, in hospitality, 'sweets' refers to plated desserts, pastries, and confectionery.",
+        "firstRecordedUse": "Before 12th century (Old English as adjective); 14th century (Middle English as noun for sweet foods and confections)",
+        "origin": "Middle English 'swete', from Old English 'sw\u0113te' (pleasing to the senses, sugary, fragrant), from Proto-Germanic '*sw\u014dtuz' (sweet, pleasant to taste), from Proto-Indo-European '*sw\u0101d-' / '*swehd-' (sweet, pleasant). The noun usage denoting sugary confectionery and dessert courses developed in Middle English and crystallized in 17th- and 18th-century British dining traditions.",
+        "relatedLanguages": [
+            "German: s\u00fc\u00df (sweet adj.) / S\u00fc\u00dfigkeit (sweet/confectionery)",
+            "Dutch: zoet (sweet adj.) / snoepgoed (sweets/candies)",
+            "French: suave (sweet/agreeable) / sucreries (sweets)",
+            "Latin: suavis (sweet, pleasant)",
+            "Italian: soave (gentle, sweet) / dolce (sweet/dessert)"
+        ],
+        "rootMeaning": "That which tastes sugary, rich, or pleasing to the palate; a confection, sugary treat, or the dessert course concluding a meal",
+        "rootWord": "Old English sw\u0113te / Proto-Germanic *sw\u014dtuz / Proto-Indo-European *sw\u0101d- (sweet, pleasing to taste)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A sweet food item, sugary confection, candy, or pastry; in British, Commonwealth, and professional hospitality terminology, it specifically denotes the dessert course served at the conclusion of a formal lunch or dinner, or a curated assortment of petits fours, chocolates, and pastries served with after-dinner coffee.",
+        "emotionalTone": "Indulgent, celebratory, satisfying, pleasant, and hospitable.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Restaurant dessert stations, pastry display cases, dessert trolleys, banquet service buffets, and hospitality coffee stations.",
+        "temporalContext": "Served during the final course of a luncheon or dinner, during afternoon tea service, or as an amenity upon hotel check-in."
+    },
+    "nativeMindset": {
+        "culturalContext": "In traditional British dining, multi-course meals concluded with a distinct 'sweet' course, often juxtaposed with a 'savory' (such as cheese or Welsh rarebit). In modern corporate hospitality, providing premium sweets\u2014such as Belgian chocolates, macarons, or local confections\u2014is a standard amenity at conference registration desks, VIP suites, and executive luncheons. In TOEIC test items, 'sweet' as a noun appears in Part 1 dining photographs, Part 3 restaurant dialogues, and Part 7 catering menus.",
+        "howNativesThink": "Native speakers understand 'sweet' as a noun in two main contexts. In British and international dining, a host or waiter asking 'Would you care for a sweet?' refers directly to the dessert menu\u2014such as a fruit tart, chocolate mousse, or pudding. In general and American usage, the plural 'sweets' evokes a vibrant assortment of confections, chocolates, truffles, and candies displayed in bowls or gift boxes. It represents culinary indulgence, hospitality warmth, and a rewarding finish to a savory meal.",
+        "mentalImage": "A tiered silver dessert trolley wheeled to a dining table by a waiter, showcasing an assortment of artisanal sweets including raspberry macarons, chocolate truffles dusted with cocoa, and miniature glazed fruit tartlets.",
+        "whenNotToUse": "Do not confuse the noun 'sweet' (a dessert or confection) with the adjective 'sweet' (sugary or pleasing in taste, e.g. 'sweet wine'). In North American casual dining, guests typically use 'dessert' for the final course rather than the singular 'sweet', reserving 'sweets' for candy and pastries.",
+        "whenToUse": "Use 'sweet' as a noun when referring to confectionery, candies, or sugar-based treats ('a box of handmade sweets'), or in British/hospitality dining contexts when referring to the dessert course ('order a sweet after the main course', 'a trolley of sweets')."
+    },
+    "examples": {
+        "business": [
+            "The corporate catering contract includes after-dinner coffee accompanied by an assortment of handcrafted Belgian sweets.",
+            "As an expression of appreciation, the marketing agency sent gift baskets loaded with gourmet sweets to all enterprise clients.",
+            "The banquet package features a three-course seated dinner followed by a buffet station displaying freshly baked sweets."
+        ],
+        "collocations": [
+            "selection of sweets",
+            "gourmet sweets",
+            "sweets trolley",
+            "handmade sweets",
+            "traditional sweet",
+            "assortment of sweets"
+        ],
+        "conversation": [
+            "\"Would anyone care for a sweet before we request the bill?\" / \"I really shouldn't, but the lemon meringue tartlet sounds wonderful.\"",
+            "\"Does the banquet package include vegetarian options for the final course?\" / \"Yes, several of the sweets on our dessert cart are vegan and gluten-free.\"",
+            "\"Are coffee and sweets included in the luncheon fee?\" / \"Yes, a dessert trolley with mini pastries and chocolates will be served alongside espresso.\""
+        ],
+        "daily": [
+            "At the end of our three-course dinner, the waiter wheeled over a cart offering an impressive selection of sweets.",
+            "Grandmother always kept a crystal bowl filled with hard peppermint sweets on the living room credenza.",
+            "For those dining on the terrace, the bistro offers a choice of artisanal cheese or a seasonal fruit sweet."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "sweet, bittersweet",
+        "adverb": "sweetly",
+        "noun": "sweet, sweetness, sweetmeat, sweetener",
+        "verb": "sweeten"
+    },
+    "visual": {
+        "imageDescription": "An elegant dessert presentation on a marble stand displaying fine artisanal sweets, including French macarons, dark chocolate truffles, and delicate miniature fruit tarts garnished with mint.",
+        "imageKeyword": "gourmet sweets dessert pastries chocolates display dining table",
+        "mnemonic": "SWEET: After your savory meal is complete, treat yourself to a delicious SWEET!"
+    },
+    "video": {
+        "description": "A pastry chef tutorial demonstrating the art of presenting a restaurant dessert cart, arranging an assortment of gourmet sweets such as opera cakes, fruit tartlets, and handcrafted confectionery."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "The executive luncheon concludes with freshly brewed coffee and a choice of a traditional _____ prepared by the hotel's head pastry chef.\n(A) sweet\n(B) sweetly\n(C) sweeten\n(D) sweetness",
+        "tips": "In TOEIC Part 5, questions frequently test noun recognition in positions following determiners and adjectives ('a traditional _____'). Choice (A) 'sweet' is correct, functioning in culinary and British contexts as a countable noun meaning a dessert or confection. Choice (B) 'sweetly' is an adverb; (C) 'sweeten' is a verb; and (D) 'sweetness' is an abstract uncountable noun describing flavor rather than a concrete plated item."
+    },
+    "synonyms": [
+        "dessert",
+        "confection",
+        "sweetmeat",
+        "pudding",
+        "candy",
+        "pastry"
+    ],
+    "antonyms": [
+        "savory",
+        "starter",
+        "appetizer"
+    ],
+    "relatedWords": [
+        "confectionery",
+        "pastry",
+        "truffle",
+        "dessert trolley",
+        "petit four",
+        "praline",
+        "pudding"
+    ]
+},
   {
-      "id": "dining-265",
-      "word": "table",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/table/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/table--_us_1.mp3",
-          "syllableBreakdown": "tab·le",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "table",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of table",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: tabl...",
-              "Dutch: tabl..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating table in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"table\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving table in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the table before the evening corporate reception.",
-              "Please ensure that the table meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the table."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the table across all dining venues.",
-              "Annual quality audits confirmed that every table complies with industry health regulations.",
-              "Standardizing operational procedures for the table improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the table is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the table and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the table",
-              "modern table",
-              "corporate table",
-              "standard table",
-              "quality table"
-          ]
-      },
-      "wordFamily": {
-          "noun": "table",
-          "adjective": "table-related"
-      },
-      "visual": {
-          "imageKeyword": "table dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting table.",
-          "mnemonic": "TABLE: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of table."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) table (B) tables (C) table's (D) tables'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) table. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "table factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "table management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-265",
+    "word": "table",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/table--_us_1.mp3",
+        "commonMistakes": "Learners often over-enunciate or distort the final syllabic /l/ in /\u02c8te\u026a.b\u0259l/, pronouncing it like /be\u026a.b\u028al/ or /te\u026a.b\u0254\u02d0l/. In dining situations, non-native speakers sometimes translate directly from their native tongue by saying 'we want a place for four' rather than the idiomatic English 'a table for four' or 'reserve a table'. In TOEIC Part 1 listening, test-takers occasionally confuse a dining 'table' with a service 'counter' (which is fixed and elongated without individual dining chairs) or an office 'desk'.",
+        "ipa": "/\u02c8te\u026a.b\u0259l/",
+        "stressPattern": "\u25cf\u25cb",
+        "syllableBreakdown": "ta\u00b7ble"
+    },
+    "etymology": {
+        "evolution": "In classical Latin, 'tabula' referred to a board, plank, or writing tablet, while the eating table was called 'mensa'. In Late Latin, 'tabula' displaced 'mensa' for domestic furniture. Following the Norman Conquest, Anglo-Norman 'table' entered Middle English around the 12th century, gradually replacing native Old English 'bord' (board). By the 14th century, 'table' became the universal English term for dining furniture, as well as the meals served upon it ('a generous table'). In modern restaurant management, 'table' represents the primary unit of dining floor capacity, reservation allocation, and service turnover.",
+        "firstRecordedUse": "12th century (c. 1175 in Middle English as 'table', supplanting Old English 'bord')",
+        "origin": "Middle English 'table', borrowed from Old French 'table' (board, slab, flat writing tablet), directly from Latin 'tabula' (a board, plank, slab of wood or stone, flat gaming surface, tablet), of uncertain Proto-Indo-European origin.",
+        "relatedLanguages": [
+            "French: table (table)",
+            "Spanish: tabla (board/plank) / mesa (dining table)",
+            "Italian: tavola (dining table) / tabella (table/chart)",
+            "Portuguese: t\u00e1bua (board) / mesa (table)",
+            "German: Tafel (dining board/table) / Tisch (table)"
+        ],
+        "rootMeaning": "A flat, horizontal surface of wood or stone supported by legs, used for eating, writing, or displaying goods",
+        "rootWord": "Latin tabula (board, plank, gaming board, tablet, flat surface) via Old French table"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A piece of furniture featuring a flat, horizontal surface supported by one or more legs or a pedestal, designed to hold meals, tableware, and drinks; in restaurant and hospitality operations, it serves as the foundational unit of dining room layout, guest seating, reservation scheduling, and customer service delivery.",
+        "emotionalTone": "Hospitable, communal, structured, social, and welcoming.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Restaurant dining rooms, banquet halls, outdoor patios, executive dining suites, bistros, and hotel breakfast rooms.",
+        "temporalContext": "Active throughout dining operating hours (breakfast, lunch, dinner); managed on 60-to-120 minute dining intervals (table turns)."
+    },
+    "nativeMindset": {
+        "culturalContext": "In Western hospitality, table allocation reflects status, celebration, and comfort. Hosts and ma\u00eetres d' assign prominent 'head tables' for executive honors and VIP guests, while quiet corner tables are favored for confidential business discussions. Tipping and table service standards are central to restaurant operations. On the TOEIC exam, 'table' is one of the most frequently tested concrete nouns in Part 1 (waiters serving tables, diners seated around a table), Part 3 (booking and seating dialogues), and Part 7 (banquet reservation correspondence).",
+        "howNativesThink": "Native speakers view a dining 'table' both as a physical piece of furniture and as an intimate social territory. When dining out, native speakers immediately evaluate table placement\u2014preferring a quiet window table, a comfortable booth table, or a central round table over a table situated near the kitchen doors or restrooms. Operationally, 'table' signifies service flow: patrons ask 'could we get a table for four?', while staff manage 'table turnover' and 'clear the table'. Gathering 'around the table' symbolizes camaraderie, business negotiation, and hospitality.",
+        "mentalImage": "An elegantly appointed round dining table in an upscale restaurant, dressed in a crisp white linen tablecloth, set with polished silverware, crystal wine goblets, white porcelain plates, folded napkins, and a warm candlelight centerpiece.",
+        "whenNotToUse": "Do not confuse a dining 'table' with a 'counter' or 'bar' where patrons sit in a line on elevated stools along a continuous counter. In professional office settings, do not confuse a dining table with an office 'desk' designed with drawers and computer equipment.",
+        "whenToUse": "Use 'table' when referring to dining furniture ('banquet table', 'dining table', 'bistro table'), reservation bookings ('reserve a table for six', 'table for two'), restaurant floor arrangements ('window table', 'outdoor table'), or meal service tasks ('set the table', 'clear the table', 'table service')."
+    },
+    "examples": {
+        "business": [
+            "For the corporate gala, the banquet coordinator reserved a ten-seat head table directly facing the presentation stage.",
+            "The restaurant implemented a digital floor management system that allows servers to track table status in real time.",
+            "Due to the international trade summit, every table in the hotel's fine-dining restaurant was fully booked weeks in advance."
+        ],
+        "collocations": [
+            "reserve a table",
+            "table for two",
+            "dining table",
+            "set the table",
+            "table service",
+            "clear the table"
+        ],
+        "conversation": [
+            "\"Good evening, welcome to The Oak Room. Do you have a reservation?\" / \"Yes, we reserved a table for three under Henderson at seven o'clock.\"",
+            "\"Would it be possible to move to that outdoor table on the patio?\" / \"Certainly, let me check with the host stand to ensure it hasn't been assigned yet.\"",
+            "\"Has table nine received their dessert order?\" / \"Yes, the server just delivered their coffee and sweets a few moments ago.\""
+        ],
+        "daily": [
+            "We called the French bistro three days in advance to reserve a quiet window table for our dinner.",
+            "Could you please help me set the table with forks, knives, and wine glasses before the guests arrive?",
+            "The bussing staff promptly cleared the table and wiped down the surface after the diners departed."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "",
+        "adverb": "",
+        "noun": "table, tablecloth, tableware, tabletop",
+        "verb": "table"
+    },
+    "visual": {
+        "imageDescription": "A beautifully set restaurant dining table covered with a pristine white linen cloth, featuring fine china dinner plates, polished stainless steel cutlery, stemmed wine glasses, and a fresh flower centerpiece.",
+        "imageKeyword": "restaurant dining table elegant white tablecloth place setting silverware glasses",
+        "mnemonic": "TABLE: A flat Top And Base for Lunch and Entertaining guests!"
+    },
+    "video": {
+        "description": "A fine-dining service training video demonstrating proper European banquet table setting techniques, including tablecloth alignment, silverware placement, and stemware spacing."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "The ma\u00eetre d' apologized for the brief delay and assured the client that their reserved _____ would be ready within five minutes.\n(A) table\n(B) tabular\n(C) tabulate\n(D) tabulation",
+        "tips": "In TOEIC Part 5, vocabulary and part-of-speech questions test recognition of concrete nouns following possessive determiners and participial modifiers ('their reserved _____'). Choice (A) 'table' is the correct concrete noun fitting the dining reservation context. Choice (B) 'tabular' is an adjective meaning organized in columns/rows; (C) 'tabulate' is a verb meaning to arrange data systematically; and (D) 'tabulation' is an abstract noun denoting the act of compiling figures."
+    },
+    "synonyms": [
+        "dining table",
+        "banquet table",
+        "booth",
+        "bistro table",
+        "seating"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "tablecloth",
+        "tableware",
+        "place setting",
+        "centerpiece",
+        "booth",
+        "ma\u00eetre d'",
+        "table turnover"
+    ]
+},
   {
-      "id": "dining-266",
-      "word": "tablecloth",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "intermediate",
-      "toeicFrequency": 8,
-      "pronunciation": {
-          "ipa": "/tablecloth/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tablecloth--_us_1.mp3",
-          "syllableBreakdown": "tab·lec·loth",
-          "stressPattern": "○●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "tablecloth",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of tablecloth",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: tabl...",
-              "Dutch: tabl..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating tablecloth in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"tablecloth\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving tablecloth in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the tablecloth before the evening corporate reception.",
-              "Please ensure that the tablecloth meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the tablecloth."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the tablecloth across all dining venues.",
-              "Annual quality audits confirmed that every tablecloth complies with industry health regulations.",
-              "Standardizing operational procedures for the tablecloth improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the tablecloth is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the tablecloth and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the tablecloth",
-              "modern tablecloth",
-              "corporate tablecloth",
-              "standard tablecloth",
-              "quality tablecloth"
-          ]
-      },
-      "wordFamily": {
-          "noun": "tablecloth",
-          "adjective": "tablecloth-related"
-      },
-      "visual": {
-          "imageKeyword": "tablecloth dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting tablecloth.",
-          "mnemonic": "TABLEC: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of tablecloth."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) tablecloth (B) tablecloths (C) tablecloth's (D) tablecloths'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) tablecloth. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "tablecloth factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "tablecloth management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-266",
+    "word": "tablecloth",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tablecloth--_us_1.mp3",
+        "commonMistakes": "Learners often mispronounce the final unvoiced dental fricative /\u03b8/ as /t/ or /s/, incorrectly saying 'table-clot' or 'table-clos'. Another frequent error is confusing the vowel /\u0254\u02d0/ in 'cloth' with the diphthong /o\u028a/ in 'clothes' (/klo\u028a\u00f0z/). In syllable articulation, learners sometimes omit the syllabic /l/ in 'table' or articulate it awkwardly. Finally, learners must distinguish a 'tablecloth' (which drapes across the entire tabletop) from an individual 'placemat' or a decorative central 'table runner'.",
+        "ipa": "/\u02c8te\u026a.b\u0259l.kl\u0254\u02d0\u03b8/",
+        "stressPattern": "\u25cf\u25cb\u25cb",
+        "syllableBreakdown": "ta-ble-cloth"
+    },
+    "etymology": {
+        "evolution": "Formed in late Middle English (c. 1475) to replace earlier Germanic compounds like 'board-cloth' (Middle English 'bordcloth'). In medieval and Renaissance Europe, crisp bleached linen tablecloths signified aristocratic wealth, high hygiene standards, and courteous hospitality, catching meat juices and crumbs. As commercial textile manufacturing expanded in the 19th century, damask and cotton tablecloths became standard in hotels and restaurants worldwide. In modern corporate dining, commercial polyester-cotton blends and spill-resistant textiles are staple fixtures for banquets and conferences.",
+        "firstRecordedUse": "Late 15th century (c. 1475\u20131485 in household expense records and inventories of nobility)",
+        "origin": "Compound of Middle English 'table' (borrowed from Old French 'table', from Latin 'tabula') and Old English 'cl\u0101\u00fe' (from Proto-Germanic '*klaith\u0105').",
+        "relatedLanguages": [
+            "German: Tischtuch (Tisch [table] + Tuch [cloth])",
+            "Dutch: tafellaken (tafel [table] + laken [cloth, sheet])",
+            "French: nappe (from Latin mappa [napkin, cloth])",
+            "Spanish: mantel (from Latin mantellum [cloak, covering])",
+            "Italian: tovaglia (from Germanic *twahiljo [towel, wipe])"
+        ],
+        "rootMeaning": "'A woven fabric spread over a dining board or table'",
+        "rootWord": "Latin tabula (board, plank, writing tablet) + Old English cl\u0101\u00fe (cloth, garment, woven fabric)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A large sheet of hemmed woven fabric\u2014typically made of linen, damask, cotton, or polyester\u2014draped over a dining table, banquet buffet, or display station to protect the surface from scratches and spills while creating a neat, dignified, and formally dressed dining environment.",
+        "emotionalTone": "Orderly, elegant, hospitable, formal, and pristine.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Hotel grand ballrooms, executive private dining rooms, banquet buffet setups, catering supply staging areas, and wedding reception halls, draped neatly over circular or rectangular banquet tables with symmetrical overhang.",
+        "temporalContext": "Unfolded, inspected, and ironed or steamed several hours prior to an event; immediately removed and sent to industrial laundry facilities following meal service turnover."
+    },
+    "nativeMindset": {
+        "culturalContext": "In North American and British corporate dining, 'white-tablecloth restaurant' is an institutional idiom denoting fine-dining venues suited for closing high-stakes deals or celebrating major corporate milestones. In TOEIC examinations, tablecloths are frequently featured in Part 1 photographs of dining rooms and conference buffets ('The tables are covered with cloths') and in Part 7 catering and event planning contracts.",
+        "howNativesThink": "Native English speakers instinctively associate 'white tablecloth' with fine dining, upscale hospitality, and substantial expense (as in the common industry term 'white-tablecloth restaurant'). When a table is 'dressed' with a clean cloth, it conveys meticulous attention to detail and readiness for service. Conversely, a bare table suggests casual dining, a caf\u00e9, or a modern industrial bistro. In event planning, event managers focus on the 'drop' or overhang\u2014ensuring the tablecloth hangs evenly around the table without brushing attendees' feet.",
+        "mentalImage": "A banquet attendant in a crisp black vest and white shirt smoothing out a freshly pressed, ivory damask tablecloth over a six-foot round dining table, centering it precisely before arranging polished cutlery and wine glasses.",
+        "whenNotToUse": "Do not use when referring to an individual single-plate setting pad (use 'placemat'), a long decorative fabric strip running down the table's centerline (use 'table runner'), or a personal fabric mouth wipe (use 'napkin' or 'serviette').",
+        "whenToUse": "Use when describing table linens, banquet setup guidelines, catering decor, dining hall preparations, or restaurant ambiance (e.g., 'pressed tablecloth', 'disposable tablecloth', 'floor-length tablecloth')."
+    },
+    "examples": {
+        "business": [
+            "The banquet manager ordered two hundred heavy-duty, stain-resistant polyester tablecloths in navy blue for the upcoming medical convention.",
+            "Prior to the evening awards gala, event coordinators conducted a walk-through to ensure every tablecloth was centered with an even drop on all sides.",
+            "The upscale downtown bistro decided to replace its traditional linen tablecloths with polished granite tables to reduce commercial laundry expenses."
+        ],
+        "collocations": [
+            "white tablecloth",
+            "linen tablecloth",
+            "stain-resistant tablecloth",
+            "spread a tablecloth",
+            "floor-length tablecloth",
+            "embroidered tablecloth"
+        ],
+        "conversation": [
+            "Speaker A: 'Did the commercial laundry vendor return the banquet tablecloths for tonight's corporate gala?'\\nSpeaker B: 'Yes, eighty pressed white tablecloths were delivered this morning and are already being laid out in the main hall.'",
+            "Speaker A: 'Should we use floor-length tablecloths or lap-length ones for the trade show display tables?'\\nSpeaker B: 'Floor-length tablecloths look much more professional because they conceal our extra product inventory stored underneath.'"
+        ],
+        "daily": [
+            "We draped a vibrant floral tablecloth over the wooden patio table before our backyard barbecue dinner.",
+            "A splash of cranberry juice accidentally stained my grandmother's embroidered linen tablecloth during Thanksgiving dinner.",
+            "For the outdoor children's birthday party, we purchased disposable paper tablecloths to make cleanup fast and easy."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "tableclothed",
+        "adverb": "",
+        "noun": "tablecloth, tablecloths",
+        "verb": ""
+    },
+    "visual": {
+        "imageDescription": "A pristine, pressed white linen tablecloth smoothly draped over a round banquet table with elegant silverware, crystal wine glasses, and a fresh floral centerpiece in a brightly lit hotel ballroom.",
+        "imageKeyword": "white damask tablecloth banquet table formal event setup",
+        "mnemonic": "TABLE + CLOTH: The TABLE puts on its best CLOTH suit to welcome distinguished banquet guests!"
+    },
+    "video": {
+        "description": "A banquet operations tutorial demonstrating how to properly throw, center, and measure the drop of round and rectangular tablecloths for five-star hotel events."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            3,
+            7
+        ],
+        "exampleQuestion": "Before setting the porcelain tableware and floral centerpieces, banquet staff must confirm that each dining table is covered with a clean, uncreased _____.\n(A) tablecloth\n(B) tablecloths\n(C) tableclothed\n(D) tableclothing",
+        "tips": "In TOEIC Part 1, listen for table settings: 'Tablecloths have been spread on the tables' or 'A cloth covers the surface.' In Part 5 grammar questions, the singular indefinite article 'a' paired with descriptive adjectives ('clean, uncreased') requires a singular countable noun: (A) tablecloth. Choice (B) is plural, while (C) and (D) are non-standard distractor forms."
+    },
+    "synonyms": [
+        "table linen",
+        "table cover",
+        "table covering",
+        "damask cloth",
+        "dining cover"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "table runner",
+        "placemat",
+        "napkin",
+        "linens",
+        "centerpiece",
+        "table skirt",
+        "banquet table"
+    ]
+},
   {
-      "id": "dining-267",
-      "word": "tableware",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "intermediate",
-      "toeicFrequency": 8,
-      "pronunciation": {
-          "ipa": "/tableware/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tableware--_us_1.mp3",
-          "syllableBreakdown": "tab·lew·are",
-          "stressPattern": "○●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "tableware",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of tableware",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: tabl...",
-              "Dutch: tabl..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating tableware in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"tableware\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving tableware in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the tableware before the evening corporate reception.",
-              "Please ensure that the tableware meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the tableware."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the tableware across all dining venues.",
-              "Annual quality audits confirmed that every tableware complies with industry health regulations.",
-              "Standardizing operational procedures for the tableware improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the tableware is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the tableware and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the tableware",
-              "modern tableware",
-              "corporate tableware",
-              "standard tableware",
-              "quality tableware"
-          ]
-      },
-      "wordFamily": {
-          "noun": "tableware",
-          "adjective": "tableware-related"
-      },
-      "visual": {
-          "imageKeyword": "tableware dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting tableware.",
-          "mnemonic": "TABLEW: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of tableware."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) tableware (B) tablewares (C) tableware's (D) tablewares'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) tableware. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "tableware factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "tableware management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-267",
+    "word": "tableware",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tableware--_us_1.mp3",
+        "commonMistakes": "The single most common grammatical mistake among ESL and TOEIC candidates is treating 'tableware' as a countable noun (*tablewares* or *a tableware*). 'Tableware' is strictly an uncountable/mass collective noun; use 'a set of tableware' or 'pieces of tableware'. Phonetically, learners sometimes pronounce the final element '-ware' like 'war' (/w\u0254\u02d0r/) instead of rhyming with 'air' (/wer/). Additionally, learners should not confuse 'tableware' with 'cookware' (pots and pans used for cooking) or 'kitchenware' (general cooking utensils).",
+        "ipa": "/\u02c8te\u026a.b\u0259l.wer/",
+        "stressPattern": "\u25cf\u25cb\u25cb",
+        "syllableBreakdown": "ta-ble-ware"
+    },
+    "etymology": {
+        "evolution": "Formed in Modern English during the mid-18th century (c. 1765) as the Industrial Revolution enabled the mass production of Staffordshire pottery, ceramic dinner services, and Sheffield silver-plated cutlery. The term arose as a comprehensive commercial category in merchant catalogs to group dinnerware (plates, bowls), flatware (forks, knives, spoons), and glassware under a single heading for wholesale purchasing and domestic households. In modern hospitality management, 'tableware' constitutes a primary capital asset subject to ongoing inventory control, sanitization, and replacement budgets.",
+        "firstRecordedUse": "Mid-18th century (attested in British trade ledgers and newspaper advertisements c. 1765\u20131770)",
+        "origin": "Compound of Middle English 'table' (from Old French 'table', from Latin 'tabula') and Old English 'waru' (from Proto-Germanic '*war\u014d').",
+        "relatedLanguages": [
+            "French: arts de la table / vaisselle (dishes, tableware)",
+            "Spanish: vajilla (table service, tableware)",
+            "German: Tafelgeschirr / Tischgeschirr (table dishes/utensils)",
+            "Italian: stoviglie / servizio da tavola (tableware, table service)",
+            "Dutch: servies / tafelgerei (table utensils/crockery)"
+        ],
+        "rootMeaning": "'Manufactured commodities and vessels designed for table dining'",
+        "rootWord": "Latin tabula (board, plank) + Old English waru (goods, merchandise, manufactured commodities)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "The comprehensive collective noun for all dishes, eating utensils, drinking vessels, and serving items used to set a dining table, comprising ceramic or porcelain dinnerware (plates, bowls), metallic flatware or cutlery (knives, forks, spoons), and glassware or stemware.",
+        "emotionalTone": "Professional, refined, functional, orderly, and hygienic.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Hotel dish-sorting rooms, commercial high-temperature dishwashing stations, banquet equipment rental warehouses, and restaurant service sideboards where servers polish plates and cutlery.",
+        "temporalContext": "Procured in bulk upon opening or renovating a restaurant; audited quarterly for chipping, breakage, and loss; cycled continuously between dining tables and sanitizing machines throughout meal shifts."
+    },
+    "nativeMindset": {
+        "culturalContext": "In corporate event hosting and upscale catering, the quality and design of tableware signal executive prestige. In the TOEIC exam, tableware frequently appears in Part 1 images of dining setups ('The tableware has been placed on the table'), Part 3 discussions between banquet coordinators and equipment rental agencies, and Part 7 vendor invoices or supply orders.",
+        "howNativesThink": "To a native speaker, 'tableware' is an umbrella category term, exactly like 'furniture', 'luggage', or 'equipment'. You do not ask a waiter to bring you 'a tableware'; you ask for 'a fork' or 'an extra plate'. In commercial hospitality, native food-and-beverage directors think of tableware in terms of durability, weight, chip-resistance, and aesthetic alignment with the restaurant's culinary concept. Chipped tableware is perceived as an immediate failure of quality assurance that damages a restaurant's reputation.",
+        "mentalImage": "A restaurant steward wearing protective gloves unloading steaming, sanitized racks of sparkling white porcelain dinner plates, stainless steel cutlery, and crystal water goblets from a commercial conveyer dishwasher.",
+        "whenNotToUse": "Do not use for items used exclusively to prepare food on the stove or in the oven (use 'cookware' or 'bakeware'). Do not use 'tablewares' with an '-s' or with indefinite numbers like 'five tablewares'.",
+        "whenToUse": "Use when discussing the broader equipment category of dishes, cutlery, and glassware in hospitality procurement, catering rental agreements, restaurant inventory management, or retail home goods departments (e.g., 'ceramic tableware', 'disposable tableware', 'tableware supplier')."
+    },
+    "examples": {
+        "business": [
+            "The food and beverage director allocated fifteen thousand dollars to replace chipped and worn ceramic tableware across all three resort dining rooms.",
+            "Our catering contract guarantees that the equipment vendor will provide matching stainless steel and porcelain tableware for five hundred banquet guests.",
+            "To uphold five-star hospitality standards, waitstaff must inspect all tableware for water spots or smudges before placing it on dining tables."
+        ],
+        "collocations": [
+            "ceramic tableware",
+            "disposable tableware",
+            "set of tableware",
+            "porcelain tableware",
+            "tableware rental",
+            "matching tableware"
+        ],
+        "conversation": [
+            "Speaker A: 'Has the rental agency confirmed delivery of the vintage tableware for the charity auction dinner?'\\nSpeaker B: 'Yes, they confirmed that four hundred sets of porcelain plates, cutlery, and wine glasses will arrive by two o'clock tomorrow afternoon.'",
+            "Speaker A: 'We need to conduct an inventory audit of our banquet tableware before the holiday season begins.'\\nSpeaker B: 'I will tally the plates and flatware in the storage pantry today to determine how many replacements we need to order.'"
+        ],
+        "daily": [
+            "We received a stunning fifty-piece set of fine bone china tableware as a wedding present from my aunt.",
+            "The school cafeteria switched from single-use plastic utensils to compostable, plant-based tableware.",
+            "After the dinner party, the hosts loaded the dishwasher with the ceramic tableware and washed the wine glasses by hand."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "",
+        "adverb": "",
+        "noun": "tableware",
+        "verb": ""
+    },
+    "visual": {
+        "imageDescription": "An overhead view of an impeccably arranged fine dining table setting featuring a white porcelain dinner plate, polished stainless steel cutlery, and a sparkling crystal wine goblet on a polished dark wood table.",
+        "imageKeyword": "porcelain tableware place setting cutlery wine glass restaurant banquet",
+        "mnemonic": "TABLE + WARE: The manufactured WARE (plates, forks, cups) made to dress the TABLE for dining!"
+    },
+    "video": {
+        "description": "A hospitality equipment seminar discussing how commercial food service operators choose durable, chip-resistant porcelain tableware and manage inventory loss in busy hotel restaurants."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            3,
+            7
+        ],
+        "exampleQuestion": "To minimize replacement costs caused by frequent breakage, the hotel chain decided to procure more durable ceramic _____ for its breakfast buffets.\n(A) tableware\n(B) tablewares\n(C) tablewarely\n(D) tablewared",
+        "tips": "Beware of noun countability traps in TOEIC Part 5! 'Tableware' is an uncountable (mass) collective noun like 'luggage', 'furniture', and 'equipment'. It cannot take a plural suffix '-s' (eliminating B) and cannot function as an adverb or verb (eliminating C and D). The correct choice is the base mass noun: (A) tableware."
+    },
+    "synonyms": [
+        "dinnerware",
+        "crockery",
+        "dishware",
+        "place setting",
+        "eating utensils",
+        "service ware"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "flatware",
+        "cutlery",
+        "dinnerware",
+        "chinaware",
+        "glassware",
+        "cookware",
+        "stemware"
+    ]
+},
   {
-      "id": "dining-268",
-      "word": "taste",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/taste/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/taste--_us_1.mp3",
-          "syllableBreakdown": "tas·te",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "taste",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of taste",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: tast...",
-              "Dutch: tast..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating taste in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"taste\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving taste in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the taste before the evening corporate reception.",
-              "Please ensure that the taste meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the taste."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the taste across all dining venues.",
-              "Annual quality audits confirmed that every taste complies with industry health regulations.",
-              "Standardizing operational procedures for the taste improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the taste is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the taste and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the taste",
-              "modern taste",
-              "corporate taste",
-              "standard taste",
-              "quality taste"
-          ]
-      },
-      "wordFamily": {
-          "noun": "taste",
-          "adjective": "taste-related"
-      },
-      "visual": {
-          "imageKeyword": "taste dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting taste.",
-          "mnemonic": "TASTE: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of taste."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) taste (B) tastes (C) taste's (D) tastes'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) taste. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "taste factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "taste management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-268",
+    "word": "taste",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/taste--_us_1.mp3",
+        "commonMistakes": "Learners often shorten the diphthong /e\u026a/ to an open front /\u025b/, making 'taste' sound like 'test' (/t\u025bst/). Another frequent mistake is omitting the final voiceless alveolar plosive /t/ from the consonant cluster /st/, reducing the word to 'tays' (/te\u026as/). Conceptually, learners often confuse 'taste' (strictly the physiological sensations on the tongue: sweet, sour, salty, bitter, umami) with 'flavor' (which combines taste with retro-nasal olfactory aroma). Also note that in aesthetic contexts, 'in bad taste' means offensive or socially inappropriate, not bad-tasting food.",
+        "ipa": "/te\u026ast/",
+        "stressPattern": "\u25cf",
+        "syllableBreakdown": "taste"
+    },
+    "etymology": {
+        "evolution": "Entered Middle English in the late 13th century meaning 'the act of testing, physical touch, or trial examination'. By the 14th century, the meaning specialized to testing food or drink by mouth and the resulting sensation experienced on the tongue. By the early 16th century, humanists broadened the concept metaphorically to aesthetic discernment, judgment, and personal preference in art, literature, manners, and fashion (as in 'good taste'). In contemporary corporate English, 'taste' encompasses sensory quality in food science, a small sampling portion in marketing, and consumer preferences in market research.",
+        "firstRecordedUse": "Late 13th century (attested in Middle English chronicles c. 1290 as 'tast', meaning the physical sense of touch or trial)",
+        "origin": "Middle English 'tast' / 'taste' (noun), borrowed from Anglo-Norman and Old French 'tast' (the sense of touch, taste, trial), derived from the verb 'taster' (to touch, feel, handle, examine by touch), from Vulgar Latin '*tastare', an alteration of classical Latin 'taxare' (to touch sharply, evaluate, appraise, judge), frequentative of 'tangere' (to touch).",
+        "relatedLanguages": [
+            "French: go\u00fbt (taste/flavor) / t\u00e2ter (to touch, feel, probe)",
+            "Spanish: gusto (taste, liking, pleasure) / tastar (archaic: to taste)",
+            "Italian: gusto (taste, aesthetic judgment) / tasto (key, button, touch)",
+            "German: Geschmack (taste, flavor, aesthetic preference)",
+            "Portuguese: gosto (taste, enjoyment, liking)"
+        ],
+        "rootMeaning": "'To touch, examine, sample, or test so as to evaluate quality'",
+        "rootWord": "Latin tangere (to touch) / taxare (to evaluate, appraise, touch repeatedly) / Old French taster (to touch, test, sample)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "The physiological sensation and chemical perception produced when soluble substances interact with gustatory taste bud receptors on the tongue (identifying sweetness, sourness, saltiness, bitterness, and umami); by extension, a small sample morsel or sip taken to evaluate food or drink; or metaphorically, an individual's aesthetic judgment, discernment, and personal preference.",
+        "emotionalTone": "Sensory, appreciative, discerning, evaluative, and refined.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Culinary development laboratories, executive chef tasting tables, sensory analysis booths in food production facilities, wine cellars, and restaurant dining rooms.",
+        "temporalContext": "Experienced instantaneously upon mastication or sipping; continually assessed by culinary teams during recipe formulation and prep work before dinner service."
+    },
+    "nativeMindset": {
+        "culturalContext": "In business dining and international conference management, accommodating attendees' varied 'tastes' (both cultural food preferences and dietary restrictions) is essential for customer satisfaction. In the TOEIC test, 'taste' appears across Part 2/3 conversations regarding banquet menus and catering vendors, Part 4 culinary radio commercials, and Part 7 restaurant critiques and consumer feedback forms.",
+        "howNativesThink": "Native English speakers utilize 'taste' on three distinct cognitive tiers: (1) physical gustatory sensation ('This sauce has a rich, savory taste'), (2) a small trial portion ('Would you like a taste of my appetizer?'), and (3) discernment and aesthetic preference ('She has exquisite taste in corporate gifts'). In business and hospitality contexts, native speakers frequently talk about 'catering to diverse tastes' (satisfying different client preferences) or conducting a 'blind taste test' to benchmark a product against competitors.",
+        "mentalImage": "An executive pastry chef dipping a silver tasting spoon into a freshly whisked dark chocolate ganache, closing her eyes momentarily to evaluate the balance of sweetness and cocoa bitterness before finishing the banquet desserts.",
+        "whenNotToUse": "Do not confuse with 'flavor', which is the comprehensive sensory impression involving smell and texture. Avoid saying a person 'has a bad taste' when they are ill (say 'has a bad taste in their mouth'); saying someone has 'bad taste' without qualification means they have crude or vulgar aesthetic preferences.",
+        "whenToUse": "Use when describing food sensations, offering or requesting a small sample portion, discussing consumer palate trends in market research, or commenting on refined aesthetic choices in design or entertainment (e.g., 'acquired taste', 'taste test', 'cater to different tastes')."
+    },
+    "examples": {
+        "business": [
+            "To ensure the banquet menu satisfied all attendees, the corporate event planner selected dishes that cater to a wide range of cultural tastes.",
+            "The food and beverage conglomerate organized a nationwide blind taste test to validate consumer reception of the revised soda formula.",
+            "During the pre-event catering consultation, executive committee members were invited for a private taste of the proposed five-course dinner."
+        ],
+        "collocations": [
+            "acquired taste",
+            "taste test",
+            "cater to all tastes",
+            "good taste",
+            "matter of taste",
+            "sweet and sour taste"
+        ],
+        "conversation": [
+            "Speaker A: 'How was the grilled sea bass at the new harbor restaurant where you hosted the client dinner?'\\nSpeaker B: 'The taste was extraordinary, and the client was genuinely impressed by the chef's delicate seasoning.'",
+            "Speaker A: 'Do you think our proposed catering menu includes enough variety for the international summit?'\\nSpeaker B: 'Yes, we deliberately curated three distinct entree options to satisfy different regional tastes and dietary requirements.'"
+        ],
+        "daily": [
+            "The chef added a sprinkle of fresh rosemary and sea salt to elevate the natural taste of the roasted potatoes.",
+            "The cheese merchant sliced a small wedge of aged Gouda and offered me a complimentary taste.",
+            "Her newly renovated home reflects her refined taste in Scandinavian furniture and neutral color palettes."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "tasty, tasteful, tasteless",
+        "adverb": "tastefully, tastelessly",
+        "noun": "taste, taster, tasting",
+        "verb": "taste"
+    },
+    "visual": {
+        "imageDescription": "A professional chef in a clean white uniform holding a small stainless steel tasting spoon to sample a simmering sauce in a modern commercial restaurant kitchen.",
+        "imageKeyword": "chef tasting sauce spoon gourmet kitchen restaurant culinary flavor",
+        "mnemonic": "TASTE: The TONGUE APPRECIATES SAVORY TREATS with ELEGANCE!"
+    },
+    "video": {
+        "description": "A masterclass in food science and culinary arts explaining the physiology of taste, how the five primary tastes interact, and how chefs balance acidity and salt."
+    },
+    "toeicContext": {
+        "commonParts": [
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "To ensure that the conference luncheon appeals to all visiting delegates, the catering coordinator selected a diverse menu designed to cater to various _____.\n(A) tastes\n(B) tasty\n(C) tasteful\n(D) tastefully",
+        "tips": "In TOEIC Part 5, identify the part of speech required following the adjective 'various'. You need a plural noun indicating preferences or palates: (A) tastes. The options (B) tasty and (C) tasteful are adjectives, while (D) tastefully is an adverb. Note also the high-frequency business collocation 'cater to various tastes'."
+    },
+    "synonyms": [
+        "flavor",
+        "palate",
+        "flavor profile",
+        "preference",
+        "discernment",
+        "sensory perception"
+    ],
+    "antonyms": [
+        "tastelessness",
+        "insipidity",
+        "distaste"
+    ],
+    "relatedWords": [
+        "flavor",
+        "aroma",
+        "tasting",
+        "savory",
+        "palatable",
+        "seasoning",
+        "gourmet"
+    ]
+},
   {
-      "id": "dining-269",
-      "word": "tasting",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "intermediate",
-      "toeicFrequency": 8,
-      "pronunciation": {
-          "ipa": "/tasting/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tasting--_us_1.mp3",
-          "syllableBreakdown": "tas·ting",
-          "stressPattern": "○●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "tasting",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of tasting",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: tast...",
-              "Dutch: tast..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating tasting in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"tasting\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving tasting in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the tasting before the evening corporate reception.",
-              "Please ensure that the tasting meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the tasting."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the tasting across all dining venues.",
-              "Annual quality audits confirmed that every tasting complies with industry health regulations.",
-              "Standardizing operational procedures for the tasting improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the tasting is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the tasting and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the tasting",
-              "modern tasting",
-              "corporate tasting",
-              "standard tasting",
-              "quality tasting"
-          ]
-      },
-      "wordFamily": {
-          "noun": "tasting",
-          "adjective": "tasting-related"
-      },
-      "visual": {
-          "imageKeyword": "tasting dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting tasting.",
-          "mnemonic": "TASTIN: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of tasting."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) tasting (B) tastings (C) tasting's (D) tastings'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) tasting. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "tasting factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "tasting management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-269",
+    "word": "tasting",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tasting--_us_1.mp3",
+        "commonMistakes": "Learners often shorten the diphthong /e\u026a/ to a pure /e/ or /\u025b/ (saying 'tes-ting' /\u02c8t\u025bst\u026a\u014b/), which confuses 'tasting' (sampling food or wine) with 'testing' (administering an examination or assay). Ensure the vowel begins at /e/ and glides up towards /\u026a/ ('TAY-sting'). Additionally, non-native speakers sometimes pronounce the '-ing' suffix with a hard /\u0261/ sound (/\u02c8te\u026ast\u026a\u014b\u0261/) rather than the smooth velar nasal /\u014b/.",
+        "ipa": "/\u02c8te\u026a.st\u026a\u014b/",
+        "stressPattern": "\u25cf\u25cb",
+        "syllableBreakdown": "tas\u00b7ting"
+    },
+    "etymology": {
+        "evolution": "In Classical Latin, 'tangere' meant 'to touch', yielding the frequentative 'tax\u0101re' (to touch repeatedly, appraise, value). In Vulgar Latin and Old French, 'taster' shifted from physical touch or handling to evaluating flavor by taking a small morsel into the mouth. Entering Middle English in the 14th century, the verbal noun 'tasting' came to signify the act or event of sampling small portions of food, wine, or spirits to evaluate sensory profile and quality.",
+        "firstRecordedUse": "Late 14th century (c. 1380, in Middle English translations including Wycliffe's Bible)",
+        "origin": "Middle English tasting / tasten, from Old French taster ('to feel, touch, sample, taste'), from Vulgar Latin *taxit\u0101re, frequentative of Latin tax\u0101re ('to touch repeatedly, evaluate, assess'), from tangere ('to touch').",
+        "relatedLanguages": [
+            "Old French: taster (to touch, test, sample)",
+            "French: d\u00e9gustation (tasting event) / t\u00e2ter (to feel, probe)",
+            "Italian: tastare (to feel, test)",
+            "Spanish: tastar / cata (wine tasting)",
+            "Latin: taxare (to assess, appraise) / tangere (to touch)"
+        ],
+        "rootMeaning": "to touch gently, evaluate by handling or sampling",
+        "rootWord": "tax\u0101re / tangere (Latin)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A sensory evaluation event or culinary session in which small sample portions of foods, wines, spirits, or artisanal specialty products are systematically sampled, analyzed, and compared for aroma, texture, balance, and flavor characteristics.",
+        "emotionalTone": "Discerning, sensory, refined, exploratory, and appreciative.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Winery cellars, vineyard tasting rooms, sommelier stations, Michelin-starred restaurant dining rooms, catering demonstration suites, food expo exhibition booths, and private dining salon tables.",
+        "temporalContext": "Pre-service menu rollouts (culinary staff tasting daily specials), formal client catering previews (clients sampling banquet menus months before a gala), and afternoon winery tasting flights (hourly guided sessions)."
+    },
+    "nativeMindset": {
+        "culturalContext": "In North American and European dining culture, 'tasting menus' (often 5 to 12 courses with curated beverage pairings) represent the pinnacle of high-end restaurant hospitality. In corporate entertainment, hosting clients for a private winery tasting or whiskey tasting is a popular relationship-building activity. In the TOEIC exam, invitations to catering tastings and winery tour descriptions are recurring themes in Part 3 and Part 7.",
+        "howNativesThink": "To native speakers, 'a tasting' immediately evokes small, curated flight portions served on elegant stemware, slate boards, or small ceramic ramekins\u2014never a full meal meant to fill the stomach, but rather an intellectual and sensory journey. In hospitality and corporate event planning, 'a tasting menu' or 'wine tasting' represents luxury, prestige, and experiential entertaining. In catering operations, 'attending a tasting' is a critical contractual milestone where clients sample and formally approve the menu selections before signing the master event agreement.",
+        "mentalImage": "A sommelier in a dimly lit, oak-paneled cellar pouring three-ounce pours of vintage Cabernet into tulip glasses arranged along a flight paddle, as patrons jot tasting notes on embossed evaluation cards.",
+        "whenNotToUse": "Do not use 'tasting' when referring to eating a regular, full portion meal (use 'dining', 'eating', or 'having lunch/dinner'), nor when referring to the primary biological sense of taste (which is simply the noun 'taste').",
+        "whenToUse": "Use when referring to sensory evaluation events (wine tasting, cheese tasting, olive oil tasting), multi-course curated dining experiences (tasting menu, chef's tasting), or client catering food-sampling sessions prior to a banquet."
+    },
+    "examples": {
+        "business": [
+            "The catering sales director invited the corporate event committee to an exclusive complimentary menu tasting prior to signing the banquet contract.",
+            "The luxury hotel group will host an international olive oil tasting to select new suppliers for its fine-dining restaurants.",
+            "During the annual hospitality expo, the vineyard introduced its newest reserve vintages through a series of private sommelier-led tastings."
+        ],
+        "collocations": [
+            "wine tasting",
+            "tasting menu",
+            "chef's tasting",
+            "private tasting",
+            "tasting flight",
+            "tasting room"
+        ],
+        "conversation": [
+            "\"Have you reserved our spots for the private wine tasting at the estate cellar?\" / \"Yes, our reservation is confirmed for 3:00 PM, and it includes six reserve pairings with local cheeses.\"",
+            "\"How did yesterday's catering tasting go with the conference organizers?\" / \"Very well; they loved the roasted sea bass and officially approved the three-course banquet menu.\""
+        ],
+        "daily": [
+            "We booked a four-flight wine tasting at the Napa Valley vineyard for Saturday afternoon.",
+            "The local cheese shop is hosting an artisan cheddar and gouda tasting this Friday evening.",
+            "Before finalizing the wedding reception banquet, Sarah and Mark scheduled a cake tasting with the pastry chef."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "tasty, tasteless, distasteful",
+        "adverb": "tastily",
+        "noun": "tasting, taste, taster",
+        "verb": "taste"
+    },
+    "visual": {
+        "imageDescription": "A row of four clear crystal wine glasses containing red and white vintages arranged on a rustic wooden flight paddle beside fresh grapes, artisan cheese wedges, and a tasting notebook.",
+        "imageKeyword": "wine tasting flight glasses vineyard sommelier cheese board",
+        "mnemonic": "TASTING = Taking a small sample TASTE in a curated SETTING to test before you invest in the whole feast!"
+    },
+    "video": {
+        "description": "A behind-the-scenes hospitality video showing a corporate banquet tasting session where a hotel executive chef presents appetizer and entr\u00e9e courses to event planners for evaluation and feedback."
+    },
+    "toeicContext": {
+        "commonParts": [
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "Prospective banquet clients are invited to schedule a complimentary menu _____ with our executive chef before finalizing their corporate gala reservations. (A) taste (B) tasty (C) tasting (D) tasted",
+        "tips": "In Part 5, identify compound noun pairings in hospitality contexts. The noun phrase 'menu tasting' is an established compound noun referring to a food-sampling event. While (A) 'taste' is a noun, 'menu taste' is unnatural English for a sampling session; (B) 'tasty' is an adjective, and (D) 'tasted' is a past participle. Therefore, (C) 'tasting' correctly completes the compound noun."
+    },
+    "synonyms": [
+        "sampling",
+        "d\u00e9gustation",
+        "sensory evaluation",
+        "trial sampling",
+        "flight",
+        "preview tasting"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "sommelier",
+        "palate",
+        "flight",
+        "vintage",
+        "pairing",
+        "culinary",
+        "hors d'oeuvre"
+    ]
+},
   {
-      "id": "dining-270",
-      "word": "tasty",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/tasty/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tasty--_us_1.mp3",
-          "syllableBreakdown": "tas·ty",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "tasty",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of tasty",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: tast...",
-              "Dutch: tast..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating tasty in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"tasty\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving tasty in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the tasty before the evening corporate reception.",
-              "Please ensure that the tasty meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the tasty."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the tasty across all dining venues.",
-              "Annual quality audits confirmed that every tasty complies with industry health regulations.",
-              "Standardizing operational procedures for the tasty improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the tasty is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the tasty and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the tasty",
-              "modern tasty",
-              "corporate tasty",
-              "standard tasty",
-              "quality tasty"
-          ]
-      },
-      "wordFamily": {
-          "noun": "tasty",
-          "adjective": "tasty-related"
-      },
-      "visual": {
-          "imageKeyword": "tasty dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting tasty.",
-          "mnemonic": "TASTY: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of tasty."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) tasty (B) tasties (C) tasty's (D) tasties'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) tasty. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "tasty factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "tasty management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-270",
+    "word": "tasty",
+    "partOfSpeech": [
+        "adjective"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tasty--_us_1.mp3",
+        "commonMistakes": "Learners frequently substitute the short vowel /\u025b/ for the diphthong /e\u026a/ (saying 'tes-ty' /\u02c8t\u025bsti/), which changes the meaning completely to 'testy' (meaning irritable, bad-tempered, or easily annoyed). Be sure to enunciate the long diphthong /e\u026a/ ('TAY-stee'). Another error is dropping the final /i/ vowel or pronouncing the 's' as /z/ ('tayz-ty').",
+        "ipa": "/\u02c8te\u026a.sti/",
+        "stressPattern": "\u25cf\u25cb",
+        "syllableBreakdown": "tas\u00b7ty"
+    },
+    "etymology": {
+        "evolution": "The noun 'taste' was borrowed into Middle English from Old French 'tast' / 'taster' (ultimately from Vulgar Latin *taxit\u0101re, frequentative of Latin tax\u0101re 'to touch, assess'). In early Modern English around the late 16th to early 17th century, the suffix '-y' was appended to create the adjective 'tasty', denoting food that possesses a pleasant, appealing flavor. In British colloquial usage, it later developed an informal secondary sense meaning attractive or appealing.",
+        "firstRecordedUse": "Early 17th century (c. 1610, in English culinary and literary descriptions of flavorful foods)",
+        "origin": "Middle English tasty (having good taste, savor), formed from the noun taste (from Old French taste / taster) + the Germanic adjective suffix -y.",
+        "relatedLanguages": [
+            "French: savoureux / d\u00e9licieux",
+            "Spanish: sabroso / rico",
+            "Italian: saporito / gustoso",
+            "German: lecker / schmackhaft",
+            "Dutch: smakelijk"
+        ],
+        "rootMeaning": "taste (flavor, discernment) + -y (characterized by, full of)",
+        "rootWord": "taste + -y"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "Possessing an agreeable, pleasant, and flavorful taste that stimulates the palate and produces sensory enjoyment when eaten.",
+        "emotionalTone": "Appetizing, appreciative, pleasant, casual, and satisfying.",
+        "formalityLevel": "informal",
+        "spatialContext": "Bistro dining rooms, corporate cafeteria hot-food lines, hotel breakfast buffets, food festival food trucks, and office breakrooms during catered team lunches.",
+        "temporalContext": "Midday corporate lunch breaks, informal client luncheons, restaurant customer review submissions, and culinary critique discussions immediately following a meal."
+    },
+    "nativeMindset": {
+        "culturalContext": "In American, Canadian, and British workplace culture, asking a colleague 'Was the food tasty?' or exclaiming 'That looks tasty!' is a common social lubricant during lunchtime. In TOEIC Part 3 and Part 7, informal dining conversations between traveling businesspeople frequently feature praise for tasty local specialties and neighborhood bistros.",
+        "howNativesThink": "Native speakers use 'tasty' as an accessible, everyday compliment for food that hits the spot\u2014a freshly grilled panini, a warm bowl of soup, or seasoned fries. It is friendly, genuine, and unpretentious. Unlike 'delicious' (which conveys high enthusiasm and fits both casual and upscale settings) or 'delectable'/'scrumptious' (which can sound theatrical or literary), 'tasty' is straightforward and colloquial. However, high-end fine dining critics and upscale hospitality brochures rarely use 'tasty' because it sounds too casual and slightly juvenile; they prefer 'flavorful', 'exquisite', or 'refined'.",
+        "mentalImage": "A coworker happily unwrapping a gourmet toasted sourdough chicken-pesto sandwich in the office courtyard, taking a bite, and smiling with satisfaction.",
+        "whenNotToUse": "Do not use 'tasty' in formal culinary critiques, upscale restaurant menus, or high-level corporate hospitality proposals (use 'flavorful', 'exquisite', or 'savory'). Be careful never to confuse 'tasty' (delicious) with 'testy' (impatient and irritable).",
+        "whenToUse": "Use in informal speech, casual dining recommendations, customer satisfaction surveys, office lunch chats, and everyday restaurant reviews to express that food tastes good."
+    },
+    "examples": {
+        "business": [
+            "Customer feedback cards from the corporate luncheon commended the catering team for delivering tasty and nutritious meals.",
+            "To boost employee morale, the facilities committee arranged for several local food trucks offering tasty lunch options to visit the office park.",
+            "Online travel reviews consistently praise the boutique hotel's rooftop restaurant for its tasty tapas and panoramic city views."
+        ],
+        "collocations": [
+            "tasty meal",
+            "tasty snack",
+            "tasty dish",
+            "surprisingly tasty",
+            "simple and tasty",
+            "tasty and nutritious"
+        ],
+        "conversation": [
+            "\"How was that new noodle shop across from the convention center?\" / \"It was surprisingly tasty, and the service was quick enough for a 30-minute lunch break.\"",
+            "\"Did you try the grilled salmon at the welcome reception?\" / \"Yes, it was remarkably tasty and paired beautifully with the asparagus risotto.\""
+        ],
+        "daily": [
+            "The caf\u00e9 downstairs serves very tasty breakfast burritos and freshly brewed dark roast coffee.",
+            "My grandmother shared her secret recipe for making extraordinarily tasty apple cinnamon muffins.",
+            "We discovered a small family-run diner around the corner that serves simple but extremely tasty comfort food."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "tasty, tasteful, tasteless",
+        "adverb": "tastily, tastefully",
+        "noun": "taste, tastiness",
+        "verb": "taste"
+    },
+    "visual": {
+        "imageDescription": "A gourmet grilled burger with melting cheddar cheese, crisp green lettuce, and ripe red tomato slices served alongside golden roasted potato wedges on a clean white ceramic plate.",
+        "imageKeyword": "tasty gourmet burger fries plate restaurant tabletop appetizing",
+        "mnemonic": "TASTY = Full of good TASTE, leaving a smile on your face and no food to waste!"
+    },
+    "video": {
+        "description": "A casual dining travel vlog where a host visits popular lunch spots near an international business district, reviewing fast, affordable, and tasty meals."
+    },
+    "toeicContext": {
+        "commonParts": [
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "Patrons who completed the weekend dining survey noted that while the seating area was somewhat crowded, the pasta entr\u00e9es were exceptionally _____. (A) taste (B) tastily (C) tasty (D) tastiness",
+        "tips": "In Part 5, following a linking verb (such as 'were', 'is', 'seem', 'remain') and an adverb of degree like 'exceptionally', the sentence requires a predicate adjective to describe the noun subject 'pasta entr\u00e9es'. Choice (C) 'tasty' is the correct adjective. Distractor (A) is a noun/verb, (B) is an adverb, and (D) is a noun."
+    },
+    "synonyms": [
+        "delicious",
+        "flavorful",
+        "appetizing",
+        "palatable",
+        "toothsome",
+        "delectable"
+    ],
+    "antonyms": [
+        "tasteless",
+        "insipid",
+        "bland",
+        "unpalatable",
+        "flavorless"
+    ],
+    "relatedWords": [
+        "flavor",
+        "seasoning",
+        "palate",
+        "savory",
+        "appetite",
+        "mouth-watering",
+        "gourmet"
+    ]
+},
   {
-      "id": "dining-271",
-      "word": "tea",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/tea/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tea--_us_1.mp3",
-          "syllableBreakdown": "tea",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "tea",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of tea",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: tea...",
-              "Dutch: tea..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating tea in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"tea\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving tea in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the tea before the evening corporate reception.",
-              "Please ensure that the tea meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the tea."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the tea across all dining venues.",
-              "Annual quality audits confirmed that every tea complies with industry health regulations.",
-              "Standardizing operational procedures for the tea improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the tea is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the tea and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the tea",
-              "modern tea",
-              "corporate tea",
-              "standard tea",
-              "quality tea"
-          ]
-      },
-      "wordFamily": {
-          "noun": "tea",
-          "adjective": "tea-related"
-      },
-      "visual": {
-          "imageKeyword": "tea dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting tea.",
-          "mnemonic": "TEA: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of tea."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) tea (B) teas (C) tea's (D) teas'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) tea. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "tea factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "tea management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-271",
+    "word": "tea",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tea--_us_1.mp3",
+        "commonMistakes": "Learners from languages without vowel length distinctions (such as Spanish or Vietnamese) may pronounce the vowel too short like /t\u026a/ (sounding like 'tin' without the 'n') rather than a sustained, tense high front vowel /i\u02d0/ ('tee'). Additionally, learners from rhotic backgrounds sometimes mistakenly insert an 'r' sound or diphthongize into /t\u026a\u0259/ (confusing 'tea' with 'tear' or 'tier').",
+        "ipa": "/ti\u02d0/",
+        "stressPattern": "\u25cf",
+        "syllableBreakdown": "tea"
+    },
+    "etymology": {
+        "evolution": "In Chinese, the character \u8336 has two distinct regional pronunciations: Mandarin 'ch\u00e1' (transmitted overland along the Silk Road to Persia, Russia, Arabia, and India as 'cha' / 'chai') and Southern Min / Hokkien 't\u00ea' (spoken in Fujian, the maritime trading hub with Europe). Dutch merchants trading through Xiamen (Amoy) imported both the commodity and its Hokkien name 'thee' into Western Europe in the early 17th century. It entered English around 1650 spelled 'tee' or 'chaa', stabilizing as 'tea' by the late 17th century and replacing earlier European herbal infusions.",
+        "firstRecordedUse": "Mid-17th century (c. 1655, in merchant travelogues and London coffeehouse broadsheets advertising 'that excellent China drink called by the Chineans Tcha, by other nations Tay alias Tee')",
+        "origin": "Derived from Hokkien Chinese (Southern Min dialect) t\u00ea (\u8336), borrowed via Dutch thee into early Modern English.",
+        "relatedLanguages": [
+            "Dutch: thee",
+            "French: th\u00e9",
+            "German: Tee",
+            "Spanish: t\u00e9",
+            "Italian: t\u00e8",
+            "Portuguese: ch\u00e1 (from Cantonese / Macanese trade)",
+            "Mandarin: ch\u00e1 (\u8336)"
+        ],
+        "rootMeaning": "the tea plant (Camellia sinensis) and the beverage brewed from its dried cured leaves",
+        "rootWord": "t\u00ea (\u8336 - Southern Min / Hokkien Chinese)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "An aromatic hot or cold beverage prepared by pouring boiling or hot water over the cured and dried leaves, buds, or flowers of Camellia sinensis (or herbal infusions), serving as a global staple beverage, social ritual, and hospitality refreshment.",
+        "emotionalTone": "Calming, comforting, civil, restorative, and hospitable.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Office breakrooms, coffee and tea bars, hotel executive lounges, boardroom meeting credenzas, tearooms, conference hospitality tables, and restaurant beverage stations.",
+        "temporalContext": "Morning beverage service, scheduled mid-afternoon conference coffee/tea refreshment breaks (3:00\u20133:30 PM), and after-dinner digestif offerings."
+    },
+    "nativeMindset": {
+        "culturalContext": "Tea breaks ('elevenses' and afternoon tea) have been formalized in British labor culture and Commonwealth commercial life for over a century. In modern international business, offering tea or coffee upon a visitor's arrival is standard etiquette in London, New York, Tokyo, and Singapore. In the TOEIC exam, conference schedules frequently list 'Coffee and Tea Break', and office manager memos address restocking pantry tea bags.",
+        "howNativesThink": "To native English speakers, particularly across the UK, Ireland, Canada, Australia, and New Zealand, 'tea' is far more than a drink\u2014it is a cultural touchstone of hospitality, consolation, and interpersonal connection ('Shall I put the kettle on?', 'A nice cup of tea solves everything'). In British and Commonwealth English, 'tea' can also refer to a light afternoon social meal with scones and sandwiches ('afternoon tea') or the main evening meal in working-class parlance ('high tea' or 'evening tea'). In North America, 'tea' commonly conjures hot herbal or green tea for wellness, as well as chilled 'iced tea' or 'sweet tea' as standard dining beverages. In corporate settings, providing a curated selection of teas and coffees is the basic baseline of client courtesy.",
+        "mentalImage": "A porcelain white teacup and saucer resting next to a silver teapot, steaming gently with amber-colored Earl Grey alongside a small ceramic pitcher of fresh milk and honey sticks on an executive boardroom credenza.",
+        "whenNotToUse": "Do not use 'tea' without qualification if you mean coffee, soft drinks, or juices. Avoid confusing 'afternoon tea' (light snack of tea and pastries) with a full dinner unless using British regional dialect.",
+        "whenToUse": "Use when discussing hot and cold brewed beverages, meeting refreshment menus, office pantry supplies, afternoon tea dining services, or agricultural commodity trade."
+    },
+    "examples": {
+        "business": [
+            "The conference schedule includes a thirty-minute networking break with complimentary coffee, herbal tea, and pastries.",
+            "The office administrator placed an order with the breakroom supplier for assorted organic green and black tea boxes.",
+            "The hotel's afternoon high tea service generated substantial revenue from business travelers hosting informal client meetings."
+        ],
+        "collocations": [
+            "cup of tea",
+            "afternoon tea",
+            "iced tea",
+            "green tea",
+            "herbal tea",
+            "tea break"
+        ],
+        "conversation": [
+            "\"Would you like coffee or tea while you wait for Mr. Henderson to finish his phone call?\" / \"A cup of green tea would be wonderful, thank you.\"",
+            "\"Did the catering team restock the beverage station in the second-floor conference room?\" / \"Yes, they brought out hot water carafes, lemon slices, and an assortment of herbal teas.\""
+        ],
+        "daily": [
+            "She starts every morning with a cup of hot English breakfast tea with a splash of milk.",
+            "During the hot summer months, the restaurant serves complimentary refills of fresh lemon iced tea.",
+            "He poured boiling water from the kettle into the mug to steep a bag of soothing chamomile tea."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "tea-like",
+        "noun": "tea, teapot, teacup, teabag, tearoom",
+        "verb": "tea (archaic/dialectal, to take tea)"
+    },
+    "visual": {
+        "imageDescription": "A steaming white porcelain teacup filled with clear amber tea on a matching saucer, flanked by loose tea leaves, a small stainless steel mesh infuser, and a fresh lemon slice.",
+        "imageKeyword": "steaming cup of hot tea porcelain teapot office meeting breakroom",
+        "mnemonic": "TEA: A Timeless, Energizing Aroma brewed from leaves to start your day!"
+    },
+    "video": {
+        "description": "A business etiquette training video demonstrating proper professional hospitality, including offering and serving hot tea and coffee to corporate clients in an executive conference room."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            2,
+            3,
+            7
+        ],
+        "exampleQuestion": "During the mid-afternoon recess, seminar attendees are encouraged to enjoy complimentary coffee and _____ in the foyer. (A) tea (B) teas (C) leafy (D) teaware",
+        "tips": "In Part 5, parallel compound noun phrases joined by 'and' require coordinated noun forms: 'coffee and _____'. 'Coffee' is functioning here as an uncountable mass beverage noun, matching (A) 'tea'. Distractor (B) 'teas' typically denotes varieties/types, (C) 'leafy' is an adjective, and (D) 'teaware' refers to pots and cups rather than the consumable drink."
+    },
+    "synonyms": [
+        "brew",
+        "infusion",
+        "tisane",
+        "cuppa",
+        "chai",
+        "hot beverage"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "kettle",
+        "teapot",
+        "teacup",
+        "steep",
+        "infuser",
+        "caffeine",
+        "chamomile"
+    ]
+},
   {
-      "id": "dining-272",
-      "word": "teapot",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/teapot/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/teapot--_us_1.mp3",
-          "syllableBreakdown": "tea·pot",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "teapot",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of teapot",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: teap...",
-              "Dutch: teap..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating teapot in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"teapot\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving teapot in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the teapot before the evening corporate reception.",
-              "Please ensure that the teapot meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the teapot."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the teapot across all dining venues.",
-              "Annual quality audits confirmed that every teapot complies with industry health regulations.",
-              "Standardizing operational procedures for the teapot improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the teapot is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the teapot and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the teapot",
-              "modern teapot",
-              "corporate teapot",
-              "standard teapot",
-              "quality teapot"
-          ]
-      },
-      "wordFamily": {
-          "noun": "teapot",
-          "adjective": "teapot-related"
-      },
-      "visual": {
-          "imageKeyword": "teapot dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting teapot.",
-          "mnemonic": "TEAPOT: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of teapot."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) teapot (B) teapots (C) teapot's (D) teapots'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) teapot. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "teapot factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "teapot management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-272",
+    "word": "teapot",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/teapot--_us_1.mp3",
+        "commonMistakes": "Learners often mispronounce the compound by placing equal stress on both syllables or shifting primary stress to the second syllable (pronouncing it like 'tea-POT' instead of /\u02c8ti\u02d0.p\u0251\u02d0t/). Another frequent error is confusing the tense front vowel /i\u02d0/ with the lax /\u026a/ (sounding like 'tip-pot'). In American English, the vowel in 'pot' is an unrounded open back /\u0251\u02d0/ rather than the rounded British /\u0252/. Crucially in dining and hospitality contexts, non-native speakers frequently confuse 'teapot' (a tabletop ceramic or silver serving vessel with a spout and lid used for steeping tea) with 'kettle' (the stovetop or electric appliance used exclusively to boil water).",
+        "ipa": "/\u02c8ti\u02d0.p\u0251\u02d0t/",
+        "stressPattern": "\u25cf\u25cb",
+        "syllableBreakdown": "tea\u00b7pot"
+    },
+    "etymology": {
+        "evolution": "As Chinese loose-leaf tea arrived in England and Western Europe during the 1650s and 1660s, English potters and silversmiths adapted Chinese Yixing clay wine pots into dedicated brewing vessels featuring a perforated internal strainer, curved pouring spout, fitted lid, and insulated handle. By the 1670s, domestic probate records and London coffeehouse ledgers widely documented 'tea pots'. The 18th-century porcelain revolution led by Josiah Wedgwood and the Victorian afternoon high tea custom established the teapot as an essential centerpiece of domestic and formal banquet hospitality.",
+        "firstRecordedUse": "Mid-17th century (c. 1660\u20131670s in English maritime trade accounts and domestic inventories)",
+        "origin": "Formed in 17th-century English as a compound of 'tea' (borrowed via Dutch and maritime trade from Min Nan / Hokkien Chinese \u8336 't\u00ea') and 'pot' (from Old English 'pott', borrowed from Late Latin 'pottus' or Vulgar Latin '*pottum', denoting a drinking vessel or earthenware container).",
+        "relatedLanguages": [
+            "French: th\u00e9i\u00e8re (teapot; derived from th\u00e9 + -i\u00e8re)",
+            "Spanish: tetera (teapot; derived from t\u00e9 + -era)",
+            "Italian: teiera (teapot; derived from t\u00e8 + -iera)",
+            "German: Teekanne (teapot; compound of Tee + Kanne)",
+            "Dutch: theepot (teapot; direct West Germanic cognate)"
+        ],
+        "rootMeaning": "A specialized earthenware, ceramic, or metal vessel designed specifically for steeping and serving tea",
+        "rootWord": "Min Nan Chinese t\u00ea (tea) + Old English pott / Late Latin pottus (pot, vessel)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A specialized tabletop serving vessel equipped with a curved spout, handle, fitted lid, and often an interior strainer or infuser basket, designed specifically for steeping loose tea leaves or tea bags in freshly boiled water and pouring the brewed beverage into teacups.",
+        "emotionalTone": "Refined, comforting, hospitable, welcoming, and civilized.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Hotel afternoon tea salons, restaurant dining rooms, breakfast buffet sideboards, catering beverage stations, and room-service trays.",
+        "temporalContext": "Continental and full breakfast seatings, traditional afternoon tea service (2:00 PM to 5:00 PM), post-dinner dessert courses, and executive meeting coffee breaks."
+    },
+    "nativeMindset": {
+        "culturalContext": "In British and Commonwealth heritage, the afternoon tea ritual centered on a teapot (often insulated by a knitted 'tea cozy') remains a premier hospitality tradition. In luxury hospitality, corporate catering, and boutique hotel lounges, afternoon tea services featuring tiered pastry stands and silver teapots are prestigious venues for executive networking, client entertaining, and weekend leisure. In TOEIC test scenarios, teapots appear in Part 1 dining table photographs, Part 3 restaurant dialogues, and Part 7 banquet catering orders.",
+        "howNativesThink": "Native English speakers distinctly separate a 'teapot' from a 'kettle'. In native dining culture, hot water is boiled in an electric or stovetop kettle in the kitchen or pantry; it is NEVER boiled inside a teapot. The teapot sits on the table as a refined presentation piece to brew and pour. Receiving an individual porcelain teapot in a hotel or bistro signals quality table service, leisurely dining pacing, and attentive hospitality\u2014accompanied by a saucer, milk jug, and sugar bowl. In British, Irish, and Commonwealth culture, sharing a freshly brewed pot of tea is an enduring social gesture of comfort, warmth, and hospitality.",
+        "mentalImage": "A white-gloved banquet server placing a gleaming silver teapot on a starched white tablecloth beside a fine bone china teacup and saucer, steam gently curling from the curved gooseneck spout as Earl Grey tea steeps inside.",
+        "whenNotToUse": "Do not use 'teapot' to describe a kettle (the appliance that boils water on a stove or counter). Do not confuse with a coffee carafe, press pot / French press, or thermal beverage dispenser.",
+        "whenToUse": "Use when referring to the tabletop vessel used to brew, steep, and serve tea (e.g., 'ceramic teapot', 'cast iron teapot', 'individual teapot', 'serve a fresh pot of herbal tea', 'refill the teapot with hot water')."
+    },
+    "examples": {
+        "business": [
+            "The boutique hotel ordered eighty matching bone china teapots to elevate its executive afternoon tea service.",
+            "The banquet coordinator ensured that every meeting room credenza was supplied with an insulated teapot and assorted herbal teas.",
+            "To reduce glassware breakage during busy brunch shifts, the restaurant management replaced delicate glass pots with brushed stainless steel teapots."
+        ],
+        "collocations": [
+            "porcelain teapot",
+            "ceramic teapot",
+            "silver teapot",
+            "brew a teapot",
+            "spout of a teapot",
+            "teapot lid"
+        ],
+        "conversation": [
+            "\"Excuse me, could we please have a fresh teapot with boiling water to steep a second cup?\" / \"Certainly, sir. I'll bring out a piping hot teapot and an extra dish of lemon slices right away.\"",
+            "\"Which teapot on the refreshment table contains the decaffeinated blend?\" / \"The silver teapot on the left has the decaf green tea, while the white ceramic one contains English Breakfast.\"",
+            "\"Did the banquet staff set out enough teapots for the corporate breakfast buffet?\" / \"Yes, we placed six large teapots beside the hot water dispensers at both ends of the beverage counter.\""
+        ],
+        "daily": [
+            "The server brought a porcelain teapot of fragrant jasmine tea along with a matching cup and saucer.",
+            "Please handle the ceramic teapot carefully by the handle, as the exterior stays very hot after brewing.",
+            "She lifted the lid of the teapot to check whether the loose chamomile leaves had steeped long enough."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "",
+        "adverb": "",
+        "noun": "teapot",
+        "verb": ""
+    },
+    "visual": {
+        "imageDescription": "An elegant white porcelain teapot with an arched handle and curved spout positioned next to a matching teacup on a white linen tablecloth, with delicate steam rising from freshly poured tea.",
+        "imageKeyword": "porcelain teapot teacup saucer hot tea steam afternoon tea dining table",
+        "mnemonic": "TEAPOT: The POT where TEA brews on the table! Remember: water boils in the KETTLE, but steeps inside the TEAPOT!"
+    },
+    "video": {
+        "description": "A luxury hotel hospitality training video demonstrating proper afternoon tea service, including how banquet servers steep loose-leaf tea in bone china teapots and pour at the guest table without dripping."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "Before opening the lounge for afternoon service, the head server inspected each ceramic _____ to make sure none were chipped or stained. (A) teapot (B) teapots (C) teapoting (D) teapotly",
+        "tips": "In TOEIC Part 5, quantifier agreement is a standard grammar point. The determiner 'each' must be followed by a singular countable noun. Choice (A) 'teapot' is the correct singular form. Choice (B) 'teapots' is an incorrect plural noun, while choices (C) and (D) are non-existent derivatives."
+    },
+    "synonyms": [
+        "tea maker",
+        "tea brewer",
+        "tea vessel",
+        "tea urn",
+        "tea infuser pot"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "teacup",
+        "saucer",
+        "kettle",
+        "infuser",
+        "strainer",
+        "steeping",
+        "loose-leaf"
+    ]
+},
   {
-      "id": "dining-273",
-      "word": "tender",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-          "ipa": "/tender/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tender--_us_1.mp3",
-          "syllableBreakdown": "ten·der",
-          "stressPattern": "●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Latin",
-          "rootWord": "tenere",
-          "rootMeaning": "to hold, keep, grasp",
-          "evolution": "Formed from tenere (to hold, keep, grasp). Formed commercial tenancy, tenure, maintenance, and tenuous negotiations.",
-          "relatedLanguages": [
-              "French: tenir / locataire",
-              "Spanish: tener"
-          ],
-          "firstRecordedUse": "14th-16th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating tender in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"tender\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving tender in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the tender before the evening corporate reception.",
-              "Please ensure that the tender meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the tender."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the tender across all dining venues.",
-              "Annual quality audits confirmed that every tender complies with industry health regulations.",
-              "Standardizing operational procedures for the tender improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the tender is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the tender and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the tender",
-              "modern tender",
-              "corporate tender",
-              "standard tender",
-              "quality tender"
-          ]
-      },
-      "wordFamily": {
-          "noun": "tender",
-          "adjective": "tender-related"
-      },
-      "visual": {
-          "imageKeyword": "tender dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting tender.",
-          "mnemonic": "TENDER: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of tender."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) tender (B) tenders (C) tender's (D) tenders'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) tender. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "tender factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "tender management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-273",
+    "word": "tender",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tender--_us_1.mp3",
+        "commonMistakes": "Learners often mispronounce the first vowel by opening it too wide like /\u00e6/ ('tan-der') instead of the crisp lax front vowel /e/. In rhotic varieties like General American, the final syllable ends in an r-colored vowel [\u0259r], whereas in British RP it is an unstressed schwa [\u0259]. In dining and commercial vocabulary, non-native speakers frequently confuse the noun 'tender' (a boneless strip of poultry, or a formal catering bid/proposal) with the common adjective 'tender' (meaning soft, chewable, or delicate). Additionally, learners sometimes overlook that in restaurant POS cashiering, 'tender' designates the specific medium of payment offered to settle a bill (e.g., cash tender).",
+        "ipa": "/\u02c8ten.d\u0259r/",
+        "stressPattern": "\u25cf\u25cb",
+        "syllableBreakdown": "ten\u00b7der"
+    },
+    "etymology": {
+        "evolution": "In medieval Anglo-Norman commercial and legal practice, Latin 'tendere' developed into 'tendre' (a formal offer of payment or contractual submission to perform a service), which entered English in the 16th century as 'tender'\u2014now the standard term for bidding on institutional dining and catering concessions ('competitive tender'). Concurrently, the descriptive adjective 'tender' (from Latin 'tener', designating meat that yields easily to chewing) gave rise in mid-20th-century American food service to the culinary noun 'tender'\u2014specifically the pectoralis minor tenderloin strip beneath the chicken breast, popularized as 'chicken tenders' across casual dining, catering platters, and fast-food menus.",
+        "firstRecordedUse": "Mid-16th century (c. 1540s for commercial offer/bid to perform services; mid-20th century, c. 1960s, for culinary poultry tenders)",
+        "origin": "Dual historical derivation in English: (1) In culinary and meat-cutting usage, a nominalization of the adjective 'tender' (delicate, easily cut), borrowed from Old French 'tendre', from Latin 'tener' (soft, delicate); (2) In commercial food service contracting and finance, borrowed from Anglo-Norman and Middle French 'tendre' (an offer, bid, to hold forth), directly from Latin 'tendere' (to stretch out, extend, offer for acceptance).",
+        "relatedLanguages": [
+            "French: tendre (tender, soft; to offer) / soumission (commercial contract tender)",
+            "Spanish: tierno (tender, soft) / licitaci\u00f3n (commercial tender / bid)",
+            "Italian: tenero (tender, soft) / bando di gara (contract tender / competition)",
+            "German: Zartbitter (tender/soft) / Ausschreibung (formal commercial tender / bid)",
+            "Dutch: mals (tender, succulent) / aanbesteding (public contract tender)"
+        ],
+        "rootMeaning": "A soft cut of meat; an offer or formal proposal held forth for acceptance",
+        "rootWord": "Latin tener (soft, delicate) & Latin tendere (to stretch out, extend, offer)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "In culinary arts, restaurant hospitality, and commercial food service, 'tender' designates: (1) a tender, boneless strip of poultry or meat cut from the inner tenderloin muscle, typically marinated, breaded, or grilled and featured on casual menus or buffet platters; (2) a formal commercial proposal or bid submitted by a catering operator or dining concessionaire to secure a multi-year food-service contract; and (3) an accepted medium of payment (cash, card, or voucher) presented to settle a dining bill at the register.",
+        "emotionalTone": "Commercial, appetizing, competitive, practical, and procedural.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Casual restaurant fry stations, corporate cafeteria buffet lines, catering procurement offices, sports stadium concession stands, and restaurant point-of-sale registers.",
+        "temporalContext": "Fast-casual lunch hours, family dinner rushes, corporate catering contract bidding cycles (quarterly or annual RFP deadlines), and end-of-meal payment settlement."
+    },
+    "nativeMindset": {
+        "culturalContext": "In North American culinary culture, 'chicken tenders' emerged in the 1970s and became a ubiquitous fast-casual and sports venue staple, distinguished from nuggets because they are cut from the actual pectoralis minor muscle. In Commonwealth and international corporate dining, 'tendering' is the mandatory transparent legal process through which airports, universities, and corporate campuses award multimillion-dollar food-service operations. In the TOEIC exam, 'tender' frequently tests candidates in Part 7 procurement proposals and Part 3 business dining negotiations.",
+        "howNativesThink": "Native speakers navigate 'tender' across two distinct everyday dining dimensions. When glancing at a casual dining or pub menu, 'tenders' (almost universally pluralized as 'chicken tenders') instantly triggers an appetizing image of whole-muscle, buttermilk-battered strips of white breast meat served with dipping sauces\u2014distinct from ground or processed nuggets. In corporate hospitality management and event catering, however, executives immediately treat 'tender' as an official competitive procurement bid to win airport dining concessions, university dining halls, or corporate cafeteria contracts.",
+        "mentalImage": "A restaurant line cook arranging freshly fried, golden-brown chicken tenders on parchment paper with ramekins of honey mustard sauce, while in an adjacent office, the catering sales director reviews a bound proposal stamped 'Corporate Dining Concession Tender'.",
+        "whenNotToUse": "Do not confuse the noun 'tender' with the adjective 'tender' (describing tender steak or tender meat texture). When referring to the act of submitting a payment or resigning, use the verb 'to tender' (e.g., 'tender payment', 'tender one's resignation').",
+        "whenToUse": "Use when describing strips of boneless poultry or tenderloin on dining menus ('basket of chicken tenders', 'crispy tenders with barbecue sauce'), official bids for food and beverage contracts ('invitation to tender', 'submit a catering tender', 'win the dining concession tender'), or payment forms at checkout ('cash tender', 'record the tender type')."
+    },
+    "examples": {
+        "business": [
+            "The international hospitality group submitted a competitive tender to manage the corporate headquarters cafeteria.",
+            "Following a thorough procurement review, the city airport authority awarded the terminal dining tender to a consortium of local restaurants.",
+            "The executive chef calculated food cost margins for the new catering menu, ensuring that hand-breaded chicken tenders met profitability targets."
+        ],
+        "collocations": [
+            "chicken tender",
+            "catering tender",
+            "submit a tender",
+            "award a tender",
+            "crispy tender",
+            "legal tender"
+        ],
+        "conversation": [
+            "\"Are the chicken tenders made from whole chicken breast meat or processed patties?\" / \"Our kitchen uses fresh, whole-muscle chicken breast tenders marinated overnight in seasoned buttermilk.\"",
+            "\"When is our final submission due for the convention center catering tender?\" / \"All bid documents and sample banquet menus must be submitted to the committee by five o'clock on Friday.\"",
+            "\"Does the restaurant POS terminal support split-tender payments for large banquet checks?\" / \"Yes, patrons can split the bill across multiple credit cards or combine cash and card tender seamlessly.\""
+        ],
+        "daily": [
+            "We ordered a basket of crispy chicken tenders served with honey mustard and seasoned fries for lunch.",
+            "The sports bar offers a popular appetizer platter featuring spicy buffalo chicken tenders and celery sticks.",
+            "The server totaled our lunch bill and verified that the fifty-dollar bill was accepted as cash tender."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "tender",
+        "adverb": "tenderly",
+        "noun": "tender, tenderness",
+        "verb": "tender"
+    },
+    "visual": {
+        "imageDescription": "A wire basket lined with checkered red-and-white paper holding golden-brown, crispy chicken tenders with small ramekins of dipping sauce and lemon wedges on a casual diner table.",
+        "imageKeyword": "crispy chicken tenders dipping sauce casual restaurant meal french fries",
+        "mnemonic": "TENDER: A TENDER cut of chicken is juicy and tender to eat; in corporate dining, caterers ex-TEND a TENDER (bid) to win the contract!"
+    },
+    "video": {
+        "description": "A professional culinary prep video demonstrating how commercial kitchen cooks trim fresh poultry tenderloins, coat them in buttermilk batter, and deep-fry them to produce golden crispy chicken tenders."
+    },
+    "toeicContext": {
+        "commonParts": [
+            3,
+            5,
+            7
+        ],
+        "exampleQuestion": "The metropolitan airport authority published an invitation to _____ for local restaurant operators interested in leasing terminal dining concessions. (A) tender (B) tendering (C) tenderly (D) tendered",
+        "tips": "In TOEIC business English and contract procurement contexts, 'invitation to tender' (ITT) is a standard fixed commercial collocation where 'tender' functions as a noun denoting an official bid or proposal. Choice (A) 'tender' correctly completes this standard phrase. Choices (B) 'tendering', (C) 'tenderly', and (D) 'tendered' violate established business terminology."
+    },
+    "synonyms": [
+        "bid",
+        "proposal",
+        "quotation",
+        "tenderloin strip",
+        "meat strip",
+        "submission"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+        "procurement",
+        "concession",
+        "catering contract",
+        "tenderloin",
+        "breading",
+        "request for proposal",
+        "bidder"
+    ]
+},
   {
-      "id": "dining-274",
-      "word": "terrace",
-      "partOfSpeech": [
-          "noun"
-      ],
-      "category": "dining",
-      "level": "intermediate",
-      "toeicFrequency": 8,
-      "pronunciation": {
-          "ipa": "/terrace/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/terrace--_us_1.mp3",
-          "syllableBreakdown": "ter·race",
-          "stressPattern": "○●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "terrace",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of terrace",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: terr...",
-              "Dutch: terr..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A foundational professional concept and noun designating terrace in culinary arts, dining, and restaurant hospitality, central to strategic workflows and operational accountability.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "neutral"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"terrace\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving terrace in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "The banquet staff inspected the terrace before the evening corporate reception.",
-              "Please ensure that the terrace meets all hospitality and safety standards.",
-              "Our catering coordinator prepared an updated arrangement for the terrace."
-          ],
-          "business": [
-              "The hospitality management team invested in upgrading the terrace across all dining venues.",
-              "Annual quality audits confirmed that every terrace complies with industry health regulations.",
-              "Standardizing operational procedures for the terrace improved overall guest satisfaction."
-          ],
-          "conversation": [
-              "\"Could you check whether the terrace is ready for our VIP corporate guests?\"",
-              "\"Yes, the catering supervisor just inspected the terrace and confirmed everything is set.\""
-          ],
-          "collocations": [
-              "inspect the terrace",
-              "modern terrace",
-              "corporate terrace",
-              "standard terrace",
-              "quality terrace"
-          ]
-      },
-      "wordFamily": {
-          "noun": "terrace",
-          "adjective": "terrace-related"
-      },
-      "visual": {
-          "imageKeyword": "terrace dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting terrace.",
-          "mnemonic": "TERRAC: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of terrace."
-      },
-      "toeicContext": {
-          "commonParts": [
-              1,
-              3,
-              4,
-              7
-          ],
-          "exampleQuestion": "The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight's reception. (A) terrace (B) terraces (C) terrace's (D) terraces'",
-          "tips": "In dining and hospitality contexts, the blank following the participle \"requested\" requires the head noun: (A) terrace. Distinguish carefully between singular (A), plural (B), and possessive forms (C, D)."
-      },
-      "synonyms": [
-          "terrace factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "terrace management",
-          "implementation",
-          "protocol"
-      ]
-  },
+    "id": "dining-274",
+    "word": "terrace",
+    "partOfSpeech": [
+        "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/terrace--_us_1.mp3",
+        "commonMistakes": "Learners frequently mispronounce the unstressed second syllable as a full vowel /e\u026as/ (sounding like 'ter-race' rhyming with 'chase' or 'race' /\u02c8ter.e\u026as/) instead of reducing it to a weak schwa or lax /\u0259s/ (/\u02c8ter.\u0259s/). Another frequent error is shifting the stress to the second syllable (*te-RRACE*). Furthermore, in hospitality contexts, non-native speakers often confuse 'terrace' (an expansive paved or stone outdoor dining area adjoining a restaurant, hotel, or rooftop) with 'balcony' (a smaller cantilevered platform projecting from an upper-floor wall) or 'deck' (an elevated wooden plank structure).",
+        "ipa": "/\u02c8ter.\u0259s/",
+        "stressPattern": "\u25cf\u25cb",
+        "syllableBreakdown": "ter\u00b7race"
+    },
+    "etymology": {
+        "evolution": "Originally in Roman engineering and medieval military fortifications, a 'terrasse' was an earthen bank or rampart constructed for defense. During the Italian and French Renaissance, architects transformed terraces into paved promenade platforms and garden galleries overlooking villa estates. By the 18th and 19th centuries, grand Parisian boulevard cafes and European seaside hotels converted these paved outdoor areas into dining terraces for alfresco refreshments. In modern dining and hospitality architecture, 'terrace' specifically designates a premier outdoor, garden, or rooftop dining venue equipped with tables, parasols, and radiant heaters.",
+        "firstRecordedUse": "Early 16th century (c. 1510s for raised architectural platforms and garden promenades; 19th century for restaurant and cafe outdoor dining spaces)",
+        "origin": "Borrowed into Middle English via Middle French 'terrace' / Old French 'terrasse' (a raised platform, rampart, terrace), from Old Occitan 'terrassa' (earthen bank or mound), derived from Vulgar Latin '*terraceus' (made of earth), which stems from Latin 'terra' (earth, land, soil), descending from Proto-Indo-European '*ters-' (to dry, dry land).",
+        "relatedLanguages": [
+            "French: terrasse (terrace, outdoor cafe seating area; e.g., terrasse de caf\u00e9)",
+            "Spanish: terraza (terrace, outdoor patio, rooftop bar)",
+            "Italian: terrazza (terrace, open-air veranda, rooftop)",
+            "German: Terrasse (terrace, patio, outdoor dining area; loanword from French)",
+            "Dutch: terras (cafe terrace, outdoor seating area)"
+        ],
+        "rootMeaning": "An elevated, paved open-air platform or earthen embankment overlooking grounds",
+        "rootWord": "Latin terra (earth, land) / Vulgar Latin *terraceus (made of earth) / Old French terrasse"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "An open-air or semi-enclosed paved architectural platform, elevated patio, or rooftop dining space adjoining a restaurant, hotel, or banquet facility, furnished with tables, chairs, umbrellas, and heaters to accommodate outdoor dining and beverage service.",
+        "emotionalTone": "Pleasant, breezy, luxurious, scenic, relaxed, and hospitable.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Waterfront bistros, luxury hotel rooftop lounges, vineyard tasting rooms, mountain resort dining halls, and street-side European-style cafes.",
+        "temporalContext": "Spring and summer alfresco dining seasons, weekend brunch seatings, sunset cocktail hours, and warm-weather evening corporate banquets."
+    },
+    "nativeMindset": {
+        "culturalContext": "In European and North American dining culture, terrace seating ('dining alfresco') is a cherished lifestyle phenomenon. In major metropolitan centers, rooftop restaurant terraces command high reservation premiums and generate substantial beverage revenue. Because outdoor dining depends heavily on climate, restaurant booking platforms and banquet contracts routinely include terrace weather contingency clauses. In the TOEIC exam, terraces are a staple of Part 1 photographs (diners under patio umbrellas), Part 3 dining reservation dialogues, and Part 7 venue rental contracts.",
+        "howNativesThink": "When native speakers hear 'terrace' in a dining context, they instinctively visualize a stylish, scenic, and highly desirable open-air seating area\u2014frequently elevated with panoramic views of a city skyline, harbor, ocean, or landscaped garden. It represents an elevated dining experience, leisure, and upscale ambiance. Diners often request 'terrace seating' specifically, willing to endure a wait for a table with a view. Restaurant managers view the terrace as prime high-margin seating, but also recognize the operational necessity of weather contingency planning (retractable awnings, patio heaters, or indoor backup banquet rooms in case of rain).",
+        "mentalImage": "Guests in business-casual attire seated at teak tables with white linens on a paved rooftop restaurant terrace overlooking an illuminated harbor at sunset, string lights glowing overhead and tall patio heaters ready for the evening chill.",
+        "whenNotToUse": "Do not confuse with 'balcony' (a small projecting platform from an individual hotel room, rarely used for restaurant table service) or 'deck' (a structure constructed specifically from timber or composite decking boards). Do not use to describe an enclosed indoor dining room.",
+        "whenToUse": "Use when describing an outdoor, elevated, or rooftop dining area connected to a dining or lodging establishment (e.g., 'dining on the terrace', 'rooftop terrace', 'terrace seating', 'oceanfront terrace', 'garden terrace')."
+    },
+    "examples": {
+        "business": [
+            "The corporate welcome reception will be held on the hotel\u2019s rooftop terrace, which accommodates up to two hundred attendees.",
+            "Management installed radiant gas heaters and motorized awnings to extend the dining terrace season through late autumn.",
+            "The private banquet agreement specifies that in the event of inclement weather, outdoor terrace reservations will automatically transfer to the main ballroom."
+        ],
+        "collocations": [
+            "rooftop terrace",
+            "outdoor terrace",
+            "dining terrace",
+            "terrace seating",
+            "garden terrace",
+            "terrace view"
+        ],
+        "conversation": [
+            "\"Would your party prefer an indoor booth or a table outside on the terrace?\" / \"If there is an open table near a patio heater, we would love to sit on the terrace to enjoy the harbor view.\"",
+            "\"Has the event coordinator confirmed the backup plan for tonight\u2019s dinner on the terrace?\" / \"Yes, if rain develops, the banquet staff will transition the buffet into the enclosed veranda.\"",
+            "\"How many additional servers should we assign to the rooftop terrace for the Friday evening rush?\" / \"Let's schedule three servers and two bussers, since beverage turnover is especially fast during sunset cocktail hour.\""
+        ],
+        "daily": [
+            "We requested a table on the seaside terrace so we could watch the sunset while having dinner.",
+            "During the warm summer months, the bistro opens its garden terrace for Saturday and Sunday brunch.",
+            "When a sudden drizzle began, the attentive waitstaff promptly moved our party from the terrace to the indoor dining room."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "terraced",
+        "adverb": "",
+        "noun": "terrace",
+        "verb": "terrace"
+    },
+    "visual": {
+        "imageDescription": "An elegant paved rooftop restaurant terrace with dark wooden dining tables under wide cream umbrellas, lush potted olive trees, and string lights overlooking an illuminated city skyline at dusk.",
+        "imageKeyword": "restaurant rooftop terrace outdoor dining tables umbrellas skyline view sunset",
+        "mnemonic": "TERRACE comes from Latin 'terra' (earth/ground): An open-air paved platform for dining under the open sky!"
+    },
+    "video": {
+        "description": "A luxury hotel and restaurant management video highlighting an award-winning waterfront dining terrace, demonstrating weather-resistant outdoor furniture layout, radiant heating systems, and service pacing."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "If the weather remains favorable this evening, the networking dinner for summit attendees will be held on the hotel's garden _____. (A) terrace (B) terracing (C) terraced (D) terrifically",
+        "tips": "In TOEIC Part 5, following a compound noun/adjective modifier like 'garden', a concrete singular head noun naming a facility or venue is required. Choice (A) 'terrace' is the correct noun. Choice (B) 'terracing' is an action gerund; Choice (C) 'terraced' is a past participle adjective; and Choice (D) 'terrifically' is an adverb of degree."
+    },
+    "synonyms": [
+        "patio",
+        "veranda",
+        "courtyard",
+        "deck",
+        "rooftop lounge",
+        "balcony"
+    ],
+    "antonyms": [
+        "interior",
+        "indoor dining room"
+    ],
+    "relatedWords": [
+        "alfresco",
+        "awning",
+        "parasol",
+        "patio heater",
+        "waterfront",
+        "scenic view",
+        "outdoor seating"
+    ]
+},
   {
-      "id": "dining-275",
-      "word": "thermal",
-      "partOfSpeech": [
-          "adjective"
-      ],
-      "category": "dining",
-      "level": "intermediate",
-      "toeicFrequency": 8,
-      "pronunciation": {
-          "ipa": "/thermal/",
-          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/thermal--_us_1.mp3",
-          "syllableBreakdown": "the·rmal",
-          "stressPattern": "○●○",
-          "commonMistakes": "Pay attention to clean articulation of the root syllables in professional speech."
-      },
-      "etymology": {
-          "origin": "Old English / Germanic Lexical Root",
-          "rootWord": "thermal",
-          "rootMeaning": "core Germanic commercial root signifying foundational operational practice of thermal",
-          "evolution": "Preserved through centuries of Anglo-Saxon and Middle English maritime commerce, guild trade, and standard English international business vocabulary.",
-          "relatedLanguages": [
-              "German: ther...",
-              "Dutch: ther..."
-          ],
-          "firstRecordedUse": "12th-14th century"
-      },
-      "deepMeaning": {
-          "coreConcept": "A critical qualifying attribute describing operations, systems, or criteria that are thermal under professional culinary arts, dining, and restaurant hospitality benchmarks.",
-          "spatialContext": "Executive dining halls, banquet banquet rooms, commercial culinary kitchens, wine cellars, and formal linen tables.",
-          "temporalContext": "Multi-course banquet service sequencing, reservation seatings, dietary prep lead times, and seasonal menu cycles.",
-          "emotionalTone": "Objective, authoritative, professional, and execution-oriented.",
-          "formalityLevel": "formal",
-          "connotation": "positive"
-      },
-      "nativeMindset": {
-          "howNativesThink": "Native hospitality managers assess \"thermal\" as a guest satisfaction and culinary standard: does it elevate dining ambiance, ensure food safety compliance, or orchestrate banquet service seamlessly?",
-          "mentalImage": "An executive banquet coordinator orchestrating table service and dietary accommodations involving thermal in a dining room.",
-          "whenToUse": "Use in catering agreements, executive banquet menus, restaurant reservation policies, and culinary service reviews.",
-          "whenNotToUse": "Avoid using informal food terms in formal corporate catering agreements or executive dining invitations.",
-          "culturalContext": "Encountered in TOEIC Part 3 restaurant dialogues, Part 4 banquet keynote introductions, and Part 7 catering contracts."
-      },
-      "examples": {
-          "daily": [
-              "Please verify that all submitted files are fully thermal and up to date.",
-              "The supervisor confirmed that the proposed timeline is completely thermal for the team.",
-              "Staff members must maintain a thermal approach when communicating with clients."
-          ],
-          "business": [
-              "The executive committee concluded that the expansion plan remains financially thermal.",
-              "Management established a thermal framework to ensure compliance with industry standards.",
-              "The annual performance report highlighted several thermal achievements across departments."
-          ],
-          "conversation": [
-              "\"Do you believe the draft proposal is thermal enough for the executive review?\"",
-              "\"Yes, it appears completely thermal and aligns with our departmental goals.\""
-          ],
-          "collocations": [
-              "highly thermal",
-              "fully thermal",
-              "strictly thermal",
-              "remain thermal",
-              "deemed thermal"
-          ]
-      },
-      "wordFamily": {
-          "adjective": "thermal",
-          "adverb": "thermally"
-      },
-      "visual": {
-          "imageKeyword": "thermal dining restaurant banquet hospitality catering gourmet",
-          "imageDescription": "An executive private dining suite where banquet managers and culinary staff prepare fine dining table arrangements highlighting thermal.",
-          "mnemonic": "THERMA: Gracious Hospitality Elevates Executive Dining Standards!"
-      },
-      "video": {
-          "description": "Professional business overview: practical applications and strategic significance of thermal."
-      },
-      "toeicContext": {
-          "commonParts": [
-              5,
-              6,
-              7
-          ],
-          "exampleQuestion": "Senior leadership concluded that the proposed strategic initiative remains completely _____ under current guidelines. (A) thermal (B) thermally (C) more thermal (D) most thermal",
-          "tips": "Following the linking verb context and modifying adverb, the predicate requires an adjective: (A) thermal. Do not confuse with the adverbial form (B) thermally or comparative forms (C, D)."
-      },
-      "synonyms": [
-          "thermal factor",
-          "standard practice",
-          "procedure"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-          "thermal management",
-          "implementation",
-          "protocol"
-      ]
-  }
+    "id": "dining-275",
+    "word": "thermal",
+    "partOfSpeech": [
+        "adjective"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/thermal--_us_1.mp3",
+        "commonMistakes": "Learners frequently substitute the voiceless dental fricative /\u03b8/ with /t/ ('ter-mal'), /s/ ('ser-mal'), or /f/ ('fer-mal'). Speakers from non-rhotic or tonal language backgrounds often flatten the r-colored nurse vowel /\u025c\u02d0r/ into /e/ or /\u0251\u02d0/. Additionally, learners sometimes over-enunciate the unstressed second syllable with a full vowel /\u00e6l/ instead of a reduced schwa and syllabic dark 'l' (/\u0259l/).",
+        "ipa": "/\u02c8\u03b8\u025c\u02d0r.m\u0259l/",
+        "stressPattern": "\u25cf\u25cb",
+        "syllableBreakdown": "ther\u00b7mal"
+    },
+    "etymology": {
+        "evolution": "In ancient Greek, thermos indicated physical warmth. In 1756, English medical literature adopted 'thermal' via French to describe geothermal mineral springs ('thermal baths'). During the 19th century, physicists applied the word to thermodynamics and radiant energy. Following the commercial development of double-walled vacuum insulation by James Dewar and commercial thermos manufacturers in the early 20th century, 'thermal' entered the dining, catering, and beverage vernacular to designate insulated carafes, food transit containers, and precision temperature-controlled cooking tools.",
+        "firstRecordedUse": "Mid-18th century (c. 1756 for hot springs; mid-19th century in thermodynamics; early 20th century in food and beverage insulation)",
+        "origin": "Derived from Ancient Greek therm\u0113 ('heat, fever') and thermos ('hot, warm'), descending from Proto-Indo-European *g\u02b7\u02b0er- ('warm, hot'). It entered Neo-Latin as thermalis in the 18th century and French as thermal before being adopted into English, initially to describe medicinal hot springs before expanding in the 19th and 20th centuries to thermodynamics and insulated food and beverage apparatus.",
+        "relatedLanguages": [
+            "French: thermique (relating to heat / thermal insulation) / bouteille isotherme (thermal insulated bottle)",
+            "Spanish: t\u00e9rmico / t\u00e9rmica (thermal / heat-insulating; e.g., jarra t\u00e9rmica, bolsa t\u00e9rmica)",
+            "Italian: termico / termica (thermal / heat-preserving; e.g., caraffa termica, borsa termica)",
+            "German: thermisch (thermal) / Thermoskanne (vacuum / thermal jug) / Thermobeh\u00e4lter (insulated food container)"
+        ],
+        "rootMeaning": "Pertaining to heat, warmth, or heat retention",
+        "rootWord": "Ancient Greek thermos (hot, warm) / Proto-Indo-European *g\u02b7\u02b0er- (warm, hot)"
+    },
+    "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "Relating to heat, temperature regulation, or thermal insulation; specifically in food service and dining operations, designating equipment, containers, or materials engineered with double-wall vacuum or polyurethane foam insulation to maintain cooked foods and beverages at hot holding temperatures (above 140\u00b0F / 60\u00b0C) or chilled temperatures (below 40\u00b0F / 4\u00b0C) without external power.",
+        "emotionalTone": "Technical, practical, reliable, safety-oriented, and hospitable.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Commercial restaurant kitchens, banquet staging pantries, conference room beverage credenzas, off-site catering transport vans, buffet lines, and coffee service stations.",
+        "temporalContext": "Utilized continuously during pre-service prep shifts, throughout multi-hour banquet meal services, during transport from prep commissaries to event venues, and during morning continental breakfast setups."
+    },
+    "nativeMindset": {
+        "culturalContext": "In North American and British corporate dining and event hospitality, thermal carafes are a universal fixture in boardroom meetings, conventions, and hotel breakfast buffets because they eliminate electric cords and prevent the burnt, bitter flavor caused by continuous electric burner plates. Furthermore, public health and food safety standards (such as HACCP and local municipal health codes) strictly govern the commercial food temperature 'danger zone' (40\u00b0F\u2013140\u00b0F / 4\u00b0C\u201360\u00b0C). Consequently, commercial caterers rely universally on certified thermal transport cabinets and infrared thermal thermometers to pass inspections and satisfy corporate clients. In TOEIC test design, 'thermal' appears in catering proposals, banquet service schedules, and restaurant equipment procurement invoices.",
+        "howNativesThink": "To native speakers in dining, catering, and hospitality operations, 'thermal' immediately evokes temperature retention and insulation rather than active heating elements. A native speaker thinking of a 'thermal carafe' visualizes a brushed stainless steel, double-wall vacuum pitcher with an airtight pour-spout that keeps brewed coffee piping hot for hours on a conference table without scorching the beans. In event catering, 'thermal carriers' or 'thermal bags' immediately signify temperature compliance and safe food transit\u2014preventing hot entrees from falling into the bacterial danger zone. In beverage service, it implies both heat retention for hot drinks and cold retention for iced beverages without sweating condensation on tabletop linens.",
+        "mentalImage": "A catering attendant setting out sleek brushed stainless steel thermal carafes labeled 'Regular' and 'Decaf' alongside porcelain cups on a conference room credenza, while in the background kitchen, line cooks load steaming hotel pans into heavy-duty insulated thermal food carriers for delivery.",
+        "whenNotToUse": "Do not use 'thermal' when simply describing high ambient room temperature or spicy culinary seasonings (use 'hot', 'warm', or 'spicy'). Do not confuse with 'thermostatic' (which refers specifically to an automated sensor switch that regulates a thermostat) or 'caloric' (which refers to nutritional energy in food).",
+        "whenToUse": "Use when describing equipment, containers, or materials engineered specifically to insulate, preserve, or regulate temperature in food and beverage operations (e.g., 'thermal carafe', 'thermal food carrier', 'thermal insulated delivery bag', 'thermal circulator', 'thermal shock-resistant glassware', 'thermal receipt paper')."
+    },
+    "examples": {
+        "business": [
+            "The banquet supervisor ordered thirty heavy-duty thermal food carriers to transport hot catered meals from the central commissary to the downtown convention center.",
+            "According to the restaurant's HACCP food safety protocol, line cooks must verify holding temperatures using digital thermal probe thermometers before transferring dishes to the buffet line.",
+            "The corporate catering contract specifies that all meeting rooms must be equipped with brushed stainless steel thermal dispensers for both regular and decaffeinated coffee."
+        ],
+        "collocations": [
+            "thermal carafe",
+            "thermal food carrier",
+            "thermal insulated bag",
+            "thermal beverage dispenser",
+            "thermal shock resistance",
+            "thermal probe thermometer"
+        ],
+        "conversation": [
+            "\"Will the coffee stay hot enough during the two-hour executive committee meeting?\" / \"Yes, our vacuum-insulated thermal carafes are rated to keep beverages above seventy degrees Celsius for up to six hours.\"",
+            "\"Did the catering van arrive with the hot luncheon entrees for the symposium?\" / \"Yes, the delivery team just rolled in four wheeled thermal holding cabinets, and the steam pans are still steaming hot.\"",
+            "\"Why did the procurement team replace the glass teapots in the hotel lounge?\" / \"They switched to double-walled thermal teapots because guests complained that the hot tea cooled down too quickly during afternoon high tea.\""
+        ],
+        "daily": [
+            "The server placed a stainless steel thermal carafe of hot coffee on our breakfast table so we could refill our cups at our own leisure.",
+            "Before heading out on the long drive, she poured hot herbal tea into a double-walled thermal travel mug to keep it warm all morning.",
+            "The food delivery courier carried our pizza and pasta in a padded thermal insulated bag to ensure everything arrived piping hot."
+        ]
+    },
+    "wordFamily": {
+        "adjective": "thermal",
+        "adverb": "thermally",
+        "noun": "thermal, therm, thermodynamics",
+        "verb": "thermalize"
+    },
+    "visual": {
+        "imageDescription": "A row of brushed stainless steel thermal coffee carafes neatly arranged on a white linen buffet table beside ceramic mugs, with subtle steam visible as hot coffee is poured.",
+        "imageKeyword": "stainless steel thermal carafe coffee dispenser banquet buffet catering",
+        "mnemonic": "THERMAL comes from Greek 'thermos' (heat): A THERMAL carafe locks in TEMPERATURE so hot drinks stay warm!"
+    },
+    "video": {
+        "description": "A commercial catering logistics video demonstrating how to load stainless steel hotel pans into insulated thermal food carriers to maintain safe holding temperatures during transport."
+    },
+    "toeicContext": {
+        "commonParts": [
+            1,
+            3,
+            4,
+            7
+        ],
+        "exampleQuestion": "To keep beverages at an optimal serving temperature throughout the seminar, the catering coordinator placed a _____ carafe of brewed coffee on each conference table. (A) thermal (B) thermally (C) thermals (D) thermalize",
+        "tips": "In TOEIC Part 5 and Part 6, 'thermal' frequently appears as an adjective modifying food-service nouns such as 'carafe', 'container', 'bag', or 'insulation'. Choice (A) 'thermal' is the correct adjective form modifying 'carafe'. Choice (B) 'thermally' is an adverb which cannot modify a noun; Choice (C) 'thermals' is a plural noun; and Choice (D) 'thermalize' is a verb."
+    },
+    "synonyms": [
+        "insulated",
+        "heat-retaining",
+        "temperature-controlled",
+        "heat-insulating",
+        "vacuum-insulated"
+    ],
+    "antonyms": [
+        "non-insulated",
+        "conductive",
+        "heat-conducting"
+    ],
+    "relatedWords": [
+        "carafe",
+        "insulation",
+        "chafing dish",
+        "holding temperature",
+        "cambro",
+        "sous-vide",
+        "food safety"
+    ]
+}
 ];

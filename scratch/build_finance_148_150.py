@@ -1,0 +1,356 @@
+import json
+import re
+
+words = [
+    {
+        "id": "finance-148",
+        "word": "financial",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/faɪˈnæn.ʃəl/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/financial--_us_1.mp3",
+            "syllableBreakdown": "fi-nan-cial",
+            "stressPattern": "○●○",
+            "commonMistakes": "Learners frequently misplace the primary stress onto the initial syllable (*FYE-nan-shul*) rather than the second syllable (/faɪˈnæn.ʃəl/). Non-native speakers also frequently mispronounce the final suffix '-cial' as two distinct syllables (*/si.əl/ or */ʃi.əl/*) instead of the blended reduction /ʃəl/. Grammatically, test-takers overwhelmingly assume 'financial' is exclusively an adjective, becoming bewildered when encountering it as a plural noun ('financials') denoting audited financial statements or banking sector equities in business reports."
+        },
+        "etymology": {
+            "origin": "Old French via Medieval Latin",
+            "rootWord": "Old French 'finance' (payment, settlement, end of debt) + Latin adjectival suffix '-ialis' (pertaining to)",
+            "rootMeaning": "'Pertaining to the settlement of money obligations, state revenue, or debt'",
+            "evolution": "Originates from Old French 'finer' (to terminate, settle a dispute, pay a ransom or debt), derived from Medieval Latin 'finare' (to pay money, settle an account) and Classical Latin 'finis' (end, limit, boundary). The adjective 'financial' arose in the 18th century as state banking systems formed. By the late 19th and mid-20th centuries, Anglo-American securities markets substantivized the word into a plural noun ('financials') to refer specifically to published corporate accounting statements and banking sector equities.",
+            "relatedLanguages": [
+                "French: financier (financier / financial), finances (finances)",
+                "Spanish: financiero (financial), finanzas (finances)",
+                "Italian: finanziario (financial), finanze (finances)",
+                "German: Finanzen (finances), Finanzwerte (financial stocks)"
+            ],
+            "firstRecordedUse": "Late 19th century (c. 1880s for substantive noun usage in commercial and stock market reports)"
+        },
+        "deepMeaning": {
+            "coreConcept": "In commercial, accounting, and investment terminology, 'financials' (noun, commonly plural) denotes the complete set of published accounting statements, performance metrics, and fiscal data of a corporate entity—encompassing the balance sheet, income statement, and cash flow statement—or, in stock market contexts, the equity shares and securities of companies operating in the financial services sector (such as commercial banks, investment firms, and insurers).",
+            "spatialContext": "Investment banking pitch books, quarterly earnings decks, financial news tickers (e.g., Bloomberg, CNBC), investor relations web portals, and audit committee binders.",
+            "temporalContext": "Intensely analyzed at fiscal quarter-end (Q1-Q4), during annual regulatory filing periods (such as SEC Form 10-K releases), and throughout pre-acquisition due diligence windows.",
+            "emotionalTone": "Analytical, investigative, rigorous, and performance-oriented.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native speakers in business treat 'financials' as the ultimate reality check for any enterprise. A pitch deck can contain ambitious marketing visions, but when an executive says 'Let's take a look at their financials,' they mean 'Let's see the actual cold, hard numbers—revenue, burn rate, profit margins, and debt.' In market commentary, 'financials' refers collectively to banking and insurance stocks: when interest rates rise, traders immediately ask 'How are financials trading today?'",
+            "mentalImage": "A venture capitalist wearing glasses leaning forward at a conference table, scrolling through an Excel spreadsheet and multi-page audited earnings statement on a tablet, examining line items for recurring SaaS revenue and gross margins before signing a term sheet.",
+            "whenToUse": "Use 'financials' (typically plural) when referring broadly to an enterprise's accounting statements, quarterly reports, and fiscal results ('The auditor requested access to our 2024 financials'), or when classifying banking and brokerage stocks ('Asset managers shifted capital from tech stocks into financials').",
+            "whenNotToUse": "Do not use 'financial' in the singular to mean money itself (say 'capital', 'funds', or 'cash'). If you need an adjective modifying a noun, use 'financial' ('financial advice', 'financial institution', 'financial year'). Avoid confusing 'financials' with personal pocket money or daily household budgets.",
+            "culturalContext": "In US and UK corporate governance, public companies are legally obliged to release their quarterly financials through regulatory filings (such as 10-Q and 10-K forms). The 'earnings season'—the several weeks after each fiscal quarter when major firms publish their financials—shapes trading volumes and employment expectations across the wider economy."
+        },
+        "examples": {
+            "daily": [
+                "Before investing my savings in the renewable energy startup, I asked my accountant to review the company's financials.",
+                "The local gym owner showed prospective franchisees the historical financials to demonstrate steady membership growth.",
+                "During the estate planning consultation, the attorney asked the family to compile all their personal financials and bank balances."
+            ],
+            "business": [
+                "The investment committee postponed the acquisition until third-party forensic auditors could verify the target company's financials.",
+                "Despite supply chain disruptions, the automaker reported surprisingly robust fourth-quarter financials with record operating cash flow.",
+                "Shares of leading financials jumped nearly three percent on the London Stock Exchange following the central bank's rate decision."
+            ],
+            "conversation": [
+                "\"Did the venture capital partners agree to fund our second funding round?\" — \"They were impressed by our pitch, but they want our CFO to submit the audited financials before drafting a term sheet.\"",
+                "\"Why did the tech fund underperform the benchmark index this quarter?\" — \"The portfolio was heavily underweight in financials, which surged after commercial banks posted higher net interest margins.\"",
+                "\"Has the controller finished consolidating the overseas subsidiary financials?\" — \"Not yet; currency conversions between the euro and the dollar are delaying the final reconciliation.\""
+            ],
+            "collocations": [
+                "audited financials",
+                "quarterly financials",
+                "review the financials",
+                "consolidate the financials",
+                "release the financials",
+                "strong financials"
+            ]
+        },
+        "wordFamily": {
+            "noun": "financial, financials, finance, financing, financier",
+            "verb": "finance",
+            "adjective": "financial",
+            "adverb": "financially"
+        },
+        "visual": {
+            "imageKeyword": "corporate financials quarterly earnings report spreadsheet auditor desk tablet",
+            "imageDescription": "A high-angle photograph of an auditor's mahogany desk showing printed financial statements with highlighted net income rows, a digital tablet displaying interactive quarterly revenue graphs, and a sleek black fountain pen.",
+            "mnemonic": "FINANCIALS = The FINAL NUMBERS of a business! If you want to know how a company is really doing, check its FINANCIALS!"
+        },
+        "video": {
+            "description": "A Wall Street financial analyst demonstrates how to read and dissect a public corporation's quarterly financials, explaining how to cross-examine the balance sheet, income statement, and cash flow footnotes."
+        },
+        "toeicContext": {
+            "commonParts": [
+                5,
+                6,
+                7
+            ],
+            "exampleQuestion": "Prior to submitting a formal purchase offer for the logistics firm, the private equity partners insisted on reviewing its audited _____ for the past three fiscal years.\n(A) financially\n(B) financier\n(C) financials\n(D) financial",
+            "tips": "On TOEIC Part 5 and 6, test-takers often assume 'financial' can only be an adjective and therefore eliminate choice (C) 'financials'. Remember that in business English, 'financials' is a standard plural noun meaning 'financial statements and records'. Reject the adjective (D) 'financial' because it cannot stand alone as the direct object of 'reviewing', and reject adverb (A) and human agent noun (B)."
+        },
+        "synonyms": [
+            "financial statements",
+            "financial reports",
+            "accounting records",
+            "fiscal results",
+            "financial accounts",
+            "earnings figures"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "balance sheet",
+            "income statement",
+            "cash flow statement",
+            "earnings report",
+            "due diligence",
+            "audited accounts",
+            "fiscal year"
+        ]
+    },
+    {
+        "id": "finance-149",
+        "word": "financing",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/ˈfaɪ.næn.sɪŋ/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/financing--_us_1.mp3",
+            "syllableBreakdown": "fi-nan-cing",
+            "stressPattern": "●○○",
+            "commonMistakes": "Learners frequently confuse 'financing' with general 'finance' or 'funds'. While 'finance' refers to the overall discipline or monetary system, 'financing' specifically denotes the transactional mechanism or capital arrangement used to pay for a particular venture or asset (e.g., 'securing bank financing for the factory'). In pronunciation, non-native speakers often reduce the initial diphthong /faɪ/ to a short /fɪ/ or drop the final velar nasal /ŋ/, making it sound like 'fi-nan-sin'."
+        },
+        "etymology": {
+            "origin": "Middle French and Anglo-Norman from Medieval Latin",
+            "rootWord": "Old French 'finance' (payment, settlement) + English gerund suffix '-ing'",
+            "rootMeaning": "'The action of furnishing or obtaining funds to settle transactions or capital requirements'",
+            "evolution": "Evolved from Old French 'finer' (to pay or settle a debt), derived from Medieval Latin 'finare' (to settle monetary claims) and Classical Latin 'finis' (limit, conclusion). While 'finance' dates to the 14th century, the specialized commercial verbal noun 'financing' emerged in the mid-19th century during the Industrial Revolution, when massive infrastructure projects like transcontinental railways and municipal waterworks required multi-source structured capital pools rather than individual owner wealth.",
+            "relatedLanguages": [
+                "French: financement (financing)",
+                "Spanish: financiación / financiamiento (financing)",
+                "Italian: finanziamento (financing)",
+                "German: Finanzierung (financing, funding)"
+            ],
+            "firstRecordedUse": "Mid 19th century (c. 1858 in British and American commercial banking gazettes)"
+        },
+        "deepMeaning": {
+            "coreConcept": "The commercial process, contractual mechanism, or arranged capital package through which an individual, enterprise, or government obtains the monetary funds necessary to acquire assets, execute capital projects, or sustain business operations, typically structured as debt, equity, or leasing.",
+            "spatialContext": "Corporate finance advisory departments, commercial lending desks, mortgage brokerage offices, boardroom capital expenditure reviews, and municipal development agency halls.",
+            "temporalContext": "Arranged prior to capital expenditure commitments; amortized or serviced across long-term repayment schedules (typically 3 to 30 years).",
+            "emotionalTone": "Negotiated, transactional, pragmatic, and strategically critical.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To a native speaker, 'financing' is the bridge between a business idea and its physical realization. Without financing, a real estate project or factory expansion remains a blueprint on paper. Native businesspeople immediately categorize financing into its capital structure implications: debt financing preserves ownership equity but adds interest expense, while equity financing eliminates interest burden but dilutes shareholder control. When shopping for big-ticket items like commercial machinery or fleets, native buyers immediately ask, 'What financing options or interest rates are available?'",
+            "mentalImage": "A commercial loan officer and a real estate developer sitting across a polished glass conference table, signing a multi-million-dollar syndicated loan agreement accompanied by bound debt-schedule binders and architectural schematics of a new logistics hub.",
+            "whenToUse": "Use when discussing the specific method or arrangement of raising funds for a purchase, enterprise, or infrastructure initiative (e.g., 'secure financing', 'debt financing', 'apply for equipment financing', 'contingent on buyer financing').",
+            "whenNotToUse": "Do not use 'financing' to describe day-to-day office supply petty cash. Avoid treating 'financing' as an adjective when 'financial' is required (say 'financial stability' or 'financial audit', NOT *'financing stability' or *'financing audit').",
+            "culturalContext": "In Western economies, consumer and commercial growth relies heavily on structured financing. In commercial real estate and M&A transactions, purchase agreements routinely include a 'financing contingency clause', which legally protects the buyer by allowing cancellation without penalty if commercial lenders refuse to provide financing on agreed terms."
+        },
+        "examples": {
+            "daily": [
+                "The dealership offered zero-percent financing for sixty months on all new hybrid delivery vans.",
+                "Our mortgage broker helped us secure competitive financing with a fixed interest rate before property prices climbed.",
+                "Elena investigated solar panel installation packages that included affordable municipal financing options."
+            ],
+            "business": [
+                "The renewable energy developer secured four hundred million dollars in debt financing from an international consortium of green banks.",
+                "Management decided against secondary equity financing to avoid diluting current shareholders' voting interests.",
+                "The purchase contract remains conditional upon the buyer obtaining satisfactory commercial financing within forty-five business days."
+            ],
+            "conversation": [
+                "\"Have we finalized the financing for the proposed semiconductor fabrication plant?\" — \"The syndicated loan agreement was signed yesterday, securing seventy percent of our total construction costs.\"",
+                "\"Why did the acquisition of the regional courier service fall through?\" — \"The buyer's investment bank abruptly withdrew its debt financing commitment amid tightening credit conditions.\"",
+                "\"Should we pursue venture debt or equity financing for our software expansion?\" — \"Given our predictable recurring monthly revenue, debt financing will be cheaper and won't dilute our equity.\""
+            ],
+            "collocations": [
+                "secure financing",
+                "debt financing",
+                "equity financing",
+                "obtain financing",
+                "financing arrangement",
+                "bridge financing"
+            ]
+        },
+        "wordFamily": {
+            "noun": "financing, finance, finances, financier",
+            "verb": "finance",
+            "adjective": "financed, financial",
+            "adverb": "financially"
+        },
+        "visual": {
+            "imageKeyword": "commercial loan signing business contract bank financing handshake construction blueprint",
+            "imageDescription": "A bright, contemporary corporate boardroom where a chief financial officer and commercial banking syndicate executives shake hands over approved loan documentation, next to rolled architectural blueprints and a laptop.",
+            "mnemonic": "FINANCING = FINDING CASH to make your project REAL! Without financing, the project has zero funding!"
+        },
+        "video": {
+            "description": "A corporate finance tutorial illustrating the trade-offs between debt financing and equity financing, walking viewers through interest rate impacts, dilution risks, and debt service coverage ratios."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "exampleQuestion": "The industrial developer announced that groundbreaking on the logistics park will proceed as scheduled, having successfully secured long-term _____ from a consortium of commercial lenders.\n(A) financially\n(B) financed\n(C) financing\n(D) financeable",
+            "tips": "In TOEIC Part 5, questions frequently test noun collocations following verbs like 'secure', 'obtain', 'arrange', or 'provide'. The combination 'secure long-term financing' is an established business idiom denoting obtaining capital for a project. Reject (A) adverb, (B) past participle verb form, and (D) adjective, recognizing that the position after the compound adjective 'long-term' requires a direct object noun."
+        },
+        "synonyms": [
+            "funding",
+            "capitalization",
+            "capital backing",
+            "loan capital",
+            "monetary backing",
+            "subsidization"
+        ],
+        "antonyms": [
+            "defunding",
+            "disinvestment",
+            "divestment",
+            "liquidation"
+        ],
+        "relatedWords": [
+            "debt financing",
+            "equity financing",
+            "syndicated loan",
+            "capital expenditure",
+            "underwriting",
+            "collateral",
+            "credit facility"
+        ]
+    },
+    {
+        "id": "finance-150",
+        "word": "fixed asset",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+            "ipa": "/ˌfɪkst ˈæs.et/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/fixed_asset--_us_1.mp3",
+            "syllableBreakdown": "fixed as-set",
+            "stressPattern": "○●○",
+            "commonMistakes": "Learners often pronounce the '-ed' ending in 'fixed' as a separate syllable (saying */ˈfɪk.sɪd/ instead of the single syllable /fɪkst/ ending in /st/). Another common mistake is stressing the second syllable of 'asset' (*as-SET) rather than placing primary stress on the first syllable (/ˈæs.et/). Conceptually, non-native speakers frequently confuse 'fixed assets' with 'current assets' (which are convertible to cash within twelve months, such as accounts receivable or inventory) or assume that 'fixed' means 'repaired' rather than permanent and stationary."
+        },
+        "etymology": {
+            "origin": "Compound of Middle English / Old French 'fixe' (fastened) and Anglo-French 'assez' (sufficient)",
+            "rootWord": "Latin 'fixus' (fastened, immovable, established) + Anglo-Norman 'aver assez' (to have enough assets to satisfy creditors)",
+            "rootMeaning": "'Permanent, immovable property held by a business to sustain its operations rather than for immediate liquidation'",
+            "evolution": "'Fixed' stems from Latin 'figere' (past participle 'fixus', meaning to fasten, attach, or establish permanently). 'Asset' derives from the Anglo-French legal phrase 'aver assez' (to have enough, from Latin 'ad satis'), which initially referred to sufficient property in an estate to discharge debts. In early 19th-century British industrial accounting during the factory boom, accountants distinguished liquid mercantile inventory from capital tied up in stationary steam engines, brick foundries, and railway rights-of-way, coining 'fixed asset' to describe non-current capital goods subject to long-term usage and physical wear.",
+            "relatedLanguages": [
+                "French: actif immobilisé / immobilisation corporelle (fixed / tangible asset)",
+                "Spanish: activo fijo / inmovilizado material (fixed asset)",
+                "Italian: immobilizzazione materiale / cespite fisso (tangible fixed asset)",
+                "German: Sachanlagevermögen / Anlagegut (fixed tangible asset)"
+            ],
+            "firstRecordedUse": "Late 19th century (c. 1888 in British corporate balance sheets and railway accounting guides)"
+        },
+        "deepMeaning": {
+            "coreConcept": "A long-term tangible piece of property, plant, or equipment (PP&E) owned and utilized by a company in its core operations to produce income, which cannot be readily converted into cash within one fiscal year and is subject to systematic depreciation over its useful operating life.",
+            "spatialContext": "Corporate balance sheets under Non-Current Assets, fixed asset registers in enterprise resource planning (ERP) systems (e.g., SAP, Oracle), factory production floors, data center server rooms, and commercial distribution yards.",
+            "temporalContext": "Purchased as multi-year capital expenditures (CapEx); retained and depreciated across useful service lives ranging from three years (computers) to forty years (commercial real estate).",
+            "emotionalTone": "Pragmatic, institutional, conservative, and operationally grounded.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native financial analysts and corporate managers, a 'fixed asset' represents the heavy machinery, steel, and physical infrastructure that makes a company's production possible. When reviewing a company's balance sheet, natives immediately ask whether a business is 'asset-heavy' (like an airline with billions tied up in aircraft or an automotive plant full of robotic welders) or 'asset-light' (like a software developer). They know fixed assets generate revenue but also bring inescapable ongoing carrying costs—insurance, maintenance, and annual depreciation charges.",
+            "mentalImage": "An industrial facility manager and a corporate cost accountant walking through a brightly lit precision manufacturing plant, scanning a barcoded metal inventory tag riveted to a four-million-dollar CNC milling machine during the annual fixed asset audit.",
+            "whenToUse": "Use when discussing capital assets, factory machinery, real estate, company vehicles, office headquarters, balance sheet depreciation schedules, and corporate fixed asset registers.",
+            "whenNotToUse": "Do not use to describe short-term, liquid items like inventory, marketable securities, or accounts receivable (which are 'current assets'). Do not use for intangible properties like patents, software copyright, or brand goodwill (which are 'intangible assets').",
+            "culturalContext": "Under GAAP and IFRS accounting standards, companies must maintain an accurate fixed asset register and test long-term physical assets periodically for impairment. If technological advances make expensive machinery obsolete before its useful life ends, companies must record an asset impairment charge, directly reducing earnings and signaling operational shifts to investors."
+        },
+        "examples": {
+            "daily": [
+                "The bakery owner listed the commercial stone-deck oven as a fixed asset on her business loan application.",
+                "When closing down his independent carpentry workshop, Thomas sold off heavy fixed assets including the industrial table saws.",
+                "The delivery company upgraded its fleet of diesel vans, recording the new electric vehicles as depreciable fixed assets."
+            ],
+            "business": [
+                "The pharmaceutical company invested eighty million dollars in fixed assets to construct a state-of-the-art sterile manufacturing facility.",
+                "External auditors conducted physical inspections of major fixed assets across three regional distribution centers to verify inventory tag records.",
+                "Heavy annual depreciation expenses on aging fixed assets significantly reduced the transportation carrier's reported operating profit."
+            ],
+            "conversation": [
+                "\"Why did our capital expenditures increase so dramatically in the third quarter?\" — \"We purchased five automated packaging lines, which have been capitalized as fixed assets on the balance sheet.\"",
+                "\"Are we treating the new cloud server migration as a fixed asset or an operational expense?\" — \"Because we purchased the hardware racks outright rather than leasing cloud capacity, they are classified as fixed assets.\"",
+                "\"Has the finance department updated the fixed asset register after the warehouse fire?\" — \"Yes, the claims adjuster and our accountants wrote off the destroyed conveyor belts and forklift equipment.\""
+            ],
+            "collocations": [
+                "tangible fixed asset",
+                "fixed asset register",
+                "depreciation of fixed assets",
+                "acquire fixed assets",
+                "disposal of fixed assets",
+                "fixed asset turnover"
+            ]
+        },
+        "wordFamily": {
+            "noun": "fixed asset, asset",
+            "verb": "fix",
+            "adjective": "fixed",
+            "adverb": "fixedly"
+        },
+        "visual": {
+            "imageKeyword": "industrial machinery robotic manufacturing factory equipment fixed asset tag",
+            "imageDescription": "A high-tech manufacturing plant where automated robotic arms assemble automotive parts, with an auditor holding a digital clipboard inspecting a metallic asset tag affixed to the heavy machinery base.",
+            "mnemonic": "FIXED ASSET = An asset that is FIXED to your business for the long haul (machinery, buildings, equipment) and cannot be cashed out overnight!"
+        },
+        "video": {
+            "description": "An accounting masterclass explaining how companies record, capitalize, and depreciate fixed assets (PP&E) on balance sheets, featuring real-world examples from automotive manufacturing and aviation."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "exampleQuestion": "The manufacturing plant's new robotic assembly line was classified as a _____ on the balance sheet and will be depreciated over a ten-year useful life.\n(A) fixable asset\n(B) fixed asset\n(C) fixing asset\n(D) fixture asset",
+            "tips": "In TOEIC Part 5, business accounting terminology is tested through compound noun collocations. The standard financial term for long-term physical equipment and property is 'fixed asset'. Choices such as 'fixable asset' (A), 'fixing asset' (C), or 'fixture asset' (D) are distractors designed to confuse test-takers unfamiliar with standard balance sheet classifications."
+        },
+        "synonyms": [
+            "capital asset",
+            "non-current asset",
+            "tangible asset",
+            "property, plant, and equipment",
+            "capital equipment",
+            "physical asset"
+        ],
+        "antonyms": [
+            "current asset",
+            "liquid asset",
+            "intangible asset"
+        ],
+        "relatedWords": [
+            "Property, Plant, and Equipment (PP&E)",
+            "depreciation",
+            "capital expenditure (CapEx)",
+            "salvage value",
+            "book value",
+            "asset impairment",
+            "fixed asset register"
+        ]
+    }
+]
+
+with open("scratch/finance_148_150.json", "w", encoding="utf-8") as f:
+    json.dump({"words": words}, f, indent=2, ensure_ascii=False)
+
+print("Saved scratch/finance_148_150.json successfully!")

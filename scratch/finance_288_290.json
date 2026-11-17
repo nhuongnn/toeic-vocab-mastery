@@ -1,0 +1,353 @@
+{
+  "result": {
+    "words": [
+      {
+        "id": "finance-288",
+        "word": "toll",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "finance",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+          "ipa": "/toʊl/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/toll--_us_1.mp3",
+          "syllableBreakdown": "toll",
+          "stressPattern": "Monosyllabic (single stressed syllable: /ˈtoʊl/, ●)",
+          "commonMistakes": "Learners often pronounce the vowel as a short open /ɒ/ or /ɔ/ (rhyming with 'doll'), saying */tɒl/* instead of using the closed diphthong /oʊ/ (rhyming with 'hole' and 'bowl'). Additionally, learners frequently confuse the noun senses: distinguishing between a direct statutory charge for using transportation infrastructure (bridge/highway toll, toll booth, toll plaza) and the figurative or economic cost/wear of a prolonged event (e.g., 'heavy death toll', 'take a heavy toll on quarterly earnings')."
+        },
+        "etymology": {
+          "origin": "Old English toll ('tax, duty, tribute, transit charge'), from Proto-West Germanic *toll, borrowed from Late Latin toloneum / telonium ('toll house, customs station'), derived from Ancient Greek telōneion (τελωνεῖον, 'toll house, tax collector's booth'), from telos (τέλος, 'tax, duty, obligation, completion').",
+          "rootWord": "Ancient Greek τέλος (telos, 'tax, obligation, duty') via Late Latin telonium and Old English toll",
+          "rootMeaning": "'A designated fee, tax, or legal charge levied for passage, municipal entry, or the transport of goods'",
+          "evolution": "In Anglo-Saxon England, toll denoted customary dues levied at local markets, bridges, and city gates. By the 14th century, it specifically applied to fixed user fees established by turnpike trusts and municipal authorities for crossing bridges, canals, and highways. In modern commerce, the term expanded to automated electronic toll collection (ETC) gantries, toll-free telephone routing, and the idiomatic financial expression 'take a heavy toll on'.",
+          "relatedLanguages": [
+            "German: der Zoll (customs duty, toll)",
+            "Dutch: de tol (toll, transit levy)",
+            "Danish: told (customs, duty)",
+            "Greek: τέλος (télos, fee, tax, tariff)"
+          ],
+          "firstRecordedUse": "Before the 9th century (Old English toll recorded in early Anglo-Saxon legal charters)"
+        },
+        "deepMeaning": {
+          "coreConcept": "A statutory or contractual fee charged for the legal privilege of traveling across specific transportation infrastructure such as a turnpike, bridge, tunnel, or canal; figuratively, the cumulative quantifiable cost, loss, or operational strain inflicted upon corporate earnings, machinery, or personnel.",
+          "spatialContext": "Highway toll plazas, overhead electronic transponder gantries (e.g., E-ZPass, FasTrak), commercial fleet dispatch centers, logistics billing departments, and corporate travel expense reconciliation portals.",
+          "temporalContext": "Billed electronically in milliseconds during vehicle transit; aggregated monthly in logistics invoices or corporate travel expense vouchers; evaluated quarterly when assessing logistics overhead or equipment depreciation.",
+          "emotionalTone": "Transactional and objective regarding logistical transit expenses; serious and sobering when describing cumulative attrition or operational damage.",
+          "formalityLevel": "neutral",
+          "connotation": "neutral"
+        },
+        "nativeMindset": {
+          "howNativesThink": "Native English speakers automatically parse 'toll' along two primary financial tracks: first, as a routine, non-negotiable operational travel cost (highway tolls, bridge fees) that delivery drivers and traveling executives must retain receipts for; second, in the vivid idiomatic collocation 'take a heavy toll on', which describes gradual, unavoidable attrition eating away at corporate profit margins, supply chain resilience, or employee morale.",
+          "mentalImage": "A commercial freight truck cruising under an automated overhead highway toll gantry with green LED sensors scanning its electronic transponder, while a logistics controller monitors real-time digital billing entries for road charges on a fleet dashboard.",
+          "whenToUse": "Use 'toll' when referring specifically to infrastructure user fees (toll roads, bridge tolls, tunnel tolls, turnpike fees, canal transit charges) or when employing 'take a toll on' to describe gradual depletion, attrition, or financial damage.",
+          "whenNotToUse": "Do not use 'toll' for general sales taxes (use 'tax' or 'VAT'), customs tariffs on imported goods (use 'tariff' or 'customs duty'), passenger tickets for buses or trains (use 'fare'), or standard banking service fees (use 'bank fee' or 'service charge').",
+          "culturalContext": "In North America, Europe, and Asia, tollways are vital public-private infrastructure funding mechanisms. In corporate travel and freight logistics, tolls are ubiquitous non-discretionary reimbursable expenses audited under travel and entertainment (T&E) policies. In financial journalism, headlines frequently report that macroeconomic headwinds or inflation 'take a heavy toll on quarterly operating profits'."
+        },
+        "examples": {
+          "daily": [
+            "Remember to keep the electronic receipts for any bridge or highway tolls so you can claim them on your travel reimbursement voucher.",
+            "The automated toll transponder mounted behind the rearview mirror lets our delivery vans pass through express lanes without waiting at cash booths.",
+            "Taking the outer bypass adds fifteen minutes to the drive, but you completely avoid paying the five-dollar bridge toll."
+          ],
+          "business": [
+            "Rising diesel prices combined with increased municipal highway tolls along major freight corridors reduced our logistics division's operating margin by 2.4%.",
+            "The corporate commercial contract stipulates that the freight carrier must absorb all routine highway tolls, tunnel surcharges, and port handling fees.",
+            "Prolonged supply chain bottlenecks and elevated borrowing rates have taken a severe financial toll on mid-market manufacturing companies this fiscal year."
+          ],
+          "conversation": [
+            "\"Did you attach the itemized toll charges from your client visit in New Jersey?\" / \"Yes, I downloaded the monthly statement directly from our corporate transponder account and uploaded it to the expense portal.\"",
+            "\"Our interstate delivery budget exceeded forecasts for October.\" / \"That was largely caused by the newly implemented peak-hour congestion tolls on the turnpike bridge.\"",
+            "\"Are tunnel and turnpike tolls fully reimbursable under our company vehicle policy?\" / \"Yes, provided they were incurred during authorized business trips and accompanied by valid digital receipts.\""
+          ],
+          "collocations": [
+            "highway / bridge toll",
+            "toll booth / plaza",
+            "toll road / turnpike",
+            "take a heavy toll (on)",
+            "electronic toll collection (ETC)",
+            "toll increase / hike"
+          ]
+        },
+        "wordFamily": {
+          "noun": "toll, tollbooth, tollway, tollgate",
+          "verb": "toll (to levy a charge; to ring a bell solemnly)",
+          "adjective": "toll-free, tollable",
+          "adverb": ""
+        },
+        "visual": {
+          "imageKeyword": "highway toll plaza electronic gantry transportation billing logistics",
+          "imageDescription": "An electronic highway toll plaza with multi-lane overhead gantries equipped with digital cameras and transponder sensors, with commercial trucks and passenger vehicles passing beneath illuminated rate indicators at dusk.",
+          "mnemonic": "TOLL: Pay the Toll to Roll! A fee you pay to roll your wheels on the road, or a heavy burden that takes a toll on your load."
+        },
+        "video": {
+          "description": "A transportation logistics documentary demonstrating how fleet dispatchers utilize automated electronic toll transponders and GPS route-optimization software to audit highway toll expenses, bypass congestion zones, and minimize transit surcharges."
+        },
+        "toeicContext": {
+          "commonParts": [
+            3,
+            4,
+            5,
+            7
+          ],
+          "exampleQuestion": "Sales representatives traveling by automobile to off-site client presentations may request reimbursement for bridge and highway _____ by submitting electronic payment receipts to accounting. (A) tolls (B) fares (C) rents (D) tariffs",
+          "tips": "TOEIC frequently tests vocabulary precision regarding transportation costs. Distinguish carefully between 'tolls' (fixed charges for road, bridge, tunnel, or canal passage), 'fares' (prices paid by passengers for riding trains, buses, airplanes, or taxis), 'rents' (regular payments for leasing property or equipment), and 'tariffs' (government taxes levied on imported or exported goods). Preceded by 'bridge and highway', the only contextually and collocationally correct choice is (A) tolls."
+        },
+        "synonyms": [
+          "road charge",
+          "transit fee",
+          "turnpike fee",
+          "bridge fee",
+          "user charge",
+          "levy"
+        ],
+        "antonyms": [
+          "free passage",
+          "toll exemption",
+          "toll waiver"
+        ],
+        "relatedWords": [
+          "turnpike",
+          "transponder",
+          "tollbooth",
+          "congestion pricing",
+          "travel reimbursement",
+          "freight surcharge",
+          "infrastructure"
+        ]
+      },
+      {
+        "id": "finance-289",
+        "word": "traceability",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+          "ipa": "/ˌtreɪ.səˈbɪl.ə.t̬i/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/traceability--_us_1.mp3",
+          "syllableBreakdown": "trace-a-bil-i-ty",
+          "stressPattern": "Secondary on first syllable, primary on fourth syllable: trace-a-BIL-i-ty (/ˌtreɪ.səˈbɪl.ə.t̬i/, ˌ○●○○)",
+          "commonMistakes": "Learners often misplace the primary stress on the third syllable (*trace-A-bil-i-ty*) or compress the middle vowels, saying */treɪsˈbɪlti/*. Additionally, non-native speakers often confuse 'traceability' with simple 'tracking'; while tracking monitors real-time location in transit, traceability is the verifiable, chronological audit trail linking every monetary transaction, raw material lot, or financial asset back to its legal source, authorization, and ledger origin."
+        },
+        "etymology": {
+          "origin": "Formed in English from the adjective traceable (from Old French tracier 'to trace, pursue, track', from Vulgar Latin *tractiare 'to follow by footprints', frequentative of Latin trahere 'to draw, pull') combined with the nominal suffix -ity (from Latin -itas, denoting state, quality, or capability).",
+          "rootWord": "Latin trahere ('to draw, pull along') via Old French tracier ('to track, trace')",
+          "rootMeaning": "'The inherent capability of being tracked backward and verified through an unbroken path of documentation'",
+          "evolution": "Latin trahere evolved into Vulgar Latin *tractiare and entered Middle English around 1300 through Old French tracier. In the late 20th century, spurred by industrial quality standards (ISO 9000), pharmaceutical regulations (GMP), and financial accounting governance (Sarbanes-Oxley), 'traceability' emerged as a formal standard requiring businesses to maintain complete, unbroken audit trails from source procurement to balance sheet disclosure.",
+          "relatedLanguages": [
+            "French: la traçabilité (traceability, audit trail)",
+            "Spanish: la trazabilidad (traceability, tracking record)",
+            "German: die Rückverfolgbarkeit (traceability, retroactive tracking)",
+            "Italian: la tracciabilità (traceability, verifiable provenance)"
+          ],
+          "firstRecordedUse": "Mid-20th century (circa 1960–1975 in industrial systems engineering and corporate auditing standards)"
+        },
+        "deepMeaning": {
+          "coreConcept": "The operational or accounting capability to chronologically follow, verify, and reconstruct the complete historical path, application, location, or ownership of a financial transaction, asset, component batch, or supply chain shipment through recorded audit documentation.",
+          "spatialContext": "Corporate enterprise resource planning (ERP) suites (e.g., SAP, Oracle Financials), distributed ledger databases (blockchain), compliance audit rooms, automated warehouse distribution hubs, and manufacturing quality assurance archives.",
+          "temporalContext": "Maintained continuously across the entire asset or product lifecycle and preserved throughout statutory document retention periods (typically five to seven years under corporate tax law and SOX auditing rules).",
+          "emotionalTone": "Rigorous, analytical, authoritative, compliant, and risk-averse.",
+          "formalityLevel": "formal",
+          "connotation": "positive"
+        },
+        "nativeMindset": {
+          "howNativesThink": "In corporate finance, internal auditing, and global supply chains, native professionals associate 'traceability' with institutional integrity and risk mitigation. When an auditor or CFO emphasizes traceability, they are focusing on an unbroken chain of custody: if a fraudulent disbursement, tax discrepancy, or defective manufacturing batch is detected, can the organization prove who signed off on every purchase order, which bank account sent the wire, and which vendor provided the goods within minutes?",
+          "mentalImage": "A senior internal auditor sitting before dual monitors displaying an ERP workflow interface, tracing an encrypted corporate transaction ID from an initial requisition form through purchase orders, digital delivery receipts, bank settlement codes, and general ledger journal entries.",
+          "whenToUse": "Use 'traceability' when discussing financial audit trails, chain-of-custody documentation, regulatory compliance (ISO, FDA, SOX), supply chain transparency, ethical sourcing, or quality assurance records.",
+          "whenNotToUse": "Do not use 'traceability' to describe simple everyday courier delivery updates (use 'package tracking' or 'shipment status'). Do not confuse with 'transparency' (which refers to public openness rather than the technical capability to reconstruct historical audit records).",
+          "culturalContext": "Mandated under post-Enron corporate governance reforms (such as Sarbanes-Oxley in the US) and stringent consumer safety directives worldwide, traceability is central to international business contracts. In TOEIC Part 7, multi-passage reading sets regularly include quality assurance audits, supplier certification questionnaires, and compliance reports emphasizing full end-to-end traceability."
+        },
+        "examples": {
+          "daily": [
+            "Consumers can scan the QR code printed on the food carton to verify the complete farm-to-table traceability of the organic produce.",
+            "The corporate accounting department upgraded its digital archiving software to enhance the traceability of employee travel and meal expenses.",
+            "Without reliable lot-number traceability, the hospital pharmacy cannot dispense high-risk prescription pharmaceuticals."
+          ],
+          "business": [
+            "Deploying an enterprise blockchain ledger significantly improved the end-to-end traceability of ethically sourced minerals across our supply chain.",
+            "External financial auditors commended our internal control architecture, highlighting the flawless traceability between approved purchase requisitions and general ledger entries.",
+            "Under current regulatory standards, medical device manufacturers must guarantee component-level traceability within four hours of a formal inquiry."
+          ],
+          "conversation": [
+            "\"Why was the vendor payment delayed by the accounts payable team?\" / \"The invoice lacked proper traceability back to a signed purchase order and warehouse receiving slip.\"",
+            "\"Does our newly implemented inventory software support lot-number traceability?\" / \"Yes, it logs every shipment from raw material arrival through assembly and retail distribution.\"",
+            "\"Our sustainable forestry certification requires documented proof of timber origins.\" / \"I will provide our chain-of-custody records, which establish full forest-to-consumer traceability.\""
+          ],
+          "collocations": [
+            "end-to-end traceability",
+            "supply chain traceability",
+            "audit trail traceability",
+            "complete / full traceability",
+            "batch / lot traceability",
+            "guarantee / improve traceability"
+          ]
+        },
+        "wordFamily": {
+          "noun": "traceability, trace, tracer",
+          "verb": "trace",
+          "adjective": "traceable, traced",
+          "adverb": "traceably"
+        },
+        "visual": {
+          "imageKeyword": "supply chain traceability barcode scanner audit trail digital enterprise software",
+          "imageDescription": "A quality assurance specialist in an advanced logistics facility using an industrial handheld scanner on a pallet of microchips, while the connected tablet screen displays a verified digital audit trail showing timestamped supplier origins and inspection clearance.",
+          "mnemonic": "TRACE-ABILITY = The ABILITY to TRACE every dollar, component, and signature from source to finish!"
+        },
+        "video": {
+          "description": "An enterprise logistics documentary demonstrating how pharmaceutical companies and corporate forensic auditors utilize cloud-based traceability platforms to verify supply chain custody, detect counterfeit products, and streamline regulatory audits."
+        },
+        "toeicContext": {
+          "commonParts": [
+            5,
+            6,
+            7
+          ],
+          "exampleQuestion": "The manufacturing director emphasized that adopting the cloud-based inventory platform would ensure full _____ of all electronic components throughout the production cycle. (A) trace (B) traceable (C) traceability (D) traceably",
+          "tips": "In TOEIC Part 5, suffix discrimination within word families is frequently tested. In this sentence, the adjective 'full' modifies the direct object of the verb 'ensure', requiring a singular abstract noun: (C) traceability. Option (A) is a base verb or concrete noun, (B) is an adjective, and (D) is an adverb. Recognize the abstract noun suffix '-ility', which denotes capacity or state."
+        },
+        "synonyms": [
+          "auditability",
+          "trackability",
+          "chain of custody",
+          "verifiability",
+          "accountability",
+          "provenance"
+        ],
+        "antonyms": [
+          "untraceability",
+          "opacity",
+          "anonymity",
+          "obscurity"
+        ],
+        "relatedWords": [
+          "audit trail",
+          "chain of custody",
+          "ERP system",
+          "compliance",
+          "verification",
+          "quality assurance",
+          "Sarbanes-Oxley"
+        ]
+      },
+      {
+        "id": "finance-290",
+        "word": "trade balance",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+          "ipa": "/ˈtreɪd ˌbæl.əns/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/trade_balance--_us_1.mp3",
+          "syllableBreakdown": "trade bal-ance",
+          "stressPattern": "Primary stress on first word, secondary stress on first syllable of second word: TRADE bal-ance (/ˈtreɪd ˌbæl.əns/, ● ○●)",
+          "commonMistakes": "Learners frequently mispronounce 'balance' with an elongated /ɑː/ or /eɪ/ rather than the short open front vowel /æ/, saying */ˈtreɪd ˈbɑːləns/*, or fail to reduce the unstressed second syllable to a schwa /əns/. Conceptually, learners often confuse 'trade balance' (the net difference between physical merchandise and service exports versus imports) with 'current account balance' (which also incorporates cross-border investment income and unilateral transfers) or a government's domestic 'budget balance' (tax revenue versus state expenditure)."
+        },
+        "etymology": {
+          "origin": "A compound macroeconomic term formed from trade (from Middle English trede 'track, path, course of action', from Middle Low German trade 'track, commercial path') and balance (from Old French balance, from Vulgar Latin *bilancia, from Late Latin bilanx 'having two scale pans', from bi- 'two' + lanx 'dish, scale plate').",
+          "rootWord": "Middle Low German trade ('commercial course, track') + Latin bilanx ('two scale pans weighing against one another')",
+          "rootMeaning": "'The numerical difference or equilibrium between goods exported and imported, weighed as on commercial scales'",
+          "evolution": "In 17th-century mercantile economics (notably in Thomas Mun's foundational treatise 'England's Treasure by Forraign Trade', published 1664), the concept was formulated as the 'balance of trade' to measure whether a kingdom gained or lost precious bullion. During the 19th and 20th centuries, as standardized international trade statistics emerged under institutions like the IMF and GATT/WTO, 'trade balance' became the standard macroeconomic metric distinguishing a trade surplus from a trade deficit.",
+          "relatedLanguages": [
+            "French: la balance commerciale (commercial balance / trade balance)",
+            "Spanish: la balanza comercial (trade balance / commercial balance)",
+            "German: die Handelsbilanz (trade balance, commercial balance)",
+            "Italian: la bilancia commerciale (commercial trade balance)"
+          ],
+          "firstRecordedUse": "17th century (as 'balance of trade' circa 1615–1625; direct compound 'trade balance' common in 19th-century economic treatises)"
+        },
+        "deepMeaning": {
+          "coreConcept": "The net monetary difference between the total value of a nation's exported goods and services and the total value of its imported goods and services over a designated fiscal accounting period; an excess of exports yields a trade surplus, while an excess of imports results in a trade deficit.",
+          "spatialContext": "National ministries of commerce, central bank research divisions, sovereign debt rating agencies, foreign exchange (forex) trading floors, and international economic newsrooms (e.g., Bloomberg, Financial Times, Reuters).",
+          "temporalContext": "Compiled and published monthly and annually by national census and customs authorities; releases trigger instantaneous algorithmic volatility in currency exchange and government bond markets.",
+          "emotionalTone": "Analytical, macroeconomic, authoritative, strategic, and policy-oriented.",
+          "formalityLevel": "formal",
+          "connotation": "neutral"
+        },
+        "nativeMindset": {
+          "howNativesThink": "Native macroeconomic analysts and corporate financial officers view the 'trade balance' as an essential health check on national competitiveness, manufacturing strength, and currency stability. When a country's trade balance plunges into a widening deficit, executives instinctively anticipate domestic currency depreciation, potential import tariffs, or geopolitical friction; conversely, a persistent trade surplus signals robust global demand for domestic industrial output but may prompt trade disputes with commercial partners.",
+          "mentalImage": "A currency strategist on an institutional investment bank trading floor analyzing multi-screen financial terminals as customs data updates, showing export volume bars surpassing import lines accompanied by real-time green price movement across foreign exchange currency pairs.",
+          "whenToUse": "Use 'trade balance' when discussing national import/export data, trade surpluses or deficits, macroeconomic health, foreign exchange rate drivers, customs flows, and international bilateral trade negotiations.",
+          "whenNotToUse": "Do not use 'trade balance' to refer to a single company's operating margin, revenue, or ledger cash balance (use 'balance sheet', 'cash balance', or 'operating margin'). Do not confuse with a national government's domestic fiscal balance (use 'budget surplus' or 'budget deficit').",
+          "culturalContext": "The trade balance is a perennial headline issue in global politics, shaping foreign trade policy, free trade agreements, and bilateral tariff negotiations. In TOEIC Part 7, reading passages frequently feature business press articles, economic outlook summaries, or executive briefings analyzing how shifts in the trade balance affect shipping volume, multinational supply chains, and currency hedging strategies."
+        },
+        "examples": {
+          "daily": [
+            "According to the morning news report, the national trade balance shifted to an unexpected surplus due to surging agricultural exports.",
+            "Economists warned on television that currency depreciation could worsen the country's trade balance by making imported fuel far more expensive.",
+            "The economics lecturer explained how domestic consumer spending on imported electronics directly influences the monthly trade balance."
+          ],
+          "business": [
+            "The federal statistics bureau reported a positive trade balance of $4.8 billion for the third quarter, driven by strong overseas demand for semiconductor technology.",
+            "Multinational corporate planners monitor the bilateral trade balance between key markets to anticipate potential customs tariffs and regulatory revisions.",
+            "A persistent deficit in the national trade balance has placed downward pressure on the domestic currency, prompting treasury managers to execute foreign exchange hedging contracts."
+          ],
+          "conversation": [
+            "\"Did you review the quarterly dispatch from the Department of Commerce?\" / \"Yes, the trade balance narrowed significantly last month because consumer electronics imports declined.\"",
+            "\"Why is the currency trading team paying such close attention to tomorrow's trade balance report?\" / \"If merchandise exports surpass expectations, the central bank is less likely to intervene in currency markets.\"",
+            "\"How does the regional trade balance affect our supply chain expansion?\" / \"A growing trade surplus in the partner nation could provoke countervailing import duties, so we are diversifying our component suppliers.\""
+          ],
+          "collocations": [
+            "positive / favorable trade balance (surplus)",
+            "negative / unfavorable trade balance (deficit)",
+            "bilateral trade balance",
+            "merchandise trade balance",
+            "monthly / annual trade balance",
+            "narrow / widen the trade balance"
+          ]
+        },
+        "wordFamily": {
+          "noun": "trade balance, balance of trade, trader, trade",
+          "verb": "trade",
+          "adjective": "tradable / tradeable, balanced",
+          "adverb": ""
+        },
+        "visual": {
+          "imageKeyword": "trade balance shipping container port international cargo export import economy",
+          "imageDescription": "A vast deep-water container terminal with gantry cranes loading and unloading multicolored cargo containers onto massive cargo ships, with overlaid holographic graphs depicting export and import data lines converging.",
+          "mnemonic": "TRADE BALANCE: Balancing the commercial scales between what a nation EXPORTS and what it IMPORTS!"
+        },
+        "video": {
+          "description": "An educational macroeconomic video analyzing how national statistical bureaus calculate the trade balance from customs declarations, comparing the implications of trade surpluses and deficits on national currency valuation."
+        },
+        "toeicContext": {
+          "commonParts": [
+            5,
+            6,
+            7
+          ],
+          "exampleQuestion": "According to the preliminary report released by the Ministry of Commerce, the country's _____ balance shifted into a surplus last quarter following a surge in industrial machinery exports. (A) trade (B) traded (C) trader (D) trades",
+          "tips": "In TOEIC Part 5, macroeconomic compound nouns are frequently tested. In the phrase '_____ balance', the blank forms the established compound noun 'trade balance' (referring to the difference between a country's imports and exports). The base noun 'trade' (A) acts as a noun adjunct modifying 'balance'. Option (B) is a past participle, (C) is an agent noun referring to an individual, and (D) is plural."
+        },
+        "synonyms": [
+          "balance of trade",
+          "commercial balance",
+          "net export balance",
+          "merchandise trade balance",
+          "external trade balance",
+          "import-export balance"
+        ],
+        "antonyms": [
+          "autarky",
+          "economic isolationism",
+          "closed economy"
+        ],
+        "relatedWords": [
+          "trade surplus",
+          "trade deficit",
+          "current account",
+          "merchandise exports",
+          "merchandise imports",
+          "foreign exchange",
+          "tariffs"
+        ]
+      }
+    ]
+  }
+}

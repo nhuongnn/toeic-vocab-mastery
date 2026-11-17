@@ -1,0 +1,355 @@
+{
+  "words": [
+    {
+      "id": "finance-255",
+      "word": "safekeeping",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˈseɪfˌkiː.pɪŋ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/safekeeping--_us_1.mp3",
+        "syllableBreakdown": "safe-keep-ing",
+        "stressPattern": "Primary stress on the first syllable, secondary stress on the second syllable: SAFE-keep-ing (/ˈseɪfˌkiː.pɪŋ/, ●ˌ●○)",
+        "commonMistakes": "Non-native speakers frequently reduce the diphthong /eɪ/ to a short /e/ (sounding like 'sef-keeping') or omit the voiceless stop /k/ between the compound parts, slurring it into */ˈseɪ.fiː.pɪŋ/*. In listening comprehension, candidates sometimes confuse 'safekeeping' with general 'safety' or 'security'; in banking and legal contexts, 'safekeeping' specifically denotes the fiduciary act of physically storing and protecting valuable assets, deeds, collateral, or negotiable instruments on behalf of a client or institution."
+      },
+      "etymology": {
+        "origin": "Middle English compound formed from 'safe' (via Anglo-Norman sauf and Old French salf, from Latin salvus meaning 'healthy, uninjured, intact, safe') and 'keeping' (verbal noun of Middle English kepen, from Old English cēpan meaning 'to observe, heed, hold, retain, protect').",
+        "rootWord": "Latin salvus ('safe, unharmed, intact') + Old English cēpan ('to keep, hold, preserve')",
+        "rootMeaning": "'The preservation or retention of property in an intact, unharmed state'",
+        "evolution": "The individual elements merged in late Middle English (late 14th to early 15th century) as a legal and custodial phrase 'safe keeping' before solidifying into a single compound noun. In medieval English law and bailment contracts, goods or charters were delivered to a third party 'for safe keeping'. With the emergence of 17th-century London goldsmith bankers—who issued receipts for gold and title deeds entrusted to their vaults—safekeeping became a formal commercial banking service. In modern global custody and securities depository banking, it defines institutional custody of paper bearer certificates, physical bullion, mortgage deeds, and escrow documentation.",
+        "relatedLanguages": [
+          "French: garde (mise en lieu sûr / garde en coffre)",
+          "Spanish: custodia / guarda y custodia",
+          "German: Verwahrung (sichere Aufbewahrung)",
+          "Italian: custodia (deposito a custodia)"
+        ],
+        "firstRecordedUse": "Late 14th century (circa 1380–1400 in Middle English legal deeds and custodial records)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The formal act or legal arrangement of holding, protecting, and preserving physical assets, financial instruments, legal titles, or valuables in a secure custody facility (such as a bank vault, safe-deposit depository, or escrow archive) against theft, physical damage, loss, or unauthorized access on behalf of their rightful owner.",
+        "spatialContext": "Bank vaults equipped with reinforced concrete walls and biometric time-delay locks, corporate safe-deposit facilities, commercial custodial archives, escrow title offices, and institutional bullion depositories.",
+        "temporalContext": "Typically enacted during property transactions, long-term asset management, estate probate, or corporate loan underwriting when physical collateral and deed certificates must be held securely throughout the multi-year loan tenor or custody period.",
+        "emotionalTone": "Reassuring, fiduciary, prudent, vigilant, and legally protective.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native speaker, especially in financial and commercial environments, 'safekeeping' evokes images of an impenetrable bank vault, heavy safe-deposit boxes, and formal fiduciary responsibility. Unlike casual 'storage' (which suggests putting boxes in a basement or warehouse), 'safekeeping' implies high-stakes preservation of something precious, irreplaceable, or legally sensitive (e.g., gold bullion, bearer bonds, corporate deeds, emergency passport documents). It almost always appears in fixed custodial collocations like 'held in safekeeping' or 'deposited for safekeeping'.",
+        "mentalImage": "A bank custody officer wearing white archival gloves carefully sliding a lockbox containing original commercial property titles and bearer bond certificates into a reinforced steel safe-deposit chamber inside a climate-controlled subterranean bank vault.",
+        "whenToUse": "Use when describing the fiduciary custody, physical protection, and secure deposit of valuable assets, legal instruments, bearer securities, corporate seals, or precious metals (e.g., 'held by the custodian bank for safekeeping', 'deposited into escrow for safekeeping').",
+        "whenNotToUse": "Do not use for general warehousing of ordinary merchandise or routine office file storage (use 'storage' or 'archiving' instead). Do not confuse with digital cybersecurity / data privacy (use 'data security' or 'encryption').",
+        "culturalContext": "In Anglo-American commercial law and banking, 'safekeeping' is bound by the law of bailment: when a client deposits property with a financial institution for safekeeping, the bank acts as a bailee and assumes a strict duty of care without taking ownership or placing the asset onto its balance sheet (distinguishing custodial safekeeping from demand deposits that the bank can re-lend)."
+      },
+      "examples": {
+        "daily": [
+          "Before traveling overseas for an extended business trip, Sarah placed her family heirlooms and property deeds in the local bank's safe-deposit box for safekeeping.",
+          "The homeowner locked his spare car keys and emergency cash reserve inside a fireproof safe for safekeeping.",
+          "The vintage automobile collector entrusted the rare vehicle's original title and maintenance logs to an attorney for safekeeping."
+        ],
+        "business": [
+          "The commercial lender required the borrower to place the physical share certificates in an escrow vault for safekeeping until the loan was fully amortized.",
+          "Global custody accounts provide institutional investors with round-the-clock safekeeping and settlement services for physical bullion and cross-border securities.",
+          "All signed corporate merger documents and intellectual property patent certificates were delivered to the trust company for permanent safekeeping."
+        ],
+        "conversation": [
+          "\"Where are the original commercial lease agreements for our regional headquarters?\" — \"They are being held in safekeeping inside the central bank vault until the refinancing transaction closes next Thursday.\"",
+          "\"Does our custodial banking package include safekeeping for physical collateral?\" — \"Yes, the fee schedule covers dual-custody vault storage, comprehensive insurance underwriting, and quarterly inventory audits for safekeeping.\"",
+          "\"Should we leave the company seal and registered bearer certificates in the executive office safe?\" — \"No, company compliance protocols mandate that they be deposited with our external trust agent for safekeeping.\""
+        ],
+        "collocations": [
+          "held in safekeeping",
+          "deposit for safekeeping",
+          "entrusted for safekeeping",
+          "safekeeping of assets",
+          "safekeeping fees",
+          "safekeeping receipt"
+        ]
+      },
+      "wordFamily": {
+        "noun": "safekeeping, keeper, keepsake",
+        "verb": "keep safe",
+        "adjective": "safe, kept",
+        "adverb": "safely"
+      },
+      "visual": {
+        "imageKeyword": "bank vault safe deposit box custody fiduciary documents gold bullion safekeeping",
+        "imageDescription": "A bank fiduciary officer opening a heavy circular stainless steel vault door, revealing rows of polished numbered safe-deposit boxes containing sealed custodial pouches.",
+        "mnemonic": "SAFEKEEPING: It is literally KEEPING something completely SAFE inside an iron vault so no harm, fire, or theft can ever touch it!"
+      },
+      "video": {
+        "description": "A documentary tour inside a major Swiss custody vault, illustrating how bank officers verify, catalog, seal, and log physical bullion and valuable securities certificates deposited for long-term safekeeping."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Original property deeds and collateral certificates must be submitted to the corporate trust department for _______ until the outstanding balance on the commercial mortgage is settled in full.\n(A) safekeeping\n(B) safely\n(C) safer\n(D) safeguard",
+        "tips": "In TOEIC Part 5, test writers often test noun complementation after prepositions. Following the preposition 'for', a noun is required. The established banking collocation is 'for safekeeping' (A). Distractor (B) 'safely' is an adverb; (C) 'safer' is a comparative adjective; (D) 'safeguard' functions primarily as a verb or countable noun that would typically require a determiner ('a safeguard') and does not form the standard custodial idiom 'for safekeeping'."
+      },
+      "synonyms": [
+        "custody",
+        "safe custody",
+        "guardianship",
+        "protection",
+        "preservation",
+        "care"
+      ],
+      "antonyms": [
+        "neglect",
+        "abandonment",
+        "endangerment",
+        "exposure",
+        "misplacement"
+      ],
+      "relatedWords": [
+        "custodian",
+        "vault",
+        "safe-deposit box",
+        "bailment",
+        "escrow",
+        "collateral",
+        "depository"
+      ]
+    },
+    {
+      "id": "finance-256",
+      "word": "salary",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˈsæl.ɚ.i/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/salary--_us_1.mp3",
+        "syllableBreakdown": "sal-a-ry",
+        "stressPattern": "Primary stress on the first syllable: SAL-a-ry (/ˈsæl.ɚ.i/, ●○○)",
+        "commonMistakes": "Learners often mispronounce the first vowel as /ɑː/ or /ʌ/ (*'sah-la-ry'* or *'suh-la-ry'*) instead of the short front /æ/ as in 'cat'. Additionally, non-native speakers frequently confuse 'salary' (fixed annual or monthly compensation paid to exempt professional staff) with 'wage' (compensation calculated on an hourly or daily basis, typically for non-exempt or manual labor) or 'remuneration' (the formal umbrella term encompassing salary, bonuses, pensions, and perks)."
+      },
+      "etymology": {
+        "origin": "Middle English salarie, borrowed from Anglo-Norman salarie and Old French salaire, directly from Latin salārium, originally meaning 'salt money' or an allowance given to Roman soldiers to purchase salt, derived from sāl ('salt').",
+        "rootWord": "Latin salārium ('stipend, salt allowance'), from sāl ('salt')",
+        "rootMeaning": "'An allowance provided for the purchase of salt, an essential preservation and dietary commodity'",
+        "evolution": "In the Roman Empire, salt was an indispensable and valuable commodity for food preservation and health. Soldiers were granted an allowance (salārium argentum) to purchase salt, or occasionally received rations of salt itself. Over centuries in Roman civil law and early feudal Europe, the word broadened to designate any regular stipend or fixed maintenance payment for imperial officials and magistrates. In 14th-century Middle English, it became the standard term for regular fixed compensation paid to individuals holding non-manual offices or professional stations. Modern corporate law codifies salary as fixed periodic compensation paid to exempt employees regardless of exact hours worked in a payroll cycle.",
+        "relatedLanguages": [
+          "French: salaire",
+          "Spanish: salario",
+          "German: Salär (or Gehalt)",
+          "Italian: salario"
+        ],
+        "firstRecordedUse": "Late 13th to early 14th century (circa 1300–1340 in Middle English legal charters and labor agreements)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A fixed, regular payment typically expressed as an annual sum and disbursed on a periodic schedule (e.g., biweekly or monthly) by an employer to an employee, irrespective of the exact number of hours worked, characteristic of professional, managerial, and salaried positions.",
+        "spatialContext": "Corporate payroll offices, human resources departments, electronic direct-deposit clearing systems, employment offer letters, and annual compensation review meetings.",
+        "temporalContext": "Calculated on an annualized basis and disbursed on a fixed calendar frequency (monthly, semimonthly, or biweekly); adjusted during annual performance reviews or upon contract renegotiation.",
+        "emotionalTone": "Professional, stability-inducing, contractual, and equitable.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers in the corporate world, 'salary' signifies white-collar professional status and financial stability. Unlike hourly workers who punch a timecard and earn overtime pay ('wages'), a salaried employee receives the exact same base paycheck every pay period whether they work 35 or 55 hours in a given week. Native speakers associate salary with career progression, annual compensation packages, benefits eligibility, and baseline financial security (e.g., qualifying for a home mortgage).",
+        "mentalImage": "A human resources director sliding a formal written employment contract across an executive desk, pointing to a highlighted compensation clause stating an annual base salary of $115,000 alongside health benefits and retirement matching.",
+        "whenToUse": "Use when referring to fixed, periodic compensation for full-time, professional, administrative, or managerial employees whose earnings are quoted on an annual or monthly basis.",
+        "whenNotToUse": "Do not use when referring to hourly compensation for shift workers, factory personnel, or tradespeople (use 'wages' or 'hourly rate'). Do not use for one-time commissions, royalties, or freelance project fees (use 'commission', 'fee', or 'stipend').",
+        "culturalContext": "In Western labor markets (e.g., US Fair Labor Standards Act), salaried employees are frequently classified as 'exempt' from overtime regulations, meaning they do not receive time-and-a-half pay for hours worked over forty. In Anglo-American culture, discussing one's exact salary with peers was historically taboo, but modern salary transparency legislation in jurisdictions like California, New York, and the UK now legally mandates publishing salary ranges on public job postings."
+      },
+      "examples": {
+        "daily": [
+          "After graduating with a degree in software engineering, Marcus accepted a job offer with a starting salary of eighty-five thousand dollars.",
+          "She set up automatic transfers on payday so a portion of her monthly salary went straight into her retirement savings account.",
+          "The job listing clearly stated the salary range so candidates could determine if the position matched their financial expectations before applying."
+        ],
+        "business": [
+          "The compensation committee approved a six percent base salary increase for all department heads based on the company's strong annual performance.",
+          "In compliance with state pay transparency laws, the corporation now lists competitive salary ranges on all public job requisitions.",
+          "Executive employment contracts typically tie annual salary adjustments to measurable corporate revenue and operating margin milestones."
+        ],
+        "conversation": [
+          "\"Did the hiring manager mention whether the quoted salary includes annual performance bonuses?\" — \"No, that figure represents base salary only; performance incentives and equity options are negotiated separately.\"",
+          "\"Why is our departmental payroll variance higher than anticipated this quarter?\" — \"We added three mid-level systems analysts to our salaried headcount and adjusted two senior engineer salaries to match industry benchmarks.\"",
+          "\"Are you open to negotiating the initial salary offer?\" — \"Yes, based on my ten years of experience in enterprise risk management, I was hoping to discuss a base salary closer to the upper quartile of the posted band.\""
+        ],
+        "collocations": [
+          "base salary",
+          "competitive salary",
+          "salary increase / salary raise",
+          "salary range / salary band",
+          "salary negotiation",
+          "annual salary"
+        ]
+      },
+      "wordFamily": {
+        "noun": "salary",
+        "verb": "salary",
+        "adjective": "salaried",
+        "adverb": "N/A"
+      },
+      "visual": {
+        "imageKeyword": "employment offer letter base salary compensation human resources contract desk",
+        "imageDescription": "A professional job applicant and a corporate HR manager reviewing a printed compensation agreement showing annual base salary figures and employment benefits.",
+        "mnemonic": "SALARY comes from the Latin word for SALT (sal). Roman soldiers were paid money to buy precious salt; today, a SALARY is the essential bread-and-butter money that sustains your livelihood!"
+      },
+      "video": {
+        "description": "A human resources compensation webinar detailing how global corporations structure base salary bands, evaluate job market benchmarks, and design competitive total compensation packages."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Due to exceptional corporate earnings in the fiscal year, Apex Technologies announced a four percent _______ increase for all permanent full-time personnel.\n(A) salariness\n(B) salary\n(C) salaried\n(D) salaries",
+        "tips": "TOEIC Parts 5 and 7 constantly test compound nouns related to employee compensation. In the compound noun phrase '_______ increase', the singular noun 'salary' (B) serves as a noun adjunct modifying 'increase'. Choice (C) 'salaried' is an adjective (used to describe employees, as in 'salaried staff'), (A) is a non-existent word, and (D) 'salaries' is plural, whereas singular nouns are typically used when acting as noun adjuncts in standard compound terms like 'salary increase' or 'salary deduction'."
+      },
+      "synonyms": [
+        "earnings",
+        "pay",
+        "remuneration",
+        "compensation",
+        "stipend",
+        "emolument"
+      ],
+      "antonyms": [
+        "deduction",
+        "penalty",
+        "unpaid labor"
+      ],
+      "relatedWords": [
+        "wage",
+        "payroll",
+        "compensation package",
+        "fringe benefit",
+        "severance",
+        "bonus",
+        "paycheck"
+      ]
+    },
+    {
+      "id": "finance-257",
+      "word": "salvage value",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˈsæl.vɪdʒ ˌvæl.juː/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/salvage_value--_us_1.mp3",
+        "syllableBreakdown": "sal-vage val-ue",
+        "stressPattern": "Primary stress on first syllable of salvage, secondary stress on first syllable of value: SAL-vage VAL-ue (/ˈsæl.vɪdʒ ˌvæl.juː/, ●○ ˌ●○)",
+        "commonMistakes": "Learners often mispronounce the second syllable of 'salvage', saying */ˈsæl.veɪdʒ/* instead of the unstressed /vɪdʒ/ or /vədʒ/. In accounting contexts, students frequently confuse 'salvage value' with 'book value' or 'market value'. Book value is the asset's original acquisition cost minus accumulated depreciation at any given point during its operational life, whereas 'salvage value' is strictly the projected resale or scrap residual value expected at the very end of the asset's useful life."
+      },
+      "etymology": {
+        "origin": "English compound formed from 'salvage' (from Middle French salvage, derived from Old French salver 'to save', from Late Latin salvāre, from Latin salvus 'safe, unharmed') and 'value' (from Old French value, noun use of feminine past participle of valoir 'to be worth', from Latin valēre 'to be strong, be of worth').",
+        "rootWord": "Latin salvāre ('to save, preserve') + valēre ('to be strong, be worth')",
+        "rootMeaning": "'The worth or monetary recovery retained from saving an asset at the conclusion of its service'",
+        "evolution": "Historically, 'salvage' originated in maritime admiralty law during the 17th century to denote compensation awarded to persons who voluntarily rescued ships or cargo from shipwreck or naval destruction. In early industrial manufacturing and 19th-century railway bookkeeping, engineers and accountants adapted the concept to industrial equipment: when locomotives, steam engines, and heavy plant machinery reached the end of their operational service lives, their remaining scrap metal, components, or resale parts possessed a residual recoverable worth. In modern corporate accounting standards (GAAP and IFRS), 'salvage value' (often termed residual value) was formally institutionalized as an essential component of depreciation formulas (such as straight-line and units-of-production depreciation), representing the estimated realizable proceeds upon the asset's retirement.",
+        "relatedLanguages": [
+          "French: valeur de récupération (valeur résiduelle)",
+          "Spanish: valor residual / valor de salvamento",
+          "German: Restwert (Schrottwert)",
+          "Italian: valore di recupero (valore residuo)"
+        ],
+        "firstRecordedUse": "Late 19th century (circa 1880–1895 in industrial railway engineering and corporate capital accounting treatises)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The estimated residual resale or scrap amount that a company expects to recover from the disposal, sale, or trade-in of a capital asset at the conclusion of its useful operational lifespan, used to determine the total depreciable base in financial accounting.",
+        "spatialContext": "Corporate accounting departments, enterprise resource planning (ERP) fixed asset sub-ledgers, capital expenditure appraisal worksheets, industrial machinery auction floors, and financial audit schedules.",
+        "temporalContext": "Estimated at the initial capitalization date of the tangible asset, tracked across the asset's multi-year operational life cycle (typically 3 to 30 years), and realized upon final decommissioning, scrap sale, or asset trade-in.",
+        "emotionalTone": "Analytical, prudent, cost-conscious, calculating, and forward-looking.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To accountants and corporate financial controllers, 'salvage value' is a mathematical cornerstone of capital budgeting and fixed asset accounting. When a company buys a fleet of delivery trucks or semiconductor machinery for $500,000, they know it won't be worthless when they replace it in seven years. Native accountants think of salvage value as the 'floor' below which an asset cannot be depreciated. Subtracting salvage value from the original purchase price yields the depreciable cost, preventing the company from over-depreciating its balance sheet assets.",
+        "mentalImage": "A corporate asset accountant reviewing a fixed asset ledger on an ERP screen, calculating straight-line depreciation for twenty commercial delivery vans by subtracting an estimated salvage value of $8,000 per vehicle from the original invoice purchase price.",
+        "whenToUse": "Use when calculating depreciation schedules (straight-line, sum-of-the-years'-digits), preparing asset disposal entries, evaluating capital expenditure return on investment (ROI), or appraising trade-in residual value for fixed tangible assets (machinery, vehicles, office equipment, buildings).",
+        "whenNotToUse": "Do not use for intangible assets like patents or trademarks (which undergo amortization and almost universally have a zero residual value). Do not confuse with current 'market value' (what an asset is worth today mid-life) or 'replacement cost' (what it costs to buy a new equivalent asset).",
+        "culturalContext": "Under both US GAAP (ASC 360) and International Financial Reporting Standards (IAS 16), calculating salvage value (interchangeably referred to in IFRS as 'residual value') requires reasonable, substantiated estimates. If management overestimates salvage value, annual depreciation expense is artificially depressed, inflating reported net income—a red flag that corporate auditors scrutinize heavily during fiscal audits."
+      },
+      "examples": {
+        "daily": [
+          "When estimating the long-term cost of buying a new commuter car, Daniel calculated its probable salvage value after ten years of driving.",
+          "The construction contractor decided to sell his ten-year-old forklift for its salvage value after purchasing a modern hydraulic model.",
+          "Even after years of heavy wear, the stainless steel brewing equipment retained considerable salvage value because of the high scrap price of industrial alloys."
+        ],
+        "business": [
+          "Under the straight-line depreciation method, the manufacturing plant's depreciable cost was computed by subtracting a fifty-thousand-dollar salvage value from the total acquisition price.",
+          "The internal audit team noted that management had overestimated the salvage value of the older delivery fleet, necessitating an adjusting journal entry.",
+          "At the end of their five-year operational lifespan, the enterprise server racks will be decommissioned and liquidated for their scrap salvage value."
+        ],
+        "conversation": [
+          "\"Why is the annual depreciation charge on our new CNC lathe lower than expected?\" — \"We factored in an estimated salvage value of twenty-five thousand dollars, which reduces the total depreciable base over its ten-year useful life.\"",
+          "\"What happens if we sell the manufacturing machinery for more than its estimated salvage value upon retirement?\" — \"Any proceeds realized above the net book value at disposal will be recorded on the income statement as a gain on asset sale.\"",
+          "\"Did the equipment appraiser establish a realistic salvage value for our transport trucks?\" — \"Yes, she benchmarked secondary heavy-vehicle auction data to set a conservative salvage value of twelve percent of original cost.\""
+        ],
+        "collocations": [
+          "estimated salvage value",
+          "calculate salvage value",
+          "zero salvage value",
+          "residual salvage value",
+          "scrap salvage value",
+          "salvage value of an asset"
+        ]
+      },
+      "wordFamily": {
+        "noun": "salvage value, salvage, salvor",
+        "verb": "salvage, value",
+        "adjective": "salvageable, valued",
+        "adverb": "N/A"
+      },
+      "visual": {
+        "imageKeyword": "fixed asset depreciation calculation spreadsheet industrial machinery salvage value",
+        "imageDescription": "A financial analyst pointing at a dual-monitor display featuring a fixed-asset depreciation schedule with columns showing historical cost, accumulated depreciation, and estimated salvage value.",
+        "mnemonic": "SALVAGE VALUE: What can you SALVAGE (rescue/recover in dollars) from an old machine when its working life is totally over? That leftover scrap worth is its SALVAGE VALUE!"
+      },
+      "video": {
+        "description": "A corporate accounting tutorial demonstrating how to calculate straight-line and double-declining balance depreciation, highlighting the role of estimated salvage value in establishing an asset's depreciable base."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Accounting guidelines require controllers to deduct the estimated _______ value of industrial equipment from its purchase price before calculating annual straight-line depreciation.\n(A) salvaging\n(B) salvage\n(C) salvaged\n(D) salvages",
+        "tips": "In TOEIC Part 5 financial accounting questions, compound technical terms are tested frequently. 'Salvage value' is a fixed accounting noun phrase where 'salvage' (B) acts as a noun adjunct modifying 'value'. Participial forms like (A) 'salvaging' and (C) 'salvaged' do not form the standard accounting terminology, and (D) 'salvages' is a plural noun or third-person verb unsuitable as a noun modifier here."
+      },
+      "synonyms": [
+        "residual value",
+        "scrap value",
+        "breakup value",
+        "disposal value",
+        "terminal value",
+        "trade-in value"
+      ],
+      "antonyms": [
+        "initial purchase price",
+        "original acquisition cost",
+        "replacement cost"
+      ],
+      "relatedWords": [
+        "depreciation",
+        "depreciable base",
+        "useful life",
+        "book value",
+        "capital asset",
+        "liquidation",
+        "fixed asset"
+      ]
+    }
+  ]
+}

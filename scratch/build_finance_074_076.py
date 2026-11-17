@@ -1,0 +1,320 @@
+import json
+import re
+
+words_data = [
+    {
+        "id": "finance-074",
+        "word": "assessment",
+        "partOfSpeech": ["noun"],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/əˈses.mənt/",
+            "syllableBreakdown": "as-sess-ment",
+            "stressPattern": "Second syllable stress (as-SESS-ment)",
+            "commonMistakes": "Learners often pronounce the first unstressed syllable as /æ/ ('ass-') rather than the neutral schwa /ə/ ('uh-'). Additionally, some pronounce the suffix '-ment' with a full vowel /mænt/ instead of /mənt/.",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/assessment--_us_1.mp3"
+        },
+        "etymology": {
+            "origin": "Anglo-Norman & Old French via Latin",
+            "rootWord": "assidere / assesser",
+            "rootMeaning": "to sit beside, assist a judge in fixing a value or tax",
+            "evolution": "Originates from Latin 'assidere' (literally 'to sit beside', from ad- 'to' + sedere 'to sit'). In the Roman legal and administrative system, an 'assessor' was an official who sat alongside a magistrate to evaluate evidence and calculate fines or property values. This passed into Anglo-Norman as 'assesser' (to fix an assessment or levy a tax). By the 16th century in England, it meant the official calculation and setting of taxes. During the 19th and 20th centuries, its scope broadened from governmental taxation to general corporate valuation, credit risk measurement, and systematic project feasibility analysis.",
+            "relatedLanguages": [
+                "French: évaluation / assiette",
+                "Spanish: tasación / evaluación",
+                "Italian: accertamento / stima",
+                "German: Einschätzung / Bewertung"
+            ],
+            "firstRecordedUse": "1530s (in the context of determining and levying taxes or property values)"
+        },
+        "deepMeaning": {
+            "coreConcept": "The systematic, evidence-based process of evaluating and calculating the monetary value, financial condition, risk exposure, or tax liability of an asset, organization, or proposed investment.",
+            "spatialContext": "Underwriting offices, credit rating agency analysis rooms, corporate merger and acquisition war rooms, municipal property tax appraisal offices, and financial modeling software spreadsheets.",
+            "temporalContext": "Conducted prior to capital expenditures, during annual property tax cycles, throughout pre-acquisition due diligence, or following severe macroeconomic shifts that alter asset valuations.",
+            "emotionalTone": "Analytical, methodical, objective, and prudent.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native speakers view an 'assessment' as a deliberate, structured, and quantitative judgment backed by collected data—never a casual hunch or subjective opinion. When financial professionals mention an assessment, they expect criteria, metrics, spreadsheets, and defensible benchmark ratings (such as a 'credit risk assessment' or 'tax assessment').",
+            "mentalImage": "A commercial real estate appraiser walking through an industrial park with digital floor plans and valuation tables, measuring square footage and evaluating structural condition to produce a formal property tax valuation report.",
+            "whenToUse": "Use when describing formal evaluations of monetary worth, financial viability, default risk, or municipal tax obligations (e.g., 'credit assessment', 'property assessment', 'damage assessment', 'risk assessment').",
+            "whenNotToUse": "Do not use 'assessment' for informal personal impressions (use 'opinion' or 'impression'). Distinguish from 'audit', which is an official backward-looking examination of accounting records to verify accuracy and compliance; an assessment evaluates current worth, overall quality, or future exposure.",
+            "culturalContext": "In the United States and Commonwealth countries, local government operations are funded heavily by annual real estate property assessments. Furthermore, corporate borrowing terms are heavily dictated by credit rating agency assessments (e.g., Fitch, Moody's, S&P). Condominium and homeowners associations also issue 'special assessments'—mandatory lump-sum fees charged to owners for unexpected major capital repairs."
+        },
+        "examples": {
+            "daily": [
+                "The city assessor mailed an annual property assessment showing our home's valuation had risen by seven percent.",
+                "Before purchasing the used delivery van, the contractor took it to a specialty garage for a mechanical and safety assessment.",
+                "Residents in the beachfront condominium were shocked by an emergency assessment of $3,500 each to rebuild the seawall."
+            ],
+            "business": [
+                "The credit committee completed its risk assessment of the logistics company before approving the ten-million-dollar line of credit.",
+                "Following an independent valuation assessment, the private equity firm adjusted its buyout offer to account for rising debt servicing costs.",
+                "The chief risk officer presented an enterprise-wide assessment outlining the potential financial fallout of supply chain disruptions in East Asia."
+            ],
+            "conversation": [
+                "\"Has the underwriter finalized the credit assessment for the commercial mortgage application?\" — \"Yes, the loan-to-value ratio is well within our bank's risk threshold, so approval should be issued today.\"",
+                "\"Why did our regional distribution center receive such a massive tax bill this quarter?\" — \"The municipal government just completed a countywide property assessment, and industrial land values spiked sharply.\""
+            ],
+            "collocations": [
+                "risk assessment",
+                "tax assessment",
+                "preliminary assessment",
+                "conduct an assessment",
+                "impact assessment",
+                "comprehensive assessment"
+            ]
+        },
+        "wordFamily": {
+            "noun": "assessment",
+            "verb": "assess",
+            "adjective": "assessable",
+            "adverb": "assessably"
+        },
+        "visual": {
+            "imageKeyword": "financial risk assessment analyst spreadsheet graphs",
+            "imageDescription": "A senior credit analyst examining multi-layered financial charts and risk assessment matrices on dual monitors in a corporate banking office, holding a digital tablet with underwriting metrics.",
+            "mnemonic": "ASSESS comes from Latin 'assidere'—sitting beside the magistrate to judge value. An ASSESSMENT sits beside the numbers to calculate true worth!"
+        },
+        "video": {
+            "description": "A concise corporate finance tutorial demonstrating how commercial banks perform credit risk assessments on mid-sized corporate borrowers using financial ratios and cash flow projections."
+        },
+        "toeicContext": {
+            "commonParts": [5, 6, 7],
+            "exampleQuestion": "Following a comprehensive ________ of the plant's production overhead, the consulting team suggested consolidating warehousing facilities to eliminate redundant operational expenditures.\n(A) assess\n(B) assessment\n(C) assessable\n(D) assessably",
+            "tips": "In Part 5 grammar questions, determine the missing part of speech by analyzing the surrounding sentence architecture. Following the indefinite article 'a' and the modifying adjective 'comprehensive', the sentence structure requires a singular count noun to serve as the object of the preposition 'Following'. Choice (B) 'assessment' is the noun form. Choices (A) is a base verb, (C) is an adjective, and (D) is an adverb."
+        },
+        "synonyms": [
+            "evaluation",
+            "appraisal",
+            "valuation",
+            "estimation",
+            "analysis",
+            "rating"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "appraisal",
+            "due diligence",
+            "underwriting",
+            "creditworthiness",
+            "valuation",
+            "risk profile",
+            "depreciation"
+        ]
+    },
+    {
+        "id": "finance-075",
+        "word": "auditing",
+        "partOfSpeech": ["noun"],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/ˈɔː.dɪ.tɪŋ/",
+            "syllableBreakdown": "au-dit-ing",
+            "stressPattern": "First syllable stress (AU-dit-ing)",
+            "commonMistakes": "Learners often pronounce the initial diphthong 'au' as /aʊ/ (rhyming with 'cow') instead of the open-mid back /ɔː/ or /ɑː/. Additionally, some pronounce the final '-ing' as an over-emphasized /ɪŋɡ/ or drop the /g/ entirely into an informal /ɪn/.",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/auditing--_us_1.mp3"
+        },
+        "etymology": {
+            "origin": "Latin via Old French and Middle English",
+            "rootWord": "audire",
+            "rootMeaning": "to hear, to listen officially",
+            "evolution": "Derives from Latin 'audire' (to hear) through the stem 'audit-' and noun 'auditus' (a hearing). In medieval Europe, estate stewards and bailiffs gave oral recitations of revenue collected and grain stored before an assembly of appointed lords, because most people could not read written ledgers. This formal hearing was called an 'audit'. By the Industrial Revolution and the birth of modern double-entry bookkeeping, the term shifted from oral recitation to the rigorous documentary inspection and analytical verification of financial accounts, internal controls, and compliance procedures.",
+            "relatedLanguages": [
+                "French: audit / révision comptable",
+                "Spanish: auditoría",
+                "Italian: revisione contabile",
+                "German: Wirtschaftsprüfung / Rechnungsprüfung"
+            ],
+            "firstRecordedUse": "Late 16th century (circa 1590s, referring to the formal procedural examination of accounts)"
+        },
+        "deepMeaning": {
+            "coreConcept": "The systematic, disciplined process of examining, verifying, and evaluating an organization's accounting books, internal control mechanisms, and statutory financial statements to ensure accuracy, regulatory compliance, and freedom from material misstatement or fraud.",
+            "spatialContext": "Dedicated client audit rooms at corporate headquarters, Big Four accounting firm workspaces, corporate controllership offices, and secure digital cloud ledger review platforms.",
+            "temporalContext": "Conducted continuously via ongoing internal control audits, and culminating annually in statutory year-end audit cycles ('busy season') prior to shareholder meetings and 10-K filings.",
+            "emotionalTone": "Rigorous, objective, skeptical, methodical, and authoritative.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To a native speaker, 'auditing' denotes an independent, unflinching verification process designed to catch human error, structural loopholes, or deliberate fraud. It is not creative work; it is investigative, methodical, and governed by strict standardized rules (GAAP, GAAS, IFRS). Hearing that a company is undergoing external auditing is seen as routine governance, whereas hearing that an individual is facing IRS auditing triggers immediate stress.",
+            "mentalImage": "An audit team assembled in a client's glass conference room, cross-referencing physical vendor invoices, shipping receipts, and digital bank statements against ledger entries using automated sample verification software.",
+            "whenToUse": "Use when referring to the formalized discipline, process, or regulatory activity of reviewing and certifying accounts, processes, or quality management systems (e.g., 'internal auditing', 'forensic auditing', 'environmental auditing', 'auditing standards').",
+            "whenNotToUse": "Do not confuse with 'accounting' or 'bookkeeping'. Bookkeeping records daily transactions, and accounting prepares the financial statements. Auditing is the independent review and certification of those compiled records. Also, do not use 'auditing' when you simply mean 'proofreading' a document or 'watching' a seminar.",
+            "culturalContext": "In US corporate law, the Sarbanes-Oxley Act of 2002 (SOX) transformed corporate auditing by holding corporate executives criminally liable for inaccurate financial reports and mandating strict internal control auditing. In the TOEIC exam, auditing frequently appears in Part 7 memos, audit committee announcements, and policy compliance emails."
+        },
+        "examples": {
+            "daily": [
+                "After graduating with a master's degree in accounting, Marcus accepted an entry-level position in the auditing division of a regional firm.",
+                "Our community sports league hired an independent bookkeeper experienced in auditing to confirm that all youth tournament fees were properly accounted for.",
+                "She spent the weekend organizing shoeboxes of paper receipts after receiving a formal notice from the state taxation agency regarding an auditing review."
+            ],
+            "business": [
+                "The multinational retail chain upgraded its inventory management software to facilitate real-time internal auditing across all distribution centers.",
+                "The board of directors formed a special committee to oversee external auditing procedures and safeguard against conflicts of interest with the consulting arm.",
+                "Strict compliance with International Standards on Auditing enabled the energy conglomerate to secure an unqualified audit opinion from its independent inspectors."
+            ],
+            "conversation": [
+                "\"How is the year-end financial auditing progressing with the outside accounting firm?\" — \"They just concluded their sampling of accounts payable and reported no material discrepancies.\"",
+                "\"Why has the IT department implemented two-factor authentication on our expense submission software?\" — \"The internal auditing team required enhanced security logs to prevent unauthorized budget approvals.\""
+            ],
+            "collocations": [
+                "internal auditing",
+                "external auditing",
+                "forensic auditing",
+                "auditing standards",
+                "auditing procedures",
+                "auditing firm"
+            ]
+        },
+        "wordFamily": {
+            "noun": "auditing",
+            "verb": "audit",
+            "adjective": "audited"
+        },
+        "visual": {
+            "imageKeyword": "financial auditing internal controls accountant ledger verification",
+            "imageDescription": "A professional auditor in formal business attire comparing printed invoice vouchers with digital ledger columns on a dual-screen monitor, with color-coded audit checklists and a financial calculator on the mahogany table.",
+            "mnemonic": "AUDIT-ING is LISTEN-ING to what the accounts say! Listen carefully and verify every single dollar!"
+        },
+        "video": {
+            "description": "An informative documentary segment detailing the procedures and rigorous testing protocols that internal auditing teams employ to uncover accounting discrepancies in corporate mergers."
+        },
+        "toeicContext": {
+            "commonParts": [3, 4, 5, 7],
+            "exampleQuestion": "To ensure strict compliance with newly enacted securities regulations, the financial services firm retained a consulting agency specializing in forensic ________ to review its overseas transactions.\n(A) audibly\n(B) auditing\n(C) audible\n(D) audios",
+            "tips": "In TOEIC Part 5 questions, compound noun phrases and adjective-noun combinations are regularly tested. Following the adjective 'forensic' and functioning as the object of the preposition 'in', the blank requires a noun designating a professional field or process. Choice (B) 'auditing' correctly completes the recognized professional term 'forensic auditing'. Choice (A) is an adverb, choice (C) is an adjective meaning 'able to be heard', and choice (D) is a plural noun referring to sound recordings."
+        },
+        "synonyms": [
+            "financial examination",
+            "accounting inspection",
+            "formal verification",
+            "scrutiny",
+            "reconciliation",
+            "regulatory review"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "compliance",
+            "forensic accounting",
+            "internal controls",
+            "material misstatement",
+            "discrepancy",
+            "Sarbanes-Oxley",
+            "voucher"
+        ]
+    },
+    {
+        "id": "finance-076",
+        "word": "auditor",
+        "partOfSpeech": ["noun"],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/ˈɔː.dɪ.tər/",
+            "syllableBreakdown": "au-di-tor",
+            "stressPattern": "First syllable stress (AU-di-tor)",
+            "commonMistakes": "Learners frequently misplace stress on the second syllable (*aw-DI-tor*), which is incorrect in standard English. Others mispronounce the final syllable as a heavy /tɔːr/ instead of the unstressed schwa /tər/, or pronounce the initial 'au' as /aʊ/ (like 'out').",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/auditor--_us_1.mp3"
+        },
+        "etymology": {
+            "origin": "Latin via Anglo-Norman and Middle English",
+            "rootWord": "auditor / audire",
+            "rootMeaning": "a hearer, listener (from audire 'to hear')",
+            "evolution": "Formed directly in classical Latin as 'auditor' (a hearer, listener, pupil), derived from 'audire' (to hear) combined with the agent suffix '-tor'. In medieval feudal England (13th–14th century), royal exchequers and landed nobility appointed sworn officials called 'auditors' to listen to oral accounts and render judgment on rents and yields presented by estate bailiffs. As commercial transactions moved to formal books and ledgers, the title was retained for licensed professionals officially tasked with examining and certifying documentary accounts.",
+            "relatedLanguages": [
+                "French: auditeur",
+                "Spanish: auditor",
+                "Italian: revisore dei conti / auditore",
+                "German: Rechnungsprüfer / Wirtschaftsprüfer"
+            ],
+            "firstRecordedUse": "Late 14th century (circa 1380s in Middle English for a person officially appointed to examine financial accounts)"
+        },
+        "deepMeaning": {
+            "coreConcept": "A qualified professional or independent official authorized to examine, verify, and report on the accuracy, integrity, and regulatory compliance of an organization's financial statements and operational systems.",
+            "spatialContext": "Client executive boardrooms, corporate workstations during field audits, public accounting offices (such as the Big Four), and government tax agency inspection offices.",
+            "temporalContext": "Most intensely engaged during annual corporate audit seasons (January to April for calendar fiscal years), during quarterly interim reviews, or upon being appointed for special forensic investigations.",
+            "emotionalTone": "Objective, skeptical, meticulous, impartial, and authoritative.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native English speakers distinguish between internal auditors (corporate employees who report directly to the audit committee of the board of directors to ensure process adherence) and external auditors (independent certified public accountants who issue opinions to external shareholders and the SEC). An auditor is viewed as a financial watchdog whose professional reputation depends entirely upon neutrality and rigorous skepticism.",
+            "mentalImage": "A licensed CPA carrying a security-encrypted laptop and audit briefcase into an executive conference room, interviewing the corporate treasurer while reviewing bank confirmation letters and reconciliation schedules.",
+            "whenToUse": "Use when referring to an individual or firm designated to inspect and certify financial ledgers, tax filings, or quality management systems (e.g., 'independent auditor', 'lead auditor', 'internal auditor', 'IRS auditor').",
+            "whenNotToUse": "Do not confuse with an 'accountant' or 'bookkeeper'. An accountant prepares and maintains daily accounting records and drafts statements, whereas an auditor independently reviews, tests, and validates those statements. Do not use for a general inspector unless explicitly specified (e.g., 'safety auditor').",
+            "culturalContext": "In corporate governance, appointing an independent external auditor is a statutory requirement for publicly listed companies on the New York Stock Exchange and London Stock Exchange. The auditor's formal opinion—whether unqualified ('clean') or qualified—can cause a company's market capitalization to fluctuate dramatically."
+        },
+        "examples": {
+            "daily": [
+                "The tax auditor requested that small business owner provide bank statements and fuel receipts going back three years.",
+                "Elena studied twelve hours a day to pass her uniform CPA exam and become a certified auditor at a national firm.",
+                "An independent safety and financial auditor visited the regional airport to inspect maintenance logs and capital expenditure records."
+            ],
+            "business": [
+                "The lead external auditor met with the audit committee to present findings regarding the corporation's inventory valuation models.",
+                "To prevent conflicts of interest, corporate governance rules mandate that the board rotate its lead engagement auditor every five years.",
+                "The internal auditor discovered an unauthorized override of payment limits and immediately reported the breach to executive leadership."
+            ],
+            "conversation": [
+                "\"Has the external auditor concluded the on-site fieldwork for our fourth-quarter review?\" — \"Yes, they are drafting their final report and expect to issue a clean opinion on Friday.\"",
+                "\"Why did our department supervisor ask for original physical receipts from last month's travel?\" — \"The company's internal auditor is conducting random expense spot-checks across all regional sales branches.\""
+            ],
+            "collocations": [
+                "external auditor",
+                "internal auditor",
+                "independent auditor",
+                "lead auditor",
+                "tax auditor",
+                "auditor's report"
+            ]
+        },
+        "wordFamily": {
+            "noun": "auditor",
+            "verb": "audit",
+            "adjective": "audited"
+        },
+        "visual": {
+            "imageKeyword": "corporate auditor CPA review balance sheet executive office",
+            "imageDescription": "A professional auditor in modern corporate business attire reviewing financial binders and digital ledgers alongside a corporate controller in a brightly lit glass conference room.",
+            "mnemonic": "An AUDITOR is an official LISTENER ('audire') who listens to what the financial records say and ensures they tell the honest truth!"
+        },
+        "video": {
+            "description": "A professional orientation video showing how a lead auditor plans and coordinates the multi-stage verification of a corporation's balance sheet accounts with an audit team."
+        },
+        "toeicContext": {
+            "commonParts": [3, 4, 5, 7],
+            "exampleQuestion": "The board of directors agreed to retain an independent ________ to conduct an impartial evaluation of the company's annual financial statements.\n(A) auditor\n(B) audit\n(C) auditing\n(D) audibly",
+            "tips": "TOEIC Part 5 frequently tests the distinction between human agent nouns (such as 'auditor', 'supervisor', 'inspector') and action or abstract nouns (such as 'audit', 'auditing'). Here, following the indefinite article 'an' and the adjective 'independent', and acting as the entity capable of human action ('to conduct an impartial evaluation'), the context requires the human agent noun (A) 'auditor'. The action noun 'audit' cannot 'conduct' an evaluation."
+        },
+        "synonyms": [
+            "examiner",
+            "inspector",
+            "evaluator",
+            "scrutinizer",
+            "independent reviewer",
+            "tax examiner"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "CPA (Certified Public Accountant)",
+            "audit committee",
+            "unqualified opinion",
+            "fieldwork",
+            "audit trail",
+            "materiality",
+            "compliance officer"
+        ]
+    }
+]
+
+with open("scratch/finance_074_076.json", "w", encoding="utf-8") as f:
+    json.dump({"words": words_data}, f, indent=2, ensure_ascii=False)
+
+print("Saved scratch/finance_074_076.json successfully.")

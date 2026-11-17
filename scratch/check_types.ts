@@ -1,8 +1,10 @@
-import { VocabularyWord } from '../src/types/vocabulary';
-import * as fs from 'fs';
+import { VocabularyWord } from "../src/types/vocabulary";
+import * as fs from "fs";
 
-const data = JSON.parse(fs.readFileSync('scratch/dining_233_235.json', 'utf8'));
+const data = JSON.parse(fs.readFileSync("scratch/finance_096_098.json", "utf8"));
 
 const words: VocabularyWord[] = data.words;
 console.log(`Successfully typed ${words.length} vocabulary words!`);
-
+for (const w of words) {
+  console.log(`- ${w.id}: ${w.word} (${w.category}, ${w.level}, freq: ${w.toeicFrequency})`);
+}

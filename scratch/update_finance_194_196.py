@@ -1,0 +1,413 @@
+import json
+import re
+
+words = [
+  {
+    "id": "finance-194",
+    "word": "market share",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "finance",
+    "level": "advanced",
+    "toeicFrequency": 7,
+    "pronunciation": {
+      "ipa": "/ˈmɑːr.kɪt ˌʃɛr/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/market_share--_us_1.mp3",
+      "syllableBreakdown": "mar-ket share",
+      "stressPattern": "primary stress on first syllable of 'market', secondary stress on 'share' (MAR-ket share)",
+      "commonMistakes": "Learners often confuse 'market share' (the percentage of total industry sales controlled by a business) with 'market size' (the overall monetary value of an entire sector) or an 'equity share' (a unit of stock ownership). Phonetically, speakers sometimes mispronounce 'market' with a flat /æ/ rather than open back /ɑːr/, or omit the rhotic /r/ in American English. Grammatically, avoid pluralizing the compound as *markets share*; the correct plural is 'market shares'."
+    },
+    "etymology": {
+      "origin": "Modern commercial English compound uniting 'market' (from Anglo-Norman and Old French 'market' / 'marchiet', from Latin 'mercātus' meaning trade or marketplace, from 'mercārī' to trade) and 'share' (from Old English 'scearu' meaning division or apportioned part, from Proto-Germanic '*skarō' division, related to '*skeran' to cut).",
+      "rootWord": "mercātus (Latin, trade/commerce) + *skarō (Proto-Germanic, apportioned cut/division)",
+      "rootMeaning": "An apportioned portion or slice of total commercial trade",
+      "evolution": "'Market' denoted public trading spaces in 12th-century Middle English, while 'share' evolved from a physical cut or division into an allotted portion of earnings or property by the 16th century. In the 1920s and 1930s, as quantitative industrial economics and modern consumer research pioneered by figures like Arthur Nielsen emerged, the compound 'market share' was coined to quantify an enterprise's sales volume relative to the total industry market. In postwar corporate strategy (such as the Boston Consulting Group growth-share matrix), market share became recognized as a core metric for economies of scale, pricing power, and brand dominance.",
+      "relatedLanguages": [
+        "French: part de marché",
+        "Spanish: cuota de mercado",
+        "German: Marktanteil",
+        "Italian: quota di mercato"
+      ],
+      "firstRecordedUse": "1920s (widely popularized in mid-20th-century commercial economics and antitrust legislation)"
+    },
+    "deepMeaning": {
+      "coreConcept": "The percentage or proportional fraction of total market sales, units sold, or subscriber base in a specified industry sector controlled by a particular company or brand over a defined period.",
+      "spatialContext": "Corporate boardrooms during quarterly strategy reviews, investor relations earnings webcasts, marketing analytics war rooms tracking competitor dashboards, and antitrust compliance filings submitted to regulatory agencies.",
+      "temporalContext": "Tracked weekly or monthly via retail point-of-sale scanner databases (e.g., Nielsen, IRI), evaluated quarterly in earnings press releases, and benchmarked annually during corporate strategic budgeting.",
+      "emotionalTone": "Competitive, analytical, strategic, and growth-oriented.",
+      "formalityLevel": "formal",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Native business leaders view 'market share' as a zero-sum competitive metric: gaining market share means taking sales directly away from competitors. It serves as an instinctive barometer of competitive health, pricing leverage over retailers, and manufacturing cost efficiencies. However, natives also know that chasing market share by heavily discounting can erode profit margins ('buying market share'), so sustainable firms balance volume gains with return on capital.",
+      "mentalImage": "A chief marketing officer presenting a vibrant segmented donut chart on a boardroom screen, pointing to a bold blue slice expanding from twenty-four to thirty-one percent to illustrate market share gains captured from their closest rival over the preceding three quarters.",
+      "whenToUse": "Use when evaluating competitive standing, sales penetration within a defined sector, industry ranking, or strategic expansion initiatives (e.g., 'The merger allows the telecom firm to capture thirty-five percent of the regional market share,' 'Our goal is to defend market share against low-cost entrants').",
+      "whenNotToUse": "Do not confuse with 'equity shares' or 'stocks' (ownership certificates in a corporation), 'market capitalization' (the aggregate market value of a public company's shares), or gross sales revenue (market share is expressed as a percentage or ratio, never a flat currency figure).",
+      "culturalContext": "In American and international corporate governance, market share determines competitive strategy, drives executive compensation packages, and triggers regulatory review: antitrust authorities (such as the US Federal Trade Commission and the European Commission) strictly monitor market share thresholds to block anti-competitive monopolistic mergers under antitrust statutes."
+    },
+    "examples": {
+      "daily": [
+        "The local craft brewery expanded its market share by partnering with regional supermarket chains.",
+        "Analysts were surprised to see the budget airline capture additional market share during an economic downturn.",
+        "Even against well-funded multinational competitors, the software startup retained a resilient twelve percent market share."
+      ],
+      "business": [
+        "Through aggressive promotional pricing and omnichannel distribution, the retailer increased its domestic market share by 3.5 percentage points.",
+        "The antitrust commission warned that the proposed acquisition would give the conglomerate an unfair seventy percent market share in agricultural chemicals.",
+        "Management emphasized that sacrificing short-term profit margins to capture market share in developing economies was a necessary strategic trade-off."
+      ],
+      "conversation": [
+        "\"Did you review the quarterly market intelligence report yet?\" \"Yes, our electronics division just overtook the incumbent market leader to claim the largest market share in North America.\"",
+        "\"Why is marketing investing so heavily in this summer ad campaign?\" \"Because winning even two percentage points of market share translates into nearly fifty million dollars in annual recurring revenue.\"",
+        "\"Should we match their twenty-percent price drop on commercial printers?\" \"No, chasing market share through price wars will destroy our operating cash flow.\""
+      ],
+      "collocations": [
+        "gain market share",
+        "capture market share",
+        "lose market share",
+        "dominant market share",
+        "global market share",
+        "market share growth"
+      ]
+    },
+    "wordFamily": {
+      "noun": "market share",
+      "adjective": "market-share-driven"
+    },
+    "visual": {
+      "imageKeyword": "market share corporate presentation pie chart digital display boardroom",
+      "imageDescription": "A professional business executive presenting an interactive digital pie chart on a wall-mounted conference display, highlighting a highlighted sector illustrating expanding market share to a diverse team of corporate directors.",
+      "mnemonic": "MARKET SHARE: Picture the whole MARKET as a giant economic pie—your SHARE is the exact percentage slice you carve out and keep on your plate!"
+    },
+    "video": {
+      "description": "A Harvard Business School case study analyzing how major smartphone manufacturers deployed differentiated software ecosystems and carrier partnerships to conquer global market share."
+    },
+    "toeicContext": {
+      "commonParts": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "exampleQuestion": "By introducing energy-efficient appliances and expanding distributor networks, Zenith Corporation managed to _____ a 22 percent market share in less than eighteen months. (A) capture (B) capturing (C) captive (D) captivity",
+      "tips": "In TOEIC Part 5, business collocations involving 'market share' are frequently tested with active verbs such as 'capture', 'gain', 'expand', or 'defend'. Following the auxiliary structure 'managed to', the sentence requires the base form of the verb: (A) capture. Choice (B) is a participle/gerund, (C) is an adjective, and (D) is an unrelated noun."
+    },
+    "synonyms": [
+      "market penetration",
+      "market portion",
+      "sales share",
+      "industry portion",
+      "market slice",
+      "percentage of the market"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "market penetration",
+      "market capitalization",
+      "competitive advantage",
+      "economies of scale",
+      "pricing power",
+      "market concentration",
+      "market leader"
+    ]
+  },
+  {
+    "id": "finance-195",
+    "word": "market value",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "finance",
+    "level": "advanced",
+    "toeicFrequency": 7,
+    "pronunciation": {
+      "ipa": "/ˈmɑːr.kɪt ˌvæl.juː/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/market_value--_us_1.mp3",
+      "syllableBreakdown": "mar-ket val-ue",
+      "stressPattern": "primary stress on first syllable of 'market', secondary stress on first syllable of 'value' (MAR-ket VAL-ue)",
+      "commonMistakes": "Learners often conflate 'market value' (the price an asset commands in an open, competitive auction between willing parties) with 'book value' (the historical acquisition cost minus accumulated depreciation recorded on a balance sheet) or 'par value / face value' (the stated nominal value of a stock or bond). In pronunciation, learners sometimes pronounce 'value' with an initial /w/ rather than /v/, or substitute a flat /u/ for the diphthongal glide /juː/ (*val-oo* instead of /væl.juː/)."
+    },
+    "etymology": {
+      "origin": "Compound business noun combining 'market' (from Anglo-Norman and Old Northern French 'market', from Latin 'mercātus' trade or marketplace) and 'value' (from Old French 'value', noun use of the feminine past participle of 'valoir' to be worth, from Latin 'valēre' to be strong, healthy, worth, or effective, from Proto-Indo-European '*wal-' to be strong).",
+      "rootWord": "mercātus (Latin, marketplace) + valēre (Latin, to be worth/strong)",
+      "rootMeaning": "The effective purchasing power or worth that an asset commands in an open marketplace",
+      "evolution": "'Value' entered Middle English in the early 14th century to signify material worth or utility. The specific commercial compound 'market value' emerged in 18th-century British commercial law and classical economics (appearing in Adam Smith's 1776 work 'The Wealth of Nations') to distinguish an asset's actual transactional price in open commerce from arbitrary seller demands, production costs, or subjective utility. In 20th-century accounting and securities jurisprudence (e.g., US GAAP fair value standards ASC 820 and IFRS 13), 'fair market value' was codified as an arm's-length benchmark for asset taxation, corporate mergers, and balance sheet mark-to-market accounting.",
+      "relatedLanguages": [
+        "French: valeur marchande",
+        "Spanish: valor de mercado",
+        "German: Marktwert",
+        "Italian: valore di mercato"
+      ],
+      "firstRecordedUse": "Mid-18th century (c. 1760–1776, popularized in British commercial jurisprudence and Adam Smith's economic treaties)"
+    },
+    "deepMeaning": {
+      "coreConcept": "The estimated or realized price at which an asset, security, property, or business entity would trade between a willing buyer and a willing seller in an open, active, and competitive market where both parties act prudently, knowledgeably, and without compulsion.",
+      "spatialContext": "Commercial real estate appraisal field inspections, investment banking M&A valuation suites, stock exchange electronic trading books, corporate treasury mark-to-market ledgers, and property tax assessment bureaus.",
+      "temporalContext": "Fluctuates continuously in real time for publicly traded stocks and liquid commodities; re-evaluated periodically (annually or quinquennially) for real estate property tax assessments, collateral pledging, or corporate asset impairment tests.",
+      "emotionalTone": "Objective, empirical, realistic, and unvarnished.",
+      "formalityLevel": "formal",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Native speakers regard 'market value' as the objective, unsentimental truth of what an asset is worth in the real world right now. It directly counters emotional bias ('I love this house, so it must be worth a million dollars') and historical cost ('We paid five hundred dollars for this computer five years ago, but its market value is fifty dollars'). In finance, natives are acutely aware that market value can substantially exceed book value for innovative tech companies, while it can fall below book value during distressed fire sales.",
+      "mentalImage": "A licensed commercial appraiser holding a tablet computer in a commercial skyscraper lobby, comparing recent closing sales of comparable downtown office buildings to calculate an unbiased market value for an upcoming syndicated mortgage refinancing.",
+      "whenToUse": "Use when referencing the realistic selling price of real estate, used machinery, company enterprise valuations, or marking investment portfolios to active exchange pricing (e.g., 'The building's appraised market value exceeded our expectations,' 'The tech giant's market value crossed the two-trillion-dollar milestone').",
+      "whenNotToUse": "Do not confuse with 'book value' (accounting ledger carrying amount), 'par value' (nominal legal face value of bonds or equities), 'replacement cost' (cost to construct or acquire a new identical asset), or 'sentimental value' (personal emotional attachment).",
+      "culturalContext": "In Anglo-American economic and legal frameworks, market value governs local municipal property tax assessments (ad valorem tax), insurance indemnity settlements (where insurers reimburse fair market value rather than original retail price), bankruptcy liquidation proceedings, and corporate capital gains tax calculations under IRS and HMRC tax codes."
+    },
+    "examples": {
+      "daily": [
+        "Before listing their suburban house for sale, the homeowners hired an independent appraiser to establish its current market value.",
+        "Trading in your vehicle at a dealership usually yields less money than its actual market value on the private resale market.",
+        "Because high-tech firms moved into the neighborhood, the market value of residential properties surged by thirty percent."
+      ],
+      "business": [
+        "Under international financial reporting standards, the treasury department marked the corporate investment portfolio to market value at the close of the quarter.",
+        "The private equity firm acquired the commercial logistics park for twelve percent below its appraised market value during a forced liquidation sale.",
+        "Following the announcement of lower projected operating cash flows, the automaker's total market value fell by four billion dollars."
+      ],
+      "conversation": [
+        "\"Why did the municipal tax assessor increase our property tax bill this year?\" \"Because recent home sales in our district drove the assessed market value of our commercial property up by twelve percent.\"",
+        "\"Is the asking price of twenty million dollars reasonable for that distribution center?\" \"Based on recent square-foot commercial transactions in the logistics corridor, that figure matches current market value almost exactly.\"",
+        "\"Will our property insurance cover the cost of buying brand-new manufacturing equipment?\" \"No, the policy only covers depreciated fair market value unless we upgrade to a replacement-cost policy rider.\""
+      ],
+      "collocations": [
+        "fair market value",
+        "current market value",
+        "assess the market value",
+        "exceed market value",
+        "below market value",
+        "appraised market value"
+      ]
+    },
+    "wordFamily": {
+      "noun": "market value, valuation",
+      "verb": "value",
+      "adjective": "market-value"
+    },
+    "visual": {
+      "imageKeyword": "commercial real estate appraiser digital tablet property valuation",
+      "imageDescription": "A professional property valuation appraiser wearing a blazer holding a digital tablet with analytical graphs and financial charts, inspecting a modern glass office building to calculate its fair market value.",
+      "mnemonic": "MARKET VALUE: Forget what you originally PAID or what you WISH it were worth—market value is the exact cash the open MARKET will PAY you today!"
+    },
+    "video": {
+      "description": "An investment banking tutorial detailing how financial analysts calculate fair market value using discounted cash flow models and comparable company analysis."
+    },
+    "toeicContext": {
+      "commonParts": [
+        3,
+        4,
+        5,
+        7
+      ],
+      "exampleQuestion": "Because the warehouse facility had been meticulously maintained and expanded, its appraised _____ exceeded the original purchase price by nearly forty percent. (A) market value (B) value market (C) marketing value (D) valued market",
+      "tips": "In TOEIC Part 5, commercial terminology is frequently evaluated through established compound nouns. 'Market value' functions as a fixed compound noun wherein 'market' operates as a noun adjunct modifying 'value'. Beware of inverted word order (B) or inappropriate participial and gerund forms like (C) and (D)."
+    },
+    "synonyms": [
+      "fair market value",
+      "market price",
+      "realizable value",
+      "current valuation",
+      "exchange value",
+      "going rate"
+    ],
+    "antonyms": [
+      "book value",
+      "historical cost",
+      "carrying value",
+      "par value",
+      "nominal value"
+    ],
+    "relatedWords": [
+      "appraisal",
+      "book value",
+      "mark-to-market",
+      "liquidation value",
+      "fair value",
+      "capitalization",
+      "asset valuation"
+    ]
+  },
+  {
+    "id": "finance-196",
+    "word": "materiality",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "finance",
+    "level": "advanced",
+    "toeicFrequency": 7,
+    "pronunciation": {
+      "ipa": "/məˌtɪr.iˈæl.ə.t̬i/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/materiality--_us_1.mp3",
+      "syllableBreakdown": "ma-te-ri-al-i-ty",
+      "stressPattern": "secondary stress on second syllable, primary stress on fourth syllable: ma-te-ri-AL-i-ty (/məˌtɪr.iˈæl.ə.t̬i/)",
+      "commonMistakes": "Learners often mistakenly interpret 'materiality' through its everyday physical sense (relating to fabric, cloth, or physical building substances). In accounting, auditing, and corporate finance, it has an exact legal and technical definition: whether an omitted, misstated, or hidden fact is consequential enough to alter the economic judgment of a prudent financial statement user. In pronunciation, non-native speakers frequently misplace the primary stress onto the third syllable (*ma-te-RI-al-i-ty*) or the second syllable (*ma-TE-ri-al-i-ty*) instead of stressing the fourth syllable: /məˌtɪr.iˈæl.ə.ti/."
+    },
+    "etymology": {
+      "origin": "Late Latin 'māteriālitās' (substantiality, the condition of having matter or consequence), from Late Latin 'māteriālis' (belonging to matter), from Latin 'māteria' / 'māteriēs' (timber, raw building stuff, substance, physical matter; figuratively the underlying source or subject matter of an inquiry, derived from 'māter' mother/source) + adjectival suffix '-ālis' + abstract noun suffix '-itās'. Transmitted through Anglo-Norman and Old French 'materialité'.",
+      "rootWord": "māteria (Latin, substance, matter, source) + -ālis (adjective suffix) + -itās (state/condition)",
+      "rootMeaning": "The state, quality, or condition of having substantial weight, substance, or consequence",
+      "evolution": "In 15th-century scholastic philosophy, 'materiality' referred to physical, corporeal existence as contrasted with spiritual or abstract being. By the 18th and 19th centuries, English common law courts adopted 'material' to denote evidence or contract terms so vital that they altered the legal outcome of a case. In the 20th century, with the enactment of the US Securities Act of 1933 and landmark Supreme Court jurisprudence (e.g., TSC Industries v. Northway, 1976), 'materiality' became the bedrock auditing and regulatory standard: an item is material if there is a substantial likelihood that a reasonable investor would consider it important when making an investment decision. In recent corporate governance, it has expanded to include sustainability and ESG disclosure ('double materiality').",
+      "relatedLanguages": [
+        "French: matérialité",
+        "Spanish: materialidad",
+        "German: Wesentlichkeit",
+        "Italian: materialità"
+      ],
+      "firstRecordedUse": "Late 15th century (c. 1470 in Middle English scholastic and legal tracts; adopted into modern accounting audit standards during the 1930s)"
+    },
+    "deepMeaning": {
+      "coreConcept": "In financial accounting, external auditing, and securities law, the threshold, magnitude, or qualitative significance determining whether the omission, misstatement, or nondisclosure of financial information could reasonably influence the economic decisions, assessments, or actions of financial statement users.",
+      "spatialContext": "Independent audit engagement team rooms (such as Big Four accounting firm workspaces), corporate internal audit offices, board audit committee executive sessions, and securities regulatory compliance filing platforms (e.g., US SEC EDGAR).",
+      "temporalContext": "Defined quantitatively and qualitatively during the preliminary planning stage of an annual financial audit, applied continuously during audit substantive testing to evaluate ledger discrepancies, and finalized prior to issuing the formal auditor's report.",
+      "emotionalTone": "Judicious, exacting, objective, legally rigorous, and authoritative.",
+      "formalityLevel": "formal",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To a native certified public accountant (CPA) or corporate controller, 'materiality' is the essential practical filter between an insignificant ledger variance and an actionable audit qualification. No corporation can achieve hundred-percent mathematical perfection across millions of transactions; therefore, materiality establishes the pragmatic boundary of what truly matters to investors. Natives understand that materiality is not solely a numeric dollar cutoff (e.g., five percent of net earnings); an intentional fraud or an illegal payment of even a small dollar amount possesses qualitative materiality because it reflects on executive integrity.",
+      "mentalImage": "A lead audit partner and an audit manager in a glass-walled conference room reviewing a consolidated trial balance on their laptops, pointing at an unrecorded warranty liability spreadsheet to assess whether its quantitative variance breaches their pre-established materiality threshold of three million dollars.",
+      "whenToUse": "Use when evaluating whether financial misstatements, unrecorded transactions, operational risks, or accounting variances are significant enough to necessitate financial restatements, formal audit adjustments, or disclosure in SEC filings (e.g., 'The discrepancy fell below our materiality threshold,' 'The board discussed the materiality of the ongoing patent lawsuit').",
+      "whenNotToUse": "Do not use to describe physical substance or tangible texture in everyday conversation (use 'physical nature' or 'tangibility'). Do not confuse with 'relevance'—relevance indicates whether information pertains to a subject, whereas materiality evaluates whether the magnitude and consequence are substantial enough to alter an economic decision.",
+      "culturalContext": "The principle of materiality is the legal keystone of capital market transparency under US SEC Staff Accounting Bulletin No. 99 (SAB 99) and International Standards on Auditing (ISA 320). Public corporate officers who conceal material adverse information face severe civil enforcement penalties and federal securities fraud prosecution under the Sarbanes-Oxley Act."
+    },
+    "examples": {
+      "daily": [
+        "The tax consultant explained that an accidental omission of a four-dollar parking receipt lacked materiality and would not affect our tax audit.",
+        "When settling the volunteer club's annual accounts, the committee ignored minor rounding cents due to their complete lack of materiality.",
+        "For an individual buying stock in a biotech startup, the sudden loss of their lead pharmaceutical patent possessed undeniable materiality."
+      ],
+      "business": [
+        "During the annual audit planning meeting, the lead partner established the overall materiality threshold at five percent of normalized pre-tax operating income.",
+        "Although the warehouse flood caused forty thousand dollars in water damage, management determined that the incident did not meet the criteria of materiality requiring an immediate regulatory filing.",
+        "The external audit firm withheld an unqualified opinion until corporate management agreed to adjust several inventory variances that collectively exceeded their materiality limit."
+      ],
+      "conversation": [
+        "\"Should we notify the audit committee about this discrepancy in the vendor invoicing system?\" \"Yes, even though the dollar figure is modest, the fact that an internal control was bypassed gives it qualitative materiality.\"",
+        "\"Why are the external auditors spending so much time verifying that specific supply contract?\" \"Because the penalty clauses are so severe that any potential breach crosses our materiality threshold for public reporting.\"",
+        "\"Will our executive team have to restate the third-quarter earnings report for that billing error?\" \"No, our accounting team confirmed that the cumulative variance was well below our established materiality cutoff.\""
+      ],
+      "collocations": [
+        "materiality threshold",
+        "audit materiality",
+        "level of materiality",
+        "assess materiality",
+        "qualitative materiality",
+        "concept of materiality"
+      ]
+    },
+    "wordFamily": {
+      "noun": "materiality, immateriality, material",
+      "verb": "materialize",
+      "adjective": "material, immaterial",
+      "adverb": "materially, immaterially"
+    },
+    "visual": {
+      "imageKeyword": "financial auditor magnifying glass ledger balance sheet materiality compliance",
+      "imageDescription": "An experienced financial auditor holding a magnifying glass over printed accounting balance sheets and audit schedules, scrutinizing financial disclosure lines against international auditing standards in a modern office.",
+      "mnemonic": "MATERIAL-ITY: If an audit error is MATERIAL, it has REAL WEIGHT. If its financial weight can alter an investor's decision, it has achieved MATERIALITY!"
+    },
+    "video": {
+      "description": "An AICPA professional training video demonstrating how external auditors establish quantitative benchmarks and assess qualitative risk factors under International Standard on Auditing 320 (ISA 320)."
+    },
+    "toeicContext": {
+      "commonParts": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "exampleQuestion": "Because the minor discrepancy in the shipping expense account lacked _____, the external auditing team concluded that no financial restatement was required. (A) materiality (B) materialize (C) material (D) materially",
+      "tips": "In TOEIC Part 5, sentence completion questions frequently test derivative word forms following transitive verbs. Following the transitive verb 'lacked' (meaning 'was devoid of' or 'did not have'), a direct object noun is grammatically required. Choice (A) 'materiality' is the abstract noun. Choice (B) is a verb, (C) is an adjective, and (D) is an adverb."
+    },
+    "synonyms": [
+      "significance",
+      "substantiality",
+      "consequence",
+      "momentousness",
+      "relevance",
+      "weightiness"
+    ],
+    "antonyms": [
+      "immateriality",
+      "insignificance",
+      "triviality",
+      "inconsequence",
+      "pettiness"
+    ],
+    "relatedWords": [
+      "threshold",
+      "audit risk",
+      "misstatement",
+      "disclosure",
+      "fair presentation",
+      "SEC compliance",
+      "qualitative factor"
+    ]
+  }
+]
+
+# Validation checks
+banned_phrases = [
+    "factor", "management", "documentation for", "ready for the board meeting",
+    "Professional Coordination Secures Operational Excellence",
+    "standard practice", "protocol", "implementation"
+]
+
+for w in words:
+    dumped = json.dumps(w)
+    print(f"Validating {w['id']} - {w['word']}")
+    # Check required fields
+    assert w['id']
+    assert w['word']
+    assert w['partOfSpeech']
+    assert w['category'] == 'finance'
+    assert w['level'] in ['essential', 'intermediate', 'advanced']
+    assert isinstance(w['toeicFrequency'], int)
+    assert w['pronunciation']['ipa']
+    assert w['pronunciation']['syllableBreakdown']
+    assert w['pronunciation']['stressPattern']
+    assert w['pronunciation']['commonMistakes']
+    assert w['etymology']['origin']
+    assert w['etymology']['rootWord']
+    assert w['etymology']['rootMeaning']
+    assert w['etymology']['evolution']
+    assert len(w['etymology']['relatedLanguages']) >= 2
+    assert w['etymology']['firstRecordedUse']
+    assert w['deepMeaning']['coreConcept']
+    assert w['deepMeaning']['spatialContext']
+    assert w['deepMeaning']['temporalContext']
+    assert w['deepMeaning']['emotionalTone']
+    assert w['deepMeaning']['formalityLevel'] in ['formal', 'neutral', 'informal']
+    assert w['deepMeaning']['connotation'] in ['positive', 'neutral', 'negative']
+    assert w['nativeMindset']['howNativesThink']
+    assert w['nativeMindset']['mentalImage']
+    assert w['nativeMindset']['whenToUse']
+    assert w['nativeMindset']['whenNotToUse']
+    assert w['nativeMindset']['culturalContext']
+    assert len(w['examples']['daily']) == 3
+    assert len(w['examples']['business']) == 3
+    assert len(w['examples']['conversation']) >= 2
+    assert len(w['examples']['collocations']) >= 5
+    assert w['visual']['imageKeyword']
+    assert w['visual']['imageDescription']
+    assert w['visual']['mnemonic']
+    assert w['video']['description']
+    assert len(w['toeicContext']['commonParts']) >= 1
+    assert w['toeicContext']['exampleQuestion']
+    assert w['toeicContext']['tips']
+    assert 4 <= len(w['synonyms']) <= 6
+    assert 5 <= len(w['relatedWords']) <= 7
+    # Check for boilerplate in synonyms
+    for s in w['synonyms']:
+        assert "factor" not in s.lower(), f"Synonym contains 'factor': {s}"
+        assert "management" not in s.lower(), f"Synonym contains 'management': {s}"
+
+print("All validations passed!")
+
+# Now let's save words to scratch/words_194_196.json
+with open("scratch/words_194_196.json", "w", encoding="utf-8") as f:
+    json.dump(words, f, indent=2, ensure_ascii=False)
+print("Saved to scratch/words_194_196.json")

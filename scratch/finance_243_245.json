@@ -1,0 +1,349 @@
+{
+  "result": {
+    "words": [
+      {
+        "id": "finance-243",
+        "word": "regulation",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+          "ipa": "/ˌreɡ.jəˈleɪ.ʃən/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/regulation--_us_1.mp3",
+          "syllableBreakdown": "reg-u-la-tion",
+          "stressPattern": "Secondary stress on first syllable, primary stress on third syllable: reg-u-LA-tion (ˌrɛɡ.jəˈleɪ.ʃən, ˌ○ ○ ● ○)",
+          "commonMistakes": "Learners often drop the palatal glide /j/ in the second syllable, pronouncing it as */ˌrɛɡ.əˈleɪ.ʃən/* instead of /ˌreɡ.jəˈleɪ.ʃən/. Another common error is failing to shift stress to the penultimate syllable '-la-', placing undue emphasis on the first syllable or pronouncing the suffix '-tion' with a hard /t/ or /s/ rather than /ʃən/."
+        },
+        "etymology": {
+          "origin": "Late Latin regulatio (direction, rule), from the past participle stem of Latin regulare (to direct, rule, guide), from regula (a straight edge, wooden ruler, guiding rule), derived from the Proto-Indo-European root *reg- (to move in a straight line, to lead, rule).",
+          "rootWord": "Latin regula (rule, straight stick) + -atio (action/state forming suffix)",
+          "rootMeaning": "'The act of guiding by a ruler or straight line; establishing boundaries, standards, or prescribed limits'",
+          "evolution": "In classical Latin, 'regula' was literally a carpenter's straight measuring rod or ruler. By Late Latin, 'regulare' meant keeping things straight or orderly through governance. It passed into late 14th-century Anglo-Norman and Middle French as 'regulacioun', primarily denoting the adjustment of clocks and mechanisms, before evolving in 17th-century English into authoritative public laws, administrative statutes, and corporate financial oversight.",
+          "relatedLanguages": [
+            "French: régulation (adjustment, control, governing rule)",
+            "Spanish: regulación (adjustment, governmental rule, ordinance)",
+            "Italian: regolazione (adjustment, calibration, administrative rule)",
+            "German: Regulierung (market or financial regulation, statutory control)"
+          ],
+          "firstRecordedUse": "c. 1400 in Middle English, initially referring to mechanical calibration or the governing of religious orders, expanding to statutory economic laws by 1670."
+        },
+        "deepMeaning": {
+          "coreConcept": "An authoritative rule, directive, or statutory requirement enacted by a government body, regulatory commission, or supervisory authority to govern business conduct, market transactions, capital adequacy, and legal compliance.",
+          "spatialContext": "Compliance departments, legal advisory offices, central bank auditoriums, government agency hearing rooms, and bank trading floors.",
+          "temporalContext": "Continuously monitored during everyday commercial transactions; audited annually or quarterly; subject to revision following legislative reforms or market crises.",
+          "emotionalTone": "Strict, authoritative, and sobering; conveys compulsory conformity, risk containment, and institutional discipline.",
+          "formalityLevel": "formal",
+          "connotation": "neutral"
+        },
+        "nativeMindset": {
+          "howNativesThink": "To native English speakers in business and finance, 'regulation' evokes government oversight, guardrails, and compliance hurdles. Natives distinguish between the general concept of systemic oversight ('financial regulation protects depositors') and specific binding rules ('SEC regulations on insider trading'). It carries an inherent tension: on one hand, it represents protection against fraud and systemic bank failures; on the other, it represents bureaucratic red tape, compliance overhead, and constraints on entrepreneurial freedom.",
+          "mentalImage": "A chief compliance officer seated before twin monitors in a glass-walled office, cross-referencing updated federal banking statutes against an institution's internal lending guidelines to ensure statutory adherence.",
+          "whenToUse": "Use when referring to government-mandated administrative rules, statutory restrictions governing industries (banking, environmental, labor, securities), or specific compliance requirements enforced by agencies like the SEC, FDIC, or EPA.",
+          "whenNotToUse": "Do not confuse with 'legislation' or 'statute' (which are laws passed directly by parliament/congress, whereas regulations are detailed administrative rules enacted by executive agencies to enforce those laws). Do not use 'regulation' for informal workplace etiquette or personal team preferences.",
+          "culturalContext": "In Anglo-American economic debates, 'regulation' versus 'deregulation' is a perpetual political battleground. Proponents highlight how Dodd-Frank and Basel accords prevent catastrophic bank collapses, while critics argue excessive regulation stifles fintech innovation and raises consumer costs."
+        },
+        "examples": {
+          "daily": [
+            "The city council introduced a new municipal parking regulation prohibiting overnight trailer storage on residential streets.",
+            "Airline baggage regulations dictate that passengers must not carry lithium batteries inside checked luggage.",
+            "Due to school dress code regulations, students are required to wear solid-colored navy or white collared shirts."
+          ],
+          "business": [
+            "Commercial banks had to increase their tier-one capital reserves following the implementation of stricter liquidity regulations.",
+            "The corporate legal team spent several months reviewing European Union data privacy regulations to avoid substantial fines.",
+            "The newly appointed fintech firm hired outside counsel to verify that its cross-border payment gateway complied with federal anti-money laundering regulations."
+          ],
+          "conversation": [
+            "\"Will our international expansion into Frankfurt require us to adapt to local environmental regulations?\" — \"Yes, German manufacturing regulations require comprehensive carbon accounting and certified packaging recycling protocols.\"",
+            "\"Why did our quarterly software deployment get delayed by two weeks?\" — \"The updates impacted payment processing, so compliance had to audit the cryptographic modules against federal banking security regulations.\"",
+            "\"Has the legal department published their guidance on the revised securities regulation?\" — \"They just circulated an executive memo outlining the new disclosure deadlines for registered investment advisors.\""
+          ],
+          "collocations": [
+            "comply with regulations",
+            "government regulation",
+            "financial regulation",
+            "safety regulations",
+            "tighten regulations",
+            "regulatory framework"
+          ]
+        },
+        "wordFamily": {
+          "noun": "regulation",
+          "verb": "regulate",
+          "adjective": "regulatory",
+          "adverb": "regulatorily"
+        },
+        "visual": {
+          "imageKeyword": "financial compliance officer reviewing banking regulations legal binder desk",
+          "imageDescription": "A corporate compliance specialist in professional business attire methodically annotating a thick regulatory codebook with highlighters and sticky notes, flanked by a dual-monitor financial workstation.",
+          "mnemonic": "REGULATION comes from REGULA (Latin for 'ruler' or 'straight edge'). A regulation keeps an organization on a 'straight' path so it doesn't bend the rules or cross legal boundaries!"
+        },
+        "video": {
+          "description": "A regulatory affairs expert explains how Dodd-Frank and Basel III framework regulations establish liquidity buffers for commercial lending institutions to prevent systemic financial contagion."
+        },
+        "toeicContext": {
+          "commonParts": [
+            5,
+            6,
+            7
+          ],
+          "exampleQuestion": "All pharmaceutical shipments originating from the overseas laboratory must strictly comply with federal import _______ before clearing customs inspection.\n(A) regulate\n(B) regulator\n(C) regulations\n(D) regularizing",
+          "tips": "In TOEIC Part 5, test-takers are frequently tested on word-form discrimination following compound modifiers or prepositions. After the adjective 'federal import', a plural countable noun is required to serve as the object of the preposition 'with'. Choice (C) regulations is correct. Choice (B) regulator refers to a person or supervisory agency, while (A) and (D) are verb forms."
+        },
+        "synonyms": [
+          "ordinance",
+          "statute",
+          "directive",
+          "rule",
+          "stipulation"
+        ],
+        "antonyms": [
+          "deregulation",
+          "anarchy",
+          "lawlessness",
+          "exemption"
+        ],
+        "relatedWords": [
+          "compliance",
+          "oversight",
+          "enforcement",
+          "mandate",
+          "governance",
+          "jurisdiction"
+        ]
+      },
+      {
+        "id": "finance-244",
+        "word": "reimbursement",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+          "ipa": "/ˌriː.ɪmˈbɜːrs.mənt/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/reimbursement--_us_1.mp3",
+          "syllableBreakdown": "re-im-burse-ment",
+          "stressPattern": "Secondary stress on first syllable, primary stress on third syllable: re-im-BURSE-ment (ˌriː.ɪmˈbɜːrs.mənt, ˌ○ ○ ● ○)",
+          "commonMistakes": "Learners often drop the secondary long vowel /iː/ in the prefix 're-', collapsing the syllables into */rɪmˈbɜːrs.mənt/* or */remˈbɜːrs.mənt/*. In addition, ESL speakers unfamiliar with the r-colored vowel in '-burse-' often pronounce it as */buːrs/ or */bɑːrs/ instead of the standard mid-central /ɜːr/. Note also that the letter 'u' in 'burse' is silent /ɜːr/, not /juː/."
+        },
+        "etymology": {
+          "origin": "Formed by prefixing Middle French/Anglo-Norman re- (back, again) to embourser (to put into a purse), which derives from Old French en- (in, into) + bourse (purse, moneybag), from Late Latin bursa (leather bag, ox-hide purse), from Ancient Greek bursa (hide, skin, wineskin), combined with the English noun suffix -ment.",
+          "rootWord": "Latin bursa (leather purse) via Old French embourser (to put in a purse)",
+          "rootMeaning": "'The act of putting money back into someone's purse or pocket after they spent it on your behalf'",
+          "evolution": "In medieval Europe, a 'bourse' was the physical leather pouch or purse carried on a merchant's belt. When an employee paid traveling costs out of their own coin purse, returning those funds was literally 're-emboursing'—putting coins back into the purse. The term entered English in the early 17th century (circa 1610) as 'reimburse', with the nominal form 'reimbursement' becoming institutionalized in commerce by the mid-18th century.",
+          "relatedLanguages": [
+            "French: remboursement (repayment, paying back, reimbursement)",
+            "Spanish: reembolso (repayment, refund, refunding money into a purse)",
+            "Italian: rimborso (refund, repayment, travel expense reimbursement)",
+            "Portuguese: reembolso (repayment, reimbursement, refund)"
+          ],
+          "firstRecordedUse": "c. 1630s in English commercial contracts and municipal treasuries."
+        },
+        "deepMeaning": {
+          "coreConcept": "The monetary repayment or compensation remitted to an individual or business entity to cover an out-of-pocket expenditure, authorized travel expense, or insured loss incurred on behalf of an employer or under policy terms.",
+          "spatialContext": "Corporate payroll departments, accounts payable desks, corporate travel expense software portals (e.g., Concur, Expensify), and medical insurance claims processing centers.",
+          "temporalContext": "Submitted immediately following travel or business events (typically within 30 days of expense); processed during bi-weekly payroll runs or monthly accounting settlement cycles.",
+          "emotionalTone": "Transactional, restorative, and equitable; conveys making someone financially whole after they incurred personal outlay for an enterprise.",
+          "formalityLevel": "formal",
+          "connotation": "positive"
+        },
+        "nativeMindset": {
+          "howNativesThink": "To native English speakers in corporate environments, 'reimbursement' is inextricably linked with receipts, expense reports, per diems, and company travel. The native instinct is: 'I spent my own personal funds on business meals, flight tickets, or client entertainment, and now accounts payable owes me that exact money back.' It does not feel like profit or salary—it is merely recovering one's own cash.",
+          "mentalImage": "A traveling sales consultant sitting in an airport lounge uploading itemized hotel and meal receipts through an expense-reporting smartphone app to submit for accounts payable approval.",
+          "whenToUse": "Use when money is repaid to an employee for authorized business expenses (mileage, meals, lodging, conference fees) or to a policyholder by an insurer for covered medical or property losses.",
+          "whenNotToUse": "Do not confuse with 'compensation' or 'salary' (which represent payment for work performed, not repayment of out-of-pocket costs). Do not confuse with 'refund' (which is return of payment to an unsatisfied customer by a vendor, whereas reimbursement is paying back an authorized agent or insured party).",
+          "culturalContext": "In North American and UK corporate culture, employee expense reimbursement is governed by strict Internal Revenue Service (IRS) or HMRC 'accountable plan' rules. If an employee fails to submit substantiated itemized receipts within prescribed deadlines, the reimbursement can be reclassified as taxable gross income."
+        },
+        "examples": {
+          "daily": [
+            "After submitting the veterinary bills to the pet insurance company, she received an eighty percent reimbursement within five business days.",
+            "The community sports league offered volunteer coaches a gas mileage reimbursement for driving athletes to away games.",
+            "He kept all receipts from his pharmacy purchases so he could claim reimbursement from his flexible spending account."
+          ],
+          "business": [
+            "Employees seeking travel expense reimbursement must upload itemized lodging receipts to the intranet portal within fourteen days of their return.",
+            "The executive committee updated the corporate travel policy to cap daily meal reimbursement at seventy-five dollars per traveler.",
+            "Accounts payable expedited the vendor reimbursement to maintain positive supplier relations after an earlier billing discrepancy."
+          ],
+          "conversation": [
+            "\"Did finance approve your travel expense claim for the regional summit in Chicago?\" — \"Yes, the full flight and hotel reimbursement was credited to my direct deposit account this morning.\"",
+            "\"Does our corporate tuition assistance program cover textbooks, or just tuition fees?\" — \"The tuition reimbursement policy covers registered credit hours in full, but textbook expenses are subject to an annual five-hundred-dollar ceiling.\"",
+            "\"Why was my mileage claim sent back by the accounting department?\" — \"Your odometer log was missing departure and destination addresses, which are mandatory for mileage reimbursement under company audit policy.\""
+          ],
+          "collocations": [
+            "seek reimbursement",
+            "tuition reimbursement",
+            "expense reimbursement",
+            "full reimbursement",
+            "claim reimbursement",
+            "reimbursement rate"
+          ]
+        },
+        "wordFamily": {
+          "noun": "reimbursement",
+          "verb": "reimburse",
+          "adjective": "reimbursable",
+          "adverb": "reimbursably"
+        },
+        "visual": {
+          "imageKeyword": "employee scanning receipts mobile phone expense report reimbursement desk",
+          "imageDescription": "A professional employee using a smartphone camera to digitize a neat fan of dining and taxi receipts next to a laptop displaying an enterprise expense reimbursement workflow.",
+          "mnemonic": "RE-IM-BURSE-MENT: 'Re' (back) + 'im' (into) + 'burse' (purse like Paris Bourse)! It literally means putting money back into your purse!"
+        },
+        "video": {
+          "description": "A corporate accounting tutorial demonstrating how employees log business travel outlays, attach scanned receipts, and route mileage claims through automated reimbursement approval workflows."
+        },
+        "toeicContext": {
+          "commonParts": [
+            3,
+            4,
+            5,
+            7
+          ],
+          "exampleQuestion": "To receive prompt _______ for expenses incurred during the sales conference, delegates must submit all original receipts to accounts payable by Friday afternoon.\n(A) reimburse\n(B) reimbursement\n(C) reimbursing\n(D) reimbursable",
+          "tips": "In TOEIC Part 5, the gap between an adjective ('prompt') and a prepositional phrase ('for expenses...') requires a noun. Choice (B) reimbursement is the correct noun. Choice (A) is a verb, (C) is a present participle, and (D) is an adjective."
+        },
+        "synonyms": [
+          "repayment",
+          "refund",
+          "indemnification",
+          "restitution",
+          "compensation"
+        ],
+        "antonyms": [
+          "outlay",
+          "expenditure",
+          "disbursement",
+          "forfeiture"
+        ],
+        "relatedWords": [
+          "per diem",
+          "out-of-pocket",
+          "receipt",
+          "expenditure",
+          "allowance",
+          "payroll"
+        ]
+      },
+      {
+        "id": "finance-245",
+        "word": "reinvestment",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+          "ipa": "/ˌriː.ɪnˈvest.mənt/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/reinvestment--_us_1.mp3",
+          "syllableBreakdown": "re-in-vest-ment",
+          "stressPattern": "Secondary stress on first syllable, primary stress on third syllable: re-in-VEST-ment (ˌriː.ɪnˈvɛst.mənt, ˌ○ ○ ● ○)",
+          "commonMistakes": "Learners frequently run the prefix 're-' directly into 'in-' without the distinct glottal or vocalic boundary, pronouncing it as */rɪnˈvɛst.mənt/* instead of the clean /ˌriː.ɪn-/. Another issue is overstressing the suffix '-ment' as /mɛnt/ instead of reducing it to the unstressed schwa /mənt/."
+        },
+        "etymology": {
+          "origin": "Formed by combining English re- (again, anew) + investment (from invest + -ment), which traces to Latin investire (to clothe, cover, surround with garments, endow with rights or robes of office), from in- (in, into) + vestire (to clothe), from vestis (garment, clothing), from PIE *wes- (to clothe).",
+          "rootWord": "Latin re- (again) + investire (to clothe, surround, install in office)",
+          "rootMeaning": "'Clothing capital again; channeling generated profits back into the productive enterprise to dress it for further growth'",
+          "evolution": "In medieval feudalism, 'investing' meant ceremonially clothing a vassal with robes or giving them physical staff/symbols when granting an estate or feudal office (investiture). By the 16th century, Italian merchants ('investire il capitale') adapted this into wrapping liquid funds in commercial property or trading goods. In 18th-century English commerce, 'investment' became standard for committing financial capital. By the 19th-century Industrial Revolution, 'reinvestment' emerged as industrialists retained factory profits instead of paying dividends, channeling surplus back into steam engines, railways, and machinery.",
+          "relatedLanguages": [
+            "French: réinvestissement (reinvesting earnings or capital)",
+            "Spanish: reinversión (reinvestment of corporate profits or dividends)",
+            "Italian: reinvestimento (reinvestment of cash flow into plant or securities)",
+            "German: Reinvestition (corporate reinvestment of net income)"
+          ],
+          "firstRecordedUse": "c. 1850s in British economic texts and corporate joint-stock prospectuses."
+        },
+        "deepMeaning": {
+          "coreConcept": "The deployment of earned profits, dividends, or interest distributions back into the original asset, company, or capital project rather than cashing them out or distributing them to equity holders.",
+          "spatialContext": "Corporate treasury departments, asset management firms, brokerage client portals, boardroom budget presentations, and capital allocation committee meetings.",
+          "temporalContext": "Executed at dividend disbursement dates (automatic DRIP enrollment), quarterly earnings announcements, or annual capital expenditure planning sessions.",
+          "emotionalTone": "Forward-looking, disciplined, and compounding; implies delayed gratification and faith in long-term enterprise growth.",
+          "formalityLevel": "formal",
+          "connotation": "positive"
+        },
+        "nativeMindset": {
+          "howNativesThink": "To native speakers in finance, 'reinvestment' embodies the power of compound interest and growth strategy. When a company chooses reinvestment over dividends, it signals that leadership believes the business has high-return opportunities (e.g., tech companies like Amazon in the 2000s). In personal wealth management, it immediately calls to mind a 'DRIP' (dividend reinvestment plan), where dividends buy more fractional shares on autopilot.",
+          "mentalImage": "A chief financial officer pointing to a waterfall chart during an investor relations webcast, showing how seventy percent of operating cash flow is directed toward robotic factory automation and research reinvestment rather than share repurchases.",
+          "whenToUse": "Use when earned returns (dividends, interest, retained earnings) are recycled back into productive business assets (R&D, infrastructure, equipment) or used to purchase additional securities in the same fund.",
+          "whenNotToUse": "Do not confuse with initial 'investment' (which is the original seed or principal capital injected from outside). Do not use 'reinvestment' when shifting capital entirely away into a totally different unconnected asset class (which is 'reallocation' or 'diversification').",
+          "culturalContext": "The tension between dividend payout and profit reinvestment is fundamental in Anglo-American shareholder capitalism. Value investors demand steady dividends and share buybacks, whereas growth-stock investors celebrate full reinvestment into market dominance, technology scaling, and infrastructure."
+        },
+        "examples": {
+          "daily": [
+            "She opted for automatic dividend reinvestment on her index fund to harness the mathematical power of compound returns over twenty years.",
+            "Rather than pocketing the profits from his side business, he made a substantial reinvestment in higher-grade baking equipment.",
+            "The community farm association voted in favor of the reinvestment of crop sales into a solar-powered irrigation network."
+          ],
+          "business": [
+            "Management announced that sixty percent of this year's net operating surplus would be earmarked for reinvestment in semiconductor research.",
+            "The board justified the reduced annual dividend by explaining that heavy capital reinvestment was vital to remain competitive against emerging overseas rivals.",
+            "The commercial real estate partnership deferred partner distributions to fund the reinvestment required to modernize the logistics hub."
+          ],
+          "conversation": [
+            "\"Should we advise retail clients to enroll in the dividend reinvestment plan for this blue-chip fund?\" — \"Definitely; automatic reinvestment allows them to dollar-cost average without paying retail brokerage commissions.\"",
+            "\"Why didn't the logistics company pay out any cash dividends this quarter?\" — \"The CEO convinced shareholders that full reinvestment into autonomous sorting centers will double throughput by next year.\"",
+            "\"What will happen to the proceeds from the bond maturation?\" — \"Treasury has already planned their immediate reinvestment into five-year Treasury notes yielding four percent.\""
+          ],
+          "collocations": [
+            "dividend reinvestment",
+            "capital reinvestment",
+            "profit reinvestment",
+            "reinvestment rate",
+            "reinvestment risk",
+            "reinvestment plan"
+          ]
+        },
+        "wordFamily": {
+          "noun": "reinvestment",
+          "verb": "reinvest",
+          "adjective": "reinvested",
+          "adverb": ""
+        },
+        "visual": {
+          "imageKeyword": "dividend reinvestment chart compound growth factory automation desk",
+          "imageDescription": "A digital dashboard displaying a rising compound growth curve of reinvested earnings next to modern high-tech manufacturing equipment under installation.",
+          "mnemonic": "RE-INVEST-MENT: 'Re' (again) + 'invest' (to clothe/fund). Instead of taking profits home, you clothe the business again with new machinery so it grows even bigger!"
+        },
+        "video": {
+          "description": "A portfolio manager explains the compounding mechanics of automatic dividend reinvestment plans (DRIPs) versus cash distribution in corporate equity portfolios."
+        },
+        "toeicContext": {
+          "commonParts": [
+            5,
+            6,
+            7
+          ],
+          "exampleQuestion": "The board of directors concluded that substantial _______ of corporate earnings into renewable energy initiatives would yield greater long-term value than issuing a cash dividend.\n(A) reinvest\n(B) reinvestment\n(C) reinvesting\n(D) reinvested",
+          "tips": "In TOEIC Part 5 sentence structure, the subject position of a noun clause ('that substantial _______ of corporate earnings...') preceded by the adjective 'substantial' requires the abstract noun 'reinvestment'. Choice (B) is correct. Choice (A) is a bare verb, (C) is a gerund/participle that does not collocate with 'substantial ... of', and (D) is a past tense verb."
+        },
+        "synonyms": [
+          "capitalization",
+          "reallocation",
+          "retention",
+          "restructuring",
+          "re-funding"
+        ],
+        "antonyms": [
+          "divestment",
+          "liquidation",
+          "disinvestment",
+          "cash-out"
+        ],
+        "relatedWords": [
+          "capital expenditure",
+          "compound interest",
+          "dividend",
+          "retained earnings",
+          "yield",
+          "cash flow"
+        ]
+      }
+    ]
+  }
+}

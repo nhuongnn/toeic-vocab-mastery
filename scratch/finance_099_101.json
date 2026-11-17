@@ -1,0 +1,359 @@
+[
+    {
+        "id": "finance-099",
+        "word": "commodity",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/kəˈmɑː.də.ti/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/commodity--_us_1.mp3",
+            "syllableBreakdown": "com-mod-i-ty",
+            "stressPattern": "Second syllable stress: /kəˈmɑː.də.ti/ (○●○○)",
+            "commonMistakes": "Learners frequently misplace stress on the first syllable (pronouncing it like *ˈkɒm-ə-dɪ-ti* by false analogy with 'comedy' or 'common'). In American pronunciation, the stressed vowel is an unrounded open /ɑː/ and the medial 't' typically becomes a voiced alveolar flap [ɾ]. In corporate contexts, learners often confuse a 'commodity' (a standardized, fungible raw good traded on mercantile exchanges) with finished retail 'merchandise' or a branded 'product'. Furthermore, learners frequently miss the figurative usage describing skills or software that have lost their competitive differentiation."
+        },
+        "etymology": {
+            "origin": "Middle French via Latin",
+            "rootWord": "commoditas (convenience, fitness, utility), from commodus (suitable, timely, possessing proper measure)",
+            "rootMeaning": "'Convenience, usefulness, suitable proportion' (from com- 'with, together' + modus 'measure, manner')",
+            "evolution": "Originates from Classical Latin commoditas (convenience, suitability, advantage), derived from commodus (properly measured, fitting, convenient; from com- 'together' + modus 'measure'). The word entered Old and Middle French as commodité (benefit, profit, convenience), and was borrowed into Middle English in the early 15th century denoting personal convenience, advantage, or physical comfort. By the late 15th century (c. 1480), mercantile legal usage shifted the word to describe commercial wares, merchandise, and tangible goods that yielded profit or economic utility. In 19th-century classical economics and modern mercantile finance, the definition crystallized to denote uniform, fungible raw materials (such as crude oil, wheat, cotton, or copper) traded in bulk on organized futures exchanges regardless of producer.",
+            "relatedLanguages": [
+                "French: commodité (convenience, pl. facilities; raw material/commodity: matière première / marchandise)",
+                "Spanish: comodidad (convenience, comfort; commodity: mercancía / materia prima)",
+                "Italian: comodità (convenience; commodity: merce / materia prima)",
+                "German: Handelsware / Rohstoff (standard economic terms; Commodity used as a financial loanword)",
+                "Dutch: handelswaar / grondstof"
+            ],
+            "firstRecordedUse": "Early 15th century (c. 1420 for 'convenience, advantage'; c. 1480 for commercial goods and trade merchandise)"
+        },
+        "deepMeaning": {
+            "coreConcept": "A standardized, fungible raw material or primary agricultural, mineral, or energy product—such as crude oil, gold, wheat, copper, or coffee—that is interchangeable with other units of the same type and grade, bought and sold in bulk on mercantile exchanges; in broader business terminology, any product, service, or professional skill that has become so ubiquitous and undifferentiated that it competes almost solely on price.",
+            "spatialContext": "Mercantile exchange trading pits and electronic matching engines (e.g., CME, NYMEX, LME), agricultural grain elevators, ocean bulk carrier terminals, petroleum tank farms, and trading desks at commodity hedge funds.",
+            "temporalContext": "Traded around the clock across global time zones (Chicago, London, Singapore); analyzed continuously against seasonal harvest calendars, OPEC quota announcements, and quarterly macroeconomic reports.",
+            "emotionalTone": "Pragmatic, quantitative, cyclical, and market-driven; detached from individual brand prestige.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native business professionals, 'commodity' embodies two key concepts: fungibility and price competition. A native speaker instinctively understands that one bushel of grade-2 corn from Iowa is economically identical to one from Nebraska—they trade at the same market-clearing price. Figuratively, when native executives say 'our product is turning into a commodity,' it signals deep strategic alarm: brand premium is eroding, pricing power is lost, and margins are collapsing. Conversely, the idiom 'a hot commodity' is used to praise someone or something in overwhelming demand (e.g., 'Biotech patent lawyers are a hot commodity').",
+            "mentalImage": "A massive industrial bulk freighter being filled with golden grain at an automated port silo, while an analyst in an adjoining terminal office monitors split-screen displays showing fluctuating futures contract spreads for wheat, crude oil, and natural gas.",
+            "whenToUse": "Use when discussing raw materials, agricultural crops, energy resources, metals, futures and options markets (commodity markets, commodity futures, commodity prices), or when describing products/services that lack brand differentiation.",
+            "whenNotToUse": "Do not use 'commodity' to refer to differentiated consumer products (like a sports car or designer watch), specialized enterprise software with unique IP, or hotel conveniences (which are 'amenities', despite sharing the Latin root commoditas).",
+            "culturalContext": "Commodity trading underpins modern industrial supply chains and global food security. Price swings in energy and agricultural commodities directly dictate headline inflation figures and central bank monetary tightening across G20 economies."
+        },
+        "examples": {
+            "daily": [
+                "Because coffee is an essential morning commodity in our home, we always purchase roasted beans in five-pound bulk bags.",
+                "With utility rates surging this winter, natural gas has become an increasingly costly household commodity.",
+                "In crowded metropolitan districts with limited off-street garages, a reserved parking spot is a rare commodity."
+            ],
+            "business": [
+                "Severe droughts across the Midwest triggered a sharp rally in agricultural commodity prices on the Chicago Board of Trade.",
+                "The airline entered into hedging arrangements on the energy commodity market to cap its jet fuel expenditures for the upcoming fiscal year.",
+                "Unless our engineering team implements proprietary AI capabilities, our cloud hosting package risks being viewed as a low-margin commodity."
+            ],
+            "conversation": [
+                "\"Why did manufacturing input costs jump by twelve percent this quarter?\" — \"A sudden spike in base metal commodity prices, particularly industrial copper and nickel, squeezed our supplier contracts.\"",
+                "\"Are enterprise clients still willing to pay a premium for our cybersecurity audit?\" — \"Not as easily; standard penetration testing has practically become a commodity, so we must highlight our automated remediation tools.\"",
+                "\"I hear senior compliance attorneys are a hot commodity in fintech right now.\" — \"Definitely, the new banking regulations have prompted every major payment processor to expand their legal headcount.\""
+            ],
+            "collocations": [
+                "commodity prices",
+                "commodity market",
+                "scarce commodity",
+                "hot commodity",
+                "agricultural commodity",
+                "commodity trading"
+            ]
+        },
+        "wordFamily": {
+            "noun": "commodity, commodification, commoditization",
+            "verb": "commodify, commoditize",
+            "adjective": "commodified, commoditized",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "bulk agricultural grain shipping commodity exchange silo",
+            "imageDescription": "Golden grain cascading down an industrial conveyor chute into the hold of an ocean freight vessel, beside digital trading monitors showing real-time price quotes for crude oil, soybeans, and precious metals.",
+            "mnemonic": "COMMODITY: When goods have COMMON identity and quality, they trade as a single COMMODITY at the prevailing market price!"
+        },
+        "video": {
+            "description": "A financial exchange educational documentary explaining how raw commodities—including crude oil, livestock, and grains—are standardized into futures contracts on mercantile exchanges to allow commercial producers and industrial buyers to hedge against price volatility."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                7
+            ],
+            "exampleQuestion": "Due to sustained favorable weather and record harvest yields, the price of agricultural ______ on the international mercantile exchange declined for the second consecutive quarter.\n(A) commodities\n(B) commodify\n(C) commoditized\n(D) commodious",
+            "tips": "In TOEIC Part 5, following the preposition 'of' and adjective 'agricultural', a plural or uncountable noun is required to serve as the subject of the prepositional complement. Choice (A) commodities correctly provides the plural noun referring to traded goods. Choice (B) is a verb, (C) is a past participle/adjective, and (D) commodious is a formal adjective meaning roomy or spacious."
+        },
+        "synonyms": [
+            "raw material",
+            "bulk good",
+            "staple",
+            "primary product",
+            "merchandise",
+            "trade good"
+        ],
+        "antonyms": [
+            "custom product",
+            "proprietary good",
+            "specialty item",
+            "differentiated product"
+        ],
+        "relatedWords": [
+            "futures contract",
+            "mercantile exchange",
+            "spot price",
+            "hedging",
+            "fungibility",
+            "commoditization",
+            "supply and demand"
+        ]
+    },
+    {
+        "id": "finance-100",
+        "word": "compensation",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+            "ipa": "/ˌkɑːm.pənˈseɪ.ʃən/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/compensation--_us_1.mp3",
+            "syllableBreakdown": "com-pen-sa-tion",
+            "stressPattern": "Third syllable primary stress: /ˌkɑːm.pənˈseɪ.ʃən/ (ˌ○●○)",
+            "commonMistakes": "Learners frequently place primary stress on the second syllable (*kəm-ˈpen-sə-ʃən*) rather than the third syllable. Phonetically, the second syllable vowel should be an unstressed schwa /pən/ rather than an enunciated /pɛn/. Conceptually, many learners only associate 'compensation' with legal damages or insurance claims for physical injury; in corporate English and TOEIC contexts, it primarily refers to the complete remuneration and benefits package provided to an employee."
+        },
+        "etymology": {
+            "origin": "Latin via Old French",
+            "rootWord": "compensatio (a balancing, counterpoise), from compensare (to weigh one thing against another)",
+            "rootMeaning": "'A weighing together to balance scales' (from com- 'together' + pensare 'to weigh, ponder')",
+            "evolution": "Originates from Classical Latin compensatio (a balancing, counterpoise, offsetting of reciprocal accounts), derived from the verb compensare (to balance, counterbalance, weigh together; formed from com- 'together' + pensare 'to weigh', an intensive of pendere 'to hang, weigh'). In Roman civil jurisprudence, compensatio referred to offsetting counterclaims between debtor and creditor to settle a debt. The term entered Old and Middle French as compensation, and was borrowed into Late Middle English (late 14th century, c. 1387) in legal and philosophical treatises signifying the restoration of balance through restitution, indemnity, or counterbalancing payment. During the Industrial Revolution and early 20th century, labor statutes introduced 'workers' compensation' for occupational accidents. Subsequently, corporate human resources formalized 'compensation' as the comprehensive economic package (base salary, incentive bonuses, equity grants, and healthcare benefits) balancing an employee's labor and contribution.",
+            "relatedLanguages": [
+                "French: compensation (offset, balancing, indemnity, clearing)",
+                "Spanish: compensación (reparation, indemnification, compensation)",
+                "Italian: compensazione (clearing, offsetting, balancing)",
+                "German: Kompensation (offsetting; employee remuneration: Vergütung / Entlohnung; damages: Entschädigung)",
+                "Portuguese: compensação (compensation, counterbalance)"
+            ],
+            "firstRecordedUse": "Late 14th century (c. 1387 in Middle English legal writings denoting the act of making amends or counterbalancing an injury or loss)"
+        },
+        "deepMeaning": {
+            "coreConcept": "The complete monetary and non-monetary remuneration package provided by an employer to an employee or executive in exchange for services, labor, and performance—comprising base salary, performance incentives, equity awards, healthcare coverage, and retirement contributions; alternatively, monetary restitution or legal damages awarded to an injured party to indemnify a loss, harm, breach of contract, or operational disruption.",
+            "spatialContext": "Corporate human resources executive suites, compensation committee boardrooms, payroll accounting software databases, legal arbitration chambers, and public SEC proxy filing disclosures.",
+            "temporalContext": "Reviewed annually during executive remuneration cycles and employee performance evaluations; disbursed bi-weekly or monthly via corporate payroll; paid as lump sums following legal claims or settlements.",
+            "emotionalTone": "Formal, equitable, merit-driven, and contractual; emphasizes balanced reciprocity and fair market valuation.",
+            "formalityLevel": "formal",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native corporate speakers, 'compensation' is an umbrella term far more dignified and expansive than 'pay' or 'wages.' In executive and professional recruiting, native speakers evaluate the 'total compensation package' (often abbreviated as 'total comp' in tech and finance), weighing base salary against stock vesting, bonuses, and retirement contributions. In legal or consumer settings, 'seeking compensation' or 'financial compensation' immediately connotes rightful restitution for an injustice, flight disruption, or injury.",
+            "mentalImage": "A vice president of human resources and a candidate reviewing an executive offer summary table detailing base salary, targeted annual performance bonuses, restricted stock unit (RSU) vesting schedules, and comprehensive executive health coverage under the heading 'Total Annual Compensation'.",
+            "whenToUse": "Use when discussing overall employee remuneration, executive packages, salary benchmarking (compensation and benefits, executive compensation, deferred compensation), or legal indemnification for losses, cancelled bookings, or workplace injuries (workers' compensation, claim compensation).",
+            "whenNotToUse": "Do not use 'compensation' for informal, casual pocket-money payments, small tips, or ordinary retail refunds where no damages or additional redress are involved. Avoid using it where simple 'pay' or 'hourly wage' suffices in blue-collar casual conversation.",
+            "culturalContext": "In modern corporate governance, executive compensation is one of the most intensely regulated and debated topics, subjected to shareholder 'say-on-pay' votes and detailed proxy disclosures. In American labor law, 'workers' compensation' is a foundational no-fault insurance system guaranteeing medical care and wage replacement for work-related injuries."
+        },
+        "examples": {
+            "daily": [
+                "When our connecting flight to Chicago was cancelled overnight, the airline provided hotel lodging and three hundred dollars in cash compensation.",
+                "After the neighboring construction project damaged his boundary fence, Mark filed a formal claim for monetary compensation.",
+                "Before accepting the out-of-state transfer, Sarah calculated whether the higher compensation would cover the increased housing costs."
+            ],
+            "business": [
+                "The supervisory board formed an independent remuneration committee to review executive compensation and align performance bonuses with long-term earnings.",
+                "Eligible technicians who suffer injuries during warehouse operations receive medical benefits through the company's workers' compensation insurance policy.",
+                "To prevent software engineers from defecting to rival startups, the firm updated its compensation package to include equity stock options and flexible child-care stipends."
+            ],
+            "conversation": [
+                "\"Has the finalist accepted the offer for the chief risk officer position?\" — \"She requested a minor adjustment to her deferred compensation, but she is otherwise satisfied with the base salary and equity grant.\"",
+                "\"What redress did the shipping carrier offer for delivering the perishable inventory two weeks late?\" — \"They refunded the freight charges in full and issued a credit voucher as compensation for our warehouse downtime.\"",
+                "\"Why is human resources conducting a regional compensation survey this quarter?\" — \"To ensure our engineering salaries and healthcare packages remain competitive against benchmarked firms in the tech corridor.\""
+            ],
+            "collocations": [
+                "compensation package",
+                "executive compensation",
+                "total compensation",
+                "workers' compensation",
+                "financial compensation",
+                "deferred compensation"
+            ]
+        },
+        "wordFamily": {
+            "noun": "compensation",
+            "verb": "compensate",
+            "adjective": "compensatory, compensated",
+            "adverb": "compensatorily"
+        },
+        "visual": {
+            "imageKeyword": "executive compensation contract salary benefits human resources",
+            "imageDescription": "A corporate hiring manager and an executive candidate reviewing a colorful pie chart on a tablet displaying total compensation breakdown: base salary, stock options, retirement match, and medical benefits.",
+            "mnemonic": "COMPEN-SATION: Think of a scale balancing weights—the employer PENS (weighs) cash and benefits to COMPENSATE your hard work!"
+        },
+        "video": {
+            "description": "A human resources executive tutorial analyzing modern total compensation structures, explaining how base pay, annual performance bonuses, restricted stock units (RSUs), and non-cash benefits are balanced to attract and retain elite leadership."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                7
+            ],
+            "exampleQuestion": "The board of directors approved a revised ______ package that includes quarterly performance incentives and subsidized dental insurance to attract qualified branch managers.\n(A) compensate\n(B) compensation\n(C) compensatory\n(D) compensatively",
+            "tips": "In TOEIC Part 5, noun-noun collocations (compound nouns) are extremely common in business contexts. 'Compensation package' is a standard corporate term referring to total salary and employee benefits. The noun (B) compensation correctly functions as a noun adjunct modifying 'package'. Choice (A) is a base verb, (C) is an adjective (used in legal phrases like 'compensatory damages'), and (D) is an adverb."
+        },
+        "synonyms": [
+            "remuneration",
+            "reimbursement",
+            "reparation",
+            "indemnity",
+            "emolument",
+            "settlement"
+        ],
+        "antonyms": [
+            "forfeiture",
+            "penalty",
+            "loss",
+            "confiscation",
+            "deduction"
+        ],
+        "relatedWords": [
+            "salary",
+            "benefits package",
+            "stock options",
+            "deferred pay",
+            "workers' compensation",
+            "severance",
+            "indemnification"
+        ]
+    },
+    {
+        "id": "finance-101",
+        "word": "compliance",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/kəmˈplaɪ.əns/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/compliance--_us_1.mp3",
+            "syllableBreakdown": "com-pli-ance",
+            "stressPattern": "Second syllable stress: /kəmˈplaɪ.əns/ (○●○)",
+            "commonMistakes": "Learners sometimes reduce the stressed diphthong /aɪ/ to a short /ɪ/, erroneously saying *kəm-ˈplɪ-əns*. Others confuse 'compliance' with 'complaisance' (/kəmˈpleɪ.zəns/, which means a polite disposition to please). Grammatically, test-takers frequently miss the standard prepositional frame 'in compliance with' or confuse the noun 'compliance' with the adjective 'compliant'. In organizational terms, non-native speakers often do not realize that 'Compliance' frequently operates as an autonomous corporate oversight department."
+        },
+        "etymology": {
+            "origin": "Latin via Italian and Anglo-Norman / Middle English",
+            "rootWord": "complere (to fill up, fulfill, complete), through compliantia / complir",
+            "rootMeaning": "'The act of fulfilling or completing a duty, requirement, or command'",
+            "evolution": "Originates from Classical Latin complere (to fill up, complete, fulfill, accomplish; formed from com- 'thoroughly' + plere 'to fill'). In Medieval Latin and Italian, this developed into complire (to fulfill, satisfy, execute what is due or requested), which entered Old French and Anglo-Norman as complir. In 16th-century Early Modern English, the verb comply was adopted meaning 'to fulfill, carry out, or yield to an obligation or desire.' The abstract noun compliance arose in the 1640s by suffixing -ance, denoting the state or act of conforming, yielding, or fulfilling requirements. In the 20th century, spurred by modern financial acts, antitrust laws, environmental statutes, and corporate governance reforms (such as the Sarbanes-Oxley Act of 2002), 'compliance' became formal corporate shorthand for systematic adherence to laws, accounting codes, safety regulations, and ethical guidelines.",
+            "relatedLanguages": [
+                "French: conformité (regulatory/legal compliance; French complaisance means obligingness)",
+                "Spanish: cumplimiento (regulatory/contractual compliance) / conformidad",
+                "Italian: conformità (regulatory compliance) / adempimento (fulfillment)",
+                "German: Regeltreue / Compliance (standard loanword in German finance, banking, and corporate law)",
+                "Dutch: naleving / compliantie"
+            ],
+            "firstRecordedUse": "1640s (in Early Modern English denoting the act of yielding to a wish, rule, or demand)"
+        },
+        "deepMeaning": {
+            "coreConcept": "The state, practice, or operational framework of strictly adhering to, fulfilling, and documenting conformity with applicable laws, governmental statutes, industry standards, financial regulations, and internal ethical codes; within enterprise structure, the specialized executive oversight department responsible for monitoring internal controls, preventing statutory infractions, and managing regulatory risk.",
+            "spatialContext": "Corporate governance offices, regulatory audit war rooms, legal risk departments, commercial bank trading surveillance desks, and manufacturing quality assurance testing laboratories.",
+            "temporalContext": "Monitored on a continuous real-time basis across enterprise workflows; verified during quarterly regulatory filings, annual external audits, and scheduled government inspections.",
+            "emotionalTone": "Vigilant, rigorous, disciplined, and uncompromising; dedicated to organizational integrity and preventing legal liability.",
+            "formalityLevel": "formal",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native corporate professionals, 'compliance' is never merely passive obedience; it is an active, heavily funded defensive shield against financial penalties, criminal liability, and reputational ruin. A native speaker immediately associates the word with 'in compliance with' (e.g., 'operating in full compliance with SEC regulations') and 'Chief Compliance Officer'. In banking and finance, compliance controls every action: from Know Your Customer (KYC) onboarding to insider trading surveillance.",
+            "mentalImage": "A chief compliance officer presenting an interactive regulatory risk dashboard in a boardroom, demonstrating zero audit discrepancies and 100% adherence to newly enacted data privacy and anti-money laundering mandates.",
+            "whenToUse": "Use when discussing adherence to statutory laws, safety standards, environmental rules, accounting standards, or industry certifications (e.g., 'regulatory compliance', 'ensure strict compliance', 'in compliance with safety standards', 'compliance department').",
+            "whenNotToUse": "Do not confuse with 'complaisance' (pleasing others or mild subservience). Do not use 'compliance' in intimate or casual personal agreements where words like 'agreement', 'consent', or 'cooperation' are appropriate.",
+            "culturalContext": "In Anglo-American business culture, the explosion of regulatory complexity (SOX, Dodd-Frank, HIPAA, GDPR) elevated compliance into a direct C-suite function. A single major compliance failure can trigger billions of dollars in regulatory penalties and permanent loss of public trust."
+        },
+        "examples": {
+            "daily": [
+                "Before building the wooden deck in our backyard, we had to submit the architectural drawings to verify compliance with neighborhood building codes.",
+                "The apartment management company installed carbon monoxide detectors on every floor to maintain compliance with municipal housing laws.",
+                "Drivers must renew their vehicle emissions test annually to remain in compliance with state environmental regulations."
+            ],
+            "business": [
+                "The investment bank recruited twenty regulatory specialists to guarantee full compliance with newly enacted anti-money laundering mandates.",
+                "A failure to ensure compliance with international data privacy directives could expose our cloud platform to significant regulatory fines.",
+                "The internal audit confirmed that the manufacturing plant is operating in strict compliance with federal occupational safety standards."
+            ],
+            "conversation": [
+                "\"Did the third-party auditors uncover any discrepancies during their review of our trade ledgers?\" — \"None at all; they verified that all foreign exchange transactions are in full compliance with central bank reporting requirements.\"",
+                "\"Why do all new employees need to complete six hours of ethics training this week?\" — \"Our legal counsel mandated it to maintain compliance with federal anti-bribery standards.\"",
+                "\"Has the chemical storage facility updated its fire suppression system?\" — \"Yes, the city safety inspector signed off on the upgrades and certified complete compliance with municipal codes yesterday.\""
+            ],
+            "collocations": [
+                "in compliance with",
+                "regulatory compliance",
+                "compliance officer",
+                "ensure compliance",
+                "strict compliance",
+                "compliance audit"
+            ]
+        },
+        "wordFamily": {
+            "noun": "compliance, compliancy",
+            "verb": "comply",
+            "adjective": "compliant",
+            "adverb": "compliantly"
+        },
+        "visual": {
+            "imageKeyword": "regulatory compliance audit corporate legal checklist",
+            "imageDescription": "A corporate compliance officer in formal business attire reviewing an audit checklist on an electronic tablet alongside senior financial analysts, with green checkmarks indicating regulatory adherence across accounting registers.",
+            "mnemonic": "COMPLY -> COMPLIANCE: When an enterprise COM-PLEATELY adheres to the rules in ALLIANCE with the law, it achieves total COMPLIANCE!"
+        },
+        "video": {
+            "description": "A corporate governance masterclass video demonstrating how multinational financial institutions design internal compliance frameworks, enforce regulatory controls, and conduct continuous audits to prevent money laundering and corruption."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                7
+            ],
+            "exampleQuestion": "All pharmaceutical manufacturing facilities must operate in strict ______ with international hygiene guidelines established by the regulatory oversight agency.\n(A) comply\n(B) compliant\n(C) compliance\n(D) compliantly",
+            "tips": "A high-frequency TOEIC Part 5 structure is the prepositional phrase 'in compliance with' (often modified by an adjective such as 'strict' or 'full'). Preceding preposition 'in' and modifying adjective 'strict' demand the head noun (C) compliance. Choice (A) is a base verb, (B) is an adjective, and (D) is an adverb."
+        },
+        "synonyms": [
+            "adherence",
+            "conformity",
+            "observance",
+            "acquiescence",
+            "conformance",
+            "accordance"
+        ],
+        "antonyms": [
+            "non-compliance",
+            "violation",
+            "breach",
+            "infringement",
+            "defiance",
+            "transgression"
+        ],
+        "relatedWords": [
+            "regulatory framework",
+            "audit",
+            "governance",
+            "statutory requirement",
+            "due diligence",
+            "internal controls",
+            "sanctions"
+        ]
+    }
+]

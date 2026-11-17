@@ -1,0 +1,356 @@
+{
+  "words": [
+    {
+      "id": "finance-197",
+      "word": "monetary",
+      "partOfSpeech": [
+        "adjective"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈmɑː.nɪ.ter.i/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/monetary--_us_1.mp3",
+        "syllableBreakdown": "mon-e-tar-y",
+        "stressPattern": "Primary stress on the first syllable, secondary stress on the third syllable: MON-e-tar-y (/ˈmɑː.nɪ.ˌter.i/, ●○ˌ●○ in US; ●○○ in UK /ˈmʌn.ɪ.tri/)",
+        "commonMistakes": "Non-native speakers frequently misplace the primary stress onto the second syllable (*mo-NE-ta-ry* or *mo-NE-tri*) by false analogy with words like proprietary or hereditary; in standard English, the primary stress sits squarely on the initial syllable MON-. Conceptually, learners often conflate monetary with fiscal. In economics and corporate finance, monetary refers strictly to currency, the money supply, and central bank actions (e.g., interest rate adjustments and open-market operations), whereas fiscal pertains specifically to government revenues, taxation, and public budgetary expenditures. Another error is using monetary in place of financial to describe routine personal budgeting (e.g., *my monetary budget* instead of *my financial budget*)."
+      },
+      "etymology": {
+        "origin": "Anglo-Norman and Middle French (monétaire), directly from Classical Latin monetarius (pertaining to money, or a mint-master), derived from moneta (a mint, money, coin).",
+        "rootWord": "moneta (mint, coinage), originally an epithet of the Roman goddess Juno (Juno Moneta, \"the warner\" or \"adviser\"), from the Latin verb monere (to warn, advise, remind), ultimately from Proto-Indo-European *men- (to think, remember).",
+        "rootMeaning": "'Pertaining to a mint, circulating coinage, or currency; rooted in the concept of divine warning and fiscal integrity.'",
+        "evolution": "According to Roman legend, sacred geese at the Temple of Juno on the Capitoline Hill sounded an alarm in 390 BCE that alerted Roman defenders to a night siege by the Gauls, earning Juno the surname Moneta (\"the Warner\", from monere). In 269 BCE, Rome established its first state coining workshop adjacent to Juno Moneta's temple, causing her epithet moneta to become the designation for the mint itself and the coins produced there. The derivative adjective monetarius passed into Middle French as monétaire and was borrowed into early 16th-century English as monetary, initially referring strictly to coin minting and legal standard weights. During the late 18th and early 19th centuries, classical political economists expanded the term to encompass macroeconomic systems, paper currency circulation, and central bank interest rate frameworks (monetary policy).",
+        "relatedLanguages": [
+          "French: monétaire (monetary, currency-related)",
+          "Spanish: monetario (monetary, currency-related)",
+          "Italian: monetario (monetary, currency-related)",
+          "German: monetär (monetary, financial)",
+          "Portuguese: monetário (monetary, currency-related)"
+        ],
+        "firstRecordedUse": "Early 16th century (circa 1520s in parliamentary records and treatises on royal mint standards)"
+      },
+      "deepMeaning": {
+        "coreConcept": "Pertaining to currency, coinage, the aggregate volume of money circulating within an economy, or the macroeconomic policy mechanisms through which a central bank controls liquidity, benchmark interest rates, and inflation.",
+        "spatialContext": "Central bank headquarters (e.g., the Federal Reserve, European Central Bank, Bank of Japan), currency trading floors, commercial bank treasury suites, government ministries of finance, and economic research think tanks.",
+        "temporalContext": "Tied to central bank policy cycles (such as the Federal Open Market Committee's six-to-eight-week meeting calendar), quarterly inflation forecasting windows, and national economic reporting releases.",
+        "emotionalTone": "Authoritative, analytical, macroeconomic, institutional, and objective; conveys systematic financial governance and deliberate policy calibration.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native English speakers, 'monetary' immediately evokes high-level institutional macroeconomics—most notably 'monetary policy' (the central bank adjusting benchmark interest rates or managing money supply) and formal legal compensation ('monetary damages', 'monetary penalty'). Natives rarely use 'monetary' in casual everyday settings for personal cash; saying 'I have monetary issues' sounds stiff and unnatural compared to 'financial trouble' or 'cash-flow problems'. In political and economic discourse, natives maintain a strict distinction between 'monetary policy' (set independently by central bankers via rates and money supply) and 'fiscal policy' (debated and enacted by politicians via taxes and public budgets).",
+        "mentalImage": "A central bank chairperson standing at an official press auditorium lectern, presenting a macroeconomic projection slide that shows inflation trajectories, employment data, and the central bank's benchmark target interest rate range.",
+        "whenToUse": "Use when discussing central banking actions, interest rate adjustments, quantitative easing, macroeconomic money supply, currency valuation, and formal contractual or legal remuneration ('monetary compensation', 'monetary settlement').",
+        "whenNotToUse": "Do not use when discussing personal budgeting or day-to-day corporate department accounting (use 'budgetary', 'financial', or 'cash'). Never confuse with 'fiscal' when discussing government taxation or national budget legislation.",
+        "culturalContext": "In major capitalist economies, central bank independence is regarded as a vital institutional safeguard. When the Federal Reserve or the Bank of England announces changes to monetary policy, financial media dissect every word ('hawkish' or 'dovish') because baseline interest rate adjustments instantly reset corporate loan rates, mortgages, and consumer credit across the nation."
+      },
+      "examples": {
+        "daily": [
+          "The municipal court ordered the negligent driver to pay a monetary fine of three hundred dollars in addition to performing community service.",
+          "Although the internship offered no monetary compensation, it provided invaluable hands-on laboratory experience and university course credit.",
+          "The antique pocket watch held immense sentimental value for the family, far exceeding its actual monetary worth on the open market."
+        ],
+        "business": [
+          "The central bank tightened its monetary policy by raising the benchmark interest rate to curb persistent core inflation.",
+          "The contractual agreement stipulates that any unauthorized disclosure of proprietary trade secrets will incur substantial monetary damages.",
+          "Multinational exporters closely monitor shifts in international monetary conditions to protect foreign revenues against sudden currency fluctuations."
+        ],
+        "conversation": [
+          "\"Did the arbitration panel award our company any monetary damages for the supplier's contract breach?\" / \"Yes, the arbitrator ordered them to reimburse our direct procurement losses totaling seventy-five thousand dollars.\"",
+          "\"Why did equity markets decline following this afternoon's press conference?\" / \"Investors were unsettled by the central bank's signals that monetary easing would be postponed until the final fiscal quarter.\"",
+          "\"Does the executive bonus structure include non-monetary incentives?\" / \"Yes, alongside annual cash bonuses, senior directors receive equity stock options and additional paid sabbatical leave.\""
+        ],
+        "collocations": [
+          "monetary policy",
+          "monetary value",
+          "monetary compensation",
+          "monetary penalty",
+          "monetary authority",
+          "International Monetary Fund"
+        ]
+      },
+      "wordFamily": {
+        "noun": "money, monetization, monetarism, monetarist",
+        "verb": "monetize",
+        "adjective": "monetary, monetized",
+        "adverb": "monetarily"
+      },
+      "visual": {
+        "imageKeyword": "central bank governor press conference interest rate chart monetary policy",
+        "imageDescription": "A central bank chairperson addressing journalists at a formal podium, with widescreen monitors in the background displaying macroeconomic interest rate yield curves and inflation target projections.",
+        "mnemonic": "MONETARY shares its historical root with MONEY and MINT: think of a central banker deciding how much MONEY should be MINTED and at what interest rate!"
+      },
+      "video": {
+        "description": "An educational macroeconomic video analyzing how central banks utilize monetary policy—specifically benchmark interest rates and reserve requirements—to stabilize prices and sustain maximum employment."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "To prevent the national economy from overheating, the central bank committee voted unanimously to tighten _______ policy through an incremental interest rate hike.\n(A) monetarily\n(B) monetize\n(C) monetary\n(D) monetization",
+        "tips": "In TOEIC Part 5, questions frequently test adjective-noun collocations in institutional finance contexts. The blank precedes the noun 'policy' and modifies it. The correct modifier is the adjective 'monetary' (C), forming the standard macroeconomic collocation 'monetary policy' (chính sách tiền tệ). Choice (A) 'monetarily' is an adverb; (B) 'monetize' is a base verb; and (D) 'monetization' is a noun that cannot modify 'policy' in this standard context."
+      },
+      "synonyms": [
+        "financial",
+        "pecuniary",
+        "currency-based",
+        "capital",
+        "currency-related",
+        "numismatic"
+      ],
+      "antonyms": [
+        "non-monetary",
+        "in-kind",
+        "non-financial",
+        "intangible"
+      ],
+      "relatedWords": [
+        "central bank",
+        "interest rate",
+        "inflation",
+        "liquidity",
+        "money supply",
+        "fiscal policy",
+        "quantitative easing"
+      ]
+    },
+    {
+      "id": "finance-198",
+      "word": "money market",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˈmʌn.i ˌmɑːr.kɪt/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/money_market--_us_1.mp3",
+        "syllableBreakdown": "mon-ey mar-ket",
+        "stressPattern": "Compound noun stress: primary stress on the first syllable of 'money', secondary stress on the first syllable of 'market': MON-ey mar-ket (/ˈmʌn.i ˌmɑːr.kɪt/, ●○ ˌ●○)",
+        "commonMistakes": "Learners frequently confuse the 'money market' with the 'capital market' or 'stock market'. The money market trades exclusively in ultra-short-term debt securities (maturities of one year or less, often overnight to 90 days), such as Treasury bills, certificates of deposit, commercial paper, and repurchase agreements, prioritizing principal preservation and liquidity over long-term capital appreciation. Another prevalent error is conflating a 'money market account' (an FDIC-insured bank deposit account) with a 'money market fund' (an open-end investment mutual fund holding short-term debt, which is not government-backed and carries slight credit risk). Phonetically, some non-native speakers over-stress the second syllable of 'market' (*mar-KET*) instead of emphasizing *MAR-ket*."
+      },
+      "etymology": {
+        "origin": "Modern English financial compound combining money (from Anglo-Norman moneie, Old French monoie, from Latin moneta) and market (from Anglo-Norman market, Old French marquet, from Latin mercatus 'trade, marketplace').",
+        "rootWord": "Latin moneta (mint, coinage) + mercatus (commerce, marketplace, buying and selling), from mercari (to trade) and merx (merchandise).",
+        "rootMeaning": "'A specialized trading arena for short-term liquidity, near-cash credit instruments, and temporary cash surpluses.'",
+        "evolution": "The term arose in the City of London during the early 19th century (documented in the 1810s and 1820s) to describe the close-knit network of discount houses, bill brokers, and merchant banks operating along Lombard Street that bought and sold commercial bills of exchange and government Treasury debt. Walter Bagehot formalized the mechanics of this system in his seminal 1873 treatise 'Lombard Street: A Description of the Money Market'. In the United States, the money market matured alongside the Federal Reserve System after 1913, rapidly expanding through federal funds interbank lending, negotiable certificates of deposit (introduced by Citibank in 1961), commercial paper issued by corporations, and the invention of retail money market mutual funds in 1971 by Bruce Bent and Henry Brown to bypass Regulation Q interest rate caps.",
+        "relatedLanguages": [
+          "French: marché monétaire (money market)",
+          "Spanish: mercado monetario / mercado de dinero (money market)",
+          "Italian: mercato monetario (money market)",
+          "German: Geldmarkt (money market, short-term debt market)",
+          "Portuguese: mercado monetário (money market)"
+        ],
+        "firstRecordedUse": "Early 19th century (circa 1810s in British merchant banking circulars and financial press)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The global wholesale financial market where governments, banks, and major corporations issue and trade highly liquid, low-risk, short-term debt instruments with maturities of one year or less—such as Treasury bills, commercial paper, and repurchase agreements—to balance working capital and meet immediate cash obligations.",
+        "spatialContext": "Bank treasury desks, institutional asset management trading rooms, corporate cash management suites, central bank open-market transaction desks, and multi-screen Bloomberg terminal workstations.",
+        "temporalContext": "Operating on ultra-short horizons ranging from overnight borrowing (repos and federal funds) to 30-, 60-, 90-, and 180-day debt maturities, featuring same-day (T+0) or next-day (T+1) trade settlements.",
+        "emotionalTone": "Conservative, highly liquid, meticulous, security-minded, and institutional; emphasizes safety of principal and immediate cash availability rather than speculative yield.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native corporate treasurers and Wall Street professionals, the 'money market' is the unseen circulatory system of global commerce. It is where CFOs park hundreds of millions of dollars overnight between vendor payment cycles and payroll dispatches. To average American consumers, the term is encountered as a 'money market account' (MMA) at their local credit union or bank—a low-risk savings alternative that yields better interest than an ordinary checking account while allowing limited checks or debit card transactions.",
+        "mentalImage": "A corporate treasury analyst sitting before three monitors displaying real-time bid-ask yields on commercial paper tranches and 90-day Treasury bills, determining where to park fifty million dollars of corporate cash balance.",
+        "whenToUse": "Use when discussing short-term corporate liquidity, institutional cash management, Treasury bills, commercial paper issuances, repo transactions, money market mutual funds, or high-yield liquid banking accounts.",
+        "whenNotToUse": "Do not use when discussing equity stocks, initial public offerings (IPOs), venture capital, 30-year sovereign bonds, or corporate acquisitions (these belong to the 'capital market' or 'equity market'). Never confuse with a currency exchange (forex) booth.",
+        "culturalContext": "The stability of money market funds is so foundational that they are engineered to maintain a constant Net Asset Value (NAV) of exactly $1.00 per share. When the Reserve Primary Fund dropped below $1.00 ('broke the buck') during the September 2008 Lehman Brothers collapse, it sparked a historic run on corporate cash that prompted the US government to step in with emergency liquidity backstops to keep commercial payrolls running."
+      },
+      "examples": {
+        "daily": [
+          "To earn a competitive interest rate while preserving quick access to funds, she parked her emergency savings in a bank money market account.",
+          "The financial advisor suggested moving retirement capital into a money market fund to shield against equity volatility as retirement approached.",
+          "He chose a money market account over a certificate of deposit because it allowed monthly debit transactions without early withdrawal penalties."
+        ],
+        "business": [
+          "The corporation issued ninety-day commercial paper in the money market to fund working capital needs ahead of seasonal manufacturing demands.",
+          "Our corporate treasury team invested thirty million dollars of surplus cash in money market instruments yielding competitive annualized returns.",
+          "Spikes in money market interest rates prompted CFOs across the tech sector to reallocate operating liquidity into short-dated Treasury bills."
+        ],
+        "conversation": [
+          "\"Where are we holding the cash reserves generated from the asset sale?\" / \"Our liquidity policy mandates keeping those funds in top-rated money market instruments until our acquisition closes next quarter.\"",
+          "\"Why did our money market yield increase this month?\" / \"It reset higher in response to the central bank's latest benchmark rate increase.\"",
+          "\"Should we finance this inventory purchase through a bank term loan or commercial paper?\" / \"Current money market rates are favorable, so issuing thirty-day commercial paper will minimize our financing costs.\""
+        ],
+        "collocations": [
+          "money market account",
+          "money market fund",
+          "money market instrument",
+          "money market rate",
+          "money market yield",
+          "short-term money market"
+        ]
+      },
+      "wordFamily": {
+        "noun": "money market, money marketeer",
+        "verb": "",
+        "adjective": "money-market",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "corporate treasury desk money market trading screens commercial paper",
+        "imageDescription": "A financial liquidity trader at a modern workstation reviewing multi-window software displaying real-time yield curves for Treasury bills, repo rates, and commercial paper maturities.",
+        "mnemonic": "MONEY MARKET is the wholesale produce market for CASH: corporations and banks go there daily to buy and sell 'fresh', ultra-short-term liquid funds!"
+      },
+      "video": {
+        "description": "An executive finance tutorial demonstrating how corporate treasuries utilize money market instruments—including Treasury bills, repo agreements, and commercial paper—to manage operating liquidity and short-term debt."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "To ensure sufficient operating liquidity for upcoming factory expansions, the treasury department decided to invest its excess cash into _______ instruments.\n(A) money market\n(B) monetary market\n(C) money marketing\n(D) market money",
+        "tips": "In TOEIC Part 5, recognizing standard compound nouns and financial terms is a frequent challenge. The fixed business term modifying 'instruments' is 'money market' (A), forming the compound noun 'money market instruments' (công cụ thị trường tiền tệ) such as T-bills and commercial paper. Choice (B) 'monetary market' is unidiomatic; (C) 'money marketing' uses a gerund unrelated to finance; and (D) 'market money' reverses the compound components."
+      },
+      "synonyms": [
+        "short-term debt market",
+        "credit market",
+        "liquidity market",
+        "discount market",
+        "interbank lending market"
+      ],
+      "antonyms": [
+        "capital market",
+        "equity market",
+        "stock market",
+        "bond market",
+        "long-term debt market"
+      ],
+      "relatedWords": [
+        "Treasury bill",
+        "commercial paper",
+        "certificate of deposit",
+        "liquidity",
+        "repurchase agreement",
+        "yield",
+        "working capital"
+      ]
+    },
+    {
+      "id": "finance-199",
+      "word": "monopoly",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/məˈnɑː.pəl.i/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/monopoly--_us_1.mp3",
+        "syllableBreakdown": "mo-nop-o-ly",
+        "stressPattern": "Primary stress on the second syllable: mo-NOP-o-ly (/məˈnɑː.pəl.i/, ○●○○)",
+        "commonMistakes": "A frequent pronunciation error among non-native speakers is placing the stress on the third syllable (*mo-no-PO-ly*) or the first syllable (*MO-no-poly*). The correct English stress is on the second syllable: /məˈnɑː.pəl.i/. Semantically, learners often confuse 'monopoly' (a market structure with a single sole seller) with 'oligopoly' (a market dominated by a handful of large competitors, such as airlines or smartphone manufacturers) or 'monopsony' (a market with only one single buyer). Another common error is assuming every monopoly is unlawful; 'natural monopolies' (such as regional electricity grids or municipal water systems) are legally permitted but strictly regulated by government utility boards."
+      },
+      "etymology": {
+        "origin": "Directly borrowed from Classical Latin monopolium, from Ancient Greek monopōlion (the right of exclusive sale), formed from monos (alone, only, single) and pōlein (to sell).",
+        "rootWord": "Ancient Greek monos (single, sole, alone) + pōlein (to sell, vend).",
+        "rootMeaning": "'Exclusive right or sole privilege of selling a commodity or service in a market.'",
+        "evolution": "The concept was first systematically analyzed by Aristotle in Book I of his 'Politics', where he recorded how the philosopher Thales of Miletus cornered the market by leasing all olive oil presses in Chios and Miletus ahead of a bumper crop. The Latin loanword monopolium was used in the Roman Senate (Emperor Tiberius famously apologized for using this foreign term). In 16th- and 17th-century England, monarchs abused royal prerogatives by granting exclusive royal monopoly charters on commodities like salt, coal, and playing cards, leading Parliament to enact the historic Statute of Monopolies of 1624, which curtailed royal trade monopolies and laid the groundwork for modern patent law. In late 19th-century America, the rise of industrial trusts (such as Standard Oil) prompted the passage of the landmark Sherman Antitrust Act of 1890 and the Clayton Act of 1914, formalizing modern competition law to prevent illegal monopolization.",
+        "relatedLanguages": [
+          "French: monopole (monopoly)",
+          "Spanish: monopolio (monopoly)",
+          "Italian: monopolio (monopoly)",
+          "German: Monopol (monopoly)",
+          "Portuguese: monopólio (monopoly)",
+          "Greek: μονοπώλιο (monopólio)"
+        ],
+        "firstRecordedUse": "Mid-16th century (circa 1530s in English legal charters and parliamentary debates on trade privileges)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A market structure or economic condition where a single commercial enterprise or institutional entity exercises exclusive control over the supply of a particular good, commodity, or service, giving it commanding pricing power due to an absence of viable substitutes and high barriers to competitive entry.",
+        "spatialContext": "Antitrust courtrooms, regulatory agency hearing chambers (e.g., US Federal Trade Commission, Department of Justice, European Directorate-General for Competition), corporate compliance boardrooms, and public utility commission offices.",
+        "temporalContext": "Developing over years or decades through aggressive horizontal acquisition, patent exclusivity, network effects, or statutory utility concessions; subject to multi-year antitrust investigations and judicial oversight.",
+        "emotionalTone": "Domineering, contentious, restrictive, regulatory, and litigious; evokes scrutiny regarding anti-competitive pricing, consumer welfare, and barrier creation.",
+        "formalityLevel": "formal",
+        "connotation": "negative"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'monopoly' immediately sparks two associations: the iconic Parker Brothers/Hasbro board game (accumulating properties, building houses/hotels, and driving family members to bankruptcy) and aggressive corporate hegemony that suppresses consumer freedom and inflates prices. In business discourse, labeling a corporation a 'monopoly' carries immediate legal gravity—it conjures images of the breakup of Standard Oil, AT&T's 'Ma Bell' divestiture, and landmark antitrust lawsuits against tech giants. Figuratively, native speakers frequently say someone 'does not have a monopoly on good ideas' or 'a monopoly on common sense' to rebuff intellectual arrogance.",
+        "mentalImage": "A federal antitrust prosecutor standing in a courtroom gesturing toward a display chart that demonstrates a tech titan holding an 85 percent share of enterprise search traffic, flanked by shelves of subpoenaed corporate documents.",
+        "whenToUse": "Use when discussing commercial market concentration, antitrust law enforcement, corporate merger reviews, exclusive government utility concessions ('natural monopolies'), patent-protected drug manufacturing, or pricing power.",
+        "whenNotToUse": "Do not use for industries dominated by three or four major competing firms (use 'oligopoly', as with wireless carriers or aerospace manufacturers). Never use when describing an exclusive single purchaser (use 'monopsony'). Avoid using it to describe a popular company if customers have accessible, realistic alternative options.",
+        "culturalContext": "Under US and EU antitrust doctrine, possessing a large market share is not inherently illegal; rather, unlawful 'monopolization' occurs when a firm actively abuses its dominance through exclusionary practices, predatory pricing, or tying agreements to eliminate competition. Natural monopolies (e.g., power transmission lines and municipal tap water) are legally sanctioned because duplicating infrastructure would be economically inefficient, but their pricing is strictly governed by public utility commissions."
+      },
+      "examples": {
+        "daily": [
+          "Because the regional electricity provider operates as a natural monopoly, residents must accept its regulated tariffs without the option to switch providers.",
+          "During our weekend family game night, my cousin secured a monopoly on the yellow board properties and quickly bankrupted the other players.",
+          "Local taxi operators argued that the exclusive ride-hailing contract at the international airport created an unfair monopoly that hurt independent drivers."
+        ],
+        "business": [
+          "Antitrust regulators blocked the proposed pharmaceutical merger, contending that combining the two firms would create an unassailable monopoly in cancer therapeutics.",
+          "Securing a twenty-year patent on the proprietary battery chemistry granted the startup a legal monopoly to commercialize its technology without direct competition.",
+          "The European Commission levied a record fine against the tech platform for abusing its search engine monopoly to favor its own shopping services."
+        ],
+        "conversation": [
+          "\"Why are our cloud hosting rates increasing so steeply this quarter?\" / \"Our current provider holds a virtual monopoly in specialized high-security government cloud servers, so they possess significant pricing leverage.\"",
+          "\"Will the Department of Justice approve the railway merger?\" / \"It appears unlikely; freight regulators warned that combining their networks would establish a monopoly over critical grain transit corridors.\"",
+          "\"How can the municipal water authority increase residential utility rates without losing customers?\" / \"As a state-regulated natural monopoly, they are legally protected from market competition, though any rate hike requires utility commission approval.\""
+        ],
+        "collocations": [
+          "natural monopoly",
+          "break up a monopoly",
+          "hold a monopoly",
+          "grant a monopoly",
+          "state monopoly",
+          "monopoly power"
+        ]
+      },
+      "wordFamily": {
+        "noun": "monopoly, monopolist, monopolization",
+        "verb": "monopolize",
+        "adjective": "monopolistic, monopolized",
+        "adverb": "monopolistically"
+      },
+      "visual": {
+        "imageKeyword": "antitrust courtroom gavel corporate monopoly market share pie chart",
+        "imageDescription": "A polished wooden gavel resting beside official antitrust legal briefs and a digital presentation board displaying an 85% market share dominance diagram.",
+        "mnemonic": "MONO (single, alone) + POLY (seller, from Greek polein 'to sell') = ONE single seller controlling the entire marketplace!"
+      },
+      "video": {
+        "description": "An informative economics documentary exploring how monopolies form, comparing natural public utilities with anti-competitive commercial trusts and detailing how antitrust regulations protect consumer welfare."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "The competition oversight committee intervened in the merger discussions, warning that the acquisition would give the conglomerate an effective _______ over regional rail freight services.\n(A) monopolize\n(B) monopolistic\n(C) monopoly\n(D) monopolistically",
+        "tips": "In TOEIC Part 5, sentence completion often tests noun identification after determiners and adjectives. The phrase 'an effective _______' requires a singular countable noun to complete the object of the verb 'give'. 'Monopoly' (C) is the required noun (sự độc quyền). Choice (A) 'monopolize' is a verb; (B) 'monopolistic' is an adjective; and (D) 'monopolistically' is an adverb."
+      },
+      "synonyms": [
+        "exclusive control",
+        "corner on the market",
+        "sole supplier",
+        "trust",
+        "cartel",
+        "market dominance"
+      ],
+      "antonyms": [
+        "perfect competition",
+        "free market",
+        "open competition",
+        "competitive market"
+      ],
+      "relatedWords": [
+        "antitrust",
+        "oligopoly",
+        "cartel",
+        "Sherman Act",
+        "barrier to entry",
+        "market share",
+        "predatory pricing"
+      ]
+    }
+  ]
+}

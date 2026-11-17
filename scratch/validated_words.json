@@ -1,332 +1,352 @@
 {
   "words": [
     {
-      "id": "dining-209",
-      "word": "pie",
+      "id": "finance-228",
+      "word": "profit",
       "partOfSpeech": [
         "noun"
       ],
-      "category": "dining",
+      "category": "finance",
       "level": "essential",
       "toeicFrequency": 9,
       "pronunciation": {
-        "ipa": "/paɪ/",
-        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/pie--_us_1.mp3",
-        "syllableBreakdown": "pie",
-        "stressPattern": "●",
-        "commonMistakes": "Learners rarely mispronounce the simple /aɪ/ diphthong, but some East Asian or Francophone speakers tend to clip the ending off-glide, producing /pa/ or /peɪ/ (sounding like 'pay'). In listening comprehension, candidates sometimes confuse 'pie' with 'pine' or 'pipe' in low-fidelity audio recordings, or struggle to recognize figurative expressions like 'a piece of the pie' (share of profits/revenue) or 'pie in the sky' (unrealistic ideal) in business conversational contexts."
+        "ipa": "/\u02c8pr\u0251\u02d0.f\u026at/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/profit--_us_1.mp3",
+        "syllableBreakdown": "prof-it",
+        "stressPattern": "Primary stress on the first syllable: PROF-it (/\u02c8pr\u0251\u02d0.f\u026at/, \u25cf\u25cb)",
+        "commonMistakes": "Learners frequently confuse 'profit' with its exact homophone 'prophet' (/\u02c8pr\u0251\u02d0.f\u026at/, a religious seer or spiritual messenger); while phonetically identical in listening passages, their orthography and semantic realms are completely distinct. In speech, non-native speakers often over-enunciate the second syllable as a full vowel /-i\u02d0t/ or /-e\u026at/ rather than using the standard reduced vowel /\u026a/ or /\u0259t/. In financial analysis, learners commonly conflate 'profit' with 'revenue' (total sales before expenses) or 'cash flow' (liquid funds entering/exiting), overlooking that a business can be profitable on an accrual basis while experiencing severe cash shortfalls."
       },
       "etymology": {
-        "origin": "Middle English pie (c. 1300), of uncertain ultimate etymology; universally linked to Old French pie ('magpie'), from Latin pīca ('magpie, spotted or chattering bird').",
-        "rootWord": "pīca",
-        "rootMeaning": "magpie (an allusion to the bird's famous habit of hoarding a miscellaneous collection of varied objects in its nest, comparing it to the diverse collection of ingredients baked together within a pastry shell)",
-        "evolution": "In medieval England, pastry enclosures were known as 'coffins' or 'coffers', functioning initially as thick, inedible vessels of flour and water designed to braise, preserve, and transport meats, game, and suet over long periods. The vernacular term 'pie' appeared in Anglo-Latin and Middle English during the early 14th century to describe baked pasties containing assorted meats and spices. By the 16th century, as enriched fats like butter and lard were incorporated into the dough, the pastry casing became tender, flaky, and edible. While the British tradition maintained an enduring focus on savory meat pies (steak and ale, pork pie, shepherd's pie), American colonial bakers adapted the technique to abundant native and orchard fruits (apples, pumpkins, berries, pecans), cementing sweet fruit pies baked in sloping metal tins as an enduring symbol of American culinary culture.",
+        "origin": "Classical Latin profectus ('progress, growth, advancement, profit'), noun of action from proficere ('to make progress, advance, be useful or advantageous'), compounded from pro- ('forward, forth') + facere ('to make, do').",
+        "rootWord": "proficere (pro- 'forward' + facere 'to make, do')",
+        "rootMeaning": "'To make progress, to advance forward, to produce beneficial gain'",
+        "evolution": "In Classical Latin, profectus denoted personal improvement or general progress. It passed into Old French during the 12th century as profit / prufit ('material gain, spiritual advantage, benefit'), which entered Middle English circa 1300. By the 15th and 16th centuries, with the emergence of merchant guild accounting and Italian double-entry bookkeeping, the term specialized into its dominant commercial definition: the surplus financial value remaining from commercial transactions after subtracting all expenditures, inventory costs, and operating overhead.",
         "relatedLanguages": [
-          "Old French: pie (magpie)",
-          "Latin: pīca (magpie)",
-          "French: tarte / tourte (pie/tart), pie (magpie)",
-          "Spanish: tarta / empanada / pastel (pie/tart), pega (magpie)",
-          "Italian: torta / pasticcio (pie/tart), gazza (magpie)",
-          "German: Pastete (meat pie) / Obstkuchen (fruit pie), Elster (magpie)"
+          "French: profit (gain, financial profit, advantage)",
+          "Spanish: provecho (benefit, advantage), beneficio (financial profit)",
+          "Italian: profitto (gain, commercial profit, progress)",
+          "German: Profit (commercial profit, monetary gain)",
+          "Portuguese: proveito (benefit), lucro (commercial profit)"
         ],
-        "firstRecordedUse": "Early 14th century (c. 1303 in Anglo-Latin monastic bursars' accounts; c. 1362 in William Langland's Piers Plowman describing street cooks crying 'Hote pies, hote!')"
+        "firstRecordedUse": "Early 14th century (circa 1300 in Middle English for 'benefit, spiritual or worldly advantage'); specialized accounting usage established by the 16th century."
       },
       "deepMeaning": {
-        "coreConcept": "A baked culinary dish consisting of an edible pastry dough crust that encloses, supports, or covers a sweet filling (such as spiced fruit, custard, chocolate, or nuts) or a savory filling (such as braised meat, poultry, seafood, or vegetables), typically baked in a round, sloped-sided tin and served warm or chilled in radial wedges.",
-        "spatialContext": "Commercial bakery prep kitchens, refrigerated dessert display cases in corporate cafeterias, hotel banquet buffet stations, casual diners, gastropub dining rooms, and bakery production lines.",
-        "temporalContext": "Daily dessert course offerings during executive luncheon services, afternoon catered coffee breaks, and seasonal holiday banquet menus (autumn Thanksgiving and winter holiday dining promotions).",
-        "emotionalTone": "Comforting, artisanal, nostalgic, and indulgent.",
-        "formalityLevel": "neutral",
+        "coreConcept": "The net financial gain or monetary surplus realized from business operations, asset sales, or capital investments after deducting all costs of goods sold, operating expenses, depreciation, taxes, and debt service charges; commonly referred to in financial reporting as the 'bottom line' or net income.",
+        "spatialContext": "Corporate earnings teleconferences, executive boardrooms, brokerage terminals, quarterly earnings reports, SEC filings (Form 10-K and 10-Q), and corporate accounting ledgers.",
+        "temporalContext": "Reported on standardized quarterly (Q1-Q4) and annual fiscal reporting cycles; scrutinized dynamically during earnings announcement seasons.",
+        "emotionalTone": "Pragmatic, rewarding, commercially validating, and ambitious; conveys solvency, competitive viability, and shareholder value creation.",
+        "formalityLevel": "formal",
         "connotation": "positive"
       },
       "nativeMindset": {
-        "howNativesThink": "Native English speakers have two distinct mental models for 'pie' depending on geography: North Americans immediately imagine a golden-crusted sweet dessert—warm spiced apple pie served with vanilla ice cream ('à la mode'), holiday pumpkin pie with whipped cream, or tart key lime pie. In the UK, Ireland, Australia, and New Zealand, the default 'pie' is savory—a hearty handheld or pub-style individual meat pie filled with tender beef chunks and dark rich gravy. Beyond gastronomy, native speakers intuitively use 'pie' in economic and corporate metaphors: 'a slice/piece of the pie' represents a rightful division of revenue, budget, or market share, while 'pie chart' is an indispensable data visualization tool.",
-        "mentalImage": "A freshly baked double-crust apple pie cooling on an elevated stainless steel baker's rack, featuring golden-brown fluted crimped edges, decorative vent slits revealing simmering cinnamon-infused juices, and a delicate dusting of coarse granulated sugar.",
-        "whenToUse": "Use when referring to baked pastry dishes with sweet fillings (cherry pie, pecan pie, cream pie) or savory fillings (chicken pot pie, shepherd's pie, beef steak pie), dessert menus in dining establishments, corporate catering break selections, or established business idioms ('pie chart', 'slice of the pie').",
-        "whenNotToUse": "Do not confuse with 'tart' (which usually has a shallower, straight-sided crust without a top lid, made with sweet shortcrust pastry), 'cake' (which has a leavened, sponge-like crumb), or 'cobbler' (fruit baked under a drop-biscuit or batter topping rather than rolled pastry dough).",
-        "culturalContext": "In American cultural identity, pie occupies an iconic status epitomized by the mid-20th-century idiom 'as American as apple pie'. In corporate catering and banquet design, individual miniature pies or pie buffet displays are popular dessert choices for autumn client appreciation events and Thanksgiving luncheons. In business analytics, the 'pie chart' remains one of the most recognizable graphic formats for displaying proportional data."
+        "howNativesThink": "To native speakers, 'profit' represents the fundamental metric of enterprise viability: it is what remains after the hard costs of reality are paid. Natives intuitively picture a ledger moving 'into the black' (away from 'in the red'), symbolizing a business that generates more value than it consumes. Beyond finance, native speakers employ 'profit' metaphorically in formal register to signify any practical benefit or wisdom harvested from experience, but in contemporary corporate contexts, it evokes the relentless pursuit of healthy margins and quarterly earnings per share.",
+        "mentalImage": "A corporate income statement displayed on an analyst dual-screen workstation, highlighting the bolded bottom row labeled 'Net Profit After Tax,' showing positive double-digit percentage growth in crisp green figures beside a fountain pen and a newly compiled quarterly earnings summary.",
+        "whenToUse": "Use 'profit' when denoting the net positive remainder after subtracting business expenses (e.g., 'gross profit', 'operating profit', 'net profit'), when describing commercial success ('operating at a profit', 'turn a profit'), or in standard business agreements ('profit-sharing plan').",
+        "whenNotToUse": "Do not use 'profit' when referring to gross revenue, sales turnover, or top-line receipts before deducting operating costs. Do not confuse with 'cash flow', as a profitable company may experience a liquidity crisis if client receivables are delayed.",
+        "culturalContext": "In Anglo-American market capitalism, generating profit is recognized as the central fiduciary duty of corporate executives to their shareholders. Every quarter, publicly traded companies on the NYSE, NASDAQ, and London Stock Exchange face intense scrutiny from market analysts based on whether reported net profit meets or beats consensus earnings estimates."
       },
       "examples": {
         "daily": [
-          "The diner server recommended finishing our lunch with a slice of warm blackberry pie and vanilla bean ice cream.",
-          "On chilly winter evenings, she loved preparing a homemade chicken pot pie filled with tender vegetables and a buttery puff pastry lid.",
-          "He picked up a freshly baked pecan pie from the local bakery to bring to the family holiday gathering."
+          "After paying for booth rental, baking supplies, and packaging materials, Maya made a three-hundred-dollar profit at the neighborhood farmers market.",
+          "He restored a vintage motorcycle in his garage over the winter and sold it in the spring for a modest profit.",
+          "The booster club donates all annual profits from high school concession sales to fund athletic equipment and student scholarships."
         ],
         "business": [
-          "The executive catering menu for the year-end awards banquet includes miniature savory beef pies as passed hors d'oeuvres.",
-          "The hotel pastry division increased its seasonal dessert revenue by fourteen percent after introducing artisanal fruit pies to the autumn banquet package.",
-          "During the catering planning session, the client requested individual gluten-free chicken pot pies to accommodate guests with dietary restrictions."
+          "Despite steep increases in ocean freight rates, the consumer electronics manufacturer reported an 18 percent increase in annual net profit.",
+          "By automating warehouse fulfillment and negotiating volume discounts with suppliers, the retail chain significantly expanded its gross profit margins.",
+          "The executive committee resolved to allocate twenty percent of retained profits toward renewable energy research rather than issuing a special shareholder dividend."
         ],
         "conversation": [
-          "\"Would your table care for coffee or dessert to conclude the meal?\" / \"Yes, please—could we get two slices of the Dutch apple pie, heated up with ice cream on the side?\"",
-          "\"Does the banquet buffet include hot savory options for lunch?\" / \"Yes, we have personal-sized shepherd's pies and vegetable quiches stationed at the hot carving table.\""
+          "\"Did our overseas marketing campaign end up breaking even?\" \u2014 \"Actually, it turned a substantial profit within six weeks thanks to exceptionally high conversion rates.\"",
+          "\"Why did the company stock tumble four percent if total revenues broke records?\" \u2014 \"Because surging logistics overhead wiped out their operating profit, causing earnings per share to miss Wall Street expectations.\"",
+          "\"Is the newly acquired logistics subsidiary operating at a profit yet?\" \u2014 \"Yes, for the first time since the merger, its monthly operating income exceeded operating expenditures.\""
         ],
         "collocations": [
-          "apple pie",
-          "slice of pie",
-          "pot pie",
-          "flaky pie crust",
-          "pie chart",
-          "piece of the pie"
+          "turn a profit",
+          "net profit",
+          "gross profit",
+          "operating profit",
+          "profit margin",
+          "profit-sharing plan"
         ]
       },
       "wordFamily": {
-        "noun": "pie"
+        "noun": "profit, profitability, profiteer, profiteering",
+        "verb": "profit",
+        "adjective": "profitable, unprofitable, profitless",
+        "adverb": "profitably, unprofitably"
       },
       "visual": {
-        "imageKeyword": "freshly baked golden double crust apple pie flaky pastry crimped edge cooling rack",
-        "imageDescription": "A whole golden-brown double-crust apple pie resting on a wire cooling rack on a rustic marble bakery counter, showing hand-crimped edges and steaming cinnamon-apple juices bubbling through pastry vents.",
-        "mnemonic": "PIE: Picture Ingredients Enclosed in pastry—whether sweet apples or savory pot roast, it's always baked inside a flaky crust!"
+        "imageKeyword": "corporate financial income statement net profit bar chart laptop desk",
+        "imageDescription": "A brightly lit corporate office desk showing an open financial audit report highlighting net profit figures, accompanied by an executive tablet displaying an upward-trending financial bar chart and a slim silver calculator.",
+        "mnemonic": "PROFIT comes from Latin PROFICERE ('pro' = forward + 'facere' = to make). When your enterprise moves forward and makes money beyond its expenses, you earn a PROFIT!"
       },
       "video": {
-        "description": "A professional commercial kitchen tutorial illustrating banquet pastry chefs rolling, crimping, blind-baking, and slicing sweet and savory pies for high-volume corporate catering events."
+        "description": "A certified public accountant using an interactive digital dashboard to demonstrate how total revenue breaks down into gross profit, operating profit, and net profit by sequentially deducting COGS and operating expenses."
       },
       "toeicContext": {
         "commonParts": [
-          1,
           3,
           4,
+          5,
+          6,
           7
         ],
-        "exampleQuestion": "To cater to corporate guests with diverse dietary requirements, the banquet chef added a savory vegetarian mushroom _____ to the luncheon buffet options.\n(A) pie\n(B) pieties\n(C) piecemeal\n(D) piously",
-        "tips": "In Part 5, analyze the noun phrase 'a savory vegetarian mushroom _____'. The compound culinary noun requires the head noun naming a food item. Choice (A) 'pie' correctly completes the compound noun 'mushroom pie'. Choice (B) 'pieties' is an unrelated plural noun meaning devout religious beliefs; (C) 'piecemeal' is an adverb/adjective meaning done in fragments or stages; and (D) 'piously' is an adverb meaning with religious devotion."
+        "exampleQuestion": "Due to unexpectedly high overseas demand and stringent cost-reduction initiatives, Crestview Technologies was able to turn a substantial _______ during the third quarter.\n(A) profitable\n(B) profitably\n(C) profit\n(D) profitability",
+        "tips": "In TOEIC Part 5, the high-frequency business collocation 'turn a profit' (meaning to generate net monetary gain) is a recurring exam target. The blank follows the indefinite article 'a' and modifier 'substantial', requiring a singular countable noun. While both 'profit' and 'profitability' are nouns, 'turn a profit' is the established idiomatic expression; 'profitability' is an uncountable abstract property describing financial capacity or margin efficiency, making 'turn a profitability' unidiomatic. Choice (A) is an adjective, and (B) is an adverb."
       },
       "synonyms": [
-        "tart",
-        "pasty",
-        "pot pie",
-        "turnover",
-        "quiche",
-        "cobbler (culinary relative)"
+        "earnings",
+        "net income",
+        "gain",
+        "financial surplus",
+        "bottom line",
+        "margin"
       ],
-      "antonyms": [],
+      "antonyms": [
+        "loss",
+        "deficit",
+        "shortfall",
+        "financial loss"
+      ],
       "relatedWords": [
-        "crust",
-        "pastry",
-        "filling",
-        "baking",
-        "crimping",
-        "bakery",
-        "slice"
+        "profitability",
+        "revenue",
+        "gross margin",
+        "operating income",
+        "break-even point",
+        "cash flow",
+        "dividend"
       ]
     },
     {
-      "id": "dining-210",
-      "word": "pitcher",
+      "id": "finance-229",
+      "word": "profitability",
       "partOfSpeech": [
         "noun"
       ],
-      "category": "dining",
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/\u02ccpr\u0251\u02d0.f\u0259.t\u0259\u02c8b\u026al.\u0259.t\u032ci/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/profitability--_us_1.mp3",
+        "syllableBreakdown": "prof-it-a-bil-i-ty",
+        "stressPattern": "Secondary stress on the first syllable, primary stress on the fourth syllable: prof-it-a-BIL-i-ty (/\u02ccpr\u0251\u02d0.f\u0259.t\u0259\u02c8b\u026al.\u0259.t\u032ci/, \u02cc\u25cb \u25cb \u25cf \u25cb \u25cb)",
+        "commonMistakes": "Learners frequently misplace the primary stress onto the first syllable (*PROF-it-a-bil-i-ty*) or third syllable (*prof-it-A-bil-i-ty*), instead of landing firmly on the fourth syllable '-bil-' (/b\u026al/). Non-native speakers also frequently treat 'profitability' as a direct synonym for 'profit'; however, 'profit' is the absolute currency amount earned ($50 million), whereas 'profitability' is the relative measure or rate of financial efficiency with which a business generates returns relative to its size, sales, or capital invested (such as Return on Equity or EBITDA margin percentage)."
+      },
+      "etymology": {
+        "origin": "Formed in Modern English by affixation from profitable (from Old French profitable, from profiter + -able) + -ity (Latin nominal suffix -itas, denoting state, quality, or degree).",
+        "rootWord": "proficere (Latin: to advance, make progress) via profitable + -itas",
+        "rootMeaning": "'The state, quality, or capacity of being advantageous, lucrative, or yielding monetary gain'",
+        "evolution": "While the adjective 'profitable' dates to 14th-century Middle English, the abstract noun 'profitability' gained widespread usage in the mid-19th century (circa 1850s) amid the Industrial Revolution. As capital-heavy enterprises such as railway networks and textile mills expanded, accountants and investors needed systematic metrics to compare how productively different operations generated returns on their massive deployed capital, leading to modern margin and return-ratio analysis.",
+        "relatedLanguages": [
+          "French: rentabilit\u00e9 (profitability, return on investment), profitabilit\u00e9 (calqued modern business term)",
+          "Spanish: rentabilidad (profitability, yield, financial return)",
+          "Italian: redditivit\u00e0 (profitability, earnings capacity), profittabilit\u00e0",
+          "German: Rentabilit\u00e4t (profitability, cost-effectiveness), Profitabilit\u00e4t",
+          "Portuguese: rentabilidade (profitability, yield), lucratividade (capacity to generate profit)"
+        ],
+        "firstRecordedUse": "Mid-19th century (circa 1856 in British industrial and commercial economic journals)."
+      },
+      "deepMeaning": {
+        "coreConcept": "The relative efficiency, capacity, or degree to which an enterprise, commercial project, or capital investment generates financial earnings in excess of all expenses and capital employed; typically assessed through analytical ratios such as operating margin, Return on Invested Capital (ROIC), and Return on Assets (ROA).",
+        "spatialContext": "Corporate strategy suites, private equity investment committee meetings, equity research departments, financial dashboard monitors, and merger due diligence data rooms.",
+        "temporalContext": "Monitored across multi-quarter financial trends, annual operational budgets, and multi-year restructuring and turnaround plans.",
+        "emotionalTone": "Analytical, strategic, rigorous, and demanding; reflects managerial competence, operational discipline, and long-term organizational viability.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native executives and financial analysts regard 'profitability' as the ultimate test of business model efficiency. A massive company can generate $20 billion in revenue with only $100 million in profit, exhibiting dangerously weak profitability (a 0.5% margin), whereas a boutique software company with $40 million in revenue and $20 million in profit demonstrates exceptional profitability (a 50% margin). To native speakers, profitability answers: 'How healthy, durable, and efficient is this commercial machine?' In everyday corporate dialogue, it is treated as an ongoing strategic objective (e.g., 'path to profitability', 'restore profitability').",
+        "mentalImage": "A corporate financial analyst presenting an interactive dashboard showing multi-year line graphs comparing gross margin, operating margin, and return on capital, pointing to an upward trajectory showing improved profitability across regional business units.",
+        "whenToUse": "Use 'profitability' when discussing the relative capacity, quality, or rate at which a company or initiative produces profit (e.g., 'boost profitability', 'long-term profitability', 'threaten profitability', 'path to profitability', 'measure of profitability').",
+        "whenNotToUse": "Never use 'profitability' as a countable monetary amount (never say *'the division earned a profitability of $1 million'*; use *'profit'* instead). Do not confuse with gross turnover or sales volume.",
+        "culturalContext": "In modern corporate governance and tech venture capital ecosystems, startups often prioritize rapid user acquisition while incurring substantial net losses; however, institutional investors eventually demand a credible 'path to profitability' before backing an IPO. For publicly traded firms, sustained profitability is the primary benchmark determining executive compensation and creditworthiness."
+      },
+      "examples": {
+        "daily": [
+          "The neighborhood coffee shop improved its profitability by replacing slow-selling specialty drinks with high-margin baked goods.",
+          "Before taking out a commercial expansion loan, the boutique owner analyzed the profitability of her primary retail store over the past two years.",
+          "Installing energy-efficient heat pumps lowered overhead costs, thereby boosting the overall profitability of the family-run bed and breakfast."
+        ],
+        "business": [
+          "Spiraling raw material costs and maritime shipping surcharges have severely constrained the manufacturing unit's operating profitability.",
+          "After three years of aggressive international expansion, the fintech enterprise announced a strategic restructuring plan to reach overall profitability by Q4.",
+          "The management consultancy recommended divesting the underperforming freight division to protect overall corporate profitability and preserve cash reserves."
+        ],
+        "conversation": [
+          "\"Will purchasing automated assembly robots be worth the initial capital expenditure?\" \u2014 \"Yes, our financial models project that reduced labor and defect costs will significantly improve production profitability within eighteen months.\"",
+          "\"Why did the regional division struggle despite record sales figures?\" \u2014 \"Heavy promotional discounting and high return rates severely eroded their underlying profitability.\"",
+          "\"What was the board's chief requirement for approving the new product line?\" \u2014 \"The design team had to prove that the manufacturing process could maintain at least a twenty-five percent operating profitability.\""
+        ],
+        "collocations": [
+          "path to profitability",
+          "boost / enhance profitability",
+          "operating profitability",
+          "long-term profitability",
+          "restore profitability",
+          "measure of profitability"
+        ]
+      },
+      "wordFamily": {
+        "noun": "profit, profitability, profiteer, profiteering",
+        "verb": "profit",
+        "adjective": "profitable, unprofitable",
+        "adverb": "profitably, unprofitably"
+      },
+      "visual": {
+        "imageKeyword": "corporate financial executive presentation profitability dashboard line chart",
+        "imageDescription": "A chief financial officer in a glass-walled boardroom gesturing toward an interactive projection screen that displays comparative profitability ratios, EBITDA margins, and an upward quarterly trend line.",
+        "mnemonic": "PROFIT-ABILITY: Think of it as the ABILITY of a business to generate PROFIT efficiently from its sales and capital!"
+      },
+      "video": {
+        "description": "A business school professor illustrating corporate profitability ratios on an interactive digital screen, contrasting how asset-heavy industrial manufacturers and asset-light software firms achieve sustainable operating profitability."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "To evaluate whether opening a regional distribution center in Atlanta would be financially viable, senior executives requested a comprehensive _______ study from the logistics consulting group.\n(A) profitably\n(B) profitable\n(C) profitability\n(D) profiteer",
+        "tips": "In TOEIC Part 5, noun-noun compound structures (noun adjuncts) are frequently tested in corporate planning scenarios (e.g., 'profitability study', 'feasibility study', 'market analysis'). Here, the blank precedes the head noun 'study'. The noun 'profitability' (C) combines with 'study' to form the compound 'profitability study' (a research report evaluating the capacity of an operation to generate sustainable profit margins). Choice (B) 'profitable' is an adjective, which would illogically imply that the study itself is making a profit; choice (A) is an adverb; and choice (D) 'profiteer' is a disparaging noun referring to a person who makes unfair profits."
+      },
+      "synonyms": [
+        "earning power",
+        "commercial viability",
+        "financial return",
+        "cost-effectiveness",
+        "lucrativeness",
+        "return on investment"
+      ],
+      "antonyms": [
+        "unprofitability",
+        "unproductiveness",
+        "loss-making condition",
+        "insolvency"
+      ],
+      "relatedWords": [
+        "profit margin",
+        "return on equity",
+        "return on assets",
+        "cost-benefit analysis",
+        "operating margin",
+        "ebitda",
+        "viability"
+      ]
+    },
+    {
+      "id": "finance-230",
+      "word": "prospectus",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
       "level": "intermediate",
       "toeicFrequency": 8,
       "pronunciation": {
-        "ipa": "/ˈpɪtʃ.ər/",
-        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/pitcher--_us_1.mp3",
-        "syllableBreakdown": "pitch·er",
-        "stressPattern": "●○",
-        "commonMistakes": "Learners frequently confuse the lax vowel /ɪ/ with the tense vowel /iː/, pronouncing it like 'peach-er' (/ˈpiː.tʃər/). Another common phonetic slip is substituting the postalveolar affricate /tʃ/ with a soft fricative /ʃ/ ('pish-er'). In TOEIC listening sections, candidates often confuse the acoustic profile of 'pitcher' (water vessel) with 'picture' (/ˈpɪk.tʃər/), which contains a distinct /k/ stop consonant, or get distracted by the sports homonym (baseball pitcher on the mound)."
+        "ipa": "/pr\u0259\u02c8spek.t\u0259s/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/prospectus--_us_1.mp3",
+        "syllableBreakdown": "pro-spec-tus",
+        "stressPattern": "Primary stress on the second syllable: pro-SPEC-tus (/pr\u0259\u02c8spek.t\u0259s/, \u25cb \u25cf \u25cb)",
+        "commonMistakes": "Learners frequently misplace the primary stress onto the first syllable (*PROS-pec-tus*), mistakenly copying the stress pattern of the noun 'prospect' (/\u02c8pr\u0251\u02d0.spekt/). In 'prospectus', stress always falls on the middle syllable: /pr\u0259\u02c8spek.t\u0259s/. Additionally, learners sometimes produce incorrect pseudo-Latin plurals like *'prospecti'*; the standard and correct English plural is 'prospectuses' (/pr\u0259\u02c8spek.t\u0259.s\u026az/). Non-native speakers also frequently confuse a financial 'prospectus' with a casual advertising brochure or pamphlet, ignoring its formal status as a legally binding, regulatory-mandated disclosure document."
       },
       "etymology": {
-        "origin": "Middle English picher (late 12th century), borrowed from Old French pichier / pechier, from Medieval Latin bīcārium / picārium, an alteration of Late Latin bīcārium ('drinking beaker, goblet, vessel'), from Ancient Greek βῖκος (bîkos, 'earthen wine jar, amphora'), possibly borrowed from an ancient Semitic root (compare Phoenician or Hebrew bakbuk 'flask').",
-        "rootWord": "bîkos / bīcārium",
-        "rootMeaning": "earthen jar or drinking vessel",
-        "evolution": "In classical antiquity, the Greek 'bîkos' designated an earthenware vessel used to store and pour liquids like wine and olive oil. The word moved into Late Latin as 'bīcārium', which also branched into Germanic languages to produce 'beaker' (Old High German 'behhari', modern German 'Becher'). In Gallo-Romance and Old French, a labial phonetic shift resulted in 'pichier', which crossed the English Channel with the Normans. By 1200, Middle English 'picher' referred to an earthenware, pewter, or glass jug equipped with a handle and lip for pouring table beverages. While British English eventually adopted 'jug' as the primary term for household water and milk vessels, North American English preserved 'pitcher' as the standard term for table beverage vessels (water, iced tea, beer).",
+        "origin": "Classical Latin pr\u014dspectus ('lookout, view, prospect, distant view'), fourth-declension noun from the past participle stem of pr\u014dspicere ('to look forward, look out, look into the distance'), formed from pro- ('forward, before') + specere ('to look at, behold').",
+        "rootWord": "pr\u014dspicere (pro- 'forward' + specere 'to look, see')",
+        "rootMeaning": "'A forward view, an outward outlook, a comprehensive survey of what lies ahead'",
+        "evolution": "In Classical Latin, pr\u014dspectus denoted a visual panorama or elevated vantage point. During the 18th century (circa 1730s-1750s) in Britain, publishers and entrepreneurs began using 'prospectus' in print for published circulars detailing the scope, terms, and cost of an upcoming book, architectural project, or joint venture to prospective subscribers. By the mid-19th century and the enactment of modern joint-stock company legislation, the term became formally codified in corporate and securities law as the mandatory legal offering document provided to potential buyers before securities, stocks, or mutual funds could be sold to the public.",
         "relatedLanguages": [
-          "Old French: pichier (jug, ewer)",
-          "Latin: bīcārium (drinking vessel, beaker)",
-          "French: pichet (small earthenware or glass jug)",
-          "Italian: bicchiere (drinking glass, goblet)",
-          "German: Becher (beaker, cup, goblet)",
-          "Spanish: pichel (tankard, pewter jug) / jarra (pitcher)"
+          "French: prospectus (leaflet, flyer, financial prospectus)",
+          "Spanish: prospecto (prospectus, commercial leaflet, medicine package insert)",
+          "Italian: prospetto (financial prospectus, summary view, architectural elevation)",
+          "German: Prospekt (commercial leaflet, brochure, financial prospectus)",
+          "Portuguese: prospecto (prospectus, leaflet, summary overview)"
         ],
-        "firstRecordedUse": "Late 12th century (c. 1190 in Anglo-Norman and Middle English domestic records describing household pantry vessels)"
+        "firstRecordedUse": "Mid-18th century (circa 1738 in Great Britain as a printed proposal for an upcoming publication or commercial enterprise)."
       },
       "deepMeaning": {
-        "coreConcept": "A large, open-mouthed container equipped with a pouring lip or spout and an integrated vertical handle, manufactured from glass, polycarbonate plastic, stainless steel, or ceramic, used in dining rooms, beverage stations, and bar service to store, chill, and pour liquids such as water, iced tea, juice, or draft beer.",
-        "spatialContext": "Restaurant waitstaff side-stations, banquet beverage service credenzas, corporate boardroom side tables, self-serve cafeteria drink bars, and gastropub bar counters.",
-        "temporalContext": "Continuous front-of-house table service (pre-pouring ice water upon seating guests), pre-conference morning beverage setups, and fast-paced casual dining beverage refills during lunch and dinner rushes.",
-        "emotionalTone": "Hospitable, functional, refreshing, and attentive.",
-        "formalityLevel": "neutral",
+        "coreConcept": "A formal, legally mandated disclosure document published by a corporation, mutual fund, or securities issuer (and filed with regulatory bodies such as the SEC) that provides prospective investors with comprehensive details about an offering of stocks, bonds, or investment units\u2014including financial statements, corporate governance, capital structure, and explicit risk disclosures; in academic institutions, an informational guide detailing degree programs and admissions requirements.",
+        "spatialContext": "Investment banking syndicate desks, securities regulatory compliance offices (e.g., SEC EDGAR database), wealth management advisory rooms, institutional investor roadshows, and corporate legal archives.",
+        "temporalContext": "Published immediately prior to an Initial Public Offering (IPO), bond issuance, or mutual fund launch; updated annually or amended via statutory prospectus supplements when material events occur.",
+        "emotionalTone": "Prudent, transparent, legally cautious, objective, and authoritative; crafted to ensure full fiduciary disclosure and shield issuers against liability for omission.",
+        "formalityLevel": "formal",
         "connotation": "neutral"
       },
       "nativeMindset": {
-        "howNativesThink": "In food service and hospitality, native speakers visualize a heavy, clear glass or shatterproof polycarbonate vessel frosted with cold condensation, filled with ice cubes, fresh lemon rounds, and chilled water. Placing a pitcher on the table or circulating with one signifies attentiveness and generous hospitality. Outside formal dining, ordering a 'pitcher of beer' or a 'pitcher of margaritas' represents casual, communal sharing among colleagues or friends after work. Native speakers are also conscious of the British-American lexical difference: Americans ask for a 'pitcher of water', whereas Britons almost always ask for a 'jug of water'.",
-        "mentalImage": "A polished stainless steel water pitcher with a curved gooseneck ice guard being tilted by a server in a crisp black apron, smoothly filling tall ice-filled water goblets along an executive boardroom dining table.",
-        "whenToUse": "Use when referring to tabletop beverage dispensing vessels (pitcher of water, pitcher of iced tea, beer pitcher), front-of-house restaurant equipment, conference catering hydration stations, and banquet service logistics.",
-        "whenNotToUse": "Do not use for hot coffee or tea service where an insulated, enclosed vacuum lid is needed (use 'carafe', 'airpot', or 'coffee pot'); do not use for small tabletop containers designed specifically for milk/cream (use 'creamer' or 'cream jug'); do not use for handle-less wine aerators (use 'decanter'). In British dining settings, prefer 'jug'.",
-        "culturalContext": "In American restaurants, providing free, ice-cold tap water poured from a pitcher as soon as diners are seated is an ingrained cultural standard and expectation. In corporate settings, ensuring conference rooms are stocked with fresh pitchers of water and clean glassware is a routine protocol for executive assistants and catering staff prior to board meetings."
+        "howNativesThink": "When native speakers in business and investing encounter 'prospectus,' they picture an extensive, heavily vetted legal dossier associated with an IPO (such as an SEC Form S-1) or a mutual fund. They instinctively look for the 'Risk Factors' section and financial disclosures, viewing the prospectus as the essential document for conducting due diligence before risking investment capital. In British and Commonwealth contexts, everyday speakers also associate a prospectus with the annual recruitment handbook published by universities for incoming students.",
+        "mentalImage": "A bound legal investment prospectus lying open on a mahogany conference table, marked with color-coded sticky tabs at the 'Risk Factors' and 'Audited Financials' sections, flanked by an executive pen and an open laptop displaying the SEC regulatory filings page.",
+        "whenToUse": "Use 'prospectus' when describing formal statutory disclosure documents for securities offerings (e.g., 'IPO prospectus', 'mutual fund prospectus', 'bond prospectus', 'issue a prospectus'), or official university promotional course catalogs in British English.",
+        "whenNotToUse": "Do not use 'prospectus' for informal marketing brochures, product flyers, sales leaflets, or internal pitch decks (use 'brochure', 'pamphlet', or 'pitch deck'). Do not confuse with an 'annual report' (which reviews past fiscal year performance for current shareholders rather than proposing a new security offering).",
+        "culturalContext": "In the United States, the modern securities prospectus was established under the Securities Act of 1933 following the 1929 market crash to ensure complete corporate transparency and eliminate fraudulent misrepresentation. In the UK, every higher-education institution issues an annual undergraduate and postgraduate prospectus, serving as the official guide for prospective student applicants."
       },
       "examples": {
         "daily": [
-          "The server brought a frosted glass pitcher of ice water and four tumblers to our table before taking our dinner orders.",
-          "During the summer barbecue, we kept a large plastic pitcher of freshly squeezed lemonade on the picnic table.",
-          "He lifted the heavy ceramic pitcher from the refrigerator door and poured himself a tall glass of cold orange juice."
+          "Before deciding which graduate university to apply to, Lucas studied the faculty prospectus to compare seminar offerings and research facilities.",
+          "The certified financial planner encouraged her client to read through the mutual fund prospectus carefully, specifically checking the annual management fee schedule.",
+          "The private boarding academy mailed an illustrated prospectus to prospective parents outlining its academic curriculum and boarding amenities."
         ],
         "business": [
-          "The catering coordinator instructed the banquet staff to place a stainless steel pitcher of ice water on every conference table before the keynote began.",
-          "To expedite beverage service during the busy lunch rush, the restaurant manager distributed insulated beverage pitchers to each server station.",
-          "The executive assistant ordered modern glass pitchers and matching tumblers for the new executive boardroom refreshment credenza."
+          "Prior to conducting its initial public offering on the London Stock Exchange, the fintech startup filed an amended offering prospectus with regulatory authorities.",
+          "Institutional portfolio managers analyzed the bond prospectus to verify the debt issuer's credit ratings, repayment schedule, and loan covenants.",
+          "The corporate legal team spent several weeks updating the risk factors section of the investment prospectus to reflect new international trade tariffs."
         ],
         "conversation": [
-          "\"Excuse me, could we please have another pitcher of water for our table?\" / \"Certainly, I will bring a fresh one with ice and lemon slices right away.\"",
-          "\"Should we order individual sodas for the team celebration or get a couple of pitchers of beer and soda for the table?\" / \"Ordering pitchers will be much faster and easier to share among the whole group.\""
+          "\"Have you reviewed the preliminary prospectus for next week's pharmaceutical IPO?\" \u2014 \"I skimmed the balance sheet, but we still need our legal counsel to evaluate the patent litigation risks disclosed in section three.\"",
+          "\"Where can I verify the historical performance and expense ratio of this index fund?\" \u2014 \"All statutory disclosures and fee breakdowns are clearly outlined in the fund's official prospectus on our client portal.\"",
+          "\"Why has the municipal bond issuance been delayed?\" \u2014 \"The underwriters requested additional time to update the offering prospectus with the city's latest audited municipal revenues.\""
         ],
         "collocations": [
-          "pitcher of water",
-          "pitcher of iced tea",
-          "pitcher of beer",
-          "glass pitcher",
-          "stainless steel pitcher",
-          "refill the pitcher"
+          "mutual fund prospectus",
+          "issue / publish a prospectus",
+          "IPO prospectus",
+          "preliminary prospectus",
+          "read the prospectus",
+          "offering prospectus"
         ]
       },
       "wordFamily": {
-        "noun": "pitcher"
+        "noun": "prospectus, prospectuses (plural), prospect, prospector",
+        "verb": "prospect",
+        "adjective": "prospective, prospectless",
+        "adverb": "prospectively"
       },
       "visual": {
-        "imageKeyword": "glass beverage pitcher ice water lemon slices condensation banquet table",
-        "imageDescription": "A transparent glass pitcher filled with clear ice water and floating lemon wheels, covered in delicate condensation beads, sitting next to four elegant water goblets on a banquet table with white linen.",
-        "mnemonic": "PITCHER: Picture pouring a PITCH of cold water from the spout into your glass!"
+        "imageKeyword": "IPO prospectus financial disclosure document legal binder conference desk",
+        "imageDescription": "A thick, professionally bound IPO prospectus resting on a conference room table alongside a fountain pen, financial glasses, and an open tablet showing a securities exchange registration filing.",
+        "mnemonic": "PROSPECTUS comes from Latin PROSPICERE ('to look forward'). A PROSPECTUS allows prospective investors to look forward into a company's finances, risks, and plans before buying shares!"
       },
       "video": {
-        "description": "A banquet service training video showing hospitality waitstaff the proper two-handed technique for carrying and pouring from heavy water pitchers without dripping onto conference table documents."
+        "description": "An investment banking analyst walking viewers through a statutory corporate prospectus (SEC Form S-1), explaining how to navigate risk disclosures, executive compensation, capitalization tables, and use of proceeds."
       },
       "toeicContext": {
         "commonParts": [
-          1,
-          2,
-          3,
-          7
-        ],
-        "exampleQuestion": "Prior to the start of the executive seminar, banquet servers placed a chilled _____ of filtered water and clean glasses at each attendee's workstation.\n(A) pitcher\n(B) pitched\n(C) pitching\n(D) pitch",
-        "tips": "In Part 5, identify the syntactic part of speech required between the adjective 'chilled' and the prepositional phrase 'of filtered water'. The sentence demands a singular countable concrete noun referring to a beverage container. Choice (A) 'pitcher' is the correct noun. Choice (B) 'pitched' is a past participle/past tense verb; (C) 'pitching' is a present participle/gerund; and (D) 'pitch' is a base verb or unrelated abstract/mass noun (e.g. sales pitch, musical pitch, angle)."
-      },
-      "synonyms": [
-        "jug",
-        "carafe",
-        "ewer",
-        "decanter",
-        "beverage vessel",
-        "flagon"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-        "spout",
-        "handle",
-        "pour",
-        "tumbler",
-        "carafe",
-        "beverage",
-        "refill"
-      ]
-    },
-    {
-      "id": "dining-211",
-      "word": "pizza",
-      "partOfSpeech": [
-        "noun"
-      ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-        "ipa": "/ˈpiːt.sə/",
-        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/pizza--_us_1.mp3",
-        "syllableBreakdown": "piz·za",
-        "stressPattern": "●○",
-        "commonMistakes": "A very common error among English learners is pronouncing the double 'zz' as a voiced alveolar fricative /z/ ('pee-zuh' /ˈpiː.zə/), unaware that the Italian spelling 'zz' is pronounced as a voiceless alveolar affricate /ts/ ('peet-suh' /ˈpiːt.sə/). Another frequent mistake is replacing the initial long tense vowel /iː/ with a short lax vowel /ɪ/ (producing 'pits-uh'). In TOEIC listening, learners must distinguish pizza from similar sounding words in noisy restaurant audio clips."
-      },
-      "etymology": {
-        "origin": "Italian pizza, of disputed Mediterranean and Germanic origin; traditionally connected to Medieval Latin pīctiō / pizza ('flat bread, cake'), possibly related to Ancient Greek πῆκτος (pēktos, 'congealed, curded') or Byzantine Greek πίτα (pīta, 'flat bread, pastry'), or from Langobardic (Lombardic Germanic) *pizzo / *bizzo ('bite, mouthful', related to modern German Bissen 'morsel, bite').",
-        "rootWord": "pītta / *pizzo",
-        "rootMeaning": "flatbread, cake, or mouthful/bite",
-        "evolution": "The earliest documented mention of the word 'pizza' appears in a Latin notarized lease agreement dating from May 997 AD in Gaeta, Italy, specifying that twelve pizzas had to be rendered to the bishop on Christmas and Easter. For centuries in southern Italy, pizza was a rustic flatbread seasoned with lard, coarse salt, and garlic, baked rapidly in wood-fired ovens. In the late 18th and early 19th centuries, following the culinary adoption of the tomato in Naples, the modern pizza emerged, culminating in the 1889 creation of the Pizza Margherita (topped with tomatoes, mozzarella, and fresh basil to honor Queen Margherita of Savoy and reflect the Italian tricolor flag). Italian emigrants brought pizza to major North American cities like New York and Chicago in the early 20th century, where it evolved into distinct regional crust varieties (thin New York slice, thick Chicago deep-dish) and transformed into a cornerstone of commercial food service, fast-casual dining, and corporate catering worldwide.",
-        "relatedLanguages": [
-          "Italian: pizza",
-          "Greek: pita (flatbread)",
-          "German: Bissen (bite, morsel - shared Germanic root)",
-          "French: pizza",
-          "Spanish: pizza",
-          "Portuguese: pizza"
-        ],
-        "firstRecordedUse": "Late 10th century (997 AD in a Medieval Latin legal manuscript from Gaeta, Italy; first recorded in English in 1935 in an American culinary publication)"
-      },
-      "deepMeaning": {
-        "coreConcept": "A savory dish of Italian origin consisting of a flattened, circular base of leavened wheat dough topped with seasoned tomato sauce, melted cheese (typically mozzarella), and an assortment of toppings such as meats, vegetables, and herbs, baked at high heat in a specialized stone or wood-fired deck oven and divided radially into wedge slices.",
-        "spatialContext": "Pizzerias, commercial pizza deck ovens, open-plan trattoria kitchens, corporate cafeteria hot bars, office breakrooms during team catering lunches, and restaurant delivery dispatch counters.",
-        "temporalContext": "Casual weekday office lunches, late-night overtime team sustenance during critical project deadlines, Friday departmental celebrations, and rapid-delivery corporate catering orders.",
-        "emotionalTone": "Convivial, communal, indulgent, comforting, and informal.",
-        "formalityLevel": "informal",
-        "connotation": "positive"
-      },
-      "nativeMindset": {
-        "howNativesThink": "To native speakers, 'pizza' is the quintessential informal communal meal. It triggers vivid sensory associations: the elasticity of hot melted mozzarella ('cheese pull'), charred bubbly crust blisters (the 'cornicione'), tangy garlic-oregano tomato sauce, and holding a foldable triangular slice. In corporate and workplace environments, 'ordering pizza' represents the universal social gesture for informal team bonding, late-night sprint sessions, and company milestone celebrations. While universally loved, native professionals recognize its casual status—a 'pizza party' is perfect for an internal sprint completion, but entirely inappropriate for formal client contract signings.",
-        "mentalImage": "An artisan thin-crust Margherita pizza served straight out of an 800-degree brick oven on a round metal tray, bubbling with melted buffalo mozzarella, bright red San Marzano tomato sauce, fresh basil leaves, and charred leopard spots on its golden-crisp rim.",
-        "whenToUse": "Use when discussing informal dining menus, casual corporate catering, food delivery logistics, team lunch orders, hospitality operations, and restaurant food preparation.",
-        "whenNotToUse": "Do not use when describing formal executive multi-course banquets, state dinners, or upscale diplomatic catering. Do not confuse with 'flatbread' (often unleavened and served as an appetizer without traditional pizza sauce/cheese profiles), 'calzone' (a turnover made of folded pizza dough with filling inside), or 'focaccia' (thick leavened bread drizzled with olive oil and herbs without heavy sauce or melted cheese toppings).",
-        "culturalContext": "In North American and British corporate culture, the 'office pizza party' is a recognized workplace tradition used by team leaders to reward teams, celebrate project launches, or sustain morale during late hours. In business operations, pizza delivery logistics pioneered modern point-of-sale tracking, real-time app delivery routing, and high-efficiency franchise supply chains."
-      },
-      "examples": {
-        "daily": [
-          "We ordered two large thin-crust pepperoni pizzas and a bottle of sparkling water for Friday movie night.",
-          "The authentic Neapolitan pizzeria bakes each personal pizza in a wood-burning oven in less than ninety seconds.",
-          "Could we ask the server to make one half of the pizza mushroom and bell peppers and the other half sausage?"
-        ],
-        "business": [
-          "The department manager ordered eight specialty pizzas to feed the IT staff working late on the database upgrade.",
-          "To celebrate exceeding their quarterly targets, the sales division held an informal lunch featuring artisan gourmet pizzas.",
-          "The catering coordinator partnered with a local pizzeria that provides gluten-free cauliflower crust options for corporate events."
-        ],
-        "conversation": [
-          "\"What should we arrange for lunch during tomorrow's team-building workshop?\" / \"Let's order assorted sheet pizzas from the Italian deli—they have excellent vegetarian and vegan selections.\"",
-          "\"Did the delivery service confirm when the catering order will arrive?\" / \"Yes, all twelve pizzas are scheduled to be delivered to the fourteenth-floor conference room by twelve-fifteen.\""
-        ],
-        "collocations": [
-          "slice of pizza",
-          "wood-fired pizza",
-          "pizza delivery",
-          "crispy pizza crust",
-          "order a pizza",
-          "specialty pizza"
-        ]
-      },
-      "wordFamily": {
-        "noun": "pizza"
-      },
-      "visual": {
-        "imageKeyword": "artisanal wood-fired Margherita pizza melted mozzarella basil charred crust",
-        "imageDescription": "A steaming hot artisan pizza fresh from a wood-fired brick oven, displayed on a dark wooden board, featuring melted fresh mozzarella, vibrant red tomato sauce, torn green basil, and blistered charred edges.",
-        "mnemonic": "PIZZA: Look at the two Z's like two zigzag cuts through the dough to share hot triangular slices with your team!"
-      },
-      "video": {
-        "description": "A documentary clip featuring master pizzaiolos in Naples stretching fermented dough by hand, dressing it with fresh ingredients, and baking pizzas in high-temperature wood-fired ovens."
-      },
-      "toeicContext": {
-        "commonParts": [
-          2,
           3,
           4,
+          5,
           7
         ],
-        "exampleQuestion": "During the quarterly milestone celebration, the department supervisor ordered several gourmet sheet _____ to provide lunch for the entire marketing division.\n(A) pizza\n(B) pizzas\n(C) pizzalike\n(D) pizzeria",
-        "tips": "In Part 5, observe the quantifier 'several' modifying the compound noun phrase 'sheet _____'. When countable items are preceded by 'several', the plural noun form is required. Choice (B) 'pizzas' correctly completes the plural noun phrase 'sheet pizzas'. Choice (A) 'pizza' is singular; choice (C) 'pizzalike' is an adjective; and choice (D) 'pizzeria' is a noun referring to the restaurant establishment itself rather than the edible dish."
+        "exampleQuestion": "Before committing significant capital to the newly established international equity fund, institutional investors are strongly advised to examine the fund's official _______ in detail.\n(A) prospect\n(B) prospectus\n(C) prospective\n(D) prospectively",
+        "tips": "In TOEIC Part 5 financial and investment contexts, word-form distinctions surrounding 'prospect' are a common test point. The blank follows the possessive noun phrase 'the fund's official' (adjective) and precedes the prepositional phrase 'in detail', requiring a singular head noun. In financial investing, 'prospectus' (B) refers specifically to the formal, legally binding document detailing an investment fund's strategy, management, fees, and risks. Choice (A) 'prospect' means an outlook or potential client; choice (C) 'prospective' is an adjective (e.g., 'prospective buyers'); and choice (D) 'prospectively' is an adverb."
       },
       "synonyms": [
-        "flatbread (culinary cousin)",
-        "pie (regional US colloquial)",
-        "pizza pie",
-        "Neapolitan pizza",
-        "sheet pizza"
+        "offering circular",
+        "disclosure document",
+        "investment brochure",
+        "offering memorandum",
+        "registration statement",
+        "information memorandum"
       ],
       "antonyms": [],
       "relatedWords": [
-        "crust",
-        "mozzarella",
-        "topping",
-        "pizzeria",
-        "dough",
-        "slice",
-        "wood-fired"
+        "initial public offering",
+        "securities and exchange commission",
+        "due diligence",
+        "underwriting",
+        "risk disclosure",
+        "mutual fund",
+        "offering price"
       ]
     }
   ]

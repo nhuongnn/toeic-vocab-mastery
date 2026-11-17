@@ -1,0 +1,358 @@
+{
+  "result": {
+    "words": [
+      {
+        "id": "finance-258",
+        "word": "saving",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "finance",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+          "ipa": "/ˈseɪ.vɪŋ/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/saving--_us_1.mp3",
+          "syllableBreakdown": "sav-ing",
+          "stressPattern": "Primary stress on the first syllable: SAV-ing (/ˈseɪ.vɪŋ/, ●○)",
+          "commonMistakes": "Learners frequently confuse the singular count noun 'a saving' (a reduction in expenditure, e.g., 'a saving of $5,000') with the plural noun 'savings' (accumulated funds or broader cost reductions, e.g., 'retirement savings', 'cost savings'). Phonetically, avoid reducing the diphthong /eɪ/ to a flat monophthong /e/ or replacing the velar nasal /ŋ/ with an alveolar /n/."
+        },
+        "etymology": {
+          "origin": "Middle English sauving, nominal derivative of the verb sauven ('to save, protect, rescue'), borrowed from Anglo-Norman and Old French sauver, from Late Latin salvāre ('to save, make safe'), from Latin salvus ('safe, sound, whole, uninjured').",
+          "rootWord": "Latin salvus (whole, intact, uninjured) + Middle English nominal suffix -ing",
+          "rootMeaning": "'The act of keeping intact or preserved from harm, loss, or unnecessary consumption'",
+          "evolution": "Originating in 14th-century theological and chivalric texts in the sense of spiritual salvation or preservation from peril, 'saving' transitioned into commercial accounting and domestic economics during the 17th and 18th centuries with the growth of banking and mercantile enterprises. By the mid-1700s, it specifically denoted an economy or reduction in cost or expenditure. In modern corporate financial reporting and TOEIC exam contexts, 'saving' functions as a precise term for operational cost reductions and preserved capital.",
+          "relatedLanguages": [
+            "French: sauvegarde / épargne",
+            "Spanish: salvaguarda / ahorro",
+            "Italian: salvataggio / risparmio",
+            "German: Einsparung / Ersparnis"
+          ],
+          "firstRecordedUse": "Late 14th century (c. 1380) for general preservation; financial sense of an expenditure reduction recorded in British accounting documents c. 1730."
+        },
+        "deepMeaning": {
+          "coreConcept": "A measurable reduction in the expenditure of money, time, or physical resources, yielding a positive financial variance against prior operational costs; also, liquid capital set aside in an interest-bearing account rather than spent.",
+          "spatialContext": "Corporate procurement offices, enterprise resource planning (ERP) expense dashboards, supply chain vendor review meetings, and commercial banking deposit portals.",
+          "temporalContext": "Evaluated during quarterly budget variance reviews, fiscal year-end financial audits, vendor contract renegotiation periods, and regular payroll deduction cycles.",
+          "emotionalTone": "Prudent, value-driven, financially reassuring, and disciplined.",
+          "formalityLevel": "neutral",
+          "connotation": "positive"
+        },
+        "nativeMindset": {
+          "howNativesThink": "Native speakers instinctively recognize three functional profiles: (1) Singular count noun: 'a substantial saving of 12%' or 'a net saving of $40,000' (indicating a specific, quantified economy); (2) Plural collective: 'annual cost savings' (referring to aggregate operational efficiencies); (3) Personal wealth: 'retirement savings' or 'life savings'. They never say 'we made a big save' in financial accounting, and they distinguish 'savings' from 'profit'—savings reduce cash outflow, whereas profit represents net capital gain.",
+          "mentalImage": "A corporate procurement director presenting a waterfall slide in a boardroom, using a laser pointer on green downward bars that illustrate how consolidations in logistics routes produced a certified $350,000 reduction in annual shipping expenditure.",
+          "whenToUse": "Use when quantifying a specific economy in expenses ('a saving of $10,000'), referring to operational efficiency gains ('a notable time saving'), or discussing money deposited for long-term reserves ('savings account').",
+          "whenNotToUse": "Do not use 'saving' when referring to the recovery of value from discarded or damaged assets (use 'salvage'). Do not use the bare singular form to describe accumulated personal wealth (say 'her life savings', never 'her life saving').",
+          "culturalContext": "In Anglo-American corporate governance, delivering certified 'cost savings' is a core Key Performance Indicator (KPI) for procurement directors and operational executives, directly influencing annual bonuses and shareholder dividends. In personal finance, tax-advantaged savings vehicles such as 401(k) accounts in the US and ISAs in the UK are central pillars of individual retirement planning."
+        },
+        "examples": {
+          "daily": [
+            "Switching to an energy-efficient heat pump produced an immediate saving of fifty dollars on our monthly utility bill.",
+            "She deposits fifteen percent of every paycheck directly into her high-yield savings account to build an emergency fund.",
+            "Purchasing household pantry staples in bulk offers a substantial financial saving over the course of the year."
+          ],
+          "business": [
+            "Consolidating our enterprise cloud storage vendors across global subsidiaries generated an annual cost saving of over $300,000.",
+            "The procurement team's renegotiation of raw material freight tariffs achieved a five percent saving on gross operational expenditure.",
+            "Automating repetitive vendor invoice verification provided a significant time saving for the accounts payable staff."
+          ],
+          "conversation": [
+            "\"Were we able to trim the travel and accommodation budget as requested by executive leadership?\"\n\"Yes, booking regional flights through our negotiated corporate portal achieved a saving of roughly twenty percent per trip.\"",
+            "\"Does investing in the automated packaging line make financial sense right now?\"\n\"Definitely; our manufacturing engineering director forecasts a net operational saving of nearly $45,000 every fiscal quarter.\""
+          ],
+          "collocations": [
+            "substantial cost saving",
+            "annual cost savings",
+            "realize a significant saving",
+            "time-saving measure",
+            "net energy saving",
+            "high-yield savings account"
+          ]
+        },
+        "wordFamily": {
+          "noun": "saving, savings, saver",
+          "verb": "save",
+          "adjective": "saving, savable",
+          "adverb": "savingly"
+        },
+        "visual": {
+          "imageKeyword": "corporate cost saving procurement invoice financial analytics spreadsheet",
+          "imageDescription": "A procurement manager in a modern glass-walled office examining a dual-column financial spreadsheet on a tablet next to signed vendor contracts and a calculator showing positive budget variances.",
+          "mnemonic": "SAVE + ING: When you SAVE, the INcoming Gain stays in your company's accounts rather than flowing out as expenses."
+        },
+        "video": {
+          "description": "A documentary case study highlighting how an international manufacturing firm streamlined its procurement workflows to capture over ten million dollars in sustainable annual cost savings."
+        },
+        "toeicContext": {
+          "commonParts": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "exampleQuestion": "By consolidating its regional logistics hubs into a single automated facility, Horizon Freight realized an annual _____ of nearly two million dollars in operational expenses.\n(A) save\n(B) saving\n(C) saved\n(D) saves",
+          "tips": "In TOEIC Part 5, test-writers frequently construct distractors around the verb root 'save' versus its noun forms. Preceded by the indefinite article 'an' and the adjective 'annual', the blank requires a singular countable noun referring to an economy of expenditure: (B) saving. While the plural 'savings' is also frequent in corporate contexts, only the singular 'saving' grammatically matches the singular determiner 'an'."
+        },
+        "synonyms": [
+          "cost reduction",
+          "economy",
+          "curtailment",
+          "conservation",
+          "discount",
+          "retrenchment"
+        ],
+        "antonyms": [
+          "expenditure",
+          "extravagance",
+          "waste",
+          "outlay",
+          "overspending"
+        ],
+        "relatedWords": [
+          "procurement",
+          "budgeting",
+          "frugality",
+          "variance",
+          "overhead",
+          "operating margin",
+          "surplus"
+        ]
+      },
+      {
+        "id": "finance-259",
+        "word": "settlement",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+          "ipa": "/ˈset.əl.mənt/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/settlement--_us_1.mp3",
+          "syllableBreakdown": "set-tle-ment",
+          "stressPattern": "Primary stress on the first syllable: SET-tle-ment (/ˈset.əl.mənt/, ●○○)",
+          "commonMistakes": "Learners often over-pronounce the middle syllable /əl/ as an open vowel /el/ rather than a reduced syllabic /l/. Conceptually, students often confuse financial settlement (discharging a debt or closing a securities trade) with geographical colonization (a pioneer settlement) or an out-of-court legal compromise (litigation settlement)."
+        },
+        "etymology": {
+          "origin": "Middle English settlement, formed from the verb settlen ('to place in a fixed seat or position, make firm or stable', from Old English setlan, from setl 'seat') + the Anglo-Norman/Old French nominal suffix -ment (from Latin -mentum).",
+          "rootWord": "Old English setl (seat, stool, resting place) + Latinate suffix -mentum",
+          "rootMeaning": "'The act of placing an open matter into a permanent seat, bringing stability and final resolution'",
+          "evolution": "In Old and Middle English, 'setlan' meant physically seating someone or coming to rest. In 15th- and 16th-century commercial bookkeeping, to 'settle' an account meant bringing debit and credit ledgers into agreement and discharging the remaining balance so the ledger could be closed. In 17th-century securities trading in London and Amsterdam, 'settlement' acquired its strict capital markets meaning: the irrevocable exchange of securities for cash. In contemporary commercial law and banking, it encompasses both the payment of overdue accounts and the final clearing of interbank or exchange trades.",
+          "relatedLanguages": [
+            "German: Begleichung / Abrechnung (financial) and Siedlung (geographic)",
+            "Dutch: afwikkeling / vereffening",
+            "French: règlement / liquidation",
+            "Spanish: liquidación / finiquito / arreglo",
+            "Italian: regolamento / liquidazione"
+          ],
+          "firstRecordedUse": "Circa 1590s for legal treaties and agreements; commercial accounting sense of the full payment or adjustment of an account recorded by 1620."
+        },
+        "deepMeaning": {
+          "coreConcept": "The conclusive discharge of a financial obligation, outstanding invoice, or balance through payment; in capital markets and banking, the irrevocable legal and financial process whereby traded securities and corresponding funds are officially transferred between counterparties; also, the formal resolution of a financial dispute or claim.",
+          "spatialContext": "Central clearinghouses (e.g., DTCC, Euroclear), interbank wire transfer networks (Fedwire, CHIPS, TARGET2), corporate accounts payable departments, and commercial arbitration suites.",
+          "temporalContext": "Standardized securities settlement cycles (such as modern T+1 equity clearing), monthly accounts payable check/wire payment runs, and insurance claim closure dates.",
+          "emotionalTone": "Conclusive, legally binding, formal, and stabilizing.",
+          "formalityLevel": "formal",
+          "connotation": "neutral"
+        },
+        "nativeMindset": {
+          "howNativesThink": "Native speakers associate 'settlement' with final closure and the elimination of outstanding risk. In securities trading, they sharply distinguish the 'trade date' (when an agreement is struck) from the 'settlement date' (when cash and assets actually change hands). In commercial correspondence, phrasing such as 'We request prompt settlement of the enclosed invoice' is formal, polite business language for 'please pay this bill in full\\. In legal/insurance contexts, a 'settlement' implies avoiding unpredictable court litigation by paying an agreed sum.",
+          "mentalImage": "A commercial bank treasury manager viewing a dual-screen portal showing the status of hundreds of corporate transactions flipping from 'Pending Clearing' to 'Settled' as the central bank wire transfer window closes at 4:00 PM.",
+          "whenToUse": "Use when referring to the formal discharge of an outstanding invoice ('prompt settlement of the invoice'), the execution of a financial clearing transaction ('securities settlement cycle'), or the resolution of a dispute without a full court trial ('negotiate a cash settlement').",
+          "whenNotToUse": "Do not use 'settlement' for casual bill-splitting among friends after dinner (natives say 'split the bill' or 'square up'). Do not confuse with 'deposit' or 'down payment', which represent partial initial payments rather than conclusive closure.",
+          "culturalContext": "In global investment banking, the transition from T+2 to T+1 settlement cycles across North American and European exchanges represents a massive regulatory milestone aimed at reducing systemic counterparty exposure. In the TOEIC exam, business letters and notices frequently employ formal phrases like 'early settlement of accounts' or 'settlement of outstanding claims\\."
+        },
+        "examples": {
+          "daily": [
+            "The automobile insurer agreed on a fair financial settlement to cover the repairs following the rear-end collision.",
+            "Our general contractor requested full settlement of the outstanding invoice before handing over the keys to the newly constructed garage.",
+            "After weeks of mediation, the neighbors reached an amicable settlement regarding the cost of repairing the shared fence."
+          ],
+          "business": [
+            "Under updated securities regulations, equity trade settlement must execute on a T+1 basis to minimize counterparty default risk.",
+            "The credit management department issued a formal notice requesting immediate settlement of accounts overdue by more than thirty days.",
+            "The multinational technology corporation agreed to a multimillion-dollar out-of-court settlement to resolve the patent dispute."
+          ],
+          "conversation": [
+            "\"When will the proceeds from our corporate bond sale be credited to our operating liquidity balance?\"\n\"The trade took place on Tuesday, so formal cash settlement will conclude by Thursday morning.\"",
+            "\"Has the German distributor honored the outstanding freight invoices?\"\n\"Yes, their treasury department confirmed electronic settlement of all outstanding balances earlier today.\""
+          ],
+          "collocations": [
+            "prompt settlement of an invoice",
+            "settlement date",
+            "reach an out-of-court settlement",
+            "trade settlement cycle",
+            "gross settlement system",
+            "final settlement of claims"
+          ]
+        },
+        "wordFamily": {
+          "noun": "settlement, settler, settling",
+          "verb": "settle",
+          "adjective": "settled, unsettled",
+          "adverb": "settledly"
+        },
+        "visual": {
+          "imageKeyword": "trade settlement banking wire clearing contract signing transaction verification",
+          "imageDescription": "Two corporate attorneys and a financial director reviewing an executed financial settlement agreement across a conference table next to a digital tablet displaying wire transfer clearance numbers.",
+          "mnemonic": "SETTLE-MENT: When an account is SETTLED, the balance is firmly SEATED—no open debt remains standing or floating."
+        },
+        "video": {
+          "description": "An explainer video from a financial exchange detailing the difference between trade matching, clearing, and trade settlement across global capital markets."
+        },
+        "toeicContext": {
+          "commonParts": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "exampleQuestion": "To preserve preferential credit terms with our suppliers, the corporate accounting department requires prompt _____ of all verified invoices upon receipt.\n(A) settle\n(B) settlement\n(C) settled\n(D) settling",
+          "tips": "In TOEIC Part 5, test-writers frequently evaluate collocation pairs like 'prompt settlement' and 'require / demand settlement\\. Following the adjective 'prompt' and followed by the prepositional phrase 'of all verified invoices', the blank requires a noun: (B) settlement. Distinguish this from the base verb (A), past participle (C), or participle/gerund (D)."
+        },
+        "synonyms": [
+          "discharge",
+          "liquidation",
+          "clearing",
+          "reconciliation",
+          "satisfaction",
+          "remittance"
+        ],
+        "antonyms": [
+          "default",
+          "nonpayment",
+          "outstanding balance",
+          "arrears",
+          "dispute"
+        ],
+        "relatedWords": [
+          "counterparty",
+          "clearinghouse",
+          "escrow",
+          "trade date",
+          "invoicing",
+          "indemnity",
+          "liquidity"
+        ]
+      },
+      {
+        "id": "finance-260",
+        "word": "share capital",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+          "ipa": "/ˈʃeər ˌkæp.ɪ.təl/",
+          "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/share_capital--_us_1.mp3",
+          "syllableBreakdown": "share cap-i-tal",
+          "stressPattern": "Primary stress on 'share', secondary stress on the first syllable of 'capital': SHARE CAP-i-tal (/ˈʃeər ˌkæp.ɪ.təl/, ● ˌ●○○)",
+          "commonMistakes": "Learners frequently misplace stress on the second syllable of 'capital' (*ca-PI-tal*), or confuse 'share capital' (equity capital raised from selling shares) with 'working capital' (operating liquidity: current assets minus current liabilities) or 'loan capital' (debt/borrowed funds)."
+        },
+        "etymology": {
+          "origin": "Compound commercial noun formed by combining share (from Old English scearu 'a cutting, division, part, apportioned lot', from Proto-Germanic *skaro-, from the root *skeran 'to shear, divide') and capital (from Old French capital, from Latin capitālis 'of the head, primary, chief', from caput 'head').",
+          "rootWord": "Proto-Germanic *skeran (to divide into portions) + Latin caput (head, principal fund)",
+          "rootMeaning": "'The primary head fund of money contributed by owners who hold fractional portions (shares) of the incorporated business'",
+          "evolution": "The mechanism developed in 17th-century joint-stock enterprises such as the Dutch and English East India Companies, where venture risk was partitioned into transferable shares. The formal legal concept of 'share capital' crystallized with the UK Joint Stock Companies Acts of 1844 and 1856 and modern limited liability laws, establishing that subscribed equity forms a permanent legal reserve fund that finances corporate operations and protects creditors against insolvency.",
+          "relatedLanguages": [
+            "French: capital social",
+            "Spanish: capital social",
+            "Italian: capitale sociale",
+            "German: Grundkapital / Stammkapital",
+            "Dutch: maatschappelijk kapitaal / aandelenkapitaal"
+          ],
+          "firstRecordedUse": "Mid-19th century (c. 1850s) in British company law treatises and corporate charter documents."
+        },
+        "deepMeaning": {
+          "coreConcept": "The total amount of equity financing that an incorporated company raises from investors through the issuance of ordinary or preferred shares in exchange for cash or assets; recorded under the shareholders' equity section of the balance sheet and categorized into authorized, issued, called-up, and paid-up capital.",
+          "spatialContext": "Corporate balance sheets under the Shareholders' Equity section, articles of association, initial public offering (IPO) prospectuses, and government corporate registration registries (e.g., Companies House, SEC Edgar filings).",
+          "temporalContext": "Formed during corporate founding or incorporation, expanded during IPOs or secondary rights issues, and audited annually during statutory year-end financial closings.",
+          "emotionalTone": "Institutional, formal, fiduciary, and legally binding.",
+          "formalityLevel": "formal",
+          "connotation": "neutral"
+        },
+        "nativeMindset": {
+          "howNativesThink": "Chartered accountants, bankers, and native investors perceive 'share capital' as the permanent foundation of a company's solvency. Unlike debt or loan capital, share capital requires no scheduled interest payments and cannot be unilaterally redeemed or withdrawn by investors; it represents permanent risk capital that acts as a financial buffer protecting creditors against operating losses. In British and Commonwealth English, 'share capital' is the statutory term; American GAAP typically uses 'contributed capital', 'paid-in capital', or 'common/preferred stock\\.",
+          "mentalImage": "A Chief Financial Officer and legal counsel reviewing an audited balance sheet schedule in a boardroom, verifying that thirty million dollars raised in a secondary rights issue has been duly credited to the issued share capital account without exceeding the statutory authorized ceiling.",
+          "whenToUse": "Use when discussing corporate balance sheet equity, capital raising through share issuance, corporate charter amendments, or investor dilution ('increase authorized share capital', 'dilution of existing share capital').",
+          "whenNotToUse": "Do not use 'share capital' when referring to cash on hand for day-to-day operations (use 'working capital'). Do not confuse with 'retained earnings', which are cumulative profits generated and kept within the firm rather than equity contributed by outside investors.",
+          "culturalContext": "Across Commonwealth and European corporate legal regimes, strict statutory 'capital maintenance rules' prevent companies from distributing dividends out of share capital, ensuring that creditors have a safeguarded financial cushion. In TOEIC Part 7 annual reports and corporate press releases, questions frequently test understanding of corporate restructuring, rights issues, and equity financing."
+        },
+        "examples": {
+          "daily": [
+            "The local cooperative grocery store raised fifty thousand dollars in share capital by selling fifty-dollar member shares to community residents.",
+            "Before investing his personal savings, Marcus reviewed the company's annual report to see how much share capital the founders had contributed.",
+            "In a worker-owned cooperative, voting power is distributed proportionally according to the share capital contributed by each partner."
+          ],
+          "business": [
+            "The board of directors passed a formal resolution to increase the corporation's authorized share capital prior to the initial public offering.",
+            "Following the successful equity rights issue, the pharmaceutical company's paid-up share capital increased to ninety million dollars.",
+            "Issuing additional share capital enabled the tech firm to finance its European data center expansion without increasing its corporate debt burden."
+          ],
+          "conversation": [
+            "\"Why did the finance committee favor a rights offering rather than securing a commercial bank loan?\"\n\"Expanding our share capital improves our debt-to-equity ratio and spares us from onerous interest payments in this high-interest rate environment.\"",
+            "\"Has the accounting department updated the balance sheet following the private equity round?\"\n\"Yes, the issued and fully paid share capital line item now reflects the fifty-million-dollar cash injection from the consortium.\""
+          ],
+          "collocations": [
+            "authorized share capital",
+            "issued share capital",
+            "paid-up share capital",
+            "increase share capital",
+            "dilution of share capital",
+            "reduction of share capital"
+          ]
+        },
+        "wordFamily": {
+          "noun": "share capital, shareholder, shareholding, share, capital, capitalization",
+          "verb": "share, capitalize",
+          "adjective": "capital, shareholding, capitalized",
+          "adverb": ""
+        },
+        "visual": {
+          "imageKeyword": "share capital corporate equity balance sheet stock certificate investment audit",
+          "imageDescription": "A corporate executive in a boardroom examining an open annual financial statement showing the Shareholders' Equity schedule with 'Issued Share Capital' highlighted beside an ornate stock certificate and a calculator.",
+          "mnemonic": "SHARE + CAPITAL: The HEAD fund (capital) divided into OWNERSHIP SLICES (shares) that form the enterprise's permanent equity bedrock."
+        },
+        "video": {
+          "description": "A corporate finance lecture explaining how share capital is structured on a balance sheet, differentiating between authorized, issued, and paid-up capital during corporate expansion."
+        },
+        "toeicContext": {
+          "commonParts": [
+            5,
+            6,
+            7
+          ],
+          "exampleQuestion": "To finance the acquisition of its overseas competitor without incurring substantial bank debt, the consortium decided to raise additional _____ through an equity placement.\n(A) share capitalized\n(B) share capital\n(C) shared capitalist\n(D) sharing capitalization",
+          "tips": "In TOEIC Part 5 financial passages, the phrase 'raise share capital' is a standard business collocation. The transitive verb 'raise' takes the compound noun 'share capital' as its direct object: (B) share capital. The other options are grammatical distractors involving a past participle (A), agent noun (C), or awkward participle phrase (D)."
+        },
+        "synonyms": [
+          "equity capital",
+          "contributed capital",
+          "paid-in capital",
+          "stockholders' equity",
+          "subscribed capital",
+          "shareholders' funds"
+        ],
+        "antonyms": [
+          "loan capital",
+          "debt capital",
+          "borrowed capital",
+          "liabilities"
+        ],
+        "relatedWords": [
+          "ordinary shares",
+          "preference shares",
+          "par value",
+          "retained earnings",
+          "rights issue",
+          "dividend",
+          "solvency"
+        ]
+      }
+    ]
+  }
+}

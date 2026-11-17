@@ -1,0 +1,363 @@
+import json
+import re
+
+words_data = [
+    {
+        "id": "finance-276",
+        "word": "subsidiary",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/səbˈsɪd.i.er.i/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/subsidiary--_us_1.mp3",
+            "syllableBreakdown": "sub-sid-i-ar-y",
+            "stressPattern": "Primary stress on the second syllable: sub-SID-i-ar-y (/səbˈsɪd.i.er.i/, ○●○○○)",
+            "commonMistakes": "Learners frequently misplace stress on the third syllable (*sub-si-DI-ar-y) or incorrectly emphasize the first syllable (*SUB-sid-y-ar-y). The prefix 'sub-' is unstressed and pronounced with a reduced schwa /səb-/, not a full /sʌb-/. Non-native speakers also frequently confuse 'subsidiary' (a company controlled by a holding or parent corporation via greater than 50% voting stock) with 'branch' (an internal operating division of the same legal entity) or 'affiliate' (a company where the parent holds a minority stake, typically 20% to 50%). Additionally, in writing, learners sometimes misspell it as *subsidary or *subsidiery."
+        },
+        "etymology": {
+            "origin": "Classical Latin subsidiarius ('belonging to a reserve, serving to assist or aid'), from subsidium ('reserve troops, auxiliary aid, support'), compounded from sub- ('behind, under') + sedere ('to sit')",
+            "rootWord": "subsidium (from sub- 'behind, under' + sedere 'to sit')",
+            "rootMeaning": "'Stationed in reserve behind the front line to support, assist, or reinforce'",
+            "evolution": "In ancient Roman military strategy, 'subsidiarii' were veteran reserve cohorts seated or stationed behind the frontline legions, ready to step in when needed ('subsidium' literally meaning 'sitting behind'). In the 15th century, the word entered Middle English via Old French 'subsidiaire' as an adjective meaning 'furnishing auxiliary help'. By the mid-19th century, with the rise of modern corporate law, joint-stock corporations, and industrial conglomerates in the United States and Britain, the term took on its specific corporate noun meaning: a separate legal entity whose controlling voting shares are owned by a holding or parent company, serving as an operational vehicle in a distinct geographic market or business line.",
+            "relatedLanguages": [
+                "French: filiale (corporate noun) / subsidiaire (adjective)",
+                "Spanish: filial (noun) / subsidiaria (adjective/noun)",
+                "Italian: società controllata / sussidiaria",
+                "German: Tochtergesellschaft (corporate noun) / subsidiär (adjective)",
+                "Portuguese: subsidiária (corporate entity)"
+            ],
+            "firstRecordedUse": "Mid-16th century (circa 1540s for adjective 'auxiliary, supplementary'); late 19th century (circa 1880s–1890s in corporate and securities law for 'a company owned and controlled by a parent corporation')"
+        },
+        "deepMeaning": {
+            "coreConcept": "A legally independent corporation or operational enterprise whose majority or controlling equity shares (typically more than 50% of voting stock) are owned and held by another corporate entity, known as the parent company or holding company, allowing the parent to control board appointments and strategic policy while insulating itself from operational liabilities.",
+            "spatialContext": "Multinational corporate headquarters, regional offices across international jurisdictions, registrar of companies, consolidated financial balance sheets, and tax-efficient operational hubs (such as European headquarters in Dublin or Asian hubs in Singapore).",
+            "temporalContext": "Established during strategic cross-border expansions, joint ventures, or mergers and acquisitions; reported on a quarterly and annual basis within consolidated financial statements (10-K filings); dissolved, spun off, or divested during corporate restructurings.",
+            "emotionalTone": "Formal, strategic, corporate, and structural; conveys organized scale, multinational reach, and legal-financial compartmentalization.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native business speakers, a 'subsidiary' is not just a branch office; it is a separate corporate citizen with its own balance sheet, tax ID, and board of directors, yet steered by the 'parent company' like a tugboat guiding a vessel. Executives and lawyers think of subsidiaries as protective shock absorbers: if a subsidiary in another country incurs debt or faces litigation, the legal principle of limited liability shields the parent corporation's main assets. In finance, natives immediately think of 'consolidated statements'—earnings from all subsidiaries aggregated into one top-level report—and 'wholly owned subsidiary' (100% ownership).",
+            "mentalImage": "An organizational chart on an executive boardroom screen showing an umbrella holding company at the apex with downward arrows branching into distinct regional and product-specific corporate entities, each labeled 'Wholly Owned Subsidiary (Delaware LLC)' or 'Overseas Subsidiary (GmbH)' with independent balance sheets.",
+            "whenToUse": "Use when referring to a legally distinct company that is owned, directed, or controlled by a parent or holding corporation (e.g., 'wholly owned subsidiary', 'overseas subsidiary', 'operating subsidiary', 'establish a subsidiary'). Also used in accounting contexts regarding consolidated earnings.",
+            "whenNotToUse": "Do not confuse a subsidiary with a 'branch' (which is merely an outpost or office of the identical legal company without separate incorporation). Do not use 'subsidiary' for companies where the investor owns only a minority non-controlling stake (use 'affiliate' or 'associate company'). Avoid using it as a simple synonym for 'department' or 'division'.",
+            "culturalContext": "In Western corporate governance and global tax planning, multinational enterprises (MNEs) establish foreign subsidiaries to navigate local labor laws, regulatory compliance, and transfer pricing guidelines under OECD standards. In TOEIC reading passages (Parts 6 and 7), corporate press releases frequently announce the creation of overseas subsidiaries to spearhead retail or manufacturing expansion into emerging Asian or European markets."
+        },
+        "examples": {
+            "daily": [
+                "Many consumers do not realize that their favorite natural skincare brand is actually a subsidiary of an international cosmetics conglomerate.",
+                "He received a job offer to work as a software engineer for the tech giant's newly launched European subsidiary in Dublin.",
+                "When you inspect the billing statement, the credit card charge appears under the name of the streaming platform's regional subsidiary."
+            ],
+            "business": [
+                "The automotive manufacturer decided to incorporate its electric battery division as an independent subsidiary to attract outside venture capital.",
+                "Under International Financial Reporting Standards (IFRS 10), the parent corporation must present consolidated financial statements that combine the revenues, assets, and liabilities of all its global subsidiaries.",
+                "Following the antitrust review, the telecommunications group was instructed to divest its regional broadband subsidiary before finalizing the merger."
+            ],
+            "conversation": [
+                "\"Are we being hired directly by the Tokyo headquarters, or through the Singapore entity?\" — \"Your employment contract will be issued by the Southeast Asian subsidiary, but your reporting line goes straight to the global vice president.\"",
+                "\"Why did the holding company set up a wholly owned subsidiary for the real estate acquisitions?\" — \"It ring-fences commercial liability so that potential tenant lawsuits don't threaten the parent firm's primary cash reserves.\"",
+                "\"Have the auditors completed the fiscal review for our German operations?\" — \"Not yet; they are currently consolidating the subsidiary’s books into our year-end group accounts.\""
+            ],
+            "collocations": [
+                "wholly owned subsidiary",
+                "foreign / overseas subsidiary",
+                "operating subsidiary",
+                "establish / incorporate a subsidiary",
+                "subsidiary's earnings / balance sheet",
+                "parent company and its subsidiaries"
+            ]
+        },
+        "wordFamily": {
+            "noun": "subsidiary, subsidiarity",
+            "verb": "subsidize",
+            "adjective": "subsidiary",
+            "adverb": "subsidiarily"
+        },
+        "visual": {
+            "imageKeyword": "corporate organizational hierarchy chart holding parent company subsidiary boardroom presentation",
+            "imageDescription": "A clean corporate presentation slide on a glass boardroom table displaying an organizational tree diagram with a prominent parent holding corporation branching into multiple regional operating subsidiaries marked with national flags and corporate seals.",
+            "mnemonic": "A SUB-sidiary is a company SUBordinate to the parent company, sitting ('sidiary' from Latin sedere = to sit) under its corporate umbrella!"
+        },
+        "video": {
+            "description": "A corporate finance case study explaining the strategic differences between parent companies, subsidiaries, and sister divisions, illustrating how conglomerates use wholly owned subsidiaries to compartmentalize financial risk and expand into overseas jurisdictions."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                7
+            ],
+            "exampleQuestion": "OmniMedia Group announced plans to spin off its digital streaming division into an independent _______ in order to seek specialized venture funding.\n(A) subsidiary\n(B) subsidize\n(C) subsidiarily\n(D) subsidized",
+            "tips": "In TOEIC Part 5, questions testing corporate structures often present word-family variations. Preceded by an indefinite article ('an') and an adjective ('independent'), the blank requires the singular countable noun 'subsidiary' (A). Option (B) 'subsidize' is a verb meaning to support financially; (C) 'subsidiarily' is an adverb; and (D) 'subsidized' is a past participle or adjective meaning receiving financial aid. Also watch for reading passages in Part 7 where questions ask: 'What is true about [Company X]?' and the answer requires recognizing that Company X is owned by a parent entity mentioned earlier."
+        },
+        "synonyms": [
+            "daughter company",
+            "controlled entity",
+            "corporate affiliate",
+            "operating affiliate",
+            "wholly owned enterprise"
+        ],
+        "antonyms": [
+            "parent company",
+            "holding company",
+            "sole proprietorship",
+            "ultimate parent corporation"
+        ],
+        "relatedWords": [
+            "parent company",
+            "holding company",
+            "conglomerate",
+            "consolidated financial statement",
+            "limited liability",
+            "spin-off",
+            "controlling interest"
+        ]
+    },
+    {
+        "id": "finance-277",
+        "word": "surety",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/ˈʃʊr.ə.ti/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/surety--_us_1.mp3",
+            "syllableBreakdown": "sur-e-ty",
+            "stressPattern": "Primary stress on the first syllable: SUR-e-ty (/ˈʃʊr.ə.ti/, ●○○)",
+            "commonMistakes": "Learners often mispronounce the initial sound as /s/ (*'soor-tee') rather than the 'sh' sound /ʃ/ (/ˈʃʊr.ə.ti/). Many students also confuse 'surety' with simple 'insurance' or 'security deposit'. While insurance is a two-party agreement where the insurer absorbs risk without expecting repayment, a surety bond is a tripartite agreement (principal, obligee, surety) where the surety retains legal subrogation rights to recover every dollar from the defaulting principal. Learners also mistake 'surety' (the guarantor or the legal bond) with 'certainty' (a state of psychological assurance)."
+        },
+        "etymology": {
+            "origin": "Anglo-Norman and Old French seurté ('security, pledge, certainty'), from Classical Latin securitas ('freedom from care, safety, security'), from securus ('free from care, safe', from se- 'without' + cura 'care')",
+            "rootWord": "securitas (from se- 'without' + cura 'care')",
+            "rootMeaning": "'Freedom from care or risk through a binding pledge or guarantee'",
+            "evolution": "In Roman law, personal securities guaranteed legal covenants. Following the Norman Conquest, the term entered Anglo-Norman English in the 12th century as 'seurte', referring to pledges given by reliable freemen ensuring an individual's appearance in court or the performance of a merchant pledge. In medieval common law, standing surety was a recognized legal duty. By the 19th and early 20th centuries, as public infrastructure grew, institutional corporate suretyship emerged in Britain and the United States, replacing individual personal guarantees with tripartite commercial surety bonds issued by specialized underwriting corporations.",
+            "relatedLanguages": [
+                "French: sûreté (security, legal guarantee, bail)",
+                "Spanish: seguridad / fianza (surety, guarantee)",
+                "Italian: sicurtà / fideiussione (surety, financial guarantee)",
+                "German: Bürgschaft / Sicherheit (commercial surety, warranty)",
+                "Latin: securitas (security, guarantee)"
+            ],
+            "firstRecordedUse": "12th century (circa 1175 in early Middle English legal pledges); formalized in corporate contract law in the 19th century"
+        },
+        "deepMeaning": {
+            "coreConcept": "In commercial finance and contract law, a binding tripartite legal agreement or the guarantor entity that undertakes formal legal responsibility to pay a debt, fulfill an obligation, or cover financial damages if the primary debtor or contractor (the principal) defaults or fails to perform; also denotes the financial security, bond, or collateral pledged as a guarantee.",
+            "spatialContext": "Commercial construction sites, municipal procurement offices, commercial surety underwriting desks, bonding agencies, civil courts, and bid tender submission rooms.",
+            "temporalContext": "Executed prior to the commencement of major commercial or public infrastructure contracts (e.g., bid bonds, performance bonds); remains active throughout the multi-year project lifecycle until formal certificate of substantial completion; invoked immediately upon default, insolvency, or contractor abandonment.",
+            "emotionalTone": "Contractual, protective, risk-mitigating, and legally binding; provides institutional assurance that capital investments and deliverables are backed by solvent third-party assets.",
+            "formalityLevel": "formal",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native contractors, bankers, and project owners, 'surety' represents financial backstopping and ultimate accountability. When a city commissions a $50 million bridge or municipal transit line, it does not just rely on the general contractor's promises; it mandates a 'surety bond'. If the contractor goes bankrupt mid-project, the surety company steps in with capital and emergency engineers to finish the job. Unlike regular casualty insurance—which anticipates losses and spreads risk across premiums—surety underwriting operates under a 'zero-loss' philosophy: the surety prequalifies the contractor through rigorous forensic auditing of balance sheets, working capital, and past performance before issuing the bond.",
+            "mentalImage": "A municipal procurement board reviewing a general contractor's bid dossier, pointing to a verified tripartite surety bond with a gold foil corporate seal from a top-rated insurance underwriter, certifying that project completion is financially guaranteed.",
+            "whenToUse": "Use in contract negotiations, commercial construction, municipal bidding, lending, and civil litigation when referring to a third-party guarantor or a tripartite bond guaranteeing contractual performance or debt payment (e.g., 'surety bond', 'act as surety', 'require a surety', 'stand surety for a loan').",
+            "whenNotToUse": "Do not use 'surety' to describe standard commercial property insurance, health insurance, or casualty policies. Do not use 'surety' as an informal adjective meaning 'sure' or 'confident' (do not say *'I am surety about the results').",
+            "culturalContext": "In the US, the federal Miller Act (and state Little Miller Acts) legally mandates that general contractors on public works projects furnish both performance and payment sureties to protect taxpayer dollars and ensure subcontractors and material suppliers are paid. In TOEIC Part 7, construction contracts, bid specifications, and vendor tender documents regularly feature requirements for surety bonds."
+        },
+        "examples": {
+            "daily": [
+                "The bank refused to issue the business loan unless the entrepreneur provided a creditworthy family member to act as surety.",
+                "Before signing the residential renovation contract, the homeowner confirmed that the remodeling firm held valid surety bonding against contractor default.",
+                "The civil magistrate released the defendant on bail after two property-owning relatives agreed to stand surety for his scheduled court appearance."
+            ],
+            "business": [
+                "The municipal authority required the engineering firm to submit a ten-million-dollar surety bond guaranteeing timely completion of the harbor dredging project.",
+                "When the primary contractor declared chapter eleven bankruptcy, the corporate surety stepped in to hire replacement subcontractors and complete the commercial high-rise.",
+                "Our commercial lending division evaluates the debt-to-equity ratio of both the borrower and the corporate surety before extending multi-million-dollar credit lines."
+            ],
+            "conversation": [
+                "\"Why does the city RFP require a performance surety bond representing one hundred percent of the contract price?\" — \"Because municipal infrastructure projects cannot afford to be abandoned midway if a contractor encounters cash-flow insolvency.\"",
+                "\"Will our parent company need to stand as surety for the new lease agreement?\" — \"Yes, the commercial landlord requires a corporate surety guarantee since our local subsidiary was only incorporated three months ago.\"",
+                "\"Has the bonding company approved our surety line for the upcoming transit authority bid?\" — \"Yes, after auditing our balance sheet and liquid working capital, the underwriter issued the prequalification letter.\""
+            ],
+            "collocations": [
+                "surety bond",
+                "stand / act as surety",
+                "corporate surety",
+                "surety company / underwriter",
+                "surety underwriting",
+                "performance surety"
+            ]
+        },
+        "wordFamily": {
+            "noun": "surety, suretyship",
+            "verb": "",
+            "adjective": "sure",
+            "adverb": "surely"
+        },
+        "visual": {
+            "imageKeyword": "surety bond certificate construction contract guarantee insurance stamp corporate underwriting",
+            "imageDescription": "An official tripartite surety bond document lying on an architect's blueprint-covered drafting table, stamped with an embossed underwriter's seal alongside hard hats, contract specifications, and an executive fountain pen.",
+            "mnemonic": "A SURE-ty makes you SURE that your contract won't collapse, because a solvent third party guarantees the performance!"
+        },
+        "video": {
+            "description": "An educational commercial insurance seminar explaining how surety bonds function in the construction industry, detailing the three-party relationship between the project owner (obligee), contractor (principal), and surety insurer."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                7
+            ],
+            "exampleQuestion": "Under municipal procurement regulations, all bids for the airport expansion project must be accompanied by a _______ bond to guarantee contractual fulfillment.\n(A) surety\n(B) surely\n(C) sureness\n(D) surer",
+            "tips": "In TOEIC Part 5, business terminology involving procurement, contracting, and finance often tests compound nouns and specific collocations. The term 'surety bond' is a high-frequency financial and legal compound noun where 'surety' (A) acts as a noun adjunct. Choice (B) 'surely' is an adverb meaning certainly; choice (C) 'sureness' is an abstract noun denoting personal self-confidence; and choice (D) 'surer' is a comparative adjective. In Part 7 contracts, remember that a surety bond is a guarantee, not standard insurance."
+        },
+        "synonyms": [
+            "guarantor",
+            "surety bond",
+            "guarantee",
+            "indemnitor",
+            "cosigner",
+            "financial sponsor"
+        ],
+        "antonyms": [
+            "defaulter",
+            "debtor",
+            "defaulting borrower",
+            "unsecured creditor"
+        ],
+        "relatedWords": [
+            "guarantor",
+            "performance bond",
+            "obligee",
+            "underwriting",
+            "indemnity",
+            "collateral",
+            "subrogation"
+        ]
+    },
+    {
+        "id": "finance-278",
+        "word": "tariff",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/ˈtær.ɪf/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tariff--_us_1.mp3",
+            "syllableBreakdown": "tar-iff",
+            "stressPattern": "Primary stress on the first syllable: TAR-iff (/ˈtær.ɪf/, ●○)",
+            "commonMistakes": "Learners often mispronounce the first vowel as a long /ɑː/ (*'tahr-iff') instead of the short front /æ/ sound as in 'cat' or 'traffic' (/ˈtær.ɪf/). Phonetically, the second syllable should end with a crisp unvoiced /f/ and a reduced /ɪ/ vowel, not an elongated /iː/. Conceptually, learners frequently confuse 'tariff' (specifically an import/export tax imposed at customs borders) with general internal sales taxes, corporate income taxes, or shipping freight charges. They also confuse 'tariff' with 'quota' (which restricts the physical quantity of goods rather than applying a price tax)."
+        },
+        "etymology": {
+            "origin": "Italian tariffa ('price list, customs rate, schedule of duties'), from Medieval Latin tarifa, borrowed from Arabic ta'rīf (تَعْرِيف, 'notification, inventory, announcement of rates'), verbal noun of 'arrafa ('to notify, inform, make known')",
+            "rootWord": "ta'rīf (from Arabic 'arrafa 'to notify, make known')",
+            "rootMeaning": "'Notification, public announcement, or schedule of official fees and rates'",
+            "evolution": "The term originated in medieval Mediterranean commerce, where Islamic ports posted 'ta'rīf' (lists of fees and port charges) for arriving merchant vessels. Italian merchants in Venice and Genoa adopted it as 'tariffa' during the 14th century to denote official tables of customs duties on foreign cargo. The word was borrowed into French as 'tarif' and entered English in the late 16th century (circa 1590s) as an official list or schedule of taxes assessed on imported and exported merchandise. Throughout the 19th and 20th centuries, tariffs became key instruments of national trade policy, evolving into complex tariff schedules regulated by international bodies such as the GATT and the World Trade Organization.",
+            "relatedLanguages": [
+                "French: tarif (rate, price schedule, customs tariff)",
+                "Spanish: tarifa (rate, fare, customs fee)",
+                "Italian: tariffa (rate, price list, customs schedule)",
+                "German: Tarif (price schedule, wage agreement) / Zolltarif (customs tariff)",
+                "Arabic: ta'rīf (تَعْرِيف - notification, definition, announcement)"
+            ],
+            "firstRecordedUse": "Late 16th century (circa 1591 in maritime trade for 'a table of rates or customs duties')"
+        },
+        "deepMeaning": {
+            "coreConcept": "A statutory tax or customs duty levied by a sovereign government on imported merchandise or foreign commodities upon entry at international borders, primarily instituted to generate public fiscal revenue, raise import purchase prices, and protect domestic manufacturers and agriculture against cheaper foreign competitors; also denotes an official published schedule of rates, duties, or utility fees.",
+            "spatialContext": "International container shipping terminals, bonded customs warehouses, border clearance inspection points, ministry of commerce trade offices, and supply chain logistics dashboards.",
+            "temporalContext": "Assessed continuously at point of customs entry; recalibrated during international trade agreement rounds (e.g., bilateral trade deals, WTO renegotiations) or retaliatory trade disputes; updated annually in national Harmonized Tariff Schedule (HTS) codes.",
+            "emotionalTone": "Strategic, regulatory, protective, and politically charged; evokes geopolitical economic policy, cross-border supply chain friction, and fiscal trade balances.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native business executives and economists, a 'tariff' is an intentional friction introduced into international supply chains. When a government slaps a 25% tariff on imported steel or electronic components, native supply chain directors know instantly that the cost will either squeeze corporate operating margins or get passed along to end consumers as higher retail prices. Unlike quotas (which set hard volume limits) or embargoes (which ban trade completely), tariffs use price mechanisms to disincentivize foreign buying and encourage domestic sourcing. The word also carries geopolitical tension: native speakers instinctively pair 'tariff' with verbs like 'impose', 'levy', 'hike', and 'retaliate'.",
+            "mentalImage": "An automated cargo inspection scanner at a bustling maritime shipping port processing stacks of intermodal steel containers, with a customs broker reviewing an electronic import declaration showing calculated ad valorem tariff duties applied to arriving auto parts.",
+            "whenToUse": "Use when discussing international trade policy, customs duties imposed on imported or exported goods, cross-border freight taxation, or published rate schedules (e.g., 'protective tariff', 'impose a 15% tariff on foreign goods', 'tariff barriers', 'harmonized tariff schedule', 'feed-in tariff for renewable energy').",
+            "whenNotToUse": "Do not use 'tariff' to describe general domestic value-added taxes (VAT), local sales tax, property tax, or corporate income tax. Do not confuse 'tariff' with an import quota (volume restriction) or a shipping freight charge (carrier transport fee).",
+            "culturalContext": "Tariffs are at the heart of macroeconomic debates in the US, Europe, and Asia. Corporate earnings calls frequently address how tariff escalation affects raw material procurement costs and offshore factory relocations. In the TOEIC exam, reading passages frequently feature global logistics updates, supply chain notices explaining price adjustments due to changes in customs tariffs, and business news articles covering international trade negotiations."
+        },
+        "examples": {
+            "daily": [
+                "The recent twenty percent tariff on imported solar panels led several local homeowners to postpone their home energy upgrades.",
+                "Because of newly introduced customs tariffs on international apparel, shoppers noticed higher prices on imported winter coats this season.",
+                "Small coffee shop owners had to absorb the tariff on imported espresso machinery rather than passing the cost on to their morning commuters."
+            ],
+            "business": [
+                "To shield domestic steelmakers from subsidized overseas competition, the government announced an executive order imposing a fifteen percent tariff on foreign steel imports.",
+                "Supply chain analysts warned the chief financial officer that retaliatory tariffs would increase component procurement costs by eight million dollars annually.",
+                "Under the bilateral free trade agreement, both member nations agreed to eliminate import tariffs on agricultural products and automotive parts over a five-year period."
+            ],
+            "conversation": [
+                "\"Why are the quarterly supply chain costs from our overseas component suppliers running twelve percent over budget?\" — \"The customs authority reclassified the raw microchips under a different Harmonized Tariff Schedule code that carries a higher duty.\"",
+                "\"Will our company absorb the new import tariff or raise prices on retail distributors?\" — \"The executive committee decided to pass half the tariff increase to distributors while seeking alternate suppliers in tariff-exempt countries.\"",
+                "\"Did the trade delegation make any headway in reducing cross-border duties?\" — \"Yes, the bilateral treaty drafts indicate that bilateral tariffs on medical devices will be phased out by the end of next year.\""
+            ],
+            "collocations": [
+                "impose / levy a tariff",
+                "protective tariff",
+                "retaliatory tariff",
+                "tariff barriers / rates",
+                "Harmonized Tariff Schedule (HTS)",
+                "exempt from tariffs"
+            ]
+        },
+        "wordFamily": {
+            "noun": "tariff, tariffing",
+            "verb": "tariff",
+            "adjective": "tariff-free, tariffed",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "customs cargo port container ship trade duty tariff tax import inspection logistics",
+            "imageDescription": "A massive cargo container ship being unloaded by gantry cranes at an ocean port terminal, with a customs inspector holding a digital tablet displaying calculated import tariff duties and clearance manifests.",
+            "mnemonic": "The customs officer checked the TAR-iff to see how much TAX was added to the foreign TRAFFIC of goods!"
+        },
+        "video": {
+            "description": "An international trade explainer illustrating how import tariffs operate, demonstrating their direct impact on consumer prices, domestic manufacturing competitiveness, and global supply chain dynamics."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                7
+            ],
+            "exampleQuestion": "Due to the recent implementation of an international trade agreement, the government agreed to eliminate _______ on imported consumer electronics next quarter.\n(A) tariffs\n(B) tariffed\n(C) tariffing\n(D) tariffable",
+            "tips": "In TOEIC Part 5, international trade and customs passages regularly test collocations with verbs like 'eliminate', 'impose', 'reduce', or 'levy'. Following the transitive verb 'eliminate', the sentence requires a direct object noun: the plural noun 'tariffs' (A). Choice (B) 'tariffed' is a past participle/adjective; choice (C) 'tariffing' is a gerund/present participle; and choice (D) 'tariffable' is an adjective meaning subject to duty. In Part 7, notice how tariffs directly explain why product prices increase or why a company shifts manufacturing to a domestic plant."
+        },
+        "synonyms": [
+            "customs duty",
+            "import tax",
+            "trade levy",
+            "import surcharge",
+            "excise duty",
+            "border tariff"
+        ],
+        "antonyms": [
+            "subsidy",
+            "tax exemption",
+            "duty-free allowance",
+            "trade rebate"
+        ],
+        "relatedWords": [
+            "customs duty",
+            "trade deficit",
+            "import quota",
+            "protectionism",
+            "free trade agreement",
+            "Harmonized System (HS)",
+            "retaliatory duty"
+        ]
+    }
+]
+
+with open("scratch/finance_276_278.json", "w", encoding="utf-8") as f:
+    json.dump({"words": words_data}, f, indent=2, ensure_ascii=False)
+
+print("Saved scratch/finance_276_278.json successfully!")

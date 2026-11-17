@@ -1,0 +1,380 @@
+import json
+
+data = {
+  "words": [
+    {
+      "id": "dining-257",
+      "word": "steak",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/steɪk/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/steak--_us_1.mp3",
+        "syllableBreakdown": "steak",
+        "stressPattern": "●",
+        "commonMistakes": "Learners often pronounce 'steak' with a short monophthong /stɛk/ (rhyming with 'speck' or 'neck') or confuse it with 'stick' /stɪk/; it should always be pronounced with the long diphthong /eɪ/ (rhyming with 'bake', 'cake', and 'make'). In written correspondence, learners occasionally confuse 'steak' with its exact homophone 'stake' (a wooden post, or financial interest/risk, as in 'stakeholder'). In restaurant contexts, non-native speakers also sometimes mistakenly use 'steak' to refer to ground beef patties; a hamburger patty is not called a 'steak' in English unless explicitly designated as 'Salisbury steak'."
+      },
+      "etymology": {
+        "origin": "Middle English 'steike' or 'steyke', borrowed in the mid-15th century from Old Norse 'steik' (a slice of meat roasted on a spit or skewer), which derives from Proto-Germanic '*staikō' (something stuck or affixed to a spit), related to Old Norse 'steikja' (to roast on a spit) and Proto-Germanic '*stikana' (to stick, prick, pierce), tracing back to Proto-Indo-European '*steyg-' (to prick, be sharp, pierce).",
+        "rootWord": "Old Norse steik (meat roasted on a spit) / steikja (to roast on a spit) / Proto-Germanic *staikō",
+        "rootMeaning": "A thick slab or slice of meat impaled upon a skewer or spit for roasting over direct fire",
+        "evolution": "In Old Norse culinary practice, 'steik' referred specifically to thick meat cuts impaled upon pointed skewers ('stakes') and roasted over open flames. Scandinavian settlers introduced the term into northern Middle English during the 15th century. By the 18th century, with the emergence of London chophouses, 'steak' specialized into prime beef cuts (rump, loin, rib) cooked quickly over glowing charcoal grills. During the 19th and 20th centuries, as commercial butchery standardized specific primal cuts (ribeye, T-bone, tenderloin), the term expanded to include thick-cut transverse steaks of dense fish such as salmon, halibut, and swordfish.",
+        "relatedLanguages": [
+          "Old Norse: steik (roast meat) / steikja (to roast on a spit)",
+          "Icelandic: steik (steak / roast meat)",
+          "Danish: steg (roast) / stege (to fry, roast)",
+          "Swedish: stek (roast meat) / steka (to fry, broil)",
+          "Norwegian: steik / stek (roast meat)",
+          "German: stechen (to prick, pierce - from shared PIE root *steyg-)"
+        ],
+        "firstRecordedUse": "Mid-15th century (c. 1450 in the 'Fifteenth-Century Cookery-Boke' as 'steike')"
+      },
+      "deepMeaning": {
+        "coreConcept": "A high-grade, thick-cut portion of meat—most commonly prime beef butchered perpendicularly across the muscle grain, but also extending to thick transverse cross-sections of fish or dense vegetables—prepared using rapid direct-heat methods such as grilling, broiling, or cast-iron searing, and served to precise degrees of culinary doneness (rare, medium-rare, medium, well-done).",
+        "spatialContext": "Fine-dining dining rooms, upscale chophouses, open-flame restaurant grill stations, butcher display cases, and banquet carving boards.",
+        "temporalContext": "Dinner service, executive client entertainment evenings, celebratory banquet meals, and precise cooking times ranging from four to twelve minutes depending on customer preference and cut thickness.",
+        "emotionalTone": "Substantial, prestigious, savory, celebratory, and satisfying.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers regard a steak as the definitive celebratory or executive dinner entree. It is associated with indulgence, personal culinary agency, and premium hospitality. Ordering a steak triggers an automatic mental protocol regarding doneness ('rare', 'medium-rare', 'medium', 'well-done') and cut preference ('ribeye' for marbling and flavor, 'filet mignon' for tenderness, 'New York strip' for firm texture). In professional networking, treating a business associate to a steak dinner signals genuine esteem and meaningful investment in the commercial relationship.",
+        "mentalImage": "A thick, center-cut prime ribeye resting on an oval sizzling ceramic platter, showing defined cross-hatch char marks from the grill, topped with melting herb butter that mingles with savory meat juices beside grilled asparagus spears and roasted fingerling potatoes.",
+        "whenToUse": "Use when ordering, serving, or discussing thick cuts of beef (ribeye, sirloin, tenderloin, T-bone), hearty fish cross-sections (salmon steak, tuna steak), or specialized vegetable cuts (cauliflower steak). Essential in dining dialogues, menu descriptions, and corporate meal expense documentation.",
+        "whenNotToUse": "Do not use for thin sandwich deli meats, sliced roast beef, shredded beef, or standard ground beef hamburger patties. Do not confuse with 'chop' (which typically applies to pork or lamb containing a rib bone) or 'roast' (a large whole cut cooked slowly for multiple servings).",
+        "culturalContext": "In North American, British, and Australian corporate dining, hosting clients for a steak dinner is an established convention for sealing commercial agreements, celebrating quarterly achievements, or welcoming senior delegates. Waitstaff are trained to clarify cooking temperatures immediately upon ordering. In TOEIC test scenarios, steak appears frequently on restaurant menus, dining billing receipts, waitstaff ordering conversations in Parts 2 and 3, and event catering selections in Part 7."
+      },
+      "examples": {
+        "daily": [
+          "He ordered an eight-ounce ribeye steak cooked medium-rare with a side of garlic mashed potatoes.",
+          "Before placing the steak on the hot grill, she seasoned both sides generously with coarse salt and cracked black pepper.",
+          "The local butcher recommended a thick sirloin steak for our family dinner over the weekend."
+        ],
+        "business": [
+          "The regional director hosted the international delegates for a steak dinner at the harbor club to mark the contract signing.",
+          "The banquet contract specifies that attendees may choose between a grilled beef steak and a vegetarian risotto.",
+          "According to company travel policy, an itemized dining receipt showing individual steak entrees must accompany the reimbursement claim."
+        ],
+        "conversation": [
+          "\"Good evening, how would you like your sirloin steak prepared tonight?\" / \"Medium-rare, please, with the peppercorn sauce on the side.\"",
+          "\"Are we covering dinner for the visiting auditors tonight?\" / \"Yes, I made reservations at the grill downtown so we can offer them a proper steak dinner.\"",
+          "\"Did the catering coordinator confirm our dietary selections for the gala?\" / \"Yes, seventy guests chose the beef steak, forty chose the salmon, and fifteen requested vegetarian plates.\""
+        ],
+        "collocations": [
+          "medium-rare steak",
+          "ribeye steak",
+          "sirloin steak",
+          "filet mignon steak",
+          "grilled steak",
+          "prime steak"
+        ]
+      },
+      "wordFamily": {
+        "noun": "steak, steakhouse",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "grilled ribeye steak sear marks restaurant dinner plate rosemary",
+        "imageDescription": "A perfectly seared ribeye steak resting on a warm white ceramic plate, displaying dark crisscrossed grill marks, a pat of herb butter melting across the browned crust, and garnished with rosemary sprigs and roasted garlic.",
+        "mnemonic": "A STEAK is meat pierced on a wooden STAKE (spit) over fire—a sizzling, prime cut served to your exact taste!"
+      },
+      "video": {
+        "description": "A professional culinary masterclass demonstrating how an executive chef trims, seasons, and sears prime dry-aged beef steaks on a high-heat commercial broiler while explaining internal cooking temperatures."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          2,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Waitstaff at the Grandview Bistro are instructed to ask patrons how they would like their _____ prepared before sending the order to the kitchen. (A) steak (B) steaked (C) steaking (D) steaks",
+        "tips": "In TOEIC Part 5, culinary nouns after possessive pronouns ('their') followed by singular verb or singular reference can test noun form. Here, 'their _____ prepared' refers to the patron's individual entree choice, where the singular base noun 'steak' (Choice A) functions correctly. Option (B) 'steaked' is an incorrect participial form, (C) 'steaking' is not a culinary noun, and (D) 'steaks' is an unnatural plural for an individual guest's entree in this construction."
+      },
+      "synonyms": [
+        "cut of beef",
+        "beef cut",
+        "sirloin",
+        "filet",
+        "tenderloin cut",
+        "strip cut"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "marbling",
+        "medium-rare",
+        "doneness",
+        "grill",
+        "tenderloin",
+        "meat thermometer",
+        "dry-aging"
+      ]
+    },
+    {
+      "id": "dining-258",
+      "word": "steakhouse",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈsteɪk.haʊs/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/steakhouse--_us_1.mp3",
+        "syllableBreakdown": "steak·house",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners sometimes place primary stress on the second syllable (/steɪkˈhaʊs/), but as a standard English compound noun, primary stress falls firmly on the first syllable: /ˈsteɪk.haʊs/. Another frequent issue is vowel reduction; learners may reduce '-house' to /həs/ or /hʊs/ instead of articulating the full diphthong /haʊs/. When pluralized ('steakhouses'), the final 's' is pronounced with a voiced /z/ (/ˈsteɪk.haʊ.zɪz/). Non-native speakers also occasionally confuse a 'steakhouse' (an upscale sit-down restaurant specializing in steaks) with a 'butcher shop' (a retail store selling raw meat cuts)."
+      },
+      "etymology": {
+        "origin": "An English compound noun formed from 'steak' (from Middle English 'steike', from Old Norse 'steik', meat roasted on a spit) and 'house' (from Old English 'hūs', dwelling, shelter, commercial establishment, from Proto-Germanic '*hūsą').",
+        "rootWord": "Old Norse steik (meat roasted on a spit) + Old English hūs (dwelling, building, establishment)",
+        "rootMeaning": "A commercial hospitality establishment or restaurant dedicated to the grilling and service of beef steaks and chops",
+        "evolution": "In 17th- and 18th-century London, traditional taverns known as 'chophouses' served grilled mutton and beef chops to merchant traders. During the late 19th century in commercial hubs like New York and Chicago, establishments like Keens and Peter Luger transformed this tradition into the American 'steak house', emphasizing prime dry-aged beef, extensive wine cellars, leather booths, and dark wood architecture. The combined compound 'steakhouse' became prevalent in American print during the 1880s and 1890s. Throughout the 20th century, the steakhouse expanded internationally as a symbol of executive dining, client entertaining, and celebration.",
+        "relatedLanguages": [
+          "German: Steakhaus (steakhouse - loan compound) / Haus (house)",
+          "Dutch: steakhouse (steak restaurant) / huis (house)",
+          "Old Norse: steik (roast meat) / hús (house, dwelling)",
+          "Danish: bøfhus (beef house) / steakhouse",
+          "Swedish: stekhus / steakhouse (meat specialty restaurant)",
+          "French: steakhouse / restaurant de grillades (borrowed dining genre)"
+        ],
+        "firstRecordedUse": "Late 19th century (c. 1885 in American commercial directories and newspaper advertisements)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A specialized, traditionally upscale restaurant that focuses on serving high-quality cuts of beef, chops, poultry, and seafood alongside classic accompaniment dishes, characterized by formal table service, curated wine programs, subdued lighting, and private dining options.",
+        "spatialContext": "Metropolitan financial districts, luxury hotel properties, entertainment quarters, executive private dining salons, and wine cellar dining rooms.",
+        "temporalContext": "Evening dinner service, corporate business lunches, celebratory retirement or promotion dinners, and peak weekend dining periods requiring advance reservations.",
+        "emotionalTone": "Sophisticated, warm, prestigious, convivial, and hospitable.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "For native English speakers, a 'steakhouse' is not merely a restaurant that serves meat; it is a distinct dining institution associated with prestige, celebratory indulgence, and executive networking. The mental picture evokes white linen tablecloths, leather club chairs, vintage dark mahogany paneling, and an extensive wine list. Native professionals instinctively view the steakhouse as an ideal venue to entertain prospective clients, host retirement dinners, or celebrate closing an important business acquisition.",
+        "mentalImage": "An upscale steakhouse interior featuring warm amber lighting, plush burgundy leather booths, dark wood wainscoting, and a climate-controlled glass wine cellar, as a tuxedo-vested server delivers sizzling plates to a celebratory corporate table.",
+        "whenToUse": "Use when identifying or referring specifically to restaurants whose primary culinary identity and menu revolve around prime beef steaks, chops, and upscale side dishes. Common in travel itineraries, business entertaining conversations, dinner reservations, and corporate reimbursement documentation.",
+        "whenNotToUse": "Do not use for casual burger stands, fast-food counters, generic barbecue joints, or family diners that happen to list steak on their menu. Do not confuse with a retail butcher shop or meat market.",
+        "culturalContext": "In corporate North America and the UK, the steakhouse is deeply intertwined with deal-making and milestone celebrations. Companies routinely reserve private dining rooms in high-end steakhouses for board dinners and client presentations. In the TOEIC exam, steakhouses frequently appear in Part 3 conversations about organizing client dinners, Part 4 voice messages concerning dinner reservation adjustments, and Part 7 restaurant evaluations, booking confirmations, and expense vouchers."
+      },
+      "examples": {
+        "daily": [
+          "We reserved a booth at the downtown steakhouse to celebrate our parents' wedding anniversary.",
+          "The new steakhouse on Elm Street has received stellar reviews for its forty-day dry-aged ribeye.",
+          "Even though she does not eat red meat, the steakhouse menu offered several grilled seafood and vegetarian options."
+        ],
+        "business": [
+          "The senior partners reserved the private dining room at a premier steakhouse to host visiting executives from Tokyo.",
+          "Our hospitality expense guidelines stipulate that all dinner receipts from the steakhouse must itemize food and beverage totals.",
+          "The conference organizers compiled a list of recommended local steakhouses within walking distance of the convention center."
+        ],
+        "conversation": [
+          "\"Have you finalized where we will take the visiting delegation tomorrow evening?\" / \"Yes, I booked a private room at the steakhouse near the riverfront.\"",
+          "\"Will the steakhouse be able to accommodate our party of twelve without an advance deposit?\" / \"They only require a credit card on file to secure the reservation for large groups.\"",
+          "\"Did you submit the dinner receipt from the steakhouse with your travel expense claim?\" / \"Yes, along with the itemized bill and the full list of client attendees.\""
+        ],
+        "collocations": [
+          "upscale steakhouse",
+          "downtown steakhouse",
+          "steakhouse reservation",
+          "steakhouse menu",
+          "traditional steakhouse",
+          "steakhouse chain"
+        ]
+      },
+      "wordFamily": {
+        "noun": "steakhouse, steak",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "upscale steakhouse dining room leather booths wine cellar dark wood",
+        "imageDescription": "An elegant, dimly lit steakhouse dining room with polished dark hardwood floors, round leather booths, white cloth tables set with wine glasses, and a visible glass-walled wine cellar in the background.",
+        "mnemonic": "STEAK + HOUSE = A HOUSE dedicated entirely to serving the finest STEAKS for celebrations and executive dining!"
+      },
+      "video": {
+        "description": "A hospitality documentary showcasing the front-of-house operations, table staging, and private client dining service at a legendary metropolitan steakhouse during a busy Friday dinner rush."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Due to exceptionally high customer volume during the convention, tables at the waterfront _____ should be reserved at least one week in advance. (A) steak (B) steaks (C) steakhouse (D) steakhouses",
+        "tips": "In TOEIC Part 5, distinguishing between the food item ('steak') and the physical dining venue ('steakhouse') is essential. The singular noun modifier 'the waterfront _____' followed by the singular auxiliary construction 'should be reserved' specifies an individual establishment: Choice (C) 'steakhouse'. Options (A) 'steak' and (B) 'steaks' refer to the food cut rather than the dining venue, while (D) 'steakhouses' is plural and does not fit the singular context following the singular definite noun phrase."
+      },
+      "synonyms": [
+        "chophouse",
+        "grill room",
+        "beef restaurant",
+        "asador",
+        "meat restaurant"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "dry-aged beef",
+        "wine cellar",
+        "private dining",
+        "prime rib",
+        "sommelier",
+        "maître d'",
+        "table reservation"
+      ]
+    },
+    {
+      "id": "dining-259",
+      "word": "steam",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/stiːm/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/steam--_us_1.mp3",
+        "syllableBreakdown": "steam",
+        "stressPattern": "●",
+        "commonMistakes": "Learners often shorten the tense high front vowel /iː/ to a lax /ɪ/ (pronouncing it like 'stim'), failing to lengthen the vowel sound as in 'team' or 'dream'. In culinary and hospitality contexts, non-native speakers also sometimes confuse 'steam' (water vapor at boiling point used for moist-heat cooking or food warming) with 'smoke' (particulate by-product of wood or charcoal combustion) or 'mist' (cool liquid water droplets suspended in ambient air). In equipment terms, learners sometimes misinterpret 'steam table' as a dining table made of steam, rather than a heated water-bath counter designed to hold food pans at safe temperatures."
+      },
+      "etymology": {
+        "origin": "Middle English 'stem' or 'steem' (vapor, exhalation, warm breath, steam), from Old English 'stēam' (vapor, smoke, fume, exhalation), from Proto-Germanic '*staumaz' (vapor, steam, breath), derived from Proto-Indo-European '*stow-mo-', from the root '*stew-' (to blow, billow, rise in vapor, mist).",
+        "rootWord": "Old English stēam (vapor, exhalation, fume) / Proto-Germanic *staumaz (vapor, steam)",
+        "rootMeaning": "Hot vapor, misty exhalation, or breath rising from boiling water or heated moist bodies",
+        "evolution": "In Old English, 'stēam' referred broadly to vapors, mist, or exhalations rising from heated liquids, the earth, or breath. In Middle English, it narrowed specifically to the gaseous vapor produced when water reaches its boiling point. In culinary and restaurant history, the controlled use of steam evolved from ancient bamboo steamer baskets into 19th-century cafeteria 'steam tables' designed to maintain hot buffet food, and modern commercial combi-steam ovens that cook vegetables, poultry, and seafood quickly while locking in nutrients, color, and natural moisture.",
+        "relatedLanguages": [
+          "Old English: stēam (vapor, smoke, exhalation)",
+          "Dutch: stoom (steam, vapor)",
+          "Middle Low German: stōm (steam, vapor)",
+          "West Frisian: steam (steam)",
+          "Old High German: stoum (steam, vapor, smoke)",
+          "German: Dunst (vapor, haze) / Dampf (steam - semantic cognate)"
+        ],
+        "firstRecordedUse": "Before 1000 (Old English 'stēam' in early medical and theological manuscripts)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The hot, gaseous vapor produced when water boils at 100°C (212°F), utilized in dining and commercial food service as a clean moist-heat cooking medium, a thermodynamic heat source for buffet warming tables and chafing wells, and the visible vapor rising from freshly served hot dishes and beverages.",
+        "spatialContext": "Commercial restaurant kitchens, cafeteria buffet serving lines, banquet chafing stations, dishwashing sanitation areas, and espresso beverage stations.",
+        "temporalContext": "Continuous operation during buffet meal shifts, rapid two-to-eight minute vegetable and seafood steaming cycles, and food-holding windows adhering to health code temperature guidelines.",
+        "emotionalTone": "Invigorating, fresh, nourishing, comforting, and functional.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "In dining contexts, native speakers associate 'steam' with two primary sensations: immediate sensory freshness (a steaming bowl of chowder or fragrant coffee signaling hot, freshly made food) and efficient, healthy cooking (steaming vegetables or dumplings to preserve crunch, vibrant color, and nutrients without heavy cooking oils). In catering and hospitality operations, 'steam' is synonymous with temperature control, specifically via 'steam tables' that use hot water vapor to keep buffet dishes above mandatory health-code safety thresholds.",
+        "mentalImage": "A commercial kitchen banquet line where a line cook lifts the polished stainless steel cover of a hotel pan on the steam table, releasing a billowing plume of clean white steam revealing tender, glistening steamed broccoli and roasted baby potatoes.",
+        "whenToUse": "Use when describing moist-heat culinary preparation ('steam cooking', 'steamed vegetables'), the visible vapor rising from hot food or drinks ('steam rising from the tea'), or commercial kitchen holding equipment ('steam table', 'combi oven', 'steam wand').",
+        "whenNotToUse": "Do not confuse with 'smoke' (which arises from combustion and carries an acrid scent) or 'steamers' (clams or mechanical devices). Do not use to describe dry-heat cooking methods such as roasting, grilling, or frying.",
+        "culturalContext": "Steam is central to global dining traditions, spanning Asian dim sum bamboo basket cookery, European combi-steam culinary techniques, and North American institutional buffet service. Food safety regulations in commercial hospitality strictly require that steam tables keep hot food above 140°F (60°C) to inhibit bacterial growth. In TOEIC examinations, 'steam' appears in Part 1 listening photos depicting kitchen staff operating equipment or hot buffet lines, Part 3 catering dialogues, and Part 7 equipment maintenance orders.",
+        "examples": {
+          "daily": [
+            "Be careful when removing the saucepan lid, as the escaping steam can cause severe burns.",
+            "A delicate plume of steam rose from the mug of freshly brewed coffee on the kitchen counter.",
+            "She prefers cooking vegetables using gentle steam because it preserves their vibrant color and vitamins."
+          ],
+          "business": [
+            "The catering staff checked the water level beneath the steam table to keep the banquet entrees at the required serving temperature.",
+            "The kitchen supervisor scheduled a technician to descale the commercial steam oven before the busy conference weekend.",
+            "Health department regulations require cafeteria steam tables to maintain prepared foods at sixty degrees Celsius or higher."
+          ],
+          "conversation": [
+            "\"Why are the vegetables on the buffet line cooling down so quickly?\" / \"The steam table's heating element malfunctioned, but our maintenance crew is replacing it now.\"",
+            "\"How would you like the chef to prepare the side of asparagus?\" / \"Please ask if they can cook it with light steam and a drizzle of olive oil instead of butter.\"",
+            "\"Did the catering shipment include the extra inserts for the hot food counter?\" / \"Yes, all the stainless steel pans are ready to be placed directly into the steam table.\""
+          ],
+          "collocations": [
+            "plume of steam",
+            "steam table",
+            "steam cooker",
+            "cloud of steam",
+            "gentle steam",
+            "steam wand"
+          ]
+        }
+      },
+      "examples": {
+        "daily": [
+          "Be careful when removing the saucepan lid, as the escaping steam can cause severe burns.",
+          "A delicate plume of steam rose from the mug of freshly brewed coffee on the kitchen counter.",
+          "She prefers cooking vegetables using gentle steam because it preserves their vibrant color and vitamins."
+        ],
+        "business": [
+          "The catering staff checked the water level beneath the steam table to keep the banquet entrees at the required serving temperature.",
+          "The kitchen supervisor scheduled a technician to descale the commercial steam oven before the busy conference weekend.",
+          "Health department regulations require cafeteria steam tables to maintain prepared foods at sixty degrees Celsius or higher."
+        ],
+        "conversation": [
+          "\"Why are the vegetables on the buffet line cooling down so quickly?\" / \"The steam table's heating element malfunctioned, but our maintenance crew is replacing it now.\"",
+          "\"How would you like the chef to prepare the side of asparagus?\" / \"Please ask if they can cook it with light steam and a drizzle of olive oil instead of butter.\"",
+          "\"Did the catering shipment include the extra inserts for the hot food counter?\" / \"Yes, all the stainless steel pans are ready to be placed directly into the steam table.\""
+        ],
+        "collocations": [
+          "plume of steam",
+          "steam table",
+          "steam cooker",
+          "cloud of steam",
+          "gentle steam",
+          "steam wand"
+        ]
+      },
+      "wordFamily": {
+        "noun": "steam, steamer",
+        "verb": "steam",
+        "adjective": "steamed, steamy",
+        "adverb": "steamily"
+      },
+      "visual": {
+        "imageKeyword": "steam rising hot buffet food warmer commercial kitchen restaurant",
+        "imageDescription": "A commercial kitchen chef lifting a stainless steel lid from a steam table insert, as a billowing cloud of white steam rises over freshly cooked vegetables and warm banquet entrees.",
+        "mnemonic": "STEAM is boiling water's hot team—cooking food cleanly and keeping buffet dishes warm in a gleam!"
+      },
+      "video": {
+        "description": "A commercial kitchen safety and operations video demonstrating proper moisture control, temperature calibration on buffet steam tables, and maintenance of high-pressure commercial steamers."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Before the lunch rush begins, cafeteria attendants must ensure the water reservoirs under the _____ table are filled to the designated line. (A) steam (B) steamed (C) steaming (D) steamer",
+        "tips": "In TOEIC Part 5, recognizing common compound nouns in hospitality and facilities management is critical. The term 'steam table' is an established compound noun designating a water-heated food-holding counter. Choice (A) 'steam' functions correctly as a noun adjunct modifier. Option (B) 'steamed' is a past participle modifier for cooked food (e.g., 'steamed dumplings'), (C) 'steaming' is a participial adjective, and (D) 'steamer' refers to the appliance itself."
+      },
+      "synonyms": [
+        "water vapor",
+        "vapor",
+        "condensation",
+        "exhalation",
+        "mist plume"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "steam table",
+        "combi oven",
+        "bamboo steamer",
+        "moist-heat cooking",
+        "chafing dish",
+        "food warmer",
+        "buffet line"
+      ]
+    }
+  ]
+}
+
+# Notice: In steam, let's remove duplicate 'examples' inside 'nativeMindset' if present
+if "examples" in data["words"][2]["nativeMindset"]:
+    del data["words"][2]["nativeMindset"]["examples"]
+
+with open("scratch/dining_257_259.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+
+print("Saved scratch/dining_257_259.json")

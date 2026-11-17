@@ -1,0 +1,341 @@
+import json
+import re
+
+words_data = [
+  {
+    "id": "finance-252",
+    "word": "revolving credit",
+    "partOfSpeech": ["noun"],
+    "category": "finance",
+    "level": "advanced",
+    "toeicFrequency": 7,
+    "pronunciation": {
+      "ipa": "/rɪˈvɑːl.vɪŋ ˈkred.ɪt/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/revolving_credit--_us_1.mp3",
+      "syllableBreakdown": "re-volv-ing cred-it",
+      "stressPattern": "Secondary on first word, primary on second syllable of revolving; primary on first syllable of credit: re-VOLV-ing CRED-it (/rɪˈvɑːl.vɪŋ ˈkred.ɪt/, ○●○ ●○)",
+      "commonMistakes": "Learners often omit the second /v/ in 'revolving', erroneously saying */rɪˈvɒl.ɪŋ/*, or drop the final /t/ in 'credit'. Conceptually, non-native speakers frequently confuse 'revolving credit' with a fixed installment loan; with revolving credit, borrowing capacity automatically replenishes as balances are repaid, and interest is charged only on the funds actively drawn."
+    },
+    "etymology": {
+      "origin": "English compound composed of 'revolving' (from Latin revolvere 'to roll back, turn over, unroll') and 'credit' (from Latin creditum 'a loan, trust, thing entrusted', past participle of credere 'to believe, trust').",
+      "rootWord": "Latin revolvere (re- 'again, back' + volvere 'to roll, turn') + credere (to believe, entrust)",
+      "rootMeaning": "'Renewable credit that cycles back into availability upon debt repayment'",
+      "evolution": "Latin revolvere entered Middle English in the late 14th century via Old French revolvre. In mid-20th-century American banking and retail commerce (specifically during the 1930s-1950s department store charge accounts and subsequent bank card systems), lenders introduced 'revolving credit accounts'—flexible credit lines where consumers and commercial borrowers could repeatedly borrow up to a credit ceiling as repayments cleared. In corporate treasury, this evolved into multi-million-dollar 'revolving credit facilities' (revolvers).",
+      "relatedLanguages": [
+        "French: crédit renouvelable (crédit revolving)",
+        "Spanish: crédito rotativo / crédito revolvente",
+        "German: revolvierender Kredit",
+        "Italian: credito rotativo"
+      ],
+      "firstRecordedUse": "Mid-20th century (circa 1937–1940 in American retail banking and commercial credit agreements)"
+    },
+    "deepMeaning": {
+      "coreConcept": "An open-end financial credit agreement establishing a maximum borrowing limit from which a borrower can withdraw funds, repay outstanding balances, and borrow again continuously, with interest accruing strictly on drawn amounts rather than the total facility limit.",
+      "spatialContext": "Corporate treasury dashboards, commercial lending syndication offices, credit card account portals, and corporate financial statements (Form 10-K working capital notes).",
+      "temporalContext": "Operates continuously over an agreed multi-year tenor; interest accrues daily or monthly on outstanding draws, and periodic minimum payments or full repayments recycle borrowing capacity without terminating the contract.",
+      "emotionalTone": "Strategic, liquidity-conscious, pragmatic, and operationally empowering.",
+      "formalityLevel": "formal",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To corporate treasurers and financial managers, 'revolving credit' (often colloquially referred to on Wall Street as 'a revolver') represents a crucial liquidity lifeline. Rather than taking out a rigid term loan and paying interest on idle cash, companies maintain revolving credit as an elastic cushion for seasonal cash-flow troughs, inventory purchases, or emergency backstops. Native speakers instinctively associate it with ongoing operational flexibility and working capital preservation.",
+      "mentalImage": "A corporate Chief Financial Officer at a dual-monitor workstation reviewing a cash management portal, authorizing a four-million-dollar drawdown against the company's revolving credit facility to settle bulk supplier invoices ahead of seasonal holiday inventory deliveries.",
+      "whenToUse": "Use when describing open-end borrowing mechanisms (corporate credit facilities, business lines of credit, or credit cards) where borrowed funds can be repeatedly repaid and redrawn without submitting a new loan application.",
+      "whenNotToUse": "Do not use for fixed-term, amortizing debt such as commercial mortgages, vehicle loans, or equipment term loans where the borrowed principal cannot be re-borrowed once repaid. Do not confuse with 'revolving door' (a sociological/political metaphor for staff turnover).",
+      "culturalContext": "In Anglo-American corporate finance and consumer economics, revolving credit is foundational. Publicly traded corporations negotiate syndicated revolving credit agreements with consortiums of major commercial banks to serve as liquidity backstops, supporting commercial paper issuances and protecting against unexpected macroeconomic shocks."
+    },
+    "examples": {
+      "daily": [
+        "Because a consumer credit card operates as revolving credit, paying down your balance immediately restores your available credit limit.",
+        "The small business owner relied on a revolving credit line to purchase restaurant supplies during slow seasonal months without renegotiating terms each time.",
+        "Credit counselors advise consumers to keep their revolving credit utilization ratio below thirty percent to maintain favorable credit scores."
+      ],
+      "business": [
+        "To bridge working capital gaps before quarterly receivables arrived, the manufacturing firm drew twelve million dollars from its revolving credit facility.",
+        "The syndicated revolving credit agreement requires the logistics provider to maintain an interest coverage ratio of at least 3.5 to prevent technical default.",
+        "The board of directors approved extending the maturity date of the corporation's hundred-million-dollar revolving credit line by three additional years."
+      ],
+      "conversation": [
+        "\"Should we finance the seasonal warehouse expansion through an amortizing term loan or tap our revolving credit line?\" — \"Our revolving credit line is much more cost-effective because we can draw funds incrementally as construction invoices arrive and pay only for what we use.\"",
+        "\"Has the commercial lending syndicate approved the amendment to our credit terms?\" — \"Yes, they agreed to increase our revolving credit ceiling to fifty million dollars while reducing the standby commitment fee on undrawn balances.\"",
+        "\"Why did the financial auditor flag our recent borrowing activity?\" — \"Because we utilized more than eighty-five percent of our revolving credit facility near the fiscal year-end, which signals heightened liquidity strain.\""
+      ],
+      "collocations": [
+        "revolving credit facility",
+        "revolving credit agreement",
+        "revolving credit line",
+        "draw down revolving credit",
+        "revolving credit limit",
+        "undrawn revolving credit"
+      ]
+    },
+    "wordFamily": {
+      "noun": "revolving credit",
+      "verb": "revolve",
+      "adjective": "revolving",
+      "adverb": "revolvingly"
+    },
+    "visual": {
+      "imageKeyword": "corporate revolving credit agreement commercial bank loan facility documents desk",
+      "imageDescription": "A corporate finance controller and a commercial bank loan officer sitting at a conference table reviewing a signed revolving credit agreement next to a tablet displaying credit facility utilization charts.",
+      "mnemonic": "REVOLVING credit REVOLVES like a wheel: when you pay money back, the credit rolls right back into your account, ready to be borrowed again whenever cash is needed!"
+    },
+    "video": {
+      "description": "An executive banking lecture explaining the mechanics of corporate revolving credit facilities, illustrating how drawdowns, repayments, interest margins, and standby commitment fees are managed in treasury operations."
+    },
+    "toeicContext": {
+      "commonParts": [3, 4, 5, 7],
+      "exampleQuestion": "In order to manage fluctuating inventory expenses during peak shipping seasons, Trans-Continental Logistics has secured a $20 million _______ credit facility from its lead commercial lender.\n(A) revolved\n(B) revolving\n(C) revolution\n(D) revolve",
+      "tips": "In TOEIC Part 5 banking and finance passages, 'revolving credit' (and 'revolving credit facility') is an established financial compound term. The present participle 'revolving' (B) functions as an adjective modifying 'credit facility' to describe an arrangement where borrowing capacity renews upon repayment. Distractor (A) 'revolved' is an unidiomatic past participle, (C) 'revolution' is an unrelated noun, and (D) 'revolve' is a base verb unable to modify the noun."
+    },
+    "synonyms": [
+      "open-end credit",
+      "revolving line of credit",
+      "revolving facility",
+      "evergreen credit facility",
+      "bank line of credit",
+      "revolver"
+    ],
+    "antonyms": [
+      "installment credit",
+      "closed-end credit",
+      "term loan",
+      "fixed loan",
+      "non-revolving loan"
+    ],
+    "relatedWords": [
+      "credit limit",
+      "drawdown",
+      "commitment fee",
+      "working capital",
+      "syndicated loan",
+      "credit utilization",
+      "debt covenant"
+    ]
+  },
+  {
+    "id": "finance-253",
+    "word": "risk management",
+    "partOfSpeech": ["noun"],
+    "category": "finance",
+    "level": "advanced",
+    "toeicFrequency": 7,
+    "pronunciation": {
+      "ipa": "/ˈrɪsk ˌmæn.ɪdʒ.mənt/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/risk_management--_us_1.mp3",
+      "syllableBreakdown": "risk man-age-ment",
+      "stressPattern": "Primary stress pattern: RISK MAN-age-ment (/ˈrɪsk ˌmæn.ɪdʒ.mənt/, ● ˌ●○○)",
+      "commonMistakes": "Learners often articulate the suffix '-ment' as a full vowel /-ment/ instead of the reduced schwa /-mənt/. In addition, the middle syllable of 'management' is frequently mispronounced as /eɪ/ rather than a weak /ɪ/ or /ə/. In grammar, non-native speakers sometimes incorrectly pluralize the term as *'risk managements'* or use an indefinite article (*'a risk management'*); in corporate finance, it is an uncountable discipline and institutional governance practice."
+    },
+    "etymology": {
+      "origin": "Modern English compound noun combining 'risk' (from Early Modern French 'risque', via Italian 'risco/rischio' meaning 'hazard, steep rock, navigational peril', from Greek 'rhiza' meaning 'cliff, root') and 'management' (from Italian 'maneggiare' meaning 'to handle, control, train horses', from Latin 'manus' meaning 'hand').",
+      "rootWord": "Italian rischio (navigational peril, hazard) + Latin manus (hand, handling)",
+      "rootMeaning": "'Handling navigational perils with skilled hands' — guiding an enterprise safely through commercial and financial hazards.",
+      "evolution": "While marine underwriting and actuarial sciences date back centuries, the formal discipline and nomenclature of 'risk management' emerged in the mid-1950s within American corporate finance and business academia (notably at Wharton and Harvard). It marked a transition from merely purchasing commercial insurance to systematically identifying, assessing, controlling, and hedging operational, financial, and strategic exposures across an enterprise (Enterprise Risk Management / ERM).",
+      "relatedLanguages": [
+        "French: gestion des risques",
+        "Spanish: gestión de riesgos",
+        "German: Risikomanagement",
+        "Italian: gestione del rischio"
+      ],
+      "firstRecordedUse": "Mid-20th century (circa 1956 in American management treatises and corporate finance journals)"
+    },
+    "deepMeaning": {
+      "coreConcept": "The structured, ongoing corporate discipline of identifying, analyzing, evaluating, and addressing potential financial, operational, strategic, and regulatory threats in order to minimize enterprise vulnerability and safeguard organizational capital and earnings.",
+      "spatialContext": "Corporate boardrooms, internal audit suites, trading floor compliance monitoring desks, credit committee review chambers, and digital risk management information systems (RMIS).",
+      "temporalContext": "Conducted continuously in daily trading and operational surveillance, evaluated during quarterly board audit committee reviews, and formalized in annual enterprise risk assessments and regulatory disclosure filings.",
+      "emotionalTone": "Vigilant, analytical, prudent, methodical, and governance-driven.",
+      "formalityLevel": "formal",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "In corporate finance and executive leadership, native speakers understand that 'risk management' does not mean eliminating all risk—doing so would halt growth and innovation. Instead, natives view risk management as maintaining conscious control over uncertainty: calculating risk appetite, setting exposure limits, hedging market volatility, implementing internal controls, and establishing contingency plans so that external shocks never threaten organizational solvency.",
+      "mentalImage": "A Chief Risk Officer standing before the board of directors, presenting a color-coded heat map of the enterprise risk matrix that highlights supply chain vulnerabilities and foreign exchange exposures alongside proposed hedging strategies.",
+      "whenToUse": "Use when discussing formal corporate programs, departmental frameworks, compliance procedures, and financial hedging techniques designed to monitor and mitigate losses (e.g. enterprise risk management, liquidity risk management, credit risk management).",
+      "whenNotToUse": "Do not use for casual personal caution (e.g., locking your front door is common-sense safety, not 'risk management' in standard business usage). Do not confuse with 'crisis management', which refers to emergency mitigation after a disaster has already occurred.",
+      "culturalContext": "In modern corporate governance and post-2008 banking regulations (such as Dodd-Frank and Basel III/IV), risk management is legally mandated. Public corporate boards are legally bound under fiduciary duty rules to maintain comprehensive risk management oversight, with dedicated Chief Risk Officers reporting directly to independent audit committees."
+    },
+    "examples": {
+      "daily": [
+        "Diversifying personal retirement investments across multiple asset classes is a fundamental rule of personal risk management.",
+        "The property owner practiced sensible risk management by installing automated water shutoff valves and commercial smoke alarms throughout the apartment complex.",
+        "Before embarking on an international hiking expedition, the guide applied basic risk management by carrying satellite communication devices and emergency rations."
+      ],
+      "business": [
+        "The multinational conglomerate hired an external advisory firm to overhaul its enterprise risk management framework ahead of the European expansion.",
+        "Disciplined foreign exchange risk management enabled the exporting company to shield its quarterly operating margins from currency devaluations.",
+        "Following the regulatory examination, the bank's risk management committee instituted stricter underwriting requirements for commercial real estate loans."
+      ],
+      "conversation": [
+        "\"Why did senior management pause the overseas acquisition proposal?\" — \"Our corporate risk management division identified significant regulatory volatility and currency repatriation restrictions in that jurisdiction.\"",
+        "\"Has the newly appointed director of risk management completed her review of our vendor contracts?\" — \"Yes, she requested mandatory third-party cybersecurity audits and specific indemnification riders before authorizing sign-offs.\"",
+        "\"Are we hedging our jet fuel contracts for the third quarter?\" — \"Yes, our energy risk management guidelines mandate locking in derivative hedges whenever crude oil price volatility exceeds fifteen percent.\""
+      ],
+      "collocations": [
+        "enterprise risk management",
+        "risk management framework",
+        "risk management strategy",
+        "effective risk management",
+        "risk management protocol",
+        "comprehensive risk management"
+      ]
+    },
+    "wordFamily": {
+      "noun": "risk management, risk manager",
+      "verb": "manage risk",
+      "adjective": "risk-managed",
+      "adverb": "N/A"
+    },
+    "visual": {
+      "imageKeyword": "enterprise risk management matrix heat map compliance corporate boardroom presentation",
+      "imageDescription": "A modern corporate boardroom where an executive points to an interactive wall display showing a color-coded risk assessment heat map detailing operational and financial risk ratings.",
+      "mnemonic": "RISK MANAGEMENT: Picture holding the reins (Italian 'manus' - hand, 'maneggiare' - to handle) of a powerful horse as you navigate past steep cliffs ('risk'). You don't abandon the journey; you skillfully guide the reins to avoid a disastrous fall!"
+    },
+    "video": {
+      "description": "A corporate governance video detailing how modern enterprises implement Enterprise Risk Management (ERM) frameworks, featuring case studies on hedging interest rate volatility and mitigating cyber risks."
+    },
+    "toeicContext": {
+      "commonParts": [4, 5, 6, 7],
+      "exampleQuestion": "Senior leadership credited the firm's robust _______ management framework with shielding its investment portfolio from extreme market volatility during the second quarter.\n(A) risky\n(B) riskily\n(C) risked\n(D) risk",
+      "tips": "In TOEIC Part 5 business administration questions, test designers frequently assess compound noun collocations. In the phrase 'robust _______ management framework', the blank functions as a noun adjunct modifying 'management'. Choice (D) 'risk' forms the established compound noun 'risk management'. Adjective (A) 'risky' distorts the meaning to imply the management itself is hazardous, (B) is an adverb, and (C) is a past participle."
+    },
+    "synonyms": [
+      "risk mitigation",
+      "risk control",
+      "exposure management",
+      "threat assessment",
+      "enterprise risk governance",
+      "vulnerability control"
+    ],
+    "antonyms": [
+      "risk neglect",
+      "unhedged exposure",
+      "recklessness",
+      "imprudence"
+    ],
+    "relatedWords": [
+      "risk assessment",
+      "due diligence",
+      "hedging",
+      "internal controls",
+      "compliance",
+      "stress testing",
+      "contingency plan"
+    ]
+  },
+  {
+    "id": "finance-254",
+    "word": "royalty",
+    "partOfSpeech": ["noun"],
+    "category": "finance",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/ˈrɔɪ.əl.ti/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/royalty--_us_1.mp3",
+      "syllableBreakdown": "roy-al-ty",
+      "stressPattern": "Primary stress on first syllable: ROY-al-ty (/ˈrɔɪ.əl.ti/, ●○○)",
+      "commonMistakes": "Learners often compress the three syllables into two (pronouncing it */ˈrɔɪl.ti/*) or articulate the unstressed second vowel as an open /æ/ or /e/ instead of a reduced schwa /ə/. In semantic usage, learners often focus exclusively on the monarchical sense ('members of a royal family') and fail to recognize its prominent commercial meaning: recurring licensing or concession payments. Note that in commercial finance, it is very commonly pluralized as 'royalties' to denote payment streams."
+    },
+    "etymology": {
+      "origin": "Middle English 'roialte', borrowed from Anglo-Norman and Old French 'roialté' ('royalty, royal prerogative, magnificence'), from Latin 'regalis' ('kingly, regal'), derived from 'rex' (genitive 'regis', meaning 'king').",
+      "rootWord": "Latin rex (king) -> regalis (royal) -> Old French roialté",
+      "rootMeaning": "'Sovereign prerogative or crown revenue reserved for the king'",
+      "evolution": "In 14th-century feudal England, 'royalty' denoted sovereign prerogatives, especially the Crown's right to claim a percentage of all gold and silver mined from private land ('royalties'). Over the 16th and 17th centuries, this legal mechanism expanded to Crown grants for monopolies, patents, and mineral concessions. By the mid-19th century, with the codification of modern patent laws, copyright conventions, and oil and gas leases, 'royalty' became the universal commercial term for percentage-based or unit-based compensation paid to authors, patent holders, franchisors, and resource owners for the commercial exploitation of their property.",
+      "relatedLanguages": [
+        "French: redevance (commercial/licensing royalty) / royauté (monarchy)",
+        "Spanish: regalía (commercial royalty) / realeza (monarchy)",
+        "German: Lizenzgebühr (commercial licensing fee) / Tantieme (copyright royalty)",
+        "Italian: royalty (commercial loanword) / diritto d'autore"
+      ],
+      "firstRecordedUse": "Early 15th century (sovereign rights); mid-19th century (circa 1850 in modern patent, copyright, and mineral leasing contracts)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A legally binding, recurring compensation paid to an owner, creator, or patent holder by a licensee for the right to continually use, manufacture, sell, perform, or extract their intellectual property, copyrighted work, patented technology, franchise brand, or natural mineral resource.",
+      "spatialContext": "Licensing contract execution tables, corporate patent brokerages, publishing accounting divisions, music streaming distributor portals, and franchise financial reporting ledgers.",
+      "temporalContext": "Disbursed on predetermined contractual payment schedules—typically quarterly, semi-annually, or annually—calculated as an agreed-upon percentage of gross sales, net wholesale revenue, or per-unit extracted/sold.",
+      "emotionalTone": "Contractual, equitable, legally binding, and performance-incentivized.",
+      "formalityLevel": "formal",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "In commercial and professional English, native speakers view 'royalties' as the hallmark of high-margin intellectual property ownership and perpetual passive income. You create an invention, compose a song, author a manuscript, or develop proprietary software once, and every subsequent commercial sale or stream generates a royalty payment. In corporate finance, royalties represent either steady top-line revenue for licensors or an essential cost of goods/operating expense for licensees.",
+      "mentalImage": "An independent software inventor examining an itemized quarterly royalty statement on her laptop, checking enterprise license volumes and verifying the direct deposit of licensing fees wired from a global technology licensee.",
+      "whenToUse": "Use when discussing payments made for the commercial use of intellectual property (books, recorded music, software patents, registered trademarks), franchise licensing fees, or mineral/energy extraction rights (oil, gas, and mining leases). Typically pluralized as 'royalties' when discussing income streams.",
+      "whenNotToUse": "Do not use to describe standard employee wages, hourly salaries, or sales commissions (sales commissions are earned by employees for selling merchandise, not for owning intellectual property). Do not confuse with 'dividends', which are distributions of corporate profits to stockholders.",
+      "culturalContext": "Royalties form the economic backbone of creative industries (publishing, music, filmmaking, video games), biotechnology, and commercial franchising across English-speaking economies. In TOEIC Part 7, reading passages frequently feature licensing contracts, author royalty accounting statements, and corporate franchise disclosures detailing fee structures."
+    },
+    "examples": {
+      "daily": [
+        "The graphic designer receives a quarterly royalty check whenever merchandise featuring her viral illustration is sold online.",
+        "Independent musicians frequently highlight how challenging it is to earn a sustainable living from micro-penny streaming royalties.",
+        "After patenting an ergonomic garden tool, the retired engineer negotiated a six-percent royalty on every unit sold nationwide."
+      ],
+      "business": [
+        "Under the terms of the global licensing agreement, the electronics manufacturer must disburse an eight-percent royalty on all net product sales.",
+        "The pharmaceutical firm's annual financial report revealed a forty-million-dollar surge in operating revenue generated by biotechnology patent royalties.",
+        "Each franchise location is contractually obligated to remit a four-percent weekly advertising and brand royalty to corporate headquarters."
+      ],
+      "conversation": [
+        "\"How are author royalties structured under the international publishing contract?\" — \"You will receive ten percent of the suggested retail price on hardcover editions and eight percent on digital audiobooks.\"",
+        "\"Has the legal dispute regarding the patented sensor technology been settled?\" — \"Yes, both firms signed a cross-licensing pact, and our competitor agreed to pay back royalties totaling two million dollars.\"",
+        "\"Why did our software licensing revenue spike so dramatically last quarter?\" — \"Several enterprise cloud clients exceeded their initial user quotas, triggering higher tier-two royalty payments under their service agreements.\""
+      ],
+      "collocations": [
+        "royalty payment",
+        "pay royalties",
+        "royalty agreement",
+        "royalty rate",
+        "patent royalty",
+        "earn royalties"
+      ]
+    },
+    "wordFamily": {
+      "noun": "royalty",
+      "verb": "N/A",
+      "adjective": "royal",
+      "adverb": "royally"
+    },
+    "visual": {
+      "imageKeyword": "intellectual property licensing agreement royalty payment statement document desk",
+      "imageDescription": "An intellectual property licensing contract open on an executive mahogany desk next to a pen, an official corporate seal, and a digital tablet displaying quarterly royalty disbursement metrics.",
+      "mnemonic": "ROYALTY: Kings ('royals') once claimed a mandatory cut of all gold mined from the earth. Today, creators and inventors are the 'kings' of their intellectual property, collecting a rightful royalty cut every time their creation is sold!"
+    },
+    "video": {
+      "description": "An intellectual property and commercial law presentation explaining how royalty rates are negotiated, highlighting differences between gross revenue percentages, net profit models, and minimum guaranteed advances."
+    },
+    "toeicContext": {
+      "commonParts": [3, 4, 5, 7],
+      "exampleQuestion": "Pursuant to the international distribution agreement, Apex Media must remit all quarterly _______ payments to the content creator within thirty days following the close of the sales period.\n(A) royally\n(B) royalty\n(C) royal\n(D) royalist",
+      "tips": "In TOEIC Part 5 financial and contractual contexts, compound noun structures modifying payments or fees occur frequently. Here, the blank precedes the plural noun 'payments'. The singular noun 'royalty' (B) is required as a noun adjunct to form the standard commercial collocation 'royalty payments'. Choice (A) 'royally' is an adverb, (C) 'royal' is an adjective associated with monarchies, and (D) 'royalist' is a noun designating an advocate of monarchism."
+    },
+    "synonyms": [
+      "licensing fee",
+      "license fee",
+      "usage fee",
+      "residual",
+      "concession fee",
+      "tantieme"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "intellectual property",
+      "licensing agreement",
+      "patent",
+      "copyright",
+      "trademark",
+      "franchise fee",
+      "franchisor"
+    ]
+  }
+]
+
+# Write to scratch/finance_252_254.json
+with open("scratch/finance_252_254.json", "w", encoding="utf-8") as f:
+    json.dump({"result": {"words": words_data}}, f, indent=2, ensure_ascii=False)
+print("Saved scratch/finance_252_254.json")
+
+# Write to words_output.json as well
+with open("words_output.json", "w", encoding="utf-8") as f:
+    json.dump(words_data, f, indent=2, ensure_ascii=False)
+print("Saved words_output.json")

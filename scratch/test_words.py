@@ -1,483 +1,487 @@
 import json
+import jsonschema
 
-words_data = [
-    {
-        "id": "dining-197",
-        "word": "onion",
-        "partOfSpeech": ["noun"],
-        "category": "dining",
-        "level": "essential",
-        "toeicFrequency": 9,
-        "pronunciation": {
-            "ipa": "/ˈʌn.jən/",
-            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/onion--_us_1.mp3",
-            "syllableBreakdown": "on·ion",
-            "stressPattern": "●○",
-            "commonMistakes": "Learners often mispronounce the initial vowel based on spelling, pronouncing it like 'on' (/ɒn/ or /oʊn/) instead of the short central vowel /ʌ/ ('un-yun'). Another common mistake is pronouncing the 'i' as a distinct third syllable (saying 'on-ee-on' /ˌɒn.iːˈɒn/) rather than gliding smoothly into the palatal semivowel /j/."
-        },
-        "etymology": {
-            "origin": "Middle English oynon / unyun, borrowed from Anglo-Norman and Old French oignon / oingnon, from Latin ūniō ('oneness, unity, single large pearl, single-bulb onion'), derived from ūnus ('one').",
-            "rootWord": "ūniō / ūnus",
-            "rootMeaning": "oneness, unity, or single round pearl",
-            "evolution": "In Roman antiquity, 'ūniō' designated oneness or a unique large pearl. Roman agriculturalists applied the term to a round, single-bulb allium that grows without dividing into cloves (unlike garlic). The word evolved into Gallo-Romance 'oignon', entered Middle English following the Norman Conquest in the 13th to 14th centuries, and supplanted Old English 'cipe' (cognate with German Zwiebel and Spanish cebolla).",
-            "relatedLanguages": [
-                "French: oignon",
-                "Spanish: unión (unity) / cebolla (vegetable)",
-                "Italian: cipolla (vegetable) / unione (unity)",
-                "German: Zwiebel",
-                "Portuguese: cebola"
-            ],
-            "firstRecordedUse": "Early 14th century (c. 1325, in Middle English culinary texts including 'The Forme of Cury')"
-        },
-        "deepMeaning": {
-            "coreConcept": "A pungent, layered edible bulb of the allium family (Allium cepa), featuring concentric fleshy scales, cultivated worldwide and utilized raw, sautéed, roasted, or caramelized as a foundational aromatic base across global cuisines and hospitality operations.",
-            "spatialContext": "Commercial prep kitchens, salad bar prep stations, walk-in vegetable storage cellars, burger assembly lines, catering banquet kitchens, and wholesale produce terminals.",
-            "temporalContext": "Early morning prep shifts (dicing aromatics for mirepoix before service), fast-paced lunch/dinner services (processing special dietary requests such as 'no raw onions'), and seasonal autumn harvest procurements.",
-            "emotionalTone": "Pungent, foundational, savory, and aromatic.",
-            "formalityLevel": "neutral",
-            "connotation": "neutral"
-        },
-        "nativeMindset": {
-            "howNativesThink": "To native speakers, the onion is the indispensable cornerstone of savory culinary art; the sizzle and fragrance of onions hitting hot butter or oil is the universal olfactory cue of home cooking or restaurant service beginning. Beyond cooking, 'peeling back the layers of an onion' is an instinctive metaphor for uncovering complex layers of an issue. In dining service, onions represent one of the most common patron modification requests—often excluded due to breath concerns, digestive sensitivities, or raw pungency.",
-            "mentalImage": "A restaurant line cook rapidly slicing a halved yellow onion on a thick poly-top cutting board, paper-thin golden outer skins set to the side while translucent crescent ribbons pile high next to a hot steel saucepan.",
-            "whenToUse": "Use when discussing culinary ingredients, soup/sauce flavor bases (mirepoix, sautéed onions), menu dish descriptions (french onion soup, caramelized onions), catering dietary modifications ('hold the onions'), and agricultural produce supply chains.",
-            "whenNotToUse": "Do not confuse with distinct allium family members that require precise culinary specification, such as 'garlic', 'shallots', 'leeks', 'scallions' (green onions), or 'chives'.",
-            "culturalContext": "In Western culinary traditions, onions form half of the French mirepoix (onions, carrots, celery) and Cajun 'holy trinity' (onions, bell peppers, celery). On North American and British restaurant tickets, modifications like 'NO ONION' or 'SUB CARAMELIZED ONIONS' are staple POS entries that servers and kitchen expeditors monitor diligently."
-        },
-        "examples": {
-            "daily": [
-                "He caramelized the sliced yellow onions over low heat for forty minutes until they turned deep amber and sweet.",
-                "Could I please get the grilled chicken sandwich without raw onions on the side?",
-                "The chef sprinkled thinly sliced green onions over the steaming bowl of chicken noodle soup."
-            ],
-            "business": [
-                "The restaurant group negotiated bulk purchasing contracts with regional produce distributors to hedge against fluctuating wholesale onion prices.",
-                "The catering banquet manager ensured all buffet place cards listed sliced onions separately so guests with dietary restrictions could customize their plates.",
-                "Due to high kitchen prep volume, the franchise commissary adopted pre-diced, vacuum-packaged onions to maintain portion consistency across twenty locations."
-            ],
-            "conversation": [
-                "\"Does the signature beef burger come with caramelized or raw onions?\" / \"It normally features crispy fried onion strings, but our kitchen can substitute caramelized onions upon request.\"",
-                "\"Table seven specifically noted an allium allergy for their entrées.\" / \"Got it—I will alert the expediter immediately to ensure no onion or garlic touches their order.\""
-            ],
-            "collocations": [
-                "caramelized onion",
-                "diced onion",
-                "red onion",
-                "french onion soup",
-                "crispy fried onions",
-                "sweet Vidalia onion"
-            ]
-        },
-        "wordFamily": {
-            "noun": "onion",
-            "adjective": "oniony"
-        },
-        "visual": {
-            "imageKeyword": "whole yellow onions halved red onion cutting board culinary prep",
-            "imageDescription": "A whole golden-skinned yellow onion beside a halved red onion displaying vibrant purple-and-white concentric rings, resting on an end-grain butcher block next to a stainless steel chef knife.",
-            "mnemonic": "ONION comes from Latin 'unio' (oneness): peel away all the layers and it is still ONE unified bulb that makes your eyes water!"
-        },
-        "video": {
-            "description": "A culinary school tutorial demonstrating professional knife skills for trimming, scoring, and fine-dicing yellow and red onions with minimal tear-inducing fumes."
-        },
-        "toeicContext": {
-            "commonParts": [1, 2, 3, 7],
-            "exampleQuestion": "To cater to banquet guests with specific dietary preferences, the chef agreed to prepare the braised short ribs without the traditional glaze containing red _____ and shallots. (A) onion (B) onions (C) oniony (D) onioned",
-            "tips": "In Part 5, ingredient lists in dining contexts require plural countable nouns when referring to components collectively. In 'red _____ and shallots', parallel structure with plural 'shallots' confirms that plural noun (B) 'onions' is required. Choice (A) is singular, (C) is an adjective, and (D) is an ungrammatical verb-like form."
-        },
-        "synonyms": [
-            "allium bulb",
-            "yellow onion",
-            "bulb onion",
-            "sweet onion",
-            "shallot (botanical cousin)"
-        ],
-        "antonyms": [],
-        "relatedWords": [
-            "mirepoix",
-            "caramelize",
-            "shallot",
-            "chives",
-            "scallion",
-            "allium",
-            "saute"
-        ]
+SCHEMA = {
+    "type": "object",
+    "properties": {
+        "words": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {"type": "string"},
+                    "word": {"type": "string"},
+                    "partOfSpeech": {"type": "array", "items": {"type": "string"}},
+                    "category": {"type": "string"},
+                    "level": {"type": "string", "enum": ["essential", "intermediate", "advanced"]},
+                    "toeicFrequency": {"type": "number"},
+                    "pronunciation": {
+                        "type": "object",
+                        "properties": {
+                            "ipa": {"type": "string"},
+                            "audioUrl": {"type": "string"},
+                            "syllableBreakdown": {"type": "string"},
+                            "stressPattern": {"type": "string"},
+                            "commonMistakes": {"type": "string"}
+                        },
+                        "required": ["ipa", "syllableBreakdown", "stressPattern", "commonMistakes"]
+                    },
+                    "etymology": {
+                        "type": "object",
+                        "properties": {
+                            "origin": {"type": "string"},
+                            "rootWord": {"type": "string"},
+                            "rootMeaning": {"type": "string"},
+                            "evolution": {"type": "string"},
+                            "relatedLanguages": {"type": "array", "items": {"type": "string"}},
+                            "firstRecordedUse": {"type": "string"}
+                        },
+                        "required": ["origin", "rootWord", "rootMeaning", "evolution", "relatedLanguages", "firstRecordedUse"]
+                    },
+                    "deepMeaning": {
+                        "type": "object",
+                        "properties": {
+                            "coreConcept": {"type": "string"},
+                            "spatialContext": {"type": "string"},
+                            "temporalContext": {"type": "string"},
+                            "emotionalTone": {"type": "string"},
+                            "formalityLevel": {"type": "string", "enum": ["formal", "neutral", "informal"]},
+                            "connotation": {"type": "string", "enum": ["positive", "neutral", "negative"]}
+                        },
+                        "required": ["coreConcept", "spatialContext", "temporalContext", "emotionalTone", "formalityLevel", "connotation"]
+                    },
+                    "nativeMindset": {
+                        "type": "object",
+                        "properties": {
+                            "howNativesThink": {"type": "string"},
+                            "mentalImage": {"type": "string"},
+                            "whenToUse": {"type": "string"},
+                            "whenNotToUse": {"type": "string"},
+                            "culturalContext": {"type": "string"}
+                        },
+                        "required": ["howNativesThink", "mentalImage", "whenToUse", "whenNotToUse", "culturalContext"]
+                    },
+                    "examples": {
+                        "type": "object",
+                        "properties": {
+                            "daily": {"type": "array", "items": {"type": "string"}},
+                            "business": {"type": "array", "items": {"type": "string"}},
+                            "conversation": {"type": "array", "items": {"type": "string"}},
+                            "collocations": {"type": "array", "items": {"type": "string"}}
+                        },
+                        "required": ["daily", "business", "conversation", "collocations"]
+                    },
+                    "wordFamily": {
+                        "type": "object",
+                        "properties": {
+                            "noun": {"type": "string"},
+                            "verb": {"type": "string"},
+                            "adjective": {"type": "string"},
+                            "adverb": {"type": "string"}
+                        }
+                    },
+                    "visual": {
+                        "type": "object",
+                        "properties": {
+                            "imageKeyword": {"type": "string"},
+                            "imageDescription": {"type": "string"},
+                            "mnemonic": {"type": "string"}
+                        },
+                        "required": ["imageKeyword", "imageDescription", "mnemonic"]
+                    },
+                    "video": {
+                        "type": "object",
+                        "properties": {
+                            "description": {"type": "string"}
+                        },
+                        "required": ["description"]
+                    },
+                    "toeicContext": {
+                        "type": "object",
+                        "properties": {
+                            "commonParts": {"type": "array", "items": {"type": "number"}},
+                            "exampleQuestion": {"type": "string"},
+                            "tips": {"type": "string"}
+                        },
+                        "required": ["commonParts", "exampleQuestion", "tips"]
+                    },
+                    "synonyms": {"type": "array", "items": {"type": "string"}},
+                    "antonyms": {"type": "array", "items": {"type": "string"}},
+                    "relatedWords": {"type": "array", "items": {"type": "string"}}
+                },
+                "required": [
+                    "id", "word", "partOfSpeech", "category", "level", "toeicFrequency",
+                    "pronunciation", "etymology", "deepMeaning", "nativeMindset",
+                    "examples", "wordFamily", "visual", "video", "toeicContext",
+                    "synonyms", "antonyms", "relatedWords"
+                ]
+            }
+        }
     },
-    {
-        "id": "dining-198",
-        "word": "order",
-        "partOfSpeech": ["noun"],
-        "category": "dining",
-        "level": "essential",
-        "toeicFrequency": 9,
-        "pronunciation": {
-            "ipa": "/ˈɔːr.dər/",
-            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/order--_us_1.mp3",
-            "syllableBreakdown": "or·der",
-            "stressPattern": "●○",
-            "commonMistakes": "Non-native speakers often over-pronounce the second syllable with a flat /ɛ/ or /e/ sound instead of the weak rhotic schwa /ər/ (US) or /ə/ (UK). In hospitality contexts, some learners confuse 'order' with 'command' or 'instruction', using it awkwardly with kitchen staff instead of natural phrases like 'place an order' or 'take your order'."
-        },
-        "etymology": {
-            "origin": "Middle English ordre, borrowed from Anglo-Norman and Old French ordre / ordene, from Latin ōrdinem (accusative of ōrdō, 'row, line of threads in a loom, rank, series, methodical arrangement').",
-            "rootWord": "ōrdō",
-            "rootMeaning": "row, series, rank, or thread alignment in weaving",
-            "evolution": "Originally derived from weaving terminology in Ancient Rome ('aligning threads on a loom') and military formations ('ranks of soldiers'), 'ōrdō' transitioned through Old French 'ordre' to signify systematic arrangement or ecclesiastical hierarchies. By the 16th century in English, it denoted authoritative instructions, and by the 18th and 19th centuries, it expanded into commerce and dining to mean a customer's specific request for goods, beverages, or meals at an inn or restaurant.",
-            "relatedLanguages": [
-                "French: ordre",
-                "Spanish: orden",
-                "Italian: ordine",
-                "German: Ordnung",
-                "Portuguese: ordem"
+    "required": ["words"]
+}
+
+words_data = {
+    "words": [
+        {
+            "id": "finance-209",
+            "word": "option",
+            "partOfSpeech": [
+                "noun"
             ],
-            "firstRecordedUse": "Early 13th century (in the sense of religious/social hierarchy); late 18th century (for restaurant food requests and commercial transactions)"
-        },
-        "deepMeaning": {
-            "coreConcept": "A customer's explicit request for specific food items, beverages, or courses to be prepared and served by a dining establishment; or the physical or digital ticket documenting those requested items for the kitchen and billing.",
-            "spatialContext": "Restaurant dining rooms, point-of-sale (POS) waiter terminals, kitchen expediting counters (the pass), drive-through windows, catering order desks, and mobile app pickup stations.",
-            "temporalContext": "Immediate table service intervals (taking appetizer orders within five minutes of guest arrival), peak dining turnover hours (lunch 12:00 PM – 1:30 PM, dinner 6:30 PM – 9:00 PM), and daily kitchen cut-off times.",
-            "emotionalTone": "Courteous, attentive, structured, and efficient.",
-            "formalityLevel": "neutral",
-            "connotation": "positive"
-        },
-        "nativeMindset": {
-            "howNativesThink": "In dining, native speakers regard the 'order' as both an interactive ritual ('Are you ready to order?') and an implicit service agreement. Diners expect exact compliance with their order, especially regarding side substitutions, steak doneness, and food allergies. For waitstaff and kitchen line cooks, an 'order' represents an active unit of production that must be timed, plated, and expedited alongside adjacent tables.",
-            "mentalImage": "A restaurant server standing attentively beside a table with a digital handheld ordering pad, entering dish selections and wine pairings as seated business clients consult their menus.",
-            "whenToUse": "Use when discussing dining requests ('take an order', 'place an order'), kitchen tickets ('an order of garlic bread'), catering contracts, takeaway requests, or food distributor procurement.",
-            "whenNotToUse": "Do not confuse with the final restaurant bill/check ('Could we have the bill, please?' not 'Could we have the order?'). Also, do not use 'order' when referring to general culinary recipes or unsolicited food advice.",
-            "culturalContext": "The exchange 'May I take your order?' is one of the most culturally ingrained phrases in English-speaking hospitality. Promptness and accuracy in taking and delivering orders form the primary evaluation criteria for dining tips in North America and restaurant review scores worldwide."
-        },
-        "examples": {
-            "daily": [
-                "The server returned to our booth after ten minutes to see if we were ready to place our dinner order.",
-                "I asked for an extra order of truffle fries and a glass of sparkling water for the table.",
-                "There was an error in my takeout order, so the manager offered a complimentary dessert while the kitchen corrected it."
+            "category": "finance",
+            "level": "essential",
+            "toeicFrequency": 9,
+            "pronunciation": {
+                "ipa": "/ˈɑːp.ʃən/",
+                "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/option--_us_1.mp3",
+                "syllableBreakdown": "op-tion",
+                "stressPattern": "Primary stress on the first syllable: OP-tion (/ˈɑːp.ʃən/, ●○)",
+                "commonMistakes": "Learners frequently mispronounce the suffix '-tion' with an overly stressed, full vowel like /-ʃɒn/ or /-tjɒn/ instead of the standard reduced schwa /-ʃən/. In North American English, the initial vowel is an open unrounded /ɑː/ ('AH-ption'), not a rounded diphthong /oʊ/ (*OH-ption*). In financial contexts, non-native speakers commonly conflate an 'option' (which gives the unilateral right, but never the legal obligation, to buy or sell an asset) with a 'futures' or 'forward' contract (which legally compels both counterparties to execute the settlement). Additionally, in executive compensation, learners often confuse 'stock options' (the right to buy company shares at a pre-set strike price after vesting) with 'restricted stock units (RSUs)' or direct share grants (which award immediate equity value without requiring an upfront purchase payment)."
+            },
+            "etymology": {
+                "origin": "Classical Latin optio (stem option-, 'free choice, liberty to choose', and ancient Roman military title for an 'adjutant / chosen assistant'), from optare ('to desire, choose, select')",
+                "rootWord": "optare (to choose, select, wish for, desire)",
+                "rootMeaning": "'The act, faculty, or privilege of choosing; freedom to select from alternatives'",
+                "evolution": "Derived from Classical Latin optio (from optare 'to choose, wish for'), the term passed into Middle French in the 15th century as option and entered Early Modern English during the 1590s to signify the general power or freedom of choice. In the early 18th century (circa 1720s, during the London South Sea Bubble), it was adopted into financial and commodity trading agreements to denote contracts giving traders the privilege to accept or refuse delivery of stock or goods. The modern quantitative derivatives market was revolutionized in 1973 with the founding of the Chicago Board Options Exchange (CBOE) and the publication of the Black-Scholes pricing model. Concurrently, Anglo-American corporations formalized employee stock options (ESOPs) as standard equity incentive compensation to align executive interests with shareholders.",
+                "relatedLanguages": [
+                    "French: option (choice, financial option, stock option)",
+                    "Spanish: opción (choice, financial option, stock purchase right)",
+                    "Italian: opzione (choice, financial option)",
+                    "German: Option (choice, financial option contract)",
+                    "Portuguese: opção (choice, financial option)"
+                ],
+                "firstRecordedUse": "Late 16th century (circa 1590s in general English for 'liberty to choose'); early 18th century (circa 1720s in British merchant and equity trading contracts)"
+            },
+            "deepMeaning": {
+                "coreConcept": "In general strategic decision-making, a viable alternative course of action or choice among multiple possibilities; in financial derivatives, a legally binding contract granting the buyer the right, but not the obligation, to purchase (call option) or sell (put option) an underlying asset (such as equities, commodities, or currencies) at a predetermined strike price on or before an expiration date; in corporate human resources, an equity grant entitling employees to purchase shares of company stock at a fixed price upon meeting predetermined vesting milestones.",
+                "spatialContext": "Securities trading desks, brokerage options order books, corporate compensation committee conference rooms, venture capital investment term sheets, and commercial leasing offices.",
+                "temporalContext": "Traded continuously during exchange market hours; subject to strict expiration dates (weekly, monthly, or quarterly expiration cycles); governed by multi-year corporate vesting schedules (e.g., standard four-year vesting with a one-year cliff).",
+                "emotionalTone": "Empowering, strategic, flexible, and calculating; conveys autonomy, upside opportunity, and asymmetric risk management without compulsory commitment.",
+                "formalityLevel": "formal",
+                "connotation": "positive"
+            },
+            "nativeMindset": {
+                "howNativesThink": "To native speakers, 'option' embodies optionality—the ultimate strategic advantage of asymmetric upside with capped downside. In colloquial business strategy, idioms like 'keeping your options open' or 'weighing all options' reflect a strong cultural preference for agility and avoiding premature commitments until market conditions clarify. In finance, buying an option feels like purchasing an insurance policy or an asymmetric lottery ticket: the maximum loss is limited to the premium paid, while potential gains can be substantial. In Silicon Valley and corporate America, 'stock options' carry the cultural promise of life-changing financial independence through company equity.",
+                "mentalImage": "An executive meeting with a compensation attorney, reviewing a stock option agreement document beside a dual-monitor workstation displaying an options chain table with strike prices, implied volatility, and expiration dates.",
+                "whenToUse": "Use when discussing financial derivative contracts (call option, put option, options trading, exercise an option), corporate equity compensation schemes (stock option grant, incentive stock option, vesting schedule), commercial contracts (lease renewal option, purchase option), or strategic decision-making alternatives (viable option, attractive option, explore every option).",
+                "whenNotToUse": "Do not use 'option' when an action is strictly mandatory, compulsory, or legally required by company policy (do not say 'wearing a hard hat is an option' when it is mandatory). Do not confuse with 'futures' or 'forwards' (which obligate both counterparties to execute the trade at maturity).",
+                "culturalContext": "In Anglo-American corporate culture and startup ecosystems, stock options are the cornerstone of employee recruitment and retention, turning early engineers and executives into company co-owners. On Wall Street, options represent both a sophisticated risk-hedging mechanism for portfolio managers and a high-leverage speculative instrument on platforms like the Chicago Board Options Exchange (CBOE)."
+            },
+            "examples": {
+                "daily": [
+                    "With heavy construction gridlock on the interstate highway, taking the commuter train seemed like our most reliable option.",
+                    "The homeowner evaluated the option of refinancing his mortgage while commercial lending rates remained near historic lows.",
+                    "Before committing to an annual gym membership, Sarah explored month-to-month subscription options to maintain flexibility."
+                ],
+                "business": [
+                    "The multinational airline purchased call options on crude oil futures to protect its operating budget against anticipated spikes in jet fuel prices.",
+                    "As part of the senior engineering compensation package, the tech startup granted ten thousand incentive stock options vesting over four years.",
+                    "The commercial lease contract contains an option to renew the office rental for an additional three years at a pre-negotiated rate."
+                ],
+                "conversation": [
+                    "\"Are we legally required to purchase the remaining overseas inventory at the end of the quarter?\" — \"No, our procurement agreement merely provides an option to buy, so we have no obligation if demand slows down.\"",
+                    "\"When do your employee stock options become exercisable?\" — \"Twenty-five percent vest next month at my one-year anniversary, and the remainder vest in equal monthly installments over the following three years.\"",
+                    "\"Should we lock in the five-year fixed interest rate on our commercial loan today?\" — \"Let's keep our options open until the Federal Reserve concludes its monetary policy meeting tomorrow afternoon.\""
+                ],
+                "collocations": [
+                    "stock option",
+                    "exercise an option",
+                    "viable option",
+                    "keep one's options open",
+                    "call / put option",
+                    "option agreement"
+                ]
+            },
+            "wordFamily": {
+                "noun": "option, optionality",
+                "verb": "opt, option",
+                "adjective": "optional, optative",
+                "adverb": "optionally"
+            },
+            "visual": {
+                "imageKeyword": "financial stock option agreement derivative trading desk laptop document",
+                "imageDescription": "A crisp executive desk featuring an employee stock option grant agreement, an open laptop displaying an options chain table with strike prices and call/put indicators, and a fountain pen beside signed equity papers.",
+                "mnemonic": "OPTION comes from OPT (to choose). An OPTION gives you the OPTimal power to OPT in or OPT out—it's your choice, never an obligation!"
+            },
+            "video": {
+                "description": "A financial derivatives instructor illustrating the mechanics of call and put options on an interactive trading board, demonstrating how corporate treasurers use options to hedge currency risk while explaining strike prices and expiration dates."
+            },
+            "toeicContext": {
+                "commonParts": [
+                    3,
+                    4,
+                    5,
+                    7
+                ],
+                "exampleQuestion": "After evaluating multiple commercial properties across the metropolitan area, the relocation committee concluded that leasing the downtown office tower was the most economically viable _______ available.\n(A) optionally\n(B) option\n(C) opt\n(D) optional",
+                "tips": "In TOEIC Part 5, questions frequently test part-of-speech recognition within complex noun phrases. In this sentence, the noun phrase is introduced by the definite article and superlative modifier 'the most economically viable' (adverb + adjective). The blank requires a singular head noun, making 'option' (B) the correct answer. Choice (A) 'optionally' is an adverb; choice (C) 'opt' is a base verb; and choice (D) 'optional' is an adjective, which cannot complete the noun phrase without a nominal head."
+            },
+            "synonyms": [
+                "choice",
+                "alternative",
+                "derivative contract",
+                "equity grant",
+                "discretionary right",
+                "course of action"
             ],
-            "business": [
-                "The corporate event coordinator finalized the catering order for the two-hundred-person annual shareholder luncheon.",
-                "During the Friday evening rush, the kitchen expediter handled more than eighty dinner orders per hour without missing a ticket.",
-                "The procurement director placed a wholesale order for prime beef cuts to ensure adequate inventory ahead of the holiday banquet season."
+            "antonyms": [
+                "obligation",
+                "compulsion",
+                "requirement",
+                "mandate",
+                "necessity"
             ],
-            "conversation": [
-                "\"Are you ready to order, or would you like another couple of minutes to look over the chef specials?\" / \"We are ready now, thank you; we will start with the calamari and order the grilled salmon for our main course.\"",
-                "\"Has order forty-two been picked up by the delivery courier yet?\" / \"Yes, it was bagged, checked against the receipt, and dispatched five minutes ago.\""
-            ],
-            "collocations": [
-                "place an order",
-                "take an order",
-                "catering order",
-                "drink order",
-                "special order",
-                "side order"
+            "relatedWords": [
+                "strike price",
+                "call option",
+                "put option",
+                "vesting schedule",
+                "expiration date",
+                "premium",
+                "underlying asset"
             ]
         },
-        "wordFamily": {
-            "noun": "order",
-            "verb": "order",
-            "adjective": "orderly",
-            "adverb": "orderly"
-        },
-        "visual": {
-            "imageKeyword": "restaurant server notepad taking order patrons dining table",
-            "imageDescription": "A friendly server wearing a black bistro apron writing in an order pad while leaning in politely toward a couple seated at a well-set restaurant dining table with glasses of water.",
-            "mnemonic": "ORDER comes from Latin 'ordo' (row/line): when you place your order, your meal joins the orderly line of tickets waiting to be cooked!"
-        },
-        "video": {
-            "description": "A hospitality training module illustrating proper techniques for taking food and beverage orders, repeating modifications accurately, and entering orders into a touch-screen POS system."
-        },
-        "toeicContext": {
-            "commonParts": [1, 2, 3, 4, 7],
-            "exampleQuestion": "The head waiter promptly apologized to the guests at table four and promised that their dinner _____ would be expedited immediately. (A) order (B) ordered (C) ordering (D) orderly",
-            "tips": "In TOEIC Part 5, identify the required part of speech by analyzing surrounding words. The possessive pronoun 'their' and noun modifier 'dinner' require a head noun to serve as the subject of the clause 'would be expedited'. Choice (A) 'order' is the singular noun. (B) is a past tense verb, (C) is a gerund/participle, and (D) is an adjective."
-        },
-        "synonyms": [
-            "request",
-            "requisition",
-            "selection",
-            "ticket",
-            "food ticket",
-            "purchase order"
-        ],
-        "antonyms": [
-            "cancellation"
-        ],
-        "relatedWords": [
-            "appetizer",
-            "entree",
-            "pos terminal",
-            "receipt",
-            "server",
-            "waitstaff",
-            "expediter"
-        ]
-    },
-    {
-        "id": "dining-199",
-        "word": "organic",
-        "partOfSpeech": ["adjective"],
-        "category": "dining",
-        "level": "intermediate",
-        "toeicFrequency": 8,
-        "pronunciation": {
-            "ipa": "/ɔːrˈɡæn.ɪk/",
-            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/organic--_us_1.mp3",
-            "syllableBreakdown": "or·gan·ic",
-            "stressPattern": "○●○",
-            "commonMistakes": "Learners frequently place stress on the first syllable (saying /ˈɔːr.ɡə.nɪk/) rather than the stressed second syllable /ɔːrˈɡæn.ɪk/. Another mistake is pronouncing the 'g' as an affricate /dʒ/ (similar to 'orange') instead of the hard velar stop /ɡ/."
-        },
-        "etymology": {
-            "origin": "Via Latin organicus ('serving as an instrument, mechanical'), from Ancient Greek organikós (ὀργανικός, 'of or pertaining to an organ or tool'), from órganon (ὄργανον, 'implement, instrument, bodily organ, work'), from PIE *werg- ('to do, act, work').",
-            "rootWord": "órganon (ὄργανον)",
-            "rootMeaning": "instrument, tool, bodily organ, or work",
-            "evolution": "Originally in Greek and Latin, 'organikos' pertained to musical instruments or mechanical tools. In 18th-century biology and chemistry, it denoted substances derived from living organisms. In 1940, agriculturalist Lord Northbourne coined 'organic farming' in his work 'Look to the Land' to describe an ecologically balanced farm operating as a unified living organism without artificial inputs. By the late 20th century, it became a legally protected certification standard across gastronomy and retail.",
-            "relatedLanguages": [
-                "French: biologique / organique",
-                "Spanish: orgánico",
-                "Italian: organico / biologico",
-                "German: biologisch / organisch",
-                "Portuguese: orgânico"
+        {
+            "id": "finance-210",
+            "word": "outflow",
+            "partOfSpeech": [
+                "noun"
             ],
-            "firstRecordedUse": "Mid-17th century (in chemistry/physiology); 1940 (in the agricultural and food production sense)"
-        },
-        "deepMeaning": {
-            "coreConcept": "Describing food ingredients, agricultural produce, or beverages cultivated, reared, and processed without synthetic chemical pesticides, artificial fertilizers, antibiotics, growth hormones, or genetic modification, adhering to certified regulatory ecological standards.",
-            "spatialContext": "Farm-to-table bistro kitchens, organic salad counters, certified sustainable wine cellars, health-focused cafes, artisanal bakeries, and high-end hotel dining rooms.",
-            "temporalContext": "Daily early-morning deliveries from local farm cooperatives, seasonal menu transitions reflecting harvest availability, and recurring annual organic certification audits.",
-            "emotionalTone": "Wholesome, conscientious, sustainable, fresh, and premium.",
-            "formalityLevel": "neutral",
-            "connotation": "positive"
-        },
-        "nativeMindset": {
-            "howNativesThink": "To native speakers, seeing 'organic' on a dining menu immediately signals wholesome quality, environmental responsibility, and a willingness to pay a premium price. Diners equate organic items with transparency, clean eating, and support for sustainable agriculture. In restaurant marketing, '100% organic' serves as a badge of culinary authenticity and integrity.",
-            "mentalImage": "A rustic wooden farm stand in front of an open kitchen displaying vibrant baskets of unblemished heirloom tomatoes, bunches of dark Tuscan kale, and fresh rosemary sprigs marked with handwritten 'Certified Organic' chalk signs.",
-            "whenToUse": "Use when describing certified agricultural ingredients (organic produce, organic milk, organic wine), farm-to-table culinary concepts, sustainable dining policies, and eco-friendly hospitality sourcing.",
-            "whenNotToUse": "Do not confuse with the unregulated term 'natural' (which carries no legal certification standards), nor with 'gluten-free' or 'vegan' (which denote allergen/dietary categories, not farming methods). In dining, avoid using it to simply mean 'homemade'.",
-            "culturalContext": "In North American, European, and Australasian dining culture, the demand for certified organic menu choices has transformed restaurant procurement. Luxury hotel chains, upscale corporate dining facilities, and fast-casual brands prominently showcase organic certifications to align with client wellness programs and sustainability initiatives."
-        },
-        "examples": {
-            "daily": [
-                "The breakfast diner proudly makes all its pancakes with organic flour, cage-free eggs, and pure maple syrup.",
-                "She ordered a mixed green salad made exclusively with crisp organic spinach and heirloom cherry tomatoes.",
-                "Many shoppers are willing to pay slightly more at the supermarket for organic apples that are free of synthetic pesticides."
+            "category": "finance",
+            "level": "intermediate",
+            "toeicFrequency": 8,
+            "pronunciation": {
+                "ipa": "/ˈaʊt.floʊ/",
+                "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/outflow--_us_1.mp3",
+                "syllableBreakdown": "out-flow",
+                "stressPattern": "Primary stress on the first syllable: OUT-flow (/ˈaʊt.floʊ/, ●○)",
+                "commonMistakes": "Learners frequently misplace primary stress onto the second syllable (*out-FLOW*); compound nouns formed with a preposition and verb root (such as 'outflow', 'inflow', 'output', 'outlay') take strong initial stress on the prefix (OUT-flow). Phonetically, non-native speakers may substitute the diphthong /aʊ/ with /ɔː/ (*ought-flow*) or /oʊ/ (*oat-flow*). Conceptually in finance, learners frequently confuse 'cash outflow' (the actual movement of liquid cash out of an entity to pay liabilities, fund investments, or cover operations) with an accounting 'expense' (an accrual cost that reduces net income on the income statement). Crucially, major cash outflows like repaying loan principal or acquiring capital equipment are balance sheet transactions, not immediate operating expenses."
+            },
+            "etymology": {
+                "origin": "Germanic compound formed from Middle English oute / Old English ūte ('out, outward, forth') and Middle English flowen / Old English flōwan ('to stream, flow as a liquid')",
+                "rootWord": "ūt (outward, forth) + flōwan (to stream, flow)",
+                "rootMeaning": "'A continuous outward streaming or flowing forth of liquid, substance, or capital from a source'",
+                "evolution": "Originally coined in Middle and Early Modern English (late 16th century, circa 1600) as a physical and hydrological descriptor for the discharge of water draining from a lake, river, or cistern. By the early-to-mid 20th century, macroeconomists and central bankers applied the hydraulic metaphor of liquidity and currency circulation to describe movements of money across accounts and borders. The term 'capital outflow' became prominent in international economics (balance of payments) during the Great Depression and post-WWII Bretton Woods era to denote cross-border asset transfers and capital flight. Following the formal codification of the Statement of Cash Flows in corporate accounting standards (US GAAP SFAS 95 in 1987 and IAS 7 under IFRS), 'cash outflow' became an essential standard classification for operational, investing, and financing disbursements.",
+                "relatedLanguages": [
+                    "French: sortie de fonds / flux sortant / décaissement (cash outflow, capital exit)",
+                    "Spanish: salida de fondos / flujo saliente de capital (outflow of funds, capital outflow)",
+                    "Italian: deflusso di capitali / uscita di cassa (capital outflow, cash disbursement)",
+                    "German: Abfluss / Mittelabfluss / Kapitalabfluss (outflow of funds, capital drain)",
+                    "Dutch: uitstroom / kapitaaluitstroom (outflow, capital outflow)"
+                ],
+                "firstRecordedUse": "Circa 1600 (in hydrology and physics for the discharge of water); 1930s-1940s (in corporate cash-flow accounting and international macroeconomic finance)"
+            },
+            "deepMeaning": {
+                "coreConcept": "The aggregate movement, disbursement, or withdrawal of money, capital, liquid reserves, or financial assets leaving a corporate treasury, bank account, investment portfolio, or national economy over a defined accounting interval; in cash-flow accounting, the total monetary expenditures categorized under operating activities (vendor payments, payroll, income taxes), investing activities (capital expenditures, property acquisitions), and financing activities (debt principal repayments, share buybacks, dividend distributions).",
+                "spatialContext": "Corporate treasury workstations, automated banking reconciliation platforms, central bank macroeconomic monitoring dashboards, and quarterly cash flow audit schedules.",
+                "temporalContext": "Monitored continuously on daily treasury liquidity sheets; aggregated monthly for vendor disbursements and payroll runs; formally disclosed in quarterly and annual regulatory financial filings (Statement of Cash Flows).",
+                "emotionalTone": "Vigilant, disciplined, cautionary, and analytical; prompts budgetary scrutiny, liquidity management, and working-capital preservation.",
+                "formalityLevel": "formal",
+                "connotation": "neutral"
+            },
+            "nativeMindset": {
+                "howNativesThink": "To native financial analysts, 'outflow' conjures an intuitive hydraulic model: cash is the lifeblood fluid of an enterprise, entering as inflows and exiting as outflows. When outflows consistently exceed inflows, the company faces insolvency unless rescued by external financing. Hearing 'massive fund outflows' or 'capital outflow' instinctively signals a loss of confidence—investors pulling their capital out of an emerging economy or redeeming shares from a mutual fund, forcing asset managers to sell securities into a falling market. In corporate management, tracking 'net cash outflow' is the paramount metric determining a startup's or distressed firm's remaining cash runway.",
+                "mentalImage": "A corporate treasurer analyzing a financial cash-flow dashboard on dual monitors, where downward-pointing red bars indicate heavy investing cash outflows for factory automation equipment beside green inflow bars from customer receipts.",
+                "whenToUse": "Use when describing aggregate movements or totals of liquidity leaving an organization, fund, or nation (cash outflow, capital outflow, net outflow of funds, currency outflow, operating cash outflow).",
+                "whenNotToUse": "Do not use 'outflow' to refer to a single routine retail transaction (use 'payment', 'purchase', or 'receipt'). Do not use 'outflow' as an exact synonym for an accrual accounting 'expense' (depreciation is an expense but generates zero cash outflow; repaying loan principal is a cash outflow but is not an expense).",
+                "culturalContext": "In Wall Street and international finance, weekly ETF and mutual fund 'outflow reports' serve as vital barometers of investor sentiment. In corporate earnings seasons, institutional investors scrutinize the Statement of Cash Flows just as intently as the Income Statement, knowing that a company can report positive net accounting profit while silently suffering fatal negative cash outflows."
+            },
+            "examples": {
+                "daily": [
+                    "After paying the annual homeowners association fee, auto insurance, and quarterly property taxes all in the same week, her savings account experienced a steep financial outflow.",
+                    "The personal finance software generated a color-coded pie chart comparing monthly salary inflows against essential household outflows such as rent, groceries, and utilities.",
+                    "The freelance graphic designer budgeted carefully to ensure that seasonal client payments covered her predictable business software and workspace outflows."
+                ],
+                "business": [
+                    "The acquisition of the semiconductor fabrication plant resulted in an investing cash outflow of sixty million dollars in the second quarter.",
+                    "To mitigate the destabilizing outflow of foreign capital, the country's central bank intervened in currency markets and raised reference borrowing rates.",
+                    "The company's quarterly statement of cash flows revealed that operating cash outflows exceeded revenue collections due to widespread supply chain delays."
+                ],
+                "conversation": [
+                    "\"Why did executive leadership institute a freeze on non-critical capital expenditures?\" — \"Our finance director projected heavy cash outflows next month to settle our syndicated bank debt.\"",
+                    "\"Are institutional investors withdrawing capital from our European equity fund?\" — \"Unfortunately, yes; the fund suffered net outflows of over one hundred fifty million dollars following the economic report.\"",
+                    "\"How can we bridge our working capital shortfall before our enterprise client settles their invoice?\" — \"We should request sixty-day payment terms from our component suppliers to delay cash outflows.\""
+                ],
+                "collocations": [
+                    "cash outflow",
+                    "capital outflow",
+                    "net outflow",
+                    "massive / heavy outflow",
+                    "outflow of funds",
+                    "stem / curb the outflow"
+                ]
+            },
+            "wordFamily": {
+                "noun": "outflow, flow",
+                "verb": "flow, outflow",
+                "adjective": "flowing, outflowing",
+                "adverb": "outwardly"
+            },
+            "visual": {
+                "imageKeyword": "cash flow statement corporate finance capital outflow graph spreadsheet",
+                "imageDescription": "A corporate financial director reviewing an interactive cash flow statement on a computer monitor, pointing at a red bar chart representing substantial capital outflows for industrial equipment beside tabular financial ledgers.",
+                "mnemonic": "OUTFLOW: Cash FLOWing OUT! Remember: Cash Inflows flow In, but Cash OUTflows flow OUT of your bank account."
+            },
+            "video": {
+                "description": "A senior corporate accountant breaking down the Statement of Cash Flows on a white dry-erase board, explaining how to track operating, investing, and financing cash outflows and differentiate them from income statement expenses."
+            },
+            "toeicContext": {
+                "commonParts": [
+                    3,
+                    4,
+                    5,
+                    7
+                ],
+                "exampleQuestion": "Due to substantial capital _______ incurred during the modernization of the logistics hub, the corporation's liquid cash reserves contracted significantly in the second quarter.\n(A) outflows\n(B) outflowing\n(C) outflown\n(D) outflowed",
+                "tips": "In TOEIC Part 5, business and finance compound nouns like 'capital outflows' (dòng vốn chi ra / dòng tiền xuất) or 'cash outflows' (dòng tiền chi) are tested frequently. The blank is preceded by the adjective 'capital' and the modifying adjective 'substantial'. Functioning as the subject of the passive participle phrase 'incurred during the modernization', the sentence requires the plural noun 'outflows' (A). Choice (B) 'outflowing' is a present participle; choice (C) 'outflown' is a past participle; and choice (D) 'outflowed' is an erroneous verb form."
+            },
+            "synonyms": [
+                "cash disbursement",
+                "capital flight",
+                "drain of funds",
+                "expenditure",
+                "disinvestment",
+                "monetary exit"
             ],
-            "business": [
-                "The boutique hotel chain increased its catering revenue by offering clients fully customized banquet menus featuring certified organic wines and grass-fed meats.",
-                "To meet corporate sustainability benchmarks, the corporate cafeteria partnered with local growers to source seventy percent of its seasonal vegetables from certified organic farms.",
-                "Rising consumer preference for clean-label dining led the restaurant franchise to transition its salad dressings to organic cold-pressed olive oil."
+            "antonyms": [
+                "inflow",
+                "cash inflow",
+                "capital influx",
+                "receipts",
+                "revenue stream"
             ],
-            "conversation": [
-                "\"Does your brunch menu feature organic eggs, or are they conventionally farmed?\" / \"All of our eggs and dairy products are certified organic, delivered fresh daily from a family farm in Lancaster County.\"",
-                "\"Why did the price of the artisan pasta entrées increase by two dollars?\" / \"The chef upgraded our pantry to use one hundred percent organic durum wheat semolina imported from Italy.\""
-            ],
-            "collocations": [
-                "organic produce",
-                "certified organic",
-                "organic ingredients",
-                "organic farming",
-                "organic wine",
-                "organic vegetables"
+            "relatedWords": [
+                "cash flow statement",
+                "disbursement",
+                "liquidity",
+                "capital expenditure",
+                "working capital",
+                "debt service",
+                "burn rate"
             ]
         },
-        "wordFamily": {
-            "noun": "organism",
-            "adjective": "organic",
-            "adverb": "organically",
-            "verb": "organize"
-        },
-        "visual": {
-            "imageKeyword": "fresh certified organic vegetables basket farm to table restaurant rustic table",
-            "imageDescription": "A woven wooden harvest basket brimming with freshly picked organic vegetables—crisp orange carrots with vibrant green tops, purple beets, and curly kale—resting on a butcher block in a bright restaurant kitchen.",
-            "mnemonic": "ORGANIC comes from 'organ' (living body): food grown naturally, working together like living organs without artificial chemicals!"
-        },
-        "video": {
-            "description": "A documentary feature following an executive chef visiting certified organic farms at dawn to select heirloom vegetables and discussing how chemical-free produce enhances flavor profiles on his seasonal tasting menu."
-        },
-        "toeicContext": {
-            "commonParts": [3, 4, 7],
-            "exampleQuestion": "Harvest Table Bistro has attracted substantial corporate catering business since converting its entire lunch menu to include only certified _____ ingredients from regional growers. (A) organically (B) organic (C) organism (D) organizing",
-            "tips": "In TOEIC Part 5, analyze word position and function. The blank follows the adverb 'certified' and directly precedes the noun 'ingredients'. An adjective is required to complete the noun phrase 'certified _____ ingredients'. Choice (B) 'organic' is the correct adjective. (A) is an adverb, (C) is a noun, and (D) is a present participle/gerund."
-        },
-        "synonyms": [
-            "chemical-free",
-            "pesticide-free",
-            "sustainably grown",
-            "biological",
-            "farm-fresh",
-            "non-synthetic"
-        ],
-        "antonyms": [
-            "conventional",
-            "synthetic",
-            "inorganic",
-            "chemically treated"
-        ],
-        "relatedWords": [
-            "sustainable",
-            "farm-to-table",
-            "pesticide",
-            "non-gmo",
-            "certification",
-            "agriculture",
-            "free-range"
-        ]
-    },
-    {
-        "id": "dining-200",
-        "word": "oven",
-        "partOfSpeech": ["noun"],
-        "category": "dining",
-        "level": "essential",
-        "toeicFrequency": 9,
-        "pronunciation": {
-            "ipa": "/ˈʌv.ən/",
-            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/oven--_us_1.mp3",
-            "syllableBreakdown": "ov·en",
-            "stressPattern": "●○",
-            "commonMistakes": "Learners frequently mispronounce the first vowel by analogy with 'over' (/oʊ/) or 'hot' (/ɒ/), producing /ˈoʊ.vən/ or /ˈɒv.ən/ instead of the short central vowel /ʌ/ ('uh-ven'). Another mistake is over-enunciating the second syllable as /ɛn/ rather than the weak unstressed schwa /ən/."
-        },
-        "etymology": {
-            "origin": "Old English ofn ('oven, furnace'), from Proto-Germanic *uhnaz / *ufnaz ('oven, furnace'), from Proto-Indo-European *aukw- ('cooking pot, earthen vessel').",
-            "rootWord": "ofn / *ufnaz",
-            "rootMeaning": "furnace, kiln, or earthen cooking vessel",
-            "evolution": "Dating back to prehistoric Germanic cooking structures, Proto-Germanic '*ufnaz' yielded Old English 'ofn', referring to enclosed clay or masonry chambers used for baking bread. The word persisted through Middle English 'oven' / 'ouen' into Early Modern English. With industrialization, it evolved from communal brick hearths to cast-iron ranges and modern high-capacity commercial convection and combi-steam ovens in professional hospitality.",
-            "relatedLanguages": [
-                "German: Ofen",
-                "Dutch: oven",
-                "Swedish: ugn",
-                "Danish: ovn",
-                "Gothic: auhns",
-                "Latin cognate: aulla / olla (earthen cooking pot)"
+        {
+            "id": "finance-211",
+            "word": "overdraft",
+            "partOfSpeech": [
+                "noun"
             ],
-            "firstRecordedUse": "Before the 9th century (c. 825, in Old English glosses and the Vespasian Psalter)"
-        },
-        "deepMeaning": {
-            "coreConcept": "A thermally insulated, enclosed cooking chamber heated by gas, electricity, steam, or burning wood, engineered for baking, roasting, broiling, and braising food in residential kitchens and commercial food service establishments.",
-            "spatialContext": "Commercial kitchen hot cook lines, hotel pastry and bakery departments, artisanal pizzeria hearths, institutional catering facilities, and culinary prep stations.",
-            "temporalContext": "Early dawn bakery shifts (preheating deck ovens at 4:30 AM), pre-service roasting shifts (slow-roasting meats at 2:00 PM), and high-velocity dinner service firing intervals.",
-            "emotionalTone": "Warm, comforting, artisanal, industrious, and essential.",
-            "formalityLevel": "neutral",
-            "connotation": "positive"
-        },
-        "nativeMindset": {
-            "howNativesThink": "To native speakers, 'oven' evokes comforting aromas of freshly baked bread, bubbling casseroles, and holiday roasts ('fresh out of the oven'). In commercial hospitality, the oven is the heavy-duty workhorse of the kitchen. Chefs evaluate ovens on temperature stability, heat distribution, humidity control (as in combi-ovens), and capacity to handle simultaneous banquet trays without burning.",
-            "mentalImage": "A professional pastry baker in a flour-dusted white chef coat sliding a wide wooden peel loaded with golden baguettes into a gleaming, four-deck commercial stone oven with glowing interior lights.",
-            "whenToUse": "Use when referring to enclosed baking and roasting appliances, culinary preparation methods involving enclosed dry or convection heat ('oven-roasted'), commercial kitchen equipment (deck oven, convection oven, combi-oven, pizza oven), or temperature management in cooking.",
-            "whenNotToUse": "Do not confuse with a 'stove' or 'cooktop' (the open top surface with burners for frying and boiling in pans), a 'grill' or 'broiler' (open direct heat), or a 'microwave' (electromagnetic wave heating).",
-            "culturalContext": "In contemporary dining, visual centerpiece ovens—particularly wood-fired stone or tiled ovens in open-kitchen trattorias and pizzerias—are prominent design and marketing features that signal artisanal authenticity. In commercial catering and hotels, computerized convection and combination steam ovens represent major capital investments vital for high-volume banquet consistency."
-        },
-        "examples": {
-            "daily": [
-                "She set the kitchen timer for thirty minutes after placing the chocolate chip cookies into the preheated oven.",
-                "The savory aroma of slow-roasted chicken and garlic potatoes filled the dining room every Sunday afternoon.",
-                "Remember to wear heavy heat-resistant silicone mitts before pulling the hot ceramic casserole dish from the oven."
+            "category": "finance",
+            "level": "intermediate",
+            "toeicFrequency": 8,
+            "pronunciation": {
+                "ipa": "/ˈoʊ.vɚ.dræft/",
+                "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/overdraft--_us_1.mp3",
+                "syllableBreakdown": "o-ver-draft",
+                "stressPattern": "Primary stress on the first syllable: O-ver-draft (/ˈoʊ.vɚ.dræft/, ●○○)",
+                "commonMistakes": "Learners frequently misplace the primary stress onto the second or third syllable (*o-VER-draft* or *over-DRAFT*); in standard English, compound nouns prefixed with 'over-' (such as 'overdraft', 'overcoat', 'overview') take primary stress on the initial syllable (O-ver-draft). Phonetically, non-native speakers often mispronounce the prefix vowel as short /ɒ/ or /ɔː/ rather than the diphthong /oʊ/ (US) or /əʊ/ (UK). In vowel articulation between accents, note that American English uses the near-open front vowel /æ/ in 'draft' (/ˈoʊ.vɚ.dræft/), whereas British English uses the open back vowel /ɑː/ (/ˈəʊ.və.drɑːft/). Conceptually, learners often confuse an 'overdraft' (where the bank honors and clears a payment that exceeds the balance, creating a negative ledger balance) with a 'bounced check' or 'NSF return' (where the bank rejects and refuses payment altogether). Additionally, learners often fail to recognize that in corporate finance, an 'overdraft facility' is an intentional, negotiated credit line rather than an accidental mistake."
+            },
+            "etymology": {
+                "origin": "Compound noun formed from Old English ofer ('over, beyond, in excess') and Middle English draught / draft (from Old English dragan 'to draw, pull, extract', referring to the drawing of funds against a banker)",
+                "rootWord": "ofer (beyond, excessive) + dragan (to draw, pull, extract)",
+                "rootMeaning": "'Drawing or pulling out money beyond the amount deposited in an account'",
+                "evolution": "The word combines Germanic 'over' (denoting excess or transcendence) with 'draft' (from Old English dragan 'to draw', specifically referring to a drawn order of payment or bill of exchange). In 1728, the Royal Bank of Scotland invented the world's first modern overdraft mechanism by granting merchant William Hog a 'cash credit' allowing him to withdraw more cash than he had deposited against a security bond. The specific nominal compound 'overdraft' entered mainstream British and American banking records in the early 19th century (circa 1830s) to denote an overdrawn bank balance. In modern banking law and global commerce, it encompasses both arranged overdraft facilities (pre-approved revolving credit lines vital for enterprise working capital) and unarranged overdrafts (unauthorized deficits incurring penalty interest and administrative fees).",
+                "relatedLanguages": [
+                    "French: découvert bancaire (bank overdraft, deficit balance)",
+                    "Spanish: sobregiro bancario / descubierto bancario (bank overdraft, overdrawn balance)",
+                    "Italian: scoperto di conto bancario / fido (bank overdraft, credit facility)",
+                    "German: Kontokorrentkredit / Überziehung (overdraft credit facility, overdrawing)",
+                    "Portuguese: cheque especial / saldo a descoberto (overdraft facility, overdrawn balance)"
+                ],
+                "firstRecordedUse": "Early 19th century (circa 1830s in British and American commercial banking records; credit concept originated in Scotland in 1728)"
+            },
+            "deepMeaning": {
+                "coreConcept": "A banking credit condition or transactional deficit that occurs when disbursements, withdrawals, or cleared debits from a commercial or personal demand deposit (checking) account exceed the available account balance, resulting in a negative ledger balance; in corporate commercial banking, an arranged overdraft facility is a pre-negotiated short-term credit line that allows enterprises to draw capital up to an authorized ceiling to finance operational working capital, bridge timing mismatches between receivables and payables, and guarantee uninterrupted supplier payments.",
+                "spatialContext": "Commercial bank branches, corporate treasury online portals, automated clearing house (ACH) payment processing hubs, and monthly bank reconciliation statements.",
+                "temporalContext": "Accessed dynamically on a daily basis as vendor checks, payroll debits, and electronic payments clear; reviewed on monthly bank statements; renegotiated or renewed annually with commercial lending officers.",
+                "emotionalTone": "Pragmatic, cautious, operational, and urgent; carries reassurance and operational agility when pre-authorized, but anxiety and financial stress when unauthorized due to punitive penalty fees.",
+                "formalityLevel": "formal",
+                "connotation": "neutral"
+            },
+            "nativeMindset": {
+                "howNativesThink": "To native English speakers, 'overdraft' has two distinct connotations depending on context: retail and corporate. In retail banking, an 'overdraft fee' ($30-$35 in the US) is widely resented as a predatory penalty for accidentally overdrawing an account, prompting consumers to enroll in 'overdraft protection' linked to a secondary savings account. In corporate and Commonwealth (UK, Australia, New Zealand) commerce, however, an 'overdraft facility' is seen as a standard, highly flexible financial tool—a revolving liquidity safety net that gives business owners peace of mind that operational payments and payroll won't bounce if customer invoice settlements are temporarily delayed.",
+                "mentalImage": "A small enterprise owner reviewing an online business banking portal displaying a checking balance of -$8,400 beneath a green badge stating 'Authorized Overdraft Facility: $50,000 Limit', confirming all vendor wire transfers cleared smoothly.",
+                "whenToUse": "Use when referring to negative bank account balances (run up an overdraft, clear an overdraft), commercial bank credit lines attached to checking accounts (bank overdraft facility, arranged overdraft limit), or retail banking features (overdraft protection, overdraft fee).",
+                "whenNotToUse": "Do not confuse with a 'bounced check' or 'non-sufficient funds (NSF) return'—an overdraft means the bank accepted and funded the debit; an NSF return means the bank rejected the transaction. Do not use 'overdraft' when referring to long-term structured debt, term loans, or capital equipment leases.",
+                "culturalContext": "In the UK, Australia, and New Zealand, overdraft facilities are the standard mechanism for small business working capital, far more ubiquitous than in the US, where businesses more commonly rely on corporate credit cards or revolving lines of credit. In American consumer banking, overdraft fees have been the subject of extensive federal regulatory oversight by the Consumer Financial Protection Bureau (CFPB)."
+            },
+            "examples": {
+                "daily": [
+                    "Because her automated gym membership fee cleared an hour before her paycheck was processed, she was hit with a thirty-five-dollar overdraft fee.",
+                    "He enrolled in overdraft protection through his mobile banking app so funds would transfer automatically from his savings account if his checking balance fell below zero.",
+                    "After reviewing his online banking statement, Kevin noticed his account was sixty dollars in overdraft and promptly transferred money to eliminate the deficit.",
+                    "Before traveling overseas, she confirmed that her checking account would not trigger an automatic overdraft if international transaction fees were applied."
+                ],
+                "business": [
+                    "The logistics enterprise utilized its fifty-thousand-dollar bank overdraft facility to fund weekly driver payroll while waiting for major freight clients to remit payment.",
+                    "Our commercial lending officer approved a temporary increase in our authorized overdraft limit to help us procure seasonal inventory ahead of the holiday rush.",
+                    "The company's audited balance sheet classified short-term bank overdrafts under current liabilities alongside trade accounts payable."
+                ],
+                "conversation": [
+                    "\"Did the urgent electronic wire to our parts supplier bounce when our account balance hit zero?\" — \"No, our pre-arranged bank overdraft facility covered the transfer, so our supply chain was not interrupted.\"",
+                    "\"Why were there extra interest charges and administrative fees on this month's bank statement?\" — \"We slipped into an unauthorized overdraft for two days after a foreign client's international payment was delayed.\"",
+                    "\"Should we take out a fixed-term bank loan to manage our short-term cash flow gaps?\" — \"An overdraft facility is much more flexible because we only pay interest on the exact deficit amount we use and only for the days we use it.\""
+                ],
+                "collocations": [
+                    "bank overdraft",
+                    "overdraft facility",
+                    "overdraft protection",
+                    "overdraft fee",
+                    "authorized / arranged overdraft",
+                    "overdraft limit"
+                ]
+            },
+            "wordFamily": {
+                "noun": "overdraft, draft",
+                "verb": "overdraw, draft",
+                "adjective": "overdrawn",
+                "adverb": ""
+            },
+            "visual": {
+                "imageKeyword": "bank overdraft online banking deficit balance commercial account corporate",
+                "imageDescription": "A business owner examining a laptop showing a corporate banking portal with a negative checking balance of -$6,200 displayed beside an active 'Approved Overdraft Facility: $25,000 Limit' notice and cleared invoice payments.",
+                "mnemonic": "OVERDRAFT: You DRAFTED (pulled out) OVER what you had in the bank! It's an OVER-DRAFT of your available funds."
+            },
+            "video": {
+                "description": "A commercial lending officer explaining how businesses negotiate pre-arranged overdraft facilities to smooth working capital fluctuations and protect credit ratings during seasonal sales dips."
+            },
+            "toeicContext": {
+                "commonParts": [
+                    3,
+                    4,
+                    5,
+                    7
+                ],
+                "exampleQuestion": "To prevent costly penalties and transaction rejections during temporary cash shortfalls, small business owners are encouraged to apply for an approved _______ protection facility with their commercial bank.\n(A) overdraft\n(B) overdrafting\n(C) overdrawn\n(D) overdraw",
+                "tips": "In TOEIC Part 5 banking contexts, compound nouns and noun adjuncts modifying banking services appear regularly (e.g., 'overdraft protection', 'interest rate', 'credit facility'). Here, the blank precedes the compound noun 'protection facility'. The noun 'overdraft' (A) is required to form the compound 'overdraft protection facility'. Choice (B) 'overdrafting' is an awkward gerund; choice (C) 'overdrawn' is a participial adjective modifying accounts (e.g., 'an overdrawn account'); and choice (D) 'overdraw' is a bare verb."
+            },
+            "synonyms": [
+                "bank deficit",
+                "negative balance",
+                "credit facility",
+                "overdrawn balance",
+                "short-term credit line",
+                "overdraft facility"
             ],
-            "business": [
-                "The executive chef submitted a capital expenditure request to replace the banquet facility's aging convection ovens with energy-efficient combi-steam units.",
-                "During peak banquet preparation, kitchen staff utilized all four deck ovens to roast sixty prime rib cuts simultaneously to precise internal temperatures.",
-                "Preventive maintenance technicians inspected the commercial ovens before the busy tourist season to verify accurate thermostat calibrations and door gasket seals."
+            "antonyms": [
+                "surplus",
+                "positive balance",
+                "credit balance",
+                "deposit surplus"
             ],
-            "conversation": [
-                "\"Are the artisanal sourdough loaves ready to be transferred to the cooling racks?\" / \"The timer just sounded, and the crusts have reached a perfect deep golden color, so they are coming out of the deck oven right now.\"",
-                "\"Why did the catering team delay serving the roasted pork loins?\" / \"The main convection oven experienced a brief power fluctuation, requiring the chef to finish the roast in the auxiliary unit.\""
-            ],
-            "collocations": [
-                "preheat the oven",
-                "convection oven",
-                "wood-fired oven",
-                "deck oven",
-                "oven mitts",
-                "oven-roasted"
+            "relatedWords": [
+                "overdraw",
+                "overdrawn",
+                "overdraft fee",
+                "overdraft protection",
+                "line of credit",
+                "working capital",
+                "non-sufficient funds"
             ]
-        },
-        "wordFamily": {
-            "noun": "oven",
-            "adjective": "ovenproof"
-        },
-        "visual": {
-            "imageKeyword": "commercial bakery deck oven baker wooden peel fresh bread kitchen",
-            "imageDescription": "A professional baker using a long-handled wooden peel to slide crusty golden loaves of artisan bread into a heavy-duty commercial deck oven with interior halogen lights illuminating stone baking racks.",
-            "mnemonic": "OVEN rhymes with 'shoven': you shove dough into the hot oven to bake warm crusty bread!"
-        },
-        "video": {
-            "description": "A commercial kitchen equipment showcase reviewing the advanced programmable settings, multi-rack steam injection, and precise convection airflow of industrial combi-ovens used in luxury hotel kitchens."
-        },
-        "toeicContext": {
-            "commonParts": [1, 3, 7],
-            "exampleQuestion": "The head chef submitted an urgent repair order after discovering that the kitchen's primary convection _____ was failing to maintain a consistent roasting temperature. (A) oven (B) ovens (C) ovenproof (D) ovenware",
-            "tips": "Examine the grammatical structure of the noun phrase. The singular possessive 'the kitchen\\'s' paired with the singular modifier 'primary convection' and singular past continuous verb 'was failing' indicates that a singular countable head noun is needed. Choice (A) 'oven' is correct. Choice (B) is plural (which disagrees with 'was failing'), (C) is an adjective, and (D) is an uncountable collective noun for baking dishes."
-        },
-        "synonyms": [
-            "baking chamber",
-            "roaster",
-            "convection unit",
-            "range oven",
-            "kiln (specialized/industrial)",
-            "cooker"
-        ],
-        "antonyms": [
-            "refrigerator",
-            "freezer",
-            "chiller"
-        ],
-        "relatedWords": [
-            "preheat",
-            "roasting",
-            "baking",
-            "convection",
-            "temperature",
-            "baker's peel",
-            "thermostat"
-        ]
-    }
-]
+        }
+    ]
+}
 
-# Validation
-import sys
-
-# Check schema requirements
-required_top_keys = [
-    "id", "word", "partOfSpeech", "category", "level", "toeicFrequency",
-    "pronunciation", "etymology", "deepMeaning", "nativeMindset",
-    "examples", "wordFamily", "visual", "video", "toeicContext",
-    "synonyms", "antonyms", "relatedWords"
-]
-
-required_pron = ["ipa", "syllableBreakdown", "stressPattern", "commonMistakes"]
-required_etym = ["origin", "rootWord", "rootMeaning", "evolution", "relatedLanguages", "firstRecordedUse"]
-required_deep = ["coreConcept", "spatialContext", "temporalContext", "emotionalTone", "formalityLevel", "connotation"]
-required_native = ["howNativesThink", "mentalImage", "whenToUse", "whenNotToUse", "culturalContext"]
-required_ex = ["daily", "business", "conversation", "collocations"]
-required_vis = ["imageKeyword", "imageDescription", "mnemonic"]
-required_vid = ["description"]
-required_toeic = ["commonParts", "exampleQuestion", "tips"]
-
-for w in words_data:
-    for k in required_top_keys:
-        assert k in w, f"Missing key {k} in {w['id']}"
-    for k in required_pron:
-        assert k in w["pronunciation"], f"Missing {k} in pron {w['id']}"
-    for k in required_etym:
-        assert k in w["etymology"], f"Missing {k} in etym {w['id']}"
-    for k in required_deep:
-        assert k in w["deepMeaning"], f"Missing {k} in deep {w['id']}"
-    for k in required_native:
-        assert k in w["nativeMindset"], f"Missing {k} in native {w['id']}"
-    for k in required_ex:
-        assert k in w["examples"], f"Missing {k} in ex {w['id']}"
-    for k in required_vis:
-        assert k in w["visual"], f"Missing {k} in vis {w['id']}"
-    for k in required_vid:
-        assert k in w["video"], f"Missing {k} in vid {w['id']}"
-    for k in required_toeic:
-        assert k in w["toeicContext"], f"Missing {k} in toeic {w['id']}"
-
-    assert len(w["examples"]["daily"]) >= 3
-    assert len(w["examples"]["business"]) >= 3
-    assert len(w["examples"]["conversation"]) >= 2
-    assert len(w["examples"]["collocations"]) >= 5
-    assert len(w["synonyms"]) >= 4
-    assert len(w["relatedWords"]) >= 5
-    assert w["deepMeaning"]["formalityLevel"] in ["formal", "neutral", "informal"]
-    assert w["deepMeaning"]["connotation"] in ["positive", "neutral", "negative"]
-    assert w["level"] in ["essential", "intermediate", "advanced"]
-
-print("All assertions passed perfectly!")
+jsonschema.validate(instance=words_data, schema=SCHEMA)
+print("Validation SUCCESSFUL! All fields strictly adhere to the schema.")

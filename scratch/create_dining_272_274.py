@@ -1,0 +1,351 @@
+import json
+import re
+
+words_data = [
+    {
+        "id": "dining-272",
+        "word": "teapot",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/ˈtiː.pɑːt/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/teapot--_us_1.mp3",
+            "syllableBreakdown": "tea·pot",
+            "stressPattern": "●○",
+            "commonMistakes": "Learners often mispronounce the compound by placing equal stress on both syllables or shifting primary stress to the second syllable (pronouncing it like 'tea-POT' instead of /ˈtiː.pɑːt/). Another frequent error is confusing the tense front vowel /iː/ with the lax /ɪ/ (sounding like 'tip-pot'). In American English, the vowel in 'pot' is an unrounded open back /ɑː/ rather than the rounded British /ɒ/. Crucially in dining and hospitality contexts, non-native speakers frequently confuse 'teapot' (a tabletop ceramic or silver serving vessel with a spout and lid used for steeping tea) with 'kettle' (the stovetop or electric appliance used exclusively to boil water)."
+        },
+        "etymology": {
+            "origin": "Formed in 17th-century English as a compound of 'tea' (borrowed via Dutch and maritime trade from Min Nan / Hokkien Chinese 茶 'tê') and 'pot' (from Old English 'pott', borrowed from Late Latin 'pottus' or Vulgar Latin '*pottum', denoting a drinking vessel or earthenware container).",
+            "rootWord": "Min Nan Chinese tê (tea) + Old English pott / Late Latin pottus (pot, vessel)",
+            "rootMeaning": "A specialized earthenware, ceramic, or metal vessel designed specifically for steeping and serving tea",
+            "evolution": "As Chinese loose-leaf tea arrived in England and Western Europe during the 1650s and 1660s, English potters and silversmiths adapted Chinese Yixing clay wine pots into dedicated brewing vessels featuring a perforated internal strainer, curved pouring spout, fitted lid, and insulated handle. By the 1670s, domestic probate records and London coffeehouse ledgers widely documented 'tea pots'. The 18th-century porcelain revolution led by Josiah Wedgwood and the Victorian afternoon high tea custom established the teapot as an essential centerpiece of domestic and formal banquet hospitality.",
+            "relatedLanguages": [
+                "French: théière (teapot; derived from thé + -ière)",
+                "Spanish: tetera (teapot; derived from té + -era)",
+                "Italian: teiera (teapot; derived from tè + -iera)",
+                "German: Teekanne (teapot; compound of Tee + Kanne)",
+                "Dutch: theepot (teapot; direct West Germanic cognate)"
+            ],
+            "firstRecordedUse": "Mid-17th century (c. 1660–1670s in English maritime trade accounts and domestic inventories)"
+        },
+        "deepMeaning": {
+            "coreConcept": "A specialized tabletop serving vessel equipped with a curved spout, handle, fitted lid, and often an interior strainer or infuser basket, designed specifically for steeping loose tea leaves or tea bags in freshly boiled water and pouring the brewed beverage into teacups.",
+            "spatialContext": "Hotel afternoon tea salons, restaurant dining rooms, breakfast buffet sideboards, catering beverage stations, and room-service trays.",
+            "temporalContext": "Continental and full breakfast seatings, traditional afternoon tea service (2:00 PM to 5:00 PM), post-dinner dessert courses, and executive meeting coffee breaks.",
+            "emotionalTone": "Refined, comforting, hospitable, welcoming, and civilized.",
+            "formalityLevel": "neutral",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native English speakers distinctly separate a 'teapot' from a 'kettle'. In native dining culture, hot water is boiled in an electric or stovetop kettle in the kitchen or pantry; it is NEVER boiled inside a teapot. The teapot sits on the table as a refined presentation piece to brew and pour. Receiving an individual porcelain teapot in a hotel or bistro signals quality table service, leisurely dining pacing, and attentive hospitality—accompanied by a saucer, milk jug, and sugar bowl. In British, Irish, and Commonwealth culture, sharing a freshly brewed pot of tea is an enduring social gesture of comfort, warmth, and hospitality.",
+            "mentalImage": "A white-gloved banquet server placing a gleaming silver teapot on a starched white tablecloth beside a fine bone china teacup and saucer, steam gently curling from the curved gooseneck spout as Earl Grey tea steeps inside.",
+            "whenToUse": "Use when referring to the tabletop vessel used to brew, steep, and serve tea (e.g., 'ceramic teapot', 'cast iron teapot', 'individual teapot', 'serve a fresh pot of herbal tea', 'refill the teapot with hot water').",
+            "whenNotToUse": "Do not use 'teapot' to describe a kettle (the appliance that boils water on a stove or counter). Do not confuse with a coffee carafe, press pot / French press, or thermal beverage dispenser.",
+            "culturalContext": "In British and Commonwealth heritage, the afternoon tea ritual centered on a teapot (often insulated by a knitted 'tea cozy') remains a premier hospitality tradition. In luxury hospitality, corporate catering, and boutique hotel lounges, afternoon tea services featuring tiered pastry stands and silver teapots are prestigious venues for executive networking, client entertaining, and weekend leisure. In TOEIC test scenarios, teapots appear in Part 1 dining table photographs, Part 3 restaurant dialogues, and Part 7 banquet catering orders."
+        },
+        "examples": {
+            "daily": [
+                "The server brought a porcelain teapot of fragrant jasmine tea along with a matching cup and saucer.",
+                "Please handle the ceramic teapot carefully by the handle, as the exterior stays very hot after brewing.",
+                "She lifted the lid of the teapot to check whether the loose chamomile leaves had steeped long enough."
+            ],
+            "business": [
+                "The boutique hotel ordered eighty matching bone china teapots to elevate its executive afternoon tea service.",
+                "The banquet coordinator ensured that every meeting room credenza was supplied with an insulated teapot and assorted herbal teas.",
+                "To reduce glassware breakage during busy brunch shifts, the restaurant management replaced delicate glass pots with brushed stainless steel teapots."
+            ],
+            "conversation": [
+                "\"Excuse me, could we please have a fresh teapot with boiling water to steep a second cup?\" / \"Certainly, sir. I'll bring out a piping hot teapot and an extra dish of lemon slices right away.\"",
+                "\"Which teapot on the refreshment table contains the decaffeinated blend?\" / \"The silver teapot on the left has the decaf green tea, while the white ceramic one contains English Breakfast.\"",
+                "\"Did the banquet staff set out enough teapots for the corporate breakfast buffet?\" / \"Yes, we placed six large teapots beside the hot water dispensers at both ends of the beverage counter.\""
+            ],
+            "collocations": [
+                "porcelain teapot",
+                "ceramic teapot",
+                "silver teapot",
+                "brew a teapot",
+                "spout of a teapot",
+                "teapot lid"
+            ]
+        },
+        "wordFamily": {
+            "noun": "teapot",
+            "verb": "",
+            "adjective": "",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "porcelain teapot teacup saucer hot tea steam afternoon tea dining table",
+            "imageDescription": "An elegant white porcelain teapot with an arched handle and curved spout positioned next to a matching teacup on a white linen tablecloth, with delicate steam rising from freshly poured tea.",
+            "mnemonic": "TEAPOT: The POT where TEA brews on the table! Remember: water boils in the KETTLE, but steeps inside the TEAPOT!"
+        },
+        "video": {
+            "description": "A luxury hotel hospitality training video demonstrating proper afternoon tea service, including how banquet servers steep loose-leaf tea in bone china teapots and pour at the guest table without dripping."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "Before opening the lounge for afternoon service, the head server inspected each ceramic _____ to make sure none were chipped or stained. (A) teapot (B) teapots (C) teapoting (D) teapotly",
+            "tips": "In TOEIC Part 5, quantifier agreement is a standard grammar point. The determiner 'each' must be followed by a singular countable noun. Choice (A) 'teapot' is the correct singular form. Choice (B) 'teapots' is an incorrect plural noun, while choices (C) and (D) are non-existent derivatives."
+        },
+        "synonyms": [
+            "tea maker",
+            "tea brewer",
+            "tea vessel",
+            "tea urn",
+            "tea infuser pot"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "teacup",
+            "saucer",
+            "kettle",
+            "infuser",
+            "strainer",
+            "steeping",
+            "loose-leaf"
+        ]
+    },
+    {
+        "id": "dining-273",
+        "word": "tender",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/ˈten.dər/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/tender--_us_1.mp3",
+            "syllableBreakdown": "ten·der",
+            "stressPattern": "●○",
+            "commonMistakes": "Learners often mispronounce the first vowel by opening it too wide like /æ/ ('tan-der') instead of the crisp lax front vowel /e/. In rhotic varieties like General American, the final syllable ends in an r-colored vowel [ər], whereas in British RP it is an unstressed schwa [ə]. In dining and commercial vocabulary, non-native speakers frequently confuse the noun 'tender' (a boneless strip of poultry, or a formal catering bid/proposal) with the common adjective 'tender' (meaning soft, chewable, or delicate). Additionally, learners sometimes overlook that in restaurant POS cashiering, 'tender' designates the specific medium of payment offered to settle a bill (e.g., cash tender)."
+        },
+        "etymology": {
+            "origin": "Dual historical derivation in English: (1) In culinary and meat-cutting usage, a nominalization of the adjective 'tender' (delicate, easily cut), borrowed from Old French 'tendre', from Latin 'tener' (soft, delicate); (2) In commercial food service contracting and finance, borrowed from Anglo-Norman and Middle French 'tendre' (an offer, bid, to hold forth), directly from Latin 'tendere' (to stretch out, extend, offer for acceptance).",
+            "rootWord": "Latin tener (soft, delicate) & Latin tendere (to stretch out, extend, offer)",
+            "rootMeaning": "A soft cut of meat; an offer or formal proposal held forth for acceptance",
+            "evolution": "In medieval Anglo-Norman commercial and legal practice, Latin 'tendere' developed into 'tendre' (a formal offer of payment or contractual submission to perform a service), which entered English in the 16th century as 'tender'—now the standard term for bidding on institutional dining and catering concessions ('competitive tender'). Concurrently, the descriptive adjective 'tender' (from Latin 'tener', designating meat that yields easily to chewing) gave rise in mid-20th-century American food service to the culinary noun 'tender'—specifically the pectoralis minor tenderloin strip beneath the chicken breast, popularized as 'chicken tenders' across casual dining, catering platters, and fast-food menus.",
+            "relatedLanguages": [
+                "French: tendre (tender, soft; to offer) / soumission (commercial contract tender)",
+                "Spanish: tierno (tender, soft) / licitación (commercial tender / bid)",
+                "Italian: tenero (tender, soft) / bando di gara (contract tender / competition)",
+                "German: Zartbitter (tender/soft) / Ausschreibung (formal commercial tender / bid)",
+                "Dutch: mals (tender, succulent) / aanbesteding (public contract tender)"
+            ],
+            "firstRecordedUse": "Mid-16th century (c. 1540s for commercial offer/bid to perform services; mid-20th century, c. 1960s, for culinary poultry tenders)"
+        },
+        "deepMeaning": {
+            "coreConcept": "In culinary arts, restaurant hospitality, and commercial food service, 'tender' designates: (1) a tender, boneless strip of poultry or meat cut from the inner tenderloin muscle, typically marinated, breaded, or grilled and featured on casual menus or buffet platters; (2) a formal commercial proposal or bid submitted by a catering operator or dining concessionaire to secure a multi-year food-service contract; and (3) an accepted medium of payment (cash, card, or voucher) presented to settle a dining bill at the register.",
+            "spatialContext": "Casual restaurant fry stations, corporate cafeteria buffet lines, catering procurement offices, sports stadium concession stands, and restaurant point-of-sale registers.",
+            "temporalContext": "Fast-casual lunch hours, family dinner rushes, corporate catering contract bidding cycles (quarterly or annual RFP deadlines), and end-of-meal payment settlement.",
+            "emotionalTone": "Commercial, appetizing, competitive, practical, and procedural.",
+            "formalityLevel": "neutral",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native speakers navigate 'tender' across two distinct everyday dining dimensions. When glancing at a casual dining or pub menu, 'tenders' (almost universally pluralized as 'chicken tenders') instantly triggers an appetizing image of whole-muscle, buttermilk-battered strips of white breast meat served with dipping sauces—distinct from ground or processed nuggets. In corporate hospitality management and event catering, however, executives immediately treat 'tender' as an official competitive procurement bid to win airport dining concessions, university dining halls, or corporate cafeteria contracts.",
+            "mentalImage": "A restaurant line cook arranging freshly fried, golden-brown chicken tenders on parchment paper with ramekins of honey mustard sauce, while in an adjacent office, the catering sales director reviews a bound proposal stamped 'Corporate Dining Concession Tender'.",
+            "whenToUse": "Use when describing strips of boneless poultry or tenderloin on dining menus ('basket of chicken tenders', 'crispy tenders with barbecue sauce'), official bids for food and beverage contracts ('invitation to tender', 'submit a catering tender', 'win the dining concession tender'), or payment forms at checkout ('cash tender', 'record the tender type').",
+            "whenNotToUse": "Do not confuse the noun 'tender' with the adjective 'tender' (describing tender steak or tender meat texture). When referring to the act of submitting a payment or resigning, use the verb 'to tender' (e.g., 'tender payment', 'tender one's resignation').",
+            "culturalContext": "In North American culinary culture, 'chicken tenders' emerged in the 1970s and became a ubiquitous fast-casual and sports venue staple, distinguished from nuggets because they are cut from the actual pectoralis minor muscle. In Commonwealth and international corporate dining, 'tendering' is the mandatory transparent legal process through which airports, universities, and corporate campuses award multimillion-dollar food-service operations. In the TOEIC exam, 'tender' frequently tests candidates in Part 7 procurement proposals and Part 3 business dining negotiations.",
+            "culturalContext": "In North American culinary culture, 'chicken tenders' emerged in the 1970s and became a ubiquitous fast-casual and sports venue staple, distinguished from nuggets because they are cut from the actual pectoralis minor muscle. In Commonwealth and international corporate dining, 'tendering' is the mandatory transparent legal process through which airports, universities, and corporate campuses award multimillion-dollar food-service operations. In the TOEIC exam, 'tender' frequently tests candidates in Part 7 procurement proposals and Part 3 business dining negotiations."
+        },
+        "examples": {
+            "daily": [
+                "We ordered a basket of crispy chicken tenders served with honey mustard and seasoned fries for lunch.",
+                "The sports bar offers a popular appetizer platter featuring spicy buffalo chicken tenders and celery sticks.",
+                "The server totaled our lunch bill and verified that the fifty-dollar bill was accepted as cash tender."
+            ],
+            "business": [
+                "The international hospitality group submitted a competitive tender to manage the corporate headquarters cafeteria.",
+                "Following a thorough procurement review, the city airport authority awarded the terminal dining tender to a consortium of local restaurants.",
+                "The executive chef calculated food cost margins for the new catering menu, ensuring that hand-breaded chicken tenders met profitability targets."
+            ],
+            "conversation": [
+                "\"Are the chicken tenders made from whole chicken breast meat or processed patties?\" / \"Our kitchen uses fresh, whole-muscle chicken breast tenders marinated overnight in seasoned buttermilk.\"",
+                "\"When is our final submission due for the convention center catering tender?\" / \"All bid documents and sample banquet menus must be submitted to the committee by five o'clock on Friday.\"",
+                "\"Does the restaurant POS terminal support split-tender payments for large banquet checks?\" / \"Yes, patrons can split the bill across multiple credit cards or combine cash and card tender seamlessly.\""
+            ],
+            "collocations": [
+                "chicken tender",
+                "catering tender",
+                "submit a tender",
+                "award a tender",
+                "crispy tender",
+                "legal tender"
+            ]
+        },
+        "wordFamily": {
+            "noun": "tender, tenderness",
+            "verb": "tender",
+            "adjective": "tender",
+            "adverb": "tenderly"
+        },
+        "visual": {
+            "imageKeyword": "crispy chicken tenders dipping sauce casual restaurant meal french fries",
+            "imageDescription": "A wire basket lined with checkered red-and-white paper holding golden-brown, crispy chicken tenders with small ramekins of dipping sauce and lemon wedges on a casual diner table.",
+            "mnemonic": "TENDER: A TENDER cut of chicken is juicy and tender to eat; in corporate dining, caterers ex-TEND a TENDER (bid) to win the contract!"
+        },
+        "video": {
+            "description": "A professional culinary prep video demonstrating how commercial kitchen cooks trim fresh poultry tenderloins, coat them in buttermilk batter, and deep-fry them to produce golden crispy chicken tenders."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                5,
+                7
+            ],
+            "exampleQuestion": "The metropolitan airport authority published an invitation to _____ for local restaurant operators interested in leasing terminal dining concessions. (A) tender (B) tendering (C) tenderly (D) tendered",
+            "tips": "In TOEIC business English and contract procurement contexts, 'invitation to tender' (ITT) is a standard fixed commercial collocation where 'tender' functions as a noun denoting an official bid or proposal. Choice (A) 'tender' correctly completes this standard phrase. Choices (B) 'tendering', (C) 'tenderly', and (D) 'tendered' violate established business terminology."
+        },
+        "synonyms": [
+            "bid",
+            "proposal",
+            "quotation",
+            "tenderloin strip",
+            "meat strip",
+            "submission"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "procurement",
+            "concession",
+            "catering contract",
+            "tenderloin",
+            "breading",
+            "request for proposal",
+            "bidder"
+        ]
+    },
+    {
+        "id": "dining-274",
+        "word": "terrace",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/ˈter.əs/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/terrace--_us_1.mp3",
+            "syllableBreakdown": "ter·race",
+            "stressPattern": "●○",
+            "commonMistakes": "Learners frequently mispronounce the unstressed second syllable as a full vowel /eɪs/ (sounding like 'ter-race' rhyming with 'chase' or 'race' /ˈter.eɪs/) instead of reducing it to a weak schwa or lax /əs/ (/ˈter.əs/). Another frequent error is shifting the stress to the second syllable (*te-RRACE*). Furthermore, in hospitality contexts, non-native speakers often confuse 'terrace' (an expansive paved or stone outdoor dining area adjoining a restaurant, hotel, or rooftop) with 'balcony' (a smaller cantilevered platform projecting from an upper-floor wall) or 'deck' (an elevated wooden plank structure)."
+        },
+        "etymology": {
+            "origin": "Borrowed into Middle English via Middle French 'terrace' / Old French 'terrasse' (a raised platform, rampart, terrace), from Old Occitan 'terrassa' (earthen bank or mound), derived from Vulgar Latin '*terraceus' (made of earth), which stems from Latin 'terra' (earth, land, soil), descending from Proto-Indo-European '*ters-' (to dry, dry land).",
+            "rootWord": "Latin terra (earth, land) / Vulgar Latin *terraceus (made of earth) / Old French terrasse",
+            "rootMeaning": "An elevated, paved open-air platform or earthen embankment overlooking grounds",
+            "evolution": "Originally in Roman engineering and medieval military fortifications, a 'terrasse' was an earthen bank or rampart constructed for defense. During the Italian and French Renaissance, architects transformed terraces into paved promenade platforms and garden galleries overlooking villa estates. By the 18th and 19th centuries, grand Parisian boulevard cafes and European seaside hotels converted these paved outdoor areas into dining terraces for alfresco refreshments. In modern dining and hospitality architecture, 'terrace' specifically designates a premier outdoor, garden, or rooftop dining venue equipped with tables, parasols, and radiant heaters.",
+            "relatedLanguages": [
+                "French: terrasse (terrace, outdoor cafe seating area; e.g., terrasse de café)",
+                "Spanish: terraza (terrace, outdoor patio, rooftop bar)",
+                "Italian: terrazza (terrace, open-air veranda, rooftop)",
+                "German: Terrasse (terrace, patio, outdoor dining area; loanword from French)",
+                "Dutch: terras (cafe terrace, outdoor seating area)"
+            ],
+            "firstRecordedUse": "Early 16th century (c. 1510s for raised architectural platforms and garden promenades; 19th century for restaurant and cafe outdoor dining spaces)"
+        },
+        "deepMeaning": {
+            "coreConcept": "An open-air or semi-enclosed paved architectural platform, elevated patio, or rooftop dining space adjoining a restaurant, hotel, or banquet facility, furnished with tables, chairs, umbrellas, and heaters to accommodate outdoor dining and beverage service.",
+            "spatialContext": "Waterfront bistros, luxury hotel rooftop lounges, vineyard tasting rooms, mountain resort dining halls, and street-side European-style cafes.",
+            "temporalContext": "Spring and summer alfresco dining seasons, weekend brunch seatings, sunset cocktail hours, and warm-weather evening corporate banquets.",
+            "emotionalTone": "Pleasant, breezy, luxurious, scenic, relaxed, and hospitable.",
+            "formalityLevel": "neutral",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "When native speakers hear 'terrace' in a dining context, they instinctively visualize a stylish, scenic, and highly desirable open-air seating area—frequently elevated with panoramic views of a city skyline, harbor, ocean, or landscaped garden. It represents an elevated dining experience, leisure, and upscale ambiance. Diners often request 'terrace seating' specifically, willing to endure a wait for a table with a view. Restaurant managers view the terrace as prime high-margin seating, but also recognize the operational necessity of weather contingency planning (retractable awnings, patio heaters, or indoor backup banquet rooms in case of rain).",
+            "mentalImage": "Guests in business-casual attire seated at teak tables with white linens on a paved rooftop restaurant terrace overlooking an illuminated harbor at sunset, string lights glowing overhead and tall patio heaters ready for the evening chill.",
+            "whenToUse": "Use when describing an outdoor, elevated, or rooftop dining area connected to a dining or lodging establishment (e.g., 'dining on the terrace', 'rooftop terrace', 'terrace seating', 'oceanfront terrace', 'garden terrace').",
+            "whenNotToUse": "Do not confuse with 'balcony' (a small projecting platform from an individual hotel room, rarely used for restaurant table service) or 'deck' (a structure constructed specifically from timber or composite decking boards). Do not use to describe an enclosed indoor dining room.",
+            "culturalContext": "In European and North American dining culture, terrace seating ('dining alfresco') is a cherished lifestyle phenomenon. In major metropolitan centers, rooftop restaurant terraces command high reservation premiums and generate substantial beverage revenue. Because outdoor dining depends heavily on climate, restaurant booking platforms and banquet contracts routinely include terrace weather contingency clauses. In the TOEIC exam, terraces are a staple of Part 1 photographs (diners under patio umbrellas), Part 3 dining reservation dialogues, and Part 7 venue rental contracts."
+        },
+        "examples": {
+            "daily": [
+                "We requested a table on the seaside terrace so we could watch the sunset while having dinner.",
+                "During the warm summer months, the bistro opens its garden terrace for Saturday and Sunday brunch.",
+                "When a sudden drizzle began, the attentive waitstaff promptly moved our party from the terrace to the indoor dining room."
+            ],
+            "business": [
+                "The corporate welcome reception will be held on the hotel’s rooftop terrace, which accommodates up to two hundred attendees.",
+                "Management installed radiant gas heaters and motorized awnings to extend the dining terrace season through late autumn.",
+                "The private banquet agreement specifies that in the event of inclement weather, outdoor terrace reservations will automatically transfer to the main ballroom."
+            ],
+            "conversation": [
+                "\"Would your party prefer an indoor booth or a table outside on the terrace?\" / \"If there is an open table near a patio heater, we would love to sit on the terrace to enjoy the harbor view.\"",
+                "\"Has the event coordinator confirmed the backup plan for tonight’s dinner on the terrace?\" / \"Yes, if rain develops, the banquet staff will transition the buffet into the enclosed veranda.\"",
+                "\"How many additional servers should we assign to the rooftop terrace for the Friday evening rush?\" / \"Let's schedule three servers and two bussers, since beverage turnover is especially fast during sunset cocktail hour.\""
+            ],
+            "collocations": [
+                "rooftop terrace",
+                "outdoor terrace",
+                "dining terrace",
+                "terrace seating",
+                "garden terrace",
+                "terrace view"
+            ]
+        },
+        "wordFamily": {
+            "noun": "terrace",
+            "verb": "terrace",
+            "adjective": "terraced",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "restaurant rooftop terrace outdoor dining tables umbrellas skyline view sunset",
+            "imageDescription": "An elegant paved rooftop restaurant terrace with dark wooden dining tables under wide cream umbrellas, lush potted olive trees, and string lights overlooking an illuminated city skyline at dusk.",
+            "mnemonic": "TERRACE comes from Latin 'terra' (earth/ground): An open-air paved platform for dining under the open sky!"
+        },
+        "video": {
+            "description": "A luxury hotel and restaurant management video highlighting an award-winning waterfront dining terrace, demonstrating weather-resistant outdoor furniture layout, radiant heating systems, and service pacing."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "If the weather remains favorable this evening, the networking dinner for summit attendees will be held on the hotel's garden _____. (A) terrace (B) terracing (C) terraced (D) terrifically",
+            "tips": "In TOEIC Part 5, following a compound noun/adjective modifier like 'garden', a concrete singular head noun naming a facility or venue is required. Choice (A) 'terrace' is the correct noun. Choice (B) 'terracing' is an action gerund; Choice (C) 'terraced' is a past participle adjective; and Choice (D) 'terrifically' is an adverb of degree."
+        },
+        "synonyms": [
+            "patio",
+            "veranda",
+            "courtyard",
+            "deck",
+            "rooftop lounge",
+            "balcony"
+        ],
+        "antonyms": [
+            "interior",
+            "indoor dining room"
+        ],
+        "relatedWords": [
+            "alfresco",
+            "awning",
+            "parasol",
+            "patio heater",
+            "waterfront",
+            "scenic view",
+            "outdoor seating"
+        ]
+    }
+]
+
+with open("scratch/dining_272_274.json", "w", encoding="utf-8") as f:
+    json.dump({"words": words_data}, f, indent=2, ensure_ascii=False)
+
+print("Saved scratch/dining_272_274.json successfully!")

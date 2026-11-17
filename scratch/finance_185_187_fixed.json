@@ -1,0 +1,355 @@
+{
+  "words": [
+    {
+      "id": "finance-185",
+      "word": "leverage",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈlev.ər.ɪdʒ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/leverage--_us_1.mp3",
+        "syllableBreakdown": "lev-er-age",
+        "stressPattern": "●○○",
+        "commonMistakes": "Learners frequently misplace stress on the second syllable (*le-VER-age) or mispronounce the final unstressed suffix '-age' as /eɪdʒ/ (rhyming with 'cage') instead of the correct reduced vowel /ɪdʒ/ (rhyming with the end of 'cabbage' or 'manage'). In British English, /ˈliː.vər.ɪdʒ/ is widely standard, whereas North American corporate English predominantly uses /ˈlev.ər.ɪdʒ/ or /ˈlev.rɪdʒ/. Additionally, non-native speakers often overlook that while 'leverage' is fundamentally a noun representing financial or strategic power, modern business English frequently employs it as a transitive verb meaning to exploit or maximize an asset's full potential."
+      },
+      "etymology": {
+        "origin": "Formed in English from lever (from Old French levier, 'a lifter, lever', from lever, 'to raise', from Latin levare, 'to lighten, lift up', from levis, 'light in weight') + nominal suffix -age.",
+        "rootWord": "Latin levis (light) -> levare (to lift, lighten) -> Old French levier (lever) -> English lever + -age",
+        "rootMeaning": "'The action, mechanical power, or mechanical advantage gained by applying a lever'",
+        "evolution": "Originally documented in mechanics during the early 18th century (c. 1720s–1730s) to describe physical mechanical advantage. In the 1930s on Wall Street, financial theorists adopted the term metaphorically to describe the use of borrowed capital (debt) to amplify purchasing power and returns on equity. During the 1970s and 1980s, the term became central to private equity through 'leveraged buyouts' (LBOs), and subsequently expanded into strategic management to denote the application of any existing asset, partnership, or resource to generate disproportionately large commercial results.",
+        "relatedLanguages": [
+          "French: effet de levier (financial leverage) / levier (lever)",
+          "Spanish: apalancamiento (financial leverage, from palanca 'lever')",
+          "Italian: leva finanziaria (financial leverage) / leva (lever)",
+          "German: Hebelwirkung (leverage effect, from Hebel 'lever') / Verschuldungsgrad (degree of gearing)",
+          "Portuguese: alavancagem financeira (financial leverage, from alavanca 'lever')"
+        ],
+        "firstRecordedUse": "1727 in physical mechanics; c. 1933 in corporate finance and investment analysis."
+      },
+      "deepMeaning": {
+        "coreConcept": "In corporate finance and investing, the strategic deployment of borrowed funds, debt instruments, or financial derivatives to amplify the potential return, scale, or purchasing power of an investment, which proportionally magnifies downside exposure and risk of insolvency. In organizational strategy and negotiations, the exertion of an existing advantage, resource, or bargaining position to influence decisions or achieve favorable commercial terms.",
+        "spatialContext": "Syndicated loan desks at investment banks, private equity deal rooms modeling LBO debt structures, credit rating agency evaluation panels, and corporate treasury suites monitoring debt-to-EBITDA covenants.",
+        "temporalContext": "Corporate capital restructuring reviews, quarterly earnings calls when dissecting debt burdens, M&A financing negotiations, and credit rating reassessment cycles.",
+        "emotionalTone": "Analytical, strategic, calculated, and high-stakes.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native financial practitioners view leverage as an unyielding two-way amplifier: when asset values rise or operating revenues exceed fixed borrowing costs, returns to equity holders surge dramatically; when revenues drop, fixed interest and principal payments remain unchanged, swiftly wiping out equity and driving insolvency. In executive dealmaking, natives think of leverage as competitive bargaining power—asking 'Who has the leverage in this negotiation?' to determine which party holds irreplaceable value or superior alternatives.",
+        "mentalImage": "An investment banking analyst projecting a sensitivity matrix on an interactive display, showing senior partners how shifting a buyout's capital structure from 50% to 70% debt boosts expected internal rate of return (IRR) from 18% to 27%, while highlighting covenant breach thresholds in bright red.",
+        "whenToUse": "Use when examining capital structure metrics (e.g., 'operating leverage', 'financial leverage', 'net leverage ratio'), private equity acquisitions ('leveraged buyout'), or negotiation dynamics ('gain leverage', 'lack negotiating leverage').",
+        "whenNotToUse": "Do not confuse with 'liquidity' (ready access to cash) or general 'revenue' (sales inflows). In British finance, remember that 'gearing' is frequently the preferred domestic synonym for debt-to-equity leverage. Avoid using 'leverage' as a vague marketing buzzword when plain verbs like 'use', 'apply', or 'collaborate' are more accurate.",
+        "culturalContext": "Leverage is the bedrock of modern Anglo-American private equity and real estate capitalism, enabling firms like Blackstone and KKR to acquire multi-billion-dollar conglomerates with modest upfront equity. However, excessive corporate leverage has been the primary culprit behind historic market collapses, including the 2008 subprime credit crisis and repeated high-profile retail bankruptcies driven by debt-laden balance sheets."
+      },
+      "examples": {
+        "daily": [
+          "Taking out a fixed-rate mortgage allows homebuyers to use financial leverage to purchase a home that would otherwise require decades of cash savings.",
+          "Securing a formal offer letter from a competing tech firm gave Marcus substantial leverage when negotiating his year-end compensation package.",
+          "Trading stock index futures on margin offers high leverage, but an unexpected market pullback can trigger an immediate margin call from the brokerage."
+        ],
+        "business": [
+          "Credit rating agencies downgraded the telecommunications conglomerate after its net leverage ratio climbed above 4.5 times annual EBITDA.",
+          "The enterprise software company enjoys substantial operating leverage because its cloud infrastructure costs remain flat as new recurring subscriptions expand.",
+          "The private equity consortium funded sixty percent of the acquisition through syndicated bank debt, relying on leverage to optimize fund returns."
+        ],
+        "conversation": [
+          "\"Why is the treasury committee reluctant to issue more corporate bonds for the facility expansion?\" / \"Our current bank covenants restrict our leverage to three times cash flow, and borrowing more would risk a costly technical default.\"",
+          "\"Do we have any leverage in renegotiating the enterprise software licensing agreement?\" / \"Yes, our procurement team secured competitive bids from two alternative suppliers at a twenty percent discount, which gives us strong bargaining power.\"",
+          "\"How was the hedge fund able to generate thirty percent annual returns in a sideways market?\" / \"They used significant leverage through currency swaps and index futures, although that approach exposed their portfolio to substantial volatility.\""
+        ],
+        "collocations": [
+          "financial leverage",
+          "operating leverage",
+          "leverage ratio",
+          "negotiating leverage",
+          "reduce leverage",
+          "excessive leverage"
+        ]
+      },
+      "wordFamily": {
+        "noun": "leverage, deleveraging",
+        "verb": "leverage, deleverage",
+        "adjective": "leveraged, unleveraged",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "corporate financial leverage debt equity balance sheet private equity negotiation",
+        "imageDescription": "A modern executive boardroom where financial directors analyze debt-to-equity leverage graphs and capital structure metrics on an interactive conference screen.",
+        "mnemonic": "LEVER-AGE: Just as a physical LEVER allows a worker to lift a heavy stone with minimal effort, financial LEVERAGE uses borrowed debt to lift investment returns—until the weight slips!"
+      },
+      "video": {
+        "description": "A corporate finance professor uses whiteboard diagrams to explain financial leverage, illustrating how debt magnifies Return on Equity (ROE) while outlining covenant restrictions and insolvency risks."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "In order to comply with bank covenants and satisfy credit rating criteria, the executive committee voted to reduce corporate _____ by repaying fifty million dollars in senior debt.\n(A) leverage\n(B) leveraged\n(C) levered\n(D) leverages",
+        "tips": "In TOEIC Part 5, 'leverage' often appears following descriptive modifiers (e.g., 'corporate _____', 'financial _____') or transitive action verbs ('reduce _____', 'gain _____'). The sentence requires the uncountable noun (A) 'leverage' functioning as the direct object of 'reduce'. Choice (B) 'leveraged' and (C) 'levered' are past participle adjectives, while (D) 'leverages' is incorrect because financial leverage is treated as uncountable in this corporate governance context. In Part 7, look for 'leverage' in business articles detailing acquisitions, debt restructuring, and vendor negotiations."
+      },
+      "synonyms": [
+        "financial gearing",
+        "borrowed capital",
+        "debt financing",
+        "bargaining power",
+        "strategic advantage",
+        "influence"
+      ],
+      "antonyms": [
+        "equity financing",
+        "deleveraging",
+        "debt-free status",
+        "powerlessness"
+      ],
+      "relatedWords": [
+        "capital structure",
+        "debt-to-equity ratio",
+        "leveraged buyout",
+        "debt covenant",
+        "margin call",
+        "operating leverage",
+        "insolvency"
+      ]
+    },
+    {
+      "id": "finance-186",
+      "word": "lien",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/liːn/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/lien--_us_1.mp3",
+        "syllableBreakdown": "lien",
+        "stressPattern": "●",
+        "commonMistakes": "Learners unfamiliar with legal terminology often mispronounce the word phonetically as /ljɛ̃/ or like 'lion' (/ˈlaɪ.ən/). In standard English legal and business practice, it is pronounced monosyllabically as /liːn/ (homophonous with 'lean'), though a two-syllable variant /ˈliː.ən/ ('LEE-en') is also recognized in older references. Another frequent error is confusing 'lien' with 'loan' or 'mortgage': while a loan is the debt obligation and a mortgage is the security instrument, a 'lien' is the overarching legal right or claim encumbering specific property until that obligation is satisfied."
+      },
+      "etymology": {
+        "origin": "Anglo-Norman and Old French lien ('bond, tie, binding pledge, fetter'), from Latin ligamen ('band, tie, halter'), from ligare ('to bind, tie up, fasten').",
+        "rootWord": "Latin ligare (to tie, bind) -> ligamen (a band, bond) -> Old French lien (binding obligation)",
+        "rootMeaning": "'A legal bond or tie holding property hostage until a debt is discharged'",
+        "evolution": "In Classical Latin, 'ligamen' described a physical cord or bandage. In medieval Anglo-Norman Law French (13th–15th century English common law), 'lien' became established as a formal legal term for a creditor's right to retain a debtor's personal property until an underlying debt was paid. During the 19th-century industrial expansion, statutory liens evolved (such as mechanic's liens, tax liens, and maritime liens) allowing creditors to file public encumbrances against real property or vessels without needing physical custody, preventing debtors from transferring clear title until claims were settled.",
+        "relatedLanguages": [
+          "French: lien (bond, tie, connection) / privilège (legal security lien)",
+          "Spanish: gravamen (lien, encumbrance) / derecho de retención (possessory lien) / ligamen (bond)",
+          "Italian: vincolo (lien, encumbrance) / pegno (pledge) / legame (bond, tie)",
+          "German: Pfandrecht (lien, pledge right) / Grundpfandrecht (mortgage lien)",
+          "Latin: ligamen (band, fetter), ligamentum (ligament, binding)"
+        ],
+        "firstRecordedUse": "c. 1530s in English common law reports and property treatises."
+      },
+      "deepMeaning": {
+        "coreConcept": "A formal legal right, security interest, or official encumbrance granted by an owner, established by contract, or imposed by statute over a specific piece of real estate, vehicle, equipment, or monetary asset, serving to secure payment of a debt or performance of an obligation; if the debtor defaults, the lienholder possesses the legal right to foreclose, seize, or force the sale of the asset to recover owed funds.",
+        "spatialContext": "County deeds registries, title insurance closing rooms, municipal tax revenue offices, UCC-1 personal property registries, and commercial bank mortgage underwriting departments.",
+        "temporalContext": "Real estate title examination before property closing, post-construction payment deadlines, tax delinquency enforcement proceedings, and corporate bankruptcy asset distributions.",
+        "emotionalTone": "Binding, restrictive, protective of creditors, and legally enforceable.",
+        "formalityLevel": "formal",
+        "connotation": "negative"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers view a lien as a legal 'cloud' or padlock attached to property that prevents the owner from transferring clear ownership. If you buy a house or vehicle that has an active lien on it, the lienholder can repossess or foreclose on the asset even if you paid the seller in full. In construction and real estate, contractors immediately record a 'mechanic's lien' the moment an owner delays milestone payments, ensuring their labor and materials are secured before the property changes hands.",
+        "mentalImage": "A title officer in a closing office reviewing an official deed abstract, highlighting an unexpected fifty-thousand-dollar mechanic's lien filed by a roofing contractor, which prevents the buyers from executing their mortgage documents until the seller escrow funds to satisfy the debt.",
+        "whenToUse": "Use in discussions of real estate transactions, title searches, loan collateral, construction payment disputes ('mechanic's lien'), municipal tax enforcement ('tax lien'), or secured lending covenants ('free and clear of liens').",
+        "whenNotToUse": "Do not confuse with general unsecured debt (such as revolving credit card balances where no physical collateral is pledged). Do not use 'lien' as a verb in formal legal writing; standard practice uses idioms like 'place a lien on', 'file a lien against', or 'levy a lien on'.",
+        "culturalContext": "In North American and British property law, receiving a deed 'free and clear of all liens and encumbrances' is the cornerstone of real estate conveyancing. The entire multi-billion-dollar title insurance industry exists specifically to investigate public county records, uncover unrecorded or recorded liens, and indemnify purchasers and lenders against undiscovered creditor claims."
+      },
+      "examples": {
+        "daily": [
+          "Before buying the used commercial van, Sarah checked state vehicle records to make sure there was no outstanding auto loan lien on the title.",
+          "The homeowner was shocked to learn that the city had placed a tax lien on his townhouse after municipal assessment notices were sent to an outdated address.",
+          "Once the mortgage was fully paid off, the lending bank mailed a formal deed of reconveyance releasing its lien against the residential property."
+        ],
+        "business": [
+          "The title search revealed an unresolved two-hundred-thousand-dollar mechanic's lien filed by the HVAC subcontractor, which stalled the commercial property acquisition.",
+          "Under the terms of the credit facility, the commercial lender holds a first-priority lien on all manufacturing equipment and warehouse inventory.",
+          "The county tax collector announced that several commercial properties with chronic delinquent tax liens would be auctioned on the courthouse steps."
+        ],
+        "conversation": [
+          "\"Why has the title company delayed closing on our regional distribution center?\" / \"A title search uncovered a municipal tax lien from two years ago, and the seller must deposit funds into escrow to release it before we sign.\"",
+          "\"Did the general contractor resolve the dispute with the steel fabricators?\" / \"Yes, the owner paid the disputed balance directly, and the supplier signed a notarized lien waiver this morning.\"",
+          "\"Can the bank seize our subsidiary's delivery trucks if we breach our working capital covenants?\" / \"Only if the financing agreement specifically granted the lender a perfected security lien over those vehicles.\""
+        ],
+        "collocations": [
+          "place a lien on",
+          "release a lien",
+          "tax lien",
+          "mechanic's lien",
+          "first-priority lien",
+          "free and clear of liens"
+        ]
+      },
+      "wordFamily": {
+        "noun": "lien, lienholder",
+        "verb": "",
+        "adjective": "lien-free",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "real estate property title deed legal lien mortgage encumbrance closing",
+        "imageDescription": "A commercial property deed document spread out on a conference table alongside a title examiner's magnifying glass, a notary stamp, and an official legal lien release certificate.",
+        "mnemonic": "LIEN: Pronounced like 'LEAN'—a creditor LEANS on your house or car and refuses to step away until their bill is paid in full!"
+      },
+      "video": {
+        "description": "A real estate attorney explains how contractor mechanic's liens and tax liens cloud property titles, demonstrating how title companies perform lien searches before releasing escrow funds."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Before the commercial property transaction can be completed, the seller must settle all outstanding contractor claims to ensure the title is free of any _____.\n(A) liens\n(B) lien's\n(C) linearly\n(D) linear",
+        "tips": "In TOEIC Part 5, 'lien' frequently tests legal and banking terminology following phrases such as 'free of any _____', 'subject to a _____', or 'place a _____ against'. In this sentence, the quantifier 'any' paired with a countable noun in a negative or restrictive context requires the plural noun (A) 'liens'. Choice (B) 'lien's' is an erroneous singular possessive, while (C) 'linearly' and (D) 'linear' are unrelated geometric terms. In Part 7, watch for 'lien waiver' and 'title search' in correspondence between contractors, escrow agents, and commercial property developers."
+      },
+      "synonyms": [
+        "legal claim",
+        "encumbrance",
+        "security interest",
+        "charge",
+        "pledge",
+        "mortgage hold"
+      ],
+      "antonyms": [
+        "clean title",
+        "unencumbered property",
+        "clear deed",
+        "lien release"
+      ],
+      "relatedWords": [
+        "lienholder",
+        "mechanic's lien",
+        "tax lien",
+        "encumbrance",
+        "collateral",
+        "foreclosure",
+        "title insurance"
+      ]
+    },
+    {
+      "id": "finance-187",
+      "word": "liquidation",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˌlɪk.wəˈdeɪ.ʃən/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/liquidation--_us_1.mp3",
+        "syllableBreakdown": "liq-ui-da-tion",
+        "stressPattern": "○○●○",
+        "commonMistakes": "Learners often misplace primary stress on the second syllable (*li-QUI-da-tion) rather than on the penultimate syllable 'da' (/ˌlɪk.wəˈdeɪ.ʃən/). Many also omit the labialized glide /w/, incorrectly pronouncing it as *'lik-i-da-tion'*. Conceptually, non-native speakers frequently confuse 'liquidation' (the formal dissolution of a company and forced conversion of assets into cash to satisfy creditors) with 'liquidity' (the ongoing operational availability of cash) or 'restructuring' (reorganizing debt while remaining in business)."
+      },
+      "etymology": {
+        "origin": "Late Latin liquidātiō, liquidātiōnem ('a clearing, settling of accounts'), from liquidātus, past participle of liquidāre ('to make liquid, clarify, make clear or evident'), from Classical Latin liquidus ('flowing, fluid, clear, transparent').",
+        "rootWord": "Latin liquidus (fluid, clear) -> liquidare (to clarify, settle debts) -> Late Latin liquidatio (settlement of accounts)",
+        "rootMeaning": "'The process of clarifying or settling financial accounts by converting assets into clear, fluid cash'",
+        "evolution": "In Classical Latin, 'liquidus' described clear liquids. In medieval Latin and canon law, 'liquidare' was applied metaphorically to accounting: clarifying tangled business debits and credits into unambiguous, ascertained sums. It entered French as 'liquidation' (c. 16th century) and English in the 1570s meaning the settlement of debts or legal ascertainment of damages. With the development of modern British and American bankruptcy acts in the 19th century, 'liquidation' became the technical legal designation for winding up an insolvent corporation, selling off its assets, and distributing the cash proceeds to creditors in statutory order of priority.",
+        "relatedLanguages": [
+          "French: liquidation (settlement, winding-up, liquidation sale)",
+          "Spanish: liquidación (liquidation, settlement, clearance sale)",
+          "Italian: liquidazione (liquidation, severance pay, settlement)",
+          "German: Liquidation (liquidation, winding up) / Abwicklung (orderly winding-down)",
+          "Portuguese: liquidação (liquidation, clearance sale, settlement)"
+        ],
+        "firstRecordedUse": "1570s for settling accounts or debts; 1860s as a formal legal term for winding up an insolvent commercial company."
+      },
+      "deepMeaning": {
+        "coreConcept": "The formal legal and financial process of bringing a business enterprise, partnership, or investment fund to a permanent end, converting all physical equipment, inventory, real property, and financial instruments into cash through auctions or negotiated sales, and distributing the proceeds to secured creditors, unsecured creditors, and equity holders in accordance with statutory priority rules; in financial trading, the orderly closing out of a speculative position or margin portfolio for cash.",
+        "spatialContext": "Bankruptcy courtrooms (e.g. Chapter 7 proceedings), commercial auction houses, empty corporate warehouses tagged with lot numbers, liquidation consulting offices, and financial clearinghouse margin desks.",
+        "temporalContext": "Final stages of corporate insolvency following failed reorganization, scheduled fund dissolution dates, court-mandated auction timetables, and emergency automated margin liquidations during market panics.",
+        "emotionalTone": "Distressed, definitive, urgent, and solemn.",
+        "formalityLevel": "formal",
+        "connotation": "negative"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers associate 'liquidation' with complete business failure and the point of no return. Unlike a 'reorganization' (such as Chapter 11 bankruptcy where a company renegotiates debt to keep operating), liquidation means the lights are turned off forever, the brand ceases to exist, employees are terminated, and everything down to office desks is auctioned off to pay pennies on the dollar to creditors. In retail, a 'liquidation sale' conveys yellow clearance banners, bare shelves, and final markdowns.",
+        "mentalImage": "An empty retail distribution center where an auctioneer with a gavel and a court-appointed liquidator with a clipboard sell off pallets of electronics and warehouse forklifts to commercial bidders under a large banner reading 'Court-Ordered Bankruptcy Liquidation'.",
+        "whenToUse": "Use when a bankrupt company dissolves completely and sells off assets (e.g., 'file for liquidation', 'compulsory liquidation', 'Chapter 7 liquidation'), when a retail enterprise holds a closing-down inventory sale ('liquidation sale'), or when an investment brokerage forcibly closes client positions due to margin deficits ('forced liquidation').",
+        "whenNotToUse": "Do not use 'liquidation' when a business is merely reorganizing or continuing operations under court protection (that is 'reorganization' or 'restructuring'). Do not use it to describe temporary cash flow problems (which refer to a 'liquidity shortage').",
+        "culturalContext": "In corporate finance and commercial law (such as Chapter 7 in the United States and the Insolvency Act in the United Kingdom), liquidation represents the legal death of an enterprise. A court-appointed liquidator or trustee displaces the board of directors and enforces strict creditor priority: administrative legal fees first, then secured lenders, followed by unpaid wages, taxes, unsecured vendors, and finally common stockholders (who almost invariably lose their entire investment)."
+      },
+      "examples": {
+        "daily": [
+          "The neighborhood sporting goods retailer announced a massive liquidation sale, offering seventy percent discounts on all merchandise before closing permanently.",
+          "Following the closure of the family bakery, an estate liquidation firm cataloged commercial ovens and display counters for an upcoming weekend public auction.",
+          "When the electronics chain entered liquidation, customers hurried to local outlets to redeem outstanding gift cards before the stores shut down for good."
+        ],
+        "business": [
+          "After failing to secure debtor-in-possession financing to reorganize, the regional airline was forced by the bankruptcy judge into Chapter 7 liquidation.",
+          "The court-appointed liquidator reported that proceeds from the liquidation of industrial equipment would be distributed to secured bondholders by the end of the second quarter.",
+          "Facing severe market volatility, the proprietary trading desk initiated an orderly liquidation of its equity derivatives portfolio to meet brokerage margin requirements."
+        ],
+        "conversation": [
+          "\"Did the department store chain manage to reach an agreement with its bondholders to restructure its debt?\" / \"No, the creditors rejected the recovery plan, forcing the board of directors to vote for full corporate liquidation.\"",
+          "\"What will happen to the manufacturing machinery inside the automotive assembly plant?\" / \"An industrial liquidator is conducting an online auction next Thursday to sell off all the robotic arms and metal presses.\"",
+          "\"Why did the trading platform automatically sell off twenty percent of my portfolio at market open?\" / \"Your margin account fell below the maintenance requirement, which triggered an automated liquidation of collateral assets to cover the deficit.\""
+        ],
+        "collocations": [
+          "voluntary liquidation",
+          "compulsory liquidation",
+          "liquidation sale",
+          "liquidation value",
+          "file for liquidation",
+          "orderly liquidation"
+        ]
+      },
+      "wordFamily": {
+        "noun": "liquidation, liquidator",
+        "verb": "liquidate",
+        "adjective": "liquidated, liquidating",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "bankruptcy liquidation warehouse auction empty shelves business dissolution",
+        "imageDescription": "A cavernous industrial warehouse where commercial auctioneers and court-appointed liquidators inspect heavy machinery tagged with auction lot numbers for a court-ordered liquidation sale.",
+        "mnemonic": "LIQUID-ATION: Turning solid, frozen business assets into 'LIQUID' cash so waiting creditors can soak up whatever money remains!"
+      },
+      "video": {
+        "description": "An insolvency specialist outlines the corporate liquidation process, detailing the appointment of bankruptcy trustees, valuation of distressed assets, and creditor payout hierarchies under corporate law."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Following three consecutive quarters of catastrophic operational losses, the electronics retail chain announced the complete _____ of its remaining store inventory and distribution assets.\n(A) liquidate\n(B) liquidating\n(C) liquidation\n(D) liquidator",
+        "tips": "In TOEIC Part 5, test-takers must identify the correct nominal derivative following a modifying adjective like 'complete' or 'orderly' and preceded by an article ('the'). The blank requires the abstract process noun (C) 'liquidation' denoting the conversion of assets into cash. Choice (A) 'liquidate' is the base verb, (B) 'liquidating' is a participle/gerund, and (D) 'liquidator' refers to the court-appointed individual or firm managing the process. In Part 7, look for 'liquidation sale' in notices announcing retail closures or legal advertisements regarding bankruptcy proceedings."
+      },
+      "synonyms": [
+        "winding-up",
+        "dissolution",
+        "asset sell-off",
+        "insolvency closing",
+        "clearance sale",
+        "divestment"
+      ],
+      "antonyms": [
+        "incorporation",
+        "establishment",
+        "reorganization",
+        "capitalization"
+      ],
+      "relatedWords": [
+        "liquidator",
+        "bankruptcy",
+        "insolvency",
+        "Chapter 7",
+        "receivership",
+        "distressed assets",
+        "creditor priority"
+      ]
+    }
+  ]
+}

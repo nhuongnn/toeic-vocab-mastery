@@ -1,0 +1,120 @@
+[
+  {
+    "id": "finance-135",
+    "word": "efficiency",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "finance",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/efficiency--_us_1.mp3",
+      "ipa": "/ɪˈfɪʃ.ən.si/",
+      "syllableBreakdown": "ef-fi-cien-cy",
+      "stressPattern": "Second syllable stress: /ɪˈfɪʃ.ən.si/ (○●○○)",
+      "commonMistakes": "Learners frequently misplace the primary stress onto the initial syllable as */ˈɛf.ə.ʃən.si/* or onto the third syllable as */ɛ.fɪˈʃiː.ən.si/*. Another pervasive mistake is pronouncing the central 'ci' as an alveolar sibilant /s/ (producing */ɪˈfɪs.ən.si/*) instead of the voiceless postalveolar fricative /ʃ/. Non-native business speakers also frequently confuse the noun 'efficiency' (the ratio of input to output) with 'effectiveness' (the ability to achieve an intended objective regardless of resources spent)."
+    },
+    "etymology": {
+      "origin": "Latin",
+      "rootWord": "Latin efficere (from ex- 'thoroughly, out' + facere 'to make, do') / efficientia (efficient cause, efficacy)",
+      "rootMeaning": "to work out completely, accomplish, effect, produce",
+      "evolution": "Originating in classical Latin as 'efficientia', the term was popularized in medieval scholastic philosophy via translations of Aristotle's 'causa efficiens' (the active agent or force producing an effect). In the late 16th century, it entered English in philosophical and theological texts denoting the capacity to produce an effect. During the 19th-century Industrial Revolution, British and French engineers and thermodynamicists (such as Rankine and Carnot) repurposed the word quantitatively to express the numerical ratio of useful mechanical work performed by steam engines to the total energy expended. By the early 20th century, Frederick Winslow Taylor and pioneer economists transposed this mathematical metric into corporate management, operations research, and finance to denote the minimization of operational friction, waste, and unit costs relative to generated economic value.",
+      "relatedLanguages": [
+        "French: efficience (f.) / efficacité (f.) (efficiency, effectiveness; e.g., gain d'efficience, efficience énergétique)",
+        "Spanish: eficiencia (f.) (efficiency, productivity; e.g., eficiencia operativa, eficiencia de costos)",
+        "Italian: efficienza (f.) (efficiency, competence; e.g., efficienza energetica, efficienza dei costi)",
+        "German: Effizienz (f.) / Wirtschaftlichkeit (f.) (efficiency, cost-effectiveness; e.g., Kosteneffizienz, Energieeffizienz)"
+      ],
+      "firstRecordedUse": "c. 1593 (denoting the power to produce an outcome); modern quantitative economic and thermodynamic usage emerged c. 1850–1880"
+    },
+    "deepMeaning": {
+      "coreConcept": "The measurable capacity to produce maximum output, revenue, or functional value while expending the minimum necessary amount of capital, labor, time, or raw materials; the optimization of resource conversion that eliminates waste and reduces unit operating costs.",
+      "spatialContext": "Corporate treasury suites, corporate controllership offices, automated fulfillment centers, lean manufacturing floors, enterprise resource planning (ERP) digital terminals, and financial analytics war rooms.",
+      "temporalContext": "Analyzed during quarterly earnings releases, evaluated in annual operating expense audits, tracked continuously on production dashboards, and assessed after capital equipment deployments.",
+      "emotionalTone": "Analytical, disciplined, pragmatic, and performance-driven.",
+      "formalityLevel": "formal",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Native English speakers in financial and operational contexts make a sharp distinction between working hard and working efficiently. While 'hard work' implies exertion, 'efficiency' implies elegance, waste elimination, and systemic optimization. In the native corporate psyche, efficiency is inextricably linked with Peter Drucker's maxim that 'efficiency is doing things right, while effectiveness is doing the right things.' When a native executive calls a process efficient, they mean it achieves results with zero friction, zero redundant headcount, and minimal cash burn.",
+      "mentalImage": "A high-tech supply chain control center where real-time financial dashboards display a downward slope in cost-per-unit metrics alongside a rising line of daily completed dispatches, reflecting an automated fulfillment line running smoothly with no idle bottlenecks.",
+      "whenToUse": "Use when discussing quantifiable reductions in waste, time, capital expenditure, or operating costs relative to output (e.g., 'operational efficiency', 'tax efficiency', 'energy efficiency', 'capital efficiency', 'improve workflow efficiency').",
+      "whenNotToUse": "Do not use as a loose synonym for 'effectiveness' (which evaluates goal attainment irrespective of resource consumption) or 'speed' (moving fast is not efficient if error rates surge). Never use it to describe mere human industriousness or personal stamina.",
+      "culturalContext": "A cornerstone of Anglo-American corporate orthodoxy, rooted in Frederick Winslow Taylor's scientific management and Toyota's Lean Production (Kaizen). In North American and British corporate culture, public companies face relentless pressure from Wall Street and institutional investors to expand operating margins by unlocking administrative and operational efficiencies."
+    },
+    "examples": {
+      "daily": [
+        "Upgrading to an automated drip-irrigation system and smart soil sensors markedly increased water efficiency across our community garden.",
+        "Meal prepping lunches every Sunday noticeably improved my weekday morning efficiency and reduced our household grocery spending.",
+        "The commuter switched to the express subway line to maximize travel efficiency and avoid downtown traffic delays during rush hour."
+      ],
+      "business": [
+        "By replacing legacy paper-based workflows with an integrated cloud ERP platform, the accounts payable team realized a 30 percent gain in processing efficiency.",
+        "The chief operating officer initiated a lean inventory review across all regional distribution hubs to boost capital efficiency and reduce warehousing overhead.",
+        "During the quarterly earnings call, the CFO highlighted that recent corporate procurement consolidations had driven significant administrative efficiencies."
+      ],
+      "conversation": [
+        "\"Our billing specialists are spending hours cross-referencing invoice discrepancies by hand.\" / \"If we deploy the automated reconciliation plug-in, we can dramatically increase billing efficiency without having to hire temporary contractors.\"",
+        "\"Did executive management approve the capital request for the conveyor automation system?\" / \"Yes, the financial modeling indicated that the projected efficiency gains would fully recover the investment within eighteen months.\"",
+        "\"How did your division manage to reduce operating expenses by eight percent last fiscal quarter?\" / \"We restructured our freight delivery routes and adopted energy-efficient warehouse lighting, which drove substantial cost efficiency.\""
+      ],
+      "collocations": [
+        "operational efficiency",
+        "cost efficiency",
+        "energy efficiency",
+        "gain in efficiency",
+        "maximize efficiency",
+        "capital efficiency"
+      ]
+    },
+    "wordFamily": {
+      "noun": "efficiency, inefficiency",
+      "verb": "streamline, optimize (functional equivalents; verb form 'efficientize' is rare/colloquial)",
+      "adjective": "efficient, inefficient",
+      "adverb": "efficiently, inefficiently"
+    },
+    "visual": {
+      "imageKeyword": "financial analytics operations dashboard cost reduction automated logistics",
+      "imageDescription": "A dual-monitor financial workstation in a corporate office displaying comparative graphs where operating expense lines trend sharply downward while volume throughput curves rise, beside a clean, organized desk with a digital tablet and financial reports.",
+      "mnemonic": "EFFICIENCY: Remember EF (effect) + FIC (Latin root for 'make/do') + IENCY. An efficient system MAKES the maximum EFFECT with minimum effort and zero waste!"
+    },
+    "video": {
+      "description": "A Harvard Business Review case study breakdown detailing how a global retail supplier re-engineered its cross-docking logistics to optimize transport efficiency and eliminate redundant warehousing costs."
+    },
+    "toeicContext": {
+      "commonParts": [
+        3,
+        4,
+        5,
+        7
+      ],
+      "exampleQuestion": "By adopting automated optical scanning technology at its regional distribution center, Horizon Freight achieved greater processing _____ while reducing shipment delays. (A) efficient (B) efficiently (C) efficiency (D) efficacious",
+      "tips": "In TOEIC Part 5 and Part 6, 'efficiency' is frequently tested in part-of-speech questions following an adjective (e.g., 'processing', 'greater', 'operational', 'energy'). Test-takers often mistakenly select the adverb 'efficiently' because they see a verb form like 'processing' or 'achieved' nearby. Remember that 'processing' here functions as a noun adjunct modifying the blank, and the transitive verb 'achieved' requires a noun object: (C) 'efficiency'."
+    },
+    "synonyms": [
+      "productivity",
+      "cost-effectiveness",
+      "optimization",
+      "competence",
+      "streamlining",
+      "resourcefulness"
+    ],
+    "antonyms": [
+      "inefficiency",
+      "wastefulness",
+      "unproductiveness",
+      "extravagance",
+      "profligacy"
+    ],
+    "relatedWords": [
+      "throughput",
+      "optimization",
+      "streamline",
+      "overhead",
+      "bottleneck",
+      "productivity",
+      "utilization"
+    ]
+  }
+]

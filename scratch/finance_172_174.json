@@ -1,0 +1,358 @@
+{
+    "words": [
+        {
+            "id": "finance-172",
+            "word": "insurance",
+            "partOfSpeech": [
+                "noun"
+            ],
+            "category": "finance",
+            "level": "intermediate",
+            "toeicFrequency": 8,
+            "pronunciation": {
+                "ipa": "/ɪnˈʃʊr.əns/",
+                "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/insurance--_us_1.mp3",
+                "syllableBreakdown": "in-sur-ance",
+                "stressPattern": "Unstressed first syllable, primary stress on second syllable: in-SUR-ance (/ɪnˈʃʊr.əns/, ○●○)",
+                "commonMistakes": "Learners frequently misplace the primary stress onto the initial syllable (*IN-sur-ance*), a dialectal variation heard in some southern US regions but considered non-standard in international corporate English; standard business pronunciation stresses the second syllable (/ɪnˈʃʊr.əns/). Additionally, non-native speakers often confuse 'insurance' (financial indemnification against contingent or potential losses like fire, theft, liability, or illness) with 'assurance' (coverage for inevitable life events such as life assurance, or a subjective guarantee of certainty). Another common error is substituting the verb 'ensure' (to guarantee or make certain an event happens) for 'insure' (to provide or purchase financial coverage)."
+            },
+            "etymology": {
+                "origin": "Anglo-Norman and Middle French (enseurance) via Old French (enseurer), rooted in Vulgar Latin *securare and Classical Latin securus",
+                "rootWord": "enseurer (to assure, make secure, give guarantee) from Latin se- (without) + cura (care, worry)",
+                "rootMeaning": "'A state of freedom from care, anxiety, or financial vulnerability through a binding pledge or guarantee'",
+                "evolution": "Derived from the Latin adjective securus (compounded from se- 'without' and cura 'care, sorrow', literally 'free from anxiety'). Through Vulgar Latin *assecurare and *insecurare, it developed into Old French enseurer (to pledge, make safe, or guarantee). In 14th-century Anglo-Norman law, the noun enseurance signified a formal pledge or solemn warranty. With the expansion of Mediterranean shipping in Italian merchant republics (Genoa, Venice) and later London during the 16th century, merchants created formal underwriting contracts to distribute maritime voyage risks. English adopted the spelling ensurance and subsequently insurance to describe policies indemnifying cargo and vessel losses. Following the Great Fire of London (1666) and the establishment of Lloyd's Coffee House (1688), insurance evolved into an institutionalized financial industry covering property, life, marine, and commercial liability risks.",
+                "relatedLanguages": [
+                    "French: assurance (insurance, underwriting, guarantee)",
+                    "Spanish: seguro / aseguranza (insurance, policy, security)",
+                    "Italian: assicurazione (insurance, underwriting)",
+                    "Portuguese: seguro (insurance, guarantee)",
+                    "German: Versicherung (insurance, assurance)"
+                ],
+                "firstRecordedUse": "Late 16th century (circa 1580s in English maritime trade charters and merchant law)"
+            },
+            "deepMeaning": {
+                "coreConcept": "A formal financial contract and risk-transfer mechanism wherein an individual or corporate policyholder pays regular, predetermined premiums to an insurer or underwriting syndicate in return for a binding contractual guarantee of indemnification or monetary compensation against specified losses, property damage, legal liability, business interruption, or medical contingencies.",
+                "spatialContext": "Corporate risk management departments, commercial underwriting syndicates, insurance brokerage offices, corporate legal counsel suites, and claims adjustment conference rooms.",
+                "temporalContext": "Bound to annual or multi-year policy renewal cycles, monthly or quarterly premium remittance dates, and strict contractual windows (typically 30 to 60 days) for notifying insurers and filing claims following a loss event.",
+                "emotionalTone": "Prudent, protective, contractual, and risk-averse; balances financial exposure against predictability and balance-sheet solvency.",
+                "formalityLevel": "formal",
+                "connotation": "positive"
+            },
+            "nativeMindset": {
+                "howNativesThink": "To native business executives and consumers, insurance is an indispensable risk-management shield rather than a discretionary expense. Natives instinctively conceptualize insurance through four interconnected mechanics: the 'policy' (the governing legal contract), the 'premium' (the recurring subscription fee paid to maintain coverage), the 'deductible' (the out-of-pocket threshold absorbed before the insurer pays), and the 'claim' (the formal assertion of a covered loss). In idiomatic corporate speech, 'an insurance policy' is also deployed metaphorically to denote any deliberate redundancy or hedging strategy designed to prevent operational catastrophe.",
+                "mentalImage": "A corporate risk manager reviewing a commercial liability insurance policy binder beside a laptop spreadsheet detailing premium costs, deductible thresholds, and aggregate coverage caps across multiple regional distribution facilities.",
+                "whenToUse": "Use when discussing commercial liability, property damage coverage, workers' compensation, corporate risk management, marine cargo protection, premium payments, and claims adjustment.",
+                "whenNotToUse": "Do not confuse with 'assurance' (the traditional Commonwealth term for whole life coverage where death is an eventual certainty, or a personal verbal pledge), 'warranty' (a manufacturer's promise to repair or replace defective goods), or 'indemnity' (the underlying legal doctrine of making a party whole, rather than the commercial policy product itself).",
+                "culturalContext": "In North American and Commonwealth corporate governance, maintaining comprehensive commercial general liability (CGL), directors and officers (D&O) liability, and cyber-risk insurance is a strict fiduciary standard. Third-party vendors, suppliers, and tenants must universally deliver a formal 'Certificate of Insurance' (COI) naming the client as an additional insured before entering job sites or executing master service agreements."
+            },
+            "examples": {
+                "daily": [
+                    "Before signing the residential lease, the landlord required prospective tenants to submit proof of active renter's insurance.",
+                    "Her automobile insurance premium decreased after she completed a defensive driving course and maintained a clean record for five years.",
+                    "During human resources onboarding, the coordinator explained how to compare health and dental insurance plans during the open enrollment window."
+                ],
+                "business": [
+                    "The board of directors approved an expanded commercial property insurance package to protect coastal production plants against flood and storm damage.",
+                    "Following the server outage, our risk management division filed an insurance claim under our business interruption policy to recover lost revenues.",
+                    "Contractors submitting bids for the municipal airport terminal project must carry at least five million dollars in professional indemnity insurance."
+                ],
+                "conversation": [
+                    "\"Has the contractor delivered their certificate of insurance for the headquarters renovation?\" — \"Yes, their broker submitted proof of general liability and workers' compensation coverage earlier this morning.\"",
+                    "\"Why did our corporate insurance premiums increase by twelve percent for the upcoming fiscal year?\" — \"Underwriters raised property rates industry-wide due to recent extreme weather events and rising replacement material costs.\"",
+                    "\"Will the damaged logistics inventory be covered under our existing policy?\" — \"The claims adjuster is inspecting the warehouse tomorrow to confirm that the incident complies with our freight transit insurance clauses.\""
+                ],
+                "collocations": [
+                    "comprehensive insurance coverage",
+                    "file an insurance claim",
+                    "pay an insurance premium",
+                    "commercial liability insurance",
+                    "certificate of insurance",
+                    "take out an insurance policy"
+                ]
+            },
+            "wordFamily": {
+                "noun": "insurance, insurer, insured",
+                "verb": "insure",
+                "adjective": "insurable, insured",
+                "adverb": ""
+            },
+            "visual": {
+                "imageKeyword": "commercial insurance policy certificate risk management corporate office desk",
+                "imageDescription": "A professional leather folder containing a commercial insurance policy document with highlighted coverage clauses, placed beside a calculator, architectural blueprints, and a pen on a polished mahogany desk.",
+                "mnemonic": "IN-SURE-ANCE: You invest money IN advance to be SURE that unexpected incidents won't destroy your finANCE!"
+            },
+            "video": {
+                "description": "A corporate risk officer breaking down how commercial enterprises structure general liability, property casualty, and business interruption insurance portfolios to preserve liquidity during catastrophic losses."
+            },
+            "toeicContext": {
+                "commonParts": [
+                    3,
+                    4,
+                    5,
+                    7
+                ],
+                "exampleQuestion": "All external catering vendors operating on company premises must submit proof of valid liability _______ before their service contracts can be executed.\n(A) insure\n(B) insurer\n(C) insurance\n(D) insurably",
+                "tips": "In TOEIC Part 5, noun compound recognition and word-form selection are tested frequently. Following the compound modifying noun 'liability', the blank requires the uncountable noun 'insurance' (C) to complete the standard business phrase 'liability insurance' (bảo hiểm trách nhiệm). Choice (A) 'insure' is a verb, (B) 'insurer' refers to the underwriting company or person (which would require an indefinite article like 'a valid liability insurer' and makes no sense in this context), and (D) 'insurably' is an adverb."
+            },
+            "synonyms": [
+                "coverage",
+                "indemnity",
+                "protection",
+                "underwriting",
+                "policy",
+                "assurance"
+            ],
+            "antonyms": [
+                "exposure",
+                "liability",
+                "uninsured risk",
+                "vulnerability"
+            ],
+            "relatedWords": [
+                "premium",
+                "deductible",
+                "underwriter",
+                "claim",
+                "indemnification",
+                "actuary",
+                "beneficiary"
+            ]
+        },
+        {
+            "id": "finance-173",
+            "word": "intangible",
+            "partOfSpeech": [
+                "noun"
+            ],
+            "category": "finance",
+            "level": "intermediate",
+            "toeicFrequency": 8,
+            "pronunciation": {
+                "ipa": "/ɪnˈtæn.dʒə.bəl/",
+                "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/intangible--_us_1.mp3",
+                "syllableBreakdown": "in-tan-gi-ble",
+                "stressPattern": "Unstressed first syllable, primary stress on second syllable: in-TAN-gi-ble (/ɪnˈtæn.dʒə.bəl/, ○●○○)",
+                "commonMistakes": "Learners often pronounce the third syllable with a hard velar plosive /g/ (*in-tan-GI-ble*) instead of the proper voiced post-alveolar affricate /dʒ/ (/ɪnˈtæn.dʒə.bəl/). Another error is placing primary stress on the third syllable (*in-tan-GI-ble*). Conceptually, non-native speakers frequently assume 'intangible' functions exclusively as an adjective; however, in financial accounting and investment reporting, it is widely used as a countable noun—most commonly in the plural 'intangibles'—referring to non-physical, long-term balance sheet assets such as patents, trademarks, software licenses, brand equity, and goodwill."
+            },
+            "etymology": {
+                "origin": "Late Latin (intangibilis) through Medieval Latin into Middle French (intangible)",
+                "rootWord": "in- (not, un-) + tangibilis (touchable), from tangere (to touch)",
+                "rootMeaning": "'Incapable of being touched, handled, or grasped physically; incorporeal'",
+                "evolution": "Formed in Medieval and Late Latin as intangibilis by prefixing the negative in- (not) to the verbal adjective tangibilis (palpable, capable of being touched), which derives from the classical Latin verb tangere (to touch, strike, or reach). It entered Middle French as intangible during the 15th century and was borrowed into Early Modern English to describe spiritual, philosophical, or impalpable matters. During the late 19th and early 20th centuries, as corporate capitalism and patent law expanded, Anglo-American accountancy and commercial courts distinguished physical capital (tangibles such as real estate, machinery, and inventory) from non-physical wealth (intangibles such as patents, copyright royalties, trade names, customer databases, and goodwill). Under modern IFRS (IAS 38) and US GAAP (ASC 350), an intangible is formally classified as an identifiable non-monetary asset without physical substance.",
+                "relatedLanguages": [
+                    "French: incorporel / actif intangible (intangible asset, incorporeal)",
+                    "Spanish: intangible / activo intangible (intangible asset)",
+                    "Italian: intangibile / bene immateriale (intangible, non-material asset)",
+                    "Portuguese: intangível / ativo intangível (intangible asset)",
+                    "Latin: intangibilis (that cannot be touched)"
+                ],
+                "firstRecordedUse": "Early 17th century (general adjective); late 19th/early 20th century (accounting and corporate finance noun)"
+            },
+            "deepMeaning": {
+                "coreConcept": "In corporate finance and financial accounting, an identifiable non-monetary asset or economic resource that lacks physical substance but confers measurable, legally enforceable competitive advantage and future cash flow potential, including intellectual property, patents, trademarks, proprietary software, franchises, customer contracts, and purchased goodwill.",
+                "spatialContext": "Non-current asset sections of corporate balance sheets, merger and acquisition (M&A) valuation models, intellectual property portfolio registers, and patent licensing boardrooms.",
+                "temporalContext": "Assessed during corporate acquisitions, amortized systematically across useful economic lifespans (ranging from 3 to 20 years), and tested annually for economic impairment.",
+                "emotionalTone": "Sophisticated, analytical, strategic, and valuation-focused; highlights the underlying intellectual, technological, and reputational drivers of modern enterprise value.",
+                "formalityLevel": "formal",
+                "connotation": "positive"
+            },
+            "nativeMindset": {
+                "howNativesThink": "To native financial analysts, corporate controllers, and investment bankers, an 'intangible' (or collectively 'intangibles') represents the core source of competitive moat and market value in the digital economy. While legacy industrial accounting prioritized physical machinery and real estate, today tech and pharmaceutical giants hold balance sheets where intangibles constitute 80% or more of corporate worth. Natives maintain a sharp technical distinction between 'finite-lived intangibles' (such as software patents that undergo straight-line amortization over their legal life) and 'indefinite-lived intangibles' (such as corporate goodwill or iconic trademarks that cannot be amortized but must undergo periodic impairment testing). Colloquially, natives also describe qualitative aspects of a candidate or workplace—like morale or leadership presence—as valuable 'intangibles'.",
+                "mentalImage": "An investment banking analyst examining a corporate purchase price allocation schedule on dual monitors, apportioning a multi-billion-dollar acquisition premium into identifiable intangibles like patented drug algorithms, software codebases, and trademark rights.",
+                "whenToUse": "Use when discussing balance sheet asset classification, enterprise valuation, M&A due diligence, intellectual property amortization, goodwill write-downs, and brand equity analysis.",
+                "whenNotToUse": "Do not confuse with 'tangible' (physical property like manufacturing plants, transport fleets, and warehouse inventory), 'current assets' (cash, accounts receivable, short-term marketable securities), or 'fictitious assets' (deferred revenue charges). Also avoid using it for everyday physical goods.",
+                "culturalContext": "Under international accounting standards (IFRS and US GAAP), internally developed intangibles—such as organic brand recognition or internal R&D—cannot generally be capitalized on the balance sheet and must be expensed as incurred. Consequently, when a company is acquired, the difference between the purchase price and fair market value of physical assets crystallizes as acquired intangibles and goodwill, making it a pivotal topic in TOEIC Part 7 annual reports, shareholder briefings, and financial news excerpts."
+            },
+            "examples": {
+                "daily": [
+                    "Although the base compensation was standard, the intangibles—such as a supportive manager and comprehensive remote-work flexibility—made the job offer irresistible.",
+                    "When evaluating the family-owned bakery for sale, the broker noted that seventy years of neighborhood goodwill was its most valuable intangible.",
+                    "Great coaches often look beyond athletic statistics to evaluate intangibles like leadership, resilience, and unselfish teamwork."
+                ],
+                "business": [
+                    "Following the corporate merger, the acquired technology startup's proprietary algorithms were recognized on the balance sheet as finite-lived intangibles.",
+                    "Accounting rules mandate that any recognized intangible with an identifiable useful lifespan must be amortized over that duration.",
+                    "The corporate board approved a twelve-million-dollar impairment charge after reassessing the commercial viability of several acquired intangibles."
+                ],
+                "conversation": [
+                    "\"Why is the acquisition price so much higher than the book value of the vendor's physical equipment?\" — \"Because the vast majority of their enterprise value is tied up in valuable intangibles, including patented battery technology and customer relationships.\"",
+                    "\"Are we required to amortize this software copyright over the next seven years?\" — \"Yes, under GAAP guidelines, any purchased intangible with a definite lifespan requires scheduled amortization.\"",
+                    "\"Did the auditors raise any concerns regarding our balance sheet valuation?\" — \"They accepted our depreciation schedule for physical machinery but requested a full impairment analysis for our trademark intangibles.\""
+                ],
+                "collocations": [
+                    "intangible asset",
+                    "identifiable intangibles",
+                    "amortization of intangibles",
+                    "impairment of intangibles",
+                    "valuable intangibles",
+                    "acquire an intangible"
+                ]
+            },
+            "wordFamily": {
+                "noun": "intangible, intangibility, intangibles",
+                "verb": "",
+                "adjective": "intangible",
+                "adverb": "intangibly"
+            },
+            "visual": {
+                "imageKeyword": "intangible asset intellectual property patent trademark balance sheet corporate valuation",
+                "imageDescription": "A financial controller pointing to a high-resolution balance sheet infographic on an executive boardroom screen, highlighting patent royalties, proprietary software licenses, and goodwill under the category of non-current intangibles.",
+                "mnemonic": "IN-TANGIBLE: You can't touch (tangere = touch) it physically, but its patent, code, or brand equity makes it an asset worth millions!"
+            },
+            "video": {
+                "description": "An executive corporate accounting webinar detailing IFRS 38 and US GAAP rules regarding the identification, balance sheet recognition, amortization, and impairment testing of intangibles in corporate mergers."
+            },
+            "toeicContext": {
+                "commonParts": [
+                    5,
+                    6,
+                    7
+                ],
+                "exampleQuestion": "Following the acquisition of the biomedical firm, the corporate accounting team recorded the newly acquired patent portfolio as amortizable _______ on the consolidated balance sheet.\n(A) intangibles\n(B) intangibility\n(C) intangibly\n(D) intangible",
+                "tips": "In TOEIC Part 5, distinguishing between plural nouns and abstract uncountable derivatives is a frequent test trap. Preceded by the adjective 'amortizable' and followed by a prepositional phrase locating items on the balance sheet, the blank requires a plural countable noun representing balance-sheet asset items: (A) 'intangibles' (tài sản vô hình). Choice (B) 'intangibility' is an abstract quality noun that cannot be pluralized or amortized, (C) is an adverb, and (D) is the singular form or adjective, which would require an article like 'an amortizable intangible' to function as a singular noun."
+            },
+            "synonyms": [
+                "intangible asset",
+                "intellectual property",
+                "non-physical asset",
+                "goodwill",
+                "proprietary asset",
+                "incorporeal property"
+            ],
+            "antonyms": [
+                "tangible asset",
+                "physical asset",
+                "hard asset",
+                "fixed asset",
+                "material property"
+            ],
+            "relatedWords": [
+                "amortization",
+                "impairment",
+                "goodwill",
+                "patent",
+                "trademark",
+                "copyright",
+                "intellectual property"
+            ]
+        },
+        {
+            "id": "finance-174",
+            "word": "interest",
+            "partOfSpeech": [
+                "noun"
+            ],
+            "category": "finance",
+            "level": "intermediate",
+            "toeicFrequency": 8,
+            "pronunciation": {
+                "ipa": "/ˈɪn.trəst/",
+                "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/interest--_us_1.mp3",
+                "syllableBreakdown": "in-ter-est",
+                "stressPattern": "Primary stress on first syllable, commonly syncopated to two syllables in standard fluent speech: IN-trest (/ˈɪn.trəst/, ●○) or occasionally IN-ter-est (/ˈɪn.tər.ɪst/, ●○○)",
+                "commonMistakes": "Learners frequently pronounce all three syllables distinctly and shift stress toward the end (*in-ter-EST*); standard English requires heavy primary stress on the first syllable (/ˈɪn.trəst/), typically syncopated into two syllables. In business contexts, non-native speakers often confuse the two distinct financial senses of 'interest': (1) the borrowing charge or yield calculated as a percentage of capital (e.g. 'interest rate', 'accrued interest'), and (2) an equity stake, ownership percentage, or legal title in an enterprise or asset (e.g. 'controlling interest', 'conflict of interest'). Another frequent grammatical error involves prepositions: one pays or charges interest 'on' a loan, earns interest 'on' an investment, but holds an equity interest 'in' a firm."
+            },
+            "etymology": {
+                "origin": "Anglo-Norman and Old French (interest) via Medieval Latin (interesse), from Classical Latin inter (between) + esse (to be)",
+                "rootWord": "interesse (to be between, make a difference, be of importance), from inter (between) + esse (to be)",
+                "rootMeaning": "'That which is between; a state of being of material concern, or legitimate compensation for financial loss'",
+                "evolution": "Originates from the Classical Latin impersonal verb phrase interest ('it is of importance, it matters, it makes a difference'), formed from inter (between) and esse (to be). In medieval Roman legal and canonist scholarship, interesse developed into a specialized legal substantive denoting the legitimate financial compensation or indemnity due to a creditor for the economic harm or opportunity loss (*damnum emergens* or *lucrum cessans*) suffered between the default date and final repayment. Because medieval religious usury bans prohibited levying a fee solely for the passage of time on a loan, lenders defended charges under the legal doctrine of interesse (compensation for incurred loss or foregone gain). By the 15th and 16th centuries, with the rise of international banking in Italy, Flanders, and England, the term shed its usury stigma and became the standard commercial designation for the finance fee paid by a debtor for the use of borrowed capital. By the 17th century, the word acquired the parallel financial meaning of an ownership share or financial stake in an enterprise.",
+                "relatedLanguages": [
+                    "French: intérêt (interest charge, equity stake, concern)",
+                    "Spanish: interés (interest fee, advantage, concern)",
+                    "Italian: interesse (interest, benefit, financial return)",
+                    "Portuguese: interesse (interest, profit, stake)",
+                    "German: Zinsen (interest on money) / Interesse (stake, interest)"
+                ],
+                "firstRecordedUse": "15th century (in Middle English legal and commercial loan transactions)"
+            },
+            "deepMeaning": {
+                "coreConcept": "In corporate finance, banking, and macroeconomics: (1) the contractual finance charge or cost of borrowing paid by a debtor to a creditor for the use of capital, or the investment yield earned by a depositor or bondholder, typically expressed as an annualized percentage rate (APR); and (2) an equity share, ownership stake, or legal title held by an investor or stakeholder in a corporate entity, syndicate, or physical asset.",
+                "spatialContext": "Corporate treasury departments, commercial banking loan origination desks, income statements under non-operating financing expenses, bond trading floors, and central bank monetary policy boards.",
+                "temporalContext": "Accrued on a daily basis, compounded monthly, quarterly, semi-annually, or annually, and serviced across loan maturity schedules spanning short-term commercial paper (30 to 90 days) to long-term bonds (10 to 30 years).",
+                "emotionalTone": "Quantitative, binding, strategic, and disciplined; reflects the cost of capital, inflation expectations, and investment return.",
+                "formalityLevel": "formal",
+                "connotation": "neutral"
+            },
+            "nativeMindset": {
+                "howNativesThink": "To native business executives, 'interest' is the financial expression of the 'time value of money'. A dollar today is worth more than a dollar tomorrow; interest compensates the lender for inflation, deferred consumption, and default risk. In corporate management, executives constantly differentiate between interest expense (the drag of debt servicing on net profit) and interest income (returns on idle cash reserves). Concurrently, corporate attorneys and directors stay vigilant regarding an 'interest' in a commercial entity—distinguishing a 'controlling interest' (holding majority voting rights) from a passive 'minority interest', and rigorously guarding against any 'conflict of interest' that violates fiduciary duty.",
+                "mentalImage": "A corporate treasurer analyzing a debt amortization spreadsheet on an office monitor, comparing monthly principal repayments against fluctuating interest expenses under newly announced central bank policy rates.",
+                "whenToUse": "Use when discussing loan terms, mortgage borrowing costs, bond yields, debt servicing on income statements, compound savings growth, benchmark central bank rates, equity stakes, and conflicts of interest.",
+                "whenNotToUse": "Do not confuse with 'principal' (the original base sum borrowed or invested before interest accumulates), 'dividend' (a discretionary profit distribution paid to equity shareholders), or 'fee' (a flat administrative transaction charge). Do not use 'interest' to describe an operating profit margin.",
+                "culturalContext": "In Anglo-American economics, central bank benchmark interest rates (set by the Federal Reserve, Bank of England, or European Central Bank) are the primary macroeconomic lever steering commercial borrowing, consumer demand, corporate capital expenditure, and currency valuations. In TOEIC Parts 3, 4, and 7, dialogues and passages routinely feature corporate borrowing negotiations, interest rate fluctuations, and corporate conflict-of-interest compliance policies."
+            },
+            "examples": {
+                "daily": [
+                    "Her high-yield online savings account pays four point five percent annual interest, which is calculated daily and credited monthly.",
+                    "To reduce his long-term finance charges, he paid an additional two hundred dollars directly toward the mortgage principal rather than paying only the required monthly interest.",
+                    "The credit card issuer charges twenty-one percent annual interest if cardholders fail to pay off their balance in full by the end of the billing cycle."
+                ],
+                "business": [
+                    "The commercial logistics firm secured a twenty-million-dollar revolving credit facility with a variable interest rate tied to the prime rate.",
+                    "Despite achieving record gross revenues, the company's net quarterly profit declined due to higher interest expenses on its outstanding bond debt.",
+                    "The venture capital consortium acquired a forty percent equity interest in the clean energy startup, securing two seats on the board of directors."
+                ],
+                "conversation": [
+                    "\"Did the bank approve our application for the warehouse expansion loan?\" — \"Yes, they approved the funding with a fixed annual interest rate of four point eight percent over a ten-year term.\"",
+                    "\"Why did our quarterly financial costs escalate so sharply?\" — \"Because recent central bank rate hikes increased our debt-servicing interest payments across all variable-rate loans.\"",
+                    "\"Why was the senior procurement director excluded from the vendor selection panel?\" — \"He owns a significant personal interest in one of the competing software suppliers, which presents a direct conflict of interest.\""
+                ],
+                "collocations": [
+                    "interest rate",
+                    "accrued interest",
+                    "compound interest",
+                    "controlling interest",
+                    "interest expense",
+                    "conflict of interest"
+                ]
+            },
+            "wordFamily": {
+                "noun": "interest, disinterest, uninterest",
+                "verb": "interest",
+                "adjective": "interested, interesting, disinterested, uninterested",
+                "adverb": "interestingly"
+            },
+            "visual": {
+                "imageKeyword": "interest rate loan calculation finance percentage banking ledger corporate treasury",
+                "imageDescription": "A financial analyst using a pen and calculator over a printed loan amortization schedule displaying principal and interest payment breakdowns alongside an upward-trending percentage graph.",
+                "mnemonic": "INTEREST: It costs money to be INTER (between) borrowing capital and returning it—that rental cost is INTEREST!"
+            },
+            "video": {
+                "description": "A financial economist explaining the mechanical relationship between central bank benchmark interest rates, commercial lending rates, and corporate debt-servicing capacity in annual earnings reports."
+            },
+            "toeicContext": {
+                "commonParts": [
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ],
+                "exampleQuestion": "In response to recent monetary policy shifts, Apex Commercial Bank announced that _______ rates on small-business credit lines would increase by half a percentage point starting next month.\n(A) interest\n(B) interested\n(C) interestingly\n(D) interesting",
+                "tips": "In TOEIC Part 5, high-frequency financial collocations and noun-noun compound modifiers are tested regularly. Preceding the plural head noun 'rates', the sentence requires the noun 'interest' (A) to form the compound noun phrase 'interest rates' (lãi suất). Choices (B) 'interested' and (D) 'interesting' are participial adjectives referring to personal feelings or curiosity, which cannot describe financial borrowing charges, and (C) is an adverb."
+            },
+            "synonyms": [
+                "finance charge",
+                "lending rate",
+                "borrowing cost",
+                "stake",
+                "equity share",
+                "holding"
+            ],
+            "antonyms": [
+                "principal",
+                "disinvestment",
+                "debt relief"
+            ],
+            "relatedWords": [
+                "principal",
+                "annual percentage rate",
+                "amortization",
+                "compounding",
+                "accrual",
+                "yield",
+                "dividend"
+            ]
+        }
+    ]
+}

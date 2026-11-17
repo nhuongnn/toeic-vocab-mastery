@@ -1,0 +1,357 @@
+{
+  "words": [
+    {
+      "id": "finance-200",
+      "word": "mortgagee",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˌmɔːr.ɡəˈdʒiː/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/mortgagee--_us_1.mp3",
+        "syllableBreakdown": "mort-ga-gee",
+        "stressPattern": "Secondary stress on first syllable, unstressed second syllable, primary stress on final syllable: mort-ga-GEE (/ˌmɔːr.ɡəˈdʒiː/, ˌ○ ○ ●)",
+        "commonMistakes": "Learners frequently pronounce the silent letter 't' (*mort-ga-gee* with an audible /t/), mispronounce the soft 'g' as a hard velar plosive /ɡ/ (*mort-ga-gee* with /ɡiː/ instead of the voiced affricate /dʒiː/), or mistakenly place primary stress on the first syllable as in the base word 'mortgage' (*MORT-ga-gee* instead of standard *mort-ga-GEE*). Most critically, non-native speakers routinely confuse the 'mortgagee' (the creditor or lending financial institution receiving the mortgage pledge) with the 'mortgagor' (the property borrower or debtor granting the mortgage)."
+      },
+      "etymology": {
+        "origin": "Anglo-Norman and Law French (*mortgagee*), formed from Old French *mort* (dead) + *gage* (pledge) with the Anglo-Norman legal passive suffix *-ee* (derived from Latin *-atus*)",
+        "rootWord": "mort (dead, from Latin mortuus) + gage (pledge, from Frankish *wadja / Proto-Germanic *wadją) + -ee (recipient of grant/pledge)",
+        "rootMeaning": "'The recipient or legal holder of a dead-pledge' (a security interest that dies when the loan is satisfied or causes property forfeiture upon default)",
+        "evolution": "In medieval Anglo-Norman common law jurisprudence (expounded by jurists like Glanvill and Sir Edward Coke), a real property loan secured by land was designated a 'dead pledge' (*mort gage*) because the land or its revenues were lost to the debtor if unredeemed, or the security died upon debt payoff. In legal conveyancing, the lending entity receiving legal conveyance or security interest as collateral for repayment was designated the *mortgagee*, whereas the debtor pledging the estate was the *mortgagor*. In modern commercial banking and property law, statutory enactments (such as the Law of Property Act 1925 in the UK and state recording acts in the US) formalized the mortgagee as the secured creditor with statutory rights of entry, receivership, foreclosure, and power of sale upon mortgagor default.",
+        "relatedLanguages": [
+          "French: créancier hypothécaire (mortgagee, hypothecary creditor)",
+          "Spanish: acreedor hipotecario (mortgagee, mortgage creditor)",
+          "Italian: creditore ipotecario (mortgagee, mortgage creditor)",
+          "German: Hypothekengläubiger (mortgage creditor, mortgagee)",
+          "Portuguese: credor hipotecário (mortgage creditor)"
+        ],
+        "firstRecordedUse": "Late 16th century (circa 1580s in English land conveyance rolls and common law equity treatises)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A financial lending institution, commercial bank, building society, or secured creditor that holds a mortgage lien against real property pledged by a borrower (the mortgagor) as collateral for a loan, maintaining the enforceable legal entitlement to foreclose and liquidate the underlying asset if loan obligations are breached.",
+        "spatialContext": "Commercial bank lending divisions, mortgage underwriting centers, title settlement conference rooms, county deed registry archives, and judicial foreclosure courtrooms.",
+        "temporalContext": "Active throughout the entire amortization lifecycle of the underlying debt (typically 15 to 30 years), spanning initial underwriting, ongoing escrow monitoring, and formal lien release upon full debt repayment.",
+        "emotionalTone": "Authoritative, contractual, risk-conscious, and institutional; emphasizes financial security, legal compliance, and capital protection.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers in banking, law, and real estate immediately identify the mortgagee as the lender—the banking corporation or credit union providing the funds. The instinctive native cognitive heuristic is that the legal suffix '-ee' denotes the recipient or beneficiary of a legal instrument (like employee, payee, grantee, or trustee), while '-or' / '-er' denotes the initiator or grantor (employer, payer, grantor, trustor). Consequently, the mortgagee is the bank that receives the mortgage pledge from the borrower. Outside pure legal contracts, natives most commonly observe 'mortgagee' on homeowner property insurance certificates, where banks insist on being named as 'loss payee / mortgagee' so insurance proceeds pay off the outstanding balance before any funds go to the homeowner.",
+        "mentalImage": "A commercial loan officer at a bank closing desk reviewing a title insurance binder and stamping an official mortgagee endorsement clause onto a deed of trust securing a multi-million-dollar corporate building.",
+        "whenToUse": "Use in legal deeds, commercial property loan agreements, title policies, hazard insurance certificates, and debt securitization filings to denote the lender holding the lien.",
+        "whenNotToUse": "Do not use in colloquial consumer conversations where 'lender', 'mortgage bank', or 'loan provider' is more natural. Never use 'mortgagee' to refer to the individual or company taking out the loan to buy real estate.",
+        "culturalContext": "In American and Commonwealth property transactions, the mortgagee exercises extensive institutional control through covenants requiring the property to be maintained and insured. Securitization markets bundle thousands of mortgages, where institutional entities like Fannie Mae, Freddie Mac, or designated nominees (such as MERS—Mortgage Electronic Registration Systems) serve as mortgagee of record to facilitate secondary market trading."
+      },
+      "examples": {
+        "daily": [
+          "Our residential property insurance policy must formally list the bank as the first mortgagee before our loan can close.",
+          "The letter from the county deeds office confirmed that the mortgagee had recorded a full satisfaction of lien on our home.",
+          "When submitting our property storm damage claim, the insurance adjuster notified the mortgagee before releasing repair disbursements."
+        ],
+        "business": [
+          "As the primary mortgagee, the commercial syndicate maintains a first-priority security lien over the industrial distribution complex.",
+          "Under the loan agreement covenants, the corporate borrower cannot lease or alter the premises without written consent from the mortgagee.",
+          "Upon full repayment of the thirty-year debt facility, the mortgagee filed a formal deed of reconveyance with the land registry."
+        ],
+        "conversation": [
+          "\"Why does our commercial property fire policy require a designated mortgagee clause?\" — \"Because the bank has a secured legal interest in the building and must receive compensation if the property is destroyed.\"",
+          "\"Has the title company verified whether the prior mortgagee released its encumbrance on the office park?\" — \"Yes, the recorded certificate of discharge was received and verified yesterday morning.\"",
+          "\"What occurs if the developer defaults on the construction loan covenants?\" — \"The mortgagee is legally entitled to exercise power of sale or appoint a receiver to oversee the asset.\""
+        ],
+        "collocations": [
+          "first mortgagee",
+          "mortgagee clause",
+          "rights of the mortgagee",
+          "designated mortgagee",
+          "mortgagee in possession",
+          "consent of the mortgagee"
+        ]
+      },
+      "wordFamily": {
+        "noun": "mortgagee, mortgage, mortgagor",
+        "verb": "mortgage",
+        "adjective": "mortgaged",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "commercial bank mortgage deed closing table officer pen title documents",
+        "imageDescription": "A close-up shot of a formal loan settlement closing table featuring a signed deed of trust highlighting the bank as designated mortgagee beside property keys, a calculator, and a notary stamp.",
+        "mnemonic": "MORTGAGEE ends with double 'E' like 'LEND-EE' or 'FEE RECEIVER' — the Mortgagee is the Bank that holds the deed and collects the interest!"
+      },
+      "video": {
+        "description": "A real estate finance professor explains the distinction between mortgagor and mortgagee in property lien priority, deed recording, and foreclosure proceedings."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Under the terms of the commercial financing covenant, the property developer must secure written approval from the primary _______ before undertaking major structural renovations.\n(A) mortgagor\n(B) mortgagee\n(C) mortgageable\n(D) mortgaging",
+        "tips": "In TOEIC Part 5, distinguishing between legal agent nouns ending in -or and recipient nouns ending in -ee is an advanced test point. In this contract context, the party granting approval to the developer (the borrower) is the lending financial institution holding the lien, which is the 'mortgagee' (B). Choice (A) 'mortgagor' refers to the borrowing property owner itself, (C) 'mortgageable' is an adjective, and (D) 'mortgaging' is a present participle or gerund."
+      },
+      "synonyms": [
+        "lender",
+        "secured creditor",
+        "mortgage holder",
+        "lienholder",
+        "loan provider",
+        "underwriting bank"
+      ],
+      "antonyms": [
+        "mortgagor",
+        "borrower",
+        "debtor",
+        "obligor"
+      ],
+      "relatedWords": [
+        "foreclosure",
+        "collateral",
+        "lien",
+        "conveyance",
+        "deed of trust",
+        "amortization",
+        "escrow"
+      ]
+    },
+    {
+      "id": "finance-201",
+      "word": "mortgagor",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˌmɔːr.ɡəˈdʒɔːr/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/mortgagor--_us_1.mp3",
+        "syllableBreakdown": "mort-ga-gor",
+        "stressPattern": "Secondary stress on first syllable, unstressed second syllable, primary stress on final syllable in legal context: mort-ga-GOR (/ˌmɔːr.ɡəˈdʒɔːr/, ˌ○ ○ ●); also pronounced /ˈmɔːr.ɡə.dʒər/ in general American",
+        "commonMistakes": "Learners often articulate the silent letter 't' (*mort-ga-gor* with /t/), pronounce the soft 'g' as a hard plosive /ɡ/ (*mort-ga-gor* with /ɡɔːr/ instead of affricate /dʒɔːr/), or confuse 'mortgagor' with 'mortgagee'. Non-native speakers frequently assume that because the bank 'provides the loan money', the bank must be the mortgagor; in legal fact, the mortgage is not the money, but the security pledge created and granted by the debtor-borrower to the bank, making the borrower the mortgagor."
+      },
+      "etymology": {
+        "origin": "Anglo-Norman and Law French (*mortgageor*), from Old French *mort* (dead) + *gage* (pledge) with the Anglo-Norman active agent suffix *-or* (from Latin *-ator*)",
+        "rootWord": "mort (dead, from Latin mortuus) + gage (pledge, from Frankish *wadja) + -or (agent noun / grantor)",
+        "rootMeaning": "'The grantor or creator of a dead-pledge' (the landowner who pledges real property as security for debt)",
+        "evolution": "In medieval English common law courts following the Norman Conquest, bilateral deeds required distinct terms for contractual counterparts. Because the debtor pledged property by executing a conditional conveyance of legal title to the creditor, the debtor was designated the *mortgageor* (modern *mortgagor*)—the grantor of the pledge. During the 17th and 18th centuries, the English Court of Chancery developed the doctrine of 'equity of redemption', establishing that the mortgagor retained an inalienable equitable title and the right to redeem the property upon full debt repayment, even if the strict contractual payment date had passed. Modern statutory property codes preserve the mortgagor as the debtor obligated to pay debt service, maintain property insurance, and discharge municipal taxes.",
+        "relatedLanguages": [
+          "French: débiteur hypothécaire (mortgagor, hypothecary debtor)",
+          "Spanish: deudor hipotecario (mortgagor, mortgage debtor)",
+          "Italian: debitore ipotecario (mortgagor, mortgage debtor)",
+          "German: Hypothekenschuldner (mortgage debtor, mortgagor)",
+          "Portuguese: devedor hipotecário (mortgage debtor)"
+        ],
+        "firstRecordedUse": "Late 16th century (circa 1580s in English land conveyance rolls and common law casebooks)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A real estate property owner, commercial enterprise, or borrower that pledges legal title or a security lien on real property to a lender (the mortgagee) as collateral for a loan, maintaining equitable possession and the right of redemption while bound by financial debt service and maintenance covenants.",
+        "spatialContext": "Real estate settlement offices, notary public desks, residential property purchase meetings, municipal title registration bureaus, and commercial loan closing suites.",
+        "temporalContext": "Spans the full duration of the loan facility (typically 15 to 30 years), governed by monthly principal-and-interest payment schedules, periodic escrow adjustments, and annual property insurance updates.",
+        "emotionalTone": "Committed, accountable, legally bound, and prudent; balances property ownership aspirations with serious long-term financial liabilities.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers with legal, financial, or property experience understand that 'mortgagor' is the formal legal designation for the homebuyer, property owner, or commercial borrower. The native linguistic key is that the mortgagor is the 'giver' of the mortgage—because legally, a mortgage is the security pledge transferred to the bank, not the loan capital itself. In everyday retail vernacular, natives say 'borrower' or 'homebuyer', but the moment formal legal contracts, deed of trust covenants, default notices, or foreclosure actions appear, 'mortgagor' is the precise statutory term used. Natives also recognize that the mortgagor holds the beneficial 'equity' in the property as values rise and principal decreases.",
+        "mentalImage": "A commercial property purchaser sitting across from a closing attorney, systematically signing and initialing each page of a multi-page commercial mortgage deed in the designated 'Signature of Mortgagor' block.",
+        "whenToUse": "Use in formal real estate instruments, deeds of trust, title conveyances, mortgage covenants, and foreclosure correspondence to denote the borrower pledging property as security.",
+        "whenNotToUse": "Do not use in casual consumer marketing, ordinary banking branch discussions, or friendly conversations where 'homeowner', 'homebuyer', or 'borrower' is expected. Never use it to describe the bank or lending corporation.",
+        "culturalContext": "In modern Western property law, the rights of the mortgagor are protected by extensive consumer credit legislation, such as the Real Estate Settlement Procedures Act (RESPA) and Truth in Lending Act (TILA) in the US. Fundamental to Anglo-American jurisprudence is the principle that a mortgagor's equity of redemption cannot be 'clogged' or forfeited without rigorous statutory notice and judicial foreclosure protections."
+      },
+      "examples": {
+        "daily": [
+          "As the mortgagor, my sister was responsible for paying local school and property taxes on her suburban home.",
+          "The escrow agent instructed the mortgagor to bring government-issued identification and certified funds to the closing.",
+          "After ten years of disciplined amortization payments, the mortgagor had accumulated forty percent equity in the property."
+        ],
+        "business": [
+          "The commercial credit facility mandates that the corporate mortgagor keep all industrial machinery insured at replacement value.",
+          "Should the mortgagor breach the loan covenants by failing to remit quarterly payments, the creditor may accelerate the debt balance.",
+          "The mortgagor provided the lender with audited balance sheets to confirm compliance with debt-service coverage thresholds."
+        ],
+        "conversation": [
+          "\"What primary obligations does this deed impose upon the mortgagor?\" — \"The mortgagor must remit monthly principal and interest payments and maintain comprehensive hazard coverage.\"",
+          "\"Did the title examination disclose any outstanding tax judgments against the mortgagor?\" — \"No, the records indicate the mortgagor maintains clear title with zero secondary encumbrances.\"",
+          "\"Why did the financial institution dispatch a default notification to the mortgagor?\" — \"The mortgagor neglected to provide proof of required flood insurance prior to the contractual deadline.\""
+        ],
+        "collocations": [
+          "default by the mortgagor",
+          "covenants of the mortgagor",
+          "obligations of the mortgagor",
+          "equity of the mortgagor",
+          "rights of the mortgagor",
+          "insolvent mortgagor"
+        ]
+      },
+      "wordFamily": {
+        "noun": "mortgagor, mortgagee, mortgage",
+        "verb": "mortgage",
+        "adjective": "mortgaged",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "property borrower signing real estate deed notary closing desk mortgagor",
+        "imageDescription": "A top-down view of a business executive signing a multi-page commercial deed of trust with a pen, positioned directly above the printed line reading 'Authorized Signature of Mortgagor'.",
+        "mnemonic": "MORTGAGOR ends with -OR like 'OWNER' or 'OBLIGOR' — the Mortgagor is the property Owner who owes the debt and pledges the building!"
+      },
+      "video": {
+        "description": "A property law webinar examining the statutory obligations, maintenance covenants, and equity of redemption rights held by the mortgagor in commercial lending."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "According to the property covenant outlined in Section 8, the _______ is obligated to maintain adequate casualty insurance on the industrial warehouse throughout the loan term.\n(A) mortgagor\n(B) mortgage\n(C) mortgaging\n(D) mortgaged",
+        "tips": "TOEIC Part 5 frequently tests the identification of appropriate nominal forms within formal commercial contracts. Preceding the predicate verb 'is obligated', the sentence requires a subject noun referring to the responsible party (the borrower/property owner), making 'mortgagor' (A) the correct choice. Choice (B) 'mortgage' is the inanimate loan agreement itself, (C) 'mortgaging' is a gerund/participle, and (D) 'mortgaged' is an adjective or past participle."
+      },
+      "synonyms": [
+        "borrower",
+        "debtor",
+        "obligor",
+        "property owner",
+        "pledgor",
+        "secured debtor"
+      ],
+      "antonyms": [
+        "mortgagee",
+        "lender",
+        "secured creditor",
+        "lienholder"
+      ],
+      "relatedWords": [
+        "equity of redemption",
+        "deed of trust",
+        "foreclosure",
+        "collateral",
+        "debt service",
+        "promissory note",
+        "covenant"
+      ]
+    },
+    {
+      "id": "finance-202",
+      "word": "mutual fund",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˈmjuː.tʃu.əl ˌfʌnd/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/mutual_fund--_us_1.mp3",
+        "syllableBreakdown": "mu-tu-al fund",
+        "stressPattern": "Primary stress on first syllable of 'mutual', secondary stress on 'fund': MU-tu-al FUND (/ˈmjuː.tʃu.əl ˌfʌnd/, ● ○ ○ ˌ●)",
+        "commonMistakes": "Learners often omit the palatal glide /j/ after /m/ in 'mutual', pronouncing it as */ˈmuː.tʃu.əl/ (*MOO-tual*) instead of standard /ˈmjuː.tʃu.əl/. Another mistake is pronouncing 'mutual' as two syllables (*mju-tʃəl*), or pronouncing the vowel in 'fund' as /uː/ or /ʊ/ (*foond*) rather than the central open-mid vowel /ʌ/. Conceptually, learners frequently confuse a mutual fund (an open-end investment vehicle priced once daily at Net Asset Value) with an exchange-traded fund (ETF, traded intraday on an exchange) or a hedge fund (an unregulated pooled vehicle for accredited investors)."
+      },
+      "etymology": {
+        "origin": "Compound of Middle French *mutuel* (from Latin *mutuus*, meaning 'reciprocal, borrowed, done in exchange') and French *fond* / Latin *fundus* (bottom, foundation, piece of land, capital stock)",
+        "rootWord": "mutuus (reciprocal, mutual) + fundus (foundation, estate, capital reserve)",
+        "rootMeaning": "'A pooled financial capital reserve owned reciprocally and proportionally by all contributing participants'",
+        "evolution": "The concept of pooled investment originated in the Dutch Republic in 1774, when merchant Adriaan van Ketwich established 'Eendragt Maakt Magt' ('Unity Creates Strength') to provide small investors with diversified exposure to foreign sovereign bonds. In 1868, the Foreign & Colonial Government Trust was formed in London to protect ordinary investors by spreading risk across diverse holdings. The modern open-ended mutual fund—offering continuous share issuance and daily liquidity at Net Asset Value (NAV)—debuted in Boston in 1924 with the launch of the Massachusetts Investors Trust. Following the Wall Street Crash of 1929, the US Congress enacted the Investment Company Act of 1940, establishing the rigorous regulatory, accounting, and fiduciary framework that governs modern registered investment companies worldwide.",
+        "relatedLanguages": [
+          "French: fonds commun de placement (FCP) / organisme de placement collectif (OPCVM)",
+          "Spanish: fondo de inversión mutuo / fondo común de inversión",
+          "Italian: fondo comune di investimento",
+          "German: Investmentfonds / offener Publikumsfonds",
+          "Portuguese: fundo mútuo de investimento / fundo comum"
+        ],
+        "firstRecordedUse": "Early 20th century (circa 1920s in American investment banking and regulatory publications)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A professionally managed investment vehicle operated by an asset management firm that pools capital from numerous retail and institutional investors to acquire a diversified portfolio of securities (such as equities, corporate bonds, government gilts, and money market instruments), issuing shares that represent proportional ownership and are priced daily at Net Asset Value (NAV).",
+        "spatialContext": "Asset management trading desks, wealth management advisory offices, corporate pension administrative departments, online retail brokerage platforms, and securities regulatory bodies (e.g., SEC, FCA).",
+        "temporalContext": "Priced once per day at 4:00 PM EST market close based on Net Asset Value (NAV); typically held across multi-year or multi-decade horizons for retirement accumulation, corporate endowments, and pension funding.",
+        "emotionalTone": "Disciplined, prudent, diversified, and fiduciary-minded; mitigates idiosyncratic security risk through broad portfolio diversification.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native English speakers, 'mutual fund' is inextricably linked with personal retirement planning and long-term financial security. Most corporate professionals interact with mutual funds through employer-sponsored retirement programs (such as 401(k) plans in the US, RRSPs in Canada, or superannuation in Australia), where payroll deductions are systematically invested in target-date or index mutual funds. When evaluating a mutual fund, native speakers instinctively look at three critical factors: the 'expense ratio' (annual fee drag), the 'track record' (performance over 5 or 10 years), and 'diversification' (avoiding single-stock collapse). In corporate communications, companies frequently update employees about changes to the mutual fund menu offered in the corporate savings plan.",
+        "mentalImage": "A financial advisor and a corporate executive seated at a conference table, reviewing a tablet display that illustrates a colorful asset allocation pie chart of a balanced mutual fund holding international equities, domestic corporate bonds, and liquid treasury notes.",
+        "whenToUse": "Use when discussing collective investment schemes, diversified retail investing, corporate 401(k) retirement offerings, asset allocation strategies, prospectus disclosures, and fund management fees.",
+        "whenNotToUse": "Do not use when specifically referring to exchange-traded funds (ETFs) that trade continuously during market hours, private hedge funds restricted to accredited high-net-worth investors, venture capital funds, or individual company stocks.",
+        "culturalContext": "Mutual funds transformed Anglo-American middle-class wealth in the post-WWII era by allowing everyday employees to participate in equity market expansion. In corporate human resources and corporate governance, the selection of fiduciary-compliant mutual fund options for company pension schemes is subject to rigorous ERISA regulatory oversight in the United States, making employee retirement seminars and fund performance reports frequent subjects in TOEIC Parts 3, 4, and 7."
+      },
+      "examples": {
+        "daily": [
+          "She invests ten percent of her monthly salary into a low-cost index mutual fund to save for her daughter's higher education.",
+          "Our financial planner recommended rebalancing out of volatile individual stocks and into a conservative bond mutual fund.",
+          "Before transferring funds into the mutual fund, he downloaded the prospectus to examine the annual management fees and expense ratio."
+        ],
+        "business": [
+          "The human resources committee added three socially responsible mutual fund options to the corporate retirement savings program.",
+          "The institutional asset management division reported a record four billion dollars of net inflows into its global equity mutual fund.",
+          "Corporate treasury allocated surplus operational cash into a prime money market mutual fund to preserve principal while generating interest."
+        ],
+        "conversation": [
+          "\"Are you selecting individual technology stocks for your portfolio?\" — \"No, I prefer an index mutual fund because it offers broad sector diversification with minimal management overhead.\"",
+          "\"Why did our investment committee replace the international growth mutual fund?\" — \"Its high expense ratio and consistent underperformance relative to the benchmark index over three consecutive years warranted the change.\"",
+          "\"How quickly can our corporate accounts liquidate shares in the mutual fund?\" — \"Redemption orders submitted prior to the four o'clock market close will settle at that day's Net Asset Value within two business days.\""
+        ],
+        "collocations": [
+          "invest in a mutual fund",
+          "index mutual fund",
+          "mutual fund prospectus",
+          "mutual fund manager",
+          "mutual fund expense ratio",
+          "balanced mutual fund"
+        ]
+      },
+      "wordFamily": {
+        "noun": "mutual fund, mutuality, fund, funding",
+        "verb": "fund",
+        "adjective": "mutual, funded, funding",
+        "adverb": "mutually"
+      },
+      "visual": {
+        "imageKeyword": "diversified mutual fund investment portfolio pie chart tablet financial advisor",
+        "imageDescription": "A financial planner's tablet on a mahogany boardroom desk displaying a multicolored asset allocation donut chart for a balanced mutual fund, detailing equity, bond, and cash percentages beside financial reports.",
+        "mnemonic": "MUTUAL FUND: Thousands of individual investors share a MUTUAL interest in one giant diversified FUND of blue-chip assets!"
+      },
+      "video": {
+        "description": "An asset management portfolio specialist explains how open-end mutual funds aggregate retail investor capital, compute Net Asset Value (NAV), and execute asset diversification strategies."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Employees enrolled in the corporate retirement program may allocate their monthly contributions across six different _______ funds managed by Vanguard Capital.\n(A) mutual\n(B) mutually\n(C) mutuality\n(D) mutualize",
+        "tips": "In TOEIC Part 5, questions frequently test established commercial compounds and adjective-noun collocations. In this sentence, the blank directly modifies the plural noun 'funds'. The adjective 'mutual' (A) is required to form the standard financial compound 'mutual funds' (quỹ tương hỗ / quỹ đầu tư mở). Choice (B) 'mutually' is an adverb, (C) 'mutuality' is an abstract noun, and (D) 'mutualize' is a verb."
+      },
+      "synonyms": [
+        "investment fund",
+        "pooled investment vehicle",
+        "open-end fund",
+        "collective investment scheme",
+        "unit trust",
+        "diversified fund"
+      ],
+      "antonyms": [
+        "individual stock",
+        "single equity holding",
+        "direct shareholding"
+      ],
+      "relatedWords": [
+        "net asset value",
+        "portfolio manager",
+        "prospectus",
+        "expense ratio",
+        "diversification",
+        "asset allocation",
+        "dividend yield"
+      ]
+    }
+  ]
+}

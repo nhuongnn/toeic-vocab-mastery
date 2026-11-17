@@ -1,528 +1,402 @@
 import json
 
-data = {
-  "words": [
-    {
-      "id": "dining-061",
-      "word": "bistro",
-      "partOfSpeech": [
-        "noun"
+entries = [
+  {
+    "id": "finance-200",
+    "word": "mortgagee",
+    "partOfSpeech": ["noun"],
+    "category": "finance",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/ˌmɔːr.ɡɪˈdʒiː/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/mortgagee--_us_1.mp3",
+      "syllableBreakdown": "mort-ga-gee",
+      "stressPattern": "Secondary stress on the first syllable, unstressed second syllable, and primary stress on the final syllable: mort-ga-GEE (/ˌmɔːr.ɡɪˈdʒiː/, ˌ○●)",
+      "commonMistakes": "Learners often erroneously articulate the silent letter 't' in 'mortgage' (*mort-ga-gee* instead of /ˈmɔːr.ɡɪˈdʒiː/). Additionally, many misplace the primary stress onto the initial syllable (*MORT-ga-gee*) rather than the ultimate syllable (*mort-ga-GEE*); in English legal terminology, nouns terminating in the suffix '-ee' (such as trustee, obligee, payee) consistently place primary stress on the final syllable. Conceptually, non-native speakers frequently confuse the legal roles, mistakenly assuming that the 'mortgagee' is the borrower because the borrower 'receives the mortgage money'; in legal reality, the mortgage is the security pledge on the property, and the mortgagee is the lending institution that receives that pledge."
+    },
+    "etymology": {
+      "origin": "Formed in Anglo-Norman and Middle French legal traditions by combining 'mortgage' (Old French mort gaige, literally 'dead pledge') with the legal passive suffix '-ee' (derived from the Old French past participle ending -é, from Latin -atus)",
+      "rootWord": "mort (dead, from Latin mortuus) + gage (pledge, from Frankish *waddi) + -ee (recipient of legal conveyance)",
+      "rootMeaning": "'The recipient or legal holder of a dead pledge' (a pledge of real property that dies to the debtor if forfeited, or dies to the creditor upon complete repayment of the debt)",
+      "evolution": "The term originated in the late 16th century (circa 1580s) within English common law conveyancing to establish a clear distinction between the party creating a mortgage lien and the party receiving it. In medieval English law, a mortgage was distinguished from a 'vifgage' ('living pledge') because the rents and profits of the land did not automatically reduce the underlying debt. In Coke's Institutes and subsequent commercial jurisprudence, 'mortgagee' became the standard legal designation for the creditor or banking institution holding the legal charge or security deed over the real property until full satisfaction of the loan.",
+      "relatedLanguages": [
+        "French: créancier hypothécaire (mortgage creditor / mortgagee)",
+        "Spanish: acreedor hipotecario (mortgage creditor / mortgagee)",
+        "Italian: creditore ipotecario (mortgage creditor)",
+        "German: Hypothekengläubiger (mortgage creditor / mortgagee)",
+        "Portuguese: credor hipotecário (mortgage creditor)"
       ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-        "ipa": "/ˈbiː.stroʊ/",
-        "syllableBreakdown": "bis-tro",
-        "stressPattern": "primary stress on first syllable (BIS-tro)",
-        "commonMistakes": "Learners often mistakenly voice the 's' as /z/ (*BIZ-tro*), misplace primary stress onto the final syllable (*bis-TRO*), or pronounce the terminal vowel as a short open /ɒ/ instead of the diphthong /oʊ/."
-      },
-      "etymology": {
-        "origin": "Borrowed from 19th-century French 'bistrot' or 'bistro' (small tavern, wine merchant, or neighborhood restaurant)",
-        "rootWord": "French 'bistrot' / 'bistraud' (regional northern French slang for a wine seller's boy or innkeeper) or Parisian slang 'bistrouille' (cheap spirits or adulterated coffee-brandy mixture)",
-        "rootMeaning": "'A small tavern or neighborhood wine shop keeper'; popular folklore links the term to Russian 'быстро' (bystro, 'quickly'), supposedly shouted by Russian Cossack troops occupying Paris in 1814, though philologists identify this as an etymological urban legend and favor derivation from French dialectal 'bistraud'",
-        "evolution": "Appearing in Parisian street argot in the 1880s, 'bistrot' originally denoted modest wine establishments serving simple, hearty daily fare to laborers and neighborhood regulars. Throughout the 20th century, it came to embody quintessential French casual dining with chalkboard menus (ardoises), zinc bars, and robust cooking. In contemporary international business English, 'bistro' refers to any small, informal, high-quality restaurant or upscale café offering seasonal dining and wine in a convivial setting.",
-        "relatedLanguages": [
-          "French: bistrot / bistro",
-          "Spanish: bistró",
-          "Italian: bistrot / bistrò",
-          "German: Bistro"
-        ],
-        "firstRecordedUse": "Late 19th century (French c. 1884; English loanword attested c. 1920s during the interwar culinary travel period in Paris)"
-      },
-      "deepMeaning": {
-        "coreConcept": "A small, informal, intimate restaurant serving moderately priced, freshly cooked meals, robust seasonal dishes, wine, and coffee, typically characterized by close table arrangements, relaxed table service, and chalkboard daily specials.",
-        "spatialContext": "Charming urban storefronts, sidewalk terrace seating with striped canvas awnings, compact dining rooms furnished with bentwood Thonet chairs, zinc-topped bars, mirrored walls, and brass coat rails.",
-        "temporalContext": "Frequented during weekday business lunches (12:00 PM – 2:00 PM), casual evening dinner meetings with colleagues or visiting clients, and weekend brunches.",
-        "emotionalTone": "Warm, welcoming, unpretentious, convivial, and tastefully relaxed.",
-        "formalityLevel": "neutral",
-        "connotation": "positive"
-      },
-      "nativeMindset": {
-        "howNativesThink": "To a native English speaker, 'bistro' evokes the feeling of excellent, unpretentious cooking without the stiff protocol, exorbitant prices, or rigid dress codes of fine dining (haute cuisine). It suggests character, artisanal warmth, and intimacy—a venue where colleagues can unwind over steak frites, mussels, or a glass of wine while conducting candid, productive conversations.",
-        "mentalImage": "A bustling corner restaurant at dusk with amber pendant lighting casting a warm glow through large picture windows; patrons sit closely at small wooden tables enjoying bowls of French onion soup and warm baguettes while a handwritten chalkboard on an exposed brick wall displays the chef's seasonal specials.",
-        "whenToUse": "Use when describing small, casual-yet-chic eateries, sidewalk cafés with full meal menus, or neighborhood restaurants specializing in simple, high-quality European or contemporary cuisine (e.g., 'Let's meet at that French bistro across from the convention center').",
-        "whenNotToUse": "Do not use for fast-food franchise outlets, greasy spoon diners, corporate self-service cafeterias, shopping mall food courts, or multi-course formal banquet halls.",
-        "culturalContext": "In metropolitan corporate culture (such as New York, London, Sydney, or Toronto), choosing a bistro for a business meal indicates a desire for genuine rapport-building, casual negotiation, and authentic hospitality rather than formal executive posturing."
-      },
-      "examples": {
-        "daily": [
-          "We stopped by the neighborhood bistro on Elm Street for a quick lunch of quiche and green salad.",
-          "The cozy corner bistro was packed with local residents enjoying the evening jazz performance.",
-          "She celebrated her promotion with close friends at an authentic French bistro down by the harbor."
-        ],
-        "business": [
-          "The account executive reserved a private booth at a nearby bistro to discuss contract renewals with the client in a relaxed setting.",
-          "During the three-day regional sales symposium, conference attendees received meal vouchers valid at several partner bistros downtown.",
-          "Rather than organizing another stiff hotel banquet, the marketing team celebrated their successful product launch at an artisan bistro."
-        ],
-        "conversation": [
-          "\"Where should we take the visiting regional directors for dinner tonight?\" \"I booked a table at the French bistro on Market Square—it's intimate, quiet enough for discussion, and the food is outstanding.\"",
-          "\"Are you planning to eat at the corporate cafeteria today?\" \"Honestly, I'd rather walk two blocks to the bistro; their soup and panini lunch special is unbeatable.\""
-        ],
-        "collocations": [
-          "French bistro",
-          "neighborhood bistro",
-          "sidewalk bistro",
-          "cozy bistro",
-          "bistro menu",
-          "dine at a bistro"
-        ]
-      },
-      "wordFamily": {
-        "noun": "bistro",
-        "verb": "",
-        "adjective": "bistro-style",
-        "adverb": ""
-      },
-      "visual": {
-        "imageKeyword": "cozy Parisian bistro sidewalk outdoor seating cafe chalkboard menu",
-        "imageDescription": "An inviting Parisian-style bistro at twilight with warm string lights illuminating round outdoor marble café tables, wicker bistro chairs, a chalkboard menu easel, and patrons conversing over dinner and wine.",
-        "mnemonic": "BISTRO: Step into a BISTRO for a Bite, Sip, and Taste to Relieve Overwork!"
-      },
-      "video": {
-        "description": "A hospitality and culinary documentary exploring classic Parisian bistros, demonstrating how chalkboard menus, daily market sourcing, and intimate seating cultivate a welcoming dining atmosphere."
-      },
-      "toeicContext": {
-        "commonParts": [
-          1,
-          3,
-          7
-        ],
-        "exampleQuestion": "Because the hotel's main dining hall was closed for scheduled refurbishments, guests were invited to enjoy complimentary breakfast at the adjacent _____ on Bellevue Avenue. (A) bistro (B) bistros (C) bistroic (D) bistroware",
-        "tips": "In TOEIC Parts 3 and 7, 'bistro' frequently appears as a setting for client entertainment and casual business meals. In Part 5 questions, identify the required singular countable noun following the definite article 'the' and adjective 'adjacent' (choice A). Watch out for artificial adjective or noun suffixes like '-ic' or '-ware' designed as distractors."
-      },
-      "synonyms": [
-        "brasserie",
-        "café",
-        "eatery",
-        "trattoria",
-        "tavern",
-        "gastropub"
+      "firstRecordedUse": "Late 16th century (circa 1584 in English land tenure records and legal commentaries)"
+    },
+    "deepMeaning": {
+      "coreConcept": "The lending institution, commercial bank, credit union, or private creditor that advances funds to a real estate purchaser and holds a formal legal mortgage lien or security interest against the borrower's real property until the debt is satisfied in full.",
+      "spatialContext": "Commercial bank lending branches, mortgage underwriting centers, title escrow closing rooms, county land recorder offices, and real estate legal practices.",
+      "temporalContext": "Spans the entire lifespan of the underlying real estate loan (typically 15 to 30 years) until the debt is paid in full, refinanced, assigned to a secondary market investor, or discharged.",
+      "emotionalTone": "Institutional, legally binding, authoritative, and fiduciary; conveys financial solvency, contractual entitlement, and regulatory security.",
+      "formalityLevel": "formal",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "In native English real estate and banking parlance, the pair 'mortgagor' and 'mortgagee' is immediately recognized from loan closing binders, title insurance commitments, and property deeds. To a loan officer or property lawyer, the mortgagee is always the lender. A universal mnemonic taught in North American real estate licensing courses is: 'MortgagEE has two E's like lEndEr, while mortgagOR has an O like bOrrOwer.' While everyday consumers simply say 'the mortgage lender' or 'the bank' at dinner, 'mortgagee' is mandatory in legal conveyances, property deed riders, hazard insurance policies ('Mortgagee Clause'), and formal default notices.",
+      "mentalImage": "A commercial loan officer at an institutional bank counter-signing a formal mortgage deed beneath a corporate insignia, alongside a recorded title document stamped 'Mortgagee: First National Fidelity Bank.'",
+      "whenToUse": "Use in legal contracts, closing settlement statements (HUD-1 / Closing Disclosure), hazard insurance policies (specifically the 'mortgagee clause' naming the bank as loss payee), title searches, loan assignment agreements, and commercial real estate transactions.",
+      "whenNotToUse": "Do not use in casual everyday conversation when referring to shopping for home loans (say 'mortgage lender', 'bank', or 'loan provider'). Do not confuse with 'mortgagor' (the borrower/homebuyer who grants the mortgage).",
+      "culturalContext": "In Anglo-American real estate finance, mortgagees hold immense institutional influence, originating trillions of dollars in residential and commercial debt. Homeowners are contractually required by the mortgagee to maintain comprehensive hazard and flood insurance policies featuring a specific 'Mortgagee Loss Payable Clause,' ensuring that the bank's financial interest is shielded if the property is damaged. In the event of an incurable borrower default, the mortgagee holds the statutory right to initiate foreclosure proceedings to recover the unpaid balance."
+    },
+    "examples": {
+      "daily": [
+        "When arranging her homeowner's hazard insurance policy, Clara had to provide her agent with the official mailing address and loan reference number for the mortgagee.",
+        "After making his final monthly installment, David received a certificate of satisfaction verifying that the mortgagee had released all claims against his residential property.",
+        "The letter from the county tax assessor noted that formal notices of assessment had been delivered to both the homeowner and the designated mortgagee."
       ],
-      "antonyms": [],
-      "relatedWords": [
-        "appetizer",
-        "chalkboard menu",
-        "prix fixe",
-        "patio seating",
-        "casual dining",
-        "sommelier",
-        "table service"
+      "business": [
+        "Under Section 4 of the commercial deed of trust, the mortgagee retains the contractual right to inspect the warehouse premises annually to verify structural maintenance.",
+        "If the real estate developer defaults on quarterly interest installments, the mortgagee may exercise its statutory power of sale to recoup the outstanding principal balance.",
+        "A syndicate of regional banks served as the primary mortgagee, underwriting forty million dollars in secured debt for the downtown mixed-use office tower."
+      ],
+      "conversation": [
+        "\"Does our builder's risk insurance policy list the financing bank as an additional insured?\" — \"Yes, the underwriter confirmed that Meridian National Bank is officially recorded as the primary mortgagee.\"",
+        "\"Why hasn't the county title registry updated the deed to show that our property is lien-free?\" — \"The title officer explained that the mortgagee has thirty business days following full payoff to submit the formal lien release document.\"",
+        "\"What happens if a property owner fails to pay property taxes on a mortgaged commercial building?\" — \"The mortgagee will typically pay the delinquent taxes directly to prevent a municipal tax lien from taking priority over its mortgage.\""
+      ],
+      "collocations": [
+        "mortgagee clause",
+        "rights of the mortgagee",
+        "first mortgagee",
+        "mortgagee in possession",
+        "named mortgagee",
+        "consent of the mortgagee"
       ]
     },
-    {
-      "id": "dining-062",
-      "word": "blend",
-      "partOfSpeech": [
-        "noun"
+    "wordFamily": {
+      "noun": "mortgage, mortgagee, mortgagor",
+      "verb": "mortgage",
+      "adjective": "mortgageable, mortgaged",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "commercial bank loan officer reviewing mortgage deed documents with corporate seal",
+      "imageDescription": "A formal closing desk where a banking officer places a corporate seal and signature onto a real estate mortgage agreement, officially registering the bank as the secured mortgagee.",
+      "mnemonic": "MORTGAGEE: Remember the double 'E'—a mortgagEE is the lEndEr (the bank receiving the pledge), whereas the mortgagOR is the bOrrOwer (the homeowner giving the pledge)."
+    },
+    "video": {
+      "description": "An instructional real estate finance seminar outlining the legal distinctions between a mortgagor and a mortgagee, illustrating how lien priority and foreclosure rights operate under state property laws."
+    },
+    "toeicContext": {
+      "commonParts": [
+        5,
+        6,
+        7
       ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-        "ipa": "/blɛnd/",
-        "syllableBreakdown": "blend",
-        "stressPattern": "single syllable with full vowel stress (BLEND)",
-        "commonMistakes": "Learners sometimes confuse the open-mid vowel /ɛ/ with /æ/, pronouncing the word like 'bland' (which means unflavored or dull), or devoice the final consonant /d/ to /t/ (*blent*)."
-      },
-      "etymology": {
-        "origin": "Derived from Middle English 'blenden' (to mix together, mingle), from Old English 'blandan' (to mix, confound, make turbid)",
-        "rootWord": "Proto-Germanic *blandaną (to mix, obscure), cognate with Old Norse 'blanda' (to mix, stir), Old Saxon 'blandan', and Gothic 'blandan'",
-        "rootMeaning": "'To stir together or intermingle distinct ingredients into a harmonious whole'; originally associated with combining liquids or drinks, and later adapted commercially for agricultural produce",
-        "evolution": "Primarily a verb in Old and Middle English, the noun sense denoting 'a harmonious mixture of diverse varieties of tea, coffee, wine, or tobacco' emerged during the 19th-century expansion of global commodity trading. Merchants developed proprietary 'house blends' of tea leaves and coffee beans from different continents (such as combining Indonesian Java with Yemeni Mocha) to achieve balanced flavor profiles and ensure consistent taste regardless of seasonal harvest fluctuations.",
-        "relatedLanguages": [
-          "German: Blend (commercial loanword) / Mischung / Verschnitt (wine)",
-          "French: assemblage (wine) / mélange (coffee, tea)",
-          "Spanish: mezcla / ensamblaje",
-          "Italian: miscela"
-        ],
-        "firstRecordedUse": "Late 17th century as a general combination; commercial culinary noun use (for coffee, tea, and spirits) widely documented c. 1850–1865"
-      },
-      "deepMeaning": {
-        "coreConcept": "A carefully curated and balanced combination of two or more distinct varieties, origins, or grades of food or beverage ingredients—especially coffee beans, tea leaves, wine varietals, spices, or olive oils—crafted to achieve a unified, complex, and dependable flavor profile.",
-        "spatialContext": "Coffee roasteries, artisanal tea salons, winery tasting rooms, commercial test kitchens, and upscale restaurant beverage stations.",
-        "temporalContext": "Formulated seasonally or maintained consistently year-round to guarantee identical taste experiences across variable agricultural harvest cycles.",
-        "emotionalTone": "Artisanal, harmonious, refined, balanced, and sophisticated.",
-        "formalityLevel": "neutral",
-        "connotation": "positive"
-      },
-      "nativeMindset": {
-        "howNativesThink": "In culinary and dining contexts, native speakers view a 'blend' as a product of deliberate craftsmanship and balance rather than an accidental mixture. An expert (such as a roastmaster, tea blender, or master vintner) selects complementary components—pairing an acidic, floral bean with an earthy, full-bodied bean—to create a smooth, rounded taste. It stands in contrast to 'single-origin', which showcases the eccentricities of an individual estate.",
-        "mentalImage": "Roasted coffee beans of varying caramel and chocolate hues cascading from a burlap sack onto a cupping table, where a master roaster evaluates ceramic tasting bowls next to a chalkboard sign announcing the café's 'Signature Autumn Roast Blend'.",
-        "whenToUse": "Use when referring to deliberate combinations of coffee beans, tea leaves, wine grape varieties, spice formulas, or oil pressings (e.g., 'house blend', 'breakfast blend', 'Bordeaux blend', 'Cajun spice blend').",
-        "whenNotToUse": "Do not confuse with 'bland' (lacking flavor or seasoning). Do not use when describing items derived from a single farm or estate without mixing (use 'single-origin' or 'varietal'). Avoid using for pharmaceutical or industrial mixtures (use 'compound' or 'amalgam').",
-        "culturalContext": "In modern corporate workplace culture, providing a high-grade 'house blend' of coffee in staff lounges or executive pantries is considered a baseline hospitality standard and a tangible employee wellness perk."
-      },
-      "examples": {
-        "daily": [
-          "The barista recommended their signature morning blend, highlighting its smooth notes of toasted almond and dark chocolate.",
-          "I bought a tin of loose-leaf herbal blend containing chamomile, peppermint, and dried lemongrass.",
-          "Adding a pinch of this Moroccan spice blend gives roasted root vegetables a wonderfully complex flavor."
-        ],
-        "business": [
-          "The restaurant chain signed an exclusive procurement agreement with an organic roaster to supply their signature coffee blend.",
-          "During the banquet tasting, the sommelier presented an award-winning red wine blend of Cabernet Sauvignon and Merlot.",
-          "To mitigate rising raw bean costs without sacrificing quality, the beverage director reformulated the breakfast blend with Brazilian Arabica."
-        ],
-        "conversation": [
-          "\"Would you prefer a single-origin pour-over or our signature espresso blend?\" \"I'll take the blend, please; I prefer a well-rounded body with steamed oat milk.\"",
-          "\"What did you think of the house coffee blend served at the morning seminar?\" \"It was surprisingly smooth and had very little bitterness.\""
-        ],
-        "collocations": [
-          "house blend",
-          "signature blend",
-          "coffee blend",
-          "tea blend",
-          "wine blend",
-          "spice blend"
-        ]
-      },
-      "wordFamily": {
-        "noun": "blend, blender",
-        "verb": "blend",
-        "adjective": "blended",
-        "adverb": ""
-      },
-      "visual": {
-        "imageKeyword": "artisan coffee blend roasted beans burlap sack tasting spoon cupping",
-        "imageDescription": "A close-up shot of rich roasted coffee beans of varied shades resting on a rustic wooden cupping table beside a silver tasting spoon, white ceramic bowls, and a craft paper package labeled 'Signature House Blend'.",
-        "mnemonic": "BLEND: Beans or Leaves Expertly Navigated into Deliciousness!"
-      },
-      "video": {
-        "description": "A coffee roastery masterclass explaining the art of cupping and formulating a balanced espresso blend by combining beans from Central America and East Africa."
-      },
-      "toeicContext": {
-        "commonParts": [
-          3,
-          4,
-          7
-        ],
-        "exampleQuestion": "Patrons at the new downtown café praised the proprietary breakfast _____, noting that its subtle floral aroma and rich chocolate finish set it apart from mass-market brands. (A) blend (B) blends (C) blender (D) blending",
-        "tips": "In TOEIC business and dining contexts, 'blend' is commonly tested as a singular countable noun referring to a composite food or beverage product. The singular noun adjunct 'breakfast' and following singular verb 'set' confirm that the singular noun (A) 'blend' is required. Distractor (C) 'blender' refers to an electrical puréeing appliance, while (D) is a gerund."
-      },
-      "synonyms": [
-        "mixture",
-        "combination",
-        "fusion",
-        "amalgamation",
-        "concoction",
-        "infusion"
+      "exampleQuestion": "Under the provisions of Section 4 of the commercial loan agreement, the _______ holds the right to inspect the collateralized warehouse annually to ensure adequate structural upkeep.\n(A) mortgagor\n(B) mortgagee\n(C) mortgaging\n(D) mortgageable",
+      "tips": "A classic legal and vocabulary trap on TOEIC Part 5 and Part 7 involves distinguishing the agent suffix '-or' (the party who grants the lien, i.e., mortgagor = the borrower) from the beneficiary suffix '-ee' (the party who receives or holds the lien, i.e., mortgagee = the lending bank). In this context, the entity possessing the legal entitlement to inspect collateralized property to safeguard its loan security is the lender, (B) 'mortgagee'. Choice (A) refers to the borrower, (C) is a participle/gerund, and (D) is an adjective."
+    },
+    "synonyms": [
+      "mortgage lender",
+      "lending institution",
+      "mortgage creditor",
+      "secured creditor",
+      "lienholder",
+      "loan originator"
+    ],
+    "antonyms": [
+      "mortgagor",
+      "borrower",
+      "debtor",
+      "property owner"
+    ],
+    "relatedWords": [
+      "deed of trust",
+      "foreclosure",
+      "collateral",
+      "lien priority",
+      "promissory note",
+      "title insurance",
+      "amortization schedule"
+    ]
+  },
+  {
+    "id": "finance-201",
+    "word": "mortgagor",
+    "partOfSpeech": ["noun"],
+    "category": "finance",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/ˈmɔːr.ɡɪ.dʒər/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/mortgagor--_us_1.mp3",
+      "syllableBreakdown": "mort-ga-gor",
+      "stressPattern": "Primary stress on the first syllable in general usage: MORT-ga-gor (/ˈmɔːr.ɡɪ.dʒər/, ●○○); or secondary stress on the third syllable in legal pronunciation (/ˌmɔːr.ɡəˈdʒɔːr/, ˌ○●)",
+      "commonMistakes": "Learners often pronounce the silent 't' in 'mortgage' (*mort-gagor* instead of /ˈmɔːr.ɡɪ.dʒər/). Another widespread mistake is confusing the legal roles: students frequently assume the 'mortgagor' is the bank because the bank issues the financing. In real estate jurisprudence, the mortgage is the pledge of real property given as collateral, meaning the party granting this security pledge (the borrower/homeowner) is the 'mortgagor'."
+    },
+    "etymology": {
+      "origin": "Formed in Anglo-Norman and Middle English legal parlance from 'mortgage' (Old French mort gaige 'dead pledge') + the legal agent suffix '-or' (derived from Latin -ator, denoting the grantor or actor in a legal transaction)",
+      "rootWord": "mort (dead, from Latin mortuus) + gage (pledge, from Frankish *waddi) + -or (grantor/conveying party)",
+      "rootMeaning": "'The grantor or pledger of the dead pledge' (the property owner who pledges real estate title or lien to secure an indebtedness)",
+      "evolution": "Dating back to 14th-century Anglo-Norman court rolls and codified in late medieval English common law treatises such as Sir Thomas Littleton's Tenures (1481), the suffix '-or' designated the active party conveying a deed or executing a legal covenant (analogous to grantor, lessor, donor). The mortgagor transferred a conditional legal interest in the land to secure repayment of money borrowed; if the debt was discharged on 'law day', the pledge expired and full unencumbered title reverted to the mortgagor. The term was preserved through centuries of equity and property law, remaining the universal designation for real estate borrowers across common law jurisdictions.",
+      "relatedLanguages": [
+        "French: débiteur hypothécaire (mortgage debtor / mortgagor)",
+        "Spanish: deudor hipotecario (mortgage debtor / mortgagor)",
+        "Italian: debitore ipotecario (mortgage debtor)",
+        "German: Hypothekenschuldner (mortgage debtor / mortgagor)",
+        "Portuguese: devedor hipotecário (mortgage debtor)"
       ],
-      "antonyms": [
-        "single-origin",
-        "pure varietal",
-        "monoculture",
-        "unblended ingredient"
+      "firstRecordedUse": "Late 15th century (circa 1481 in Littleton's Tenures and early English property conveyances)"
+    },
+    "deepMeaning": {
+      "coreConcept": "The property owner or borrower who pledges real estate as collateral by executing a mortgage agreement in favor of a lender (the mortgagee) to secure financing, while retaining equitable ownership, possession, and the obligation to repay the underlying debt.",
+      "spatialContext": "Residential closing settlement offices, commercial real estate development firms, escrow title companies, municipal deed registries, and consumer loan closing conferences.",
+      "temporalContext": "Active throughout the amortization schedule of the loan (commonly 15 to 30 years) until the final payment is cleared and a formal satisfaction of mortgage is officially recorded.",
+      "emotionalTone": "Contractual, obligated, asset-protective, and legally accountable; embodies the rights and fiduciary liabilities of property ownership under financing.",
+      "formalityLevel": "formal",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "In native English legal and commercial contexts, the mortgagor is the party taking on debt to acquire or refinance property. While everyday conversation uses terms like 'homebuyer,' 'borrower,' or 'property owner,' legal deeds and deed-of-trust documents strictly name this individual or corporate entity as the 'mortgagor.' Native real estate practitioners remember the role through the mnemonic: 'The mortgagOR is the bOrrOwer who O-wes the money.' The mortgagor retains the bundle of ownership rights—occupancy, enjoyment, improvements—subject only to the security interest held by the lender.",
+      "mentalImage": "A homeowner sitting at an escrow conference table reviewing a thick stack of title documents, signing their signature on the line labeled 'Signature of Mortgagor.'",
+      "whenToUse": "Use in legal contracts, loan covenants, deeds of trust, title conveyances, insurance documents, foreclosure notices, and real estate litigation.",
+      "whenNotToUse": "Do not use in casual everyday conversations about buying a home (native speakers naturally say 'homebuyer,' 'borrower,' or 'homeowner'). Do not confuse with 'mortgagee' (the bank or lender receiving the pledge).",
+      "culturalContext": "In Anglo-American property law, the concept of the 'equity of redemption' was historically developed by the Court of Chancery specifically to protect mortgagors from forfeiting their entire estate due to minor technical payment defaults. Today, extensive consumer credit laws (such as the Truth in Lending Act and RESPA in the US) protect mortgagors by requiring clear annual percentage rate (APR) disclosures, mandatory grace periods, and standardized closing disclosure timelines."
+    },
+    "examples": {
+      "daily": [
+        "As the mortgagor, Sarah is contractually responsible for maintaining continuous flood insurance on her coastal residence.",
+        "After making thirty years of punctual payments, the mortgagor finally received a recorded deed of release from the county land registry.",
+        "The loan officer explained that if the mortgagor decides to rent out the townhouse, the bank must be notified in writing according to the occupancy clause."
       ],
-      "relatedWords": [
-        "roast profile",
-        "cupping",
-        "varietal",
-        "single-estate",
-        "flavor profile",
-        "tasting notes",
-        "sommelier"
+      "business": [
+        "Under clause 12 of the financing covenant, the mortgagor must submit audited annual financial statements for the commercial office plaza to the lender.",
+        "If the corporate mortgagor transfers ownership of the industrial facility without prior written authorization, the lender may enforce the acceleration clause.",
+        "The debt restructuring agreement allowed the commercial mortgagor to defer principal payments for six months while renovating the retail center."
+      ],
+      "conversation": [
+        "\"Who is responsible for paying annual municipal property taxes under this mortgage agreement?\" — \"The mortgagor remains personally liable, although the funds are usually collected monthly into an escrow account.\"",
+        "\"Did the closing attorney review the title deed before the signing ceremony?\" — \"Yes, she verified that the mortgagor's legal name matches the name appearing on the municipal land registry exactly.\"",
+        "\"What happens if a mortgagor wants to sell the property before the 30-year loan term expires?\" — \"The mortgagor pays off the outstanding balance from the sale proceeds at closing, and the lender's lien is formally discharged.\""
+      ],
+      "collocations": [
+        "rights of the mortgagor",
+        "equity of the mortgagor",
+        "default by the mortgagor",
+        "covenants of the mortgagor",
+        "obligations of the mortgagor",
+        "liabilities of the mortgagor"
       ]
     },
-    {
-      "id": "dining-063",
-      "word": "boil",
-      "partOfSpeech": [
-        "noun"
+    "wordFamily": {
+      "noun": "mortgage, mortgagor, mortgagee",
+      "verb": "mortgage",
+      "adjective": "mortgageable, mortgaged",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "homebuyer signing mortgage closing settlement paperwork deed",
+      "imageDescription": "A prospective homeowner holding a pen over a formal legal mortgage closing deed, signing directly above the printed designation 'Mortgagor'.",
+      "mnemonic": "MORTGAGOR: Notice the 'OR' at the end—the MortgagOR is the bORrOwer who O-wes the money!"
+    },
+    "video": {
+      "description": "A detailed real estate law tutorial explaining the reciprocal legal rights and obligations of mortgagors and mortgagees during property acquisition and closing."
+    },
+    "toeicContext": {
+      "commonParts": [
+        5,
+        6,
+        7
       ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-        "ipa": "/bɔɪl/",
-        "syllableBreakdown": "boil",
-        "stressPattern": "single syllable with diphthong stress (BOIL)",
-        "commonMistakes": "Learners frequently substitute the diphthong /ɔɪ/ with the monophthong /ɔː/ (*ball*) or /oʊ/ (*bowl*), causing confusion between 'boil', 'ball', and 'bowl'. Another error is swallowing or over-aspirating the final liquid /l/."
-      },
-      "etymology": {
-        "origin": "Derived from Middle English 'boilen' (to bubble, boil), borrowed from Old French 'boillir' (to boil, bubble up)",
-        "rootWord": "Latin 'bullīre' (to bubble, boil, effervesce), from 'bulla' (a water bubble, rounded swelling)",
-        "rootMeaning": "'To produce bubbles' or 'the churning physical state caused by heat vaporization'; referring to spherical water bubbles bursting at the surface",
-        "evolution": "In Middle English, 'boil' functioned as a verb describing liquid vaporization. By the late 16th century, the nominal form developed to describe 'the state or condition of boiling' (crystallized in phrases like 'bring to a boil' or 'at the boil'). In 19th- and 20th-century North American regional culinary culture (notably coastal Louisiana, Georgia, and Maryland), 'boil' acquired an additional nominal definition designating an outdoor communal feast where shellfish (crawfish, shrimp, or blue crabs), corn, potatoes, and sausage are boiled in a spicy broth and served directly on paper-covered tables.",
-        "relatedLanguages": [
-          "French: bouillon (broth) / ébullition (boiling state)",
-          "Spanish: ebullición (boiling state) / hervor",
-          "Italian: bollore / ebollizione",
-          "German: Sieden / Kochen"
-        ],
-        "firstRecordedUse": "16th century (c. 1590s for 'state or point of boiling'); 20th century (c. 1920–1930s for communal culinary seafood gatherings like 'crawfish boil')"
-      },
-      "deepMeaning": {
-        "coreConcept": "1. The thermal state or thermodynamic threshold at which a cooking liquid reaches its boiling point (212°F / 100°C for water), creating continuous turbulent bubbling essential for blanching, poaching stocks, or reducing sauces. 2. A communal culinary gathering or festive meal where seafood, vegetables, and seasoned stock are boiled together in large kettles and served family-style.",
-        "spatialContext": "Commercial restaurant prep kitchens with high-BTU gas stockpot ranges, industrial steam kettles, outdoor catering pavilions with propane burners, and corporate picnic grounds.",
-        "temporalContext": "Monitored constantly during food preparation shifts; organized seasonally as celebratory outdoor corporate social events during spring and summer.",
-        "emotionalTone": "Energetic, dynamic, festive, communal, and hearty.",
-        "formalityLevel": "neutral",
-        "connotation": "neutral"
-      },
-      "nativeMindset": {
-        "howNativesThink": "In the culinary lexicon, native speakers treat 'boil' as a critical precision indicator in cooking methods—carefully distinguishing between a 'gentle boil' (small steady bubbles) and a 'rolling boil' (violent churning agitation that cannot be stopped by stirring). Furthermore, across North America, 'a boil' triggers vivid cultural associations of outdoor camaraderie, butcher paper, plastic bibs, and hands-on eating without silverware.",
-        "mentalImage": "A heavy-gauge stainless steel stockpot on an industrial burner with water bubbling vigorously at a rolling boil, clouds of fragrant steam billowing past the prep cook; beside it, an outdoor banquet table spread with butcher paper where steaming red crawfish, sweet corn cobs, and sausage links are poured fresh from the pot.",
-        "whenToUse": "Use in recipe instructions indicating liquid phase changes (e.g., 'bring the soup broth to a rolling boil before adding noodles') or when describing communal seafood feasts and catering events (e.g., 'The staff celebrated the project milestone with a Southern seafood boil').",
-        "whenNotToUse": "Do not use 'boil' when the liquid has only tiny, sporadic bubbles rising gently below 95°C (use 'simmer' or 'poach'). Do not use for dry-heat oven cooking (use 'bake' or 'roast'). Avoid confounding with the medical noun 'boil' (skin furuncle) in culinary contexts.",
-        "culturalContext": "In regional North American business and social traditions, hosting an informal outdoor crawfish or shrimp boil is a celebrated networking icebreaker, symbolizing authentic hospitality, approachable teamwork, and unpretentious celebration."
-      },
-      "examples": {
-        "daily": [
-          "Bring four quarts of salted water to a rolling boil before adding the penne pasta.",
-          "Our department held an outdoor low-country shrimp boil at the lakeside pavilion on Saturday.",
-          "Once the vegetable broth reaches a full boil, reduce the heat to low and let it simmer for forty minutes."
-        ],
-        "business": [
-          "The corporate retreat organizers planned an authentic Louisiana crawfish boil as the welcome dinner for regional managers.",
-          "Kitchen safety regulations require commercial soup bases to reach a vigorous boil for at least two minutes before hot holding.",
-          "The catering contract itemized expenses for industrial propane cookers, seafood boil seasoning blends, and fresh Gulf shellfish."
-        ],
-        "conversation": [
-          "\"Should I lower the heat on the lobster stock now?\" \"Wait until it comes to a full boil, skim the surface, and then drop it to a gentle simmer.\"",
-          "\"What kind of catering are we doing for the annual summer company picnic?\" \"We hired a local caterer to host a traditional seafood boil with shrimp, potatoes, and sweet corn.\""
-        ],
-        "collocations": [
-          "rolling boil",
-          "bring to a boil",
-          "come to a boil",
-          "seafood boil",
-          "crawfish boil",
-          "gentle boil"
-        ]
-      },
-      "wordFamily": {
-        "noun": "boil, boiler, boiling point",
-        "verb": "boil",
-        "adjective": "boiled, boiling",
-        "adverb": ""
-      },
-      "visual": {
-        "imageKeyword": "rolling boil stockpot commercial kitchen steam bubbling water chef",
-        "imageDescription": "A professional chef in a commercial kitchen monitoring a large stainless steel stockpot with water churning at a vigorous rolling boil, dense white steam rising beneath stainless steel ventilation hoods.",
-        "mnemonic": "BOIL: Bubbling Over In Liquid—when intense heat makes water Bubble, Oscillate, and Ignite steam!"
-      },
-      "video": {
-        "description": "A professional culinary academy demonstration illustrating temperature thresholds, highlighting the visual distinction between simmering, poaching, and maintaining a rolling boil for vegetable blanching."
-      },
-      "toeicContext": {
-        "commonParts": [
-          1,
-          3,
-          7
-        ],
-        "exampleQuestion": "According to the corporate cafeteria's food safety manual, kitchen staff must bring all prepared gravies to a rapid _____ before transferring them to the steam table. (A) boil (B) boiled (C) boiler (D) boilingly",
-        "tips": "In TOEIC passages concerning catering, kitchen operations, and food safety, the prepositional idiom 'bring ... to a [noun]' requires a noun indicating state. Choice (A) 'boil' correctly forms the established culinary phrase 'bring to a rapid boil'. Distractor (C) 'boiler' refers to a mechanical heating tank, (B) is a past participle, and (D) is an adverb."
-      },
-      "synonyms": [
-        "boiling point",
-        "bubbling point",
-        "rolling boil",
-        "ebullition",
-        "seafood feast",
-        "cookout"
+      "exampleQuestion": "According to the real estate lending agreement, the _______ is obligated to maintain adequate hazard insurance on the premises throughout the term of the financing.\n(A) mortgagor\n(B) mortgageable\n(C) mortgaging\n(D) mortify",
+      "tips": "In TOEIC Part 5, test-takers frequently encounter business and legal terminology regarding contracts and property finance. In this sentence, the subject of the clause must be a person or entity obligated to perform an action ('is obligated to maintain adequate hazard insurance'). The correct choice is (A) 'mortgagor' (the property borrower/owner who has the contractual duty to insure the mortgaged property). Choice (B) is an adjective meaning capable of being mortgaged, (C) is a participle/gerund, and (D) is an unrelated verb meaning to humiliate or embarrass."
+    },
+    "synonyms": [
+      "mortgage borrower",
+      "property borrower",
+      "debtor",
+      "pledgor",
+      "encumbrancer",
+      "homebuyer"
+    ],
+    "antonyms": [
+      "mortgagee",
+      "lender",
+      "creditor",
+      "lienholder"
+    ],
+    "relatedWords": [
+      "equity of redemption",
+      "promissory note",
+      "escrow account",
+      "foreclosure",
+      "amortization",
+      "deed of trust",
+      "refinancing"
+    ]
+  },
+  {
+    "id": "finance-202",
+    "word": "mutual fund",
+    "partOfSpeech": ["noun"],
+    "category": "finance",
+    "level": "advanced",
+    "toeicFrequency": 7,
+    "pronunciation": {
+      "ipa": "/ˈmjuː.tʃu.əl ˌfʌnd/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/mutual_fund--_us_1.mp3",
+      "syllableBreakdown": "mu-tu-al fund",
+      "stressPattern": "Primary stress on the first syllable of 'mutual', secondary stress on 'fund': MU-tu-al FUND (/ˈmjuː.tʃu.əl ˌfʌnd/, ●○○ ˌ●)",
+      "commonMistakes": "Learners frequently mispronounce 'mutual' as *moo-tual* (/ˈmuː-/) by dropping the initial palatal glide /j/; the correct articulation begins with /mjuː-/ (*MYOO-choo-əl*). In addition, non-native speakers may pronounce 'fund' as *foond* (/fʊnd/) rather than using the short open-mid vowel /ʌ/ (/fʌnd/). Conceptually, learners often confuse 'mutual fund' with an 'exchange-traded fund' (ETF); unlike ETFs, mutual funds do not trade continuously during exchange hours, but are priced and transacted only once per business day after the market closes at the Net Asset Value (NAV)."
+    },
+    "etymology": {
+      "origin": "Compound term formed from English 'mutual' (from Middle French mutuel, derived from Latin mutuus 'reciprocal, borrowed, exchanged') and 'fund' (from French fond, derived from Latin fundus 'bottom, estate, foundation')",
+      "rootWord": "mutuus (reciprocal, done in exchange, shared) + fundus (bottom, foundation, capital stock)",
+      "rootMeaning": "'A pooled foundation of capital held in common reciprocal ownership for shared benefit'",
+      "evolution": "The roots of pooled collective investment trace back to 1774 in the Netherlands with the establishment of Adriaan van Ketwich's investment trust 'Eendragt Maakt Magt' ('Unity Creates Strength'). In 1924, the Massachusetts Investors Trust in Boston established the modern open-end mutual fund structure featuring continuous share issuance, fractional ownership, and daily redemption rights at net asset value. The regulatory framework was codified in the United States by the Investment Company Act of 1940, establishing strict disclosure standards, independent fiduciary board governance, and mandatory prospectuses for retail investors.",
+      "relatedLanguages": [
+        "French: fonds commun de placement (FCP) / organisme de placement collectif (OPCVM)",
+        "Spanish: fondo de inversión / fondo mutuo (mutual fund)",
+        "Italian: fondo comune di investimento (mutual investment fund)",
+        "German: Investmentfonds / Publikumsfonds (mutual fund / open-end retail investment fund)",
+        "Portuguese: fundo mútuo / fundo de investimento (mutual fund)"
       ],
-      "antonyms": [
-        "freeze",
-        "freezing point",
-        "chill",
-        "frost"
+      "firstRecordedUse": "Early 20th century (circa 1924–1928 in Massachusetts trust documents and American financial publications)"
+    },
+    "deepMeaning": {
+      "coreConcept": "An open-end, professionally managed collective investment vehicle that pools capital from numerous individual and institutional investors to purchase a diversified portfolio of equities, fixed-income debt securities, or money market instruments, granting investors fractional ownership priced daily at Net Asset Value (NAV).",
+      "spatialContext": "Asset management firms, retail brokerage web portals, corporate 401(k) / retirement plan administration desks, and wealth management advisory offices.",
+      "temporalContext": "Traded and priced strictly once daily following the close of major financial exchanges (4:00 PM EST in the US); held as medium- to long-term investment vehicles spanning multiple years or decades for retirement accumulation and capital appreciation.",
+      "emotionalTone": "Prudent, disciplined, diversified, fiduciary, and long-term oriented; conveys collective financial security, systematic wealth creation, and risk mitigation.",
+      "formalityLevel": "formal",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "In North American and Commonwealth corporate culture, 'mutual funds' are deeply synonymous with retirement security and middle-class wealth accumulation. For decades, the primary vehicle for private retirement savings has been regular monthly payroll deductions into mutual funds within 401(k) plans or IRAs. Native speakers associate mutual funds with professional management, broad market diversification ('not putting all your eggs in one basket'), expense ratios, and household financial firms like Vanguard and Fidelity. They contrast mutual funds with high-risk individual stock picking and with intraday-traded ETFs.",
+      "mentalImage": "A financial advisor sitting with a working couple in a well-lit office, reviewing a colorful pie chart showing their 401(k) portfolio allocated across international equity mutual funds, bond index funds, and large-cap growth funds.",
+      "whenToUse": "Use when discussing collective investment vehicles, 401(k) retirement plans, portfolio diversification, asset management, net asset value (NAV), expense ratios, and retail investing.",
+      "whenNotToUse": "Do not use when referring to funds traded intraday on stock exchanges (those are Exchange-Traded Funds or ETFs), private lightly regulated investment pools for accredited investors (those are hedge funds or private equity funds), or sovereign wealth funds.",
+      "culturalContext": "In the United States, the shift from traditional defined-benefit corporate pensions to defined-contribution 401(k) plans during the 1980s and 1990s triggered a massive retail investment revolution centered on mutual funds. John Bogle's creation of the first index mutual fund in 1976 democratized Wall Street, empowering ordinary wage earners to capture broad economic growth at minimal cost."
+    },
+    "examples": {
+      "daily": [
+        "When Mark started his first corporate job, HR advised him to allocate a portion of each monthly paycheck into a low-cost index mutual fund.",
+        "After reviewing their retirement plan, the couple rebalanced their portfolio by moving money from an aggressive growth mutual fund into a balanced bond fund.",
+        "Clara checked her mutual fund account online after the closing bell to see how the day's market rally had increased her net asset value."
       ],
-      "relatedWords": [
-        "simmer",
-        "blanch",
-        "stockpot",
-        "steam",
-        "parboil",
-        "poach",
-        "temperature probe"
+      "business": [
+        "The asset management company announced that its flagship international equity mutual fund had outperformed its benchmark index by two percent this fiscal year.",
+        "Corporate human resources updated the employee benefits guide to include five new target-date mutual funds managed by an independent fiduciary.",
+        "To lower overhead costs for retail shareholders, the board of trustees voted to reduce the management expense ratio of the global bond mutual fund."
+      ],
+      "conversation": [
+        "\"Are you planning to pick individual tech stocks for your retirement portfolio?\" — \"No, I prefer investing in a broad-market mutual fund because it offers automatic diversification with lower volatility.\"",
+        "\"Why can't I buy shares of this mutual fund at 11:00 AM like a regular stock?\" — \"Mutual funds are priced only once per business day after the market closes, based on the final net asset value of their underlying holdings.\"",
+        "\"What should we look for when choosing between competing index mutual funds?\" — \"Pay close attention to the expense ratio and the fund's tracking error relative to its benchmark index.\""
+      ],
+      "collocations": [
+        "mutual fund manager",
+        "index mutual fund",
+        "mutual fund shares",
+        "mutual fund portfolio",
+        "net asset value of a mutual fund",
+        "invest in a mutual fund"
       ]
     },
-    {
-      "id": "dining-064",
-      "word": "bottle",
-      "partOfSpeech": [
-        "noun"
+    "wordFamily": {
+      "noun": "mutual fund, mutuality, fund, funding",
+      "verb": "fund",
+      "adjective": "mutual, funded",
+      "adverb": "mutually"
+    },
+    "visual": {
+      "imageKeyword": "diverse investor portfolio pie chart mutual fund financial planning",
+      "imageDescription": "A financial advisor and client reviewing a detailed investment portfolio pie chart illustrating asset allocation across equity, bond, and international mutual funds on a tablet screen.",
+      "mnemonic": "MUTUAL FUND: 'Mutual' means shared together; a 'fund' is a pool of money. A mutual fund is a shared pool of money managed for the mutual benefit of all investors!"
+    },
+    "video": {
+      "description": "An educational financial animation explaining how a mutual fund pools capital from thousands of small investors to purchase a diversified portfolio of hundreds of stocks and bonds."
+    },
+    "toeicContext": {
+      "commonParts": [
+        3,
+        4,
+        5,
+        7
       ],
-      "category": "dining",
-      "level": "essential",
-      "toeicFrequency": 9,
-      "pronunciation": {
-        "ipa": "/ˈbɑː.təl/",
-        "syllableBreakdown": "bot-tle",
-        "stressPattern": "primary stress on first syllable (BOT-tle)",
-        "commonMistakes": "In American English, the medial 'tt' is voiced as an alveolar flap [ɾ], whereas learners often over-aspirate a sharp [t] or omit the syllabic [l̩] entirely. Learners also frequently confuse the vowel /ɑː/ or /ɒ/ with /oʊ/ (*boat-le*)."
-      },
-      "etymology": {
-        "origin": "Derived from Middle English 'botel', borrowed from Old French 'boteille' (bottle, flask)",
-        "rootWord": "Late Latin 'butticula' (a small cask, flask), diminutive of Late Latin 'buttis' (cask, barrel, wine vessel), probably of Gaulish or Late Greek origin",
-        "rootMeaning": "'A small cask or vessel'; diminutive noun form referring to a portable container used to carry and dispense wine or spirits",
-        "evolution": "Entering Middle English via Anglo-Norman French in the 14th century, 'botel' initially referred to leather, earthenware, or pewter vessels carried by travelers. With the rapid expansion of industrial glassmaking in 17th-century Western Europe, glass bottles became the standard vessel for storing, preserving, and serving wine, cider, condiments, and mineral water. In modern commercial dining and hospitality, 'bottle' serves both as a concrete container and as a commercial ordering unit (distinguishing bottle service from drinks served by the glass).",
-        "relatedLanguages": [
-          "French: bouteille",
-          "Spanish: botella",
-          "Italian: bottiglia",
-          "German: Flasche (Germanic) / Buttel (dialectal)"
-        ],
-        "firstRecordedUse": "14th century (c. 1350–1400 in Middle English, specifically designating wine and oil containers)"
-      },
-      "deepMeaning": {
-        "coreConcept": "A rigid container with a narrow neck, mouth, and secure closure (such as a cork, screw cap, or crown seal), fabricated from glass, plastic, or aluminum, used in hospitality and dining to preserve, store, chill, transport, and pour beverages and liquid condiments.",
-        "spatialContext": "Fine dining dining tables, back-bar display shelving, refrigerated beverage coolers, wine cellars with wooden storage racks, banquet service trays, and recycling collection stations.",
-        "temporalContext": "Presented and served continuously throughout restaurant service hours; inventoried and restocked weekly by food and beverage managers.",
-        "emotionalTone": "Refined, hospitable, celebratory, practical, and inviting.",
-        "formalityLevel": "neutral",
-        "connotation": "neutral"
-      },
-      "nativeMindset": {
-        "howNativesThink": "In dining culture, native speakers perceive a 'bottle' as both a functional container and a social catalyst. Ordering wine or mineral water 'by the bottle' signifies an unhurried, shared dining experience, hospitality toward guests, or a celebratory occasion. It also immediately triggers etiquette associations—the sommelier presenting the label, the opening ritual, checking the cork, and offering a tasting pour before filling guests' glasses.",
-        "mentalImage": "An elegant dark green glass wine bottle with a crisp embossed paper label resting in an ice bucket with beaded moisture on its surface, placed beside two polished crystal stemware glasses on a white linen tablecloth.",
-        "whenToUse": "Use when identifying narrow-necked beverage containers in restaurants, dining venues, and hospitality logistics (e.g., 'a bottle of sparkling mineral water', 'wine bottle', 'reorder twenty cases of bottled cider', 'olive oil bottle').",
-        "whenNotToUse": "Do not use for wide-mouthed food storage vessels without narrow necks (use 'jar' or 'canister'). Do not use for handle-equipped open pouring vessels (use 'pitcher' or 'carafe'). Do not use for handleless drinking cups (use 'glass', 'tumbler', or 'mug').",
-        "culturalContext": "In corporate dining, selecting and opening a quality bottle of wine is a customary gesture of business hospitality. Additionally, corporate sustainability initiatives frequently address beverage service by replacing single-use plastic water bottles with chilled reusable glass carafes."
-      },
-      "examples": {
-        "daily": [
-          "The waiter placed a chilled bottle of sparkling water and two lime wedges on our table.",
-          "Please store the olive oil bottle in a dark pantry cupboard away from direct sunlight.",
-          "After the staff picnic, volunteers gathered all the empty glass soda bottles for recycling."
-        ],
-        "business": [
-          "To celebrate closing the cross-border merger, the managing director ordered a bottle of vintage champagne for the executive team.",
-          "As part of its environmental initiative, the hotel restaurant replaced disposable plastic bottles with refillable glass carafes.",
-          "The banquet inventory revealed that twelve cases of imported bottled water were delivered to the wrong conference ballroom."
-        ],
-        "conversation": [
-          "\"Should we order wine by the glass or get a bottle for the table?\" \"Since four of us are ordering the roast lamb, getting a bottle of Syrah makes much more sense.\"",
-          "\"Did the catering staff place a fresh bottle of mineral water at each speaker's podium?\" \"Yes, both still and sparkling bottles are set up with clean glassware.\""
-        ],
-        "collocations": [
-          "bottle of wine",
-          "bottled water",
-          "glass bottle",
-          "uncork a bottle",
-          "bottle service",
-          "empty bottle"
-        ]
-      },
-      "wordFamily": {
-        "noun": "bottle, bottler, bottling",
-        "verb": "bottle",
-        "adjective": "bottled",
-        "adverb": ""
-      },
-      "visual": {
-        "imageKeyword": "wine bottle ice bucket restaurant table white linen crystal glasses",
-        "imageDescription": "A chilled green glass wine bottle resting in a polished stainless steel ice bucket with water droplets condensing on the exterior, set beside two crystal wine glasses on an immaculate white tablecloth.",
-        "mnemonic": "BOTTLE: Beverage Or Tasty Tonic Locked Inside! Descended from 'butticula'—a miniature barrel for your dining table."
-      },
-      "video": {
-        "description": "A fine-dining service training module demonstrating the correct etiquette for presenting, uncorking, wiping, and pouring a bottle of wine at a formal corporate banquet."
-      },
-      "toeicContext": {
-        "commonParts": [
-          1,
-          3,
-          7
-        ],
-        "exampleQuestion": "When finalizing the catering order for the banquet, the event planner requested one _____ of sparkling water for every four guests seated at each table. (A) bottle (B) bottled (C) bottling (D) bottler",
-        "tips": "In TOEIC Part 1, bottles on tables, shelves, or trays are frequent visual focal points (e.g., 'Bottles are displayed on the counter'). In Part 5, observe numeral quantifiers like 'one', which require a singular countable noun. Here, choice (A) 'bottle' correctly acts as the direct object. Distractor (D) 'bottler' refers to a bottling company or factory, while (B) and (C) are verb forms."
-      },
-      "synonyms": [
-        "flask",
-        "carafe",
-        "flagon",
-        "decanter",
-        "vial",
-        "receptacle"
-      ],
-      "antonyms": [],
-      "relatedWords": [
-        "corkscrew",
-        "cork",
-        "screw cap",
-        "sommelier",
-        "beverage list",
-        "recycling bin",
-        "ice bucket"
-      ]
-    }
-  ]
-}
+      "exampleQuestion": "Employees who enroll in the company's retirement savings plan can choose to allocate their monthly contributions across several high-performing _______ funds.\n(A) mutual\n(B) mutually\n(C) mutuality\n(D) mutate",
+      "tips": "In TOEIC Part 5, business collocation questions often test compound finance terminology. The collocation 'mutual fund' (quỹ tương hỗ / quỹ đầu tư chung) is a standard financial term frequently tested in retirement planning and corporate benefits contexts. Before the plural noun 'funds', the adjective (A) 'mutual' correctly forms the compound noun 'mutual funds'. Choice (B) 'mutually' is an adverb, choice (C) 'mutuality' is a noun, and choice (D) 'mutate' is an unrelated verb."
+    },
+    "synonyms": [
+      "investment fund",
+      "pooled investment fund",
+      "open-end fund",
+      "collective investment scheme",
+      "index fund",
+      "unit trust"
+    ],
+    "antonyms": [
+      "individual stock",
+      "direct equity holding",
+      "unpooled investment"
+    ],
+    "relatedWords": [
+      "Net Asset Value",
+      "expense ratio",
+      "portfolio diversification",
+      "asset allocation",
+      "prospectus",
+      "capital gains distribution",
+      "exchange-traded fund"
+    ]
+  }
+]
 
-# Verify schema
-for word in data["words"]:
-    assert "id" in word
-    assert "word" in word
-    assert "partOfSpeech" in word and isinstance(word["partOfSpeech"], list)
-    assert "category" in word and word["category"] == "dining"
-    assert "level" in word and word["level"] in ["essential", "intermediate", "advanced"]
-    assert "toeicFrequency" in word and isinstance(word["toeicFrequency"], int)
-    
-    # Pronunciation
-    p = word["pronunciation"]
-    assert "ipa" in p and p["ipa"].startswith("/")
-    assert "syllableBreakdown" in p
-    assert "stressPattern" in p
-    assert "commonMistakes" in p
-    
-    # Etymology
-    e = word["etymology"]
-    assert "origin" in e
-    assert "rootWord" in e
-    assert "rootMeaning" in e
-    assert "evolution" in e
-    assert "relatedLanguages" in e and len(e["relatedLanguages"]) >= 4
-    assert "firstRecordedUse" in e
-    
-    # Deep meaning
-    dm = word["deepMeaning"]
-    assert "coreConcept" in dm
-    assert "spatialContext" in dm
-    assert "temporalContext" in dm
-    assert "emotionalTone" in dm
-    assert dm["formalityLevel"] in ["formal", "neutral", "informal"]
-    assert dm["connotation"] in ["positive", "neutral", "negative"]
-    
-    # Native mindset
-    nm = word["nativeMindset"]
-    assert "howNativesThink" in nm
-    assert "mentalImage" in nm
-    assert "whenToUse" in nm
-    assert "whenNotToUse" in nm
-    assert "culturalContext" in nm
-    
-    # Examples
-    ex = word["examples"]
-    assert len(ex["daily"]) == 3
-    assert len(ex["business"]) == 3
-    assert len(ex["conversation"]) >= 2
-    assert len(ex["collocations"]) >= 5
-    
-    # Word family
-    wf = word["wordFamily"]
-    assert "noun" in wf and "verb" in wf and "adjective" in wf and "adverb" in wf
-    
-    # Visual
-    v = word["visual"]
-    assert "imageKeyword" in v and "imageDescription" in v and "mnemonic" in v
-    
-    # Video
-    vid = word["video"]
-    assert "description" in vid
-    
-    # TOEIC context
-    tc = word["toeicContext"]
-    assert isinstance(tc["commonParts"], list) and len(tc["commonParts"]) > 0
-    assert "exampleQuestion" in tc and "(A)" in tc["exampleQuestion"]
-    assert "tips" in tc
-    
-    # Synonyms, antonyms, relatedWords
-    assert len(word["synonyms"]) >= 4
-    assert isinstance(word["antonyms"], list)
-    assert len(word["relatedWords"]) >= 5
-    
-    print(f"Word {word['word']} (ID: {word['id']}) verified successfully!")
+# Validation
+required_word_keys = [
+  "id", "word", "partOfSpeech", "category", "level", "toeicFrequency",
+  "pronunciation", "etymology", "deepMeaning", "nativeMindset",
+  "examples", "wordFamily", "visual", "video", "toeicContext",
+  "synonyms", "antonyms", "relatedWords"
+]
 
-print("\nALL 4 WORDS PASSED RIGOROUS VALIDATION!")
+pronunciation_keys = ["ipa", "syllableBreakdown", "stressPattern", "commonMistakes"]
+etymology_keys = ["origin", "rootWord", "rootMeaning", "evolution", "relatedLanguages", "firstRecordedUse"]
+deep_meaning_keys = ["coreConcept", "spatialContext", "temporalContext", "emotionalTone", "formalityLevel", "connotation"]
+native_mindset_keys = ["howNativesThink", "mentalImage", "whenToUse", "whenNotToUse", "culturalContext"]
+examples_keys = ["daily", "business", "conversation", "collocations"]
+visual_keys = ["imageKeyword", "imageDescription", "mnemonic"]
+video_keys = ["description"]
+toeic_keys = ["commonParts", "exampleQuestion", "tips"]
+
+for i, w in enumerate(entries):
+    print(f"Checking word {i}: {w['word']}")
+    for k in required_word_keys:
+        assert k in w, f"Missing key {k} in word {w['word']}"
+    for k in pronunciation_keys:
+        assert k in w["pronunciation"], f"Missing {k} in pronunciation of {w['word']}"
+    for k in etymology_keys:
+        assert k in w["etymology"], f"Missing {k} in etymology of {w['word']}"
+    for k in deep_meaning_keys:
+        assert k in w["deepMeaning"], f"Missing {k} in deepMeaning of {w['word']}"
+    for k in native_mindset_keys:
+        assert k in w["nativeMindset"], f"Missing {k} in nativeMindset of {w['word']}"
+    for k in examples_keys:
+        assert k in w["examples"], f"Missing {k} in examples of {w['word']}"
+    for k in visual_keys:
+        assert k in w["visual"], f"Missing {k} in visual of {w['word']}"
+    for k in video_keys:
+        assert k in w["video"], f"Missing {k} in video of {w['word']}"
+    for k in toeic_keys:
+        assert k in w["toeicContext"], f"Missing {k} in toeicContext of {w['word']}"
+    
+    assert len(w["examples"]["daily"]) >= 3, f"Not enough daily examples in {w['word']}"
+    assert len(w["examples"]["business"]) >= 3, f"Not enough business examples in {w['word']}"
+    assert len(w["examples"]["conversation"]) >= 2, f"Not enough conversation examples in {w['word']}"
+    assert len(w["examples"]["collocations"]) >= 5, f"Not enough collocations in {w['word']}"
+    assert len(w["synonyms"]) >= 4, f"Not enough synonyms in {w['word']}"
+    assert len(w["relatedWords"]) >= 5, f"Not enough relatedWords in {w['word']}"
+    assert w["deepMeaning"]["formalityLevel"] in ["formal", "neutral", "informal"]
+    assert w["deepMeaning"]["connotation"] in ["positive", "neutral", "negative"]
+    assert w["level"] in ["essential", "intermediate", "advanced"]
+
+print("ALL CHECKS PASSED PERFECTLY!")
+
+with open("scratch/words_200_202.json", "w", encoding="utf-8") as f:
+    json.dump(entries, f, indent=2, ensure_ascii=False)

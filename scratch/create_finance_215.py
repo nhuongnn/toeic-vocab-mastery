@@ -1,0 +1,128 @@
+import json
+
+word_data = {
+    "words": [
+        {
+            "id": "finance-215",
+            "word": "percentage",
+            "partOfSpeech": [
+                "noun"
+            ],
+            "category": "finance",
+            "level": "intermediate",
+            "toeicFrequency": 8,
+            "pronunciation": {
+                "ipa": "/pərˈsen.tɪdʒ/",
+                "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/percentage--_us_1.mp3",
+                "syllableBreakdown": "per-cen-tage",
+                "stressPattern": "Unstressed first syllable, primary stress on second syllable: per-CEN-tage (/pərˈsen.tɪdʒ/, ○●○)",
+                "commonMistakes": "Non-native learners universally confuse 'percent' and 'percentage'. 'Percent' (%) must strictly follow an explicit numeral (e.g., '15 percent', '40 percent'), whereas 'percentage' is a noun preceded by determiners or adjectives without an explicit preceding number (e.g., 'a high percentage of market share', 'what percentage of revenue?'). Writing *'15 percentage'* or *'a high percent of users'* is a critical grammatical error frequently penalized in TOEIC Part 5. Additionally, non-native speakers frequently confuse 'percentage points' with 'percent' when describing changes in rates (a jump from 4% to 6% is a 2 percentage point increase, but a 50 percent relative increase). Phonetically, learners often mispronounce the final unstressed suffix '-tage' as *-tahzh* or *-teydzh* instead of the correct reduced /tɪdʒ/."
+            },
+            "etymology": {
+                "origin": "Modern English formation from Medieval Latin per centum (by the hundred) compounded with the Anglo-Norman / Middle French noun suffix -age",
+                "rootWord": "Medieval Latin per centum (by the hundred) + English suffix -age (denoting rate, relation, or condition, from Latin -aticum)",
+                "rootMeaning": "'A rate, proportion, or commission duty calculated by each hundred'",
+                "evolution": "The mathematical computation of interest, customs tariffs, and maritime cargo fees by hundredths traces back to late Roman law (centesima rerum venalium). In Renaissance Italy, merchant banking hubs in Genoa, Venice, and Florence standardized ledger accounting using 'per cento', abbreviated in commerce as 'p 100' or with early loop symbols that evolved into the modern '%' sign. In the 16th and 17th centuries, English merchants adopted the commercial Latin phrase 'per centum'. By the late 18th century (circa 1788), English financial commentators and political economists combined 'per cent' with the substantive suffix '-age' (parallel to 'brokerage' and 'mileage') to denote the abstract mathematical ratio, commission cut, or statistical rate itself rather than an explicit numerical quantity. In contemporary corporate finance and accounting, 'percentage' represents the universal standard for normalizing growth, cost structures, and profitability across disparate enterprise scales.",
+                "relatedLanguages": [
+                    "French: pourcentage (percentage, proportion)",
+                    "Spanish: porcentaje (percentage, rate)",
+                    "Italian: percentuale (percentage)",
+                    "Portuguese: porcentagem (percentage)",
+                    "German: Prozentsatz (percentage rate, quota)"
+                ],
+                "firstRecordedUse": "Late 18th century (circa 1788 in British parliamentary commercial records and mercantile handbooks)"
+            },
+            "deepMeaning": {
+                "coreConcept": "A mathematical rate, fractional proportion, or relative share expressed as parts per hundred, utilized in corporate accounting, financial analysis, and operational reporting to standardize and evaluate margins, returns, capital allocations, and performance trends independent of absolute currency or volume amounts.",
+                "spatialContext": "Corporate financial dashboards, executive board presentations, spreadsheet comparative columns (e.g., % of total revenue, QoQ % change), investor earnings call decks, and financial terminals (Bloomberg, FactSet).",
+                "temporalContext": "Continuously referenced during monthly closing cycles, quarterly earnings releases (QoQ), year-over-year (YoY) comparative audits, and annual budgeting reviews.",
+                "emotionalTone": "Analytical, objective, comparative, and evaluative; provides proportion and scale clarity by stripping out raw size differences.",
+                "formalityLevel": "formal",
+                "connotation": "neutral"
+            },
+            "nativeMindset": {
+                "howNativesThink": "To native business speakers, 'percentage' immediately signals relative scale rather than raw dollars: an increase of $50,000 means very little in isolation, but an '80 percentage surge in overhead' or 'a 2 percentage point margin compression' instantly triggers alarm or approval. Natives intuitively treat 'percentage' as both a statistical ratio ('the percentage of defective units') and a contractual slice of financial upside ('an equity percentage' or 'a percentage of gross licensing revenue'). Grammatically, native speakers instinctively never place an exact numeral directly before 'percentage' (never *'12 percentage'*), reserving 'percent' exclusively for explicit figures.",
+                "mentalImage": "A senior financial analyst standing before a dual-screen presentation in a glass conference room, pointing to a segmented donut chart that highlights the percentage share of quarterly operating income generated by international cloud subscriptions.",
+                "whenToUse": "Use when referring to a proportional ratio, fractional share, or relative rate without an explicit preceding number (e.g., 'a substantial percentage of our workforce', 'the percentage of non-performing loans declined', 'calculate the margin percentage'). Also use when discussing negotiated commission cuts or royalty participation stakes.",
+                "whenNotToUse": "NEVER use immediately after a specific numeral (use 'percent' or '%' instead, e.g., '12 percent', not *'12 percentage'*). Do not confuse with 'percentile' (which designates a rank in a distribution curve, such as scoring in the 90th percentile). Avoid using 'percentage points' interchangeably with 'percent' when describing changes between two interest or margin rates.",
+                "culturalContext": "In North American and Commonwealth corporate culture, executive compensation, KPI scorecards, and institutional shareholder audits revolve fundamentally around percentage metrics: gross margin percentage, return on invested capital (ROIC), customer churn percentage, and YoY revenue growth percentage. Wall Street analysts value margin percentage expansion far more than top-line dollar volume because percentage margins prove genuine pricing power and operational leverage."
+            },
+            "examples": {
+                "daily": [
+                    "Only a small percentage of suburban commuters take public transit during non-peak weekend hours.",
+                    "The packaging label clearly lists the percentage of recommended daily fiber provided in each serving.",
+                    "A significant percentage of online shoppers abandon their shopping carts when unexpected shipping fees are added at checkout."
+                ],
+                "business": [
+                    "Despite a ten percent increase in top-line sales, our gross margin percentage contracted due to soaring oceanic freight expenses.",
+                    "The investment committee voted to raise the portfolio's asset allocation percentage dedicated to green infrastructure bonds.",
+                    "By adopting automated optical inspection on the assembly line, the electronics plant decreased the percentage of defective circuit boards to under 0.1 percent."
+                ],
+                "conversation": [
+                    "\"What percentage of our annual operational budget is earmarked for cybersecurity upgrades?\" — \"Currently about eleven percent, but the chief information officer is lobbying to raise that allocation next quarter.\"",
+                    "\"Did the seasonal promotional discount succeed in boosting our e-commerce conversion rates?\" — \"Yes, the percentage of website visitors completing a purchase jumped from two to four and a half percent over the holiday weekend.\"",
+                    "\"Are commercial leasing agents compensated with a fixed salary or a percentage of newly signed contracts?\" — \"They receive a baseline salary plus a five percent commission percentage on gross annual lease values.\""
+                ],
+                "collocations": [
+                    "percentage of",
+                    "high percentage",
+                    "low percentage",
+                    "percentage increase",
+                    "percentage decrease",
+                    "margin percentage",
+                    "percentage point"
+                ]
+            },
+            "wordFamily": {
+                "noun": "percentage",
+                "adjective": "percentage-based",
+                "adverb": "percentagewise"
+            },
+            "visual": {
+                "imageKeyword": "financial analyst executive presentation pie chart percentage breakdown boardroom screen",
+                "imageDescription": "A sharp, modern corporate boardroom where a financial analyst gestures toward an interactive digital screen showing a brightly segmented pie chart and comparative bar graphs analyzing the percentage distribution of operating costs across global subsidiaries.",
+                "mnemonic": "PERCENTAGE = PER CENT (for every 100) + -AGE (measure or rate). It literally measures what portion out of 100 parts your share represents!"
+            },
+            "video": {
+                "description": "A corporate financial analysis masterclass demonstrating how investment analysts calculate gross margin percentage and operating profit percentage from corporate income statements to compare the relative efficiency of competing retail giants."
+            },
+            "toeicContext": {
+                "commonParts": [
+                    5,
+                    6,
+                    7
+                ],
+                "exampleQuestion": "Thanks to the newly negotiated freight contract, the logistics provider reduced the _______ of transit delays caused by regional hub congestion.\n(A) percentage\n(B) percent\n(C) percentiles\n(D) percentage-wise",
+                "tips": "A staple TOEIC Part 5 grammatical trap involves choosing between 'percent' and 'percentage'. Remember this cardinal rule: 'percent' is used after a specific number (e.g., '15 percent', 'over 50 percent'), whereas 'percentage' is a noun that follows determiners (such as 'the', 'a', 'what', or qualitative adjectives like 'small' or 'large') and is typically paired with 'of + noun'. In this sentence, preceded by the definite article 'the' and followed by 'of transit delays', the head noun '(A) percentage' is the only grammatically correct option."
+            },
+            "synonyms": [
+                "proportion",
+                "share",
+                "fraction",
+                "ratio",
+                "quota",
+                "allocation"
+            ],
+            "antonyms": [
+                "whole",
+                "entirety",
+                "totality",
+                "aggregate"
+            ],
+            "relatedWords": [
+                "percent",
+                "percentile",
+                "basis point",
+                "rate",
+                "margin",
+                "proportion",
+                "yield"
+            ]
+        }
+    ]
+}
+
+with open("scratch/finance_215.json", "w", encoding="utf-8") as f:
+    json.dump(word_data, f, indent=4, ensure_ascii=False)
+
+print("Saved scratch/finance_215.json successfully!")

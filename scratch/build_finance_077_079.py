@@ -1,0 +1,376 @@
+import json
+
+words = [
+    {
+        "id": "finance-077",
+        "word": "authorization",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+            "ipa": "/ˌɔː.θər.aɪˈzeɪ.ʃən/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/authorization--_us_1.mp3",
+            "syllableBreakdown": "au-thor-i-za-tion",
+            "stressPattern": "Secondary stress on first syllable, primary stress on fourth syllable: au-thor-i-ZA-tion (/ˌɔː.θɚ.əˈzeɪ.ʃən/)",
+            "commonMistakes": "Learners often misplace primary stress on the second syllable (/ɔːˈθɒr-/) instead of the fourth (/-ˈzeɪ-/). Another common mistake is substituting an unvoiced /s/ or /t/ for the initial dental fricative /θ/."
+        },
+        "etymology": {
+            "origin": "Anglo-Norman French & Medieval Latin",
+            "rootWord": "auctorizare / autoriser",
+            "rootMeaning": "to give authority or legal sanction to; to empower",
+            "evolution": "Traces through Old French 'autoriser' (14th century) from Medieval Latin 'auctorizare', derived from Classical Latin 'auctor' (creator, guarantor, originator, from 'augere' meaning 'to increase' or 'produce'). The nominal suffix '-ation' denotes the formal act or resulting warrant. In legal and mercantile tradition, an authorization served as an official instrument or power of attorney enabling an agent or steward to disburse funds, seal contracts, or commit resources on behalf of an enterprise or state.",
+            "relatedLanguages": [
+                "French: autorisation",
+                "Spanish: autorización",
+                "Italian: autorizzazione",
+                "German: Autorisierung"
+            ],
+            "firstRecordedUse": "Late 16th century (circa 1590s)"
+        },
+        "deepMeaning": {
+            "coreConcept": "Formal, legally or procedurally binding approval granted by an empowered official, governing body, or automated verification gateway to initiate an expenditure, release funds, or access protected financial instruments.",
+            "spatialContext": "Enterprise resource planning (ERP) systems (such as SAP or NetSuite), digital banking clearance interfaces, accounts payable workflows, and corporate procurement authorization forms.",
+            "temporalContext": "Pre-transactional; required before funds are disbursed, payment orders executed, contracts finalized, or credit facilities drawn down.",
+            "emotionalTone": "Authoritative, procedurally cautious, and risk-mitigating.",
+            "formalityLevel": "formal",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native speakers treat 'authorization' as an institutional checkpoint or regulatory green light rather than mere personal agreement. In a financial context, without authorization, funds are locked and transactions are frozen. It embodies separation of duties and administrative compliance, reassuring stakeholders that money is being disbursed responsibly under established fiscal policy.",
+            "mentalImage": "A finance director reviewing a multi-thousand-dollar purchase order on a dual-monitor workstation, confirming that the budget code matches the capital expenditure plan, and typing a one-time cryptographic passcode to issue formal digital authorization.",
+            "whenToUse": "Use when discussing formal permission or legal delegation for financial transactions, expenditures, credit card pre-authorizations, corporate signing authority, or access to sensitive accounts (e.g., 'prior authorization', 'board authorization', 'authorization code').",
+            "whenNotToUse": "Do not use for casual, informal personal permissions (use 'permission' or 'consent' instead, e.g., 'My boss gave me permission to leave early'). Do not confuse with 'authenticity' (genuineness) or 'authority' (the power/position itself).",
+            "culturalContext": "In Anglo-American corporate governance and Sarbanes-Oxley (SOX) compliance frameworks, strict 'delegation of authority' matrices define exact monetary thresholds that managers can approve independently, ensuring fraud prevention and transparent fiscal oversight."
+        },
+        "examples": {
+            "daily": [
+                "The credit card terminal showed a decline notice because the bank required two-factor authorization for the unusually large purchase.",
+                "You will need to submit written authorization from your landlord before the utility provider can activate service under your name.",
+                "The pharmacy contacted my health insurer to secure prior authorization before dispensing the specialty prescription."
+            ],
+            "business": [
+                "Any capital expenditure exceeding $25,000 mandates formal written authorization from the Chief Financial Officer.",
+                "Accounts payable refused to process the wire transfer because the invoice lacked a corresponding purchase authorization number.",
+                "The regional division operates under a strict delegation of authorization policy that caps local project spending at $100,000."
+            ],
+            "conversation": [
+                "\"Were you able to order the replacement lab workstations this morning?\" — \"Not yet; we are still waiting for the controller to provide budget authorization.\"",
+                "\"Why has the overseas supplier's advance payment been put on hold?\" — \"Our banking platform flagged it for secondary executive authorization due to the altered beneficiary details.\"",
+                "\"Can I sign off on this client entertainment voucher?\" — \"Only if your formal authorization level covers travel and representation expenses.\""
+            ],
+            "collocations": [
+                "prior authorization",
+                "written authorization",
+                "budget authorization",
+                "authorization code",
+                "grant authorization",
+                "obtain authorization"
+            ]
+        },
+        "wordFamily": {
+            "noun": "authorization, authorizer, authority",
+            "verb": "authorize",
+            "adjective": "authorized, unauthorized, authoritative",
+            "adverb": "authoritatively"
+        },
+        "visual": {
+            "imageKeyword": "corporate payment digital authorization executive signature stamp",
+            "imageDescription": "A close-up shot of a corporate finance manager reviewing an electronic invoice on an enterprise banking tablet, touching an on-screen green 'Authorize Payment' button while a paper requisition with an official approval stamp rests on the mahogany desk.",
+            "mnemonic": "An AUTHOR pens a manuscript, but an AUTHORIZATION gives the official power (authority) to release the funds and execute the script."
+        },
+        "video": {
+            "description": "A corporate governance training module detailing internal control mechanisms, illustrating how multi-tier expenditure authorization protocols shield businesses from invoice fraud and unauthorized disbursements."
+        },
+        "toeicContext": {
+            "commonParts": [
+                5,
+                6,
+                7
+            ],
+            "exampleQuestion": "Department heads must obtain written _______ from the finance director prior to purchasing non-budgeted software licenses exceeding $500.\n(A) authorize\n(B) authorized\n(C) authorization\n(D) authoritatively",
+            "tips": "In TOEIC Part 5, test-makers frequently position a blank between an adjective ('written') and a prepositional phrase ('from the finance director'). This slot requires a noun direct object: 'authorization' (C). Avoid confusing it with the base verb 'authorize' (A), the adjective/participle 'authorized' (B), or the adverb 'authoritatively' (D)."
+        },
+        "synonyms": [
+            "approval",
+            "sanction",
+            "clearance",
+            "permission",
+            "consent",
+            "warrant"
+        ],
+        "antonyms": [
+            "refusal",
+            "rejection",
+            "prohibition",
+            "denial",
+            "disallowance"
+        ],
+        "relatedWords": [
+            "delegation",
+            "compliance",
+            "sign-off",
+            "requisition",
+            "endorsement",
+            "mandate"
+        ]
+    },
+    {
+        "id": "finance-078",
+        "word": "balance",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/ˈbæl.əns/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/balance--_us_1.mp3",
+            "syllableBreakdown": "bal-ance",
+            "stressPattern": "First syllable stress: BAL-ance (/ˈbæl.əns/)",
+            "commonMistakes": "Learners often over-pronounce the second syllable vowel as a strong /æ/ or /eɪ/ instead of a reduced neutral schwa /ə/. Another error is failing to enunciate the ending /s/ clearly."
+        },
+        "etymology": {
+            "origin": "Latin via Old French",
+            "rootWord": "bilanx (bi- + lanx)",
+            "rootMeaning": "having two scale pans or dishes (bi- 'two' + lanx 'scale dish, plate')",
+            "evolution": "Traces from Late Latin 'bilanx', composed of 'bi-' (two) and 'lanx' (dish, platter). It entered Old French as 'balance' around the 12th century as a name for a two-pan weighing scale. In northern Italian mercantile cities during the Renaissance, the physical metaphor of weighing equal pans was transferred to double-entry accounting: when debit entries equal credit entries, the ledger is in equilibrium. By the 16th and 17th centuries in English commerce, 'balance' specifically designated the difference between the two sides of an account—the net sum remaining.",
+            "relatedLanguages": [
+                "French: balance",
+                "Spanish: balance",
+                "Italian: bilancio",
+                "German: Bilanz"
+            ],
+            "firstRecordedUse": "13th century (weighing scale); late 16th century (accounting ledger balance)"
+        },
+        "deepMeaning": {
+            "coreConcept": "The net amount remaining in an account after the sum of all debits is deducted from the sum of all credits, or the outstanding principal sum remaining unpaid on a loan or credit line.",
+            "spatialContext": "Mobile banking apps, printed monthly bank statements, general ledger accounting software, point-of-sale customer receipts, and credit management portals.",
+            "temporalContext": "Assessed continuously in real time, reconciled daily at close of business, or calculated on monthly billing cycle closing dates.",
+            "emotionalTone": "Objective and factual; reassuring when positive (cash reserves), urgent or stressful when reflecting an overdue liability.",
+            "formalityLevel": "neutral",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native speakers intuitively view an account 'balance' as a point-in-time snapshot of their liquidity or liability—it is what is left on the table right now. When speaking of credit cards, 'carrying a balance' immediately signals debt that incurs high interest. In corporate bookkeeping, 'balancing the books' represents complete reconciliation where neither a single dollar nor a cent is unaccounted for.",
+            "mentalImage": "A customer viewing a mobile banking screen with a bold green '$3,480.50 Available Balance' above a list of recent pending card swipes, alongside a printed credit card invoice displaying a red 'New Balance Due' box.",
+            "whenToUse": "Use when specifying the net funds in an account (checking balance, current balance), an unpaid debt sum (outstanding balance, loan balance), or the reconciliation state of financial ledgers.",
+            "whenNotToUse": "Do not confuse with 'budget' (which is a planned spending projection, not existing cash) or 'revenue' (which is cumulative earnings over time). A balance is a static stock measure, not a periodic flow.",
+            "culturalContext": "In American and British consumer finance culture, paying the 'statement balance in full' each billing cycle is considered the golden rule of credit card literacy, safeguarding personal credit scores (FICO) and avoiding compounding APR interest charges."
+        },
+        "examples": {
+            "daily": [
+                "I glanced at my mobile banking app before ordering groceries to verify that my account balance could cover the cost.",
+                "If you pay off your full statement balance before the billing due date, the credit card company will not assess any interest fees.",
+                "After the final tuition payment was deducted, the remaining balance in my college savings fund was less than two hundred dollars."
+            ],
+            "business": [
+                "The client was notified that services would be suspended until the outstanding balance of $14,200 was paid in full.",
+                "Treasury policy requires our corporate accounts to maintain a minimum daily cash balance of $1,000,000 to cover operational liquidity.",
+                "The senior accountant spent the entire afternoon reconciling discrepancies between the bank statement and our internal ledger balance."
+            ],
+            "conversation": [
+                "\"Do we have enough money in the marketing department account to engage the freelance designer?\" — \"Yes, our available balance is currently hovering around six thousand dollars.\"",
+                "\"Did the supplier acknowledge receipt of our electronic payment?\" — \"They did; their customer portal now shows a zero balance on all past invoices.\"",
+                "\"Why did we get hit with a late finance charge on the corporate charge card?\" — \"Someone forgot that the remaining balance had to be cleared by the twenty-fifth of the month.\""
+            ],
+            "collocations": [
+                "account balance",
+                "outstanding balance",
+                "remaining balance",
+                "check the balance",
+                "settle the balance",
+                "zero balance"
+            ]
+        },
+        "wordFamily": {
+            "noun": "balance, imbalance",
+            "verb": "balance",
+            "adjective": "balanced, unbalancing",
+            "adverb": "balancedly"
+        },
+        "visual": {
+            "imageKeyword": "bank account balance smartphone app financial statement",
+            "imageDescription": "A smartphone held in hand displaying a mobile banking dashboard showing a clear 'Available Balance' figure in clean typography, next to a printed monthly statement with debit and credit itemizations.",
+            "mnemonic": "BI (two) + LANX (scales): Imagine two weighing pans on a scale—deposits in one, withdrawals in the other. What stays in the pans is your net BALANCE!"
+        },
+        "video": {
+            "description": "A concise financial literacy video explaining how bank account balances update, differentiating between available balance, pending transactions, and ledger balance."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                5,
+                7
+            ],
+            "exampleQuestion": "Tenants who fail to pay their remaining _______ by the fifth of the month will be subject to a ten-dollar late fee.\n(A) balance\n(B) balanced\n(C) balancing\n(D) balances",
+            "tips": "In TOEIC Part 5, 'outstanding balance' and 'remaining balance' are fixed collocations in billing, tenancy, and customer service passages. When preceded by a possessive pronoun ('their') and adjective ('remaining') referring to a single collective debt sum, select the singular noun 'balance' (A)."
+        },
+        "synonyms": [
+            "remainder",
+            "residual",
+            "net amount",
+            "difference",
+            "surplus",
+            "outstanding sum"
+        ],
+        "antonyms": [
+            "deficit",
+            "imbalance",
+            "shortfall",
+            "discrepancy"
+        ],
+        "relatedWords": [
+            "ledger",
+            "credit",
+            "debit",
+            "reconciliation",
+            "settlement",
+            "statement"
+        ]
+    },
+    {
+        "id": "finance-079",
+        "word": "balance sheet",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "finance",
+        "level": "advanced",
+        "toeicFrequency": 7,
+        "pronunciation": {
+            "ipa": "/ˈbæl.əns ˌʃiːt/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/balance_sheet--_us_1.mp3",
+            "syllableBreakdown": "bal-ance sheet",
+            "stressPattern": "Primary stress on first syllable of 'balance', secondary stress on 'sheet': BAL-ance sheet (/ˈbæl.əns ˌʃiːt/)",
+            "commonMistakes": "Learners frequently fail to sustain the long vowel /iː/ in 'sheet', mistakenly shortening it to /ɪ/ (producing an offensive or comical mispronunciation). Another common error is merging the final /s/ of 'balance' with the initial /ʃ/ of 'sheet' without crisp boundary articulation."
+        },
+        "etymology": {
+            "origin": "Modern English Compound (Old French 'balance' + Old English 'scēte')",
+            "rootWord": "balance + sheet",
+            "rootMeaning": "a paper document or folium displaying the balancing of debit and credit accounts",
+            "evolution": "Formed in late 18th-century British mercantile and banking practice as double-entry bookkeeping became standardized. 'Sheet' stems from Old English 'scēte' (a broad expanse of cloth or paper), while 'balance' comes via Anglo-French from Latin 'bilanx'. Bookkeepers would tally ledger accounts at the end of an accounting period onto a single broad sheet to confirm that total assets matched the sum of liabilities and owner equity. By the 19th-century railway booms and the rise of joint-stock corporations, the 'balance sheet' became legally mandated in corporate filings.",
+            "relatedLanguages": [
+                "French: bilan",
+                "Spanish: balance de situación / balance general",
+                "Italian: stato patrimoniale / bilancio d'esercizio",
+                "German: Bilanz"
+            ],
+            "firstRecordedUse": "1799 (in merchant accounting manuals in London)"
+        },
+        "deepMeaning": {
+            "coreConcept": "A primary corporate financial statement that provides an itemized snapshot of an enterprise's financial health at a specific date, reporting the fundamental accounting identity: Assets = Liabilities + Shareholders' Equity.",
+            "spatialContext": "Annual reports (SEC 10-K filings), corporate boardroom presentations, credit rating agency audit files, investment banking financial models (Excel/Bloomberg Terminal), and executive controllership offices.",
+            "temporalContext": "A point-in-time snapshot, captured precisely as of the final day of a fiscal quarter or fiscal year (e.g., 'As of December 31, 2025'), contrasting with periodic flow statements.",
+            "emotionalTone": "Analytical, rigorous, objective, and conservative.",
+            "formalityLevel": "formal",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native financial professionals think of a balance sheet as an enterprise's structural backbone or financial x-ray. While an income statement tells you how fast the business ran this year, the balance sheet tells you whether the business has the structural integrity to withstand an unexpected storm. A 'strong balance sheet' means abundant liquidity and manageable debt, giving a company strategic agility.",
+            "mentalImage": "A clean, dual-column financial schedule in an annual report: the left column categorizes Current Assets (cash, accounts receivable, inventory) and Non-Current Assets (property, plant, equipment); the right column details Current Liabilities, Long-Term Debt, and Retained Earnings—concluding with identical matching totals.",
+            "whenToUse": "Use when analyzing capital structure, working capital, debt leverage, corporate solvency, liquidity ratios, or evaluating merger and acquisition targets.",
+            "whenNotToUse": "Do not confuse with an 'income statement' (which records sales revenue, operating expenses, and net profit over a time duration) or a 'cash flow statement'. Never use to refer to personal monthly spending budgets or checkbook registers.",
+            "culturalContext": "In Wall Street and corporate treasury parlance, companies with minimal leverage and vast cash reserves are celebrated as possessing 'fortress balance sheets'. Conversely, excessive off-balance-sheet liabilities were the focal point of infamous corporate accounting collapses such as Enron."
+        },
+        "examples": {
+            "daily": [
+                "Before purchasing shares in the manufacturing company, David scrutinized its balance sheet to assess its debt obligations.",
+                "The business professor asked students to calculate the debt-to-equity ratio using data from the retailer's balance sheet.",
+                "During our annual financial planning session, our accountant presented a balance sheet listing our family assets and mortgage obligations."
+            ],
+            "business": [
+                "Independent auditors verified that the consolidated balance sheet conforms to International Financial Reporting Standards.",
+                "Management implemented an aggressive deleveraging plan to remove high-interest debt and strengthen the corporate balance sheet.",
+                "According to the third-quarter balance sheet, the organization held over eighty million dollars in cash and short-term liquid investments."
+            ],
+            "conversation": [
+                "\"Why did the credit rating agency downgrade our bond rating?\" — \"They cited deteriorating liquidity on our balance sheet following the aggressive overseas acquisition.\"",
+                "\"Are we in a position to weather a prolonged industry downturn?\" — \"Fortunately, yes; our balance sheet is practically debt-free, and we have substantial cash reserves.\"",
+                "\"Where can I locate the inventory valuation figures?\" — \"Check line item four under Current Assets on the consolidated balance sheet.\""
+            ],
+            "collocations": [
+                "strengthen the balance sheet",
+                "consolidated balance sheet",
+                "off-balance-sheet",
+                "healthy balance sheet",
+                "audited balance sheet",
+                "review the balance sheet"
+            ]
+        },
+        "wordFamily": {
+            "noun": "balance sheet",
+            "verb": "",
+            "adjective": "off-balance-sheet, balance-sheet",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "balance sheet financial statement corporate audit annual report",
+            "imageDescription": "A top-down view of an executive's desk showing an open corporate annual report open to the audited balance sheet, alongside a calculator, a fountain pen, and a laptop displaying financial ratio charts.",
+            "mnemonic": "A SHEET where both sides must BALANCE: Total Assets on one side must equal Total Liabilities plus Equity on the other!"
+        },
+        "video": {
+            "description": "An executive education case study breaking down how to interpret a corporate balance sheet, explaining liquidity metrics, asset impairment, and debt leverage analysis for strategic decision-making."
+        },
+        "toeicContext": {
+            "commonParts": [
+                5,
+                6,
+                7
+            ],
+            "exampleQuestion": "The external auditors confirmed that the company's consolidated _______ presents a true and fair view of its financial position as of December 31.\n(A) balance sheet\n(B) balancing sheet\n(C) balanced sheet\n(D) sheet balance",
+            "tips": "In TOEIC Part 5 and 7, 'balance sheet' is tested as an established compound noun collocated with 'consolidated', 'audited', or 'financial position'. Reject incorrect participial variations like 'balancing sheet' (B) or 'balanced sheet' (C), as well as inverted terms like 'sheet balance' (D)."
+        },
+        "synonyms": [
+            "statement of financial position",
+            "statement of financial condition",
+            "statement of assets and liabilities",
+            "audited statement",
+            "financial position statement"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "assets",
+            "liabilities",
+            "shareholders' equity",
+            "liquidity",
+            "solvency",
+            "working capital",
+            "income statement"
+        ]
+    }
+]
+
+# Write to scratch/finance_077_079.json
+with open("scratch/finance_077_079.json", "w", encoding="utf-8") as f:
+    json.dump({"words": words}, f, indent=2, ensure_ascii=False)
+
+# Update src/data/vocabulary/finance.ts
+with open("src/data/vocabulary/finance.ts", "r", encoding="utf-8") as f:
+    content = f.read()
+
+pos77 = content.find('"id": "finance-077",')
+pos80 = content.find('"id": "finance-080",')
+
+start = content.rfind("  {", 0, pos77)
+end = content.rfind("  {", 0, pos80)
+
+# Format entries with 4-space indentation for objects, indented 2 spaces for array elements
+formatted_blocks = []
+for entry in words:
+    dumped = json.dumps(entry, indent=4, ensure_ascii=False)
+    indented = "\n".join("  " + line for line in dumped.split("\n"))
+    formatted_blocks.append(indented)
+
+replacement_block = ",\n".join(formatted_blocks) + ",\n"
+
+new_content = content[:start] + replacement_block + content[end:]
+
+with open("src/data/vocabulary/finance.ts", "w", encoding="utf-8") as f:
+    f.write(new_content)
+
+print("scratch/finance_077_079.json and src/data/vocabulary/finance.ts updated successfully!")

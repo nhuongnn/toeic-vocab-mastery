@@ -1,0 +1,351 @@
+{
+  "words": [
+    {
+      "id": "finance-123",
+      "word": "derivative",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/dɪˈrɪv.ə.tɪv/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/derivative--_us_1.mp3",
+        "syllableBreakdown": "de-riv-a-tive",
+        "stressPattern": "○●○○",
+        "commonMistakes": "Learners frequently place primary stress on the first syllable (*ˈdɛr.ɪ.veɪ.tɪv*) instead of the second (/dɪˈrɪv.ə.tɪv/). Another common mistake is pronouncing the third syllable with an unreduced diphthong rather than a weak schwa /ə/. Semantically, candidates in business contexts often confuse a financial derivative (a contract deriving value from an underlying asset) with its mathematical meaning (a rate of change in calculus) or artistic meaning (something unoriginal). In TOEIC, derivatives refer almost exclusively to financial risk instruments like options, futures, and swaps."
+      },
+      "etymology": {
+        "origin": "Late Latin derivativus via Old French dérivatif and Classical Latin derivare",
+        "rootWord": "Latin de- (down from, away) + rivus (brook, stream) → derivare (to divert a stream of water, draw off)",
+        "rootMeaning": "Drawn from a source stream; flowing out of another body",
+        "evolution": "Originally used in Classical Latin to describe diverting water channels from a river (de rivo). In Late Latin and medieval grammar, it referred to words derived from root words. By the 15th century, Middle English adopted derivative for things drawn or produced from an existing primary source. In 20th-century financial markets, economists and legal scholars applied the term to contractual agreements whose financial value is drawn directly from the price movements of an underlying asset, commodity, interest rate, or currency index.",
+        "relatedLanguages": [
+          "French: dérivé / dérivatif (derivative)",
+          "Spanish: derivado / derivativo (derivative)",
+          "Italian: derivato (derivative, financial instrument)",
+          "German: Derivat (financial derivative instrument)",
+          "Dutch: derivaat (derivative)"
+        ],
+        "firstRecordedUse": "15th century (general sense in Middle English); early 20th century (specialized modern financial sense in capital markets)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A specialized financial contract whose market value and payoff structure are determined by the price, yield, or performance of an underlying entity—such as a stock, bond, commodity, currency exchange rate, or market benchmark index. Standard derivatives include futures, forward contracts, options, and interest rate swaps, primarily used by corporations and fund managers to hedge against price volatility or speculate on market movements.",
+        "spatialContext": "Institutional trading floors, investment bank derivative desks, commodity exchanges (e.g., CME, ICE), corporate treasury departments, and risk management compliance suites.",
+        "temporalContext": "Monitored continuously during trading hours with daily mark-to-market valuations; settled at predetermined expiration, delivery, or rollover dates.",
+        "emotionalTone": "Sophisticated, analytical, risk-sensitive, and legally precise; carries connotations of advanced financial engineering.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native financial professionals, derivative immediately triggers two dual thoughts: risk hedging and leverage. When a multinational corporation buys jet fuel futures or currency forwards, natives see prudent insurance against price shocks. However, in public discourse and after market crises, natives also associate unhedged or complex derivatives with systemic leverage and speculative hazard. In TOEIC contexts, it almost always appears in the context of institutional risk mitigation, hedging interest rate fluctuations, or portfolio diversification.",
+        "mentalImage": "A quantitative risk analyst at an investment bank reviewing a multi-screen terminal displaying pricing models for interest rate swaps and oil futures, evaluating how sudden price volatility would impact client hedging portfolios.",
+        "whenToUse": "Use when referring to financial instruments derived from underlying assets (e.g., credit derivative, equity derivative, derivative contract, trade derivatives, hedging with derivatives).",
+        "whenNotToUse": "Do not use to mean simple shares of common stock or physical bank deposits. In finance, do not confuse with underlying asset (the actual asset, such as physical crude oil or Treasury bonds, from which the derivative derives its value). In writing reviews, avoid mixing with the literary adjective meaning unoriginal or imitative.",
+        "culturalContext": "Derivatives constitute the largest segment of global financial markets by notional value, exceeding hundreds of trillions of dollars. Regulated under frameworks like Dodd-Frank in the US and EMIR in Europe, corporate treasurers routinely deploy them to stabilize operating budgets against foreign exchange fluctuations."
+      },
+      "examples": {
+        "daily": [
+          "Retail investors often find trading a complex financial derivative much riskier than buying ordinary company shares.",
+          "The business news anchor explained how airlines use an energy derivative to protect against sudden spikes in jet fuel prices.",
+          "Before investing in an equity derivative, he consulted a licensed wealth advisor to understand the potential downside exposure."
+        ],
+        "business": [
+          "To mitigate foreign exchange volatility across European operations, the multinational enterprise entered into a currency derivative contract.",
+          "The investment bank expanded its structured products desk to meet growing institutional demand for credit derivative solutions.",
+          "Regulatory authorities mandated central clearing for any standard over-the-counter derivative to enhance market transparency and limit counterparty default."
+        ],
+        "conversation": [
+          "\"Why is our corporate treasury department purchasing so many interest rate swaps this quarter?\" / \"They are using the derivative to convert our floating-rate debt into a predictable fixed-rate obligation before the central bank raises interest rates.\"",
+          "\"Did the portfolio manager execute the hedge on our agricultural commodities?\" / \"Yes, she finalized an options-based derivative to establish a price floor for next season's wheat harvest.\""
+        ],
+        "collocations": [
+          "credit derivative",
+          "financial derivative",
+          "derivative contract",
+          "over-the-counter derivative",
+          "trade a derivative",
+          "hedging with derivatives"
+        ]
+      },
+      "wordFamily": {
+        "noun": "derivative, derivation",
+        "verb": "derive",
+        "adjective": "derivative, derivable",
+        "adverb": "derivatively"
+      },
+      "visual": {
+        "imageKeyword": "financial derivative trading desk multi monitor futures options terminal",
+        "imageDescription": "A financial risk analyst seated at a dual-monitor trading desk reviewing interactive payoff diagrams, options pricing models, and commodity futures contracts.",
+        "mnemonic": "DE-RIVE-ATIVE: Its value is literally DERIVED from an underlying asset, like water flowing downstream from a river!"
+      },
+      "video": {
+        "description": "An instructional capital markets video explaining how corporate treasurers utilize interest rate derivatives and currency forward contracts to protect company cash flows against unexpected market fluctuations."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "To protect its operating budget against currency fluctuations in international markets, Nexis Corporation entered into a foreign exchange _____.\n(A) derivative\n(B) derive\n(C) derivation\n(D) derivatively",
+        "tips": "In TOEIC Part 5, identify the part of speech required by the grammatical context. Following the compound noun modifier 'foreign exchange' and the indefinite article 'a', the sentence requires a singular count noun representing a financial contract: (A) derivative. Choice (B) derive is a base verb; choice (C) derivation refers to the abstract process of originating; and choice (D) derivatively is an adverb. In Part 7, look for derivative contracts mentioned in corporate annual reports detailing risk management and hedging strategies."
+      },
+      "synonyms": [
+        "financial contract",
+        "hedging instrument",
+        "derivative security",
+        "structured instrument",
+        "synthetic asset"
+      ],
+      "antonyms": [
+        "underlying asset",
+        "primary security",
+        "spot asset",
+        "physical commodity"
+      ],
+      "relatedWords": [
+        "futures",
+        "options",
+        "swap",
+        "hedging",
+        "counterparty",
+        "notional value",
+        "underlying"
+      ]
+    },
+    {
+      "id": "finance-124",
+      "word": "devaluation",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "finance",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˌdiːˌvæl.juˈeɪ.ʃən/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/devaluation--_us_1.mp3",
+        "syllableBreakdown": "de-val-u-a-tion",
+        "stressPattern": "○○○●○",
+        "commonMistakes": "Learners often misplace primary stress on the second syllable (*de-VAL-u-a-tion*) instead of the fourth syllable (/-ˈeɪ.ʃən/). Another common mistake is pronouncing the prefix 'de-' as /dɪ/ or /də/ rather than the distinct long vowel /diː/. In economic and business contexts, learners frequently confuse devaluation (the official, deliberate downward adjustment of a pegged currency by a government or central bank) with depreciation (the gradual loss of currency value caused by free-market supply and demand, or the amortized accounting write-down of tangible physical equipment). In TOEIC, distinguish monetary devaluation from operational write-downs."
+      },
+      "etymology": {
+        "origin": "Compound formed from the Latin prefix de- (down, away from) and valere (to be strong, be worth, have value), via French dévaluation.",
+        "rootWord": "Latin de- (down, reversal) + valere (to be worth, be strong) + -ation (nominal action suffix)",
+        "rootMeaning": "An official act of reducing the established worth or parity of a currency",
+        "evolution": "The classical Latin verb valere gave rise to Old French valoir and the concept of value. In the late 19th and early 20th centuries, as international trade expanded under the gold standard and fixed exchange rate regimes, economists coined the French term dévaluation (c. 1914-1920) to describe a sovereign state's deliberate reduction of its currency's gold convertibility or pegged parity. The word was formally adopted into English financial journalism and macroeconomic policy during the interwar currency adjustments of the 1920s and 1930s, specifically designating statutory monetary reductions implemented to stimulate domestic exports or conserve foreign exchange reserves.",
+        "relatedLanguages": [
+          "French: dévaluation (currency devaluation)",
+          "Spanish: devaluación (devaluation of currency)",
+          "Italian: svalutazione / devaluazione (devaluation, depreciation)",
+          "German: Abwertung / Devaluation (devaluation of currency)",
+          "Dutch: devaluatie (devaluation)"
+        ],
+        "firstRecordedUse": "Early 20th century (c. 1920, in British economic journals discussing post-World War I exchange rate realignments)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The official, deliberate downward adjustment of a sovereign currency's value relative to a benchmark currency, currency basket, or gold standard, decreed by a national government or central bank operating within a fixed or pegged exchange rate regime; by extension, any substantial reduction in the recognized value, prestige, or purchasing power of an asset or standard.",
+        "spatialContext": "Central bank press briefing auditoriums, national ministry of finance chambers, foreign exchange (forex) trading desks, and international financial institutions (such as the IMF and World Bank).",
+        "temporalContext": "Announced during formal monetary policy press conferences, emergency cabinet sessions during balance-of-payments crises, or scheduled currency re-pegging periods.",
+        "emotionalTone": "Consequential, urgent, politically sensitive, and disruptive to import purchasing power while advantageous to exporters.",
+        "formalityLevel": "formal",
+        "connotation": "negative"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native economic and corporate observers, devaluation signals intentional government intervention during macroeconomic strain. Unlike a floating currency that depreciates gradually day-to-day on market sentiment, devaluation is a decisive stroke of state policy. Natives instantly anticipate the two-sided consequence: domestic consumers suffer higher costs on imported goods and inflation surges, while domestic manufacturing exporters celebrate because their goods become cheaper and more competitive overseas. In TOEIC scenarios, devaluation appears in international business news, economic updates, and corporate trade memos evaluating foreign exchange risks.",
+        "mentalImage": "A central bank governor speaking at a televised press conference surrounded by microphoned podiums, displaying a chart that outlines a ten-percent downward adjustment of the national currency to correct trade deficits.",
+        "whenToUse": "Use when referring to an official government decision to lower a currency's pegged exchange rate (e.g., currency devaluation, sudden devaluation, devaluation of the peso), or metaphorically to an official cheapening of standards or credentials (e.g., devaluation of professional certifications).",
+        "whenNotToUse": "Do not use devaluation for floating currencies fluctuating naturally in the open market (use depreciation instead). Do not use to describe the wear-and-tear amortization of factory machinery on a balance sheet (use depreciation or impairment). Avoid confusing with deflation (a decrease in consumer price levels).",
+        "culturalContext": "In global economic history, currency devaluations under the Bretton Woods system or contemporary emerging markets often spark fierce political debate. For multinational companies, an unexpected devaluation in an overseas market immediately shrinks translated revenues when converting foreign earnings back into US dollars or euros."
+      },
+      "examples": {
+        "daily": [
+          "Following the unexpected currency devaluation, tourists noticed that imported electronics in local shops became noticeably more expensive.",
+          "Families living near the border converted their cash savings into foreign currency to protect their purchasing power against further devaluation.",
+          "The international student faced higher tuition expenses after the sharp devaluation of her home country's national currency."
+        ],
+        "business": [
+          "The electronics manufacturer suffered significant third-quarter translation losses following the sudden devaluation of the Argentine peso.",
+          "Economists predicted that the planned devaluation would boost industrial exports by making locally manufactured goods more price-competitive abroad.",
+          "The multinational retailer adjusted its overseas pricing strategy to preserve profit margins in the wake of ongoing currency devaluation."
+        ],
+        "conversation": [
+          "\"How will our overseas subsidiary cope with the recent devaluation of the local currency?\" / \"We will have to renegotiate local supplier contracts and raise retail prices slightly to offset higher import costs.\"",
+          "\"Why did the central bank decide on a five percent currency devaluation?\" / \"Their foreign exchange reserves were dwindling, so they devalued the currency to curb expensive imports and encourage domestic manufacturing.\""
+        ],
+        "collocations": [
+          "currency devaluation",
+          "sharp devaluation",
+          "sudden devaluation",
+          "massive devaluation",
+          "trigger a devaluation",
+          "prevent currency devaluation"
+        ]
+      },
+      "wordFamily": {
+        "noun": "devaluation, value, valuation",
+        "verb": "devalue, evaluate",
+        "adjective": "devalued, evaluating",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "currency devaluation central bank press conference forex exchange chart",
+        "imageDescription": "A central bank press conference showing monetary officials seated before charts indicating a downward re-pegging of the national currency against international reserve currencies.",
+        "mnemonic": "DE-VALUATION: DE means downward, VALUE means worth — an official action forcing the currency's VALUE DOWN!"
+      },
+      "video": {
+        "description": "An economic case study video analyzing how a central bank's currency devaluation impacts domestic consumer inflation, export volumes, and multinational corporate balance sheets."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Multinational corporations operating in emerging markets must hedge their cash flows against unexpected currency _____ to prevent sudden revenue losses.\n(A) devaluation\n(B) devaluing\n(C) devalue\n(D) devalued",
+        "tips": "In TOEIC Part 5, determine the correct part of speech following the compound noun modifier 'currency'. The blank requires the head noun naming the monetary policy event: (A) devaluation. Choice (B) devaluing is a gerund or present participle; choice (C) devalue is the base verb form; and choice (D) devalued is a past participle or adjective. In Part 7 reading passages, look for articles discussing how shifts in monetary policy or currency devaluation affect corporate quarterly guidance."
+      },
+      "synonyms": [
+        "currency depreciation",
+        "depreciation",
+        "cheapening",
+        "downgrade",
+        "debasement"
+      ],
+      "antonyms": [
+        "revaluation",
+        "currency appreciation",
+        "appreciation",
+        "enhancement"
+      ],
+      "relatedWords": [
+        "pegged exchange rate",
+        "foreign exchange reserves",
+        "inflation",
+        "trade deficit",
+        "central bank",
+        "purchasing power",
+        "depreciation"
+      ]
+    },
+    {
+      "id": "finance-125",
+      "word": "diminish",
+      "partOfSpeech": [
+        "verb"
+      ],
+      "category": "finance",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/dɪˈmɪn.ɪʃ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/diminish--_us_1.mp3",
+        "syllableBreakdown": "di-min-ish",
+        "stressPattern": "○●○",
+        "commonMistakes": "Learners frequently misplace primary stress on the first syllable (*ˈdɪm.ɪn.ɪʃ*) rather than the second syllable (/dɪˈmɪn.ɪʃ/). Another common mistake is substituting a tense vowel /iː/ for the short lax vowel /ɪ/ in the second and third syllables, pronouncing it like dee-MEEN-eesh. Semantically, candidates sometimes confuse the transitive use (rising costs diminish profits) with intransitive use (sales began to diminish). Non-native speakers also confuse diminish with dwindle (which usually implies shrinking gradually toward zero or extinction) or depreciate (which is specific to asset accounting or currency value)."
+      },
+      "etymology": {
+        "origin": "Late Middle English blend of Old French diminuer (to lessen) and earlier English minish (from Old French menuisier, from Latin minuere, meaning to make smaller).",
+        "rootWord": "Latin de- / dis- (completely, away) + minuere (to make small, lessen, from minus meaning less)",
+        "rootMeaning": "To make smaller, reduce in size, degree, or intensity",
+        "evolution": "In Classical Latin, minuere (to make less) produced Late Latin diminuere (to break into small pieces, lessen). In 14th-century Middle English, speakers used the verb minish (borrowed from Old French menuisier). During the 15th century, influenced by the Latinate form diminuer, English scholars merged the prefix with minish to form diminish. In commercial and legal history, the term gained rapid prominence in bookkeeping and contract law to describe reductions in capital, yields, asset value, or executive authority, eventually becoming a cornerstone verb in corporate finance and economic reporting.",
+        "relatedLanguages": [
+          "French: diminuer (to reduce, decrease, lessen)",
+          "Spanish: disminuir (to diminish, reduce, decrease)",
+          "Italian: diminuire (to diminish, decrease, lessen)",
+          "Portuguese: diminuir (to reduce, lessen)",
+          "German: vermindern (to diminish, reduce)"
+        ],
+        "firstRecordedUse": "Early 15th century (c. 1400-1425, in Middle English legal and literary manuscripts)"
+      },
+      "deepMeaning": {
+        "coreConcept": "To make or become smaller, fewer, or less in amount, degree, intensity, value, or importance. In financial and business contexts, it describes the contraction of revenues, margins, purchasing power, returns, customer demand, or balance sheet reserves caused by market pressures, inflation, competition, or increased operational overhead.",
+        "spatialContext": "Corporate finance boardrooms, earnings call conference rooms, financial analytics dashboards, and economic forecasting presentations.",
+        "temporalContext": "Observed across consecutive quarterly earnings periods, multi-year economic cycles, or immediately following inflationary shocks or supply disruptions.",
+        "emotionalTone": "Cautionary, sober, analytical, and watchful; prompts strategic restructuring or cost-containment measures.",
+        "formalityLevel": "formal",
+        "connotation": "negative"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native business speakers, diminish is a precise, elevated verb favored over colloquial verbs like drop, shrink, or go down. When native executives discuss corporate results, they say inflation diminished our operating margins or investor enthusiasm began to diminish. It carries a sense of gradual erosion or substantive reduction that warrants executive attention. It is also famous in the foundational economic phrase law of diminishing returns (where adding more input yields progressively smaller output gains), which every business executive and TOEIC test-taker is expected to recognize.",
+        "mentalImage": "A chief financial officer at a corporate annual meeting pointing to a projected bar chart where profit margins gradually taper downward due to rising raw material expenditures.",
+        "whenToUse": "Use when describing the reduction of abstract or quantifiable business metrics such as profits, returns, enthusiasm, authority, value, or market share (e.g., diminish returns, diminish profit margins, diminish the impact, prospects began to diminish).",
+        "whenNotToUse": "Do not use for physical destruction or sudden total collapse (use destroy, plummet, or collapse). Avoid using in casual, colloquial speech for simple physical shrinking of clothing (say shrunk in the wash, not the shirt diminished). Do not use as a noun (the correct nouns are diminution or diminishment).",
+        "culturalContext": "In Anglo-American economic literature, the law of diminishing returns (originally formalized by David Ricardo and Thomas Malthus) is a core economic principle taught in every business curriculum. In corporate leadership, managers frequently discuss steps to prevent organizational fatigue or ensure employee morale does not diminish during prolonged restructurings."
+      },
+      "examples": {
+        "daily": [
+          "Persistent inflation has begun to diminish the purchasing power of middle-class household savings.",
+          "Her initial nervousness before the client presentation started to diminish once she saw the audience nodding encouragingly.",
+          "The constant delays did not diminish his enthusiasm for completing the community fundraising initiative."
+        ],
+        "business": [
+          "Unprecedented spikes in maritime logistics costs significantly diminished our gross profit margins for the third quarter.",
+          "The factory manager realized that adding more assembly line shifts yielded diminishing returns due to worker fatigue.",
+          "Aggressive pricing from regional competitors threatened to diminish the software firm's dominant market share."
+        ],
+        "conversation": [
+          "\"Did the unexpected increase in component costs affect our quarterly net income?\" / \"Yes, it diminished our earnings by nearly eight percent compared to our initial budget forecast.\"",
+          "\"Do you think hiring more sales representatives will double our regional revenue?\" / \"Not necessarily, because our current sales territory is saturated, so we may see diminishing returns.\""
+        ],
+        "collocations": [
+          "diminish returns",
+          "diminish profit margins",
+          "diminish the value",
+          "diminish the impact",
+          "diminish market share",
+          "law of diminishing returns"
+        ]
+      },
+      "wordFamily": {
+        "noun": "diminution, diminishment",
+        "verb": "diminish",
+        "adjective": "diminished, diminishing",
+        "adverb": "diminishingly"
+      },
+      "visual": {
+        "imageKeyword": "cfo pointing to diminishing profit margins bar chart quarterly financial presentation",
+        "imageDescription": "A corporate executive presenting financial charts on a large digital screen in a boardroom, illustrating a gradual downward trend in quarterly net operating margins.",
+        "mnemonic": "DIM-IN-ISH: Think of a light DIMMING down — when profits diminish, the financial outlook dims!"
+      },
+      "video": {
+        "description": "An executive economics lecture explaining the law of diminishing returns in manufacturing, demonstrating how adding extra labor without capital expansion eventually reduces marginal productivity."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Unexpected increases in raw material and transportation costs have substantially _____ the manufacturer's quarterly operating profits.\n(A) diminished\n(B) diminution\n(C) diminishingly\n(D) diminishable",
+        "tips": "In TOEIC Part 5, analyze the verbal structure of the sentence. The auxiliary construction 'have substantially _____' requires a past participle to complete the present perfect tense verb phrase: (A) diminished. Choice (B) diminution is a noun; choice (C) diminishingly is an adverb; and choice (D) diminishable is an adjective. Also watch for the high-frequency business collocation diminishing returns in Part 7 reading comprehension passages."
+      },
+      "synonyms": [
+        "lessen",
+        "decrease",
+        "reduce",
+        "curtail",
+        "shrink",
+        "erode"
+      ],
+      "antonyms": [
+        "increase",
+        "enhance",
+        "augment",
+        "amplify",
+        "boost"
+      ],
+      "relatedWords": [
+        "diminishing returns",
+        "diminution",
+        "margin erosion",
+        "revenue decline",
+        "depletion",
+        "contraction",
+        "curtailment"
+      ]
+    }
+  ]
+}

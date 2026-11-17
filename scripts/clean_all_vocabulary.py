@@ -20,6 +20,7 @@ Cleans all 13 vocabulary files in src/data/vocabulary/:
 import sys, os, re, json
 sys.path.insert(0, os.getcwd())
 from scripts.word_banks import WORD_BANKS
+from scripts.linguistic_mastery import resolve_etymology, resolve_deep_meaning, resolve_native_mindset, resolve_visual
 
 SPECIAL_WORDS = {
     'apple': {
@@ -236,18 +237,91 @@ CATEGORIES_META = {
     }
 }
 
+NOUN_EXCEPTIONS = {
+    'kitchen', 'chicken', 'oven', 'allergen', 'pathogen', 'regimen', 'oxygen', 'hydrogen', 'nitrogen',
+    'linen', 'hyphen', 'pollen', 'screen', 'citizen', 'specimen', 'alien', 'dozen', 'burden', 'garden',
+    'haven', 'omen', 'token', 'warden', 'gluten', 'iron', 'apron', 'crayon', 'canon', 'carton', 'canyon',
+    'chocolate', 'plate', 'rate', 'date', 'estate', 'climate', 'mandate', 'pirate', 'senate', 'inmate',
+    'gate', 'crate', 'consulate', 'magistrate',
+    'candidate', 'certificate', 'syndicate', 'affiliate', 'delegate', 'surrogate', 'aggregate',
+    'assembly', 'subassembly', 'final assembly', 'modular assembly', 'monopoly', 'supply', 'janitorial supply',
+    'janitor supply', 'rally', 'family', 'anomaly', 'folly', 'belly',
+    'journal', 'portal', 'signal', 'cable', 'hospital', 'capital', 'approval', 'refusal', 'proposal',
+    'appraisal', 'manual', 'terminal', 'interval', 'protocol', 'deal', 'appeal', 'trial', 'denial',
+    'removal', 'retrieval', 'renewal', 'survival', 'dismissal', 'disposal', 'reversal', 'referral',
+    'official', 'individual', 'professional', 'material', 'commercial', 'financial', 'potential',
+    'credential', 'residential', 'cereal', 'collateral', 'deferral', 'goal', 'infomercial', 'meal',
+    'mistrial', 'periodical', 'peripheral', 'principal', 'rebuttal', 'recusal', 'rental', 'repeal',
+    'testimonial', 'tribunal', 'withdrawal', 'accrual', 'arrival',
+    'actuary', 'anniversary', 'beneficiary', 'boundary', 'commentary', 'directory', 'documentary',
+    'dormitory', 'glossary', 'intermediary', 'itinerary', 'judiciary', 'laboratory', 'library',
+    'memory', 'notary', 'obituary', 'repository', 'salary', 'subsidiary', 'summary',
+    'enterprise', 'expertise', 'exercise', 'compromise', 'cruise', 'high-rise', 'mid-rise',
+    'clinic', 'critic', 'epidemic', 'infographic', 'logic', 'mechanic', 'metric', 'narcotic',
+    'pandemic', 'paramedic', 'traffic', 'antibiotic', 'analgesic', 'anesthetic', 'antiseptic', 'prosthetic',
+    'archive', 'derivative', 'executive', 'incentive', 'initiative', 'locomotive', 'objective',
+    'prerogative', 'representative', 'sedative',
+    'consumable', 'convertible', 'deductible', 'deliverable', 'durable', 'intangible', 'payable',
+    'receivable', 'roundtable', 'table', 'variable', 'vegetable'
+}
+
+ADJECTIVE_EXCEPTIONS = {
+    'accurate', 'corporate', 'subordinate', 'single-family', 'timely', 'friendly', 'orderly',
+    'abrasive', 'cooperative', 'cost-effective', 'defective', 'exclusive', 'interactive',
+    'investigative', 'legislative', 'native', 'preventive', 'prospective', 'responsive',
+    'accountable', 'admissible', 'delectable', 'edible', 'eligible', 'enforceable', 'liable',
+    'negotiable', 'perishable', 'redeemable',
+    'artisanal', 'behavioral', 'biomedical', 'clerical', 'clinical', 'commercial', 'confidential',
+    'continental', 'contractual', 'dental', 'digital', 'editorial', 'electrical', 'exceptional',
+    'fiscal', 'formal', 'halal', 'internal', 'managerial', 'medical', 'nominal',
+    'nutritional', 'occupational', 'operational', 'pharmaceutical', 'promotional', 'special',
+    'surgical', 'thermal', 'virtual', 'wireless',
+    'advisory', 'ambulatory', 'budgetary', 'complimentary', 'culinary', 'dietary', 'disciplinary',
+    'fiduciary', 'interrogatory', 'mandatory', 'monetary', 'primary', 'probationary', 'respiratory',
+    'sanitary', 'savory', 'sedentary', 'statutory', 'supervisory',
+    'alcoholic', 'authentic', 'chronic', 'demographic', 'diagnostic', 'domestic', 'electronic',
+    'ergonomic', 'generic', 'graphic', 'historic', 'holistic', 'hygienic', 'numeric', 'ophthalmic',
+    'organic', 'orthopedic', 'strategic', 'supersonic'
+}
+
+VERB_EXCEPTIONS = {
+    'accommodate', 'activate', 'affiliate', 'aggregate', 'articulate', 'associate', 'disseminate',
+    'estimate', 'graduate', 'integrate', 'litigate', 'marinate', 'navigate', 'terminate', 'update',
+    'amortize', 'braise', 'caramelize', 'devise', 'immunize', 'initialize', 'optimize', 'publicize',
+    'raise', 'subsidize', 'arrive', 'enable', 'delete', 'negotiate', 'collaborate', 'implement',
+    'testify', 'indemnify'
+}
+
+ADVERB_EXCEPTIONS = {
+    'accurately', 'annually', 'biweekly', 'daily', 'monthly', 'quarterly', 'weekly', 'promptly',
+    'efficiently', 'confidantially', 'strictly', 'consistently', 'directly', 'regularly'
+}
+
 def guess_part_of_speech(word):
     """Accurately determine primary part of speech."""
-    w = word.lower()
+    w = word.lower().strip()
+    if ' ' in w:
+        return 'noun'
+    if w in VERB_EXCEPTIONS:
+        return 'verb'
+    if w in ADJECTIVE_EXCEPTIONS:
+        return 'adjective'
+    if w in ADVERB_EXCEPTIONS:
+        return 'adverb'
+    if w in NOUN_EXCEPTIONS:
+        return 'noun'
+    if w.endswith('ly') and not w.endswith(('family', 'assembly', 'supply', 'monopoly', 'rally', 'belly', 'folly', 'anomaly')):
+        return 'adverb'
     if w.endswith(('tion', 'ment', 'ence', 'ance', 'ity', 'ness', 'ship', 'ism', 'er', 'or', 'ant', 'ent', 'ure', 'logy', 'ing')):
         return 'noun'
     if w.endswith(('able', 'ible', 'ive', 'ous', 'ful', 'less', 'ic', 'al', 'ary', 'ory')):
         return 'adjective'
-    if w.endswith('ly'):
-        return 'adverb'
-    if w.endswith(('ize', 'ise', 'ate', 'ify', 'en')):
+    if w.endswith(('ize', 'ise', 'ify')):
         return 'verb'
-    # Default common business patterns
+    if w.endswith('ate') and len(w) > 4:
+        return 'verb'
+    if w.endswith(('widen', 'tighten', 'loosen', 'shorten', 'strengthen', 'brighten', 'darken', 'sharpen', 'deepen', 'soften', 'broaden')):
+        return 'verb'
     return 'noun'
 
 def generate_ipa(word):
@@ -268,57 +342,467 @@ def generate_syllables(word):
             out.append(f"{p[:3]}·{p[3:6]}·{p[6:]}")
     return ' '.join(out)
 
-def generate_etymology(word, pos):
-    w = word.lower()
-    if w.startswith(('con', 'com', 'col')):
-        origin = 'Latin via Old French'
-        root = 'cum'
-        meaning = 'with, together, completely'
-    elif w.startswith(('re', 'retro')):
-        origin = 'Latin'
-        root = 're-'
-        meaning = 'again, back, anew'
-    elif w.startswith(('in', 'im', 'en')):
-        origin = 'Latin'
-        root = 'in-'
-        meaning = 'into, upon, or causing to become'
-    elif w.startswith(('sub', 'sup')):
-        origin = 'Latin'
-        root = 'sub-'
-        meaning = 'under, subordinate, secondary'
-    elif w.startswith(('trans', 'tra')):
-        origin = 'Latin'
-        root = 'trans-'
-        meaning = 'across, beyond, through'
-    elif w.startswith(('inter', 'intra')):
-        origin = 'Latin'
-        root = 'inter-'
-        meaning = 'between, among, mutually'
-    elif w.startswith(('pro', 'pre')):
-        origin = 'Latin'
-        root = 'pro- / prae-'
-        meaning = 'forward, before, on behalf of'
-    elif w.startswith(('de', 'dis')):
-        origin = 'Latin'
-        root = 'de- / dis-'
-        meaning = 'down, away, reversal, separation'
-    elif w.startswith(('tele', 'micro', 'auto', 'hyper', 'poly')):
-        origin = 'Classical Greek'
-        root = w[:4]
-        meaning = 'specialized technical modifier'
+DOMAIN_NOUN_TEMPLATES = {
+    'dining': {
+        'daily': [
+            'The banquet staff inspected the {w} before the evening corporate reception.',
+            'Please ensure that the {w} meets all hospitality and safety standards.',
+            'Our catering coordinator prepared an updated arrangement for the {w}.'
+        ],
+        'business': [
+            'The hospitality management team invested in upgrading the {w} across all dining venues.',
+            'Annual quality audits confirmed that every {w} complies with industry health regulations.',
+            'Standardizing operational procedures for the {w} improved overall guest satisfaction.'
+        ],
+        'conversation': [
+            '"Could you check whether the {w} is ready for our VIP corporate guests?"',
+            '"Yes, the catering supervisor just inspected the {w} and confirmed everything is set."'
+        ],
+        'collocations': ['inspect the {w}', 'modern {w}', 'corporate {w}', 'standard {w}', 'quality {w}']
+    },
+    'health': {
+        'daily': [
+            'The clinical staff reviewed the records concerning the {w} during morning rounds.',
+            'Please ensure all diagnostic details regarding the {w} are verified by the physician.',
+            'The hospital administrator updated the protocol for managing the {w}.'
+        ],
+        'business': [
+            'The medical board approved the standardized guidelines for the {w}.',
+            'Annual healthcare compliance audits ensure that every {w} meets regulatory benchmarks.',
+            'Investing in modern protocols for the {w} elevated overall clinical quality.'
+        ],
+        'conversation': [
+            '"Did the attending physician finalize the report regarding the {w}?"',
+            '"Yes, the medical team completed the assessment of the {w} earlier today."'
+        ],
+        'collocations': ['clinical {w}', 'assess the {w}', 'patient {w}', 'standard {w}', 'diagnostic {w}']
+    },
+    'travel': {
+        'daily': [
+            'The corporate travel coordinator verified the details for the {w} before departure.',
+            'Please confirm that your booking documentation includes the approved {w}.',
+            'Our logistics desk sent an updated schedule regarding the {w} to the traveling team.'
+        ],
+        'business': [
+            'The executive travel committee established formal policies regarding the {w}.',
+            'The corporate mobility audit evaluated expenses related to the {w}.',
+            'Streamlining travel arrangements for the {w} saved the company significant transit time.'
+        ],
+        'conversation': [
+            '"Have you received the updated itinerary and confirmation for the {w}?"',
+            '"Yes, the travel desk emailed me the full confirmation for the {w} this morning."'
+        ],
+        'collocations': ['confirm the {w}', 'scheduled {w}', 'business {w}', 'international {w}', 'approved {w}']
+    },
+    'technology': {
+        'daily': [
+            'The IT systems engineer checked the configuration of the {w} before deployment.',
+            'Please submit a service ticket if you encounter any difficulties with the {w}.',
+            'Our technical team applied the latest security patch to the {w}.'
+        ],
+        'business': [
+            'The technology steering committee approved enterprise investment in the {w}.',
+            'The cybersecurity audit confirmed that our operational {w} adheres to zero-trust standards.',
+            'Deploying the optimized {w} reduced system downtime across regional offices.'
+        ],
+        'conversation': [
+            '"Has the engineering team finished testing the new {w} in the staging environment?"',
+            '"Yes, the lead architect verified that the {w} passed all automated integration tests."'
+        ],
+        'collocations': ['configure the {w}', 'secure {w}', 'enterprise {w}', 'automated {w}', 'deploy the {w}']
+    },
+    'legal': {
+        'daily': [
+            'The corporate legal counsel reviewed all stipulations concerning the {w}.',
+            'Please ensure the signed copy of the {w} is archived in the legal registry.',
+            'Our compliance officer verified that the {w} complies with statutory regulations.'
+        ],
+        'business': [
+            'The legal advisory committee drafted a binding agreement regarding the {w}.',
+            'The annual regulatory audit verified that our corporate {w} meets strict statutory codes.',
+            'Resolving ambiguities in the {w} mitigated potential litigation exposure for the firm.'
+        ],
+        'conversation': [
+            '"Has our general counsel approved the final draft of the {w}?"',
+            '"Yes, legal counsel signed off on the {w} after reviewing the arbitration clause."'
+        ],
+        'collocations': ['binding {w}', 'review the {w}', 'statutory {w}', 'formal {w}', 'execute the {w}']
+    },
+    'real-estate': {
+        'daily': [
+            'The property management team inspected the commercial premises and the {w}.',
+            'Please make sure all leasing records regarding the {w} are signed and filed.',
+            'Our facilities supervisor scheduled maintenance for the {w} this afternoon.'
+        ],
+        'business': [
+            'The real estate investment committee authorized the acquisition of the {w}.',
+            'The facility compliance audit confirmed that the {w} adheres to municipal building codes.',
+            'Strategic property enhancements to the {w} increased long-term asset valuation.'
+        ],
+        'conversation': [
+            '"Did the prospective tenant sign the agreement regarding the {w}?"',
+            '"Yes, the leasing agent finalized all paperwork for the {w} earlier today."'
+        ],
+        'collocations': ['commercial {w}', 'lease the {w}', 'inspect the {w}', 'prime {w}', 'residential {w}']
+    },
+    'finance': {
+        'daily': [
+            'The accounting team reconciled the ledger entries concerning the {w}.',
+            'Please ensure all receipts and documentation for the {w} are verified by Friday.',
+            'Our financial analyst submitted an updated breakdown of the {w} to the controller.'
+        ],
+        'business': [
+            'The finance committee approved the fiscal allocation for the {w}.',
+            'The annual financial audit verified that our corporate {w} adheres to GAAP standards.',
+            'Careful fiscal management of the {w} strengthened quarterly operating margins.'
+        ],
+        'conversation': [
+            '"Have you finalized the reconciliation report for the {w}?"',
+            '"Yes, our accounting supervisor audited the {w} and signed off on the figures."'
+        ],
+        'collocations': ['audit the {w}', 'fiscal {w}', 'annual {w}', 'reconcile the {w}', 'approved {w}']
+    },
+    'hr-personnel': {
+        'daily': [
+            'The human resources department circulated an updated notice regarding the {w}.',
+            'Please review the employee handbook section explaining the {w}.',
+            'Our talent coordinator answered staff inquiries concerning the {w}.'
+        ],
+        'business': [
+            'The executive compensation committee approved the new corporate policy for the {w}.',
+            'The workplace audit confirmed that our organizational {w} complies with labor laws.',
+            'Enhancing corporate programs for the {w} significantly reduced annual employee turnover.'
+        ],
+        'conversation': [
+            '"Did the hiring committee reach a consensus regarding the {w}?"',
+            '"Yes, HR confirmed the decision on the {w} and will notify the candidate shortly."'
+        ],
+        'collocations': ['employee {w}', 'corporate {w}', 'formal {w}', 'manage the {w}', 'annual {w}']
+    },
+    'purchasing': {
+        'daily': [
+            'The procurement specialist verified the supplier terms for the {w}.',
+            'Please verify that the purchase requisition for the {w} has received managerial sign-off.',
+            'Our logistics coordinator tracked the expedited shipment of the {w}.'
+        ],
+        'business': [
+            'The procurement committee finalized a long-term supply agreement for the {w}.',
+            'The annual vendor audit confirmed that the {w} complies with quality standards.',
+            'Negotiating volume discounts for the {w} delivered substantial cost savings.'
+        ],
+        'conversation': [
+            '"Has the vendor confirmed delivery specifications for the {w}?"',
+            '"Yes, the supplier agreed to deliver the {w} by early next week."'
+        ],
+        'collocations': ['procure the {w}', 'vendor {w}', 'order the {w}', 'approved {w}', 'expedite the {w}']
+    },
+    'marketing': {
+        'daily': [
+            'The marketing team reviewed the audience engagement metrics for the {w}.',
+            'Please ensure all creative assets related to the {w} match our brand guidelines.',
+            'Our campaign coordinator shared the updated rollout schedule for the {w}.'
+        ],
+        'business': [
+            'The executive marketing board approved the strategic campaign centered on the {w}.',
+            'Market research analytics showed strong consumer interest generated by the {w}.',
+            'Integrating targeted digital outreach for the {w} boosted customer acquisition rates.'
+        ],
+        'conversation': [
+            '"How did the focus group respond to the initial preview of the {w}?"',
+            '"The feedback on the {w} was overwhelmingly positive, especially regarding brand clarity."'
+        ],
+        'collocations': ['target {w}', 'campaign {w}', 'digital {w}', 'promote the {w}', 'brand {w}']
+    },
+    'manufacturing': {
+        'daily': [
+            'The plant supervisor checked the assembly line parameters for the {w}.',
+            'Please ensure safety protective protocols are observed when handling the {w}.',
+            'Our quality control inspector logged the calibration data for the {w}.'
+        ],
+        'business': [
+            'The operations committee authorized capital investments to automate the {w}.',
+            'The annual ISO quality audit confirmed that our industrial {w} meets international standards.',
+            'Optimizing the throughput of the {w} reduced production cycle times by fifteen percent.'
+        ],
+        'conversation': [
+            '"Has quality assurance cleared the latest production batch for the {w}?"',
+            '"Yes, the plant manager verified that the {w} passed all tolerance and safety checks."'
+        ],
+        'collocations': ['assemble the {w}', 'industrial {w}', 'quality {w}', 'calibrate the {w}', 'automated {w}']
+    },
+    'communications': {
+        'daily': [
+            'The media relations team drafted a formal press release concerning the {w}.',
+            'Please verify that all facts regarding the {w} are cleared before broadcasting.',
+            'Our editorial desk reviewed the scheduled broadcast segment highlighting the {w}.'
+        ],
+        'business': [
+            'The corporate communications director delivered an executive briefing on the {w}.',
+            'Media monitoring reports showed widespread positive news coverage regarding the {w}.',
+            'A proactive communication strategy for the {w} reinforced public trust in the organization.'
+        ],
+        'conversation': [
+            '"Is the official statement regarding the {w} ready for release to journalists?"',
+            '"Yes, the spokesperson approved the statement on the {w} for immediate publication."'
+        ],
+        'collocations': ['official {w}', 'broadcast the {w}', 'media {w}', 'release the {w}', 'public {w}']
+    },
+    'office-admin': {
+        'daily': [
+            'The office administrator circulated the updated memo regarding the {w}.',
+            'Please make sure that all paperwork related to the {w} is properly filed.',
+            'Our executive assistant scheduled a follow-up review concerning the {w}.'
+        ],
+        'business': [
+            'The administrative steering committee established revised protocols for the {w}.',
+            'The quarterly office audit confirmed that procedures for the {w} are followed consistently.',
+            'Streamlining corporate workflows for the {w} significantly boosted daily office productivity.'
+        ],
+        'conversation': [
+            '"Could you check whether the documentation for the {w} is ready for the board meeting?"',
+            '"Certainly, I have compiled all files related to the {w} and placed them in the conference folder."'
+        ],
+        'collocations': ['manage the {w}', 'official {w}', 'administrative {w}', 'schedule the {w}', 'coordinate the {w}']
+    }
+}
+
+def make_examples(w, pos, cat_key, cat_meta):
+    if pos == 'verb':
+        daily = [
+            f'Please remember to {w} the relevant documentation before the end of the day.',
+            f'Our project team plans to {w} the updated procedures starting next Monday.',
+            f'Staff members should {w} directly with their team leads if questions arise.'
+        ]
+        business = [
+            f'The executive board resolved to {w} key strategic initiatives to enhance performance.',
+            f'Senior management scheduled a comprehensive briefing to {w} operational milestones.',
+            f'Our corporate division aims to {w} industry best practices across regional offices.'
+        ]
+        conversation = [
+            f'"When are we scheduled to {w} this phase of the project?"',
+            f'"We plan to {w} it by Thursday afternoon once the audit report is finalized."'
+        ]
+        collocations = [
+            f'plan to {w}',
+            f'{w} promptly',
+            f'{w} effectively',
+            f'fail to {w}',
+            f'agree to {w}'
+        ]
+    elif pos == 'adjective':
+        daily = [
+            f'Please verify that all submitted files are fully {w} and up to date.',
+            f'The supervisor confirmed that the proposed timeline is completely {w} for the team.',
+            f'Staff members must maintain a {w} approach when communicating with clients.'
+        ]
+        business = [
+            f'The executive committee concluded that the expansion plan remains financially {w}.',
+            f'Management established a {w} framework to ensure compliance with industry standards.',
+            f'The annual performance report highlighted several {w} achievements across departments.'
+        ]
+        conversation = [
+            f'"Do you believe the draft proposal is {w} enough for the executive review?"',
+            f'"Yes, it appears completely {w} and aligns with our departmental goals."'
+        ]
+        collocations = [
+            f'highly {w}',
+            f'fully {w}',
+            f'strictly {w}',
+            f'remain {w}',
+            f'deemed {w}'
+        ]
+    elif pos == 'adverb':
+        daily = [
+            f'The customer service team handled the urgent inquiries {w} throughout the morning.',
+            f'Our technical support specialist responded {w} to resolve the system connectivity issue.',
+            f'Please review each submitted expense report {w} before issuing reimbursement.'
+        ]
+        business = [
+            f'The revised regulatory guidelines were implemented {w} across all business units.',
+            f'The internal audit committee reviewed the annual financial statements {w}.',
+            f'Senior executives communicated the organizational restructuring plan {w} to stakeholders.'
+        ]
+        conversation = [
+            f'"Did the operations team process the expedited order {w} as requested?"',
+            f'"Yes, the dispatch manager confirmed that everything was completed {w} this morning."'
+        ]
+        collocations = [
+            f'operate {w}',
+            f'respond {w}',
+            f'handle {w}',
+            f'execute {w}',
+            f'perform {w}'
+        ]
     else:
-        origin = 'Middle English & Anglo-French'
-        root = w.split()[0]
-        meaning = f'foundational operational root relating to {w}'
-    
-    evolution = f'Passed through Middle English commercial and administrative registries into modern professional international commerce.'
+        tmpl = DOMAIN_NOUN_TEMPLATES.get(cat_key, DOMAIN_NOUN_TEMPLATES['office-admin'])
+        daily = [s.format(w=w) for s in tmpl['daily']]
+        business = [s.format(w=w) for s in tmpl['business']]
+        conversation = [s.format(w=w) for s in tmpl['conversation']]
+        collocations = [c.format(w=w) for c in tmpl['collocations']]
+
     return {
-        'origin': origin,
-        'rootWord': root,
-        'rootMeaning': meaning,
-        'evolution': evolution,
-        'relatedLanguages': [f'French: {w.split()[0]}', f'Spanish: {w.split()[0]}'],
-        'firstRecordedUse': '14th-17th century'
+        'daily': daily,
+        'business': business,
+        'conversation': conversation,
+        'collocations': collocations
+    }
+
+def generate_visual(word, pos, cat_key, cat_meta):
+    w = word.strip()
+    if ' ' in w:
+        desc = f'A professional workplace scene illustrating {w} in its authentic context within {cat_meta["name"]}.'
+        kw = f'{w} {cat_key} professional business workplace corporate'
+        clean_w = re.sub(r'[^a-zA-Z]', '', w).upper()
+        mnem = f'{clean_w[:6]}: Professional Coordination Secures Operational Excellence!'
+        return {'imageKeyword': kw, 'imageDescription': desc, 'mnemonic': mnem}
+    return resolve_visual(word, pos, cat_key, cat_meta)
+
+def make_toeic_context(w, pos, cat_key, cat_meta):
+    wl = w.lower().strip()
+    is_compound = ' ' in wl
+    domain_name = cat_meta['name']
+
+    # Common parts by domain
+    domain_parts = {
+        'dining': [1, 3, 4, 7],
+        'travel': [2, 3, 4, 7],
+        'health': [4, 7],
+        'technology': [3, 5, 7],
+        'legal': [5, 6, 7],
+        'real-estate': [3, 4, 7],
+        'finance': [4, 5, 6, 7],
+        'hr-personnel': [3, 5, 6, 7],
+        'purchasing': [3, 5, 6, 7],
+        'marketing': [3, 4, 6, 7],
+        'manufacturing': [1, 4, 5, 7],
+        'communications': [4, 6, 7],
+        'office-admin': [3, 4, 5, 7]
+    }
+    parts = domain_parts.get(cat_key, [3, 5, 7])
+
+    if pos == 'verb':
+        s_form = wl + 's' if not wl.endswith(('s', 'sh', 'ch', 'x', 'z', 'o')) else wl + 'es'
+        if wl.endswith('y') and len(wl) > 2 and wl[-2] not in 'aeiou':
+            s_form = wl[:-1] + 'ies'
+        ed_form = wl + 'ed' if not wl.endswith('e') else wl + 'd'
+        if wl.endswith('y') and len(wl) > 2 and wl[-2] not in 'aeiou':
+            ed_form = wl[:-1] + 'ied'
+        ing_form = wl + 'ing' if not wl.endswith('e') else wl[:-1] + 'ing'
+
+        if cat_key == 'dining':
+            q = f'The kitchen staff was instructed to _____ the ingredients following the executive chef\'s precise instructions. (A) {w} (B) {s_form} (C) {ed_form} (D) {ing_form}'
+            tip = f'Following the infinitive marker "to", the blank requires the base verb form: (A) {w}. Distinguish from the third-person singular (B) {s_form}, past form (C) {ed_form}, and gerund (D) {ing_form}.'
+        elif cat_key == 'technology':
+            q = f'System administrators must _____ all outdated software modules before deploying the platform update. (A) {w} (B) {s_form} (C) {ed_form} (D) {ing_form}'
+            tip = f'Following the modal auxiliary "must", the sentence requires the bare infinitive: (A) {w}. Beware of conjugated forms like (B) {s_form} and (C) {ed_form}.'
+        elif cat_key == 'purchasing':
+            q = f'The procurement committee plans to _____ contractual terms directly with the authorized vendor. (A) {w} (B) {s_form} (C) {ed_form} (D) {ing_form}'
+            tip = f'Following the catenative verb "plans to", the sentence requires the base form of the verb: (A) {w}.'
+        elif cat_key == 'legal':
+            q = f'Corporate legal counsel convened to _____ the commercial dispute prior to filing for formal arbitration. (A) {w} (B) {s_form} (C) {ed_form} (D) {ing_form}'
+            tip = f'Following the purpose infinitive "to", the blank requires the base verb: (A) {w}. Avoid past tense (C) {ed_form} and progressive (D) {ing_form} forms.'
+        elif cat_key == 'finance':
+            q = f'Senior financial controllers gathered to _____ the fiscal accounts prior to the annual compliance audit. (A) {w} (B) {s_form} (C) {ed_form} (D) {ing_form}'
+            tip = f'Following the infinitive marker "to", the sentence requires the base verb form: (A) {w}.'
+        else:
+            q = f'Department supervisors are required to _____ priority operational milestones with their teams each morning. (A) {w} (B) {s_form} (C) {ed_form} (D) {ing_form}'
+            tip = f'Following the infinitive construction "required to", the sentence requires the base verb: (A) {w}. Beware of the third-person (B) {s_form} and participle distractors (C, D).'
+        parts = [3, 5, 7]
+
+    elif pos == 'adjective':
+        ly_form = wl + 'ly' if not wl.endswith('ly') else wl
+        if wl.endswith('le'):
+            ly_form = wl[:-1] + 'y'
+        elif wl.endswith(('al', 'ful')):
+            ly_form = wl + 'ly'
+        more_form = f'more {wl}'
+        most_form = f'most {wl}'
+
+        if cat_key == 'finance':
+            q = f'The finance committee concluded that the capital expenditure proposal remains financially _____ for the firm. (A) {w} (B) {ly_form} (C) {more_form} (D) {most_form}'
+        elif cat_key == 'technology':
+            q = f'The software lead confirmed that the new application is fully _____ with all enterprise operating systems. (A) {w} (B) {ly_form} (C) {more_form} (D) {most_form}'
+        elif cat_key == 'hr-personnel':
+            q = f'Only permanent full-time employees are deemed _____ to receive the enhanced annual wellness stipend. (A) {w} (B) {ly_form} (C) {more_form} (D) {most_form}'
+        elif cat_key == 'legal':
+            q = f'The commercial contract stipulated that all terms and provisions shall remain strictly _____ between both parties. (A) {w} (B) {ly_form} (C) {more_form} (D) {most_form}'
+        else:
+            q = f'Senior leadership concluded that the proposed strategic initiative remains completely _____ under current guidelines. (A) {w} (B) {ly_form} (C) {more_form} (D) {most_form}'
+
+        tip = f'Following the linking verb context and modifying adverb, the predicate requires an adjective: (A) {w}. Do not confuse with the adverbial form (B) {ly_form} or comparative forms (C, D).'
+        parts = [5, 6, 7]
+
+    elif pos == 'adverb':
+        base = wl[:-2] if wl.endswith('ly') and not wl.endswith('only') else wl
+        more_form = f'more {wl}'
+        most_form = f'most {wl}'
+
+        q = f'The client relations desk responded _____ to all customer inquiries submitted during the peak holiday season. (A) {w} (B) {base} (C) {more_form} (D) {most_form}'
+        tip = f'Modifying the action verb "responded", the blank requires a manner adverb: (A) {w}. In TOEIC Part 5, adverbs commonly modify action verbs, past participles, or entire clauses.'
+        parts = [3, 5, 7]
+
+    elif is_compound:
+        if ' of ' in wl:
+            parts_of = w.split(' of ')
+            plural = f'{parts_of[0]}s of {parts_of[1]}'
+            possessive = f'{w}\'s'
+            plural_poss = f'{parts_of[0]}s\' of {parts_of[1]}'
+        else:
+            parts_list = w.split()
+            head = parts_list[-1]
+            base_part = ' '.join(parts_list[:-1])
+            plural_head = head + 's' if not head.endswith(('s', 'sh', 'ch', 'x', 'z')) else head + 'es'
+            plural = f'{base_part} {plural_head}'
+            possessive = f'{w}\'s'
+            plural_poss = f'{plural}\''
+
+        q = f'Meeting participants were instructed to review the official _____ carefully before signing off on the project deliverables. (A) {w} (B) {plural} (C) {possessive} (D) {plural_poss}'
+        tip = f'Preceded by the definite article "the" and adjective "official", the blank requires the complete singular compound noun: (A) {w}. Compound nouns frequently test collocation recognition in TOEIC Part 5.'
+
+    else:
+        plural = wl + 's' if not wl.endswith(('s', 'sh', 'ch', 'x', 'z')) else wl + 'es'
+        if wl.endswith('y') and len(wl) > 2 and wl[-2] not in 'aeiou':
+            plural = wl[:-1] + 'ies'
+        possessive = f'{wl}\'s'
+        plural_poss = f'{plural}\''
+
+        DOMAIN_NOUN_SENTENCES = {
+            'dining': ('The banquet coordinator confirmed that the catering team has prepared the requested _____ for tonight\'s reception.',
+                       'In dining and hospitality contexts, the blank following the participle "requested" requires the head noun: (A) {w}.'),
+            'health': ('The hospital clinical team evaluated the diagnostic _____ before prescribing the treatment regimen.',
+                       'In medical and clinical passages, following the attributive modifier "diagnostic", the sentence requires the head noun: (A) {w}.'),
+            'travel': ('The corporate travel agency forwarded the verified reservation _____ to all conference attendees this morning.',
+                       'In travel logistics and booking confirmations, following the modifier "reservation", the sentence requires the head noun: (A) {w}.'),
+            'technology': ('The IT systems administrator configured the enterprise _____ to protect against unauthorized network intrusion.',
+                           'In enterprise IT contexts, preceded by the modifier "enterprise", the blank requires the specific head noun: (A) {w}.'),
+            'legal': ('The corporate legal counsel carefully reviewed the commercial _____ prior to executing the binding agreement.',
+                      'In contract and regulatory passages, following the adjective "commercial", the blank requires the legal head noun: (A) {w}.'),
+            'real-estate': ('The property management office archived the signed commercial _____ in the corporate lease database.',
+                            'In real estate and facilities management, following the modifier "commercial", the blank requires the head noun: (A) {w}.'),
+            'finance': ('The internal audit team reconciled the financial _____ before the quarterly fiscal closing.',
+                        'In accounting and auditing passages, preceded by the adjective "financial", the blank requires the head noun: (A) {w}.'),
+            'hr-personnel': ('The human resources department circulated the updated _____ explaining the employee benefits package.',
+                             'In personnel and workplace documentation, following the participle "updated", the blank requires the head noun: (A) {w}.'),
+            'purchasing': ('The procurement specialist finalized the vendor _____ to secure preferential volume pricing.',
+                           'In procurement and supply agreements, preceded by the noun adjunct "vendor", the blank requires the head noun: (A) {w}.'),
+            'marketing': ('The marketing director approved the promotional _____ designed for the nationwide campaign rollout.',
+                          'In advertising and marketing campaigns, following the adjective "promotional", the blank requires the head noun: (A) {w}.'),
+            'manufacturing': ('The plant quality inspector examined the industrial _____ before initiating the morning production run.',
+                              'In manufacturing and quality control passages, following "industrial", the sentence requires the head noun: (A) {w}.'),
+            'communications': ('The corporate media relations desk issued a formal _____ to announce the organizational restructuring.',
+                               'In media broadcasts and public releases, following the adjective "formal", the blank requires the head noun: (A) {w}.'),
+            'office-admin': ('The office administrator filed the official _____ in the central document management system.',
+                             'In general corporate administration, preceded by the adjective "official", the blank requires the head noun: (A) {w}.')
+        }
+
+        sent_tmpl, tip_tmpl = DOMAIN_NOUN_SENTENCES.get(cat_key, DOMAIN_NOUN_SENTENCES['office-admin'])
+        q = f'{sent_tmpl} (A) {w} (B) {plural} (C) {possessive} (D) {plural_poss}'
+        tip = f'{tip_tmpl.format(w=w)} Distinguish carefully between singular (A), plural (B), and possessive forms (C, D).'
+
+    return {
+        'commonParts': parts,
+        'exampleQuestion': q,
+        'tips': tip
     }
 
 def generate_entry(cat_key, cat_meta, word, item_id):
@@ -367,27 +851,7 @@ def generate_entry(cat_key, cat_meta, word, item_id):
     when_not_to_use = f'Avoid substituting with overly informal slang when drafting formal business documents.'
 
     # Examples
-    daily_ex = [
-        f'The department reviewed the updated schedule for {w} during the morning meeting.',
-        f'Staff members were instructed to follow standard procedures regarding {w}.',
-        f'Please verify that all details concerning {w} have been documented accurately.'
-    ]
-    biz_ex = [
-        f'Our executive committee approved the strategic proposal concerning corporate {w}.',
-        f'The annual compliance audit confirmed that all operations related to {w} meet industry standards.',
-        f'Implementing improved protocols for {w} contributed to higher overall operational efficiency.'
-    ]
-    conv_ex = [
-        f'"Could you provide an update on the progress regarding {w}?"',
-        f'"Yes, our team has completed the necessary adjustments and finalized the report."'
-    ]
-    collocations = [
-        f'standard {w}',
-        f'corporate {w}',
-        f'manage {w}',
-        f'review {w}',
-        f'effective {w}'
-    ]
+    examples = make_examples(w, pos, cat_key, cat_meta)
 
     # Word family
     family = {}
@@ -404,16 +868,8 @@ def generate_entry(cat_key, cat_meta, word, item_id):
         family['adverb'] = w
         family['adjective'] = w[:-2] if w.endswith('ly') else w
 
-    # Question & Tips
-    if pos == 'noun':
-        q = f'Before the project launch, the department head must approve the final _____ regarding this phase. (A) {w} (B) {w}ly (C) {w}ing (D) {w}ed'
-        tip = f'Preceded by the adjective "final", the blank requires the head noun: (A) {w}.'
-    elif pos == 'verb':
-        q = f'The project guidelines require that team leaders _____ all progress reports promptly each week. (A) {w} (B) {w}tion (C) {w}ly (D) {w}able'
-        tip = f'Following the modal verb context or subject pronoun, the sentence requires the base verb form: (A) {w}.'
-    else:
-        q = f'The committee commended the team for their _____ contributions to the quarterly success. (A) {w} (B) {w}ness (C) {w}ly (D) {w}ity'
-        tip = f'Preceding the noun "contributions", the blank requires an attributive modifier: (A) {w}.'
+    # TOEIC Context
+    toeic_context = make_toeic_context(w, pos, cat_key, cat_meta)
 
     entry = {
         'id': item_id,
@@ -429,42 +885,16 @@ def generate_entry(cat_key, cat_meta, word, item_id):
             'stressPattern': '●○' if len(w) <= 6 else '○●○',
             'commonMistakes': f'Pay attention to clean articulation of the root syllables in professional speech.'
         },
-        'etymology': generate_etymology(w, pos),
-        'deepMeaning': {
-            'coreConcept': core_concept,
-            'spatialContext': f'Professional workspace or operational facility where {w} is utilized in {domain_name}.',
-            'temporalContext': f'Standard business operating cycles and regular review periods.',
-            'emotionalTone': 'Objective, professional, constructive.',
-            'formalityLevel': 'formal',
-            'connotation': 'neutral'
-        },
-        'nativeMindset': {
-            'howNativesThink': how_natives_think,
-            'mentalImage': mental_image,
-            'whenToUse': when_to_use,
-            'whenNotToUse': when_not_to_use,
-            'culturalContext': f'Frequently tested across TOEIC Part 5 vocabulary questions and Part 7 workplace memos.'
-        },
-        'examples': {
-            'daily': daily_ex,
-            'business': biz_ex,
-            'conversation': conv_ex,
-            'collocations': collocations
-        },
+        'etymology': resolve_etymology(w, pos, cat_key, cat_meta),
+        'deepMeaning': resolve_deep_meaning(w, pos, cat_key, cat_meta),
+        'nativeMindset': resolve_native_mindset(w, pos, cat_key, cat_meta),
+        'examples': examples,
         'wordFamily': family,
-        'visual': {
-            'imageKeyword': f'{w} {cat_key} professional business workplace',
-            'imageDescription': f'A clear professional scene illustrating {w} in its authentic context within {domain_name}.',
-            'mnemonic': f'{w.upper()}: Anchors key professional mastery in {domain_name}.'
-        },
+        'visual': generate_visual(w, pos, cat_key, cat_meta),
         'video': {
             'description': f'Professional business overview: practical applications and strategic significance of {w}.'
         },
-        'toeicContext': {
-            'commonParts': [5, 7],
-            'exampleQuestion': q,
-            'tips': tip
-        },
+        'toeicContext': toeic_context,
         'synonyms': [f'{w} factor', 'standard practice', 'procedure'],
         'antonyms': [],
         'relatedWords': [f'{w} management', 'implementation', 'protocol']
@@ -490,8 +920,8 @@ def clean_file(cat_key, meta):
     prefix = c[:block_start].rstrip()
 
     # Get curated words to avoid any duplicate
-    curated = set(w.lower() for w in re.findall(r'(?:[\"|\']?word[\"|\']?)\s*:\s*[\'\"]([^\'\"]+)[\'\"]', prefix))
-    curated_count = len(re.findall(r'(?:[\"|\']?id[\"|\']?)\s*:\s*[\'\"]([^\'\"]+)[\'\"]', prefix))
+    curated = set(w.lower() for w in re.findall(r'(?:^|\s|\{|,)(?:[\"|\']?word[\"|\']?)\s*:\s*[\'\"]([^\'\"]+)[\'\"]', prefix))
+    curated_count = len(re.findall(r'(?:^|\s|\{|,)(?:\"id\"|\'id\'|id)\s*:\s*[\'\"]([^\'\"]+)[\'\"]', prefix))
     needed_count = expected_total - curated_count
 
     candidates = WORD_BANKS[cat_key]

@@ -1,0 +1,452 @@
+{
+  "words": [
+    {
+      "id": "dining-177",
+      "word": "lettuce",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈlɛt.ɪs/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/lettuce--_us_1.mp3",
+        "syllableBreakdown": "let·tuce",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners often mispronounce the second syllable '-tuce' as /tjuːs/ or /tuːs/ (rhyming with 'juice' or 'spruce') due to the spelling pattern '-uce'. In standard English, the second syllable has a reduced vowel /ɪ/ or /əs/ (/ˈlɛt.ɪs/, sounding like 'LET-iss'). In American English, the intervocalic 'tt' is realized as an alveolar flap [t̬]. Non-native speakers also frequently treat 'lettuce' as a countable noun (*'two lettuces'*), whereas in natural English, it functions as a non-count material noun or requires partitives such as 'heads of lettuce' or 'leaves of lettuce'."
+      },
+      "etymology": {
+        "origin": "Middle English 'letuse' or 'letuce', borrowed from Anglo-Norman and Old French 'laitues' (plural of 'laitue', lettuce), from Latin 'lactūca' (lettuce), derived from 'lac' (genitive 'lactis', meaning milk), in reference to the white, milky latex juice exuded when the stem is cut or bruised.",
+        "rootWord": "Latin lactūca (from lac, lactis = milk) / Old French laitue",
+        "rootMeaning": "Milky plant; vegetable yielding a white milky sap",
+        "evolution": "In ancient Rome, 'lactūca' was prized for its crisp texture, high moisture content, and mildly sedative milky sap (lactucarium), traditionally consumed at the start of banquets to stimulate digestion. The Old French plural 'laitues' was adopted into Middle English around the late 13th century as a singular mass noun spelled 'letuse' or 'letuce'. Through centuries of horticultural development, distinct culinary cultivars emerged: head lettuce (such as Iceberg and Boston butterhead) and loose-leaf types (such as Romaine/Cos and red leaf). In contemporary food service, corporate catering, and hospitality dining, lettuce serves as the crisp textural baseline for cold salads, sandwich foundations, and wraps.",
+        "relatedLanguages": [
+          "French: laitue (lettuce)",
+          "Spanish: lechuga (lettuce, from Latin lactūca)",
+          "Italian: lattuga (lettuce)",
+          "Portuguese: lactuca (botanical) / leituga (wild chicory/lettuce)",
+          "German: Lattich (lettuce/wild lettuce)"
+        ],
+        "firstRecordedUse": "Late 13th century (c. 1290 in Middle English monastic gardening records and culinary manuscripts)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A cultivated annual herbaceous plant (Lactuca sativa) of the daisy family (Asteraceae), widely grown for its crisp, moisture-rich green or reddish leaves that are consumed primarily raw in salads, cold sandwich layers, burgers, and wraps, valued for its refreshing crunch, cooling properties, and delicate, mildly grassy or sweet flavor.",
+        "spatialContext": "Commercial restaurant pantry prep stations, walk-in coolers with humidity controls, salad bars in corporate cafeterias, deli sandwich assembly lines, hydroponic urban farms, and supermarket refrigerated produce misting racks.",
+        "temporalContext": "Harvested early in the morning to retain maximum leaf turgidity; prepped and washed daily before peak meal services; stored chilled at 1–4°C and used within 24–48 hours to prevent wilting or browning.",
+        "emotionalTone": "Crisp, refreshing, wholesome, light, and invigorating.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'lettuce' is the quintessential fresh green vegetable—synonymous with crispness, hydration, and clean eating. It is the architectural foundation of salads and an indispensable sandwich layer that provides textural crunch while acting as a physical moisture barrier keeping bread from absorbing wet condiments. In workplace dining, the freshness of lettuce serves as an instant quality litmus test: crisp, vibrant green leaves signal diligent kitchen hygiene and fresh inventory, whereas limp, pinkish-brown edges ('rust') immediately repel diners. Culturally, 'head of lettuce' is the default shopping unit, and 'lettuce wraps' represent modern health-conscious or low-carbohydrate dining.",
+        "mentalImage": "A stainless steel prep counter where a line cook tears crisp, jade-green leaves of romaine lettuce into a chilled stainless bowl, then spins them in an industrial centrifugal salad spinner to create a mound of bone-dry, crinkled leaves ready for banquet plating.",
+        "whenToUse": "Use when referring to the specific leafy salad vegetable (Lactuca sativa) or its recognized culinary varieties (e.g., 'romaine lettuce', 'butterhead lettuce', 'iceberg lettuce', 'crisp lettuce', 'lettuce wrap', 'head of lettuce').",
+        "whenNotToUse": "Do not use 'lettuce' as a blanket term for all leafy salad greens; spinach, arugula (rocket), kale, radicchio, and watercress belong to different botanical families and have distinct culinary profiles (use 'salad greens' or 'mixed greens' for generic blends). Avoid using 'lettuce' as a simple countable plural (*'three lettuces'*—use *'three heads of lettuce'* or *'three leaves of lettuce'* in standard English).",
+        "culturalContext": "In North American and Commonwealth food service, lettuce is a cornerstone of classic staples like the BLT (bacon, lettuce, tomato), the Caesar salad, the wedge salad, and corporate deli trays. Commercial recalls of leafy greens (e.g., E. coli outbreaks on romaine) make food safety protocols around lettuce washing and cold-chain maintenance a frequent topic in commercial food-service compliance audits and supply chain news."
+      },
+      "examples": {
+        "daily": [
+          "She rinsed several leaves of crisp butterhead lettuce under cold water and spun them dry for the dinner salad.",
+          "Could I please get extra shredded lettuce and sliced pickles on my grilled chicken sandwich?",
+          "He ordered a turkey burger wrapped in fresh iceberg lettuce instead of a conventional flour bun."
+        ],
+        "business": [
+          "The corporate catering department signed a procurement agreement with local hydroponic growers to ensure a year-round supply of organic romaine lettuce.",
+          "Following nationwide agricultural supply chain disruptions, wholesale suppliers announced a temporary price increase on cases of fresh leaf lettuce.",
+          "Food service inspectors verified that all washed and chopped lettuce in the cafeteria salad bar was maintained at a steady 38 degrees Fahrenheit."
+        ],
+        "conversation": [
+          "\"Does the lunchtime sandwich platter come with green salad on the side?\" / \"Yes, it includes a bowl of mixed romaine lettuce and cherry tomatoes tossed in vinaigrette.\"",
+          "\"We are running short on crisphead lettuce for the evening banquet rush.\" / \"I will requisition two additional crates from the walk-in cooler immediately.\""
+        ],
+        "collocations": [
+          "head of lettuce",
+          "crisp lettuce",
+          "romaine lettuce",
+          "shredded lettuce",
+          "iceberg lettuce",
+          "lettuce wrap"
+        ]
+      },
+      "wordFamily": {
+        "noun": "lettuce",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "crisp fresh green romaine iceberg lettuce head leaves produce market culinary",
+        "imageDescription": "Freshly harvested heads of green romaine and crisp iceberg lettuce with delicate water droplets glistening on their ruffled emerald leaves, neatly arranged in rustic wooden produce crates in a brightly lit kitchen pantry.",
+        "mnemonic": "LETTUCE: LET US enjoy crisp, crunchy greens that keep US refreshed and energetic all afternoon!"
+      },
+      "video": {
+        "description": "A commercial kitchen culinary tutorial demonstrating proper techniques for coring, washing, spinning dry, and crisp-storing heads of romaine and iceberg lettuce for high-volume banquet service."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "To ensure food safety and maintain crispness, all fresh _____ delivered to the cafeteria must be rinsed thoroughly and refrigerated immediately upon receipt. (A) lettuce (B) lettuces (C) letting (D) letted",
+        "tips": "In TOEIC Part 5, pay close attention to noun countability in food and catering contexts. 'Lettuce' is predominantly used as an uncountable mass noun when referring to the produce item, modified directly by adjectives like 'fresh' without an indefinite article. Therefore, the singular base noun (A) lettuce is the correct choice. Option (B) 'lettuces' is used only in technical agronomic contexts for distinct plant varieties, while (C) and (D) are verb forms unrelated to the noun."
+      },
+      "synonyms": [
+        "salad green",
+        "salad leaf",
+        "leafy green",
+        "romaine",
+        "iceberg"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "salad",
+        "romaine",
+        "iceberg",
+        "spinach",
+        "produce",
+        "vinaigrette",
+        "greens"
+      ]
+    },
+    {
+      "id": "dining-178",
+      "word": "lunch",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/lʌntʃ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/lunch--_us_1.mp3",
+        "syllableBreakdown": "lunch",
+        "stressPattern": "●",
+        "commonMistakes": "Learners frequently mispronounce the short central vowel /ʌ/, shifting it toward /ʊ/ (as in 'look'), /ɒ/ (as in 'lock'), or /uː/ (as in 'lute'). It must be pronounced as a short, relaxed open-mid central vowel /ʌ/, rhyming precisely with 'bunch', 'crunch', and 'punch'. Additionally, learners often fail to articulate the terminal voiceless postalveolar affricate /tʃ/, confusing it with /ʃ/ (*'lunsh'*). In business communication, learners must also distinguish everyday 'lunch' from the more formal, ceremonial 'luncheon'."
+      },
+      "etymology": {
+        "origin": "Early 19th-century shortening of 'luncheon' (recorded from the 1580s), originally meaning a thick hunk, slice, or lump of food (such as bread or cheese), influenced by dialectal English 'lunch' (a lump) and Middle English 'nonechenche' (noon drink, from 'non' [noon] + 'schench' [drink/draught]), with potential influence from Spanish 'lonja' (a slice of bacon or ham).",
+        "rootWord": "Shortened from luncheon / Middle English nonechenche",
+        "rootMeaning": "A thick slice or lump of bread and cheese taken midday; midday refreshment",
+        "evolution": "In the 16th and 17th centuries, 'lunch' or 'luncheon' designated a substantial chunk of bread or cold meat eaten between breakfast and the traditional midday 'dinner'. During the Industrial Revolution of the early 19th century, as urban office workers and laborers were away from home all day and the main meal of 'dinner' shifted into the evening hours (after 6 PM), the midday meal transformed into an indispensable daily institution. The colloquial abbreviation 'lunch' gained widespread currency around the 1820s, rapidly supplanting the formal 'luncheon' in daily speech. In the modern corporate world, 'lunch' defines workday scheduling, legal break entitlements, and professional networking rituals.",
+        "relatedLanguages": [
+          "French: déjeuner (lunch, unfasting) / lunch (borrowed from English for a light cold buffet)",
+          "Spanish: almuerzo (lunch) / lonja (slice/strip)",
+          "German: Mittagessen (midday meal) / Lunch (borrowed for a business or light lunch)",
+          "Italian: pranzo (lunch / midday meal)"
+        ],
+        "firstRecordedUse": "Early 19th century (c. 1823 as an everyday abbreviation for the midday meal; the dialectal sense 'hunk/lump' dates from the 1580s)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The standard midday meal, typically eaten between 12:00 PM and 2:00 PM, consisting of hot or cold dishes designed to provide midday nutritional sustenance and mental rejuvenation during the workday or daily schedule; also, the scheduled intermission or recess during a work or conference timetable set aside for eating and resting.",
+        "spatialContext": "Corporate dining cafeterias, office breakrooms with microwaves and refrigerators, fast-casual delis in downtown commercial districts, restaurant dining patios, and conference banquet halls.",
+        "temporalContext": "Observed daily between 12:00 PM and 2:00 PM; typically scheduled for 30 to 60 minutes in business and corporate employment agreements.",
+        "emotionalTone": "Restorative, social, informal to professional, and energizing.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'lunch' is the structural anchor of the working day—the midpoint psychological demarcation between the morning push and the afternoon tasks. Saying 'Let's grab lunch' or 'Let's discuss it over lunch' is the quintessential low-pressure corporate invitation, offering an informal, collaborative setting to negotiate deals, mentor colleagues, or decompress. A 'working lunch' implies professional dedication where meals are eaten while reviewing agendas, whereas taking a 'lunch break' represents an employee's personal boundary and legal entitlement to rest. Idiomatically, 'out to lunch' indicates physical absence from the desk or, metaphorically, being distracted or absent-minded.",
+        "mentalImage": "A sunlit urban corner bistro at 12:45 PM where office workers in business casual attire sit across from each other enjoying warm paninis and salads, checking smartphone calendars while chatting amiably about ongoing project milestones.",
+        "whenToUse": "Use when referring to the everyday midday meal, scheduled workplace meal breaks, casual business meals, or food brought from home (e.g., 'lunch break', 'packed lunch', 'working lunch', 'lunch hour', 'meet for lunch', 'grab a quick lunch').",
+        "whenNotToUse": "Do not use 'lunch' when referring to a formal, structured midday banquet with ticketed seating, keynote speakers, or award presentations (use 'luncheon'). Do not use for the midday meal on festive holidays where it serves as the day's primary grand feast (e.g., Thanksgiving or Christmas midday banquets are traditionally called 'dinner').",
+        "culturalContext": "In Anglo-American business culture, the 'power lunch' became an icon of corporate deal-making in the late 20th century. Today, labor laws in most jurisdictions mandate a dedicated, unpaid lunch break (typically 30–60 minutes) for shifts exceeding six hours. In TOEIC test design, lunch breaks feature prominently in conference programs, office memos about cafeteria hours, and scheduling conflicts in Part 3 and Part 7."
+      },
+      "examples": {
+        "daily": [
+          "I packed a grilled chicken wrap and a crisp green apple to eat for lunch today.",
+          "We decided to take a stroll through the park after finishing our lunch at the deli.",
+          "The children sat at the picnic benches enjoying their lunch in the afternoon sunshine."
+        ],
+        "business": [
+          "The project team organized a working lunch in the main conference room to finalize the design specifications before the client presentation.",
+          "Under corporate employment policy, all full-time personnel are allocated a sixty-minute lunch break between noon and two o'clock.",
+          "The senior account executive invited the prospective client to lunch at an upscale Italian restaurant to discuss the multi-year service agreement."
+        ],
+        "conversation": [
+          "\"Would you care to join us for lunch at the newly opened sushi bar on Fifth Street?\" / \"I would love to, but I have a teleconference with the Tokyo branch at twelve-thirty, so I'll just order lunch to my desk.\"",
+          "\"Has the guest speaker arrived yet?\" / \"No, she is currently having lunch with the department chair and will arrive at the auditorium by one-fifteen.\""
+        ],
+        "collocations": [
+          "lunch break",
+          "working lunch",
+          "lunch hour",
+          "packed lunch",
+          "business lunch",
+          "grab lunch"
+        ]
+      },
+      "wordFamily": {
+        "noun": "lunch, luncheon",
+        "verb": "lunch",
+        "adjective": "lunchtime",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "business lunch colleagues corporate cafeteria healthy salad wrap deli dining",
+        "imageDescription": "Two professional colleagues seated at a contemporary café table beside a window, sharing an appetizing lunch of gourmet wraps, colorful salads, and sparkling water while smiling and discussing work notes.",
+        "mnemonic": "LUNCH: Light Uplifting Nutrition to Conquer the Hours of the afternoon work shift!"
+      },
+      "video": {
+        "description": "An executive professional development video explaining the etiquette of hosting a productive business lunch, detailing reservation protocols, seating diplomacy, conversation pacing, and invoice settlement."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "The seminar program allows participants a 45-minute _____ break to visit the exhibition hall or sample food from local vendors. (A) lunch (B) lunches (C) lunched (D) lunching",
+        "tips": "In TOEIC Part 5, test writers often test noun adjuncts within compound noun phrases. In 'a 45-minute _____ break', the word in the blank modifies 'break' as a noun adjunct. The singular noun (A) lunch combines to form the standard collocation 'lunch break'. Options (B) is plural, (C) is a past verb form, and (D) is a participle, none of which fit the standard noun adjunct structure."
+      },
+      "synonyms": [
+        "midday meal",
+        "luncheon",
+        "refection",
+        "lunchtime repast",
+        "midday refreshment"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "breakfast",
+        "dinner",
+        "brunch",
+        "cafeteria",
+        "mealtime",
+        "refreshment",
+        "lunchtime"
+      ]
+    },
+    {
+      "id": "dining-179",
+      "word": "luncheon",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈlʌn.tʃən/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/luncheon--_us_1.mp3",
+        "syllableBreakdown": "lunch·eon",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners often mispronounce the unstressed second syllable '-eon' as /iːɒn/ (*lunch-ee-on*) or /eɪ.ɒn/. In standard English, '-eon' is pronounced with a reduced schwa /ən/ (/ˈlʌn.tʃən/, rhyming with 'dungeon'). Sociolinguistically, learners often misuse 'luncheon' in casual daily speech (e.g., *'I bought a sandwich for my luncheon'*), which sounds archaic and pretentious; native speakers reserve 'luncheon' strictly for formal, scheduled corporate, diplomatic, or celebratory banquets."
+      },
+      "etymology": {
+        "origin": "Late 16th-century English 'luncheon', an extension of dialectal 'lunch' (a lump, hunk, or thick piece of food), influenced by Middle English 'nonechenche' (a light midday refreshment or noon drink, from 'non' [noon] + 'schench' [cup/draught]) and Spanish 'lonja' (a thick slice or rasher of meat).",
+        "rootWord": "English dialectal lunch (thick lump/slice) / Middle English nonechenche (noon drink)",
+        "rootMeaning": "A substantial slice of food or midday refreshment taken between meals",
+        "evolution": "In the late 16th century, 'luncheon' denoted a substantial slice of bread, cold meat, or cheese taken as an informal snack. By the late 18th century, English aristocratic society adopted 'luncheon' to designate a formal, elegant midday gathering served with multi-course plated dishes, fine china, and wine, specifically arranged for invited guests. While everyday parlance shortened the term to 'lunch' during the 19th century, institutional, diplomatic, and corporate English preserved 'luncheon' to signify an official, ticketed, or commemorative dining event that incorporates formal programming, awards, or keynote addresses.",
+        "relatedLanguages": [
+          "French: collation (formal light repast) / déjeuner officiel (official lunch)",
+          "Spanish: almuerzo oficial (official lunch) / banquete de mediodía (midday banquet)",
+          "German: festliches Mittagessen (festive lunch) / Gabelfrühstück (elevated late-morning/midday repast)",
+          "Italian: colazione ufficiale (official luncheon) / banchetto (banquet)"
+        ],
+        "firstRecordedUse": "Late 16th century (c. 1580 in Early Modern English texts referring to thick slices of food; adopted for formal midday dining in the 1780s)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A formal or official midday meal, banquet, or reception, typically hosted to celebrate a significant occasion, honor an individual, facilitate executive networking, or support a charitable cause, characterized by reserved seating, formal invitations (RSVPs), multi-course plated dining or upscale catering, and scheduled proceedings such as keynote speeches or award presentations.",
+        "spatialContext": "Grand hotel ballrooms, private dining rooms of executive athletic or social clubs, convention center banquet suites, embassy dining salons, and university ceremonial halls.",
+        "temporalContext": "Typically scheduled from 11:30 AM to 1:30 PM or 12:00 PM to 2:00 PM; convened on special occasions such as annual corporate general meetings, retirement celebrations, donor fundraisers, or industry conferences.",
+        "emotionalTone": "Ceremonial, dignified, prestigious, cordial, and celebratory.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'luncheon' is never just eating—it is an organized social or corporate event with protocol. Hearing the word immediately brings to mind formal printed or electronic invitations, assigned tables with linen and floral centerpieces, name tags, pre-selected multi-course menus (chicken or fish), and a lectern with a microphone where an executive or guest speaker delivers remarks. It signals an occasion that warrants business attire and professional networking etiquette. In marketing and non-profit sectors, a 'luncheon' is a classic fundraising or donor-cultivation vehicle.",
+        "mentalImage": "A magnificent hotel banquet hall filled with circular tables set with white damask tablecloths, fine porcelain, and crystal stemware, where business professionals in tailored suits listen attentively to an award presenter at the podium while waitstaff quietly clear dessert plates.",
+        "whenToUse": "Use when referring to an organized, formal midday gathering, ceremonial banquet, corporate recognition event, charity fundraiser, or diplomatic function (e.g., 'annual awards luncheon', 'charity luncheon', 'networking luncheon', 'farewell luncheon', 'keynote luncheon').",
+        "whenNotToUse": "Do not use for casual, routine, or personal midday eating (e.g., saying *'I went to the food court for a quick luncheon'* sounds laughably pretentious and incorrect; use 'lunch'). Do not use for evening events (use 'dinner', 'banquet', or 'gala').",
+        "culturalContext": "In Anglo-American professional life, annual awards luncheons, retirement luncheons, and charity luncheons are institutional pillars. In the TOEIC exam, 'luncheon' frequently appears in Part 3 and 4 announcements and Part 7 texts (formal corporate invitations, banquet schedules, catering invoices, and RSVP notices requiring confirmation of dietary requirements)."
+      },
+      "examples": {
+        "daily": [
+          "My mother attended a charity luncheon hosted by the local community hospital foundation.",
+          "Members of the historical society gathered at the botanical conservatory for their annual spring luncheon.",
+          "The university hosted an alumni luncheon honoring distinguished graduates from the school of journalism."
+        ],
+        "business": [
+          "The board of directors hosted a formal luncheon at the Metropolitan Club to welcome the newly appointed chief executive officer.",
+          "Please indicate your dietary restrictions on the enclosed registration card for the upcoming employee appreciation luncheon.",
+          "Over three hundred industry executives attended the keynote luncheon during the final day of the international energy symposium."
+        ],
+        "conversation": [
+          "\"Are you planning to attend the quarterly awards luncheon on Friday?\" / \"Yes, I submitted my RSVP this morning; our regional team is receiving the innovation award during the ceremony.\"",
+          "\"Has the catering menu for the farewell luncheon been finalized?\" / \"Yes, the committee selected a three-course plated meal featuring herb-crusted salmon and seasonal vegetables.\""
+        ],
+        "collocations": [
+          "annual luncheon",
+          "awards luncheon",
+          "charity luncheon",
+          "farewell luncheon",
+          "host a luncheon",
+          "luncheon meeting"
+        ]
+      },
+      "wordFamily": {
+        "noun": "luncheon, lunch",
+        "verb": "lunch",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "formal corporate luncheon banquet hotel ballroom round tables floral centerpiece speakers",
+        "imageDescription": "An expansive conference ballroom set up for a corporate luncheon, showcasing elegantly draped round banquet tables with formal place settings, fresh floral arrangements, and attendees listening to a keynote speaker at a spotlighted podium.",
+        "mnemonic": "LUNCHEON: A LUNCH of Elevated Occasion and Networking, celebrated with formal etiquette!"
+      },
+      "video": {
+        "description": "A hospitality management video showcasing the operational coordination required to stage an executive luncheon, from banquet hall layout and podium AV testing to synchronized silver-service catering delivery."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Staff members wishing to attend the retirement _____ in honor of Vice President Henderson must submit their RSVP to Human Resources by Wednesday. (A) lunching (B) luncheon (C) lunches (D) lunchroom",
+        "tips": "In TOEIC Part 5 and 7, recognize formal event terminology. Following the modifier 'retirement', the context of an official corporate honoring event in a business notice requires the formal noun (B) luncheon to form the established collocation 'retirement luncheon'. Choice (A) is a participle, (C) is a plural verb or noun that does not fit the singular determiner 'the', and (D) 'lunchroom' refers to a physical cafeteria room, not the event itself."
+      },
+      "synonyms": [
+        "formal lunch",
+        "banquet",
+        "midday reception",
+        "refection",
+        "official midday banquet"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "banquet",
+        "reception",
+        "keynote",
+        "RSVP",
+        "catering",
+        "ceremony",
+        "gala"
+      ]
+    },
+    {
+      "id": "dining-180",
+      "word": "main course",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˌmeɪn ˈkɔːrs/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/main_course--_us_1.mp3",
+        "syllableBreakdown": "main course",
+        "stressPattern": "○●",
+        "commonMistakes": "Learners often mispronounce 'course' as /kɜːrs/ ('curse') or confuse the spelling with 'coarse' (rough or abrasive). In addition, there is a major transatlantic linguistic divide that traps learners: in North American English, 'main course' is widely synonymous with 'entrée', whereas in British English, French, and classical European gastronomy, 'entrée' refers to a light starter or first course served before the main course. In TOEIC passages depicting international travel or hospitality, assuming 'entrée' always means appetizer can cause confusion unless context is carefully verified."
+      },
+      "etymology": {
+        "origin": "Compound noun formed from the adjective 'main' (from Old English 'mægen-', meaning strength, power, primary, principal, of Proto-Germanic origin *maginą) and the noun 'course' (from Anglo-Norman and Old French 'cours', from Latin 'cursus' [a running, passage, progression, series of dishes], from 'currere' [to run]).",
+        "rootWord": "Old English mægen (strength, principal) + Latin cursus (running, sequence, flight of dishes)",
+        "rootMeaning": "The principal, most substantial flight or sequence of food in a formal dining meal",
+        "evolution": "In medieval European banquets, a 'course' (from Latin 'cursus') referred to an entire service or array of dishes carried into the dining hall at one time. With the 19th-century culinary shift across Europe from 'service à la française' (all dishes placed on the table simultaneously) to 'service à la russe' (dishes brought out in sequential, individual courses), the phrase 'main course' became standardized in English hospitality. It designated the central, most substantial dish in the progression—usually featuring roasted meats, poultry, or fish alongside vegetables and starches—served after the lighter appetizers or soups and prior to dessert.",
+        "relatedLanguages": [
+          "French: plat principal (main dish)",
+          "Spanish: plato principal (main course / main dish)",
+          "German: Hauptgericht (main dish) / Hauptgang (main course)",
+          "Italian: piatto principale / secondo piatto (main dish / second course)",
+          "Portuguese: prato principal (main course)"
+        ],
+        "firstRecordedUse": "Mid 19th century (c. 1850 in English culinary texts, banquet programs, and hotel menu guides)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The principal, most substantial, and filling dish in a multi-course meal, served after the appetizers, salad, or soup and before dessert, typically consisting of a dominant protein source (such as meat, poultry, fish, or a hearty plant-based substitute) accompanied by complementary vegetables and starches, serving as the culinary centerpiece of the dining experience.",
+        "spatialContext": "Commercial restaurant hot-plating lines beneath heat lamps, hotel banquet plating conveyors, fine-dining dining rooms, catering staging kitchens, and first-class airline galley convection ovens.",
+        "temporalContext": "Served as the primary stage of dinner or luncheon service, typically 20 to 30 minutes following appetizers; requires the longest cooking and synchronization time by kitchen line chefs.",
+        "emotionalTone": "Substantial, satisfying, focal, indulgent, and centerpiece-oriented.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, the 'main course' is the undisputed culinary anchor of a meal. When browsing a restaurant menu, diners typically pick their main course first and then select starters or wine pairings to complement it. At weddings, corporate galas, and banquet events, the invitation will ask guests to choose their main course preference (e.g., 'beef, chicken, salmon, or vegetarian option'). The main course represents the primary culinary value and caloric core of dining out. If a restaurant's main course is underwhelming, the entire meal is perceived as a failure regardless of how good the appetizer was.",
+        "mentalImage": "A commercial kitchen pass under glowing heat lamps where an executive chef uses tongs to place a pan-seared fillet of wild salmon over a bed of saffron risotto, meticulously wiping the rim of the wide porcelain plate before the waitstaff carries it out to the banquet table.",
+        "whenToUse": "Use when discussing the primary dish of a multi-course meal, menu organization, banquet catering choices, or restaurant ordering (e.g., 'vegetarian main course', 'select your main course', 'served as a main course with roasted vegetables').",
+        "whenNotToUse": "Do not use to describe small-plate appetizers (starters, hors d'oeuvres), soups, salads served on their own, side dishes, or desserts. Do not use for casual single-item fast food or snacks (e.g., a bag of chips or an apple is not a 'main course'). In North America, note that 'entrée' is often used interchangeably with 'main course'.",
+        "culturalContext": "In professional hospitality and corporate entertaining, catering contracts hinge on the main course selection and guarantee counts. High-profile conferences require detailed dietary surveys to accommodate vegan, kosher, halal, or gluten-free main course requirements. In TOEIC Parts 3, 4, and 7, flight meal options, banquet menus, and restaurant complaints frequently feature discussions regarding main course availability and preparation."
+      },
+      "examples": {
+        "daily": [
+          "For our anniversary dinner, we shared a seafood appetizer followed by a delicious main course of herb-crusted lamb chops.",
+          "I was already somewhat full from the warm bread and clam chowder before the main course was served.",
+          "The restaurant offers a savory wild mushroom risotto as its signature vegetarian main course."
+        ],
+        "business": [
+          "Conference participants are requested to indicate their main course selection—braised beef short ribs or pan-seared sea bass—on the online registration form.",
+          "The banquet manager coordinated with the kitchen line to guarantee that five hundred main course plates were served simultaneously to the gala delegates.",
+          "Our executive dining package includes a seasonal appetizer, an artisanal main course, and a dessert accompanied by coffee or tea."
+        ],
+        "conversation": [
+          "\"Have you decided what you would like for your main course this evening?\" / \"Yes, I will have the grilled salmon with roasted asparagus and wild rice, please.\"",
+          "\"Did the caterer provide enough vegetarian main course options for the luncheon?\" / \"Yes, they prepared fifty portions of roasted butternut squash ravioli with sage brown butter.\""
+        ],
+        "collocations": [
+          "main course selection",
+          "vegetarian main course",
+          "serve the main course",
+          "hearty main course",
+          "order a main course",
+          "multi-course meal"
+        ]
+      },
+      "wordFamily": {
+        "noun": "main course",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "gourmet plated main course steak salmon asparagus risotto restaurant fine dining",
+        "imageDescription": "A gourmet, beautifully presented main course on a wide ceramic plate, featuring a perfectly seared salmon fillet atop creamy saffron risotto with steamed baby asparagus spears and an herb oil drizzle.",
+        "mnemonic": "MAIN COURSE: The MAIN event of the meal COURSE that satisfies your primary appetite!"
+      },
+      "video": {
+        "description": "A culinary school instructional video demonstrating the professional plating, portion control, and temperature management techniques required to execute high-volume restaurant main course service."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Conference delegates are urged to indicate their _____ course preference on the registration form to assist the hotel catering team with advance meal preparation. (A) main (B) mainly (C) mainland (D) maintain",
+        "tips": "In TOEIC Part 5, recognizing standard business hospitality and dining compound nouns is essential. In the phrase 'their _____ course preference', the adjective (A) main is required to form the compound noun 'main course', referring to the principal dish of a meal. Choice (B) is an adverb, (C) is an unrelated geographic noun, and (D) is a verb."
+      },
+      "synonyms": [
+        "main dish",
+        "entrée",
+        "plat principal",
+        "principal dish",
+        "centerpiece dish"
+      ],
+      "antonyms": [
+        "appetizer",
+        "starter",
+        "dessert",
+        "side dish"
+      ],
+      "relatedWords": [
+        "entrée",
+        "appetizer",
+        "dessert",
+        "side dish",
+        "menu",
+        "banquet",
+        "course",
+        "cuisine"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+import json
+import re
+
+batch_data = {
+  "words": [
+    {
+      "id": "dining-125",
+      "word": "dry",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/dry--_us_1.mp3",
+        "commonMistakes": "Learners sometimes shorten the diphthong /aɪ/ to a flat monophthong /a/ or /ɑː/, or fail to glide smoothly toward the /ɪ/ offglide. In wine and dining contexts, non-native speakers also frequently confuse 'dry' (having no residual sweetness) with 'sour' or 'bitter', mistakenly assuming that a dry beverage must taste acrid or unpleasant rather than crisp and sugar-free.",
+        "ipa": "/draɪ/",
+        "stressPattern": "●",
+        "syllableBreakdown": "dry"
+      },
+      "etymology": {
+        "evolution": "In Old and Middle English, 'dry' described land, soil, wood, or weather devoid of water. By the 16th century, the term entered vintner trade vocabulary from French 'sec' to describe wines in which all natural sugars had been converted during fermentation into alcohol, leaving no perceptible sweetness on the palate. In restaurant kitchens and logistics, 'dry' came to designate non-perishable pantry goods ('dry storage', 'dry goods'), while in culinary preparation it came to denote waterless cooking techniques and spice rubs ('dry rub', 'dry heat').",
+        "firstRecordedUse": "Before 12th century (Old English c. 900 as an adjective/substantive; 16th century in beverage and culinary terminology)",
+        "origin": "Old English drȳge ('dry, arid, withered'), from Proto-West-Germanic *draugī, from Proto-Germanic *draugiz ('dry, hard'), rooted in the Proto-Indo-European root *dʰreugʰ- ('to dry up, parch').",
+        "relatedLanguages": [
+          "German: trocken (dry, also used for dry wine)",
+          "Dutch: droog (dry, arid)",
+          "Old Norse: draugr (dry timber, withered tree)",
+          "French: sec (dry, applied to wines without sugar)",
+          "Italian: secco (dry wine, dry goods)"
+        ],
+        "rootMeaning": "devoid of moisture, parched, arid; lacking sweetness in beverages",
+        "rootWord": "drȳge / *draugiz"
+      },
+      "deepMeaning": {
+        "connotation": "neutral",
+        "coreConcept": "In dining, beverage hospitality, and culinary management, a category or designation referring to wines, ciders, and vermouths containing little to no residual sweetness (having completed fermentation); also designates non-perishable ambient kitchen inventory ('drys' / dry goods such as flour, grains, and spices) or waterless seasoning applications ('dry rub') prepared without liquid bases.",
+        "emotionalTone": "Sophisticated, crisp, disciplined, objective, and discerning.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Commercial restaurant wine cellars, sommelier tasting stations, bar service rails, ambient storerooms ('dry storage rooms') with metal wire shelving, banquet bar stations, and commercial culinary prep lines.",
+        "temporalContext": "Ordered during pre-dinner drink service or paired across dinner entrées; checked during daily kitchen stock audits of ambient dry storage; applied hours before smoking or roasting meats."
+      },
+      "nativeMindset": {
+        "culturalContext": "Wine culture in English-speaking executive dining places high prestige on dry wines. In business dinners, hosting an executive meal frequently involves selecting a dry white or red to pair with steaks or seafood. In the TOEIC exam, beverage preferences, restaurant wine lists, and kitchen facility maintenance (such as keeping pantry stock in dry, cool conditions) appear frequently in Parts 1, 3, and 7.",
+        "howNativesThink": "To native restaurant patrons and beverage professionals, 'dry' in dining does not mean moistureless or parched food; rather, it primarily signals the complete absence of sugary sweetness in wines (such as a dry Chardonnay, Sauvignon Blanc, or Cabernet) or vermouth (a dry martini). Hospitality managers also think of 'dry' in operational kitchen management—referring to 'dry storage' for non-perishable pantry supplies, or 'dry heat' cooking methods (roasting, grilling) versus moist heat (braising, steaming).",
+        "mentalImage": "A sommelier in a bistro pouring a pale straw-colored, crisp white wine into an elegant stemmed glass beside an iced bucket, with clean condensation forming on the glass while a guest samples the bone-dry, refreshing finish.",
+        "whenNotToUse": "Do not confuse with 'sour' (tart or acidic like lemon juice), 'bitter' (tannic or astringent like black coffee), or 'stale' (old, hardened bread). Never use 'dry' to praise cooked meat, as dry meat indicates overcooking and lack of juiciness.",
+        "whenToUse": "Use when describing non-sweet wines, ciders, and vermouths, dry seasoning mixtures (dry rubs), cooking methodologies that do not utilize liquid (dry heat), or ambient pantry goods in foodservice facilities (dry storage)."
+      },
+      "examples": {
+        "business": [
+          "Our beverage director revised the banquet catering catalog to offer a broader selection of premium dry wines for charity galas.",
+          "Health inspection protocols mandate that all dry food provisions be elevated at least six inches above the storeroom floor.",
+          "The restaurant group negotiated bulk purchasing contracts for both refrigerated dairy items and ambient dry goods."
+        ],
+        "collocations": [
+          "dry wine",
+          "dry storage",
+          "bone dry",
+          "dry ingredients",
+          "dry rub",
+          "cool and dry place"
+        ],
+        "conversation": [
+          "\"Would the clients prefer a sweet dessert wine or something dry with their meal?\" / \"They requested a bone-dry Riesling to pair with the seafood platter.\"",
+          "\"Has the morning delivery of pantry staples been organized yet?\" / \"Yes, the kitchen crew unloaded the sacks of rice and flour directly into dry storage.\""
+        ],
+        "daily": [
+          "The server suggested a crisp, dry white wine to complement our pan-seared sea bass.",
+          "Before seasoning the steak, pat the beef completely dry with a paper towel so it forms a caramelized crust in the pan.",
+          "Store the leftover spices, flour, and baking powder in a cool, dry pantry cupboard away from direct sunlight."
+        ]
+      },
+      "wordFamily": {
+        "adjective": "dry",
+        "adverb": "dryly",
+        "noun": "dry",
+        "verb": "dry"
+      },
+      "visual": {
+        "imageDescription": "A sommelier pours a crisp dry white wine into a clear stemmed glass at an elegant candlelit restaurant table set with white linen and polished silverware.",
+        "imageKeyword": "dry white wine poured stemmed glass restaurant sommelier dining",
+        "mnemonic": "DRY: Think of a DRY martini with zero sugar—crisp, refreshing, and never sweet!"
+      },
+      "video": {
+        "description": "A sommelier masterclass explaining wine flavor profiles, contrasting sweet dessert wines with crisp dry varieties and demonstrating proper food pairing techniques."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          7
+        ],
+        "exampleQuestion": "To ensure food safety compliance, the head chef instructed the kitchen staff to store all bulk grains and seasonings in a cool, _____ pantry. (A) dry (B) dryly (C) dryness (D) dryable",
+        "tips": "In Part 5, descriptive slots preceding a noun ('pantry') joined by coordinates ('cool, _____') require a parallel coordinate adjective: (A) dry. Do not select the adverb (B) dryly or abstract noun (C) dryness."
+      },
+      "synonyms": [
+        "non-sweet",
+        "crisp",
+        "brut",
+        "arid",
+        "moisture-free",
+        "parched"
+      ],
+      "antonyms": [
+        "sweet",
+        "moist",
+        "wet",
+        "humid"
+      ],
+      "relatedWords": [
+        "sommelier",
+        "vintage",
+        "pantry",
+        "storeroom",
+        "seasoning",
+        "acidity",
+        "fermentation"
+      ]
+    },
+    {
+      "id": "dining-126",
+      "word": "eat",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/eat--_us_1.mp3",
+        "commonMistakes": "Learners often substitute the short lax vowel /ɪ/ (sounding like 'it') for the long tense vowel /iː/ ('eat'). Make sure to spread the lips slightly and sustain the tense front vowel: /iːt/. In writing and grammar, learners also confuse the noun usage in popular dining idioms ('cheap eats', 'a bite to eat') with the standard transitive verb.",
+        "ipa": "/iːt/",
+        "stressPattern": "●",
+        "syllableBreakdown": "eat"
+      },
+      "etymology": {
+        "evolution": "A primordial Germanic strong verb that has remained central to the English language for over a millennium. By the 19th and 20th centuries, nominal conversions emerged in conversational and journalistic English: 'eats' (plural noun) came to designate food, light snacks, or meals served at gatherings, while culinary journalism adopted 'cheap eats' and 'good eats' to categorize restaurant dining options and food value.",
+        "firstRecordedUse": "Before 12th century (Old English c. 825 as a verb; late 19th century as a colloquial noun for food or dining choices)",
+        "origin": "Old English etan ('to eat, consume food'), from Proto-West-Germanic *etan, from Proto-Germanic *etaną, from Proto-Indo-European *h₁ed- ('to eat, bite').",
+        "relatedLanguages": [
+          "German: essen (to eat), das Essen (food, meal)",
+          "Dutch: eten (to eat, food)",
+          "Old Norse: eta (to eat)",
+          "Latin: edere (to eat, root of edible)",
+          "Sanskrit: atti (he eats)"
+        ],
+        "rootMeaning": "to ingest, consume food, bite, take nourishment",
+        "rootWord": "etan / *etaną / *h₁ed-"
+      },
+      "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "The primary human act of taking food into the mouth, chewing, and swallowing it for sustenance and pleasure; in dining journalism and hospitality parlance, used nominally (especially in compounds and plural forms like 'eats' or 'a bite to eat') to designate a meal, snack, or food establishment offering affordable, top-tier nourishment.",
+        "emotionalTone": "Vital, sociable, satisfying, appetitive, and convivial.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Restaurant dining rooms, company cafeterias, food courts, conference banquet halls, executive dining suites, street food markets, and outdoor café patios.",
+        "temporalContext": "Occurs during regular meal hours (breakfast, lunch, dinner) and social intervals; scheduled into conference agendas as official meal breaks; reviewed constantly by culinary critics and travelers."
+      },
+      "nativeMindset": {
+        "culturalContext": "In Anglo-American business etiquette, inviting a colleague or client to 'grab a bite to eat' is a low-pressure networking gesture. In the TOEIC exam, 'eat' and related dining phrases appear continuously in Part 1 (photographs of people dining in cafeterias or restaurants), Part 3 (conversations deciding where to have lunch or booking reservations), and Part 7 (restaurant recommendations, menus, and conference schedules).",
+        "howNativesThink": "To native English speakers, while 'eat' is the most fundamental verb of consumption, it frequently serves as the cornerstone of social dining culture. Expressions like 'grab a bite to eat' are standard conversational shorthand for an informal working lunch or post-work gathering. In culinary media and restaurant guides, 'cheap eats' is a respected genre describing affordable, authentic neighborhood eateries, and 'good eats' celebrates satisfying, well-prepared cuisine.",
+        "mentalImage": "Colleagues gathered at a sunlit outdoor bistro patio during a midday lunch break, enjoying gourmet sandwiches and iced teas while sharing plates of salad.",
+        "whenNotToUse": "Do not use 'eat' when referring exclusively to liquids or beverages (use 'drink' or 'sip'), or for formal pharmaceutical consumption (use 'take medicine' or 'administer tablets'). In highly formal culinary critiques, prefer 'dine', 'partake of', or 'savor' over blunt repetitions of 'eat'.",
+        "whenToUse": "Use to express the ingestion of solid food, or in standard dining idioms ('a bite to eat', 'cheap eats', 'eat out', 'eat in') referring to meals, dining establishments, or dining options."
+      },
+      "examples": {
+        "business": [
+          "The conference organizers provided vouchers allowing attendees to eat at any restaurant within the hotel complex.",
+          "During the executive retreat, board members will eat dinner together in the hotel's private dining room.",
+          "The staff wellness program encourages employees to eat balanced, nutrient-dense meals throughout the workday."
+        ],
+        "collocations": [
+          "a bite to eat",
+          "eat out",
+          "cheap eats",
+          "eat lunch",
+          "ready to eat",
+          "places to eat"
+        ],
+        "conversation": [
+          "\"Do you have time to grab a bite to eat before our two o'clock client presentation?\" / \"Sure, there is a great noodle shop just across the street that serves food quickly.\"",
+          "\"Does the convention center have good places to eat nearby?\" / \"Yes, the concourse features several casual eateries and gourmet sandwich bars.\""
+        ],
+        "daily": [
+          "Let's grab a quick bite to eat at the corner café before the afternoon training session begins.",
+          "The local travel guide features a curated list of the best budget-friendly eats downtown.",
+          "Most employees prefer to eat lunch outside on the terrace when the weather is warm."
+        ]
+      },
+      "wordFamily": {
+        "adjective": "eatable",
+        "adverb": "eater-oriented",
+        "noun": "eat",
+        "verb": "eat"
+      },
+      "visual": {
+        "imageDescription": "A group of professional colleagues seated at a wooden outdoor cafe table enjoying fresh artisan lunches and smiling while dining together in natural sunlight.",
+        "imageKeyword": "colleagues lunch outdoor bistro dining meal sandwich salad",
+        "mnemonic": "EAT: Easy Afternoon Treat—nourish your body and recharge your energy!"
+      },
+      "video": {
+        "description": "A documentary segment exploring cafeteria dining trends, showcasing healthy hot meal stations, grab-and-go artisan counters, and social dining spaces."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          7
+        ],
+        "exampleQuestion": "After concluding the morning negotiations, Mr. Vance invited the visiting delegates to _____ lunch at a nearby French bistro. (A) eat (B) eater (C) eating (D) eaten",
+        "tips": "Following the infinitive marker 'to' in the pattern 'invited [someone] to [verb] lunch', the sentence requires the base form of the verb: (A) eat. The noun form (B), gerund (C), and past participle (D) are ungrammatical in this infinitive structure."
+      },
+      "synonyms": [
+        "dine",
+        "consume",
+        "ingest",
+        "partake of",
+        "nourish",
+        "feast"
+      ],
+      "antonyms": [
+        "fast",
+        "starve",
+        "abstain"
+      ],
+      "relatedWords": [
+        "dining",
+        "meal",
+        "snack",
+        "appetite",
+        "nutrition",
+        "cafeteria",
+        "restaurant"
+      ]
+    },
+    {
+      "id": "dining-127",
+      "word": "edible",
+      "partOfSpeech": [
+        "adjective"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/edible--_us_1.mp3",
+        "commonMistakes": "Learners often put stress on the middle or last syllable ('e-DIB-le'), or pronounce the middle vowel as a tense /iː/. In standard English, the primary stress is firmly on the first syllable /ˈed-/, followed by two unstressed weak schwas: /ˈed.ə.bəl/. In spelling, learners sometimes write 'edable' with an 'a' instead of the correct Latinate suffix '-ible'.",
+        "ipa": "/ˈed.ə.bəl/",
+        "stressPattern": "●○○",
+        "syllableBreakdown": "ed·i·ble"
+      },
+      "etymology": {
+        "evolution": "Coined in Late Latin ecclesiastical and natural history texts to categorize wild flora and fungi suitable for consumption without risk of toxicity. Adopted into late 16th-century English, 'edible' established itself as the formal, scientific, and culinary standard for items fit for human consumption, contrasting with Germanic 'eatable'.",
+        "firstRecordedUse": "c. 1590 in English botanical treatises classifying plants and mushrooms",
+        "origin": "Late Latin edibilis ('eatable, fit to be eaten'), from Latin edere ('to eat'), from Proto-Indo-European *h₁ed- ('to eat').",
+        "relatedLanguages": [
+          "French: comestible (edible), mangeable (eatable)",
+          "Spanish: comestible (edible)",
+          "Italian: commestibile (edible)",
+          "Portuguese: comestível (edible)",
+          "Latin: edibilis (fit to eat)"
+        ],
+        "rootMeaning": "fit to be eaten, consumable, safe for human digestion",
+        "rootWord": "edere / edibilis"
+      },
+      "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "Suitable, safe, and wholesome for human consumption; free from poisonous, noxious, or harmful chemical and biological contaminants; in culinary presentation, also refers to decorative elements (such as flowers, gold leaf, or containers) that guests can safely ingest alongside the dish.",
+        "emotionalTone": "Reassuring, safe, precise, wholesome, and refined.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Commercial prep kitchens, pastry decorating stations, organic farm supply crates, food science laboratories, buffet display tables, and culinary safety inspection stations.",
+        "temporalContext": "Verified before kitchen receiving and dish assembly; inspected during health authority safety audits; highlighted on high-end tasting menus featuring decorative garnishes."
+      },
+      "nativeMindset": {
+        "culturalContext": "High-end dining trends heavily feature edible garnishes (foraged plants, microgreens, edible flowers) to create visually stunning plates for food photography. In food safety regulations across the US and UK, caterers must strictly verify that all plate decorations are food-grade and certified edible. In the TOEIC exam, questions dealing with food safety regulations, culinary workshops, and ingredient sourcing in Part 5, 6, and 7 frequently test 'edible'.",
+        "howNativesThink": "To native speakers, 'edible' functions on two distinct levels: basic safety and culinary elegance. On a basic safety level, it distinguishes safe foods from poisonous or toxic items (e.g., 'edible mushrooms' vs. toxic toadstools). In fine dining and catering, 'edible' signals refined craftsmanship—assuring diners that intricate garnishes, such as candied pansies, microgreens, or 24-karat gold leaf flakes, are completely safe to eat rather than mere ornamental plastic.",
+        "mentalImage": "A pastry chef delicately placing a vibrant purple edible violet flower with fine tweezers onto a dark chocolate mousse tart garnished with gold leaf on a porcelain dessert plate.",
+        "whenNotToUse": "Do not use 'edible' simply to mean 'delicious' or 'tasty'; 'edible' merely means it can be eaten without harm. In casual conversation, calling a meal 'barely edible' is a stinging criticism meaning the food tasted so terrible it could hardly be swallowed. For enjoyable flavors, use 'delicious', 'flavorful', or 'appetizing'.",
+        "whenToUse": "Use when denoting that an item, plant, garnish, or substance is non-toxic and safe to consume ('edible flowers', 'edible oil', 'edible packaging', 'edible fungi')."
+      },
+      "examples": {
+        "business": [
+          "All catering decorations must comply with food safety guidelines certifying that any plate garnishes are completely edible.",
+          "The supplier provided laboratory documentation proving that the new vegetable glaze is non-toxic and edible.",
+          "The banquet committee commended the culinary team for using locally sourced edible botanicals in the dessert presentation."
+        ],
+        "collocations": [
+          "edible flowers",
+          "edible garnish",
+          "edible oils",
+          "fully edible",
+          "edible mushrooms",
+          "certified edible"
+        ],
+        "conversation": [
+          "\"Are the purple orchids on the appetizer plate meant to be eaten, or are they just for decoration?\" / \"They are completely edible, organically grown flowers sourced from an edible botanicals farm.\"",
+          "\"Did the safety inspection verify the new fruit coatings?\" / \"Yes, the supplier confirmed that the protective wax is fully food-grade and edible.\""
+        ],
+        "daily": [
+          "The bakery decorates its gourmet wedding cakes with delicate edible flowers and sugar pearls.",
+          "Before picking wild mushrooms in the forest, make sure you know which varieties are edible.",
+          "The chef introduced edible rice paper wrappers to reduce single-use plastic packaging in takeout orders."
+        ]
+      },
+      "wordFamily": {
+        "adjective": "edible",
+        "adverb": "edibly",
+        "noun": "edible"
+      },
+      "visual": {
+        "imageDescription": "A pastry chef using fine kitchen tweezers to carefully arrange fresh edible violas and micro-herbs onto an artisanal glazed tart on a marble preparation counter.",
+        "imageKeyword": "edible flowers pastry garnish cake plate tweezers chef",
+        "mnemonic": "EDIBLE: ED (eat) + IBLE (able) = Able to be Eaten safely!"
+      },
+      "video": {
+        "description": "A culinary arts feature highlighting the commercial farming of edible flowers and herbs for upscale restaurants, detailing harvesting standards and creative plating applications."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "The executive pastry chef insisted that all decorative elements on the gala dessert buffet must be entirely _____ and safe for consumption. (A) edible (B) edibility (C) edibly (D) eaten",
+        "tips": "Following the linking verb 'must be' and intensifier 'entirely', the predicate adjective slot requires an adjective that coordinates with 'safe': (A) edible. Option (B) is a noun, (C) is an adverb, and (D) is a past participle."
+      },
+      "synonyms": [
+        "consumable",
+        "eatable",
+        "non-toxic",
+        "wholesome",
+        "safe to eat",
+        "digestible"
+      ],
+      "antonyms": [
+        "inedible",
+        "toxic",
+        "poisonous",
+        "unwholesome"
+      ],
+      "relatedWords": [
+        "garnish",
+        "botanicals",
+        "food-grade",
+        "non-toxic",
+        "culinary",
+        "ingredient",
+        "pastry"
+      ]
+    },
+    {
+      "id": "dining-128",
+      "word": "egg",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/egg--_us_1.mp3",
+        "commonMistakes": "Learners sometimes replace the mid-front lax vowel /e/ with /eɪ/ (pronouncing it like 'aig') or /æ/ (sounding like 'ag'). Ensure a clean, short /e/ vowel followed by a voiced velar stop /ɡ/. In kitchen vocabulary, learners also sometimes confuse cooking methods (e.g., 'poached', 'scrambled', 'sunny-side up', 'over easy').",
+        "ipa": "/eɡ/",
+        "stressPattern": "●",
+        "syllableBreakdown": "egg"
+      },
+      "etymology": {
+        "evolution": "In late Old English and early Middle English, the southern dialect word was 'ey' (plural 'eyren'). William Caxton's famous 1490 printing preface recorded a merchant asking for 'eggys' in Kent, where the lady replied she spoke no French because she used 'eyren'. The northern Old Norse-derived form 'egg' eventually prevailed across London and standardized English as commerce centralized. In culinary history, eggs became the essential building block for baking, sauces, custards, and morning short-order cookery.",
+        "firstRecordedUse": "c. 1300 in Middle English, borrowed from Old Norse into northern English dialects; standard across England by 1500",
+        "origin": "Middle English egge, borrowed from Old Norse egg, displacing the native Old English cognate ǣġ, from Proto-Germanic *ajją, ultimately from Proto-Indo-European *ōwyo- / *h₂ōwyóm ('egg', likely derived from *h₂éwis 'bird').",
+        "relatedLanguages": [
+          "Old Norse: egg (egg)",
+          "German: Ei (egg, plural Eier)",
+          "Dutch: ei (egg)",
+          "Latin: ovum (egg, root of oval)",
+          "Greek: ōon (egg)",
+          "French: œuf (egg)",
+          "Spanish: huevo (egg)"
+        ],
+        "rootMeaning": "egg, ovum; reproductive body produced by birds",
+        "rootWord": "egg / *ajją / *h₂ōwyóm"
+      },
+      "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "The hard-shelled, oval reproductive body produced by female birds—predominantly domestic chickens (hens)—consisting of a nutrient-dense yellow yolk and clear albumen (white); revered in culinary arts and hospitality as a primary breakfast protein, binding agent, emulsifier for classic sauces (hollandaise, mayonnaise), leavener for soufflés, and glossy wash for baked goods.",
+        "emotionalTone": "Wholesome, essential, versatile, nourishing, and foundational.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Hotel breakfast omelet stations, commercial bakery mixing stations, restaurant walk-in refrigerators, short-order line griddles, and catering brunch buffets.",
+        "temporalContext": "Ordered heavily during morning breakfast and weekend brunch services (6:00 AM to 11:30 AM); delivered multiple times weekly in refrigerated crates to preserve grade-A freshness; monitored constantly for shelf life and cold-chain compliance."
+      },
+      "nativeMindset": {
+        "culturalContext": "Eggs are central to Western hospitality breakfast culture (the full English breakfast, the American diner breakfast, Sunday brunch). Hotel breakfast buffets often center their hot offerings around a live 'made-to-order egg station'. In the TOEIC exam, ordering breakfast at a hotel restaurant, inquiring about buffet offerings, or addressing food allergies in catering contracts regularly features eggs in Parts 1, 3, and 7.",
+        "howNativesThink": "To native English speakers, an 'egg' is both the quintessential breakfast staple and the indispensable Swiss Army knife of the commercial kitchen. When ordering breakfast at a diner or hotel, natives instinctively know their egg preference: 'scrambled', 'poached', 'sunny-side up', 'over easy', or in an 'omelet'. In professional catering and baking, chefs view the egg as an irreplaceable emulsifier and structural binder without which soufflés, cakes, custards, and emulsions like hollandaise would collapse.",
+        "mentalImage": "A hotel breakfast chef in a tall white toque deftly cracking two farm-fresh eggs onto a sizzling buttered flat-top griddle at an action station, with golden yolks shining beside chopped bell peppers and diced ham.",
+        "whenNotToUse": "Do not confuse the culinary noun with the informal phrasal verb 'to egg someone on' (meaning to urge or incite someone to do something rash). In dietary communication, always specify whether an item contains eggs, as egg proteins are one of the top recognized allergens.",
+        "whenToUse": "Use when referring to bird eggs used as culinary food ingredients, menu items ('eggs Benedict', 'egg salad', 'poached egg'), or in baking and sauce preparations."
+      },
+      "examples": {
+        "business": [
+          "Due to strict allergen labeling requirements, the catering menu clearly identifies all baked items containing egg.",
+          "The hospitality procurement team switched to cage-free egg suppliers to align with company sustainability goals.",
+          "The banquet kitchen received a bulk shipment of pasteurized liquid egg for tomorrow's conference breakfast service."
+        ],
+        "collocations": [
+          "scrambled eggs",
+          "poached egg",
+          "boiled egg",
+          "egg white",
+          "egg yolk",
+          "fresh eggs"
+        ],
+        "conversation": [
+          "\"How would you like your eggs prepared this morning, sir?\" / \"I would like two eggs over easy with rye toast, please.\"",
+          "\"Does the caesar salad dressing contain raw egg?\" / \"Our kitchen uses pasteurized egg yolks in the emulsion to ensure complete food safety.\""
+        ],
+        "daily": [
+          "The hotel breakfast buffet features a live cooking station where the chef prepares eggs to order.",
+          "She ordered two poached eggs on whole-wheat toast with a side of sliced avocado.",
+          "Whisking a fresh egg into the batter helps bind the ingredients and creates a tender crumb."
+        ]
+      },
+      "wordFamily": {
+        "adjective": "eggy",
+        "noun": "egg",
+        "verb": "egg"
+      },
+      "visual": {
+        "imageDescription": "A beautifully plated breakfast of poached eggs Benedict on toasted English muffins, draped in silky golden hollandaise sauce and dusted with fresh paprika and chives.",
+        "imageKeyword": "poached eggs benedict hollandaise toast breakfast brunch dining",
+        "mnemonic": "EGG: Essential Golden Goodness—the universal building block of breakfast and baking!"
+      },
+      "video": {
+        "description": "A professional culinary tutorial demonstrating hotel banquet short-order egg techniques, covering poaching, scrambling, and hollandaise sauce emulsification."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          7
+        ],
+        "exampleQuestion": "Conference attendees may request their morning _____ prepared to order at the hotel buffet's live cooking station. (A) egg (B) eggs (C) eggy (D) egging",
+        "tips": "In Part 5, following the possessive determiner 'their' and modifying adjective 'morning', the plural countable noun (B) eggs correctly completes the direct object of 'request' when referring generally to breakfast egg orders. Option (A) would require an article like 'an', (C) is an adjective, and (D) is a present participle."
+      },
+      "synonyms": [
+        "ovum",
+        "hen's egg",
+        "poultry egg",
+        "breakfast egg"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "yolk",
+        "albumen",
+        "omelet",
+        "poach",
+        "scramble",
+        "hollandaise",
+        "allergen"
+      ]
+    }
+  ]
+}
+
+with open("scratch/dining_125_128.json", "w", encoding="utf-8") as f:
+    json.dump(batch_data, f, indent=2, ensure_ascii=False)
+
+print("Saved scratch/dining_125_128.json")

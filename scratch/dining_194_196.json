@@ -1,0 +1,345 @@
+{
+  "words": [
+    {
+      "id": "dining-194",
+      "word": "nutrition",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/nuːˈtrɪʃ.ən/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/nutrition--_us_1.mp3",
+        "syllableBreakdown": "nu·tri·tion",
+        "stressPattern": "○●○",
+        "commonMistakes": "Learners often misplace the primary stress onto the first syllable (*NOO-tri-tion*) or mispronounce the suffix '-tion' as /ʃɒn/ or /tɪən/ rather than the reduced schwa /ʃən/. Non-native speakers also frequently confuse the noun 'nutrition' (the overall intake or biological process of nourishing) with 'nutrient' (a specific dietary substance like iron or protein) or mistakenly treat 'nutrition' as a countable noun (*nutritions*)."
+      },
+      "etymology": {
+        "origin": "Late Middle English borrowing from Late Latin 'nutritio' (a nourishing, nursing, rearing), noun of action from the past-participle stem of Latin 'nutrire' (to feed, nurse, foster, suckle), from Proto-Indo-European *snāu- (to flow, nurse).",
+        "rootWord": "Latin nutritio / nutrire",
+        "rootMeaning": "To feed, suckle, foster, sustain life with bodily nourishment",
+        "evolution": "In classical and Late Latin, 'nutritio' referred to the maternal nursing of infants and physiological sustenance. Introduced into 15th-century Middle English via Anglo-Norman medical texts, the word initially designated bodily digestion and absorption of nutrients. During the 19th-century scientific revolution, the discovery of proteins, carbohydrates, fats, and vitamins transformed nutrition into an empirical biochemical discipline. In modern hospitality, workplace management, and commercial dining, 'nutrition' centers on dietary transparency, wellness menus, and caloric disclosure compliance.",
+        "relatedLanguages": [
+          "French: nutrition (nutrition)",
+          "Spanish: nutrición (nutrition)",
+          "Italian: nutrizione (nutrition)",
+          "German: Ernährung (nutrition, sustenance)",
+          "Portuguese: nutrição (nutrition)"
+        ],
+        "firstRecordedUse": "Early 15th century (c. 1425 in Middle English translations of French medical compendia)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The biochemical and physiological process through which living organisms ingest, assimilate, and utilize food substances for energy, tissue growth, and vital function; in dining and hospitality, the nutritional composition, dietary value, and health-promoting quality of prepared food and beverages.",
+        "spatialContext": "Corporate wellness cafeterias featuring posted nutritional charts and calorie boards, hospital dietary prep kitchens, hotel breakfast buffet allergen counters, food manufacturing packaging labels, and corporate health seminar facilities.",
+        "temporalContext": "Daily meal planning, quarterly corporate wellness audits, annual menu updates complying with federal nutritional disclosure regulations, and morning breakfast service where health-conscious diners review dietary facts.",
+        "emotionalTone": "Healthful, nourishing, scientific, disciplined, and wellness-focused.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers distinguish 'nutrition' from mere 'food' or 'eating'—nutrition represents the functional, health-giving value of what one consumes rather than just sensory indulgence. When natives see 'nutrition facts' on a menu or package, they instinctively think of calories, protein, sodium, fiber, and sugar content. In the modern corporate landscape, employers actively invest in 'workplace nutrition' (healthy cafeteria options, fruit baskets, subsidized organic meals) as part of employee retention, productivity, and preventive health insurance strategies.",
+        "mentalImage": "A bright corporate cafeteria salad station featuring clearly labeled glass dispensers of quinoa, edamame, baby spinach, roasted salmon, and olive oil vinaigrettes, with a sleek digital screen displaying comprehensive nutritional information including calories, fiber, and protein per serving.",
+        "whenToUse": "Use when discussing the healthfulness, dietary value, or nutrient profile of meals; when referring to scientific dietary standards, wellness programs, nutritional labeling, or dietary consultations.",
+        "whenNotToUse": "Do not use 'nutrition' when referring to a specific chemical element or vitamin—use 'nutrient' instead (e.g., 'calcium is an essential nutrient', not *calcium is an essential nutrition*). Do not confuse with 'nourishment' (which is broader, poetic, or encompasses general sustenance) or 'diet' (which refers to the habitual pattern of eating or a restricted regimen).",
+        "culturalContext": "In the United States, United Kingdom, and Canada, mandatory menu labeling laws require chain restaurants and large corporate cafeterias to display clear nutrition facts (calorie counts, allergen warnings, sodium levels). Furthermore, corporate wellness programs routinely offer seminars and consultations with registered dietitians to optimize employee energy and curb long-term healthcare claims."
+      },
+      "examples": {
+        "daily": [
+          "The pediatrician emphasized the importance of balanced nutrition, including fresh vegetables and whole grains, for growing children.",
+          "Before buying the cereal, she checked the nutrition label on the back of the box to see how much added sugar it contained.",
+          "Good nutrition and adequate sleep are just as essential to marathon training as logging daily miles."
+        ],
+        "business": [
+          "The human resources department launched a corporate nutrition initiative that provides free healthy snacks and subsidized salads in the cafeteria.",
+          "To comply with regional hospitality regulations, the hotel chain added comprehensive nutrition and allergen disclosures to all catering menus.",
+          "Our executive dining services collaborated with a certified dietitian to improve the nutritional quality of daily luncheon offerings."
+        ],
+        "conversation": [
+          "\"Did you see the new nutritional labels displayed beside the hot buffet stations in the cafeteria?\" / \"Yes, it makes it much easier to track my daily caloric intake and protein goals.\"",
+          "\"Our team is organizing a wellness workshop next month; should we focus on stress management or nutrition?\" / \"Why not both? A presentation on workplace nutrition and meal prepping would be especially popular with the engineering team.\""
+        ],
+        "collocations": [
+          "good nutrition",
+          "proper nutrition",
+          "nutrition label",
+          "nutrition facts",
+          "clinical nutrition",
+          "workplace nutrition"
+        ]
+      },
+      "wordFamily": {
+        "noun": "nutrition, nutritionist, nutrient",
+        "verb": "nourish",
+        "adjective": "nutritional, nutritious, nutritive",
+        "adverb": "nutritionally"
+      },
+      "visual": {
+        "imageKeyword": "nutrition facts label healthy salad corporate cafeteria wellness dining",
+        "imageDescription": "A modern corporate cafeteria salad bar with bowls of colorful superfoods—kale, avocado, chickpeas, and pomegranate seeds—beside a clean digital tablet displaying calorie counts and nutritional breakdowns for employees.",
+        "mnemonic": "NUTRITION: Think of 'NURTURE' + 'CONDITION'—good NUTRITION NURTURES your physical CONDITION with vital vitamins and energy!"
+      },
+      "video": {
+        "description": "An educational workplace wellness video presented by a registered dietitian explaining how balanced nutrition and mindful lunch choices boost afternoon cognitive focus and stamina in office professionals."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "In an effort to promote workplace wellness, Apex Technologies has updated its cafeteria menu to emphasize balanced _____ and locally sourced organic ingredients. (A) nutrition (B) nutritional (C) nutritionist (D) nutritionally",
+        "tips": "In TOEIC Part 5, parts-of-speech questions frequently test the noun 'nutrition' versus its adjective 'nutritional' or person noun 'nutritionist'. After the adjective 'balanced', a noun is required to complete the noun phrase acting as the object of 'emphasize'. Choice (A) nutrition correctly functions as the non-count noun. Choice (B) is an adjective, (C) is a singular countable person noun requiring a determiner, and (D) is an adverb."
+      },
+      "synonyms": [
+        "nourishment",
+        "sustenance",
+        "nutriment",
+        "dietary intake",
+        "wholesomeness",
+        "aliment"
+      ],
+      "antonyms": [
+        "malnutrition",
+        "undernutrition",
+        "deficiency",
+        "starvation"
+      ],
+      "relatedWords": [
+        "nutrient",
+        "nutritionist",
+        "nutritious",
+        "dietitian",
+        "calorie",
+        "metabolism",
+        "macronutrient"
+      ]
+    },
+    {
+      "id": "dining-195",
+      "word": "oil",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ɔɪl/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/oil--_us_1.mp3",
+        "syllableBreakdown": "oil",
+        "stressPattern": "●",
+        "commonMistakes": "Learners frequently struggle with the diphthong /ɔɪ/ followed immediately by the dark liquid 'l' [ɫ], resulting in awkward epenthetic vowels like *oy-uhl* (/ˈɔɪ.əl/) with two exaggerated syllables, or collapsing the diphthong into a flat monophthong like *all* (/ɔːl/) or *earl* (/ɜːrl/). In dining settings, non-native speakers also sometimes confuse culinary oils (olive oil, sesame oil, vegetable oil) with industrial lubricants or petroleum, or mistakenly pluralize 'oil' when referring to culinary oil in cooking (e.g., saying *too many oils* instead of *too much oil*)."
+      },
+      "etymology": {
+        "origin": "Middle English 'oile', borrowed from Anglo-French and Old Northern French 'olie', 'oile' (Old French 'huile'), from Latin 'oleum' (olive oil, oil), borrowed from Ancient Greek 'élaion' (olive oil), from 'elaía' (olive tree), ultimately of Mediterranean or Pre-Greek substrate origin.",
+        "rootWord": "Latin oleum / Ancient Greek élaion",
+        "rootMeaning": "Olive oil; liquid fat pressed from olives",
+        "evolution": "In the classical Greco-Roman Mediterranean, olives were so central to lighting, cooking, athletic anointing, and medicine that 'oleum' (strictly 'olive oil') became the generic word for all viscous, hydrophobic liquid fats. Borrowed into Middle English via Norman French around 1175, 'oil' initially designated consecrated chrism and culinary olive oil. Over centuries, the meaning broadened to encompass animal fats (whale oil), plant seed extracts (canola, sesame, sunflower), and eventually mineral hydrocarbons (petroleum). In dining, gastronomy, and hospitality, 'oil' remains the foundational culinary medium for searing, sautéing, emulsifying salad dressings, and finishing plated dishes.",
+        "relatedLanguages": [
+          "French: huile (oil)",
+          "Spanish: óleo (oil, consecrated or art) / aceite (cooking oil, from Arabic al-zayt)",
+          "Italian: olio (oil)",
+          "German: Öl (oil)",
+          "Portuguese: óleo (oil) / azeite (olive oil)"
+        ],
+        "firstRecordedUse": "Late 12th century (c. 1175 as 'oile' in Old English and Early Middle English homilies and medical remedies)"
+      },
+      "deepMeaning": {
+        "coreConcept": "Any viscous, smooth, flammable liquid substance that is insoluble in water and soluble in organic solvents, typically extracted from plant seeds, fruits (such as olives and avocados), or nuts; in culinary and dining contexts, an essential cooking medium, flavoring agent, and dressing base used to transfer heat, prevent sticking, enhance mouthfeel, and carry fat-soluble aromatic compounds.",
+        "spatialContext": "Commercial restaurant hot lines with stainless steel oil squeeze bottles beside sauté burners, salad prep stations with glass cruets of extra virgin olive oil, deep-fryer vats with temperature monitors, pantry shelving stocked with five-gallon tins of canola oil, and tableside bread service caddies.",
+        "temporalContext": "Continuous culinary usage during lunch and dinner sauté service, early morning fryer filtration shifts, à la minute tableside drizzle before plate delivery, and weekly kitchen inventory bulk purchasing cycles.",
+        "emotionalTone": "Rich, glossy, fragrant, viscous, and culinarily indispensable.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "In a dining context, native speakers immediately visualize culinary oils—especially olive oil, canola oil, vegetable oil, or sesame oil. When dining at an Italian or Mediterranean restaurant, the instinctive mental image is dipping crusty bread into a small saucer of extra virgin olive oil seasoned with black pepper and balsamic vinegar. Cooks associate oil with heat management: knowing smoke points (canola or peanut oil for high-heat frying vs. cold-pressed extra virgin olive oil for finishing). Outside the kitchen, native speakers use 'oil' metaphorically in idioms such as 'burning the midnight oil' (working late) or 'pour oil on troubled waters' (calming a conflict).",
+        "mentalImage": "A sleek dark-green glass bottle pouring a silky, luminous stream of golden-green extra virgin olive oil into a shallow porcelain dipping dish containing freshly ground sea salt, cracked black peppercorns, and rosemary leaves, beside warm crusty sourdough bread.",
+        "whenToUse": "Use when referring to culinary cooking fats, dressings, frying liquids, tableside condiments (olive oil cruet), or restaurant kitchen pantry supplies; or figuratively in established idioms ('midnight oil').",
+        "whenNotToUse": "Do not confuse with 'vinegar' in cruet pairings; always specify the type when precision is required (e.g., 'extra virgin olive oil', 'truffle oil', 'canola oil'). Do not use 'oil' when referring to solid animal fats like 'butter' or 'lard' unless they have been clarified or melted, and avoid confusing food-grade culinary oils with industrial lubricants or fuel.",
+        "culturalContext": "In Western dining and hospitality, extra virgin olive oil is regarded as a hallmark of quality and Mediterranean culinary sophistication. High-end restaurants proudly highlight single-estate olive oils on bread service and salad descriptions. In TOEIC listening and reading scenarios, oil appears frequently in restaurant orders, ingredient delivery manifests, and safety guidelines for commercial kitchen equipment like deep fryers."
+      },
+      "examples": {
+        "daily": [
+          "He poured a generous swirl of olive oil into the skillet before sautéing the garlic and onions.",
+          "The server brought a small dish of cold-pressed oil and balsamic vinegar to the table for dipping the warm bread.",
+          "For high-heat stir-frying, she prefers using peanut oil because of its high smoke point."
+        ],
+        "business": [
+          "The hotel culinary division switched to non-GMO sunflower oil across all banquet facilities to align with sustainability standards.",
+          "Our supplier confirmed that bulk shipments of extra virgin olive oil will arrive at the restaurant depot on Wednesday morning.",
+          "Kitchen safety guidelines require line cooks to monitor the deep fryer oil temperature every two hours during dinner service."
+        ],
+        "conversation": [
+          "\"Would you like butter or olive oil with your dinner rolls?\" / \"A little olive oil with cracked pepper would be wonderful, thank you.\"",
+          "\"Did we remember to order extra sesame oil and peanut oil for the wok station?\" / \"Yes, the purchasing manager added two cases to our weekly dry-goods order.\""
+        ],
+        "collocations": [
+          "olive oil",
+          "vegetable oil",
+          "cooking oil",
+          "sesame oil",
+          "canola oil",
+          "extra virgin oil"
+        ]
+      },
+      "wordFamily": {
+        "noun": "oil, oiliness",
+        "verb": "oil",
+        "adjective": "oily",
+        "adverb": "oilily"
+      },
+      "visual": {
+        "imageKeyword": "extra virgin olive oil pouring cruet dipping bread dining table",
+        "imageDescription": "A clear glass cruet pouring a smooth, golden stream of extra virgin olive oil onto a ceramic plate with rosemary sprigs and sea salt, beside artisan sliced bread in a dimly lit restaurant.",
+        "mnemonic": "OIL: OLIVES + INSTANT + LIQUID = OIL! Liquid gold pressed from olives and seeds to make every dish sizzle and shine!"
+      },
+      "video": {
+        "description": "A culinary masterclass video by an executive chef explaining the different smoke points and flavor profiles of cooking oils, demonstrating how to properly sear fish using canola oil and finish with extra virgin olive oil."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          7
+        ],
+        "exampleQuestion": "The head chef requested that two additional cases of extra virgin olive _____ be delivered to the banquet kitchen before Friday evening. (A) oil (B) oily (C) oiliness (D) oiled",
+        "tips": "In TOEIC Part 5, compound noun collocations in hospitality and culinary contexts are frequently tested. In the phrase 'extra virgin olive _____', the mass noun (A) 'oil' is needed to complete the compound term. Choice (B) is an adjective, (C) is a noun meaning the quality of being greasy, and (D) is a past participial adjective."
+      },
+      "synonyms": [
+        "cooking oil",
+        "vegetable oil",
+        "olive oil",
+        "fat",
+        "lubricant",
+        "grease"
+      ],
+      "antonyms": [
+        "water",
+        "vinegar",
+        "dryness"
+      ],
+      "relatedWords": [
+        "olive",
+        "vinegar",
+        "cruet",
+        "sauté",
+        "fryer",
+        "smoke point",
+        "vinaigrette"
+      ]
+    },
+    {
+      "id": "dining-196",
+      "word": "omelet",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˈɑːm.lət/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/omelet--_us_1.mp3",
+        "syllableBreakdown": "om·e·let",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners frequently mispronounce the word phonetically with three fully articulated syllables (*OH-meh-let* or *ah-MEH-let*) rather than the standard contracted two-syllable pronunciation /ˈɑːm.lət/. Non-native writers also get confused by the alternate spelling: 'omelet' is standard in American English, whereas 'omelette' is standard in British and French culinary usage (both refer to the exact same dish). Additionally, non-native speakers sometimes confuse an omelet with scrambled eggs, missing the essential defining feature of an omelet: beaten eggs cooked in a pan without continuous stirring until set into an intact sheet, then folded over a filling."
+      },
+      "etymology": {
+        "origin": "Early 17th century borrowing from French 'omelette', an alteration of Middle French 'amelette', itself a metathesis of 'alemelle' (knife blade, thin plate, from Old French 'lamelle', from Latin 'lamella', diminutive of 'lamina' meaning thin plate, sheet of metal or leaf).",
+        "rootWord": "Latin lamella (thin plate, small metal blade) / French amelette -> omelette",
+        "rootMeaning": "Thin plate, blade; referring to the flat, thin, oblong sheet-like shape of the cooked beaten eggs",
+        "evolution": "In classical Latin, 'lamina' designated a thin sheet or plate. Its diminutive 'lamella' became Old French 'alemelle' (thin knife blade). Through popular association with flat, sheet-like egg preparations cooked in flat pans, French speakers referred to the flat beaten egg dish as an 'alemelle', which mutated via phonetic metathesis into 'amelette' and eventually 'omelette' by the 16th century. Borrowed into English in the early 1600s, the French spelling 'omelette' dominated until Noah Webster and American lexicographers popularized the simplified phonetic spelling 'omelet' in the 19th century. In modern hospitality, the omelet station is the premier signature feature of luxury hotel breakfast and brunch buffets worldwide.",
+        "relatedLanguages": [
+          "French: omelette (omelet)",
+          "Spanish: tortilla (specifically tortilla francesa for plain omelet, tortilla española with potatoes)",
+          "Italian: frittata (open-faced Italian omelet) / omelette (French style)",
+          "German: Omelett (omelet)",
+          "Portuguese: omelete (omelet)"
+        ],
+        "firstRecordedUse": "Early 17th century (c. 1611 in Randle Cotgrave's French-English Dictionarie as 'omelette')"
+      },
+      "deepMeaning": {
+        "coreConcept": "A culinary dish made from beaten eggs whisked with seasoning and cooked quickly with butter or oil in a curved frying pan until set into a tender, flat sheet, then typically folded in half or rolled into an oval cylinder around savory fillings such as cheese, diced ham, sautéed mushrooms, onions, bell peppers, or fresh herbs.",
+        "spatialContext": "Live hotel breakfast buffet action stations equipped with portable induction burners, commercial nonstick omelet skillets, glass bowls of pre-chopped fillings (diced ham, spinach, cheddar cheese), restaurant short-order breakfast cook lines, and brunch banquet carving and egg stations.",
+        "temporalContext": "Morning breakfast service (typically 6:30 AM to 10:30 AM), weekend brunch seatings (10:00 AM to 2:00 PM), and fast à la minute preparation taking approximately two to three minutes per order.",
+        "emotionalTone": "Fresh, savory, customizable, comforting, warm, and inviting.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'omelet' is the quintessential customizable breakfast and brunch food. Whether at a diner, an upscale weekend brunch, or a hotel breakfast buffet, the first question a native speaker asks is, 'What fillings do you want?' (e.g., western omelet, cheese omelet, spinach-and-feta omelet). In professional culinary circles, cooking a classic French omelet (pale golden exterior, zero browning, soft and creamy interior) is famously regarded as the ultimate test of a chef's fundamental technique. Native speakers also frequently quote the timeless proverb, 'You can't make an omelet without breaking eggs' (achieving something worthwhile inevitably requires sacrifices or disruption).",
+        "mentalImage": "A skilled hotel chef in a white toque at a polished marble buffet counter, using a silicone spatula to fold a golden, steaming three-egg omelet oozing melted cheddar cheese, diced ham, and sautéed mushrooms onto a warm white porcelain plate for a waiting guest.",
+        "whenToUse": "Use when ordering breakfast or brunch, describing hotel buffet amenities ('made-to-order omelet station'), writing restaurant menus, discussing egg cookery techniques, or using the idiom 'cannot make an omelet without breaking eggs'.",
+        "whenNotToUse": "Do not confuse with 'scrambled eggs' (where the curds are continually broken and stirred) or 'sunny-side up / poached eggs' (where the yolks remain whole and unwhisked). Distinguish from an Italian 'frittata' (which is unfolded, thick, and baked or broiled open-faced) or a Spanish 'tortilla de patatas' (dense potato-and-egg cake).",
+        "culturalContext": "In the global hospitality industry, the 'made-to-order omelet bar' is an iconic amenity in full-service business hotels (such as Marriott, Hilton, Hyatt, and Embassy Suites) and corporate conference venues. In TOEIC test listening (Part 3/4) and reading (Part 7), hotel service advertisements, conference breakfast vouchers, and guest reviews frequently highlight complimentary hot breakfast buffets featuring live omelet chefs."
+      },
+      "examples": {
+        "daily": [
+          "He prepared a quick three-egg omelet filled with baby spinach, diced tomatoes, and sharp cheddar cheese for breakfast.",
+          "The corner diner serves a hearty Western omelet with smoked ham, green bell peppers, and hash browns.",
+          "She practiced her technique to make a tender French omelet with a creamy center and no surface browning."
+        ],
+        "business": [
+          "Conference attendees praised the hotel's complimentary breakfast buffet, especially the made-to-order omelet station.",
+          "The banquet manager arranged for two additional chefs at the live omelet bar to reduce wait times during peak morning hours.",
+          "Corporate hotel guests who purchase the executive package receive daily access to the private lounge offering cooked-to-order omelets."
+        ],
+        "conversation": [
+          "\"What ingredients would you like in your omelet this morning, sir?\" / \"Could I please have mushrooms, diced bell peppers, and Swiss cheese, but no onions?\"",
+          "\"The morning seminar starts at eight thirty; do we have enough time to grab breakfast at the hotel dining room?\" / \"Yes, the omelet station opens at six thirty, so we will have plenty of time.\""
+        ],
+        "collocations": [
+          "cheese omelet",
+          "made-to-order omelet",
+          "Western omelet",
+          "French omelet",
+          "omelet station",
+          "egg white omelet"
+        ]
+      },
+      "wordFamily": {
+        "noun": "omelet, omelette",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "made to order omelet station hotel breakfast buffet chef skillet",
+        "imageDescription": "A smiling hotel breakfast chef in a clean white uniform deftly folding a golden omelet in a nonstick pan, with glass bowls of diced ham, bell peppers, cheese, and mushrooms neatly arranged across the marble counter.",
+        "mnemonic": "OMELET: Oh My Egg, Let's Eat Together! Whisk eggs into a flat sheet, fold in your favorite toppings, and enjoy a hot breakfast!"
+      },
+      "video": {
+        "description": "A culinary hotel hospitality feature showing a professional breakfast line cook demonstrating how to prepare a high-volume, made-to-order vegetable and cheese omelet in under two minutes at a corporate convention buffet."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Guests staying on the executive club floor are invited to enjoy a complimentary breakfast buffet featuring a made-to-order _____ station. (A) omelet (B) omelets (C) omeleting (D) omeleted",
+        "tips": "In TOEIC Part 5, noun adjuncts modifying another noun (such as 'station' in 'omelet station', parallel to 'ticket counter' or 'baggage claim') almost always take the singular form. Choice (A) omelet is correct. Choice (B) is the plural noun, which is ungrammatical as a pre-modifying adjunct in this phrase; choices (C) and (D) are non-existent or improper verb forms."
+      },
+      "synonyms": [
+        "frittata",
+        "tortilla",
+        "egg dish",
+        "scramble",
+        "quiche"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "egg",
+        "whisk",
+        "skillet",
+        "filling",
+        "brunch",
+        "buffet",
+        "spatula"
+      ]
+    }
+  ]
+}

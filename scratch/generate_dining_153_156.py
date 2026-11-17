@@ -1,0 +1,481 @@
+import json
+import re
+import sys
+
+words_data = [
+    {
+        "id": "dining-153",
+        "word": "guest",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/ɡɛst/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/guest--_us_1.mp3",
+            "syllableBreakdown": "guest",
+            "stressPattern": "●",
+            "commonMistakes": "Learners often mispronounce the silent 'u' by articulating it as /ɡwɛst/ rather than /ɡɛst/, or confuse the spelling and pronunciation with 'ghost' (/ɡoʊst/) or 'guess' (/ɡɛs/). In professional hospitality, avoid confusing 'guest' (a diner or hospitality patron receiving service) with 'client' (a recipient of legal, financial, or consulting services) or 'customer' (a transactional retail shopper)."
+        },
+        "etymology": {
+            "origin": "Middle English gest / gist, from Old Norse gestr ('guest') and reinforced by Old English giest / gæst ('stranger, visitor, guest'), from Proto-Germanic *gastiz ('guest, stranger'), from Proto-Indo-European *gʰos-ti- ('stranger, guest, host; someone bound by mutual obligations of hospitality').",
+            "rootWord": "*gʰos-ti- (PIE) / *gastiz (Proto-Germanic)",
+            "rootMeaning": "stranger, guest, one bound by reciprocal hospitality",
+            "evolution": "In ancient Proto-Indo-European culture, *gʰos-ti- established sacred reciprocal obligations between hosts and travelers. In Old Norse gestr and Old English giest, it referred to a traveler sheltered at a hall or hearth. Throughout medieval English dining halls and coaching inns, it became the standard term for diners and lodgers. Modern hospitality industries explicitly favor 'guest' over 'customer' to establish an atmosphere of personal attentiveness and gracious welcome. Historically cognate with Latin hostis ('stranger, enemy') and hospes ('host, guest', root of 'hospitality' and 'hotel').",
+            "relatedLanguages": [
+                "German: Gast (guest)",
+                "Dutch: gast (guest)",
+                "Old Norse: gestr (guest)",
+                "Latin (cognate): hospes (host, guest) / hostis (stranger)",
+                "French (via Latin hospes): hôte (host, guest)",
+                "Russian: гость (gost', guest)"
+            ],
+            "firstRecordedUse": "Before 12th century (Old English c. 890 in Beowulf as gæst/giest)"
+        },
+        "deepMeaning": {
+            "coreConcept": "A person receiving hospitality, specifically an individual invited to a meal, social function, or private dining event, or a paying patron at a restaurant, hotel, or banquet venue who is afforded professional courtesy, personalized service, and culinary care.",
+            "spatialContext": "Restaurant reception podiums (maître d' stands), formal dining rooms, banquet reception halls, hotel executive dining lounges, and corporate catering suites.",
+            "temporalContext": "Dinner seatings (typically 6:00 PM – 10:00 PM), reservation arrival grace periods (15 minutes), banquet cocktail hours, and multi-course event schedules.",
+            "emotionalTone": "Welcoming, gracious, respectful, and attentive.",
+            "formalityLevel": "neutral",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "In English-speaking dining and hospitality culture, 'guest' carries a strong psychological implication of honor and warmth compared to transactional words like 'customer'. When a restaurant or caterer calls someone a 'guest', it signals that the establishment is not merely selling food, but hosting an experience where comfort, dietary needs, and dining pleasure are paramount. At personal or corporate dinner parties, being the 'guest' implies being treated with generosity, attentiveness, and high social respect.",
+            "mentalImage": "A restaurant maître d' in a sharp tailored suit warmly greeting two diners at the reception podium, reviewing their table reservation on a digital display, and guiding them toward a candlelit corner table draped in crisp white linen with polished silverware and sparkling glassware.",
+            "whenToUse": "Use when referring to diners at a restaurant, attendees at a dinner party or banquet, patrons staying or eating at a hotel, or individuals invited to corporate receptions and tasting dinners.",
+            "whenNotToUse": "Do not use 'guest' for clients receiving legal, accounting, or corporate consulting services (use 'client'), nor for people purchasing retail goods in a store (use 'customer' or 'shopper'), nor for uninvited intruders.",
+            "culturalContext": "In Western hospitality management (championed by iconic luxury hotel groups and high-end restaurant establishments), referring to diners strictly as 'guests' rather than 'customers' is an industry-wide golden rule. It elevates the commercial exchange into a personal relationship grounded in traditional hospitality values."
+        },
+        "examples": {
+            "daily": [
+                "We are expecting six dinner guests this evening, so I set the dining table with our finest porcelain dishes.",
+                "The server politely asked each guest at our table whether anyone had food allergies before taking our entree orders.",
+                "As an invited wedding guest, she enjoyed a three-course plated dinner and complimentary champagne."
+            ],
+            "business": [
+                "The hotel restaurant manager instructed front-of-house staff to greet every dining guest within thirty seconds of arrival.",
+                "Corporate hosts are expected to accommodate dietary restrictions communicated by international guests prior to the gala.",
+                "The ballroom comfortably seats up to two hundred fifty dinner guests for the annual shareholder reception."
+            ],
+            "conversation": [
+                "\"How many guests should we prepare place settings for at the VIP corner table?\" / \"The client reserved seating for eight guests, including the keynote speaker.\"",
+                "\"Excuse me, will additional guests be joining your party for dinner this evening?\" / \"No, it will just be the four of us, thank you.\"",
+                "\"Did the catering coordinator note that two of our conference guests requested vegetarian entrees?\" / \"Yes, their plated meals are marked and will be served separately by the banquet captain.\""
+            ],
+            "collocations": [
+                "dinner guest",
+                "hotel guest",
+                "special guest",
+                "guest list",
+                "welcome a guest",
+                "accommodate a guest"
+            ]
+        },
+        "wordFamily": {
+            "noun": "guest, guestbook, guesthouse",
+            "verb": "guest",
+            "adjective": "guest (attributive: guest chef, guest speaker)",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "restaurant dining room guest table reservation maitre d hospitality",
+            "imageDescription": "A smiling restaurant host warmly seating two elegant dinner guests at a beautifully arranged corner table in a softly lit upscale restaurant.",
+            "mnemonic": "GUEST: Be our GUEST! Rooted in ancient hospitality—treat every GUEST with Great Utmost Esteem, Service, and Taste!"
+        },
+        "video": {
+            "description": "A luxury hospitality training video demonstrating front-of-house etiquette, showing how restaurant hosts welcome dining guests, confirm dietary preferences, and coordinate seating arrangements."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                2,
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "The restaurant manager requested that the catering staff confirm all dietary preferences before the _____ arrive for the corporate banquet. (A) guest (B) guests (C) guest's (D) guesting",
+            "tips": "In Part 5, pay close attention to subject-verb agreement and noun plurals. The verb 'arrive' in the subordinate clause 'before the _____ arrive' is plural (uninflected base form with a third-person plural subject), requiring the plural noun 'guests' (B). Choice (A) is singular (which would require 'arrives'), (C) is possessive, and (D) is an inappropriate participle."
+        },
+        "synonyms": [
+            "patron",
+            "diner",
+            "visitor",
+            "invitee",
+            "attendee",
+            "customer"
+        ],
+        "antonyms": [
+            "host",
+            "hostess",
+            "proprietor",
+            "restaurateur"
+        ],
+        "relatedWords": [
+            "hospitality",
+            "reservation",
+            "banquet",
+            "reception",
+            "dietary preference",
+            "table setting",
+            "maître d'"
+        ]
+    },
+    {
+        "id": "dining-154",
+        "word": "halal",
+        "partOfSpeech": [
+            "adjective"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/həˈlɑːl/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/halal--_us_1.mp3",
+            "syllableBreakdown": "ha·lal",
+            "stressPattern": "○●",
+            "commonMistakes": "Learners often misplace primary stress on the first syllable (/ˈhɑːlɑːl/) or use an open English /æ/ sound in both syllables. In standard English, the primary stress falls on the second syllable: /həˈlɑːl/. Learners also confuse 'halal' (Islamic dietary standards) with 'kosher' (Jewish dietary standards), or mistakenly use 'halal' as a noun for a specific cut of meat rather than an adjective qualifying food prepared according to Islamic dietary law."
+        },
+        "etymology": {
+            "origin": "Arabic حَلَال (ḥalāl), literally 'permissible, lawful, allowed', from the Semitic triliteral root ḥ-l-l (ح-ل-ل) meaning 'to untie, loosen, release, or render permissible' (the antonym of ḥarām, meaning 'forbidden, sacrosanct').",
+            "rootWord": "ḥ-l-l (ح-ل-ل)",
+            "rootMeaning": "to untie, loosen, dissolve, or render permissible/lawful",
+            "evolution": "Originated in Islamic jurisprudence (sharia) to categorize acts, goods, and foods permitted under Quranic law. Regarding food and beverage, it requires dhabihah—the humane slaughter of permissible livestock by an adult Muslim invoking the name of God, swift incision of the throat, and thorough draining of blood—alongside the absolute exclusion of pork, carrion, and alcohol. Adopted into modern global commerce, airline hospitality, hotel catering, and international regulatory food standards as an audited dietary certification.",
+            "relatedLanguages": [
+                "Arabic: حَلَال (ḥalāl - lawful, permissible)",
+                "Turkish: helal (lawful, permissible)",
+                "Persian: حلال (halâl - permissible)",
+                "Malay/Indonesian: halal (permissible, conforming to Islamic law)",
+                "Hebrew (cognate root): halal / hillel (to untie, loosen)"
+            ],
+            "firstRecordedUse": "Mid-19th century in English scholarly and diplomatic writings; widely formalized in international food packaging and trade from the 1970s onward"
+        },
+        "deepMeaning": {
+            "coreConcept": "Designating food, beverage, or preparation practices that adhere strictly to Islamic dietary law, denoting products that are lawful and permissible to consume, characterized by the humane slaughter (dhabihah) of permissible livestock, complete drainage of blood, and zero presence of pork, pork derivatives, intoxicants (alcohol), or cross-contamination from non-compliant foods.",
+            "spatialContext": "Airline catering prep facilities, international convention banquet buffet stations, halal-certified restaurant kitchens, hotel room service pantries, and food certification testing labs.",
+            "temporalContext": "Advance catering booking deadlines (typically requiring 48-to-72-hour dietary confirmation), daily culinary shift preparations, and annual commercial food audit cycles.",
+            "emotionalTone": "Respectful, conscientious, inclusive, and compliant.",
+            "formalityLevel": "neutral",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "In international business, corporate dining, and event planning, native speakers perceive 'halal' not merely as a religious classification, but as an indispensable dietary requirement and international benchmark of hospitality excellence. Similar to vegetarian or gluten-free requests, professional event hosts proactively confirm halal options for Muslim attendees to ensure that everyone feels valued, respected, and accommodated without embarrassment or isolation.",
+            "mentalImage": "A catering coordinator placing a polished acrylic buffet label reading 'Certified Halal Grilled Lamb Skewers' beside a separate stainless-steel chafing dish with dedicated gold-toned tongs and allergen informational cards at an international summit dinner.",
+            "whenToUse": "Use when describing foods, dining menus, catering options, culinary preparation methods, butcher products, or restaurants that adhere strictly to Islamic dietary laws.",
+            "whenNotToUse": "Do not confuse with 'kosher' (which adheres to Jewish dietary laws, though both prohibit pork and require specific slaughter practices); do not use 'halal' as a generic synonym for Middle Eastern or South Asian cuisine (as regional food may contain alcohol or non-halal meat); do not treat 'halal' as a noun describing a specific dish.",
+            "culturalContext": "In modern global business—ranging from multinational corporate meetings in London, New York, and Singapore to commercial airlines worldwide—halal food catering is an essential operational requirement. With Muslims comprising nearly a quarter of the global population, corporations and hotels that fail to provide verified halal meal options risk alienating international partners and delegates."
+        },
+        "examples": {
+            "daily": [
+                "She ordered a grilled chicken wrap and spiced yellow rice from the neighborhood halal food cart.",
+                "The supermarket now features an entire refrigerated section dedicated to certified halal poultry and beef.",
+                "When inviting his Muslim coworkers over for dinner, he made sure to buy halal steaks from a local specialty butcher."
+            ],
+            "business": [
+                "The event planning committee confirmed with the hotel banquet director that all catered lunch entrees would be certified halal.",
+                "To attract overseas delegates, the conference center updated its dining services to include a dedicated halal kitchen.",
+                "The catering contract specifies that halal meal boxes must be prepared and sealed separately to prevent any cross-contamination."
+            ],
+            "conversation": [
+                "\"Are there any halal entree options available at tomorrow's networking dinner?\" / \"Yes, the chef has prepared a halal-certified roasted sea bass and an herb-crusted chicken breast.\"",
+                "\"Does this corporate catering package include meals for delegates with religious dietary preferences?\" / \"Certainly, we offer full halal and kosher meal trays upon forty-eight hours' advance notice.\"",
+                "\"Can you verify whether the dessert contains gelatin or alcohol?\" / \"The pastry chef confirmed it uses agar-agar and contains no alcohol, so it is completely halal.\""
+            ],
+            "collocations": [
+                "halal food",
+                "halal meat",
+                "halal certification",
+                "halal-certified",
+                "halal option",
+                "halal restaurant"
+            ]
+        },
+        "wordFamily": {
+            "noun": "halal, halalness, halalization",
+            "verb": "halalize",
+            "adjective": "halal",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "halal certified food logo restaurant banquet buffet catering",
+            "imageDescription": "A beautifully garnished dish of grilled spiced halal chicken skewers resting on saffron rice, accompanied by a small green certificate card displaying the official Halal logo on a buffet table.",
+            "mnemonic": "HALAL: Think 'HEALTHY & LAWFUL'—dietary choices that are completely PERMISSIBLE under the LAW!"
+        },
+        "video": {
+            "description": "An educational documentary examining global airline catering logistics, showing how executive chefs prepare and seal certified halal meals in a dedicated, audit-compliant kitchen facility."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "To accommodate visiting executives from overseas branches, the conference committee requested that the catering service supply _____ meal options for all official luncheons. (A) halal (B) halals (C) halaling (D) halaled",
+            "tips": "In TOEIC Part 5, dietary descriptors like 'halal', 'kosher', 'vegan', and 'organic' function as adjectives modifying plural nouns (e.g., '_____ meal options'). The word 'halal' is an invariant adjective borrowed from Arabic; therefore, (A) is correct. Forms with plural endings (B) or pseudo-participle suffixes (C, D) are incorrect distractors."
+        },
+        "synonyms": [
+            "permissible",
+            "lawful",
+            "dietary-compliant",
+            "Islamic compliant",
+            "religiously approved",
+            "sanctioned"
+        ],
+        "antonyms": [
+            "haram",
+            "forbidden",
+            "prohibited",
+            "unlawful"
+        ],
+        "relatedWords": [
+            "kosher",
+            "dhabihah",
+            "dietary restriction",
+            "cross-contamination",
+            "certification",
+            "catering",
+            "buffet"
+        ]
+    },
+    {
+        "id": "dining-155",
+        "word": "ham",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/hæm/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/ham--_us_1.mp3",
+            "syllableBreakdown": "ham",
+            "stressPattern": "●",
+            "commonMistakes": "Learners sometimes confuse 'ham' (specifically cured pork leg) with pork generally, or mispronounce it as /hɑːm/ (sounding like 'harm') by elongating the vowel or improperly opening the mouth. In dietary and hospitality planning, learners must remember that ham is pork and therefore strictly prohibited in both halal and kosher catering."
+        },
+        "etymology": {
+            "origin": "Old English hamm ('hollow or bend of the knee, popliteal space'), from Proto-Germanic *hamma- / *hamō ('bend of the knee, crook of the leg'), from Proto-Indo-European *kōn-m- ('leg, bend of the limb').",
+            "rootWord": "hamm (Old English) / *hamma- (Proto-Germanic)",
+            "rootMeaning": "bend of the knee, crook of the leg, haunch",
+            "evolution": "Originally in Anglo-Saxon England, hamm referred strictly to the anatomical part behind the knee (retained in 'hamstring'). By the 15th century (Middle English hamme), the word shifted culinarily to denote the cured, salted, or smoked hind leg (haunch) of a swine. Curing ham became one of humanity's foremost food preservation methods, evolving into iconic regional varieties such as Italian prosciutto, Spanish jamón serrano and ibérico, German Black Forest ham, and American country ham.",
+            "relatedLanguages": [
+                "Dutch: ham (ham)",
+                "German: Haxe (knuckle, shin) / Schinken (ham)",
+                "Old Norse: höm (the thigh of a horse)",
+                "Old High German: hamma (bend of the leg)",
+                "French (concept): jambon (from jambe, leg)",
+                "Spanish (concept): jamón (from Old French jambon)"
+            ],
+            "firstRecordedUse": "Before 1000 in Old English (anatomical); c. 1440 in Middle English (culinary pork cut)"
+        },
+        "deepMeaning": {
+            "coreConcept": "A specific culinary cut of meat taken from the hind leg and rump of a pig or hog, typically preserved and flavored through dry-curing with salt, wet brining, or hardwood smoking, widely consumed thinly sliced in delicatessen sandwiches, cold breakfast buffets, and charcuterie platters, or baked whole with sweet or spiced glazes as a centerpiece banquet entree.",
+            "spatialContext": "Hotel continental breakfast buffets, corporate cafeteria cold-cut bars, delicatessen slicing counters, banquet carving stations, and charcuterie display boards.",
+            "temporalContext": "Morning breakfast service (7:00 AM – 10:30 AM), midday lunch rush hours (11:30 AM – 1:30 PM), and corporate holiday banquet buffets (Thanksgiving, Christmas, Easter seasons).",
+            "emotionalTone": "Savory, hearty, traditional, and appetizing.",
+            "formalityLevel": "neutral",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To a native speaker, 'ham' embodies two classic Western food experiences: the dependable everyday comfort of an office cold-cut sandwich (e.g., 'ham and cheese on rye') and the festive elegance of a holiday banquet carving station (e.g., a glazed, clove-studded spiral ham). In modern hospitality and corporate catering, native event managers instinctively recognize ham as pork, meaning it requires separate platters and clear signage to avoid violating kosher, halal, or vegetarian dietary guidelines.",
+            "mentalImage": "A uniformed banquet chef standing at a marble-topped carving station under a warm brass heat lamp, carefully carving thin, tender slices of honey-glazed baked ham resting on a silver carving board alongside bowls of stone-ground mustard.",
+            "whenToUse": "Use when referring to cured pork leg meat, sliced deli meat for sandwiches, holiday baked centerpiece roasts, or dry-cured specialty meats like prosciutto or serrano ham.",
+            "whenNotToUse": "Do not use 'ham' to refer to fresh uncured pork loin, pork chops, bacon, or pork belly; do not use when referring to meats from beef or poultry unless qualified as an imitation product (e.g., 'turkey ham'); avoid the colloquial slang verb 'to ham it up' (to overact) in formal culinary or hospitality writing.",
+            "culturalContext": "In North American, British, and European culture, ham is a quintessential centerpiece for holiday family feasts and corporate celebratory banquets. In office settings, boxed ham sandwiches have been a lunch standard for generations. However, contemporary corporate catering always provides alternative poultry or plant-based proteins to maintain religious and health inclusivity."
+        },
+        "examples": {
+            "daily": [
+                "He packed a toasted whole-wheat sandwich with smoked ham, Swiss cheese, and dijon mustard for lunch.",
+                "The family ordered a spiral-cut honey ham from the local butcher shop for their annual holiday dinner.",
+                "The breakfast diner serves two eggs sunny-side up accompanied by home fries and a thick slice of grilled ham."
+            ],
+            "business": [
+                "The hotel's executive breakfast buffet features an assortment of artisanal cheeses, fresh croissants, and cured Black Forest ham.",
+                "The catering manager verified that the ham sandwich platters were kept physically separated from the halal and kosher trays.",
+                "For the company's year-end banquet, the catering service set up a live carving station serving herb-crusted roast beef and glazed country ham."
+            ],
+            "conversation": [
+                "\"Which sandwich selections did you order for the client presentation?\" / \"I requested a variety of smoked ham, roasted turkey breast, and grilled vegetable focaccia.\"",
+                "\"Does the breakfast spread at the conference venue include hot breakfast meats?\" / \"Yes, they have crispy bacon strips, pork sausage links, and grilled slices of ham.\"",
+                "\"Could you confirm if the pea soup contains any meat broth or bacon?\" / \"Yes, it is traditionally prepared with a smoked ham hock, so it is not suitable for vegetarians.\""
+            ],
+            "collocations": [
+                "smoked ham",
+                "honey-glazed ham",
+                "ham and cheese sandwich",
+                "slice of ham",
+                "cured ham",
+                "spiral ham"
+            ]
+        },
+        "wordFamily": {
+            "noun": "ham, hamhock",
+            "verb": "ham",
+            "adjective": "hammy",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "glazed baked ham carving station hotel banquet buffet",
+            "imageDescription": "A glistening, golden-brown glazed spiral-cut ham garnished with orange slices and fresh rosemary on a silver platter at an upscale hotel banquet carving station.",
+            "mnemonic": "HAM: Cut from the HAUNCH of the pig—salt-cured, hardwood-smoked, and sliced for a Hearty Appetizing Meal!"
+        },
+        "video": {
+            "description": "A culinary masterclass demonstration demonstrating how professional banquet chefs brine, score, and glaze a bone-in holiday ham with brown sugar and bourbon for large-scale corporate receptions."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                2,
+                3,
+                7
+            ],
+            "exampleQuestion": "The conference catering order included platters of sliced roasted turkey, grilled chicken, and honey-glazed _____ to offer attendees a diverse lunch selection. (A) ham (B) hams (C) hammed (D) hamming",
+            "tips": "In TOEIC Part 5 vocabulary and grammar questions, food items functioning as mass nouns or head nouns in menu listings appear in their uninflected base form ('honey-glazed ham'). Choice (A) correctly fills the blank. Choices (C) and (D) are forms of the informal verb 'to ham' (to overact), and (B) is inappropriate when listing meat types in a buffet description."
+        },
+        "synonyms": [
+            "cured pork",
+            "gammon",
+            "prosciutto",
+            "pork haunch",
+            "smoked pork",
+            "deli ham"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "pork",
+            "bacon",
+            "prosciutto",
+            "charcuterie",
+            "carving station",
+            "brine",
+            "cold cuts"
+        ]
+    },
+    {
+        "id": "dining-156",
+        "word": "headcount",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/ˈhɛdˌkaʊnt/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/headcount--_us_1.mp3",
+            "syllableBreakdown": "head·count",
+            "stressPattern": "●○",
+            "commonMistakes": "Learners often put equal stress on both syllables or inadvertently stress the second syllable (/hɛdˈkaʊnt/). In standard English compound nouns, the primary stress falls decisively on the first element: /ˈhɛdˌkaʊnt/. Learners also confuse 'headcount' (the exact numerical count of people for logistics/catering) with 'turnout' (the general size of a crowd or voter participation) or 'attendance' (the state of being present)."
+        },
+        "etymology": {
+            "origin": "Compound noun formed in Modern English from head (from Old English hēafod 'top of the body, leader, individual human being', from Proto-Germanic *haubudą) + count (from Old French conter/compter 'to enumerate, calculate', from Latin computāre 'to calculate, reckon together').",
+            "rootWord": "hēafod (Old English) + computāre (Latin)",
+            "rootMeaning": "individual person/head + to compute/calculate",
+            "evolution": "The practice of counting people or livestock by 'head' ('per head', 'twenty head of cattle') dates back to Old and Middle English legal and agricultural tallies. In the mid-20th century (1940s–1950s), the closed compound 'headcount' crystallized in American corporate administration, military logistics, and hospitality management. In catering and events, it specifically became the binding legal figure determining food volume, table setup, and invoicing.",
+            "relatedLanguages": [
+                "German: Kopfzahl (Kopf = head, Zahl = number) / Personenanzahl",
+                "Dutch: hoofdtelling (hoofd = head, telling = count)",
+                "French (semantic equivalent): effectif / nombre de convives",
+                "Spanish (semantic equivalent): recuento de asistentes / número de comensales",
+                "Italian (semantic equivalent): numero di partecipanti / conteggio"
+            ],
+            "firstRecordedUse": "c. 1945 in industrial management, corporate staffing, and event administration"
+        },
+        "deepMeaning": {
+            "coreConcept": "The precise total number of individuals attending or expected to attend a specific gathering, banquet, or event, used in hospitality, dining, and event operations as the definitive baseline metric to calculate food procurement, per-plate billing, table settings, and staffing requirements.",
+            "spatialContext": "Banquet sales offices, hotel ballroom coordination desks, corporate event planning suites, restaurant private dining rooms, and catering kitchen dispatch boards.",
+            "temporalContext": "Contractual RSVP deadlines, 72-hour pre-event final confirmation windows, morning catering prep counts, and post-banquet invoice audits.",
+            "emotionalTone": "Precise, pragmatic, logistical, and authoritative.",
+            "formalityLevel": "neutral",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native corporate planners and banquet directors, 'headcount' is the single most critical number on a Banquet Event Order (BEO). Everything in hospitality hinges on it: a miscalculated headcount means either a catastrophic food shortage or thousands of dollars wasted on unconsumed meals. The 'guaranteed headcount' is treated with rigorous contractual discipline—clients know that once the 72-hour deadline passes, they will be billed for that exact number regardless of cancellations.",
+            "mentalImage": "An event manager in a hotel conference center holding a tablet and floor plan, walking between large round banquet tables draped in navy linen, verifying that forty tables of ten place settings precisely match the client's confirmed headcount of 400 attendees.",
+            "whenToUse": "Use when referring to the exact tally or expected number of attendees for a meal, banquet, conference, corporate retreat, or private dining reservation, as well as in human resources when discussing the total number of employees.",
+            "whenNotToUse": "Do not use 'headcount' to express qualitative sentiments (e.g., do not say 'a warm headcount'); do not use when referring to informal, unstructured casual gatherings where numbers are unimportant; do not confuse with 'turnout' (which describes the general proportion or enthusiasm of an audience showing up).",
+            "culturalContext": "In North American and British event contracts, the 'guaranteed minimum headcount' clause is standard legal practice. If 150 guests are guaranteed but only 120 arrive, the client must still pay for 150 meals. This contractual standard protects caterers against perishable food spoilage and unrecoverable staffing labor."
+        },
+        "examples": {
+            "daily": [
+                "Please let me know if you can make it to dinner by Thursday so I can give the restaurant an accurate headcount.",
+                "Before making the reservation for our anniversary dinner, we took a headcount of all family members attending.",
+                "The host did a quick headcount in the kitchen before dishing out portions of lasagna for the dinner party."
+            ],
+            "business": [
+                "The hotel's catering policy requires clients to submit a finalized guest headcount seventy-two hours prior to the banquet.",
+                "Based on an anticipated headcount of four hundred fifty delegates, the banquet kitchen ordered sixty pounds of fresh asparagus.",
+                "The final catering invoice was reconciled against the guaranteed headcount specified in the banquet event contract."
+            ],
+            "conversation": [
+                "\"When do we need to submit our final headcount for the annual awards dinner?\" / \"The venue coordinator needs the confirmed number of attendees by noon on Wednesday.\"",
+                "\"Has there been any update to the headcount for tomorrow's executive luncheon?\" / \"Yes, three branch managers confirmed late, bringing our total headcount to twenty-five.\"",
+                "\"Why does the invoice charge us for sixty dinners when only fifty people attended?\" / \"Because our signed contract established a guaranteed minimum headcount of sixty meals.\""
+            ],
+            "collocations": [
+                "final headcount",
+                "accurate headcount",
+                "guaranteed headcount",
+                "confirmed headcount",
+                "submit a headcount",
+                "headcount reduction"
+            ]
+        },
+        "wordFamily": {
+            "noun": "headcount, head, counter",
+            "verb": "count",
+            "adjective": "countable",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "banquet event coordinator counting tables ballroom seating headcount",
+            "imageDescription": "A corporate event coordinator with a digital clipboard verifying banquet table place settings in a large convention hall to match the final guest headcount.",
+            "mnemonic": "HEADCOUNT: Count every single HEAD at the dinner table so you don't run out of food or overpay ahead of time!"
+        },
+        "video": {
+            "description": "A hospitality management tutorial demonstrating how event planners calculate food quantities, table floor plans, and service staff ratios based on the guaranteed banquet headcount."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "The banquet agreement stipulates that any modification to the estimated _____ must be communicated to the catering director at least three days before the reception. (A) headcount (B) headcounts (C) headcounting (D) headcounter",
+            "tips": "In TOEIC Part 5, compound business nouns like 'headcount' frequently appear in event planning and administrative contexts. Preceded by the modifier 'estimated' and referring to the total number of attendees for a specific function, the singular compound noun 'headcount' (A) is correct. Choice (B) is plural and inappropriate for a single event's total, (C) is a gerund, and (D) is a non-existent noun."
+        },
+        "synonyms": [
+            "attendance tally",
+            "guest count",
+            "number of attendees",
+            "turnout figure",
+            "participant count",
+            "census"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "banquet event order",
+            "catering",
+            "RSVP",
+            "capacity",
+            "place setting",
+            "per-plate cost",
+            "seating arrangement"
+        ]
+    }
+]
+
+# Write to scratch/dining_153_156.json
+with open("scratch/dining_153_156.json", "w", encoding="utf-8") as f:
+    json.dump({"words": words_data}, f, indent=2, ensure_ascii=False)
+
+print("Saved scratch/dining_153_156.json")
+
+# Also update words_output.json
+with open("words_output.json", "w", encoding="utf-8") as f:
+    json.dump(words_data, f, indent=2, ensure_ascii=False)
+
+print("Saved words_output.json")

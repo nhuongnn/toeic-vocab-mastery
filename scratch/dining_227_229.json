@@ -1,0 +1,355 @@
+{
+  "words": [
+    {
+      "id": "dining-227",
+      "word": "roasting",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈroʊstɪŋ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/roasting--_us_1.mp3",
+        "syllableBreakdown": "roast·ing",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners frequently substitute the open vowel /ɔː/ or /ɒ/ (sounding like \"raw-sting\") instead of articulating the American English diphthong /oʊ/ (as in \"boat\"). Additionally, non-native speakers often confuse the verbal noun \"roasting\" (the thermal cooking method or industrial process, as in \"drum roasting\") with the participial adjective \"roasted\" (as in \"roasted chicken\"), or mistakenly use \"roasting\" to refer to moist-heat techniques like braising and poaching."
+      },
+      "etymology": {
+        "origin": "Middle English \"rosting\" / \"rosten\", borrowed from Anglo-Norman and Old French \"rostir\" (to roast, brown on a grate; modern French \"rôtir\"), originating from Frankish \"*raustijan\" (to roast, toast), derived from Proto-Germanic \"*raustijana\" (from \"*raustaz\", gridiron or roasting grate; cognate with Old High German \"rōsten\").",
+        "rootWord": "Proto-Germanic *raustijana / Frankish *raustijan / Old French rostir",
+        "rootMeaning": "To cook or brown over dry heat on a gridiron or grate",
+        "evolution": "In Germanic tribal cookery, the root denoted cooking meats directly over an open fire on an iron grate. After the Norman Conquest, Old French \"rostir\" entered Middle English as \"rosten\", broadening to include spit-roasting before an open hearth and oven cookery with dry circulating air. During the 16th and 17th centuries, \"roasting\" formalized in English gastronomy as dry-heat convection cookery that browns surfaces through caramelization and the Maillard reaction. By the 18th and 19th centuries, the term expanded industrially to describe the thermal processing of coffee beans and cacao.",
+        "relatedLanguages": [
+          "French: rôtissage (noun, roasting) / rôtir (verb, to roast)",
+          "German: Rösten (noun, roasting) / rösten (verb, to roast)",
+          "Dutch: roosteren (verb, to roast/toast) / rooster (noun, grid/grate)",
+          "Italian: arrostire (verb, to roast) / arrosto (noun, roast meat)",
+          "Spanish: tostar (to roast/toast) / asar (to roast)"
+        ],
+        "firstRecordedUse": "14th century (c. 1380 in Middle English translations and court culinary records)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A dry-heat culinary technique in which foods—predominantly meats, poultry, root vegetables, or coffee beans—are cooked in an enclosed oven, revolving spit, or heated drum via circulating hot air and radiant energy, inducing surface caramelization and Maillard browning while preserving internal moisture.",
+        "spatialContext": "Commercial restaurant kitchen lines with multi-deck convection ovens, rotisserie spits, banquet carving stations, and industrial specialty coffee roasteries.",
+        "temporalContext": "Operational durations ranging from 12–15 minutes (for precise small-batch coffee bean roasting) to 2–4 hours (for slow-cooked banquet beef loins or whole turkeys), requiring staged temperature adjustments and internal probe monitoring.",
+        "emotionalTone": "Savory, artisanal, warming, meticulous, and rich.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers instinctively associate \"roasting\" with appetizing aromas, crispy caramelized crusts, and comforting celebratory meals like Sunday family roasts or holiday banquet centerpieces. In specialty food and beverage culture, they also strongly connect it to artisanal coffee bean profiling. Linguistically, natives sharply distinguish \"roasting\" (dry indirect convective heat for savory proteins, hearty vegetables, and seeds) from \"baking\" (flour-based breads and pastries) and \"broiling/grilling\" (intense direct radiant heat).",
+        "mentalImage": "An executive chef in a double-breasted white jacket lifting a heavy-gauge stainless steel roasting pan from a radiant convection oven, revealing a golden-brown herb-crusted rib roast surrounded by caramelized root vegetables.",
+        "whenToUse": "Use when specifying dry-heat oven cooking methods for meats, poultry, and vegetables; detailing artisanal coffee or cacao processing; identifying specialized culinary cookware (e.g., \"roasting pan\", \"roasting rack\"); or outlining banquet preparation techniques.",
+        "whenNotToUse": "Do not use \"roasting\" when discussing flour-based baked goods like breads, cakes, or cookies (use \"baking\"). Do not apply to moist-heat culinary methods such as braising, steaming, or poaching. Avoid using \"roasting\" as a descriptive participle when referring to a completed menu dish (say \"roasted duck\", not \"roasting duck\").",
+        "culturalContext": "In Anglo-American culture, roasting carries profound culinary heritage, anchoring traditional Sunday roasts in the UK and Thanksgiving banquets across North America. In modern commercial hospitality, in-house coffee roasting has become an elite branding differentiator for upscale cafes and corporate hotel breakfast programs."
+      },
+      "examples": {
+        "daily": [
+          "Slow roasting brings out the natural sugars and rich flavor of autumn root vegetables.",
+          "The kitchen smelled wonderful during the roasting of the Thanksgiving turkey.",
+          "We stopped by a neighborhood cafe that showcases the on-site roasting of fair-trade coffee beans."
+        ],
+        "business": [
+          "The banquet culinary team utilized programmable combi-ovens to ensure uniform roasting across thirty prime rib cuts.",
+          "The restaurant chain updated its menu to highlight artisanal roasting methods that reduce added oils and sodium.",
+          "A calibration defect in the roasting equipment caused temporary temperature inconsistencies during the morning breakfast prep."
+        ],
+        "conversation": [
+          "\"Which cooking method did the executive chef choose for the banquet's signature beef tenderloin?\" / \"He recommended slow roasting at two hundred seventy-five degrees to maximize tenderness and prevent shrinkage.\"",
+          "\"Where is that wonderful aroma of toasted nuts coming from in the lobby?\" / \"The boutique coffee bar conducts fresh bean roasting every Tuesday morning before opening.\"",
+          "\"Have the kitchen stewards cleaned the heavy roasting racks for tonight's catering service?\" / \"Yes, all twenty roasting pans and wire inserts have been sanitized and inspected.\""
+        ],
+        "collocations": [
+          "slow roasting",
+          "coffee roasting",
+          "roasting pan",
+          "roasting temperature",
+          "roasting rack",
+          "oven roasting"
+        ]
+      },
+      "wordFamily": {
+        "noun": "roast, roaster, roasting",
+        "verb": "roast",
+        "adjective": "roasted, roasting",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "commercial kitchen convection oven roasting pan meat culinary chef",
+        "imageDescription": "A commercial restaurant chef wearing heat-resistant silicone mitts removing a gleaming stainless steel roasting pan containing a sizzling, herb-basted beef loin with golden roasted potatoes from a glowing multi-deck convection oven.",
+        "mnemonic": "ROASTING: Radiant Oven Air Slowly Tenderizes Ingredients to Natural Gold—remember that roasting requires dry convective heat to create that delicious browned crust!"
+      },
+      "video": {
+        "description": "A culinary institute masterclass demonstrating thermal convection airflow, core temperature probe placement, and pan-dripping basting techniques during commercial banquet poultry roasting."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "The head chef explained that slow _____ at moderate temperatures prevents large cuts of meat from drying out during banquet preparations. (A) roast (B) roasting (C) roasted (D) roaster",
+        "tips": "In TOEIC Part 5 items, determine the syntactic function required by the sentence structure. Preceded by the adjective \"slow\" and followed by the prepositional modifier \"at moderate temperatures\", an uncountable verbal noun (gerund) is required to serve as the subject of the clause. Option (B) \"roasting\" is the correct verbal noun. Choice (A) \"roast\" is countable when used as a noun and requires a determiner (e.g., \"a slow roast\"); (C) \"roasted\" is a participle/adjective; and (D) \"roaster\" denotes an apparatus or person."
+      },
+      "synonyms": [
+        "dry-heat cooking",
+        "oven-browning",
+        "rotisserie cooking",
+        "spit-roasting",
+        "pan-roasting"
+      ],
+      "antonyms": [
+        "braising",
+        "poaching",
+        "steaming",
+        "boiling",
+        "stewing"
+      ],
+      "relatedWords": [
+        "caramelization",
+        "Maillard reaction",
+        "basting",
+        "convection oven",
+        "meat thermometer",
+        "skewer",
+        "rotisserie"
+      ]
+    },
+    {
+      "id": "dining-228",
+      "word": "rooftop",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈruːftɑːp/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/rooftop--_us_1.mp3",
+        "syllableBreakdown": "roof·top",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners often fail to apply primary stress to the first element in this compound noun, incorrectly giving equal or primary stress to \"-top\" instead of saying /ˈruːf.tɑːp/. Non-native speakers also frequently make prepositional errors, mistakenly saying \"in the rooftop\" or \"at the rooftop\" instead of \"on the rooftop\" or \"at the rooftop restaurant\". Furthermore, learners sometimes confuse \"rooftop\" (the outdoor upper surface) with \"penthouse\" (the luxury interior apartment or enclosed top suite)."
+      },
+      "etymology": {
+        "origin": "An English compound noun formed from Middle English \"rof\" (from Old English \"hrōf\", roof, upper covering of a building; Proto-Germanic \"*hrōfą\") combined with Middle English \"top\" (from Old English \"top\", summit, highest point, crest; Proto-Germanic \"*toppa-\").",
+        "rootWord": "Old English hrōf (roof) + top (summit, crest)",
+        "rootMeaning": "The uppermost exterior surface or horizontal boundary covering a building",
+        "evolution": "Initially used in Old and Middle English to describe the physical outer crest of dwellings or farm buildings. In late 19th-century metropolitan centers like New York, Chicago, and Paris, the introduction of structural steel frames and commercial passenger elevators enabled hotels to transform flat roofs into landscaped \"roof gardens\" for open-air summer entertainment. Throughout the late 20th and early 21st centuries, \"rooftop\" shifted prominently into the commercial lexicon as a prestigious hospitality category denoting open-air dining decks, panoramic skyline cocktail lounges, and premier corporate event spaces.",
+        "relatedLanguages": [
+          "German: Dachterrasse (roof terrace) / Dachgarten (roof garden)",
+          "Dutch: dakterras (rooftop terrace) / dak (roof)",
+          "French: toit-terrasse (rooftop terrace) / terrasse de toit",
+          "Spanish: azotea (flat rooftop terrace) / terraza de azotea",
+          "Italian: terrazza panoramica (scenic terrace) / lastrico solare"
+        ],
+        "firstRecordedUse": "16th century (c. 1580s in Elizabethan architectural and biblical English; modern hospitality usage emerged c. 1890s)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The uppermost exterior horizontal surface of a building, specifically an engineered flat architectural platform designed or converted for commercial hospitality use, incorporating open-air dining tables, lounge seating, beverage bars, perimeter safety balustrades, and panoramic views of the surrounding urban or coastal landscape.",
+        "spatialContext": "High-rise luxury hotels, urban commercial towers, boutique metropolitan restaurants, and waterfront hospitality complexes featuring teak decking, ambient fire tables, glass wind screens, and retractable pergolas.",
+        "temporalContext": "Peak operational demand during evening sunset hours (5:00 PM – 10:00 PM), weekend corporate brunches, and warm seasonal periods, with scheduled contingency activations during sudden rainstorms or high wind advisories.",
+        "emotionalTone": "Scenic, sophisticated, vibrant, elevated, and celebratory.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native speaker, \"rooftop\" in a dining or leisure context evokes an immediate sense of metropolitan luxury, energetic social ambiance, craft cocktails, and stunning cityscape vistas. It represents a favored venue for corporate networking mixers, celebratory team dinners, and client entertainment where the view itself is a core component of the dining experience. Native speakers also instinctively anticipate weather dependencies—such as asking whether a rooftop venue has outdoor heaters, windbreaks, or an enclosed backup space.",
+        "mentalImage": "An elegant high-rise rooftop dining terrace at dusk, featuring polished hardwood decking, modern wicker lounge chairs, glowing tabletop lanterns, and professional patrons enjoying beverages against a backdrop of illuminated downtown skyscrapers.",
+        "whenToUse": "Use when describing elevated open-air dining and drinking establishments, booking corporate social receptions, specifying outdoor hotel event spaces, or detailing architectural venue characteristics (e.g., \"rooftop terrace\", \"rooftop bar\", \"rooftop dining\").",
+        "whenNotToUse": "Do not use to describe an enclosed indoor upper-level suite (use \"penthouse\" or \"top floor\"). Do not use for conventional pitched or gabled roofs where pedestrian access is impossible. Avoid the incorrect preposition \"in the rooftop\"; use \"on the rooftop\" or \"at the rooftop lounge\".",
+        "culturalContext": "Rooftop dining represents an integral component of urban corporate hospitality across major global financial centers like New York, London, Tokyo, and Singapore. In the TOEIC exam, rooftop venues frequently appear in Part 3 and Part 4 dialogues regarding company anniversaries, welcome mixers, and weather relocation contingencies, as well as Part 7 venue reservation confirmations."
+      },
+      "examples": {
+        "daily": [
+          "We reserved an outdoor table on the rooftop to watch the sunset over the harbor.",
+          "The boutique hotel's rooftop features a heated plunge pool and a casual grill for guests.",
+          "On warm Friday evenings, coworkers often gather on the rooftop terrace for refreshing drinks."
+        ],
+        "business": [
+          "The technology firm booked the hotel's rooftop lounge to host an evening mixer for international conference attendees.",
+          "Due to a sudden thunderstorm forecast, the networking dinner will be moved from the rooftop to the second-floor banquet hall.",
+          "The hospitality group announced plans to construct an all-season rooftop restaurant equipped with retractable glass panels."
+        ],
+        "conversation": [
+          "\"Where will the welcoming reception for the visiting executives take place tomorrow?\" / \"We reserved the rooftop terrace at the Continental Hotel because of its panoramic city view.\"",
+          "\"Has the weather forecast improved for tonight's client dinner on the rooftop?\" / \"Yes, skies are clear, but the banquet staff arranged patio heaters around the tables just in case.\"",
+          "\"What is the maximum standing capacity of the rooftop lounge for private events?\" / \"The venue coordinator confirmed that local safety regulations allow up to one hundred twenty guests.\""
+        ],
+        "collocations": [
+          "rooftop terrace",
+          "rooftop bar",
+          "rooftop restaurant",
+          "rooftop lounge",
+          "rooftop dining",
+          "hotel rooftop"
+        ]
+      },
+      "wordFamily": {
+        "noun": "rooftop, roof",
+        "verb": "roof",
+        "adjective": "roofed, roofless",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "rooftop restaurant terrace skyline evening dining urban lounge",
+        "imageDescription": "An upscale urban hotel rooftop terrace at twilight, showcasing candlelit dining tables, modular lounge sofas, sleek glass perimeter railings, and guests conversing while admiring illuminated downtown skyscrapers.",
+        "mnemonic": "ROOFTOP: Reaching Over Other Floors To Offer Panoramas—think of the highest flat TOP surface of a ROOF transformed into an open-air dining haven!"
+      },
+      "video": {
+        "description": "A hospitality management feature exploring architectural layout, wind baffle engineering, and guest service logistics at an acclaimed metropolitan rooftop restaurant and lounge."
+      },
+      "toeicContext": {
+        "commonParts": [
+          2,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Due to sudden rainfall, the evening networking reception was relocated from the _____ terrace to the indoor conference pavilion. (A) rooftop (B) rooftop's (C) rooftopped (D) rooftops",
+        "tips": "In TOEIC Part 5 questions, identify compound noun formations where a noun serves as a noun adjunct modifying another noun. Here, \"rooftop\" directly modifies \"terrace\" to name a recognized type of venue (\"rooftop terrace\"). Choice (A) \"rooftop\" is correct. Option (B) contains an erroneous possessive apostrophe; (C) \"rooftopped\" is an ungrammatical participial form; and (D) \"rooftops\" is a plural noun that cannot serve as a singular compound modifier in this context."
+      },
+      "synonyms": [
+        "roof terrace",
+        "terrace deck",
+        "sky lounge",
+        "open-air terrace",
+        "observation deck",
+        "sun deck"
+      ],
+      "antonyms": [
+        "basement",
+        "cellar",
+        "ground floor",
+        "subterranean level"
+      ],
+      "relatedWords": [
+        "skyline",
+        "balustrade",
+        "canopy",
+        "patio",
+        "penthouse",
+        "panoramic view",
+        "veranda"
+      ]
+    },
+    {
+      "id": "dining-229",
+      "word": "salad",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˈsæləd/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/salad--_us_1.mp3",
+        "syllableBreakdown": "sal·ad",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners frequently pronounce the second unstressed vowel /ə/ as a full vowel /æ/ or /ɑː/ (saying /ˈsæ.læd/ or /ˈsæ.lɑːd/ instead of /ˈsæ.ləd/). In hospitality and dining discourse, non-native speakers also mistakenly refer to salad dressing as \"salad sauce\", or use \"salad\" to mean a head of fresh lettuce (in English, the unprocessed plant is \"lettuce\", while \"salad\" refers to the prepared culinary dish)."
+      },
+      "etymology": {
+        "origin": "Middle English \"salade\", borrowed from Old French \"salade\" (14th century), from Old Provençal \"salada\" (salted greens, savory dish), originating from Vulgar Latin \"*salāta\" (salted), feminine past participle of \"salāre\" (to salt), from Classical Latin \"sal\" (salt; from Proto-Indo-European \"*seh₂l-\", salt).",
+        "rootWord": "Latin sal (salt) / salāre (to salt) / Vulgar Latin *salāta",
+        "rootMeaning": "Salted; fresh raw greens seasoned with salt, oil, and vinegar",
+        "evolution": "In Classical Roman cuisine, raw wild greens, herbs, and endives were seasoned with brine, coarse sea salt, olive oil, and vinegar to aid digestion, giving rise to the Vulgar Latin culinary term \"herba salata\" (salted herbs). This developed into Provençal \"salada\" and Old French \"salade\", entering Middle English around the late 14th century. Over the succeeding centuries, the concept evolved beyond simple salted greens to include chilled culinary compositions of chopped raw or blanched vegetables, fruits, cooked grains, and bound proteins (such as chicken salad, tuna salad, or potato salad mixed with mayonnaise or vinaigrette).",
+        "relatedLanguages": [
+          "French: salade (salad / lettuce)",
+          "Spanish: ensalada (salad)",
+          "Italian: insalata (salad)",
+          "Portuguese: salada (salad)",
+          "German: Salat (salad / lettuce)",
+          "Dutch: salade / sla (salad / lettuce)"
+        ],
+        "firstRecordedUse": "14th century (c. 1390 in \"The Forme of Cury\", the master recipe roll compiled by King Richard II's chief master-cooks)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A cold or room-temperature culinary preparation composed of mixed small pieces of raw vegetables (predominantly leafy greens such as romaine, arugula, or spinach), herbs, fruits, legumes, grains, or cooked proteins, tossed with or accompanied by a seasoned liquid dressing or emulsion (such as a vinaigrette, ranch, or Caesar dressing), served as an appetizer, side accompaniment, or nutritious main course.",
+        "spatialContext": "Commercial restaurant prep stations, refrigerated salad bars, corporate cafeteria self-service buffet islands, catering cold-prep larders (garde-manger), and banquet plating lines.",
+        "temporalContext": "Prepared fresh prior to meal seatings and held strictly at refrigerated temperatures (below 41°F/5°C); typically dressed immediately prior to consumption to preserve crispness and prevent leaf wilting.",
+        "emotionalTone": "Crisp, fresh, wholesome, revitalizing, and health-conscious.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers instinctively view \"salad\" through two major culinary paradigms: (1) crisp, fresh leafy greens tossed with colorful raw vegetables and a vinaigrette (associated with personal wellness, dietary discipline, and a light workday lunch that avoids afternoon sluggishness), and (2) \"bound salads\" made with mayonnaise or cooked bases (such as potato salad, pasta salad, or egg salad served at picnics and deli counters). When ordering in restaurants, natives always anticipate choosing a dressing and frequently request it \"on the side\". In corporate catering, salads are considered essential to accommodate vegetarian, vegan, and gluten-free dietary requirements.",
+        "mentalImage": "A crisp restaurant garden salad served in an oversized white ceramic bowl, piled high with fresh baby spinach, shaved cucumbers, bright cherry tomatoes, shredded carrots, and toasted sunflower seeds, flanked by a small porcelain carafe of balsamic vinaigrette.",
+        "whenToUse": "Use when selecting or serving appetizers and light entrees, detailing corporate cafeteria options, ordering catering boxed lunches, or accommodating dietary preferences on conference registration forms (e.g., \"garden salad\", \"Caesar salad\", \"salad bar\", \"side salad\").",
+        "whenNotToUse": "Do not use \"salad\" to denote the agricultural whole head of greens (use \"lettuce\"). Do not refer to condiment dressings as \"salad sauce\". Avoid confusing a green tossed salad with heavy bound salads like \"potato salad\" when exact dietary details are required.",
+        "culturalContext": "In contemporary Western corporate dining culture, ordering a salad for lunch is a widespread professional habit designed to maintain energy and alertness for afternoon negotiations. Furthermore, providing abundant, fresh, diverse salad options at corporate conferences is a fundamental expectation of modern executive catering. In the TOEIC exam, salads appear regularly in Part 1 buffet photos, Part 3 lunch order dialogues, and Part 7 conference catering contracts."
+      },
+      "examples": {
+        "daily": [
+          "She ordered a Mediterranean Greek salad with crisp cucumbers, olives, and feta cheese for lunch.",
+          "The chef recommends tossing the field greens with vinaigrette just before serving so they stay crisp.",
+          "Our office building cafeteria features an extensive salad bar with fresh toppings and homemade dressings."
+        ],
+        "business": [
+          "The conference catering contract includes fifty boxed lunches with gourmet sandwiches and individual side salads.",
+          "To accommodate vegetarian and gluten-free attendees, the banquet coordinator added two hearty grain salads to the buffet.",
+          "The corporate cafeteria introduced an organic salad station in response to employee feedback requesting healthier dining options."
+        ],
+        "conversation": [
+          "\"Would you like the soup of the day or the garden salad as your lunch starter?\" / \"I'll take the garden salad, please, with Italian dressing served on the side.\"",
+          "\"Are there sufficient plant-based meal options prepared for today's board luncheon?\" / \"Yes, the catering team delivered large quinoa salads and fresh fruit platters alongside the entrees.\"",
+          "\"How frequently does the cafeteria restock the ingredients at the fresh salad bar?\" / \"The kitchen staff refills the produce bins every hour to keep the greens chilled and crisp.\""
+        ],
+        "collocations": [
+          "green salad",
+          "salad dressing",
+          "salad bar",
+          "Caesar salad",
+          "tossed salad",
+          "side salad"
+        ]
+      },
+      "wordFamily": {
+        "noun": "salad",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "fresh garden salad bowl restaurant healthy dining gourmet",
+        "imageDescription": "A vibrant, colorful gourmet salad in a shallow white porcelain bowl, featuring crisp mixed baby greens, heirloom cherry tomatoes, thinly sliced English cucumbers, shaved parmesan, and garlic croutons, with a cruet of extra-virgin olive oil beside it.",
+        "mnemonic": "SALAD: Salt And Lettuce Assembled Deliciously—remember that \"salad\" stems from Latin \"sal\" (salt), referring to the original practice of dressing raw greens with salted oil!"
+      },
+      "video": {
+        "description": "A professional culinary arts video demonstrating proper washing, spin-drying, and knife techniques for crisp salad greens, followed by emulsifying classical French vinaigrettes."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          2,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "All attendees registered for the awards luncheon may select either a garden _____ or clam chowder as their starter course. (A) salad (B) salads (C) salading (D) saladly",
+        "tips": "In TOEIC Part 5 dining contexts, recognized culinary compound nouns frequently identify menu courses. The term \"garden salad\" is a standard noun compound naming a traditional leafy green salad served as an appetizer. Because it is preceded by the singular indefinite article \"a\", only the singular base noun in choice (A) \"salad\" is grammatically correct. Option (B) \"salads\" is plural; (C) \"salading\" and (D) \"saladly\" are non-existent words."
+      },
+      "synonyms": [
+        "greens",
+        "tossed salad",
+        "raw vegetables",
+        "slaw",
+        "cold dish",
+        "crudités"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "vinaigrette",
+        "dressing",
+        "lettuce",
+        "croutons",
+        "garde-manger",
+        "appetizer",
+        "salad bar"
+      ]
+    }
+  ]
+}

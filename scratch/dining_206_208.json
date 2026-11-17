@@ -1,0 +1,345 @@
+{
+  "words": [
+    {
+      "id": "dining-206",
+      "word": "patronage",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈpeɪ.trə.nɪdʒ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/patronage--_us_1.mp3",
+        "syllableBreakdown": "pa·tron·age",
+        "stressPattern": "●○○",
+        "commonMistakes": "Learners often mistakenly shift the primary stress to the second or third syllable (e.g., *pa-TRON-age* or *pa-tro-NAGE*) by false analogy with 'patronize'. Another frequent mistake is pronouncing the final suffix '-age' as /-eɪdʒ/ (like 'page') instead of the reduced /-ɪdʒ/ (like in 'cabbage' or 'package'). Additionally, while American English frequently uses /ˈpeɪ.trə.nɪdʒ/, British English predominantly uses /ˈpæt.rə.nɪdʒ/."
+      },
+      "etymology": {
+        "origin": "Middle English 'patronage', borrowed from Old French 'patronage' (protection, guardianship, advocacy), from Medieval Latin 'patrōnāticum' / 'patrōnātus', derived from Classical Latin 'patrōnus' (protector, defender, sponsor), from 'pater' (father) with the suffix '-ōnus'.",
+        "rootWord": "Classical Latin patrōnus / pater (father, protector)",
+        "rootMeaning": "The protective backing or financial sponsorship of a guardian or supporter; extended historically to customer support of a merchant or innkeeper",
+        "evolution": "In ancient Rome, a 'patronus' offered legal and financial protection to 'clientes' in exchange for social deference and loyalty. In medieval and Renaissance Europe, wealthy aristocrats and church prelates acted as patrons funding artists and scholars. By the 17th and 18th centuries in Britain, as commercial public houses, taverns, and dining inns flourished, 'patronage' evolved to denote the regular business and financial support given by loyal customers to tradesmen and innkeepers. In contemporary hospitality and dining, 'patronage' serves as the standard formal term for customer loyalty and repeat dining visits, ubiquitously appearing in gratitude notices such as 'Thank you for your patronage.'",
+        "relatedLanguages": [
+          "French: patronage (patronage, sponsorship, advocacy)",
+          "Spanish: patronazgo (patronage, sponsorship) / patrocinio (sponsorship)",
+          "Italian: patrocinio (patronage, sponsorship) / patronato (guardianship, welfare board)",
+          "German: Patronat (patronage, sponsorship) / Schirmherrschaft (auspices, patronage)"
+        ],
+        "firstRecordedUse": "Late 14th century (c. 1387–1400 in Middle English, initially denoting church guardianship and evolving into commercial customer custom by the 18th century)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The regular financial support, loyal custom, and continued business given to a commercial dining establishment (such as a restaurant, café, bistro, or hotel banquet facility) by its customers or guests; also, formal sponsorship or backing granted by an influential benefactor to a culinary or cultural institution.",
+        "spatialContext": "Fine-dining restaurant host stands, framed guest appreciation plaques in entry vestibules, leather check presenters at table checkout, VIP dining lounge portals, and banquet ballroom reception programs.",
+        "temporalContext": "Customer retention cycles, annual restaurant milestone celebrations, holiday dining gratitude letters, and post-service payment acknowledgments.",
+        "emotionalTone": "Gracious, distinguished, appreciative, and courteous.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "In hospitality and food service, native speakers regard 'patronage' as the most refined, dignified term for customer loyalty and repeat visits. Rather than bluntly saying 'thank you for spending your money here,' a restaurateur or maître d' graciously says 'We thank you for your valued patronage.' It elevates diners from mere transactional consumers to respected benefactors whose ongoing presence sustains the establishment's culinary craft.",
+        "mentalImage": "An upscale waterfront restaurant where the general manager slips a handwritten, embossed card into a leather bill presenter thanking a corporate dining group for their continued patronage over the past decade.",
+        "whenToUse": "Use in formal restaurant announcements, loyalty program communications, holiday greeting letters to regular diners, banquet gala speeches, receipt footers, and executive catering correspondence to express gratitude for sustained business.",
+        "whenNotToUse": "Do not use in fast-casual or informal dining situations (e.g., saying 'thank you for your patronage' at a burger drive-thru sounds stilted and comical; use 'thanks for stopping by!' instead). Do not confuse with 'patronizing' in its pejorative sense of speaking down to someone condescendingly.",
+        "culturalContext": "In Anglo-American hospitality etiquette, 'Thank you for your patronage' is the quintessential formal closing on guest checks, restaurant doors, and holiday greeting cards. On the TOEIC exam, the word appears frequently in Part 7 correspondence, announcements, and emails from restaurant owners, hotel managers, and caterers announcing venue renovations, thanking loyal patrons, or inviting VIP diners to exclusive tastings."
+      },
+      "examples": {
+        "daily": [
+          "A polite message printed at the bottom of the dinner receipt read, 'We truly appreciate your continued patronage.'",
+          "The neighborhood Italian bistro celebrated its twentieth anniversary by offering complimentary cannoli to reward regular patronage.",
+          "When the family-owned diner prepared to close its doors after four decades, the owners posted a heartfelt window sign thanking locals for their loyal patronage."
+        ],
+        "business": [
+          "Due to the consistent patronage of regional business executives, the hotel's fine-dining restaurant reported record hospitality earnings this quarter.",
+          "The catering director sent personalized appreciation letters and discount vouchers to retain the patronage of high-profile corporate clients.",
+          "To cultivate long-term dining patronage, the luxury resort launched an exclusive rewards program offering priority table reservations and sommelier consultations."
+        ],
+        "conversation": [
+          "\"Our downtown café will be closed for kitchen renovations all next week; how should we notify our regulars?\" / \"Let's send an email thanking them for their patronage and offering a ten percent voucher for our grand reopening.\"",
+          "\"Did you notice the thank-you note from the head chef tucked inside our bill presenter?\" / \"Yes, it is such a gracious touch; expressing genuine appreciation for customer patronage turns a simple meal into an exceptional dining experience.\""
+        ],
+        "collocations": [
+          "appreciate your patronage",
+          "continued patronage",
+          "loyal patronage",
+          "solicit patronage",
+          "loss of patronage",
+          "valued patronage"
+        ]
+      },
+      "wordFamily": {
+        "noun": "patronage",
+        "verb": "patronize",
+        "adjective": "patronizing",
+        "adverb": "patronizingly"
+      },
+      "visual": {
+        "imageKeyword": "fine dining restaurant thank you for your patronage leather check bill presenter",
+        "imageDescription": "An embossed leather bill presenter resting on a dark walnut restaurant table next to wine glasses, displaying an elegant card thanking diners for their patronage.",
+        "mnemonic": "PATRON-AGE: A loyal PATRON whose support endures through every AGE provides the restaurant with steadfast PATRONAGE!"
+      },
+      "video": {
+        "description": "A hospitality management video detailing strategies used by executive restaurant managers to cultivate repeat corporate dining patronage and elevate guest retention through personalized service."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "The executive management of Riverfront Bistro wishes to express its heartfelt gratitude to all patrons for their loyal _____ throughout the past decade. (A) patron (B) patronize (C) patronage (D) patronizing",
+        "tips": "In TOEIC Part 5, following the possessive determiner 'their' and descriptive adjective 'loyal', the sentence requires an abstract noun denoting customer support: (C) patronage. Choice (A) 'patron' is a countable person noun requiring pluralization ('patrons') to be grammatically possible in this context; choice (B) is a verb, and choice (D) is a participial adjective or gerund. Remember the standard business and dining collocation 'loyal patronage'."
+      },
+      "synonyms": [
+        "custom",
+        "clientele",
+        "support",
+        "backing",
+        "loyalty",
+        "sponsorship"
+      ],
+      "antonyms": [
+        "boycott",
+        "disfavor",
+        "opposition",
+        "abstention"
+      ],
+      "relatedWords": [
+        "patron",
+        "patronize",
+        "hospitality",
+        "clientele",
+        "loyalty program",
+        "guest check",
+        "dining"
+      ]
+    },
+    {
+      "id": "dining-207",
+      "word": "pepper",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˈpɛp.ər/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/pepper--_us_1.mp3",
+        "syllableBreakdown": "pep·per",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners occasionally confuse the initial voiceless bilabial plosive /p/ with voiced /b/, sounding like *beb-ber*. Non-native speakers also sometimes substitute the short open-mid lax front vowel /ɛ/ with a tense vowel /eɪ/ (*pay-per*) or /æ/ (*pap-per*). Ensure the first syllable receives clear stress and the vowel is a crisp /ɛ/ as in 'bed'."
+      },
+      "etymology": {
+        "origin": "Old English 'pipor', borrowed from Latin 'piper' (pepper), an early borrowing from Ancient Greek πέπερι ('péperi'), which was borrowed from Sanskrit पिप्पलि ('pippalī', meaning 'long pepper').",
+        "rootWord": "Sanskrit pippalī / Latin piper",
+        "rootMeaning": "Berry of the pepper vine; pungent hot seasoning berry",
+        "evolution": "In ancient India, 'pippalī' originally referred to long pepper. Classical Roman merchants traded heavily with the Malabar Coast of southern India for black pepper ('Piper nigrum'), adopting the term into Latin as 'piper'. Because pepper was lightweight, shelf-stable, and intensely aromatic, it became an extraordinarily valuable luxury spice across medieval Europe, often accepted as payment for rent, taxes, and trade treaties. Following European exploration of the Americas in the 15th century, the name 'pepper' was extended to New World 'Capsicum' plants (bell peppers, chili peppers) because of their spicy pungency, even though they belong to a completely distinct botanical family. Today, ground black pepper is paired with salt as an indispensable dining table condiment worldwide.",
+        "relatedLanguages": [
+          "French: poivre (black pepper) / poivron (bell pepper)",
+          "Spanish: pimienta (black pepper) / pimiento (bell pepper, capsicum)",
+          "Italian: pepe (black pepper) / peperone (bell pepper)",
+          "German: Pfeffer (pepper) / Paprika (bell pepper)"
+        ],
+        "firstRecordedUse": "Before the 8th century (recorded as 'pipor' in Old English medical and culinary treatises, demonstrating Roman trade across the British Isles)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A pungent, aromatic spice prepared from the dried berries (peppercorns) of the tropical vine Piper nigrum, ground and supplied in shakers or table grinders as a universal dining condiment alongside salt; also, any fruit of the Capsicum genus (such as sweet bell peppers or hot chilies) prepared as a culinary vegetable or seasoning.",
+        "spatialContext": "Dining room tables set with paired salt and pepper shakers or tall wooden mills, chef seasoning rails on the kitchen line, salad prep stations, and dry spice storage shelves in restaurant pantries.",
+        "temporalContext": "Seasoning sprinkled during cooking (à la minute) and offered freshly ground by banquet servers immediately upon delivering soups, salads, or main entrées.",
+        "emotionalTone": "Aromatic, zesty, savory, appetizing, and crisp.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "For native English speakers, 'salt and pepper' is the ultimate culinary pairing—they are considered the universal baseline seasonings of Western dining. When eating at a formal restaurant, diners instinctively expect the server to present a pepper mill and inquire, 'Would you like fresh ground pepper on your salad?' Native speakers also readily distinguish between ground black spice at the table and fresh vegetable 'bell peppers' (red, green, yellow) sliced into salads or sautés.",
+        "mentalImage": "A restaurant server holding a tall polished dark wood peppermill over a bowl of fresh pasta, twisting the top mechanism to scatter fragrant, coarse flecks of freshly cracked black pepper across the cheese garnish.",
+        "whenToUse": "Use when referring to the table spice (black pepper, white pepper, cracked peppercorns), condiment dispensers (pepper shaker, pepper grinder), or culinary capsicums (sweet bell peppers, roasted red peppers) in recipes, menu descriptions, and dining requests.",
+        "whenNotToUse": "Do not confuse 'black/white pepper' (the spice from Piper nigrum) with hot 'chili peppers' or 'cayenne pepper' without qualification when guests have low spice tolerances; in British English, sweet capsicums are simply called 'peppers', while Australians refer to them as 'capsicums'.",
+        "culturalContext": "Salt and pepper shakers or grinders are standard equipment on dining tables across North America, Europe, and international hotel venues. On the TOEIC exam, pepper appears in Part 1 photographs depicting table settings, Part 3 conversations regarding meal seasoning or condiment requests, and Part 7 catering menus describing seasoned meat and roasted vegetable sides."
+      },
+      "examples": {
+        "daily": [
+          "Could you please pass the salt and pepper across to this side of the table?",
+          "The waiter offered to grind fresh black pepper over our bowls of clam chowder.",
+          "She diced crisp red and green bell peppers to toss into the garden salad."
+        ],
+        "business": [
+          "The restaurant manager replaced all glass table shakers with stainless steel pepper mills to modernize the dining room presentation.",
+          "Standard operating procedures in the hotel banquet kitchen require chefs to season prime rib with sea salt and coarse black pepper before roasting.",
+          "The corporate cafeteria supplier delivered bulk containers of black peppercorns and roasted bell peppers for this week's lunch service."
+        ],
+        "conversation": [
+          "\"Excuse me, server, could our table please have a pepper shaker?\" / \"Of course; I'll bring one immediately, or I can grind some fresh peppercorns over your pasta right now if you prefer.\"",
+          "\"What vegetables come with the roasted chicken breast on the banquet menu?\" / \"The entrée is served with sautéed zucchini, baby carrots, and roasted red bell peppers seasoned with fresh herbs.\""
+        ],
+        "collocations": [
+          "black pepper",
+          "freshly ground pepper",
+          "pepper shaker",
+          "pepper mill",
+          "bell pepper",
+          "cracked peppercorn"
+        ]
+      },
+      "wordFamily": {
+        "noun": "pepper",
+        "verb": "pepper",
+        "adjective": "peppery",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "freshly ground black pepper wooden mill shaker dining table salad",
+        "imageDescription": "A waiter grinding fresh black pepper from a tall wooden grinder onto a gourmet pasta dish set on a white tablecloth in a candlelit restaurant.",
+        "mnemonic": "PEPPER: Adds PEP to your plate! The tiny black grains that PEP up every dish from soup to steak."
+      },
+      "video": {
+        "description": "A culinary arts instructional video demonstrating how professional line chefs calibrate pepper mills for fine and coarse grinds and balance black pepper seasoning in pan sauces."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          7
+        ],
+        "exampleQuestion": "Before the dinner rush commenced, the floor staff ensured that every dining booth was properly supplied with clean napkins, silverware, and salt and _____ shakers. (A) pepper (B) peppery (C) peppered (D) peppering",
+        "tips": "In TOEIC Part 5 dining contexts, compound nouns and coordinate noun-adjunct phrases are regularly tested. 'Salt and pepper shakers' is a fixed noun-adjunct construction where both nouns ('salt', 'pepper') modify 'shakers'. Choice (A) is correct. Choice (B) is an adjective, and choices (C) and (D) are verb participles that cannot properly form this standard dining term."
+      },
+      "synonyms": [
+        "peppercorn",
+        "seasoning",
+        "condiment",
+        "spice",
+        "bell pepper",
+        "capsicum"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "salt",
+        "peppercorn",
+        "pepper mill",
+        "seasoning",
+        "condiment",
+        "shaker",
+        "spice"
+      ]
+    },
+    {
+      "id": "dining-208",
+      "word": "perishable",
+      "partOfSpeech": [
+        "adjective"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈpɛr.ɪ.ʃə.bəl/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/perishable--_us_1.mp3",
+        "syllableBreakdown": "per·ish·a·ble",
+        "stressPattern": "●○○○",
+        "commonMistakes": "Learners frequently misplace the primary stress onto the second syllable (*per-ISH-a-ble*). The primary stress falls firmly on the first syllable: /ˈpɛr.ɪ.ʃə.bəl/. Another common error is pronouncing the suffix '-able' with an unreduced tense vowel /eɪ.bəl/ instead of a relaxed schwa /ə.bəl/. In addition, avoid substituting the voiceless postalveolar fricative /ʃ/ with an alveolar /s/ (*per-is-able*)."
+      },
+      "etymology": {
+        "origin": "Late Middle English 'perisshable', formed by combining the verb 'perish' (from Old French 'periss-', the extended present stem of 'perir', from Latin 'perīre' meaning 'to pass away, come to an end, be destroyed') with the Latin-derived suffix '-able' (capable of or susceptible to).",
+        "rootWord": "Latin perīre (per- 'thoroughly, completely' + īre 'to go')",
+        "rootMeaning": "Prone to pass away or be destroyed; subject to natural decay and spoilage",
+        "evolution": "In Classical Latin, 'perīre' literally meant 'to go completely through' or 'to disappear/die'. Adopted through Anglo-French into Middle English (c. 13th–14th century), 'perish' originally described the death of living beings or ships wrecked at sea. By the early 17th century, the adjective 'perishable' was coined to characterize organic provisions and commodities susceptible to quick rot and decomposition. With the development of modern commercial refrigeration, cold storage logistics, and food safety laws in the 20th century, 'perishable' became an essential commercial classification ('perishable goods', 'perishable food') mandating continuous cold chains and strict shelf-life monitoring.",
+        "relatedLanguages": [
+          "French: périssable (perishable, spoilage-prone)",
+          "Spanish: perecedero (perishable)",
+          "Italian: deperibile (perishable, subject to decay)",
+          "German: verderblich (perishable, prone to spoiling)"
+        ],
+        "firstRecordedUse": "Early 17th century (c. 1610 in English merchant and philosophical records describing short-lived provisions and mortality)"
+      },
+      "deepMeaning": {
+        "coreConcept": "Liable to spoil, rot, or decompose quickly if not kept refrigerated or preserved (applied specifically to fresh food items such as dairy, seafood, meat, poultry, and fresh produce); requiring controlled temperatures and rapid inventory turnover.",
+        "spatialContext": "Restaurant walk-in refrigerators and freezers, refrigerated delivery vans, temperature-monitored prep counters, cold buffet display wells, and commercial kitchen receiving bays.",
+        "temporalContext": "Strict shelf-life windows measured in hours or days (typically 24 to 72 hours for raw seafood and fresh dairy), daily inventory checks, morning supplier receiving schedules, and rigid expiration date enforcement.",
+        "emotionalTone": "Vigilant, cautious, time-critical, and safety-conscious.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers in culinary, grocery, and hospitality settings immediately associate 'perishable' with food items that must stay in the fridge or on ice, such as raw fish, milk, berries, lettuce, and soft cheeses. Professional kitchen staff view perishable inventory with keen vigilance because letting items sit at room temperature creates foodborne illness hazards and financial waste. Native speakers also naturally use the plural noun 'perishables' to designate fresh food departments as opposed to dry canned goods.",
+        "mentalImage": "A restaurant line cook receiving a morning crate of fresh salmon fillets and whole milk at the kitchen loading dock, promptly checking the digital infrared thermometer before wheeling them straight into the walk-in cooler.",
+        "whenToUse": "Use when discussing foods prone to spoilage (meat, seafood, produce, dairy), cold-chain transport logistics, commercial kitchen refrigeration requirements, and food safety regulations.",
+        "whenNotToUse": "Do not use for dry, shelf-stable foods such as uncooked rice, flour, dried pasta, or canned beans (these are 'non-perishable'). Do not confuse with 'fragile' (which describes physical breakability, like wine glasses) or 'vulnerable'.",
+        "culturalContext": "In Western commercial food service, the safe handling of 'perishable foods' is heavily audited by health departments requiring strict 'First In, First Out' (FIFO) rotation, temperature logbooks, and date-labeling stickers. On the TOEIC test, 'perishable' is a frequent vocabulary item in Part 3 conversations between kitchen managers and suppliers, Part 4 delivery announcements, and Part 7 supply chain and freight logistics memos."
+      },
+      "examples": {
+        "daily": [
+          "Fresh strawberries and unpasteurized milk are highly perishable, so make sure to refrigerate them as soon as you get home from the grocery store.",
+          "Before taking off on a two-week business trip, she emptied all perishable food items from the refrigerator.",
+          "The local farmers' market vendor keeps all perishable artisan cheeses packed in insulated coolers lined with ice."
+        ],
+        "business": [
+          "The banquet manager enforced strict FIFO inventory rotation to ensure that perishable ingredients are used before their expiration dates.",
+          "Following an overnight power outage in the walk-in cooler, the hotel kitchen had to discard three crates of perishable dairy and poultry products.",
+          "The procurement agreement requires the food distributor to deliver all perishable supplies in refrigerated trucks maintained below four degrees Celsius."
+        ],
+        "conversation": [
+          "\"Has the morning delivery of fresh Atlantic salmon arrived at the loading dock?\" / \"Yes, the kitchen steward is already transferring the perishable items to the walk-in cooler to preserve the cold chain.\"",
+          "\"Why are we receiving three small shipments of fresh salad greens each week instead of one large delivery?\" / \"Greens are extremely perishable, so ordering frequent small batches ensures our banquet guests always receive crisp, peak-quality produce without spoilage.\""
+        ],
+        "collocations": [
+          "highly perishable",
+          "perishable goods",
+          "perishable food",
+          "perishable inventory",
+          "perishable items",
+          "non-perishable"
+        ]
+      },
+      "wordFamily": {
+        "noun": "perishability",
+        "verb": "perish",
+        "adjective": "perishable",
+        "adverb": "perishably"
+      },
+      "visual": {
+        "imageKeyword": "refrigerated walk-in cooler fresh perishable produce dairy restaurant kitchen",
+        "imageDescription": "A chef in clean kitchen whites checking digital temperature gauges on shelves stocked with crates of fresh vegetables and dairy inside a commercial walk-in cooler.",
+        "mnemonic": "PERISHABLE: Items that will PERISH quickly if you are not ABLE to keep them cold!"
+      },
+      "video": {
+        "description": "A commercial food safety training video explaining cold chain protocols, critical temperature thresholds, and FIFO inventory labeling for perishable dairy and meat in restaurant kitchens."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          5,
+          7
+        ],
+        "exampleQuestion": "Because fresh seafood and dairy products are highly _____, the catering company requires all suppliers to use refrigerated transport vehicles. (A) perishable (B) perishing (C) perishably (D) perishability",
+        "tips": "In TOEIC Part 5, following the linking verb 'are' and modifying adverb 'highly', the predicate complement modifying the plural subject ('seafood and dairy products') requires a descriptive adjective: (A) perishable ('highly perishable'). Choice (B) 'perishing' is an active participle indicating active dying; choice (C) is an adverb; choice (D) is an abstract noun. Notice the essential TOEIC business collocation 'highly perishable'."
+      },
+      "synonyms": [
+        "spoilable",
+        "biodegradable",
+        "short-lived",
+        "decayable",
+        "temperature-sensitive",
+        "decomposable"
+      ],
+      "antonyms": [
+        "non-perishable",
+        "shelf-stable",
+        "imperishable",
+        "preserved",
+        "long-lasting"
+      ],
+      "relatedWords": [
+        "refrigeration",
+        "spoilage",
+        "shelf life",
+        "cold chain",
+        "walk-in cooler",
+        "food safety",
+        "expiration date"
+      ]
+    }
+  ]
+}

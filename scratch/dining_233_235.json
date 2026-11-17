@@ -1,0 +1,348 @@
+{
+  "words": [
+    {
+      "id": "dining-233",
+      "word": "sandwich",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈsændwɪtʃ/",
+        "syllableBreakdown": "sand-wich",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners often struggle with the consonant cluster /-ndw-/, either over-enunciating an unnatural, rigid /d/ sound, or conversely mispronouncing the final affricate /tʃ/ as a soft fricative /ʃ/ (saying 'sand-wish' instead of 'sand-wich') or a hard stop /k/ ('sand-wick'). In rapid native speech, the /d/ is regularly elided, yielding /ˈsænwɪtʃ/ or assimilating into /ˈsæmwɪtʃ/. Additionally, some non-native speakers mistakenly classify open-faced toasts or hot dogs as standard sandwiches without contextual qualification."
+      },
+      "etymology": {
+        "origin": "Named eponymously after John Montagu (1718–1792), 4th Earl of Sandwich, an English aristocrat and First Lord of the Admiralty. The place name 'Sandwich' in Kent, England derives from Old English 'Sandwīċ' (sandy trading harbor or market village), from 'sand' (sand) + 'wīċ' (dwelling, trading hamlet; cognate with Latin 'vicus').",
+        "rootWord": "Old English sand + wīċ (sandy harbor/village); transferred eponymously via John Montagu, 4th Earl of Sandwich",
+        "rootMeaning": "Sandy settlement; historically transferred to designate cold meat or filling placed between two slices of bread",
+        "evolution": "According to the famous 1765 anecdote by French writer Pierre-Jean Grosley, Lord Sandwich requested cold roast beef between toasted slices of bread so he could dine without leaving the gaming table or staining his cards with grease. Other historical records suggest he ate this meal at his desk to avoid interrupting long hours of naval administration. By the late 18th and 19th centuries, the sandwich spread throughout British afternoon tea culture and railroad refreshment buffets, eventually becoming the quintessential midday meal and corporate box lunch across the English-speaking world.",
+        "relatedLanguages": [
+          "French: sandwich (borrowed from English in the late 18th century)",
+          "Spanish: sándwich / emparedado",
+          "Italian: tramezzino / sandwich",
+          "German: Sandwich / belegtes Brot",
+          "Dutch: sandwich / belegd broodje"
+        ],
+        "firstRecordedUse": "1762 (in the journal of British historian Edward Gibbon: 'I dined at the Cocoa Tree... saw twenty or thirty, perhaps the first men of the kingdom... supping at little tables upon a bit of cold meat, or a Sandwich')"
+      },
+      "deepMeaning": {
+        "coreConcept": "A prepared food item consisting of two or more slices of bread, a halved roll, baguette, or tortilla wrap enclosing a savory filling of sliced meats, poultry, cheeses, vegetables, and condiments, designed for portable, convenient hand-held dining in corporate catering, casual cafeterias, and quick-service settings.",
+        "spatialContext": "Corporate office conference buffets, cafeteria refrigerated grab-and-go displays, deli counters, airline galley trays, and bistro prep lines.",
+        "temporalContext": "Predominantly consumed during midday lunch breaks, working luncheon seminars, travel intervals, or afternoon executive teas.",
+        "emotionalTone": "Casual, appetizing, utilitarian, approachable, and practical.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native speaker, 'sandwich' represents the universal baseline of efficient, informal midday nutrition. In corporate life, proposing a 'catered sandwich lunch' conveys a productive, low-fuss working session where participants review agenda items and slide decks while eating. Native speakers distinguish between humble desk lunch sandwiches (deli subs, PB&J) and elevated gourmet selections (paninis, ciabatta melts, artisan focaccia). Metaphorically, native speakers also instinctively use the verb 'to sandwich' to convey being compressed between two rigid objects, overlapping schedule obligations, or financial burdens.",
+        "mentalImage": "An executive catering platter neatly set upon a boardroom sideboard, exhibiting an array of halved artisan sandwiches on whole-grain sourdough and rosemary ciabatta—filled with roast turkey, smoked provolone, crisp romaine lettuce, and sun-dried tomato aioli—garnished with fresh herb sprigs alongside serving tongs and paper napkins.",
+        "whenToUse": "Use when referencing boxed lunches, conference catering menus, cafeteria selections, deli orders, brown-bag working meals, or quick-service food options (e.g., 'sandwich platter', 'box lunch', 'club sandwich', 'chicken salad sandwich'). Also appropriate figuratively as a verb or adjective (e.g., 'sandwiched between two meetings').",
+        "whenNotToUse": "Do not use 'sandwich' for hot meals served in bowls or plated entrees requiring a knife and fork (such as casseroles, pasta, or stews). Avoid calling a hamburger just a 'sandwich' in casual speech (natives almost always say 'burger' or 'cheeseburger'). Do not use 'sandwich' for sweet confectioneries unless qualified (such as 'ice cream sandwich').",
+        "culturalContext": "In Anglo-American corporate culture, the sandwich is the foundational element of the 'working lunch' ethos, facilitating uninterrupted productivity during corporate seminars. In the UK, commercial packaged triangular sandwiches form the bedrock of the nationwide retail 'meal deal'. In TOEIC examinations, sandwiches frequently appear in Part 1 images of cafe seating, Part 3 conversations regarding catering orders for workshops, and Part 7 vendor invoices or lunch menu selections."
+      },
+      "examples": {
+        "daily": [
+          "She packed a turkey and avocado sandwich on whole-wheat bread for her afternoon picnic in the city park.",
+          "The neighborhood delicatessen serves a warm pastrami sandwich with Swiss cheese and spicy mustard that draws long lines at noon.",
+          "He grabbed an egg salad sandwich and an iced tea from the convenience store before catching his commuter train."
+        ],
+        "business": [
+          "The office manager ordered several assorted sandwich platters and gluten-free wraps to accommodate everyone attending the annual budget review.",
+          "To keep the training seminar on schedule, the organizing committee arranged for boxed sandwiches and fresh fruit to be delivered to the conference room.",
+          "Please verify dietary preferences on the registration portal so the catering vendor can prepare an adequate number of vegetarian sandwiches."
+        ],
+        "conversation": [
+          "\"Have the lunch platters arrived for the client presentation?\" / \"Yes, the catering courier just delivered the gourmet sandwich trays and beverage coolers to the third-floor annex.\"",
+          "\"Do we have any dairy-free options among the boxed lunches?\" / \"The roast beef and hummus sandwiches on sourdough are completely dairy-free and marked with green labels.\"",
+          "\"We only have a fifteen-minute intermission before the keynote address.\" / \"Let's just grab a quick chicken salad sandwich from the grab-and-go cooler in the lobby.\""
+        ],
+        "collocations": [
+          "sandwich platter",
+          "club sandwich",
+          "gourmet sandwich",
+          "toasted sandwich",
+          "sandwich wrap",
+          "deli sandwich"
+        ]
+      },
+      "wordFamily": {
+        "noun": "sandwich, sandwiching",
+        "verb": "sandwich",
+        "adjective": "sandwiched",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "gourmet sandwich catering platter corporate lunch buffet",
+        "imageDescription": "A beautifully arranged corporate buffet table with a silver platter displaying halved artisan sandwiches on crusty baguettes and multigrain bread, layered with deli turkey, Swiss cheese, and fresh greens, accompanied by mini salad cups and sleek bamboo serving tongs.",
+        "mnemonic": "Earl of SANDWICH stayed at the gaming table eating MEAT SANDWICHED between two slices of BREAD to avoid touching SAND or dirt!"
+      },
+      "video": {
+        "description": "A professional culinary video detailing commercial catering preparations, featuring an executive chef assembling gourmet artisan sandwich lunchboxes for a corporate conference."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "To accommodate conference attendees during the brief midday recess, the event coordinator arranged for a variety of boxed wraps and _____ to be served in the foyer. (A) sandwiches (B) sandwiching (C) sandwiched (D) sandwich",
+        "tips": "In TOEIC Part 5 questions featuring coordinate conjunctions like 'and', parallel grammatical structure is tested. Because 'wraps' is a plural countable noun denoting prepared lunch food, the paired coordinate noun must also be in plural countable form. Choice (A) 'sandwiches' is correct. Choice (B) is a gerund/participle, (C) is a past participle/verb, and (D) is a singular noun that fails plural agreement with 'wraps'."
+      },
+      "synonyms": [
+        "sub",
+        "hoagie",
+        "panini",
+        "wrap",
+        "club sandwich",
+        "hero"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "delicatessen",
+        "baguette",
+        "condiment",
+        "catering",
+        "box lunch",
+        "cold cuts",
+        "spread"
+      ]
+    },
+    {
+      "id": "dining-234",
+      "word": "sanitation",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˌsænɪˈteɪʃən/",
+        "syllableBreakdown": "san-i-ta-tion",
+        "stressPattern": "ˌ○○●○",
+        "commonMistakes": "Learners often place the primary stress incorrectly on the second syllable (/səˈnɪteɪʃən/) instead of the third syllable (/ˌsænɪˈteɪʃən/). Non-native speakers also frequently confuse 'sanitation' (the overarching hygienic system, public health infrastructure, and cleanliness protocols) with 'sanitizing' (the act of applying a chemical agent) or 'sanitizer' (the cleaning chemical itself). Furthermore, speakers of Romance languages may falsely equate it with general 'health' or 'healthcare' due to cognates like Spanish 'sanidad' or French 'santé'."
+      },
+      "etymology": {
+        "origin": "Formed in English during the mid-19th century from Latin 'sānitas' (health, soundness of body and mind), from 'sānus' (healthy, sound, whole, uninjured) + English noun suffix '-ation' (action, process, or resulting state).",
+        "rootWord": "Latin sānus (healthy, sound) / sānitas (health)",
+        "rootMeaning": "Sound health; clean physical condition promoting bodily welfare and disease prevention",
+        "evolution": "Coined in Britain during the 1840s and 1850s Sanitary Movement led by public health reformers Edwin Chadwick and John Snow, 'sanitation' initially designated municipal sewage systems, refuse removal, and clean piped water infrastructure designed to eliminate cholera and typhoid in industrial towns. With the advent of germ theory in the late 19th and early 20th centuries, the term was integrated into restaurant management, commercial food manufacturing, and institutional food service to encompass strict sterilization, pest prevention, surface decontamination, and health code compliance.",
+        "relatedLanguages": [
+          "Latin: sanitas (health, soundness)",
+          "French: assainissement (sanitation, drainage) / sanitaire (sanitary)",
+          "Spanish: saneamiento (sanitation) / sanidad (public health)",
+          "Italian: risanamento (sanitation) / igiene (hygiene)",
+          "German: Sanierung (sanitation/remediation) / Hygiene (hygiene)"
+        ],
+        "firstRecordedUse": "1853 (in British parliamentary public health acts and epidemiological reports addressing municipal drainage and infectious disease prevention)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The systematic development and rigorous application of hygienic practices, environmental controls, waste disposal systems, and chemical cleaning protocols designed to prevent microbial contamination, disease transmission, and foodborne illness in dining, hospitality, and food-processing environments.",
+        "spatialContext": "Commercial restaurant kitchens, food preparation lines, dishwashing sculleries, walk-in cold storage facilities, corporate dining halls, and waste management disposal bays.",
+        "temporalContext": "Conducted continuously on strict operational schedules (hourly station wiping, shift-end deep scrubs, daily trash compaction, and unannounced quarterly municipal health inspections).",
+        "emotionalTone": "Authoritative, sterile, clinical, regulatory, and uncompromising.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers regard 'sanitation' not merely as basic surface cleanliness or aesthetic neatness, but as an institutional, regulatory safeguard for human life. In restaurant operations, 'sanitation' instantly triggers associations with municipal health inspection grades (e.g., Grade 'A' certificates displayed in storefronts), food safety certification courses (like ServSafe), color-coded cutting boards, chemical sanitizing dips, handwashing logs, and hazard analysis protocols (HACCP). A lapse in sanitation is perceived as an acute legal, financial, and reputational liability.",
+        "mentalImage": "A gleaming, stainless-steel commercial restaurant kitchen undergoing end-of-shift closing, where kitchen staff in aprons and rubber gloves scrub prep surfaces with disinfectant solution, clean pots dry on open-wire shelving, and a clipboard with a signed sanitation checklist hangs next to an automated chemical dispenser.",
+        "whenToUse": "Use when discussing food safety compliance, restaurant health inspections, commercial kitchen cleaning protocols, waste management, municipal health codes, or industrial food hygiene (e.g., 'sanitation standards', 'sanitation inspection', 'department of sanitation', 'food sanitation guidelines').",
+        "whenNotToUse": "Do not use 'sanitation' to describe personal grooming habits (use 'personal hygiene'). Avoid using it for casual tidying of office desks or living rooms (use 'cleaning' or 'tidying up'). Do not confuse with 'sanitizer' (the liquid solution) or 'sanitization' (the specific physical act of sanitizing or data scrubbing).",
+        "culturalContext": "In the United States, Canada, and the UK, municipal health departments enforce rigorous sanitation codes, publishing public inspection records and requiring restaurants to display health inspection grades prominently. Commercial foodservice operators face immediate temporary closure if critical sanitation violations are discovered. In TOEIC test scenarios, 'sanitation' regularly appears in Part 4 employee orientation speeches, Part 5 lexical selection questions, Part 6 workplace memos regarding health audits, and Part 7 facility inspection reports."
+      },
+      "examples": {
+        "daily": [
+          "Proper dishwashing and food sanitation at home are critical to prevent bacteria like Salmonella from spreading.",
+          "Volunteers participated in a weekend cleanup initiative aimed at improving neighborhood sanitation along the riverbank.",
+          "The nursery school enforces strict sanitation routines by wiping down shared toys and table surfaces with disinfectant twice a day."
+        ],
+        "business": [
+          "The corporate cafeteria received top marks from the municipal health department following a comprehensive sanitation inspection.",
+          "All restaurant employees must undergo mandatory training in food handling and commercial kitchen sanitation prior to their first shift.",
+          "The catering facility invested in automated dishwashers to maintain the highest levels of sanitation during peak banquet season."
+        ],
+        "conversation": [
+          "\"Why is the health inspector reviewing the kitchen logs?\" / \"She is verifying our daily refrigeration temperature charts and sanitation records for food preparation surfaces.\"",
+          "\"Has the night crew finished sanitizing the food processing equipment?\" / \"Yes, they followed the new sanitation checklist and signed off on all sterilization steps at eleven o'clock.\"",
+          "\"What caused the temporary closure of the dining pavilion?\" / \"The facility failed a routine sanitation audit due to improper waste storage near the delivery entrance.\""
+        ],
+        "collocations": [
+          "sanitation standards",
+          "sanitation inspection",
+          "food sanitation",
+          "sanitation guidelines",
+          "sanitation protocols",
+          "department of sanitation"
+        ]
+      },
+      "wordFamily": {
+        "noun": "sanitation, sanitizer, sanitization, sanity",
+        "verb": "sanitize",
+        "adjective": "sanitary",
+        "adverb": "sanitarily"
+      },
+      "visual": {
+        "imageKeyword": "commercial kitchen sanitation restaurant health inspection stainless steel",
+        "imageDescription": "A certified health inspector holding a digital inspection tablet examining spotless stainless steel food prep counters, sanitizing solution test strips, and temperature-controlled storage units in an immaculate commercial restaurant kitchen.",
+        "mnemonic": "SANITY in health: S-A-N-I-T-A-T-I-O-N ensures SANITARY conditions so bad germs don't invade our dining stations!"
+      },
+      "video": {
+        "description": "An institutional foodservice training video demonstrating standard commercial kitchen sanitation protocols, including three-compartment sink setup, sanitizing chemical PPM testing, and cross-contamination prevention."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "All kitchen personnel must adhere strictly to established food _____ guidelines to ensure compliance with municipal public health regulations. (A) sanitize (B) sanitation (C) sanitary (D) sanitarily",
+        "tips": "In TOEIC Part 5 part-of-speech questions, analyze the compound noun construction modifying the head noun 'guidelines'. The position following the noun 'food' requires the noun 'sanitation' to form the established culinary compound 'food sanitation guidelines'. Choice (B) 'sanitation' is correct. Option (A) 'sanitize' is a verb, (C) 'sanitary' is an adjective, and (D) 'sanitarily' is an adverb."
+      },
+      "synonyms": [
+        "hygiene",
+        "cleanliness",
+        "sanitariness",
+        "sterilization",
+        "antisepsis",
+        "disinfection"
+      ],
+      "antonyms": [
+        "contamination",
+        "insalubrity",
+        "pollution",
+        "filth",
+        "unsanitariness"
+      ],
+      "relatedWords": [
+        "sterilize",
+        "disinfectant",
+        "hygiene",
+        "pathogen",
+        "cross-contamination",
+        "inspection",
+        "health code"
+      ]
+    },
+    {
+      "id": "dining-235",
+      "word": "sauce",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/sɔːs/",
+        "syllableBreakdown": "sauce",
+        "stressPattern": "●",
+        "commonMistakes": "Learners often mispronounce the vowel /ɔː/ as an open diphthong /aʊ/ (sounding like 'souse' /saʊs/) or turn the final unvoiced sibilant /s/ into a voiced /z/ (pronouncing it like 'saws' /sɔːz/). Additionally, non-native speakers often forget that 'sauce' is primarily an uncountable mass noun in culinary contexts ('more sauce', 'served with sauce'), although countable when referring to individual types or commercial varieties ('a flight of three sauces')."
+      },
+      "etymology": {
+        "origin": "Middle English 'sauce', borrowed from Old French 'sauce', from Latin 'salsa' (salted things, salted relish, or seasoned brine), the feminine past participle of 'salīre' / 'sallere' (to salt), derived from 'sāl' (salt), descending from Proto-Indo-European '*seh₂l-' (salt).",
+        "rootWord": "Latin salsa / salīre / sāl (salt) via Old French sauce",
+        "rootMeaning": "Salted seasoning liquid or seasoned relish used to flavor food",
+        "evolution": "In the Roman culinary tradition, savory preparations were seasoned with salty fish relishes (garum) and herb-infused salted liquids called 'salsa'. Passed into Old French as 'sauce', the term entered Middle English culinary texts in the 14th century to designate seasoned liquids accompanying roasts and steamed fish. In 19th-century French haute cuisine, culinary pioneer Auguste Escoffier codified the 'five French mother sauces' (Béchamel, Velouté, Espagnole, Sauce Tomat, and Hollandaise), cementing 'sauce' as the central pillar of classical culinary training and upscale restaurant hospitality worldwide.",
+        "relatedLanguages": [
+          "Latin: salsa (salted food / relish)",
+          "French: sauce (sauce, dressing, gravy)",
+          "Spanish: salsa (sauce, dressing)",
+          "Italian: salsa (sauce, dressing)",
+          "German: Soße / Sauce (sauce, gravy)",
+          "Portuguese: molho (sauce) / salsa (parsley / salty relish)"
+        ],
+        "firstRecordedUse": "14th century (c. 1340 in Middle English culinary recipe rolls, including 'The Forme of Cury')"
+      },
+      "deepMeaning": {
+        "coreConcept": "A seasoned liquid, semi-liquid, or creamy culinary accompaniment, reduction, or emulsion prepared separately and poured over, paired with, or served alongside food to enhance moisture, depth of flavor, visual contrast, and gastronomic richness.",
+        "spatialContext": "Professional restaurant kitchens, saucier stations, banquet carving tables, condiment caddies, and fine dining place settings.",
+        "temporalContext": "Crafted during pre-service kitchen prep (simmered stocks, emulsified sauces) and finished tableside or immediately before plating during lunch and dinner services.",
+        "emotionalTone": "Epicurean, savory, flavorful, refined, and inviting.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native speaker, 'sauce' is the culinary finishing touch that transforms an ordinary protein, pasta, or vegetable dish into a cohesive culinary experience. In fast-casual settings, it evokes everyday dipping condiments like barbecue sauce, ranch dressing, or ketchup. In upscale hospitality, it represents the pinnacle of culinary craft—intricate pan deglazings, wine reductions, veloutés, or delicate emulsions. In TOEIC hospitality contexts, native speakers frequently encounter phrases like 'sauce on the side' to accommodate personal dietary preferences or calorie consciousness.",
+        "mentalImage": "An executive chef in a tall toque using a stainless-steel saucing spoon to drizzle a glossy, rich red-wine demi-glace in an elegant arc across a sliced filet mignon garnished with sautéed asparagus on a heated porcelain plate.",
+        "whenToUse": "Use when describing culinary recipes, restaurant dishes, banquet menu selections, condiment choices, or meal customization requests (e.g., 'tomato sauce', 'bearnaise sauce', 'dipping sauce', 'dressing or sauce', 'served with sauce on the side').",
+        "whenNotToUse": "Do not confuse 'sauce' with 'gravy' (which specifically denotes thickened pan drippings from roasted meat served with roasts, mashed potatoes, or biscuits in Anglo-American cooking), nor with standalone liquid meals like 'soup' or 'broth'. In professional workplace settings, avoid colloquial slang where 'sauce' implies liquor or cheekiness.",
+        "culturalContext": "In Western fine dining, the saucier holds one of the most prestigious positions in the traditional French kitchen brigade (brigade de cuisine). In casual dining across the US and UK, specialty dipping sauces are central to brand identity for casual chains. On the TOEIC test, 'sauce' appears in Part 1 dining photographs, Part 2/3 listening dialogues about restaurant preferences, and Part 7 catering invoices and restaurant reviews."
+      },
+      "examples": {
+        "daily": [
+          "The customer asked the server if she could have the creamy garlic sauce served on the side.",
+          "He simmered ripe Roma tomatoes with garlic, oregano, and olive oil to make a fragrant homemade pasta sauce.",
+          "Would you prefer sweet chili sauce or honey mustard as a dipping sauce for the roasted potato wedges?"
+        ],
+        "business": [
+          "The banquet contract specifies that the pan-seared sea bass will be accompanied by a light lemon-caper sauce.",
+          "Our hospitality group negotiated a supply agreement with a regional producer for organic pasta sauces and dressings.",
+          "Please inform the kitchen staff that the VIP table requested their entrees prepared without dairy-based sauces."
+        ],
+        "conversation": [
+          "\"Does the grilled chicken breast include any dairy ingredients?\" / \"The poultry itself is dairy-free, but the accompanying mushroom sauce contains heavy cream, so we can substitute a red wine reduction instead.\"",
+          "\"Could we request an extra serving of the house dipping sauce for the appetizer platter?\" / \"Certainly, I will have the server bring a ramekin of the spicy aioli immediately.\"",
+          "\"Why is tonight's special taking longer to plate?\" / \"The chef is freshly emulsifying the hollandaise sauce for each order to ensure optimal texture.\""
+        ],
+        "collocations": [
+          "tomato sauce",
+          "dipping sauce",
+          "soy sauce",
+          "sauce on the side",
+          "cream sauce",
+          "pasta sauce"
+        ]
+      },
+      "wordFamily": {
+        "noun": "sauce, saucier, sauciness",
+        "verb": "sauce",
+        "adjective": "saucy, sauced",
+        "adverb": "saucily"
+      },
+      "visual": {
+        "imageKeyword": "culinary sauce drizzle gourmet chef plating restaurant dish",
+        "imageDescription": "A close-up shot of an executive chef's hands using a silver culinary spoon to drizzle a glossy, warm caramel-colored pan reduction sauce onto an artisan entree plate in a restaurant kitchen.",
+        "mnemonic": "SAUCE comes from Latin SAL (salt)—a flavorful SALTY liquid that turns simple food into an awesome meal!"
+      },
+      "video": {
+        "description": "An instructional culinary video demonstrating the five French mother sauces, focusing on emulsion techniques and pan reduction sauces for restaurant entrees."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          2,
+          3,
+          7
+        ],
+        "exampleQuestion": "Because several conference delegates are sensitive to dairy products, the chef agreed to serve the garlic cream _____ separately in a small pitcher. (A) sauce (B) sauced (C) saucy (D) saucing",
+        "tips": "In TOEIC Part 5 dining sentences, identify the required grammatical category in the noun phrase. The compound modifier 'garlic cream' modifies the head noun of the direct object. Choice (A) 'sauce' is the correct culinary noun. Option (B) 'sauced' is a past participle/verb, (C) 'saucy' is an informal adjective meaning bold or cheeky, and (D) 'saucing' is a participle/gerund."
+      },
+      "synonyms": [
+        "dressing",
+        "gravy",
+        "condiment",
+        "relish",
+        "reduction",
+        "dip"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "saucier",
+        "condiment",
+        "reduction",
+        "emulsion",
+        "vinaigrette",
+        "gravy",
+        "marinade"
+      ]
+    }
+  ]
+}

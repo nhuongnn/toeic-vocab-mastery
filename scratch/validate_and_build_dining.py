@@ -1,0 +1,483 @@
+import json
+import re
+import sys
+
+words_data = [
+    {
+        "id": "dining-049",
+        "word": "bakery",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/ˈbeɪ.kər.i/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/bakery--_us_1.mp3",
+            "syllableBreakdown": "ba-ker-y",
+            "stressPattern": "primary stress on the first syllable (BAY-kuh-ree)",
+            "commonMistakes": "Learners frequently substitute the open front vowel /æ/ ('back-ery') for the correct diphthong /eɪ/ ('BAY-ker-ee'). In fast native speech, the unstressed medial vowel /ə/ is often elided so it sounds like two syllables (/ˈbeɪ.kri/), which can confuse learners expecting three clearly articulated beats."
+        },
+        "etymology": {
+            "origin": "Middle English 'bakerie', formed from Old English 'bacere' (baker) + the Old French/Anglo-Norman suffix '-ie' (signifying an establishment, place of trade, or craft), ultimately derived from Proto-Germanic *bakanan (to bake).",
+            "rootWord": "bacere (Old English: baker) + -ie (Middle English / Old French noun suffix for place of trade)",
+            "rootMeaning": "The workshop, establishment, or place of business where a baker prepares and sells baked goods.",
+            "evolution": "In Anglo-Saxon England, bread making occurred in communal village hearths or domestic bakehouses ('bæchus'). Following the Norman Conquest, the French nominal suffix '-ie' fused with Germanic roots, creating 'bakerie' in 14th-century Middle English. By the 18th and 19th centuries, urban retail storefronts separated specialized pastry and bread sales from heavy industrial mills, establishing modern commercial and artisanal bakeries.",
+            "relatedLanguages": [
+                "German: Bäckerei",
+                "Dutch: bakkerij",
+                "Danish: bageri",
+                "Swedish: bageri",
+                "French: boulangerie"
+            ],
+            "firstRecordedUse": "Late 14th century (c. 1380 in Middle English guild and tax records)"
+        },
+        "deepMeaning": {
+            "coreConcept": "A commercial establishment, retail storefront, or food-production facility that specializes in baking and selling flour-based foods such as bread, rolls, pastries, pies, and cakes, either directly to retail consumers or wholesale to hotels, corporate dining halls, and restaurants.",
+            "spatialContext": "Retail boutique storefronts with display cases, glass countertops, and chalkboards; industrial wholesale facilities with rotary rack ovens, proofer boxes, and commercial dough mixers; hotel banquet prep pantries.",
+            "temporalContext": "Pre-dawn baking operations starting between 3:30 AM and 5:00 AM, high-volume retail morning peaks between 7:00 AM and 9:30 AM for breakfast commuters, and seasonal demand peaks during Thanksgiving, Christmas, and corporate holiday events.",
+            "emotionalTone": "Welcoming, warm, artisanal, industrious, and comforting.",
+            "formalityLevel": "neutral",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To a native speaker, 'bakery' evokes sensory warmth—fresh yeast, browned crusts, melting butter, and cinnamon. In professional and daily life, a 'bakery run' is a familiar ritual: grabbing a box of artisanal donuts, croissants, or bagels to treat colleagues during an early-morning project sprint or ordering a custom sheet cake for a colleague's retirement party. Native speakers distinguish between industrial commercial bakeries (mass-market wholesale bread) and artisanal neighborhood bakeries (craft sourdough and patisserie).",
+            "mentalImage": "An artisanal neighborhood bakery bathed in morning sunlight, where flour-dusted bakers in aprons use a long wooden peel to pull golden baguettes and rustic sourdough batards from a stone hearth oven behind a glass vitrine of croissants.",
+            "whenToUse": "Use when referring to an establishment, shop, or production plant that prepares and sells bread, cakes, and pastries (e.g., 'The marketing team ordered breakfast pastries from the French bakery on Fourth Avenue').",
+            "whenNotToUse": "Do not use to describe a venue whose primary function is serving sit-down savory meals (use 'restaurant', 'bistro', or 'cafe'), an establishment that exclusively brews coffee with no in-house baking (use 'coffee shop'), or a store specializing purely in confections and chocolates (use 'candy store' or 'chocolatier').",
+            "culturalContext": "In corporate culture across English-speaking countries, providing fresh bakery goods at morning seminars, shareholder meetings, or team breakfasts is a ubiquitous sign of hospitality. In the TOEIC exam, bakeries feature regularly in Part 1 (photographs of bakeries and display shelves), Part 3 (dialogues arranging catering orders or discussing supply deliveries), and Part 7 (catering invoices, order confirmation emails, and customer feedback surveys)."
+        },
+        "examples": {
+            "daily": [
+                "I stopped by the local bakery on my walk home to pick up a warm loaf of seeded rye bread.",
+                "The neighborhood bakery opens at 6:30 AM to serve commuters fresh croissants and muffins.",
+                "We ordered a three-tier custom chocolate cake from an artisanal bakery for our anniversary celebration."
+            ],
+            "business": [
+                "The conference organizers contracted a commercial bakery to supply two hundred breakfast pastry platters for the summit attendees.",
+                "Due to increased wholesale flour prices, the regional bakery updated its supplier pricing schedule for the upcoming fiscal quarter.",
+                "The hotel's on-site bakery operates twenty-four hours a day to cater to banquet events and private dining suites."
+            ],
+            "conversation": [
+                "Event Planner: 'Have the breakfast pastries arrived for the board meeting?'\\nAdministrative Assistant: 'Yes, the bakery delivered three boxes of assorted croissants and danishes twenty minutes ago.'",
+                "Executive Chef: 'Our sourdough delivery was short two dozen baguettes this morning.'\\nPurchasing Coordinator: 'I'll call the wholesale bakery immediately to have an emergency courier dispatch the remaining order.'",
+                "Colleague A: 'Are you joining us for coffee across the street?'\\nColleague B: 'I'd love to, especially if you stop at the corner bakery so I can grab an almond scone.'"
+            ],
+            "collocations": [
+                "commercial bakery",
+                "artisanal bakery",
+                "wholesale bakery",
+                "neighborhood bakery",
+                "bakery goods",
+                "on-site bakery"
+            ]
+        },
+        "wordFamily": {
+            "noun": "bakery, baker, baking",
+            "verb": "bake",
+            "adjective": "baked",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "artisanal bakery display glass counter fresh sourdough bread pastries",
+            "imageDescription": "A warm, rustic bakery interior featuring wooden display shelves stacked with golden-crusted sourdough loaves and baguettes, alongside a gleaming glass case showcasing fruit tarts and flaky croissants.",
+            "mnemonic": "BAKERY: The place where the BAKER works EVERY morning to bring you warm bread!"
+        },
+        "video": {
+            "description": "A commercial kitchen documentary highlighting early-morning operations inside an artisanal bakery, showing master bakers mixing levain dough, hand-shaping baguettes, and baking them in a multi-deck steam-injected oven."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "Due to rapid growth in catering contracts, Sunrise _____ announced plans to open a secondary distribution hub near the international airport.\\n(A) Bake\\n(B) Baker\\n(C) Bakery\\n(D) Bakingly",
+            "tips": "In TOEIC Part 5, corporate business names regularly feature noun classifications where the entity type completes the proper noun subject. 'Sunrise Bakery' (C) is the proper singular company name acting as the subject of 'announced'. (A) is a base verb, (B) is an individual person, and (D) is a non-existent adverb form."
+        },
+        "synonyms": [
+            "bakeshop",
+            "patisserie",
+            "boulangerie",
+            "pastry shop",
+            "bread shop"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "baker",
+            "pastry",
+            "confectionery",
+            "dough",
+            "oven",
+            "yeast",
+            "flour"
+        ]
+    },
+    {
+        "id": "dining-050",
+        "word": "baking",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/ˈbeɪ.kɪŋ/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/baking--_us_1.mp3",
+            "syllableBreakdown": "bak-ing",
+            "stressPattern": "primary stress on the first syllable (BAY-king)",
+            "commonMistakes": "Learners frequently replace the final velar nasal /ŋ/ with an alveolar nasal /n/ ('bay-kin'), or pronounce the root vowel with a flat /æ/ ('back-ing') instead of the diphthong /eɪ/. Be careful to recognize when 'baking' functions as a culinary noun (craft/activity) or noun adjunct ('baking powder', 'baking dish') rather than an active present participle verb."
+        },
+        "etymology": {
+            "origin": "Old English 'bacing' (the action or process of baking), from the Proto-Germanic strong verb *bakanan (to bake, cook by dry heat), related to Old High German 'bahhan' and Old Norse 'baka'.",
+            "rootWord": "bacan (Old English: to cook by dry enclosed heat) + -ing (Old English nominal gerund suffix denoting an action or process)",
+            "rootMeaning": "The act, process, or craft of cooking food through dry, radiant heat in an enclosed oven.",
+            "evolution": "In Old and Middle English, 'bacing' or 'bakinge' referred to the essential domestic craft of converting harvested grains into sustenance. By the 18th century, it was recognized as a distinct branch of gastronomy governed by precise physical and chemical reactions (caramelization, leavening, and gelatinization). In the 19th century, industrial food science introduced standardized chemical leaveners, creating household compounds such as 'baking powder' and 'baking soda'.",
+            "relatedLanguages": [
+                "German: Backen",
+                "Dutch: bakken",
+                "Old Norse: baka",
+                "Swedish: bakning",
+                "Danish: bagning"
+            ],
+            "firstRecordedUse": "Before 1100 (Old English 'bacing' in monastic chronicles and agricultural inventories)"
+        },
+        "deepMeaning": {
+            "coreConcept": "The culinary technique, specialized craft, or industrial process of cooking food—especially doughs, batters, and flour-based mixtures—using prolonged, dry, indirect heat inside an oven or enclosed chamber, resulting in structural setting, moisture loss, and Maillard crust development.",
+            "spatialContext": "Commercial test kitchens, industrial production bakeries, pastry arts classroom laboratories, restaurant prep stations with convection and steam deck ovens, and domestic home kitchens.",
+            "temporalContext": "Rigidly timed cooking periods (from 10-minute cookie batches to 60-minute artisan loaves), strict pre-heating intervals, and holiday baking seasons spanning November through January.",
+            "emotionalTone": "Precise, scientific, nurturing, disciplined, and comforting.",
+            "formalityLevel": "neutral",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native speakers make a fundamental psychological distinction between general 'cooking' and 'baking'. Cooking allows for improvisation, tasting, and casual seasoning adjustments as you go; baking is viewed as chemistry, requiring strict volumetric or weighted adherence to recipes, precise oven temperatures, and chemical leavening reactions. In domestic culture, baking is tied to hospitality, comfort, and festive gifting (holiday cookie tins). In commercial hospitality, baking represents a specialized skill set requiring formal pastry arts certification.",
+            "mentalImage": "A pastry chef wearing heat-resistant silicone mitts sliding a heavy perforated baking sheet of golden-brown croissants out of a glowing commercial convection oven onto a stainless steel cooling rack.",
+            "whenToUse": "Use when referring to the method, practice, trade, or hobby of preparing food in an oven (e.g., 'The culinary school offers a specialized diploma in artisan bread baking'). Also used as a noun adjunct in common kitchen and industrial terms (e.g., 'baking sheet', 'baking powder', 'baking temperature').",
+            "whenNotToUse": "Do not confuse with roasting (which applies to meats, poultry, and vegetables at high heat), broiling/grilling (which uses radiant direct heat from above or below), or frying (cooking in hot fat). Do not use 'baking' when referring to the physical store itself (use 'bakery').",
+            "culturalContext": "Baking competitions (like The Great British Bake Off) and holiday cookie exchanges are major cultural touchstones in Western societies. In the business context, corporate bake sales are a traditional fundraising mechanism, and hospitality management programs rigorously test knowledge of commercial baking yields, portion control, and food safety standards."
+        },
+        "examples": {
+            "daily": [
+                "She finds weekend baking to be a relaxing hobby that fills the house with the aroma of cinnamon and vanilla.",
+                "Always ensure your oven is preheated to the recommended temperature before you begin baking.",
+                "We purchased organic unbleached flour, active dry yeast, and baking powder for our weekend project."
+            ],
+            "business": [
+                "The catering company expanded its on-site baking operations to meet surging demand for artisanal banquet breads.",
+                "Investments in computer-controlled convection ovens reduced energy consumption during the overnight baking cycle by eighteen percent.",
+                "The culinary academy added a specialized module covering industrial gluten-free baking techniques to its curriculum."
+            ],
+            "conversation": [
+                "Head Baker: 'Why did the crust on that batch of sourdough blister excessively?'\\nApprentice: 'The steam injector on the deck oven malfunctioned during the initial ten minutes of baking.'",
+                "Executive Chef: 'Can we increase our in-house baking output for Friday's gala reception?'\\nPastry Chef: 'Yes, provided we schedule an extra assistant on the morning prep shift to handle the proofing.'",
+                "Colleague A: 'Did you bring these blueberry muffins into the office?'\\nColleague B: 'I did; I spent Sunday afternoon doing some baking and wanted to share them with the team.'"
+            ],
+            "collocations": [
+                "commercial baking",
+                "baking sheet",
+                "baking temperature",
+                "baking powder",
+                "home baking",
+                "baking process"
+            ]
+        },
+        "wordFamily": {
+            "noun": "baking, baker, bakery",
+            "verb": "bake",
+            "adjective": "baked",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "pastry chef commercial baking oven tray fresh croissants",
+            "imageDescription": "A professional pastry chef in a clean white uniform carefully pulling a stainless steel tray filled with puffed, golden-brown brioche rolls from a modern digital convection oven in a commercial kitchen.",
+            "mnemonic": "BAKING: The accurate chemistry of HEAT and FLOUR that MAKES baked goods rise and shine!"
+        },
+        "video": {
+            "description": "An instructional culinary video demonstrating the food science behind commercial baking, illustrating how oven steam, gluten development, and heat transfer create the perfect artisan bread crumb and crust."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "Maintaining calibrated oven temperatures throughout the entire _____ process is crucial for achieving uniform pastry rise and crust coloring.\\n(A) bake\\n(B) baking\\n(C) baked\\n(D) bakes",
+            "tips": "In TOEIC Part 5, gerund-participle noun adjuncts frequently appear before nouns denoting workflows, intervals, or methods (e.g., 'the baking process', 'the planning stage', 'the hiring committee'). Here, 'baking' (B) acts as a noun adjunct qualifying 'process'. (A) is a base verb, (C) is an adjective/past participle, and (D) is a third-person singular verb."
+        },
+        "synonyms": [
+            "pastry making",
+            "oven cooking",
+            "breadmaking",
+            "patisserie",
+            "confectionery"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "bake",
+            "yeast",
+            "convection oven",
+            "proofing",
+            "dough",
+            "leavening",
+            "kneading"
+        ]
+    },
+    {
+        "id": "dining-051",
+        "word": "barbecue",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/ˈbɑːr.bə.kjuː/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/barbecue--_us_1.mp3",
+            "syllableBreakdown": "bar-be-cue",
+            "stressPattern": "primary stress on the first syllable (BAR-buh-kyoo)",
+            "commonMistakes": "Learners frequently misplace stress on the final syllable (*bar-be-CUE*), pronounce the unstressed middle syllable /bə/ as a long vowel, or use informal abbreviations ('BBQ', 'barbeque') in formal correspondence where 'barbecue' is the standard preferred spelling."
+        },
+        "etymology": {
+            "origin": "Derived from the Taíno / Arawakan word 'barbacoa' (a raised wooden framework on posts used for sleeping and smoking meat), borrowed into Spanish as 'barbacoa' in the early 16th century, and subsequently incorporated into English during the late 17th century.",
+            "rootWord": "barbacoa (Taíno: raised wooden frame for drying and smoking fish and meat)",
+            "rootMeaning": "A raised wooden framework of stakes erected over an open pit of glowing embers for slow smoking and preserving meats.",
+            "evolution": "Spanish explorer Gonzalo Fernández de Oviedo recorded 'barbacoa' in Hispaniola in 1526. The term entered English maritime journals around 1697 (notably in William Dampier's voyages). In the American South, it fused with indigenous and West African slow-smoking traditions over hardwood coals (hickory, oak, pecan). By the 20th century, the term broadened to denote outdoor cooking grills, marinated smoked meats, and casual social meal gatherings.",
+            "relatedLanguages": [
+                "Spanish: barbacoa",
+                "French: barbecue",
+                "Portuguese: churrasco",
+                "Italian: barbecue"
+            ],
+            "firstRecordedUse": "Late 17th century (c. 1697 in English maritime expedition journals)"
+        },
+        "deepMeaning": {
+            "coreConcept": "A versatile culinary concept designating: (1) a method of slow-cooking meat over low, indirect heat and hardwood smoke; (2) the savory, smoked or grilled meat itself (such as ribs, brisket, or pulled pork); (3) an outdoor appliance, pit, or metal grill used for cooking food over charcoal or gas; and (4) an informal outdoor social event where grilled or smoked food is prepared and shared.",
+            "spatialContext": "Corporate campus lawns during summer employee picnics, public park pavilions with permanent grill pits, dedicated restaurant smokehouses with offset barrel smokers, and backyard residential patios.",
+            "temporalContext": "Held primarily during late spring and summer months, weekend corporate team-building outings, annual company appreciation picnics, and national holiday weekends (Memorial Day, Fourth of July, Labor Day).",
+            "emotionalTone": "Festive, convivial, relaxed, communal, and hearty.",
+            "formalityLevel": "informal",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native speakers instinctively differentiate between authentic slow-cooked barbecue (meat cooked for 10-14 hours over fragrant wood smoke until tender) and casual backyard grilling (cooking burgers, sausages, and steaks over direct heat). In corporate and workplace life, a 'company barbecue' represents a welcome cultural shift away from office formality—executives and staff wear casual attire, socialize without hierarchy, and enjoy hearty comfort food together outdoors.",
+            "mentalImage": "An outdoor company picnic under a large white marquee tent, where a pitmaster flips marinated chicken skewers and carved beef brisket on a smoking steel grill while colleagues in casual clothes chat around picnic benches.",
+            "whenToUse": "Use when referring to outdoor cooking equipment, smoked meat dishes, or an informal outdoor dining gathering (e.g., 'The staff social committee voted to host a company barbecue for our summer retreat').",
+            "whenNotToUse": "Do not use to describe indoor formal corporate banquets, high-end seated galas, or standard baking techniques. Avoid using the informal abbreviations 'BBQ' or 'barbeque' in formal corporate communications or legal catering contracts.",
+            "culturalContext": "The company barbecue or picnic is an enduring tradition across the United States, Canada, the United Kingdom, and Australia (where it is colloquially termed a 'barbie'). In the TOEIC exam, company barbecues often serve as the setting for Part 3 and Part 4 announcements regarding social committee events, weather-related venue changes, RSVP deadlines, and dietary surveys."
+        },
+        "examples": {
+            "daily": [
+                "We hosted a backyard barbecue for our friends to celebrate the warm summer weather.",
+                "He scraped the grill grates and prepared the charcoal before lighting the barbecue.",
+                "The slow-cooked beef brisket at the local barbecue restaurant melted in your mouth."
+            ],
+            "business": [
+                "Human resources organized an outdoor company barbecue to celebrate achieving the department's annual milestones.",
+                "The catering contract includes mobile barbecue equipment, side salads, beverages, and compostable service ware for three hundred attendees.",
+                "Should adverse weather occur, the annual staff barbecue will be relocated from the central lawn to the covered pavilion."
+            ],
+            "conversation": [
+                "HR Manager: 'Have we accounted for all dietary preferences for next week's company barbecue?'\\nEvent Coordinator: 'Yes, the catering team has arranged a dedicated vegetarian grill station alongside the smoked meats.'",
+                "Facility Director: 'Where should the catering vendor position their mobile barbecue smoker?'\\nSafety Coordinator: 'It must be placed at least thirty feet away from the building's air intake vents to prevent smoke from entering the offices.'",
+                "Colleague A: 'Are you planning to attend the marketing division's annual barbecue on Friday?'\\nColleague B: 'Definitely, it's always a wonderful opportunity to catch up with colleagues from other branch offices.'"
+            ],
+            "collocations": [
+                "company barbecue",
+                "annual barbecue",
+                "outdoor barbecue",
+                "barbecue grill",
+                "barbecue sauce",
+                "host a barbecue"
+            ]
+        },
+        "wordFamily": {
+            "noun": "barbecue",
+            "verb": "barbecue",
+            "adjective": "barbecued",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "outdoor company barbecue grill charcoal smoke corporate picnic",
+            "imageDescription": "An outdoor corporate summer picnic on a sunny green lawn with a large stainless steel barbecue grill sending up fragrant smoke from grilling skewers and steaks, surrounded by colleagues socializing at picnic tables.",
+            "mnemonic": "BARBECUE: Gather at the open BAR, cook the BEEF on the grill, and CUE the celebration!"
+        },
+        "video": {
+            "description": "A corporate event planning feature showcasing an outdoor corporate summer barbecue, highlighting professional catering setup, commercial mobile smoker rigs, and team-building activities."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "Due to impending rain showers, the annual employee _____ has been rescheduled for next Thursday afternoon in the north courtyard.\\n(A) barbecue\\n(B) barbecued\\n(C) barbecues\\n(D) barbecuing",
+            "tips": "In TOEIC Part 5, determine the correct part of speech in compound noun phrases functioning as subjects. 'The annual employee _____' requires a singular count noun head matching the singular verb 'has been rescheduled'. (A) 'barbecue' is the correct head noun. (B) is a past participle/adjective, (C) is plural which conflicts with 'the annual employee...', and (D) is a gerund/participle."
+        },
+        "synonyms": [
+            "cookout",
+            "charcoal grill",
+            "outdoor grill",
+            "grill-out",
+            "smoker"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "charcoal",
+            "grill",
+            "smoker",
+            "brisket",
+            "marinade",
+            "cookout",
+            "picnic"
+        ]
+    },
+    {
+        "id": "dining-052",
+        "word": "barista",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/bəˈriː.stə/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/barista--_us_1.mp3",
+            "syllableBreakdown": "ba-ris-ta",
+            "stressPattern": "primary stress on the second syllable (buh-REE-stuh)",
+            "commonMistakes": "Learners frequently place primary stress on the first syllable (*BA-ri-sta*) or pronounce the stressed syllable with a short lax /ɪ/ ('buh-RIS-tuh') instead of the authentic Italian long tense vowel /iː/ ('buh-REE-stuh'). In English, unlike Italian where plural forms are gendered ('baristi' / 'bariste'), 'barista' is gender-neutral and simply pluralized with '-s' ('baristas')."
+        },
+        "etymology": {
+            "origin": "Modern Italian 'barista' (bartender, counter attendant), formed from 'bar' (borrowed into Italian from English 'bar', meaning counter or tavern) + the occupational agent suffix '-ista' (from Latin '-ista', Greek '-istēs', meaning a specialist, practitioner, or devotee).",
+            "rootWord": "bar (counter/saloon) + -ista (occupational agent suffix)",
+            "rootMeaning": "A person who attends the counter of a bar or cafe, expertly preparing and serving beverages.",
+            "evolution": "In 20th-century Italy, a barista was the skilled professional operating the manual lever espresso machine in local cafe-bars. The term entered English in 1982 and gained universal worldwide adoption during the 1990s specialty coffee movement. In modern English, it specifically denotes a trained professional who extracts espresso, foams milk, and creates handcrafted coffee drinks.",
+            "relatedLanguages": [
+                "Italian: barista",
+                "Spanish: barista",
+                "French: barista",
+                "German: Barista"
+            ],
+            "firstRecordedUse": "1982 in English hospitality and beverage trade publications; 1930s in Italian"
+        },
+        "deepMeaning": {
+            "coreConcept": "A skilled hospitality professional who specializes in grinding coffee beans, extracting espresso, texturing steamed milk, and crafting specialty coffee beverages—such as lattes, cappuccinos, flat whites, and pour-overs—while operating commercial espresso machinery and maintaining high-volume beverage service standards.",
+            "spatialContext": "Specialty coffee shops, artisan roastery tasting counters, upscale hotel breakfast bars, corporate cafeteria espresso kiosks, and commercial building lobby coffee carts.",
+            "temporalContext": "Peak morning service rushes between 7:00 AM and 10:00 AM coinciding with corporate arrival times, secondary afternoon coffee breaks between 2:00 PM and 3:30 PM, and daily machine calibration cycles.",
+            "emotionalTone": "Energetic, hospitable, attentive, artisanal, and precision-driven.",
+            "formalityLevel": "neutral",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To a native speaker, a 'barista' is not simply a fast-food counter worker, but a respected culinary artisan who controls a vital part of their daily morning routine. Office workers often develop strong loyalty to a specific neighborhood barista who remembers their customized order, dietary preferences (such as oat or almond milk), and temperature specifications. A great barista combines technical precision (grind size, water pressure, extraction timing) with warm, efficient hospitality during stressful morning rushes.",
+            "mentalImage": "A barista in a canvas apron working behind a gleaming chrome commercial espresso machine, carefully tilting a steaming pitcher to pour velvety microfoam into an espresso cup, forming an intricate fern-like rosetta pattern on the surface.",
+            "whenToUse": "Use when referring to an individual whose occupation is preparing and serving handcrafted coffee drinks at a cafe, restaurant, or espresso counter (e.g., 'The lobby cafe hired an additional barista to reduce morning queue times').",
+            "whenNotToUse": "Do not use for personnel who only pour drip coffee from a thermal carafe or banquet urn (use 'server' or 'caterer'), workers who exclusively mix alcoholic cocktails in a bar or tavern (use 'bartender'), or kitchen cooks (use 'cook' or 'chef').",
+            "culturalContext": "In contemporary urban corporate environments, coffee culture serves as an essential facilitator of workplace productivity and informal networking. In the TOEIC exam, baristas and coffee shop environments frequently appear in Part 1 (photographs of espresso machines and counter interactions), Part 3 (conversations about coffee runs, order errors, and cafe rewards programs), and Part 7 (help-wanted classified ads, vendor supply contracts, and customer review notices)."
+        },
+        "examples": {
+            "daily": [
+                "The barista at our corner cafe greeted me by name and handed me my favorite iced oat latte.",
+                "She completed a two-week certification program to improve her skills as a professional barista.",
+                "Customers frequently praised the barista for her intricate latte art and cheerful customer service."
+            ],
+            "business": [
+                "Management installed a commercial espresso bar in the corporate lobby and contracted a professional barista to serve employees and visiting clients.",
+                "The regional coffee chain offered comprehensive health benefits and barista training programs to reduce employee turnover.",
+                "During the peak commuter hour, three experienced baristas coordinated their efforts to fulfill over one hundred mobile orders."
+            ],
+            "conversation": [
+                "Client: 'Could you recommend a quick spot near the office for our catch-up meeting?'\\nAccount Executive: 'There is a specialty coffee shop on the ground floor with excellent baristas and plenty of quiet seating.'",
+                "Cafe Manager: 'How is the new espresso grinder performing on the morning shift?'\\nHead Barista: 'It provides a much more consistent grind size, which has cut our shot extraction time and reduced customer wait times.'",
+                "Colleague A: 'Where did you get that beautiful cappuccino?'\\nColleague B: 'The new barista at the lobby kiosk made it; she even poured a swan design into the foam.'"
+            ],
+            "collocations": [
+                "skilled barista",
+                "certified barista",
+                "head barista",
+                "experienced barista",
+                "barista training",
+                "lobby barista"
+            ]
+        },
+        "wordFamily": {
+            "noun": "barista, baristas",
+            "verb": "",
+            "adjective": "",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "barista pouring latte art espresso machine commercial cafe counter",
+            "imageDescription": "A focused barista wearing a dark apron pouring steamed milk from a metal pitcher into a ceramic cup to create delicate latte art, with a commercial multi-group espresso machine and portafilters in the background.",
+            "mnemonic": "BARISTA: The star of the coffee BAR who crafts your ESPRESSO with ARTISTRY!"
+        },
+        "video": {
+            "description": "A world barista championship training tutorial showing how professional baristas calibrate coffee grinders, dial in espresso extraction ratios, and steam milk to silky microfoam consistency."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "The newly opened lobby cafe is actively recruiting a skilled _____ who has experience operating commercial espresso equipment and handling high-volume morning rushes.\\n(A) barista\\n(B) beverage\\n(C) bakery\\n(D) brewing",
+            "tips": "In TOEIC Part 5, vocabulary questions frequently test identifying human agent nouns versus inanimate objects or actions based on relative clause context. The relative clause 'who has experience operating commercial espresso equipment...' requires an agent noun referring to a person; therefore, (A) 'barista' is the only grammatically and contextually appropriate choice. (B) is a drink, (C) is a shop, and (D) is a gerund."
+        },
+        "synonyms": [
+            "coffee maker",
+            "coffee specialist",
+            "espresso technician",
+            "cafe server",
+            "counter attendant"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "espresso",
+            "latte art",
+            "steamed milk",
+            "cappuccino",
+            "portafilter",
+            "grinder",
+            "coffeehouse"
+        ]
+    }
+]
+
+# Validation checks
+FORBIDDEN_PHRASES = [
+    "factor", "management practice", "manage the...", "documentation for...",
+    "foundational professional concept and noun designating", "core Germanic commercial root"
+]
+
+for w in words_data:
+    wid = w["id"]
+    wstr = json.dumps(w)
+    for f in FORBIDDEN_PHRASES:
+        if f.lower() in wstr.lower():
+            print(f"ERROR: {wid} contains forbidden phrase '{f}'")
+            sys.exit(1)
+    
+    # Check lengths
+    assert len(w["examples"]["daily"]) == 3, f"{wid} daily examples != 3"
+    assert len(w["examples"]["business"]) == 3, f"{wid} business examples != 3"
+    assert len(w["examples"]["conversation"]) in [2, 3], f"{wid} conversation != 2 or 3"
+    assert len(w["examples"]["collocations"]) in [5, 6], f"{wid} collocations not 5-6"
+    assert len(w["synonyms"]) >= 4, f"{wid} synonyms < 4"
+    assert len(w["relatedWords"]) >= 5, f"{wid} relatedWords < 5"
+    assert w["deepMeaning"]["formalityLevel"] in ["formal", "neutral", "informal"]
+    assert w["deepMeaning"]["connotation"] in ["positive", "neutral", "negative"]
+    assert w["level"] in ["essential", "intermediate", "advanced"]
+    print(f"Validation passed for {wid}: {w['word']}")
+
+with open("scratch/dining_049_052.json", "w", encoding="utf-8") as f:
+    json.dump({"words": words_data}, f, indent=2, ensure_ascii=False)
+
+print("Saved to scratch/dining_049_052.json successfully.")

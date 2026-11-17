@@ -1,0 +1,340 @@
+{
+  "words": [
+    {
+      "id": "dining-179",
+      "word": "luncheon",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈlʌn.tʃən/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/luncheon--_us_1.mp3",
+        "syllableBreakdown": "lunch·eon",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners often mispronounce the unstressed second syllable '-eon' as /iːɒn/ (*lunch-ee-on*) or /eɪ.ɒn/. In standard English, '-eon' is pronounced with a reduced schwa /ən/ (/ˈlʌn.tʃən/, rhyming with 'dungeon'). Sociolinguistically, learners sometimes mistakenly use 'luncheon' in casual daily speech (e.g., *'I bought a sandwich for my luncheon'*), which sounds archaic and pretentious; native speakers reserve 'luncheon' strictly for formal, scheduled corporate, diplomatic, or celebratory banquets."
+      },
+      "etymology": {
+        "origin": "Late 16th-century English 'luncheon', an extension of dialectal 'lunch' (a lump, hunk, or thick piece of food), influenced by Middle English 'nonechenche' (a light midday refreshment or noon drink, from 'non' [noon] + 'schench' [cup/draught]) and Spanish 'lonja' (a thick slice or rasher of meat).",
+        "rootWord": "English dialectal lunch (thick lump/slice) / Middle English nonechenche (noon drink)",
+        "rootMeaning": "A substantial slice of food or midday refreshment taken between meals",
+        "evolution": "In the late 16th century, 'luncheon' denoted a substantial slice of bread, cold meat, or cheese taken as an informal snack. By the late 18th century, English aristocratic society adopted 'luncheon' to designate a formal, elegant midday gathering served with multi-course plated dishes, fine china, and wine, specifically arranged for invited guests. While everyday parlance shortened the term to 'lunch' during the 19th century, institutional, diplomatic, and corporate English preserved 'luncheon' to signify an official, ticketed, or commemorative dining event that incorporates formal programming, awards, or keynote addresses.",
+        "relatedLanguages": [
+          "French: collation (formal light repast) / déjeuner officiel (official lunch)",
+          "Spanish: almuerzo oficial (official lunch) / banquete de mediodía (midday banquet)",
+          "German: festliches Mittagessen (festive lunch) / Gabelfrühstück (elevated late-morning/midday repast)",
+          "Italian: colazione ufficiale (official luncheon) / banchetto (banquet)"
+        ],
+        "firstRecordedUse": "Late 16th century (c. 1580 in Early Modern English texts referring to thick slices of food; adopted for formal midday dining in the 1780s)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A formal or official midday meal, banquet, or reception, typically hosted to celebrate a significant occasion, honor an individual, facilitate executive networking, or support a charitable cause, characterized by reserved seating, formal invitations (RSVPs), multi-course plated dining or upscale catering, and scheduled proceedings such as keynote speeches or award presentations.",
+        "spatialContext": "Grand hotel ballrooms, private dining rooms of executive athletic or social clubs, convention center banquet suites, embassy dining salons, and university ceremonial halls.",
+        "temporalContext": "Typically scheduled from 11:30 AM to 1:30 PM or 12:00 PM to 2:00 PM; convened on special occasions such as annual corporate general meetings, retirement celebrations, donor fundraisers, or industry conferences.",
+        "emotionalTone": "Ceremonial, dignified, prestigious, cordial, and celebratory.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'luncheon' is never just eating—it is an organized social or corporate event with protocol. Hearing the word immediately brings to mind formal printed or electronic invitations, assigned tables with linen and floral centerpieces, name tags, pre-selected multi-course menus (chicken or fish), and a lectern with a microphone where an executive or guest speaker delivers remarks. It signals an occasion that warrants business attire and professional networking etiquette. In marketing and non-profit sectors, a 'luncheon' is a classic fundraising or donor-cultivation vehicle.",
+        "mentalImage": "A magnificent hotel banquet hall filled with circular tables set with white damask tablecloths, fine porcelain, and crystal stemware, where business professionals in tailored suits listen attentively to an award presenter at the podium while waitstaff quietly clear dessert plates.",
+        "whenToUse": "Use when referring to an organized, formal midday gathering, ceremonial banquet, corporate recognition event, charity fundraiser, or diplomatic function (e.g., 'annual awards luncheon', 'charity luncheon', 'networking luncheon', 'farewell luncheon', 'keynote luncheon').",
+        "whenNotToUse": "Do not use for casual, routine, or personal midday eating (e.g., saying *'I went to the food court for a quick luncheon'* sounds laughably pretentious and incorrect; use 'lunch'). Do not use for evening events (use 'dinner', 'banquet', or 'gala').",
+        "culturalContext": "In Anglo-American professional life, annual awards luncheons, retirement luncheons, and charity luncheons are institutional pillars. In the TOEIC exam, 'luncheon' frequently appears in Part 3 and 4 announcements and Part 7 texts (formal corporate invitations, banquet schedules, catering invoices, and RSVP notices requiring confirmation of dietary requirements)."
+      },
+      "examples": {
+        "daily": [
+          "My mother attended a charity luncheon hosted by the local community hospital foundation.",
+          "Members of the historical society gathered at the botanical conservatory for their annual spring luncheon.",
+          "The university hosted an alumni luncheon honoring distinguished graduates from the school of journalism."
+        ],
+        "business": [
+          "The board of directors hosted a formal luncheon at the Metropolitan Club to welcome the newly appointed chief executive officer.",
+          "Please indicate your dietary restrictions on the enclosed registration card for the upcoming employee appreciation luncheon.",
+          "Over three hundred industry executives attended the keynote luncheon during the final day of the international energy symposium."
+        ],
+        "conversation": [
+          "\"Are you planning to attend the quarterly awards luncheon on Friday?\" / \"Yes, I submitted my RSVP this morning; our regional team is receiving the innovation award during the ceremony.\"",
+          "\"Has the catering menu for the farewell luncheon been finalized?\" / \"Yes, the committee selected a three-course plated meal featuring herb-crusted salmon and seasonal vegetables.\""
+        ],
+        "collocations": [
+          "annual luncheon",
+          "awards luncheon",
+          "charity luncheon",
+          "farewell luncheon",
+          "host a luncheon",
+          "luncheon meeting"
+        ]
+      },
+      "wordFamily": {
+        "noun": "luncheon, lunch",
+        "verb": "lunch",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "formal corporate luncheon banquet hotel ballroom round tables floral centerpiece speakers",
+        "imageDescription": "An expansive conference ballroom set up for a corporate luncheon, showcasing elegantly draped round banquet tables with formal place settings, fresh floral arrangements, and attendees listening to a keynote speaker at a spotlighted podium.",
+        "mnemonic": "LUNCHEON: A LUNCH of Elevated Occasion and Networking, celebrated with formal etiquette!"
+      },
+      "video": {
+        "description": "A hospitality management video showcasing the operational coordination required to stage an executive luncheon, from banquet hall layout and podium AV testing to synchronized silver-service catering delivery."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Staff members wishing to attend the retirement _____ in honor of Vice President Henderson must submit their RSVP to Human Resources by Wednesday. (A) lunching (B) luncheon (C) lunches (D) lunchroom",
+        "tips": "In TOEIC Part 5 and 7, recognize formal event terminology. Following the modifier 'retirement', the context of an official corporate honoring event in a business notice requires the formal noun (B) luncheon to form the established collocation 'retirement luncheon'. Choice (A) is a participle, (C) is a plural verb or noun that does not fit the singular determiner 'the', and (D) 'lunchroom' refers to a physical cafeteria room, not the event itself."
+      },
+      "synonyms": [
+        "formal lunch",
+        "banquet",
+        "midday reception",
+        "refection",
+        "official midday banquet"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "banquet",
+        "reception",
+        "keynote",
+        "RSVP",
+        "catering",
+        "ceremony",
+        "gala"
+      ]
+    },
+    {
+      "id": "dining-180",
+      "word": "main course",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˌmeɪn ˈkɔːrs/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/main_course--_us_1.mp3",
+        "syllableBreakdown": "main course",
+        "stressPattern": "○●",
+        "commonMistakes": "Learners often mispronounce 'course' as /kɜːrs/ ('curse') or confuse the spelling with 'coarse' (rough or abrasive). In addition, there is a major transatlantic linguistic divide that traps learners: in North American English, 'main course' is widely synonymous with 'entrée', whereas in British English, French, and classical European gastronomy, 'entrée' refers to a light starter or first course served before the main course. In TOEIC passages depicting international travel or hospitality, assuming 'entrée' always means appetizer can cause confusion unless context is carefully verified."
+      },
+      "etymology": {
+        "origin": "Compound noun formed from the adjective 'main' (from Old English 'mægen-', meaning strength, power, primary, principal, of Proto-Germanic origin *maginą) and the noun 'course' (from Anglo-Norman and Old French 'cours', from Latin 'cursus' [a running, passage, progression, series of dishes], from 'currere' [to run]).",
+        "rootWord": "Old English mægen (strength, principal) + Latin cursus (running, sequence, flight of dishes)",
+        "rootMeaning": "The principal, most substantial flight or sequence of food in a formal dining meal",
+        "evolution": "In medieval European banquets, a 'course' (from Latin 'cursus') referred to an entire service or array of dishes carried into the dining hall at one time. With the 19th-century culinary shift across Europe from 'service à la française' (all dishes placed on the table simultaneously) to 'service à la russe' (dishes brought out in sequential, individual courses), the phrase 'main course' became standardized in English hospitality. It designated the central, most substantial dish in the progression—usually featuring roasted meats, poultry, or fish alongside vegetables and starches—served after the lighter appetizers or soups and prior to dessert.",
+        "relatedLanguages": [
+          "French: plat principal (main dish)",
+          "Spanish: plato principal (main course / main dish)",
+          "German: Hauptgericht (main dish) / Hauptgang (main course)",
+          "Italian: piatto principale / secondo piatto (main dish / second course)",
+          "Portuguese: prato principal (main course)"
+        ],
+        "firstRecordedUse": "Mid 19th century (c. 1850 in English culinary texts, banquet programs, and hotel menu guides)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The principal, most substantial, and filling dish in a multi-course meal, served after the appetizers, salad, or soup and before dessert, typically consisting of a dominant protein source (such as meat, poultry, fish, or a hearty plant-based substitute) accompanied by complementary vegetables and starches, serving as the culinary centerpiece of the dining experience.",
+        "spatialContext": "Commercial restaurant hot-plating lines beneath heat lamps, hotel banquet plating conveyors, fine-dining dining rooms, catering staging kitchens, and first-class airline galley convection ovens.",
+        "temporalContext": "Served as the primary stage of dinner or luncheon service, typically 20 to 30 minutes following appetizers; requires the longest cooking and synchronization time by kitchen line chefs.",
+        "emotionalTone": "Substantial, satisfying, focal, indulgent, and centerpiece-oriented.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, the 'main course' is the undisputed culinary anchor of a meal. When browsing a restaurant menu, diners typically pick their main course first and then select starters or wine pairings to complement it. At weddings, corporate galas, and banquet events, the invitation will ask guests to choose their main course preference (e.g., 'beef, chicken, salmon, or vegetarian option'). The main course represents the primary culinary value and caloric core of dining out. If a restaurant's main course is underwhelming, the entire meal is perceived as a failure regardless of how good the appetizer was.",
+        "mentalImage": "A commercial kitchen pass under glowing heat lamps where an executive chef uses tongs to place a pan-seared fillet of wild salmon over a bed of saffron risotto, meticulously wiping the rim of the wide porcelain plate before the waitstaff carries it out to the banquet table.",
+        "whenToUse": "Use when discussing the primary dish of a multi-course meal, menu organization, banquet catering choices, or restaurant ordering (e.g., 'vegetarian main course', 'select your main course', 'served as a main course with roasted vegetables').",
+        "whenNotToUse": "Do not use to describe small-plate appetizers (starters, hors d'oeuvres), soups, salads served on their own, side dishes, or desserts. Do not use for casual single-item fast food or snacks (e.g., a bag of chips or an apple is not a 'main course'). In North America, note that 'entrée' is often used interchangeably with 'main course'.",
+        "culturalContext": "In professional hospitality and corporate entertaining, catering contracts hinge on the main course selection and guarantee counts. High-profile conferences require detailed dietary surveys to accommodate vegan, kosher, halal, or gluten-free main course requirements. In TOEIC Parts 3, 4, and 7, flight meal options, banquet menus, and restaurant complaints frequently feature discussions regarding main course availability and preparation."
+      },
+      "examples": {
+        "daily": [
+          "For our anniversary dinner, we shared a seafood appetizer followed by a delicious main course of herb-crusted lamb chops.",
+          "I was already somewhat full from the warm bread and clam chowder before the main course was served.",
+          "The restaurant offers a savory wild mushroom risotto as its signature vegetarian main course."
+        ],
+        "business": [
+          "Conference participants are requested to indicate their main course selection—braised beef short ribs or pan-seared sea bass—on the online registration form.",
+          "The banquet manager coordinated with the kitchen line to guarantee that five hundred main course plates were served simultaneously to the gala delegates.",
+          "Our executive dining package includes a seasonal appetizer, an artisanal main course, and a dessert accompanied by coffee or tea."
+        ],
+        "conversation": [
+          "\"Have you decided what you would like for your main course this evening?\" / \"Yes, I will have the grilled salmon with roasted asparagus and wild rice, please.\"",
+          "\"Did the caterer provide enough vegetarian main course options for the luncheon?\" / \"Yes, they prepared fifty portions of roasted butternut squash ravioli with sage brown butter.\""
+        ],
+        "collocations": [
+          "main course selection",
+          "vegetarian main course",
+          "serve the main course",
+          "hearty main course",
+          "order a main course",
+          "multi-course meal"
+        ]
+      },
+      "wordFamily": {
+        "noun": "main course",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "gourmet plated main course steak salmon asparagus risotto restaurant fine dining",
+        "imageDescription": "A gourmet, beautifully presented main course on a wide ceramic plate, featuring a perfectly seared salmon fillet atop creamy saffron risotto with steamed baby asparagus spears and an herb oil drizzle.",
+        "mnemonic": "MAIN COURSE: The MAIN event of the meal COURSE that satisfies your primary appetite!"
+      },
+      "video": {
+        "description": "A culinary school instructional video demonstrating the professional plating, portion control, and temperature management techniques required to execute high-volume restaurant main course service."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Conference delegates are urged to indicate their _____ course preference on the registration form to assist the hotel catering team with advance meal preparation. (A) main (B) mainly (C) mainland (D) maintain",
+        "tips": "In TOEIC Part 5, recognizing standard business hospitality and dining compound nouns is essential. In the phrase 'their _____ course preference', the adjective (A) main is required to form the compound noun 'main course', referring to the principal dish of a meal. Choice (B) is an adverb, (C) is an unrelated geographic noun, and (D) is a verb."
+      },
+      "synonyms": [
+        "main dish",
+        "entrée",
+        "plat principal",
+        "principal dish",
+        "centerpiece dish"
+      ],
+      "antonyms": [
+        "appetizer",
+        "starter",
+        "dessert",
+        "side dish"
+      ],
+      "relatedWords": [
+        "entrée",
+        "appetizer",
+        "dessert",
+        "side dish",
+        "menu",
+        "banquet",
+        "course",
+        "cuisine"
+      ]
+    },
+    {
+      "id": "dining-181",
+      "word": "maitre-d",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˌmeɪ.trə ˈdiː/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/maitre-d--_us_1.mp3",
+        "syllableBreakdown": "mai·tre-d",
+        "stressPattern": "○○●",
+        "commonMistakes": "Learners frequently stumble over both the spelling and pronunciation of this French loanword. Many mispronounce 'maitre' as English 'meter' or 'matter' (/ˈmeɪtər/), and attempt to pronounce the final letter 'd' as an isolated consonant /d/ rather than the letter name /diː/ ('MAY-truh-DEE'). The abbreviation stands for 'maître d'hôtel' (/ˌmeɪtrə doʊˈtɛl/), but in contemporary English usage, 'maitre-d' (or 'maître d'') is universally pronounced /ˌmeɪtrə ˈdiː/. Furthermore, learners often confuse the role with that of a line server, waiter, or busser; a maitre-d is an executive front-of-house manager who oversees reservation books, seating charts, VIP guest relations, and waitstaff choreography, rather than serving plates directly."
+      },
+      "etymology": {
+        "origin": "Borrowed from French 'maître d'hôtel' (literally 'master of the house/hotel'). The word 'maître' derives from Old French 'maistre', from Latin 'magister' (master, director, superintendent, from 'magis' [more, greater]); 'de' (of); and 'hôtel' (from Old French 'ostel', from Medieval Latin 'hospitale' [inn, guest-house, hospice], from 'hospes' [host, guest]). Shortened colloquially and professionally in 20th-century English to 'maître d'' or 'maitre-d'.",
+        "rootWord": "Latin magister (master, director) + hospitale (guest house, inn) via French maître d'hôtel",
+        "rootMeaning": "Master of the household or manager of the dining hall",
+        "evolution": "In Renaissance French royal and noble courts, the 'maître d'hôtel' was a prestigious household officer who commanded domestic personnel, organized grand court banquets, and controlled culinary procurement. During the 19th-century golden age of Parisian gastronomy and luxury European palace hotels (epitomized by César Ritz and Auguste Escoffier), the title evolved into the executive front-of-house manager of the dining room. English adopted 'maître d'hôtel' in the 16th century, and by the 1920s American and British hospitality culture shortened it to 'maître d'' or 'maitre-d', designating the authoritative professional who presides over reservations, table assignments, and dining room decorum.",
+        "relatedLanguages": [
+          "French: maître d'hôtel (dining room manager / head waiter)",
+          "Italian: maestro di sala / maître (head of dining room service)",
+          "Spanish: jefe de sala / maitre (head waiter / dining room captain)",
+          "German: Oberkellner / Restaurantleiter (head waiter / dining room manager)",
+          "Portuguese: chefe de sala / maitre (dining room supervisor)"
+        ],
+        "firstRecordedUse": "Late 16th century for 'maître d'hôtel' (c. 1530s in court records); shortened form 'maître d'' / 'maitre-d' first recorded in English print in the 1920s (c. 1928)."
+      },
+      "deepMeaning": {
+        "coreConcept": "The head of front-of-house operations in a fine-dining restaurant, luxury hotel dining salon, or private club, responsible for managing the reservation ledger, greeting patrons, assigning tables according to VIP hierarchy and pacing, coordinating floor captains and waitstaff, handling special guest requests, and ensuring exemplary customer service.",
+        "spatialContext": "Restaurant entrance foyers, front-of-house reservation podiums equipped with table-management terminals (e.g., OpenTable, Resy), upscale dining room floors, and private executive dining salon entrances.",
+        "temporalContext": "Active throughout peak evening dinner services and corporate luncheon seatings; conducts pre-service waitstaff line-up briefings 30 minutes before opening, and manages dining room seating flow between 6:00 PM and 10:00 PM.",
+        "emotionalTone": "Polished, urbane, authoritative, welcoming, and impeccably diplomatic.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, the 'maitre-d' is the ultimate front-of-house gatekeeper and ambassador of hospitality. Hearing the word evokes a suave professional in a tailored suit or tuxedo who knows regular clients by name, remembers their favorite tables and vintage wine preferences, and possesses the diplomatic finesse to defuse awkward situations. Native diners understand that establishing a good relationship with the maitre-d is the secret to securing coveted tables during fully booked evenings. In corporate entertainment, an attentive maitre-d ensures an executive dinner runs flawlessly without embarrassing delays or seat misallocations.",
+        "mentalImage": "A distinguished maitre-d in a tailored charcoal suit standing at a sleek walnut host stand at the entrance of a Michelin-starred restaurant, consulting a digital floor plan on an iPad before greeting a party of corporate executives and smoothly guiding them toward their secluded window table.",
+        "whenToUse": "Use when referring specifically to the dining room host, head of front-of-house, or floor manager in an upscale, fine-dining, or luxury hospitality establishment (e.g., 'the maitre-d seated us immediately', 'speak with the maitre-d about reserving the private room', 'a courteous and experienced maitre-d').",
+        "whenNotToUse": "Do not use for casual or fast-food restaurant staff (do not refer to a cashier, cafeteria counter worker, or casual diner host as a 'maitre-d'). Do not use for the head chef or culinary staff in the kitchen (who manage back-of-house operations). Avoid using for a regular busser or food runner.",
+        "culturalContext": "In Western dining culture, the maitre-d represents the gold standard of front-of-house professionalism. The tradition of discreetly tipping the maitre-d for exceptional seating or special arrangements has deep cultural roots. In TOEIC listening and reading passages, the maitre-d frequently appears in Part 3 conversations regarding restaurant reservations, Part 4 banquet announcements, and Part 7 customer feedback surveys, email confirmations, or hotel service reviews."
+      },
+      "examples": {
+        "daily": [
+          "The maitre-d greeted us warmly by name and escorted our party to a quiet table overlooking the garden terrace.",
+          "Because we arrived twenty minutes before our reservation time, the maitre-d suggested we enjoy a drink at the cocktail lounge.",
+          "She thanked the maitre-d for accommodating their unexpected party of six on a bustling Friday evening."
+        ],
+        "business": [
+          "The company's event planner coordinated with the hotel maitre-d to arrange private seating and dedicated service for the visiting delegates.",
+          "Before the dinner rush commenced, the maitre-d held a briefing with the service team to review VIP guest preferences and severe food allergies.",
+          "Our client was thoroughly impressed by how smoothly the maitre-d managed the banquet seating during the international symposium."
+        ],
+        "conversation": [
+          "\"Were you able to secure a table for eight at the bistro tonight?\" / \"Yes, I spoke directly with the maitre-d, and he managed to set aside a private booth for us.\"",
+          "\"The dining room seems completely full; do you think we can still get seated?\" / \"Let's check in with the maitre-d at the front podium—he might have an unconfirmed cancellation.\""
+        ],
+        "collocations": [
+          "consult the maitre-d",
+          "speak with the maitre-d",
+          "the maitre-d seated us",
+          "experienced maitre-d",
+          "courteous maitre-d",
+          "maitre-d station"
+        ]
+      },
+      "wordFamily": {
+        "noun": "maitre-d",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "maitre-d restaurant front of house host podium luxury fine dining hospitality welcoming",
+        "imageDescription": "An elegantly dressed maitre-d in a tailored dark suit standing beside a polished dark wood reservation podium at the entrance of a high-end restaurant, smiling graciously while reviewing table assignments on a tablet.",
+        "mnemonic": "MAITRE-D: The MASTER (maître) of the Dining room who Directs your table and Delivers five-star hospitality!"
+      },
+      "video": {
+        "description": "A behind-the-scenes hospitality video following a luxury hotel maitre-d through an evening shift, demonstrating table management systems, staff coordination, and VIP greeting protocols."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Upon arriving at the restaurant, guests should present their reservation confirmation to the _____ at the front podium to be escorted to their assigned table. (A) maitre-d (B) maintenance (C) mainframe (D) marketplace",
+        "tips": "In TOEIC Part 5, questions situated in restaurant or hotel contexts often test specific hospitality personnel titles. Preceded by the definite article 'the' and followed by 'at the front podium to be escorted to their assigned table', the correct noun representing the front-of-house dining supervisor is (A) maitre-d. Choices (B) 'maintenance', (C) 'mainframe', and (D) 'marketplace' are distractors starting with 'm' that are completely unrelated to restaurant guest seating."
+      },
+      "synonyms": [
+        "head waiter",
+        "dining room manager",
+        "restaurant host",
+        "floor manager",
+        "maître d'hôtel",
+        "front-of-house manager"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "sommelier",
+        "reservation",
+        "front-of-house",
+        "seating chart",
+        "waitstaff",
+        "hospitality",
+        "table service"
+      ]
+    }
+  ]
+}

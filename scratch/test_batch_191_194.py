@@ -1,0 +1,538 @@
+import json
+
+words_data = [
+  {
+    "id": "comms-191",
+    "word": "panelist",
+    "partOfSpeech": ["noun"],
+    "category": "communications",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/ˈpæn.əl.ɪst/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/panelist--_us_1.mp3",
+      "syllableBreakdown": "pan-el-ist",
+      "stressPattern": "primary stress on the first syllable (PAN-el-ist)",
+      "commonMistakes": "Learners often place stress on the second syllable (*pa-NEL-ist*) due to false analogies with words like 'canal' or Romance stress habits, or fail to reduce the second syllable vowel to a schwa /əl/. Some also confuse spelling with the British English variant 'panellist' (both are accepted, but American business English standardizes a single 'l')."
+    },
+    "etymology": {
+      "origin": "Formed in English by suffixing 'panel' with the agent noun suffix '-ist'. 'Panel' derives from Anglo-Norman and Old French 'panel' (a piece of cloth, pane, saddle-pad, small parchment slip containing names of jurors), diminutive of Vulgar Latin '*pannellus', from Latin 'pannus' (cloth, piece of cloth).",
+      "rootWord": "Latin 'pannus' (piece of cloth) via Old French 'panel' (parchment roll/slip) + Greek suffix '-istēs' via Latin '-ista' (practitioner, participant)",
+      "rootMeaning": "'One who is enrolled on a small slip of parchment' — originally designating an individual selected and listed on an official jury roll (panel), later extended to a member of a group chosen to judge, advise, or debate.",
+      "evolution": "In 13th-century Anglo-Norman jurisprudence, a 'panel' was a schedule of parchment affixed to a writ containing the names of summoned jurors. By the 1920s and 1930s, with the rapid rise of radio broadcasting and public affairs programming, 'panel' was adopted for a group of invited experts assembled to debate topics or answer questions. 'Panelist' arose in American English around the late 1930s to designate an individual speaker on such broadcast discussions, quickly cementing itself in corporate symposiums, academic conventions, and televised forums.",
+      "relatedLanguages": [
+        "French: panéliste / participant à une table ronde",
+        "Spanish: panelista",
+        "German: Panelist / Diskussionsteilnehmer",
+        "Italian: panelista / relatore"
+      ],
+      "firstRecordedUse": "Circa 1937–1942 (American broadcast radio and public affairs forum terminology)"
+    },
+    "deepMeaning": {
+      "coreConcept": "An individual selected and invited to serve as an expert participant on a moderated discussion panel, symposium, or broadcast forum, sharing specialized knowledge, answering attendee queries, and debating industry issues alongside fellow authorities.",
+      "spatialContext": "Conference auditoriums, convention center main stages, elevated dais risers behind skirted tables equipped with tabletop gooseneck microphones, television broadcast studios, and virtual webinar stages.",
+      "temporalContext": "Scheduled during plenary breakout tracks, annual industry expos, executive summits, post-keynote Q&A sessions, and televised public policy roundtables.",
+      "emotionalTone": "Articulate, authoritative, collegial, and informative.",
+      "formalityLevel": "formal",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native English speakers, a 'panelist' is distinguished from a solo keynote speaker or an event moderator. While a keynote speaker delivers a prepared address alone and a moderator directs flow and timekeeping, a panelist is an invited subject-matter expert whose role is to provide diverse perspectives, engage in extemporaneous dialogue with peers, and react directly to audience questions. Serving as a panelist signals recognized professional stature and peer respect within an industry.",
+      "mentalImage": "An industry executive wearing a clip-on lavalier microphone seated in an armchair on an illuminated conference stage beside three other experts, leaning forward to address an audience question posed by the moderator.",
+      "whenToUse": "Use when identifying an invited participant on a discussion panel at a professional conference, convention, trade show, academic symposium, webinar, or televised roundtable (e.g., 'invited panelists', 'distinguished panelist', 'a panelist on the supply chain forum').",
+      "whenNotToUse": "Do not use for the person chairing or directing the session (use 'moderator' or 'chair'), a solo orator giving an address (use 'keynote speaker' or 'presenter'), or a member of the general listening audience (use 'attendee' or 'delegate').",
+      "culturalContext": "In Anglo-American professional conventions, panel discussions are ubiquitous because they present balanced, competing viewpoints within a single hour. Organizers place significant emphasis on 'panel diversity'—assembling panelists across different market sectors, company sizes, and backgrounds to foster lively debate.",
+      "mentalImage": "An industry executive wearing a clip-on lavalier microphone seated in an armchair on an illuminated conference stage beside three other experts, leaning forward to address an audience question posed by the moderator."
+    },
+    "examples": {
+      "daily": [
+        "My sister was invited to serve as a panelist at the downtown public library's community forum on sustainable urban living.",
+        "Audience members queued up at the center aisle microphone to ask the panelists about future employment trends.",
+        "During the televised town hall, each panelist was allotted two minutes to outline their perspective on public transit funding."
+      ],
+      "business": [
+        "The annual logistics summit announced four distinguished industry panelists who will explore regional supply chain resiliency.",
+        "As a featured panelist, our chief technology officer shared practical insights on enterprise cloud migration and cyber defense.",
+        "Conference organizers distributed an updated briefing packet to all confirmed panelists detailing discussion prompts and stage logistics."
+      ],
+      "conversation": [
+        "\"Are you speaking at the FinTech expo next month?\" \"Yes, I've agreed to serve as a panelist on the digital payments roundtable on Thursday morning.\"",
+        "\"Did the moderator manage the session well?\" \"Extremely well—she ensured every panelist had equal speaking time and handled audience questions seamlessly.\"",
+        "\"Who else is on the roster for the afternoon panel?\" \"The organizers secured a veteran venture capitalist and a corporate regulator as fellow panelists.\""
+      ],
+      "collocations": [
+        "distinguished panelist",
+        "featured panelist",
+        "invited panelist",
+        "serve as a panelist",
+        "panelist on the discussion",
+        "briefing for panelists"
+      ]
+    },
+    "wordFamily": {
+      "noun": "panelist, panel, panellist",
+      "verb": "panel",
+      "adjective": "paneled",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "conference panelist speaking microphone stage discussion auditorium",
+      "imageDescription": "A professional speaker in business attire speaking into a wireless tabletop microphone while seated on an elevated conference stage alongside fellow panelists at a trade symposium.",
+      "mnemonic": "A PANEL of experts sits together on stage; the -IST is the professional specialIST sharing knowledge."
+    },
+    "video": {
+      "description": "A live broadcast excerpt from an international business convention featuring a moderated panel discussion on renewable energy investments, showing panelists addressing audience questions."
+    },
+    "toeicContext": {
+      "commonParts": [3, 4, 7],
+      "exampleQuestion": "Due to unexpected flight cancellations caused by severe weather, one of the scheduled _____ was unable to arrive in time for the afternoon symposium on international trade.\n(A) panels\n(B) panelists\n(C) paneled\n(D) paneling",
+      "tips": "TOEIC Part 5 frequently tests semantic distinctions between nouns referring to people versus objects or activities. Following 'one of the scheduled [plural noun]', the sentence refers to an entity that travels by plane and arrives at a symposium ('unable to arrive in time'). Therefore, the human agent noun 'panelists' (B) is the only logically correct choice. 'Panels' (A) refers to groups or physical partitions, while (C) and (D) are adjective/participle forms."
+    },
+    "synonyms": [
+      "discussion participant",
+      "roundtable speaker",
+      "symposium contributor",
+      "panel member",
+      "forum speaker",
+      "debater"
+    ],
+    "antonyms": [
+      "moderator",
+      "session chair",
+      "audience member",
+      "attendee"
+    ],
+    "relatedWords": [
+      "moderator",
+      "symposium",
+      "roundtable",
+      "keynote speaker",
+      "conference",
+      "breakout session",
+      "plenary"
+    ]
+  },
+  {
+    "id": "comms-192",
+    "word": "paper",
+    "partOfSpeech": ["noun"],
+    "category": "communications",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+      "ipa": "/ˈpeɪ.pɚ/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/paper--_us_1.mp3",
+      "syllableBreakdown": "pa-per",
+      "stressPattern": "primary stress on the first syllable (PA-per)",
+      "commonMistakes": "Learners whose native languages lack the English /eɪ/ diphthong often substitute a flat, monophthongal /e/ or /ɛ/ (*peh-per*). In non-rhotic dialects (like British RP), the terminal syllable is pronounced with a simple schwa /ə/, whereas in General American it carries an r-colored vowel /ɚ/. Grammatically, learners frequently confuse the non-count mass noun usage ('we need more paper for the printer') with countable senses ('the morning paper', 'publish a research paper')."
+    },
+    "etymology": {
+      "origin": "Middle English 'papyre', borrowed from Anglo-Norman 'papir' and Old French 'papier', from Latin 'papȳrus', from Ancient Greek 'pápyros' (πάπυρος), the Nilotic sedge reed used throughout the ancient Mediterranean world as a writing surface.",
+      "rootWord": "Ancient Greek 'pápyros' (papyrus plant) via Latin 'papȳrus' and Old French 'papier'",
+      "rootMeaning": "'Writing material derived from pressed Nile papyrus pith' — later transferred across medieval Europe to describe felted sheets of cellulose fiber pulped from rags, hemp, and wood.",
+      "evolution": "While writing sheets made from Nilotic papyrus reeds date back to 3000 BCE in Egypt, modern pulp papermaking using cellulose fibers originated in Han Dynasty China (c. 105 CE) and diffused through the Islamic world to Moorish Spain and Italy by the 12th century. The word entered Middle English via Anglo-Norman in the 14th century. Gutenberg's 15th-century moveable-type press transformed paper into the essential foundation of mass literacy, administration, and legal commerce. By the 17th and 18th centuries, 'paper' broadened metonymically to mean daily news periodicals ('newspaper'), formal academic treatises ('white paper', 'term paper'), and negotiable commercial documents ('commercial paper').",
+      "relatedLanguages": [
+        "French: papier",
+        "Spanish: papel",
+        "German: Papier",
+        "Italian: carta / papiro"
+      ],
+      "firstRecordedUse": "Early 14th century (c. 1325–1350 in Middle English administrative rolls and guild ledgers)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A manufactured sheet material composed of interlocking cellulose fibers derived from wood pulp, rags, or recycled plant matter, serving as the universal physical substrate for writing, printing, official documentation, packaging, and published periodicals.",
+      "spatialContext": "Corporate copy centers, document archives, desktop paper feed cassettes, print shops, mailrooms, registration tables, and newsstand displays.",
+      "temporalContext": "Used continuously during daily office administration; refilled into photocopiers during morning supply prep; archived for regulatory retention periods spanning multiple years.",
+      "emotionalTone": "Functional, tangible, authoritative, and practical.",
+      "formalityLevel": "neutral",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Native English speakers automatically differentiate between 'paper' as an uncountable substance and 'a paper' as a countable artifact. When referring to office supplies, 'paper' is non-count: you purchase 'a ream of paper' or grab 'a sheet of paper'. In contrast, 'a paper' denotes a specific publication: either a daily newspaper ('reading the morning paper') or a scholarly or professional research report ('a white paper on market trends'). Despite widespread digitization, native speakers still associate paper with tangible formality, legal validity ('wet-ink signature on paper'), and permanence.",
+      "mentalImage": "An office administrator loading a fresh 500-sheet ream of bright white 20-lb multi-purpose copy paper into the sliding cassette tray of a high-speed commercial multifunction printer.",
+      "whenToUse": "Use when referring to physical printer sheets, stationery, formal legal documents, published newspapers, academic monographs, or administrative forms (e.g., 'recycled printer paper', 'a ream of paper', 'the Sunday paper', 'present a conference paper').",
+      "whenNotToUse": "Do not use 'a paper' to mean a single blank sheet (use 'a piece of paper' or 'a sheet of paper'). Do not confuse with 'cardboard' or 'cardstock' (substantially thicker paperboard), or purely electronic documents unless modified as 'white paper' or 'concept paper'.",
+      "culturalContext": "Despite decades of corporate initiatives aiming for the 'paperless office', paper remains central to legal compliance, financial auditing, confidential voting, and formal contracts. High-rag-content bond paper with watermarks conveys institutional prestige and executive authority."
+    },
+    "examples": {
+      "daily": [
+        "Could you hand me a sheet of paper and a pen so I can write down the doctor's appointment details?",
+        "My neighbor still enjoys stepping out to the porch each morning to pick up the daily paper before breakfast.",
+        "Before painting the living room trim, we taped old newspapers and butcher paper over the baseboards."
+      ],
+      "business": [
+        "The procurement office ordered fifty cartons of certified recycled paper for the corporate document center.",
+        "Please confirm that the lower feed tray is stocked with legal-size paper before starting the contract print run.",
+        "The senior research analyst submitted a white paper examining renewable infrastructure financing in emerging markets."
+      ],
+      "conversation": [
+        "\"The second-floor copy machine is flashing an orange error indicator.\" \"Tray 1 is out of paper; there are several unopened reams on the shelf in the supply closet.\"",
+        "\"Did you see the editorial on urban development in this morning's paper?\" \"Yes, our planning director was interviewed regarding the new light-rail transit corridor.\"",
+        "\"Do we have the physical signed agreements on file?\" \"Yes, the original paper contracts with wet-ink signatures are locked in the legal compliance vault.\""
+      ],
+      "collocations": [
+        "ream of paper",
+        "printer paper",
+        "daily paper",
+        "paper tray",
+        "paper jam",
+        "recycled paper"
+      ]
+    },
+    "wordFamily": {
+      "noun": "paper, paperwork, paperweight, paperboy",
+      "verb": "paper",
+      "adjective": "paper, papery, paperback",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "office paper ream printer copy room stationery business",
+      "imageDescription": "Neat stacks of wrapped 500-sheet white paper reams beside an open photocopier paper drawer in a modern brightly lit corporate mailroom.",
+      "mnemonic": "PAPYRUS gave birth to PAPER: the ancient river reed pressed flat into crisp sheets for writing and printing."
+    },
+    "video": {
+      "description": "An industrial manufacturing overview showing an eco-certified paper mill processing wood pulp into massive paper rolls, followed by precision automated cutting into standard packaged office reams."
+    },
+    "toeicContext": {
+      "commonParts": [1, 3, 5, 7],
+      "exampleQuestion": "Due to high printing volume ahead of the fiscal audit, the facilities department ordered ten additional cases of multi-purpose copy _____ from the regional supplier.\n(A) paper\n(B) papers\n(C) papering\n(D) papery",
+      "tips": "In TOEIC business supply contexts, 'copy paper' functions as a compound noun where 'paper' is an uncountable mass noun denoting bulk printing material. Option (A) 'paper' correctly completes the phrase 'cases of multi-purpose copy paper'. Option (B) 'papers' refers to distinct documents, newspapers, or scholarly essays, (C) is a participle/verb form, and (D) is an adjective describing texture."
+    },
+    "synonyms": [
+      "stationery",
+      "stock",
+      "sheet",
+      "document",
+      "newspaper",
+      "white paper"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "ream",
+      "paperwork",
+      "photocopier",
+      "stationery",
+      "paper jam",
+      "wood pulp",
+      "document"
+    ]
+  },
+  {
+    "id": "comms-193",
+    "word": "photographer",
+    "partOfSpeech": ["noun"],
+    "category": "communications",
+    "level": "advanced",
+    "toeicFrequency": 7,
+    "pronunciation": {
+      "ipa": "/fəˈtɑː.ɡrə.fɚ/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/photographer--_us_1.mp3",
+      "syllableBreakdown": "pho-tog-ra-pher",
+      "stressPattern": "primary stress on the second syllable (pho-TOG-ra-pher)",
+      "commonMistakes": "This word exhibits a classic stress-shift trap in English morphology! In 'PHO-to' /ˈfoʊ.toʊ/ and 'PHO-to-graph' /ˈfoʊ.tə.ɡræf/, stress falls squarely on the first syllable. However, in 'pho-TOG-ra-pher' /fəˈtɑː.ɡrə.fɚ/, primary stress shifts to the second syllable, reducing the first syllable to a weak schwa /fə/. Learners frequently misplace stress on the initial syllable (*PHO-to-gra-pher*). In British English, the final syllable ends in an uninflected schwa /fə/, while in General American it is rhotic /fɚ/."
+    },
+    "etymology": {
+      "origin": "Formed in 19th-century English from 'photograph' + agent noun suffix '-er'. Rooted in Ancient Greek 'phôs' (φῶς, stem 'phōt-', meaning 'light') + 'gráphō' (γράφω, meaning 'to write, carve, inscribe').",
+      "rootWord": "Ancient Greek 'phôs' (light) + 'gráphein' (to write/draw) + English agent suffix '-er' (one who performs an action)",
+      "rootMeaning": "'One who draws or writes with light' — capturing optical images chemically on light-sensitive emulsions or electronically across digital sensor arrays.",
+      "evolution": "Coined in 1839 during the simultaneous emergence of the daguerreotype and calotype processes. Astronomer and chemist Sir John Herschel popularized the terms 'photography', 'photograph', and 'photographer' in scientific correspondence, displacing early rival designations like 'heliographer' or 'daguerreotypist'. Throughout the 19th and early 20th centuries, photographers operated as technical artisans mastering wet collodion plates and darkroom chemistry. The mid-20th-century development of compact 35mm film cameras and strobe lighting established commercial and press photography. In the 21st century, professional photographers utilize high-resolution digital cameras, calibrated tethered displays, and advanced studio strobe lighting for corporate branding and editorial publishing.",
+      "relatedLanguages": [
+        "French: photographe",
+        "Spanish: fotógrafo",
+        "German: Fotograf / Photograph",
+        "Italian: fotografo"
+      ],
+      "firstRecordedUse": "1839 (in correspondence and papers presented by Sir John Herschel to the Royal Society)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A professional practitioner or skilled visual artist who operates digital or film cameras, optical lenses, lighting equipment, and compositional framing to capture, edit, and produce photographic images for media, commercial advertising, corporate documentation, or fine art.",
+      "spatialContext": "Dedicated photo studios with cyclorama infinity walls, outdoor event press scrums, corporate boardrooms during executive portrait sessions, and location staging sets.",
+      "temporalContext": "Booked weeks in advance for corporate annual report shoots, scheduled during product launches and awards banquets, or dispatched on rapid notice to cover breaking news.",
+      "emotionalTone": "Creative, observant, meticulous, and technically adept.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Native English speakers make a sharp distinction between a casual person taking snapshots on a smartphone and a professional 'photographer'. Hiring a photographer represents an investment in technical craft (mastering aperture, shutter speed, ISO sensitivity, focal length, flash diffusion) and artistic composition. In business, corporate communications directors hire professional photographers to produce authentic, publication-grade imagery for annual reports, press releases, and executive profiles, avoiding sterile stock photos.",
+      "mentalImage": "A professional corporate photographer kneeling discreetly beside an executive podium, adjusting the focus ring on a telephoto lens to capture candid, expressive portraits during a company keynote.",
+      "whenToUse": "Use when identifying a person who takes photographs professionally, commercially, or artistically (e.g., 'freelance photographer', 'commercial photographer', 'press photographer', 'hire a photographer for the gala').",
+      "whenNotToUse": "Do not use for the camera hardware itself, nor confuse with 'videographer' or 'cinematographer' (who capture moving motion pictures), or 'graphic designer' (who creates typographic layouts and illustrations).",
+      "culturalContext": "In corporate branding and public relations, commissioned photography forms the visual identity of an organization. Executive headshots on LinkedIn, images in annual shareholder reports, and press coverage of groundbreaking ceremonies rely heavily on accredited professional photographers."
+    },
+    "examples": {
+      "daily": [
+        "We hired a portrait photographer to take pictures of the entire extended family during our summer reunion.",
+        "The wedding photographer spent an hour after the ceremony capturing couple portraits in the botanical garden.",
+        "As an amateur landscape photographer, Rachel wakes up before dawn to photograph mountain lakes in morning mist."
+      ],
+      "business": [
+        "The marketing department hired an experienced commercial photographer to shoot the new product line for the seasonal catalog.",
+        "Corporate communications engaged a freelance photographer to update executive headshots for the company website.",
+        "Accredited press photographers gathered in the designated press pen to capture the signing of the trade agreement."
+      ],
+      "conversation": [
+        "\"Have we confirmed all vendors for the annual awards dinner?\" \"Yes, the caterer, audio technician, and event photographer are all under contract.\"",
+        "\"Why is the executive boardroom closed off this morning?\" \"A commercial photographer is in there setting up studio lighting for the board members' portrait session.\"",
+        "\"Did you review the proofs from the product shoot?\" \"Yes, the photographer captured the metallic finish and clean lines of the new model perfectly.\""
+      ],
+      "collocations": [
+        "freelance photographer",
+        "commercial photographer",
+        "press photographer",
+        "event photographer",
+        "hire a photographer",
+        "award-winning photographer"
+      ]
+    },
+    "wordFamily": {
+      "noun": "photographer, photograph, photography, photos, photoshoot",
+      "verb": "photograph",
+      "adjective": "photographic, photogenic",
+      "adverb": "photographically"
+    },
+    "visual": {
+      "imageKeyword": "professional photographer camera lens tripod studio lighting shoot",
+      "imageDescription": "A professional photographer adjusting a prime camera lens mounted on a tripod with umbrella softbox lighting in an executive portrait studio.",
+      "mnemonic": "PHOTO (light) + GRAPH (write/draw) + ER (person): A PHOTOGRAPHER is a person who writes with light using a camera."
+    },
+    "video": {
+      "description": "A behind-the-scenes commercial photography documentary showing an editorial photographer directing lighting assistants and subjects during an on-location corporate advertising shoot."
+    },
+    "toeicContext": {
+      "commonParts": [1, 3, 5, 7],
+      "exampleQuestion": "The public relations department contracted an award-winning _____ to document the ribbon-cutting ceremony at the new regional headquarters.\n(A) photographic\n(B) photography\n(C) photographer\n(D) photographically",
+      "tips": "TOEIC Part 5 tests derivational morphology distinguishing between human agent nouns, abstract fields, and modifiers. Preceded by the indefinite article 'an' and the compound adjective 'award-winning', and followed by an infinitive phrase of purpose ('to document the ceremony'), the blank requires a singular human count noun. Choice (C) 'photographer' correctly identifies the professional. (A) is an adjective, (B) is the abstract discipline or collection of pictures (non-count), and (D) is an adverb."
+    },
+    "synonyms": [
+      "photojournalist",
+      "cameraman",
+      "lensman",
+      "portraitist",
+      "camera operator",
+      "shutterbug"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "photography",
+      "camera",
+      "lens",
+      "photoshoot",
+      "shutter speed",
+      "aperture",
+      "darkroom",
+      "exposure"
+    ]
+  },
+  {
+    "id": "comms-194",
+    "word": "photojournalism",
+    "partOfSpeech": ["noun"],
+    "category": "communications",
+    "level": "advanced",
+    "toeicFrequency": 7,
+    "pronunciation": {
+      "ipa": "/ˌfoʊ.toʊˈdʒɝː.nə.lɪz.əm/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/photojournalism--_us_1.mp3",
+      "syllableBreakdown": "pho-to-jour-nal-ism",
+      "stressPattern": "secondary stress on the first syllable, primary stress on the third syllable (pho-to-JOUR-nal-ism)",
+      "commonMistakes": "Learners frequently stumble over the five-syllable structure (pho-to-jour-nal-ism) and misplace primary stress on 'photo' (*PHO-to-journalism*) instead of the third syllable /dʒɝː/. In American English, the vowel in 'jour-' is the rhotic nurse vowel /ɝː/, whereas in British English it is /ɜː/. Learners also frequently fail to voice the final /z/ sound in '-ism', mispronouncing it as an unvoiced /s/ (*-is-um*)."
+    },
+    "etymology": {
+      "origin": "Compound noun formed from the combining element 'photo-' (from Ancient Greek 'phôs', stem 'phōt-', light) + 'journalism' (from Old French 'journal', meaning daily publication, from Latin 'diurnālis', daily, from 'diēs', day).",
+      "rootWord": "Ancient Greek 'phôs' (light) + Latin 'diurnālis' (daily) via French 'journal' + suffix '-ism' (system, practice, discipline)",
+      "rootMeaning": "'The practice of daily news reporting through light-captured images' — creating timely photographic narratives for public news dissemination.",
+      "evolution": "While early war reportage emerged in the 1850s (Roger Fenton in the Crimea, Mathew Brady in the American Civil War), the formal term 'photojournalism' was coined in the late 1930s in the United States, popularized by journalism educator Frank Luther Mott and Cliff Edom, who established the first university curriculum in photojournalism at the University of Missouri in 1942. The discipline entered a golden era between the 1930s and 1970s through illustrated news magazines like Life, Look, and National Geographic, and agencies like Magnum Photos. In the modern era, photojournalism is codified by strict professional ethics (such as the National Press Photographers Association code), strictly banning staging, posing, or digital cloning of news scenes.",
+      "relatedLanguages": [
+        "French: photojournalisme",
+        "Spanish: fotoperiodismo",
+        "German: Fotojournalismus / Bildjournalismus",
+        "Italian: fotogiornalismo"
+      ],
+      "firstRecordedUse": "Circa 1938–1942 (American journalistic academia and press photography associations)"
+    },
+    "deepMeaning": {
+      "coreConcept": "The journalistic discipline and professional practice of reporting news, current events, and human interest stories through candid, documentary still photography, adhering strictly to editorial ethics of factual truth, authenticity, and non-manipulation.",
+      "spatialContext": "Editorial bullpen picture desks, field assignments in conflict zones or disaster recovery sites, international press wire bureaus (AP, Reuters, AFP), and museum documentary exhibits.",
+      "temporalContext": "Paced by rapid breaking news deadlines, daily press printing schedules, and multi-month investigative documentary photo essays.",
+      "emotionalTone": "Compelling, poignant, objective, evocative, and uncompromising.",
+      "formalityLevel": "formal",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Native speakers regard 'photojournalism' as a serious branch of journalism, sharply separated from advertising, commercial, or fashion photography. While commercial photography aims to market a product through staged lighting and retouched perfection, photojournalism is dedicated to bearing witness to unscripted reality. Native speakers associate photojournalism with courageous field reporting, historical documentation, and uncompromising ethics: staging an event or photoshopping an element out of a news picture leads to immediate dismissal and professional disgrace.",
+      "mentalImage": "A press photojournalist with two weather-sealed cameras strapped across her chest crouching behind a safety barrier at a major international summit, focusing intently on world leaders reacting during unscripted negotiations.",
+      "whenToUse": "Use when discussing news photography, documentary photo essays, press reporting through images, Pulitzer Prize-winning press coverage, or journalistic ethics in visual media (e.g., 'a career in photojournalism', 'the ethics of photojournalism', 'exhibition of award-winning photojournalism').",
+      "whenNotToUse": "Do not use for commercial product photography, fashion modeling shoots, studio portrait sessions, wedding photography, or personal social media photography (use 'commercial photography', 'fashion photography', 'portraiture', or 'travel photography').",
+      "culturalContext": "Photojournalism has played a pivotal role in modern civic life, creating iconic images that defined the Civil Rights Movement, the Vietnam War, and natural crises. Prestigious honors like the Pulitzer Prize for Feature Photography and World Press Photo celebrate visual journalism that exposes injustice and informs the global public."
+    },
+    "examples": {
+      "daily": [
+        "The municipal art museum is showcasing an exhibition on twentieth-century photojournalism featuring iconic historical images.",
+        "Her interest in photojournalism developed while documenting community conservation efforts for her college newspaper.",
+        "I spent the evening reading a coffee-table book celebrating eighty years of international photojournalism."
+      ],
+      "business": [
+        "The international news agency expanded its operational grant for investigative photojournalism focusing on global supply chain vulnerabilities.",
+        "The publishing company established clear editorial guidelines to uphold authenticity and prevent artificial intelligence alterations in its photojournalism.",
+        "A senior wire service editor delivered a presentation on how real-time mobile transmission is reshaping modern photojournalism."
+      ],
+      "conversation": [
+        "\"Did you see the photo essay on community healthcare clinics in Sunday's paper?\" \"Yes, it was a remarkable piece of photojournalism that told the story far better than text alone could.\"",
+        "\"Why was that photographer's contest submission disqualified?\" \"The judges discovered he digitally cloned out an electrical wire in the background, violating core photojournalism ethics.\"",
+        "\"Is the journalism department introducing new electives next semester?\" \"Yes, they are adding an advanced course on photojournalism and visual ethics in breaking news.\""
+      ],
+      "collocations": [
+        "investigative photojournalism",
+        "contemporary photojournalism",
+        "ethics of photojournalism",
+        "award-winning photojournalism",
+        "documentary photojournalism",
+        "field of photojournalism"
+      ]
+    },
+    "wordFamily": {
+      "noun": "photojournalism, photojournalist, journalism, journalist, photo",
+      "verb": "",
+      "adjective": "photojournalistic, journalistic",
+      "adverb": "photojournalistically, journalistically"
+    },
+    "visual": {
+      "imageKeyword": "photojournalism documentary press photographer camera press pass news",
+      "imageDescription": "A photojournalist wearing a media press credential around his neck, holding a dual-camera harness while reviewing raw documentary images on his camera display amid a crowded press briefing.",
+      "mnemonic": "PHOTO (light images) + JOURNALISM (truthful news reporting) = PHOTOJOURNALISM: Telling the raw, unfiltered truth of news stories through photographs."
+    },
+    "video": {
+      "description": "A documentary profile examining the work of Pulitzer Prize-winning photojournalists in the field, detailing how they capture historical moments while adhering to strict ethical codes of non-manipulation."
+    },
+    "toeicContext": {
+      "commonParts": [4, 6, 7],
+      "exampleQuestion": "The metropolitan newspaper won a prestigious national media award for its exceptional _____ highlighting community rebuilding efforts following the natural disaster.\n(A) photojournalism\n(B) photojournalist\n(C) photojournalistic\n(D) photojournalistically",
+      "tips": "TOEIC Part 5 tests derivational suffixes distinguishing between abstract disciplines and human practitioners. Modified by the possessive determiner 'its' and the adjective 'exceptional', and functioning as the direct object of 'won', the blank requires a non-count abstract noun designating the journalistic work or field: (A) 'photojournalism'. Option (B) 'photojournalist' refers to an individual person (which would require an article 'an exceptional photojournalist' if singular, but the sentence describes what the publication produced and won an award for). Options (C) and (D) are adjective and adverb forms."
+    },
+    "synonyms": [
+      "documentary photography",
+      "press photography",
+      "visual journalism",
+      "news photography",
+      "editorial photography",
+      "candid reportage"
+    ],
+    "antonyms": [
+      "commercial photography",
+      "advertising photography",
+      "staged photography",
+      "fashion photography"
+    ],
+    "relatedWords": [
+      "photojournalist",
+      "press pass",
+      "photo essay",
+      "documentary",
+      "editorial",
+      "Pulitzer Prize",
+      "wire service"
+    ]
+  }
+]
+
+# Validation assertions
+required_word_keys = [
+  "id", "word", "partOfSpeech", "category", "level", "toeicFrequency",
+  "pronunciation", "etymology", "deepMeaning", "nativeMindset",
+  "examples", "wordFamily", "visual", "video", "toeicContext",
+  "synonyms", "antonyms", "relatedWords"
+]
+
+required_pronunciation_keys = ["ipa", "syllableBreakdown", "stressPattern", "commonMistakes"]
+required_etymology_keys = ["origin", "rootWord", "rootMeaning", "evolution", "relatedLanguages", "firstRecordedUse"]
+required_deepMeaning_keys = ["coreConcept", "spatialContext", "temporalContext", "emotionalTone", "formalityLevel", "connotation"]
+required_nativeMindset_keys = ["howNativesThink", "mentalImage", "whenToUse", "whenNotToUse", "culturalContext"]
+required_examples_keys = ["daily", "business", "conversation", "collocations"]
+required_visual_keys = ["imageKeyword", "imageDescription", "mnemonic"]
+required_video_keys = ["description"]
+required_toeicContext_keys = ["commonParts", "exampleQuestion", "tips"]
+
+banned_patterns = ["... factor", "factor", "manage the...", "documentation for... is ready for the board meeting"]
+
+for idx, word_entry in enumerate(words_data):
+    w = word_entry["word"]
+    print(f"Validating word {idx+1}: {w} ({word_entry['id']})...")
+    for key in required_word_keys:
+        assert key in word_entry, f"Missing {key} in word {idx}: {w}"
+    for k in required_pronunciation_keys:
+        assert k in word_entry["pronunciation"], f"Missing {k} in pronunciation of {w}"
+    for k in required_etymology_keys:
+        assert k in word_entry["etymology"], f"Missing {k} in etymology of {w}"
+    for k in required_deepMeaning_keys:
+        assert k in word_entry["deepMeaning"], f"Missing {k} in deepMeaning of {w}"
+    for k in required_nativeMindset_keys:
+        assert k in word_entry["nativeMindset"], f"Missing {k} in nativeMindset of {w}"
+    for k in required_examples_keys:
+        assert k in word_entry["examples"], f"Missing {k} in examples of {w}"
+    for k in required_visual_keys:
+        assert k in word_entry["visual"], f"Missing {k} in visual of {w}"
+    for k in required_video_keys:
+        assert k in word_entry["video"], f"Missing {k} in video of {w}"
+    for k in required_toeicContext_keys:
+        assert k in word_entry["toeicContext"], f"Missing {k} in toeicContext of {w}"
+    
+    assert len(word_entry["examples"]["daily"]) == 3, f"daily examples must be exactly 3 for {w}"
+    assert len(word_entry["examples"]["business"]) == 3, f"business examples must be exactly 3 for {w}"
+    assert len(word_entry["examples"]["conversation"]) >= 2, f"conversation examples must be >= 2 for {w}"
+    assert len(word_entry["examples"]["collocations"]) >= 5, f"collocations must be >= 5 for {w}"
+    assert 4 <= len(word_entry["synonyms"]) <= 6, f"synonyms must be 4-6 for {w}"
+    assert 5 <= len(word_entry["relatedWords"]) <= 8, f"relatedWords must be 5-7 (or 8) for {w}"
+    assert word_entry["deepMeaning"]["formalityLevel"] in ["formal", "neutral", "informal"]
+    assert word_entry["deepMeaning"]["connotation"] in ["positive", "neutral", "negative"]
+
+    # Check for placeholder strings
+    entry_str = json.dumps(word_entry)
+    for bp in banned_patterns:
+        if bp in entry_str:
+            raise ValueError(f"Found banned pattern '{bp}' in entry for {w}")
+
+print("All 4 entries passed comprehensive validation!")
+
+# Save to scratch/comms_191_194.json
+with open('scratch/comms_191_194.json', 'w', encoding='utf-8') as f:
+    json.dump({"words": words_data}, f, indent=2, ensure_ascii=False)
+
+print("Saved to scratch/comms_191_194.json")
+
+# Update communications.ts
+with open('src/data/vocabulary/communications.ts', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+idx191 = content.find('  {\n      "id": "comms-191"')
+if idx191 == -1:
+    idx191 = content.find('  {\n    "id": "comms-191"')
+if idx191 == -1:
+    idx191 = content.find('"comms-191"')
+    idx191 = content.rfind('  {', 0, idx191)
+
+idx195 = content.find('  {\n      "id": "comms-195"')
+if idx195 == -1:
+    idx195 = content.find('  {\n    "id": "comms-195"')
+if idx195 == -1:
+    idx195 = content.find('"comms-195"')
+    idx195 = content.rfind('  {', 0, idx195)
+
+print(f"Targeting range in communications.ts: {idx191} to {idx195}")
+assert idx191 != -1 and idx195 != -1, "Could not find comms-191 or comms-195 in communications.ts"
+
+# Format new entries
+formatted_entries = []
+for word_entry in words_data:
+    entry_json = json.dumps(word_entry, indent=4, ensure_ascii=False)
+    # indent by 2 spaces to match existing file indentation
+    indented = "\n".join("  " + line for line in entry_json.splitlines())
+    formatted_entries.append(indented)
+
+new_block = ",\n".join(formatted_entries) + ",\n"
+
+updated_content = content[:idx191] + new_block + content[idx195:]
+
+with open('src/data/vocabulary/communications.ts', 'w', encoding='utf-8') as f:
+    f.write(updated_content)
+
+print("Updated communications.ts successfully!")

@@ -1,0 +1,450 @@
+[
+  {
+    "id": "dining-165",
+    "word": "ice",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+      "ipa": "/a\u026as/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/ice--_us_1.mp3",
+      "syllableBreakdown": "ice",
+      "stressPattern": "\u25cf",
+      "commonMistakes": "Learners sometimes devoice or truncate the diphthong /a\u026a/ or mistakenly voice the final consonant into /a\u026az/ (which sounds like 'eyes'). The final /s/ must remain a sharp, voiceless alveolar fricative. In food and beverage service, distinguish carefully between 'ice' (the frozen water cubes) and 'iced' (the past participle/adjective used in 'iced tea' or 'iced coffee')."
+    },
+    "etymology": {
+      "origin": "Middle English is, from Old English \u012bs ('ice'), from Proto-Germanic *\u012bs\u0105 ('ice'), from Proto-Indo-European *eyH- / *h\u2081eys- ('ice, frost').",
+      "rootWord": "\u012bs",
+      "rootMeaning": "frozen water, frost, or solid cold sheet",
+      "evolution": "Inherited from Proto-Germanic into Old English as \u012bs, remaining phonetically and semantically stable throughout Middle English. In the 18th and 19th centuries, the commercial natural ice trade revolutionized international food preservation, shipping frozen blocks cut from northern lakes to worldwide ports. With 20th-century refrigeration, 'ice' became indispensable in hospitality, dining, beverage presentation, and culinary seafood displays.",
+      "relatedLanguages": [
+        "German: Eis",
+        "Dutch: ijs",
+        "Old Norse: \u00edss",
+        "Danish: is",
+        "Swedish: is"
+      ],
+      "firstRecordedUse": "Before the 9th century (Old English legal, poetic, and gloss texts, c. 890)"
+    },
+    "deepMeaning": {
+      "coreConcept": "Water frozen into a crystalline solid state at or below 0\u00b0C (32\u00b0F), utilized in dining and food service to chill beverages, preserve perishable seafood and raw bar platters, maintain banquet buffet temperatures, and produce frozen desserts.",
+      "spatialContext": "Commercial ice machine dispensers behind restaurant bars, stainless-steel cocktail service wells, salad bar cold tables, refrigerated display beds for raw oysters, and banquet buffet beverage stations.",
+      "temporalContext": "Continuous replenishment during busy dinner services, routine morning sanitization of ice machines, and pre-event setup for corporate cocktail hours.",
+      "emotionalTone": "Refreshing, crisp, functional, and hygienic.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "In North American dining culture, a glass of water or soft drink is served loaded with ice by default; receiving room-temperature water without ice is often viewed as an oversight unless specifically requested ('no ice' or 'room temperature'). In European dining, conversely, ice is often used more sparingly (one or two cubes). Natives also associate clean, clear ice with hygiene, premium craft cocktail culture (e.g., clear artisanal ice cubes vs. cloudy dispenser ice), and proper food safety when displaying raw seafood on crushed ice.",
+      "mentalImage": "A bartender using stainless-steel tongs to drop solid, crystal-clear cubes of ice into a highball glass, listening to the sharp clink as tonic water fizzes around a lime wedge at a hotel lounge bar.",
+      "whenToUse": "Use when referring to frozen water in beverages, food preservation beds (crushed ice under shellfish), kitchen ice baths for blanching vegetables, or hotel ice dispensers.",
+      "whenNotToUse": "Do not confuse with 'frost' (frozen ambient moisture), 'hail' (atmospheric precipitation pellets), or 'glaze' (thin sugar icing on pastries). Also avoid confusing the noun 'ice' with the participial adjective 'iced' when ordering (say 'iced tea', not 'ice tea' in formal menus, though spoken English often blends them).",
+      "culturalContext": "In corporate hospitality, providing abundant clean ice and functioning ice machines is considered a fundamental guest amenity in hotels and convention centers. In culinary arts, an 'ice bath' (a bowl of ice water) is a mandatory technique to shock blanched green vegetables and preserve their vibrant color."
+    },
+    "examples": {
+      "daily": [
+        "The waiter promptly brought a tall glass of sparkling water with lemon and plenty of ice.",
+        "Before serving the white wine at our family picnic, we placed the bottle in an insulated bucket filled with ice and water.",
+        "After blanching the green beans for two minutes, plunge them immediately into a bowl of ice to preserve their crisp texture and bright green color."
+      ],
+      "business": [
+        "The hotel banquet captain requested an extra fifty pounds of crushed ice to prepare the seafood buffet display for the gala reception.",
+        "Health inspectors issued a citation because the catering kitchen failed to maintain adequate sanitization logs for the commercial ice machine.",
+        "During the summer convention, beverage concessions experienced delays when the main ice maker in the exhibition hall malfunctioned."
+      ],
+      "conversation": [
+        "\"Would you prefer your iced Americano with light ice or regular ice?\" / \"Light ice, please, and could you add a splash of oat milk?\"",
+        "\"The ice machine on the fourth floor of the conference center seems to be jammed.\" / \"I will contact facilities management right away to have a technician inspect it before the afternoon session.\"",
+        "\"How much ice should we order for the rooftop cocktail networking mixer?\" / \"Catering guidelines recommend allocating at least one and a half pounds of ice per guest for a three-hour event.\""
+      ],
+      "collocations": [
+        "crushed ice",
+        "ice bucket",
+        "ice machine",
+        "ice cubes",
+        "on the rocks (with ice)",
+        "ice bath"
+      ]
+    },
+    "wordFamily": {
+      "noun": "ice",
+      "verb": "ice",
+      "adjective": "icy",
+      "adverb": "icily"
+    },
+    "visual": {
+      "imageKeyword": "crystal clear ice cubes glass beverage restaurant bar cocktail refreshing",
+      "imageDescription": "Crisp, transparent square ice cubes splashing into a sweating glass tumbler filled with sparkling water, garnished with a fresh lime wheel and mint sprig on a slate bar counter.",
+      "mnemonic": "ICE is pure H2O frozen COLD: In Cocktails and Escoffier's kitchen, Ice Chills Everything!"
+    },
+    "video": {
+      "description": "A culinary hospitality training video demonstrating proper food safety procedures for handling commercial ice, including scoop sanitation, ice machine maintenance, and raw seafood bed temperature control."
+    },
+    "toeicContext": {
+      "commonParts": [
+        1,
+        3,
+        4,
+        7
+      ],
+      "exampleQuestion": "Due to a technical failure in the kitchen's commercial _____ machine, banquet staff had to purchase bagged cubes from an outside vendor for the luncheon. (A) ice (B) iced (C) icily (D) icy",
+      "tips": "The blank appears before the noun 'machine' to form a compound noun ('ice machine'\u2014a machine that produces ice). While 'iced' is an adjective modifying beverages (iced tea), 'ice' functions as an attributive noun specifying the appliance's function: (A) ice. Choices (C) and (D) are adverb and adjective forms describing temperature or demeanor."
+    },
+    "synonyms": [
+      "frozen water",
+      "ice cubes",
+      "crushed ice",
+      "cube ice",
+      "block ice"
+    ],
+    "antonyms": [
+      "steam",
+      "boiling water"
+    ],
+    "relatedWords": [
+      "ice maker",
+      "beverage",
+      "chilling",
+      "refrigeration",
+      "cooler",
+      "tongs",
+      "condiment"
+    ]
+  },
+  {
+    "id": "dining-166",
+    "word": "ice cream",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/\u02c8a\u026as kri\u02d0m/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/ice_cream--_us_1.mp3",
+      "syllableBreakdown": "ice cream",
+      "stressPattern": "\u25cf\u25cf",
+      "commonMistakes": "Learners often put primary stress exclusively on the second word 'cream' instead of stressing 'ice' (/\u02c8a\u026as kri\u02d0m/), which is standard for English compound nouns. Some also pronounce 'cream' with a short vowel /\u026a/ instead of the tense, long high-front vowel /i\u02d0/."
+    },
+    "etymology": {
+      "origin": "Early modern English compound, shortened from 'iced cream' (first recorded in the late 17th century), combining 'iced' (from Old English \u012bsian, 'to freeze') and 'cream' (from Old French cresme, from Late Latin cr\u0101ma).",
+      "rootWord": "iced + cream",
+      "rootMeaning": "cream sweetened and frozen or chilled with ice and salt",
+      "evolution": "Originally termed 'iced cream' in the court of King Charles II of England (c. 1670s) and elite French confectionery, referring to a luxury confection of sweetened cream frozen using salt and ice baths. By the mid-18th century in colonial North America and Great Britain, the participial ending '-ed' was phonetically elided in speech, standardizing the compound as 'ice cream'. The invention of the hand-cranked freezer by Nancy Johnson in 1843 and commercial industrial refrigeration transformed it from an aristocratic delicacy into a ubiquitous international dessert.",
+      "relatedLanguages": [
+        "French: cr\u00e8me glac\u00e9e",
+        "Spanish: helado",
+        "Italian: gelato",
+        "German: Eiscreme",
+        "Portuguese: sorvete"
+      ],
+      "firstRecordedUse": "Late 17th century (as 'iced cream' in 1671; as 'ice cream' in 1744 by William Black in Virginia)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A rich, sweetened frozen dairy dessert made by churning cream or milk with sugar, flavorings (such as vanilla, cocoa, or fruit), and air, yielding a smooth, scoopable emulsion enjoyed as a standalone treat or dessert accompaniment.",
+      "spatialContext": "Restaurant pastry stations, artisanal gelato parlor display freezers, hotel dessert buffet carts, banquet plating lines, and commercial refrigerated scoop tubs.",
+      "temporalContext": "Post-dinner dessert orders, afternoon break refreshments during summer corporate retreats, and children's event catering menus.",
+      "emotionalTone": "Indulgent, delightful, celebratory, and comforting.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Native speakers view ice cream as the quintessential reward, comfort food, or celebratory dessert. In dining contexts, it is frequently served '\u00e0 la mode' (perched atop warm fruit pie, brownie, or cobbler). In corporate or team-building environments, an 'ice cream social' is a recognized informal workplace event where employees gather for sundaes to boost morale on warm summer afternoons. High-end diners scrutinize overrun (the amount of incorporated air), butterfat content (artisanal vs. mass-market), and flavor integrity (e.g., Madagascar vanilla bean).",
+      "mentalImage": "A pastry chef using a warm mechanical scoop to form a perfect, glistening sphere of Madagascar vanilla bean ice cream, gently placing it over a warm molten chocolate lava cake dusted with cocoa powder.",
+      "whenToUse": "Use when referring to frozen churned dairy desserts, parlor menu selections, dessert catering, or dessert accompaniments ('served with vanilla ice cream').",
+      "whenNotToUse": "Do not confuse with 'sorbet' or 'water ice' (dairy-free frozen fruit puree), 'sherbet' (contains minimal dairy and fruit acid), or 'frozen yogurt' (churned cultured milk with tangy flavor). In legal definitions, dairy desserts with low butterfat cannot be labeled 'ice cream' in many jurisdictions (they are labeled 'frozen dairy dessert').",
+      "culturalContext": "The 'ice cream social' is a classic American cultural and corporate institution used by schools, universities, and corporate HR departments as a welcoming or celebratory mixer. Additionally, high butterfat content (at least 10% in the US) is legally mandated for products labeled 'ice cream'."
+    },
+    "examples": {
+      "daily": [
+        "For dessert, the bistro served warm apple tart topped with a scoop of cinnamon ice cream.",
+        "On hot summer weekends, long queues form outside the neighborhood's artisanal ice cream shop.",
+        "We bought a tub of mint chocolate chip ice cream from the grocery store to share after dinner."
+      ],
+      "business": [
+        "Human Resources hosted an afternoon ice cream social in the courtyard to welcome the summer interns and celebrate reaching our quarterly sales goal.",
+        "The restaurant group negotiated a wholesale contract with a local organic dairy farm to supply premium artisanal ice cream for all four downtown venues.",
+        "Due to temperature fluctuations during transit, the frozen foods distributor had to refund an entire shipment of gourmet ice cream."
+      ],
+      "conversation": [
+        "\"Would you care for dessert this evening? Our molten chocolate cake comes with homemade hazelnut ice cream.\" / \"That sounds wonderful, please bring two spoons so we can share.\"",
+        "\"Did the catering service include non-dairy alternatives for the dessert table?\" / \"Yes, alongside traditional dairy ice cream, they are providing oat milk strawberry and coconut chocolate scoops.\"",
+        "\"Why is the freezer in the employee lounge unplugged?\" / \"The compressor failed overnight, so unfortunately all the ice cream sandwiches melted.\""
+      ],
+      "collocations": [
+        "scoop of ice cream",
+        "vanilla ice cream",
+        "artisanal ice cream",
+        "ice cream parlor",
+        "ice cream social",
+        "homemade ice cream"
+      ]
+    },
+    "wordFamily": {
+      "noun": "ice cream",
+      "adjective": "ice-cream"
+    },
+    "visual": {
+      "imageKeyword": "scoop vanilla ice cream cone dessert waffle artisan pastry",
+      "imageDescription": "A mouthwatering double scoop of artisanal vanilla bean and salted caramel ice cream perched on a golden waffle cone, slightly melting in the warm sunlight.",
+      "mnemonic": "ICE + CREAM: I scream, you scream, we all scream for ICE CREAM! Cream chilled into frozen bliss!"
+    },
+    "video": {
+      "description": "A behind-the-scenes culinary documentary showing a master pastry chef churn fresh organic cream, egg yolks, and Tahitian vanilla beans in a batch freezer to produce silky artisanal ice cream."
+    },
+    "toeicContext": {
+      "commonParts": [
+        3,
+        4,
+        7
+      ],
+      "exampleQuestion": "To celebrate the successful launch of the software update, management organized an afternoon _____ social in the cafeteria for all department employees. (A) ice cream (B) icy cream (C) creamed ice (D) icing cream",
+      "tips": "The correct established compound noun is 'ice cream', which acts here as a noun adjunct modifying 'social' ('an ice cream social'\u2014a common corporate gathering). Choices (B), (C), and (D) are unidiomatic or invented variations that do not reflect standard business English usage."
+    },
+    "synonyms": [
+      "frozen custard",
+      "gelato",
+      "frozen dessert",
+      "soft serve",
+      "dairy dessert"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "sorbet",
+      "gelato",
+      "sundae",
+      "parlor",
+      "dairy",
+      "dessert",
+      "churn"
+    ]
+  },
+  {
+    "id": "dining-167",
+    "word": "jam",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+      "ipa": "/d\u0292\u00e6m/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/jam--_us_1.mp3",
+      "syllableBreakdown": "jam",
+      "stressPattern": "\u25cf",
+      "commonMistakes": "Learners sometimes confuse the initial voiced postalveolar affricate /d\u0292/ with the unvoiced affricate /t\u0283/ (sounding like 'cham') or the palatal glide /j/ (sounding like 'yam'). Ensure the initial sound is voiced with tongue contact on the alveolar ridge, followed by the flat short /\u00e6/ vowel."
+    },
+    "etymology": {
+      "origin": "Early 18th-century English, probably derived from the verb jam ('to press tightly, squeeze, crush'), of imitative or Scandinavian origin (compare Low German dammen, or dialectal cram).",
+      "rootWord": "jam (verb: to squeeze or crush)",
+      "rootMeaning": "fruit pressed, crushed, or boiled down into a thick pulp with sugar",
+      "evolution": "Appearing first in the early 1700s, the culinary noun 'jam' arose from the process of crushing and boiling whole berries or stone fruits with cane sugar and pectin into a spreadable preserve. The domestic and commercial canning revolution of the 19th century made shelf-stable fruit jams an essential staple of British breakfast tea and American breakfast spreads.",
+      "relatedLanguages": [
+        "French: confiture",
+        "Spanish: mermelada",
+        "Italian: marmellata / confettura",
+        "German: Marmelade / Konfit\u00fcre",
+        "Portuguese: geleia / compota"
+      ],
+      "firstRecordedUse": "First recorded in culinary writing around 1730\u20131740 (e.g., Lady Mary Wortley Montagu and 18th-century domestic recipe collections)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A thick, sweet culinary preserve made by boiling crushed whole fruit or pulp with sugar and pectin until gelatinized, commonly spread on toast, scones, pastries, or bread, or used as a filling in baked goods.",
+      "spatialContext": "Hotel continental breakfast buffets, bakery condiment stations, restaurant morning prep counters, grocery condiment aisles, and afternoon tea service tables.",
+      "temporalContext": "Early morning continental breakfast hours (6:30 AM \u2013 10:00 AM), afternoon tea services (3:00 PM \u2013 5:00 PM), and morning bakery production schedules.",
+      "emotionalTone": "Homely, sweet, comforting, and wholesome.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "In dining and breakfast culture, native speakers immediately associate jam with breakfast spreads\u2014toast, English muffins, bagels, or British scones with clotted cream and jam. Distinctions between fruit spreads matter: 'jam' contains crushed fruit pulp and seeds, 'jelly' is made from strained clear fruit juice and is smooth and translucent, 'marmalade' contains citrus juice and bitter peel, and 'preserves' contain larger chunks of whole fruit. Beyond dining, natives recognize idioms like 'traffic jam' or 'paper jam', but in culinary contexts, it evokes sweet fruit preserves.",
+      "mentalImage": "A glass ramekin of vibrant ruby-red raspberry jam with visible fruit seeds sitting on a white porcelain breakfast tray next to a warm, golden-brown toasted croissant and a butter knife.",
+      "whenToUse": "Use when discussing fruit spreads, breakfast condiment selections, hotel buffet amenities, bakery fillings (e.g., jam-filled donuts or tarts), or pantry grocery items.",
+      "whenNotToUse": "Do not confuse with 'jelly' (made from strained clear juice with gelatin/pectin, without pulp or seeds), 'marmalade' (specifically citrus-based with rind), or 'chutney' (savory/spiced fruit preserve cooked with vinegar and spices). Outside dining, avoid using it when referring to mechanical stoppages unless clear context (like 'paper jam') is intended.",
+      "culturalContext": "In traditional British afternoon tea, the order of spreading clotted cream and jam on a scone is a famous cultural debate (Devon method spreads cream first, then jam; Cornish method spreads jam first, then cream). In corporate hotel catering, providing individual miniature jars of branded fruit jam (e.g., Bonne Maman) signals high quality on breakfast trays."
+    },
+    "examples": {
+      "daily": [
+        "He spread a generous layer of homemade strawberry jam across a warm slice of sourdough toast.",
+        "The breakfast tray arrived with warm pastries, salted butter, and small jars of apricot and blackberry jam.",
+        "In traditional afternoon tea, fresh scones are served warm with clotted cream and strawberry jam."
+      ],
+      "business": [
+        "The hotel's catering department upgraded its continental breakfast offerings by replacing bulk plastic dispensers with individual glass jars of organic fruit jam.",
+        "The specialty food distributor reported strong fourth-quarter sales growth driven by premium artisanal jams and fruit preserves.",
+        "During the morning conference break, hotel staff promptly refilled the bakery condiment station with fresh butter, honey, and assorted jams."
+      ],
+      "conversation": [
+        "\"Would you like marmalade or strawberry jam with your morning croissant?\" / \"Strawberry jam, please, and an extra pat of unsalted butter if you have it.\"",
+        "\"Did the banquet order specify single-serve condiments for the executive breakfast buffet?\" / \"Yes, we placed mini jars of blueberry and raspberry jam at each place setting.\"",
+        "\"What kind of filling is inside these breakfast pastries?\" / \"Those are Danish pastries filled with sweetened cream cheese and apricot jam.\""
+      ],
+      "collocations": [
+        "strawberry jam",
+        "raspberry jam",
+        "jar of jam",
+        "spread jam",
+        "homemade jam",
+        "fruit jam"
+      ]
+    },
+    "wordFamily": {
+      "noun": "jam",
+      "verb": "jam",
+      "adjective": "jammy"
+    },
+    "visual": {
+      "imageKeyword": "strawberry jam glass jar spoon toast breakfast croissant preserve",
+      "imageDescription": "A rustic glass jar of glistening strawberry jam with a vintage spoon resting inside, next to golden slices of toasted brioche and fresh ripe strawberries on a wooden cutting board.",
+      "mnemonic": "JAM: You JAM fruit tightly into a pot and boil it down until it becomes delicious spreadable JAM!"
+    },
+    "video": {
+      "description": "An artisanal food production video showcasing how fresh organic berries are simmered with natural cane sugar and apple pectin in copper cauldrons, then poured into glass jars to create traditional jam."
+    },
+    "toeicContext": {
+      "commonParts": [
+        1,
+        3,
+        7
+      ],
+      "exampleQuestion": "Complimentary breakfast at the executive suites includes fresh pastries, seasonal fruit, and a selection of gourmet fruit _____ imported from France. (A) jams (B) jamming (C) jammier (D) jammer",
+      "tips": "The blank is modified by the compound adjective phrase 'gourmet fruit' and preceded by 'a selection of', requiring a plural count noun representing condiment varieties: (A) jams. Choice (B) is a participle/gerund, (C) is a comparative adjective, and (D) is an agent noun."
+    },
+    "synonyms": [
+      "preserve",
+      "fruit spread",
+      "confiture",
+      "jelly",
+      "marmalade",
+      "compote"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "pectin",
+      "marmalade",
+      "preserves",
+      "spread",
+      "toast",
+      "condiment",
+      "canning"
+    ]
+  },
+  {
+    "id": "dining-168",
+    "word": "juice",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+      "ipa": "/d\u0292u\u02d0s/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/juice--_us_1.mp3",
+      "syllableBreakdown": "juice",
+      "stressPattern": "\u25cf",
+      "commonMistakes": "Learners frequently mispronounce the spelling 'ui' as two syllables (e.g., /\u02c8d\u0292u\u02d0.\u026as/) or confuse the vowel sound. In English, 'juice' is strictly monosyllabic /d\u0292u\u02d0s/ with a long back vowel /u\u02d0/ and a voiceless final /s/. Do not voice the final consonant into /z/."
+    },
+    "etymology": {
+      "origin": "Middle English jus / juce, borrowed from Old French jus ('broth, sauce, liquid extracted from plants or meat'), from Latin i\u016bs ('broth, sauce, soup, liquid').",
+      "rootWord": "i\u016bs",
+      "rootMeaning": "broth, sauce, liquid, or vegetable/animal sap",
+      "evolution": "Originating from Proto-Indo-European *yeuHs- ('broth, soup'), Latin i\u016bs referred to sauces and gravies. In Old French, jus broadened to include liquid pressed from grapes, herbs, or meat. Entering Middle English around 1300, it originally referred to medicinal herbal infusions and medicinal plant extracts before narrowing in general culinary English to the potable liquid pressed or squeezed from fruits and vegetables, while the culinary borrowing 'au jus' preserved the original savory meat juice sense.",
+      "relatedLanguages": [
+        "French: jus",
+        "Spanish: jugo",
+        "Italian: sugo / succo",
+        "Portuguese: suco",
+        "Latin: i\u016bs"
+      ],
+      "firstRecordedUse": "Late 13th to early 14th century (c. 1300 in Middle English texts as jus, referring to herbal and fruit extracts)"
+    },
+    "deepMeaning": {
+      "coreConcept": "The naturally occurring liquid contained in fruit, vegetables, or meat tissues, specifically the clear or pulpy liquid extracted by pressing, squeezing, or centrifugal processing of fresh produce, served as a nutritious beverage or culinary flavoring.",
+      "spatialContext": "Hotel breakfast beverage bars, corporate conference refreshment credenzas, commercial juice extractors in cafe service areas, and chilled dispenser carafes on brunch tables.",
+      "temporalContext": "Morning breakfast beverage service (7:00 AM \u2013 10:00 AM), mid-morning wellness breaks during executive seminars, and afternoon catering beverage replenishments.",
+      "emotionalTone": "Invigorating, refreshing, wholesome, and nutritious.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers, juice is the quintessential breakfast beverage, routinely paired with coffee, eggs, and toast. In hospitality and consumer marketing, consumers draw strict distinctions between 'freshly squeezed 100% juice' (premium, unpasteurized or cold-pressed, high status) versus 'juice cocktail' or 'juice drink' (which often contain only 10% juice diluted with water and high-fructose corn syrup). In upscale corporate catering, offering fresh-squeezed orange or grapefruit juice signals attention to guest health and premium hospitality.",
+      "mentalImage": "A tall chilled glass carafe filled with pulpy, brightly colored orange juice glistening with condensation on a white-linen breakfast buffet table beside freshly halved oranges.",
+      "whenToUse": "Use when referring to extracted liquid from fruits or vegetables (orange juice, apple juice, tomato juice), morning catering beverage packages, or meat liquids in culinary preparations (e.g., roast beef 'served in its own juices').",
+      "whenNotToUse": "Do not confuse with 'syrup' (thick concentrated sugar solution), 'smoothie' (blended whole fruit with yogurt/ice into thick puree), or 'cider' (specifically fermented apple beverage in UK English, or unfiltered pressed apple beverage in US English). Avoid calling artificial fruit-flavored sodas 'juice'.",
+      "culturalContext": "At corporate conference breakfasts across North America and the UK, orange juice and cranberry juice are standard baseline offerings alongside coffee and tea. Under FDA and EFSA regulations, a beverage cannot be labeled simply 'juice' unless it consists of 100% fruit or vegetable juice."
+    },
+    "examples": {
+      "daily": [
+        "She ordered a large glass of freshly squeezed orange juice with her poached eggs and toast.",
+        "We keep a pitcher of crisp apple juice in the refrigerator for the children's afternoon snack.",
+        "A splash of fresh lemon juice enhances the flavor of pan-seared fish and salad dressings."
+      ],
+      "business": [
+        "The corporate catering contract includes unlimited coffee, herbal teas, and chilled fruit juice throughout the two-day symposium.",
+        "Due to a severe freeze affecting citrus groves in Florida, wholesale orange juice futures jumped fifteen percent on international markets.",
+        "The cafeteria recently installed a cold-pressed juice bar to align with the company's employee wellness and nutrition initiative."
+      ],
+      "conversation": [
+        "\"Would you care for some juice with your breakfast buffet? We have freshly squeezed orange, grapefruit, and pressed apple.\" / \"A small glass of grapefruit juice would be wonderful, thank you.\"",
+        "\"Did the event coordinator order enough beverages for the morning break?\" / \"Yes, the hotel is providing two dispensers of ice water and three carafes of assorted fruit juice.\"",
+        "\"Is this cranberry juice 100 percent pure or is it a sweetened juice cocktail?\" / \"The label states it is 100 percent unsweetened juice blended with white grape juice to balance the tartness.\""
+      ],
+      "collocations": [
+        "orange juice",
+        "freshly squeezed juice",
+        "fruit juice",
+        "apple juice",
+        "grapefruit juice",
+        "cold-pressed juice"
+      ]
+    },
+    "wordFamily": {
+      "noun": "juice, juiciness, juicer",
+      "verb": "juice",
+      "adjective": "juicy",
+      "adverb": "juicily"
+    },
+    "visual": {
+      "imageKeyword": "freshly squeezed orange juice glass pitcher breakfast fruits citrus",
+      "imageDescription": "A sweating glass of freshly squeezed orange juice with pulp, accompanied by sliced ripe oranges and a glass pitcher on a sunlit wooden breakfast table.",
+      "mnemonic": "JUICE: JUICY citrus fruits squeezed into a glass produce delicious, energizing JUICE!"
+    },
+    "video": {
+      "description": "A hospitality catering training video outlining proper cold beverage station setup, showing how to maintain sanitary dispenser carafes of fresh fruit juices during high-volume hotel breakfast rushes."
+    },
+    "toeicContext": {
+      "commonParts": [
+        1,
+        3,
+        4,
+        7
+      ],
+      "exampleQuestion": "Conference attendees may help themselves to complimentary coffee, tea, and assorted fruit _____ stationed at the back of the auditorium. (A) juicy (B) juices (C) juiciness (D) juicily",
+      "tips": "The blank is preceded by the adjective phrase 'assorted fruit' and functions as the third object in a compound series ('coffee, tea, and assorted fruit _____'). When referring to multiple types or varieties of beverage, the count noun takes the plural form: (B) juices. Choice (A) is an adjective, (C) is an abstract noun of quality, and (D) is an adverb."
+    },
+    "synonyms": [
+      "fruit drink",
+      "nectar",
+      "extract",
+      "press",
+      "sap",
+      "broth"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "beverage",
+      "citrus",
+      "extractor",
+      "pulp",
+      "refreshment",
+      "concentrate",
+      "smoothie"
+    ]
+  }
+]

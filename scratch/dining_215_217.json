@@ -1,0 +1,340 @@
+{
+  "words": [
+    {
+      "id": "dining-215",
+      "word": "pork",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/pɔːrk/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/pork--_us_1.mp3",
+        "syllableBreakdown": "pork",
+        "stressPattern": "●",
+        "commonMistakes": "Learners often substitute the open /ɑːr/ vowel (pronouncing it like 'park' instead of 'pork') or under-enunciate the rhotic /r/ in General American. Non-native speakers also frequently make the grammatical error of treating 'pork' as a countable noun (saying 'two porks' instead of 'two pork chops' or 'two servings of pork'). Additionally, learners must be careful never to use the animal name 'pig' when referring to culinary meat on a menu (saying 'roasted pig meat' instead of 'roast pork')."
+      },
+      "etymology": {
+        "origin": "Middle English 'pork', borrowed via Anglo-Norman from Old French 'porc' (pig, swine, flesh of swine), directly descending from Latin 'porcus' (domestic pig, swine), which traces back to Proto-Indo-European '*pórḱ-os' (piglet, young swine).",
+        "rootWord": "Latin porcus / Proto-Indo-European *pórḱ-os / Old French porc",
+        "rootMeaning": "Pig, swine; the meat of a domesticated pig prepared for culinary consumption",
+        "evolution": "Following the 1066 Norman Conquest, French became the language of the English aristocracy, while Old English remained the tongue of the conquered peasant class. Consequently, the live animal retained its Germanic name ('pig' or 'swine', tended in pastures by Anglo-Saxon farmers), whereas the butchered and prepared meat served at noble banquet tables adopted the Norman French term ('porc', modern 'pork'). In 19th-century American political discourse, 'pork barrel' arose metaphorically to describe government treasury funds secured for local political patronage.",
+        "relatedLanguages": [
+          "French: porc (pork / pig)",
+          "Spanish: puerco (pig / pork) / carne de cerdo",
+          "Italian: porco (pig) / carne di maiale",
+          "Portuguese: porco (pig / pork)",
+          "German: Ferkel (piglet - cognate from Proto-Indo-European *pórḱ-os)"
+        ],
+        "firstRecordedUse": "13th century (c. 1300 in Middle English culinary rolls and monastic estate records)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The culinary meat derived from domestic swine (Sus domesticus), widely utilized across global dining and hospitality as a primary protein source; encompasses fresh primal cuts such as loin, tenderloin, shoulder, and ribs, as well as cured, smoked, and salted charcuterie products like bacon, ham, and prosciutto.",
+        "spatialContext": "Commercial butcheries, walk-in meat lockers, hotel banquet prep lines, corporate cafeteria carvery stations, and charcuterie display cases.",
+        "temporalContext": "Served across all meal periods (breakfast bacon/sausage, lunchtime sandwiches, evening banquet loins); requires strict time-temperature tracking (minimum internal temperature 145°F/63°C with a 3-minute rest) to prevent foodborne illness.",
+        "emotionalTone": "Culinary, savory, hearty, practical, and objective.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers maintain a sharp psychological boundary between the live farm animal ('pig') and the prepared meat ('pork'). They regard pork as an exceptionally versatile, savory protein that bridges casual comfort food (barbecue ribs, bacon) and upscale culinary dining (pan-seared tenderloin medallions). In modern professional hospitality, native speakers are immediately mindful of religious and dietary restrictions (halal for Muslims, kosher for Jews, vegetarianism/veganism), meaning banquet planners always label pork items explicitly and provide dedicated alternative entrees.",
+        "mentalImage": "An executive chef in a spotless uniform slicing a succulent, herb-crusted roast pork tenderloin on a dark hardwood carving board beneath warm kitchen pass lights, plated with roasted root vegetables and a cider reduction sauce.",
+        "whenToUse": "Use when identifying pig meat on menus, catering preference forms, food safety logs, restaurant orders, or grocery invoices (e.g., 'pork tenderloin', 'pork chops', 'pulled pork', 'roast pork').",
+        "whenNotToUse": "Do not use 'pork' to designate the live animal in a field (use 'pig', 'hog', or 'swine'). Do not pluralize as 'porks' to count portions; use measure phrases like 'two servings of pork' or specific cut names like 'two pork chops'. Avoid referring to specific cured products like 'bacon' or 'prosciutto' as generic 'pork' when specificity is required.",
+        "culturalContext": "Pork is the most widely consumed meat worldwide, holding staple status throughout East Asia and Europe. In Western business dining, corporate hosts routinely audit menus to ensure pork-free alternatives are readily available for clients with dietary or religious observances. In TOEIC test scenarios, pork frequently appears in Part 3 restaurant dialogues, Part 4 banquet announcements, and Part 7 conference catering contracts."
+      },
+      "examples": {
+        "daily": [
+          "For Sunday dinner, the family roasted a seasoned pork loin with garlic, rosemary, and sweet apples.",
+          "The corner bistro is famous for its slow-cooked pulled pork sandwich served on a toasted brioche bun.",
+          "He used a digital meat thermometer to verify that the grilled pork chops had reached a safe internal temperature."
+        ],
+        "business": [
+          "The banquet coordinator noted that twenty percent of the conference attendees requested an alternative entree to the herb-crusted pork.",
+          "Our hotel dining group exclusively purchases certified free-range pork from regional agricultural suppliers.",
+          "The catering contract specifies separate food preparation stations to prevent pork cross-contact with halal and kosher dishes."
+        ],
+        "conversation": [
+          "\"Have we received the dietary preference forms for Friday's executive dinner?\" / \"Yes, three guests indicated they do not consume pork, so the chef prepared pan-seared sea bass as their alternate entree.\"",
+          "\"Would you recommend the braised pork belly or the roasted salmon?\" / \"Both are excellent, but the pork belly is our chef's signature dish, braised for twelve hours in a savory ginger glaze.\""
+        ],
+        "collocations": [
+          "pork tenderloin",
+          "pork chops",
+          "pulled pork",
+          "roast pork",
+          "pork belly",
+          "ground pork"
+        ]
+      },
+      "wordFamily": {
+        "noun": "pork, porker",
+        "verb": "",
+        "adjective": "porky",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "roast pork tenderloin culinary plating gourmet banquet restaurant",
+        "imageDescription": "A gourmet restaurant plate featuring tender slices of herb-crusted roast pork tenderloin drizzled with pan jus, accompanied by roasted baby carrots and asparagus spears on a fine white porcelain plate.",
+        "mnemonic": "PORK: Prime Oven-Roasted Kitchen meat from pigs—remember that French nobles dined on PORK, while Anglo-Saxon farmers raised PIGS!"
+      },
+      "video": {
+        "description": "A professional culinary masterclass demonstrating safe internal cooking temperatures, dry-brining techniques, and carving presentation for corporate banquet pork tenderloin."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "To accommodate conference delegates with specific dietary requirements, the banquet menu provides grilled salmon alongside the roasted _____ tenderloin. (A) pork (B) porks (C) porky (D) porking",
+        "tips": "In TOEIC Part 5 questions involving dining and catering menus, culinary nouns frequently serve as noun adjuncts modifying cuts of meat (e.g., 'pork tenderloin', 'beef sirloin'). Choice (A) 'pork' is the correct singular noun adjunct. Option (B) 'porks' is ungrammatical as 'pork' is an uncountable mass noun; (C) 'porky' is an informal adjective meaning pig-like; and (D) 'porking' is not an acceptable culinary modifier."
+      },
+      "synonyms": [
+        "pig meat",
+        "swine flesh",
+        "porcine meat",
+        "gammon",
+        "hog meat"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "bacon",
+        "tenderloin",
+        "charcuterie",
+        "ham",
+        "poultry",
+        "cutlet",
+        "ribs"
+      ]
+    },
+    {
+      "id": "dining-216",
+      "word": "pot",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/pɑːt/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/pot--_us_1.mp3",
+        "syllableBreakdown": "pot",
+        "stressPattern": "●",
+        "commonMistakes": "Learners often mispronounce the short open vowel /ɑː/ (in General American) or /ɒ/ (in Received Pronunciation) as /ɔː/ (sounding like 'port' or 'pawn') or /oʊ/ (sounding like 'boat'). Additionally, learners frequently confuse 'pot' with 'pan'. A 'pot' has high, deep vertical sides and two loop handles (designed for liquids, soups, boiling, and simmering), whereas a 'pan' is shallow with a single long handle (designed for frying, searing, and sautéing). In beverage contexts, learners sometimes mistakenly say 'a cup of coffee' when referring to the brewing vessel rather than the individual serving ('a pot of coffee')."
+      },
+      "etymology": {
+        "origin": "Late Old English 'pott', borrowed from early Medieval Latin 'pottus' (drinking cup, pot, vessel), which derived from Late Latin 'potāre' (to drink; the root of 'potable' and 'potion'). Cognate with Middle Dutch 'pot', Old Frisian 'pott', Middle Low German 'pot', and Old Norse 'pottr'.",
+        "rootWord": "Late Old English pott / Late Latin pottus / Latin potāre (to drink)",
+        "rootMeaning": "Deep vessel or container for drinking, holding, or boiling liquids",
+        "evolution": "Entering Old English in the 11th century to denote earthen pots used for cooking and liquid storage, 'pot' gradually superseded native Germanic terms like 'crocca' (crock). With the advancement of European metallurgy, cast-iron pots and cauldrons became essential hearth implements. By the 17th century, the term specialized to include specialized vessels such as 'coffee pot' and 'teapot'. In contemporary culinary arts and hospitality, 'pot' denotes high-capacity, heavy-duty stainless steel, copper-core, or cast-iron cookware optimized for wet-heat cooking methods such as boiling, braising, and stock reduction.",
+        "relatedLanguages": [
+          "French: pot (pot, jar, container)",
+          "Spanish: pote (pot, jar, stew) / olla (cooking pot)",
+          "Italian: pentola (cooking pot) / poto (archaic drinking vessel)",
+          "Dutch: pot (pot, jar)",
+          "German: Pott (pot, mug - colloquial/regional) / Topf (cooking pot)"
+        ],
+        "firstRecordedUse": "11th century (Late Old English 'pott' in monastic estate registers and medical leechbooks)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A deep, typically cylindrical cooking or beverage vessel featuring a flat bottom, vertical sidewalls, dual carrying handles, and a fitted lid, engineered for holding, heating, boiling, and simmering substantial volumes of liquid, soups, sauces, or stocks; also, a lidded tabletop vessel with a spout and handle used for brewing and pouring hot beverages such as coffee or tea.",
+        "spatialContext": "Commercial culinary ranges, stew and stock stations, pot-washing sanitizing sinks, office kitchen beverage counters, banquet service stations, and buffet warmer wells.",
+        "temporalContext": "Utilized continuously throughout culinary prep shifts; commercial stockpots simmer stocks for 8 to 24 hours, while workplace coffee pots are brewed fresh every morning and midday break.",
+        "emotionalTone": "Industrious, nourishing, functional, communal, and warm.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers instinctively associate 'pot' with depth and volume. They contrast it sharply with 'pan': if food is cooked in liquid (pasta water, chicken noodle soup, marinara sauce), it belongs in a pot; if food is seared, sautéed, or fried dry (eggs, steaks, vegetables), it belongs in a pan. In workplace culture, 'the coffee pot' holds an iconic communal status—native speakers recognize the implicit office etiquette that whoever takes the last drop of coffee from the pot is expected to start a fresh brew for coworkers.",
+        "mentalImage": "A busy commercial restaurant kitchen where an executive chef uses a long wooden spoon to stir a steaming, 20-quart stainless steel stockpot of simmering broth on a heavy-duty industrial gas range.",
+        "whenToUse": "Use when designating deep cooking vessels for soups, boiling, and stews (e.g., 'stockpot', 'saucepot', 'cast-iron pot'), vessels for brewing beverages (e.g., 'pot of coffee', 'pot of tea'), or in established workplace idioms (e.g., 'brew a fresh pot').",
+        "whenNotToUse": "Do not use 'pot' for shallow frying vessels (use 'pan', 'skillet', or 'frying pan'), shallow baking dishes (use 'baking sheet' or 'casserole dish'), or individual drinking vessels (use 'cup', 'mug', or 'glass'). Do not use 'pot' in formal corporate contexts to refer to slang meanings (such as cannabis).",
+        "culturalContext": "In Anglo-American office environments, the breakroom coffee pot serves as an informal social hub where coworkers exchange project updates and casual conversation. In TOEIC test listening (Part 1 photographs of restaurant kitchens or office breakrooms) and reading (Part 7 workplace notices regarding kitchenette cleanliness), pots frequently appear on stovetops or beverage credenzas."
+      },
+      "examples": {
+        "daily": [
+          "He filled a large stainless steel pot with water and set it on the stove to boil the pasta.",
+          "Before the morning staff arrived, she brewed a fresh pot of Colombian dark roast coffee.",
+          "The soup was left to simmer gently in a heavy cast-iron pot for three hours to develop rich flavors."
+        ],
+        "business": [
+          "Kitchen safety guidelines require line cooks to use heat-resistant silicone grips when transferring heavy pots from the range.",
+          "According to the revised office policy, the last person to pour coffee from the pot must rinse the carafe and brew a new batch.",
+          "The hospitality purchasing director ordered twelve commercial-grade 20-quart stockpots for the banquet kitchen renovation."
+        ],
+        "conversation": [
+          "\"Is there any coffee remaining in the breakroom lounge?\" / \"I just poured the final mug, but I've already started brewing another pot that will finish in three minutes.\"",
+          "\"Which vessel should we use to prepare the seafood chowder for sixty guests?\" / \"Take the tall aluminum stockpot from the storage rack near the prep sink; it has the necessary volume.\""
+        ],
+        "collocations": [
+          "pot of coffee",
+          "stockpot",
+          "cast-iron pot",
+          "brew a pot",
+          "pot roast",
+          "boil in a pot"
+        ]
+      },
+      "wordFamily": {
+        "noun": "pot, pottery, potter, potting",
+        "verb": "pot",
+        "adjective": "potted",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "stainless steel stockpot commercial kitchen range cooking soup",
+        "imageDescription": "A large stainless steel stockpot with steam rising from beneath its fitted lid, resting on an industrial gas stove in a bustling restaurant kitchen with polished tile walls.",
+        "mnemonic": "POT: Purely Outstanding Temperature for simmering soups—remember that POTS have deep walls for liquids, while PANS are shallow for frying!"
+      },
+      "video": {
+        "description": "A commercial kitchen operations video demonstrating proper lifting ergonomics, heat regulation, and sanitation procedures for large culinary stockpots and beverage brewing stations."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          2,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Employees are kindly reminded to turn off the heating element on the coffee _____ before leaving the office for the evening. (A) pot (B) pots (C) potted (D) potting",
+        "tips": "In TOEIC Part 1 and Part 5, test writers frequently test workplace compound nouns. In the phrase 'the coffee _____', the singular countable noun (A) 'pot' correctly completes the compound noun 'coffee pot'. Choice (B) 'pots' is plural and does not fit the singular definite context 'the coffee _____'; (C) 'potted' is an adjective or past participle (e.g., 'potted plant'); and (D) 'potting' is a gerund/participle referring to gardening."
+      },
+      "synonyms": [
+        "cooking vessel",
+        "saucepot",
+        "stockpot",
+        "cauldron",
+        "casserole",
+        "kettle"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "pan",
+        "skillet",
+        "saucepan",
+        "lid",
+        "cookware",
+        "stovetop",
+        "kettle"
+      ]
+    },
+    {
+      "id": "dining-217",
+      "word": "potato",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/pəˈteɪ.toʊ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/potato--_us_1.mp3",
+        "syllableBreakdown": "po·ta·to",
+        "stressPattern": "○●○",
+        "commonMistakes": "Learners often mistakenly stress the initial syllable (/ˈpoʊ.tə.toʊ/) rather than the second syllable (/pəˈteɪ.toʊ/). The first vowel 'po-' must be reduced to a weak schwa /pə/, not articulated as a full /oʊ/ or /ɒ/. In written English, learners frequently misspell the plural form by omitting the 'e' (writing 'potatos' instead of the correct 'potatoes'). Additionally, in culinary contexts, American English typically uses the plural form 'mashed potatoes' for the prepared dish, whereas learners sometimes say 'mashed potato'."
+      },
+      "etymology": {
+        "origin": "Borrowed in the 1560s from Spanish 'patata', a linguistic blend of Taino (Arawakan) 'batata' (sweet potato, Ipomoea batatas) and Quechua 'papa' (highland potato, Solanum tuberosum). Originating in the Andean region of South America, potatoes were domesticated over 7,000 years ago by indigenous cultures.",
+        "rootWord": "Spanish patata / Taino batata / Quechua papa",
+        "rootMeaning": "Starchy underground tuberous root cultivated for food",
+        "evolution": "Spanish explorers encountering root crops in the Caribbean adopted the Taino word 'batata'. When conquistadors later reached the Inca highlands of Peru in the 1530s, they encountered the common potato ('papa' in Quechua) and merged the names into 'patata'. Introduced to Spain and Britain in the late 16th century, the potato was initially regarded with skepticism as a member of the nightshade family (Solanaceae). By the 18th century, its exceptional caloric yield made it an indispensable agricultural staple across Northern Europe. In 19th-century Ireland, overreliance on a single clonal variety led to the catastrophic Great Famine (1845–1852). Today, it ranks as the fourth most important food crop globally and a universal staple starch in commercial hospitality.",
+        "relatedLanguages": [
+          "Spanish: patata (Spain) / papa (Latin America)",
+          "Italian: patata (potato)",
+          "Portuguese: batata (potato)",
+          "French: patate (informal potato / sweet potato); formal standard French uses 'pomme de terre'",
+          "German: Kartoffel (borrowed via dialectal Italian 'tartufula' / truffle)"
+        ],
+        "firstRecordedUse": "1560s (referring initially to sweet potatoes; applied to Solanum tuberosum in English herbal texts by John Gerard in 1597)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The starchy, edible underground tuber of the nightshade family plant Solanum tuberosum, characterized by an exterior skin enclosing dense, carbohydrate-rich flesh ranging from white and yellow to red and purple; universally prized in dining and food service as a fundamental carbohydrate foundation prepared through baking, boiling, mashing, roasting, and frying.",
+        "spatialContext": "Commercial dry pantry bins (maintained in cool, ventilated, dark storage to prevent solanine greening and sprouting), prep peeling stations, banquet hot-holding wells, hotel buffet lines, and deep-frying stations.",
+        "temporalContext": "Sourced and served year-round with high shelf stability; prepped daily in high volume before lunch and dinner shifts to satisfy banquet side-dish requirements.",
+        "emotionalTone": "Comforting, hearty, wholesome, rustic, and universally approachable.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers view the potato as the ultimate culinary comfort staple—so foundational that the idiom 'meat and potatoes' signifies the essential, unpretentious core of any concept or business strategy. In restaurant dining, natives automatically expect a starch option accompanying grilled meats or fish, with potato preparations (baked, mashed, roasted, or french fries) being the most common default. Native speakers also recognize everyday idioms like 'hot potato' (a sensitive, contentious dilemma) and 'couch potato' (an inactive individual).",
+        "mentalImage": "An upscale steakhouse table setting where a steaming baked potato split down the center is topped with whipped butter, sour cream, chives, and melted cheddar, served alongside a prime ribeye steak.",
+        "whenToUse": "Use when identifying the tuber vegetable, specifying side dishes on restaurant menus, cataloging culinary ingredients, ordering catering accompaniments, or utilizing standard business idioms (e.g., 'mashed potatoes', 'baked potato', 'potato salad', 'meat-and-potatoes approach').",
+        "whenNotToUse": "Do not confuse with 'sweet potato' (an unrelated botanical root from the Convolvulaceae family), which must be clearly differentiated on menus due to its distinct sweetness and color. Avoid informal idioms like 'couch potato' in professional performance evaluations or corporate documents.",
+        "culturalContext": "In Western hospitality standards, dinner banquet menus traditionally adhere to the 'protein, vegetable, and starch' tri-component plating structure, where the potato is the most widely selected starch. In TOEIC test listening (Part 2 and Part 3 meal order dialogues) and reading (Part 7 restaurant menus and catering invoices), potatoes regularly appear as interchangeable side items."
+      },
+      "examples": {
+        "daily": [
+          "She wrapped the russet potato in aluminum foil and baked it until the interior was light and fluffy.",
+          "Our family prepared a bowl of creamy homemade potato salad for the neighborhood picnic.",
+          "The diner menu allows patrons to substitute seasoned potato wedges for standard potato chips."
+        ],
+        "business": [
+          "The corporate event menu gives banquet guests an option between garlic mashed potatoes and steamed wild rice.",
+          "Wholesale potato prices remained stable throughout the fiscal quarter, keeping institutional catering costs within budget.",
+          "To satisfy health-conscious conference attendees, the executive chef introduced herb-roasted fingerling potatoes prepared with olive oil instead of butter."
+        ],
+        "conversation": [
+          "\"What side dish comes with the grilled sirloin steak?\" / \"You have your choice of a baked potato, mashed potatoes, or seasonal steamed vegetables.\"",
+          "\"Could you confirm how many sacks of Idaho potatoes were delivered this morning?\" / \"Yes, the invoice lists ten fifty-pound bags, all inspected and stored in the dry pantry.\""
+        ],
+        "collocations": [
+          "mashed potatoes",
+          "baked potato",
+          "potato salad",
+          "sweet potato",
+          "roast potatoes",
+          "potato chips"
+        ]
+      },
+      "wordFamily": {
+        "noun": "potato, potatoes",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "baked potato gourmet steakhouse sour cream chives butter dining",
+        "imageDescription": "A steaming hot baked potato split open and garnished with a generous dollop of sour cream, melted golden butter, and chopped chives, served on a dark ceramic platter beside a grilled steak.",
+        "mnemonic": "POTATO: Popular Oven-Tuber Always Tasty and Outstanding—remember Spanish 'patata' became the world's most versatile dining starch!"
+      },
+      "video": {
+        "description": "A professional food service training video demonstrating commercial peeling, boiling, and whipping techniques for preparing restaurant-quality mashed potatoes in high-volume catering."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          2,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Restaurant patrons ordering the chef's special may select either a baked _____ or a cup of clam chowder as their complimentary side order. (A) potato (B) potatoes (C) potatolike (D) potato's",
+        "tips": "In TOEIC Part 5, singular countable nouns preceded by the indefinite article 'a' require singular morphological form. In the phrase 'a baked _____', the singular noun (A) 'potato' correctly forms the compound noun phrase 'baked potato'. Option (B) 'potatoes' is plural and conflicts with the singular article 'a'; (C) 'potatolike' is an unnecessary adjective; and (D) 'potato's' is a singular possessive form, which is ungrammatical here."
+      },
+      "synonyms": [
+        "spud",
+        "tuber",
+        "russet",
+        "Solanum tuberosum",
+        "earth apple"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "tuber",
+        "starch",
+        "carbohydrate",
+        "mashed",
+        "fries",
+        "hash brown",
+        "root vegetable"
+      ]
+    }
+  ]
+}

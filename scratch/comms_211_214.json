@@ -1,0 +1,463 @@
+{
+  "words": [
+    {
+      "id": "comms-211",
+      "word": "publisher",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈpʌb.lɪ.ʃər/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/publisher--_us_1.mp3",
+        "syllableBreakdown": "pub-lish-er",
+        "stressPattern": "primary stress on the first syllable (PUB-lish-er)",
+        "commonMistakes": "Learners frequently mispronounce the initial vowel /ʌ/ as /uː/ or /ʊ/ (*poob-lisher*) or substitute the voiceless alveolar fricative /s/ for the postalveolar /ʃ/ (*pub-liss-er*). In non-rhotic accents or ESL pronunciation, speakers sometimes omit the final r-colored vowel [ɚ] or over-articulate a full vowel rather than a reduced schwa."
+      },
+      "etymology": {
+        "origin": "Middle English formation combining the verb 'publishen' (to proclaim, announce, print and issue) with the agent noun suffix '-er'. 'Publish' entered English via Anglo-Norman and Old French 'publier', descending from Latin 'pūblicāre' (to make public property, proclaim publicly), from 'pūblicus' (pertaining to the people, public).",
+        "rootWord": "Latin 'pūblicus' (pertaining to the people) via 'pūblicāre' (to make public) + Middle English '-er' (agent suffix)",
+        "rootMeaning": "'One who makes information, literature, or records available to the general public'",
+        "evolution": "In 15th-century England, a 'publisher' was someone who publicly proclaimed official decrees, heraldic declarations, or legal notices. Following the introduction of movable type and the establishment of Caxton's press in 1476, the functions of printer, bookseller, and publisher were initially unified within stationers. By the late 17th and early 18th centuries—formalized by the Statute of Anne in 1710—'publisher' came to specifically denote the commercial entrepreneur or firm that acquires copyrights, finances production, coordinates printing, and manages wholesale distribution. In the modern era, the term covers traditional book and newspaper conglomerates, university presses, and digital media entities.",
+        "relatedLanguages": [
+          "French: éditeur",
+          "Spanish: editor / editorial",
+          "German: Verleger / Verlag",
+          "Italian: editore",
+          "Dutch: uitgever"
+        ],
+        "firstRecordedUse": "circa 1440–1450 (originally denoting an official announcer; applied specifically to the commercial book trade by the 1590s)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A company, institution, or executive responsible for curating, acquiring, financing, producing, and commercially distributing printed or digital publications, including books, periodicals, software, or academic journals.",
+        "spatialContext": "Editorial offices, corporate publishing headquarters, international book fairs, print distribution centers, and academic press offices.",
+        "temporalContext": "Operates on seasonal publishing schedules (spring and fall catalogs for trade books; monthly or weekly issues for periodicals); acquisitions and contract negotiations occur year-round.",
+        "emotionalTone": "Authoritative, professional, intellectual, and commercially discerning.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native English speaker, 'publisher' carries institutional prestige and commercial weight. Natives strictly distinguish between the 'author' (the creative originator), the 'printer' (the manufacturing contractor), the 'editor' (the prose reviser), and the 'publisher' (the business entity that assumes legal and financial risk to bring the work into the public sphere). In corporate magazine and newspaper structures, 'the publisher' also denotes the senior corporate executive who leads business operations, advertising revenue, and publication strategy.",
+        "mentalImage": "An acquisitions editor and senior publisher seated in a glass-walled corner office examining hardcover jacket proofs, page layouts, and author contract terms spread across a conference table.",
+        "whenToUse": "Use when referring to the business organization, commercial firm, or executive overseeing the production, copyright acquisition, and market distribution of books, newspapers, journals, or digital media (e.g., 'academic publisher', 'independent book publisher', 'major magazine publisher', 'the publisher approved the revised manuscript').",
+        "whenNotToUse": "Do not confuse with 'author' or 'writer' (who writes the material), 'printer' (the manufacturing factory running physical presses), or 'editor' (the individual correcting and refining the manuscript). Avoid using 'publisher' to refer to a retail bookshop.",
+        "culturalContext": "In English-speaking culture, legacy publishers (such as the 'Big Five' in New York or longstanding university presses like Oxford and Cambridge) historically serve as cultural and intellectual gatekeepers. In the TOEIC exam, publishers frequently appear in Part 7 reading texts (author contract correspondence, catalog announcements, book launch notices) and Part 3/4 dialogues about marketing campaigns and print deadlines."
+      },
+      "examples": {
+        "daily": [
+          "She checked the copyright page inside the novel to see which publisher had released the first edition.",
+          "The debut novelist received an enthusiastic contract offer from an independent publisher based in Boston.",
+          "Our neighborhood library ordered multiple hardcover copies of the new reference encyclopedia directly from the publisher."
+        ],
+        "business": [
+          "The educational textbook publisher finalized a multi-year digital licensing agreement with several regional school districts.",
+          "Before signing the global distribution contract, the author's literary agent reviewed the foreign royalty schedules proposed by the overseas publisher.",
+          "Facing escalating printing and freight expenditures, the trade publisher reduced initial print runs in favor of responsive print-on-demand fulfillment."
+        ],
+        "conversation": [
+          "A: 'Have you submitted the final revisions for the management guide to the publisher yet?'\nB: 'Yes, the acquisitions team received the manuscript this morning and will send proof sheets by Friday.'",
+          "A: 'Why did the economics department choose an academic press over a commercial publisher?'\nB: 'The university publisher provides rigorous peer review and ensures open-access digital availability.'",
+          "A: 'Did the publisher agree to retain our overseas translation rights?'\nB: 'Fortunately, yes; our attorney negotiated that clause prior to signing the publishing contract.'"
+        ],
+        "collocations": [
+          "book publisher",
+          "academic publisher",
+          "independent publisher",
+          "commercial publisher",
+          "contact the publisher",
+          "publisher's imprint"
+        ]
+      },
+      "wordFamily": {
+        "noun": "publisher, publishing, publication",
+        "verb": "publish",
+        "adjective": "published, publishable",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "book publisher executive reviewing manuscript jacket proofs modern office",
+        "imageDescription": "A publishing executive in a sunlit modern office reviewing full-color hardcover book jacket proofs and bound manuscript galleys laid out on an oak desk.",
+        "mnemonic": "A PUBLISHER makes literature PUBLIC! Link 'PUBlic' + 'establISHER' = PUBLISHER."
+      },
+      "video": {
+        "description": "A documentary feature following an acquisitions publisher through the entire production lifecycle of a commercial non-fiction book, from initial author proposal to nationwide distribution."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Due to unexpected manufacturing delays at the printing plant, the _____ announced that the release date of the architectural survey has been postponed to November.\n(A) publish\n(B) publisher\n(C) publishing\n(D) published",
+        "tips": "This question tests noun agent identification in Part 5. The subject of the sentence requires a noun capable of making an announcement ('announced'). 'Publisher' (B) refers to the company or executive entity responsible for issuing the book. 'Publish' (A) is a base verb, 'publishing' (C) refers to the industry or process (or functions as an adjective), and 'published' (D) is a past participle. Therefore, (B) is the only grammatically and logically correct choice."
+      },
+      "synonyms": [
+        "publishing house",
+        "press",
+        "issuing firm",
+        "periodical proprietor",
+        "media house"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "manuscript",
+        "copyright",
+        "royalty",
+        "imprint",
+        "circulation",
+        "proofreading",
+        "acquisitions"
+      ]
+    },
+    {
+      "id": "comms-212",
+      "word": "publishing",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈpʌb.lɪ.ʃɪŋ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/publishing--_us_1.mp3",
+        "syllableBreakdown": "pub-lish-ing",
+        "stressPattern": "primary stress on the first syllable (PUB-lish-ing)",
+        "commonMistakes": "Learners frequently substitute the alveolar nasal /n/ for the final velar nasal /ŋ/ (*pub-lish-in*), or add an audible hard /ɡ/ release (*pub-lish-ing-guh*). Non-native speakers also occasionally substitute /s/ for the postalveolar fricative /ʃ/ (*pub-liss-ing*) or pronounce the middle unstressed /ɪ/ as a tense /iː/ (*pub-leesh-ing*)."
+      },
+      "etymology": {
+        "origin": "Formed in Middle English as a verbal noun from 'publishen' (to make publicly known, issue written works) with the noun-forming suffix '-ing' (from Old English '-ung' / '-ing'). 'Publish' stems from Anglo-Norman and Old French 'publier', which originated in Latin 'pūblicāre' (to make public property, display publicly), from 'pūblicus' (pertaining to the populace).",
+        "rootWord": "Latin 'pūblicāre' (to make public) via Middle English 'publishen' + Old English '-ing' / '-ung' (process, trade, or activity)",
+        "rootMeaning": "'The action, trade, or ongoing enterprise of issuing written, recorded, or graphic compositions for public consumption'",
+        "evolution": "In late 14th-century Middle English, 'publishing' denoted the public proclamation of edicts, bans, and municipal decrees. Following the proliferation of the London stationers' craft in the late 15th and 16th centuries, the term evolved to designate the commercial business of editing, binding, and marketing printed literature. The 19th-century Industrial Revolution industrialized publishing through mechanical composition (Linotype) and high-speed rotary presses, turning it into a mass media sector. In the late 20th and 21st centuries, the scope expanded to include digital content management, desktop publishing, audiobooks, academic peer-reviewed platforms, and electronic books.",
+        "relatedLanguages": [
+          "French: édition",
+          "Spanish: edición / industria editorial",
+          "German: Verlagswesen / Publizieren",
+          "Italian: editoria",
+          "Dutch: uitgeverij"
+        ],
+        "firstRecordedUse": "late 14th century (for public announcement); specialized to the book and print trade by the mid-16th century"
+      },
+      "deepMeaning": {
+        "coreConcept": "The commercial industry, profession, or operational process of acquiring, editing, designing, producing, manufacturing, and distributing written, visual, audio, or digital content (such as books, magazines, research papers, music, or software) for public dissemination and commerce.",
+        "spatialContext": "Publishing houses, pre-press layout studios, commercial printing plants, digital content distribution servers, newsrooms, and university presses.",
+        "temporalContext": "Spans multi-phase product life cycles taking from a few weeks (for periodicals) to several months or years (for educational curricula and trade books); operates continuously across quarterly fiscal deadlines.",
+        "emotionalTone": "Commercial, intellectual, structured, and culturally influential.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native speaker, 'publishing' primarily denotes the entire commercial trade and profession (e.g., 'she works in publishing', 'the digital publishing revolution'). Natives distinguish 'publishing' (the ongoing process, field, and business system) from 'publication' (which typically denotes a single discrete artifact—such as a specific report, pamphlet, or book issue). It instinctively brings to mind editorial teams, book fairs, ISBN numbers, copyright licensing, layout proofing, and distribution agreements.",
+        "mentalImage": "A busy creative studio where graphic designers use layout software to format dual-page magazine spreads while adjacent editors mark typographical corrections on printed proofs.",
+        "whenToUse": "Use when referring to the commercial sector, professional career, or operational workflow of producing printed or electronic texts (e.g., 'publishing industry', 'academic publishing', 'desktop publishing', 'publishing house', 'digital publishing trends').",
+        "whenNotToUse": "Do not substitute for 'publication' when referring to a specific tangible or electronic document (e.g., say 'The company released an informative publication', not *'an informative publishing'*). Avoid using 'publishing' to describe hardware printing machinery repairs.",
+        "culturalContext": "In Anglo-American commerce, publishing is celebrated as the bedrock of intellectual freedom, copyright jurisprudence, and scholarly progress. In TOEIC test scenarios, 'publishing' frequently functions as a noun adjunct in compound business terms (e.g., 'publishing firm', 'publishing contract', 'publishing rights', 'publishing schedule') across Parts 3, 5, 6, and 7."
+      },
+      "examples": {
+        "daily": [
+          "After finishing her degree in English, she sought an entry-level editorial position in trade publishing.",
+          "Modern desktop publishing programs make it simple for small non-profit organizations to create quarterly newsletters.",
+          "Many independent authors have turned to digital self-publishing to connect directly with an international readership."
+        ],
+        "business": [
+          "The corporate merger between the two international publishing houses will consolidate distribution networks throughout the Pacific Rim.",
+          "Citing rising raw material prices and container shipping rates, several publishing executives reported squeezed profit margins on physical books.",
+          "The corporate legal team negotiated an extensive digital publishing contract that protects the company's proprietary training curricula worldwide."
+        ],
+        "conversation": [
+          "A: 'How has the surge in e-reader popularity transformed trade publishing?'\nB: 'While digital downloads grew rapidly, physical hardcover and paperback sales still represent the majority of retail revenue.'",
+          "A: 'Did the author agree to the foreign publishing terms proposed by the international affiliate?'\nB: 'Yes, after we adjusted the translation royalties and guaranteed a localized promotional tour.'",
+          "A: 'Are you handling the design in-house or contracting it out?'\nB: 'Our in-house team is handling the desktop publishing layout, but an outside vendor will manage the offset printing.'"
+        ],
+        "collocations": [
+          "publishing house",
+          "publishing industry",
+          "academic publishing",
+          "desktop publishing",
+          "publishing contract",
+          "digital publishing"
+        ]
+      },
+      "wordFamily": {
+        "noun": "publishing, publication, publisher",
+        "verb": "publish",
+        "adjective": "published, publishable, publishing",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "publishing house editorial team computer layout magazine proofs",
+        "imageDescription": "An editorial team gathered around an open desk comparing printed color proof sheets to page layouts displayed on dual desktop monitors.",
+        "mnemonic": "PUBLISH-ING: The -ING suffix emphasizes the active TRADE and INDUSTRY of creating and issuing public works."
+      },
+      "video": {
+        "description": "An inside look at a major publishing firm illustrating the complete journey of a manuscript from editorial acquisition and copyediting to typesetting, printing, and digital marketing."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Delegates from several international _____ companies are scheduled to attend the annual media symposium to discuss digital copyright enforcement.\n(A) publish\n(B) publisher\n(C) publishing\n(D) published",
+        "tips": "In Part 5, when modifying a plural noun like 'companies', 'firms', or 'houses' within this industry, English uses the gerundial noun adjunct 'publishing' (e.g., 'publishing companies', 'publishing firm', 'publishing industry'). While 'publisher' is a noun referring to the individual or corporate entity, the established idiomatic compound is 'publishing companies'. 'Publish' (A) is a base verb, and 'published' (D) is a past participle that would illogically imply the companies themselves were printed."
+      },
+      "synonyms": [
+        "book production",
+        "editorial trade",
+        "print industry",
+        "press industry",
+        "media issuance"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "manuscript",
+        "copyright",
+        "typesetting",
+        "editorial",
+        "proofreading",
+        "imprint",
+        "distribution"
+      ]
+    },
+    {
+      "id": "comms-213",
+      "word": "quarterly",
+      "partOfSpeech": [
+        "adverb"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈkwɔːr.tər.li/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/quarterly--_us_1.mp3",
+        "syllableBreakdown": "quar-ter-ly",
+        "stressPattern": "primary stress on the first syllable (QUAR-ter-ly)",
+        "commonMistakes": "Learners often mispronounce the diphthong/vowel /wɔːr/ as an unrounded /wɑːr/ (*kwar-ter-li*) or drop the glide /w/ altogether. Non-native speakers also tend to over-enunciate the medial alveolar stop /t/, whereas American English native speakers typically realize it as an alveolar flap [ɾ] ([ˈkwɔːɹ.ɾɚ.li])."
+      },
+      "etymology": {
+        "origin": "Formed in Middle English by combining 'quarter' (a fourth part, fourth of a year) with the adverbial/adjectival suffix '-ly' (from Old English '-līce', meaning 'in the manner of', from Proto-Germanic '*-līkaz'). 'Quarter' entered Middle English via Anglo-Norman and Old French 'quartier', derived from Latin 'quartārius' (a fourth part of a measure), from 'quartus' (fourth), rooted in Proto-Indo-European '*kʷetwórtos' (fourth).",
+        "rootWord": "Latin 'quartus' (fourth) via Anglo-Norman 'quartier' + Old English '-līce' (in the manner of)",
+        "rootMeaning": "'In a periodic manner occurring once every fourth part of a calendar year' (i.e. every three months)",
+        "evolution": "In medieval England, agricultural, legal, and financial obligations centered on four fixed 'Quarter Days' (Lady Day in March, Midsummer in June, Michaelmas in September, and Christmas in December), on which tenancy rents were paid and courts of Quarter Sessions convened. The adverb 'quarterly' emerged in the 15th century to describe events or payments occurring on those four dates. With the rise of joint-stock corporations and 19th-century securities legislation, corporate accounting formalised quarterly earnings cycles, dividend distributions, and investor disclosures, solidifying 'quarterly' as an indispensable business term.",
+        "relatedLanguages": [
+          "French: trimestriellement",
+          "Spanish: trimestralmente",
+          "German: vierteljährlich",
+          "Italian: trimestralmente",
+          "Dutch: driemaandelijks"
+        ],
+        "firstRecordedUse": "mid-15th century (describing tenancy payments and court sessions occurring four times a year)"
+      },
+      "deepMeaning": {
+        "coreConcept": "At intervals of three months; four times per year; once every calendar or fiscal quarter.",
+        "spatialContext": "Corporate boardrooms, accounting and auditing departments, investor relations conference centers, securities exchanges, and executive briefing rooms.",
+        "temporalContext": "Occurs every three months at the conclusion of Q1, Q2, Q3, and Q4; coincides with fiscal accounting reconciliations, corporate tax payments, and earnings calls.",
+        "emotionalTone": "Systematic, disciplined, regulatory, and corporate-formal.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native English speaker in professional environments, 'quarterly' represents the operational heartbeat of corporate discipline. When used adverbially to modify verbs like 'meet', 'report', 'review', 'disburse', or 'audit', it conveys regulatory cadence, predictable rhythm, and fiduciary accountability. Natives instinctively align 'quarterly' with fiscal quarters (Q1 through Q4), shareholder reporting cycles, performance appraisals, and dividend declarations.",
+        "mentalImage": "A financial controller pointing to a three-month interval progression on a wall display showing company operating cash flow and revenue targets before executive committee members.",
+        "whenToUse": "Use as an adverb to describe activities, meetings, performance reviews, financial distributions, or auditing procedures occurring every three months (e.g., 'the board convenes quarterly', 'dividends are paid quarterly', 'reconcile accounts quarterly', 'evaluate staff quarterly').",
+        "whenNotToUse": "Do not confuse with 'biannually' or 'semiannually' (twice a year, every six months), 'biennially' (every two years), or 'quadrennially' (every four years). Do not use 'quarterly' to describe random four-time occurrences; it denotes structured three-month increments.",
+        "culturalContext": "In US and UK corporate governance, 'the quarterly cycle' (reporting earnings every three months) is legally required for public companies by regulatory agencies like the SEC. In the TOEIC exam, 'quarterly' is a high-frequency testing point in Part 5 (identifying frequency adverbs modifying verbs vs. adjectives modifying nouns) and Part 7 (reading executive memos, financial statements, and scheduled facility reviews)."
+      },
+      "examples": {
+        "daily": [
+          "The dentist advises patients with braces to have their orthodontic wires inspected quarterly.",
+          "Our residential building association meets quarterly in the recreation room to review maintenance expenditures.",
+          "I review my family budget and long-term utility expenses quarterly to ensure our savings goals remain on schedule."
+        ],
+        "business": [
+          "The executive management committee convenes quarterly to evaluate department expenditures against annual revenue targets.",
+          "Publicly traded companies are legally mandated to file comprehensive financial reports quarterly with securities regulators.",
+          "Investment dividends from the municipal bond fund are calculated and disbursed quarterly directly to account holders."
+        ],
+        "conversation": [
+          "A: 'How often does your regional department audit travel expense reports?'\nB: 'Our accounting compliance team reconciles receipts quarterly to prevent budget discrepancies.'",
+          "A: 'Do the field branch directors travel to headquarters on a monthly basis?'\nB: 'No, they assemble quarterly in Chicago to review operational performance.'",
+          "A: 'Is our corporate software licensing agreement billed annually?'\nB: 'No, the service provider bills our account quarterly according to active user seats.'"
+        ],
+        "collocations": [
+          "convene quarterly",
+          "meet quarterly",
+          "report quarterly",
+          "disbursed quarterly",
+          "billed quarterly",
+          "reviewed quarterly"
+        ]
+      },
+      "wordFamily": {
+        "noun": "quarter, quarterly",
+        "verb": "quarter",
+        "adjective": "quarterly, quarter",
+        "adverb": "quarterly"
+      },
+      "visual": {
+        "imageKeyword": "corporate finance meeting quarterly review desk calendar four quarters chart",
+        "imageDescription": "A desk calendar opened beside an executive tablet showing four distinct color-coded sections labeled Q1, Q2, Q3, and Q4 with financial bar charts.",
+        "mnemonic": "QUARTER-LY: Break the year into 4 QUARTERS, and do it -LY (regularly every three months)!"
+      },
+      "video": {
+        "description": "A corporate finance tutorial illustrating how a company's executive committee meets quarterly to reconcile departmental budgets, analyze cash flow, and prepare investor disclosures."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "The executive board of directors gathers _____ to review operational performance and determine shareholder dividend allocations.\n(A) quarter\n(B) quarters\n(C) quarterly\n(D) quartering",
+        "tips": "In Part 5 grammar questions, identify what part of speech is needed to modify the intransitive verb 'gathers'. An adverb of frequency is needed here. Although 'quarterly' can also serve as an adjective ('a quarterly review'), it is an established frequency adverb meaning 'every three months'. Choice (C) is correct. Choice (A) is a noun/verb, (B) is a plural noun, and (D) is a participle/gerund."
+      },
+      "synonyms": [
+        "every three months",
+        "four times a year",
+        "trimonthly",
+        "once a quarter",
+        "at three-month intervals"
+      ],
+      "antonyms": [
+        "annually",
+        "monthly",
+        "weekly",
+        "daily",
+        "irregularly"
+      ],
+      "relatedWords": [
+        "fiscal quarter",
+        "earnings call",
+        "Q1",
+        "dividend",
+        "financial audit",
+        "disbursement",
+        "governance"
+      ]
+    },
+    {
+      "id": "comms-214",
+      "word": "quotation",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/kwoʊˈteɪ.ʃən/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/quotation--_us_1.mp3",
+        "syllableBreakdown": "quo-ta-tion",
+        "stressPattern": "primary stress on the second syllable (quo-TA-tion)",
+        "commonMistakes": "Learners often drop the labialized glide /w/ in the initial onset, mispronouncing it as /koʊˈteɪ.ʃən/ (*ko-tay-shun*). Another common error is shifting stress to the first syllable (*QUO-ta-tion*). In business writing, non-native speakers also frequently confuse 'quotation' (the formal noun document) with 'invoice' (a bill sent after work is done) or 'estimate' (a loose non-binding guess)."
+      },
+      "etymology": {
+        "origin": "Derived from Middle English 'quoten' (to mark with chapter or section numbers, cite an authority) + the Latinate noun suffix '-ation' (from Latin '-ātiō', denoting an action or resulting state). 'Quote' derives from Medieval Latin 'quotāre' (to divide into chapters, number verses, state how many or at what price), from Latin 'quot' (how many, as many as), from Proto-Indo-European '*kʷoti' (how many).",
+        "rootWord": "Latin 'quot' (how many) via Medieval Latin 'quotāre' (to number, cite chapter and verse) + Latin suffix '-ātiō' (state or act of)",
+        "rootMeaning": "'The act of citing chapter numbers or repeating exact words'; in commerce, 'a formal statement specifying how much money a supplier will charge for goods or services'",
+        "evolution": "In the 14th and 15th centuries, 'quotation' meant the marginal referencing and numbering of biblical verses or legal statutes. By the 17th century, it expanded to denote repeating spoken or written words from an author or authority ('a memorable quotation'). During the late 18th and early 19th centuries, with the expansion of commodity exchanges and merchant trade, 'quotation' developed its core commercial sense: an official statement of the market price of goods, stocks, freight, or contracted services. In contemporary corporate procurement and the TOEIC exam, a 'quotation' is the formal binding or semi-binding price proposal provided by a vendor.",
+        "relatedLanguages": [
+          "French: devis (price estimate) / citation (quoted words)",
+          "Spanish: cotización (price proposal) / cita (quoted words)",
+          "German: Kostenvoranschlag (price estimate) / Zitat (quoted words)",
+          "Italian: preventivo (price estimate) / citazione (quoted words)",
+          "Dutch: offerte (price quote) / citaat (quoted words)"
+        ],
+        "firstRecordedUse": "early 15th century (in the sense of marginal referencing or numbering); commercial sense of specifying prices recorded by 1800"
+      },
+      "deepMeaning": {
+        "coreConcept": "1. A formal commercial statement or document specifying the exact price, terms, and delivery schedule for which a contractor or vendor agrees to provide specified goods or services. 2. A passage, phrase, or sentence repeated verbatim from a speech, text, or external authority.",
+        "spatialContext": "Procurement departments, vendor sales offices, construction job sites, corporate purchasing portals, client billing desks, and trade contract archives.",
+        "temporalContext": "Issued during the vendor solicitation or Request for Proposal (RFP) stage prior to contract signing; typically remains valid for a stipulated period (such as 30 or 60 days).",
+        "emotionalTone": "Precise, commercial, contractual, and transparent.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "In corporate English, native speakers distinguish 'quotation' from an 'estimate' and an 'invoice'. An estimate is an informal ballpark projection; an invoice is a bill demanding payment after delivery. A 'quotation' (or 'quote') is a formal price commitment: if the buyer accepts it within the stated validity period, the seller is bound to honor those specific line-item prices. Natives also instantly recognize 'quotation' in literary and communicative contexts as exact words enclosed in 'quotation marks'. In procurement, native managers instinctively insist on 'getting three competitive quotations' before issuing a purchase order.",
+        "mentalImage": "A purchasing manager sitting at a desk reviewing an itemized vendor quotation detailing hardware unit costs, volume discounts, freight charges, and a 'valid for 30 days' stamp.",
+        "whenToUse": "Use when requesting, issuing, or evaluating a formal written price specification for products, contractor work, or commercial shipping (e.g., 'request a quotation', 'obtain a quotation', 'formal price quotation', 'validity of the quotation'). Also use when citing someone's verbatim speech or text (e.g., 'a quotation from the CEO', 'enclosed in quotation marks').",
+        "whenNotToUse": "Do not confuse with 'invoice' (a bill issued after delivery requesting payment) or 'receipt' (proof of completed payment). In very casual speech, natives often shorten it to 'quote', but in formal writing, examinations, and official documentation, 'quotation' is preferred.",
+        "culturalContext": "In Western corporate governance and public-sector procurement, obtaining multiple independent quotations is a mandatory compliance requirement to prevent favoritism and ensure market-rate pricing. On the TOEIC exam, 'quotation' is a ubiquitous keyword in Part 7 (business letters, email inquiries between purchasing managers and suppliers) and Part 5/6 (testing vocabulary, collocations, and prepositions like 'validity of the quotation')."
+      },
+      "examples": {
+        "daily": [
+          "The auto repair shop provided a written quotation before replacing the vehicle's transmission.",
+          "Her graduation speech began with a famous quotation about perseverance from an ancient philosopher.",
+          "We contacted three local plumbing companies to obtain a price quotation for renovating our bathroom."
+        ],
+        "business": [
+          "Our procurement director requested an itemized quotation from the technology vendor for three hundred enterprise laptops.",
+          "Please be advised that the prices specified in this quotation remain valid for thirty calendar days from the date of issue.",
+          "After reviewing competing quotations from several licensed contractors, the facilities department selected the firm with the best safety record."
+        ],
+        "conversation": [
+          "A: 'Have we received the shipping quotation for our overseas freight container?'\nB: 'Yes, the logistics coordinator emailed an itemized breakdown including customs clearance this morning.'",
+          "A: 'Why is the total on this quotation higher than the preliminary estimate we received?'\nB: 'This quotation includes expedited overnight freight and comprehensive insurance coverage.'",
+          "A: 'Should I issue the purchase order immediately based on their quotation?'\nB: 'Let's verify first that the vendor confirmed the four-week delivery timeline in writing.'"
+        ],
+        "collocations": [
+          "request a quotation",
+          "price quotation",
+          "written quotation",
+          "itemized quotation",
+          "obtain a quotation",
+          "quotation marks"
+        ]
+      },
+      "wordFamily": {
+        "noun": "quotation, quote",
+        "verb": "quote",
+        "adjective": "quotable, quoted",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "itemized commercial price quotation document desk pen calculator procurement",
+        "imageDescription": "An itemized price quotation sheet on official letterhead displaying column headers for quantity, unit price, and total cost, positioned beside a calculator and signing pen.",
+        "mnemonic": "QUOT-ATION: It gives you the exact cost QUOTA, or repeats words exactly as QUOTED!"
+      },
+      "video": {
+        "description": "A procurement management video explaining how purchasing officers draft requests for quotations (RFQs), evaluate vendor cost breakdowns, and negotiate final commercial contracts."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "The facility renovation committee will not approve the contract until the contractor submits a detailed written _____ outlining all labor and material expenses.\n(A) quote\n(B) quotation\n(C) quoting\n(D) quotable",
+        "tips": "In Part 5 vocabulary and grammar questions, notice the noun modifier 'a detailed written _____'. While 'quote' (A) is common in colloquial speech as a noun, 'quotation' (B) is the full, formal business noun required in professional correspondence and standardized tests like the TOEIC. 'Quoting' (C) is a participle/gerund, and 'quotable' (D) is an adjective. Choice (B) is the most accurate and formal option."
+      },
+      "synonyms": [
+        "price estimate",
+        "bid",
+        "tender",
+        "cost statement",
+        "price proposal",
+        "valuation"
+      ],
+      "antonyms": [
+        "invoice",
+        "receipt"
+      ],
+      "relatedWords": [
+        "procurement",
+        "estimate",
+        "itemized",
+        "purchase order",
+        "vendor",
+        "bid",
+        "proposal"
+      ]
+    }
+  ]
+}

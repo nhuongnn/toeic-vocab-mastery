@@ -1,0 +1,465 @@
+{
+  "words": [
+    {
+      "id": "comms-115",
+      "word": "distribution",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˌdɪs.trɪˈbjuː.ʃən/",
+        "syllableBreakdown": "dis-tri-bu-tion",
+        "stressPattern": "secondary stress on the first syllable, primary stress on the third syllable (dis-tri-BU-tion)",
+        "commonMistakes": "Learners often misplace the primary stress onto the second syllable (*dis-TRI-bu-tion* instead of *dis-tri-BU-tion*), pronounce the '-tion' suffix as /-tɪ.ɒn/ rather than the reduced schwa form /-ʃən/, or omit the /j/ glide before the long vowel /uː/, saying /-buː-/ instead of /-bjuː-/.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/distribution--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Middle English borrowed from Anglo-Norman and Old French 'distribution', directly from Latin 'distributio' (an apportioning, division, distribution), noun of action from the past-participle stem of 'distribuere' (to divide, apportion, scatter among several).",
+        "rootWord": "Latin 'distribuere' (from prefix 'dis-' meaning apart/in different directions + 'tribuere' meaning to assign, bestow, apportion)",
+        "rootMeaning": "'The act of apportioning or dispersing apart to different recipients' — conveying the systematic allocation and physical or digital dispersal of items or information from a centralized source to multiple endpoints.",
+        "evolution": "In Classical and Late Latin, 'distributio' applied to the rhetorical division of arguments and state allotment of grain or funds. In 14th-century Middle English, it entered theological, legal, and almsgiving contexts. By the 18th and 19th centuries, it expanded into commercial economics for the movement of goods from manufacturer to merchant. In 20th-century communications, publishing, and digital media, 'distribution' became the standard term for the systematic dissemination of printed publications, syndicated press releases, digital newsletters, and targeted corporate email routing.",
+        "relatedLanguages": [
+          "French: distribution",
+          "Spanish: distribución",
+          "German: Distribution / Verteilung",
+          "Italian: distribuzione"
+        ],
+        "firstRecordedUse": "Late 14th century (c. 1380–1390 in Middle English administrative and theological treatises)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The systematic process of allocating, disseminating, circulating, or delivering information, publications, commercial merchandise, or digital content from a central originator through structured channels to targeted recipients or markets.",
+        "spatialContext": "Commercial mailing facilities, corporate communications newsrooms, fulfillment warehouses, regional logistics hubs, and automated email server networks.",
+        "temporalContext": "Occurs on scheduled broadcast cycles, weekly newsletter release dates, quarterly magazine deliveries, or immediate multi-wire press release dispatch intervals.",
+        "emotionalTone": "Methodical, structured, expansive, and operational.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers visualize 'distribution' as a branching hub-and-spoke mechanism. Whether discussing supply chains or communications, the mental model is a single origin (warehouse, server, headquarters) splitting outward through multiple established conduits to reach wide endpoints. In an office setting, saying 'add me to the distribution list' immediately conveys wanting to be in the automated loop for memos or reports, whereas 'global distribution' evokes shipping networks, retail stocking, or media syndication.",
+        "mentalImage": "A corporate communications director monitoring a live dashboard as a newly published quarterly earnings press release radiates simultaneously across syndicated wire feeds, email distribution lists, and regional media bureaus.",
+        "whenToUse": "Use when referring to the organized dissemination of media content, marketing materials, corporate newsletters, press releases, or commercial merchandise across wholesale and retail channels (e.g., 'digital distribution of the streaming film', 'update the departmental distribution list').",
+        "whenNotToUse": "Do not use for the simple hand-to-hand delivery of an individual parcel or personal letter (use 'delivery' or 'handover'), nor for informal sharing between two friends (use 'sharing' or 'sending').",
+        "culturalContext": "In Western corporate communications and commerce, effective distribution channels dictate whether a message or product reaches its target demographic. The ubiquitous corporate abbreviation 'DL' (distribution list) reflects how deeply institutional email routing is woven into daily corporate communication."
+      },
+      "examples": {
+        "daily": [
+          "The neighborhood association oversees the monthly distribution of community newsletters to every doorstep on the block.",
+          "Please remove my personal email from the alumni distribution list so I stop receiving campus updates on that account.",
+          "Local non-profit organizations coordinated the distribution of emergency food hampers and blankets ahead of the winter storm."
+        ],
+        "business": [
+          "Our corporate communications team scheduled the international distribution of the merger announcement through three major newswire services.",
+          "The publisher signed an exclusive multi-year distribution agreement with a leading digital platform to expand foreign sales.",
+          "Auditors noted discrepancies in the regional distribution of promotional materials and requested a complete inventory reconciliation."
+        ],
+        "conversation": [
+          "\"Did everyone in sales receive the updated pricing matrix?\" \"Yes, it was blasted out this morning via the executive distribution list.\"",
+          "\"Why is the shipment of the printed product brochures behind schedule?\" \"There was a customs bottleneck at the border, which temporarily disrupted our regional distribution network.\""
+        ],
+        "collocations": [
+          "distribution channel",
+          "distribution list",
+          "distribution network",
+          "distribution agreement",
+          "press release distribution",
+          "wide distribution"
+        ]
+      },
+      "wordFamily": {
+        "noun": "distribution, distributor, distributorship",
+        "verb": "distribute, redistribute",
+        "adjective": "distributive, distributional, distributed",
+        "adverb": "distributively"
+      },
+      "visual": {
+        "imageKeyword": "content distribution network digital communications logistics dispatch",
+        "imageDescription": "An overhead view of a modern logistics and media dispatch center with high-tech monitors displaying global network maps and sorting tracks for parcel and publication dispatch.",
+        "mnemonic": "DIS-tribute = DIS (apart/in different directions) + TRIBUTE (pay/give). You give things out in different directions to everyone on the list!"
+      },
+      "video": {
+        "description": "A behind-the-scenes broadcast segment explaining how international wire services automate the secure digital distribution of financial press releases to thousands of news organizations within milliseconds."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "To ensure that all regional branches receive policy updates promptly, the human resources department has updated its employee email _____ list.\n(A) distribute\n(B) distributor\n(C) distribution\n(D) distributive",
+        "tips": "In TOEIC Part 5, ETS tests compound nouns and noun adjuncts frequently. Here, the blank modifies 'list' to form the standard workplace term 'distribution list' (a pre-compiled list of recipients for emails or memos). (C) 'distribution' is the correct noun adjunct. 'Distributor' (B) refers to a commercial company/person that supplies goods, which makes no sense before 'list' in this context; 'distribute' (A) is a verb; and 'distributive' (D) is an adjective referring to mathematical or economic division."
+      },
+      "synonyms": [
+        "dissemination",
+        "circulation",
+        "dispersion",
+        "allocation",
+        "apportionment",
+        "delivery"
+      ],
+      "antonyms": [
+        "collection",
+        "accumulation",
+        "hoarding",
+        "centralization",
+        "retention"
+      ],
+      "relatedWords": [
+        "logistics",
+        "supply chain",
+        "wholesaler",
+        "channel",
+        "syndication",
+        "fulfillment",
+        "disseminate"
+      ]
+    },
+    {
+      "id": "comms-116",
+      "word": "distributor",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/dɪˈstrɪb.jə.tər/",
+        "syllableBreakdown": "dis-trib-u-tor",
+        "stressPattern": "primary stress on the second syllable (dis-TRIB-u-tor)",
+        "commonMistakes": "Learners often mistakenly stress the first or third syllable (*DIS-tri-bu-tor* or *dis-tri-BU-tor*), confuse it with the stress pattern of 'distribution' (/ˌdɪs.trɪˈbjuː.ʃən/), or over-enunciate the unstressed third syllable instead of using a reduced schwa /jə/.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/distributor--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Late Latin 'distributor' (one who divides, dispenses, or allots), agent noun formed from the past-participle stem of 'distribuere' (to divide, apportion) + agent suffix '-or' (one who performs the action).",
+        "rootWord": "Latin 'distribuere' + '-or' (agent suffix)",
+        "rootMeaning": "'One who allocates, apportions, or disperses' — originally referring to an official or administrator who dispenses funds, provisions, or judicial rulings.",
+        "evolution": "In Late Latin and medieval administration, 'distributor' denoted an officer who handed out state stipends, grain, or church tithes. Entered early Modern English around the 15th-16th century in legal and theological writings. During the Industrial Revolution, the term became entrenched in commerce to designate merchant wholesalers acting as commercial intermediaries between factory producers and retail sellers. In media and communications, it evolved to signify syndicates, film releasing companies, and publishing distributors who license and physically or digitally circulate content to movie theaters, retailers, and broadcasters.",
+        "relatedLanguages": [
+          "French: distributeur",
+          "Spanish: distribuidor",
+          "German: Distributor / Großhändler",
+          "Italian: distributore"
+        ],
+        "firstRecordedUse": "Early 15th century (c. 1420 in administrative and civic guild ordinances)"
+      },
+      "deepMeaning": {
+        "coreConcept": "An enterprise, independent commercial entity, or specialized agent that purchases or licenses goods, media productions, or publications directly from producers or manufacturers and sells or delivers them to retailers, broadcasters, or institutional clients.",
+        "spatialContext": "Wholesale commercial showrooms, international trade expos, commercial logistics parks, media distribution offices, and contract negotiation boardrooms.",
+        "temporalContext": "Engaged during quarterly supply procurement cycles, seasonal film distribution festivals, wholesale order re-stocking windows, and annual dealership agreement renewals.",
+        "emotionalTone": "Commercial, enterprising, transactional, and authoritative.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers distinguish clearly between a 'manufacturer' (who makes the product or film), a 'distributor' (the commercial intermediary with regional channels and licenses), and a 'retailer' (who sells to the consumer). In communications and publishing, a distributor is the critical pipeline that gets books into physical bookstores or films into streaming catalogs. When business executives say 'We need an exclusive distributor in East Asia', they mean a trusted partner holding regulatory licenses, warehousing infrastructure, and regional retail connections.",
+        "mentalImage": "A commercial negotiations meeting where a European film studio executive shakes hands with a North American media distributor over a signed theatrical and streaming distribution contract.",
+        "whenToUse": "Use when referring to a company or wholesale agent that buys or licenses products/media from manufacturers/studios and supplies them to retailers or end-market vendors (e.g., 'an authorized regional distributor', 'independent film distributor').",
+        "whenNotToUse": "Do not use for the retail storefront where consumers shop (use 'retailer' or 'merchant'), nor for a freelance delivery courier or mail carrier (use 'courier' or 'delivery driver').",
+        "culturalContext": "In global commerce and entertainment, distributors carry significant power because they control the pipeline to audiences and consumers. Anti-trust regulations and licensing agreements frequently revolve around distributor exclusivity and territory rights."
+      },
+      "examples": {
+        "daily": [
+          "The local bicycle shop had to backorder replacement gear components because the national distributor was out of stock.",
+          "She bought an espresso machine directly from the official North American distributor to ensure the manufacturer warranty was valid.",
+          "After winning critical acclaim at the film festival, the young director signed a deal with an independent movie distributor."
+        ],
+        "business": [
+          "The pharmaceutical firm terminated its contract with the regional distributor following persistent delays in hospital supply shipments.",
+          "To penetrate Latin American retail markets, our sales director is meeting with three prospective authorized distributors in São Paulo.",
+          "The publishing house announced that a prominent educational distributor will carry its new line of digital ESL textbooks."
+        ],
+        "conversation": [
+          "\"Can we order these promotional touchscreen monitors directly from the manufacturer?\" \"No, their company policy requires all commercial orders to go through an authorized regional distributor.\"",
+          "\"Why hasn't that documentary been released in theaters yet?\" \"The production company is still negotiating streaming and theatrical rights with a foreign distributor.\""
+        ],
+        "collocations": [
+          "authorized distributor",
+          "exclusive distributor",
+          "wholesale distributor",
+          "regional distributor",
+          "independent distributor",
+          "distributor agreement"
+        ]
+      },
+      "wordFamily": {
+        "noun": "distributor, distribution, distributorship",
+        "verb": "distribute, redistribute",
+        "adjective": "distributive, distributed",
+        "adverb": "distributively"
+      },
+      "visual": {
+        "imageKeyword": "authorized distributor commercial wholesale warehouse representative handshake",
+        "imageDescription": "A corporate representative in business attire greeting a wholesale distributor inside a clean, modern commercial logistics center with neatly organized pallets of packaged goods in the background.",
+        "mnemonic": "DISTRIBUT-OR: The suffix '-OR' signifies a person or company (like vendor or actor). A DISTRIBUT-OR is the commercial ACTOR who handles DISTRIBUTION!"
+      },
+      "video": {
+        "description": "An executive case study exploring how an independent consumer electronics manufacturer evaluated and selected a licensed overseas distributor to navigate regional import tariffs and retail shelf-space agreements."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Nexus Electronics recently signed an agreement with an authorized _____ to expand its commercial presence across Northern Europe.\n(A) distribute\n(B) distribution\n(C) distributor\n(D) distributable",
+        "tips": "In TOEIC Part 5, choosing between human/entity agent nouns and abstract nouns is a common test point. The sentence uses the indefinite article 'an' and the adjective 'authorized'. You need a countable singular noun denoting an authorized commercial entity or partner, which is (C) 'distributor'. (B) 'distribution' is an uncountable abstract action noun that cannot logically follow 'an authorized' in the context of signing a partnership agreement; (A) is a verb; and (D) is an adjective."
+      },
+      "synonyms": [
+        "wholesaler",
+        "supplier",
+        "vendor",
+        "intermediary",
+        "dealer",
+        "syndicator"
+      ],
+      "antonyms": [
+        "consumer",
+        "end user",
+        "manufacturer",
+        "producer"
+      ],
+      "relatedWords": [
+        "wholesaling",
+        "supply chain",
+        "retailer",
+        "licensing",
+        "dealership",
+        "broker",
+        "inventory"
+      ]
+    },
+    {
+      "id": "comms-117",
+      "word": "documentary",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˌdɑː.kjəˈmen.tər.i/",
+        "syllableBreakdown": "doc-u-men-ta-ry",
+        "stressPattern": "secondary stress on the first syllable, primary stress on the third syllable (doc-u-MEN-ta-ry)",
+        "commonMistakes": "Learners often put primary stress on the second syllable (*doc-U-men-tary*) or mangle the penultimate unstressed vowel, pronouncing it like *-tairy* instead of a reduced schwa /-tər.i/ or eliding it entirely in British English /-tri/.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/documentary--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Formed in English from 'document' (from Latin 'documentum' meaning lesson, example, proof, evidence, from 'docere' to teach) + suffix '-ary' (from Latin '-arius' indicating connection or belonging).",
+        "rootWord": "Latin 'documentum' (proof, lesson, evidence) from 'docere' (to teach, show, instruct)",
+        "rootMeaning": "'Pertaining to or consisting of evidence and instruction' — rooted in presenting authentic factual proof and recorded evidence rather than fictional depiction.",
+        "evolution": "In early 19th-century English, 'documentary' functioned purely as an adjective meaning 'pertaining to written documents or legal records' (e.g., 'documentary evidence'). In 1926, Scottish filmmaker John Grierson coined the substantive noun usage when reviewing Robert Flaherty's film 'Moana', defining it as the 'creative treatment of actuality'. Throughout the mid-to-late 20th century, the noun expanded from cinema to public radio, television broadcasting, and modern corporate communications, designating any in-depth factual multimedia investigation or historical overview based on real people and real events.",
+        "relatedLanguages": [
+          "French: documentaire",
+          "Spanish: documental",
+          "German: Dokumentarfilm / Dokumentation",
+          "Italian: documentario"
+        ],
+        "firstRecordedUse": "1802 as an adjective; 1926 as a noun by filmmaker John Grierson in the New York Sun"
+      },
+      "deepMeaning": {
+        "coreConcept": "A non-fiction film, television broadcast, audio program, or multimedia production that documents real events, historical occurrences, social phenomena, or corporate milestones using factual interviews, on-location footage, and archival records rather than fictional actors or dramatized plots.",
+        "spatialContext": "Broadcast editing bays, television network studios, public broadcasting screening halls, corporate media archives, and film festival auditoriums.",
+        "temporalContext": "Broadcast during prime-time educational television slots, featured at documentary film festivals, or released to commemorate significant institutional milestones.",
+        "emotionalTone": "Informative, investigative, serious, and thought-provoking.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "When native speakers hear 'documentary', they instinctively contrast it with 'fiction', 'feature film', or 'commercial'. It signals educational credibility, real human testimony, and journalistic integrity. In corporate and public relations contexts, producing a 'company documentary' represents prestige storytelling—chronicling an organization's founding struggles, innovative culture, or community impact through genuine interviews rather than slick 30-second sales pitches.",
+        "mentalImage": "A film director sitting in a darkened post-production studio wearing monitoring headphones, editing archival black-and-white video reels and synchronized interview audio on dual high-resolution displays.",
+        "whenToUse": "Use when referring to an authentic, factual film, television broadcast, or multi-part audio series grounded in real-life research, interviews, and historical archives (e.g., 'award-winning nature documentary', 'investigative television documentary').",
+        "whenNotToUse": "Do not use for a standard scripted drama, fiction film, or comedy show (use 'movie' or 'feature film'), nor for brief advertisements or commercials (use 'commercial' or 'promotional clip').",
+        "culturalContext": "In English-speaking media (e.g., BBC, PBS, Netflix, National Geographic), documentaries are viewed as vital civic and cultural instruments for raising public awareness, exposing corporate malfeasance, celebrating historical milestones, or exploring wildlife."
+      },
+      "examples": {
+        "daily": [
+          "We spent Sunday afternoon watching a fascinating multi-part documentary about wildlife conservation in the African savannah.",
+          "The community art center is hosting a free screening of an independent documentary about urban agriculture this Thursday.",
+          "After listening to the investigative radio documentary, she decided to research sustainable consumer choices more closely."
+        ],
+        "business": [
+          "In celebration of its centennial milestone, the aerospace manufacturer commissioned a full-length corporate documentary highlighting its engineering breakthroughs.",
+          "The marketing team secured rights to feature clips from the sustainability documentary in their upcoming social impact campaign.",
+          "Broadcasters paid substantial licensing fees to air the award-winning environmental documentary during prime-time hours."
+        ],
+        "conversation": [
+          "\"Did you catch that new television documentary on artificial intelligence last night?\" \"Yes, the interviews with computer scientists and ethicists were remarkably insightful.\"",
+          "\"Our public relations team wants to produce a short documentary profiling our regional supply chain partners.\" \"That sounds like an excellent way to demonstrate our commitment to ethical sourcing.\""
+        ],
+        "collocations": [
+          "feature-length documentary",
+          "award-winning documentary",
+          "investigative documentary",
+          "corporate documentary",
+          "documentary filmmaker",
+          "television documentary"
+        ]
+      },
+      "wordFamily": {
+        "noun": "documentary, document, documentation, documentarian",
+        "verb": "document",
+        "adjective": "documentary, documented",
+        "adverb": "documentarily"
+      },
+      "visual": {
+        "imageKeyword": "documentary filmmaker camera interview production studio lighting",
+        "imageDescription": "A professional film production crew operating a high-end cinema camera and boom microphone while recording an in-depth interview with a subject in a warmly lit studio setting.",
+        "mnemonic": "DOCU-mentary: A film made entirely of real DOCU-ments, interviews, and factual records!"
+      },
+      "video": {
+        "description": "A film festival trailer highlighting an investigative corporate documentary featuring interviews with industry whistleblowers, archival board meeting transcripts, and factory footage."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "The network will broadcast an hour-long _____ examining the economic impact of renewable energy infrastructure on Wednesday evening.\n(A) document\n(B) documentary\n(C) documentation\n(D) documented",
+        "tips": "In TOEIC Part 5 and 6, candidates are often tested on distinguishing between related nouns derived from the same base. Here, the context involves a media broadcast ('The network will broadcast an hour-long _____ examining...'). The only noun that refers to a broadcast film or program is (B) 'documentary'. 'Document' (A) is a written paper or digital file; 'documentation' (C) is an uncountable noun referring to written instructions, records, or technical manuals; 'documented' (D) is a past participle adjective."
+      },
+      "synonyms": [
+        "factual film",
+        "nonfiction feature",
+        "docudrama",
+        "chronicle",
+        "investigative report",
+        "exposé"
+      ],
+      "antonyms": [
+        "fiction",
+        "fantasy",
+        "fictional feature",
+        "dramatization"
+      ],
+      "relatedWords": [
+        "voiceover",
+        "archival footage",
+        "filmmaker",
+        "broadcast",
+        "cinematography",
+        "interview",
+        "non-fiction"
+      ]
+    },
+    {
+      "id": "comms-118",
+      "word": "draft",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/dræft/",
+        "syllableBreakdown": "draft",
+        "stressPattern": "single-syllable word with full vowel stress (DRAFT)",
+        "commonMistakes": "Learners often pronounce the initial consonant blend /dr-/ with an unvoiced affricate /tʃr/ (like *chraft*) or confuse the American vowel /æ/ with /ʌ/ or /ɑː/, pronouncing it like *druft* or over-elongating it unnaturally.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/draft--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Middle English 'drafte', a phonetic and spelling variant of 'draught' (drawing, pulling, drawing off, sketch, outline), derived from Old English 'dræht' or Proto-Germanic '*drahtuz' (a pulling, carrying, course), related to Old English 'dragan' (to draw, drag, pull).",
+        "rootWord": "Proto-Germanic '*draganą' (to draw, pull) / Middle English 'drafte'",
+        "rootMeaning": "'That which is drawn, pulled out, or delineated' — referring to an initial sketch or rough design drawn out on paper before completion.",
+        "evolution": "In Old and Middle English, 'draught' / 'draft' meant pulling a load, drawing a net, a drink swallowed in one gulp, or pulling troops into military service. In the 15th and 16th centuries, it took on the specialized meaning of 'drawing an outline, schematic, or rough sketch' on architectural parchment. By the 17th and 18th centuries, it shifted into legal and literary terminology denoting a preliminary piece of writing prepared for review before final engrossment or printing. Today, in business communications, 'draft' is the universally accepted noun for any working version of a memo, contract, speech, or report prior to final approval.",
+        "relatedLanguages": [
+          "Dutch: dracht / ontwerp (concept, draft)",
+          "German: Entwurf (draft) / Tracht",
+          "Swedish: dräkt / utkast (draft)",
+          "French: brouillon / ébauche (draft)"
+        ],
+        "firstRecordedUse": "Late 14th century (c. 1380 as 'draught/drafte' meaning a sketch or outline; 1520s for a written document outline)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A preliminary or working version of a written piece, legal contract, architectural plan, speech, or policy document that is created for review, critique, editing, and revision before formal approval, execution, or publication.",
+        "spatialContext": "Corporate word-processing interfaces, collaborative cloud document editors, shared network review folders, editorial desks, and legal drafting conference rooms.",
+        "temporalContext": "Created in the opening phases of document generation, circulated during iterative peer review rounds, and retired once a final version is signed off.",
+        "emotionalTone": "Collaborative, provisional, receptive to feedback, and industrious.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native English speakers, a 'draft' is inherently temporary and safe for feedback. Calling something a 'draft' grants permission for constructive criticism, redlines, and changes—it protects the writer from expectations of perfection. In everyday corporate speech, phrases like 'send me a rough draft' or 'let's review the first draft' imply active collaboration. Conversely, if something is marked 'FINAL DRAFT', it signals that substantive changes are now closed and only superficial typos should be flagged.",
+        "mentalImage": "A legal associate looking at a dual-monitor setup reviewing a 20-page service contract with 'DRAFT - FOR INTERNAL REVIEW ONLY' faintly watermarked across the diagonal of every page, filled with redline revisions and margin comments.",
+        "whenToUse": "Use when referring to an unfinished or working version of any written composition, contract, proposal, email, speech, or blueprint undergoing review and revision (e.g., 'rough draft', 'first draft', 'final draft').",
+        "whenNotToUse": "Do not use for a finalized, officially approved, and signed document (use 'final version', 'executed contract', or 'authorized policy'), nor for a brief informal sticky note (use 'note' or 'memo').",
+        "culturalContext": "In professional workplace culture throughout the US, UK, and worldwide, circulating a 'draft' before official release is standard business etiquette. It builds consensus, manages risk, and ensures cross-departmental buy-in from legal, compliance, and executive leadership."
+      },
+      "examples": {
+        "daily": [
+          "She saved a rough draft of her graduate school application essay and asked her professor for feedback.",
+          "Before sending the strongly worded email to my landlord, I let the draft sit in my inbox overnight.",
+          "The novelist completed the third draft of his manuscript after revising the ending several times."
+        ],
+        "business": [
+          "The legal department circulated the initial draft of the vendor licensing agreement for executive review.",
+          "Please submit the revised draft of the quarterly financial statement to the auditing committee by Friday afternoon.",
+          "After incorporating feedback from the marketing team, Carlos uploaded the second draft to the shared project drive."
+        ],
+        "conversation": [
+          "\"Have you had a chance to look over the press release I drafted?\" \"Yes, I made a few tracked changes on your initial draft and left comments in the margins.\"",
+          "\"Is this the final version of the lease agreement?\" \"No, that's just a preliminary draft—our attorney is still finalizing the termination clause.\""
+        ],
+        "collocations": [
+          "rough draft",
+          "first draft",
+          "final draft",
+          "draft proposal",
+          "circulate a draft",
+          "revise a draft"
+        ]
+      },
+      "wordFamily": {
+        "noun": "draft, drafter, drafting, draftsmanship",
+        "verb": "draft, redraft",
+        "adjective": "draft, drafting",
+        "adverb": "draftingly"
+      },
+      "visual": {
+        "imageKeyword": "draft contract document review redline track changes laptop pen",
+        "imageDescription": "A printed business proposal on a wooden desk with visible red pen corrections, handwritten marginal notes, and yellow sticky notes, beside a laptop open to a word processor.",
+        "mnemonic": "DRAFT: Think of 'DRAW-FT'—you DRAW up the initial lines of text before painting the final picture!"
+      },
+      "video": {
+        "description": "A business writing tutorial demonstrating how corporate communicators move from a messy brain dump to an organized first draft, followed by systematic peer review and polishing."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Members of the editorial board are requested to review the preliminary _____ of the annual report before tomorrow's executive meeting.\n(A) draft\n(B) drafted\n(C) drafting\n(D) draftee",
+        "tips": "In TOEIC Part 5, collocations and parts of speech are heavily tested. Following the adjective 'preliminary' and definite article 'the', a noun is required. The common workplace collocation is 'preliminary draft' (meaning an initial working version of a document). Choice (A) 'draft' is the standard noun. Choice (B) 'drafted' is past tense / participle; (C) 'drafting' is a gerund/process noun referring to the action of drawing or writing; and (D) 'draftee' is a noun referring to a person conscripted into military service, which is contextually absurd."
+      },
+      "synonyms": [
+        "outline",
+        "sketch",
+        "manuscript",
+        "blueprint",
+        "mock-up",
+        "version"
+      ],
+      "antonyms": [
+        "final version",
+        "finished product",
+        "final copy",
+        "masterpiece"
+      ],
+      "relatedWords": [
+        "redline",
+        "revision",
+        "proofread",
+        "markup",
+        "copy editing",
+        "amendment",
+        "manuscript"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,513 @@
+import json
+import re
+import jsonschema
+
+# Load schema from scripts/process_words.py
+with open("scripts/process_words.py", "r", encoding="utf-8") as f:
+    code = f.read()
+
+schema_str = code[code.find("SCHEMA ="):code.find("BASE_PROMPT =")].strip()
+ldict = {}
+exec(schema_str, globals(), ldict)
+SCHEMA = ldict["SCHEMA"]
+
+words_data = [
+    {
+        "id": "dining-137",
+        "word": "food",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/fuːd/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/food--_us_1.mp3",
+            "syllableBreakdown": "food",
+            "stressPattern": "single stressed syllable (FOOD)",
+            "commonMistakes": "Learners from various linguistic backgrounds often shorten the long, tense vowel /uː/ to a lax /ʊ/ (sounding like 'foot' with a 'd') or unvoice the terminal consonant /d/ into an abrupt /t/ ('foot'). Ensure the lips remain closely rounded throughout the /uː/ sound and release the final /d/ with gentle vocal cord vibration rather than an unvoiced stop."
+        },
+        "etymology": {
+            "origin": "Inherited from Middle English 'fode', from Old English 'fōda' (nourishment, aliment, sustenance), from Proto-Germanic '*fōdô' (nourishment, food), from Proto-Indo-European root '*peh₂-' (to protect, pasture, feed).",
+            "rootWord": "Proto-Germanic *fōdô (sustenance, nourishment) / PIE *peh₂- (to guard, graze, feed)",
+            "rootMeaning": "That which guards, pastures, or sustains life; physical or spiritual nourishment.",
+            "evolution": "In Old and Middle English, 'fōda' designated all forms of consumable sustenance for humans and animals, closely linked to the verb 'fēdan' (to feed) and noun 'fōdor' (fodder). Following the Norman Conquest, while specific dressed meats adopted Anglo-Norman names (beef, pork, poultry), 'food' remained the primary Germanic blanket term for nourishment. Across contemporary commercial, institutional, and culinary contexts, it serves as an overarching category noun encompassing catering, dietary nutrition, and food-and-beverage (F&B) operations.",
+            "relatedLanguages": [
+                "German: Futter (animal feed, fodder) / füttern (to feed)",
+                "Dutch: voedsel (food) / voeden (to feed)",
+                "Old Norse: fæða (food, sustenance)",
+                "Gothic: fōdeins (nourishment, food)",
+                "Danish: føde (nourishment, food)",
+                "Latin: panis (bread) / pascere (to graze, feed, from PIE *peh₂-)"
+            ],
+            "firstRecordedUse": "Before 900 AD (Old English 'fōda' in King Alfred's translation of Boethius)"
+        },
+        "deepMeaning": {
+            "coreConcept": "Any nutritious solid or liquid substance that people or animals eat or drink, or that plants absorb, in order to sustain life, maintain growth, and supply vital energy; in corporate hospitality and culinary service, specifically prepared dishes, refreshments, and banquet provisions provided for guests, employees, or conference delegates.",
+            "spatialContext": "Commercial banquet galleys, corporate cafeterias, hotel buffet lines, executive dining suites, conference refreshment stations, and refrigerated walk-in pantries.",
+            "temporalContext": "Daily scheduled service intervals (breakfast 7:00–9:00 AM, lunch 12:00–1:30 PM, evening receptions 6:00–8:30 PM), strictly timed hot/cold holding windows, and perishable inventory turnarounds.",
+            "emotionalTone": "Nourishing, hospitable, satisfying, restorative, and culturally appreciative.",
+            "formalityLevel": "neutral",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native English speakers treat 'food' primarily as an uncountable mass noun in general discourse ('There was plenty of food at the reception'). The plural form 'foods' is reserved almost exclusively for denoting distinct categories, nutritional groups, or specialized culinary traditions ('packaged foods', 'fermented foods', 'organic baby foods'). In corporate and event planning contexts, 'food' immediately pairs with hospitality ('food and beverage', abbreviated F&B), signaling attentiveness to dietary accommodations (vegan, kosher, gluten-free, allergen-free). Providing exceptional food is perceived as a direct reflection of an organization's esteem for its staff and clients.",
+            "mentalImage": "A tiered hotel banquet buffet display where polished stainless steel chafing dishes steam gently beside artfully garnished platters of roasted meats, vibrant Mediterranean grain salads, and allergen indicator labels under warm overhead spotlights.",
+            "whenToUse": "Use when discussing edible sustenance in general, banquet catering arrangements, workplace dining services, nutritional policies, or industry pairings ('food and beverage industry', 'food safety inspection', 'gourmet food', 'local food supplier').",
+            "whenNotToUse": "Do not use 'food' when referring to a specific scheduled dining occasion (use 'meal', 'luncheon', 'banquet', or 'dinner'), an individual chef-prepared culinary creation (use 'dish', 'course', or 'entrée'), or livestock bulk feed (use 'fodder', 'feed', or 'forage').",
+            "culturalContext": "In contemporary corporate etiquette across English-speaking countries, providing catered food is an essential hospitality norm for seminars, shareholder conferences, and board meetings. Furthermore, tech and creative campuses frequently offer gourmet subsidized or complimentary food pantries to foster workplace collaboration and talent retention. In the TOEIC exam, 'food' appears regularly in Part 1 (photographs of buffet lines and meal preparation), Part 3 (dialogues coordinating catering orders), Part 4 (announcements about dining venue operating hours), and Part 7 (catering invoices, restaurant reviews, and employee health notices)."
+        },
+        "examples": {
+            "daily": [
+                "We decided to pick up some takeout food from the neighborhood Thai bistro after finishing late at the gym.",
+                "The community center organized an annual holiday food drive to support low-income families with non-perishable groceries.",
+                "Incorporating wholesome, minimally processed food into her daily diet noticeably improved her afternoon energy levels."
+            ],
+            "business": [
+                "The conference coordinator finalized the contract with the hotel to provide all food and beverage services for the three-day summit.",
+                "To comply with municipal public health regulations, all food prepared in the corporate cafeteria must undergo temperature monitoring every two hours.",
+                "The facilities team conducted an employee survey to evaluate satisfaction with the newly introduced subsidized healthy food program."
+            ],
+            "conversation": [
+                "Delegate: 'Excuse me, will food be provided during the afternoon break, or should we visit the café across the plaza?'\\nEvent Director: 'Complimentary food and hot beverages will be served right in the mezzanine foyer at three o'clock.'",
+                "Catering Coordinator: 'Have we received all dietary preference forms for the awards banquet?'\\nExecutive Chef: 'Yes, we have arranged dedicated food stations to accommodate both vegetarian and gluten-sensitive guests.'",
+                "Department Head: 'The client praised the quality of the food served during yesterday's product rollout.'\\nAccount Executive: 'That's fantastic to hear; partnering with an artisanal catering vendor really made a positive impression.'"
+            ],
+            "collocations": [
+                "food and beverage",
+                "food safety",
+                "food allergy",
+                "catered food",
+                "food poisoning",
+                "organic food"
+            ]
+        },
+        "wordFamily": {
+            "noun": "food, foodie, foodstuffs",
+            "verb": "feed",
+            "adjective": "food-grade, food-safe, foodless",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "buffet food corporate luncheon hotel banquet dishes gourmet catering",
+            "imageDescription": "An elegant corporate banquet luncheon spread featuring steaming stainless steel chafing units, fresh seasonal salads in porcelain bowls, and artisanal bread baskets arranged on a linen-covered table.",
+            "mnemonic": "FOOD: Fueling Our Organization Daily with wholesome nourishment and hospitable care!"
+        },
+        "video": {
+            "description": "A hospitality management training module demonstrating commercial kitchen food safety protocols, temperature logging, and banquet line presentation at an international convention hotel."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "Due to updated health guidelines, all hot _____ prepared by the catering department must be kept at a minimum temperature of sixty degrees Celsius until served.\\n(A) food\\n(B) foods\\n(C) foodie\\n(D) feeder",
+            "tips": "In TOEIC Part 5, 'food' functions predominantly as an uncountable mass noun when referring broadly to prepared sustenance or culinary provisions ('all hot food prepared...'). While 'foods' can occasionally designate distinct packaged product lines or food groups in technical nutrition passages, general hospitality contexts require the singular non-count form (A) 'food'. Choice (C) refers to a gourmet enthusiast, and (D) refers to a mechanical dispensing apparatus."
+        },
+        "synonyms": [
+            "nourishment",
+            "sustenance",
+            "provisions",
+            "fare",
+            "edibles",
+            "nutriment"
+        ],
+        "antonyms": [
+            "poison",
+            "toxin",
+            "starvation"
+        ],
+        "relatedWords": [
+            "beverage",
+            "catering",
+            "nutrition",
+            "cuisine",
+            "buffet",
+            "dietary",
+            "perishable"
+        ]
+    },
+    {
+        "id": "dining-138",
+        "word": "fork",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/fɔːrk/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/fork--_us_1.mp3",
+            "syllableBreakdown": "fork",
+            "stressPattern": "single stressed syllable (FORK)",
+            "commonMistakes": "Learners often drop the rhotic /r/ in North American English or confuse the open-mid back vowel /ɔː/ with the diphthong /oʊ/, unintentionally pronouncing 'folk' (/foʊk/, where the 'l' is silent). Additionally, some speakers from languages lacking the labiodental fricative /f/ substitute a voiceless bilabial plosive /p/, making 'fork' sound like 'pork'."
+        },
+        "etymology": {
+            "origin": "Middle English 'forke', from Old English 'force' or 'forca' (pitchfork, agricultural pronged tool), borrowed from Latin 'furca' (two-pronged agricultural fork, pitchfork, stake), later reinforced by Anglo-Norman and Old French 'fourche' and Italian 'forchetta'.",
+            "rootWord": "Latin 'furca' (pitchfork, two-pronged tool, stake)",
+            "rootMeaning": "A two- or multi-pronged implement utilized for piercing, hoisting, or holding.",
+            "evolution": "In antiquity and Anglo-Saxon England, 'forca' was exclusively an agricultural implement for pitching hay. Byzantine royalty introduced small two-pronged table forks for eating fruit and sticky sweets around the 10th century, which migrated to Renaissance Italian merchant courts by the 14th century. When English traveler Thomas Coryat published his Italian dining observations in 1611, table forks were initially lampooned in London as an effeminate vanity. However, by the late 17th century, silver four-tined forks became indispensable across Western dining etiquette, differentiating into specialized salad, dinner, fish, and dessert forks.",
+            "relatedLanguages": [
+                "Latin: furca (pitchfork, two-pronged tool)",
+                "French: fourchette (table fork) / fourche (pitchfork)",
+                "Italian: forchetta (table fork) / forca (pitchfork)",
+                "Spanish: horca (pitchfork) / tenedor (table fork)",
+                "German: Forke (agricultural pitchfork) / Gabel (table fork)",
+                "Portuguese: forca (gallows, pitchfork) / garfo (table fork)"
+            ],
+            "firstRecordedUse": "c. 1000 in Old English (agricultural sense); c. 1430 in royal inventories for specialized table eating utensils"
+        },
+        "deepMeaning": {
+            "coreConcept": "An eating or culinary utensil consisting of a handle ending in two, three, or typically four pointed prongs (tines), engineered specifically to pierce, scoop, lift, or secure food during cutting or consumption; extended mechanically to lifting apparatuses (forklift) and geographically to branching paths (a fork in a road or river).",
+            "spatialContext": "Formal dining tables, restaurant silverware rolling stations, banquet flatware storage caddies, dishwashing sorting racks, and conference buffet utensil dispensers.",
+            "temporalContext": "Pre-service table setting alignments prior to guest seating, plate clearing transitions between dining courses, and post-event inventory counts.",
+            "emotionalTone": "Polished, orderly, civilized, functional, and formal.",
+            "formalityLevel": "neutral",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native English speakers instinctively link the 'fork' to formal Western dining etiquette and place settings. When seated at an executive banquet or fine-dining restaurant, a native speaker remembers to 'work from the outside in': the smaller salad fork rests on the far left, while the larger dinner fork sits closest to the plate. In casual environments, requesting a fork implies solid food that cannot be cleanly picked up by hand or scooped with a spoon. Idiomatically, natives frequently employ 'fork out' or 'fork over' (to pay money reluctantly) and 'a fork in the road' (a pivotal strategic dilemma).",
+            "mentalImage": "A formal table setting covered with a starched white linen tablecloth, where a mirror-finished stainless steel dinner fork with four sleek prongs rests exactly one inch to the left of a wide porcelain plate alongside an ironed napkin.",
+            "whenToUse": "Use when designating the pronged eating implement ('dinner fork', 'salad fork', 'plastic fork', 'fondue fork'), a large carving fork, or metaphorically when describing branching roads, decisions, or software code bases.",
+            "whenNotToUse": "Do not confuse with a 'spoon' (concave bowl for soups and broths) or 'knife' (sharpened blade for slicing); refer to them collectively as 'cutlery', 'flatware', or 'silverware'. Never refer to Asian eating sticks ('chopsticks') as forks.",
+            "culturalContext": "Mastery of fork mechanics (the Continental style of keeping the fork in the left hand tines-down versus the traditional American 'zigzag' style of switching hands after cutting) remains a quiet marker of social and professional polish during executive business dinners. In the TOEIC exam, forks appear regularly in Part 1 (waiters setting banquet tables, flatware placed neatly by chargers), Part 3 (diners requesting replacement utensils from waitstaff), and Part 7 (catering equipment rental invoices and hotel supply purchasing logs)."
+        },
+        "examples": {
+            "daily": [
+                "She placed the salad fork to the far left of the plate while setting the dining table for Sunday dinner.",
+                "The restaurant server immediately brought a clean dessert fork after noticing mine had fallen to the carpet.",
+                "For our outdoor company barbecue, the planning committee supplied compostable wooden forks and knives instead of plastic ones."
+            ],
+            "business": [
+                "The banquet manager inspected each place setting to verify that every silver-plated dinner fork was aligned with the edge of the tablecloth.",
+                "Our catering equipment purchase order includes twenty cases of stainless steel forks, dessert spoons, and butter knives.",
+                "During corporate etiquette seminars, junior consultants are taught proper European and American fork handling for international client dinners."
+            ],
+            "conversation": [
+                "Head Waiter: 'Please ensure that the tables in Banquet Salon C are fully dressed with both a salad fork and a main-course fork.'\\nServer: 'Yes, sir, I am polishing the remaining silver flatware right now.'",
+                "Guest: 'Excuse me, server, could I please get a fresh fork for my entrée?'\\nWaiter: 'Certainly, madam, I will bring you a clean dinner fork right away.'",
+                "Event Planner: 'Did the rental invoice cover sufficient flatware for four hundred banquet attendees?'\\nOperations Lead: 'Yes, the vendor delivered five hundred place settings, including appetizer forks and pastry forks.'"
+            ],
+            "collocations": [
+                "dinner fork",
+                "salad fork",
+                "knife and fork",
+                "tines of a fork",
+                "plastic fork",
+                "dessert fork"
+            ]
+        },
+        "wordFamily": {
+            "noun": "fork, forkful, forklift",
+            "verb": "fork, bifurcate",
+            "adjective": "forked",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "fork table setting formal dining silverware cutlery place setting",
+            "imageDescription": "A gleaming, mirror-polished four-tined stainless steel dinner fork resting neatly to the left of a fine bone china plate on an upscale banquet table.",
+            "mnemonic": "FORK: Four Outstretched prongs Ready to Knife-assist and lift food cleanly!"
+        },
+        "video": {
+            "description": "A luxury hotel dining etiquette tutorial illustrating proper banquet table place settings, detailing the precise positioning of salad, dinner, and dessert forks."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                2,
+                3,
+                7
+            ],
+            "exampleQuestion": "Before opening the banquet hall doors to delegates, the head steward ensured that each cover was arranged with a knife, spoon, and polished _____ in accordance with protocol.\\n(A) fork\\n(B) forked\\n(C) forking\\n(D) forklike",
+            "tips": "In TOEIC Part 5, series of coordinate items linked by conjunctions ('knife, spoon, and _____') demand strict grammatical parallelism. Because 'knife' and 'spoon' are singular countable nouns identifying eating utensils, the blank requires the parallel noun (A) 'fork'. Choices (B) and (C) are participle verb forms, while (D) is an adjective."
+        },
+        "synonyms": [
+            "eating utensil",
+            "table fork",
+            "flatware piece",
+            "cutlery piece",
+            "prong"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "cutlery",
+            "flatware",
+            "silverware",
+            "spoon",
+            "knife",
+            "tine",
+            "table setting"
+        ]
+    },
+    {
+        "id": "dining-139",
+        "word": "fresh",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/frɛʃ/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/fresh--_us_1.mp3",
+            "syllableBreakdown": "fresh",
+            "stressPattern": "single stressed syllable (FRESH)",
+            "commonMistakes": "Non-native speakers, particularly speakers of Vietnamese, Cantonese, or Spanish, frequently omit the terminal voiceless postalveolar fricative /ʃ/, producing an incomplete /frɛ/ or replacing it with an alveolar /s/ ('fress'). Furthermore, learners sometimes struggle with the initial consonant cluster /fr/, erroneously inserting an epenthetic vowel ('fuh-resh') or substituting /p/ for /f/ ('presh')."
+        },
+        "etymology": {
+            "origin": "Middle English 'fresh' / 'fersch', from Old English 'fersc' (sweet, not salt or corrupted, of water), reinforced by Anglo-Norman and Old French 'fres' (feminine 'fresche', fresh, newly made, cool), borrowed from Proto-Germanic '*friskaz' (fresh, active, lively).",
+            "rootWord": "Proto-Germanic *friskaz (lively, active, crisp, unspoiled)",
+            "rootMeaning": "Unspoiled, retaining original moisture, crispness, and vitality; not salted, stale, or decomposed.",
+            "evolution": "In Old English, 'fersc' was applied primarily to sweet inland drinking water as opposed to saline sea water ('fersc wæter'). Following the Norman Conquest, the French feminine form 'fresche' (derived from the same Germanic root *friskaz borrowed into Vulgar Latin as *friscus) merged with the native word, expanding its meaning to newly picked produce, freshly caught fish, and newly baked bread. In contemporary commercial logistics, 'fresh' functions both as an adjective and as an industry category noun designating perishable, unprocessed produce and proteins maintained through strict cold chains.",
+            "relatedLanguages": [
+                "German: frisch (fresh, crisp, brisk)",
+                "Dutch: vers (fresh) / fris (cool, fresh)",
+                "French: frais / fraîche (fresh, cool, chilled)",
+                "Italian: fresco (fresh, cool, chilly)",
+                "Spanish: fresco (fresh, cool)",
+                "Old Norse: ferskr (fresh, not salty)"
+            ],
+            "firstRecordedUse": "c. 900 in Old English (referring to non-saline water); expanded to food and harvest freshness in 13th-century Middle English"
+        },
+        "deepMeaning": {
+            "coreConcept": "Newly harvested, caught, baked, or prepared food that retains its natural moisture, crisp texture, nutritional potency, and authentic flavor; not preserved by freezing, canning, chemical additives, or dehydration; in culinary procurement and supermarket supply chains, also used as an industry noun designating the entire category of perishable produce, dairy, and butchery goods.",
+            "spatialContext": "Farm-to-table restaurant kitchens, supermarket produce misting aisles, corporate cafeteria salad counters, refrigerated seafood storage bays, and artisanal bakery display racks.",
+            "temporalContext": "Daily dawn vendor deliveries (4:30–6:30 AM), tight perishable inventory turnover windows (24 to 48 hours), and seasonal agricultural harvest schedules.",
+            "emotionalTone": "Crisp, wholesome, invigorating, revitalizing, and premium.",
+            "formalityLevel": "neutral",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To a native English speaker, 'fresh' in dining evokes an immediate sensory guarantee of crisp textures, bright colors, and clean flavors. It stands in direct psychological opposition to 'stale', 'processed', 'canned', or 'frozen'. In professional catering and hospitality management, advertising 'fresh produce' or 'made fresh daily' signals premium culinary care and health consciousness. Additionally, in retail grocery management and wholesale supply, 'fresh' functions as a recognized commercial noun category (e.g., 'Director of Fresh', 'managing perishables in fresh'). In general business contexts, natives also use 'fresh' metaphorically to denote innovative thinking ('a fresh perspective').",
+            "mentalImage": "A chef in an apron inspecting a freshly unloaded wooden delivery crate brimming with dewy, crisp romaine lettuce heads, deep-red heirloom tomatoes, and fragrant basil leaves in a sunlit kitchen receiving bay.",
+            "whenToUse": "Use when describing newly harvested vegetables, recently caught seafood, warm bread, or unpreserved ingredients ('fresh ingredients', 'fresh produce', 'fresh catch of the day', 'freshly squeezed juice'); also use in grocery/catering procurement for the fresh food category.",
+            "whenNotToUse": "Do not use 'fresh' to describe dry shelf-stable pantry goods (use 'dry goods' or 'canned goods'). Do not confuse 'fresh' with 'raw'—a gourmet meal can be freshly cooked, whereas raw indicates uncooked state. Avoid informal cheeky or impertinent slang usages ('don't get fresh with me') in corporate or culinary correspondence.",
+            "culturalContext": "The contemporary culinary movement emphasizing 'fresh, seasonal, and locally sourced' food has deeply influenced corporate dining and event hospitality in English-speaking countries. Serving fresh fare aligns with employee wellness initiatives and sustainable procurement goals. In the TOEIC test, 'fresh' appears frequently in Part 1 (market stalls laden with fresh fruit), Part 3 (conversations negotiating produce shipments or asking about seafood freshness), Part 4 (supermarket promotional announcements), and Part 7 (restaurant reviews, catering brochures, and vendor contracts)."
+        },
+        "examples": {
+            "daily": [
+                "The corner bakery fills the neighborhood with the comforting aroma of fresh sourdough every morning at dawn.",
+                "She prefers to shop at the farmers' market on Saturdays to purchase fresh organic vegetables directly from local growers.",
+                "We squeezed fresh lemons and mint from the garden to prepare a pitcher of chilled iced tea for our guests."
+            ],
+            "business": [
+                "Our executive dining room guarantees that all seafood dishes are prepared using fresh catch delivered each morning from coastal fisheries.",
+                "The hospitality group appointed a new Vice President of Fresh to oversee quality control across perishable food supply chains.",
+                "To support workplace wellness, the human resources team arranged for crates of fresh seasonal fruit to be delivered to breakrooms weekly."
+            ],
+            "conversation": [
+                "Banquet Planner: 'Can the catering staff assure us that the salmon served at the luncheon will be fresh and not previously frozen?'\\nExecutive Chef: 'Absolutely, our seafood purveyor delivers fresh Atlantic salmon directly from the harbor every morning.'",
+                "Procurement Officer: 'Why is there a cost increase in our weekly produce requisition?'\\nKitchen Manager: 'We transitioned to an organic supplier who delivers heirloom produce fresh from local farm cooperatives.'",
+                "Colleague A: 'Are you heading over to the cafeteria for lunch?'\\nColleague B: 'Yes, the salad bar features fresh spinach and roasted peppers from the campus greenhouse today.'"
+            ],
+            "collocations": [
+                "fresh produce",
+                "fresh ingredients",
+                "freshly prepared",
+                "fresh fruit",
+                "fresh seafood",
+                "freshly brewed"
+            ]
+        },
+        "wordFamily": {
+            "noun": "freshness, fresher, fresh",
+            "verb": "freshen, refresh",
+            "adjective": "fresh",
+            "adverb": "freshly"
+        },
+        "visual": {
+            "imageKeyword": "fresh produce vegetables farmers market culinary kitchen organic",
+            "imageDescription": "A rustic wooden crate overflowing with dewy, brightly colored organic bell peppers, crisp cucumbers, and green herbs in an illuminated restaurant kitchen.",
+            "mnemonic": "FRESH: Farm-harvested, Ripe, Energetic, Sweet, and Healthy!"
+        },
+        "video": {
+            "description": "A farm-to-table hospitality documentary tracking daily morning deliveries of fresh organic herbs and heirloom vegetables to an upscale restaurant kitchen."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "Bayside Bistro has earned regional acclaim for serving dishes prepared with _____ caught seafood sourced directly from local fishermen every morning.\\n(A) fresh\\n(B) freshly\\n(C) freshness\\n(D) freshen",
+            "tips": "In TOEIC Part 5, identifying the correct word form depends on analyzing syntactic modifiers. In the phrase '_____ caught seafood', the word 'caught' is a past participle functioning as an adjective modifying 'seafood'. Adjectives and participles must be modified by an adverb: therefore, (B) 'freshly' is correct. If the blank preceded the noun directly without a participle ('serving _____ seafood'), the adjective (A) 'fresh' would be required. Option (C) is a noun and (D) is a verb."
+        },
+        "synonyms": [
+            "crisp",
+            "unprocessed",
+            "newly harvested",
+            "unspoiled",
+            "farm-fresh",
+            "wholesome"
+        ],
+        "antonyms": [
+            "stale",
+            "spoiled",
+            "frozen",
+            "canned",
+            "decayed",
+            "preserved"
+        ],
+        "relatedWords": [
+            "produce",
+            "perishable",
+            "farm-to-table",
+            "organic",
+            "seasonal",
+            "wholesome",
+            "refrigerated"
+        ]
+    },
+    {
+        "id": "dining-140",
+        "word": "fruit",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/fruːt/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/fruit--_us_1.mp3",
+            "syllableBreakdown": "fruit",
+            "stressPattern": "single stressed syllable (FRUIT)",
+            "commonMistakes": "Learners often attempt to pronounce the spelling letter 'i' as a distinct vocalic beat (*froo-it* or *frwit* /fruː.ɪt/), unaware that the English digraph 'ui' represents a single monophthong /uː/. Additionally, speakers sometimes shorten the vowel to a lax /ʊ/ (sounding like 'foot' with an 'r') or substitute /p/ for /f/."
+        },
+        "etymology": {
+            "origin": "Middle English 'fruit', borrowed in the late 12th century from Anglo-Norman and Old French 'fruit' (fruit, produce, harvest, advantage), from Latin 'fructus' (enjoyment, delight, satisfaction, proceeds, produce, fruit of the earth), from the past participle stem of 'frui' (to enjoy, delight in, use).",
+            "rootWord": "Latin 'fructus' (enjoyment, agricultural produce, proceeds) from 'frui' (to enjoy)",
+            "rootMeaning": "That which is enjoyed; the pleasurable harvest, sweet yield, or profitable produce of nature.",
+            "evolution": "In classical Rome, 'fructus' signified the enjoyment or legal profits of property (persisting in the legal concept of 'usufruct'), as well as agricultural yields. Entering Middle English around 1175–1200 via Anglo-Norman judicial and monastic scribes, 'fruit' gradually superseded the native Old English term 'wæstm' (growth, produce). In culinary terminology, 'fruit' became distinguished from savory vegetables by its natural sweetness and seed-bearing pulp. The figurative sense of productive outcome ('the fruit of our labor') remains vibrant across modern business discourse.",
+            "relatedLanguages": [
+                "French: fruit (fruit, output)",
+                "Spanish: fruta (edible fruit) / fruto (botanical fruit, yield/result)",
+                "Italian: frutta (collective fruit) / frutto (individual fruit, result)",
+                "German: Frucht (fruit, crop, output)",
+                "Portuguese: fruta (fruit) / fruto (botanical fruit, outcome)",
+                "Latin: fructus (enjoyment, produce, profit)"
+            ],
+            "firstRecordedUse": "Late 12th century (c. 1175 in early Middle English homilies and botanical treatises)"
+        },
+        "deepMeaning": {
+            "coreConcept": "The sweet and fleshy, seed-bearing structure of a flowering plant that can be eaten as food; in dining and hospitality, fresh, sliced, or dried edible plant crops (such as melons, berries, citrus, apples, and grapes) served as breakfast buffet items, healthy snacks, dessert components, or garnishes; metaphorically, the productive result or reward of effort.",
+            "spatialContext": "Continental breakfast buffet stations, conference hospitality suites, hotel kitchen prep pantries, corporate cafeteria grab-and-go coolers, and banquet dessert plating areas.",
+            "temporalContext": "Morning breakfast service (6:30–10:00 AM), afternoon conference refreshment breaks (2:30–3:30 PM), seasonal crop harvest rotations, and daily fruit inventory replenishment.",
+            "emotionalTone": "Refreshing, natural, wholesome, vibrant, and nourishing.",
+            "formalityLevel": "neutral",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "Native English speakers instinctively treat 'fruit' as an uncountable collective noun in ordinary dining contexts ('Would you like some fruit?', 'We served fresh fruit for breakfast'), only using 'fruits' when distinguishing between diverse botanical or agricultural species ('tropical fruits', 'citrus fruits', 'stone fruits'). In workplace and conference settings, a platter of sliced fresh fruit is the quintessential symbol of a clean, health-conscious catering spread, offering a guilt-free alternative to heavy pastries. Metaphorically, natives constantly use 'bear fruit' or 'fruits of one's labor' to describe successful project outcomes.",
+            "mentalImage": "A tiered crystal platter on a hotel breakfast buffet arranged with vibrant slices of golden pineapple, ruby watermelon, cantaloupe, and clustered fresh blackberries, garnished with fresh mint sprigs.",
+            "whenToUse": "Use when referring to edible sweet plant produce ('fresh fruit', 'fruit salad', 'seasonal fruit', 'fruit platter') or idiomatically to denote profitable results ('the project bore fruit').",
+            "whenNotToUse": "Do not use 'fruit' when referring to culinary vegetables (lettuce, broccoli, potatoes), even if certain culinary vegetables are botanically fruits (like tomatoes, cucumbers, or avocados, which in dining contexts are treated as vegetables). Avoid informal offensive slang connotations in professional communication.",
+            "culturalContext": "In contemporary corporate catering, providing fresh fruit is standard etiquette to support corporate wellness initiatives and satisfy diverse dietary requirements (vegan, raw, gluten-free). In the TOEIC exam, 'fruit' appears regularly in Part 1 (market stall photos, breakfast buffet images), Part 3 (dialogues between conference organizers and caterers regarding snack trays), Part 4 (supermarket announcements of seasonal arrivals), and Part 7 (catering invoices, company wellness notices, supply contracts)."
+        },
+        "examples": {
+            "daily": [
+                "She starts every morning with a bowl of oatmeal topped with fresh fruit and sliced almonds.",
+                "The children picked ripe apples and blackberries during their weekend visit to the family fruit orchard.",
+                "We brought a colorful platter of sliced fruit to the neighborhood picnic on Sunday afternoon."
+            ],
+            "business": [
+                "The conference catering package includes a complimentary continental breakfast featuring artisanal pastries and seasonal fruit platters.",
+                "Corporate wellness coordinators arranged for fresh organic fruit to be delivered to breakrooms twice a week.",
+                "After eighteen months of intensive product development, our strategic investment in automation is finally bearing fruit."
+            ],
+            "conversation": [
+                "Executive: 'Can we offer a lighter option alongside the pastries at the morning registration desk?'\\nEvent Planner: 'Certainly, we can add a chilled display of fresh seasonal fruit and individual yogurts.'",
+                "Attendee: 'Where did the kitchen source these strawberries? They are exceptionally sweet.'\\nBanquet Captain: 'Our chef procures all fresh fruit from a local agricultural collective in the neighboring valley.'",
+                "Project Manager: 'Do you think our restructuring efforts will pay off?'\\nDirector: 'Yes, we are already seeing the initial fruit of those operational changes in our quarterly performance.'"
+            ],
+            "collocations": [
+                "fresh fruit",
+                "seasonal fruit",
+                "fruit platter",
+                "fruit juice",
+                "bear fruit",
+                "fruit salad"
+            ]
+        },
+        "wordFamily": {
+            "noun": "fruit, fruition, fruitfulness, fruitlessness",
+            "verb": "fruit",
+            "adjective": "fruitful, fruitless, fruity",
+            "adverb": "fruitfully, fruitlessly"
+        },
+        "visual": {
+            "imageKeyword": "fruit platter fresh melon berries hotel breakfast buffet catering",
+            "imageDescription": "An artfully arranged commercial catering platter featuring sliced cantaloupe, honeydew melon, ripe strawberries, blueberries, and kiwi garnished with mint leaves on a banquet table.",
+            "mnemonic": "FRUIT brings FRUITION: Enjoy the sweet, natural reward of nature's harvest!"
+        },
+        "video": {
+            "description": "A hospitality management video showcasing hotel breakfast buffet setup techniques, emphasizing temperature-controlled display and aesthetic presentation of sliced fresh fruits."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "To encourage healthy dietary habits among employees, the human resources department has arranged for fresh _____ to be delivered to each breakroom every Monday morning.\\n(A) fruit\\n(B) fruitful\\n(C) fruited\\n(D) fruitfully",
+            "tips": "In TOEIC Part 5, determine the required part of speech by analyzing the sentence structure. Following the adjective 'fresh', the blank requires a head noun functioning as the direct object of the verb 'delivered'. Option (A) 'fruit' is the correct uncountable noun. Option (B) 'fruitful' is an adjective meaning productive; (C) 'fruited' is a participial adjective; and (D) 'fruitfully' is an adverb."
+        },
+        "synonyms": [
+            "produce",
+            "berries and melons",
+            "edible crop",
+            "harvest",
+            "yield",
+            "orchard produce"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "vegetable",
+            "orchard",
+            "citrus",
+            "produce",
+            "berry",
+            "harvest",
+            "vitamins"
+        ]
+    }
+]
+
+# Validation
+payload = {"words": words_data}
+jsonschema.validate(instance=payload, schema=SCHEMA)
+print("JSON Schema validation PASSED!")
+
+FORBIDDEN_PHRASES = [
+    "factor", "manage the...", "documentation for...", "ready for the board meeting",
+    "foundational professional concept", "inspect the ", "standard practice",
+    "corporate food", "quality food", "corporate fork", "quality fork",
+    "corporate fresh", "quality fresh", "corporate fruit", "quality fruit",
+    "Gracious Hospitality Elevates", "Preserved through centuries of Anglo-Saxon"
+]
+
+for w in words_data:
+    serialized = json.dumps(w).lower()
+    for bp in FORBIDDEN_PHRASES:
+        assert bp not in serialized, f"Forbidden phrase '{bp}' found in {w['id']}!"
+    assert len(w["examples"]["daily"]) == 3, f"{w['id']} daily count != 3"
+    assert len(w["examples"]["business"]) == 3, f"{w['id']} business count != 3"
+    assert len(w["examples"]["conversation"]) in [2, 3], f"{w['id']} conv count not 2 or 3"
+    assert len(w["examples"]["collocations"]) in [5, 6], f"{w['id']} colloc count not 5 or 6"
+    assert len(w["synonyms"]) >= 4, f"{w['id']} synonyms < 4"
+    assert len(w["relatedWords"]) >= 5, f"{w['id']} relatedWords < 5"
+    assert len(w["etymology"]["relatedLanguages"]) >= 3, f"{w['id']} relatedLanguages < 3"
+
+print("All custom constraints and anti-boilerplate checks PASSED!")
+
+# Save to scratch/dining_137_140.json
+with open("scratch/dining_137_140.json", "w", encoding="utf-8") as f:
+    json.dump(payload, f, indent=2, ensure_ascii=False)
+print("Saved to scratch/dining_137_140.json successfully!")

@@ -1,0 +1,333 @@
+{
+  "words": [
+    {
+      "id": "dining-209",
+      "word": "pie",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/paɪ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/pie--_us_1.mp3",
+        "syllableBreakdown": "pie",
+        "stressPattern": "●",
+        "commonMistakes": "Learners rarely mispronounce the simple /aɪ/ diphthong, but some East Asian or Francophone speakers tend to clip the ending off-glide, producing /pa/ or /peɪ/ (sounding like 'pay'). In listening comprehension, candidates sometimes confuse 'pie' with 'pine' or 'pipe' in low-fidelity audio recordings, or struggle to recognize figurative expressions like 'a piece of the pie' (share of profits/revenue) or 'pie in the sky' (unrealistic ideal) in business conversational contexts."
+      },
+      "etymology": {
+        "origin": "Middle English pie (c. 1300), of uncertain ultimate etymology; universally linked to Old French pie ('magpie'), from Latin pīca ('magpie, spotted or chattering bird').",
+        "rootWord": "pīca",
+        "rootMeaning": "magpie (an allusion to the bird's famous habit of hoarding a miscellaneous collection of varied objects in its nest, comparing it to the diverse collection of ingredients baked together within a pastry shell)",
+        "evolution": "In medieval England, pastry enclosures were known as 'coffins' or 'coffers', functioning initially as thick, inedible vessels of flour and water designed to braise, preserve, and transport meats, game, and suet over long periods. The vernacular term 'pie' appeared in Anglo-Latin and Middle English during the early 14th century to describe baked pasties containing assorted meats and spices. By the 16th century, as enriched fats like butter and lard were incorporated into the dough, the pastry casing became tender, flaky, and edible. While the British tradition maintained an enduring focus on savory meat pies (steak and ale, pork pie, shepherd's pie), American colonial bakers adapted the technique to abundant native and orchard fruits (apples, pumpkins, berries, pecans), cementing sweet fruit pies baked in sloping metal tins as an enduring symbol of American culinary culture.",
+        "relatedLanguages": [
+          "Old French: pie (magpie)",
+          "Latin: pīca (magpie)",
+          "French: tarte / tourte (pie/tart), pie (magpie)",
+          "Spanish: tarta / empanada / pastel (pie/tart), pega (magpie)",
+          "Italian: torta / pasticcio (pie/tart), gazza (magpie)",
+          "German: Pastete (meat pie) / Obstkuchen (fruit pie), Elster (magpie)"
+        ],
+        "firstRecordedUse": "Early 14th century (c. 1303 in Anglo-Latin monastic bursars' accounts; c. 1362 in William Langland's Piers Plowman describing street cooks crying 'Hote pies, hote!')"
+      },
+      "deepMeaning": {
+        "coreConcept": "A baked culinary dish consisting of an edible pastry dough crust that encloses, supports, or covers a sweet filling (such as spiced fruit, custard, chocolate, or nuts) or a savory filling (such as braised meat, poultry, seafood, or vegetables), typically baked in a round, sloped-sided tin and served warm or chilled in radial wedges.",
+        "spatialContext": "Commercial bakery prep kitchens, refrigerated dessert display cases in corporate cafeterias, hotel banquet buffet stations, casual diners, gastropub dining rooms, and bakery production lines.",
+        "temporalContext": "Daily dessert course offerings during executive luncheon services, afternoon catered coffee breaks, and seasonal holiday banquet menus (autumn Thanksgiving and winter holiday dining promotions).",
+        "emotionalTone": "Comforting, artisanal, nostalgic, and indulgent.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers have two distinct mental models for 'pie' depending on geography: North Americans immediately imagine a golden-crusted sweet dessert—warm spiced apple pie served with vanilla ice cream ('à la mode'), holiday pumpkin pie with whipped cream, or tart key lime pie. In the UK, Ireland, Australia, and New Zealand, the default 'pie' is savory—a hearty handheld or pub-style individual meat pie filled with tender beef chunks and dark rich gravy. Beyond gastronomy, native speakers intuitively use 'pie' in economic and corporate metaphors: 'a slice/piece of the pie' represents a rightful division of revenue, budget, or market share, while 'pie chart' is an indispensable data visualization tool.",
+        "mentalImage": "A freshly baked double-crust apple pie cooling on an elevated stainless steel baker's rack, featuring golden-brown fluted crimped edges, decorative vent slits revealing simmering cinnamon-infused juices, and a delicate dusting of coarse granulated sugar.",
+        "whenToUse": "Use when referring to baked pastry dishes with sweet fillings (cherry pie, pecan pie, cream pie) or savory fillings (chicken pot pie, shepherd's pie, beef steak pie), dessert menus in dining establishments, corporate catering break selections, or established business idioms ('pie chart', 'slice of the pie').",
+        "whenNotToUse": "Do not confuse with 'tart' (which usually has a shallower, straight-sided crust without a top lid, made with sweet shortcrust pastry), 'cake' (which has a leavened, sponge-like crumb), or 'cobbler' (fruit baked under a drop-biscuit or batter topping rather than rolled pastry dough).",
+        "culturalContext": "In American cultural identity, pie occupies an iconic status epitomized by the mid-20th-century idiom 'as American as apple pie'. In corporate catering and banquet design, individual miniature pies or pie buffet displays are popular dessert choices for autumn client appreciation events and Thanksgiving luncheons. In business analytics, the 'pie chart' remains one of the most recognizable graphic formats for displaying proportional data."
+      },
+      "examples": {
+        "daily": [
+          "The diner server recommended finishing our lunch with a slice of warm blackberry pie and vanilla bean ice cream.",
+          "On chilly winter evenings, she loved preparing a homemade chicken pot pie filled with tender vegetables and a buttery puff pastry lid.",
+          "He picked up a freshly baked pecan pie from the local bakery to bring to the family holiday gathering."
+        ],
+        "business": [
+          "The executive catering menu for the year-end awards banquet includes miniature savory beef pies as passed hors d'oeuvres.",
+          "The hotel pastry division increased its seasonal dessert revenue by fourteen percent after introducing artisanal fruit pies to the autumn banquet package.",
+          "During the catering planning session, the client requested individual gluten-free chicken pot pies to accommodate guests with dietary restrictions."
+        ],
+        "conversation": [
+          "\"Would your table care for coffee or dessert to conclude the meal?\" / \"Yes, please—could we get two slices of the Dutch apple pie, heated up with ice cream on the side?\"",
+          "\"Does the banquet buffet include hot savory options for lunch?\" / \"Yes, we have personal-sized shepherd's pies and vegetable quiches stationed at the hot carving table.\""
+        ],
+        "collocations": [
+          "apple pie",
+          "slice of pie",
+          "pot pie",
+          "flaky pie crust",
+          "pie chart",
+          "piece of the pie"
+        ]
+      },
+      "wordFamily": {
+        "noun": "pie"
+      },
+      "visual": {
+        "imageKeyword": "freshly baked golden double crust apple pie flaky pastry crimped edge cooling rack",
+        "imageDescription": "A whole golden-brown double-crust apple pie resting on a wire cooling rack on a rustic marble bakery counter, showing hand-crimped edges and steaming cinnamon-apple juices bubbling through pastry vents.",
+        "mnemonic": "PIE: Picture Ingredients Enclosed in pastry—whether sweet apples or savory pot roast, it's always baked inside a flaky crust!"
+      },
+      "video": {
+        "description": "A professional commercial kitchen tutorial illustrating banquet pastry chefs rolling, crimping, blind-baking, and slicing sweet and savory pies for high-volume corporate catering events."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "To cater to corporate guests with diverse dietary requirements, the banquet chef added a savory vegetarian mushroom _____ to the luncheon buffet options.\n(A) pie\n(B) pieties\n(C) piecemeal\n(D) piously",
+        "tips": "In Part 5, analyze the noun phrase 'a savory vegetarian mushroom _____'. The compound culinary noun requires the head noun naming a food item. Choice (A) 'pie' correctly completes the compound noun 'mushroom pie'. Choice (B) 'pieties' is an unrelated plural noun meaning devout religious beliefs; (C) 'piecemeal' is an adverb/adjective meaning done in fragments or stages; and (D) 'piously' is an adverb meaning with religious devotion."
+      },
+      "synonyms": [
+        "tart",
+        "pasty",
+        "pot pie",
+        "turnover",
+        "quiche",
+        "cobbler (culinary relative)"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "crust",
+        "pastry",
+        "filling",
+        "baking",
+        "crimping",
+        "bakery",
+        "slice"
+      ]
+    },
+    {
+      "id": "dining-210",
+      "word": "pitcher",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈpɪtʃ.ər/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/pitcher--_us_1.mp3",
+        "syllableBreakdown": "pitch·er",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners frequently confuse the lax vowel /ɪ/ with the tense vowel /iː/, pronouncing it like 'peach-er' (/ˈpiː.tʃər/). Another common phonetic slip is substituting the postalveolar affricate /tʃ/ with a soft fricative /ʃ/ ('pish-er'). In TOEIC listening sections, candidates often confuse the acoustic profile of 'pitcher' (water vessel) with 'picture' (/ˈpɪk.tʃər/), which contains a distinct /k/ stop consonant, or get distracted by the sports homonym (baseball pitcher on the mound)."
+      },
+      "etymology": {
+        "origin": "Middle English picher (late 12th century), borrowed from Old French pichier / pechier, from Medieval Latin bīcārium / picārium, an alteration of Late Latin bīcārium ('drinking beaker, goblet, vessel'), from Ancient Greek βῖκος (bîkos, 'earthen wine jar, amphora'), possibly borrowed from an ancient Semitic root (compare Phoenician or Hebrew bakbuk 'flask').",
+        "rootWord": "bîkos / bīcārium",
+        "rootMeaning": "earthen jar or drinking vessel",
+        "evolution": "In classical antiquity, the Greek 'bîkos' designated an earthenware vessel used to store and pour liquids like wine and olive oil. The word moved into Late Latin as 'bīcārium', which also branched into Germanic languages to produce 'beaker' (Old High German 'behhari', modern German 'Becher'). In Gallo-Romance and Old French, a labial phonetic shift resulted in 'pichier', which crossed the English Channel with the Normans. By 1200, Middle English 'picher' referred to an earthenware, pewter, or glass jug equipped with a handle and lip for pouring table beverages. While British English eventually adopted 'jug' as the primary term for household water and milk vessels, North American English preserved 'pitcher' as the standard term for table beverage vessels (water, iced tea, beer).",
+        "relatedLanguages": [
+          "Old French: pichier (jug, ewer)",
+          "Latin: bīcārium (drinking vessel, beaker)",
+          "French: pichet (small earthenware or glass jug)",
+          "Italian: bicchiere (drinking glass, goblet)",
+          "German: Becher (beaker, cup, goblet)",
+          "Spanish: pichel (tankard, pewter jug) / jarra (pitcher)"
+        ],
+        "firstRecordedUse": "Late 12th century (c. 1190 in Anglo-Norman and Middle English domestic records describing household pantry vessels)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A large, open-mouthed container equipped with a pouring lip or spout and an integrated vertical handle, manufactured from glass, polycarbonate plastic, stainless steel, or ceramic, used in dining rooms, beverage stations, and bar service to store, chill, and pour liquids such as water, iced tea, juice, or draft beer.",
+        "spatialContext": "Restaurant waitstaff side-stations, banquet beverage service credenzas, corporate boardroom side tables, self-serve cafeteria drink bars, and gastropub bar counters.",
+        "temporalContext": "Continuous front-of-house table service (pre-pouring ice water upon seating guests), pre-conference morning beverage setups, and fast-paced casual dining beverage refills during lunch and dinner rushes.",
+        "emotionalTone": "Hospitable, functional, refreshing, and attentive.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "In food service and hospitality, native speakers visualize a heavy, clear glass or shatterproof polycarbonate vessel frosted with cold condensation, filled with ice cubes, fresh lemon rounds, and chilled water. Placing a pitcher on the table or circulating with one signifies attentiveness and generous hospitality. Outside formal dining, ordering a 'pitcher of beer' or a 'pitcher of margaritas' represents casual, communal sharing among colleagues or friends after work. Native speakers are also conscious of the British-American lexical difference: Americans ask for a 'pitcher of water', whereas Britons almost always ask for a 'jug of water'.",
+        "mentalImage": "A polished stainless steel water pitcher with a curved gooseneck ice guard being tilted by a server in a crisp black apron, smoothly filling tall ice-filled water goblets along an executive boardroom dining table.",
+        "whenToUse": "Use when referring to tabletop beverage dispensing vessels (pitcher of water, pitcher of iced tea, beer pitcher), front-of-house restaurant equipment, conference catering hydration stations, and banquet service logistics.",
+        "whenNotToUse": "Do not use for hot coffee or tea service where an insulated, enclosed vacuum lid is needed (use 'carafe', 'airpot', or 'coffee pot'); do not use for small tabletop containers designed specifically for milk/cream (use 'creamer' or 'cream jug'); do not use for handle-less wine aerators (use 'decanter'). In British dining settings, prefer 'jug'.",
+        "culturalContext": "In American restaurants, providing free, ice-cold tap water poured from a pitcher as soon as diners are seated is an ingrained cultural standard and expectation. In corporate settings, ensuring conference rooms are stocked with fresh pitchers of water and clean glassware is a routine protocol for executive assistants and catering staff prior to board meetings."
+      },
+      "examples": {
+        "daily": [
+          "The server brought a frosted glass pitcher of ice water and four tumblers to our table before taking our dinner orders.",
+          "During the summer barbecue, we kept a large plastic pitcher of freshly squeezed lemonade on the picnic table.",
+          "He lifted the heavy ceramic pitcher from the refrigerator door and poured himself a tall glass of cold orange juice."
+        ],
+        "business": [
+          "The catering coordinator instructed the banquet staff to place a stainless steel pitcher of ice water on every conference table before the keynote began.",
+          "To expedite beverage service during the busy lunch rush, the restaurant manager distributed insulated beverage pitchers to each server station.",
+          "The executive assistant ordered modern glass pitchers and matching tumblers for the new executive boardroom refreshment credenza."
+        ],
+        "conversation": [
+          "\"Excuse me, could we please have another pitcher of water for our table?\" / \"Certainly, I will bring a fresh one with ice and lemon slices right away.\"",
+          "\"Should we order individual sodas for the team celebration or get a couple of pitchers of beer and soda for the table?\" / \"Ordering pitchers will be much faster and easier to share among the whole group.\""
+        ],
+        "collocations": [
+          "pitcher of water",
+          "pitcher of iced tea",
+          "pitcher of beer",
+          "glass pitcher",
+          "stainless steel pitcher",
+          "refill the pitcher"
+        ]
+      },
+      "wordFamily": {
+        "noun": "pitcher"
+      },
+      "visual": {
+        "imageKeyword": "glass beverage pitcher ice water lemon slices condensation banquet table",
+        "imageDescription": "A transparent glass pitcher filled with clear ice water and floating lemon wheels, covered in delicate condensation beads, sitting next to four elegant water goblets on a banquet table with white linen.",
+        "mnemonic": "PITCHER: Picture pouring a PITCH of cold water from the spout into your glass!"
+      },
+      "video": {
+        "description": "A banquet service training video showing hospitality waitstaff the proper two-handed technique for carrying and pouring from heavy water pitchers without dripping onto conference table documents."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          2,
+          3,
+          7
+        ],
+        "exampleQuestion": "Prior to the start of the executive seminar, banquet servers placed a chilled _____ of filtered water and clean glasses at each attendee's workstation.\n(A) pitcher\n(B) pitched\n(C) pitching\n(D) pitch",
+        "tips": "In Part 5, identify the syntactic part of speech required between the adjective 'chilled' and the prepositional phrase 'of filtered water'. The sentence demands a singular countable concrete noun referring to a beverage container. Choice (A) 'pitcher' is the correct noun. Choice (B) 'pitched' is a past participle/past tense verb; (C) 'pitching' is a present participle/gerund; and (D) 'pitch' is a base verb or unrelated abstract/mass noun (e.g. sales pitch, musical pitch, angle)."
+      },
+      "synonyms": [
+        "jug",
+        "carafe",
+        "ewer",
+        "decanter",
+        "beverage vessel",
+        "flagon"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "spout",
+        "handle",
+        "pour",
+        "tumbler",
+        "carafe",
+        "beverage",
+        "refill"
+      ]
+    },
+    {
+      "id": "dining-211",
+      "word": "pizza",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˈpiːt.sə/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/pizza--_us_1.mp3",
+        "syllableBreakdown": "piz·za",
+        "stressPattern": "●○",
+        "commonMistakes": "A very common error among English learners is pronouncing the double 'zz' as a voiced alveolar fricative /z/ ('pee-zuh' /ˈpiː.zə/), unaware that the Italian spelling 'zz' is pronounced as a voiceless alveolar affricate /ts/ ('peet-suh' /ˈpiːt.sə/). Another frequent mistake is replacing the initial long tense vowel /iː/ with a short lax vowel /ɪ/ (producing 'pits-uh'). In TOEIC listening, learners must distinguish pizza from similar sounding words in noisy restaurant audio clips."
+      },
+      "etymology": {
+        "origin": "Italian pizza, of disputed Mediterranean and Germanic origin; traditionally connected to Medieval Latin pīctiō / pizza ('flat bread, cake'), possibly related to Ancient Greek πῆκτος (pēktos, 'congealed, curded') or Byzantine Greek πίτα (pīta, 'flat bread, pastry'), or from Langobardic (Lombardic Germanic) *pizzo / *bizzo ('bite, mouthful', related to modern German Bissen 'morsel, bite').",
+        "rootWord": "pītta / *pizzo",
+        "rootMeaning": "flatbread, cake, or mouthful/bite",
+        "evolution": "The earliest documented mention of the word 'pizza' appears in a Latin notarized lease agreement dating from May 997 AD in Gaeta, Italy, specifying that twelve pizzas had to be rendered to the bishop on Christmas and Easter. For centuries in southern Italy, pizza was a rustic flatbread seasoned with lard, coarse salt, and garlic, baked rapidly in wood-fired ovens. In the late 18th and early 19th centuries, following the culinary adoption of the tomato in Naples, the modern pizza emerged, culminating in the 1889 creation of the Pizza Margherita (topped with tomatoes, mozzarella, and fresh basil to honor Queen Margherita of Savoy and reflect the Italian tricolor flag). Italian emigrants brought pizza to major North American cities like New York and Chicago in the early 20th century, where it evolved into distinct regional crust varieties (thin New York slice, thick Chicago deep-dish) and transformed into a cornerstone of commercial food service, fast-casual dining, and corporate catering worldwide.",
+        "relatedLanguages": [
+          "Italian: pizza",
+          "Greek: pita (flatbread)",
+          "German: Bissen (bite, morsel - shared Germanic root)",
+          "French: pizza",
+          "Spanish: pizza",
+          "Portuguese: pizza"
+        ],
+        "firstRecordedUse": "Late 10th century (997 AD in a Medieval Latin legal manuscript from Gaeta, Italy; first recorded in English in 1935 in an American culinary publication)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A savory dish of Italian origin consisting of a flattened, circular base of leavened wheat dough topped with seasoned tomato sauce, melted cheese (typically mozzarella), and an assortment of toppings such as meats, vegetables, and herbs, baked at high heat in a specialized stone or wood-fired deck oven and divided radially into wedge slices.",
+        "spatialContext": "Pizzerias, commercial pizza deck ovens, open-plan trattoria kitchens, corporate cafeteria hot bars, office breakrooms during team catering lunches, and restaurant delivery dispatch counters.",
+        "temporalContext": "Casual weekday office lunches, late-night overtime team sustenance during critical project deadlines, Friday departmental celebrations, and rapid-delivery corporate catering orders.",
+        "emotionalTone": "Convivial, communal, indulgent, comforting, and informal.",
+        "formalityLevel": "informal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'pizza' is the quintessential informal communal meal. It triggers vivid sensory associations: the elasticity of hot melted mozzarella ('cheese pull'), charred bubbly crust blisters (the 'cornicione'), tangy garlic-oregano tomato sauce, and holding a foldable triangular slice. In corporate and workplace environments, 'ordering pizza' represents the universal social gesture for informal team bonding, late-night sprint sessions, and company milestone celebrations. While universally loved, native professionals recognize its casual status—a 'pizza party' is perfect for an internal sprint completion, but entirely inappropriate for formal client contract signings.",
+        "mentalImage": "An artisan thin-crust Margherita pizza served straight out of an 800-degree brick oven on a round metal tray, bubbling with melted buffalo mozzarella, bright red San Marzano tomato sauce, fresh basil leaves, and charred leopard spots on its golden-crisp rim.",
+        "whenToUse": "Use when discussing informal dining menus, casual corporate catering, food delivery logistics, team lunch orders, hospitality operations, and restaurant food preparation.",
+        "whenNotToUse": "Do not use when describing formal executive multi-course banquets, state dinners, or upscale diplomatic catering. Do not confuse with 'flatbread' (often unleavened and served as an appetizer without traditional pizza sauce/cheese profiles), 'calzone' (a turnover made of folded pizza dough with filling inside), or 'focaccia' (thick leavened bread drizzled with olive oil and herbs without heavy sauce or melted cheese toppings).",
+        "culturalContext": "In North American and British corporate culture, the 'office pizza party' is a recognized workplace tradition used by team leaders to reward teams, celebrate project launches, or sustain morale during late hours. In business operations, pizza delivery logistics pioneered modern point-of-sale tracking, real-time app delivery routing, and high-efficiency franchise supply chains."
+      },
+      "examples": {
+        "daily": [
+          "We ordered two large thin-crust pepperoni pizzas and a bottle of sparkling water for Friday movie night.",
+          "The authentic Neapolitan pizzeria bakes each personal pizza in a wood-burning oven in less than ninety seconds.",
+          "Could we ask the server to make one half of the pizza mushroom and bell peppers and the other half sausage?"
+        ],
+        "business": [
+          "The department manager ordered eight specialty pizzas to feed the IT staff working late on the database upgrade.",
+          "To celebrate exceeding their quarterly targets, the sales division held an informal lunch featuring artisan gourmet pizzas.",
+          "The catering coordinator partnered with a local pizzeria that provides gluten-free cauliflower crust options for corporate events."
+        ],
+        "conversation": [
+          "\"What should we arrange for lunch during tomorrow's team-building workshop?\" / \"Let's order assorted sheet pizzas from the Italian deli—they have excellent vegetarian and vegan selections.\"",
+          "\"Did the delivery service confirm when the catering order will arrive?\" / \"Yes, all twelve pizzas are scheduled to be delivered to the fourteenth-floor conference room by twelve-fifteen.\""
+        ],
+        "collocations": [
+          "slice of pizza",
+          "wood-fired pizza",
+          "pizza delivery",
+          "crispy pizza crust",
+          "order a pizza",
+          "specialty pizza"
+        ]
+      },
+      "wordFamily": {
+        "noun": "pizza"
+      },
+      "visual": {
+        "imageKeyword": "artisanal wood-fired Margherita pizza melted mozzarella basil charred crust",
+        "imageDescription": "A steaming hot artisan pizza fresh from a wood-fired brick oven, displayed on a dark wooden board, featuring melted fresh mozzarella, vibrant red tomato sauce, torn green basil, and blistered charred edges.",
+        "mnemonic": "PIZZA: Look at the two Z's like two zigzag cuts through the dough to share hot triangular slices with your team!"
+      },
+      "video": {
+        "description": "A documentary clip featuring master pizzaiolos in Naples stretching fermented dough by hand, dressing it with fresh ingredients, and baking pizzas in high-temperature wood-fired ovens."
+      },
+      "toeicContext": {
+        "commonParts": [
+          2,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "During the quarterly milestone celebration, the department supervisor ordered several gourmet sheet _____ to provide lunch for the entire marketing division.\n(A) pizza\n(B) pizzas\n(C) pizzalike\n(D) pizzeria",
+        "tips": "In Part 5, observe the quantifier 'several' modifying the compound noun phrase 'sheet _____'. When countable items are preceded by 'several', the plural noun form is required. Choice (B) 'pizzas' correctly completes the plural noun phrase 'sheet pizzas'. Choice (A) 'pizza' is singular; choice (C) 'pizzalike' is an adjective; and choice (D) 'pizzeria' is a noun referring to the restaurant establishment itself rather than the edible dish."
+      },
+      "synonyms": [
+        "flatbread (culinary cousin)",
+        "pie (regional US colloquial)",
+        "pizza pie",
+        "Neapolitan pizza",
+        "sheet pizza"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "crust",
+        "mozzarella",
+        "topping",
+        "pizzeria",
+        "dough",
+        "slice",
+        "wood-fired"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+import json
+import re
+import os
+import asyncio
+
+SCHEMA = {
+    "type": "object",
+    "properties": {
+        "words": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {"type": "string"},
+                    "word": {"type": "string"},
+                    "partOfSpeech": {"type": "array", "items": {"type": "string"}},
+                    "category": {"type": "string"},
+                    "level": {"type": "string", "enum": ["essential", "intermediate", "advanced"]},
+                    "toeicFrequency": {"type": "number"},
+                    "pronunciation": {
+                        "type": "object",
+                        "properties": {
+                            "ipa": {"type": "string"},
+                            "audioUrl": {"type": "string"},
+                            "syllableBreakdown": {"type": "string"},
+                            "stressPattern": {"type": "string"},
+                            "commonMistakes": {"type": "string"}
+                        },
+                        "required": ["ipa", "syllableBreakdown", "stressPattern", "commonMistakes"]
+                    },
+                    "etymology": {
+                        "type": "object",
+                        "properties": {
+                            "origin": {"type": "string"},
+                            "rootWord": {"type": "string"},
+                            "rootMeaning": {"type": "string"},
+                            "evolution": {"type": "string"},
+                            "relatedLanguages": {"type": "array", "items": {"type": "string"}},
+                            "firstRecordedUse": {"type": "string"}
+                        },
+                        "required": ["origin", "rootWord", "rootMeaning", "evolution", "relatedLanguages", "firstRecordedUse"]
+                    },
+                    "deepMeaning": {
+                        "type": "object",
+                        "properties": {
+                            "coreConcept": {"type": "string"},
+                            "spatialContext": {"type": "string"},
+                            "temporalContext": {"type": "string"},
+                            "emotionalTone": {"type": "string"},
+                            "formalityLevel": {"type": "string", "enum": ["formal", "neutral", "informal"]},
+                            "connotation": {"type": "string", "enum": ["positive", "neutral", "negative"]}
+                        },
+                        "required": ["coreConcept", "spatialContext", "temporalContext", "emotionalTone", "formalityLevel", "connotation"]
+                    },
+                    "nativeMindset": {
+                        "type": "object",
+                        "properties": {
+                            "howNativesThink": {"type": "string"},
+                            "mentalImage": {"type": "string"},
+                            "whenToUse": {"type": "string"},
+                            "whenNotToUse": {"type": "string"},
+                            "culturalContext": {"type": "string"}
+                        },
+                        "required": ["howNativesThink", "mentalImage", "whenToUse", "whenNotToUse", "culturalContext"]
+                    },
+                    "examples": {
+                        "type": "object",
+                        "properties": {
+                            "daily": {"type": "array", "items": {"type": "string"}},
+                            "business": {"type": "array", "items": {"type": "string"}},
+                            "conversation": {"type": "array", "items": {"type": "string"}},
+                            "collocations": {"type": "array", "items": {"type": "string"}}
+                        },
+                        "required": ["daily", "business", "conversation", "collocations"]
+                    },
+                    "wordFamily": {
+                        "type": "object",
+                        "properties": {
+                            "noun": {"type": "string"},
+                            "verb": {"type": "string"},
+                            "adjective": {"type": "string"},
+                            "adverb": {"type": "string"}
+                        }
+                    },
+                    "visual": {
+                        "type": "object",
+                        "properties": {
+                            "imageKeyword": {"type": "string"},
+                            "imageDescription": {"type": "string"},
+                            "mnemonic": {"type": "string"}
+                        },
+                        "required": ["imageKeyword", "imageDescription", "mnemonic"]
+                    },
+                    "video": {
+                        "type": "object",
+                        "properties": {
+                            "description": {"type": "string"}
+                        },
+                        "required": ["description"]
+                    },
+                    "toeicContext": {
+                        "type": "object",
+                        "properties": {
+                            "commonParts": {"type": "array", "items": {"type": "number"}},
+                            "exampleQuestion": {"type": "string"},
+                            "tips": {"type": "string"}
+                        },
+                        "required": ["commonParts", "exampleQuestion", "tips"]
+                    },
+                    "synonyms": {"type": "array", "items": {"type": "string"}},
+                    "antonyms": {"type": "array", "items": {"type": "string"}},
+                    "relatedWords": {"type": "array", "items": {"type": "string"}}
+                },
+                "required": [
+                    "id", "word", "partOfSpeech", "category", "level", "toeicFrequency",
+                    "pronunciation", "etymology", "deepMeaning", "nativeMindset",
+                    "examples", "wordFamily", "visual", "video", "toeicContext",
+                    "synonyms", "antonyms", "relatedWords"
+                ]
+            }
+        }
+    },
+    "required": ["words"]
+}
+
+BASE_PROMPT = """
+You are an expert native lexicographer and elite TOEIC exam designer.
+For each given word in the list, produce a complete, 100% genuine, deeply researched, contextually accurate dictionary entry in JSON format according to the schema.
+
+STRICT LINGUISTIC RULES:
+1. ABSOLUTELY NO generic templates, repetitive placeholder phrases, or boilerplate text (DO NOT write "... factor", "manage the...", "documentation for... is ready for the board meeting", or generic boardroom sentences).
+2. The core meaning, native mindset, visual description, daily examples, and TOEIC context MUST strictly reflect the actual nature of the concept:
+   - Physical objects / stationery (e.g. archival box, tape): describe physical appearance, materials, purpose, storage, dimensions.
+   - Facility / HVAC equipment (e.g. air conditioning): describe temperature control, thermostats, maintenance, building engineering.
+   - People / organizational roles (e.g. assistant manager, administrator): describe hierarchy, job duties, delegation, reporting lines.
+   - Organizational processes / systems (e.g. alphabetical filing, answering service): describe workflow mechanics, practical operation.
+3. Pronunciation: accurate IPA transcription, correct hyphenated syllable breakdown, clear stress pattern, common learner pronunciation mistakes.
+4. Etymology: authentic historical linguistic roots (Latin, Germanic, Greek, Old French, Anglo-Norman, or historical compounding details), chronological evolution, first recorded usage period, and genuine foreign language cognates (French, Spanish, German, Italian).
+5. Deep Meaning:
+   - coreConcept: precise, comprehensive definition.
+   - spatialContext: authentic physical or digital workplace environments.
+   - temporalContext: realistic frequency and timing of occurrence.
+   - emotionalTone, formalityLevel ("formal" | "neutral" | "informal"), connotation ("positive" | "neutral" | "negative").
+6. Native Speaker Mindset:
+   - howNativesThink: psychological nuance, connotations, what native speakers instinctively associate with this word.
+   - mentalImage: vivid, photorealistic scene description.
+   - whenToUse vs whenNotToUse: subtle usage boundaries, common false friends.
+   - culturalContext: corporate, institutional, or societal significance in English-speaking countries.
+7. Real-world Examples:
+   - daily: 3 natural, everyday sentences.
+   - business: 3 authentic professional corporate sentences.
+   - conversation: 2-3 realistic dialogue pairs between colleagues or clients.
+   - collocations: 5-6 widely used, high-frequency natural collocations.
+8. Word Family: accurate morphological derivatives (noun, verb, adjective, adverb).
+9. Visual Association:
+   - imageKeyword: specific search terms for finding the ideal stock photograph.
+   - imageDescription: clear visual description of an authentic scene.
+   - mnemonic: an engaging, memorable cognitive hook or etymological memory device.
+10. Video: concise summary of an authentic business/educational video clip demonstrating the concept in action.
+11. TOEIC Exam Intelligence:
+   - commonParts: list of relevant TOEIC exam parts (e.g. [1, 3, 7] for physical objects; [5, 6, 7] for abstract/grammatical terms).
+   - exampleQuestion: realistic Part 5 multiple choice question contextualized in a professional setting with 4 plausible choices (A, B, C, D).
+   - tips: strategic exam tip explaining the grammatical or collocational trap.
+12. Synonyms: 4-6 genuine, context-appropriate synonyms (NEVER append "factor" or "management").
+13. Antonyms: genuine antonyms where applicable (or empty array if none).
+14. Related Words: 5-7 closely connected domain terms.
+"""
+
+KEY_ORDER = [
+    "id", "word", "partOfSpeech", "category", "level", "toeicFrequency",
+    "pronunciation", "etymology", "deepMeaning", "nativeMindset",
+    "examples", "wordFamily", "visual", "video", "toeicContext",
+    "synonyms", "antonyms", "relatedWords"
+]
+
+def order_keys(obj):
+    ordered = {}
+    for k in KEY_ORDER:
+        if k in obj:
+            ordered[k] = obj[k]
+    for k, v in obj.items():
+        if k not in ordered:
+            ordered[k] = v
+    return ordered
+
+target_file = args.get("file", "src/data/vocabulary/office-admin.ts")
+target_ids = args.get("ids", None)
+start_idx = args.get("start", None)
+count = args.get("count", 10)
+
+with open(target_file) as f:
+    ts_content = f.read()
+
+# Robust extraction of each word block
+id_positions = [m.start() for m in re.finditer(r'[\"\']?id[\"\']?\s*:\s*[\"\']([^\"\']+)[\"\']', ts_content)]
+id_positions.append(len(ts_content))
+
+parsed_blocks = []
+for i in range(len(id_positions) - 1):
+    block = ts_content[id_positions[i] : id_positions[i+1]]
+    wid = re.search(r'[\"\']?id[\"\']?\s*:\s*[\"\']([^\"\']+)[\"\']', block).group(1)
+    w_match = re.search(r'\bword\b[\"\']?\s*:\s*[\"\']([^\"\']+)[\"\']', block)
+    word = w_match.group(1) if w_match else ""
+    pos_match = re.search(r'partOfSpeech[\"\']?\s*:\s*\[([^\]]+)\]', block)
+    pos = [p.strip().strip("'\"") for p in pos_match.group(1).split(",") if p.strip()] if pos_match else ["noun"]
+    cat_match = re.search(r'category[\"\']?\s*:\s*[\"\']([^\"\']+)[\"\']', block)
+    cat = cat_match.group(1) if cat_match else "office-admin"
+    lvl_match = re.search(r'level[\"\']?\s*:\s*[\"\']([^\"\']+)[\"\']', block)
+    lvl = lvl_match.group(1) if lvl_match else "intermediate"
+    freq_match = re.search(r'toeicFrequency[\"\']?\s*:\s*(\d+)', block)
+    freq = int(freq_match.group(1)) if freq_match else 7
+    parsed_blocks.append({
+        "id": wid, "word": word, "partOfSpeech": pos,
+        "category": cat, "level": lvl, "toeicFrequency": freq
+    })
+
+if target_ids:
+    selected = [p for p in parsed_blocks if p["id"] in target_ids]
+elif start_idx is not None:
+    selected = parsed_blocks[start_idx : start_idx + count]
+else:
+    selected = parsed_blocks[:count]
+
+log(f"Selected {len(selected)} words to process: {[s['id'] + ': ' + s['word'] for s in selected]}")
+
+# Split into parallel chunks of 3 words
+chunk_size = 3
+chunks = [selected[i : i + chunk_size] for i in range(0, len(selected), chunk_size)]
+
+async def process_chunk(chunk):
+    items_desc = []
+    for e in chunk:
+        items_desc.append(f'- id: "{e["id"]}", word: "{e["word"]}", partOfSpeech: {json.dumps(e["partOfSpeech"])}, category: "{e["category"]}", level: "{e["level"]}", toeicFrequency: {e["toeicFrequency"]}')
+    prompt = BASE_PROMPT + "\n\nWords to generate:\n" + "\n".join(items_desc)
+    
+    a = agent(prompt, schema=SCHEMA, role=f"Lexicographer for {chunk[0]['word']}..{chunk[-1]['word']}", model="flash")
+    res = await a
+    return res.get("words", [])
+
+phase(f"Generating {len(selected)} words in parallel ({len(chunks)} agent chunks)")
+results = await parallel(chunks, process_chunk)
+
+all_generated_words = {}
+for word_list in results:
+    for w in word_list:
+        all_generated_words[w["id"]] = order_keys(w)
+
+log(f"Received {len(all_generated_words)} generated words.")
+
+# Update file
+phase("Writing updates to file")
+updated_count = 0
+for wid, wobj in all_generated_words.items():
+    # Matches {\s*["']id["']:\s*["']wid["'].*?\n  }(?:,|\s*(?=\n\];))
+    pattern = r'\{\s*[\"\']id[\"\']:\s*[\"\']' + re.escape(wid) + r'[\"\'].*?\n  \}(?:,|\s*(?=\n\];))'
+    m = re.search(pattern, ts_content, re.DOTALL)
+    if m:
+        is_last = (m.end() == len(ts_content) or ts_content[m.end():].lstrip().startswith("];"))
+        replacement = json.dumps(wobj, indent=4) + ("" if is_last else ",")
+        ts_content = ts_content[:m.start()] + replacement + ts_content[m.end():]
+        updated_count += 1
+    else:
+        log(f"Warning: pattern for {wid} not found!")
+
+with open(target_file, "w") as f:
+    f.write(ts_content)
+
+log(f"Successfully updated {updated_count} words in {target_file}")
+print(f"Updated: {list(all_generated_words.keys())}")

@@ -1,0 +1,472 @@
+{
+  "words": [
+    {
+      "id": "comms-183",
+      "word": "observer",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/əbˈzɜːr.vər/",
+        "syllableBreakdown": "ob-serv-er",
+        "stressPattern": "primary stress on the second syllable (ob-SERV-er)",
+        "commonMistakes": "Learners often mispronounce the unstressed initial syllable /əb/ with an open /ɒ/ or /ɑː/ (*AHB-zer-ver*) and shift stress incorrectly to the first syllable. Non-native speakers also frequently devoice the /z/ in 'serv' into /s/ (*ob-SIR-ver*) or fail to produce the central rhotic vowel /ɜːr/ in American English.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/observer--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Late Middle English via Anglo-Norman and Old French 'observer' / 'observateur', derived from Latin 'observāre' (to watch over, guard, attend to, heed), combining 'ob-' (in front of, before, toward) + 'servāre' (to watch, preserve, keep safe) + agent suffix '-er'.",
+        "rootWord": "Latin 'observare' (to watch, pay attention to) + Proto-Indo-European *ser- (to protect, watch over)",
+        "rootMeaning": "'One who watches over or pays close heed' — an individual positioned to watch, monitor, record, and witness events without direct intervention or voting power.",
+        "evolution": "In Classical Latin, 'observator' referred to a watcher of celestial signs, legal customs, or religious rituals. By the 15th and 16th centuries in Middle English, 'observer' applied to people adhering to laws or religious rules ('an observer of the Sabbath') and soon expanded to scholars studying natural phenomena (astronomical observers). In the 18th and 19th centuries, it became a standard designation in diplomacy and international congresses for non-voting delegates accredited to attend negotiations. Concurrently, journalism adopted 'observer' both as an authoritative masthead title (e.g., The Observer, founded in 1791) and as an attribution phrase ('industry observers anticipate...') to describe knowledgeable market commentators and analysts without disclosing specific proprietary sources.",
+        "relatedLanguages": [
+          "French: observateur",
+          "Spanish: observador",
+          "German: Beobachter",
+          "Italian: osservatore"
+        ],
+        "firstRecordedUse": "Late 14th century (c. 1380–1400 in Middle English, initially denoting an adherent of a religious rule or law; early 16th century in the sense of a spectator or onlooker)."
+      },
+      "deepMeaning": {
+        "coreConcept": "An individual who attends an event, meeting, election, or diplomatic proceeding to witness, monitor, and record developments impartially without active participation or voting privileges; or an expert analyst/commentator who closely tracks and assesses industry, market, or political trends for public or media reporting.",
+        "spatialContext": "International conference halls (seated in designated 'Observer' galleries), shareholder meetings, election monitoring stations, courtroom public galleries, and financial news commentary desks.",
+        "temporalContext": "Present during formal deliberations, annual general meetings, treaty negotiations, labor arbitrations, or cited continuously in business journalism during earnings seasons and economic announcements.",
+        "emotionalTone": "Objective, detached, vigilant, and analytical.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, an 'observer' carries a dual connotation depending on context. In institutional and diplomatic settings, an observer has official accreditation but strictly passive status—they have 'eyes and ears, but no voice and no vote' (e.g., UN observer missions, neutral election observers). In business news and media reporting, 'market observers' or 'industry observers' is the classic journalistic shorthand used by reporters to summarize prevailing Wall Street sentiment or industry analyst consensus without attributing quotes to a single firm.",
+        "mentalImage": "An accredited monitor wearing a laminated identification badge seated in a designated perimeter row of an international regulatory assembly, taking meticulous notes on a tablet while delegates at the central dais debate and cast ballots.",
+        "whenToUse": "Use when referring to someone granted non-participatory, official attendance at an assembly or audit (e.g., 'neutral election observer', 'observer status at the trade forum') or when quoting generalized expert commentary in business reportage (e.g., 'financial observers predict an interest rate cut').",
+        "whenNotToUse": "Do not confuse with a casual bystander or tourist watching an accident on the street (use 'onlooker' or 'spectator'), a scientific investigator conducting experiments (use 'researcher'), or a person actively voting and debating in a session (use 'delegate', 'voting member', or 'participant').",
+        "culturalContext": "In Anglo-American corporate governance and public affairs, granting 'observer rights' or 'observer seats' on a corporate board of directors is a standard legal compromise during venture capital financing or joint venture negotiations, allowing an investor's representative to attend executive sessions without holding fiduciary voting power."
+      },
+      "examples": {
+        "daily": [
+          "The medical school allowed second-year students to attend the complex cardiovascular surgery as silent observers.",
+          "Independent international observers visited polling stations across the capital to ensure the municipal ballot was counted fairly.",
+          "As an astute observer of human behavior, she immediately noticed the tension between her two roommates."
+        ],
+        "business": [
+          "Representatives from the minority shareholder group were permitted to attend the board meeting in the capacity of non-voting observers.",
+          "Industry observers expect the impending merger between the telecommunications giants to face intense scrutiny from antitrust regulators.",
+          "The trade delegation was granted official observer status at the annual Asia-Pacific Economic Cooperation forum."
+        ],
+        "conversation": [
+          "\"Will our lead venture capital partner be voting on the new executive compensation package?\" \"No, their fund only negotiated an observer seat on our board, so they can attend discussions but cannot cast a vote.\"",
+          "\"Why do press reports keep citing 'close market observers' regarding our restructuring?\" \"Several prominent equity research analysts issued research notes anticipating our branch closures before our official earnings call.\"",
+          "\"Can junior associates join the high-stakes contract mediation tomorrow?\" \"Yes, the client agreed that two junior attorneys may sit in the back row as silent observers for training purposes.\""
+        ],
+        "collocations": [
+          "industry observer",
+          "market observer",
+          "independent observer",
+          "observer status",
+          "election observer",
+          "keen observer"
+        ]
+      },
+      "wordFamily": {
+        "noun": "observer, observation, observance, observatory",
+        "verb": "observe",
+        "adjective": "observant, observable, observational",
+        "adverb": "observantly, observably"
+      },
+      "visual": {
+        "imageKeyword": "election observer international delegate conference non-voting meeting monitor",
+        "imageDescription": "An international election monitor in a navy blue branded vest and accreditation badge taking notes with a clipboard in an organized polling room, observing the verification process from a respectful distance.",
+        "mnemonic": "OBSERVE + ER: An OBSERVER has eyes to OBSERVE and EAR to hERe (hear), but keeps their mouth shut because they have no vote!"
+      },
+      "video": {
+        "description": "A news feature following accredited United Nations election observers monitoring ballot box security, illustrating how independent monitors verify electoral integrity without interfering in local administration."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Although the regional delegate attended the trade summit as an official _____, she was not permitted to cast a vote on the proposed tariff reductions.\n(A) observer\n(B) observe\n(C) observation\n(D) observatory",
+        "tips": "In TOEIC Part 5, suffix discrimination between people nouns and abstract nouns is a frequent testing point. Following the indefinite article 'an' and adjective 'official', the sentence context refers to a human delegate who attended an event ('attended... as an official _____'). (A) 'observer' correctly denotes the person. (B) 'observe' is a verb, (C) 'observation' is the abstract action or remark, and (D) 'observatory' is a physical facility for observing celestial bodies or weather."
+      },
+      "synonyms": [
+        "monitor",
+        "onlooker",
+        "witness",
+        "commentator",
+        "analyst",
+        "spectator"
+      ],
+      "antonyms": [
+        "participant",
+        "delegate",
+        "actor",
+        "voting member",
+        "contender"
+      ],
+      "relatedWords": [
+        "observer status",
+        "board observer",
+        "non-voting member",
+        "scrutineer",
+        "election monitoring",
+        "market analysis",
+        "press gallery"
+      ]
+    },
+    {
+      "id": "comms-184",
+      "word": "on-air",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˌɑːnˈer/",
+        "syllableBreakdown": "on-air",
+        "stressPattern": "secondary stress on 'on', primary stress on 'air' (on-AIR) when used predicatively; initial stress (ON-air) when used attributively before a noun",
+        "commonMistakes": "Learners often separate the words with a glottal stop instead of linking the final nasal /n/ smoothly to the vowel /er/ (linking pronunciation: /ˌɑːˈner/). In British English, the vowel is an open-mid centering diphthong /eə/ without rhoticity, whereas in American English it is an open-mid front vowel followed by an r-colored glide /er/ or /ɛər/.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/on_air--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "20th-century English compound idiom and technical broadcasting term, originating from the prepositional phrase 'on the air' (transmitted via radio frequency electromagnetic waves through the atmosphere).",
+        "rootWord": "Old English 'on' (upon, during) + Old French 'air' (atmosphere, breeze, sky, melody), from Latin 'āēr', from Ancient Greek 'ἀήρ' (aēr, lower air, mist)",
+        "rootMeaning": "'Transmitted through the atmospheric ether' — designating the operational state or transmission period when signals are actively radiated over electromagnetic radio waves.",
+        "evolution": "In the 1920s, during the infancy of commercial wireless radio stations (such as KDKA in Pittsburgh and the BBC in London), engineers installed illuminated red warning signs outside soundproof acoustic studios reading 'ON AIR' to caution staff that microphones were live and that silence was mandatory. As commercial radio and later television flourished in the 1930s to 1950s, the phrase hyphenated into a compound modifier ('on-air talent', 'on-air promotion') and subsequently entered industry vernacular as a noun denoting the broadcast segment itself, the live broadcast phase, or on-air presentation (e.g., 'smooth transition to on-air', 'two minutes of prime on-air').",
+        "relatedLanguages": [
+          "French: à l'antenne / en direct",
+          "Spanish: en el aire / en emisión / en antena",
+          "German: auf Sendung / On-Air",
+          "Italian: in onda / in diretta"
+        ],
+        "firstRecordedUse": "c. 1927 in early radio broadcasting manuals and studio architectural specifications."
+      },
+      "deepMeaning": {
+        "coreConcept": "The active state, segment, or period of live radio or television broadcasting during which audio or video signals are being transmitted in real time over electromagnetic airwaves, satellite links, or streaming networks to the listening or viewing public.",
+        "spatialContext": "Acoustically treated radio control booths, multi-camera television news studios, master control rooms, and studio corridors beneath illuminated red warning signs.",
+        "temporalContext": "Commences the precise millisecond the floor director cues the host ('In 3, 2, 1...') and terminates when the switcher cuts to a commercial break or the transmitter powers down.",
+        "emotionalTone": "High-alert, focused, energetic, polished, and urgent.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'on-air' conjures an immediate mental image of an illuminated bright red sign mounted above a soundproof studio door. It signals that nothing can be taken back: slips of the tongue, microphone thumps, or background coughs will immediately be broadcast to thousands or millions of listeners. In media careers, being 'on-air' distinguishes the visible/audible performers (the 'on-air personalities', anchors, correspondents) from behind-the-scenes producers, writers, and technical switchers. In corporate PR, securing an executive's 'on-air interview' is considered a high-stakes, high-reward media opportunity.",
+        "mentalImage": "A television news anchor sitting behind a polished studio desk, looking directly into camera one with an earpiece, while an overhead red studio light box brightly glows 'ON AIR'.",
+        "whenToUse": "Use when describing live broadcast status, televised or radio segments, broadcast talent, or station promotions (e.g., 'we go on-air in thirty seconds', 'her first on-air was a major success', 'the network's premier on-air personality').",
+        "whenNotToUse": "Do not use for pre-recorded offline rehearsals, print articles, podcasts recorded in batch for later editing (unless referring specifically to live streaming), or internal closed-circuit intercom announcements (use 'off-air', 'in rehearsal', 'offline', or 'in-house broadcast').",
+        "culturalContext": "The illuminated 'ON AIR' neon or LED sign is an iconic cultural symbol of 20th- and 21st-century broadcasting worldwide. In labor union contracts (such as SAG-AFTRA in the United States), 'on-air personnel' have distinct collective bargaining agreements and wage scales compared to production crews."
+      },
+      "examples": {
+        "daily": [
+          "The morning radio show host answered a live caller question during his first on-air after the commercial break.",
+          "The bright red sign above the recording booth switched to 'ON AIR', warning everyone in the hallway to lower their voices.",
+          "She felt a rush of adrenaline during her brief on-air when the local news station interviewed her about the marathon."
+        ],
+        "business": [
+          "The company's chief executive delivered a concise rebuttal during a live on-air with the financial news channel.",
+          "The broadcast network allocated fifteen minutes of valuable on-air to showcase the philanthropic corporate partnership.",
+          "Media training ensured our regional spokesperson maintained composure throughout the entire four-minute on-air."
+        ],
+        "conversation": [
+          "\"How much time do we have before our guest's scheduled on-air?\" \"The floor manager says we have approximately three minutes while the sponsor's commercial plays.\"",
+          "\"Did the technical director notice the audio glitch during the 6:00 PM on-air?\" \"Yes, the soundboard operator switched to the backup lapel microphone before the broadcast segment concluded.\"",
+          "\"Is Sarah ready for her television debut?\" \"She was nervous during the rehearsal, but once the camera went on-air, her presentation was seamless.\""
+        ],
+        "collocations": [
+          "go on-air",
+          "during the on-air",
+          "live on-air",
+          "on-air personality",
+          "on-air talent",
+          "on-air interview"
+        ]
+      },
+      "wordFamily": {
+        "noun": "on-air (broadcasting status/segment), airtime, broadcast, airwave",
+        "verb": "air (to air a program)",
+        "adjective": "on-air, off-air, airy",
+        "adverb": "on-air"
+      },
+      "visual": {
+        "imageKeyword": "on air red glowing studio sign broadcast microphone television radio",
+        "imageDescription": "A vintage-style illuminated red glass studio box displaying the capitalized words 'ON AIR' against a dark acoustic wall, with a condenser broadcast microphone visible in soft focus.",
+        "mnemonic": "When the red light is ON, your words are sailing through the AIR for millions to hear!"
+      },
+      "video": {
+        "description": "A time-lapse behind-the-scenes broadcast studio tour demonstrating the high-pressure coordination between the control room director and the studio anchors during a live on-air morning news broadcast."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Because the morning business report will go _____ in less than two minutes, studio visitors are asked to exit the production floor immediately.\n(A) on-air\n(B) on-airs\n(C) on-airing\n(D) on-aired",
+        "tips": "In TOEIC listening (Part 4 announcements) and reading passages, the fixed idiomatic phrasal construction 'go on-air' (or 'go on the air') indicates transitioning to live transmission. Option (A) 'on-air' completes the idiomatic predicate adjective/adverbial phrase. The word 'on-air' does not take plural suffixes (B) nor verbal participle inflections like -ing (C) or -ed (D)."
+      },
+      "synonyms": [
+        "live broadcast",
+        "telecast",
+        "radio broadcast",
+        "live transmission",
+        "simulcast",
+        "airtime"
+      ],
+      "antonyms": [
+        "off-air",
+        "off-camera",
+        "taped broadcast",
+        "offline",
+        "in rehearsal"
+      ],
+      "relatedWords": [
+        "broadcast booth",
+        "prompter",
+        "soundboard",
+        "airtime",
+        "teleprompter",
+        "floor manager",
+        "control room"
+      ]
+    },
+    {
+      "id": "comms-185",
+      "word": "online",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˈɑːn.laɪn/",
+        "syllableBreakdown": "on-line",
+        "stressPattern": "primary stress on the first syllable, secondary stress on the second syllable (ON-line) as a noun or attributive adjective; equal stress or final stress in British predicative usage",
+        "commonMistakes": "Learners often pronounce 'line' without a clean diphthong /aɪ/, pronouncing it like *on-lin* or *on-lean*. In some accents, the initial vowel /ɑː/ (US) or /ɒ/ (UK) is replaced with a closed /oʊ/ (*own-line*). In compound noun usage, stress should firmly rest on the first syllable: /ˈɑːn.laɪn/.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/online--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Late 19th-century railway and telegraphic compounding of 'on' (in operation, connected with) + 'line' (railway track, telegraph or telephone wire).",
+        "rootWord": "Old English 'on' (upon, onto) + Latin 'linea' (flax thread, drawn string, cable)",
+        "rootMeaning": "'Connected directly to the operational wire or track' — initially designating rolling stock operating on the railway line or telegraph transmitters plugged into an active telegraph line.",
+        "evolution": "In the 1890s, 'on-line' referred to equipment situated on a main railroad line or telegraph circuit. In the 1950s and 1960s, early mainframe computer engineering (such as MIT's Project Whirlwind and IBM systems) adopted 'on-line' to describe peripheral equipment (such as magnetic tape drives and printers) under the direct, interactive control of the central processing unit (CPU), as opposed to 'off-line' batch processing. With the advent of ARPANET and the commercial World Wide Web in the 1990s, the hyphen was dropped, and 'online' became the universal descriptor for the internet, connected digital services, and digital commerce. In corporate marketing and media strategy, 'online' nominalized to designate the entire digital channel and virtual communication ecosystem (e.g., 'allocating 60% of our advertising budget to online').",
+        "relatedLanguages": [
+          "French: en ligne",
+          "Spanish: en línea",
+          "German: online / im Netz",
+          "Italian: in linea / online"
+        ],
+        "firstRecordedUse": "1892 (railway and telegraphic terminology); 1950 (early computing literature referring to connected peripheral devices)."
+      },
+      "deepMeaning": {
+        "coreConcept": "The digital ecosystem, electronic network medium, or state of active connectivity to the internet, cloud computing platforms, or computer networks through which communication, commerce, information exchange, and virtual collaboration take place.",
+        "spatialContext": "Cloud servers, web browsers, mobile application interfaces, digital marketing command centers, corporate intranets, and remote teleconferencing environments.",
+        "temporalContext": "Continuous, 24/7/365 real-time accessibility with instantaneous packet routing, automated server uptime monitoring, and scheduled maintenance windows.",
+        "emotionalTone": "Dynamic, connected, accessible, efficient, and ubiquitous.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'online' represents the default state of modern corporate and personal communication. When used substantively in business media (e.g., 'a shift toward online', 'capturing market share in online'), it contrasts directly with physical retail ('brick-and-mortar') or traditional print media ('offline'). In day-to-day corporate communication, going 'online' means becoming reachable via Slack, Teams, email, or video call. It carries expectations of immediacy, searchability, and continuous self-service convenience.",
+        "mentalImage": "A digital strategist analyzing live analytics dashboards on multiple high-resolution monitors, tracking real-time web traffic, e-commerce conversion funnels, and customer chat interactions across an enterprise web portal.",
+        "whenToUse": "Use when referring to digital media platforms, web-based services, internet-connected communications, or the virtual space in contrast to physical channels (e.g., 'reallocating ad spend to online', 'available online', 'online customer portal').",
+        "whenNotToUse": "Do not use when describing disconnected legacy hardware, local storage systems that never touch a network (use 'offline' or 'standalone'), or purely physical in-person interactions (use 'in-person', 'face-to-face', or 'on-site').",
+        "culturalContext": "In corporate communications and TOEIC business scenarios, 'online' is central to modern operational efficiency: e-procurement, automated online registrations, online webinars, digital banking, and remote work logistics."
+      },
+      "examples": {
+        "daily": [
+          "Most residents in our neighborhood now pay their utility bills through the city's secure online.",
+          "She ordered a replacement charging cable through online because standard retail stores were out of stock.",
+          "After checking that her router was functioning, she confirmed her home office was back online."
+        ],
+        "business": [
+          "Our marketing director decided to divert 40 percent of our print budget into online to target younger demographics.",
+          "The retail conglomerate reported a 28 percent revenue increase from online during the third quarter.",
+          "To enhance operational efficiency, human resources transitioned all employee onboarding documents to online."
+        ],
+        "conversation": [
+          "\"Where should we distribute the press release for our software launch?\" \"We will publish it simultaneously via traditional wire services and our corporate online.\"",
+          "\"Did the technical support team restore server access after this morning's outage?\" \"Yes, all regional customer account portals are fully operational and back online.\"",
+          "\"Why are our print catalog sales declining?\" \"Customer shopping habits have shifted permanently toward online, where discounts and real-time inventory checks are immediate.\""
+        ],
+        "collocations": [
+          "shift to online",
+          "growth in online",
+          "available online",
+          "back online",
+          "go online",
+          "transition to online"
+        ]
+      },
+      "wordFamily": {
+        "noun": "online, onliner, connectivity, network",
+        "verb": "on-line (rare computing verb to bring online)",
+        "adjective": "online, offline, networked",
+        "adverb": "online, offline"
+      },
+      "visual": {
+        "imageKeyword": "online communication digital marketing e-commerce network laptop dashboard",
+        "imageDescription": "A professional sitting at a sleek desk using a laptop displaying dynamic data graphs and customer engagement metrics, with illuminated digital networking icons glowing subtly in the background.",
+        "mnemonic": "ON-LINE: You are ON the digital transmission LINE—linked directly to the global network!"
+      },
+      "video": {
+        "description": "An executive case study examining a legacy retail chain's digital transformation as it successfully shifted customer service and fulfillment workflows from physical branches into online."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "To receive an immediate confirmation receipt, conference attendees are encouraged to complete their registration _____ rather than mailing a paper form.\n(A) online\n(B) onlining\n(C) onlined\n(D) onlineness",
+        "tips": "In TOEIC Part 5, 'online' frequently functions as an adverb of manner or place modifying action verbs like 'register', 'apply', 'order', or 'purchase'. Option (A) 'online' is the correct standard adverb/noun form. Options (B), (C), and (D) are non-standard morphological pseudo-forms created to trap test-takers."
+      },
+      "synonyms": [
+        "digital realm",
+        "internet",
+        "cyberspace",
+        "web",
+        "digital platform",
+        "connected medium"
+      ],
+      "antonyms": [
+        "offline",
+        "brick-and-mortar",
+        "in-person",
+        "physical store",
+        "print media"
+      ],
+      "relatedWords": [
+        "e-commerce",
+        "digital portal",
+        "cloud computing",
+        "intranet",
+        "connectivity",
+        "telecommuting",
+        "cybersecurity"
+      ]
+    },
+    {
+      "id": "comms-186",
+      "word": "opinion",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/əˈpɪn.jən/",
+        "syllableBreakdown": "o-pin-ion",
+        "stressPattern": "primary stress on the second syllable (o-PIN-ion)",
+        "commonMistakes": "Learners often over-pronounce the initial unaccented 'o' as a full round /oʊ/ (*OH-pin-yun*) instead of reducing it to a soft schwa /ə/. In the final syllable, some speakers insert an extra vowel (*o-pin-ee-on* /əˈpɪniːən/) instead of pronouncing the glide-nasal cluster /-jən/.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/opinion--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Middle English via Anglo-Norman and Old French 'opinion', derived from Latin 'opīniō' (belief, supposition, judgment, reputation), from the base of 'opīnārī' (to think, judge, deem, hold an opinion).",
+        "rootWord": "Latin 'opinio' (thought, conjecture, belief), from 'opinari' (to think, suppose), related to 'optare' (to choose, wish for)",
+        "rootMeaning": "'A judgment, belief, or estimation formed in the mind' — a personal view, assessment, or professional evaluation not grounded in mathematical certainty or proven fact.",
+        "evolution": "In Classical Latin and Roman law, 'opinio' represented an unproven belief or widespread public judgment, distinguished from 'scientia' (certain scientific knowledge) and 'veritas' (truth). In Middle English (c. 1300s), it entered philosophical discourse to denote personal conviction or estimation. By the 17th and 18th centuries, with the emergence of coffeehouse culture, democratic political theory, and daily newspapers, the term evolved to encompass 'public opinion' (the collective judgment of a population). In modern jurisprudence, journalism, and corporate communications, 'opinion' gained two specialized institutional definitions: a formal written legal analysis issued by legal counsel or a court ('legal opinion', 'majority opinion') and dedicated journalistic commentary ('opinion piece', 'op-ed section') clearly segregated from factual news reportage.",
+        "relatedLanguages": [
+          "French: opinion / avis",
+          "Spanish: opinión / parecer",
+          "German: Meinung / Gutachten",
+          "Italian: opinione / parere"
+        ],
+        "firstRecordedUse": "Early 14th century (c. 1300–1340 in Middle English, meaning a belief or judgment formed without absolute certainty)."
+      },
+      "deepMeaning": {
+        "coreConcept": "A belief, judgment, or viewpoint formed about a particular matter, not necessarily based on absolute empirical proof or demonstrable fact; or a formal professional appraisal or authoritative statement delivered by an expert (such as legal counsel or an auditor) evaluating a specific case or condition.",
+        "spatialContext": "Editorial boardrooms, corporate boardroom consultation tables, polling agency research centers, legal counsel chambers, and feedback survey forms.",
+        "temporalContext": "Expressed during strategy brainstorming sessions, measured through quarterly customer sentiment surveys, solicited prior to contract signatures, or published daily on newspaper op-ed pages.",
+        "emotionalTone": "Subjective, thoughtful, evaluative, persuasive, or diplomatic.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native speaker, an 'opinion' exists on a clear spectrum ranging from subjective personal preference ('that's just my opinion') to high-stakes, authoritative professional counsel ('we need a formal legal opinion from outside counsel'). In corporate diplomacy, expressing an opinion requires careful linguistic hedging (e.g., 'in my opinion', 'it is our considered opinion that...'). In journalism and communications, respecting the boundary between 'news' (verifiable reporting) and 'opinion' (editorial stance or commentary) is considered the cardinal ethical standard of professional media.",
+        "mentalImage": "A senior corporate attorney leaning over a mahogany desk, reviewing financial disclosure drafts and annotating a formal memorandum entitled 'Legal Opinion on Proposed Acquisition'.",
+        "whenToUse": "Use when describing personal viewpoints, customer survey responses, public sentiment, editorial commentary, or expert professional appraisals (e.g., 'public opinion poll', 'in my professional opinion', 'second medical opinion', 'legal opinion').",
+        "whenNotToUse": "Do not use when referring to verified, empirical, indisputable data or hard physical facts (use 'fact', 'empirical evidence', or 'data'), nor when referring to an official binding decree or enacted legislation (use 'statute', 'ruling', or 'mandate').",
+        "culturalContext": "In corporate governance and accounting, an independent auditor's report culminates in an 'audit opinion' (e.g., an 'unqualified opinion', meaning clean financial statements, versus an 'adverse opinion'). Similarly, measuring 'public opinion' through scientifically sampled surveys is a multi-billion-dollar market research industry across the United States and the United Kingdom."
+      },
+      "examples": {
+        "daily": [
+          "In my opinion, the new downtown library has much better study facilities than the old branch.",
+          "She asked her sister for an honest opinion before purchasing the tailored interview suit.",
+          "Everyone on the committee had a different opinion regarding the best theme for the annual neighborhood picnic."
+        ],
+        "business": [
+          "Before finalizing the foreign joint venture, the executive board sought a formal legal opinion regarding compliance with international trade sanctions.",
+          "Our marketing team launched a comprehensive survey to gauge public opinion regarding the proposed corporate rebranding.",
+          "The accounting firm issued an unqualified audit opinion, confirming that our annual financial statements represent an accurate financial position."
+        ],
+        "conversation": [
+          "\"What is your opinion on the revised quarterly sales targets?\" \"I think they are achievable provided supply chain disruptions do not worsen next month.\"",
+          "\"Did outside counsel deliver their opinion on the patent infringement claim?\" \"Yes, their written legal opinion concluded that our software architecture does not violate any competitor patents.\"",
+          "\"Why did the editor decline to run that column in the main news section?\" \"She noted that the article expressed too much personal opinion and reassigned it to the Sunday op-ed page.\""
+        ],
+        "collocations": [
+          "public opinion",
+          "in my opinion",
+          "legal opinion",
+          "second opinion",
+          "matter of opinion",
+          "unqualified opinion"
+        ]
+      },
+      "wordFamily": {
+        "noun": "opinion, opinionist, opinion poll",
+        "verb": "opine",
+        "adjective": "opinionated",
+        "adverb": "opinionatedly"
+      },
+      "visual": {
+        "imageKeyword": "opinion poll customer survey feedback legal counsel boardroom consultation",
+        "imageDescription": "A focused corporate legal consultant in a well-lit office presenting a bound advisory document to company executives, with survey charts and highlighted text visible on the table.",
+        "mnemonic": "An OPINION is an OPEN OPTION in your mind—a judgment chosen before facts make it absolute!"
+      },
+      "video": {
+        "description": "An informative corporate governance video explaining the crucial differences between factual news reporting, editorial opinion pieces, and formal legal opinions in corporate crisis communications."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Before authorizing the expenditure for the commercial property acquisition, the chief financial officer requested a formal _____ from the legal department.\n(A) opinion\n(B) opine\n(C) opinionated\n(D) opinionatedly",
+        "tips": "In TOEIC Part 5, recognizing noun requirements after adjectives is a core skill. The blank is preceded by the adjective 'formal' and followed by the prepositional phrase 'from the legal department'. The transitive verb 'requested' requires a direct object noun. (A) 'opinion' is the required noun (forming the common business collocation 'formal opinion'). (B) is a verb, (C) is an adjective, and (D) is an adverb."
+      },
+      "synonyms": [
+        "viewpoint",
+        "judgment",
+        "perspective",
+        "assessment",
+        "evaluation",
+        "sentiment"
+      ],
+      "antonyms": [
+        "fact",
+        "certainty",
+        "empirical evidence",
+        "reality",
+        "truth"
+      ],
+      "relatedWords": [
+        "public opinion poll",
+        "editorial",
+        "op-ed",
+        "audit opinion",
+        "legal opinion",
+        "consensus",
+        "focus group"
+      ]
+    }
+  ]
+}

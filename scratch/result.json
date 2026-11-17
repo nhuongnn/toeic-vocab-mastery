@@ -1,0 +1,442 @@
+{
+  "words": [
+    {
+      "id": "dining-073",
+      "word": "butter",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˈbʌt.ər/",
+        "syllableBreakdown": "but·ter",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners often over-enunciate the medial double \"t\" as a sharp voiceless plosive [t] instead of using an American alveolar flap [ɾ], or substitute /uː/ or /ʊ/ for the short open-mid back vowel /ʌ/.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/butter--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Old English / Latin / Ancient Greek",
+        "rootWord": "butyrum (Latin) < boutyron (Ancient Greek: bous \"cow\" + tyros \"cheese\")",
+        "rootMeaning": "\"cow-cheese\" or curdled dairy fat from cow milk",
+        "evolution": "Derived from Greek \"boutyron\", borrowed into Latin as \"butyrum\", and entered Proto-Germanic as an agricultural loanword (*buterǭ). It entered Old English as \"butere\", developed through Middle English \"butere/butter\", and became Modern English \"butter\", the standard term for the churned dairy fat spread.",
+        "relatedLanguages": [
+          "German: Butter",
+          "Dutch: boter",
+          "French: beurre",
+          "Italian: burro",
+          "Spanish: mantequilla"
+        ],
+        "firstRecordedUse": "Before 900 AD (Old English \"butere\")"
+      },
+      "deepMeaning": {
+        "coreConcept": "A solid or semi-solid yellow dairy emulsion churned from fresh or fermented cream, composed predominantly of milkfat, water, and milk proteins, widely used as an essential culinary cooking fat, baking shortening, and table condiment for bread service.",
+        "spatialContext": "Commercial restaurant kitchens, walk-in coolers, banquet buffet cold stations, and formal dining tables served in miniature porcelain ramekins beside bread plates.",
+        "temporalContext": "Portioned during kitchen morning prep, continuously replenished during meal services, and served at room temperature to ensure spreadability.",
+        "emotionalTone": "Rich, comforting, sensory, traditional.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers instinctively regard butter as a mark of culinary quality, richness, and indulgence compared to artificial spreads or margarine. In restaurant dining, warm bread accompanied by fresh butter is considered an essential hospitality courtesy. Idiomatically, natives associate butter with frictionless execution (\"smooth as butter\") or primary financial livelihoods (\"bread and butter\").",
+        "mentalImage": "A small white ceramic ramekin filled with sculpted quenelles of salted sweet cream butter garnished with flaky sea salt, arranged beside warm sourdough rolls on a formal dining table.",
+        "whenToUse": "Use when referring to dairy cooking fats, baking ingredients, table spreads for bread service, or catering dietary specifications.",
+        "whenNotToUse": "Do not use for vegetable-based oils, margarine, or plant spreads unless specifically qualified with a compound noun (e.g., \"peanut butter\", \"almond butter\", \"vegan butter\").",
+        "culturalContext": "In Western executive hospitality and formal banquets, providing European-style high-fat butter reflects dining quality. In TOEIC, butter appears in Part 1 images of formal dining place settings, Part 3 discussions regarding banquet catering requests, and Part 7 hotel breakfast menu notices."
+      },
+      "examples": {
+        "daily": [
+          "She spread a generous layer of unsalted butter over the warm scone she bought from the bakery.",
+          "Could you please pass the butter and the bread basket down to this end of the table?",
+          "The recipe specifies melting two tablespoons of butter in a saucepan over medium-low heat."
+        ],
+        "business": [
+          "The banquet catering contract stipulates that unsalted European butter and dairy-free margarine must both be provided at every table.",
+          "Surging global dairy prices forced the commercial bakery chain to adjust its quarterly budget for butter procurement.",
+          "Waitstaff were instructed to replenish the butter ramekins and water carafes before serving the main dinner course."
+        ],
+        "conversation": [
+          "\"Did the delivery driver bring the extra dairy supplies for this weekend's corporate conference?\" — \"Yes, two cases of sweet cream butter and ten quarts of half-and-half are stocked in the walk-in cooler.\"",
+          "\"Do we have dairy-free alternatives for attendees who cannot consume butter with their dinner rolls?\" — \"The kitchen has prepared individual dishes of extra-virgin olive oil and balsamic vinegar as an alternative.\"",
+          "\"Excuse me, is this house butter salted or unsalted?\" — \"It is lightly salted and whipped with local clover honey.\""
+        ],
+        "collocations": [
+          "unsalted butter",
+          "whipped butter",
+          "melted butter",
+          "bread and butter",
+          "butter knife",
+          "spread butter"
+        ]
+      },
+      "wordFamily": {
+        "noun": "butter",
+        "verb": "butter",
+        "adjective": "buttery"
+      },
+      "visual": {
+        "imageKeyword": "ceramic ramekin butter curls bread basket formal restaurant table",
+        "imageDescription": "A pristine white ceramic ramekin containing chilled curls of golden butter sprinkled with sea salt, placed alongside a bread basket filled with artisan rolls and a silver butter knife on a linen tablecloth.",
+        "mnemonic": "BUTTER makes bread taste BETTER! Churn cream to make rich yellow BUTTER."
+      },
+      "video": {
+        "description": "A formal banquet dining tutorial explaining proper table place settings, demonstrating the placement of the bread-and-butter plate, the butter knife, and individual butter ramekins to the upper left of the dinner fork."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          7
+        ],
+        "exampleQuestion": "To accommodate attendees with lactose intolerance, the catering staff will provide plant-based margarine as an alternative to dairy _____ . (A) butter (B) buttery (C) buttered (D) buttering",
+        "tips": "Following the classifying noun adjunct \"dairy\", the sentence requires a head noun to identify the food product. (A) butter is the correct noun. (B) is an adjective, (C) is a past participle/adjective, and (D) is a gerund/participle."
+      },
+      "synonyms": [
+        "dairy spread",
+        "sweet cream butter",
+        "shortening",
+        "cooking fat",
+        "table spread"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "margarine",
+        "dairy",
+        "cream",
+        "spread",
+        "ramekin",
+        "pastry",
+        "condiment"
+      ]
+    },
+    {
+      "id": "dining-074",
+      "word": "cafe",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/kæfˈeɪ/",
+        "syllableBreakdown": "ca·fe",
+        "stressPattern": "○●",
+        "commonMistakes": "Non-native speakers often drop the final syllable entirely (*kaff /kæf/) or pronounce the ending with a flat monophthong /e/ or /iː/ instead of the diphthong /eɪ/ on the stressed second syllable.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/cafe--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "French / Ottoman Turkish / Classical Arabic",
+        "rootWord": "café (French) < kahve (Turkish) < qahwah (Arabic: coffee brew)",
+        "rootMeaning": "\"coffee\", originally designating the hot brewed beverage and later applied to the establishment serving it",
+        "evolution": "Originating from Arabic \"qahwah\", the word entered Ottoman Turkish as \"kahve\" and was adopted into French in the 17th century as \"café\" for both the bean beverage and Parisian coffeehouses. In the early 19th century, English borrowed the French word \"café\" to describe informal public establishments serving coffee, tea, pastries, and light refreshments.",
+        "relatedLanguages": [
+          "French: café",
+          "Spanish: café",
+          "Italian: caffè",
+          "German: Café / Kaffeehaus",
+          "Portuguese: café"
+        ],
+        "firstRecordedUse": "Early 19th century (circa 1802)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A small, informal dining establishment and coffeehouse specializing in freshly brewed specialty coffees, espresso beverages, teas, pastries, sandwiches, and light lunch fare, typically featuring counter ordering and indoor or sidewalk seating.",
+        "spatialContext": "Commercial downtown avenues, ground-floor retail concourses of office buildings, transit stations, and hotel lobbies outfitted with espresso machines, pastry display cases, and compact cafe tables.",
+        "temporalContext": "Peak patronage during morning commuter rushes (7:30 AM – 9:30 AM) and mid-afternoon coffee breaks (2:00 PM – 3:30 PM), maintaining steady customer turnover all day.",
+        "emotionalTone": "Casual, relaxed, energized, welcoming, communal.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, a cafe is the prototypical \"third place\"—a welcoming space distinct from home and the formal office. Inviting someone to \"meet at the cafe\" sets an informal, low-pressure tone ideal for one-on-one catch-ups, networking, or focused remote work on a laptop over coffee, in contrast to the rigid formality of an executive boardroom or a seated dinner restaurant.",
+        "mentalImage": "Patrons sitting at small round wooden bistro tables near large sunlit windows, typing on laptops or conversing over steaming porcelain coffee cups as a barista foams milk behind the counter.",
+        "whenToUse": "Use when referring to coffee shops, casual bistros serving light meals and baked goods, or the ground-floor coffee lounge of an office complex.",
+        "whenNotToUse": "Do not use for full-service dinner restaurants with table reservations and formal waitstaff, fast-food burger drive-thrus, or self-service institutional corporate cafeterias.",
+        "culturalContext": "Cafes are integral to modern professional life in English-speaking cities. In TOEIC test design, cafes are frequent settings for Part 1 photographs (customers seated under outdoor awnings), Part 3 dialogues (colleagues deciding to meet outside the office or picking up morning drinks), and Part 7 notices (announcements of new cafe tenants or grand opening promotional discounts)."
+      },
+      "examples": {
+        "daily": [
+          "I stopped by the corner cafe this morning to pick up an iced latte and a freshly baked croissant.",
+          "On sunny afternoons, patrons enjoy sitting on the outdoor terrace of the sidewalk cafe.",
+          "The cafe offers fast wireless internet and comfortable seating, making it a popular work spot for remote freelancers."
+        ],
+        "business": [
+          "Ms. Delgado suggested meeting at the lobby cafe at 10:00 A.M. to review the revised marketing proposal in an informal setting.",
+          "The property management firm signed a long-term lease with an artisanal cafe to operate on the ground floor of the commercial tower.",
+          "Instead of booking an internal conference room, our project team held a brief brainstorming session at the nearby sidewalk cafe."
+        ],
+        "conversation": [
+          "\"Would you prefer to discuss the partnership agreement in our office or at the cafe downstairs?\" — \"Let's go to the cafe downstairs; a quiet table and a cup of coffee will make the discussion much more comfortable.\"",
+          "\"Does this cafe offer any gluten-free bakery items?\" — \"Yes, the barista told me they receive daily shipments of gluten-free muffins and oat bars from a local bakery.\"",
+          "\"We need to find a convenient place to wait until our 2:00 P.M. client presentation.\" — \"There is a quiet cafe just across the street where we can review our presentation slides.\""
+        ],
+        "collocations": [
+          "sidewalk cafe",
+          "outdoor cafe",
+          "corner cafe",
+          "lobby cafe",
+          "cafe terrace",
+          "visit a cafe"
+        ]
+      },
+      "wordFamily": {
+        "noun": "cafe, cafeteria",
+        "adjective": "cafe-style"
+      },
+      "visual": {
+        "imageKeyword": "modern urban cafe coffee shop barista latte art patrons",
+        "imageDescription": "A warm and inviting urban cafe interior with exposed brick walls, soft pendant lighting, small wooden bistro tables occupied by professionals, and a barista pouring intricate latte art into a ceramic cup.",
+        "mnemonic": "CAFE = Coffee And Fresh Eats! A cozy spot to meet, drink coffee, and eat."
+      },
+      "video": {
+        "description": "A commercial real estate video tour highlighting the amenities of a newly developed office tower, emphasizing the ground-floor retail cafe designed for tenant collaboration and informal client meetings."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          7
+        ],
+        "exampleQuestion": "Because all conference rooms were booked, the marketing associates gathered at a nearby _____ to finalize their campaign presentation over coffee. (A) cafe (B) cafet (C) cafes (D) cafed",
+        "tips": "Following the singular indefinite article \"a\" and the modifier \"nearby\", the sentence requires a singular countable noun referring to a dining establishment. (A) cafe is the correct choice. Part 1 frequently includes photographs depicting patrons seated outside a cafe."
+      },
+      "synonyms": [
+        "coffee shop",
+        "coffeehouse",
+        "bistro",
+        "espresso bar",
+        "tea shop"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "barista",
+        "espresso",
+        "latte",
+        "bistro",
+        "pastry",
+        "coffeehouse",
+        "beverage"
+      ]
+    },
+    {
+      "id": "dining-075",
+      "word": "cafeteria",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˌkæf.əˈtɪr.i.ə/",
+        "syllableBreakdown": "caf·e·te·ri·a",
+        "stressPattern": "ˌ○○●○○",
+        "commonMistakes": "Learners often articulate all five syllables with equal vowel duration (*ka-fe-te-ri-a) instead of reducing unstressed medial syllables to schwa /ə/ and placing primary stress firmly on the fourth syllable (/ˈtɪr/).",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/cafeteria--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "American Spanish / Latin",
+        "rootWord": "cafetería (Spanish: café \"coffee\" + -tería place suffix denoting a retail establishment)",
+        "rootMeaning": "\"coffee shop\" or place where coffee is dispensed, later adapted in the US to denote self-service tray restaurants",
+        "evolution": "Derived from Mexican Spanish \"cafetería\" (coffee store). During the late 19th century in the American West and popularized at the 1893 World's Columbian Exposition in Chicago, the term was adopted to describe self-service dining halls with tray rails and hot food counters designed for high-efficiency, low-cost dining. It became the universal designation for institutional dining facilities in corporate headquarters, hospitals, and educational institutions.",
+        "relatedLanguages": [
+          "Spanish: cafetería",
+          "French: cafétéria",
+          "Italian: caffetteria",
+          "Portuguese: cafeteria",
+          "German: Cafeteria / Mensa"
+        ],
+        "firstRecordedUse": "Late 19th century (circa 1893 in the US)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A large self-service dining facility in an office complex, university campus, factory, or hospital where patrons slide meal trays along designated counter stations to select hot entrees, soups, salads, and beverages before paying at a central register and seating themselves at communal tables.",
+        "spatialContext": "Dedicated corporate dining levels or building amenity basements equipped with stainless-steel steam tables, sneeze-guards, cold salad bars, drink fountains, tray return conveyor belts, and open seating halls.",
+        "temporalContext": "Peak operational volume during company lunch periods (11:30 AM – 2:00 PM), with breakfast service (7:00 AM – 9:00 AM) and beverage or snack access during work breaks.",
+        "emotionalTone": "Functional, practical, lively, collegial, efficient.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native speaker, \"cafeteria\" means self-service tray dining: picking up a plastic tray, sliding it past stainless-steel food warmers, asking food service workers for portions of hot dishes, selecting packaged beverages, and carrying the tray to large shared tables. It implies high-volume efficiency and an egalitarian corporate culture where executives and entry-level staff eat lunch in the same facility.",
+        "mentalImage": "Office employees wearing employee ID badges holding green meal trays as they slide them along a polished metal counter, choosing fresh salads and grilled chicken under warm display heat lamps.",
+        "whenToUse": "Use when describing corporate campus dining halls, hospital canteens, university dining centers, or building lunchrooms structured around self-service trays.",
+        "whenNotToUse": "Do not confuse with a full-service restaurant where waitstaff take orders and deliver food to tables, or an intimate coffeehouse cafe.",
+        "culturalContext": "On-site corporate cafeterias are major recruitment and retention amenities in modern corporations, often subsidized by employers to promote healthy eating and cross-departmental collaboration. In the TOEIC exam, cafeterias are a staple setting for Part 3 workplace chats (discussing lunch plans or menu changes), Part 4 building announcements (notices of scheduled cleaning or holiday closures), and Part 7 administrative memos (catering vendor updates and dietary surveys)."
+      },
+      "examples": {
+        "daily": [
+          "The university cafeteria offers a diverse selection of hot meals, fresh sandwiches, and vegetarian dishes for students.",
+          "Visitors and medical staff often take a quick lunch break in the hospital cafeteria on the lower ground floor.",
+          "He carried his meal tray over to an open booth in the campus cafeteria to eat with his study group."
+        ],
+        "business": [
+          "The corporate services division announced that the employee cafeteria will undergo renovations next month to install new salad stations.",
+          "Human Resources distributed a survey asking staff for feedback on the quality and pricing of meals served in the company cafeteria.",
+          "Due to scheduled maintenance on the building's gas lines, the cafeteria will close early this Friday at 1:30 P.M."
+        ],
+        "conversation": [
+          "\"Are you planning to eat out for lunch today, or will you be heading down to the company cafeteria?\" — \"I'll probably just grab something at the cafeteria; they have a new stir-fry station that looks very good.\"",
+          "\"Did you see the memo regarding the temporary closure of the third-floor cafeteria?\" — \"Yes, but the notice mentioned that the grab-and-go kiosk on the first floor will remain open all week.\"",
+          "\"The executive committee is hosting the annual staff recognition luncheon in the main cafeteria tomorrow.\" — \"That sounds great; I understand the company will be providing complimentary catered lunches for everyone.\""
+        ],
+        "collocations": [
+          "company cafeteria",
+          "employee cafeteria",
+          "hospital cafeteria",
+          "school cafeteria",
+          "cafeteria tray",
+          "eat in the cafeteria"
+        ]
+      },
+      "wordFamily": {
+        "noun": "cafeteria, cafe",
+        "adjective": "cafeteria-style"
+      },
+      "visual": {
+        "imageKeyword": "modern corporate cafeteria buffet tray line food stations employees",
+        "imageDescription": "A spacious, modern corporate cafeteria featuring stainless-steel food counters, an expansive fresh salad bar, and business professionals seated at clean birch tables enjoying their lunch.",
+        "mnemonic": "CAFETERIA = CAFÉ + TRAYS for EVERYONE IN THE AREA! A self-service hall where everybody slides their meal tray."
+      },
+      "video": {
+        "description": "An internal corporate orientation video demonstrating the amenities of a corporate headquarters campus, detailing the cafeteria's multi-station food counters, digital payment kiosks, and composting stations."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Employees are advised that the corporate _____ will be closed for the afternoon while technicians upgrade the refrigeration and ventilation systems. (A) cafeteria (B) cafeteria-style (C) cafeterias (D) cafe-like",
+        "tips": "The definite article \"the\" followed by the classifying noun adjunct \"corporate\" requires a singular count noun referring to the specific company facility. (A) cafeteria is the correct answer. (B) is an adjective/compound, (C) is plural, and (D) is an adjective."
+      },
+      "synonyms": [
+        "canteen",
+        "dining hall",
+        "mess hall",
+        "lunchroom",
+        "food hall"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "canteen",
+        "tray",
+        "self-service",
+        "salad bar",
+        "steam table",
+        "meal voucher",
+        "cashier"
+      ]
+    },
+    {
+      "id": "dining-076",
+      "word": "cake",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/keɪk/",
+        "syllableBreakdown": "cake",
+        "stressPattern": "●",
+        "commonMistakes": "Speakers sometimes shorten the diphthong /eɪ/ into a pure monophthong /e/ or omit the voiceless velar plosive /k/ at the end, pronouncing it as *kay /keɪ/.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/cake--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Old Norse / Proto-Germanic",
+        "rootWord": "kaka (Old Norse)",
+        "rootMeaning": "\"flat round loaf of bread\" baked hard on both sides",
+        "evolution": "Originating in Proto-Germanic *kakǭ, the word entered Middle English around 1230 as \"kake\" from Old Norse \"kaka\". Historically designating flat, baked buns or sweetened bread loaves, the word evolved by the 18th and 19th centuries with the advent of fine flour, refined sugar, and leavening agents into the modern sweet baked dessert finished with icing or frosting for celebratory occasions.",
+        "relatedLanguages": [
+          "German: Kuchen",
+          "Dutch: koek / koekje",
+          "Danish: kage",
+          "Swedish: kaka",
+          "Norwegian: kake"
+        ],
+        "firstRecordedUse": "Early 13th century (circa 1230 in Middle English)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A sweet baked confectionery dessert made from flour, sugar, eggs, and butter or shortening, leavened with baking powder or whipped eggs, and typically layered and frosted with icing or buttercream for celebratory events, anniversaries, and dessert courses.",
+        "spatialContext": "Commercial patisseries, hotel pastry kitchens, catered dessert buffet stations, and corporate breakrooms or conference suites during milestone celebrations.",
+        "temporalContext": "Custom ordered days or weeks in advance for special events; served during scheduled afternoon office celebrations (often around 3:00 PM) or as the final course of formal banquet meals.",
+        "emotionalTone": "Celebratory, festive, joyful, appreciative, sweet.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, \"cake\" is inextricably linked with communal milestones and celebrations. In an office environment, saying \"There is cake in the breakroom\" is an immediate invitation to step away from work and celebrate a coworker's promotion, birthday, or retirement. Figuratively, native speakers use \"cake\" in idioms signifying effortless ease (\"a piece of cake\") or wanting mutually exclusive benefits (\"have your cake and eat it too\").",
+        "mentalImage": "A beautifully frosted two-tier sponge cake decorated with fresh raspberries and white vanilla buttercream, displayed on a glass cake stand in a sunny office kitchenette alongside small paper plates and a cake server.",
+        "whenToUse": "Use when referring to baked sweet desserts, celebration pastries, banquet dessert selections, or customized bakery orders for corporate functions.",
+        "whenNotToUse": "Do not confuse with bread loaves, cookies, pastries, or savory tarts unless explicitly prefixed as a molded savory patty (such as \"crab cake\" or \"fish cake\").",
+        "culturalContext": "In Anglo-American corporate life, gathering in the conference room or lounge for sheet cake and coffee is a time-honored tradition to honor retirement, milestones, or project completions. In the TOEIC exam, cake appears in Part 3 conversations regarding event planning and office farewells, Part 4 announcements of celebratory receptions, and Part 7 bakery order confirmations."
+      },
+      "examples": {
+        "daily": [
+          "She ordered a customized two-layer chocolate cake with fresh strawberries for her daughter's birthday party.",
+          "The local bakery displays an assortment of carrot cake, cheesecake, and fruit tarts in its glass case.",
+          "Would you like a slice of lemon pound cake with your afternoon cup of tea?"
+        ],
+        "business": [
+          "The administrative team arranged for a decorated sheet cake to celebrate the branch manager's upcoming retirement.",
+          "The event coordinator placed an order with a local bakery for a three-tiered celebratory cake featuring the company's twentieth-anniversary logo.",
+          "An email was sent to all department personnel inviting them to gather in the executive lounge at 3:30 P.M. for coffee and cake."
+        ],
+        "conversation": [
+          "\"Did the delivery driver drop off the retirement cake for Harold's farewell party this afternoon?\" — \"Yes, it arrived twenty minutes ago and is currently stored in the pantry refrigerator.\"",
+          "\"We need to accommodate several guests with dietary restrictions at the anniversary reception.\" — \"In addition to the main celebratory cake, the caterer is providing gluten-free cupcakes and vegan fruit parfaits.\"",
+          "\"Who is responsible for cutting and distributing the company anniversary cake?\" — \"The catering staff will handle the slicing and plating once the CEO finishes his brief speech.\""
+        ],
+        "collocations": [
+          "slice of cake",
+          "birthday cake",
+          "wedding cake",
+          "custom cake",
+          "anniversary cake",
+          "bake a cake"
+        ]
+      },
+      "wordFamily": {
+        "noun": "cake",
+        "verb": "cake",
+        "adjective": "cake-like, caked"
+      },
+      "visual": {
+        "imageKeyword": "custom celebration cake corporate retirement party dessert table",
+        "imageDescription": "A beautifully decorated corporate celebration cake frosted with smooth white buttercream and piped rosettes, displayed on a ceramic pedestal stand surrounded by champagne flutes on an office banquet table.",
+        "mnemonic": "BAKE a CAKE to CELEBRATE! Flour, sugar, butter, and eggs make a sweet dessert."
+      },
+      "video": {
+        "description": "A master pastry chef demonstrating commercial techniques for crumb-coating, frosting, and piping decorative borders onto a multi-tiered corporate gala celebration cake."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Staff members are invited to the fourth-floor conference room at 3:00 P.M. to enjoy a slice of _____ in celebration of the quarterly sales record. (A) cake (B) cakes (C) caked (D) caking",
+        "tips": "Following the partitive expression \"a slice of\", the uncountable mass noun (A) cake is required to designate the dessert food. (B) is the plural count form, (C) is a participle/adjective, and (D) is a gerund/participle."
+      },
+      "synonyms": [
+        "gateau",
+        "torte",
+        "sponge cake",
+        "pastry",
+        "baked dessert"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "bakery",
+        "frosting",
+        "icing",
+        "pastry chef",
+        "slice",
+        "confectionery",
+        "celebration"
+      ]
+    }
+  ]
+}

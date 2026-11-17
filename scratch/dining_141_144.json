@@ -1,0 +1,445 @@
+{
+  "words": [
+    {
+      "id": "dining-141",
+      "word": "fry",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/fry--_us_1.mp3",
+        "commonMistakes": "Learners sometimes replace the diphthong /aɪ/ with a flat monophthong /aː/ or confuse the initial consonant blend /fr/ with /fl/ (saying 'fly' instead of 'fry'). Ensure the tongue retracts slightly for the American /r/ without trilling or contacting the alveolar ridge, followed by a smooth glide to /ɪ/.",
+        "ipa": "/fraɪ/",
+        "stressPattern": "●",
+        "syllableBreakdown": "fry"
+      },
+      "etymology": {
+        "origin": "Middle English frien, from Old French frire ('to fry, cook in fat or oil'), from Latin frīgere ('to roast, fry, parch'), from Proto-Indo-European *bʰer- / *bʰreg- ('to roast, brew, crackle').",
+        "rootWord": "Latin frīgere / Old French frire",
+        "rootMeaning": "to roast, parch, or cook in bubbling hot fat",
+        "evolution": "Latin frīgere described cooking food in hot oil or roasting seeds. Borrowed into Old French as frire, the term entered Middle English around the late 13th century as frien. Over centuries, while the verb remained primary, nominal culinary senses developed to denote dishes prepared in hot oil (such as a stir-fry or fish fry in the 19th century) and, in North American commercial dining, an individual elongated strip of deep-fried potato (short for French fry).",
+        "relatedLanguages": [
+          "French: frire (verb: to fry), friture (noun: fried food/frying)",
+          "Spanish: freír (verb: to fry), fritura (noun: fried food/fritter)",
+          "Italian: friggere (verb: to fry), fritto (noun: fried dish)",
+          "Portuguese: frigir (verb: to fry)"
+        ],
+        "firstRecordedUse": "c. 1290 for the verb; nominal senses emerged from the 14th century (fried dish) to the 20th century (french fry)"
+      },
+      "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A food item cooked by immersion or searing in hot oil or fat—most commonly designating an individual strip of deep-fried potato (a French fry), a composite hot-oil dish (such as a stir-fry), or an organized culinary meal or social gathering featuring fried fare (such as a traditional fish fry).",
+        "emotionalTone": "Casual, appetizing, savory, and indulgent.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Commercial deep-fryer lines, casual restaurant pass-through counters, food trucks, cafeteria hot-food displays, and dining tables.",
+        "temporalContext": "Prepared to order within 3 to 5 minutes at high oil temperatures (350°F to 375°F / 175°C to 190°C); served immediately while hot, crisp, and fresh to avoid sogginess."
+      },
+      "nativeMindset": {
+        "culturalContext": "French fries (or chips in British usage) represent the prototypical side dish across North American and international casual dining, fast-casual restaurants, and bistros. Additionally, traditional communal meals like a Midwestern or Southern 'fish fry' serve as popular corporate social outings, charity fundraisers, and weekend family traditions.",
+        "howNativesThink": "When native speakers hear 'fry' as a standalone countable noun in culinary contexts, they picture an individual French fry (e.g., 'a stray fry at the bottom of the bag', 'curly fry', 'sweet potato fry') or encounter it in compounds like 'stir-fry' and 'fish fry'. In commercial kitchens, line cooks understand that an exceptional fry requires precise oil temperature control and instant seasoning after draining.",
+        "mentalImage": "A golden-yellow, double-blanched French fry with a crisp, lightly salted exterior and fluffy potato interior, held between fingers over a parchment-lined wire serving basket beside a gourmet cheeseburger.",
+        "whenNotToUse": "Do not use the singular noun 'fry' when requesting an entire order or side dish (say 'an order of fries' or 'French fries', not 'I want a fry'). Do not confuse with the idiom 'small fry' (meaning unimportant or trivial individuals).",
+        "whenToUse": "Use when identifying a specific style or individual cut of fried potato ('waffle fry', 'crinkle-cut fry'), a high-heat wok dish ('vegetable stir-fry'), or an organized culinary event centered on fried seafood or poultry ('annual company fish fry')."
+      },
+      "examples": {
+        "business": [
+          "The fast-casual restaurant chain standardized its double-frying procedure to guarantee that every fry maintains a crisp exterior during high-volume lunch rushes.",
+          "To foster team camaraderie, the branch social committee hosted an outdoor fish fry for employees and their families at the lakeside pavilion.",
+          "Kitchen supervisors audited deep-fryer oil filtration logs to ensure that each potato fry meets the franchise's strict golden-color standards."
+        ],
+        "collocations": [
+          "French fry",
+          "stir-fry",
+          "fish fry",
+          "crispy fry",
+          "curly fry",
+          "waffle fry"
+        ],
+        "conversation": [
+          "\"Would you like the standard shoestring fries or a sweet potato fry with your club sandwich?\" / \"Let's upgrade to the sweet potato fry—they are seasoned with smoked paprika.\"",
+          "\"Why are the fried appetizers taking longer than usual from the line?\" / \"The kitchen had to wait for the frying oil to reheat to 365 degrees after dropping a large basket of frozen potato fries.\""
+        ],
+        "daily": [
+          "He reached into the takeout bag to pull out a single hot, crispy fry before driving home.",
+          "Condensation trapped inside the closed cardboard carton will quickly turn a freshly cooked fry limp and soggy.",
+          "The diner offers your choice of a seasoned curly fry or mixed garden salad as a complimentary side."
+        ]
+      },
+      "wordFamily": {
+        "noun": "fry",
+        "verb": "fry",
+        "adjective": "fried",
+        "adverb": ""
+      },
+      "visual": {
+        "imageDescription": "A golden, freshly fried potato strip with delicate salt crystals glistening on its surface, resting atop a wire basket of shoestring fries on a wooden bistro table.",
+        "imageKeyword": "crispy french fry golden potato basket dining bistro",
+        "mnemonic": "FRY: Sizzling in hot oil until it is Free from moisture and Ready to crunch: F-R-Y!"
+      },
+      "video": {
+        "description": "A restaurant line-cooking tutorial demonstrating the two-stage blanching and flash-frying technique used to prepare consistently crisp potato fries in high-volume hospitality."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "To maintain crispness, the kitchen training manual instructs prep cooks that every potato _____ must be drained over the oil vat for ten seconds before transfer to the warming bin. (A) fry (B) fried (C) frying (D) fryer",
+        "tips": "In Part 5, analyze the noun phrase structure following the quantifier 'every' and noun adjunct 'potato'. The sentence requires a singular countable noun indicating the food item: (A) fry. (B) fried is a past participle/adjective, (C) frying is a gerund/participle, and (D) fryer refers to the cooking apparatus rather than the item being drained."
+      },
+      "synonyms": [
+        "French fry",
+        "fritter",
+        "stir-fry",
+        "fried dish",
+        "fish fry"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "deep-fryer",
+        "frying oil",
+        "crispiness",
+        "french fries",
+        "skillet",
+        "hash brown",
+        "tempura"
+      ]
+    },
+    {
+      "id": "dining-142",
+      "word": "garnishing",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/garnishing--_us_1.mp3",
+        "commonMistakes": "Learners sometimes replace the voiceless postalveolar fricative /ʃ/ with an alveolar /s/ (pronouncing it 'gar-nissing') or drop the rhotic coloring in the first syllable. Ensure clear articulation of /ˈɡɑːr-/ followed by /-nɪ-/ and /-ʃɪŋ/.",
+        "ipa": "/ˈɡɑːr.nɪ.ʃɪŋ/",
+        "stressPattern": "●○○",
+        "syllableBreakdown": "gar·nish·ing"
+      },
+      "etymology": {
+        "origin": "Middle English garnysshyng, from the verb garnischen, from Old French garniss-, present participle stem of garnir ('to furnish, provide, arm, decorate'), from Frankish *warnijan ('to protect, provision, take care of'), from Proto-Germanic *warnōną ('to heed, guard').",
+        "rootWord": "Old French garnir / Frankish *warnijan",
+        "rootMeaning": "to furnish, equip, adorn, or provision",
+        "evolution": "Originally denoting the provisioning of fortresses or equipping knights in Anglo-Norman and Old French, the verb garnir expanded to mean artistic or architectural ornamentation. In Middle English culinary manuscripts by the late 14th century, 'garnishing' came to signify the culinary practice and edible embellishments (herbs, carved citrus, sauces) added to dishes to heighten visual elegance and complement flavors.",
+        "relatedLanguages": [
+          "French: garniture (noun: garnish, trimming), garnir (verb: to garnish/furnish)",
+          "Spanish: guarnición (noun: garnish, side dish)",
+          "Italian: guarnizione (noun: garnish, topping, decoration)",
+          "Portuguese: guarnição (noun: garnish, side dish, crew)"
+        ],
+        "firstRecordedUse": "late 14th century (c. 1380) in Middle English culinary treatises"
+      },
+      "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "The culinary art, technique, or decorative edible element used to finish and embellish a plated dish, buffet platter, or beverage—using accents such as fresh herbs, microgreens, citrus wheels, edible flowers, or delicate sauce reductions to heighten aesthetic appeal, contrast, and aroma.",
+        "emotionalTone": "Refined, artistic, meticulous, and elegant.",
+        "formalityLevel": "formal",
+        "spatialContext": "Chef plating stations, upscale restaurant expo lines, banquet pass-through counters, catering assembly tables, and cocktail bar stations.",
+        "temporalContext": "Carried out in the final seconds immediately before expediting plates to the dining room to preserve the fresh appearance, vibrant color, and crispness of delicate botanicals."
+      },
+      "nativeMindset": {
+        "culturalContext": "In modern fine dining and executive event catering, garnishing has evolved from outdated decorative frills (such as curly parsley or notched orange wheels) into an intentional, functional element where every decorative component must be edible and directly harmonize with the flavor profile of the dish.",
+        "howNativesThink": "Native hospitality professionals view garnishing as the critical visual signature that turns a routine plate into a fine dining experience. It provides visual contrast against white porcelain and releases immediate aromatics (like bruised mint or lemon zest) when placed before the diner. Over-garnishing or utilizing non-functional decorative items is perceived as amateurish.",
+        "mentalImage": "An executive chef using slender stainless-steel plating tweezers to place a sprig of fresh chervil and edible borage blossom atop a seared halibut fillet drizzled with herb-infused olive oil.",
+        "whenNotToUse": "Do not confuse with the legal noun 'garnishment' (the court-ordered attachment of debtor funds or wages). Do not use 'garnishing' to designate hearty, substantive side dishes (use 'side dish' or 'accompaniment' for large servings of potatoes or vegetables).",
+        "whenToUse": "Use when describing the delicate finishing embellishments on food or cocktails, the act of decorating dishes before service, or the visual presentation standards of a banquet or restaurant."
+      },
+      "examples": {
+        "business": [
+          "Executive banquet standards require all plated entrées to receive consistent herb garnishing before leaving the staging kitchen for the dining ballroom.",
+          "The catering supervisor commended the pastry team on the meticulous sugar and raspberry garnishing applied to the corporate anniversary dessert platters.",
+          "Updating plate presentation guidelines to feature vibrant microgreen garnishing noticeably improved guest satisfaction ratings at the hotel restaurant."
+        ],
+        "collocations": [
+          "herb garnishing",
+          "plate garnishing",
+          "edible garnishing",
+          "delicate garnishing",
+          "cocktail garnishing",
+          "artful garnishing"
+        ],
+        "conversation": [
+          "\"Which herb should we use for the salmon garnishing on tonight's banquet menu?\" / \"The executive chef selected fresh dill sprigs and micro-arugula to provide a bright green contrast on the dark ceramic plates.\"",
+          "\"Why was table seven's order held back at the pass?\" / \"The expeditor noticed that the sous-chef had omitted the lime zest garnishing from the seared scallops.\""
+        ],
+        "daily": [
+          "A simple garnishing of chopped chives and cracked black pepper transformed the bowl of potato leek soup into an elegant first course.",
+          "She finished the cocktail with an orange twist garnishing that released fragrant citrus oils across the surface of the drink.",
+          "The children admired the festive holiday garnishing of fresh berries and mint leaves decorating the chocolate cake."
+        ]
+      },
+      "wordFamily": {
+        "noun": "garnishing",
+        "verb": "garnish",
+        "adjective": "garnished",
+        "adverb": ""
+      },
+      "visual": {
+        "imageDescription": "A professional chef in a crisp white jacket using fine culinary tweezers to position vibrant green micro-herbs as a finishing garnishing on an artistically plated seafood entrée.",
+        "imageKeyword": "chef plating garnishing microgreens fine dining tweezers presentation",
+        "mnemonic": "GARNISHING: Think of a GARMENT for the dish—you 'garnish' a plate to dress it in style and make it shine!"
+      },
+      "video": {
+        "description": "A culinary arts masterclass demonstrating precision garnishing techniques with herb oils, microgreens, and citrus spirals on fine dining banquet courses."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          7
+        ],
+        "exampleQuestion": "The banquet catering supervisor insisted that the herb _____ on each cold seafood platter be arranged with precision tweezers to ensure flawless visual presentation. (A) garnishing (B) garnished (C) garnishable (D) garnishly",
+        "tips": "In Part 5, following the noun adjunct 'herb' and preceding the prepositional phrase 'on each cold seafood platter', the blank requires a head noun denoting the decorative arrangement or embellishment: (A) garnishing. (B) garnished is a past participle/verb, (C) garnishable is an adjective, and (D) garnishly is an incorrect adverbial form."
+      },
+      "synonyms": [
+        "garnish",
+        "garniture",
+        "embellishment",
+        "adornment",
+        "trimming",
+        "decoration"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "microgreens",
+        "edible flower",
+        "chervil",
+        "plating tweezers",
+        "citrus twist",
+        "coulis",
+        "presentation"
+      ]
+    },
+    {
+      "id": "dining-143",
+      "word": "ginger",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/ginger--_us_1.mp3",
+        "commonMistakes": "Learners often mispronounce the two 'g's using a hard velar stop /ɡ/ (pronouncing it 'ghin-gher' like in 'gear') instead of the soft voiced palato-alveolar affricate /dʒ/ (as in 'gym' or 'judge'). Both consonant sounds are /dʒ/: /ˈdʒɪn.dʒər/.",
+        "ipa": "/ˈdʒɪn.dʒər/",
+        "stressPattern": "●○",
+        "syllableBreakdown": "gin·ger"
+      },
+      "etymology": {
+        "origin": "Old English gingifer, reinforced by Old French gingibre, from Medieval Latin gingiber, from Classical Latin zingiberi, from Ancient Greek zingíberis (ζιγγίβερις), borrowed from Prakrit siṅgavera, from Sanskrit śṛṅgaveram ('horn-shaped root'), from śṛṅga ('horn, antler') + vera ('body, root').",
+        "rootWord": "Sanskrit śṛṅgaveram / Greek zingíberis",
+        "rootMeaning": "horn-shaped or antler-shaped root",
+        "evolution": "Indigenous to maritime Southeast Asia and cultivated in ancient India, ginger was transported along early maritime and overland spice routes to the Mediterranean. Sanskrit speakers named it śṛṅgaveram after its knobby, antler-like branches. Passing into Greek as zingíberis and Latin as zingiberi, it entered Old French as gingibre and Old English as gingifer before 1000 AD. By the 14th century, Middle English stabilized the spelling as ginger, solidifying its place in international culinary trade.",
+        "relatedLanguages": [
+          "French: gingembre (noun: ginger)",
+          "Spanish: jengibre (noun: ginger)",
+          "Italian: zenzero (noun: ginger)",
+          "German: Ingwer (noun: ginger)",
+          "Portuguese: gengibre (noun: ginger)"
+        ],
+        "firstRecordedUse": "Old English period (pre-1000 AD); modern English form established by c. 1300"
+      },
+      "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "The pungent, aromatic, knobby underground rhizome of the perennial plant Zingiber officinale, widely used fresh, grated, minced, dried, powdered, pickled, or candied to impart a zesty, peppery, warming heat to culinary dishes, marinades, baked goods, and restorative beverages.",
+        "emotionalTone": "Vibrant, pungent, warm, invigorating, and refreshing.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Commercial restaurant prep kitchens, sushi bar counters (pickled gari), bakery dry-storage spice racks, corporate juice bars, and beverage preparation counters.",
+        "temporalContext": "Available fresh year-round; minced or grated into aromatics at the start of sautéing, steeped in broths, or served raw and pickled as an immediate palate cleanser alongside sushi."
+      },
+      "nativeMindset": {
+        "culturalContext": "Ginger holds a foundational role across Asian culinary traditions (frequently forming the classic aromatic trinity with garlic and scallions in Chinese cuisine, or served as pickled 'gari' in Japanese sushi bars). In Western dining, it is historically linked to holiday baking (gingerbread, gingersnaps) and carbonated sodas, while modern corporate dining embraces ginger shots and herbal infusions for workplace wellness.",
+        "howNativesThink": "Native speakers associate ginger with clean, invigorating heat and digestive soothing. In food service, specifying 'fresh ginger' immediately signals freshness and premium culinary craftsmanship compared to dried ginger powder. Chefs value its enzymatic properties in tenderizing marinades and its capacity to cut through fatty or rich sauces.",
+        "mentalImage": "A fresh, plump, branched ginger rhizome with tan papery skin resting on a wooden cutting board beside a sharp paring knife and a small ceramic bowl of freshly grated yellow pulp releasing a spicy, citrusy aroma.",
+        "whenNotToUse": "Do not confuse ginger with 'ginseng' (a bitter, earthy medicinal root). Avoid using 'ginger' as a derogatory slang noun or adjective referring to red-haired individuals in corporate professional settings.",
+        "whenToUse": "Use when identifying the culinary spice, fresh aromatic root, or flavoring ingredient in recipes, menu descriptions, beverage offerings, or purchasing orders (e.g., 'fresh ginger', 'pickled ginger', 'ginger-soy marinade')."
+      },
+      "examples": {
+        "business": [
+          "The corporate cafeteria menu introduced a pan-seared salmon fillet glazed with an orange and fresh ginger reduction to highlight healthy dining choices.",
+          "Hotel purchasing agents established a direct contract with an organic agricultural distributor to secure weekly deliveries of premium fresh ginger for the banquet kitchens.",
+          "In response to employee wellness surveys, the office refreshment pantry stocked sparkling ginger water and organic ginger-lemon herbal tea."
+        ],
+        "collocations": [
+          "fresh ginger",
+          "grated ginger",
+          "pickled ginger",
+          "ginger root",
+          "ground ginger",
+          "ginger dressing"
+        ],
+        "conversation": [
+          "\"Does the dipping sauce for the vegetable spring rolls contain raw ginger?\" / \"Yes, it is blended with finely minced ginger, rice vinegar, toasted sesame oil, and low-sodium soy sauce.\"",
+          "\"Should we substitute dried ground ginger for the fresh root in this braised pork belly recipe?\" / \"I would advise against it, because fresh ginger delivers a bright, sharp pungency that powdered spice simply cannot replicate.\""
+        ],
+        "daily": [
+          "She grated a thumb-sized piece of peeled ginger into the skillet to season the vegetable stir-fry.",
+          "A hot mug of steeped ginger tea with raw honey offered welcome comfort during a cold winter afternoon.",
+          "The server brought a small ceramic dish of thinly sliced pink pickled ginger alongside the sashimi platter."
+        ]
+      },
+      "wordFamily": {
+        "noun": "ginger",
+        "verb": "ginger",
+        "adjective": "gingery",
+        "adverb": ""
+      },
+      "visual": {
+        "imageDescription": "A knobby, fresh ginger rhizome with thin tan skin and moist yellow slices resting on a rustic prep board next to a microplane grater and green scallions.",
+        "imageKeyword": "fresh ginger root rhizome cooking spice kitchen board",
+        "mnemonic": "GINGER: Gives an Invigorating Natural Glow and Energetic Radiance to every dish: G-I-N-G-E-R!"
+      },
+      "video": {
+        "description": "A professional culinary demonstration teaching prep cooks how to skin fresh ginger using a teaspoon and finely julienne it for commercial stir-fry stations."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "According to the restaurant review, the chef's signature stir-fry sauce relies on freshly grated _____ combined with crushed garlic and toasted sesame oil for its distinctive zesty flavor. (A) ginger (B) gingery (C) gingering (D) gingerness",
+        "tips": "In Part 5, following the adverb 'freshly' and participial adjective 'grated', the sentence requires a head noun denoting the edible spice or ingredient: (A) ginger. (B) gingery is an adjective, (C) gingering is a verbal participle, and (D) gingerness is an abstract state noun inapplicable to an ingredient in a recipe."
+      },
+      "synonyms": [
+        "ginger root",
+        "rhizome",
+        "spice",
+        "flavoring",
+        "aromatic root"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "rhizome",
+        "pickled ginger",
+        "garlic",
+        "turmeric",
+        "gingerbread",
+        "aromatics",
+        "stir-fry"
+      ]
+    },
+    {
+      "id": "dining-144",
+      "word": "glass",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/glass--_us_1.mp3",
+        "commonMistakes": "Learners sometimes substitute the open-mid front vowel /æ/ (in standard American English) with the open back vowel /ɑː/ (as in standard British 'glahss') or diphthongize it into /eə/. In American English, articulate a bright, crisp /æ/ as in 'trap' or 'cat', and ensure the final alveolar sibilant /s/ is fully enunciated rather than omitted.",
+        "ipa": "/ɡlæs/",
+        "stressPattern": "●",
+        "syllableBreakdown": "glass"
+      },
+      "etymology": {
+        "origin": "Old English glæs ('glass, glass vessel'), from Proto-Germanic *glasą ('glass, amber, shine'), from Proto-Indo-European *gʰel- ('to shine, gleam, glow').",
+        "rootWord": "Proto-Germanic *glasą / PIE *gʰel-",
+        "rootMeaning": "to shine, gleam, or shimmer (originally describing amber or lustrous resin)",
+        "evolution": "Derived from a Proto-Indo-European root signifying radiance and glimmering light, Proto-Germanic *glasą originally referred to amber. In Old English, glæs evolved to denote both the hard, brittle transparent material manufactured by fusing silica with alkali, and the utilitarian drinking vessel shaped from it. As European and Venetian glassmaking refined table stemware during the Renaissance, 'glass' became the universal English term for tableware drinking vessels.",
+        "relatedLanguages": [
+          "German: Glas (noun: glass, drinking tumbler)",
+          "Dutch: glas (noun: glass, drinking vessel)",
+          "Danish: glas (noun: glass)",
+          "Swedish: glas (noun: glass)"
+        ],
+        "firstRecordedUse": "pre-900 AD in Old English charters and literary glossaries"
+      },
+      "deepMeaning": {
+        "connotation": "positive",
+        "coreConcept": "A rigid, transparent or translucent drinking container without a handle, manufactured from blown or molded silicate glass (or clear food-grade crystal), used at dining tables, beverage stations, and banquets to serve drinks such as water, wine, cocktails, and juices; also denotes the volume of beverage contained within it.",
+        "emotionalTone": "Crisp, clean, luminous, refined, and transparent.",
+        "formalityLevel": "neutral",
+        "spatialContext": "Banquet table settings, restaurant bar back counters, commercial dishwasher glass-racks, dining room sideboards, and conference beverage stations.",
+        "temporalContext": "Set during pre-shift table mise en place; refilled continuously throughout banquet service; washed and polished immediately after meals to eliminate water marks."
+      },
+      "nativeMindset": {
+        "culturalContext": "In formal Western dining and corporate events, proper table etiquette governs glassware positioning: water glasses are positioned directly above the dinner knife, flanked by red and white wine glasses in order of course progression. Furthermore, 'raising a glass' is the universally recognized ceremonial gesture for delivering toasts at corporate banquets, award ceremonies, and weddings.",
+        "howNativesThink": "Native speakers naturally distinguish between 'glass' as an uncountable material ('a bottle made of glass') and 'a glass' as a countable drinking vessel ('a glass of water'). In dining hospitality, banquet servers prioritize pristine cleanliness—inspecting glassware against light to ensure there are no smudges, lip marks, or water spots.",
+        "mentalImage": "A polished, stemless water glass filled with ice cubes and chilled sparkling water, garnished with a thin lemon slice, reflecting warm ambient chandelier light on an ironed white linen banquet table.",
+        "whenNotToUse": "Do not use 'glass' for hot-beverage vessels equipped with handles (use 'cup' or 'mug' for coffee or tea). Do not use 'glass' when referring to disposable paper or plastic containers (use 'paper cup' or 'plastic cup'). In the plural 'glasses', ensure context clarifies whether drinking vessels or eyeglasses are meant.",
+        "whenToUse": "Use when designating a cold-beverage drinking vessel (e.g., 'water glass', 'wine glass', 'cocktail glass') or as a measure of liquid consumption ('would you like another glass of iced tea?')."
+      },
+      "examples": {
+        "business": [
+          "Before opening the dining room doors for the executive gala, the banquet captain inspected every water glass for water spots or fingerprints.",
+          "At the conclusion of the awards banquet, the chief executive invited all attendees to raise a glass in honor of the retiring vice president.",
+          "The hotel food and beverage division ordered five hundred units of commercial tempered glassware to replace damaged stemware across its event venues."
+        ],
+        "collocations": [
+          "glass of water",
+          "wine glass",
+          "raise a glass",
+          "tall glass",
+          "empty glass",
+          "sparkling glass"
+        ],
+        "conversation": [
+          "\"Could the waitstaff please bring an extra glass of water with ice to table twelve?\" / \"Right away, I will inform the beverage runner immediately.\"",
+          "\"Did you double-check the champagne flutes before setting up the reception tray?\" / \"Yes, every glass was polished with a clean microfiber cloth to ensure a sparkling presentation.\""
+        ],
+        "daily": [
+          "She poured a tall glass of freshly squeezed orange juice to accompany her breakfast bagel.",
+          "Be cautious when stacking those delicate wine glasses in the cupboard because the rims can chip easily.",
+          "He drank two full glasses of water after finishing his morning jog around the neighborhood park."
+        ]
+      },
+      "wordFamily": {
+        "noun": "glass",
+        "verb": "glass",
+        "adjective": "glassy",
+        "adverb": ""
+      },
+      "visual": {
+        "imageDescription": "A crystal-clear glass filled with ice cubes and sparkling mineral water with a fresh lemon slice, set on a restaurant table beside polished flatware.",
+        "imageKeyword": "clear water glass sparkling ice lemon table dining",
+        "mnemonic": "GLASS: Gleaming Light And Sand, Serving every cool beverage in your hand!"
+      },
+      "video": {
+        "description": "A luxury hotel training module showing banquet servers how to polish, handle, and arrange glassware on formal dining tables according to standard place-setting geometry."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          2,
+          3,
+          7
+        ],
+        "exampleQuestion": "Before seating the evening banquet attendees, the lead server verified that a clean _____ of water had been placed at each table setting. (A) glass (B) glasses (C) glassy (D) glassing",
+        "tips": "In Part 5, following the singular indefinite article 'a' and descriptive adjective 'clean', the sentence requires a singular countable noun denoting the drinking vessel: (A) glass. (B) glasses is plural and disagrees with 'a', (C) glassy is an adjective, and (D) glassing is a participial form."
+      },
+      "synonyms": [
+        "tumbler",
+        "drinking vessel",
+        "goblet",
+        "flute",
+        "beaker",
+        "chalice"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "glassware",
+        "stemware",
+        "tumbler",
+        "water goblet",
+        "decanter",
+        "pitcher",
+        "table setting"
+      ]
+    }
+  ]
+}

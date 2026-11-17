@@ -1,0 +1,448 @@
+{
+  "result": {
+    "words": [
+      {
+        "id": "dining-057",
+        "word": "beef",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+          "ipa": "/biːf/",
+          "syllableBreakdown": "beef",
+          "stressPattern": "single stressed syllable (BEEF)",
+          "commonMistakes": "Learners sometimes shorten the long, tense vowel /iː/ to a lax /ɪ/ (sounding like 'biff') or fail to articulate the final voiceless labiodental fricative /f/ cleanly. Non-native speakers also frequently treat 'beef' as a countable noun when referring to meat (*'we ordered two beefs'* instead of *'two servings of beef'* or *'two beef dishes'*). Note that the plural 'beefs' is exclusively reserved for informal contexts meaning grievances or disputes."
+        },
+        "etymology": {
+          "origin": "Middle English 'beef' / 'beof', borrowed from Anglo-Norman and Old French 'buef' (modern French 'bœuf'), from Latin 'bōs' (stem 'bov-'), meaning 'ox', 'bull', or 'cow', ultimately descending from Proto-Indo-European *gʷou- ('ox, cow'). This reflects the classic post-1066 Norman Conquest linguistic dichotomy in English: Anglo-Saxon words were retained for living farm animals (cow, ox, swine, sheep), while Norman-French terms were adopted for the prepared culinary meats served to the nobility (beef, pork, mutton, veal).",
+          "rootWord": "Latin 'bōs' (genitive 'bovis') / Old French 'buef' (cattle, ox)",
+          "rootMeaning": "'buef' / 'bōs' — domestic bovine cattle; specifically the culinary flesh of cattle dressed for consumption",
+          "evolution": "Introduced into Middle English around 1300 through Norman aristocratic dining culture, 'beef' established itself as the standard term for the edible meat of cattle. During the industrial revolution and 19th-century American expansion, cattle ranching solidified beef as a dominant dietary and commercial staple. In late 19th-century American slang, 'beef' developed colloquial senses meaning a complaint or grievance, as well as the phrasal verb 'to beef up' (to strengthen or reinforce).",
+          "relatedLanguages": [
+            "French: bœuf",
+            "Spanish: buey (ox), carne de res (beef)",
+            "Italian: bue (ox), carne bovina (beef)",
+            "German: Rindfleisch (Germanic compound; cf. archaic English 'neat's flesh')"
+          ],
+          "firstRecordedUse": "c. 1300 (Middle English, in culinary rolls and household accounts of the English nobility)"
+        },
+        "deepMeaning": {
+          "coreConcept": "The culinary flesh of domestic bovine cattle (steers, heifers, or cows), encompassing diverse primal and subprimal cuts such as tenderloin, sirloin, ribeye, and brisket, prized across global gastronomy for its rich umami flavor, marbling, high protein content, and adaptability to dry-heat roasting, grilling, braising, and banquet catering.",
+          "spatialContext": "Steakhouse dining rooms, commercial hotel banquet kitchens, butcher counters, corporate gala carving stations, and airline meal preparation commissaries.",
+          "temporalContext": "Featured prominently on daily lunch and dinner menus, executive business dining itineraries, and corporate banquet entrée RSVP deadlines.",
+          "emotionalTone": "Hearty, substantial, prestigious, and culinary.",
+          "formalityLevel": "neutral",
+          "connotation": "positive"
+        },
+        "nativeMindset": {
+          "howNativesThink": "Native English speakers view beef as the classic, hearty centerpiece protein of Western culinary dining. In corporate hospitality and event planning, offering a beef option (such as filet mignon or prime rib) immediately signals a premium, upscale banquet experience compared to standard chicken or pasta. Business professionals also routinely recognize metaphorical extensions like 'beefing up security' (substantially reinforcing) or asking 'where's the beef?' (questioning whether an initiative possesses actual substance).",
+          "mentalImage": "An executive banquet chef in a crisp white jacket slicing a roasted, herb-crusted prime rib of beef under warm carving-station lamps, revealing a succulent pink center alongside miniature silver sauceboats of au jus and horseradish cream.",
+          "whenToUse": "Use when discussing culinary choices, restaurant orders, banquet catering options, food procurement, cuts of meat, or dietary selections (e.g., 'Conference delegates must indicate whether they prefer the braised beef short ribs or the herb-crusted cod').",
+          "whenNotToUse": "Do not use 'beef' when referring to live pasture livestock (use 'cattle', 'cows', or 'steers'). Do not pluralize as 'beefs' when ordering multiple servings at a dining table (use 'beef entrées' or 'orders of beef'). Avoid informal slang usages ('a beef with a coworker') in formal business writing.",
+          "culturalContext": "In American and British corporate dining, steakhouse dinners and beef carving stations are traditional venues for closing high-stakes commercial deals. However, modern international hospitality requires careful accommodation of cultural, religious, and dietary guidelines—such as Hindu vegetarianism or veneration of cattle, kosher/halal dietary specifications, and health-conscious alternatives—making entrée selection slips a ubiquitous feature in TOEIC event coordination passages."
+        },
+        "examples": {
+          "daily": [
+            "We bought two pounds of ground beef at the local grocery store to make homemade chili for our weekend gathering.",
+            "He ordered the beef tenderloin cooked medium-rare, accompanied by roasted asparagus and garlic mashed potatoes.",
+            "The family enjoyed a hearty beef stew with carrots and potatoes after spending the afternoon outdoors in the cold."
+          ],
+          "business": [
+            "Due to recent inflationary pressures in agricultural commodity markets, the catering supplier revised its per-plate cost for the roast beef banquet package.",
+            "The corporate events coordinator sent a reminder requesting that all summit attendees confirm whether they prefer the beef medallion entrée or the vegetarian risotto.",
+            "The regional restaurant chain signed an exclusive procurement agreement with local ranches to ensure a dependable supply of grass-fed beef."
+          ],
+          "conversation": [
+            "\"Have you gathered all the dinner entrée selections for Thursday's client reception?\" \"Almost all of them; fourteen guests chose the roasted beef filet, nine selected the pan-seared salmon, and three requested vegan meals.\"",
+            "\"How would you like your beef cooked this evening, ma'am?\" \"Medium, please, and could I substitute steamed vegetables for the french fries?\"",
+            "\"Did you see the catering menu for the regional sales conference?\" \"Yes, the hotel is offering a prime rib of beef carving station alongside an extensive salad bar during the networking mixer.\""
+          ],
+          "collocations": [
+            "roast beef",
+            "ground beef",
+            "beef tenderloin",
+            "lean beef",
+            "beef stew",
+            "beef cattle"
+          ]
+        },
+        "wordFamily": {
+          "noun": "beef",
+          "verb": "beef (phrasal: beef up)",
+          "adjective": "beefy",
+          "adverb": ""
+        },
+        "visual": {
+          "imageKeyword": "roast beef prime rib carving station banquet catering restaurant",
+          "imageDescription": "A hotel banquet carving station displaying a rosemary-seasoned prime rib roast of beef with a rich browned crust and tender pink center, flanked by a carving knife, sprigs of fresh herbs, and small ramekins of jus.",
+          "mnemonic": "BEEF was the feast of the Norman CHIEF: French lords dined on 'beef' while Saxon farmers herded the 'cow' in grief!"
+        },
+        "video": {
+          "description": "A professional culinary arts video demonstrating high-volume banquet preparation, showcasing a head chef seasoning, slow-roasting, and slicing prime rib of beef for a four-hundred-seat corporate convention."
+        },
+        "toeicContext": {
+          "commonParts": [
+            1,
+            3,
+            4,
+            7
+          ],
+          "exampleQuestion": "Delegates attending the awards banquet are requested to indicate their preferred main course—herb-roasted _____ tenderloin, grilled sea bass, or roasted butternut squash—on the enclosed RSVP card.\n(A) beef\n(B) beefs\n(C) beefy\n(D) beefing",
+          "tips": "In TOEIC Part 5, a noun can serve as a noun adjunct (a noun acting like an adjective to modify another noun, such as 'beef tenderloin', 'catering service', or 'dinner banquet'). Here, the singular noun 'beef' directly modifies 'tenderloin'. Choice (B) 'beefs' is incorrect because culinary meat is an uncountable mass noun; Choice (C) 'beefy' is an informal adjective meaning muscular or heavily built; and Choice (D) 'beefing' is a participle/gerund that does not fit."
+        },
+        "synonyms": [
+          "bovine meat",
+          "cattle meat",
+          "red meat",
+          "steak",
+          "prime rib"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+          "veal",
+          "tenderloin",
+          "sirloin",
+          "poultry",
+          "entrée",
+          "marbling",
+          "butcher"
+        ]
+      },
+      {
+        "id": "dining-058",
+        "word": "beer",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+          "ipa": "/bɪər/",
+          "syllableBreakdown": "beer",
+          "stressPattern": "single stressed syllable (BEER)",
+          "commonMistakes": "Learners often confuse the centering diphthong or rhotic vowel /ɪər/ with /bɛər/ ('bear' or 'bare'), /bɪəd/ ('beard'), or /bɜːrd/ ('bird'). Pay close attention to keeping the vowel close and front /ɪ/ gliding toward /ər/. Non-native speakers also occasionally confuse 'beer' (an umbrella term for fermented malt grain beverages) with 'ale' (a top-fermented subtype of beer) or 'cider' (fermented apple juice)."
+        },
+        "etymology": {
+          "origin": "Old English 'bēor', cognate with Old Frisian 'biār', Old Saxon 'bior', Middle Dutch 'bier', and Old High German 'bior' (modern German 'Bier'). Originates from Proto-West Germanic *beura- (beer, malt beverage), traditionally traced to Proto-Indo-European *bʰer- ('to brew, bubble, boil') or related to Vulgar Latin 'biber' ('a beverage, drink', from Classical Latin 'bibere' [to drink]).",
+          "rootWord": "Proto-West Germanic *beura- (brewed malt beverage) / Old English 'bēor'",
+          "rootMeaning": "'beura-' — fermented malt drink brewed from grain, water, and yeast; historically differentiated from ancient unhopped ale",
+          "evolution": "In medieval England, 'ale' was unhopped, fermented purely from malted grain, water, and yeast, while 'bēor' referred to a sweeter, fermented malt drink. During the 14th and 15th centuries, Flemish and Dutch brewers introduced hops to the British Isles, yielding a bitter, aromatic, and bacterially stable beverage called 'beer'. By the 16th and 17th centuries, hoppy brewing became standard, and 'beer' transformed into the universal category term encompassing lagers, ales, porters, and stouts across international beverage industries.",
+          "relatedLanguages": [
+            "German: Bier",
+            "Dutch: bier",
+            "French: bière",
+            "Italian: birra",
+            "Spanish: cerveza (derived from Latin 'cervisia', unlike French/Italian which borrowed Germanic 'bier')"
+          ],
+          "firstRecordedUse": "Before 1000 (Old English 'bēor', in early herbal, medical, and monastic texts)"
+        },
+        "deepMeaning": {
+          "coreConcept": "An alcoholic beverage brewed by steeping malted cereal grains (principally barley, wheat, rye, or oats) in hot water, boiling the resulting wort with hops for bitterness and aroma, and fermenting the liquid with brewer's yeast to produce alcohol and natural carbonation.",
+          "spatialContext": "Hotel lounge bars, casual dining bistros, microbreweries, convention center reception lounges, and outdoor company picnic pavilions.",
+          "temporalContext": "Commonly served during late-afternoon happy hours (typically 5:00 PM – 7:00 PM), post-conference networking receptions, dinner services, and weekend social mixers.",
+          "emotionalTone": "Convivial, relaxed, informal-to-semiformal, sociable, and collegial.",
+          "formalityLevel": "neutral",
+          "connotation": "positive"
+        },
+        "nativeMindset": {
+          "howNativesThink": "In native English-speaking corporate and social environments, 'grabbing a beer' or 'having a cold beer' is the universally understood shorthand for informal decompression, camaraderie, and low-stakes professional networking. Unlike hard liquor, beer carries a casual, approachable, and social connotation. In modern dining, the global craft beer renaissance has elevated beer to an artisanal beverage evaluated for tasting notes, food pairings (like wine), and regional provenance.",
+          "mentalImage": "A chilled, condensation-slick glass of golden amber draft beer topped with a thick collar of creamy white foam, resting on a polished mahogany pub counter beside a platter of gourmet appetizers during an evening networking session.",
+          "whenToUse": "Use when referencing fermented malt beverages, beverage service packages, restaurant drink menus, casual after-work gatherings, or catering bar setups (e.g., 'The registration package includes two complimentary drink tickets valid for draft beer, house wine, or soft drinks').",
+          "whenNotToUse": "Do not use 'beer' in formal legal, statutory, or compliance documents that require technical phrasing (use 'malt alcoholic beverages'). Avoid assuming all colleagues consume alcohol; when proposing social outings, inclusive terms like 'after-work drinks' or 'joining us for refreshments' are preferred in professional corporate culture.",
+          "culturalContext": "In North American, British, German, and Australasian corporate life, Friday afternoon 'desk beers' or offsite pub socials are longstanding team-building traditions. In TOEIC Parts 3 and 7, dialogues and announcements frequently involve banquet contracts featuring 'beer and wine bars', company anniversary celebrations at local craft breweries, or catering drink orders."
+        },
+        "examples": {
+          "daily": [
+            "After spending all Saturday afternoon working in the yard, he relaxed on the porch with a cold glass of beer.",
+            "The downtown bistro features an extensive beverage menu showcasing twelve distinct varieties of regional craft beer.",
+            "Would you prefer a light pilsner or a rich, dark beer to go with your smoked barbecue platter?"
+          ],
+          "business": [
+            "Admission to the corporate alumni mixer includes two drink vouchers redeemable for craft beer, house wine, or non-alcoholic beverages.",
+            "A regional microbrewery signed a multi-year partnership with the convention center to serve its locally crafted beer during trade exhibitions.",
+            "Human resources updated the employee handbook to clarify that moderate consumption of beer and wine is permissible only at company-sponsored evening events."
+          ],
+          "conversation": [
+            "\"A few members of the marketing team are meeting at the corner pub for a beer to celebrate finishing the client audit—would you like to join us?\" \"That sounds great; I just need to send one final email and I'll meet you over there.\"",
+            "\"What beverage options did you select for the post-symposium reception?\" \"We chose the standard beverage package, which includes imported and domestic draft beer, red and white wines, and sparkling water.\"",
+            "\"Could you recommend a beverage that pairs well with the spicy grilled shrimp?\" \"Certainly, our pale ale beer has bright citrus notes that balance the spice of the seafood beautifully.\""
+          ],
+          "collocations": [
+            "craft beer",
+            "draft beer",
+            "cold beer",
+            "beer tap",
+            "local beer",
+            "bottled beer"
+          ]
+        },
+        "wordFamily": {
+          "noun": "beer",
+          "verb": "",
+          "adjective": "beery",
+          "adverb": ""
+        },
+        "visual": {
+          "imageKeyword": "craft beer pint glass bar counter tap foam restaurant",
+          "imageDescription": "A clear pint glass filled with glowing golden craft beer, exhibiting fine effervescent bubbles and a dense crown of white foam, positioned on a dark wooden bar counter with illuminated brass taps in the blurred background.",
+          "mnemonic": "BEER brings CHEER at the end of the year: barley, hops, and water clear!"
+        },
+        "video": {
+          "description": "An instructional hospitality beverage management video detailing how banquet bar staff tap kegs, regulate CO2 pressure, and pour draft beer with the optimal foam collar for corporate gala receptions."
+        },
+        "toeicContext": {
+          "commonParts": [
+            2,
+            3,
+            4,
+            7
+          ],
+          "exampleQuestion": "Complimentary refreshments, including soft drinks, chilled mineral water, and locally brewed _____, will be served during the networking session in the courtyard.\n(A) beer\n(B) beers\n(C) beery\n(D) beering",
+          "tips": "In TOEIC Part 5, names of beverages (such as beer, wine, coffee, tea) act as uncountable mass nouns when denoting the beverage category in parallel lists ('soft drinks, chilled mineral water, and locally brewed beer'). Choice (A) is correct. While (B) 'beers' can colloquially mean individual glasses or servings, standard professional written English utilizes the singular mass noun. (C) 'beery' is an adjective, and (D) 'beering' is a non-existent verb form."
+        },
+        "synonyms": [
+          "brew",
+          "ale",
+          "lager",
+          "malt beverage",
+          "fermented drink"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+          "brewery",
+          "hops",
+          "malt",
+          "fermentation",
+          "tap",
+          "pub",
+          "bartender"
+        ]
+      },
+      {
+        "id": "dining-059",
+        "word": "bill",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+          "ipa": "/bɪl/",
+          "syllableBreakdown": "bill",
+          "stressPattern": "single stressed syllable (BILL)",
+          "commonMistakes": "Learners often pronounce the short lax vowel /ɪ/ as a tense /iː/ (*beel*), or substitute a light 'clear L' [l] or a 'w' sound for the velarized 'dark L' [ɫ] at the coda, making it sound like 'biw' or 'beeyo'. In hospitality vocabulary, learners also struggle with regional differences: 'bill' is standard British and international English for the total restaurant charge, whereas American English predominantly uses 'check' in casual dining, though both are tested in TOEIC."
+        },
+        "etymology": {
+          "origin": "Middle English 'bille' (written document, formal petition, itemized statement of debt), borrowed from Anglo-Norman and Old French 'bille', from Medieval Latin 'bulla' (sealed document, decree, formal edict), originally from Classical Latin 'bulla' (bubble, swelling, round metal amulet or seal). The meaning shifted historically from the round lead seal attached to an official document, to the document itself, to an itemized account of goods supplied or debts owed.",
+          "rootWord": "Latin 'bulla' (seal, bubble) via Medieval Latin 'bulla' / Old French 'bille'",
+          "rootMeaning": "'bulla' — an authenticated, sealed written instrument; an official accounting specifying goods, charges, or legal petitions",
+          "evolution": "In the 14th century, 'bille' signified any formal written instrument, declaration, or legal petition submitted to parliament or a court. By the 15th century, merchant guilds and innkeepers adapted the word to denote an itemized list of charges or merchandise supplied ('bill of parcels', 'bill of charges', 'restaurant bill'). Over centuries, 'bill' branched into legislation (parliamentary bill), finance (bill of exchange, treasury bill), paper currency (ten-dollar bill), and commercial invoicing.",
+          "relatedLanguages": [
+            "French: billet (note, ticket, bank note, historically diminutive of 'bille')",
+            "Spanish: billete (banknote, ticket)",
+            "Italian: bolla (papal seal/edict), biglietto (ticket, note)",
+            "German: Rechnung (the direct conceptual translation for an itemized commercial/dining bill)"
+          ],
+          "firstRecordedUse": "c. 1380 (Middle English, in legal petitions and financial debt accounts)"
+        },
+        "deepMeaning": {
+          "coreConcept": "A printed or written itemized statement presented to a patron or customer specifying the quantities, descriptions, and individual prices of food, beverages, and services consumed in a dining establishment, alongside taxes and gratuities, functioning as a formal demand for settlement.",
+          "spatialContext": "Restaurant dining rooms presented inside padded leather check folios, hotel room-service trays, banquet management billing offices, and corporate expense auditing desks.",
+          "temporalContext": "Presented at the conclusion of a dining service upon customer request ('Could we have the bill, please?'), or billed on monthly net-30 terms for corporate dining accounts.",
+          "emotionalTone": "Commercial, transactional, formal, and precise.",
+          "formalityLevel": "neutral",
+          "connotation": "neutral"
+        },
+        "nativeMindset": {
+          "howNativesThink": "Native speakers regard requesting the bill as the customary conclusion of a restaurant meal. In professional and business travel settings, receiving the bill triggers immediate considerations of expense accountability: ensuring it is itemized, verifying that discounts or corporate vouchers were applied, calculating an appropriate tip, and obtaining a formal receipt for corporate accounting reimbursement. Phrases like 'footing the bill' (paying for everyone) and 'splitting the bill' (sharing expenses equally) are deeply ingrained corporate dining idioms.",
+          "mentalImage": "An open black faux-leather presenter folder resting on a white tablecloth, holding a neatly printed thermal-paper dining slip that lists appetizers, main courses, sparkling water, tax, and a blank tip line beside a company credit card.",
+          "whenToUse": "Use when asking for the dining total at a restaurant or café, reviewing charges for catering services, verifying travel expense reports, or discussing recurring utility or vendor statements (e.g., 'The server brought the bill promptly after clearing our dessert plates').",
+          "whenNotToUse": "Do not confuse 'bill' with 'receipt'. The 'bill' is the demand for payment presented before funds are transferred; the 'receipt' is the written proof of payment issued after the money has been paid. In informal American spoken English, patrons frequently say 'check, please' rather than 'bill, please', though both are universally understood.",
+          "culturalContext": "Business dining etiquette dictates that the host who extended the invitation quietly pays the bill without awkward debate or visible calculation at the table. In TOEIC Parts 3 and 7, dialogues and email correspondence frequently revolve around reviewing dining bills, resolving billing discrepancies, requesting separate checks, or submitting itemized receipts for travel expense reimbursement."
+        },
+        "examples": {
+          "daily": [
+            "When everyone had finished their coffee, we asked the waiter for the bill so we could catch our evening train.",
+            "The three coworkers decided to split the lunch bill evenly rather than having the cashier ring up separate orders.",
+            "She checked the restaurant bill carefully and noticed that they had accidentally charged her for two desserts instead of one."
+          ],
+          "business": [
+            "The corporate finance policy stipulates that employees must submit the detailed, itemized dining bill alongside the credit card receipt for expense reimbursement.",
+            "Our managing director offered to foot the dinner bill as a gesture of appreciation for the visiting overseas delegates.",
+            "The catering department issued an invoice bill for the executive luncheon, with payment terms set at net thirty days."
+          ],
+          "conversation": [
+            "\"Excuse me, could we have the bill whenever you're ready?\" \"Certainly, sir. Will you be paying together, or would you like me to split it onto separate cards?\"",
+            "\"Did you review the catering bill for Friday's client luncheon?\" \"Yes, everything looks accurate except for the beverage count, which includes six extra bottles of sparkling water.\"",
+            "\"Can I charge this business dinner directly to the corporate account?\" \"Only if the restaurant has a billing arrangement with us; otherwise, pay with your company credit card and save the itemized bill.\""
+          ],
+          "collocations": [
+            "foot the bill",
+            "split the bill",
+            "itemized bill",
+            "restaurant bill",
+            "pay the bill",
+            "request the bill"
+          ]
+        },
+        "wordFamily": {
+          "noun": "bill",
+          "verb": "bill",
+          "adjective": "billable",
+          "adverb": ""
+        },
+        "visual": {
+          "imageKeyword": "restaurant bill check presenter credit card dining receipt",
+          "imageDescription": "A sleek black leather check presenter folder open on a restaurant table, revealing an itemized dining bill listing food items, sales tax, and total balance next to a corporate platinum credit card and a silver pen.",
+          "mnemonic": "A BILL is a formal BILL-board of charges: look before you leap, check the bill before you weep!"
+        },
+        "video": {
+          "description": "A fine-dining hospitality service training video demonstrating the discreet presentation of the bill folio to the host, handling split payments, and generating itemized merchant receipts."
+        },
+        "toeicContext": {
+          "commonParts": [
+            2,
+            3,
+            4,
+            7
+          ],
+          "exampleQuestion": "Corporate travelers must retain the original itemized _____ from all business meals in order to qualify for full reimbursement under company policy.\n(A) bill\n(B) bills\n(C) billing\n(D) billable",
+          "tips": "Following the singular definite article 'the' and adjectives 'original itemized', a singular countable noun is needed to represent the individual dining statement. Choice (A) 'bill' is correct. Choice (B) 'bills' is plural; Choice (C) 'billing' refers to the invoicing process or accounting operation; and Choice (D) 'billable' is an adjective (e.g., 'billable hours')."
+        },
+        "synonyms": [
+          "check",
+          "invoice",
+          "statement of charges",
+          "account",
+          "reckoning",
+          "tab"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+          "receipt",
+          "gratuity",
+          "tip",
+          "subtotal",
+          "expense report",
+          "reimbursement",
+          "voucher"
+        ]
+      },
+      {
+        "id": "dining-060",
+        "word": "biscuit",
+        "partOfSpeech": [
+          "noun"
+        ],
+        "category": "dining",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+          "ipa": "/ˈbɪs.kɪt/",
+          "syllableBreakdown": "bis-cuit",
+          "stressPattern": "primary stress on the first syllable (BIS-cuit)",
+          "commonMistakes": "Learners frequently mispronounce the silent 'ui' as /kjuːɪt/ or /kwɪt/ (*bis-kweet* or *bis-kyoot*). The digraph 'ui' is pronounced as a simple short /kɪt/. A major lexical challenge is the transatlantic divergence: in British and Commonwealth English, a 'biscuit' is a crisp, flat baked treat (what Americans call a 'cookie' or 'cracker'), whereas in American English, a 'biscuit' is a soft, flaky, leavened quick bread typically served warm with butter or savory dishes at breakfast."
+        },
+        "etymology": {
+          "origin": "Middle English 'bisquite', borrowed from Old French 'bescuit' (modern French 'biscuit'), derived from Medieval Latin 'biscoctus', from Classical Latin 'bis' ('twice') + 'coctus' (past participle of 'coquere', 'to cook' or 'to bake'). The term originally described hard, dry flat bread that was baked twice to eliminate all moisture so it could be stored indefinitely for military campaigns and long sea voyages.",
+          "rootWord": "Latin 'bis' (twice) + 'coctus' (cooked, baked, from 'coquere' [to cook])",
+          "rootMeaning": "'bis-coctus' — baked twice; dehydrated durable bread crafted to resist spoilage on extended journeys",
+          "evolution": "In ancient Rome and medieval Europe, 'panis biscoctus' served as standard naval rations ('hardtack' or 'ship's biscuit'). During the Renaissance, with increased availability of butter, sugar, and fine flour, British bakers adapted the technique to create crisp, sweet or savory treats eaten with afternoon tea. Meanwhile, in 19th-century North America, the term was applied to a quick-leavened, single-baked bread made with baking powder or soda, buttermilk, and butter or lard, resulting in a soft, flaky morning bread roll.",
+          "relatedLanguages": [
+            "French: biscuit (cookie, cracker, dry pastry, sponge cake base)",
+            "Italian: biscotto (twice-baked cookie/biscuit; direct reflex of 'biscoctus')",
+            "Spanish: bizcocho (sponge cake, sweet pastry, or biscuit)",
+            "German: Biskuit (sponge cake / ladyfinger; German uses 'Keks' for British biscuits)"
+          ],
+          "firstRecordedUse": "Early 14th century (Middle English, appearing in royal naval provisioning accounts as 'bisquite')"
+        },
+        "deepMeaning": {
+          "coreConcept": "A small flour-based baked food item characterized by two primary regional culinary standards: in British and Commonwealth tradition, a flat, dry, crisp sweet or savory confection served as a tea accompaniment or snack; in North American tradition, a soft, tender, flaky leavened quick bread roll served warm with butter, preserves, or savory breakfast fare.",
+          "spatialContext": "Hotel breakfast buffet stations, conference breakroom beverage counters, traditional afternoon tea trays, executive hospitality coffee stations, and bakery display cases.",
+          "temporalContext": "Served during morning continental breakfasts (7:00 AM – 9:00 AM), mid-morning coffee breaks (10:00 AM – 10:30 AM), and traditional afternoon tea services (3:30 PM – 5:00 PM).",
+          "emotionalTone": "Comforting, warm, welcoming, and hospitable.",
+          "formalityLevel": "neutral",
+          "connotation": "positive"
+        },
+        "nativeMindset": {
+          "howNativesThink": "Native speakers instantly interpret 'biscuit' through their regional cultural lens. A British speaker reflexively associates it with a cup of tea, digestive biscuits, or shortbread during an office tea break—where offering 'a cup of tea and a biscuit' is the gold standard of welcoming hospitality. A North American speaker instinctively envisions a warm, flaky, golden-crusted quick bread fresh from the oven, served with whipped honey butter or alongside scrambled eggs. In international business contexts, native speakers are mindful of these distinct culinary traditions.",
+          "mentalImage": "A tiered catering tray prepared for a conference coffee intermission, displaying freshly baked, golden-brown flaky buttermilk biscuits alongside glass dishes of sweet cream butter, strawberry preserves, and orange blossom honey.",
+          "whenToUse": "Use when referencing breakfast breads, conference coffee break refreshments, afternoon tea assortments, or bakery goods on catering orders (e.g., 'The catering service will provide hot coffee, tea, and an assortment of fresh biscuits during the morning workshop break').",
+          "whenNotToUse": "In North American dining, do not use 'biscuit' when you intend to describe a sweet, chewy chocolate-chip baked treat (use 'cookie'). Conversely, when dining in the UK, do not expect a warm bread roll if you order a biscuit with your meal.",
+          "culturalContext": "In British business life, serving tea and biscuits is a foundational social ritual when welcoming clients or job candidates to an office. In North American corporate hospitality, hot biscuits and breakfast spreads are staple offerings at breakfast seminars and hotel conference buffets. In TOEIC Part 7, meeting agendas, hotel breakfast descriptions, and catering invoices frequently feature biscuits in refreshment schedules."
+        },
+        "examples": {
+          "daily": [
+            "She sat down by the window with a fresh cup of tea and a chocolate-covered biscuit.",
+            "The server brought a basket of warm buttermilk biscuits to our table along with whipped honey butter.",
+            "He packed a small tin of savory oat biscuits in his briefcase to snack on during his train commute."
+          ],
+          "business": [
+            "The corporate events manager arranged for coffee, herbal tea, and gourmet biscuits to be served outside the auditorium during the mid-morning intermission.",
+            "The hotel's executive continental breakfast includes freshly baked buttermilk biscuits, seasonal fruit, and Greek yogurt.",
+            "An artisan bakery secured a supply agreement to provide branded gift boxes of butter biscuits for the corporate holiday gift catalog."
+          ],
+          "conversation": [
+            "\"Would you care for a biscuit while we wait for the client to join the video conference?\" \"Thank you very much; the ginger biscuit looks wonderful with this green tea.\"",
+            "\"Does the hotel catering package provide breakfast items for early arrivals?\" \"Yes, there is a hot breakfast buffet offering scrambled eggs, link sausages, and warm buttermilk biscuits with preserves.\"",
+            "\"Should we order pastries or biscuits for the afternoon break at the seminar?\" \"Let's order a mixed platter of gourmet biscuits; they're less messy for attendees who are walking around and networking.\""
+          ],
+          "collocations": [
+            "buttermilk biscuit",
+            "tea and biscuits",
+            "biscuit tin",
+            "digestive biscuit",
+            "warm biscuit",
+            "assorted biscuits"
+          ]
+        },
+        "wordFamily": {
+          "noun": "biscuit",
+          "verb": "",
+          "adjective": "",
+          "adverb": ""
+        },
+        "visual": {
+          "imageKeyword": "freshly baked buttermilk biscuits breakfast catering table butter",
+          "imageDescription": "A stack of freshly baked, golden-brown flaky buttermilk biscuits with distinct flaky layers, arranged on a rustic white ceramic plate alongside a small dish of whipped butter and fresh blackberries on a sunny table.",
+          "mnemonic": "BIS-CUIT means 'BIS' (twice) + 'CUIT' (cooked): originally baked twice for sailors, now baked once for morning savor!"
+        },
+        "video": {
+          "description": "A hotel catering culinary demonstration video showing a pastry chef cutting and baking tall, multi-layered buttermilk biscuits for a large-scale corporate convention breakfast service."
+        },
+        "toeicContext": {
+          "commonParts": [
+            3,
+            4,
+            7
+          ],
+          "exampleQuestion": "Complimentary morning refreshments, including freshly brewed Colombian coffee, herbal teas, and assorted _____, will be available in the reception lobby starting at 8:00 A.M.\n(A) biscuit\n(B) biscuits\n(C) biscuity\n(D) biscuiting",
+          "tips": "In TOEIC Part 5 and Part 7 texts, the adjective 'assorted' (meaning consisting of various sorts or kinds) modifies a plural countable noun. Therefore, the plural noun form (B) 'biscuits' is grammatically correct. Choice (A) 'biscuit' is singular; Choice (C) 'biscuity' is an informal adjective; and Choice (D) 'biscuiting' is a non-existent verb form."
+        },
+        "synonyms": [
+          "cookie (British biscuit equivalent)",
+          "cracker (for dry/savory biscuit)",
+          "scone (closely related British quick bread)",
+          "quick bread",
+          "baked treat",
+          "pastry"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+          "pastry",
+          "bakery",
+          "buttermilk",
+          "flour",
+          "confectionery",
+          "baking powder",
+          "shortbread"
+        ]
+      }
+    ]
+  }
+}

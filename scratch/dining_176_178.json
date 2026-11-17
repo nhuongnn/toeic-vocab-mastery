@@ -1,0 +1,338 @@
+{
+  "words": [
+    {
+      "id": "dining-176",
+      "word": "lemon",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/\u02c8l\u025bm.\u0259n/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/lemon--_us_1.mp3",
+        "syllableBreakdown": "lem\u00b7on",
+        "stressPattern": "\u25cf\u25cb",
+        "commonMistakes": "Learners often over-enunciate the unstressed second syllable '-on' as /\u0252n/ or /o\u028an/ (rhyming with 'on' or 'cone') instead of reducing it to a short schwa /\u0259n/ (/\u02c8l\u025bm.\u0259n/). In rapid speech, speakers may also substitute a full vowel in the first syllable; it should be an open-mid front unrounded vowel /\u025b/ (as in 'bed' or 'pen'). Learners should also note that 'lemon' functions as an uncountable mass noun when referring to lemon flavor or lemon juice in recipes, but as a countable noun when referring to whole fruits or cut wedges."
+      },
+      "etymology": {
+        "origin": "Middle English 'lymon' or 'lemon', borrowed from Old French 'limon' (citrus fruit), through Old Proven\u00e7al or Medieval Latin 'l\u012bm\u014d', from Arabic 'laym\u016bn' (\u0644\u064a\u0645\u0648\u0646) or 'l\u012bm\u016bn', which originated from Persian 'l\u012bm\u016bn' (citrus fruit). The fruit was native to South Asia (Northwestern India and Assam) and was introduced to the Mediterranean basin by Arab traders in the 10th and 11th centuries.",
+        "rootWord": "Arabic laym\u016bn (\u0644\u064a\u0645\u0648\u0646) / Persian l\u012bm\u016bn / Old French limon",
+        "rootMeaning": "Citrus fruit; acidic yellow citrus",
+        "evolution": "Originating in South Asia as a hybrid between bitter orange (sour orange) and citron, lemons spread across the Islamic world and entered Mediterranean agricultural trade during the 10th to 12th centuries. The Arabic 'laym\u016bn' was adopted into Old French as 'limon' around the 12th century, entering Middle English culinary texts in the late 14th century (c. 1380\u20131400) via Norman French manuscripts. In the 18th century, the British Royal Navy's adoption of lemon and lime juice revolutionized maritime health by eradicating scurvy. In modern dining and food service, lemons serve as indispensable acidic balancing agents, beverage garnishes, and dessert bases. By the early 20th century in American English, 'lemon' also acquired an informal colloquial figurative sense denoting a defective or disappointing purchase, giving rise to consumer-protection 'lemon laws'.",
+        "relatedLanguages": [
+          "French: citron (lemon; Old French 'limon' evolved to mean lime)",
+          "Spanish: lim\u00f3n (lemon / lime)",
+          "Italian: limone (lemon)",
+          "Portuguese: lim\u00e3o (lemon / lime)",
+          "German: Zitrone (lemon) / Limone (citrus/lime)"
+        ],
+        "firstRecordedUse": "Late 14th century (c. 1390 in Middle English culinary recipes and household inventories)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The yellow, ellipsoidal citrus fruit of the evergreen tree Citrus limon, characterized by a thick, aromatic, oil-rich rind (peel) and tart, pale-yellow segmented pulp with high citric acid content; prized in dining for its bright acidity, culinary versatility as a seasoning and tenderizer, beverage component, and decorative garnish.",
+        "spatialContext": "Commercial kitchen prep counters, bar garnish stations, seafood buffet displays, corporate banquet service carts, walk-in refrigeration units, and bakery workstations.",
+        "temporalContext": "Available year-round with peak seasonal harvests in winter and early spring; sliced fresh daily before meal shifts to prevent dehydration, oxidation, and rind bitterness.",
+        "emotionalTone": "Zesty, refreshing, sharp, crisp, and revitalizing.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'lemon' evokes instant sensory sharpness, bright citrus aroma, and culinary cleanliness. In dining contexts, it is rarely eaten whole like an orange; rather, it is instinctively conceptualized as an essential culinary tool that 'cuts through' rich fats, balances cream and butter, eliminates unpleasant fish odors, and brightens simple water or iced tea. Native speakers automatically ask for 'a wedge of lemon' with seafood or 'lemon with water' at restaurants. Outside the culinary domain, native speakers recognize the informal idiom 'a lemon' (a defective machine, particularly a car), but never confuse this slang with professional dining menus or food service vocabulary.",
+        "mentalImage": "A chilled stainless-steel garnish tray containing freshly cut, vibrant yellow lemon wedges with glistening, juice-laden pulp, ready to be placed alongside grilled salmon fillets and iced water carafes in an upscale restaurant dining room.",
+        "whenToUse": "Use when referring to the yellow citrus fruit (Citrus limon), its juice, zest, peel, or lemon-flavored food and beverages (e.g., 'lemon wedge', 'lemon juice', 'lemon zest', 'slice of lemon', 'lemon vinaigrette', 'iced tea with lemon').",
+        "whenNotToUse": "Do not confuse with 'lime', which is a smaller green citrus fruit with a distinct aromatic profile popular in Mexican, Caribbean, and Southeast Asian cooking. Avoid using the informal colloquial idiom 'a lemon' (meaning defective goods) in formal dining, menu writing, or professional business documentation.",
+        "culturalContext": "In Anglo-American dining culture, serving iced water with a slice of lemon is standard hospitality practice in restaurants and executive meeting rooms. In the seafood industry, lemon is the universal accompaniment, chemically aiding digestion and balancing oily fish profiles. Furthermore, 'lemon laws' are formal US consumer protection statutes compensating buyers of chronically defective consumer vehicles."
+      },
+      "examples": {
+        "daily": [
+          "The server brought a tall glass of sparkling water garnished with a thin slice of fresh lemon.",
+          "She squeezed a fresh lemon wedge over the grilled fish to bring out its natural flavors.",
+          "He drinks warm water with honey and lemon every morning before heading to the office."
+        ],
+        "business": [
+          "The head chef submitted an urgent procurement order for three crates of organic lemons ahead of the seafood festival banquet.",
+          "The hotel's catering department enhanced its beverage service by offering carafes of chilled water infused with fresh lemon and mint in all executive conference rooms.",
+          "Rising shipping costs and adverse weather in citrus-growing regions prompted the restaurant chain to adjust wholesale supply contracts for lemons and limes."
+        ],
+        "conversation": [
+          "\"Would you like a slice of lemon or cucumber in your iced tea?\" / \"A lemon wedge would be wonderful, thank you.\"",
+          "\"Are there enough fresh lemons prepped for the evening banquet service?\" / \"Yes, the prep cook sliced four containers of lemon wedges this afternoon.\""
+        ],
+        "collocations": [
+          "lemon wedge",
+          "lemon juice",
+          "lemon zest",
+          "slice of lemon",
+          "squeeze of lemon",
+          "lemon peel"
+        ]
+      },
+      "wordFamily": {
+        "noun": "lemon, lemonade, lemoniness",
+        "verb": "",
+        "adjective": "lemony",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "fresh yellow lemon fruit slice wedge citrus kitchen dining produce",
+        "imageDescription": "A bright yellow, ripe lemon sliced into juicy wedges with translucent pulp vesicles and fine droplets of juice glistening on a dark slate cutting board beside a stainless-steel chef knife.",
+        "mnemonic": "LEMON: Lively, Energizing, Mouthwatering, Oval, and Naturally sour!"
+      },
+      "video": {
+        "description": "A professional culinary video detailing knife skills for carving lemon wedges and twists for restaurant beverage service and garnishing seafood platters."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          2,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "To enhance the presentation and flavor of the seafood platter, each serving was garnished with a fresh _____ of lemon. (A) wedge (B) draft (C) stem (D) pile",
+        "tips": "In TOEIC Part 1 (photographs of dining/buffet setups) and Part 5 (collocations and dining vocabulary), look out for conventional food measurement and preparation collocations. A cut section of citrus fruit served with food or beverages is conventionally termed a 'wedge' or a 'slice'. Option (A) wedge forms the exact culinary collocation 'wedge of lemon'. Options (B) draft, (C) stem, and (D) pile are semantically inappropriate for citrus garnishes."
+      },
+      "synonyms": [
+        "citrus fruit",
+        "yellow citrus",
+        "acidic fruit",
+        "Citrus limon"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "lime",
+        "citrus",
+        "zest",
+        "peel",
+        "acidity",
+        "lemonade",
+        "garnish"
+      ]
+    },
+    {
+      "id": "dining-177",
+      "word": "lettuce",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/\u02c8l\u025bt.\u026as/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/lettuce--_us_1.mp3",
+        "syllableBreakdown": "let\u00b7tuce",
+        "stressPattern": "\u25cf\u25cb",
+        "commonMistakes": "Learners often mispronounce the second syllable '-tuce' as /tju\u02d0s/ or /tu\u02d0s/ (rhyming with 'juice' or 'spruce') due to the spelling pattern '-uce'. In standard English, the second syllable has a reduced vowel /\u026a/ or /\u0259s/ (/\u02c8l\u025bt.\u026as/, sounding like 'LET-iss'). In American English, the intervocalic 'tt' is realized as an alveolar flap [t\u032c]. Non-native speakers also frequently treat 'lettuce' as a countable noun (*'two lettuces'*), whereas in natural English, it functions as a non-count material noun or requires partitives such as 'heads of lettuce' or 'leaves of lettuce'."
+      },
+      "etymology": {
+        "origin": "Middle English 'letuse' or 'letuce', borrowed from Anglo-Norman and Old French 'laitues' (plural of 'laitue', lettuce), from Latin 'lact\u016bca' (lettuce), derived from 'lac' (genitive 'lactis', meaning milk), in reference to the white, milky latex juice exuded when the stem is cut or bruised.",
+        "rootWord": "Latin lact\u016bca (from lac, lactis = milk) / Old French laitue",
+        "rootMeaning": "Milky plant; vegetable yielding a white milky sap",
+        "evolution": "In ancient Rome, 'lact\u016bca' was prized for its crisp texture, high moisture content, and mildly sedative milky sap (lactucarium), traditionally consumed at the start of banquets to stimulate digestion. The Old French plural 'laitues' was adopted into Middle English around the late 13th century as a singular mass noun spelled 'letuse' or 'letuce'. Through centuries of horticultural development, distinct culinary cultivars emerged: head lettuce (such as Iceberg and Boston butterhead) and loose-leaf types (such as Romaine/Cos and red leaf). In contemporary food service, corporate catering, and hospitality dining, lettuce serves as the crisp textural baseline for cold salads, sandwich foundations, and wraps.",
+        "relatedLanguages": [
+          "French: laitue (lettuce)",
+          "Spanish: lechuga (lettuce, from Latin lact\u016bca)",
+          "Italian: lattuga (lettuce)",
+          "Portuguese: lactuca (botanical) / leituga (wild chicory/lettuce)",
+          "German: Lattich (lettuce/wild lettuce)"
+        ],
+        "firstRecordedUse": "Late 13th century (c. 1290 in Middle English monastic gardening records and culinary manuscripts)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A cultivated annual herbaceous plant (Lactuca sativa) of the daisy family (Asteraceae), widely grown for its crisp, moisture-rich green or reddish leaves that are consumed primarily raw in salads, cold sandwich layers, burgers, and wraps, valued for its refreshing crunch, cooling properties, and delicate, mildly grassy or sweet flavor.",
+        "spatialContext": "Commercial restaurant pantry prep stations, walk-in coolers with humidity controls, salad bars in corporate cafeterias, deli sandwich assembly lines, hydroponic urban farms, and supermarket refrigerated produce misting racks.",
+        "temporalContext": "Harvested early in the morning to retain maximum leaf turgidity; prepped and washed daily before peak meal services; stored chilled at 1\u20134\u00b0C and used within 24\u201348 hours to prevent wilting or browning.",
+        "emotionalTone": "Crisp, refreshing, wholesome, light, and invigorating.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'lettuce' is the quintessential fresh green vegetable\u2014synonymous with crispness, hydration, and clean eating. It is the architectural foundation of salads and an indispensable sandwich layer that provides textural crunch while acting as a physical moisture barrier keeping bread from absorbing wet condiments. In workplace dining, the freshness of lettuce serves as an instant quality litmus test: crisp, vibrant green leaves signal diligent kitchen hygiene and fresh inventory, whereas limp, pinkish-brown edges ('rust') immediately repel diners. Culturally, 'head of lettuce' is the default shopping unit, and 'lettuce wraps' represent modern health-conscious or low-carbohydrate dining.",
+        "mentalImage": "A stainless steel prep counter where a line cook tears crisp, jade-green leaves of romaine lettuce into a chilled stainless bowl, then spins them in an industrial centrifugal salad spinner to create a mound of bone-dry, crinkled leaves ready for banquet plating.",
+        "whenToUse": "Use when referring to the specific leafy salad vegetable (Lactuca sativa) or its recognized culinary varieties (e.g., 'romaine lettuce', 'butterhead lettuce', 'iceberg lettuce', 'crisp lettuce', 'lettuce wrap', 'head of lettuce').",
+        "whenNotToUse": "Do not use 'lettuce' as a blanket term for all leafy salad greens; spinach, arugula (rocket), kale, radicchio, and watercress belong to different botanical families and have distinct culinary profiles (use 'salad greens' or 'mixed greens' for generic blends). Avoid using 'lettuce' as a simple countable plural (*'three lettuces'*\u2014use *'three heads of lettuce'* or *'three leaves of lettuce'* in standard English).",
+        "culturalContext": "In North American and Commonwealth food service, lettuce is a cornerstone of classic staples like the BLT (bacon, lettuce, tomato), the Caesar salad, the wedge salad, and corporate deli trays. Commercial recalls of leafy greens (e.g., E. coli outbreaks on romaine) make food safety protocols around lettuce washing and cold-chain maintenance a frequent topic in commercial food-service compliance audits and supply chain news."
+      },
+      "examples": {
+        "daily": [
+          "She rinsed several leaves of crisp butterhead lettuce under cold water and spun them dry for the dinner salad.",
+          "Could I please get extra shredded lettuce and sliced pickles on my grilled chicken sandwich?",
+          "He ordered a turkey burger wrapped in fresh iceberg lettuce instead of a conventional flour bun."
+        ],
+        "business": [
+          "The corporate catering department signed a procurement agreement with local hydroponic growers to ensure a year-round supply of organic romaine lettuce.",
+          "Following nationwide agricultural supply chain disruptions, wholesale suppliers announced a temporary price increase on cases of fresh leaf lettuce.",
+          "Food service inspectors verified that all washed and chopped lettuce in the cafeteria salad bar was maintained at a steady 38 degrees Fahrenheit."
+        ],
+        "conversation": [
+          "\"Does the lunchtime sandwich platter come with green salad on the side?\" / \"Yes, it includes a bowl of mixed romaine lettuce and cherry tomatoes tossed in vinaigrette.\"",
+          "\"We are running short on crisphead lettuce for the evening banquet rush.\" / \"I will requisition two additional crates from the walk-in cooler immediately.\""
+        ],
+        "collocations": [
+          "head of lettuce",
+          "crisp lettuce",
+          "romaine lettuce",
+          "shredded lettuce",
+          "iceberg lettuce",
+          "lettuce wrap"
+        ]
+      },
+      "wordFamily": {
+        "noun": "lettuce",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "crisp fresh green romaine iceberg lettuce head leaves produce market culinary",
+        "imageDescription": "Freshly harvested heads of green romaine and crisp iceberg lettuce with delicate water droplets glistening on their ruffled emerald leaves, neatly arranged in rustic wooden produce crates in a brightly lit kitchen pantry.",
+        "mnemonic": "LETTUCE: LET US enjoy crisp, crunchy greens that keep US refreshed and energetic all afternoon!"
+      },
+      "video": {
+        "description": "A commercial kitchen culinary tutorial demonstrating proper techniques for coring, washing, spinning dry, and crisp-storing heads of romaine and iceberg lettuce for high-volume banquet service."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "To ensure food safety and maintain crispness, all fresh _____ delivered to the cafeteria must be rinsed thoroughly and refrigerated immediately upon receipt. (A) lettuce (B) lettuces (C) letting (D) letted",
+        "tips": "In TOEIC Part 5, pay close attention to noun countability in food and catering contexts. 'Lettuce' is predominantly used as an uncountable mass noun when referring to the produce item, modified directly by adjectives like 'fresh' without an indefinite article. Therefore, the singular base noun (A) lettuce is the correct choice. Option (B) 'lettuces' is used only in technical agronomic contexts for distinct plant varieties, while (C) and (D) are verb forms unrelated to the noun."
+      },
+      "synonyms": [
+        "salad green",
+        "salad leaf",
+        "leafy green",
+        "romaine",
+        "iceberg"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "salad",
+        "romaine",
+        "iceberg",
+        "spinach",
+        "produce",
+        "vinaigrette",
+        "greens"
+      ]
+    },
+    {
+      "id": "dining-178",
+      "word": "lunch",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/l\u028cnt\u0283/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/lunch--_us_1.mp3",
+        "syllableBreakdown": "lunch",
+        "stressPattern": "\u25cf",
+        "commonMistakes": "Learners frequently mispronounce the short central vowel /\u028c/, shifting it toward /\u028a/ (as in 'look'), /\u0252/ (as in 'lock'), or /u\u02d0/ (as in 'lute'). It must be pronounced as a short, relaxed open-mid central vowel /\u028c/, rhyming precisely with 'bunch', 'crunch', and 'punch'. Additionally, learners often fail to articulate the terminal voiceless postalveolar affricate /t\u0283/, confusing it with /\u0283/ (*'lunsh'*). In business communication, learners must also distinguish everyday 'lunch' from the more formal, ceremonial 'luncheon'."
+      },
+      "etymology": {
+        "origin": "Early 19th-century shortening of 'luncheon' (recorded from the 1580s), originally meaning a thick hunk, slice, or lump of food (such as bread or cheese), influenced by dialectal English 'lunch' (a lump) and Middle English 'nonechenche' (noon drink, from 'non' [noon] + 'schench' [drink/draught]), with potential influence from Spanish 'lonja' (a slice of bacon or ham).",
+        "rootWord": "Shortened from luncheon / Middle English nonechenche",
+        "rootMeaning": "A thick slice or lump of bread and cheese taken midday; midday refreshment",
+        "evolution": "In the 16th and 17th centuries, 'lunch' or 'luncheon' designated a substantial chunk of bread or cold meat eaten between breakfast and the traditional midday 'dinner'. During the Industrial Revolution of the early 19th century, as urban office workers and laborers were away from home all day and the main meal of 'dinner' shifted into the evening hours (after 6 PM), the midday meal transformed into an indispensable daily institution. The colloquial abbreviation 'lunch' gained widespread currency around the 1820s, rapidly supplanting the formal 'luncheon' in daily speech. In the modern corporate world, 'lunch' defines workday scheduling, legal break entitlements, and professional networking rituals.",
+        "relatedLanguages": [
+          "French: d\u00e9jeuner (lunch, unfasting) / lunch (borrowed from English for a light cold buffet)",
+          "Spanish: almuerzo (lunch) / lonja (slice/strip)",
+          "German: Mittagessen (midday meal) / Lunch (borrowed for a business or light lunch)",
+          "Italian: pranzo (lunch / midday meal)"
+        ],
+        "firstRecordedUse": "Early 19th century (c. 1823 as an everyday abbreviation for the midday meal; the dialectal sense 'hunk/lump' dates from the 1580s)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The standard midday meal, typically eaten between 12:00 PM and 2:00 PM, consisting of hot or cold dishes designed to provide midday nutritional sustenance and mental rejuvenation during the workday or daily schedule; also, the scheduled intermission or recess during a work or conference timetable set aside for eating and resting.",
+        "spatialContext": "Corporate dining cafeterias, office breakrooms with microwaves and refrigerators, fast-casual delis in downtown commercial districts, restaurant dining patios, and conference banquet halls.",
+        "temporalContext": "Observed daily between 12:00 PM and 2:00 PM; typically scheduled for 30 to 60 minutes in business and corporate employment agreements.",
+        "emotionalTone": "Restorative, social, informal to professional, and energizing.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'lunch' is the structural anchor of the working day\u2014the midpoint psychological demarcation between the morning push and the afternoon tasks. Saying 'Let's grab lunch' or 'Let's discuss it over lunch' is the quintessential low-pressure corporate invitation, offering an informal, collaborative setting to negotiate deals, mentor colleagues, or decompress. A 'working lunch' implies professional dedication where meals are eaten while reviewing agendas, whereas taking a 'lunch break' represents an employee's personal boundary and legal entitlement to rest. Idiomatically, 'out to lunch' indicates physical absence from the desk or, metaphorically, being distracted or absent-minded.",
+        "mentalImage": "A sunlit urban corner bistro at 12:45 PM where office workers in business casual attire sit across from each other enjoying warm paninis and salads, checking smartphone calendars while chatting amiably about ongoing project milestones.",
+        "whenToUse": "Use when referring to the everyday midday meal, scheduled workplace meal breaks, casual business meals, or food brought from home (e.g., 'lunch break', 'packed lunch', 'working lunch', 'lunch hour', 'meet for lunch', 'grab a quick lunch').",
+        "whenNotToUse": "Do not use 'lunch' when referring to a formal, structured midday banquet with ticketed seating, keynote speakers, or award presentations (use 'luncheon'). Do not use for the midday meal on festive holidays where it serves as the day's primary grand feast (e.g., Thanksgiving or Christmas midday banquets are traditionally called 'dinner').",
+        "culturalContext": "In Anglo-American business culture, the 'power lunch' became an icon of corporate deal-making in the late 20th century. Today, labor laws in most jurisdictions mandate a dedicated, unpaid lunch break (typically 30\u201360 minutes) for shifts exceeding six hours. In TOEIC test design, lunch breaks feature prominently in conference programs, office memos about cafeteria hours, and scheduling conflicts in Part 3 and Part 7."
+      },
+      "examples": {
+        "daily": [
+          "I packed a grilled chicken wrap and a crisp green apple to eat for lunch today.",
+          "We decided to take a stroll through the park after finishing our lunch at the deli.",
+          "The children sat at the picnic benches enjoying their lunch in the afternoon sunshine."
+        ],
+        "business": [
+          "The project team organized a working lunch in the main conference room to finalize the design specifications before the client presentation.",
+          "Under corporate employment policy, all full-time personnel are allocated a sixty-minute lunch break between noon and two o'clock.",
+          "The senior account executive invited the prospective client to lunch at an upscale Italian restaurant to discuss the multi-year service agreement."
+        ],
+        "conversation": [
+          "\"Would you care to join us for lunch at the newly opened sushi bar on Fifth Street?\" / \"I would love to, but I have a teleconference with the Tokyo branch at twelve-thirty, so I'll just order lunch to my desk.\"",
+          "\"Has the guest speaker arrived yet?\" / \"No, she is currently having lunch with the department chair and will arrive at the auditorium by one-fifteen.\""
+        ],
+        "collocations": [
+          "lunch break",
+          "working lunch",
+          "lunch hour",
+          "packed lunch",
+          "business lunch",
+          "grab lunch"
+        ]
+      },
+      "wordFamily": {
+        "noun": "lunch, luncheon",
+        "verb": "lunch",
+        "adjective": "lunchtime",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "business lunch colleagues corporate cafeteria healthy salad wrap deli dining",
+        "imageDescription": "Two professional colleagues seated at a contemporary caf\u00e9 table beside a window, sharing an appetizing lunch of gourmet wraps, colorful salads, and sparkling water while smiling and discussing work notes.",
+        "mnemonic": "LUNCH: Light Uplifting Nutrition to Conquer the Hours of the afternoon work shift!"
+      },
+      "video": {
+        "description": "An executive professional development video explaining the etiquette of hosting a productive business lunch, detailing reservation protocols, seating diplomacy, conversation pacing, and invoice settlement."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "The seminar program allows participants a 45-minute _____ break to visit the exhibition hall or sample food from local vendors. (A) lunch (B) lunches (C) lunched (D) lunching",
+        "tips": "In TOEIC Part 5, test writers often test noun adjuncts within compound noun phrases. In 'a 45-minute _____ break', the word in the blank modifies 'break' as a noun adjunct. The singular noun (A) lunch combines to form the standard collocation 'lunch break'. Options (B) is plural, (C) is a past verb form, and (D) is a participle, none of which fit the standard noun adjunct structure."
+      },
+      "synonyms": [
+        "midday meal",
+        "luncheon",
+        "refection",
+        "lunchtime repast",
+        "midday refreshment"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "breakfast",
+        "dinner",
+        "brunch",
+        "cafeteria",
+        "mealtime",
+        "refreshment",
+        "lunchtime"
+      ]
+    }
+  ]
+}

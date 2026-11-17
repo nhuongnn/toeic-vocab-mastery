@@ -1,0 +1,457 @@
+{
+  "words": [
+    {
+      "id": "comms-163",
+      "word": "livestream",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/\u02c8la\u026av.stri\u02d0m/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/livestream--_us_1.mp3",
+        "syllableBreakdown": "live-stream",
+        "stressPattern": "primary stress on the first syllable (LIVE-stream)",
+        "commonMistakes": "Learners often mispronounce 'live' with a short /\u026a/ sound (like the verb 'to live' /l\u026av/) instead of the diphthong /a\u026a/ as in 'alive' or 'life'. Others split the initial consonant cluster /str/ awkwardly or devoice the final /m/."
+      },
+      "etymology": {
+        "origin": "Modern English compound formed from the adjective 'live' (aphetic variant of 'alive', from Old English 'on life' meaning in living state) + 'stream' (from Old English 'str\u0113am', from Proto-Germanic '*straumaz', from PIE '*srow-mo-', root '*sreu-' to flow).",
+        "rootWord": "Old English 'on l\u012bfe' (alive, active) + 'str\u0113am' (a flowing body of water or continuous current)",
+        "rootMeaning": "'A continuous flowing transmission delivered in real time' \u2014 evolving from physical flowing water into telecommunications data packets delivered synchronously over a network.",
+        "evolution": "The term 'stream' in computer science emerged in the 1970s and 1980s to denote a continuous flow of data bytes. With the emergence of Real-Time Streaming Protocol (RTSP) and broadband multimedia in the late 1990s and early 2000s, 'live stream' (eventually solidifying into the compound noun and verb 'livestream' around 2006\u20132008) came to designate the real-time transmission of video and audio content across the internet without requiring pre-buffering or file downloading. In corporate communications, it quickly evolved from a niche tech capability into the primary vehicle for global all-hands meetings, product launches, shareholder earnings calls, and interactive webinars.",
+        "relatedLanguages": [
+          "French: diffusion en direct / flux en direct",
+          "Spanish: transmisi\u00f3n en vivo / emisi\u00f3n en directo",
+          "German: Livestream / Live\u00fcbertragung",
+          "Italian: trasmissione in diretta / live streaming"
+        ],
+        "firstRecordedUse": "Early 2000s (c. 2005\u20132007 during the advent of real-time web video platforms like Justin.tv, Ustream, and early YouTube streaming)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A continuous, real-time broadcast of synchronized video and audio content delivered over the internet to viewers simultaneously as the event unfolds, allowing immediate audience engagement and commentary.",
+        "spatialContext": "Broadcast control rooms, corporate auditoriums outfitted with multi-camera PTZ setups, remote webinar studios with ring lights and teleprompters, or high-tech conference stages connected to dedicated fiber encoding racks.",
+        "temporalContext": "Scheduled for real-time events: quarterly shareholder presentations, worldwide product reveals, virtual keynote speeches, emergency press briefings, or scheduled employee town halls.",
+        "emotionalTone": "Engaging, dynamic, immediate, and transparent.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers associate 'livestream' with immediacy, raw authenticity, and synchronous participation. Unlike a polished, pre-recorded promotional video or edited webinar, a livestream carries an element of unpredictability and active connection\u2014viewers expect a live chat feed, interactive Q&A, and real-time interaction. In corporate contexts, hosting a livestream signals modern, direct communication with stakeholders, eliminating the delay and curated filtering of traditional press releases.",
+        "mentalImage": "A corporate stage where an executive speaks into a wireless lavalier microphone against a branded backdrop, framed by two 4K broadcast cameras while a live operator monitors audio levels, latency feeds, and thousands of incoming chat comments on a multi-view production console.",
+        "whenToUse": "Use when referring specifically to an event broadcast over the internet simultaneously as it takes place (e.g., 'The annual product reveal will be accessible via a global livestream on YouTube and LinkedIn').",
+        "whenNotToUse": "Do not use for pre-recorded, on-demand videos that are simply hosted online (use 'recording', 'video on demand', or 'webcast archive'), nor for one-on-one private video telephone calls (use 'video call' or 'virtual meeting').",
+        "culturalContext": "In modern corporate culture, livestreams have largely replaced traditional closed-door media conferences and internal roadshows. Tech giants popularized high-production livestreams to generate viral consumer buzz and stakeholder trust, making live-streaming infrastructure a core competency of corporate public relations and enterprise comms."
+      },
+      "examples": {
+        "daily": [
+          "Thousands of culinary enthusiasts tuned into the chef's weekend livestream to watch her demonstrate how to bake artisanal sourdough bread.",
+          "Our local community center hosted a livestream of the charity auction so residents who couldn't attend in person could submit bids.",
+          "I missed the beginning of the gaming tournament's livestream, so I had to rewind the playback feed by twenty minutes."
+        ],
+        "business": [
+          "The chief executive officer addressed employees worldwide during an all-hands livestream originating from the London headquarters.",
+          "Due to overwhelming shareholder interest, the investor relations department set up an unlisted high-definition livestream of the quarterly earnings call.",
+          "The product marketing team will broadcast a live demonstration of the cloud software during Thursday's interactive livestream."
+        ],
+        "conversation": [
+          "\"Did the technical crew verify the bandwidth allocation for tomorrow's keynote livestream?\" \"Yes, they configured a dedicated redundant fiber line to prevent any streaming latency or buffering issues.\"",
+          "\"Will international branch offices be able to submit questions during the CEO's livestream?\" \"Definitely; the production team will curate queries from the live chat console in real time.\"",
+          "\"Where can I access the archived recording of the town hall?\" \"The complete livestream replay will be posted on the employee intranet by 5:00 PM.\""
+        ],
+        "collocations": [
+          "broadcast a livestream",
+          "host a livestream",
+          "livestream feed",
+          "tune into a livestream",
+          "high-definition livestream",
+          "interactive livestream"
+        ]
+      },
+      "wordFamily": {
+        "noun": "livestream, livestreaming, livestreamer",
+        "verb": "livestream",
+        "adjective": "livestreamed, livestreaming",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "corporate livestream production switcher broadcast camera studio monitor",
+        "imageDescription": "A media technician in a darkened studio control room operating a video switcher with multiple live camera monitors showing a keynote speaker on stage, illuminated by a glowing red 'ON AIR' indicator.",
+        "mnemonic": "LIVE-STREAM: It flows like a STREAM of data, but it is HAPPENING LIVE right this second!"
+      },
+      "video": {
+        "description": "A behind-the-scenes look at an enterprise corporate communications team orchestrating a multi-camera global livestream for an international product unveiling, showing audio mixing, switchboards, and live chat moderation."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Because several remote board members were unable to travel to the annual general meeting, the IT department broadcast a secure _____ of the proceedings on the corporate portal.\n(A) livestream\n(B) livestreamed\n(C) livestreams\n(D) livestreaming",
+        "tips": "In TOEIC Part 5, determine the syntactic category needed to complete the noun phrase. The singular indefinite article 'a' and adjective 'secure' require a singular countable head noun acting as the direct object of 'broadcast'. Choice (A) 'livestream' is the countable noun referring to the broadcast event itself. (B) 'livestreamed' is a past participle/verb form, (C) 'livestreams' is plural (which cannot follow the singular article 'a'), and (D) 'livestreaming' is an uncountable gerund/verbal noun that cannot take the indefinite article 'a' without an accompanying noun like 'service' or 'platform'."
+      },
+      "synonyms": [
+        "live broadcast",
+        "webcast",
+        "live transmission",
+        "real-time stream",
+        "simulcast",
+        "online broadcast"
+      ],
+      "antonyms": [
+        "recorded broadcast",
+        "archived video",
+        "on-demand video",
+        "pre-recorded program"
+      ],
+      "relatedWords": [
+        "webinar",
+        "bandwidth",
+        "latency",
+        "buffering",
+        "encoder",
+        "viewership",
+        "live chat"
+      ]
+    },
+    {
+      "id": "comms-164",
+      "word": "magazine",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/\u02ccm\u00e6\u0261.\u0259\u02c8zi\u02d0n/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/magazine--_us_1.mp3",
+        "syllableBreakdown": "mag-a-zine",
+        "stressPattern": "primary stress on the third syllable, secondary on the first (\u02ccmag-a-ZINE)",
+        "commonMistakes": "Learners often place primary stress on the first syllable (*MAG-a-zine*), which sounds archaic or non-standard in North American English. Others substitute the final long /i\u02d0/ vowel with a short /\u026a/ (*maga-zin*) or mispronounce the voiced sibilant /z/ as a voiceless /s/."
+      },
+      "etymology": {
+        "origin": "Middle French 'magasin' (warehouse, storehouse), borrowed from Italian 'magazzino', from Arabic 'makh\u0101zin' (\u0645\u062e\u0627\u0632\u0646), the plural of 'makhzan' (\u0645\u062e\u0632\u0646, storehouse, granary, depository), derived from the triconsonantal root kh-z-n (\u062e\u0632\u0646, to store up, deposit, hoard).",
+        "rootWord": "Arabic 'makhzan' (storehouse, repository, depot)",
+        "rootMeaning": "'A storehouse or repository' \u2014 originally a physical warehouse for military munitions, gunpowder, or trading merchandise, later metaphorically applied to a periodical publication serving as a 'storehouse' of diverse articles, stories, and information.",
+        "evolution": "The Arabic word entered Mediterranean European languages via maritime trade in Venice and Marseille in the 14th\u201316th centuries as Italian 'magazzino' and French 'magasin' (storehouse/shop). In English, 'magazine' initially meant a military weapons and gunpowder storehouse (c. 1580s). In 1731, Edward Cave published 'The Gentleman's Magazine', intentionally adopting the military and commercial metaphor to mean a 'storehouse of varied reading matter' (essays, poems, political tracts, and price tables). Over the 19th and 20th centuries, it evolved into glossy, serialized, advertising-supported periodicals covering general interest, lifestyle, trade, and business niches. In modern digital publishing, the term encompasses both print glossies and digital web-based serialized periodicals.",
+        "relatedLanguages": [
+          "French: magasin (shop) / magazine (periodical)",
+          "Spanish: almac\u00e9n (warehouse) / revista (magazine)",
+          "Italian: magazzino (warehouse) / rivista (magazine)",
+          "German: Magazin (storehouse or periodical)"
+        ],
+        "firstRecordedUse": "1580s in the sense of military storehouse; 1731 in the publishing sense with Edward Cave's 'The Gentleman's Magazine'"
+      },
+      "deepMeaning": {
+        "coreConcept": "A periodic publication, printed with paper covers or distributed digitally, that contains an editorial collection of feature articles, essays, investigative reporting, interviews, photographs, and advertisements focused on a specific subject, industry, or demographic.",
+        "spatialContext": "Editorial newsrooms, newsstands, airport terminal transit lounges, corporate reception lobbies, doctor's waiting areas, and digital tablet reading apps.",
+        "temporalContext": "Published on a regular periodic schedule: weekly, bi-weekly, monthly, or quarterly.",
+        "emotionalTone": "Informative, engaging, culturally reflective, and polished.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native speaker, a 'magazine' stands distinct from a 'newspaper' and an academic 'journal'. A newspaper offers rapid, daily, factual news reporting on cheap newsprint; an academic journal is dense, peer-reviewed, and scholarly. A 'magazine', by contrast, evokes curated leisure, in-depth feature writing, narrative journalism, rich photography, and glossy production. In business and corporate communications, being featured in an industry trade magazine (e.g., Forbes, Bloomberg Businessweek, Harvard Business Review) provides immense prestige, third-party validation, and brand prestige.",
+        "mentalImage": "A sleek glossy monthly business magazine opened on an executive glass coffee table, showcasing a high-resolution portrait photograph of a technology entrepreneur beside an investigative two-page spread.",
+        "whenToUse": "Use when referring to a periodic bound or digital publication containing diverse articles, photographs, and columns on business, culture, trade, or lifestyle (e.g., 'The chief financial officer was profiled in this month's issue of a prominent business magazine').",
+        "whenNotToUse": "Do not confuse with a daily news publication printed on broadsheet paper (use 'newspaper'), a peer-reviewed scientific or academic periodical (use 'academic journal'), or a multi-page promotional paper pamphlet (use 'brochure' or 'pamphlet').",
+        "culturalContext": "In Anglo-American commercial society, magazines have shaped consumer taste, fashion, political discourse, and corporate leadership profiles for over a century. In the TOEIC exam, business trade magazines frequently appear in Part 7 reading passages as subscription renewal notices, press advertisements, media kit rates, and feature articles discussing corporate trends."
+      },
+      "examples": {
+        "daily": [
+          "While waiting for his dentist appointment, he flipped through a home improvement magazine to look for backyard patio ideas.",
+          "She renewed her annual subscription to the architectural design magazine to receive both the print editions and digital archives.",
+          "Airport kiosks typically carry an extensive selection of travel, fashion, and technology magazines near the departures gate."
+        ],
+        "business": [
+          "Our marketing director placed a full-page color advertisement in the leading trade magazine to coincide with our new equipment rollout.",
+          "An in-depth profile of our renewable energy project was published in the November issue of Global Logistics Magazine.",
+          "Corporate subscribers receive digital access to the weekly business magazine as part of their professional development benefits."
+        ],
+        "conversation": [
+          "\"Have you finalized the ad copy for the upcoming winter issue of the retail trade magazine?\" \"Yes, our graphic designers sent the high-resolution press files to the publisher yesterday.\"",
+          "\"Why did our subscription costs for trade magazines increase this quarter?\" \"We upgraded to an enterprise digital license so the entire analytics department can read the articles online.\"",
+          "\"Did you see the article covering our competitor's merger?\" \"Yes, it was featured on the cover of last week's manufacturing magazine.\""
+        ],
+        "collocations": [
+          "trade magazine",
+          "magazine subscription",
+          "magazine article",
+          "glossy magazine",
+          "monthly magazine",
+          "magazine cover"
+        ]
+      },
+      "wordFamily": {
+        "noun": "magazine",
+        "verb": "",
+        "adjective": "magazinelike",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "glossy magazine editorial spread glossy pages lifestyle trade publication",
+        "imageDescription": "A clean stack of glossy monthly lifestyle and business magazines arranged neatly on a wooden coffee table, with the top publication open to a double-page editorial feature with sharp typography and vivid photography.",
+        "mnemonic": "MAGA-ZINE: Think of a mega-storehouse (Arabic makhzan) where rich articles and vivid photos are stored for curious minds to read!"
+      },
+      "video": {
+        "description": "A printing press and editorial tour explaining how a national monthly business magazine is researched, written, designed, printed on high-speed offset lithography presses, and delivered to subscribers."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "An insightful article analyzing recent sustainability initiatives at the firm was featured in this month's issue of an influential industry _____.\n(A) magazine\n(B) magnificent\n(C) magnitude\n(D) magnification",
+        "tips": "In TOEIC Part 5, questions frequently test your ability to select the correct part of speech and appropriate noun in context. Following the compound modifier 'influential industry', the sentence requires a head noun denoting a periodical publication that has 'this month's issue' and publishes 'articles'. Choice (A) 'magazine' is the only option that fits this semantic role. Choice (B) 'magnificent' is an adjective meaning splendid, choice (C) 'magnitude' is a noun meaning great size or extent, and choice (D) 'magnification' is a noun referring to the act of enlarging an image."
+      },
+      "synonyms": [
+        "periodical",
+        "glossy",
+        "trade journal",
+        "publication",
+        "serial",
+        "review"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "subscription",
+        "circulation",
+        "masthead",
+        "editorial",
+        "bimonthly",
+        "cover story",
+        "spread"
+      ]
+    },
+    {
+      "id": "comms-165",
+      "word": "mailing",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/\u02c8me\u026a.l\u026a\u014b/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/mailing--_us_1.mp3",
+        "syllableBreakdown": "mail-ing",
+        "stressPattern": "primary stress on the first syllable (MAIL-ing)",
+        "commonMistakes": "Learners occasionally confuse the diphthong /e\u026a/ with a pure short /e/ (pronouncing it like 'melling'), drop the velar nasal /\u014b/ into an alveolar /n/ (*mailin'*), or confuse 'mailing' (the postal batch or act of posting) with 'emailing' (sending electronic mail)."
+      },
+      "etymology": {
+        "origin": "Middle English 'male' (bag, pack, travelling bag), from Old French 'male' (wallet, bag, knapsack), of Germanic origin (Frankish '*malha' or Proto-Germanic '*malh\u014d' meaning bag, pouch). The noun suffix '-ing' derives from Old English '-ing' / '-ung' forming verbal nouns of action or collective instances.",
+        "rootWord": "Old French 'male' (leather bag, pouch for carrying letters and goods) + Old English '-ing' (suffix forming action nouns)",
+        "rootMeaning": "'The act of dispatching bags of letters' or 'a batch of postal items sent out together' \u2014 originating from the leather pouch (mail-bag) carried by post riders.",
+        "evolution": "In the 12th\u201314th centuries, 'mail' referred strictly to a traveler's bag, pouch, or wallet. By the mid-17th century, it specifically designated the postal bag carrying government or public letters, which led to the system of postal delivery being called 'the mail'. In the late 19th and early 20th centuries, as businesses adopted mass direct-mail advertising and postal marketing campaigns, 'mailing' was coined as a distinct noun to mean either the physical dispatching of letters/parcels or a specific large batch of promotional or informational material distributed via post. In modern communications, the term extends to both bulk postal mailings (direct mail) and scheduled bulk email broadcasts (email mailings).",
+        "relatedLanguages": [
+          "French: envoi postal / publipostage",
+          "Spanish: env\u00edo postal / correspondencia",
+          "German: Postversand / Rundschreiben",
+          "Italian: spedizione postale / invio postale"
+        ],
+        "firstRecordedUse": "Late 19th century (c. 1880s\u20131890s in commercial postal and advertising trade contexts)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A large batch or coordinated distribution of letters, brochures, marketing flyers, bills, or informational packets dispatched simultaneously to multiple recipients via postal carrier or email distribution systems.",
+        "spatialContext": "Corporate mailrooms, post offices, fulfillment warehouses, direct marketing agencies, print-and-dispatch facilities, and digital email marketing dashboard platforms.",
+        "temporalContext": "Executed according to scheduled billing cycles, marketing campaign launch dates, seasonal catalogs drops, or annual general meeting proxy notifications.",
+        "emotionalTone": "Functional, transactional, organized, and targeted.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers distinguish 'mail' (uncountable: letters in general) from 'a mailing' (countable: a specific, organized campaign or batch of postal items sent to a list). When an office manager or marketer says 'We just finished the holiday mailing', they picture stacks of envelopes, metered postage stamps, addressed label stickers, or an automated batch run through an inserter machine. In business, 'direct mailing' implies targeted outreach designed to prompt an action (e.g. paying an invoice, donating, subscribing, or purchasing).",
+        "mentalImage": "An automated corporate mailroom conveyor where thousands of sealed white envelopes imprinted with metered postage bars and recipient barcodes glide smoothly into sorted gray postal trays destined for regional post offices.",
+        "whenToUse": "Use when referring to a specific batch of letters or promotional packages sent out together to an audience (e.g., 'The direct mailing generated a five percent response rate among prospective clients') or the physical address where someone receives mail ('mailing address').",
+        "whenNotToUse": "Do not use 'a mailing' to refer to a single incoming personal letter (say 'a letter' or 'a parcel'), nor as a generic uncountable term for correspondence (use 'mail').",
+        "culturalContext": "In North American and UK commercial history, direct mail marketing and postal circulars have been staple channels of consumer communication. Even in the digital age, direct physical mailings remain heavily utilized for legal notices, utility billings, bank statements, and targeted luxury catalog retail. In TOEIC, 'mailing list', 'mailing address', and 'mass mailing' are ubiquitous in customer service, shipping, and promotional listening and reading sections."
+      },
+      "examples": {
+        "daily": [
+          "Please double-check your current mailing address on the registration form to ensure you receive your new membership card.",
+          "The local animal shelter organized a community mailing to raise funds for their upcoming winter facility expansion.",
+          "Our apartment building received a neighborhood-wide mailing from the city utility company regarding upcoming water pipe repairs."
+        ],
+        "business": [
+          "The customer service team completed a mass mailing of revised insurance terms to all policyholders prior to the fiscal year-end.",
+          "According to our direct marketing analytics, the promotional catalog mailing produced a remarkable return on investment.",
+          "Before proceeding with the international promotional mailing, we purged obsolete and duplicate contacts from the database."
+        ],
+        "conversation": [
+          "\"Has the courier picked up the client appreciation gift mailing yet?\" \"Not yet; the mailroom staff is still affixing customs declarations to the overseas packages.\"",
+          "\"Did you receive any responses from our recent recruitment mailing?\" \"Yes, over thirty qualified applicants submitted resumes within forty-eight hours of receiving the brochure.\"",
+          "\"Why was my package returned to the sender?\" \"It looks like there was a typo in the apartment number on your mailing label.\""
+        ],
+        "collocations": [
+          "mailing address",
+          "mailing list",
+          "mass mailing",
+          "direct mailing",
+          "promotional mailing",
+          "mailing label"
+        ]
+      },
+      "wordFamily": {
+        "noun": "mail, mailing, mailer",
+        "verb": "mail",
+        "adjective": "mailable",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "corporate mailroom sorting postal envelopes direct mail campaign labels",
+        "imageDescription": "A commercial mailroom associate in a modern postal dispatch facility organizing large neat trays of neatly addressed, barcode-stamped corporate mailing envelopes ready for carrier pickup.",
+        "mnemonic": "MAIL-ING: Think of putting a huge batch of LETTERS into the MAIL bag all at once \u2014 that's a MAILING!"
+      },
+      "video": {
+        "description": "A corporate operations documentary detailing how an enterprise fulfillment center handles a 50,000-piece direct mail campaign, showing variable-data digital printing, envelope stuffing, automated folding, and postal sorting."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Before dispatching the confidential dividend statements, the investor relations office verified each shareholder's current _____ address against the primary database.\n(A) mail\n(B) mailing\n(C) mailed\n(D) mailer",
+        "tips": "In TOEIC Part 5, compound nouns and fixed business collocations are frequently tested. The correct, idiomatic term for a postal address where an individual receives correspondence is 'mailing address' (using the participial noun modifier 'mailing'). Distractor (A) 'mail' cannot serve as the modifier in this fixed expression (*mail address* is non-standard), (C) 'mailed' is a past participle describing letters already sent, and (D) 'mailer' refers either to an advertising flyer or a postal envelope."
+      },
+      "synonyms": [
+        "postal dispatch",
+        "direct mail",
+        "mass distribution",
+        "circular",
+        "batch delivery",
+        "consignment"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "postage",
+        "mailroom",
+        "envelope",
+        "postal service",
+        "courier",
+        "zip code",
+        "recipient"
+      ]
+    },
+    {
+      "id": "comms-166",
+      "word": "manuscript",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/\u02c8m\u00e6n.j\u0259.skr\u026apt/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/manuscript--_us_1.mp3",
+        "syllableBreakdown": "man-u-script",
+        "stressPattern": "primary stress on the first syllable (MAN-u-script)",
+        "commonMistakes": "Learners often omit the palatal glide /j/ in the second syllable, pronouncing it *MAN-oo-script* instead of /\u02c8m\u00e6nj\u0259skr\u026apt/. Others fail to pronounce the final /pt/ cluster clearly, dropping the /t/."
+      },
+      "etymology": {
+        "origin": "Medieval Latin 'man\u016bscriptum' (written by hand), substantivized neuter of 'man\u016bscriptus', composed of Latin 'man\u016b' (ablative of 'manus', hand) + 'scr\u012bptus' (past participle of 'scr\u012bbere', to write, from PIE root '*skreibh-', to cut, incise, or scratch).",
+        "rootWord": "Latin 'manus' (hand) + 'scribere' (to write)",
+        "rootMeaning": "'Written by hand' \u2014 originally distinguishing handwritten books and codices from printed publications after the invention of the printing press.",
+        "evolution": "In Classical and Medieval Latin, 'codex manuscriptus' designated a text copied by hand rather than produced mechanically. After Johannes Gutenberg's introduction of movable type in the mid-15th century, the word entered English in the late 16th century (c. 1590s) to denote ancient handwritten documents, scrolls, and biblical codices. By the 18th and 19th centuries, the publishing industry adopted 'manuscript' to refer to an author's original handwritten or typed draft submitted to a printer or publisher for typesetting and review. In contemporary publishing, academia, and corporate documentation, a 'manuscript' is any unpublished draft text (whether physical printout or electronic Word/PDF document) being evaluated, edited, peer-reviewed, or prepared for formal publication.",
+        "relatedLanguages": [
+          "French: manuscrit",
+          "Spanish: manuscrito",
+          "Italian: manoscritto",
+          "German: Manuskript / Handschrift"
+        ],
+        "firstRecordedUse": "1590s (referring to handwritten historical documents), and early 1700s in the modern publishing sense of an author's draft submitted for printing"
+      },
+      "deepMeaning": {
+        "coreConcept": "An author's original, pre-publication draft of a book, article, academic study, or corporate report submitted for editorial evaluation, peer review, proofreading, and typesetting before commercial publication.",
+        "spatialContext": "Publishing houses, literary agencies, academic journal editorial offices, author writing desks, university archives, and collaborative manuscript submission software portals.",
+        "temporalContext": "Pre-publication phase: initial drafting, editorial revision rounds, peer review, galley proofing, and final author sign-off prior to printing.",
+        "emotionalTone": "Scholarly, literary, deliberate, and developmental.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native speaker, a 'manuscript' represents creative work in progress before it becomes a finished 'book', 'article', or 'monograph'. It evokes stacks of typed pages with red-pen editorial annotations, double-spaced typography, margin notes, and query tracking. While historically it strictly meant handwritten parchment, modern publishing professionals use 'manuscript' (often abbreviated 'MS' or 'MSS') exclusively for the editable text version submitted by an author. When an editor asks 'Did you receive the manuscript?', they are asking for the full draft text ready for line editing.",
+        "mentalImage": "An acquisitions editor sitting at a mahogany desk with a binder-clipped stack of double-spaced typed pages, marking up marginal notes and grammar corrections in red pencil next to an open laptop displaying the author's electronic draft.",
+        "whenToUse": "Use when referring to an unpublished draft of a written work submitted for editorial appraisal, revision, or publication (e.g., 'The historian spent three years revising the manuscript before submitting it to the university press').",
+        "whenNotToUse": "Do not use for already published and bound books (use 'book', 'volume', or 'publication'), nor for short informal business memos, meeting agendas, or routine emails (use 'draft', 'memo', or 'notes').",
+        "culturalContext": "In Western literary and academic culture, submitting a manuscript is a milestone of intellectual effort. Historical manuscripts (such as the Magna Carta, Shakespeare first folio drafts, or medieval illuminated codices) are treasured archival artifacts preserved in climate-controlled museum vaults. In TOEIC reading passages (Part 7), manuscripts frequently appear in letters between authors and publishers, academic journal peer review instructions, and copyright clearance correspondence."
+      },
+      "examples": {
+        "daily": [
+          "The aspiring novelist spent every evening for a year polishing her manuscript before querying literary agents.",
+          "The museum library put a rare fifteenth-century illuminated manuscript on display behind protective UV-filtering glass.",
+          "She printed out a clean copy of her completed manuscript and asked her former English professor for an honest critique."
+        ],
+        "business": [
+          "The senior editor requested that the author make several revisions to Chapter 4 before the manuscript proceeds to typesetting.",
+          "All manuscripts submitted to the medical journal undergo rigorous peer review by independent clinical researchers.",
+          "The publishing house signed a lucrative contract after reviewing the first three chapters of the business consultant's manuscript."
+        ],
+        "conversation": [
+          "\"Have you finished reviewing the financial textbook manuscript that Dr. Bennett submitted?\" \"I've completed the first round of line edits, but we still need the legal team to verify the copyright permissions for the charts.\"",
+          "\"What is the deadline for sending the finalized manuscript to the printer?\" \"If we want the book available for the spring trade show, the approved manuscript must be uploaded by Friday.\"",
+          "\"Did the author accept our editorial suggestions?\" \"Yes, she returned the revised manuscript with all track changes addressed.\""
+        ],
+        "collocations": [
+          "submit a manuscript",
+          "revise a manuscript",
+          "unpublished manuscript",
+          "original manuscript",
+          "manuscript submission",
+          "review a manuscript"
+        ]
+      },
+      "wordFamily": {
+        "noun": "manuscript",
+        "verb": "",
+        "adjective": "manuscript",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "book manuscript editing proofreading red pen typed draft pages",
+        "imageDescription": "A close-up view of double-spaced typed manuscript pages resting on an editor's wooden desk, featuring handwritten margin annotations, editorial proofreading marks in red pen, and a pair of reading glasses.",
+        "mnemonic": "MANU-SCRIPT: 'MANUS' (Latin for hand) + 'SCRIPT' (writing). Think of a HAND-WRITTEN script before it becomes a printed book!"
+      },
+      "video": {
+        "description": "An inside look at a major book publishing firm's editorial meeting, following how an author's manuscript moves from acquisition and developmental editing to copyediting, proofreading, and final press prep."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Authors who wish to have their work considered for publication in the journal must submit a typed _____ along with a brief summary of each chapter.\n(A) manuscript\n(B) manufacture\n(C) mandate\n(D) manifest",
+        "tips": "In TOEIC Part 5, questions often test vocabulary distinction among formal Latin-derived nouns. The context describes authors submitting written work for publication ('submit a typed _____ along with a brief summary'). (A) 'manuscript' refers specifically to an author's written or typed text before publication. Distractor (B) 'manufacture' relates to industrial production, (C) 'mandate' refers to an official order or authorization, and (D) 'manifest' denotes a cargo or passenger shipping document."
+      },
+      "synonyms": [
+        "draft",
+        "text",
+        "typescript",
+        "original copy",
+        "work in progress",
+        "proof"
+      ],
+      "antonyms": [
+        "published book",
+        "final print",
+        "imprint"
+      ],
+      "relatedWords": [
+        "typesetting",
+        "proofreading",
+        "copyediting",
+        "publisher",
+        "author",
+        "galley proof",
+        "byline"
+      ]
+    }
+  ]
+}

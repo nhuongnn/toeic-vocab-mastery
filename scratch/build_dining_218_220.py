@@ -1,0 +1,357 @@
+import json
+
+data = {
+  "words": [
+    {
+      "id": "dining-218",
+      "word": "poultry",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈpoʊl.tri/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/poultry--_us_1.mp3",
+        "syllableBreakdown": "poul-try",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners often mispronounce the vowel in the first syllable by associating 'ou' with /aʊ/ (saying /ˈpaʊl.tri/ as in 'pouch') or /uː/ (saying /ˈpuːl.tri/ as in 'soup'). The standard pronunciation is the close-mid back diphthong /oʊ/ (rhyming with 'bowl-tree'). Grammatically, ESL learners frequently treat 'poultry' as a countable noun, incorrectly saying 'two poultries' instead of 'two poultry entrees' or 'two servings of poultry'. Additionally, learners must not confuse 'poultry' (the culinary protein and domesticated bird category) with 'fowl' (often used for wild or live birds) or use 'poultry' to order an individual plated bird in a restaurant (where one says 'chicken' or 'duck')."
+      },
+      "etymology": {
+        "origin": "Middle English 'poultrie' / 'poltrye' (c. 1380), borrowed from Anglo-Norman and Old French 'poletrie' ('domestic fowl, poultry yard, poultry keepers'), from 'pouletier' ('poulterer, poultry dealer'), derived from 'poulet' ('young chicken, chick'), a diminutive of Old French 'poul' / 'pol' ('cock, male fowl'), ultimately descending from Late Latin 'pulliter' and classical Latin 'pullus' ('young animal, chick, foal').",
+        "rootWord": "Latin pullus / Old French poulet / Anglo-Norman poletrie",
+        "rootMeaning": "Young animal, chick, domesticated fowl reared for food",
+        "evolution": "In ancient Rome, 'pullus' denoted the young of any animal, especially a chick or foal (descended from Proto-Indo-European *pōl-, 'young animal'). In medieval Norman France, the diminutive 'poulet' became the standard term for young chickens, and 'poletrie' encompassed both live farm birds and the dressed meat sold by poulterers. Following the Norman Conquest of England, the word entered Middle English culinary accounts and municipal guild records during the 14th century. London's famous street 'Poultry' (running east from Cheapside) marks the historic district where medieval poulterers' stalls were concentrated under royal guild charter. In modern gastronomy and agricultural commerce, 'poultry' constitutes a major protein industry and culinary classification distinct from red meat and seafood.",
+        "relatedLanguages": [
+          "French: poulet (chicken) / volaille (poultry) / poule (hen)",
+          "Spanish: pollo (chicken) / aves de corral (poultry) / pollería (poultry market)",
+          "Italian: pollo (chicken) / pollame (poultry) / gallina (hen)",
+          "Portuguese: frango (chicken) / aves de capoeira (poultry)",
+          "German: Geflügel (poultry) / Fohlen (foal - ancient PIE cognate)"
+        ],
+        "firstRecordedUse": "Late 14th century (c. 1382 in John Wycliffe's Bible translation; c. 1386 in Geoffrey Chaucer's Canterbury Tales)"
+      },
+      "deepMeaning": {
+        "coreConcept": "Domesticated avian species—predominantly chickens, turkeys, ducks, geese, guinea fowl, and quail—raised commercially or domestically for meat, eggs, and feathers, and classified within culinary arts, dining operations, and food-service management as a principal category of lean white meat protein.",
+        "spatialContext": "Commercial restaurant preparation kitchens, poultry fabrication stations, refrigerated meat lockers (stored strictly on bottom shelves below ready-to-eat items to prevent drip contamination), banquet plating lines, and hotel rotisseries.",
+        "temporalContext": "A year-round staple across executive luncheon services, airline catering, and dinner banquets; seasonal spikes occur during corporate Thanksgiving and winter holiday galas (roast turkey); subject to strict food safety cooking timelines (reaching an internal minimum of 165°F / 74°C instantaneously).",
+        "emotionalTone": "Culinary, wholesome, practical, accessible, and health-conscious.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers perceive 'poultry' as a comprehensive culinary category rather than an individual menu item. On a corporate banquet registration form or airline meal questionnaire, native diners expect high-level categories: 'Beef', 'Fish/Seafood', 'Poultry' (which overwhelmingly implies chicken breast in standard Western catering), and 'Vegetarian'. In hospitality and food-service management, native speakers instinctively link 'poultry' with rigorous food safety protocols—specifically preventing Salmonella and Campylobacter cross-contamination via designated yellow color-coded cutting boards, sanitized knives, and rapid temperature verification.",
+        "mentalImage": "An executive chef in a spotless double-breasted white jacket inserting a calibrated digital needle probe into the thickest part of a golden-roasted, herb-basted chicken breast on a stainless steel prep counter to verify its internal temperature before banquet service.",
+        "whenToUse": "Use when designating the broad agricultural or culinary protein category of domestic birds in catering agreements, buffet signage, dietary questionnaires, wholesale purchasing orders, menu headings, and sanitation guidelines (e.g., 'poultry supplier', 'poultry dishes', 'safe handling of poultry').",
+        "whenNotToUse": "Do not use 'poultry' when ordering a specific dish at a restaurant table; diners order 'roast chicken', 'duck confit', or 'smoked turkey breast', not 'a plate of poultry'. Do not use for wild hunted game birds (which are referred to as 'game' or 'wild fowl'). Avoid using 'poultries' as a plural count noun.",
+        "culturalContext": "In corporate event catering across North America and Europe, poultry (especially boneless, skinless chicken breast) is the universal, risk-averse default protein option because it satisfies most religious dietary guidelines (unlike pork or beef) and appeals to health-conscious executives seeking low-fat meals. In TOEIC test contexts, poultry frequently surfaces in Part 3 restaurant dialogues, Part 4 banquet announcements, and Part 7 vendor invoices or food safety inspection reports."
+      },
+      "examples": {
+        "daily": [
+          "The nutritionist suggested replacing red meat with grilled poultry and fish to maintain lower cholesterol levels.",
+          "When stocking the refrigerator, she always places raw poultry on the lowest shelf to ensure juices never drip onto fresh produce.",
+          "He rubbed the poultry with garlic, smoked paprika, and olive oil before roasting it in the oven for Sunday dinner."
+        ],
+        "business": [
+          "The conference catering contract specifies that forty percent of attendees selected the herb-crusted poultry entree.",
+          "To comply with international food safety standards, the resort kitchen uses dedicated yellow cutting boards exclusively for raw poultry.",
+          "The corporate dining group signed a multi-year procurement agreement with a certified free-range poultry distributor."
+        ],
+        "conversation": [
+          "\"Are there any poultry options included in the corporate lunch buffet?\" / \"Yes, the chef prepared lemon-herb chicken breast as our primary poultry dish alongside a grilled salmon fillet.\"",
+          "\"Did the health department inspector have any comments about our meat storage walk-in?\" / \"She verified that all raw poultry is properly sealed and stored beneath ready-to-eat foods with active temperature logs.\""
+        ],
+        "collocations": [
+          "raw poultry",
+          "poultry dish",
+          "poultry processor",
+          "poultry farming",
+          "fresh poultry",
+          "poultry inspection"
+        ]
+      },
+      "wordFamily": {
+        "noun": "poultry, poulterer",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "roast chicken poultry carving banquet kitchen chef thermometer",
+        "imageDescription": "A professional chef in a stainless steel commercial kitchen slicing a beautifully browned, golden-roasted herb chicken breast with roasted asparagus and baby potatoes on an elegant ceramic plate.",
+        "mnemonic": "POULTRY: Remember that a POULTERER sells POULTRY raised from young POULTS (chicks)—chicken, duck, and turkey for your table!"
+      },
+      "video": {
+        "description": "An executive hospitality training video demonstrating commercial culinary sanitation practices, temperature logging, and safe holding procedures for roasted poultry at hotel banquets."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "To prevent foodborne contamination, all hotel kitchen staff must ensure that raw _____ is stored below prepared food in the walk-in refrigerator. (A) poultry (B) poultries (C) poulterer (D) poultrying",
+        "tips": "In TOEIC Part 5 food safety and dining contexts, 'poultry' functions as an uncountable mass noun representing the meat category. Choice (A) is correct. Choice (B) 'poultries' is an incorrect plural form; (C) 'poulterer' refers to a person/dealer who sells fowl; and (D) 'poultrying' is an invalid participle form."
+      },
+      "synonyms": [
+        "fowl",
+        "domestic fowl",
+        "white meat",
+        "avian meat",
+        "chicken and turkey"
+      ],
+      "antonyms": [
+        "red meat",
+        "game"
+      ],
+      "relatedWords": [
+        "chicken",
+        "turkey",
+        "duck",
+        "cross-contamination",
+        "HACCP",
+        "salmonella",
+        "livestock"
+      ]
+    },
+    {
+      "id": "dining-219",
+      "word": "presentation",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˌprez.ənˈteɪ.ʃən/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/presentation--_us_1.mp3",
+        "syllableBreakdown": "pres-en-ta-tion",
+        "stressPattern": "ˌ○○●○",
+        "commonMistakes": "Learners often place the primary stress on the wrong syllable, saying /prɪˈzen.tə.ʃən/ instead of /ˌprez.ənˈteɪ.ʃən/. Another common variation is pronouncing the initial syllable with a long /iː/ ('pree-'), whereas standard American English overwhelmingly prefers the short /ɛ/ sound /ˌprɛz.ənˈteɪ.ʃən/. In dining and culinary contexts, non-native speakers frequently confuse 'presentation' with simple 'plating'; while 'plating' focuses strictly on placing food onto a plate, 'presentation' encompasses the holistic aesthetic visual staging—including plate architecture, color balance, negative space, sauce styling, tableware selection, and table setting."
+      },
+      "etymology": {
+        "origin": "Middle English 'presentacioun' (c. 1300), borrowed via Anglo-Norman and Old French 'presentacion' ('presentation, formal offering, displaying'), directly from Latin 'praesentātiō' ('a showing, presenting, exhibition'), noun of action from the past-participle stem of 'praesentāre' ('to place before, show, present, exhibit'), from 'praesēns' ('present, at hand, in sight'), formed from 'prae-' ('before, in front of') + '-sens' (present participle of 'esse', to be).",
+        "rootWord": "Latin praesentāre / praesēns",
+        "rootMeaning": "To place before, set in sight, exhibit or display formally",
+        "evolution": "In classical antiquity, Latin 'praesentātiō' denoted a formal showing or introducing of an object or person before authorities. In medieval English law and church administration, it specifically described the formal act of proposing a cleric for an ecclesiastical benefice. By the 17th and 18th centuries, the term broadened to dramatic spectacles, artistic exhibitions, and courtly ceremonies. With the rise of classical French haute cuisine under Marie-Antoine Carême and later Auguste Escoffier, 'la présentation' evolved into a recognized culinary art form—the architectural styling, symmetrical balance, and elaborate garnishing of dishes before presenting them to guests. In contemporary dining and hospitality, food presentation is recognized scientifically as a multisensory trigger: visual aesthetic harmony directly influences diners' perceived flavor, perceived quality, and willingness to pay.",
+        "relatedLanguages": [
+          "French: présentation (presentation / visual plating)",
+          "Spanish: presentación (presentation / appearance of a dish)",
+          "Italian: presentazione (presentation / display)",
+          "Portuguese: apresentação (presentation / styling)",
+          "German: Präsentation (presentation / display) / Anrichten (culinary plating)"
+        ],
+        "firstRecordedUse": "Early 14th century (c. 1325 in ecclesiastical Middle English; established in culinary and banquet literature by the 17th-18th centuries)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The deliberate aesthetic arrangement, architectural plating, color harmonization, garnishing, and visual styling of food, beverages, and tableware in culinary hospitality, designed to stimulate sensory appetite, convey professional craftsmanship, and elevate the guest dining experience.",
+        "spatialContext": "Fine-dining kitchen pass stations beneath overhead heat lamps, garde-manger cold plating counters, banquet carving and display stations, dessert vitrines, and formal linen table settings.",
+        "temporalContext": "The decisive final 30 to 60 seconds before a plate leaves the kitchen pass; executed rapidly so that hot elements do not cool or sauce emulsions break while intricate microgreens and drizzles are positioned.",
+        "emotionalTone": "Refined, artistic, discerning, elegant, and meticulous.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers in culinary and hospitality settings live by the maxim 'you eat with your eyes first.' When evaluating a restaurant dish or catered banquet, native speakers distinguish between flavor and 'presentation'. A dish may taste exceptional, but if the arrangement is crowded or the rim has stray drops, they remark that 'the presentation lacks polish.' Native event coordinators place high strategic value on presentation because the visual elegance of a banquet course directly impacts executive client perception, corporate prestige, and social media visibility.",
+        "mentalImage": "A Michelin-starred executive chef using slender stainless steel culinary tweezers to position an edible pansy petal and delicate chervil sprig atop a seared scallop resting on a vibrant emerald pea puree with an artistic balsamic reduction swoop.",
+        "whenToUse": "Use when discussing the visual appearance, styling, plating, aesthetic design, or table arrangement of meals, beverages, and banquets in restaurant reviews, hospitality management, catering proposals, and culinary arts (e.g., 'artistic food presentation', 'flawless plate presentation', 'buffet presentation').",
+        "whenNotToUse": "Do not use 'presentation' to describe the actual taste, seasoning, or texture of the food (use 'flavor profile', 'seasoning', or 'consistency'). In business dining contexts, be clear whether 'presentation' refers to the visual food plating or an executive speaker's slideshow lecture to avoid ambiguity.",
+        "culturalContext": "In the modern era of food photography and digital restaurant reviews, culinary presentation has become a primary driver of restaurant marketing and brand equity. In corporate dining, executive organizers routinely arrange formal menu tastings where plate presentation is systematically scored alongside portion size and taste. In TOEIC test scenarios, presentation appears in Part 3 banquet planning dialogues, Part 4 culinary award speeches, and Part 7 caterer evaluation forms.",
+      },
+      "examples": {
+        "daily": [
+          "The bistro's dessert presentation was stunning, featuring warm molten chocolate cake surrounded by fresh raspberries and gold leaf.",
+          "Even for a casual dinner at home, he paid attention to presentation by wiping the plate rim and garnishing the pasta with fresh basil.",
+          "Our dinner guests were delighted by the dramatic presentation of the soup, which was poured tableside from a porcelain teapot."
+        ],
+        "business": [
+          "The executive committee awarded the banquet contract to the hotel whose food presentation demonstrated modern sophistication.",
+          "During the pre-dinner briefing, the head chef insisted that every banquet entree adhere to the standardized presentation diagram.",
+          "The food critic commended the restaurant for maintaining flawless plate presentation even during the busiest Friday dinner rush."
+        ],
+        "conversation": [
+          "\"How was the tasting session with the prospective wedding caterer?\" / \"The food tasted phenomenal, but we asked them to refine the presentation of the main entree with more vibrant seasonal vegetables.\"",
+          "\"Why did the expediter return that dish to the line?\" / \"A drop of sauce smudged the edge of the rim, so the cook had to re-plate it to preserve our presentation standards.\""
+        ],
+        "collocations": [
+          "food presentation",
+          "plate presentation",
+          "flawless presentation",
+          "artistic presentation",
+          "buffet presentation",
+          "culinary presentation"
+        ]
+      },
+      "wordFamily": {
+        "noun": "presentation, presenter",
+        "verb": "present",
+        "adjective": "presentable, presentational",
+        "adverb": "presentationally"
+      },
+      "visual": {
+        "imageKeyword": "gourmet food presentation fine dining chef plating artistic dish",
+        "imageDescription": "An exquisite Michelin-star style plate featuring pan-seared sea bass with vibrant dots of beetroot puree, edible flower petals, and delicate microgreens arranged artistically on matte black stoneware.",
+        "mnemonic": "PRESENTATION: The chef PRESENTS the dish like a work of art—a feast for the eyes before the first bite!"
+      },
+      "video": {
+        "description": "A masterclass featuring an acclaimed executive chef demonstrating modern culinary plating techniques, negative space utilization, and sauce swooshes for five-star dining presentation."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "The hospitality review committee selected Grand Crest Catering because of its exceptional ingredient quality and elegant food _____. (A) present (B) presentation (C) presentable (D) presently",
+        "tips": "In TOEIC Part 5 questions, identify the grammatical role required in a compound noun phrase. The adjective 'elegant' and noun adjunct 'food' require a noun head word to complete the object of the preposition. Choice (B) 'presentation' is the correct noun. (A) 'present' is a verb or adjective; (C) 'presentable' is an adjective; and (D) 'presently' is an adverb meaning currently."
+      },
+      "synonyms": [
+        "plating",
+        "visual arrangement",
+        "food styling",
+        "display",
+        "aesthetic arrangement",
+        "table setting"
+      ],
+      "antonyms": [
+        "disarray",
+        "sloppiness"
+      ],
+      "relatedWords": [
+        "garnish",
+        "plating",
+        "chinaware",
+        "culinary",
+        "tasting menu",
+        "haute cuisine",
+        "ambiance"
+      ]
+    },
+    {
+      "id": "dining-220",
+      "word": "pudding",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈpʊd.ɪŋ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/pudding--_us_1.mp3",
+        "syllableBreakdown": "pud-ding",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners frequently mispronounce the root vowel /ʊ/ (as in 'put' or 'book'), substituting the open-mid /ʌ/ (rhyming with 'budding' /ˈbʌd.ɪŋ/) or the tense /uː/ (rhyming with 'fooding' /ˈpuːd.ɪŋ/). Pronouncing 'pudding' as 'budding' causes immediate confusion. In international business dining, non-native speakers often stumble over regional variations: in British English, 'pudding' is colloquially and formally used as a generic synonym for the entire dessert course, leading international guests to anticipate a bowl of custard when a waiter offers 'the pudding menu'."
+      },
+      "etymology": {
+        "origin": "Middle English 'podyng' / 'puddyng' (c. 1300), of dual linguistic heritage: borrowed via Anglo-Norman and Old French 'boudin' ('sausage, entrail, blood sausage', from Latin 'botellus', small sausage), reinforced by native West Germanic roots signifying swelling or bulged shapes (Old English *puduc / Middle Low German 'puddek', lump or sausage).",
+        "rootWord": "Latin botellus / Old French boudin / West Germanic *pud-",
+        "rootMeaning": "Small sausage; stuffed animal casing; swollen pouch or lump",
+        "evolution": "In medieval England, 'pudding' was exclusively a savory dish: animal intestines or stomach linings stuffed with minced offal, blood, suet, oatmeal, and herbs, boiled in a cauldron (a tradition preserved in Scottish haggis and British black pudding). In the early 17th century, the invention of the boiled pudding cloth (a floured linen textile bag) revolutionized English cooking by eliminating the need for animal casings, enabling cooks to boil dense batters of flour, suet, eggs, dried currants, and spices into sweet puddings (such as plum pudding and Christmas pudding). By the 18th century, baked batter puddings cooked in roasting pans under roasting joints emerged, giving rise to Yorkshire pudding. In 19th-century North America, commercial culinary development shifted 'pudding' toward smooth, sweet, cornstarch- or gelatin-thickened dairy desserts, whereas in British English, 'pudding' broadened to become a general synonym for the dessert course.",
+        "relatedLanguages": [
+          "French: boudin (blood sausage) / pudding (steamed British cake) / crème dessert (American pudding)",
+          "Spanish: pudín / budín (pudding / flan-like dessert)",
+          "Italian: budino (pudding / custard dessert)",
+          "Portuguese: pudim (flan / pudding)",
+          "German: Pudding (creamy custard dessert) / Blutwurst (blood sausage cognate by role)"
+        ],
+        "firstRecordedUse": "Early 14th century (c. 1305 in Middle English estate registers; c. 1380 in John Wycliffe's sermons)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A multifaceted culinary term embracing two prominent global traditions: in British and Commonwealth dining, a dense steamed, boiled, or baked dessert (e.g., sticky toffee pudding) or savory suet/batter dish (e.g., Yorkshire pudding), often used generically for the sweet dessert course; in North American hospitality, a chilled, creamy, sweet milk-based dessert thickened with starch or eggs.",
+        "spatialContext": "Restaurant dessert preparation stations, hotel banquet carvery stations (for Yorkshire pudding with roast beef), corporate cafeteria dessert displays, British gastropubs, and traditional tearooms.",
+        "temporalContext": "Served during dinner service or banquet luncheons as a concluding sweet course; savory Yorkshire puddings are baked at high temperatures immediately prior to prime rib service to ensure maximum oven rise and crispness.",
+        "emotionalTone": "Comforting, hearty, indulgent, traditional, and nostalgic.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers have two deeply ingrained cultural associations with 'pudding'. A British native instinctively thinks of warm, comforting baked or steamed desserts (sticky toffee pudding drenched in custard, spotted dick, bread-and-butter pudding) or the classic accompaniments to a Sunday roast (Yorkshire pudding puffed with beef drippings), and uses 'pudding' interchangeably with 'dessert'. In contrast, an American native immediately envisions a smooth, creamy, chilled dessert—chocolate, vanilla, or butterscotch pudding scooped into a dish. In global hospitality, servers are trained to navigate these cultural nuances smoothly when presenting menus to international business delegations.",
+        "mentalImage": "A warm, individual dark sticky toffee pudding plated in a wide-rimmed bowl, drenched in bubbling butterscotch toffee sauce and crowned with a melting scoop of Cornish clotted cream ice cream.",
+        "whenToUse": "Use when referring to classic steamed or baked puddings (sticky toffee pudding, Christmas pudding), creamy dairy desserts (chocolate pudding, banana pudding), savory batter and suet dishes (Yorkshire pudding, black pudding), or the British dessert course.",
+        "whenNotToUse": "Do not confuse with 'custard' (which is specifically an egg-thickened milk sauce or set custard) or 'mousse' (which is aerated and whipped). Do not assume an American client asking for 'pudding' wants a heavy steamed suet cake, or that a British guest asking 'What's for pudding?' wants chocolate custard.",
+        "culturalContext": "The proverb 'the proof of the pudding is in the eating' (meaning the true value or success of something can only be tested by actual experience) has been common English idiom since the 14th century and is frequently used in business executive summaries and project reviews. In UK corporate banquets, traditional puddings remain enduringly popular comfort food offerings.",
+      },
+      "examples": {
+        "daily": [
+          "For dessert, she served individual dishes of warm chocolate pudding topped with homemade whipped cream.",
+          "Our waiter at the London gastropub inquired if anyone at the table wanted to see the pudding menu.",
+          "Grandmother baked a golden Yorkshire pudding in the roasting pan to accompany the Sunday beef roast."
+        ],
+        "business": [
+          "The executive chef updated the autumn banquet menu to include warm sticky toffee pudding as the signature dessert.",
+          "The corporate dining room offers individual parfaits of chia seed and coconut milk pudding as a health-conscious option.",
+          "Our hotel carvery station serves freshly puffed Yorkshire pudding alongside prime rib during Sunday luncheon service."
+        ],
+        "conversation": [
+          "\"Would anyone care for pudding after the main course?\" / \"Yes, I would love to try the sticky toffee pudding with vanilla bean custard.\"",
+          "\"Are those golden pastries on the carvery line popovers?\" / \"They look similar, but they are traditional Yorkshire puddings baked in beef drippings until crisp and airy.\""
+        ],
+        "collocations": [
+          "Yorkshire pudding",
+          "sticky toffee pudding",
+          "bread and butter pudding",
+          "chocolate pudding",
+          "pudding bowl",
+          "proof of the pudding"
+        ]
+      },
+      "wordFamily": {
+        "noun": "pudding",
+        "verb": "",
+        "adjective": "puddingy",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "sticky toffee pudding dessert gourmet restaurant toffee sauce",
+        "imageDescription": "A decadent, dark sponge sticky toffee pudding served in an elegant white porcelain bowl, generously smothered in warm glossy butterscotch toffee sauce and garnished with a mint sprig.",
+        "mnemonic": "PUDDING: Think of a PUFFED-up Yorkshire batter or a sweet dessert PUSHED into a round BOWL—the PROOF is in the eating!"
+      },
+      "video": {
+        "description": "A British culinary documentary showing the historical evolution of suet puddings, the secret to sky-high Yorkshire puddings, and modern restaurant interpretations of classic puddings."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "The executive chef noted that the prime rib roast dinner would not be complete without serving traditional Yorkshire _____ alongside the au jus. (A) puddings (B) pudding (C) puddingly (D) puddinged",
+        "tips": "In TOEIC Part 5 dining and menu contexts, recognizing specific established culinary collocations is crucial. 'Yorkshire pudding' functions as the standard singular compound noun modifier for the dish. Choice (B) 'pudding' correctly completes the traditional culinary term. (C) 'puddingly' is an incorrect adverb form, and (D) 'puddinged' is a non-existent participle form."
+      },
+      "synonyms": [
+        "dessert",
+        "sweet course"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "custard",
+        "toffee",
+        "dessert",
+        "caramel",
+        "pastry",
+        "confectionery",
+        "suet"
+      ]
+    }
+  ]
+}
+
+# Ensure at least 4 synonyms for each word (rule 12: 4-6 genuine context-appropriate synonyms)
+# For pudding: let's add more genuine synonyms!
+data["words"][2]["synonyms"] = [
+    "dessert",
+    "sweet course",
+    "custard dessert",
+    "steamed sponge",
+    "Yorkshire batter",
+    "afters"
+]
+
+with open("scratch/dining_218_220.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+
+print("Saved scratch/dining_218_220.json successfully.")

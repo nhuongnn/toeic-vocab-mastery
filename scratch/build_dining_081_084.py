@@ -1,0 +1,455 @@
+import json
+import re
+
+words_data = [
+    {
+        "id": "dining-081",
+        "word": "casserole",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/casserole--_us_1.mp3",
+            "commonMistakes": "Learners often place primary stress on the final syllable ('cas-se-ROLE') influenced by French or words like 'patrol', or pronounce the second syllable with a tense /e/ rather than a relaxed schwa /ə/. In standard English, the primary stress falls firmly on the first syllable: CAS-se-role.",
+            "ipa": "/ˈkæs.ə.roʊl/",
+            "stressPattern": "●○○",
+            "syllableBreakdown": "cas·se·role"
+        },
+        "etymology": {
+            "evolution": "Traveled from Ancient Greek kyathos (a wine ladle or dipping cup) into Medieval Latin cattia (a metal ladle or melting pan), entering Old Provençal as cassa and 16th-century Middle French as casserole (a small stew pan). Adopted into English in the early 18th century to designate the cooking vessel, it gradually transferred in North American and British culinary usage to the savory baked meal prepared and served within the dish.",
+            "firstRecordedUse": "c. 1706 in English culinary translations of French gastronomic treatises",
+            "origin": "Middle French casserole ('saucepan, stew pan'), diminutive of Old French casse ('ladle, pan'), from Old Provençal cassa, from Medieval Latin cattia ('ladle, melting pot'), from Ancient Greek kyathion, diminutive of kyathos ('cup, ladle for dipping wine').",
+            "relatedLanguages": [
+                "French: casserole (saucepan, stew pot)",
+                "Spanish: cacerola (saucepan, pot)",
+                "Italian: casseruola (casserole pan, saucepan)",
+                "Portuguese: caçarola (cooking pot)",
+                "Catalan: cassola (earthenware cooking dish)"
+            ],
+            "rootMeaning": "cup, ladle, small dipping pan",
+            "rootWord": "kyathos / cattia / casse"
+        },
+        "deepMeaning": {
+            "connotation": "positive",
+            "coreConcept": "Both a deep, heat-resistant baking vessel (traditionally crafted from earthenware, glazed stoneware, enameled cast iron, or tempered glass) and the savory, multi-ingredient baked meal prepared and served directly within it, typically combining protein, vegetables, and starches bound by a creamy or savory sauce under a browned, crisp topping.",
+            "emotionalTone": "Comforting, hearty, communal, and nourishing.",
+            "formalityLevel": "neutral",
+            "spatialContext": "Commercial convection ovens, banquet hot-buffet lines with stainless chafing dishes, hotel breakfast buffet warming wells, cafeteria steam tables, and dining room tables.",
+            "temporalContext": "Slow-baked for 30 to 60 minutes at moderate roasting temperatures (typically 350°F / 175°C); served predominantly during breakfast buffets, Sunday brunches, casual corporate luncheons, and holiday banquets."
+        },
+        "nativeMindset": {
+            "culturalContext": "Casseroles evolved into a defining mid-20th-century staple of North American communal hospitality, church potlucks, and holiday gatherings (such as green bean or sweet potato casseroles). In corporate catering and hotel breakfast buffets, an egg-and-cheese breakfast casserole or strata is prized as an efficient, crowd-pleasing hot dish that retains heat effectively and portions cleanly.",
+            "howNativesThink": "Native speakers associate 'casserole' with hearty comfort food, informal communal hospitality, and practical one-dish cooking. Rather than plating individual components separately, a casserole harmonizes meat, starch, and vegetables under a golden, bubbly crust. In professional foodservice, banquet managers appreciate casseroles because they hold temperature well in chafing units without drying out as quickly as grilled cuts.",
+            "mentalImage": "A heavy, enameled cast-iron baking dish fresh from the oven, bubbling along the edges with a golden-brown parmesan and panko breadcrumb crust, resting on a cork trivet on a banquet buffet table alongside a serving spoon.",
+            "whenNotToUse": "Do not use 'casserole' for stovetop stews (which are simmered in liquid rather than oven-baked in a dish), delicate egg soufflés (which rely on whipped egg whites to rise dramatically), or individual sweet custards.",
+            "whenToUse": "Use when referring to baked one-dish savory meals (such as a breakfast casserole, tuna noodle casserole, or vegetable bake) or the deep, ovenproof cooking and serving vessel itself."
+        },
+        "examples": {
+            "business": [
+                "For the annual department planning retreat, the catering service featured a baked spinach and feta breakfast casserole on the morning hot buffet.",
+                "The corporate cafeteria manager introduced a hearty quinoa and roasted vegetable casserole to expand healthy vegetarian lunch options.",
+                "Banquet guidelines require kitchen staff to keep the chicken and wild rice casserole heated at 145 degrees Fahrenheit in commercial chafing trays."
+            ],
+            "collocations": [
+                "casserole dish",
+                "breakfast casserole",
+                "bake a casserole",
+                "vegetable casserole",
+                "tuna casserole",
+                "piping hot casserole"
+            ],
+            "conversation": [
+                "\"What hot entrées are included in the continental breakfast package for tomorrow's seminar?\" / \"The caterer is bringing a savory bacon and cheddar breakfast casserole along with fresh fruit and pastries.\"",
+                "\"Can this ceramic casserole be transferred directly from the convection oven to the banquet display?\" / \"Yes, it is designed for both high-heat baking and elegant tabletop presentation.\""
+            ],
+            "daily": [
+                "She prepared a hearty chicken and broccoli casserole on Sunday evening to reheat for quick family dinners during the workweek.",
+                "Be sure to use insulated silicone oven mitts when lifting the hot glass casserole dish from the bottom rack.",
+                "Each neighbor brought a warm casserole to the community potluck, filling the long hall with inviting aromas."
+            ]
+        },
+        "wordFamily": {
+            "adjective": "casserole-style",
+            "noun": "casserole",
+            "verb": "casserole"
+        },
+        "visual": {
+            "imageDescription": "A steaming glazed ceramic casserole dish fresh from the oven, showcasing a bubbly golden-brown cheese and breadcrumb topping with chopped parsley, set on a rustic wooden table beside serving tongs.",
+            "imageKeyword": "baked casserole dish bubbling golden cheese breadcrumbs oven dining",
+            "mnemonic": "CASSEROLE: Picture a sturdy CASE that ROLLS straight out of the hot oven onto the buffet table to feed everyone from one dish!"
+        },
+        "video": {
+            "description": "An instructional culinary video demonstrating how hotel banquet chefs prepare, layer, and bake high-volume breakfast egg casseroles for corporate conference buffets."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "To accommodate conference attendees requesting vegetarian options, the banquet chef prepared an eggplant and roasted pepper _____ alongside the grilled salmon. (A) casserole (B) casseroles (C) casseroling (D) casseroled",
+            "tips": "Following the singular indefinite article 'an' and descriptive noun phrase 'eggplant and roasted pepper', the blank requires a singular countable noun: (A) casserole. The plural noun (B), present participle (C), and past participle/verb (D) are grammatically incorrect in this noun phrase slot."
+        },
+        "synonyms": [
+            "baking dish",
+            "bake",
+            "one-pot meal",
+            "hotpot",
+            "gratin",
+            "stew"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "bakeware",
+            "stoneware",
+            "potluck",
+            "buffet",
+            "chafing dish",
+            "roasting pan",
+            "comfort food"
+        ]
+    },
+    {
+        "id": "dining-082",
+        "word": "caterer",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/caterer--_us_1.mp3",
+            "commonMistakes": "Learners frequently drop the second unstressed syllable, pronouncing it as 'cay-ter' instead of 'cay-ter-er', or stumble over the two consecutive rhotic schwa syllables /-tər.ər/. Maintain clear, light enunciation of both unstressed syllables: /ˈkeɪ.tər.ər/.",
+            "ipa": "/ˈkeɪ.tər.ər/",
+            "stressPattern": "●○○",
+            "syllableBreakdown": "ca·ter·er"
+        },
+        "etymology": {
+            "evolution": "In medieval English noble households, the 'catour' or 'acater' was the officer commissioned to buy provisions and meats at town markets. By the late 16th century, 'cater' evolved into a verb meaning to provide food, beverage, and hospitality for gatherings. The agent noun 'caterer' was formed c. 1600 through the addition of -er, evolving into the modern commercial designation for outside foodservice contractors.",
+            "firstRecordedUse": "c. 1600 in early Modern English domestic ledgers and stage plays",
+            "origin": "Formed in English from the verb cater + agent suffix -er, from Middle English catour ('buyer of provisions, purveyor'), an aphetic form of Anglo-Norman acatour, from Old French acater ('to buy', Modern French acheter), from Vulgar Latin *accaptare ('to acquire, purchase'), from Latin ad- ('to') + captare ('to strive to seize'), frequentative of capere ('to take').",
+            "relatedLanguages": [
+                "French: acheteur (buyer), traiteur (caterer, food purveyor)",
+                "Anglo-Norman: acatour (buyer of provisions)",
+                "Italian: accattare (to procure, obtain)",
+                "Spanish: acatar (historically to observe/procure; modern: proveedor de banquetes)"
+            ],
+            "rootMeaning": "to take, seize, acquire provisions",
+            "rootWord": "capere / *accaptare / acatour"
+        },
+        "deepMeaning": {
+            "connotation": "positive",
+            "coreConcept": "A commercial enterprise or professional contractor specializing in the culinary preparation, transport, on-site setup, service, and post-event breakdown of food and beverages for corporate functions, banquets, conferences, and private celebrations.",
+            "emotionalTone": "Professional, accommodating, dependable, and hospitable.",
+            "formalityLevel": "formal",
+            "spatialContext": "Corporate convention ballrooms, executive boardroom suites, private event venues, commissary prep kitchens, refrigerated transport vans, and marquee event tents.",
+            "temporalContext": "Contracted weeks or months prior to scheduled events; executes on-site staging several hours before guest arrival, oversees meal delivery during programmed service windows, and conducts immediate cleanup after the function."
+        },
+        "nativeMindset": {
+            "culturalContext": "Corporate and event catering is a major commercial hospitality industry across English-speaking countries. In TOEIC test design, caterers feature prominently in Part 3 business dialogues (evaluating vendor quotes or coordinating lunch menus) and Part 7 documentation (service level agreements, banquet invoices, and customer satisfaction surveys).",
+            "howNativesThink": "To a business professional or event organizer, a 'caterer' represents an essential external vendor whose reliability directly influences guest impressions. When planning an event, organizers scrutinize caterers based on menu flexibility, dietary accommodations (gluten-free, vegan, halal), punctuality, and staff professionalism. If the food presentation is flawless, the caterer receives credit; if food arrives cold, the event planner faces criticism.",
+            "mentalImage": "A lead caterer in a crisp tailored uniform conferring with an event manager over a clipboard checklist while uniformed banquet servers set up chaffing dishes, ice buckets, and stemmed glassware along a linen-draped buffet table.",
+            "whenNotToUse": "Do not confuse a 'caterer' with a 'restaurateur' (who manages a fixed brick-and-mortar restaurant), a 'chef' (who specifically cooks food as a culinary craftsman), or a 'courier / delivery driver' (who merely transports boxed takeaway meals without event setup or service).",
+            "whenToUse": "Use when referring to an individual or commercial service hired to provide, deliver, and coordinate meals, beverages, and hospitality staff for meetings, banquets, and parties."
+        },
+        "examples": {
+            "business": [
+                "The procurement director submitted a request for proposals to three licensed caterers for the upcoming international sales summit.",
+                "Thanks to the caterer's meticulous presentation and prompt service, the executive committee approved a multi-year vendor contract.",
+                "The office coordinator phoned the caterer early this morning to increase the headcount and request five vegan boxed lunches."
+            ],
+            "collocations": [
+                "hire a caterer",
+                "corporate caterer",
+                "outside caterer",
+                "licensed caterer",
+                "event caterer",
+                "the caterer's invoice"
+            ],
+            "conversation": [
+                "\"Have we finalized our contract with the caterer for the annual shareholders' luncheon?\" / \"Almost; we're just waiting for their revised quote including the hot beverage station.\"",
+                "\"The keynote address is running fifteen minutes ahead of schedule; should we alert the caterer?\" / \"Yes, let's inform the banquet captain immediately so they can have the hot buffet ready on time.\""
+            ],
+            "daily": [
+                "They hired an experienced local caterer to manage the buffet and cocktail bar for their anniversary party.",
+                "The caterer delivered beautifully arranged platters of artisanal sandwiches and fresh fruit skewers an hour before the guests arrived.",
+                "After tasting samples from several wedding caterers, the couple selected a boutique company specializing in farm-to-table cuisine."
+            ]
+        },
+        "wordFamily": {
+            "adjective": "catered",
+            "noun": "caterer, catering",
+            "verb": "cater"
+        },
+        "visual": {
+            "imageDescription": "A professional catering team in matching black aprons and white shirts setting up an elegant banquet buffet with polished stainless-steel chafing dishes, linen runners, and floral arrangements in a bright corporate conference hall.",
+            "imageKeyword": "professional caterer buffet setup banquet hall corporate event catering",
+            "mnemonic": "CATERER: A CATER-ER is the provid-ER who CATERs to every guest's culinary needs and dietary requests at your event!"
+        },
+        "video": {
+            "description": "A documentary overview detailing the commercial logistics of an event catering enterprise, showing menu tasting sessions, mobile kitchen staging, and table service coordination for a 400-guest gala."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "Because the awards banquet will be attended by over three hundred guests, the committee decided to contract a reputable corporate _____ to handle all meal preparations. (A) caterer (B) catering (C) catered (D) cater",
+            "tips": "Following the adjective phrase 'a reputable corporate', the sentence requires a singular countable agent noun referring to the business or contractor hired: (A) caterer. 'Catering' (B) is an uncountable noun denoting the industry/service; 'catered' (C) is a participle/adjective; and 'cater' (D) is a base verb."
+        },
+        "synonyms": [
+            "food service provider",
+            "banquet purveyor",
+            "event supplier",
+            "hospitality vendor",
+            "food contractor",
+            "provisioner"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "catering",
+            "banquet",
+            "buffet",
+            "hospitality",
+            "headcount",
+            "vendor",
+            "hors d'oeuvres"
+        ]
+    },
+    {
+        "id": "dining-083",
+        "word": "cellar",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/cellar--_us_1.mp3",
+            "commonMistakes": "Learners sometimes mispronounce the initial 'c' as a hard /k/ ('keller') due to influence from German 'Keller', or over-enunciate the second syllable as /-ɑːr/ instead of a relaxed schwa /ər/. Note that 'cellar' is an exact homophone of 'seller' (/ˈsɛl.ər/).",
+            "ipa": "/ˈsɛl.ər/",
+            "stressPattern": "●○",
+            "syllableBreakdown": "cel·lar"
+        },
+        "etymology": {
+            "evolution": "Rooted in Proto-Indo-European *kel- (to hide or cover), developing into Latin cella (a small storeroom or chamber) and Late Latin cellarium (a subterranean storeroom for perishable provisions). Borrowed into Middle English after the Norman Conquest as celer, developing into the primary architectural term for an underground vault, particularly one optimized for temperature-stable wine aging and preservation.",
+            "firstRecordedUse": "c. 1225 in early Middle English monastic and estate records",
+            "origin": "Middle English celer, borrowed from Anglo-Norman celier and Old French celier ('cellar, pantry, storeroom for provisions'), from Late Latin cellarium ('storeroom, pantry'), from Latin cella ('small room, storeroom, pantry'), related to celare ('to hide, conceal'), from PIE root *kel- ('to cover, conceal, protect').",
+            "relatedLanguages": [
+                "French: cellier (storeroom, wine cellar), cave (wine cellar)",
+                "German: Keller (cellar, basement, borrowed from Latin cellarium)",
+                "Italian: celliere (pantry), cantina (wine cellar)",
+                "Spanish: celda (cell), bodega (wine cellar, warehouse)",
+                "Dutch: kelder (cellar)"
+            ],
+            "rootMeaning": "small room, storeroom, to conceal or cover",
+            "rootWord": "cella / celare / *kel-"
+        },
+        "deepMeaning": {
+            "connotation": "positive",
+            "coreConcept": "An underground room or subterranean vault beneath a building utilized for cool, stable storage; in gastronomy, restaurant hospitality, and beverage management, it specifically designates a climate-controlled chamber maintained at precise temperature and humidity for maturing and preserving fine wines, champagnes, and artisanal spirits, or by metonymy, an establishment's curated inventory of vintage bottles.",
+            "emotionalTone": "Prestigious, timeless, sophisticated, and sheltered.",
+            "formalityLevel": "neutral",
+            "spatialContext": "Subterranean brick-vaulted rooms of historic restaurants, glass-enclosed climate-regulated wine rooms in upscale hotels, winery aging caves, and residential storage vaults.",
+            "temporalContext": "Long-term maturation spanning years or decades for vintage wines (resting at a constant 55°F / 13°C and 70% humidity); accessed daily by sommeliers prior to and during evening dinner services."
+        },
+        "nativeMindset": {
+            "culturalContext": "Having an extensive 'wine cellar' recognized by industry accolades (such as the Wine Spectator Best of Award of Excellence) is a hallmark of premier dining establishments, serving as a powerful magnet for high-budget corporate entertainment and client dinners. In TOEIC passages, cellars appear in luxury hotel brochures, restaurant reviews, and guided tour itineraries.",
+            "howNativesThink": "In culinary and hospitality settings, native speakers instantly associate 'cellar' with fine wine, connoisseurship, and careful stewardship. Saying an upscale restaurant boasts an 'extensive cellar' indicates that the venue invests heavily in sommelier expertise and rare vintages. In domestic architecture, it refers to an unfinished subterranean space used for food preservation (root cellar) or general cool storage.",
+            "mentalImage": "An atmospheric underground brick vault with arched ceilings, where dusty vintage wine bottles rest horizontally in custom redwood racks illuminated by warm recessed accent lighting beside an oak tasting table.",
+            "whenNotToUse": "Do not confuse 'cellar' with a 'basement' (which generally denotes a finished, habitable ground floor level beneath a house or office), an 'attic' (the space immediately beneath the roof), or a 'pantry' (a small room or cupboard adjacent to a kitchen for dry goods).",
+            "whenToUse": "Use when referring to an underground storage chamber—especially a wine cellar—or an establishment's curated collection of aged wines (e.g., 'wine cellar', 'well-stocked cellar', 'cellar master', 'cellar temperature')."
+        },
+        "examples": {
+            "business": [
+                "The luxury hotel's flagship restaurant earned international acclaim for its private cellar, which houses more than four thousand rare vintages.",
+                "Before the annual gala, the head sommelier conducted a comprehensive inventory of the cellar to ensure sufficient reserve champagnes.",
+                "Investing in an on-site, temperature-controlled wine cellar allowed the steakhouse to offer exclusive tasting events to corporate executives."
+            ],
+            "collocations": [
+                "wine cellar",
+                "cellar master",
+                "cool cellar",
+                "extensive cellar",
+                "root cellar",
+                "cellar temperature"
+            ],
+            "conversation": [
+                "\"Does our corporate dining reservation include access to the sommelier's cellar selections?\" / \"Yes, the sommelier will guide our guests through paired vintage selections stored in the restaurant's private cellar.\"",
+                "\"Where should the banquet team store the imported sparkling wine until Friday's reception?\" / \"Transfer the crates immediately to the basement cellar, where the climate control system maintains fifty-five degrees.\""
+            ],
+            "daily": [
+                "During scorching summer days, the stone cellar beneath the old country farmhouse remained delightfully cool and dark.",
+                "Her family kept wooden crates of apples, potatoes, and homemade jam jars neatly arranged on shelves in the root cellar.",
+                "The homeowners converted their brick cellar into a climate-controlled room for their growing wine collection."
+            ]
+        },
+        "wordFamily": {
+            "adjective": "cellared",
+            "noun": "cellar, cellarer",
+            "verb": "cellar"
+        },
+        "visual": {
+            "imageDescription": "A dimly lit, arched brick wine cellar with custom oak racks filled with horizontally stored wine bottles, featuring a rustic wooden tasting barrel and soft pendant lighting.",
+            "imageKeyword": "wine cellar oak racks vintage wine bottles underground vault sommelier",
+            "mnemonic": "CELLAR: Think of a dark, cool underground CELL where you STORE (keep) fine wine and goods protected from heat and light!"
+        },
+        "video": {
+            "description": "A sommelier-led tour of a historic restaurant's subterranean wine cellar, detailing humidity regulations, vintage curation, and bottle retrieval techniques for evening dinner service."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "The historic downtown restaurant is widely celebrated for its extensive wine _____ , which features over two thousand rare vintages from European estates. (A) cellar (B) cellars (C) cellaring (D) cellared",
+            "tips": "Following the adjective phrase 'extensive wine', the singular subject noun is required to agree with the singular relative clause verb 'features' ('wine cellar, which features...'). Choice (A) cellar is correct. Choice (B) cellars is plural and clashes with the singular verb 'features'; (C) is a gerund/participle; (D) is a past participle."
+        },
+        "synonyms": [
+            "wine cellar",
+            "vault",
+            "subterranean storeroom",
+            "crypt",
+            "wine room",
+            "undercroft"
+        ],
+        "antonyms": [
+            "attic",
+            "loft",
+            "garret"
+        ],
+        "relatedWords": [
+            "sommelier",
+            "vintage",
+            "viticulture",
+            "tasting room",
+            "corkage",
+            "temperature-controlled",
+            "barrel"
+        ]
+    },
+    {
+        "id": "dining-084",
+        "word": "cereal",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/cereal--_us_1.mp3",
+            "commonMistakes": "Learners sometimes pronounce the initial syllable with /e/ or /ɛ/ ('seh-ree-al') instead of the near-close near-front /ɪr/ (rhyming with 'near'). Note that 'cereal' is an exact homophone of 'serial' (/ˈsɪr.i.əl/), which occasionally causes spelling confusion in written business correspondence.",
+            "ipa": "/ˈsɪr.i.əl/",
+            "stressPattern": "●○○",
+            "syllableBreakdown": "cer·e·al"
+        },
+        "etymology": {
+            "evolution": "In ancient Rome, Cerealia was the festival celebrating Ceres, the goddess of agriculture and grain. The Latin adjective cerealis was adopted into 19th-century French as céréale and English (c. 1818) to designate grain-yielding grasses. In the late 19th and early 20th centuries, commercial food innovations in Michigan (notably by W.K. Kellogg and C.W. Post) created processed ready-to-eat toasted flakes, transforming 'cereal' into the universal term for packaged breakfast grain foods.",
+            "firstRecordedUse": "1818 in agricultural treatises; 1890s for commercial processed breakfast cereal",
+            "origin": "Borrowed from French céréale, from Latin cerealis ('of Ceres, pertaining to grain or agriculture'), from Ceres (the Roman goddess of agriculture, grain crops, and harvest), from PIE root *ker- ('to grow, nourish').",
+            "relatedLanguages": [
+                "French: céréale (cereal grain, breakfast cereal)",
+                "Spanish: cereal (cereal, grain)",
+                "Italian: cereale (cereal grain)",
+                "Portuguese: cereal (cereal, grain)",
+                "German: Zerealie / Getreide (cereal / grain)"
+            ],
+            "rootMeaning": "grain, pertaining to Ceres (goddess of agriculture); to grow, nourish",
+            "rootWord": "Ceres / *ker-"
+        },
+        "deepMeaning": {
+            "connotation": "positive",
+            "coreConcept": "Any cultivated grass species grown for its edible starchy seed grains (such as wheat, oats, barley, or maize), as well as the processed ready-to-eat dry flakes, toasted clusters, or cooked hot porridge manufactured from them, served universally as a quick morning meal accompanied by milk, plant-based alternatives, yogurt, or fresh fruit.",
+            "emotionalTone": "Wholesome, energizing, convenient, and routine.",
+            "formalityLevel": "neutral",
+            "spatialContext": "Hotel continental breakfast buffets, corporate dining facilities, office pantry breakfast stations, grocery dry-goods aisles, and home kitchen breakfast tables.",
+            "temporalContext": "Morning breakfast hours (typically 6:00 AM to 10:00 AM); serves as a convenient, rapid breakfast option for traveling business executives and morning commuters on tight schedules."
+        },
+        "nativeMindset": {
+            "culturalContext": "Ready-to-eat breakfast cereal is a ubiquitous dietary staple across North America, the UK, Australia, and internationally. In hotel hospitality and business travel—frequent settings in TOEIC listening and reading sections—a well-equipped continental breakfast buffet is expected to provide an array of healthy cereals (such as whole-grain flakes, muesli, and granola) alongside fresh dairy and plant milks.",
+            "howNativesThink": "For native speakers, 'cereal' evokes the effortless morning ritual of pouring crunchy toasted grains into a bowl and adding cold milk. In professional hospitality, event planners and hotel managers view cereal as an indispensable component of continental breakfasts because it requires minimal preparation, offers high shelf stability, and accommodates varied health preferences (low-sugar, high-fiber, gluten-free).",
+            "mentalImage": "A modern hotel breakfast buffet station featuring transparent cylindrical dispensers filled with granola, toasted bran flakes, and muesli, flanked by ceramic bowls, stainless spoons, carafes of chilled oat and whole milk, and bowls of fresh sliced strawberries.",
+            "whenNotToUse": "Do not confuse with the homophone 'serial' (occurring in a sequential series, e.g. serial number), and avoid using 'cereal' when referring specifically to whole unprocessed raw grain kernels or non-cereal legumes (such as beans and lentils).",
+            "whenToUse": "Use when referring to breakfast grain foods (e.g., cold cereal, hot cereal, whole-grain cereal) or cultivated agricultural grain crops (e.g., cereal production, cereal grains)."
+        },
+        "examples": {
+            "business": [
+                "The hotel's complimentary executive breakfast features an array of organic cereals, fresh fruit platters, and artisan baked goods.",
+                "Due to fluctuations in commodity grain markets, the food processing conglomerate reported a quarterly margin contraction in its cereal division.",
+                "The corporate wellness initiative replaced sugary breakroom snacks with single-serving boxes of whole-grain cereal and roasted nuts."
+            ],
+            "collocations": [
+                "breakfast cereal",
+                "bowl of cereal",
+                "wholegrain cereal",
+                "hot cereal",
+                "cereal dispenser",
+                "cereal grains"
+            ],
+            "conversation": [
+                "\"What options are included in the continental breakfast spread at the conference venue?\" / \"They provide assorted dry cereals with dairy and almond milk, alongside warm croissants and fresh coffee.\"",
+                "\"Does the executive lounge offer breakfast choices for travelers with dietary restrictions?\" / \"Yes, the cereal station includes certified gluten-free granola and unsweetened oat milk.\""
+            ],
+            "daily": [
+                "Every weekday morning, he pours a bowl of crunchy wholegrain cereal topped with fresh blueberries and cold almond milk.",
+                "During cold winter months, she prefers a hot bowl of cooked oat cereal flavored with a dash of cinnamon and honey.",
+                "The children picked out their favorite fruit-flavored breakfast cereal from the supermarket cereal aisle."
+            ]
+        },
+        "wordFamily": {
+            "adjective": "cereal",
+            "noun": "cereal"
+        },
+        "visual": {
+            "imageDescription": "A row of sleek acrylic cereal dispensers filled with toasted granola, bran flakes, and muesli on a hotel breakfast buffet counter with bowls, spoons, and fresh berries.",
+            "imageKeyword": "hotel breakfast cereal buffet dispenser granola milk fresh fruit",
+            "mnemonic": "CEREAL: Named after CERES, the ancient Roman goddess of agriculture and harvest who blessed the starchy GRAINS!"
+        },
+        "video": {
+            "description": "An educational food technology video illustrating the industrial manufacturing process of breakfast cereals, from grain milling and steam cooking to flake toasting and vitamin fortification."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                2,
+                3,
+                7
+            ],
+            "exampleQuestion": "Guests staying at the Grand Plaza Hotel are entitled to a complimentary continental breakfast featuring fresh pastries, seasonal fruit, and a variety of whole-grain _____ . (A) cereals (B) serialized (C) cerealized (D) cereals'",
+            "tips": "Following the prepositional phrase 'a variety of whole-grain', the blank requires a plural countable noun denoting varieties of grain foods: (A) cereals. Beware of phonological distractors like 'serialized' (B) derived from the homophone 'serial', non-existent words like 'cerealized' (C), and possessive forms (D)."
+        },
+        "synonyms": [
+            "breakfast grain",
+            "grain crop",
+            "porridge",
+            "oatmeal",
+            "granola",
+            "muesli"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "grain",
+            "granola",
+            "oats",
+            "wheat",
+            "barley",
+            "continental breakfast",
+            "dispenser"
+        ]
+    }
+]
+
+# Write to scratch/dining_081_084.json
+with open("scratch/dining_081_084.json", "w", encoding="utf-8") as f:
+    json.dump({"words": words_data}, f, indent=2, ensure_ascii=False)
+
+print("Saved scratch/dining_081_084.json")

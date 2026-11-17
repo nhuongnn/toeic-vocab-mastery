@@ -1,0 +1,464 @@
+[
+  {
+    "id": "dining-129",
+    "word": "espresso",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/e\u02c8spre.so\u028a/",
+      "syllableBreakdown": "es-pres-so",
+      "stressPattern": "primary stress on the second syllable (eh-SPRES-oh)",
+      "commonMistakes": "A very common error among native and non-native speakers alike is pronouncing it with an intrusive 'x' (*expresso* /ek\u02c8spres.o\u028a/). Non-native speakers may also fail to clearly enunciate the crisp /s/ blend or turn the final 'o' into a flat vowel instead of the smooth diphthong /o\u028a/.",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/espresso--_us_1.mp3"
+    },
+    "etymology": {
+      "origin": "Italian 'espresso', past participle of 'esprimere' (to press out, express), from Latin 'exprimere' (to press out, squeeze out), composed of 'ex-' (out) and 'premere' (to press).",
+      "rootWord": "Italian 'espresso' (pressed out / expressly made), from Latin 'exprimere' (to press or squeeze out).",
+      "rootMeaning": "'Pressed out' \u2014 referring both to hot water forced under high atmospheric pressure through tightly compacted ground coffee, and made individually 'on demand / expressly' for the customer.",
+      "evolution": "Developed in Milan around the turn of the 20th century, specifically following Luigi Bezzera's 1901 patent for steam-pressured coffee brewing and Achille Gaggia's 1947 spring-piston machine producing high pressure (9-10 bars) and the characteristic golden crema. The term entered English in the 1940s-1950s with the post-war European coffee bar boom, becoming standard global terminology for both the concentrated beverage and the pressurized extraction method.",
+      "relatedLanguages": [
+        "Italian: caff\u00e8 espresso (pressed coffee) / esprimere (to press out)",
+        "French: expresso / caf\u00e9 expresso",
+        "Spanish: caf\u00e9 expr\u00e9s / caf\u00e9 expreso",
+        "German: Espresso"
+      ],
+      "firstRecordedUse": "c. 1945 in English travel and culinary accounts; 1901\u20131906 in Italian industrial patents and Milan Fair catalogs."
+    },
+    "deepMeaning": {
+      "coreConcept": "A concentrated, full-bodied coffee beverage brewed by forcing pressurized hot water (typically 9 bars at 90\u201396\u00b0C) through finely ground, tightly packed coffee beans in an espresso machine, yielding a dense liquid topped with a hazelnut-colored aromatic foam known as crema.",
+      "spatialContext": "Caf\u00e9s, corporate breakrooms equipped with commercial bean-to-cup machines, hotel executive lounges, restaurant barista stations, and conference coffee kiosks.",
+      "temporalContext": "Consumed especially during early mornings, post-luncheon corporate recharge periods, or served as a digestive concluding formal business dinners.",
+      "emotionalTone": "Sophisticated, invigorating, artisanal, and focused.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers, 'espresso' represents the baseline foundation of all modern specialty coffee drinks (lattes, cappuccinos, americanos) as well as a quick, potent caffeine shot taken solo. It evokes urban caf\u00e9 culture, European cosmopolitan style, and modern tech-workplace office perks (where a high-end espresso machine is a hallmark of good employee amenities). When ordered at a business lunch or hotel bar, asking for a double espresso (doppio) signals efficiency, refined taste, and a desire for focused energy without the volume of brewed drip coffee.",
+      "mentalImage": "A polished stainless steel commercial espresso machine with dual portafilters, extracting a rich, dark amber stream of coffee with thick golden-brown crema into a white porcelain demitasse cup sitting on a polished wooden caf\u00e9 counter.",
+      "whenToUse": "Use when referring to the specific concentrated beverage, the extraction brewing method, coffee beans roasted and ground specifically for pressurized extraction, or equipment designated for it (e.g., 'espresso shot', 'espresso machine', 'double espresso', 'espresso cup').",
+      "whenNotToUse": "Do not spell or pronounce as 'expresso' in formal writing, menus, or professional communications. Do not use as a generic term for regular drip filter coffee, French press, or instant coffee.",
+      "culturalContext": "In Western corporate and workplace culture, high-end espresso bars and premium bean-to-cup office machines are common corporate benefits used to foster informal collaboration and networking. In TOEIC listening dialogues (Parts 1 and 3) and reading notices (Part 7), espresso regularly appears in workplace cafeteria updates, coffee break arrangements, catering invoices, and office equipment supply purchase orders."
+    },
+    "examples": {
+      "daily": [
+        "She stopped at the corner coffee shop to order a double espresso before heading to her morning presentation.",
+        "The caf\u00e9 barista showed him how to tamp the coffee grounds evenly to pull a perfect shot of espresso.",
+        "After a rich three-course meal, the host offered each dinner guest a demitasse of hot espresso."
+      ],
+      "business": [
+        "As part of the office modernization project, the facilities committee approved the purchase of a commercial automated espresso machine for the breakroom.",
+        "The hotel lounge offers complimentary espresso, mineral water, and light refreshments for guests holding executive club passes.",
+        "The catering vendor included an on-site espresso bar with a dedicated barista in the premium conference package."
+      ],
+      "conversation": [
+        "A: 'Would you like to grab an espresso from the lobby caf\u00e9 while we wait for the client's plane to land?'\\nB: 'That sounds great\u2014I could really use a boost before our afternoon negotiation session.'",
+        "A: 'Did the new office espresso machine arrive from the supplier yet?'\\nB: 'Yes, the technician is setting up the water filter line right now, so it should be operational by noon.'",
+        "A: 'Shall I bring over the dessert menu, or would you prefer coffee first?'\\nB: 'A single espresso with a twist of lemon peel would be wonderful, thank you.'"
+      ],
+      "collocations": [
+        "pull a shot of espresso",
+        "double espresso",
+        "espresso machine",
+        "espresso beans",
+        "commercial espresso maker",
+        "steaming espresso"
+      ]
+    },
+    "wordFamily": {
+      "noun": "espresso",
+      "verb": "",
+      "adjective": "",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "espresso cup crema commercial coffee machine barista caf\u00e9",
+      "imageDescription": "A white ceramic demitasse cup filled with freshly brewed dark espresso displaying a velvety golden-brown crema layer, placed next to a stainless steel portafilter on a polished caf\u00e9 counter.",
+      "mnemonic": "ESPRESSO: It's made by EXPRESSING (pressing) pressurized water through grounds, served on the EXPRESS expressively for you!"
+    },
+    "video": {
+      "description": "A barista training video demonstrating the precision steps of dialing in a commercial espresso grinder, tamping the ground coffee, and timing the 25-second water extraction under nine bars of pressure to achieve optimal crema."
+    },
+    "toeicContext": {
+      "commonParts": [
+        1,
+        3,
+        4,
+        7
+      ],
+      "exampleQuestion": "To boost employee morale, the management team decided to replace the outdated drip coffee maker with an automated commercial _____ machine in the third-floor lounge.\\n(A) espresso\\n(B) express\\n(C) expressly\\n(D) expression",
+      "tips": "In TOEIC business and facility management contexts, 'espresso' acts as a noun adjunct modifying 'machine' (espresso machine). Candidates frequently confuse 'espresso' with phonetically or etymologically related forms like 'express' (adjective/verb), 'expressly' (adverb), or 'expression' (noun). Only 'espresso' correctly identifies the specialty coffee appliance."
+    },
+    "synonyms": [
+      "caff\u00e8 espresso",
+      "shot of espresso",
+      "black coffee shot",
+      "doppio",
+      "concentrated coffee"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "barista",
+      "crema",
+      "portafilter",
+      "demitasse",
+      "cappuccino",
+      "steam wand",
+      "tamping"
+    ]
+  },
+  {
+    "id": "dining-130",
+    "word": "etiquette",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/\u02c8et\u032c.\u026a.k\u0259t/",
+      "syllableBreakdown": "et-i-quette",
+      "stressPattern": "primary stress on the first syllable (ET-i-ket)",
+      "commonMistakes": "Learners often place stress on the final syllable (*e-ti-QUETTE*), imitating French prosody, whereas in standard English the primary stress sits squarely on the first syllable. Another common error is pronouncing the 'qu' as /kw/ (*et-i-kwet*) instead of the French-derived hard /k/ sound.",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/etiquette--_us_1.mp3"
+    },
+    "etymology": {
+      "origin": "French '\u00e9tiquette' (prescribed social ceremonial; label, ticket), from Old French 'estiquette' (label, peg, small sign), from Middle Dutch 'steken' or Old High German 'stehhan' (to stick, affix, prick).",
+      "rootWord": "Old French 'estiquette' (ticket / placard attached to a post or package), related to French 'estiquer' (to attach / stick).",
+      "rootMeaning": "'A ticket or attached placard' specifying ceremonial orders, rules of precedence, and court protocols affixed for visitors at French royal courts.",
+      "evolution": "Originally in 17th-century France (especially under Louis XIV at Versailles), placards or tickets ('\u00e9tiquettes') were posted on court grounds or handed to visitors to indicate where they could walk without trampling royal lawns and how to behave in the king's presence. In the 18th century, English borrowed the term to mean the conventional code of polite social behavior and diplomatic decorum. By the 20th and 21st centuries, it expanded into business dining etiquette, corporate communication etiquette, and digital 'netiquette'.",
+      "relatedLanguages": [
+        "French: \u00e9tiquette (etiquette / label / price tag)",
+        "Spanish: etiqueta (etiquette / label / dress code)",
+        "Italian: etichetta (etiquette / label)",
+        "German: Etikette (etiquette / social code of conduct)"
+      ],
+      "firstRecordedUse": "1750 in the letters of Lord Chesterfield, advising his son on polished polite behavior in European courts."
+    },
+    "deepMeaning": {
+      "coreConcept": "The conventional code of polite behavior, formal manners, and social decorum required within a specific profession, diplomatic setting, social class, or dining environment.",
+      "spatialContext": "Executive dining rooms, formal corporate banquets, international diplomatic state dinners, client luncheon meetings, and corporate boardrooms.",
+      "temporalContext": "Observed continuously during client hosting events, cross-cultural trade missions, official receptions, and formal dinner negotiations.",
+      "emotionalTone": "Polite, diplomatic, respectful, structured, and culturally sensitive.",
+      "formalityLevel": "formal",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native English speakers in corporate environments, 'etiquette' is not merely fussy archaic Victorian manners; it is a critical career competency and diplomatic toolkit. In business dining, knowing dining etiquette (e.g., using silverware from the outside in, passing bread to the right, waiting for the host to begin eating, placing napkins on the chair when temporarily leaving) communicates respect, composure, and emotional intelligence. Violating etiquette can jeopardize multimillion-dollar deals or international partnerships because it signals carelessness or cultural arrogance.",
+      "mentalImage": "A multi-course corporate dining table setting with pristine white damask linen, polished silver flatware arranged hierarchically beside crystal glassware, where well-dressed executives engage in courteous, attentive conversation without placing elbows or smartphones on the table.",
+      "whenToUse": "Use when discussing formal rules of social decorum, table manners, professional behavioral standards, protocol at corporate events, or cross-cultural guidelines (e.g., 'dining etiquette', 'business etiquette', 'email etiquette', 'breach of etiquette').",
+      "whenNotToUse": "Do not confuse with legally enforceable laws, formal corporate bylaws, or technical workplace regulations. Do not confuse with 'ethics' (which concerns moral principles of right vs. wrong, whereas etiquette concerns social decorum and politeness).",
+      "culturalContext": "In multinational corporate life, business dining etiquette is widely taught in executive onboarding. TOEIC Part 3 dialogues often involve colleagues discussing proper attire or protocol for dining with overseas clients, while Part 7 passages feature business seminars on international etiquette and corporate dinner guidelines."
+    },
+    "examples": {
+      "daily": [
+        "Parents teach their children basic dining etiquette, such as chewing with their mouth closed and keeping their elbows off the table.",
+        "She reviewed proper wedding etiquette before attending her colleague's formal black-tie banquet.",
+        "It is considered poor etiquette to check your phone repeatedly while someone is speaking to you over dinner."
+      ],
+      "business": [
+        "The HR department organized a workshop on international dining etiquette for executives traveling to meet overseas partners.",
+        "Observing proper business luncheon etiquette helped the sales director establish trust and rapport with the prospective investors.",
+        "Failing to send a timely follow-up thank-you note after an interview dinner is viewed as an unfortunate breach of professional etiquette."
+      ],
+      "conversation": [
+        "A: 'Are there any specific dining etiquette rules I should keep in mind for tonight's dinner with the Tokyo delegation?'\\nB: 'Yes, remember to wait until the host proposes a toast before drinking, and never stick your chopsticks upright in rice.'",
+        "A: 'Which fork am I supposed to use for the first appetizer course?'\\nB: 'Standard table etiquette says to work from the outside in, so start with the outermost small salad fork.'",
+        "A: 'Should I bring up contract negotiations during the appetizer?'\\nB: 'Corporate dining etiquette suggests keeping conversation light until the host transitions to business matters over coffee.'"
+      ],
+      "collocations": [
+        "dining etiquette",
+        "business etiquette",
+        "breach of etiquette",
+        "table etiquette",
+        "professional etiquette",
+        "proper etiquette"
+      ]
+    },
+    "wordFamily": {
+      "noun": "etiquette",
+      "verb": "",
+      "adjective": "",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "dining etiquette formal table setting business dinner flatware manners",
+      "imageDescription": "A perfectly laid formal banquet table with fine china, crystal wine goblets, folded cloth napkins, and systematically arranged silver cutlery flanking an embossed corporate menu card.",
+      "mnemonic": "ETIQUETTE: Originally an 'ETICKET' (little ticket) showing guests the royal court rules. Your 'TICKET' to great social manners!"
+    },
+    "video": {
+      "description": "An executive coaching seminar demonstrating proper business dining etiquette, including flatware navigation, silent service signals, napkin placement, and host-guest dining protocols during a corporate luncheon."
+    },
+    "toeicContext": {
+      "commonParts": [
+        3,
+        4,
+        5,
+        7
+      ],
+      "exampleQuestion": "Before traveling to Geneva for the diplomatic summit, delegates were instructed to review the official handbook on international dining _____.\\n(A) etiquette\\n(B) etiquettes\\n(C) etiquettely\\n(D) etiquettish",
+      "tips": "In TOEIC Part 5 tests, 'etiquette' is an uncountable abstract noun designating behavioral standards and decorum. It does not take a plural form (*etiquettes) in standard formal usage, nor does it possess regular adverbial or adjectival derivations like *etiquettely. Choice (A) is the correct head noun completing the compound noun phrase 'dining etiquette'."
+    },
+    "synonyms": [
+      "protocol",
+      "decorum",
+      "propriety",
+      "table manners",
+      "social conventions",
+      "code of conduct"
+    ],
+    "antonyms": [
+      "impropriety",
+      "bad manners",
+      "rudeness",
+      "discourtesy",
+      "gaucherie"
+    ],
+    "relatedWords": [
+      "manners",
+      "protocol",
+      "formality",
+      "politeness",
+      "decorum",
+      "civility",
+      "hospitality"
+    ]
+  },
+  {
+    "id": "dining-131",
+    "word": "fast food",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/\u02ccf\u00e6st \u02c8fu\u02d0d/",
+      "syllableBreakdown": "fast food",
+      "stressPattern": "secondary stress on 'fast', primary stress on 'food' (fast FOOD)",
+      "commonMistakes": "Learners often shorten the long vowel /u\u02d0/ in 'food' to a lax /\u028a/ (sounding like *foot* or *good*). Non-native speakers also sometimes pronounce 'fast' with an unnatural aspiration or drop the final /t/ before the /f/.",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/fast_food--_us_1.mp3"
+    },
+    "etymology": {
+      "origin": "Compound of Old English 'f\u00e6st' (firm, steadfast, rapid/quick) and Old English 'f\u014dda' (nourishment, food, sustenance), from Proto-Germanic *fastuz and *f\u014dd\u00f4.",
+      "rootWord": "English compound 'fast' (quick/rapid) + 'food' (sustenance).",
+      "rootMeaning": "'Food that is prepared and served quickly'.",
+      "evolution": "While quick street food has existed since antiquity (such as Roman thermopolia), the compound noun 'fast food' emerged in American commercial dining in the early 1950s following the rise of assembly-line kitchen systems (popularized by McDonald's 'Speedee Service System' in 1948). It was first recognized in major dictionaries (such as Merriam-Webster) in 1951, capturing the post-war expansion of automobile-oriented drive-through restaurants, standardized franchises, and convenient mass-produced dining.",
+      "relatedLanguages": [
+        "French: restauration rapide / fast-food",
+        "Spanish: comida r\u00e1pida",
+        "German: Fastfood / Schnellimbiss",
+        "Italian: fast food / cibo da fast food"
+      ],
+      "firstRecordedUse": "1951 in American culinary and business journalism describing franchise restaurant chains."
+    },
+    "deepMeaning": {
+      "coreConcept": "Inexpensive, mass-produced food that is prepared and served quickly across specialized counter-service or drive-through restaurant chains, characterized by standardized recipes, pre-cooked or pre-portioned ingredients, and disposable packaging.",
+      "spatialContext": "Commercial roadside franchise outlets, shopping mall food courts, airport transit terminals, highway service plazas, and urban takeout counters.",
+      "temporalContext": "Ordered during brief lunch breaks, late-night transit travel, or quick midday commutes when seated restaurant dining is impractical.",
+      "emotionalTone": "Convenient, casual, pragmatic, and fast-paced.",
+      "formalityLevel": "informal",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers, 'fast food' represents utmost convenience, speed, and affordability, contrasted sharply with 'sit-down dining', 'fine dining', or 'casual dining'. While associated with comfort foods (burgers, fries, fried chicken, tacos), it also carries strong modern nutritional connotations regarding high sodium, saturated fat, and ultra-processing. In a business context, professionals view fast food as a practical necessity when traveling, running late for an airport flight, or working through tight deadlines, but would never choose it for client entertainment or celebratory team dinners.",
+      "mentalImage": "A brightly lit fast-food service counter with digital overhead menu boards, where an attendant in a branded visor places a paper-wrapped burger and cardboard carton of golden french fries into a brown kraft paper takeaway bag beside a fountain soda.",
+      "whenToUse": "Use when referring to quick-service chain dining, burgers, fries, drive-through meals, franchise restaurant operations, or nutritional discussions comparing prepared quick meals with home cooking or full-service dining.",
+      "whenNotToUse": "Do not use 'fast food' to describe formal banquets, upscale restaurant meals, or catered corporate events. Do not use as a plural count noun (*a fast food, *many fast foods) when referring to individual restaurant buildings (say 'fast-food restaurants' or 'fast-food outlets').",
+      "culturalContext": "Fast food is a cornerstone of 20th- and 21st-century commercial globalization and franchising business models. In the TOEIC exam, fast food frequently surfaces in Part 3 conversations (workers grabbing a quick bite between flights or meetings), Part 4 announcements (airport terminal dining concession guides), and Part 7 readings (franchise business expansions, nutritional workplace wellness surveys, or commercial leasing advertisements)."
+    },
+    "examples": {
+      "daily": [
+        "With only twenty minutes between classes, the students grabbed fast food from the drive-through.",
+        "Many working parents turn to fast food on busy weeknights when there is no time to cook dinner.",
+        "She decided to cut back on fast food and prepare healthier boxed lunches for work."
+      ],
+      "business": [
+        "The commercial property developer signed a lease agreement with a major fast food chain to open an outlet in the new transit hub.",
+        "During the road trip to the regional client conference, the audit team stopped for fast food at a highway service plaza.",
+        "Market analysts reported that the fast food industry has experienced strong sales growth due to mobile ordering apps and delivery partnerships."
+      ],
+      "conversation": [
+        "A: 'Do we have time for a sit-down lunch before the supplier meeting at one?'\\nB: 'No, let's just grab some fast food across the street so we can review the slides on time.'",
+        "A: 'Why did the executive committee choose to invest in that fast food franchise?'\\nB: 'Their automated kitchen model significantly reduces labor overhead and speeds up customer throughput.'",
+        "A: 'Is there anywhere to eat near terminal gate 14?'\\nB: 'There's a fast food court right past security that offers sandwiches, salads, and coffee.'"
+      ],
+      "collocations": [
+        "fast food chain",
+        "fast food restaurant",
+        "fast food industry",
+        "grab fast food",
+        "fast food outlet",
+        "fast food franchise"
+      ]
+    },
+    "wordFamily": {
+      "noun": "fast food",
+      "verb": "",
+      "adjective": "fast-food",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "fast food burger fries takeaway counter drive-through restaurant",
+      "imageDescription": "A customer receiving a freshly packed paper bag with a burger, crispy french fries, and a fountain beverage with a straw at an airport fast-food counter under illuminated digital menu boards.",
+      "mnemonic": "FAST FOOD: Food made FAST for people on the run! The name tells its story: Speed over Ceremony."
+    },
+    "video": {
+      "description": "A business documentary segment analyzing the supply chain logistics and drive-through speed optimizations used by global fast food franchises to serve customers in under 90 seconds."
+    },
+    "toeicContext": {
+      "commonParts": [
+        3,
+        4,
+        7
+      ],
+      "exampleQuestion": "Due to a sudden flight delay, passenger lunch vouchers may be redeemed at any _____ outlet located in the departure concourse.\\n(A) fast food\\n(B) fastly food\\n(C) fastest food\\n(D) fasted food",
+      "tips": "In TOEIC travel and hospitality passages, 'fast food' commonly acts as a compound noun or compound adjective modifying nouns like 'outlet', 'restaurant', or 'chain'. Do not use unnatural adverbs like 'fastly' (which does not exist in standard English) or superlative forms when the set compound noun 'fast food' is required. Choice (A) is the correct answer."
+    },
+    "synonyms": [
+      "quick-service food",
+      "takeout food",
+      "convenience food",
+      "junk food",
+      "ready-to-eat meal"
+    ],
+    "antonyms": [
+      "fine dining",
+      "haute cuisine",
+      "slow food",
+      "gourmet dining",
+      "home-cooked meal"
+    ],
+    "relatedWords": [
+      "drive-through",
+      "franchise",
+      "quick-service restaurant (QSR)",
+      "takeaway",
+      "food court",
+      "combo meal",
+      "counter service"
+    ]
+  },
+  {
+    "id": "dining-132",
+    "word": "feast",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+      "ipa": "/fi\u02d0st/",
+      "syllableBreakdown": "feast",
+      "stressPattern": "single stressed syllable (FEAST)",
+      "commonMistakes": "Learners sometimes shorten the tense vowel /i\u02d0/ to a lax /\u026a/ (sounding like *fist*). Others may fail to release the final consonant cluster /st/ cleanly, muting the 't' into *feass*.",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/feast--_us_1.mp3"
+    },
+    "etymology": {
+      "origin": "Middle English 'feste' (religious holiday, banquet), from Old French 'feste' (festival, banquet; modern French 'f\u00eate'), from Vulgar Latin *festa, from Latin 'festa' (festivals, holidays), plural of 'festum' (holiday, festival, banquet), related to 'festivus' (festive).",
+      "rootWord": "Latin 'festum' (holiday, feast, joyful celebration).",
+      "rootMeaning": "'A joyous religious or secular festival celebrated with abundant food and drink'.",
+      "evolution": "In medieval Norman and Anglo-Saxon England, 'feste' initially referred to Christian feast days celebrating saints and liturgical seasons, which were invariably accompanied by communal banqueting. Over centuries, the word transitioned from strictly religious celebrations to any lavish, plentiful meal prepared for a gathering of guests. In modern English, it retains both the literal sense of an elaborate banquet and the metaphorical sense of an overwhelming sensory or intellectual delight (e.g., 'a visual feast').",
+      "relatedLanguages": [
+        "French: f\u00eate (party / festival / feast)",
+        "Spanish: fiesta (party / feast / celebration)",
+        "Italian: festa (party / feast / holiday)",
+        "German: Fest (celebration / banquet / party)"
+      ],
+      "firstRecordedUse": "c. 1200 in early Middle English literature describing religious holy days and royal banquets."
+    },
+    "deepMeaning": {
+      "coreConcept": "A large, lavish, and elaborate meal prepared for many guests, typically held in celebration of a special occasion, milestone, or festival; also used figuratively to describe something that gives great aesthetic or intellectual pleasure.",
+      "spatialContext": "Grand banquet halls, luxury hotel ballrooms, festival pavilions, wedding receptions, and celebratory corporate gala venues.",
+      "temporalContext": "Held on annual holidays, year-end corporate galas, milestone anniversary celebrations, or concluding major international conferences.",
+      "emotionalTone": "Celebratory, generous, joyful, abundant, and luxurious.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers, 'feast' immediately conjures images of overflowing abundance, communal warmth, and celebratory indulgence\u2014long tables brimming with roasted meats, vibrant side dishes, wines, and decadent desserts. It contrasts with ordinary sustenance or simple dinners; a feast is an event that invites people to linger, celebrate, and indulge without restraint. Native speakers also frequently use the idiom 'feast your eyes on...' or describe an impressive sensory display as 'a feast for the senses'.",
+      "mentalImage": "A long banquet table set inside an opulent hall, laden with platters of roasted meats, fresh crusty bread, tiered seafood displays, seasonal fruits, and sparkling wine glasses, surrounded by laughing dinner guests in evening attire.",
+      "whenToUse": "Use when describing an exceptionally abundant, multi-course celebratory meal, an annual harvest or holiday dinner, a lavish banquet honoring corporate achievements, or metaphorically for a delightful sensory spectacle ('a visual feast').",
+      "whenNotToUse": "Do not use 'feast' to describe an everyday brown-bag lunch, quick meal, or modest snack. Be careful not to confuse the noun 'feast' with 'fast' (which is the direct opposite: abstaining from food).",
+      "culturalContext": "Across English-speaking societies, the feast holds deep cultural significance (e.g., Thanksgiving dinners, Christmas banquets, corporate holiday parties). In the TOEIC test, 'feast' appears in Part 4 tour guide announcements, Part 3 dialogues about annual staff parties or hotel catering packages, and Part 7 promotional brochures for seasonal hospitality events."
+    },
+    "examples": {
+      "daily": [
+        "The host prepared a magnificent Thanksgiving feast with roast turkey, stuffing, mashed potatoes, and pumpkin pie.",
+        "After completing their week-long hiking expedition, the group celebrated with a hearty barbecue feast.",
+        "Guests at the wedding reception were treated to a seven-course culinary feast prepared by an award-winning chef."
+      ],
+      "business": [
+        "To celebrate the company's twentieth anniversary, executives hosted an extravagant banquet feast for all five hundred employees.",
+        "The resort's holiday package includes luxury villa accommodation and a complimentary New Year's Eve gala feast.",
+        "The annual shareholders' dinner concluded with a spectacular dessert feast showcasing artisan pastries from across the region."
+      ],
+      "conversation": [
+        "A: 'Did you attend the international food festival downtown yesterday?'\\nB: 'Yes, it was an absolute feast\u2014we sampled dishes from more than twenty different countries.'",
+        "A: 'How was the year-end catering at the convention center?'\\nB: 'The caterers laid out a remarkable feast, complete with prime rib carving stations and a chocolate fountain.'",
+        "A: 'Have you seen the design mockups for the new luxury travel catalog?'\\nB: 'Yes, the vibrant photography makes every page a feast for the eyes.'"
+      ],
+      "collocations": [
+        "holiday feast",
+        "lavish feast",
+        "feast for the eyes",
+        "sumptuous feast",
+        "banquet feast",
+        "prepare a feast"
+      ]
+    },
+    "wordFamily": {
+      "noun": "feast",
+      "verb": "feast",
+      "adjective": "feasting",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "banquet feast lavish dinner table celebration holiday abundant food",
+      "imageDescription": "A grand wooden dining table overflowing with silver serving platters of gourmet roasted meats, artisan bread, roasted vegetables, and decanters of wine during an evening celebration.",
+      "mnemonic": "FEAST: Think of FESTIVAL! You eat at a FEAST during a FESTIVAL celebration!"
+    },
+    "video": {
+      "description": "A culinary documentary detailing how hotel banquet chefs coordinate kitchen timing, ingredient sourcing, and multi-dish plating to serve a lavish four-course feast for a thousand gala attendees."
+    },
+    "toeicContext": {
+      "commonParts": [
+        3,
+        4,
+        7
+      ],
+      "exampleQuestion": "Attendees of the annual charity gala were treated to an extraordinary culinary _____ prepared by three master chefs.\\n(A) feast\\n(B) feasting\\n(C) feasted\\n(D) feasts",
+      "tips": "In TOEIC Part 5 grammar questions, singular countable nouns preceded by an indefinite article ('an') and an adjective ('extraordinary culinary') require the singular base noun: (A) feast. Choice (B) is a gerund/participle, Choice (C) is a past tense verb/participle, and Choice (D) is plural (which contradicts the singular article 'an')."
+    },
+    "synonyms": [
+      "banquet",
+      "spread",
+      "repast",
+      "buffet",
+      "celebratory dinner",
+      "lavish meal"
+    ],
+    "antonyms": [
+      "fast",
+      "famine",
+      "starvation",
+      "scanty meal",
+      "light snack"
+    ],
+    "relatedWords": [
+      "banquet",
+      "celebration",
+      "gala",
+      "delicacy",
+      "bounty",
+      "smorgasbord",
+      "hospitality"
+    ]
+  }
+]

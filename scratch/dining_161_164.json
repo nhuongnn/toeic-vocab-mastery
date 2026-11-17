@@ -1,0 +1,460 @@
+{
+  "words": [
+    {
+      "id": "dining-161",
+      "word": "host",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/hoʊst/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/host--_us_1.mp3",
+        "syllableBreakdown": "host",
+        "stressPattern": "●",
+        "commonMistakes": "Learners frequently substitute the closed diphthong /oʊ/ with a short open /ɒ/ or /ɔ/, incorrectly pronouncing the word like 'hawst'. Additionally, non-native speakers often elide the final consonant cluster /-st/, failing to enunciate the ending /t/ in connected speech (sounding like 'hohs')."
+      },
+      "etymology": {
+        "origin": "Middle English 'host' (entertainer of guests, innkeeper), borrowed from Old French 'oste' or 'hoste' (host, guest, innkeeper), derived from Latin 'hospitem' (accusative of 'hospes', meaning guest, stranger, or host), which traces back to Proto-Indo-European '*gʰos-ti-' (stranger, guest, one bound by mutual hospitality).",
+        "rootWord": "Latin hospes (host, guest) / Old French hoste",
+        "rootMeaning": "One who receives, shelters, or provides hospitality and sustenance to guests",
+        "evolution": "In Latin, 'hospes' embodied the reciprocal relationship between travelers and host providers. In 13th-century Middle English, 'host' designated an innkeeper or head of household welcoming guests. During the late 19th and early 20th centuries, with the standardization of commercial restaurant operations, 'host' became the established professional designation for the front-of-house employee greeting patrons, managing the reservation book, and orchestrating table seating.",
+        "relatedLanguages": [
+          "French: hôte (host / guest) / hôtesse (hostess)",
+          "Spanish: hospedador (host) / huésped (guest)",
+          "Italian: oste (innkeeper, host) / ospite (guest)",
+          "Portuguese: hospedeiro (host) / hóspede (guest)"
+        ],
+        "firstRecordedUse": "Late 13th century (c. 1290 in Middle English texts describing innkeepers and hospitality)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A front-of-house restaurant professional stationed at the entrance podium who welcomes arriving diners, verifies reservations, manages table turnover, and escorts parties to their designated tables; alternatively, an individual, executive, or corporate organization that organizes, sponsors, and underwrites a formal banquet, luncheon, or dinner reception.",
+        "spatialContext": "Restaurant entrance vestibules, maître d' greeting podiums equipped with reservation terminals, banquet reception foyers, hotel executive dining desks, and private corporate dining suites.",
+        "temporalContext": "Continuous coverage during high-volume lunch services (11:30–14:00) and dinner rush hours (17:30–21:30), as well as guest arrival intervals at formal corporate banquets.",
+        "emotionalTone": "Courteous, welcoming, attentive, poised, and hospitable.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, the 'host' is the immediate face and operational gatekeeper of a dining establishment. Diners instinctively wait at the entrance podium for the host to seat them rather than seating themselves. In corporate dining, native business professionals regard the 'host' as the party orchestrating and paying for the gathering; it is customary to let the host initiate toasts, select wine pairings, or dictate the flow of the meal.",
+        "mentalImage": "A polished restaurant host standing behind a sleek wooden reservation stand, checking names on an electronic reservation terminal and extending a warm gesture to escort a business party to a reserved window booth.",
+        "whenToUse": "Use when referring to the restaurant employee in charge of reception and seating, or when identifying the organizer and payer of a dinner gathering (e.g., 'table host', 'gracious host', 'host company', 'ask the host for a highchair').",
+        "whenNotToUse": "Do not use 'host' to refer to servers or waitstaff who take orders and bring food to the table. Do not use 'host' for kitchen cooks or chefs unless they personally organize and front the event.",
+        "culturalContext": "In North American and British dining etiquette, seating oneself without being ushered by a host is considered a major faux pas in full-service restaurants unless a prominent 'Seat Yourself' sign is posted. In business entertainment, the corporate host discreetly settles the bill out of sight of clients to maintain decorum."
+      },
+      "examples": {
+        "daily": [
+          "Upon entering the crowded bistro, we gave our surname to the host and waited ten minutes for a booth to open.",
+          "The restaurant host greeted us with a smile, verified our 7:30 PM reservation, and handed us printed dinner menus.",
+          "As our dinner host, David graciously insisted on paying the bill and ensuring that all dietary restrictions were accommodated."
+        ],
+        "business": [
+          "The banquet host coordinated closely with the catering director to ensure that the keynote dinner ran precisely on schedule.",
+          "Our firm acted as the corporate host for the international trade delegation's welcome banquet at the Grand Hotel.",
+          "Restaurant managers train every incoming host to balance server station loads while maintaining an inviting entrance environment."
+        ],
+        "conversation": [
+          "\"Should we find a table ourselves or wait by the door?\" / \"Let's wait right here; the host will be back to seat us in just a moment.\"",
+          "\"Who is the primary host for tonight's corporate celebration?\" / \"Vice President Jenkins is hosting on behalf of the regional marketing committee.\""
+        ],
+        "collocations": [
+          "restaurant host",
+          "gracious host",
+          "dinner host",
+          "host stand",
+          "corporate host",
+          "play host to"
+        ]
+      },
+      "wordFamily": {
+        "noun": "host, hostess, hospitality",
+        "verb": "host",
+        "adjective": "hosted",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "restaurant host greeting podium reservation tablet front of house dining entrance",
+        "imageDescription": "A professional restaurant host in tailored attire greeting arriving patrons at an elegant dining room podium, holding an open reservation terminal and gesturing politely toward an open table.",
+        "mnemonic": "HOST: The HEAD OF SEATING TABLES who welcomes each guest with HOSPITALITY!"
+      },
+      "video": {
+        "description": "A restaurant hospitality training module demonstrating how a front-of-house host effectively coordinates floor plans, manages wait times during dinner rush, and welcomes executive diners."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          2,
+          3,
+          7
+        ],
+        "exampleQuestion": "Guests arriving at the rooftop bistro are requested to check in with the _____ at the front entrance before proceeding to the terrace dining area. (A) host (B) hosting (C) hosted (D) hostessly",
+        "tips": "In TOEIC Part 5, following the definite article 'the' and preceding the prepositional phrase 'at the front entrance', a singular noun denoting a person is required: (A) host. Choice (B) is a participle/gerund, (C) is a past participle/verb, and (D) is a nonexistent adverbial form."
+      },
+      "synonyms": [
+        "greeter",
+        "maître d'",
+        "headwaiter",
+        "entertainer",
+        "organizer"
+      ],
+      "antonyms": [
+        "guest",
+        "invitee",
+        "patron",
+        "visitor"
+      ],
+      "relatedWords": [
+        "reservation",
+        "front of house",
+        "seating chart",
+        "podium",
+        "hospitality",
+        "table turnover"
+      ]
+    },
+    {
+      "id": "dining-162",
+      "word": "hostess",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈhoʊ.stəs/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/hostess--_us_1.mp3",
+        "syllableBreakdown": "hos·tess",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners frequently pronounce the second syllable with a fully stressed, open vowel /-tɛs/ rather than a reduced schwa /əs/ or lax /ɪs/ (properly /ˈhoʊ.stəs/). Some non-native speakers also misplace the stress on the final syllable (*hoh-STESS*), whereas native English places primary stress firmly on the initial syllable."
+      },
+      "etymology": {
+        "origin": "Middle English 'hostesse' (female innkeeper or hostess), borrowed from Old French 'hostesse' (feminine of 'hoste'), formed by attaching the feminine agent suffix '-esse' (from Late Latin '-issa', borrowed from Ancient Greek '-issa') to the stem of 'hoste' (host).",
+        "rootWord": "Old French hostesse / Latin hospes + -issa",
+        "rootMeaning": "A woman who provides hospitality, receives guests, or manages lodging and meals",
+        "evolution": "Formed in 13th-century Anglo-French and adopted into Middle English by the late 14th century (notably used by Chaucer in The Canterbury Tales to describe an innkeeper's wife), 'hostess' historically referred to a woman managing an inn or hospitality venue. In 20th-century restaurant and airline services, it became an official front-line job title. While contemporary corporate language increasingly favors gender-neutral 'host', 'hostess' remains widespread in traditional fine dining, private club venues, and historic hospitality texts.",
+        "relatedLanguages": [
+          "French: hôtesse (hostess, flight attendant)",
+          "Italian: ostessa (female innkeeper, landlady)",
+          "Spanish: anfitriona (female host) / azafata (hostess)",
+          "German: Gastgeberin (female host)"
+        ],
+        "firstRecordedUse": "Late 14th century (c. 1386 in Geoffrey Chaucer's Canterbury Tales)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A female hospitality staff member who welcomes patrons at a restaurant entrance, verifies reservations, and escorts diners to their tables; alternatively, a woman who receives and entertains guests at a private dinner party, charity banquet, or official corporate reception.",
+        "spatialContext": "Fine dining greeting vestibules, restaurant entrance podiums, country club dining rooms, banquet reception entrances, and private executive dining suites.",
+        "temporalContext": "Front-desk shifts during evening restaurant seatings (17:00–22:00), Sunday brunch services, and holiday gala reception check-ins.",
+        "emotionalTone": "Gracious, elegant, attentive, polished, and cordial.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'hostess' immediately evokes the front-of-house greeting station in a restaurant or a poised woman orchestrating a dinner party. In contemporary hospitality discussions, native speakers recognize that many modern restaurants use 'host' as a universal, gender-neutral title for all front desk staff; however, 'hostess' remains widely recognized and used across traditional fine dining establishments, hospitality literature, and TOEIC exam passages.",
+        "mentalImage": "An elegantly attired restaurant hostess standing beside a flower-adorned greeting stand, warmly welcoming a dining couple and gracefully leading them toward a candlelit linen-covered table.",
+        "whenToUse": "Use when specifically designating a female restaurant greeter or a woman hosting a private or charitable dinner event (e.g., 'restaurant hostess', 'gracious hostess', 'hostess stand', 'the hostess seated us').",
+        "whenNotToUse": "Avoid using 'hostess' in modern formal corporate job descriptions where gender-neutral 'host' or 'guest services associate' is legally preferred. Do not use for table servers who take food orders or deliver dishes.",
+        "culturalContext": "In Anglo-American culture, the 'hostess gift' (such as a bottle of fine wine, artisanal chocolates, or fresh cut flowers) is an ingrained social custom brought by invited guests to express appreciation to the woman hosting a formal dinner or holiday meal."
+      },
+      "examples": {
+        "daily": [
+          "The hostess checked our name off the reservation list and escorted us to a quiet table by the garden.",
+          "Before leaving the dinner party, we thanked our hostess for preparing such a magnificent five-course meal.",
+          "A friendly hostess greeted us at the restaurant entrance and told us there would be a brief ten-minute wait."
+        ],
+        "business": [
+          "The private dining club employs an experienced head hostess to manage VIP reservations and oversee entrance hospitality.",
+          "During the charity gala dinner, our executive director served as the evening's hostess, delivering opening remarks to patrons.",
+          "The hotel restaurant is recruiting a bilingual hostess to assist international business guests during peak conference seasons."
+        ],
+        "conversation": [
+          "\"Did the hostess say how long the wait would be for an outdoor table?\" / \"She estimated about fifteen minutes and suggested we enjoy a drink at the bar first.\"",
+          "\"Should we bring a bottle of wine for our hostess tonight?\" / \"Yes, bringing a small gift is customary when someone invites us to dinner at their home.\""
+        ],
+        "collocations": [
+          "restaurant hostess",
+          "gracious hostess",
+          "hostess stand",
+          "dinner hostess",
+          "hostess gift",
+          "lead hostess"
+        ]
+      },
+      "wordFamily": {
+        "noun": "hostess, host",
+        "verb": "host",
+        "adjective": "hosted",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "restaurant hostess greeting diners entrance table reservation hospitality",
+        "imageDescription": "A smiling restaurant hostess standing behind an elegant dark wood podium at an upscale dining establishment, presenting menus to an arriving couple and leading them toward their dining table.",
+        "mnemonic": "HOSTESS: The HOST who provides EXCEPTIONAL SMILES and SEATS guests with grace!"
+      },
+      "video": {
+        "description": "A fine dining service orientation detailing the professional responsibilities of a restaurant hostess, focusing on greeting etiquette, reservation handling, and smooth table allocation."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          2,
+          3,
+          7
+        ],
+        "exampleQuestion": "When the guests arrived for the banquet, the restaurant's head _____ promptly showed them to their reserved dining room. (A) hostess (B) hostility (C) hostelry (D) hostesses",
+        "tips": "In TOEIC Part 5, the blank after the compound modifier 'head' requires a singular noun denoting a hospitality role to agree with the singular position and context: (A) hostess. Choice (B) means antagonism/unfriendliness, (C) is an archaic term for an inn, and (D) is plural which does not fit following 'head' without plural context."
+      },
+      "synonyms": [
+        "greeter",
+        "maître d'",
+        "female host",
+        "receptionist",
+        "coordinator"
+      ],
+      "antonyms": [
+        "guest",
+        "diner",
+        "patron",
+        "visitor"
+      ],
+      "relatedWords": [
+        "reception",
+        "reservation book",
+        "greeting stand",
+        "dining room",
+        "front of house",
+        "seating capacity"
+      ]
+    },
+    {
+      "id": "dining-163",
+      "word": "hunger",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˈhʌŋ.ɡər/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/hunger--_us_1.mp3",
+        "syllableBreakdown": "hun·ger",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners frequently omit the plosive /ɡ/ sound, pronouncing the word as /ˈhʌŋ.ər/ (rhyming with 'singer' instead of 'finger'). In standard English, the 'ng' sequence in 'hunger' is voiced with both /ŋ/ and /ɡ/ (/ˈhʌŋ.ɡər/). Additionally, non-native speakers sometimes substitute the short central vowel /ʌ/ with /ʊ/ or /uː/."
+      },
+      "etymology": {
+        "origin": "Old English 'hungor' (hunger, famine, desire for food), from Proto-Germanic '*hungruz' (hunger, famine), from Proto-Indo-European root '*kenk-' (to burn, smart, suffer thirst or hunger).",
+        "rootWord": "Old English hungor / Proto-Germanic *hungruz",
+        "rootMeaning": "Craving for food, physical distress caused by lack of nourishment",
+        "evolution": "In Old and Middle English, 'hungor' denoted both personal biological craving for food and communal famine. Through the centuries, while maintaining its physiological primacy as the biological appetite that drives meal consumption and culinary demand, it expanded metaphorically to denote intense ambition or insatiable yearning for non-material objectives (such as achievement, knowledge, or market leadership). In modern corporate hospitality and restaurant operations, satisfying guest hunger with well-timed, nutritious dining options is a fundamental objective.",
+        "relatedLanguages": [
+          "German: Hunger (hunger)",
+          "Dutch: honger (hunger)",
+          "Old Norse: hungr (hunger, famine)",
+          "Swedish: hunger (hunger)"
+        ],
+        "firstRecordedUse": "Before 900 AD (in Old English epic and religious texts such as Beowulf and the West Saxon Gospels)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The physiological discomfort and biological drive triggered by the body's need for food, prompting an individual to seek nourishment and dine; figuratively, an intense, compelling appetite or ambition for achievement, growth, or innovation.",
+        "spatialContext": "Restaurant dining rooms, workplace breakrooms, conference banquet buffet areas, executive catering lounges, and community food bank distribution centers.",
+        "temporalContext": "Pre-lunch intervals (11:00–12:30) during intensive corporate sessions, evening commutes before dinner, and mid-morning breaks.",
+        "emotionalTone": "Compelling, urgent, primal, appetitive, and yearning.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'hunger' in everyday dining represents the biological impetus that prompts individuals to choose hearty meals, stop for lunch breaks, or appreciate generous restaurant portions ('I worked up quite a hunger'). In business and professional contexts, 'hunger' is also widely admired as a metaphor for ambition, drive, and relentless work ethic ('a hunger for growth', 'she has real hunger'). In dining service marketing, restaurants position menus to 'satisfy your hunger'.",
+        "mentalImage": "An appetizing spread of warm artisan sourdough bread, sweet butter, and rich vegetable soups placed before eager diners at a bistro table at the conclusion of a demanding workday.",
+        "whenToUse": "Use to describe the biological urge to consume food, a state of prolonged food deprivation, or metaphorically to describe ambitious drive and yearning (e.g., 'satisfy hunger', 'pangs of hunger', 'hunger for success', 'combat community hunger').",
+        "whenNotToUse": "Do not use 'hunger' when describing an acquired culinary appreciation or refined taste for gourmet flavours; use 'appetite', 'palate', or 'relish' instead (hunger is biological need; appetite is sensory desire).",
+        "culturalContext": "In workplace culture, acknowledging hunger around mid-day is standard etiquette for transitioning a long morning strategy session into a catered lunch ('Let's break for lunch before everyone's hunger takes over'). Corporate social responsibility (CSR) programs frequently partner with food banks and non-profits dedicated to alleviating community hunger."
+      },
+      "examples": {
+        "daily": [
+          "After hiking in the hills all morning, they sat down at the diner with immense hunger and ordered pancakes.",
+          "He felt a sharp pang of hunger around noon and walked to the corner cafe for a warm bowl of soup.",
+          "The bakery's display of fresh warm pastries did nothing to quell her growing hunger."
+        ],
+        "business": [
+          "The catering team planned generous sandwich platters to satisfy the hunger of attendees following the four-hour symposium.",
+          "Our corporation launched an annual charitable initiative to raise funds and donate meals to fight local childhood hunger.",
+          "During executive interviews, the hiring committee seeks candidates who exhibit both technical skill and genuine professional hunger."
+        ],
+        "conversation": [
+          "\"Are you ready to order lunch, or do you want to finish this report first?\" / \"Let's order right now; my hunger is really starting to kick in.\"",
+          "\"Does the conference registration fee include mid-morning snacks?\" / \"Yes, there will be fresh fruit and pastries to stave off hunger until the lunch buffet opens.\""
+        ],
+        "collocations": [
+          "satisfy hunger",
+          "pangs of hunger",
+          "fight hunger",
+          "stave off hunger",
+          "hunger for success",
+          "gnawing hunger"
+        ]
+      },
+      "wordFamily": {
+        "noun": "hunger",
+        "verb": "hunger",
+        "adjective": "hungry",
+        "adverb": "hungrily"
+      },
+      "visual": {
+        "imageKeyword": "healthy hearty meal dining bread soup satisfy hunger table lunch",
+        "imageDescription": "A warm, rustic restaurant dining setting with a steaming bowl of vegetable soup, artisan crusty bread, and fresh cheese being served to eagerly awaiting diners during a busy lunch hour.",
+        "mnemonic": "HUNGER: When you hear your stomach GROWL, you HUNt for GREat food to devour!"
+      },
+      "video": {
+        "description": "A documentary excerpt highlighting how corporate catering companies design protein-rich conference menus to sustain energy and satisfy attendees' hunger throughout full-day business events."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "To stave off _____ during the extended afternoon seminar, the event organizers provided complimentary fruit baskets and granola bars in the lobby. (A) hunger (B) hungry (C) hungrily (D) hungered",
+        "tips": "In TOEIC Part 5, identify the part of speech required as the direct object of the phrasal verb 'stave off'. The transitive phrasal verb requires a noun: (A) hunger. Choice (B) is an adjective, (C) is an adverb, and (D) is a past participle/verb."
+      },
+      "synonyms": [
+        "appetite",
+        "starvation",
+        "craving",
+        "famishment",
+        "yearning"
+      ],
+      "antonyms": [
+        "satiety",
+        "fullness",
+        "repletion",
+        "satisfaction"
+      ],
+      "relatedWords": [
+        "appetite",
+        "nourishment",
+        "fasting",
+        "malnutrition",
+        "caterer",
+        "buffet"
+      ]
+    },
+    {
+      "id": "dining-164",
+      "word": "hungry",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˈhʌŋ.ɡri/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/hungry--_us_1.mp3",
+        "syllableBreakdown": "hun·gry",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners frequently omit the /ɡ/ sound, saying /ˈhʌŋ.ri/ instead of /ˈhʌŋ.ɡri/. Also, some confuse 'hungry' (/ˈhʌŋ.ɡri/, needing food) with 'angry' (/ˈæŋ.ɡri/, mad/upset), or conflate them into the modern colloquial blend 'hangry' (irritable due to hunger). Additionally, non-native speakers often confuse the adjective 'hungry' with the noun 'hunger' (e.g., saying *I have hungry* under influence of Romance languages like *j'ai faim* or *tengo hambre* instead of *I am hungry*)."
+      },
+      "etymology": {
+        "origin": "Old English 'hungrig' (hungry, famished), formed from 'hungor' (hunger) + the adjectival suffix '-ig' (possessing the quality of, modern '-y'), from Proto-Germanic '*hungragaz' (hungry), derived from '*hungruz' (hunger).",
+        "rootWord": "Old English hungor + -ig / Proto-Germanic *hungragaz",
+        "rootMeaning": "Possessing hunger, feeling the urgent bodily need for nourishment",
+        "evolution": "In Old English and Middle English, 'hungrig' described individuals or livestock suffering from a lack of food. Over time, in addition to its primary adjectival use ('a hungry patron'), it gained substantive collective noun usage in social and philanthropic contexts ('the hungry', designating impoverished populations in need of meals). In modern culinary business and corporate settings, the term signifies eager dining patrons ready to order, as well as ambitious professionals driven to achieve results.",
+        "relatedLanguages": [
+          "German: hungrig (hungry)",
+          "Dutch: hongerig (hungry)",
+          "Old Norse: hungraðr (hungry, famished)",
+          "Swedish: hungrig (hungry)"
+        ],
+        "firstRecordedUse": "Before 1000 AD (in Old English homilies and translations of the Psalms)"
+      },
+      "deepMeaning": {
+        "coreConcept": "Feeling or exhibiting the physiological desire and physical need for food; alternatively, used substantively with the definite article ('the hungry') as a collective noun denoting individuals in need of nutritional sustenance; figuratively, characterized by an avid, ambitious eagerness to attain success or knowledge.",
+        "spatialContext": "Restaurant dining rooms during seating, bustling deli lunch counters, conference snack stations, community food distribution lines, and executive cafeteria checkout queues.",
+        "temporalContext": "Peak dining periods at midday (12:00–13:30) and dinner (18:00–20:00), immediately following intensive business meetings or physical labor.",
+        "emotionalTone": "Anticipatory, eager, driven, insistent, and appetite-driven.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'hungry' is the universal expression of appetite prompting mealtime decisions ('Let's grab a bite, I'm really hungry'). When combined with 'the' ('feeding the hungry'), native speakers recognize it as a collective noun representing vulnerable individuals requiring community food assistance. In corporate vernacular, describing a new hire or sales team as 'hungry' is a strong compliment signaling proactive determination, grit, and passion for closing deals.",
+        "mentalImage": "A bustling downtown corporate cafeteria during lunchtime, where a queue of hungry office workers eagerly select from fresh hot entrees, salad bar bowls, and toasted paninis.",
+        "whenToUse": "Use when describing individuals desiring food, collective groups needing nutritional aid ('the hungry'), or figuratively describing ambitious, motivated teams (e.g., 'hungry diners', 'feed the hungry', 'hungry for new business opportunities').",
+        "whenNotToUse": "Do not say 'I have hungry' (a common transfer error from Romance languages); in English, express it with the copular verb 'to be' ('I am hungry'). Avoid using 'hungry' in formal scientific nutritional reports where 'malnourished' or 'food-insecure' is more precise.",
+        "culturalContext": "In English-speaking business culture, scheduling meetings through standard lunch hours without providing food is frowned upon; organizers are expected to anticipate that participants will be hungry and provide catered box lunches or platters. Furthermore, corporate community outreach initiatives frequently partner with charities dedicated to feeding the hungry during Thanksgiving and winter holidays."
+      },
+      "examples": {
+        "daily": [
+          "By the time we sat down at the Italian restaurant at eight o'clock, we were ravenously hungry.",
+          "The smell of freshly baked garlic bread made the hungry patrons in the waiting area even more eager to be seated.",
+          "Every weekend, the community kitchen prepares hot, wholesome meals to help feed the hungry in the downtown area."
+        ],
+        "business": [
+          "The conference organizers ensured that the midday buffet was well-stocked to accommodate hundreds of hungry delegates.",
+          "The corporate social responsibility initiative partnered with local shelters to distribute surplus banquet food to the hungry.",
+          "Our firm looks to recruit hungry, self-motivated sales professionals who are eager to expand our market share."
+        ],
+        "conversation": [
+          "\"Should we walk over to the food court now?\" / \"Yes, please; I skipped breakfast this morning and I am completely hungry.\"",
+          "\"Does our charity luncheon have enough volunteers for tomorrow?\" / \"Yes, over twenty staff members signed up to serve hot meals to the hungry at the shelter.\""
+        ],
+        "collocations": [
+          "hungry patrons",
+          "feed the hungry",
+          "ravenously hungry",
+          "hungry for success",
+          "feel hungry",
+          "hungry delegates"
+        ]
+      },
+      "wordFamily": {
+        "noun": "hunger, hungriness",
+        "verb": "hunger",
+        "adjective": "hungry",
+        "adverb": "hungrily"
+      },
+      "visual": {
+        "imageKeyword": "hungry diners restaurant buffet food lunch office workers cafeteria",
+        "imageDescription": "A lively restaurant dining room filled with hungry diners eagerly enjoying fresh gourmet dishes, colorful salads, and artisan pasta at sunlit wooden tables.",
+        "mnemonic": "HUNGRY: When you are HUNGRY, you HURRY to the table to eat until you are HAPPY!"
+      },
+      "video": {
+        "description": "A restaurant operations documentary showcasing how a high-volume downtown bistro prepares rapid lunch service to efficiently feed hundreds of hungry office workers during the midday rush."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "The hotel banquet kitchen prepared additional pasta trays to ensure that all _____ conference attendees received a warm meal before the afternoon sessions began. (A) hungry (B) hunger (C) hungrily (D) hungriness",
+        "tips": "In TOEIC Part 5, analyze the position between the pre-modifying determiner 'all' and the compound noun phrase 'conference attendees'. An adjective is required to modify 'attendees': (A) hungry. Choice (B) and (D) are nouns, and (C) is an adverb which cannot directly modify a noun phrase."
+      },
+      "synonyms": [
+        "famished",
+        "starving",
+        "ravenous",
+        "peckish",
+        "eager"
+      ],
+      "antonyms": [
+        "full",
+        "satiated",
+        "stuffed",
+        "content"
+      ],
+      "relatedWords": [
+        "appetite",
+        "nourishment",
+        "mealtime",
+        "dining room",
+        "caterer",
+        "food bank"
+      ]
+    }
+  ]
+}

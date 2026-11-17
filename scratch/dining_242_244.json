@@ -1,0 +1,349 @@
+{
+  "words": [
+    {
+      "id": "dining-242",
+      "word": "seating",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈsiː.tɪŋ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/seating--_us_1.mp3",
+        "syllableBreakdown": "sea·ting",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners often shorten the tense long vowel /iː/ to a lax /ɪ/ (pronouncing it like 'sitting' /ˈsɪtɪŋ/ instead of 'seating' /ˈsiːtɪŋ/), which causes confusion between the physical act of resting on a chair ('sitting') and the designated arrangement, capacity, or dining shift ('seating'). Another frequent error is treating 'seating' in its furniture or capacity sense as a plural count noun (saying 'we need more seatings' instead of 'we need more seating' or 'more seats'). Note that 'seating' takes a plural form only when denoting multiple scheduled banquet shifts (e.g., 'the 6:00 PM and 8:30 PM seatings')."
+      },
+      "etymology": {
+        "origin": "Middle English 'seting', formed as a verbal noun from the verb 'seat' (to place on a seat, furnish with sitting accommodations), which was borrowed from Old Norse 'sæti' (seat, sitting place), descending from Proto-Germanic '*sētją' (seat) and ultimately from Proto-Indo-European '*sed-' (to sit), combined with the English verbal noun suffix '-ing'.",
+        "rootWord": "Old Norse sæti / Proto-Germanic *sētją / Proto-Indo-European *sed- (to sit) + English -ing",
+        "rootMeaning": "The provision, arrangement, or accommodation of places to sit; the physical chairs or benches provided; a scheduled dining session",
+        "evolution": "The base noun 'seat' entered English in the 13th century from Old Norse 'sæti', superseding native Old English 'setl' (settle/seat). By the late 16th century, 'seating' emerged as a gerund denoting the act of placing people into chairs. In the 19th century, with the expansion of public theatres, passenger trains, and commercial banquet halls, 'seating' developed its collective mass-noun sense for furniture arrangements and total capacity (e.g., 'seating capacity'). In modern restaurant and hospitality operations, it acquired the specific count-noun sense denoting one of several scheduled serving shifts (e.g., 'first seating', 'second seating').",
+        "relatedLanguages": [
+          "Old Norse: sæti (seat / sitting place)",
+          "German: Sitz (seat) / Bestuhlung (seating arrangement)",
+          "Dutch: zetel (seat / armchair)",
+          "Danish: sæde (seat / sitting accommodation)",
+          "Swedish: säte (seat / chair)"
+        ],
+        "firstRecordedUse": "Late 16th century (c. 1590s as verbal noun denoting the action of seating; 19th century for furniture arrangements and dining shifts)"
+      },
+      "deepMeaning": {
+        "coreConcept": "In dining, hospitality, and event coordination, 'seating' designates: (1) the collective furniture and physical layout of chairs, banquettes, booths, and tables accommodating guests; (2) the certified maximum patron capacity of a dining venue; and (3) a specific scheduled dining session or service window during which a full round of diners is received, served, and cleared.",
+        "spatialContext": "Restaurant dining rooms, banquet halls, patio terraces, rooftop bars, host greeting stands with floor plan charts, and VIP private dining suites.",
+        "temporalContext": "Peak dinner rush hours, pre-event table staging, event turn times (typically 90 to 120 minutes per seating shift), and multi-turn banquet scheduling.",
+        "emotionalTone": "Organized, accommodating, hospitable, structured, and welcoming.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers in restaurant environments instinctively split 'seating' into spatial layout and temporal scheduling. Spatially, when a host asks 'Indoor or outdoor seating?', natives immediately consider ambiance, temperature, and comfort (booths versus bar stools). Temporally, when booking at high-demand dining establishments, natives know a 'two-seating policy' (e.g., 6:00 PM and 8:30 PM) imposes a strict time boundary on their meal so the table can be reset. In venue planning, 'seating capacity' is viewed as an inflexible legal fire limit and a critical revenue metric.",
+        "mentalImage": "A restaurant maître d' standing at a polished wooden host stand, reviewing an illuminated digital reservation tablet displaying the dining room floor layout, showing occupied banquettes, reserved window booths, and patio seating ready for the 7:00 PM dinner crowd.",
+        "whenToUse": "Use when discussing dining furniture arrangements ('outdoor patio seating', 'booth seating', 'banquette seating'), venue volume ('maximum seating capacity of 150 guests'), or designated dining shifts ('reserve a table for the first seating at 6:00 PM').",
+        "whenNotToUse": "Do not confuse with 'seat' (the individual physical chair or stool; patrons sit on 'a seat', not 'a seating'). Do not confuse with 'sitting' (the physical posture of resting on buttocks). Avoid using 'seatings' in the plural unless specifically referring to multiple timed meal shifts (e.g., 'two distinct seatings for the New Year's Eve gala').",
+        "culturalContext": "Seating etiquette in North American and British restaurants is strictly orchestrated by front-of-house personnel. Placards reading 'Please wait to be seated' preserve kitchen pacing and ensure equitable server section distribution. For major holidays, executive galas, and Michelin-starred tasting menus, restaurants operate almost exclusively on structured seatings. In TOEIC scenarios, seating appears regularly in Part 1 venue photographs, Part 3 booking conversations, Part 4 banquet announcements, and Part 7 venue reservation contracts."
+      },
+      "examples": {
+        "daily": [
+          "We specifically requested outdoor patio seating so we could enjoy the harbor view during brunch.",
+          "The bistro has limited indoor seating, so arriving before noon is recommended if you do not have a reservation.",
+          "For New Year's Eve, the steakhouse is offering a four-course dinner with two scheduled seatings at 6:00 PM and 9:00 PM."
+        ],
+        "business": [
+          "The hotel refurbished its grand ballroom to expand banquet seating capacity to three hundred attendees.",
+          "The event floor plan features reserved seating for corporate sponsors directly adjacent to the keynote stage.",
+          "Due to municipal fire regulations, the venue coordinator cannot permit additional banquet tables beyond the certified seating limit."
+        ],
+        "conversation": [
+          "\"Good evening, party of four under Richardson?\" / \"Yes, and we noted in our reservation that we would prefer booth seating if possible.\"",
+          "\"Are there any tables available for the seven o'clock dinner seating?\" / \"Unfortunately, the early seating is fully booked, but we can accommodate your party during the eight-thirty seating.\"",
+          "\"How should we arrange the seating for the quarterly investor luncheon?\" / \"Let's place board members at the head table and assign department directors to the surrounding circular tables.\""
+        ],
+        "collocations": [
+          "seating capacity",
+          "outdoor seating",
+          "reserved seating",
+          "seating arrangement",
+          "booth seating",
+          "dinner seating"
+        ]
+      },
+      "wordFamily": {
+        "noun": "seat, seating",
+        "verb": "seat",
+        "adjective": "seated",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "restaurant seating arrangement dining room tables chairs interior design",
+        "imageDescription": "A contemporary upscale restaurant dining room displaying elegant wooden tables with upholstered banquette seating along the brick wall, well-spaced chairs, and pendant lighting ready for dinner service.",
+        "mnemonic": "SEATING = SEAT + ING: The systematic arrang-ING of SEATS in a dining hall, or schedul-ING dinner shifts for guests to sit!"
+      },
+      "video": {
+        "description": "A front-of-house restaurant hospitality training module demonstrating digital table management systems, floor plan allocation, and how to coordinate party seatings during peak dining hours."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "To ensure all delegates are accommodated comfortably, the banquet hall's _____ arrangement will be reconfigured before the awards gala. (A) seat (B) seated (C) seating (D) seates",
+        "tips": "In TOEIC Part 5, 'seating' frequently functions as a noun adjunct in established business collocations such as 'seating arrangement', 'seating capacity', and 'seating area'. Choice (C) 'seating' is the correct modifier. Option (A) 'seat' is singular and rarely pairs with 'arrangement'; (B) 'seated' is a past participle adjective requiring a passive or participial complement; and (D) 'seates' is an incorrect spelling."
+      },
+      "synonyms": [
+        "table arrangement",
+        "seating capacity",
+        "accommodation",
+        "placement",
+        "chairs"
+      ],
+      "antonyms": [
+        "standing room",
+        "standing area"
+      ],
+      "relatedWords": [
+        "banquette",
+        "booth",
+        "tablecloth",
+        "floor plan",
+        "maître d'",
+        "table turnover",
+        "reservation"
+      ]
+    },
+    {
+      "id": "dining-243",
+      "word": "service",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈsɜːr.vɪs/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/service--_us_1.mp3",
+        "syllableBreakdown": "ser·vice",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners often mispronounce the second syllable as /vaɪs/ (confusing it with 'vice' or 'device') instead of using the unstressed lax vowel /vɪs/. Another frequent error is confusing 'service' (the overall standard of assistance, hospitality, or attentiveness provided to patrons) with 'serving' (a portion of food, e.g., 'a serving of soup') or 'servicing' (maintenance/repair of machinery). Non-native speakers also sometimes confuse 'service charge' (a mandatory restaurant fee added to the bill) with 'tip' or 'gratuity' (a voluntary reward for waitstaff)."
+      },
+      "etymology": {
+        "origin": "Middle English 'servise', borrowed from Anglo-Norman and Old French 'servise' / 'service' (act of serving, duty, attendance, condition of a servant), directly derived from Latin 'servitium' (condition of a servant or slave, servitude), which stems from 'servus' (slave, servant) and the verb 'servire' (to serve, be devoted to, attend upon), tracing back to Proto-Indo-European '*ser-wo-' (guardian, slave).",
+        "rootWord": "Latin servire (to serve, attend) / servitium (attendance, servitude) / Old French servise",
+        "rootMeaning": "The state or act of serving; attentive assistance, personal attendance, or duty performed for another",
+        "evolution": "In Roman antiquity, 'servitium' designated legal servitude. When absorbed into Old French and medieval Anglo-Norman feudal society, the term shifted from chattel bondage toward honourable feudal allegiance, religious worship ('divine service'), and domestic attendance in noble households. By the 15th and 16th centuries, it broadened to include hospitality, serving meals at table ('table service'), and commercial assistance provided to customers. In modern dining and corporate hospitality, 'service' encompasses everything from waitstaff attentiveness and meal pacing to catering operations and post-event customer care.",
+        "relatedLanguages": [
+          "French: service (service, waitstaff, department)",
+          "Spanish: servicio (service, restroom, catering)",
+          "Italian: servizio (service, shift, table setting)",
+          "Portuguese: serviço (service, duty, favor)",
+          "German: Service (customer service, tableware set - loanword from French)"
+        ],
+        "firstRecordedUse": "c. 1200 in Middle English (designating feudal duty and religious rites); 15th century for food presentation and culinary attendance at table"
+      },
+      "deepMeaning": {
+        "coreConcept": "In the culinary, restaurant, and hospitality industries, 'service' denotes: (1) the manner, speed, and quality with which waitstaff attend to guests, take orders, and deliver food and drinks; (2) the active operational period during which a restaurant kitchen and dining room are open to patrons (e.g., lunch service, dinner service); and (3) a complete coordinated set of dishes, cutlery, or tableware (e.g., silver tea service).",
+        "spatialContext": "Restaurant dining rooms, open kitchen pass counters, banquet halls, room service dispatch pantries, and front-of-house reception stations.",
+        "temporalContext": "Breakfast, lunch, and dinner meal windows (e.g., dinner service from 5:30 PM to 10:30 PM), table check-ins, pre-service staff line-up meetings, and post-shift debriefs.",
+        "emotionalTone": "Attentive, hospitable, polished, courteous, professional, and refined.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers evaluate a dining experience along two distinct axes: the 'food' (flavor, temperature, freshness) and the 'service' (waitstaff attentiveness, pacing between courses, friendliness, water refills, speed of the check). Outstanding cuisine cannot redeem an evening spoiled by neglectful service. In professional restaurant jargon, 'service' also represents the active execution phase: 'We have sixty covers booked for tonight's service.' Native speakers also distinguish between 'table service' (full waitstaff delivery), 'counter service' (ordering at a till), and 'room service' (in-room hotel food delivery).",
+        "mentalImage": "A professional server in a crisp white shirt and dark bistro apron gracefully placing entrees simultaneously before guests at a fine dining table, discreetly topping up sparkling water without interrupting their conversation.",
+        "whenToUse": "Use when evaluating hospitality staff performance ('impeccable customer service', 'prompt table service'), referring to operating hours ('dinner service begins at 6:00 PM'), describing dining models ('counter service', 'table service', 'buffet service'), or identifying additional dining fees ('service charge included').",
+        "whenNotToUse": "Do not confuse with 'serving' (the quantity of food on a plate; do not say 'a service of lasagna'—it is 'a serving of lasagna'). Do not confuse with 'servicing' (mechanical repair or maintenance of machinery, e.g. servicing an espresso machine). Avoid using 'service' to mean an individual physical dish or bowl.",
+        "culturalContext": "Tipping and service charges are deeply embedded cultural conventions in North American and European dining. In the US, a standard tip of 18-22% is expected for good table service because servers rely on gratuities, whereas in European banquet or UK contexts, an optional or mandatory 12.5% service charge is often added directly to the invoice. In TOEIC Part 3 and Part 7, service complaints, banquet service agreements, and guest satisfaction surveys are ubiquitous."
+      },
+      "examples": {
+        "daily": [
+          "The food at the new Italian trattoria was delicious, but the service was surprisingly slow during the Friday rush.",
+          "Our server provided attentive and friendly service throughout the entire three-course meal.",
+          "The hotel offers complimentary room service breakfast for guests staying in executive suites."
+        ],
+        "business": [
+          "The catering contract includes full banquet service, with dedicated servers assigned to every two corporate tables.",
+          "Management conducted a customer service workshop to improve table turnaround times and guest satisfaction ratings.",
+          "An eighteen percent service charge is automatically added to parties of six or more delegates."
+        ],
+        "conversation": [
+          "\"How was the client dinner at the seafood grill last night?\" / \"The seafood was remarkably fresh, and the service was prompt and discreet, which allowed us to close the contract smoothly.\"",
+          "\"Did the bill include gratuity, or should we leave an extra tip?\" / \"The receipt indicates that a ten percent service charge is already included in the final total.\"",
+          "\"What time does dinner service begin in the main dining room?\" / \"Dinner service commences at five-thirty, though the lounge bar opens for cocktails at four.\""
+        ],
+        "collocations": [
+          "customer service",
+          "table service",
+          "room service",
+          "dinner service",
+          "service charge",
+          "prompt service"
+        ]
+      },
+      "wordFamily": {
+        "noun": "service, server, servant",
+        "verb": "serve, service",
+        "adjective": "serviceable",
+        "adverb": "serviceably"
+      },
+      "visual": {
+        "imageKeyword": "waiter serving fine dining restaurant customer service hospitality wine",
+        "imageDescription": "A professional waiter in an elegant uniform carrying a silver tray with covered cloches and pouring wine for business diners in a warmly lit, upscale restaurant.",
+        "mnemonic": "SERVICE comes from Latin SERVIRE (to serve): Outstanding SERVers give exceptional SERVICE so diners feel like royal SERVe-ees!"
+      },
+      "video": {
+        "description": "A hospitality training documentary illustrating fine dining service standards, covering table setting etiquette, synchronized plate presentation, wine decanting, and conflict resolution with dissatisfied diners."
+      },
+      "toeicContext": {
+        "commonParts": [
+          2,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "Patrons commended the hotel restaurant not only for its innovative regional cuisine but also for its _____ and attentive service. (A) prompt (B) promptly (C) promptness (D) prompting",
+        "tips": "In TOEIC Part 5, coordinate structures linked by 'and' require parallel grammatical forms. In the phrase 'its _____ and attentive service', the blank is modified by the possessive determiner 'its' and coordinates with the adjective 'attentive' before the noun 'service'. Therefore, the adjective (A) 'prompt' correctly parallels 'attentive'. Option (B) is an adverb, (C) is a noun, and (D) is a present participle."
+      },
+      "synonyms": [
+        "hospitality",
+        "attendance",
+        "assistance",
+        "dining service",
+        "customer care"
+      ],
+      "antonyms": [
+        "neglect",
+        "inattention",
+        "self-service"
+      ],
+      "relatedWords": [
+        "waitstaff",
+        "gratuity",
+        "tip",
+        "table turnover",
+        "room service",
+        "sommelier",
+        "banquet"
+      ]
+    },
+    {
+      "id": "dining-244",
+      "word": "serving",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈsɜːr.vɪŋ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/serving--_us_1.mp3",
+        "syllableBreakdown": "ser·ving",
+        "stressPattern": "●○",
+        "commonMistakes": "Learners frequently confuse 'serving' with 'service' (saying 'we received fast serving' instead of 'fast service', or 'a service of rice' instead of 'a serving of rice'). Another common error is confusing 'serving size' (a standardized nutritional measurement on food labels, e.g., 100 grams) with 'portion size' (the actual amount of food put on a plate at a restaurant, which is often two or three servings). In pronunciation, non-native speakers may drop the velar nasal /ŋ/ ending (pronouncing it as 'servin') or mispronounce the rhotic vowel /ɜːr/ as a front vowel."
+      },
+      "etymology": {
+        "origin": "Middle English 'serving', formed as a verbal noun and participle from the verb 'serve' (to provide food or drink, attend at table, discharge duties), borrowed from Old French 'servir' (to serve), which directly derives from Latin 'servire' (to be a servant, serve, attend upon), plus the English verbal noun suffix '-ing'.",
+        "rootWord": "Latin servire (to serve) / Old French servir + English -ing",
+        "rootMeaning": "The act of dishing out food or drink; a single measured portion or helping of food intended for one individual",
+        "evolution": "In Middle English (c. 1300s), 'serving' denoted the action of attending on someone or presenting victuals at banquet boards. By the 15th and 16th centuries, with early domestic cookery books and monastic refectory rules, 'serving' specialized into a discrete noun denoting a single portion or helping allocated to one person. In the late 19th and 20th centuries, with the advent of packaged goods and commercial catering regulations, 'serving' was adopted as a standardized unit of food measurement (e.g., 'serving size', 'six servings per container'). Simultaneously, it developed compound uses for utensils used to dispense food ('serving spoon', 'serving dish', 'serving platter').",
+        "relatedLanguages": [
+          "French: portion (portion) / servir (to serve)",
+          "Spanish: porción (serving / portion) / ración",
+          "Italian: porzione (serving / portion) / servire (to serve)",
+          "Portuguese: porção (serving / portion)",
+          "German: Portion (serving / portion) / Gang (course served)"
+        ],
+        "firstRecordedUse": "c. 1300 in Middle English (denoting attendance or delivery of food); late 16th century for a single portion or helping of food"
+      },
+      "deepMeaning": {
+        "coreConcept": "In nutrition, catering, and restaurant dining, 'serving' designates: (1) a single measured portion or helping of food or beverage prepared for one individual; (2) a standardized reference quantity used on dietary nutrition labels to quantify nutritional values; and (3) as a noun adjunct, the utensils, dishes, or apparatus used to present and distribute food to diners (e.g., serving tray, serving spoon).",
+        "spatialContext": "Commercial kitchen plating lines, cafeteria buffet carveries, catering food stations, dietary prep tables, and family-style banquet tables.",
+        "temporalContext": "Meal plating rushes, catering portion audits, dietary calorie accounting, and buffet replenishment intervals.",
+        "emotionalTone": "Nutritional, culinary, measured, nourishing, and practical.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native English speakers, a 'serving' is specifically a portion of food or drink. When looking at a recipe, 'yields 4 servings' tells them how many people it feeds. On a cereal box or beverage can, 'serving size' tells them the caloric benchmark. At a dinner table, someone might ask, 'Would anyone like a second serving of mashed potatoes?' In commercial catering, chefs calculate 'servings per pan' to control food costs and prevent waste. Natives also immediately visualize kitchenware when used as an adjunct: 'serving tongs', 'serving platter', 'serving dish'.",
+        "mentalImage": "A catering chef using stainless steel tongs to place a measured serving of herb-roasted chicken breast onto a guest's dinner plate at an executive buffet line, surrounded by large ceramic serving platters.",
+        "whenToUse": "Use when referring to individual portions of food ('a generous serving of pasta', 'two servings of vegetables per day'), recipe yields ('this recipe makes eight servings'), nutrition labels ('one serving contains 250 calories'), or serving tools ('serving platter', 'serving utensils').",
+        "whenNotToUse": "Do not use 'serving' to describe the quality of waiter hospitality or assistance (use 'service'; do not say 'the restaurant had wonderful serving'). Do not use 'serving' to denote a restaurant shift (use 'seating' or 'service'; do not say 'the lunch serving was busy').",
+        "culturalContext": "Standardized servings are strictly regulated by food administrations (such as the US FDA and USDA) for packaging and nutritional guidance. In American dining culture, restaurant 'portion sizes' are notoriously larger than recommended dietary 'servings', often leading to leftovers packaged in 'to-go' boxes. In corporate catering, portion control via calibrated portions ensures that budget and dietary guarantees are accurately honored. In TOEIC, 'serving' appears in cafeteria notices, catering quotes, recipe instructions, and dining dialogues in Parts 3, 4, and 7."
+      },
+      "examples": {
+        "daily": [
+          "According to the nutrition facts panel, one serving of this granola provides five grams of dietary fiber.",
+          "The grandmother offered everyone at the table a second serving of warm homemade apple pie.",
+          "Dietitians recommend consuming at least five servings of fruits and vegetables every day."
+        ],
+        "business": [
+          "The catering invoice indicates that each guest will receive a five-ounce serving of grilled salmon.",
+          "To minimize food waste, the cafeteria staff standardizes each serving of soup using an eight-ounce ladle.",
+          "Our corporate wellness committee revised the cafeteria guidelines to ensure that each entree includes two vegetable servings."
+        ],
+        "conversation": [
+          "\"Should we order another appetizer for the table?\" / \"No, the spinach dip comes in a very generous serving that easily feeds four people.\"",
+          "\"How many servings does this catering tray of lasagna provide?\" / \"A standard half-pan yields approximately twelve individual servings for a luncheon buffet.\"",
+          "\"Could you pass the large serving spoon?\" / \"Here it is, along with the salad tongs for the pasta salad.\""
+        ],
+        "collocations": [
+          "serving size",
+          "generous serving",
+          "second serving",
+          "serving dish",
+          "serving platter",
+          "individual serving"
+        ]
+      },
+      "wordFamily": {
+        "noun": "serving, server, service",
+        "verb": "serve",
+        "adjective": "served",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "food serving portion plate banquet buffet catering restaurant",
+        "imageDescription": "A white ceramic serving dish on a buffet line containing a vibrant gourmet pasta salad, with polished silver serving spoons resting on the rim beside neatly plated portions.",
+        "mnemonic": "SERVING: A single SERVe of food for dinING—one spoon, one plate, one mouth to feed!"
+      },
+      "video": {
+        "description": "A commercial kitchen tutorial demonstrating accurate culinary portioning techniques, proper use of calibrated serving scoops and ladles, and food cost control in high-volume catering."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "The cafeteria supervisor instructed the kitchen staff to use calibrated ladles so that each customer receives an equal _____ of chili. (A) serve (B) server (C) serving (D) service",
+        "tips": "In TOEIC Part 5, vocabulary questions frequently test the distinction between morphologically related nouns. In this dining context, the sentence refers to a measured quantity or portion of food ('of chili'), which requires (C) 'serving'. Option (A) 'serve' is primarily a verb or tennis stroke; (B) 'server' refers to a person or computer hardware; and (D) 'service' refers to hospitality assistance or maintenance, not an edible portion of food."
+      },
+      "synonyms": [
+        "portion",
+        "helping",
+        "ration",
+        "share",
+        "allotment"
+      ],
+      "antonyms": [
+        "whole",
+        "entirety"
+      ],
+      "relatedWords": [
+        "portion control",
+        "serving size",
+        "serving platter",
+        "ladle",
+        "buffet",
+        "entree",
+        "nutrition"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,352 @@
+import json
+
+words = [
+    {
+        "id": "dining-197",
+        "word": "onion",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/ˈʌn.jən/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/onion--_us_1.mp3",
+            "syllableBreakdown": "on·ion",
+            "stressPattern": "●○",
+            "commonMistakes": "Learners often mispronounce the initial vowel based on spelling, pronouncing it like 'on' (/ɒn/ or /oʊn/) instead of the short central vowel /ʌ/ ('un-yun'). Another common mistake is articulating the 'i' as a distinct third vowel syllable (saying 'on-ee-on' /ˌɒn.iːˈɒn/) rather than transitioning smoothly through the palatal semivowel /j/."
+        },
+        "etymology": {
+            "origin": "Middle English 'oynon' or 'unyun', borrowed from Anglo-Norman and Old French 'oignon' / 'oingnon', from Latin 'ūniō' ('oneness, unity, single large pearl, single-bulb onion'), derived from 'ūnus' ('one').",
+            "rootWord": "Latin ūniō / ūnus",
+            "rootMeaning": "Oneness, unity, or single unified pearl/bulb",
+            "evolution": "In Roman antiquity, 'ūniō' designated oneness or a unique large pearl. Roman agriculturalists applied the term to a round, single-bulb allium that grows without dividing into cloves (unlike multi-clove garlic). The word evolved into Gallo-Romance 'oignon', entered Middle English following the Norman Conquest in the 13th to 14th centuries, and gradually supplanted Old English 'cipe' (cognate with German Zwiebel and Spanish cebolla). Today, onions are recognized worldwide as one of the fundamental aromatic building blocks of classical gastronomy.",
+            "relatedLanguages": [
+                "French: oignon (onion)",
+                "Spanish: cebolla (onion, from Latin cepulla) / unión (unity, from ūniō)",
+                "Italian: cipolla (onion) / unione (unity)",
+                "German: Zwiebel (onion, from Late Latin cepulla)",
+                "Portuguese: cebola (onion)"
+            ],
+            "firstRecordedUse": "Early 14th century (c. 1325, in Middle English culinary manuscripts including 'The Forme of Cury')"
+        },
+        "deepMeaning": {
+            "coreConcept": "A pungent, layered edible bulb of the allium family (Allium cepa), consisting of concentric fleshy leaf bases surrounding a central shoot, cultivated globally and used raw, sautéed, roasted, pickled, or caramelized as a fundamental aromatic seasoning across restaurant, catering, and household cookery.",
+            "spatialContext": "Commercial kitchen prep stations with polyethylene cutting boards, walk-in cold rooms with well-ventilated wire shelving, hot sauté lines with simmering stockpots, salad assembly counters, and produce supply warehouses.",
+            "temporalContext": "Early morning food prep shifts (slicing and dicing aromatics for mirepoix before meal services), active lunch and dinner rushes (customizing plates for guests requesting no onions), and seasonal autumn harvest distribution.",
+            "emotionalTone": "Pungent, foundational, savory, and aromatic.",
+            "formalityLevel": "neutral",
+            "connotation": "neutral"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native speakers, the onion is the indispensable cornerstone of savory cooking; the aroma of chopped onions sweating in butter or olive oil is the universal olfactory cue that a meal is being prepared. Figuratively, native speakers instinctively use 'peeling back the layers of an onion' to describe uncovering hidden, complex layers of an issue. In dining and hospitality service, onions are one of the most frequently modified items on restaurant tickets due to personal taste, raw breath anxiety, or allium digestive intolerances.",
+            "mentalImage": "A prep cook in a stainless-steel restaurant kitchen swiftly dicing a peeled yellow onion on an NSF-certified white cutting board, translucent square bits showering beside a polished chef knife while thin papery skins sit in a compost bin.",
+            "whenToUse": "Use when discussing culinary ingredients, flavor foundations (mirepoix, soffritto), menu item descriptions (French onion soup, caramelized onion tartlet), dining customer preferences ('extra onions' or 'hold the onions'), and produce sourcing.",
+            "whenNotToUse": "Do not use 'onion' as an umbrella term when culinary specificity is required for distinct alliums such as 'shallots', 'leeks', 'scallions' (green onions), or 'garlic'. Do not use for non-culinary layered objects unless explicitly using the figurative idiom 'peeling the onion'.",
+            "culturalContext": "In Western dining traditions, onions provide the base for the classical French mirepoix (onions, carrots, celery) and the Cajun 'holy trinity' (onions, celery, bell peppers). In North American and British restaurants, customer requests like 'no raw onions' or 'substitute grilled onions' are standard POS order entries that servers communicate with expeditors to avoid returned plates."
+        },
+        "examples": {
+            "daily": [
+                "He slowly caramelized the thinly sliced yellow onions in a skillet until they turned rich golden brown and sweet.",
+                "Could I please get the grilled chicken sandwich without raw onions on the side?",
+                "The chef garnished the steaming bowl of chicken noodle soup with freshly chopped green onions."
+            ],
+            "business": [
+                "The restaurant group negotiated long-term procurement contracts with regional farm cooperatives to buffer against wholesale onion price spikes.",
+                "The catering banquet manager instructed servers to keep chopped red onions in a separate dish at the taco bar for guests with dietary preferences.",
+                "To improve kitchen throughput during peak hours, the commercial commissary adopted pre-diced, vacuum-sealed onions for all twenty franchise locations."
+            ],
+            "conversation": [
+                "\"Does the house burger come with raw or grilled onions?\" / \"It normally features crispy fried onion strings, but our kitchen can easily substitute grilled onions or leave them off entirely.\"",
+                "\"Table seven informed me that one of their guests has an allium allergy.\" / \"Thank you for letting me know; I'll inform the chef immediately so no onion or garlic is used in their entrée.\""
+            ],
+            "collocations": [
+                "caramelized onions",
+                "red onion",
+                "yellow onion",
+                "French onion soup",
+                "diced onions",
+                "crispy fried onions"
+            ]
+        },
+        "wordFamily": {
+            "noun": "onion",
+            "verb": "",
+            "adjective": "oniony",
+            "adverb": ""
+        },
+        "visual": {
+            "imageKeyword": "yellow onions halved red onion culinary prep cutting board chef knife",
+            "imageDescription": "A whole unpeeled yellow onion alongside a halved red onion revealing vivid purple-and-white rings, resting on a wooden butcher block next to a stainless-steel chef knife and sprigs of fresh rosemary.",
+            "mnemonic": "ONION traces back to Latin 'unio' (oneness): peel away layer after layer, and it is still ONE single, tear-inducing bulb!"
+        },
+        "video": {
+            "description": "A culinary masterclass video by a professional chef detailing knife grip techniques for halving, scoring, and dicing onions quickly without bruising the cell walls or causing excessive tearing."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                2,
+                3,
+                7
+            ],
+            "exampleQuestion": "To accommodate banquet guests with dietary restrictions, the chef agreed to prepare the roasted vegetable medley without the customary seasoning of garlic and _____. (A) onion (B) onions (C) oniony (D) onioned",
+            "tips": "In TOEIC Part 5, when coordinate nouns appear in an ingredient list ('garlic and _____'), countable nouns referring to ingredients in general plural quantities require the plural form: (B) onions. Choice (A) is singular and would require an article; (C) is an adjective; and (D) is a non-standard verb-like form."
+        },
+        "synonyms": [
+            "allium bulb",
+            "yellow onion",
+            "bulb onion",
+            "sweet onion",
+            "red onion",
+            "spring onion"
+        ],
+        "antonyms": [],
+        "relatedWords": [
+            "allium",
+            "shallot",
+            "scallion",
+            "garlic",
+            "mirepoix",
+            "caramelize",
+            "produce"
+        ]
+    },
+    {
+        "id": "dining-198",
+        "word": "order",
+        "partOfSpeech": [
+            "noun"
+        ],
+        "category": "dining",
+        "level": "essential",
+        "toeicFrequency": 9,
+        "pronunciation": {
+            "ipa": "/ˈɔːr.dər/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/order--_us_1.mp3",
+            "syllableBreakdown": "or·der",
+            "stressPattern": "●○",
+            "commonMistakes": "Learners often articulate the second syllable with a harsh /ɛr/ or /e/ sound instead of the unstressed rhotic schwa /ər/ (US) or /ə/ (UK). In dining contexts, some non-native speakers confuse 'order' with authoritative commands, using phrasing that sounds overly bossy instead of polite hospitality conventions like 'take an order' or 'may I place an order'."
+        },
+        "etymology": {
+            "origin": "Middle English 'ordre', borrowed from Anglo-Norman and Old French 'ordre' / 'ordene', from Latin 'ōrdō' (stem 'ōrdin-'), meaning 'row, series, rank, arrangement of threads on a loom'.",
+            "rootWord": "Latin ōrdō (stem ōrdin-)",
+            "rootMeaning": "Row, line of threads in a loom, rank, or methodical series",
+            "evolution": "Originating as an ancient weaving term for threading a loom and a military term for ranks of soldiers, 'ōrdō' passed into Old French as 'ordre' to signify orderly arrangement and religious brotherhoods. In Middle English, it signified regular arrangement and authoritative instructions. By the 18th and 19th centuries, with the rise of commercial inns, taverns, and early restaurants, 'order' evolved to designate a customer's specific itemized request for food or drink to be prepared and served by the establishment.",
+            "relatedLanguages": [
+                "French: ordre (order, command)",
+                "Spanish: orden (order, arrangement, command)",
+                "Italian: ordine (order, command, arrangement)",
+                "German: Ordnung (order, organization) / Order (commercial order)",
+                "Portuguese: ordem (order)"
+            ],
+            "firstRecordedUse": "Early 13th century (in the sense of religious or social hierarchy); late 18th century (for restaurant food requests and commercial dining service)"
+        },
+        "deepMeaning": {
+            "coreConcept": "A patron's formal request for specific food dishes, beverages, or courses to be prepared and served by a hospitality establishment; or the physical or digital ticket documenting those selected items for the kitchen expediter and billing system.",
+            "spatialContext": "Restaurant dining rooms, point-of-sale (POS) waiter terminals, kitchen expediting counters (the pass), drive-through intercoms, banquet service staging areas, and mobile pickup shelves.",
+            "temporalContext": "Immediate service milestones (taking drink orders within two minutes and dinner orders within eight minutes of seating), peak dining rush hours (12:00 PM – 2:00 PM for lunch; 6:30 PM – 9:00 PM for dinner), and daily kitchen cut-off deadlines.",
+            "emotionalTone": "Attentive, professional, structured, courteous, and efficient.",
+            "formalityLevel": "neutral",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "In dining, native speakers view an 'order' as both an essential interpersonal ritual ('Are you ready to order?') and a contractual service expectation. The guest trusts the restaurant to deliver the exact items requested with specified modifications (e.g., salad dressing on the side, steak medium-rare). For hospitality staff, an 'order' is an active operational ticket that coordinates front-of-house service with kitchen cooking times.",
+            "mentalImage": "A professional server in a dark bistro apron leaning slightly toward seated diners at a candlelit table, writing dish modifications into a leather notepad while guests point to selections on their menus.",
+            "whenToUse": "Use when discussing dining selections ('take your order', 'place an order', 'repeat the order'), food tickets ('an order of garlic bread'), catering booking requests, takeaway orders, or restaurant supply requisitions.",
+            "whenNotToUse": "Do not confuse with the final restaurant bill or check ('Could we have the bill/check, please?' not 'Could we have the order?'). Do not use 'order' in dining as a synonym for an imperative command or reprimand.",
+            "culturalContext": "Phrases like 'May I take your order?' or 'Are you ready to order?' are universal hospitality standards across English-speaking countries. In North American dining, the server's attentiveness and accuracy in recording the order directly determines tip percentages and customer satisfaction."
+        },
+        "examples": {
+            "daily": [
+                "The waiter returned to our table to see if we were ready to place our dinner order.",
+                "We decided to share an order of buffalo wings and loaded nachos before our main courses arrived.",
+                "The hostess confirmed our takeout order over the phone and said it would be ready for pickup in twenty minutes."
+            ],
+            "business": [
+                "The corporate event coordinator finalized the banquet catering order for the two-hundred-guest awards dinner.",
+                "During the peak lunch rush, the head expediter managed over sixty food orders simultaneously without a single kitchen error.",
+                "The restaurant general manager reviewed the weekly wholesale food order to adjust for upcoming weekend reservations."
+            ],
+            "conversation": [
+                "\"Good evening! Have you had enough time to review the menu, or can I take your order?\" / \"We're ready to order—we'll have the pan-seared sea bass and the ribeye steak, both with roasted potatoes.\"",
+                "\"Excuse me, I think there might be a mix-up with our order; we requested the Caesar salad with the dressing on the side.\" / \"I apologize for the oversight; I will have the kitchen prepare a fresh salad for you immediately.\""
+            ],
+            "collocations": [
+                "place an order",
+                "take an order",
+                "catering order",
+                "drink order",
+                "side order",
+                "standing order"
+            ]
+        },
+        "wordFamily": {
+            "noun": "order",
+            "verb": "order",
+            "adjective": "orderly",
+            "adverb": "orderly"
+        },
+        "visual": {
+            "imageKeyword": "restaurant server taking food order diners table notepad hospitality",
+            "imageDescription": "An attentive waiter holding a leather order pad and pen, listening closely to two smiling business colleagues seated at a set dining table with water goblets and cloth napkins.",
+            "mnemonic": "ORDER stems from Latin 'ordo' (row/line): when you place your ORDER, your dish joins the orderly line of tickets waiting to be fired by the kitchen!"
+        },
+        "video": {
+            "description": "A hospitality service training video highlighting best practices for waitstaff when greeting guests, taking detailed food and beverage orders, and accurately repeating dietary modifications."
+        },
+        "toeicContext": {
+            "commonParts": [
+                1,
+                2,
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "The server assured the business clients that their lunch _____ had already been submitted to the kitchen and would arrive shortly. (A) order (B) ordered (C) ordering (D) orderly",
+            "tips": "In TOEIC Part 5, recognize parts of speech based on sentence structure. Following the possessive pronoun 'their' and noun modifier 'lunch', a head noun is needed to serve as the subject of the passive verb phrase 'had already been submitted'. The singular noun is (A) order. Choice (B) is a past tense verb/participle, (C) is a participle/gerund, and (D) is an adjective."
+        },
+        "synonyms": [
+            "request",
+            "requisition",
+            "ticket",
+            "selection",
+            "food ticket",
+            "purchase order"
+        ],
+        "antonyms": [
+            "cancellation"
+        ],
+        "relatedWords": [
+            "appetizer",
+            "entree",
+            "pos terminal",
+            "receipt",
+            "server",
+            "waitstaff",
+            "expediter"
+        ]
+    },
+    {
+        "id": "dining-199",
+        "word": "organic",
+        "partOfSpeech": [
+            "adjective"
+        ],
+        "category": "dining",
+        "level": "intermediate",
+        "toeicFrequency": 8,
+        "pronunciation": {
+            "ipa": "/ɔːrˈɡæn.ɪk/",
+            "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/organic--_us_1.mp3",
+            "syllableBreakdown": "or·gan·ic",
+            "stressPattern": "○●○",
+            "commonMistakes": "Learners frequently misplace stress on the initial syllable (pronouncing it /ˈɔːr.ɡə.nɪk/) rather than stressing the second syllable /ɔːrˈɡæn.ɪk/. Another mistake is softening the hard velar plosive /ɡ/ into an affricate /dʒ/ (like in 'orange') instead of pronouncing a clear /ɡ/."
+        },
+        "etymology": {
+            "origin": "Via Latin 'organicus' ('serving as an instrument, mechanical'), from Ancient Greek 'organikós' (ὀργανικός, 'of or pertaining to an organ or tool'), from 'órganon' (ὄργανον, 'tool, implement, bodily organ, work'), from PIE *werg- ('to do, act, work').",
+            "rootWord": "Ancient Greek órganon (ὄργανον)",
+            "rootMeaning": "Tool, implement, instrument, or bodily organ; functioning as a living unit",
+            "evolution": "In classical Greece and Rome, 'organikos' referred to mechanical tools or musical instruments. In 18th-century chemistry and biology, it came to describe compounds derived from living organisms. In 1940, agriculturalist Lord Northbourne coined the term 'organic farming' in his manifesto 'Look to the Land', conceptualizing a farm as an integrated, self-sustaining living organism requiring no artificial synthetic inputs. By the late 20th century, 'organic' became a legally governed certification standard governing how foods are cultivated, raised, and served in the food-service industry.",
+            "relatedLanguages": [
+                "French: biologique (food) / organique (chemistry/structure)",
+                "Spanish: orgánico (organic)",
+                "Italian: biologico (food) / organico (organic/bodily)",
+                "German: biologisch (food/organic) / organisch (chemical)",
+                "Portuguese: orgânico (organic)"
+            ],
+            "firstRecordedUse": "Mid-17th century (in physiology/chemistry); 1940 (specifically for agricultural and food production methods)"
+        },
+        "deepMeaning": {
+            "coreConcept": "Pertaining to food crops, livestock, or culinary ingredients produced and prepared without synthetic pesticides, chemical fertilizers, sewage sludge, genetic modification (GMOs), ionizing radiation, antibiotics, or synthetic growth hormones, adhering to strict regulatory certification standards.",
+            "spatialContext": "Farm-to-table bistro kitchens, organic salad stations, certified sustainable wine cellars, health-conscious artisanal cafes, gourmet hotel dining rooms, and organic food cooperative markets.",
+            "temporalContext": "Daily morning deliveries from certified local growers, seasonal menu revisions tracking agricultural harvest windows, and annual organic compliance inspections by food regulatory bodies.",
+            "emotionalTone": "Wholesome, conscientious, sustainable, fresh, premium, and healthy.",
+            "formalityLevel": "neutral",
+            "connotation": "positive"
+        },
+        "nativeMindset": {
+            "howNativesThink": "To native speakers, the word 'organic' on a restaurant menu immediately evokes images of wholesome quality, clean ingredients, environmental stewardship, and health-consciousness. Diners expect organic items to taste fresher and naturally anticipate paying a premium price for them. In restaurant branding and corporate hospitality, offering organic selections communicates ethical sourcing and high culinary standards.",
+            "mentalImage": "A rustic wooden farm stand in a sunny open-air bistro patio displaying wooden crates overflowing with brightly colored heirloom tomatoes, crisp curly kale, and earthy root vegetables beside a handwritten chalkboard sign reading '100% Certified Organic'.",
+            "whenToUse": "Use when describing certified agricultural food items (organic produce, organic milk, organic wine), farm-to-table culinary philosophies, eco-friendly catering options, and sustainable hospitality supply chains.",
+            "whenNotToUse": "Do not confuse 'organic' with the unregulated marketing buzzword 'natural' (which does not require legal certification), nor with dietary categories like 'vegan' or 'gluten-free' (which relate to food types/allergens, not agricultural methods). Avoid using 'organic' in dining to simply mean 'homemade' or 'fresh'.",
+            "culturalContext": "Consumer demand for organic foods has fundamentally altered corporate and fine dining across Western nations. Upscale restaurants, corporate conference centers, and boutique hotel banquets highlight organic certifications on their menus to meet corporate sustainability goals and accommodate wellness-oriented executives."
+        },
+        "examples": {
+            "daily": [
+                "The neighborhood cafe prepares all its breakfast omelets using cage-free, certified organic eggs.",
+                "She ordered a mixed field green salad made entirely from locally grown organic vegetables.",
+                "Many consumers prefer buying organic milk and fruit to minimize their exposure to synthetic pesticides."
+            ],
+            "business": [
+                "The corporate catering department increased banquet bookings by introducing a menu featuring certified organic wines and grass-fed meats.",
+                "To align with the corporation's green sustainability pledges, the cafeteria procured seventy percent of its seasonal produce from regional organic farms.",
+                "The executive chef highlighted the restaurant's commitment to organic farming during his presentation at the national hospitality summit."
+            ],
+            "conversation": [
+                "\"Are the vegetables in the pasta primavera conventionally grown or organic?\" / \"All our seasonal greens and herbs are certified organic, supplied directly by an artisan farm upstate.\"",
+                "\"I noticed the catering package is slightly more expensive this year.\" / \"Yes, that reflects our transition to using one hundred percent organic dairy, produce, and poultry for all banquet events.\""
+            ],
+            "collocations": [
+                "organic produce",
+                "certified organic",
+                "organic ingredients",
+                "organic farming",
+                "organic vegetables",
+                "organic wine"
+            ]
+        },
+        "wordFamily": {
+            "noun": "organism",
+            "verb": "organize",
+            "adjective": "organic",
+            "adverb": "organically"
+        },
+        "visual": {
+            "imageKeyword": "fresh organic vegetables wooden crate farm to table restaurant rustic produce",
+            "imageDescription": "A rustic wooden crate packed with freshly harvested organic carrots, beets, and curly kale with water droplets glistening on leaves, displayed on a butcher block in a sunlit restaurant kitchen.",
+            "mnemonic": "ORGANIC relates to living ORGANS: crops nurtured like whole living organisms, working naturally with nature without synthetic chemicals!"
+        },
+        "video": {
+            "description": "A short documentary profile showing a renowned farm-to-table chef touring an organic vegetable farm at sunrise, selecting pesticide-free heirloom produce for that evening's tasting menu."
+        },
+        "toeicContext": {
+            "commonParts": [
+                3,
+                4,
+                7
+            ],
+            "exampleQuestion": "Greenfield Bistro has gained popularity among business travelers by sourcing only certified _____ ingredients for its daily lunch specials. (A) organically (B) organic (C) organism (D) organized",
+            "tips": "In TOEIC Part 5, examine word position and grammatical function. The blank follows the adverb 'certified' and precedes the plural noun 'ingredients'. An adjective is required to modify 'ingredients' within the noun phrase 'certified _____ ingredients'. The correct adjective is (B) organic. Choice (A) is an adverb, (C) is a noun, and (D) is a participial adjective meaning arranged or orderly."
+        },
+        "synonyms": [
+            "chemical-free",
+            "pesticide-free",
+            "sustainably grown",
+            "biological",
+            "farm-fresh",
+            "non-synthetic"
+        ],
+        "antonyms": [
+            "conventional",
+            "synthetic",
+            "inorganic",
+            "chemically treated"
+        ],
+        "relatedWords": [
+            "sustainable",
+            "farm-to-table",
+            "pesticide",
+            "non-gmo",
+            "certification",
+            "agriculture",
+            "free-range"
+        ]
+    }
+]
+
+with open("scratch/dining_197_199.json", "w", encoding="utf-8") as f:
+    json.dump({"words": words}, f, indent=2, ensure_ascii=False)
+
+print("Saved scratch/dining_197_199.json successfully.")

@@ -1,0 +1,446 @@
+[
+  {
+    "id": "dining-085",
+    "word": "chafing",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/\u02c8t\u0283e\u026a.f\u026a\u014b/",
+      "syllableBreakdown": "chaf-ing",
+      "stressPattern": "primary stress on the first syllable (CHAY-fing)",
+      "commonMistakes": "Learners often mispronounce the initial affricate /t\u0283/ as a soft fricative /\u0283/ (*shafing*, similar to French 'chauffer'). Additionally, non-native speakers may confuse the vowel with a short lax /\u00e6/ (*chaffing*, which means banter or grain husks) instead of the correct long diphthong /e\u026a/.",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/chafing--_us_1.mp3"
+    },
+    "etymology": {
+      "origin": "Middle English verbal noun 'chafing' (warming, heating), derived from Old French 'chaufer' (to warm, heat; modern French 'chauffer'), from Vulgar Latin *calfare, syncopated from Classical Latin 'calefacere' (to make hot/warm), composed of 'calere' (to be warm) and 'facere' (to make).",
+      "rootWord": "Old French 'chaufer' (to heat), from Latin 'calefacere' (to make warm).",
+      "rootMeaning": "'The act of warming or maintaining gentle heat'.",
+      "evolution": "In 15th-century England, banqueting records adopted 'chafyng-dishe' to designate portable charcoal vessels keeping food warm at noble feasts. By the 19th century, alcohol-burning silver chafing dishes became central to high-society table cooking and buffet entertaining. In modern hospitality and commercial catering, 'chafing' specifically designates the indirect bain-marie warming units (water pans heated by canned fuel or electric elements) used along banquet buffet lines to keep hot entr\u00e9es at safe holding temperatures.",
+      "relatedLanguages": [
+        "French: chauffer (to heat / warm) / chauffe-plat (food warmer / hot plate)",
+        "Spanish: escalfador (food warmer) / calentar (to heat)",
+        "Italian: scaldavivande (food warmer / chafing dish) / scaldare (to warm)",
+        "German: Chafing-Dish / Warmhaltebecken (bain-marie warmer)"
+      ],
+      "firstRecordedUse": "Late 14th century (as verbal noun); c. 1420 specifically compounded as 'chafing-dish' in royal feast ledgers."
+    },
+    "deepMeaning": {
+      "coreConcept": "In commercial catering and hospitality, the method and equipment system of holding cooked food at food-safe serving temperatures along buffet lines using indirect heat, typically a stainless steel water pan suspended over portable canned burners or electric heating elements.",
+      "spatialContext": "Hotel banquet halls, convention center buffet stations, corporate luncheon staging areas, wedding reception buffets, and brunch carving stations.",
+      "temporalContext": "Set up and ignited 30 to 45 minutes prior to guest meal service to bring water pans to holding heat, monitored continuously throughout multi-hour banquet serving windows.",
+      "emotionalTone": "Professional, hospitable, functional, and safety-conscious.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers in hospitality and event planning, 'chafing' immediately brings to mind polished stainless steel roll-top or lift-off buffet dishes with flickering blue canned-heat (Sterno) flames underneath. It signals hot, self-serve catering at conferences, galas, and weekend brunches. Native speakers instinctively distinguish the culinary equipment noun (predominantly in 'chafing dish', 'chafing fuel', or 'chafing set') from physical skin friction. In event logistics, caterers routinely specify 'electric chafing pans' when conference venues ban open flames.",
+      "mentalImage": "A banquet server wearing white service gloves using a long utility lighter to ignite canned gel fuel beneath a row of mirror-polished rectangular stainless steel chafing dishes on a white linen buffet table.",
+      "whenToUse": "Use in hospitality, catering, and restaurant management when describing food-warming equipment, buffet setups, banquet holding apparatus, or catering inventory (e.g., 'chafing dish', 'chafing fuel', 'roll-top chafing unit', 'chafing insert pans').",
+      "whenNotToUse": "Do not use 'chafing' without catering context if listeners could confuse it with physical skin irritation or metaphorical friction. Do not confuse with 'chaffing' (spelled with double 'f', meaning lighthearted teasing or winnowed grain husks).",
+      "culturalContext": "In American and British corporate hospitality, buffet-style banquets rely universally on chafing dishes to serve large groups efficiently. Municipal health codes mandate that chafing setups maintain food above 140\u00b0F (60\u00b0C) to prevent foodborne illness, making chafing temperature monitoring a routine responsibility of banquet captains. TOEIC questions regularly feature catering invoices, event planning emails, and Part 1 photos of servers tending buffet chafing trays."
+    },
+    "examples": {
+      "daily": [
+        "The family rented four stainless steel chafing dishes and a box of gel fuel cans for the backyard anniversary celebration.",
+        "Be careful when lifting the lid off the chafing pan because hot steam escapes very quickly.",
+        "The host replenished the scrambled eggs and roasted potatoes in the breakfast chafing trays before the morning guests arrived."
+      ],
+      "business": [
+        "The banquet captain instructed catering staff to ignite the chafing burners forty minutes before conference attendees were dismissed for the buffet lunch.",
+        "Due to strict indoor fire regulations at the downtown convention center, the event planner replaced open-flame gel fuel with electric chafing heaters.",
+        "The catering rental agreement includes eight roll-top chafing dishes, complete with heavy-duty water pans, stainless food inserts, and wind guards."
+      ],
+      "conversation": [
+        "A: 'Have all the chafing dishes along the main buffet counter been lit yet?'\\nB: 'Yes, the kitchen team poured boiling water into the pans and ignited the gel fuel fifteen minutes ago.'",
+        "A: 'Should we order fuel-burning chafing units or electric warmers for tomorrow's executive lunch?'\\nB: 'Let's go with electric chafing warmers because the executive boardroom lacks ventilation for open Sterno flames.'",
+        "A: 'The carving station looks great, but is the gravy chafing insert warm enough?'\\nB: 'I checked it with the digital probe thermometer, and it is holding steadily at 155 degrees Fahrenheit.'"
+      ],
+      "collocations": [
+        "chafing dish",
+        "chafing fuel",
+        "chafing pan",
+        "roll-top chafing unit",
+        "stainless steel chafing set",
+        "electric chafing heater"
+      ]
+    },
+    "wordFamily": {
+      "noun": "chafing",
+      "verb": "chafe",
+      "adjective": "chafed",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "chafing dish buffet catering food warmer banquet",
+      "imageDescription": "A row of polished stainless steel roll-top chafing dishes aligned along an elegant banquet buffet table, with gentle steam rising as a catering attendant refills an insert pan.",
+      "mnemonic": "CHAFING: Think of French 'chauffer' (to heat). A CHAFING dish CHEERFULLY HEATS food along the banquet line!"
+    },
+    "video": {
+      "description": "A commercial banquet catering tutorial demonstrating how to properly position water pans, ignite canned gel fuel beneath chafing units, and monitor food holding temperatures along a hotel conference buffet."
+    },
+    "toeicContext": {
+      "commonParts": [
+        1,
+        3,
+        7
+      ],
+      "exampleQuestion": "To ensure that all buffet entr\u00e9es remain at the required holding temperature throughout the reception, the banquet captain ordered additional _____ fuel for the serving line.\\n(A) chafe\\n(B) chafed\\n(C) chafing\\n(D) chafingly",
+      "tips": "In TOEIC catering and hospitality contexts, 'chafing' acts as a noun adjunct / participial modifier in high-frequency compound terms like 'chafing dish', 'chafing fuel', and 'chafing pan'. Choice (C) 'chafing' is the correct culinary term modifying 'fuel'. Choice (A) is a base verb, Choice (B) is a past participle/adjective implying irritation, and Choice (D) is an adverb."
+    },
+    "synonyms": [
+      "food warmer",
+      "buffet warmer",
+      "bain-marie",
+      "hot-water warming pan",
+      "steam table pan"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "bain-marie",
+      "Sterno",
+      "buffet line",
+      "holding temperature",
+      "serving tongs",
+      "banquet catering",
+      "steam table"
+    ]
+  },
+  {
+    "id": "dining-086",
+    "word": "cheese",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+      "ipa": "/t\u0283i\u02d0z/",
+      "syllableBreakdown": "cheese",
+      "stressPattern": "single stressed syllable (CHEEZ)",
+      "commonMistakes": "Learners often devoice the final /z/ consonant into a voiceless /s/ (*cheess*), which sounds unnatural to native ears. Speakers from languages lacking phonemic vowel length may substitute a short lax /\u026a/ (*chiz*). Ensure the long tense vowel /i\u02d0/ is sustained and followed by a resonant voiced /z/.",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/cheese--_us_1.mp3"
+    },
+    "etymology": {
+      "origin": "Old English 'c\u0113se' / '\u010b\u012bese' (cheese), borrowed from West Germanic *k\u0101s\u012b, an early loanword from Classical Latin 'c\u0101seus' (fermented milk curd, cheese), the root of the milk protein 'casein'.",
+      "rootWord": "Latin 'c\u0101seus' (cheese).",
+      "rootMeaning": "'Curdled milk pressed and fermented into solid food'.",
+      "evolution": "Latin 'c\u0101seus' spread across northern Roman provinces into Germanic dialects through trade and dairy technology. In Old English, it produced 'c\u0113se', which evolved through Middle English 'chese' into Modern English 'cheese'. The term gave rise to specialized culinary traditions across Europe, from regional farmhouse wheels (cheddar, gouda) to soft-ripened delicacies (brie, camembert) and the formal French 'plateau de fromages' (cheese course) in international gastronomy.",
+      "relatedLanguages": [
+        "German: K\u00e4se (cheese)",
+        "Dutch: kaas (cheese)",
+        "Spanish: queso (cheese)",
+        "Italian: cacio / formaggio (cheese)",
+        "French: fromage (cheese) / cas\u00e9ine (casein protein)"
+      ],
+      "firstRecordedUse": "Old English period (c. 8th century in the \u00c9pinal Glossary as 'c\u0113se')."
+    },
+    "deepMeaning": {
+      "coreConcept": "A nutrient-rich dairy food produced by curdling milk through enzymatic action (rennet) and bacterial cultures, separating solid curds from liquid whey, and pressing, salting, and aging the curd into diverse textures and flavors.",
+      "spatialContext": "Fine-dining dining rooms (cheese trolley service), charcuterie grazing tables at corporate receptions, delicatessen display counters, cold larder stations (garde manger), and wine-tasting rooms.",
+      "temporalContext": "Served during breakfast buffets, midday salad and sandwich catering, cocktail-hour networking hours, and as a formal pre-dessert course in European banquets.",
+      "emotionalTone": "Artisanal, savory, sophisticated, and celebratory.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers, 'cheese' represents both an everyday comfort staple (grilled cheese, sliced sandwich cheddar, burger topping) and a refined culinary centerpiece (artisanal cheese boards, wine-and-cheese corporate mixers). In professional hospitality, serving an 'artisan cheese platter' conveys upscale attention to detail, typically pairing aged cheddar, creamy brie, and tangy goat cheese with fresh figs, candied walnuts, and water crackers. Culturally, 'cheese' also triggers the photographic prompt 'say cheese' and the informal slang adjective 'cheesy' (tacky or clich\u00e9d).",
+      "mentalImage": "A slate presentation board on a dark wood table displaying wedges of aged farmhouse cheddar, ripe French brie, and crumbly blue stilton garnished with clusters of dark purple grapes, dried apricots, and silver cheese knives.",
+      "whenToUse": "Use when referring to dairy cheese, cheese boards, menu items, culinary recipes, or corporate catering reception styles (e.g., 'artisan cheese board', 'cheese platter', 'wine and cheese reception', 'grated parmesan cheese').",
+      "whenNotToUse": "Avoid using the informal slang adjective 'cheesy' in professional business correspondence or formal dining reviews when you mean low quality, trite, or unrefined. Do not confuse with 'curd' (the unpressed, fresh coagulated milk solids).",
+      "culturalContext": "In corporate America and the Commonwealth, the 'wine and cheese reception' is the standard informal networking event format following conferences, product launches, or academic seminars. In traditional British and French fine dining, a dedicated cheese course accompanied by port or dessert wine precedes or substitutes for dessert. TOEIC listening passages and reading notices frequently reference cheese in dietary requests, boxed lunch orders, and banquet menu choices."
+    },
+    "examples": {
+      "daily": [
+        "She melted a slice of sharp cheddar cheese over the toasted sourdough bread for lunch.",
+        "The gourmet grocery store features an extensive selection of imported European cheeses in its deli counter.",
+        "Please pass the grated parmesan cheese so I can sprinkle some over my bowl of penne pasta."
+      ],
+      "business": [
+        "The marketing agency hosted a wine and cheese reception in the sky lounge to celebrate the successful product rollout.",
+        "When reviewing the banquet contract, the event organizer requested an artisan cheese platter for the VIP reception suite.",
+        "To accommodate conference attendees with dairy allergies, the catering menu clearly identifies all dishes containing cow, goat, or sheep cheese."
+      ],
+      "conversation": [
+        "A: 'What light refreshments should we arrange for the evening networking session?'\\nB: 'A charcuterie board featuring three regional cheeses, dried figs, and artisan crackers would be ideal.'",
+        "A: 'Does the lunchtime executive sandwich box include a vegetarian alternative?'\\nB: 'Yes, there is a roasted vegetable wrap with fresh mozzarella and herb goat cheese.'",
+        "A: 'The banquet kitchen just received a delivery of artisanal cheeses from a local organic creamery.'\\nB: 'Excellent, let's highlight them on tonight's tasting menu as our featured regional cheese course.'"
+      ],
+      "collocations": [
+        "artisan cheese",
+        "cheese platter",
+        "wine and cheese reception",
+        "cheese board",
+        "melted cheese",
+        "cheese course"
+      ]
+    },
+    "wordFamily": {
+      "noun": "cheese",
+      "verb": "cheese (rare/slang)",
+      "adjective": "cheesy",
+      "adverb": "cheesily"
+    },
+    "visual": {
+      "imageKeyword": "artisan cheese board charcuterie grapes wine platter",
+      "imageDescription": "An elegant dark slate platter laden with wedges of aged cheddar, soft brie, blue stilton, fresh red grapes, walnuts, and crusty baguette slices on a formal banquet table.",
+      "mnemonic": "CHEESE: When milk curdles with EASE and ages to PLEASE, smile for the camera and say CHEESE!"
+    },
+    "video": {
+      "description": "A culinary arts demonstration showing a banquet chef curating and styling a five-variety artisanal cheese board with complementary fruit chutneys and gourmet crackers for a corporate reception."
+    },
+    "toeicContext": {
+      "commonParts": [
+        1,
+        3,
+        7
+      ],
+      "exampleQuestion": "The conference catering department announced that a complimentary wine and _____ reception will take place in the grand atrium immediately following the keynote address.\\n(A) cheesy\\n(B) cheeses\\n(C) cheese\\n(D) cheesily",
+      "tips": "In TOEIC Part 5 questions featuring conventional event titles, 'wine and cheese' is a fixed coordinate compound noun phrase functioning as a noun adjunct modifying 'reception'. Choice (C) 'cheese' is the correct uncountable mass noun. Choice (A) is an informal descriptive adjective, Choice (B) is the plural count form unsuitable in this compound idiom, and Choice (D) is an adverb."
+    },
+    "synonyms": [
+      "dairy product",
+      "curd cheese",
+      "fromage",
+      "cheddar",
+      "brie"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "charcuterie",
+      "dairy",
+      "lactose",
+      "whey",
+      "curd",
+      "pasteurization",
+      "fromagerie"
+    ]
+  },
+  {
+    "id": "dining-087",
+    "word": "chicken",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/\u02c8t\u0283\u026ak.\u026an/",
+      "syllableBreakdown": "chick-en",
+      "stressPattern": "primary stress on the first syllable (CHIK-in)",
+      "commonMistakes": "Learners often over-pronounce the second unstressed vowel as a full open /e/ (*chick-en*) rather than reducing it to a weak /\u026a/ or neutral schwa /\u0259n/. Additionally, speakers of languages without the English voiceless affricate /t\u0283/ sometimes substitute a fricative /\u0283/ (*shicken*).",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/chicken--_us_1.mp3"
+    },
+    "etymology": {
+      "origin": "Old English '\u010b\u012bcen', 'c\u012bcen' (young bird, chick), from Proto-Germanic *kiuk\u012bn\u0105 (young fowl), formed as a diminutive of *keuka- (cock, domestic fowl) with the diminutive suffix *-\u012bna.",
+      "rootWord": "Proto-Germanic *kiuk\u012bn\u0105 (young chicken).",
+      "rootMeaning": "'Young domestic fowl or chick'.",
+      "evolution": "In Old and Middle English, 'hen' and 'cock' designated adult birds, while 'chicken' originally referred exclusively to their young. By the 16th and 17th centuries, 'chicken' supplanted 'fowl' as the generic culinary term for the meat of Gallus gallus domesticus. In modern corporate catering, airline hospitality, and institutional banquets, chicken serves as the predominant poultry entr\u00e9e worldwide due to its mild flavor, versatile preparation methods, and broad acceptability across cultural and religious dietary codes.",
+      "relatedLanguages": [
+        "German: K\u00fcken (chick) / H\u00e4hnchen (chicken meat)",
+        "Dutch: kuiken (chick) / kip (chicken meat)",
+        "Danish: kylling (chicken)",
+        "Swedish: kyckling (chicken)"
+      ],
+      "firstRecordedUse": "Old English period (c. 950\u20131000 in the Lindisfarne Gospels as 'cicenu')."
+    },
+    "deepMeaning": {
+      "coreConcept": "The meat of the domestic fowl (Gallus domesticus) prepared and consumed as poultry, serving as the standard, versatile entr\u00e9e protein in commercial culinary kitchens, corporate banquets, and everyday dining.",
+      "spatialContext": "Hotel banquet kitchens, carving stations, airline cabin meal carts, corporate cafeterias, and restaurant dining rooms.",
+      "temporalContext": "Prepared daily during lunch and dinner services, particularly featured in pre-ordered meal counts for multi-course corporate galas and symposium dinners.",
+      "emotionalTone": "Wholesome, standard, dependable, and satisfying.",
+      "formalityLevel": "neutral",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers in everyday life and business hospitality, 'chicken' is the classic, reliable entr\u00e9e choice. On banquet RSVP cards for conferences or wedding galas, the standard entr\u00e9e selection is almost invariably 'chicken, beef, or vegetarian' (or 'chicken or fish' in airline announcements). In culinary settings, it ranges from casual staples (rotisserie chicken, grilled chicken breast sandwich, chicken Caesar salad) to sophisticated banquet fare (herb-crusted chicken supreme with white wine reduction). In commercial catering, it is favored because it avoids the religious dietary prohibitions attached to pork and beef.",
+      "mentalImage": "A restaurant dinner plate presenting a seared, golden-brown chicken breast topped with a rosemary reduction sauce, arranged beside steamed asparagus spears and roasted fingerling potatoes.",
+      "whenToUse": "Use when designating poultry meat, menu entr\u00e9es, culinary preparations, or catering choices (e.g., 'roasted chicken', 'grilled chicken breast', 'chicken entr\u00e9e', 'free-range chicken').",
+      "whenNotToUse": "Do not use 'chicken' to refer to wild waterfowl or game birds like duck, quail, or pheasant. In professional workplace communication, avoid informal idioms like 'running around like a chicken with its head cut off' when describing busy staff.",
+      "culturalContext": "In global corporate travel and conference hospitality, chicken is the universal poultry entr\u00e9e because it complies with most religious dietary laws (such as halal and kosher requirements when certified) and appeals broadly across diverse cultural backgrounds. Airline meal services featured in TOEIC Part 3 and 4 listening clips frequently contrast chicken dishes with vegetarian pasta. Food safety standards mandate that chicken be cooked to an internal temperature of 165\u00b0F (74\u00b0C) to prevent Salmonella contamination."
+    },
+    "examples": {
+      "daily": [
+        "We roasted a whole chicken with lemons, garlic cloves, and fresh rosemary for Sunday dinner.",
+        "He ordered a grilled chicken sandwich with a side of mixed greens at the sidewalk caf\u00e9.",
+        "Any leftover shredded chicken can be stored in an airtight container to make tacos tomorrow."
+      ],
+      "business": [
+        "Conference attendees were requested to indicate their banquet entr\u00e9e preference between rosemary grilled chicken and vegetable risotto.",
+        "The hotel culinary director verified that all roasted chicken entr\u00e9es reached an internal temperature of 165 degrees Fahrenheit in compliance with health standards.",
+        "For the annual client appreciation luncheon, the executive chef prepared pan-seared chicken breast served with seasonal root vegetables."
+      ],
+      "conversation": [
+        "A: 'Have all the dinner preferences for tomorrow's awards gala been finalized?'\\nB: 'Yes, out of two hundred delegates, one hundred and thirty chose the herb-roasted chicken.'",
+        "A: 'Is the grilled chicken Caesar wrap prepared fresh each morning in the employee cafeteria?'\\nB: 'Yes, our kitchen staff grills the poultry fillets and wraps them before eleven o'clock.'",
+        "A: 'The flight attendant is coming down the cabin aisle with the dinner trolley.'\\nB: 'I think I will take the roasted chicken entr\u00e9e rather than the vegetarian lasagna.'"
+      ],
+      "collocations": [
+        "grilled chicken",
+        "roasted chicken",
+        "chicken breast",
+        "chicken entr\u00e9e",
+        "rotisserie chicken",
+        "free-range chicken"
+      ]
+    },
+    "wordFamily": {
+      "noun": "chicken",
+      "verb": "chicken (slang/idiomatic: chicken out)",
+      "adjective": "chickened (rare)",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "roasted chicken breast plated banquet dining gourmet restaurant",
+      "imageDescription": "A beautifully plated golden roasted chicken breast garnished with fresh rosemary sprigs and a glossy herb reduction, served alongside glazed baby carrots on fine restaurant china.",
+      "mnemonic": "CHICKEN: The QUICKEST poultry pick when you CHECK IN for your conference banquet meal!"
+    },
+    "video": {
+      "description": "A commercial banquet kitchen operations feature demonstrating how culinary teams season, sear, and plate 300 herb-roasted chicken entr\u00e9es for a corporate annual general meeting."
+    },
+    "toeicContext": {
+      "commonParts": [
+        1,
+        2,
+        3,
+        4,
+        7
+      ],
+      "exampleQuestion": "When completing the conference registration form, please indicate whether you prefer the grilled _____ or the vegetarian lasagna for the closing banquet dinner.\\n(A) chick\\n(B) chicken\\n(C) chickens\\n(D) chickened",
+      "tips": "In TOEIC hospitality and catering scenarios, 'chicken' functions as an uncountable mass noun designating poultry meat (comparable to 'beef', 'salmon', or 'lamb'). Choice (B) 'chicken' is the correct culinary term. Choice (A) refers to a newly hatched baby bird, Choice (C) is the plural count noun denoting living birds on a farm, and Choice (D) is a past-tense verb."
+    },
+    "synonyms": [
+      "poultry",
+      "fowl",
+      "chicken breast",
+      "pullet",
+      "roaster"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "poultry",
+      "rotisserie",
+      "entr\u00e9e",
+      "drumstick",
+      "food safety",
+      "internal temperature",
+      "banquet plating"
+    ]
+  },
+  {
+    "id": "dining-088",
+    "word": "chocolate",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/\u02c8t\u0283\u0252k.l\u0259t/",
+      "syllableBreakdown": "choc-o-late",
+      "stressPattern": "primary stress on the first syllable (CHOK-lit)",
+      "commonMistakes": "Learners often attempt to pronounce all three syllables phonetically as *chok-o-layt* or *cho-co-la-te*. In natural native English speech, the middle vowel is syncopated (dropped), compressing the word into two spoken syllables: /\u02c8t\u0283\u0252k.l\u0259t/ (UK) or /\u02c8t\u0283\u0251\u02d0k.l\u0259t/ (US). The second syllable takes a reduced schwa or short /\u026a/, never a diphthong /e\u026a/.",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/chocolate--_us_1.mp3"
+    },
+    "etymology": {
+      "origin": "Borrowed into English via Spanish 'chocolate', from Classical Nahuatl (Aztec) 'chocol\u0101tl' (a frothy, bitter ceremonial drink of roasted cacao beans, water, and chili), related to Yucatec Maya 'chokol' (hot) + Nahuatl '\u0101tl' (water).",
+      "rootWord": "Classical Nahuatl 'chocol\u0101tl' (bitter cacao drink).",
+      "rootMeaning": "'Bitter or hot cacao water'.",
+      "evolution": "Brought to Spain by 16th-century conquistadors, Aztec cacao drinks were sweetened with sugar cane, vanilla, and cinnamon for European royalty. In 17th-century London, fashionable 'chocolate houses' catered to the political elite. The 19th-century inventions of cocoa pressing (Van Houten, 1828), solid eating chocolate (J.S. Fry & Sons, 1847), and conching (Rodolphe Lindt, 1879) transformed chocolate into solid confections and fine confectionery. In contemporary dining and hospitality, chocolate is the cornerstone of pastry arts, dessert buffets, catering fountains, and luxury hotel VIP amenities.",
+      "relatedLanguages": [
+        "Spanish: chocolate (chocolate)",
+        "French: chocolat (chocolate)",
+        "Italian: cioccolato (chocolate)",
+        "German: Schokolade (chocolate)",
+        "Dutch: chocolade (chocolate)"
+      ],
+      "firstRecordedUse": "Early 17th century (c. 1604 in English translations of Spanish voyages in the West Indies)."
+    },
+    "deepMeaning": {
+      "coreConcept": "A rich confectionery food and beverage prepared from roasted and ground cacao seeds (cocoa solids and cocoa butter), sweetened with sugar and often combined with milk, consumed as solid candies, hot drinks, or premium dessert ingredients.",
+      "spatialContext": "Fine-dining pastry bake stations, corporate dessert buffets, artisan chocolateries, espresso coffee bars, and luxury hotel guest suites (VIP turndown amenity).",
+      "temporalContext": "Served during banquet dessert courses, afternoon coffee breaks at conferences, holiday corporate gifting periods, and evening hotel turndown hours.",
+      "emotionalTone": "Indulgent, celebratory, luxurious, and comforting.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers, 'chocolate' evokes luxury, sensory pleasure, holiday gifting, and comfort. In corporate dining and hospitality, dark chocolate conveys artisanal craftsmanship and sophistication (single-origin Ecuadorian cacao, 72% dark chocolate mousse, ganache truffles), while milk and white chocolate suggest sweeter, nostalgic indulgence. A box of luxury chocolates is the standard corporate gift of appreciation sent to clients or colleagues during the holiday season. In luxury hotel hospitality, placing a gourmet artisan chocolate on the pillow during evening turndown service is an iconic mark of five-star guest care.",
+      "mentalImage": "A tiered silver dessert stand at an executive banquet showcasing handcrafted dark chocolate truffles dusted with bitter cocoa powder, shiny chocolate-dipped strawberries, and individual chocolate lava cakes.",
+      "whenToUse": "Use when referring to cocoa-based confections, dessert items, baking ingredients, warm beverages, or corporate gift boxes (e.g., 'dark chocolate', 'box of chocolates', 'chocolate truffle', 'chocolate fountain').",
+      "whenNotToUse": "Do not confuse 'chocolate' with raw 'cacao' (the unroasted bean or raw powder) or 'cocoa' (the defatted powdered solid). Avoid using 'chocolate' metaphorically in professional technical writing unless describing specific design color tones (e.g., 'chocolate brown upholstery').",
+      "culturalContext": "In Anglo-American business culture, premium chocolate assortments from chocolatiers like Godiva, Neuhaus, or artisanal makers are ubiquitous corporate gifts for holiday client appreciation. In luxury hotels worldwide, the 'turndown chocolate' tradition remains a key touchpoint evaluated in hospitality audit reviews. TOEIC test passages regularly feature chocolate in catering supply purchase orders, banquet menus, and guest satisfaction surveys regarding hotel amenities."
+    },
+    "examples": {
+      "daily": [
+        "She enjoyed a cup of steaming hot chocolate topped with marshmallows after walking home through the snow.",
+        "He picked up a bar of seventy-percent dark chocolate from the gourmet market near the subway station.",
+        "The baker decorated the birthday layer cake with shaved white chocolate and fresh raspberries."
+      ],
+      "business": [
+        "As part of its executive hospitality service, the boutique hotel places handcrafted dark chocolates on guests' pillows during evening turndown.",
+        "The corporate holiday gift catalogue includes a curated box of fair-trade Belgian chocolates featuring the company's embossed emblem.",
+        "For the annual charity gala dessert station, the pastry chef arranged an illuminated chocolate fountain surrounded by fresh fruit skewers."
+      ],
+      "conversation": [
+        "A: 'What dessert selections are included in the three-course banquet menu?'\\nB: 'Guests may choose between a classic vanilla bean panna cotta and a flourless dark chocolate cake.'",
+        "A: 'Did the holiday gift baskets for our enterprise accounts ship out yesterday?'\\nB: 'Yes, each basket contains imported Swiss chocolates, roasted cashews, and sparkling apple cider.'",
+        "A: 'The afternoon coffee break for the technology conference has just been set up in the corridor.'\\nB: 'Great, make sure there are both chocolate chip cookies and gluten-free pastries available.'"
+      ],
+      "collocations": [
+        "dark chocolate",
+        "milk chocolate",
+        "box of chocolates",
+        "hot chocolate",
+        "chocolate fountain",
+        "artisan chocolate"
+      ]
+    },
+    "wordFamily": {
+      "noun": "chocolate",
+      "verb": "",
+      "adjective": "chocolaty",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "artisan dark chocolate truffles gourmet dessert pastry confection",
+      "imageDescription": "An assortment of handcrafted dark chocolate truffles dusted with rich cocoa powder and garnished with edible gold leaf on a white porcelain dessert plate.",
+      "mnemonic": "CHOCOLATE: Derived from Aztec CHOCOLATL\u2014a CHIC and DELICATE treat that's never LATE to please your palate!"
+    },
+    "video": {
+      "description": "A luxury hotel pastry kitchen documentary showing an executive pastry chef tempering Belgian dark chocolate to craft intricate showpieces and truffles for an international film festival gala."
+    },
+    "toeicContext": {
+      "commonParts": [
+        1,
+        3,
+        7
+      ],
+      "exampleQuestion": "To express appreciation to long-standing clients, the executive board authorized the purchase of luxury _____ gift sets for the upcoming holiday season.\\n(A) chocolate\\n(B) chocolatey\\n(C) chocolated\\n(D) chocolates",
+      "tips": "In business English and TOEIC Part 5, 'chocolate' functions frequently as a noun adjunct modifying another noun (such as 'gift sets', 'truffles', 'cake', or 'fountain'). While 'chocolates' (Choice D) refers to individual confectionery candies, as a pre-nominal modifier before 'gift sets', the singular noun adjunct 'chocolate' (Choice A) is grammatically standard. Choice (B) is an informal descriptive adjective, and Choice (C) is nonstandard."
+    },
+    "synonyms": [
+      "confectionery",
+      "cocoa confection",
+      "truffle",
+      "sweetmeat",
+      "bonbon"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "cacao",
+      "cocoa butter",
+      "ganache",
+      "patisserie",
+      "turndown service",
+      "dessert station",
+      "tempering"
+    ]
+  }
+]

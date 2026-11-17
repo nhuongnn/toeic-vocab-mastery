@@ -1,0 +1,451 @@
+import fs from 'fs';
+
+const data = {
+  words: [
+    {
+      id: "comms-159",
+      word: "lead story",
+      partOfSpeech: ["noun"],
+      category: "communications",
+      level: "intermediate",
+      toeicFrequency: 8,
+      pronunciation: {
+        ipa: "/ˈliːd ˌstɔːr.i/",
+        syllableBreakdown: "lead sto-ry",
+        stressPattern: "primary stress on 'lead', secondary stress on the first syllable of 'story' (LEAD sto-ry)",
+        commonMistakes: "Learners often pronounce 'lead' as /lɛd/ (the heavy metal lead or past tense of lead) instead of the long high-front vowel /liːd/ (guiding/principal). Non-native speakers also frequently reduce the rhotic diphthong in 'story' (/ˈstɔːr.i/ -> *sto-li*) or place equal, flat stress across both words.",
+        audioUrl: "https://ssl.gstatic.com/dictionary/static/sounds/20200429/lead_story--_us_1.mp3"
+      },
+      etymology: {
+        origin: "Compound noun formed from Old English 'lǣdan' (to guide, conduct, precede) and Anglo-Norman / Old French 'estorie' (narrative, chronicle, history), derived from Latin 'historia'.",
+        rootWord: "'lead' (Proto-Germanic *laidijaną, 'to cause to go, guide') + 'story' (Latin 'historia', 'inquiry, narrative, account')",
+        rootMeaning: "'The narrative that guides or marches at the head' — designating the foremost, most prominent piece of reportage positioned to head a broadcast or newspaper issue.",
+        evolution: "In late 19th-century American print journalism, 'lead' (often historically spelled 'lede' in typography to distinguish it from lead molten type metal) denoted the opening sentence of an article. By the early 20th century, with the expansion of daily metropolitan broadsheets and press syndicates, 'lead story' emerged specifically to designate the front-page article featuring the largest banner headline 'above the fold'. With the advent of radio news bulletins in the 1930s and television evening broadcasts in the 1950s, the term broadened to describe the premier, agenda-setting news segment introduced right after the broadcast opening.",
+        relatedLanguages: [
+          "French: article de tête / sujet principal",
+          "Spanish: noticia de portada / tema principal",
+          "German: Aufmacher / Titelgeschichte",
+          "Italian: notizia di apertura / servizio di punta"
+        ],
+        firstRecordedUse: "Late 19th century (c. 1890–1905 in American print newsrooms and telegraphic news syndicates)"
+      },
+      deepMeaning: {
+        coreConcept: "The most prominent, newsworthy, and critical article or broadcast segment chosen by editors to appear on the front page above the fold or at the top of a radio or television news bulletin.",
+        spatialContext: "Television newsrooms, editorial bullpen layout desks, front-page broadsheet printing plates, and homepage hero banner positions of online digital media outlets.",
+        temporalContext: "Determined during daily editorial pitch meetings (morning budget meetings) and finalized minutes before press deadlines or broadcast airtime.",
+        emotionalTone: "Urgent, authoritative, attention-grabbing, and impactful.",
+        formalityLevel: "neutral",
+        connotation: "neutral"
+      },
+      nativeMindset: {
+        howNativesThink: "To native speakers, the 'lead story' is the editorial anchor of the day—the one event or scoop that editors believe defines the news cycle and demands immediate public attention. In corporate communications or PR, earning mention in or becoming the 'lead story' of a major trade journal or morning bulletin represents the absolute peak of earned media exposure, carrying massive reputational and market-moving weight.",
+        mentalImage: "A news director in a broadcast control room pointing at an array of multi-view video monitors, instructing the control switcher to queue up the field reporter's live satellite feed as the 6:00 PM broadcast's lead story.",
+        whenToUse: "Use when discussing the headline item of a newspaper, magazine, television newscast, podcast bulletin, or corporate press review (e.g., 'The central bank's interest rate hike was the lead story across every financial daily').",
+        whenNotToUse: "Do not use for a regular feature article hidden in a secondary section (use 'feature story' or 'column'), an opinion editorial (use 'op-ed'), or a simple press release issued by a company (use 'media advisory' or 'press statement').",
+        culturalContext: "In Anglo-American media tradition, the lead story establishes the public agenda ('agenda-setting theory'). Historically positioned 'above the fold' on folded broadsheets sold at newsstands, it dictated retail sales; in modern digital journalism, it commands the top hero slot on news homepages with high-contrast banners."
+      },
+      examples: {
+        daily: [
+          "I turned on the car radio just in time to hear the lead story about overnight snowfall causing highway closures.",
+          "The local paper's lead story covered the grand opening of the municipal recreation center downtown.",
+          "Did you catch the lead story on the evening news regarding the airport baggage handlers' strike?"
+        ],
+        business: [
+          "Our corporate acquisition was featured as the lead story in today's issue of the Financial Chronicle.",
+          "Following the leak of the confidential clinical trial results, crisis PR consultants scrambled as the controversy became the lead story on tech blogs.",
+          "The pharmaceutical giant's patent dispute served as the lead story across several international trade publications this morning."
+        ],
+        conversation: [
+          "\"Have you reviewed the media monitoring report from this morning?\" \"Yes, our quarterly earnings beat expectations and ended up as the lead story in the business section.\"",
+          "\"Why is the executive committee convening an emergency press conference?\" \"A major competitor filed an antitrust lawsuit against us, and it's threatening to become tonight's lead story.\"",
+          "\"Should we pitch our renewable energy project to the national desks today?\" \"I would wait until tomorrow; geopolitical breaking news will dominate every network's lead story tonight.\""
+        ],
+        collocations: [
+          "feature as the lead story",
+          "dominate the lead story",
+          "tonight's lead story",
+          "front-page lead story",
+          "develop into the lead story",
+          "lead story of the broadcast"
+        ]
+      },
+      wordFamily: {
+        noun: "lead story, leader, lead, lede",
+        verb: "lead",
+        adjective: "leading",
+        adverb: "leadingly"
+      },
+      visual: {
+        imageKeyword: "breaking newsroom broadcast television lead story control room",
+        imageDescription: "A high-tech television broadcast newsroom where anchors sit at an illuminated curved desk while a massive overhead video wall displays the bold headline graphics of the lead story.",
+        mnemonic: "LEAD story LEADS the news: it stands at the very front of the line, guiding all the other stories that follow."
+      },
+      video: {
+        description: "A behind-the-scenes broadcast journalism documentary showcasing an executive producer making the split-second decision to switch the evening broadcast's lead story following breaking corporate earnings disclosures."
+      },
+      toeicContext: {
+        commonParts: [4, 7],
+        exampleQuestion: "The acquisition of Apex Logistics was chosen as the _____ story for the morning edition of the Global Commerce Gazette.\n(A) lead\n(B) leader\n(C) leadership\n(D) leadingly",
+        tips: "In TOEIC reading and listening sections, 'lead story' is a standard journalistic compound noun meaning the foremost or headline news article. Option (A) 'lead' functions as a noun adjunct modifying 'story'. Option (B) 'leader' refers to a person who directs or a short editorial in British English; option (C) 'leadership' refers to the abstract quality of management; and option (D) is an adverb which cannot modify a noun."
+      },
+      synonyms: [
+        "headline story",
+        "front-page story",
+        "top story",
+        "cover story",
+        "main feature",
+        "banner story"
+      ],
+      antonyms: [
+        "filler item",
+        "back-page brief",
+        "side story",
+        "sidebar",
+        "human-interest footnote"
+      ],
+      relatedWords: [
+        "above the fold",
+        "breaking news",
+        "editorial board",
+        "byline",
+        "press run",
+        "news cycle",
+        "broadcast rundown"
+      ]
+    },
+    {
+      id: "comms-160",
+      word: "leaflet",
+      partOfSpeech: ["noun"],
+      category: "communications",
+      level: "intermediate",
+      toeicFrequency: 8,
+      pronunciation: {
+        ipa: "/ˈliːf.lət/",
+        syllableBreakdown: "leaf-let",
+        stressPattern: "primary stress on the first syllable (LEAF-let)",
+        commonMistakes: "Learners often pronounce the diminutive suffix '-let' with a full, elongated /ɛt/ sound instead of the unstressed, reduced schwa or weak vowel /-lət/ or /-lɪt/. Some speakers also confuse the diphthong/long vowel in 'leaf' (/iː/) with a short /ɪ/, pronouncing it like *lif-let*.",
+        audioUrl: "https://ssl.gstatic.com/dictionary/static/sounds/20200429/leaflet--_us_1.mp3"
+      },
+      etymology: {
+        origin: "Middle English root 'leef' (leaf) combined with the Anglo-Norman diminutive suffix '-et', originally a botanical term meaning a small or secondary leaf of a compound foliage structure, later transferred to single-sheet printed paper.",
+        rootWord: "Old English 'lēaf' (plant leaf, page of a book) + diminutive suffix '-let' (from Old French '-et' / '-ete')",
+        rootMeaning: "'A tiny leaf or single sheet' — metaphorical extension from a single botanical leaf to an unfolded or simply folded small printed sheet distributed for public notification.",
+        evolution: "Originating in the 18th century as a botanical term describing the distinct divisions of a compound leaf (such as clover or ash), 'leaflet' was adopted by printers and political pamphleteers in the mid-19th century (c. 1860s) to denote a small, light, unbound printed sheet of paper (often folded once or twice) passed by hand or inserted into envelopes. By the 20th century, corporate marketing, public health authorities, and political organizations standardized 'leaflet' as a cost-effective medium for mass informational handouts, pharmaceutical package inserts, and promotional flyers.",
+        relatedLanguages: [
+          "French: dépliant / feuillet / prospectus",
+          "Spanish: folleto / volante / prospecto",
+          "German: Faltblatt / Flugblatt / Merkblatt",
+          "Italian: opuscolo / volantino / foglietto illustrativo"
+        ],
+        firstRecordedUse: "1867 in the sense of a small printed circular or informational sheet; late 18th century (1780s) in botanical literature."
+      },
+      deepMeaning: {
+        coreConcept: "A printed, small single sheet of paper, typically folded (bi-fold or tri-fold) or flat, distributed freely to inform, advertise, instruct, or persuade the public regarding a commercial product, public health campaign, event, or community initiative.",
+        spatialContext: "Retail display stands, reception counters, convention exhibition booths, direct-mail envelopes, street distribution points, and product packaging boxes (e.g., patient information leaflets inside medicine boxes).",
+        temporalContext: "Produced for specific marketing rollouts, grand openings, regulatory public notices, trade fair handouts, or election campaigns.",
+        emotionalTone: "Informative, promotional, accessible, and direct.",
+        formalityLevel: "neutral",
+        connotation: "neutral"
+      },
+      nativeMindset: {
+        howNativesThink: "To a native speaker, a 'leaflet' is a tangible, lightweight, takeaway informational sheet. Unlike a glossy, stapled 'brochure' or a multi-page bound 'booklet', a leaflet is modest, quick to read, and often folded in halves or thirds (such as a tri-fold takeaway menu, a subway system guide, or a dental hygiene advisory). In the UK and Commonwealth, 'leaflet' is the primary everyday term for street flyers and pharmacy package inserts ('patient information leaflet'), whereas in American English it often shares space with 'flyer' or 'pamphlet'.",
+        mentalImage: "An acrylic tabletop dispenser on a clinic's reception desk containing tri-fold glossy paper leaflets that explain preventative health checkups and vaccination schedules.",
+        whenToUse: "Use when describing single-sheet printed promotional or instructional materials distributed by hand, posted through mail slots, or displayed on counters (e.g., 'distribute informational leaflets about the new recycling guidelines').",
+        whenNotToUse: "Do not use for multi-page saddle-stitched or bound publications (use 'booklet', 'catalog', or 'brochure'), nor for formal bound annual reports or laminated posters.",
+        culturalContext: "In British and Commonwealth everyday life, 'leafleting' is a widespread political and commercial practice (canvassing neighborhoods door-to-door). Furthermore, statutory consumer laws require a 'patient information leaflet' (PIL) to accompany all regulated pharmaceuticals."
+      },
+      examples: {
+        daily: [
+          "A volunteer outside the train station handed me a leaflet detailing weekend rail maintenance and bus replacement services.",
+          "The clinic's waiting room has several informative leaflets on managing seasonal allergies.",
+          "Before discarding the antibiotic packaging, be sure to read the dosage instructions on the enclosed leaflet."
+        ],
+        business: [
+          "Marketing printed ten thousand promotional leaflets on glossy recycled stock for distribution at the regional trade expo.",
+          "To comply with consumer protection regulations, every manufactured power tool must include a safety warning leaflet inside the carton.",
+          "Our neighborhood outreach campaign relied on door-to-door leafleting to notify residents of the upcoming public zoning consultation."
+        ],
+        conversation: [
+          "\"Do we have enough printed collateral for tomorrow's job fair?\" \"We have two boxes of tri-fold leaflets outlining our graduate recruitment program ready by the door.\"",
+          "\"Where did you learn about the new commercial energy rebate?\" \"A representative dropped a color leaflet into our office mailbox yesterday.\"",
+          "\"Can you check whether the print shop corrected the telephone number on the event leaflets?\" \"Yes, the proofs look perfect; they're running the full batch this afternoon.\""
+        ],
+        collocations: [
+          "distribute leaflets",
+          "promotional leaflet",
+          "informational leaflet",
+          "patient information leaflet",
+          "hand out leaflets",
+          "tri-fold leaflet"
+        ]
+      },
+      wordFamily: {
+        noun: "leaflet, leafleteer, leafleting",
+        verb: "leaflet",
+        adjective: "leafleted",
+        adverb: ""
+      },
+      visual: {
+        imageKeyword: "promotional tri-fold paper leaflet print marketing brochure display",
+        imageDescription: "A clear acrylic desktop brochure rack displaying neatly arranged tri-fold printed informational leaflets with crisp typography and colorful graphics on high-quality paper stock.",
+        mnemonic: "LEAF-let: Think of a tiny paper 'leaf' that falls into your hands or mail slot to deliver a short message."
+      },
+      video: {
+        description: "A corporate print-shop tutorial demonstrating the production workflow of commercial leaflets, from digital offset prepress formatting and color proofing to automated folding machines."
+      },
+      toeicContext: {
+        commonParts: [1, 3, 7],
+        exampleQuestion: "Volunteers will be _____ informative leaflets to local residents regarding the scheduled changes to the municipal bus routes.\n(A) distribute\n(B) distributing\n(C) distribution\n(D) distributor",
+        tips: "In TOEIC Part 5, grammatical collocation and verb tense structures are tested with communicative tasks. Following the auxiliary 'will be', the sentence requires a present participle (B) 'distributing' to form the future continuous tense. Notice the high-frequency TOEIC collocation 'distribute leaflets' (hand out informational flyers). Option (A) is the base form, (C) is a noun, and (D) is an agent noun."
+      },
+      synonyms: [
+        "flyer",
+        "pamphlet",
+        "brochure",
+        "handout",
+        "circular",
+        "tract"
+      ],
+      antonyms: [
+        "hardcover book",
+        "tome",
+        "bound volume",
+        "monograph"
+      ],
+      relatedWords: [
+        "print run",
+        "tri-fold",
+        "collateral",
+        "direct mail",
+        "paper stock",
+        "glossy finish",
+        "dispenser"
+      ]
+    },
+    {
+      id: "comms-161",
+      word: "letterhead",
+      partOfSpeech: ["noun"],
+      category: "communications",
+      level: "intermediate",
+      toeicFrequency: 8,
+      pronunciation: {
+        ipa: "/ˈlet̬.ɚ.hed/",
+        syllableBreakdown: "let-ter-head",
+        stressPattern: "primary stress on the first syllable, secondary stress on the third syllable (LET-ter-head)",
+        commonMistakes: "In American English, the medial /t/ is a voiced flap [ɾ], whereas learners often over-enunciate an aspirated /tʰ/ or drop the /h/ sound entirely in the final compound root (*letter-ead*). Non-rhotic speakers should also maintain the proper schwa-r sound in American pronunciation.",
+        audioUrl: "https://ssl.gstatic.com/dictionary/static/sounds/20200429/letterhead--_us_1.mp3"
+      },
+      etymology: {
+        origin: "Compound noun formed in Modern English by combining 'letter' (via Old French 'lettre' from Latin 'littera' [alphabetic character, written epistle]) and 'head' (from Old English 'hēafod' [top, summit, chief part]).",
+        rootWord: "letter (Latin 'littera', 'letter of the alphabet, document') + head (Proto-Germanic *haubudą, 'top, front, upper part')",
+        rootMeaning: "'The header or top part of a letter' — referring to the printed heading at the top of stationery paper or digital templates displaying an organization's legal name, crest/logo, address, and credentials.",
+        evolution: "In the 18th and early 19th centuries, formal correspondence began with handwritten signatures and sealing wax. With the industrialization of engraving and commercial lithographic printing in the mid-19th century (c. 1860s–1870s), businesses began commissioning custom-engraved stationery featuring their trademark, commercial crest, telegraphic code, and physical premises at the top margin. In modern legal and business contexts, 'letterhead' refers both to the printed sheet of stationery itself and to the verified digital header applied to official corporate communications, contracts, and letters of recommendation.",
+        relatedLanguages: [
+          "French: en-tête / papier à en-tête",
+          "Spanish: membrete / papel con membrete",
+          "German: Briefkopf / Geschäftspapier",
+          "Italian: carta intestata / intestazione"
+        ],
+        firstRecordedUse: "Circa 1869 in American commercial printing and legal correspondence trade catalogs."
+      },
+      deepMeaning: {
+        coreConcept: "The printed heading at the top of a sheet of writing paper or electronic document template, typically containing an organization's legal name, logo, corporate address, telephone number, website, and tax registration details; also refers to the entire sheet of stationery pre-printed with this design.",
+        spatialContext: "Corporate executive suites, law firm records rooms, official government correspondence folders, purchasing department archives, and digital word processor stationery templates (.dotx).",
+        temporalContext: "Used whenever generating formal external business correspondence, contractual offers, legal notifications, employment verification letters, or formal billing statements.",
+        emotionalTone: "Authoritative, dignified, corporate, and legally official.",
+        formalityLevel: "formal",
+        connotation: "positive"
+      },
+      nativeMindset: {
+        howNativesThink: "To native English speakers, writing something 'on company letterhead' is the universal hallmark of official corporate authenticity and legal accountability. An email or plain text printout can be sent by anyone, but putting a statement, recommendation, or offer onto 'official letterhead' signifies that the author is acting as an authorized agent of the enterprise. It transforms an informal memo into an enforceable, binding organizational representation.",
+        mentalImage: "A prestigious law firm partner signing a formal legal settlement printed on heavy 28-pound watermarked cotton bond paper featuring an embossed navy blue and gold foil company crest across the top header.",
+        whenToUse: "Use when referencing official business stationery or formal documentation requiring institutional legitimacy (e.g., 'The bank requires proof of employment written on corporate letterhead').",
+        whenNotToUse: "Do not use for informal internal chat messages, handwritten quick notes between colleagues (use 'sticky note' or 'memo pad'), or personal non-business correspondence.",
+        culturalContext: "In Western corporate and legal practice, submitting documents on official letterhead is often a strict statutory or banking requirement for visa applications, credit verifications, tender bids, and compliance filings. Unauthorized use of corporate letterhead can constitute fraudulent misrepresentation."
+      },
+      examples: {
+        daily: [
+          "The mortgage broker asked me to provide a letter from my employer printed on official company letterhead.",
+          "I opened the formal notice and saw the university's embossed letterhead at the top of the acceptance letter.",
+          "Please ensure that your medical certificate is issued on the clinic's authorized letterhead before submitting it to your travel insurance."
+        ],
+        business: [
+          "All formal vendor termination notices must be issued on executive letterhead and signed by the department director.",
+          "The purchasing team ordered five thousand sheets of premium watermarked bond paper for the new corporate letterhead.",
+          "Our legal counsel advised us that the counteroffer would only be considered binding once submitted on official firm letterhead."
+        ],
+        conversation: [
+          "\"Has the embassy responded to your work visa petition yet?\" \"Not yet; they requested an updated sponsorship letter printed on official company letterhead with an ink signature.\"",
+          "\"Should I send the settlement agreement as a standard email attachment?\" \"No, export it onto our firm's digital letterhead and send it as an encrypted PDF.\"",
+          "\"Did the print shop deliver the new stationery?\" \"Yes, the redesigned letterhead with the updated corporate address and logo arrived this morning.\""
+        ],
+        collocations: [
+          "official letterhead",
+          "company letterhead",
+          "printed on letterhead",
+          "corporate letterhead",
+          "digital letterhead",
+          "embossed letterhead"
+        ]
+      },
+      wordFamily: {
+        noun: "letterhead, letter, lettering",
+        verb: "letter",
+        adjective: "letterheaded, lettered",
+        adverb: ""
+      },
+      visual: {
+        imageKeyword: "official corporate letterhead stationery embossed logo fountain pen business document",
+        imageDescription: "A high-end sheet of crisp white textured business paper featuring an embossed corporate logo and contact details across the top margin, positioned beside an executive fountain pen.",
+        mnemonic: "LETTER-HEAD: It sits at the very HEAD (top) of the formal LETTER to tell the world who is speaking."
+      },
+      video: {
+        description: "A brand identity design case study demonstrating how a graphic design agency creates a cohesive stationery system, including custom typography and layout for corporate letterheads, business cards, and envelopes."
+      },
+      toeicContext: {
+        commonParts: [6, 7],
+        exampleQuestion: "To verify your previous salary and tenure, the mortgage underwriter requires an employment verification letter written on company _____.\n(A) letterhead\n(B) handwriting\n(C) typeface\n(D) watermark",
+        tips: "In TOEIC Part 7 business letters and Part 6 text completion, 'company letterhead' or 'official letterhead' is an essential business collocation. It refers to official pre-printed stationery carrying the company's logo, address, and credentials. (B) 'handwriting' refers to manual penmanship, (C) 'typeface' is a typographic font design, and (D) 'watermark' is an anti-counterfeit paper impression. Only (A) correctly completes the phrase."
+      },
+      synonyms: [
+        "stationery header",
+        "company stationery",
+        "corporate heading",
+        "printed stationery",
+        "official stationery",
+        "letter paper"
+      ],
+      antonyms: [
+        "blank paper",
+        "plain sheet",
+        "unprinted stationery",
+        "scratch paper"
+      ],
+      relatedWords: [
+        "stationery",
+        "watermark",
+        "embossing",
+        "logo",
+        "masthead",
+        "bond paper",
+        "correspondence"
+      ]
+    },
+    {
+      id: "comms-162",
+      word: "listener",
+      partOfSpeech: ["noun"],
+      category: "communications",
+      level: "intermediate",
+      toeicFrequency: 8,
+      pronunciation: {
+        ipa: "/ˈlɪs.ən.ɚ/",
+        syllableBreakdown: "lis-ten-er",
+        stressPattern: "primary stress on the first syllable (LIS-ten-er)",
+        commonMistakes: "Learners frequently make the mistake of pronouncing the silent 't' (*lis-ten-er* as /ˈlɪs.tən.ər/). The 't' is completely silent (/ˈlɪs.nɚ/ or /ˈlɪs.ən.ɚ/). In addition, learners sometimes substitute /iː/ for the short lax vowel /ɪ/ (*lees-ner*).",
+        audioUrl: "https://ssl.gstatic.com/dictionary/static/sounds/20200429/listener--_us_1.mp3"
+      },
+      etymology: {
+        origin: "Middle English 'listnere', derived from Old English 'hlysnan' (to listen, give ear to, attend to) combined with the Germanic agent noun suffix '-er'.",
+        rootWord: "Old English 'hlysnan' (to listen, hear, attend) from Proto-Germanic *hlusinōną (to pay attention), cognate with Old English 'hlosnian' (to wait in ambush, eavesdrop)",
+        rootMeaning: "'One who attentively gives ear or pays conscious attention to audible speech or sounds' — emphasizing active, conscious cognitive reception rather than passive hearing.",
+        evolution: "In Old and Middle English, 'hlysnan' and its agent form described someone intentionally paying attention to speech, sermons, or music, distinguishing conscious listening from passive hearing ('hierst'). In the 18th and 19th centuries, it was praised in rhetoric and social conversation manuals as a key virtue of interpersonal diplomacy. With the emergence of wireless commercial broadcasting in the 1920s, 'listener' became the definitive term for audience members tuning into radio broadcasts (often quantified as 'listenership'). In modern corporate communications, psychology, and management, 'active listener' designates an empathetic, attentive communicator who processes feedback constructively.",
+        relatedLanguages: [
+          "French: auditeur / écouteur",
+          "Spanish: oyente / radioyente",
+          "German: Hörer / Zuhörer",
+          "Italian: ascoltatore / radioascoltatore"
+        ],
+        firstRecordedUse: "Late 14th century (c. 1380–1400 in Middle English devotional and rhetorical texts); 1920s in the radio broadcasting audience sense."
+      },
+      deepMeaning: {
+        coreConcept: "A person who attentively and consciously pays ear to spoken words, audio broadcasts, musical performances, or verbal discussions; in professional communications, an individual who actively processes, comprehends, and responds to messages without interruption.",
+        spatialContext: "Radio broadcasting studios, podcast recording booths, seminar lecture halls, corporate mediation conference rooms, call centers, and client consultation suites.",
+        temporalContext: "Occurs during synchronous verbal communication, ongoing audio streaming broadcasts, customer service interactions, and team briefing sessions.",
+        emotionalTone: "Attentive, receptive, empathetic, and engaged.",
+        formalityLevel: "neutral",
+        connotation: "positive"
+      },
+      nativeMindset: {
+        howNativesThink: "To native speakers, being a 'listener' goes far beyond physiological hearing; it is a conscious psychological posture. Calling someone a 'good listener' in a corporate or personal context is one of the highest compliments, signifying empathy, patience, emotional intelligence, and respect. Conversely, in media and advertising, 'listeners' are the valued metrics—the audience that drives audio advertising rates, podcast sponsorships, and radio programming.",
+        mentalImage: "A project manager sitting across a conference table with an open notepad, maintaining steady eye contact and nodding thoughtfully while a client outlines their software specifications.",
+        whenToUse: "Use when referring to radio/podcast audience members (e.g., 'The podcast has over 500,000 weekly listeners') or when describing someone's receptive communication skills (e.g., 'A successful executive must be an empathetic listener').",
+        whenNotToUse: "Do not use when referring to spectators at a visual performance or sporting match (use 'viewer', 'spectator', or 'onlooker'), nor for a passive crowd at a public event where visual observation dominates.",
+        culturalContext: "In North American and global corporate leadership coaching, 'active listening' is recognized as a vital executive competency. In media and advertising industries, 'listenership' ratings (e.g., Nielsen Audio) determine commercial viability and spot advertising pricing."
+      },
+      examples: {
+        daily: [
+          "She is always such a compassionate listener whenever I need to talk through a tough day at school.",
+          "The radio host invited a lucky listener to call in and guess the mystery song title for concert tickets.",
+          "My grandmother has become an avid podcast listener since getting her new tablet."
+        ],
+        business: [
+          "Effective conflict resolution training teaches supervisors how to become active listeners during employee grievance hearings.",
+          "Our marketing team was thrilled to report that our weekly corporate podcast surpassed one million unique listeners this quarter.",
+          "During client negotiations, maintaining your composure and acting as a careful listener can reveal crucial concessions."
+        ],
+        conversation: [
+          "\"Why do our customer service satisfaction ratings rank so high?\" \"Our agents are trained to be patient listeners who validate caller concerns before proposing solutions.\"",
+          "\"Did you submit an entry to the national public radio contest?\" \"Yes, they selected three listeners to participate in the live quiz segment this Friday.\"",
+          "\"How can our team improve cross-departmental collaboration?\" \"We need team leaders who are proactive listeners rather than managers who simply issue top-down directives.\""
+        ],
+        collocations: [
+          "good listener",
+          "active listener",
+          "avid listener",
+          "radio listener",
+          "attentive listener",
+          "regular listener"
+        ]
+      },
+      wordFamily: {
+        noun: "listener, listenership, listening",
+        verb: "listen",
+        adjective: "listening",
+        adverb: ""
+      },
+      visual: {
+        imageKeyword: "active listener business meeting attentive professional consultation headphones podcast",
+        imageDescription: "A professional in a bright conference room leaning slightly forward with attentive body language and a warm, focused expression, actively listening to a colleague's presentation.",
+        mnemonic: "A true LISTENER does not just hear; they make a mental LIST of everything said to understand deeply."
+      },
+      video: {
+        description: "An executive coaching seminar illustrating the five pillars of active listening in high-stakes negotiations, comparing distracted hearing with empathetic, validating listening behaviors."
+      },
+      toeicContext: {
+        commonParts: [3, 4, 7],
+        exampleQuestion: "To foster productive team collaboration, project directors are encouraged to be _____ listeners who respect divergent viewpoints.\n(A) attentive\n(B) attentively\n(C) attention\n(D) attend",
+        tips: "In TOEIC Part 5, adjective-noun collocations and part-of-speech determination are tested regularly. The blank precedes the noun 'listeners' and follows the linking verb phrase 'to be... listeners', requiring an adjective modifier. (A) 'attentive' correctly modifies 'listeners' to form the standard collocation 'attentive listeners'. (B) is an adverb, (C) is a noun, and (D) is a verb."
+      },
+      synonyms: [
+        "hearer",
+        "auditor",
+        "audience member",
+        "radio listener",
+        "attendant",
+        "sympathizer"
+      ],
+      antonyms: [
+        "speaker",
+        "orator",
+        "presenter",
+        "broadcaster",
+        "lecturer"
+      ],
+      relatedWords: [
+        "active listening",
+        "listenership",
+        "audience",
+        "comprehension",
+        "receptive skills",
+        "broadcast",
+        "audio stream"
+      ]
+    }
+  ]
+};
+
+fs.writeFileSync('./scratch/comms_159_162.json', JSON.stringify(data, null, 2));
+console.log("File written successfully. Count:", data.words.length);

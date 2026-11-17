@@ -1,0 +1,500 @@
+import json
+import jsonschema
+import sys
+import re
+
+with open('scripts/process_words.py') as f:
+    code = f.read()
+
+schema_str = code[code.find('SCHEMA ='):code.find('BASE_PROMPT =')].strip()
+ldict = {}
+exec(schema_str, globals(), ldict)
+schema = ldict['SCHEMA']
+
+words = [
+  {
+    "id": "dining-045",
+    "word": "apron",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+      "ipa": "/ˈeɪ.prən/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/apron--_us_1.mp3",
+      "syllableBreakdown": "a-pron",
+      "stressPattern": "primary stress on the first syllable (AY-pruhn)",
+      "commonMistakes": "Learners frequently mispronounce the first vowel as a short /æ/ (*a-pron*) or /ɑː/ instead of the proper diphthong /eɪ/. In the second unstressed syllable, non-native speakers often over-enunciate the vowel as an open /ɒn/ or /ɔːn/ instead of the reduced neutral schwa /rən/."
+    },
+    "etymology": {
+      "origin": "Middle English metanalysis (false splitting) from Old French 'naperon' (small tablecloth, diminutive of 'nape' / modern 'nappe' meaning cloth), derived from Classical Latin 'mappa' (napkin, cloth, signal cloth).",
+      "rootWord": "Old French 'naperon' (tablemat, cloth), from Latin 'mappa' (cloth, napkin).",
+      "rootMeaning": "'A small protective cloth or napkin worn to shield clothing'.",
+      "evolution": "In Middle English, 'a naperon' was phonetically rebracketed through faulty juncture (metanalysis) around the 15th century: listeners heard 'an aperon' instead of 'a naperon' (identical to how 'a naddre' became 'an adder' and 'a norange' became 'an orange'). Over subsequent centuries, the apron evolved from a basic domestic linen cloth into specialized occupational protective gear across professional culinary kitchens, coffee houses, butcheries, and fine-dining service floors.",
+      "relatedLanguages": [
+        "French: napperon (small placemat / doily) / tablier (kitchen apron)",
+        "Spanish: delantal (apron) / mandil",
+        "Italian: grembiule (apron) / tovaglietta",
+        "German: Schürze (apron)"
+      ],
+      "firstRecordedUse": "Late 14th to early 15th century (c. 1380–1420 as 'aperon')"
+    },
+    "deepMeaning": {
+      "coreConcept": "A protective outer garment tied around the waist or looped around the neck, worn by culinary, hospitality, and service staff to protect clothing from grease, spills, stains, and heat while holding small service tools in utility pockets.",
+      "spatialContext": "Commercial restaurant kitchens, pastry bake stations, espresso coffee bars, banquet prep lines, butcher counters, and dishwashing stations.",
+      "temporalContext": "Donned immediately upon clocking in during pre-shift prep and removed or laundered between food preparation shifts according to municipal hygiene standards.",
+      "emotionalTone": "Practical, industrious, hygienic, and service-oriented.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To a native speaker, an 'apron' is the quintessential visual symbol of hands-on culinary work, craft bartending, and hospitality service. In restaurant operations, different apron styles convey distinct roles: a long, crisp white French bistro apron tied at the waist signals formal front-of-house table service or sommelier work; a heavy, dark canvas or denim bib apron with brass grommets denotes artisanal specialty barista or mixology culture; and a waterproof rubberized bib apron designates kitchen dishwashing and butchery. Wearing a clean apron represents professionalism and sanitation.",
+      "mentalImage": "A line cook wearing a clean charcoal-grey canvas bib apron with crossed back straps, reaching into the double front chest pockets for a digital meat thermometer beside a stainless steel prep station.",
+      "whenToUse": "Use when referring to the protective cloth or leather garment worn over the body while cooking, serving, baking, or crafting (e.g., 'chef's apron', 'barista apron', 'bistro waist apron', 'don an apron').",
+      "whenNotToUse": "Do not confuse with a 'pinafore' (an informal domestic or children's sleeveless decorative smock), a 'smock' (a full-coverage loose protective coat worn in laboratories or art studios), or 'chef's whites / jacket' (the double-breasted formal uniform worn underneath).",
+      "culturalContext": "A staple vocabulary item in TOEIC Part 1 photograph questions, where test-takers must identify restaurant employees or baristas ('A woman is tying an apron around her waist', 'Several servers are wearing aprons behind the counter'). In hospitality health codes across the US and UK, regulations strictly prohibit staff from wearing aprons outside the food preparation area (e.g., into restrooms or dining patios) to prevent cross-contamination."
+    },
+    "examples": {
+      "daily": [
+        "Before rolling out the pizza dough on the kitchen counter, she tied a cotton apron around her waist.",
+        "The coffee barista wiped milk foam off his dark canvas apron before calling out the next customer's order.",
+        "Hang your soiled apron on the laundry hook near the kitchen exit so it can be washed overnight."
+      ],
+      "business": [
+        "The restaurant management contract mandates that all banquet kitchen staff be issued two clean, company-branded aprons at the beginning of each shift.",
+        "According to local health and safety regulations, food handlers must remove their protective aprons before entering public restroom facilities or dining patios.",
+        "To celebrate the opening of their downtown café, the franchise ordered customized bistro aprons featuring embroidered company logos for all servers."
+      ],
+      "conversation": [
+        "A: 'Did the delivery of clean linen uniforms arrive from the industrial laundry service this morning?'\nB: 'Yes, fifty freshly pressed chef's aprons and kitchen towels are stocked in the pantry supply closet.'",
+        "A: 'Our new front-of-house uniform guidelines take effect next Monday.'\nB: 'Right, servers will switch from black waist aprons to navy blue bib aprons with brass utility clips.'",
+        "A: 'Why did the food safety inspector deduct points during the kitchen walkthrough?'\nB: 'One of the prep cooks forgot to change his stained apron after deboning raw poultry.'"
+      ],
+      "collocations": [
+        "wear an apron",
+        "tie an apron",
+        "bib apron",
+        "chef's apron",
+        "waist apron",
+        "clean apron"
+      ]
+    },
+    "wordFamily": {
+      "noun": "apron",
+      "verb": "apron (rare)",
+      "adjective": "aproned",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "chef tying canvas apron kitchen uniform restaurant cook",
+      "imageDescription": "A professional culinary chef tying the back straps of a heavy dark-grey canvas bib apron over a white shirt in a commercial restaurant kitchen beside stainless steel counters.",
+      "mnemonic": "APRON: Remember how 'A NAPERON' (napkin) was misheard as 'AN APRON'—it's your NAPKIN worn on your chest to keep stains OFF!"
+    },
+    "video": {
+      "description": "A commercial kitchen orientation video showing new culinary line staff how to properly adjust bib apron straps, maintain hygiene standards, and utilize utility pockets during lunch rush service."
+    },
+    "toeicContext": {
+      "commonParts": [
+        1,
+        3,
+        7
+      ],
+      "exampleQuestion": "Before beginning food preparation in the culinary workshop, all participants are instructed to put on a protective _____ and wash their hands thoroughly.\n(A) apron\n(B) apron's\n(C) aproned\n(D) aprons",
+      "tips": "In TOEIC Part 1, 'apron' appears frequently in photo descriptions describing culinary staff, servers, or baristas ('A server is wearing an apron', 'The woman is tying an apron behind her back'). In Part 5 grammatical questions, note the singular indefinite article 'a' followed by the adjective 'protective', which requires the singular count noun 'apron' (Choice A). Choice D is plural and conflicts with 'a', Choice B is possessive, and Choice C is an adjective participle."
+    },
+    "synonyms": [
+      "protective garment",
+      "pinafore",
+      "bib",
+      "tablier",
+      "waistcloth"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "chef's jacket",
+      "toque",
+      "kitchen linens",
+      "utility pocket",
+      "hairnet",
+      "sanitation standards",
+      "food handling"
+    ]
+  },
+  {
+    "id": "dining-046",
+    "word": "aroma",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+      "ipa": "/əˈroʊ.mə/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/aroma--_us_1.mp3",
+      "syllableBreakdown": "a-ro-ma",
+      "stressPattern": "primary stress on the second syllable (uh-ROH-muh)",
+      "commonMistakes": "Learners frequently place primary stress on the first syllable (*AH-ruh-muh*) or pronounce the stressed diphthong /oʊ/ as a flat short vowel /ɒ/ or open /ɔː/. The initial letter 'a' should be a completely reduced neutral schwa /ə/, not /æ/ or /eɪ/."
+    },
+    "etymology": {
+      "origin": "Classical Latin 'arōma' (sweet odor, spice, fragrance), borrowed from Ancient Greek 'ἄρωμα' (árōma, meaning sweet herb, aromatic spice, seasoning).",
+      "rootWord": "Ancient Greek 'ἄρωμα' (árōma, spice, perfume, fragrant plant).",
+      "rootMeaning": "'A sweet-smelling spice or fragrant botanical seasoning'.",
+      "evolution": "In Ancient Greek and Classical Latin, 'aroma' referred literally to fragrant medicinal herbs, incense, and imported spices such as cinnamon and frankincense. It entered Middle English in the 14th to 15th centuries through ecclesiastical and medical texts referring to spice preparations. By the early 19th century, its meaning broadened in standard English to describe any distinctive, pervasive, and pleasant scent or bouquet, specifically emitted by roasted coffee beans, freshly baked pastries, simmered broths, and fine wines.",
+      "relatedLanguages": [
+        "French: arôme (pleasant scent / aroma)",
+        "Spanish: aroma (fragrance / aroma)",
+        "Italian: aroma (flavoring / scent / spice)",
+        "German: Aroma (flavor / bouquet / scent)"
+      ],
+      "firstRecordedUse": "Late 14th century (c. 1380–1400 in culinary and apothecary treatises)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A distinctive, pervasive, and typically pleasant or appetizing scent or fragrance, especially one released by freshly prepared food, roasted coffee beans, aged wine, baking bread, or exotic spices.",
+      "spatialContext": "Artisan bakeries, specialty coffee roasting facilities, fine-dining restaurant dining rooms, wine tasting cellars, and open display kitchens.",
+      "temporalContext": "Experienced immediately during cooking, grinding, roasting, brewing, or uncorking, serving as the sensory precursor to tasting.",
+      "emotionalTone": "Evocative, appetizing, warm, inviting, and sensory.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers, 'aroma' has an overwhelmingly positive, mouth-watering connotation intimately linked with gastronomy, beverage appreciation, and sensory enjoyment. Unlike generic 'smell' (which is completely neutral and often negative), 'odor' (which almost always implies something foul, chemical, or unpleasant), or 'scent' (which often evokes perfume, soap, or animal trails), 'aroma' evokes the warm, rich olfactory notes of freshly brewed espresso, baking sourdough, roasting garlic, or simmering stock. In food marketing and restaurant reviews, evoking 'aroma' immediately stimulates appetite and signals craftsmanship.",
+      "mentalImage": "Steam carrying golden wisps of fragrant vapor rising from a freshly baked rosemary focaccia resting on a wooden cooling rack in a morning sunlit bakery.",
+      "whenToUse": "Use when describing pleasant, rich, appetizing scents associated with food, hot beverages, spices, wines, or botanicals (e.g., 'the rich aroma of freshly ground coffee', 'subtle floral aroma of vintage wine', 'releasing an appetizing aroma').",
+      "whenNotToUse": "Never use 'aroma' for unpleasant smells, industrial fumes, body odor, chemical spills, or rotting waste—use 'odor', 'stench', 'fumes', or 'smell' instead.",
+      "culturalContext": "Extremely common in TOEIC Part 3 and Part 7 texts featuring café marketing, restaurant reviews, hotel promotional brochures, and catering client testimonials. In Anglo-American culinary marketing, the aroma of fresh baking or coffee is recognized as a vital subconscious driver of customer foot traffic and hospitality sales."
+    },
+    "examples": {
+      "daily": [
+        "The rich aroma of dark-roast coffee filled the kitchen as soon as she turned on the espresso machine.",
+        "Walking past the neighborhood bakery, we were drawn inside by the irresistible aroma of warm cinnamon rolls.",
+        "Freshly chopped basil and simmering garlic released a mouthwatering aroma throughout the apartment."
+      ],
+      "business": [
+        "The specialty roastery redesigned its retail packaging with one-way degassing valves to preserve the beans' signature aroma during international shipping.",
+        "According to market research presented to the hospitality board, releasing the aroma of fresh baking in hotel lobbies increased morning bistro sales by twenty percent.",
+        "The sommelier noted that the estate's reserve Pinot Noir is celebrated for its complex aroma of dark cherries and French oak."
+      ],
+      "conversation": [
+        "A: 'The inviting aroma coming from that trattoria is incredible—should we book a table for our client lunch?'\nB: 'Definitely; they bake their own focaccia and pasta sauces fresh every morning.'",
+        "A: 'Why does this premium coffee blend cost thirty percent more than our standard wholesale roast?'\nB: 'It uses highland Arabica beans that undergo slow roasting, which preserves a much richer floral aroma.'",
+        "A: 'Did you notice any off-odors when inspecting the shipment of imported olive oil?'\nB: 'None at all; it has a perfectly fresh, grassy aroma indicative of first cold pressing.'"
+      ],
+      "collocations": [
+        "rich aroma",
+        "pleasant aroma",
+        "distinctive aroma",
+        "inviting aroma",
+        "aroma of fresh coffee",
+        "release an aroma"
+      ]
+    },
+    "wordFamily": {
+      "noun": "aroma",
+      "verb": "aromatize",
+      "adjective": "aromatic",
+      "adverb": "aromatically"
+    },
+    "visual": {
+      "imageKeyword": "coffee aroma steam roasted beans cafe bakery fragrance",
+      "imageDescription": "Wisps of fragrant white steam swirling upward from a freshly brewed white ceramic cup of dark espresso surrounded by roasted Arabica coffee beans on a rustic wooden table.",
+      "mnemonic": "AROMA: Think of 'A ROAST MAKES AROMA'—the delicious scent that hits your nose when the baker roasts fresh bread or coffee!"
+    },
+    "video": {
+      "description": "A food science and culinary documentary clip examining how roasting coffee beans triggers the Maillard reaction, unlocking hundreds of volatile aromatic compounds that define coffee aroma."
+    },
+    "toeicContext": {
+      "commonParts": [
+        3,
+        4,
+        7
+      ],
+      "exampleQuestion": "Patrons often praise the newly opened café not only for its attentive service but also for the enticing _____ of freshly ground Ethiopian coffee that greets them at the entrance.\n(A) aroma\n(B) aromatically\n(C) aromatize\n(D) aromatics",
+      "tips": "In TOEIC Part 5, sentence completion tests parts of speech following determiners and adjectives. In the phrase 'the enticing _____ of freshly ground Ethiopian coffee', the definite article 'the' and the adjective 'enticing' must modify a singular count noun representing a pleasant smell, which is 'aroma' (Choice A). 'Aromatically' (Choice B) is an adverb, 'aromatize' (Choice C) is a verb, and 'aromatics' (Choice D) is a plural noun referring to chemical compounds or flavoring herbs rather than the scent itself."
+    },
+    "synonyms": [
+      "fragrance",
+      "scent",
+      "bouquet",
+      "perfume",
+      "redolence",
+      "savory smell"
+    ],
+    "antonyms": [
+      "stench",
+      "stink",
+      "malodor",
+      "foul odor"
+    ],
+    "relatedWords": [
+      "aromatic",
+      "olfactory",
+      "bouquet",
+      "palate",
+      "flavor profile",
+      "tasting notes",
+      "sensory evaluation"
+    ]
+  },
+  {
+    "id": "dining-047",
+    "word": "artisanal",
+    "partOfSpeech": [
+      "adjective"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/ɑːrˈtɪz.ə.nəl/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/artisanal--_us_1.mp3",
+      "syllableBreakdown": "ar-ti-sa-nal",
+      "stressPattern": "primary stress on the second syllable: ar-TIS-a-nal (General American)",
+      "commonMistakes": "Learners frequently misplace stress on the third syllable (*ar-ti-ZAN-al*) without knowing the standard American business pronunciation /ɑːrˈtɪzənəl/, or stumble over the voiced /z/ sound by pronouncing it as a harsh unvoiced /s/ (*ar-ti-SAN-al*). Ensure the first syllable has an open /ɑːr/ rather than /ɔːr/."
+    },
+    "etymology": {
+      "origin": "French 'artisanal' (handcrafted, pertaining to an artisan), derived from 'artisan' (craftsman), from Italian 'artigiano', from Vulgar Latin '*artitiānus', ultimately from Classical Latin 'ars' (genitive 'artis', meaning art, craft, skill, specialized trade).",
+      "rootWord": "Latin 'ars' / 'artis' (skill, craftsmanship, methodical knowledge) + French adjectival suffix '-al'.",
+      "rootMeaning": "'Pertaining to traditional craftsmanship, manual mastery, and high-quality non-industrial production'.",
+      "evolution": "While the root noun 'artisan' entered English in the 16th century via French and Italian to designate a manual craftsman, the adjective 'artisanal' was adopted directly from 20th-century French culinary and sociological parlance. In the late 20th and early 21st centuries, the term expanded dramatically across gourmet gastronomy, craft brewing, cheese-making, and sourdough baking to describe products made by hand in small batches using heritage techniques, explicitly contrasting with mass industrial manufacturing.",
+      "relatedLanguages": [
+        "French: artisanal (handcrafted / small-scale)",
+        "Spanish: artesanal (handcrafted / traditional)",
+        "Italian: artigianale (handmade / craft / artisan)",
+        "German: handwerklich (artisan / handcrafted)"
+      ],
+      "firstRecordedUse": "Mid-20th century (c. 1935–1940 in technical sociology; popularized globally in culinary commerce from the 1980s onward)"
+    },
+    "deepMeaning": {
+      "coreConcept": "Describing food, beverages, or culinary goods produced in limited batches by skilled craftspeople using traditional methods, premium natural ingredients, and minimal mechanized or mass-industrial processing.",
+      "spatialContext": "Craft microbreweries, farmhouse creameries, small-batch sourdough bakeries, boutique charcuterie kitchens, and gourmet farmers' markets.",
+      "temporalContext": "Characterized by slow production timelines, extended fermentation or curing periods, and seasonal ingredient sourcing cycles.",
+      "emotionalTone": "Prestigious, authentic, handcrafted, discerning, and premium.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers, 'artisanal' functions as a powerful culinary value proposition denoting authenticity, heritage, and uncompromising quality. When consumers or corporate event planners see 'artisanal cheeses', 'artisanal bread', or 'artisanal pasta', they instinctively picture a passionate craftsperson who measures flour by touch, monitors natural sourdough cultures, or hand-turns wheels of cheese rather than a faceless automated factory conveyor belt. It justifies higher price points and conveys cultural sophistication.",
+      "mentalImage": "A baker with flour-dusted forearms gently lifting round, score-patterned loaves of artisanal sourdough bread out of a stone-deck oven using a long wooden peel.",
+      "whenToUse": "Use when describing small-scale, handcrafted, or heritage culinary products and techniques (e.g., 'artisanal bakery', 'artisanal goat cheese', 'artisanal brewing techniques', 'artisanal chocolate').",
+      "whenNotToUse": "Do not use to describe ultra-processed, high-volume automated factory goods, or generic commodity staples (e.g., pre-packaged mass-market sliced sandwich bread or soda syrup cannot be called 'artisanal' without sounding fraudulent or ironic).",
+      "culturalContext": "A ubiquitous buzzword in corporate catering proposals, executive dining menus, and TOEIC Part 7 promotional advertisements. Upscale hospitality venues specifically highlight artisanal suppliers in their promotional literature to attract discerning corporate clients willing to pay a premium for local, sustainable gastronomy."
+    },
+    "examples": {
+      "daily": [
+        "Every Saturday morning, she visits the farmers' market to buy artisanal goat cheese and heirloom tomatoes.",
+        "The neighborhood bakery prides itself on baking artisanal sourdough bread using heritage grains and natural wild yeast.",
+        "For dessert, the bistro served an artisanal dark chocolate mousse accompanied by homemade raspberry compote."
+      ],
+      "business": [
+        "The corporate catering department signed an exclusive procurement agreement with three local artisanal cheese producers to supply executive board luncheons.",
+        "Consumer demand for artisanal foods has driven major supermarket chains to expand their specialty deli aisles with locally sourced, small-batch goods.",
+        "By rebranding its craft beer line as an artisanal microbrew, the beverage company successfully expanded into high-end metropolitan hotel bars."
+      ],
+      "conversation": [
+        "A: 'Which caterer should we select for next month's international investor reception?'\nB: 'I recommend Grand Gourmet; their menu features artisanal cured meats, handmade crackers, and locally sourced cheeses.'",
+        "A: 'Why is the per-plate price for the banquet dinner higher than last year's quotation?'\nB: 'The chef upgraded the entire bread and pastry basket to certified artisanal sourdough from a regional stone-mill bakery.'",
+        "A: 'Do our hotel restaurants source their olive oil from commercial distributors?'\nB: 'No, we partner directly with a small family-owned estate that bottles artisanal extra virgin olive oil.'"
+      ],
+      "collocations": [
+        "artisanal bread",
+        "artisanal cheese",
+        "artisanal bakery",
+        "artisanal products",
+        "artisanal craft",
+        "artisanal methods"
+      ]
+    },
+    "wordFamily": {
+      "noun": "artisan, artisanship",
+      "verb": "",
+      "adjective": "artisanal",
+      "adverb": "artisanally"
+    },
+    "visual": {
+      "imageKeyword": "artisanal sourdough bread loaves rustic bakery flour cutting board",
+      "imageDescription": "Several crusty, flour-dusted artisanal sourdough bread boules displaying intricate scoring patterns resting on a rustic wooden baker's table with ears of wheat and ceramic flour bowls in the background.",
+      "mnemonic": "ART-IS-AN-AL: Think of an ARTISAN turning baking into pure ART—small batches, handmade with passion, NOT factory-made!"
+    },
+    "video": {
+      "description": "A culinary profile documentary highlighting a master baker demonstrating traditional French artisanal methods, from 36-hour sourdough fermentation to baking on refractory stone hearths."
+    },
+    "toeicContext": {
+      "commonParts": [
+        3,
+        4,
+        7
+      ],
+      "exampleQuestion": "The newly renovated hotel dining room aims to distinguish itself by offering _____ baked goods and locally roasted coffees during its daily executive breakfast buffet.\n(A) artisanal\n(B) artisan\n(C) artisanally\n(D) artisanship",
+      "tips": "In TOEIC Part 5, recognizing adjective-noun collocations is critical. Before the plural noun phrase 'baked goods', an adjective is needed to describe the nature and quality of the products. 'Artisanal' (Choice A) is the adjective modifying 'baked goods'. 'Artisan' (Choice B) is primarily a singular agent noun, 'artisanally' (Choice C) is an adverb, and 'artisanship' (Choice D) is an abstract noun meaning craftsmanship."
+    },
+    "synonyms": [
+      "handcrafted",
+      "craft",
+      "handmade",
+      "small-batch",
+      "traditional",
+      "heritage-style"
+    ],
+    "antonyms": [
+      "mass-produced",
+      "industrial",
+      "factory-made",
+      "commercialized",
+      "machine-made"
+    ],
+    "relatedWords": [
+      "artisan",
+      "craftsmanship",
+      "small-batch",
+      "fermentation",
+      "farm-to-table",
+      "gourmet",
+      "organic sourcing"
+    ]
+  },
+  {
+    "id": "dining-048",
+    "word": "bake",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+      "ipa": "/beɪk/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/bake--_us_1.mp3",
+      "syllableBreakdown": "bake",
+      "stressPattern": "single stressed syllable (BAKE)",
+      "commonMistakes": "Learners often shorten the diphthong /eɪ/ into a monophthong /e/ or /ɛ/ (*bek*), or fail to release the final unvoiced velar stop /k/, resulting in an incomplete glottal stop. Ensure the /eɪ/ glide moves smoothly from mid-front to high-front before crisp release of /k/."
+    },
+    "etymology": {
+      "origin": "Old English 'bacan' (to bake, cook by dry enclosed heat), from Proto-Germanic '*bakan- / *bak-anan' (to bake), derived from Proto-Indo-European '*bheg-' / '*bhog-' (to warm, roast, bake).",
+      "rootWord": "Proto-Germanic '*bakan' (to bake, heat in an oven), cognate with Dutch 'bakken' and German 'backen'.",
+      "rootMeaning": "'To cook or harden through prolonged exposure to dry enclosed heat'.",
+      "evolution": "Historically a strong Germanic verb in Old English ('bacan', past tense 'bōc', past participle 'gebacen'), the verb became regularized into 'baked' by the early Modern English period. Its nominalization into a count and mass noun began in the 19th century in two main streams: first, in North American communal dining traditions to denote social gatherings centered around roasted or oven-cooked foods (such as a 'clam bake' or 'fish bake'); and second, in culinary kitchen practice to denote both a baked casserole-style mixed dish (such as a 'pasta bake' or 'vegetable bake') and a scheduled commercial baking cycle or batch (such as 'the morning bake').",
+      "relatedLanguages": [
+        "German: Backen (baking) / Auflauf (casserole bake)",
+        "Dutch: bak (baking / batch) / bakken (to bake)",
+        "French: gratin / plat au four (casserole bake)",
+        "Spanish: horneado (bake / baking) / pastel al horno",
+        "Italian: sformato / pasticcio al forno (pasta/vegetable bake)"
+      ],
+      "firstRecordedUse": "Verb: before 900 AD (Old English); Noun: mid-19th century (c. 1840–1865 for social meals and culinary batches)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A noun denoting either: (1) a prepared culinary dish consisting of combined ingredients baked in an oven until hot and browned (such as a pasta bake or vegetable bake); (2) an organized communal meal or gathering featuring oven-cooked or fire-roasted food (such as a clam bake or bake sale); or (3) a commercial batch or scheduled production run of baked goods (such as the morning bake).",
+      "spatialContext": "Commercial bakery production floors, hotel banquet catering kitchens, delicatessen hot food display warmers, and seaside corporate retreat banquet grounds.",
+      "temporalContext": "Conducted during early morning pre-dawn production cycles (the first bake) or served at midday corporate buffets and evening retreat dinners.",
+      "emotionalTone": "Comforting, hearty, communal, appetizing, and industrious.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers, the noun 'bake' immediately conjures warm, communal comfort and wholesome culinary craftsmanship. On a restaurant or catering menu, a 'pasta bake' or 'vegetable bake' implies a bubbly, golden-crusted gratin dish baked in a shared casserole dish. In bakery operations, 'the morning bake' refers to the intense, high-stakes pre-dawn production window where fresh baguettes, croissants, and sourdough are pulled from stone ovens. In corporate retreats, a 'clam bake' signifies a relaxed, high-end regional seafood feast.",
+      "mentalImage": "A commercial kitchen tray holding a bubbling, golden-brown Mediterranean vegetable and cheese bake, emitting savory steam beside freshly cooling ceramic casserole dishes.",
+      "whenToUse": "Use when referring to oven-baked composite dishes (e.g., 'pasta bake', 'seafood bake', 'zucchini bake'), commercial baking runs (e.g., 'our morning bake', 'second daily bake'), or organized culinary events (e.g., 'charity bake sale', 'New England clam bake').",
+      "whenNotToUse": "Do not confuse the noun 'bake' with 'bakery' (the retail shop or production facility), 'baking' (the general activity or culinary discipline), or use 'bake' when referring to a single individual loaf or pastry (say 'a loaf of bread' or 'a baked good', not *'a bake'* unless naming the specific dish).",
+      "culturalContext": "A regular staple on English-speaking cafeteria and catering menus, where warm 'bakes' serve as budget-friendly, crowd-pleasing buffet entrees. Furthermore, 'bake sales' are deeply ingrained in North American and British corporate philanthropy and school fundraising culture."
+    },
+    "examples": {
+      "daily": [
+        "For a quick weeknight dinner, she assembled a Mediterranean pasta bake with spinach, marinara sauce, and melted mozzarella.",
+        "The local community center hosted an annual charity bake sale to raise funds for the children's library.",
+        "The baker inspected the loaves after the morning bake to ensure the crust had achieved the desired golden-brown color."
+      ],
+      "business": [
+        "Our catering division included a creamy salmon and leek bake as the hot seafood entree on the corporate conference luncheon menu.",
+        "To meet increased foot traffic during the morning rush, the bakery manager scheduled a second daily bake of croissants for 10:00 AM.",
+        "The corporate social responsibility committee organized an office bake sale that raised over two thousand dollars for local charities."
+      ],
+      "conversation": [
+        "A: 'What hot vegetarian option are we serving for the delegates at tomorrow's buffet?'\nB: 'The head chef recommended our signature roasted eggplant and ricotta bake.'",
+        "A: 'Did the patisserie finish the early morning bake on schedule?'\nB: 'Yes, the first batch of artisanal baguettes was packaged and dispatched to our retail outlets by 6:00 AM.'",
+        "A: 'Our annual team-building retreat is set for Cape Cod next month.'\nB: 'Wonderful—the hotel event coordinator already arranged a traditional seaside clam bake for the opening dinner.'"
+      ],
+      "collocations": [
+        "pasta bake",
+        "morning bake",
+        "clam bake",
+        "bake sale",
+        "vegetable bake",
+        "even bake"
+      ]
+    },
+    "wordFamily": {
+      "noun": "bake, baker, bakery, baking",
+      "verb": "bake",
+      "adjective": "baked, unbaked",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "pasta bake casserole cheese bubbling oven dish ceramic",
+      "imageDescription": "A deep white ceramic baking dish fresh out of the oven containing a bubbly, golden-brown cheese and rigatoni pasta bake garnished with chopped fresh Italian parsley on a dark slate trivet.",
+      "mnemonic": "BAKE: What you BAKE in the oven becomes a delicious hot BAKE on the buffet table!"
+    },
+    "video": {
+      "description": "A commercial bakery operations video documenting the 4:00 AM 'morning bake', showing bakers loading proofed dough onto stone hearth ovens and timing the bake cycle."
+    },
+    "toeicContext": {
+      "commonParts": [
+        1,
+        3,
+        7
+      ],
+      "exampleQuestion": "To raise money for the municipal food bank, the company's volunteer committee will host a charity _____ in the main lobby this Friday afternoon.\n(A) bake\n(B) baked\n(C) baker\n(D) bakes",
+      "tips": "In TOEIC Part 5, test-takers are frequently tested on compound nouns and common commercial collocations. The noun phrase 'charity bake sale' or 'charity bake' is a standard term for a fundraising event where baked goods are sold. Followed by the noun or acting as the head noun modified by 'charity', 'bake' (Choice A) fits the compound expression 'charity bake' / 'charity bake sale'. 'Baked' (Choice B) is a past participle adjective, 'baker' (Choice C) refers to an individual person (which would require 'a charity baker' to describe a human, not an event taking place in the lobby), and 'bakes' (Choice D) is plural/verb form."
+    },
+    "synonyms": [
+      "casserole",
+      "gratin",
+      "batch",
+      "roast",
+      "baked dish"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "baker",
+      "bakery",
+      "baking sheet",
+      "casserole dish",
+      "convection oven",
+      "roasting",
+      "dough"
+    ]
+  }
+]
+
+# Validate schema
+jsonschema.validate(instance={"words": words}, schema=schema)
+print("SUCCESS: JSON Schema validation passed perfectly!")
+
+# Check rule 1: No boilerplate phrases
+banned_patterns = [
+    r'\bfactor\b',
+    r'\bmanage the\b',
+    r'\bdocumentation for\b',
+    r'\bboard meeting\b',
+    r'core Germanic commercial root signifying foundational operational practice of',
+    r'A foundational professional concept and noun designating',
+    r'banquet banquet rooms',
+    r'central to strategic workflows and operational accountability',
+]
+
+for w in words:
+    w_str = json.dumps(w)
+    for b in banned_patterns:
+        if re.search(b, w_str, re.IGNORECASE):
+            print(f"WARNING: Found banned pattern '{b}' in word {w['id']}")
+            sys.exit(1)
+
+print("SUCCESS: No banned / boilerplate phrases found in any word!")
+
+# Save to scratch/test_dining_045_048.json
+with open('scratch/test_dining_045_048.json', 'w') as f:
+    json.dump(words, f, indent=2)
+
+print("Saved words to scratch/test_dining_045_048.json")

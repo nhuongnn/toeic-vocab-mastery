@@ -1,0 +1,478 @@
+import json
+
+words_data = [
+  {
+    "id": "comms-143",
+    "word": "hotline",
+    "partOfSpeech": ["noun"],
+    "category": "communications",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/ˈhɑːt.laɪn/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/hotline--_us_1.mp3",
+      "syllableBreakdown": "hot-line",
+      "stressPattern": "primary stress on the first syllable (HOT-line)",
+      "commonMistakes": "Learners often put equal stress on both syllables or shift stress to the second syllable (*hot-LINE*). In English compound nouns, the primary stress falls decisively on the first element: /ˈhɑːt.laɪn/. Also, non-native speakers may pronounce 'hot' with /ɔː/ or /uː/ rather than the open unrounded /ɑː/ (US) or short open rounded /ɒ/ (UK)."
+    },
+    "etymology": {
+      "origin": "Mid-20th century American English compound noun, combining 'hot' (urgent, active, critically charged) + 'line' (telecommunications wire or circuit).",
+      "rootWord": "Old English 'hāt' (hot, fervent, intense) + Latin 'linea' (flax thread, cord, string), via Old English 'līne'",
+      "rootMeaning": "'A direct, permanently active telecommunications wire for immediate urgent communication' — historically coined to denote a direct point-to-point link established for rapid crisis resolution without switchboard interception.",
+      "evolution": "Coined during the Cold War in 1963 following the Cuban Missile Crisis, when the Washington–Moscow Direct Communications Link was established to prevent accidental nuclear escalation. Through the late 20th century, the term generalized across corporate management, civil governance, and healthcare to describe dedicated telephone channels staffed for immediate crisis intervention, whistleblower fraud reporting, customer emergency assistance, or IT technical escalation.",
+      "relatedLanguages": [
+        "French: ligne directe / ligne d'urgence",
+        "Spanish: línea directa / línea de atención de urgencias",
+        "German: Hotline / Direktschaltung",
+        "Italian: linea diretta / linea verde"
+      ],
+      "firstRecordedUse": "1963 (diplomatic telecommunications context)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A dedicated, direct, and continuous point-to-point telephone or electronic communications channel staffed around the clock or for priority handling, providing rapid escalation, crisis resolution, whistleblower reporting, or specialized customer assistance.",
+      "spatialContext": "Corporate compliance offices, customer contact centers, IT incident command desks, emergency dispatch rooms, and regulatory reporting bureaus.",
+      "temporalContext": "Operational 24/7 or during priority business windows; utilized during critical outages, product recalls, compliance grievance reporting, or severe operational disruptions.",
+      "emotionalTone": "Urgent, responsive, supportive, and accessible.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To a native English speaker, a 'hotline' implies an expedited, zero-barrier channel that bypasses ordinary bureaucratic phone trees and waiting queues. Unlike a general switchboard or routine customer care line, calling a 'hotline' carries an expectation of immediacy, confidentiality, and high-priority resolution—such as an ethics whistleblower hotline, a poison control hotline, or a 24-hour IT support hotline.",
+      "mentalImage": "A customer support specialist wearing a noise-canceling headset in an illuminated operations center, answering an incoming call flagged in bright red on her terminal as an emergency system outage escalation.",
+      "whenToUse": "Use when referring to a dedicated direct phone line set up for emergencies, corporate whistleblowing, ethics compliance, IT disaster response, or continuous immediate public assistance (e.g., 'ethics hotline', '24-hour technical support hotline', 'crisis hotline').",
+      "whenNotToUse": "Do not use for general corporate switchboards, ordinary customer inquiry lines with IVR automated menus, routine sales inquiries, or personal direct-dial office extensions (use 'switchboard', 'general inquiries line', 'customer service desk', or 'direct line').",
+      "culturalContext": "In North American and UK corporate governance, Sarbanes-Oxley (SOX) and modern compliance standards legally mandate companies to operate an anonymous 'ethics hotline' or 'whistleblower hotline' so employees can safely report accounting irregularities or harassment without fear of retaliation."
+    },
+    "examples": {
+      "daily": [
+        "The municipal water authority set up a temporary hotline for residents to report burst pipes during the severe winter freeze.",
+        "Parents can call the pediatric health hotline at any time of night to speak directly with an on-duty triage nurse.",
+        "After the airline canceled hundreds of flights due to blizzard conditions, stranded passengers overwhelmed the customer support hotline."
+      ],
+      "business": [
+        "Under our newly updated corporate compliance policy, all employees have access to an anonymous third-party ethics hotline to report suspected financial misconduct.",
+        "The enterprise software provider maintains a dedicated 24/7 hotline for Tier-1 corporate clients experiencing critical data center outages.",
+        "Following the voluntary product recall, the pharmaceutical manufacturer established a toll-free hotline to handle inquiries from pharmacists and patients."
+      ],
+      "conversation": [
+        "A: 'Our network servers crashed right in the middle of month-end payroll processing.'\nB: 'Call the enterprise vendor hotline immediately; our priority service agreement guarantees a response within fifteen minutes.'",
+        "A: 'An employee told me she noticed unauthorized billing adjustments in our ledger.'\nB: 'Advise her to contact the confidential compliance hotline so the internal audit team can investigate without compromising her identity.'"
+      ],
+      "collocations": [
+        "anonymous ethics hotline",
+        "24-hour customer hotline",
+        "toll-free hotline",
+        "crisis hotline",
+        "whistleblower hotline",
+        "hotline operator"
+      ]
+    },
+    "wordFamily": {
+      "noun": "hotline",
+      "verb": "",
+      "adjective": "",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "call center headset emergency support hotline operator",
+      "imageDescription": "A focused support specialist wearing a modern headset sits in front of dual monitors displaying urgent incoming call queues in a high-tech corporate dispatch center.",
+      "mnemonic": "HOT-LINE: A phone line so 'HOT' with urgency that it connects you immediately without waiting in line!"
+    },
+    "video": {
+      "description": "A corporate compliance video demonstrating how an employee reports an ethical grievance anonymously using the company's third-party integrity hotline."
+    },
+    "toeicContext": {
+      "commonParts": [3, 4, 7],
+      "exampleQuestion": "Employees who observe violations of safety protocols are strongly encouraged to report them via the confidential corporate _____ .\n(A) hot\n(B) hotness\n(C) hotline\n(D) hotly",
+      "tips": "In TOEIC Part 5, compound nouns such as 'hotline', 'deadline', and 'timeline' frequently appear in corporate policy statements. Following the compound modifier 'confidential corporate', a singular countable noun denoting a communications channel is required. Choice (C) 'hotline' is the correct compound noun. Distractor (A) is an adjective, (B) is an abstract noun denoting temperature, and (D) is an adverb."
+    },
+    "synonyms": [
+      "direct line",
+      "helpline",
+      "emergency line",
+      "assistance line",
+      "dedicated line"
+    ],
+    "antonyms": [
+      "general switchboard",
+      "automated phone tree"
+    ],
+    "relatedWords": [
+      "whistleblower",
+      "compliance",
+      "toll-free number",
+      "call center",
+      "incident escalation",
+      "help desk"
+    ]
+  },
+  {
+    "id": "comms-144",
+    "word": "infographic",
+    "partOfSpeech": ["noun"],
+    "category": "communications",
+    "level": "advanced",
+    "toeicFrequency": 7,
+    "pronunciation": {
+      "ipa": "/ˌɪn.foʊˈɡræf.ɪk/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/infographic--_us_1.mp3",
+      "syllableBreakdown": "in-fo-graph-ic",
+      "stressPattern": "secondary stress on the first syllable, primary stress on the third syllable (in-fo-GRAPH-ic)",
+      "commonMistakes": "Learners sometimes place the primary stress on the second syllable (*in-FOG-ra-phic*) or reduce the vowel in '-graph-', pronouncing it with a schwa instead of the clear short /æ/. The correct pronunciation is /ˌɪn.foʊˈɡræf.ɪk/."
+    },
+    "etymology": {
+      "origin": "Late 20th-century English blend (portmanteau) of 'information' + 'graphic'.",
+      "rootWord": "Latin 'informatio' (conception, representation, outline) + Greek 'graphikos' (pertaining to drawing, writing), from 'graphein' (to write, scratch, draw)",
+      "rootMeaning": "'A visual drawing or design that conveys structured information' — synthesizing statistical charts, icons, and succinct text into an intelligible graphic layout.",
+      "evolution": "Emerging in newsrooms and graphic design studios during the 1970s and 1980s (championed by newspapers like USA Today and data visualization theorists like Edward Tufte), the term 'infographic' exploded with the rise of the digital internet and content marketing in the 2000s. It became a primary medium for transforming complex quantitative data, corporate timelines, and instructional procedures into highly shareable, visually digestible digital collateral.",
+      "relatedLanguages": [
+        "French: infographie",
+        "Spanish: infografía",
+        "German: Infografik",
+        "Italian: infografica"
+      ],
+      "firstRecordedUse": "1974 (news design and statistical communication)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A visual representation of information, statistical data, or process flows designed using typography, charts, illustrations, and iconography to present complex knowledge quickly, clearly, and engagingly.",
+      "spatialContext": "Corporate marketing decks, annual sustainability reports, public relations press releases, digital website landing pages, and conference exhibition posters.",
+      "temporalContext": "Created during product launches, quarterly reporting periods, marketing campaigns, and educational briefings.",
+      "emotionalTone": "Informative, visually dynamic, structured, and engaging.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers, an 'infographic' is not simply a bar graph or an illustration—it is a self-contained narrative where data and graphic design intersect. It tells a complete story at a glance, distilling dense white papers or hundred-page annual reports into an easily digestible poster or vertical web graphic that can be understood in thirty seconds.",
+      "mentalImage": "A sleek, vertically scrolling digital poster featuring bold percentages, color-coded pie charts, vector icons of renewable energy systems, and concise explanatory callouts.",
+      "whenToUse": "Use when referring to designed visual assets that combine statistical charts, diagrams, icons, and text to explain a concept, survey findings, or business workflow (e.g., 'the marketing team published an infographic summarizing customer survey results').",
+      "whenNotToUse": "Do not use for a plain spreadsheet, a raw mathematical chart without narrative design elements (use 'chart' or 'graph'), or an unadorned photograph.",
+      "culturalContext": "In modern corporate communications and social media strategy, infographics are heavily utilized for B2B brand thought-leadership, corporate social responsibility (CSR) reporting, and employee training because visual data yields vastly higher retention and engagement than dense textual memos."
+    },
+    "examples": {
+      "daily": [
+        "The health ministry published an easy-to-read infographic explaining proper handwashing techniques and quarantine guidelines.",
+        "I shared an infographic on social media that compared the carbon footprints of various modes of transportation.",
+        "The travel magazine featured a colorful infographic outlining the average cost of living across ten European capitals."
+      ],
+      "business": [
+        "Our digital marketing department created a dynamic infographic to summarize key findings from the annual consumer trends report.",
+        "The human resources team embedded an infographic into the new employee portal to illustrate the tiered health insurance enrollment process.",
+        "During the investor pitch, the CEO presented an infographic detailing the startup's rapid revenue growth and market expansion milestones."
+      ],
+      "conversation": [
+        "A: 'Our clients are struggling to digest this twenty-page market analysis report.'\nB: 'Let\\'s ask the creative team to distill the core statistics into a one-page infographic.'",
+        "A: 'Did the new sustainability infographic get approved by corporate communications?'\nB: 'Yes, they loved the visual breakdown of our zero-waste initiative and posted it to LinkedIn.'"
+      ],
+      "collocations": [
+        "interactive infographic",
+        "data-driven infographic",
+        "one-page infographic",
+        "promotional infographic",
+        "design an infographic",
+        "publish an infographic"
+      ]
+    },
+    "wordFamily": {
+      "noun": "infographic, infographics, infographist",
+      "verb": "",
+      "adjective": "infographical",
+      "adverb": "infographically"
+    },
+    "visual": {
+      "imageKeyword": "infographic vector data visualization charts statistics design",
+      "imageDescription": "A brightly colored data visualization poster laid out with modern vector icons, percentage gauges, flowing process arrows, and comparative bar charts on a clean background.",
+      "mnemonic": "INFO + GRAPHIC = Visual GRAPHICS that make complicated INFORMATION instantly clear!"
+    },
+    "video": {
+      "description": "A graphic design tutorial demonstrating how to turn complex financial data from a spreadsheet into an engaging corporate infographic using vector illustration tools."
+    },
+    "toeicContext": {
+      "commonParts": [5, 6, 7],
+      "exampleQuestion": "The communications department published an interactive _____ summarizing the environmental benefits of the company's transition to solar energy.\n(A) infographic\n(B) infographically\n(C) infographical\n(D) infographics",
+      "tips": "In TOEIC Part 5, pay close attention to noun-phrase structure and agreement. After the indefinite article 'an' and the adjective 'interactive', the blank requires a singular countable noun. Choice (A) 'infographic' fits both grammatically and contextually. Choice (B) is an adverb, (C) is an adjective, and (D) is plural, which cannot be preceded by the singular article 'an'."
+    },
+    "synonyms": [
+      "data visualization",
+      "visual chart",
+      "diagrammatic summary",
+      "graphic representation",
+      "visual aid",
+      "flowchart"
+    ],
+    "antonyms": [
+      "raw data",
+      "unformatted text",
+      "dense prose",
+      "tabular spreadsheet"
+    ],
+    "relatedWords": [
+      "visualization",
+      "iconography",
+      "typography",
+      "data analytics",
+      "layout",
+      "content marketing",
+      "vector graphic"
+    ]
+  },
+  {
+    "id": "comms-145",
+    "word": "information",
+    "partOfSpeech": ["noun"],
+    "category": "communications",
+    "level": "advanced",
+    "toeicFrequency": 7,
+    "pronunciation": {
+      "ipa": "/ˌɪn.fɚˈmeɪ.ʃən/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/information--_us_1.mp3",
+      "syllableBreakdown": "in-for-ma-tion",
+      "stressPattern": "secondary stress on the first syllable, primary stress on the third syllable (in-for-MA-tion)",
+      "commonMistakes": "Learners often put primary stress on the second syllable (*in-FOR-ma-tion*). The primary stress falls strictly on the penultimate syllable /-ˈmeɪ-/. In addition, non-native speakers frequently treat 'information' as a countable noun, erroneously saying *an information* or *informations*."
+    },
+    "etymology": {
+      "origin": "Middle English borrowed from Old French 'informacion' (instruction, education, legal investigation), directly from Latin 'informatio' (an outline, sketch, concept, idea, formative instruction), noun of action from the past participle stem of 'informare' (to give form or shape to, fashion, instruct, educate).",
+      "rootWord": "Latin 'informare' (from 'in-' meaning into + 'formare' meaning to form, shape, create, from 'forma' meaning form/shape)",
+      "rootMeaning": "'The act of giving form or mental shape to the mind' — historically denoting the pedagogical training, structuring, or shaping of human understanding through instruction.",
+      "evolution": "In Classical Latin, 'informatio' meant the mental conception or imprint of an idea. In 14th-century Middle English and Anglo-French law, it acquired the technical sense of formal criminal charges or official testimony submitted to a magistrate. During the 17th and 18th centuries, it widened to mean communication of knowledge or intelligence regarding events. In the mid-20th century, Claude Shannon's mathematical theory of communication redefined 'information' as measurable data signals that reduce uncertainty, ushering in the 'Information Age' of computing and telecommunications.",
+      "relatedLanguages": [
+        "French: information",
+        "Spanish: información",
+        "German: Information",
+        "Italian: informazione"
+      ],
+      "firstRecordedUse": "Late 14th century (c. 1386 in Geoffrey Chaucer's Tale of Melibee)"
+    },
+    "deepMeaning": {
+      "coreConcept": "Knowledge, data, intelligence, or communicative facts communicated, acquired, processed, or stored concerning a particular subject, person, or operational situation.",
+      "spatialContext": "Corporate intranet databases, customer service information kiosks, executive briefings, encrypted servers, and media broadcast newsdesks.",
+      "temporalContext": "Transmitted continuously in real time across digital networks; requested during onboarding, updated quarterly, or reviewed prior to strategic decision-making.",
+      "emotionalTone": "Objective, authoritative, factual, and analytical.",
+      "formalityLevel": "neutral",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To a native speaker, 'information' represents an uncountable mass of factual material or situational awareness. Natives instinctively recognize that 'information' cannot be counted (*informations is impossible); if an individual unit is needed, they say 'a piece of information', 'a bit of information', or 'a snippet of information'. In an enterprise context, 'information' is treated as a strategic asset—something to be gathered, protected, verified, disseminated, and leveraged for operational advantage.",
+      "mentalImage": "A financial analyst at a multi-monitor workstation cross-referencing corporate balance sheets, live wire feeds, and regulatory filings to synthesize vital investment information before the opening bell.",
+      "whenToUse": "Use when referring to knowledge, facts, news, instructions, or collected data about any topic or event (e.g., 'for further information, please contact our HR desk', 'confidential client information').",
+      "whenNotToUse": "Never use as a countable noun (*two informations*, *an information*). Do not use when referring specifically to uninterpreted numerical figures or telemetry where 'raw data' or 'metrics' is more technically precise.",
+      "culturalContext": "In modern Western corporate and legal culture, 'information security' (InfoSec) and data privacy regulations (like GDPR and CCPA) place massive fiduciary and legal responsibilities on corporations to safeguard personal and proprietary information against unauthorized disclosure."
+    },
+    "examples": {
+      "daily": [
+        "You can find detailed schedule information on the transit authority's mobile app.",
+        "The tourist information desk in the train station provided us with free walking maps and museum guides.",
+        "Please check the event confirmation email for updated information regarding parking and venue accessibility."
+      ],
+      "business": [
+        "The non-disclosure agreement stipulates that all proprietary technical information must remain strictly confidential.",
+        "For more information regarding overseas employment opportunities, please consult the human resources bulletin.",
+        "Management reviewed the latest sales information before approving the marketing budget for the upcoming fiscal quarter."
+      ],
+      "conversation": [
+        "A: 'Do we have enough information about the client's requirements to finalize the project proposal?'\nB: 'Not quite; we are still waiting for their engineering team to send their technical specifications.'",
+        "A: 'Where should I direct inquiries from journalists regarding the upcoming factory merger?'\nB: 'Forward all requests to the public information officer in corporate affairs.'"
+      ],
+      "collocations": [
+        "for further information",
+        "confidential information",
+        "information security",
+        "proprietary information",
+        "disseminate information",
+        "accurate information"
+      ]
+    },
+    "wordFamily": {
+      "noun": "information, informant, informer, informativeness",
+      "verb": "inform",
+      "adjective": "informative, informed, informational",
+      "adverb": "informatively"
+    },
+    "visual": {
+      "imageKeyword": "information desk airport terminal customer assistance",
+      "imageDescription": "A customer service representative at a modern airport information desk with a glowing 'i' sign, answering inquiries and pointing to a departure schedule for international travelers.",
+      "mnemonic": "IN-FORM-ATION: When you give knowledge, you 'FORM' ideas 'IN' someone's mind!"
+    },
+    "video": {
+      "description": "A cybersecurity training module illustrating best practices for handling sensitive personal information and avoiding phishing scams in a corporate environment."
+    },
+    "toeicContext": {
+      "commonParts": [3, 4, 5, 7],
+      "exampleQuestion": "For further _____ regarding the international shipping schedule, please visit our corporate website or contact customer service.\n(A) inform\n(B) information\n(C) informative\n(D) informatively",
+      "tips": "This is one of the most famous and frequent question patterns in TOEIC Part 5. The phrase 'For further _____' requires a noun to act as the object of the preposition 'For', modified by the comparative adjective 'further'. Choice (B) 'information' is correct. Note that 'information' is non-countable (mass noun); TOEIC tests that it never takes a plural '-s' (*informations) nor the indefinite article 'an'."
+    },
+    "synonyms": [
+      "data",
+      "details",
+      "intelligence",
+      "facts",
+      "knowledge",
+      "particulars"
+    ],
+    "antonyms": [
+      "misinformation",
+      "disinformation",
+      "ignorance",
+      "obscurity",
+      "secrecy"
+    ],
+    "relatedWords": [
+      "database",
+      "disclosure",
+      "briefing",
+      "intelligence",
+      "telecommunications",
+      "infosec",
+      "documentation"
+    ]
+  },
+  {
+    "id": "comms-146",
+    "word": "infomercial",
+    "partOfSpeech": ["noun"],
+    "category": "communications",
+    "level": "advanced",
+    "toeicFrequency": 7,
+    "pronunciation": {
+      "ipa": "/ˌɪn.foʊˈmɝː.ʃəl/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/infomercial--_us_1.mp3",
+      "syllableBreakdown": "in-fo-mer-cial",
+      "stressPattern": "secondary stress on the first syllable, primary stress on the third syllable (in-fo-MER-cial)",
+      "commonMistakes": "Learners often misplace the stress onto the second syllable (*in-FOM-er-cial*) or stumble on the r-colored vowel and palatal fricative in /-ˈmɝː.ʃəl/, pronouncing it phonetically as /-mer-see-al/. The correct pronunciation is /ˌɪn.foʊˈmɝː.ʃəl/."
+    },
+    "etymology": {
+      "origin": "Late 20th-century American English blend (portmanteau) of 'information' + 'commercial'.",
+      "rootWord": "Latin 'informatio' (an outline, conception, instruction) + Latin 'commercium' (trade, traffic, business exchange, from 'com-' together + 'merx' merchandise)",
+      "rootMeaning": "'An extended commercial broadcast styled as an informative or documentary program' — designed to pitch products directly to consumers through live demonstrations, testimonials, and toll-free or web ordering.",
+      "evolution": "Coined in the United States in the early 1980s. In 1984, the US Federal Communications Commission (FCC) lifted the longstanding 16-minute-per-hour cap on television commercials, allowing broadcast stations to sell 30-minute late-night and weekend blocks to direct-response marketers. Advertisers disguised these extended sales pitches as educational talk shows, scientific demonstrations, or consumer reports, giving birth to the 'infomercial'. By the 1990s and 2000s, infomercials became a multi-billion-dollar global direct-to-consumer (D2C) marketing phenomenon.",
+      "relatedLanguages": [
+        "French: publireportage / émission de télé-achat",
+        "Spanish: infomercial / publirreportaje",
+        "German: Infomercial / Dauerwerbesendung",
+        "Italian: televendita / infomercial"
+      ],
+      "firstRecordedUse": "1981 (American television advertising trade journals)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A full-length television or digital video advertisement—typically running fifteen to thirty minutes—structured in an instructional, talk-show, or documentary format to demonstrate a product in depth and solicit immediate direct orders from viewers.",
+      "spatialContext": "Television broadcast studios, late-night cable broadcasting slots, direct-response call centers, digital video streaming platforms, and fulfillment distribution warehouses.",
+      "temporalContext": "Historically broadcast during late-night hours, early weekend mornings, or daytime television lulls; in digital media, streamed continuously on video platforms and e-commerce shopping channels.",
+      "emotionalTone": "Persuasive, enthusiastic, dramatic, and urgently promotional.",
+      "formalityLevel": "neutral",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers, 'infomercial' evokes late-night television, energetic presenters, exaggerated before-and-after problem-solving demonstrations, enthusiastic studio audiences, and catchphrases like 'Wait, there's more!' or 'Call within the next ten minutes!' However, in modern corporate marketing and media buying, an infomercial is recognized as a sophisticated 'direct-response television' (DRTV) vehicle designed to drive instant e-commerce volume and measurable return on ad spend (ROAS).",
+      "mentalImage": "An energetic host on a brightly lit TV soundstage enthusiastically demonstrating a multipurpose kitchen gadget cutting vegetables in seconds, flanked by a graphic banner displaying a toll-free hotline, website URL, and countdown timer.",
+      "whenToUse": "Use when referring to extended, program-length commercial broadcasts or videos that explain and demonstrate consumer goods, fitness equipment, or kitchen gadgets to generate immediate direct sales (e.g., 'a 30-minute late-night infomercial', 'direct-response infomercial campaign').",
+      "whenNotToUse": "Do not use for standard 15-to-30-second commercial spots (use 'TV spot' or 'commercial'), nor for an objective documentary, corporate training webinar, or scholarly educational lecture.",
+      "culturalContext": "Infomercials transformed American consumer culture from the 1980s onward, creating famous celebrity pitchmen (such as Billy Mays and Ron Popeil) and launching iconic household brands (like George Foreman Grills and Bowflex). In corporate advertising discussions, DRTV (direct-response television) and infomercials represent a distinct advertising genre distinct from general brand-awareness campaigns."
+    },
+    "examples": {
+      "daily": [
+        "I stayed up late watching an entertaining infomercial about a non-stick frying pan that could withstand a blowtorch.",
+        "My grandmother ordered an orthopedic mattress topper after seeing an infomercial on Sunday morning.",
+        "The comedian performed a hilarious parody of a fitness equipment infomercial on late-night television."
+      ],
+      "business": [
+        "The consumer products startup allocated forty percent of its direct-to-consumer advertising budget to a nationwide infomercial campaign.",
+        "Media buyers analyzed call-center response metrics generated during the overnight broadcast of the 30-minute fitness infomercial.",
+        "Rather than selling solely through traditional brick-and-mortar retail stores, the electronics brand utilized paid infomercials to demonstrate its complex audio gear."
+      ],
+      "conversation": [
+        "A: 'Why did the marketing team produce a thirty-minute video instead of standard thirty-second commercial spots?'\nB: 'Our kitchen appliance has so many unique attachments that only an in-depth infomercial can properly demonstrate all its features.'",
+        "A: 'Did the weekend infomercial generate the anticipated surge in online orders?'\nB: 'Yes, web traffic spiked by nearly four hundred percent during the Saturday morning broadcast slot.'"
+      ],
+      "collocations": [
+        "late-night infomercial",
+        "produce an infomercial",
+        "30-minute infomercial",
+        "direct-response infomercial",
+        "broadcast an infomercial",
+        "infomercial pitchman"
+      ]
+    },
+    "wordFamily": {
+      "noun": "infomercial",
+      "verb": "",
+      "adjective": "",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "television studio infomercial host product demonstration",
+      "imageDescription": "A charismatic television presenter in a studio kitchen holding up a slicer while pointing toward an onscreen graphic offering a two-for-one promotional deal with a phone number.",
+      "mnemonic": "INFO + COMMERCIAL = An INFORMATION show that is actually a COMMERCIAL selling products!"
+    },
+    "video": {
+      "description": "A media marketing case study analyzing how direct-response television infomercials drive consumer purchasing decisions through problem-solution storytelling."
+    },
+    "toeicContext": {
+      "commonParts": [4, 7],
+      "exampleQuestion": "To demonstrate the versatility of its new multifunction food processor, the appliance manufacturer decided to produce a 30-minute _____ for late-night broadcast.\n(A) informing\n(B) informercial\n(C) infomercial\n(D) informative",
+      "tips": "In TOEIC Part 5, questions on business and media often test specific compound terminology. Following the compound numerical modifier 'a 30-minute', a singular countable noun referring to a broadcast segment is needed. Choice (C) 'infomercial' is the standard commercial term. Watch out for spelling distractors like (B) 'informercial' (which incorrectly inserts an 'r' into the prefix 'info-'). Choices (A) and (D) are a gerund/participle and an adjective, respectively."
+    },
+    "synonyms": [
+      "direct-response television advertisement",
+      "paid programming",
+      "teleshopping broadcast",
+      "program-length commercial",
+      "commercial demonstration"
+    ],
+    "antonyms": [
+      "editorial broadcast",
+      "commercial-free programming",
+      "documentary film",
+      "public service announcement"
+    ],
+    "relatedWords": [
+      "direct-response television",
+      "telemarketing",
+      "product demonstration",
+      "call to action",
+      "toll-free number",
+      "testimonial",
+      "sponsorship"
+    ]
+  }
+]
+
+# Write to scratch/comms_143_146.json
+with open('scratch/comms_143_146.json', 'w', encoding='utf-8') as f:
+    json.dump({"words": words_data}, f, indent=2, ensure_ascii=False)
+
+# Update communications.ts
+with open('src/data/vocabulary/communications.ts', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+idx143 = content.find('  {\n      "id": "comms-143"')
+if idx143 == -1:
+    idx143 = content.find('  {\n    "id": "comms-143"')
+if idx143 == -1:
+    idx143 = content.find('\"comms-143\"')
+    # find preceding '  {\n'
+    idx143 = content.rfind('  {', 0, idx143)
+
+idx147 = content.find('  {\n      "id": "comms-147"')
+if idx147 == -1:
+    idx147 = content.find('  {\n    "id": "comms-147"')
+if idx147 == -1:
+    idx147 = content.find('\"comms-147\"')
+    idx147 = content.rfind('  {', 0, idx147)
+
+print(f"Replacing from index {idx143} to {idx147}")
+
+# Format words_data as formatted JSON entries
+formatted_entries = []
+for word_entry in words_data:
+    entry_json = json.dumps(word_entry, indent=4, ensure_ascii=False)
+    # indent by 2 spaces
+    indented = "\n".join("  " + line for line in entry_json.splitlines())
+    formatted_entries.append(indented)
+
+new_block = ",\n".join(formatted_entries) + ",\n"
+
+updated_content = content[:idx143] + new_block + content[idx147:]
+
+with open('src/data/vocabulary/communications.ts', 'w', encoding='utf-8') as f:
+    f.write(updated_content)
+
+print("Updated communications.ts successfully!")

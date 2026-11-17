@@ -1,0 +1,340 @@
+{
+  "words": [
+    {
+      "id": "dining-221",
+      "word": "puree",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/pjʊˈreɪ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/puree--_us_1.mp3",
+        "syllableBreakdown": "pu·ree",
+        "stressPattern": "○●",
+        "commonMistakes": "Learners often mistakenly stress the first syllable (/ˈpjʊəreɪ/ or /ˈpjʊəri/), confusing General American pronunciation with British variants or the adjective \"pure\". In American English, primary stress falls distinctly on the second syllable: /pjʊˈreɪ/ (\"pyoo-RAY\"). Another frequent error is confusing the culinary noun \"puree\" (a smooth, sieved preparation) with coarse preparations like \"mash\" or concentrated savory condiments like \"paste\"."
+      },
+      "etymology": {
+        "origin": "Borrowed in the early 18th century from French \"purée\" (strained pulp, mashed food), the feminine past participle of Old French \"purer\" (to strain, cleanse, purify), directly derived from Latin \"pūrāre\" (to purify, cleanse), from \"pūrus\" (pure, clean, unadulterated).",
+        "rootWord": "Latin pūrus / Old French purer",
+        "rootMeaning": "Clean, purified, cleansed of impurities; mechanically sieved or strained until uniform",
+        "evolution": "In classical and medieval French cooking, boiled vegetables or legumes were pressed through a horsehair sieve (tamis) to eliminate coarse fibrous matter and skins, producing a flawless, purified texture known as \"purée\". In the early 18th century, English aristocrats adopting French haute cuisine imported the word for refined soups and sauces. In contemporary commercial kitchens, purees are crafted using blenders and fine-mesh chinois to anchor upscale plating presentations.",
+        "relatedLanguages": [
+          "French: purée (puree, mashed vegetable)",
+          "Spanish: puré (puree, mash)",
+          "Italian: purè (puree, mashed potatoes)",
+          "Portuguese: puré (puree)",
+          "German: Püree (puree, mash)"
+        ],
+        "firstRecordedUse": "Early 18th century (c. 1706 in English translations of court culinary treatises)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A smooth, uniform, creamy culinary preparation consisting of vegetables, fruits, legumes, or meats that have been cooked and mechanically ground, blended, or strained through a fine sieve to eliminate lumps and coarse fiber; utilized as a velvety soup foundation, elegant plating base, side accompaniment, or dessert coulis.",
+        "spatialContext": "Commercial kitchen saucier stations, banquet prep lines, high-end restaurant plating passes, luxury catering pantries, and baby food processing plants.",
+        "temporalContext": "Prepared during morning mise en place shifts, kept held at precise temperatures in a warm bain-marie or rapidly cooled in a blast chiller, and swiped or piped onto plates seconds prior to dining room service.",
+        "emotionalTone": "Refined, artisanal, velvety, and sophisticated.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers and hospitality professionals associate \"puree\" with refined texture, smoothness, and fine dining elegance. Unlike home-style \"mashed potatoes\" or chunky \"compote\", a puree signifies that seeds, fibers, and lumps have been meticulously removed to create a silky, melt-in-the-mouth consistency. In everyday family life, natives also associate purees with wholesome, freshly strained baby food or specialized soft diets for healthcare patients.",
+        "mentalImage": "An executive saucier in a high-end restaurant using an offset sauce spoon to make a fluid, sweeping arc of bright orange butternut squash puree across a dark slate platter before placing a golden seared scallop on top.",
+        "whenToUse": "Use when discussing finely blended and sieved vegetable, fruit, or legume dishes on restaurant menus, catering proposals, culinary recipes, food processing audits, and hospital dietary charts (e.g., \"cauliflower puree\", \"fruit puree\", \"puree diet\").",
+        "whenNotToUse": "Do not use \"puree\" for rustic, chunky preparations; use \"mash\" (for rustic smashed potatoes), \"compote\" (for stewed fruit with visible pieces), \"relish\" (for diced pickled vegetables), or \"paste\" (for dense, concentrated seasonings like tomato paste).",
+        "culturalContext": "In modern Western gastronomy, purees provide essential visual and sensory contrast on upscale banquet plates, serving as a flavorful bed for roasted proteins. In TOEIC contexts, purees appear in Part 3 dining dialogues, Part 4 banquet speeches, and Part 7 restaurant menus and catering invoices where menu modifications or dietary accommodations are discussed."
+      },
+      "examples": {
+        "daily": [
+          "She blended steamed carrots and apples into a silky puree for her baby's lunch.",
+          "The restaurant served our grilled salmon atop a bed of garlic-infused pea puree.",
+          "To achieve a restaurant-quality texture, strain the sweet potato puree through a fine-mesh sieve."
+        ],
+        "business": [
+          "The banquet event order specifies a roasted sea bass entree served with celery root puree.",
+          "Our commercial food manufacturing client expanded its product line to include organic frozen fruit purees for institutional bakeries.",
+          "The culinary director updated the corporate dining menu to substitute heavy cream purees with olive oil-based vegetable purees for health-conscious diners."
+        ],
+        "conversation": [
+          "\"Does the parsnip puree accompanying the braised beef contain any dairy products?\" / \"Yes, it is prepared with whole milk and butter, but our chef can prepare an olive oil alternative for your client.\"",
+          "\"Have the pastry chefs received the shipment of passion fruit puree for the conference dessert banquet?\" / \"Yes, ten five-liter containers arrived this morning and are stored in the walk-in freezer.\""
+        ],
+        "collocations": [
+          "vegetable puree",
+          "fruit puree",
+          "smooth puree",
+          "cauliflower puree",
+          "butternut squash puree",
+          "puree through a sieve"
+        ]
+      },
+      "wordFamily": {
+        "noun": "puree, purees",
+        "verb": "puree, pureed, pureeing",
+        "adjective": "pureed",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "gourmet vegetable puree plate spoon swipe fine dining chef",
+        "imageDescription": "A fine-dining white ceramic plate featuring an elegant curved swipe of vibrant golden butternut squash puree topped with a seared sea scallop and microgreens under warm kitchen pass lights.",
+        "mnemonic": "PUREE: PURE and Evenly Emulsified—think of food boiled and strained until completely pure and lump-free!"
+      },
+      "video": {
+        "description": "A culinary masterclass video showing an executive chef boiling parsnips in seasoned cream, blending them in a high-speed blender, and passing the mixture through a tamis to demonstrate professional puree consistency."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          7
+        ],
+        "exampleQuestion": "The head chef instructed the kitchen staff to use a fine-mesh strainer so that the cauliflower _____ would have a completely smooth consistency. (A) puree (B) purely (C) purify (D) purity",
+        "tips": "In TOEIC Part 5, determine the necessary part of speech after the compound noun modifier \"cauliflower\". A head noun indicating a food dish is required: (A) \"puree\". Option (B) \"purely\" is an adverb; (C) \"purify\" is a verb; and (D) \"purity\" is an abstract noun denoting a state of clean moral or physical quality, which cannot describe a culinary dish."
+      },
+      "synonyms": [
+        "pulp",
+        "paste",
+        "mash",
+        "coulis",
+        "emulsion"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "tamis",
+        "chinois",
+        "blender",
+        "strainer",
+        "texture",
+        "garnish",
+        "plating"
+      ]
+    },
+    {
+      "id": "dining-222",
+      "word": "quiche",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/kiːʃ/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/quiche--_us_1.mp3",
+        "syllableBreakdown": "quiche",
+        "stressPattern": "●",
+        "commonMistakes": "Non-native speakers frequently mispronounce \"qu-\" as /kw/ (pronouncing it *kweesh* or *kwitch*) or articulate the final \"ch\" as an affricate /tʃ/ (*keetch*). The word is borrowed directly from French: the initial consonant is a hard /k/ and the ending is a soft postalveolar fricative /ʃ/, sounding exactly like /kiːʃ/ (\"keesh\")."
+      },
+      "etymology": {
+        "origin": "Borrowed in the 20th century from French \"quiche\", derived from the Lorraine Franconian German dialect word \"Kichel\" or \"Küchel\" (little cake, tart), a diminutive of Middle High German \"kuoche\" (cake), from Proto-Germanic \"*kōkô\" (cake), which is also cognate with English \"cake\" and Dutch \"koek\".",
+        "rootWord": "Proto-Germanic *kōkô / Lorraine Franconian Küchel / French quiche",
+        "rootMeaning": "Little cake, pastry tart; specifically an open-faced baked egg and cream custard tart",
+        "evolution": "Originating in the Lorraine borderland region where French and Germanic cultures met, \"quiche Lorraine\" was originally an open-faced rustic bread dough baked with eggs, heavy cream (crème fraîche), and smoked lardons. When French haute cuisine and Parisian bistros refined the dish, buttery shortcrust pastry replaced bread dough and cheese (Gruyère) was incorporated. Introduced to the English-speaking world in the mid-20th century, it became a global corporate catering, brunch, and cafe staple by the 1970s.",
+        "relatedLanguages": [
+          "French: quiche (savory egg and cream tart)",
+          "German: Kuchen (cake) / Küchlein (little tart/pastry)",
+          "Dutch: koek (cake) / quiche (borrowed from French)",
+          "Spanish: quiche (savory tart)",
+          "Italian: quiche (savory tart, torta salata)"
+        ],
+        "firstRecordedUse": "Mid-20th century (c. 1925 in English culinary publications, widely popular from the 1940s onward)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A baked savory French pastry dish featuring an open-faced, blind-baked flaky or shortcrust shell filled with an unsweetened custard of beaten eggs, milk or heavy cream, and melted cheese, layered with meats, seafood, or vegetables such as bacon, ham, spinach, leeks, and mushrooms, baked until golden and set.",
+        "spatialContext": "Corporate luncheon buffets, hotel breakfast lines, Parisian-style bistros, cafe chilled display cases, catering banquet stations, and commercial pastry bakeries.",
+        "temporalContext": "Served during morning coffee breaks, brunches, mid-day seminars, afternoon teas, and cocktail receptions; baked ahead of time because cooling firms the egg custard structure for clean portioning.",
+        "emotionalTone": "Hearty, comforting, convivial, and sophisticated.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers view quiche as the quintessential brunch, cafe, and catered lunch dish. It conveys thoughtful hospitality without requiring hot kitchen equipment on site because it tastes delicious warm, chilled, or at room temperature. Native speakers also associate it with vegetarian-friendly event planning (such as spinach-feta or mushroom quiches) and recognize miniature quiches as standard finger foods passed around during corporate networking mixers.",
+        "mentalImage": "A golden-brown deep-dish quiche sitting on a marble buffet riser in a hotel conference hall, its fluted shortcrust pastry holding a firm custard flecked with chopped spinach and Gruyère, cut into crisp triangular wedges.",
+        "whenToUse": "Use when referencing savory egg-custard tarts on catering orders, event menus, cafe ordering boards, conference meal planning sheets, and banquet invoices (e.g., \"quiche Lorraine\", \"crustless quiche\", \"assorted miniature quiches\").",
+        "whenNotToUse": "Do not use \"quiche\" to refer to sweet custard pies (such as pumpkin pie, custard tart, or chess pie) or closed meat pies (like chicken pot pie or Cornish pasty). Do not refer to an Italian frittata or Spanish omelet as a quiche if it lacks a pastry crust.",
+        "culturalContext": "In Anglo-American corporate dining culture, quiche is an exceptionally popular choice for catered working lunches and morning seminars because it travels well, portions neatly, and caters easily to vegetarian attendees. In TOEIC listening and reading modules, quiche often appears in cafe ordering dialogues, seminar catering emails, and corporate cafeteria announcements."
+      },
+      "examples": {
+        "daily": [
+          "I ordered a slice of warm spinach and feta quiche with a side salad at the cafe.",
+          "She baked a classic quiche Lorraine on Sunday to slice up for weekday office lunches.",
+          "The brunch buffet featured miniature quiches with caramelized onions and cheddar cheese."
+        ],
+        "business": [
+          "The event coordinator requested ten vegetarian quiches to accommodate conference attendees with dietary preferences.",
+          "Our corporate catering division offers pre-sliced artisanal quiches packaged in eco-friendly delivery platters.",
+          "The hotel banquet menu includes miniature quiches as passed hors d'oeuvres during the evening networking reception."
+        ],
+        "conversation": [
+          "\"Should we select the quiche Lorraine or the roasted vegetable quiche for the department luncheon?\" / \"Let's order both so that our vegetarian colleagues have an entree option.\"",
+          "\"Can the quiches be served at room temperature if our meeting room lacks food warmers?\" / \"Yes, quiche retains its flavor and firm custard texture perfectly without reheating.\""
+        ],
+        "collocations": [
+          "quiche Lorraine",
+          "spinach quiche",
+          "miniature quiches",
+          "slice of quiche",
+          "vegetarian quiche",
+          "crustless quiche"
+        ]
+      },
+      "wordFamily": {
+        "noun": "quiche, quiches",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "quiche Lorraine slice brunch catering buffet flaky crust",
+        "imageDescription": "A freshly sliced, golden-brown deep-dish quiche with a fluted pastry crust and savory filling of eggs, melted cheese, and ham, displayed on a wooden board at a corporate brunch buffet.",
+        "mnemonic": "QUICHE: Quick Egg Custard in Flaky Crust—remember French \"quiche\" sounds like \"keesh\", the queen of brunch dishes!"
+      },
+      "video": {
+        "description": "A professional culinary instruction video showing a banquet chef blind-baking a fluted tart pastry shell, whisking eggs with heavy cream, adding gruyere and bacon, and baking an authentic quiche Lorraine."
+      },
+      "toeicContext": {
+        "commonParts": [
+          2,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "The corporate event planner confirmed that the lunch buffet will include fresh seasonal salads, artisan rolls, and individual portions of spinach _____. (A) quiche (B) quickly (C) quicken (D) quicker",
+        "tips": "In TOEIC Part 5, identify the noun required to complete a compound food noun following the attributive noun modifier \"spinach\". Choice (A) \"quiche\" correctly forms the food name \"spinach quiche\". Choices (B) \"quickly\" (adverb), (C) \"quicken\" (verb), and (D) \"quicker\" (comparative adjective) are morphological traps sharing the initial letters \"quic-\"."
+      },
+      "synonyms": [
+        "savory tart",
+        "egg pie",
+        "custard tart",
+        "flan",
+        "tarte salée"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "custard",
+        "pastry",
+        "crust",
+        "shortcrust",
+        "brunch",
+        "buffet",
+        "lardons"
+      ]
+    },
+    {
+      "id": "dining-223",
+      "word": "refrigeration",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "dining",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/rɪˌfrɪdʒ.əˈreɪ.ʃən/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/refrigeration--_us_1.mp3",
+        "syllableBreakdown": "re·frig·er·a·tion",
+        "stressPattern": "○○○●○",
+        "commonMistakes": "Learners often place the primary stress on the second syllable (*re-FRIDGE-er-a-tion*) or pronounce the prefix \"re-\" with a long tense vowel /riː/ instead of the reduced /rɪ/. The primary stress falls on the fourth syllable: /rɪˌfrɪdʒ.əˈreɪ.ʃən/ (\"ri-frij-uh-RAY-shun\"). Another common error is confusing the uncountable process/technology noun \"refrigeration\" with the physical appliance noun \"refrigerator\" or the colloquial truncation \"fridge\"."
+      },
+      "etymology": {
+        "origin": "From Latin \"refrigerātiō\" (a cooling, refreshing, relief from heat), noun of action formed from the past-participle stem of \"refrigerāre\" (to cool off, make cool), compounded from \"re-\" (intensive prefix or back/again) + \"frīgerāre\" (to make cold), derived from \"frīgus\" (cold, coldness, frost), from Proto-Indo-European \"*sriH-g-\" / \"*srig-\" (cold, frost).",
+        "rootWord": "Latin frīgus (cold, chill) / refrigerāre (to cool down, chill)",
+        "rootMeaning": "The act or process of cooling down or making cold; chilling below ambient room temperature",
+        "evolution": "In classical and medieval Latin, \"refrigeratio\" referred to physical cooling, relief from fever, or spiritual solace in purgatory (\"locus refrigerii\"). In the 17th and 18th centuries, natural philosophers adopted it into English for scientific cooling processes. During the Industrial Revolution of the late 19th century, mechanical vapor-compression refrigeration was invented, revolutionizing the global food industry, commercial meatpacking, restaurant dining, and transoceanic shipping by preventing microbial spoilage across the cold chain.",
+        "relatedLanguages": [
+          "French: réfrigération (cooling, chilling, refrigeration)",
+          "Spanish: refrigeración (refrigeration, cooling system)",
+          "Italian: refrigerazione (refrigeration, cooling)",
+          "Portuguese: refrigeração (refrigeration)",
+          "German: Kühlung (cooling) / Kältetechnik (refrigeration technology)"
+        ],
+        "firstRecordedUse": "Early 17th century (c. 1610s in philosophical and scientific texts describing the physics of chilling)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The thermodynamic process, engineered technology, and equipment infrastructure utilized to remove heat from an enclosed space or substance and maintain it at a controlled low temperature—typically between 34°F and 40°F (1°C to 4°C) for chilled storage and below 0°F (-18°C) for freezing—in order to inhibit bacterial proliferation, preserve perishable food supplies, and ensure food safety code compliance.",
+        "spatialContext": "Commercial kitchen walk-in coolers, reach-in refrigerated prep tables, cold-chain transport trailers, restaurant beverage cellars, supermarket dairy cases, and facility mechanical compressor rooms.",
+        "temporalContext": "Operates continuously 24 hours a day, 365 days a year; monitored during shift handovers via automated digital temperature probes, with scheduled biannual preventive maintenance on condensers and coolant coils.",
+        "emotionalTone": "Technical, essential, objective, and safety-critical.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers in restaurant operations and facilities engineering, \"refrigeration\" is not simply an appliance (which they call a \"fridge\" or \"refrigerator\"), but the critical cold-chain lifeline that ensures food safety, shelf-life integrity, and public health compliance. When kitchen managers hear \"refrigeration issue\", alarms go off: failure means immediate risk of bacterial growth, hundreds of pounds of spoiled inventory, and shut-down citations from public health inspectors. On food labels and menus, natives view \"requires refrigeration\" as an absolute instruction to prevent spoilage.",
+        "mentalImage": "A restaurant facilities technician using a digital multimeter to check the compressor electrical panel and refrigerant line of an industrial walk-in cooler, while a kitchen manager inspects the digital temperature readout showing a steady 36°F (2.2°C).",
+        "whenToUse": "Use when referring to the mechanical cooling system, cold-holding food safety standards, temperature-controlled supply chains, or equipment service contracts in culinary, hospitality, HVAC, and facilities management contexts (e.g., \"commercial refrigeration units\", \"continuous refrigeration\", \"prompt refrigeration prevents spoilage\").",
+        "whenNotToUse": "Do not use \"refrigeration\" when referring to the physical kitchen appliance in conversational speech; say \"put it in the refrigerator\" or \"in the fridge\", not \"put it in the refrigeration\". Do not confuse with \"air conditioning\" (comfort climate control for occupied indoor air).",
+        "culturalContext": "In commercial hospitality and food safety audits (HACCP regulations enforced by health departments in the US, UK, and worldwide), refrigeration is rigorously governed. Temperatures in the \"danger zone\" (40°F–140°F / 4°C–60°C) must be avoided. In TOEIC exam contexts, refrigeration appears in Part 3 conversations regarding catering logistics or kitchen repairs, Part 4 facilities maintenance announcements, and Part 7 maintenance service contracts or food safety inspection reports."
+      },
+      "examples": {
+        "daily": [
+          "The label on the artisan salad dressing states clearly that it requires refrigeration after opening.",
+          "Without proper refrigeration during the summer heat, dairy products spoil within a few hours.",
+          "Our caterer transported the seafood platters in insulated coolers with dry ice to provide continuous refrigeration."
+        ],
+        "business": [
+          "The restaurant facility manager scheduled emergency repairs after the main refrigeration system suffered a coolant leak.",
+          "Health inspectors confirmed that all walk-in refrigeration units complied with commercial temperature safety guidelines.",
+          "Investing in energy-efficient commercial refrigeration units lowered the hotel kitchen's utility costs by fifteen percent."
+        ],
+        "conversation": [
+          "\"Has the HVAC technician inspected the walk-in refrigeration unit in the basement kitchen?\" / \"Yes, he replaced a worn compressor fan belt and confirmed the internal temperature is back at thirty-six degrees.\"",
+          "\"Why was the shipment of imported cheese delayed at the distribution depot?\" / \"The logistics provider had to verify that continuous refrigeration was maintained throughout transit before releasing the pallets.\""
+        ],
+        "collocations": [
+          "commercial refrigeration",
+          "continuous refrigeration",
+          "refrigeration unit",
+          "refrigeration system",
+          "require refrigeration",
+          "refrigeration equipment"
+        ]
+      },
+      "wordFamily": {
+        "noun": "refrigeration, refrigerator, refrigerant",
+        "verb": "refrigerate, refrigerated, refrigerating",
+        "adjective": "refrigerated",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "commercial walk-in refrigeration cooler thermometer restaurant kitchen",
+        "imageDescription": "A stainless-steel commercial walk-in cooler in a restaurant kitchen with neatly organized shelves of fresh produce and dairy, monitored by an exterior digital temperature display reading 37°F.",
+        "mnemonic": "REFRIGERATION: RE-FRIGID-ERATION—bringing back (\"re-\") ice-cold frigid conditions to preserve perishable foods!"
+      },
+      "video": {
+        "description": "A commercial kitchen maintenance video explaining the closed vapor-compression cycle of restaurant refrigeration systems and demonstrating daily digital temperature logging procedures for HACCP compliance."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Health department regulations mandate that all dairy and meat products be kept under constant _____ until immediately prior to cooking or serving. (A) refrigeration (B) refrigerate (C) refrigerated (D) refrigerator",
+        "tips": "In TOEIC Part 5, following the preposition \"under\" and the modifier \"constant\", the sentence structure requires a noun denoting the condition or state of cooling: (A) \"refrigeration\". Option (B) \"refrigerate\" is a base verb; (C) \"refrigerated\" is a past participle/adjective; and (D) \"refrigerator\" is a countable noun for the appliance, which would require an article (\"a refrigerator\") and does not idiomatically collocate with \"under constant _____ \"."
+      },
+      "synonyms": [
+        "cooling",
+        "chilling",
+        "cold storage",
+        "freeze preservation",
+        "cryopreservation"
+      ],
+      "antonyms": [
+        "heating",
+        "warming",
+        "thermal processing"
+      ],
+      "relatedWords": [
+        "compressor",
+        "condenser",
+        "refrigerant",
+        "perishable",
+        "cold chain",
+        "temperature log",
+        "thermostat"
+      ]
+    }
+  ]
+}

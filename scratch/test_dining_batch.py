@@ -1,0 +1,470 @@
+import json
+import jsonschema
+
+with open('scripts/process_words.py') as f:
+    code = f.read()
+
+schema_str = code[code.find('SCHEMA ='):code.find('BASE_PROMPT =')].strip()
+ldict = {}
+exec(schema_str, globals(), ldict)
+schema = ldict['SCHEMA']
+
+words = [
+  {
+    "id": "dining-065",
+    "word": "bowl",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+      "ipa": "/boʊl/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/bowl--_us_1.mp3",
+      "syllableBreakdown": "bowl",
+      "stressPattern": "● (monosyllabic)",
+      "commonMistakes": "Learners frequently mispronounce the diphthong /oʊ/ as /aʊ/ (rhyming with 'owl' or 'bow' as in bowing) or /ɔː/ (rhyming with 'ball'). In standard English, it rhymes with 'goal', 'pole', and 'roll'. Ensure the lips round cleanly toward the end of the vowel."
+    },
+    "etymology": {
+      "origin": "Old English / Proto-Germanic",
+      "rootWord": "bolla (round vessel, pot, basin, cup)",
+      "rootMeaning": "A rounded, swollen, or hemispherical container (from Proto-Indo-European *bhel-, 'to blow, swell').",
+      "evolution": "In Old English, 'bolla' referred to a hemispherical drinking cup or basin. In Middle English, the spelling shifted to 'bolle' and eventually 'bowl' to designate open, concave hollow tableware designed for holding liquids, broths, grains, and porridges. In modern commercial hospitality and dining service, it denotes essential dinnerware used for soups, salads, and pastas, as well as serving ware and culinary prep vessels.",
+      "relatedLanguages": [
+        "German: Bolle (bulb, spherical vessel)",
+        "Dutch: bol (sphere, globe)",
+        "Old Norse: bolli (small bowl, cup)",
+        "Swedish: bulle (round roll, bun)"
+      ],
+      "firstRecordedUse": "Before the 12th century (Old English, c. 1000)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A deep, round, concave tableware or culinary vessel with an open top, designed specifically for holding, preparing, or serving liquids, soups, salads, grains, or desserts.",
+      "spatialContext": "Restaurant dining tables, commercial dishwashing stations, banquet soup stations, salad bars, and kitchen prep lines.",
+      "temporalContext": "Arranged during table setting prior to meal service; cleared after the soup or salad course; used continually in kitchen food preparation.",
+      "emotionalTone": "Comforting, functional, communal, and grounded.",
+      "formalityLevel": "neutral",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Native speakers instinctively distinguish a 'bowl' from a 'plate' (which is shallow and flat for solid foods requiring a knife) and a 'cup' (which has a handle and smaller diameter for drinking). It evokes warmth and wholesomeness (e.g., 'a warm bowl of soup'). In contemporary dining, 'bowl' also connotes trendy, balanced single-dish meals such as grain bowls, poke bowls, and salad bowls.",
+      "mentalImage": "A gleaming white porcelain soup bowl resting squarely atop a matching underplate with a polished silver soup spoon beside it, placed on a starched white linen tablecloth in a banquet dining room.",
+      "whenToUse": "Use when designating concave dinnerware, prep containers (mixing bowls), serving receptacles (punch bowls, salad bowls), or the quantity contained within them ('a bowl of clam chowder', 'a bowl of chili').",
+      "whenNotToUse": "Do not use 'bowl' to refer to flat plates or platters where liquids would run off. Avoid confusing with 'dish' (a broader category that can mean any tableware or a cooked preparation) or 'basin' (which is larger, utilitarian, or used for washing).",
+      "culturalContext": "In Western formal dining etiquette, soup bowls are always presented on a liner plate (underplate), and diners are taught to spoon soup away from themselves. In TOEIC test listening (Part 1) and reading passages, bowls frequently appear in descriptions of restaurant dining tables, banquet settings, and cafeteria buffet arrangements."
+    },
+    "examples": {
+      "daily": [
+        "She poured hot almond milk over steel-cut oatmeal in a wide ceramic bowl.",
+        "The server brought out a steaming bowl of tomato basil soup accompanied by sourdough bread.",
+        "Please place the tossed green salad into a large wooden bowl for the family dinner."
+      ],
+      "business": [
+        "The banquet operations team ordered five hundred porcelain soup bowls to replace damaged inventory before the annual gala.",
+        "During health inspections, restaurant kitchen staff must verify that all stainless steel mixing bowls are sanitized properly.",
+        "The conference catering package includes custom chinaware rentals, providing matched dinner plates, dessert bowls, and flatware."
+      ],
+      "conversation": [
+        "A: 'Could we request an extra bowl and two spoons so we can share the clam chowder?'\nB: 'Certainly, I will bring a clean soup bowl to your table right away.'",
+        "A: 'Did the shipment of shallow ceramic pasta bowls arrive from the restaurant supplier?'\nB: 'Yes, the receiving dock checked in twelve cartons this morning.'",
+        "A: 'Should the finger bowls be presented before or after the seafood platter?'\nB: 'Formal dining protocol requires them to be placed immediately following the shellfish course.'"
+      ],
+      "collocations": [
+        "soup bowl",
+        "salad bowl",
+        "mixing bowl",
+        "cereal bowl",
+        "porcelain bowl",
+        "a bowl of"
+      ]
+    },
+    "wordFamily": {
+      "noun": "bowl, bowlful",
+      "verb": "bowl",
+      "adjective": "bowled",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "white porcelain soup bowl restaurant table setting",
+      "imageDescription": "A classic white ceramic soup bowl filled with steaming French onion soup, set on an underplate atop an elegant restaurant dining table with silverware and a folded napkin.",
+      "mnemonic": "BOWL holds Broth Over Wide Lips: round, deep, and perfect for hot liquid food!"
+    },
+    "video": {
+      "description": "A hospitality training video illustrating fine dining table settings, showing the correct placement of soup bowls on underplates and alignment with flatware."
+    },
+    "toeicContext": {
+      "commonParts": [
+        1,
+        2,
+        3,
+        7
+      ],
+      "exampleQuestion": "Before guests arrived for the luncheon, the waitstaff placed a polished silver spoon next to each porcelain soup _____ on the tables. (A) bowl (B) bowls (C) bowler (D) bowling",
+      "tips": "Following the singular indefinite noun phrase 'each porcelain soup _____', the blank requires the singular head noun: (A) bowl. Distinguish from plural (B), the occupational noun (C), and the gerund/sporting noun (D)."
+    },
+    "synonyms": [
+      "basin",
+      "dish",
+      "vessel",
+      "tureen",
+      "crock"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "plate",
+      "saucer",
+      "platter",
+      "tableware",
+      "chinaware",
+      "soup spoon",
+      "cutlery"
+    ]
+  },
+  {
+    "id": "dining-066",
+    "word": "braise",
+    "partOfSpeech": [
+      "verb"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+      "ipa": "/breɪz/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/braise--_us_1.mp3",
+      "syllableBreakdown": "braise",
+      "stressPattern": "● (monosyllabic)",
+      "commonMistakes": "Learners often confuse the voiced final consonant /z/ with the voiceless /s/ of 'brace' (/breɪs/). In addition, ESL speakers may confuse the /r/ with /l/, incorrectly pronouncing it as 'blaze' (/bleɪz/). Ensure a distinct voiced /z/ and clear liquid /r/."
+    },
+    "etymology": {
+      "origin": "French / Germanic",
+      "rootWord": "braiser (to cook over live coals, from 'braise' meaning embers or hot coals)",
+      "rootMeaning": "To cook food slowly over glowing charcoal or hot embers in a closed pot.",
+      "evolution": "Derived from the French noun 'braise' (live embers/coals), rooted in Proto-Germanic *brasa. In 18th-century French culinary practice, 'braiser' became a fundamental cooking technique combining dry and moist heat: first searing meat or vegetables at high temperature to caramelize sugars, then simmering gently in a tightly covered vessel with a small quantity of aromatics and liquid. The term entered English in the late 18th century as classic French gastronomy shaped hotel and restaurant hospitality.",
+      "relatedLanguages": [
+        "French: braiser (to braise)",
+        "Spanish: brasear (to braise, roast on coals)",
+        "Italian: brasare (to braise)",
+        "German: schmoren (culinary equivalent for braising)"
+      ],
+      "firstRecordedUse": "Late 18th century (c. 1797)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A combination culinary technique in which meat or vegetables are first browned at high heat in fat, then cooked slowly in a covered pot on low heat with a small amount of flavorful liquid.",
+      "spatialContext": "Commercial restaurant kitchens, hot prep lines, heavy cast-iron Dutch ovens, braising pans (rondeaux), and tilting skillets in banquet catering facilities.",
+      "temporalContext": "Executed during morning or early afternoon prep periods, requiring several hours (typically 2 to 4 hours) of unattended low-temperature simmering before dinner service.",
+      "emotionalTone": "Artisanal, savory, sophisticated, warming, and patient.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers, 'braise' signifies maximum tenderness and deep, concentrated flavor. It is the premier technique for turning tough, connective-tissue-rich cuts of meat (like short ribs, shanks, or brisket) into meltingly tender gourmet entrees. Seeing 'braised' on a menu immediately promises a rich, savory reduction sauce and meat tender enough to cut with a fork.",
+      "mentalImage": "A professional chef using tongs to sear a thick beef short rib to a dark mahogany crust in a commercial Dutch oven before deglazing with red wine, adding thyme and beef stock, and covering with a heavy lid to simmer gently.",
+      "whenToUse": "Use when describing slow cooking in a covered container with limited liquid after initial browning, especially in culinary instructions, restaurant menus, and banquet catering orders ('braise the short ribs', 'slow-braised lamb shanks', 'braised red cabbage').",
+      "whenNotToUse": "Do not use for dishes submerged in abundant boiling liquid (that is 'boiling' or 'poaching'), dry heat cooking without liquid ('roasting' or 'baking'), or quick surface frying ('searing' or 'sautéing'). Never use in abstract office idioms (do not 'braise a report').",
+      "culturalContext": "Braised dishes are banquet favorites in hotel event catering because slow-cooked meats retain tenderness and moisture under hotel warming trays without drying out, making 'braised entrees' a staple topic in TOEIC Part 3 and Part 7 catering negotiations and restaurant reviews."
+    },
+    "examples": {
+      "daily": [
+        "The recipe instructs cooks to braise the beef brisket in apple cider and onion broth for four hours.",
+        "She decided to braise the pork shoulder in a cast-iron Dutch oven on Sunday afternoon.",
+        "After searing the chicken legs in olive oil, braise them slowly with white wine and fresh herbs."
+      ],
+      "business": [
+        "The executive chef chose to braise forty portions of lamb shank ahead of the corporate dinner so they would remain succulent.",
+        "Our banquet catering contract offers guests a choice between pan-seared salmon and slow-braised beef short ribs.",
+        "The culinary director demonstrated how to braise winter root vegetables to enhance flavor while controlling food costs."
+      ],
+      "conversation": [
+        "A: 'Which entree do you recommend for our corporate client dinner tonight?'\nB: 'The braised beef short ribs are outstanding; they are simmered for four hours until fork-tender.'",
+        "A: 'Will the kitchen have enough time to braise the pork belly before the VIP reception at seven?'\nB: 'Yes, the prep cooks started braising it at noon, so it will be ready right on schedule.'",
+        "A: 'Is the chicken breast roasted or braised?'\nB: 'It is braised in a tarragon cream broth, which keeps the white meat extremely moist.'"
+      ],
+      "collocations": [
+        "braise slowly",
+        "braised short ribs",
+        "braised lamb shank",
+        "braise in broth",
+        "slow-braised",
+        "braise gently"
+      ]
+    },
+    "wordFamily": {
+      "noun": "braising, braiser",
+      "verb": "braise",
+      "adjective": "braised",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "braised beef short ribs Dutch oven restaurant kitchen",
+      "imageDescription": "Succulent, glazed braised beef short ribs resting in a rich, dark sauce with baby carrots and rosemary inside an enameled cast-iron Dutch oven in a commercial kitchen.",
+      "mnemonic": "BRAISE = Brown then Raise the Steam: first sear brown, then slow-cook in broth until tender!"
+    },
+    "video": {
+      "description": "A culinary school tutorial demonstrating professional braising fundamentals: searing meat, building fond, deglazing with wine, adding mirepoix and stock, and oven simmering."
+    },
+    "toeicContext": {
+      "commonParts": [
+        3,
+        5,
+        7
+      ],
+      "exampleQuestion": "To ensure that the beef shanks remain succulent during prolonged banquet service, the executive chef prefers to _____ them slowly in red wine stock. (A) braise (B) braiser (C) braised (D) braising",
+      "tips": "Following the infinitive marker 'to' ('prefers to _____ them'), the sentence requires the base form of the verb: (A) braise. Notice that (B) is a noun for the cooking pan, (C) is the past tense/participle, and (D) is the present participle/gerund."
+    },
+    "synonyms": [
+      "slow-cook",
+      "stew",
+      "pot-roast",
+      "simmer",
+      "casserole"
+    ],
+    "antonyms": [
+      "sear",
+      "grill",
+      "broil",
+      "flash-fry"
+    ],
+    "relatedWords": [
+      "sear",
+      "simmer",
+      "Dutch oven",
+      "broth",
+      "reduction",
+      "pot roast",
+      "caramelize"
+    ]
+  },
+  {
+    "id": "dining-067",
+    "word": "bread",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+      "ipa": "/brɛd/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/bread--_us_1.mp3",
+      "syllableBreakdown": "bread",
+      "stressPattern": "● (monosyllabic)",
+      "commonMistakes": "Learners often mispronounce the vowel digraph 'ea' as a long tense /iː/ (rhyming with 'breed' or 'bead'). In 'bread', the vowel is always short /ɛ/ as in 'bed' or 'head'. Furthermore, pronounce the final consonant as a voiced /d/, avoiding devoicing to /t/."
+    },
+    "etymology": {
+      "origin": "Old English / Proto-Germanic",
+      "rootWord": "brēad (bit, morsel, piece of food; bread)",
+      "rootMeaning": "Food prepared through fermentation and baking (from Proto-Germanic *braudą, tied to Proto-Indo-European *bhreu- 'to boil, bubble, ferment').",
+      "evolution": "In Old English, the standard term for bread was 'hlāf' (which survived as modern 'loaf'), while 'brēad' meant a fragment or broken morsel of food. By the 12th century, 'bread' had supplanted 'hlāf' to designate the baked staple made from flour and water. As grain milling and bakeries organized into trade guilds across Europe, bread became both the fundamental human food ('staff of life') and a basic economic indicator.",
+      "relatedLanguages": [
+        "German: Brot (bread)",
+        "Dutch: brood (bread)",
+        "Old Norse: brauð (bread)",
+        "Swedish: bröd (bread)",
+        "Danish: brød (bread)"
+      ],
+      "firstRecordedUse": "Before the 12th century (Old English, c. 950)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A staple baked food prepared from a dough of ground cereal grain (usually wheat flour) and water, leavened by yeast or sourdough cultures or unleavened, kneaded, and baked in an oven.",
+      "spatialContext": "Commercial bakeries, restaurant bread stations, banquet dining tables, bakery display cases, deli sandwich prep stations, and hotel breakfast buffets.",
+      "temporalContext": "Freshly baked in the early hours before dawn; delivered daily to restaurants; served continuously as complimentary table bread, sandwich bases, or breakfast toast throughout operational hours.",
+      "emotionalTone": "Wholesome, comforting, fundamental, hospitable, and nourishing.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "To native speakers, 'bread' is both an essential dietary staple and a universal symbol of hospitality. Offering a warm bread basket with butter or seasoned olive oil immediately sets a welcoming, generous tone at a restaurant. Grammatically, native speakers treat 'bread' as an uncountable mass noun, requiring counters like 'loaf of bread', 'slice of bread', or 'roll' when quantifying. In commerce, it also idiomatically denotes financial livelihood ('breadwinner', 'bread and butter').",
+      "mentalImage": "A rustic wicker basket lined with a crisp white linen napkin holding an assortment of warm, golden-crusted sourdough slices and dinner rolls, served alongside a small dish of whipped butter on a polished dining table.",
+      "whenToUse": "Use as an uncountable noun for the food product itself ('serve fresh bread', 'bake bread', 'a slice of bread') or as a modifier in culinary compounds ('bread basket', 'bread knife', 'bread pudding'). Use the plural 'breads' exclusively when referring to different varieties or categories of bread ('artisanal breads', 'gluten-free breads').",
+      "whenNotToUse": "Never say 'a bread' to mean a single roll or slice; always say 'a piece of bread', 'a slice of bread', 'a roll', or 'a loaf of bread'. Do not confuse with 'dough' (unbaked mixture) or 'batter' (liquid mixture).",
+      "culturalContext": "In North American and European dining culture, complimentary bread is traditionally placed on the table before the meal commences. In the TOEIC exam, bread appears frequently in catering orders, banquet menu options, sandwich box lunches for corporate seminars, and discussions of dietary accommodations (such as gluten intolerance)."
+    },
+    "examples": {
+      "daily": [
+        "The neighborhood bakery bakes fresh multigrain bread every morning at five o'clock.",
+        "He toasted two slices of whole-wheat bread and topped them with mashed avocado for a quick snack.",
+        "Could you pass the bread basket and the butter dish to this end of the table, please?"
+      ],
+      "business": [
+        "The hotel catering department partners with an organic bakery to supply artisanal breads for executive conferences.",
+        "When organizing the luncheon, the event coordinator requested gluten-free bread options for participants with food allergies.",
+        "Rising commercial grain prices forced the regional restaurant chain to renegotiate its wholesale bread contracts."
+      ],
+      "conversation": [
+        "A: 'Does the luncheon sandwich platter include vegetarian and gluten-free bread selections?'\nB: 'Yes, the caterer includes gluten-free ciabatta and whole-grain wraps on separate trays.'",
+        "A: 'How many loaves of artisan bread should we slice for the evening buffet line?'\nB: 'Twelve loaves of sourdough and eight baguettes should be plenty for eighty guests.'",
+        "A: 'Would you care for some warm bread while we prepare your entrees?'\nB: 'Thank you, that would be wonderful.'"
+      ],
+      "collocations": [
+        "fresh bread",
+        "artisan bread",
+        "loaf of bread",
+        "bread basket",
+        "whole-wheat bread",
+        "gluten-free bread"
+      ]
+    },
+    "wordFamily": {
+      "noun": "bread, breadcrumb, breadbasket",
+      "verb": "bread",
+      "adjective": "breaded",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "fresh artisan bread basket restaurant dining table",
+      "imageDescription": "A woven wicker bread basket lined with clean white cloth containing crusty artisanal sourdough rolls and sliced baguettes, placed beside a ceramic dish of herb-infused dipping oil.",
+      "mnemonic": "BREAD: Baked Rolls Every Afternoon Deliciously — remember it is uncountable, so measure by loaves or slices!"
+    },
+    "video": {
+      "description": "A commercial kitchen hospitality video demonstrating proper bread service standards: bread warmer maintenance, linen-lined basket presentation, and accommodating gluten-free requests."
+    },
+    "toeicContext": {
+      "commonParts": [
+        1,
+        3,
+        4,
+        7
+      ],
+      "exampleQuestion": "To accommodate attendees with dietary restrictions, the conference banquet menu includes gluten-free _____ and dairy-free spreads upon request. (A) bread (B) breads' (C) breaded (D) breading",
+      "tips": "In Part 5, identify 'bread' as the correct uncountable noun following the modifier 'gluten-free'. Choice (B) is a plural possessive, (C) is a participle/adjective meaning coated in breadcrumbs, and (D) is a noun referring to the coating mixture."
+    },
+    "synonyms": [
+      "loaf",
+      "roll",
+      "baguette",
+      "bun",
+      "baked goods",
+      "pastry"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "bakery",
+      "dough",
+      "yeast",
+      "crust",
+      "sourdough",
+      "flour",
+      "toast"
+    ]
+  },
+  {
+    "id": "dining-068",
+    "word": "breakfast",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "dining",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/ˈbrɛk.fəst/",
+      "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/breakfast--_us_1.mp3",
+      "syllableBreakdown": "break-fast",
+      "stressPattern": "●○ (primary stress on the first syllable: BREAK-fast)",
+      "commonMistakes": "Learners often mispronounce both syllables based on their individual spellings (*break* /breɪk/ and *fast* /fæst/). In the compound noun, vowel reduction occurs: the first syllable has a short /ɛ/ ('brek') and the second syllable has an unstressed schwa /fəst/ ('fust'). Avoid saying */ˈbreɪk.fæst/."
+    },
+    "etymology": {
+      "origin": "Middle English compound",
+      "rootWord": "breken (to break) + faste (fast, abstinence from food)",
+      "rootMeaning": "To break the overnight fast (abstinence from food during sleep).",
+      "evolution": "Formed in Middle English in the 15th century (as 'brekefast'), translating the late Latin concept 'disieiunare' (which yielded French 'déjeuner' and Spanish 'desayuno'). It designated the morning meal taken after waking from nocturnal rest. In the modern hospitality industry and corporate travel, breakfast has evolved into a key service differentiator, encompassing continental breakfasts, full English/American buffets, and working breakfast business meetings.",
+      "relatedLanguages": [
+        "French: déjeuner / petit-déjeuner (breaking fast)",
+        "Spanish: desayuno (des- + ayuno, breaking fast)",
+        "Portuguese: desjejum (breaking fast) / café da manhã",
+        "German: Frühstück (early piece/morsel)"
+      ],
+      "firstRecordedUse": "Mid-15th century (c. 1463)"
+    },
+    "deepMeaning": {
+      "coreConcept": "The first meal of the day, eaten in the morning to break the overnight fasting period; in hospitality and business, a primary morning catering service, hotel amenity, or networking event format.",
+      "spatialContext": "Hotel breakfast dining rooms, corporate conference hospitality suites, executive airport lounges, restaurant breakfast counters, and hotel guest rooms (via room service).",
+      "temporalContext": "Typically served in hotel dining facilities between 6:00 AM and 10:30 AM on weekdays; scheduled from 7:30 AM to 9:00 AM for corporate breakfast meetings.",
+      "emotionalTone": "Energizing, welcoming, punctual, refreshing, and productive.",
+      "formalityLevel": "neutral",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Native speakers view 'breakfast' not only as nutritional sustenance to begin the day, but as an indispensable business and travel institution. When evaluating business hotels, executives consistently check whether room rates include a 'complimentary breakfast buffet' or 'continental breakfast'. In corporate culture, 'breakfast meetings' or 'working breakfasts' represent efficient, productive time slots for negotiations before the formal business day begins.",
+      "mentalImage": "A bright, sun-drenched hotel atrium where business professionals in business-casual attire select fresh fruit, croissants, and steaming coffee carafes from a spotless breakfast buffet table before a morning conference.",
+      "whenToUse": "Use when referring to the morning meal, meal service, or corporate morning gatherings centered around dining ('serve breakfast', 'eat breakfast', 'working breakfast', 'continental breakfast', 'breakfast voucher'). Can act as a noun adjunct/modifier ('breakfast buffet', 'breakfast menu', 'breakfast meeting').",
+      "whenNotToUse": "Do not use for midday meals (lunch) or late-morning combined meals (brunch). Do not separate into two words unless literally referring to ending a religious fast.",
+      "culturalContext": "A ubiquitous topic across all parts of the TOEIC exam. Test takers encounter 'breakfast' in hotel reservation confirmations (Part 7), flight itineraries with breakfast service (Part 4), corporate schedules outlining working breakfasts (Part 3), and Part 1 photos of hotel dining areas or breakfast buffets."
+    },
+    "examples": {
+      "daily": [
+        "She prepared a nutritious breakfast of Greek yogurt, berries, and granola before commuting to the office.",
+        "The downtown boutique hotel serves a complimentary hot breakfast in the dining lounge every morning.",
+        "Doctors emphasize that eating a balanced breakfast helps sustain energy levels throughout the workday."
+      ],
+      "business": [
+        "The executive committee scheduled a working breakfast at seven-thirty to review the quarterly financial results.",
+        "All hotel reservations booked under the corporate corporate rate include a complimentary continental breakfast.",
+        "During the three-day convention, breakfast will be served daily in the grand ballroom prior to the keynote addresses."
+      ],
+      "conversation": [
+        "A: 'Is hot breakfast included in our corporate room booking at the Grand Hyatt?'\nB: 'Yes, the booking confirmation includes full buffet breakfast vouchers for each morning.'",
+        "A: 'What time does the conference breakfast service begin tomorrow?'\nB: 'The catering staff will set up the breakfast stations by six-thirty in the morning.'",
+        "A: 'Would you be open to holding a breakfast meeting before tomorrow's trade expo?'\nB: 'Certainly, meeting over breakfast at seven-thirty at the hotel cafe works well for me.'"
+      ],
+      "collocations": [
+        "continental breakfast",
+        "complimentary breakfast",
+        "breakfast buffet",
+        "breakfast meeting",
+        "serve breakfast",
+        "eat breakfast"
+      ]
+    },
+    "wordFamily": {
+      "noun": "breakfast",
+      "verb": "breakfast",
+      "adjective": "breakfast (attributive)",
+      "adverb": ""
+    },
+    "visual": {
+      "imageKeyword": "hotel breakfast buffet corporate morning dining",
+      "imageDescription": "A well-lit, upscale hotel dining room with business guests helping themselves to an extensive breakfast buffet featuring fresh pastries, fruit platters, and hot coffee.",
+      "mnemonic": "BREAK-FAST: Literally BREAKing the night's FAST to power up your morning business performance!"
+    },
+    "video": {
+      "description": "A hotel hospitality training clip illustrating the setup and maintenance of an executive breakfast buffet, covering chafing dish temperature monitoring, coffee replenishment, and allergen notices."
+    },
+    "toeicContext": {
+      "commonParts": [
+        2,
+        3,
+        4,
+        7
+      ],
+      "exampleQuestion": "Hotel guests staying in executive suites are invited to enjoy a complimentary _____ buffet served daily in the rooftop lounge. (A) breakfast (B) breakfasts (C) breakfasted (D) breakfasting",
+      "tips": "In Part 5, when modifying the noun 'buffet' to specify the meal being served, use the singular noun adjunct: (A) breakfast. Avoid verb inflections like the past tense (C) or gerund/participle (D)."
+    },
+    "synonyms": [
+      "morning meal",
+      "continental breakfast",
+      "buffet breakfast",
+      "repast",
+      "spread"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "buffet",
+      "continental",
+      "coffee",
+      "pastry",
+      "brunch",
+      "catering",
+      "amenity"
+    ]
+  }
+]
+
+jsonschema.validate(instance={"words": words}, schema=schema)
+print("ALL 4 ENTRIES VALIDATED PERFECTLY AGAINST SCHEMA!")
+
+with open("scratch/verified_dining_065_068.json", "w") as f:
+    json.dump({"words": words}, f, indent=2)
+

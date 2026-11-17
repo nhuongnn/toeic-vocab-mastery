@@ -1,0 +1,456 @@
+{
+  "words": [
+    {
+      "id": "comms-219",
+      "word": "reporter",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/rɪˈpɔːrtər/",
+        "syllableBreakdown": "re-port-er",
+        "stressPattern": "primary stress on the second syllable (re-POR-ter)",
+        "commonMistakes": "Learners often misplace the primary stress onto the initial syllable (*REE-por-ter*) or over-enunciate the unstressed prefix /rɪ-/ as an open tense vowel /riː-/. Additionally, many ESL speakers confuse \"reporter\" with \"news anchor\" (the studio host reading the news), \"correspondent\" (a specialized senior journalist assigned to a specific topic or foreign bureau), or an internal administrative worker compiling company reports.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/reporter--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Late Middle English \"reportour\", borrowed from Anglo-Norman / Old French \"reporteur\" (one who relates, bears witness, or narrates), derived from Classical Latin \"reportare\" (to carry back, bring back, announce), formed from prefix \"re-\" (back, again) + \"portare\" (to carry, convey).",
+        "rootWord": "Latin \"reportare\" (from \"re-\" meaning back + \"portare\" meaning to carry)",
+        "rootMeaning": "\"One who carries back information\" — an emissary or observer who retrieves facts from the field and delivers an account back to an audience or governing authority.",
+        "evolution": "In Classical Latin, \"reportare\" originally applied to messengers carrying back news or soldiers returning with spoils. In late 14th-century Anglo-Norman law, a \"reporter\" was an official recorder of judicial arguments and precedents (\"court reporter\" or \"law reporter\"). By the late 18th century, as the British Parliament permitted public access to debates, newspapers stationed dedicated \"parliamentary reporters\" to take verbatim shorthand. Throughout the 19th and 20th centuries, the term expanded to designate professional print and broadcast journalists who investigate stories, interview sources, and publish news articles. In modern corporate settings, reporters represent the external press corps addressed during press conferences, quarterly earnings calls, and PR crisis briefings.",
+        "relatedLanguages": [
+          "French: reporter / rapporteur",
+          "Spanish: reportero / relator",
+          "Italian: reporter / relatore",
+          "German: Reporter / Berichterstatter"
+        ],
+        "firstRecordedUse": "Late 14th century (c. 1380 by Geoffrey Chaucer in the general sense of a narrator; 1798 in the modern sense of a newspaper journalist)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A professional journalist employed by a newspaper, magazine, television or radio network, wire service, or digital news outlet to investigate events, interview witnesses and officials, gather verifiable facts, and write or broadcast objective news stories.",
+        "spatialContext": "Corporate media briefing rooms, press scrums outside executive headquarters, newsrooms, broadcast satellite trucks, courtroom corridors, and convention center media halls.",
+        "temporalContext": "Operating under continuous, strict 24-hour editorial deadlines, scheduled press conferences, breaking-news alerts, and quarterly corporate earnings releases.",
+        "emotionalTone": "Inquisitive, objective, incisive, and professional.",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers instinctively picture a persistent professional carrying a press badge, digital audio recorder, and notebook, asking incisive follow-up questions at a press briefing. In business and public relations, a \"reporter\" represents both a crucial channel for public visibility and a demanding auditor of organizational truth. Executives treat reporters with careful deference, knowing that an unverified claim or offhand comment can quickly turn into a reputational crisis.",
+        "mentalImage": "A reporter standing in a crowded press conference holding a directional microphone labeled with a network news emblem, taking rapid shorthand notes while listening to a company spokesperson unveil an environmental sustainability initiative.",
+        "whenToUse": "Use when referring to an individual whose profession is gathering news, interviewing stakeholders, investigating leads, and reporting events for media organizations (e.g., \"financial reporter\", \"investigative reporter\", \"field reporter\", \"beat reporter\").",
+        "whenNotToUse": "Do not use \"reporter\" to refer to a television studio host (use \"anchor\"), an opinion writer (use \"columnist\" or \"commentator\"), or a corporate employee submitting routine internal status memos (use \"analyst\", \"author\", or \"compiler\").",
+        "culturalContext": "In Anglo-American journalism, reporters operate under strict ethical tenets regarding source protection, factual verification, and the distinction between \"on the record\", \"on background\", and \"off the record\". In corporate PR, maintaining favorable relations with key beat reporters (such as tech or automotive reporters) is vital for earned media coverage. In TOEIC test listening and reading sections, reporters appear regularly in Part 4 announcements, radio reports, and Part 7 newspaper articles covering corporate acquisitions, trade fairs, and leadership changes."
+      },
+      "examples": {
+        "daily": [
+          "A local reporter visited the high school science fair to interview the students about their solar-powered water filtration prototype.",
+          "The television reporter stood outside city hall with an umbrella, reporting live on the impending coastal storm.",
+          "After the press conference concluded, several reporters surrounded the mayor to ask about the transportation budget shortfall."
+        ],
+        "business": [
+          "The corporate communications director held an exclusive briefing with a senior financial reporter from the Wall Street Journal to discuss the merger.",
+          "Our public relations department assembled comprehensive press kits containing product specifications and executive headshots for every attending reporter.",
+          "Following the unexpected announcement of the quarterly earnings surplus, company spokespersons fielded numerous inquiries from technology reporters."
+        ],
+        "conversation": [
+          "\"Did you read the morning edition of the Daily Tribune?\" \"Yes, their lead business reporter wrote an insightful article evaluating our supply chain modernization project.\"",
+          "\"A reporter from Global Trade Weekly is on line two requesting a statement regarding our overseas plant opening.\" \"Please transfer the call directly to the media relations desk; company policy requires all press queries to be cleared by PR.\""
+        ],
+        "collocations": [
+          "investigative reporter",
+          "financial reporter",
+          "field reporter",
+          "press corps reporter",
+          "field questions from reporters",
+          "senior business reporter"
+        ]
+      },
+      "wordFamily": {
+        "noun": "reporter, report, reportage",
+        "verb": "report",
+        "adjective": "reported, reportable",
+        "adverb": "reportedly"
+      },
+      "visual": {
+        "imageKeyword": "press conference reporter microphone notebook journalist media briefing",
+        "imageDescription": "A focused reporter holding a broadcast microphone and a notepad, listening intently to a corporate spokesperson addressing the press from behind a wooden lectern.",
+        "mnemonic": "re-PORT-er: An agent who car-RIES (PORT) crucial facts and breaking news back (RE) to the public news desk!"
+      },
+      "video": {
+        "description": "A corporate media training video demonstrating how executive spokespersons should maintain eye contact, bridge to key messages, and handle tough inquiries from investigative reporters during an emergency press conference."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          7
+        ],
+        "exampleQuestion": "During the annual shareholder meeting, the chief financial officer agreed to field several questions from a prominent business _____ regarding projected overseas revenue.\n(A) report\n(B) reporter\n(C) reportedly\n(D) reporting",
+        "tips": "In TOEIC Part 5, test takers must frequently distinguish between human agent nouns and abstract nouns or modifiers. Following the indefinite article \"a\" and the compound adjective \"prominent business\", the blank requires a singular countable noun referring to a person: (B) \"reporter\". (A) \"report\" refers to the written document, (C) is an adverb, and (D) is an uncountable gerund/process noun."
+      },
+      "synonyms": [
+        "journalist",
+        "correspondent",
+        "newshound",
+        "press representative",
+        "news writer"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "press conference",
+        "media scrum",
+        "byline",
+        "investigative journalism",
+        "press pass",
+        "newsroom",
+        "source"
+      ]
+    },
+    {
+      "id": "comms-220",
+      "word": "reporting",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/rɪˈpɔːrtɪŋ/",
+        "syllableBreakdown": "re-port-ing",
+        "stressPattern": "primary stress on the second syllable (re-POR-ting)",
+        "commonMistakes": "Learners often drop the final velar nasal /ŋ/ (pronouncing it as *-in* or adding a hard *g* or *k* sound), or place undue stress on the initial prefix (*REE-por-ting*). Non-native speakers also frequently confuse \"reporting\" as an uncountable noun representing the ongoing activity, workflow, or media coverage with \"report\" as a discrete countable document (e.g. erroneously saying *a reporting was submitted* instead of *a report was submitted*).",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/reporting--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Middle English derivation combining the verb \"report\" (borrowed through Anglo-Norman \"reporter\" from Latin \"reportare\", meaning to bring back, deliver an account) with the English verbal noun suffix \"-ing\" (from Old English \"-ing\" / \"-ung\", used to denote actions, continuous processes, or collective products of an action).",
+        "rootWord": "Latin \"reportare\" (from \"re-\" meaning back + \"portare\" meaning to carry) + Old English \"-ing\"",
+        "rootMeaning": "\"The ongoing act or systemic process of carrying back facts, data, or intelligence\" — systematic gathering, compiling, analyzing, and presenting information.",
+        "evolution": "While the base verb \"report\" entered English in the 14th century, the gerundial noun \"reporting\" arose in the 16th century to describe the formal activity of recounting legal arguments and state transactions. By the 19th century, with the expansion of parliamentary democracy and independent newspapers, \"reporting\" emerged as a professional discipline synonymous with newsgathering and journalistic inquiry. In the mid-to-late 20th century, the advent of computerized enterprise management and statutory securities laws (e.g., SEC disclosures) established \"reporting\" as an indispensable corporate operational term—encompassing financial reporting, compliance reporting, management accounting, and organizational hierarchy (\"reporting structure\").",
+        "relatedLanguages": [
+          "French: reportage / comptabilité",
+          "Spanish: reportaje / contabilidad",
+          "Italian: reportage / rendicontazione",
+          "German: Berichterstattung / Meldewesen"
+        ],
+        "firstRecordedUse": "Late 16th century (c. 1585 in British parliamentary records and legal proceedings; modern corporate and financial reporting emerged in the late 19th century)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The structured process, methodology, or professional activity of collecting, verifying, analyzing, and presenting factual data, financial metrics, or operational results to stakeholders; also refers to the collective journalistic coverage and investigation of news events by the press.",
+        "spatialContext": "Enterprise resource planning (ERP) digital dashboards, corporate accounting offices, boardrooms, regulatory oversight agencies, newsroom editorial desks, and auditing workstations.",
+        "temporalContext": "Conducted routinely across daily, monthly, quarterly, and annual operational cycles, tied strictly to statutory fiscal schedules and editorial publishing deadlines.",
+        "emotionalTone": "Methodical, objective, analytical, and authoritative.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers understand \"reporting\" in two predominant professional frameworks: corporate compliance/governance and journalism. In corporate business, \"financial reporting\" or \"ESG reporting\" evokes systematic pipelines of data, accounting standards (GAAP/IFRS), and audited transparency that protect corporate integrity. Hierarchically, native speakers use \"reporting line\" to describe managerial reporting relationships. In journalism, \"investigative reporting\" signifies thorough fact-checking and ethical media coverage. Unlike a single \"report\", \"reporting\" conveys an ongoing operational discipline or standard.",
+        "mentalImage": "A financial controller reviewing automated enterprise software dashboards displaying balance sheet figures, cash flow graphs, and variance metrics required for the quarterly SEC financial reporting filing.",
+        "whenToUse": "Use when discussing the ongoing operational system, regulatory compliance process, or collective journalistic practice of gathering and presenting information (e.g., \"financial reporting\", \"statutory reporting\", \"investigative reporting\", \"reporting requirements\", \"direct reporting line\").",
+        "whenNotToUse": "Do not use \"reporting\" to refer to a single physical or electronic document (say \"a report\", never *a reporting*). Do not confuse with \"rumor\" or informal hearsay.",
+        "culturalContext": "In corporate governance across the US, UK, and Commonwealth nations, legislation such as the Sarbanes-Oxley Act strictly mandates internal controls over financial reporting to protect investors from accounting fraud. On organizational charts, \"reporting lines\" define corporate chain-of-command and accountability. In the TOEIC test, \"reporting\" is a staple term appearing in business memos, audit reports, executive announcements, and Part 5 grammar questions."
+      },
+      "examples": {
+        "daily": [
+          "The community newspaper was recognized for its fair and balanced reporting on the local school board elections.",
+          "Accurate weather reporting helped residents prepare their homes well before the gale-force winds arrived.",
+          "The documentary praised the investigative reporting that uncovered systemic safety violations in the regional transit network."
+        ],
+        "business": [
+          "The enterprise implemented automated cloud-based software to accelerate its monthly financial reporting and minimize accounting discrepancies.",
+          "Under the revised organizational structure, all regional marketing managers have a direct reporting line to the Chief Commercial Officer.",
+          "Regulatory authorities imposed strict penalties on the brokerage firm for failing to satisfy mandatory anti-money-laundering reporting deadlines."
+        ],
+        "conversation": [
+          "\"Who will lead the compliance audit for our international branches?\" \"Elena from internal audit; she has over ten years of experience in statutory financial reporting.\"",
+          "\"Does Michael now report directly to the Chief Technology Officer?\" \"Yes, following the department restructuring, his reporting line was officially moved to executive engineering.\""
+        ],
+        "collocations": [
+          "financial reporting",
+          "reporting structure",
+          "reporting line",
+          "statutory reporting",
+          "investigative reporting",
+          "reporting requirements"
+        ]
+      },
+      "wordFamily": {
+        "noun": "reporting, report, reporter, reportage",
+        "verb": "report",
+        "adjective": "reportable, reported",
+        "adverb": "reportedly"
+      },
+      "visual": {
+        "imageKeyword": "financial reporting dashboard analytics accounting business charts data spreadsheet",
+        "imageDescription": "A modern executive workstation featuring multiple monitors displaying real-time financial reporting analytics, interactive revenue graphs, and balance sheet tables.",
+        "mnemonic": "re-PORT-ing: The continuous, systematic process of car-RY-ING (PORT-ing) vital facts and numbers back to organizational leaders!"
+      },
+      "video": {
+        "description": "A corporate accounting tutorial explaining how multinational corporations streamline statutory financial reporting workflows to ensure strict adherence to international auditing standards."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "To ensure compliance with statutory audit standards, the accounting department has established stricter internal guidelines for quarterly financial _____.\n(A) report\n(B) reporting\n(C) reportedly\n(D) reporter",
+        "tips": "In TOEIC Part 5, distinguishing between a countable noun, an uncountable process noun, and an agent noun is a common challenge. Following the adjective \"financial\" in a prepositional phrase (\"guidelines for quarterly financial _____\"), the sentence requires the uncountable noun (B) \"reporting\", which denotes the overarching accounting process (\"financial reporting\"). (A) \"report\" is countable and would require a determiner like \"a\" or a plural ending \"-s\". (C) is an adverb, and (D) \"reporter\" is a person."
+      },
+      "synonyms": [
+        "press coverage",
+        "record-keeping",
+        "documentation",
+        "accounting",
+        "disclosure",
+        "journalistic coverage"
+      ],
+      "antonyms": [
+        "suppression",
+        "concealment",
+        "withholding",
+        "censorship"
+      ],
+      "relatedWords": [
+        "financial statement",
+        "compliance",
+        "regulatory filing",
+        "reporting line",
+        "audit trail",
+        "business intelligence",
+        "transparency"
+      ]
+    },
+    {
+      "id": "comms-221",
+      "word": "reprint",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈriːprɪnt/",
+        "syllableBreakdown": "re-print",
+        "stressPattern": "primary stress on the first syllable for the noun (REE-print); note that the verb receives primary stress on the second syllable (re-PRINT)",
+        "commonMistakes": "A classic heteronym / stress-shift pitfall: learners frequently pronounce the noun with second-syllable stress (*re-PRINT*), which is the verb form, rather than initial stress (/ˈriːprɪnt/). Learners also sometimes write it with an unnecessary hyphen (*re-print*) or confuse a \"reprint\" (an exact additional printing of identical existing text) with a \"new edition\" or \"revised edition\" (which contains rewritten chapters, updated figures, or substantial modifications).",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/reprint--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Formed in Early Modern English by prefixing the Latin \"re-\" (again, anew, back) to the Middle English noun and verb \"print\" (borrowed through Anglo-Norman / Old French \"preinte\" meaning impression or stamp, from the feminine past participle of Latin \"premere\" meaning to press, stamp, exert pressure).",
+        "rootWord": "Latin \"re-\" (again, anew) + \"premere\" (to press, stamp)",
+        "rootMeaning": "\"A second or subsequent pressing\" — an exact mechanical impression produced again from previously set type, plates, or digital files.",
+        "evolution": "With the proliferation of movable-type printing in England following William Caxton in the late 15th century, publishers required a specific term when a title sold out and identical additional impressions were pulled from the presses without resetting the movable type. The noun \"reprint\" became established by the late 16th and early 17th centuries. In 19th-century international publishing, the term was heavily associated with international reprints of foreign authors prior to modern copyright treaties. In 20th-century scientific research, medical publishing, and commercial trade, \"reprints\" became standardized standalone offprints or glossy booklet reproductions of articles from professional journals or trade magazines, purchased in bulk for distribution to clients, sales prospects, and medical professionals. In contemporary corporate publishing and TOEIC passages, a \"reprint\" refers to additional print runs of product catalogs, employee handbooks, or licensed articles.",
+        "relatedLanguages": [
+          "French: réimpression / tiré à part",
+          "Spanish: reimpresión / separata",
+          "Italian: ristampa",
+          "German: Nachdruck / Neuauflage"
+        ],
+        "firstRecordedUse": "Mid-16th century (verb recorded c. 1550; noun established in London publishing records c. 1610)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A subsequent printing or newly produced physical or digital copy of an existing publication (such as a book, brochure, catalog, or journal article) produced from original plates or digital files without substantive textual alteration; also, an authorized offprint of a single article distributed separately.",
+        "spatialContext": "Commercial printing facilities, bindery warehouses, corporate marketing collateral storerooms, academic publishing offices, and library archival shelves.",
+        "temporalContext": "Initiated when warehouse inventory of a publication is exhausted, when a specialized promotional campaign launches, or when high customer demand exceeds original print runs.",
+        "emotionalTone": "Practical, precise, commercial, and professional.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native speaker, calling a document a \"reprint\" indicates that the content was so popular or valuable that more copies had to be pressed, but the content remains identical to the original run (\"now in its fourth reprint\"). In marketing and pharmaceutical sales, receiving an \"article reprint\" carries high credibility because it is an authorized, glossy copy of an article from a respected third-party publication (like Forbes or The Lancet) showcasing the company's product. Native speakers also associate \"reprint\" with legal copyright permission: one must obtain \"reprint rights\" before reproducing protected text.",
+        "mentalImage": "Neat stacks of newly bound full-color corporate product catalogs stacked on wooden pallets inside a commercial printing warehouse, with a shipping label indicating \"Second Reprint — 5,000 Copies\".",
+        "whenToUse": "Use when referring to an additional, exact press run of a book, document, marketing brochure, or journal article, or when referring to permission to duplicate an existing publication (e.g., \"authorized reprint\", \"second reprint\", \"order a reprint\", \"request reprint permission\", \"article reprint\").",
+        "whenNotToUse": "Do not use \"reprint\" if the author or publisher substantially reworked, updated, or added new chapters to the content (use \"revised edition\", \"updated edition\", or \"second edition\"). Do not use for informal office photocopying of routine internal memos.",
+        "culturalContext": "In commercial marketing and conference exhibitions, businesses frequently negotiate \"reprint rights\" with prominent trade journals to distribute official glossy reprints of favorable reviews to potential clients. Under international copyright law, unauthorized reprints constitute copyright infringement. In TOEIC test reading passages (Part 7), \"reprint\" often appears in order forms, publisher notices regarding out-of-stock manuals, or copyright attribution lines."
+      },
+      "examples": {
+        "daily": [
+          "The independent bookstore quickly sold out of the local history guide and had to wait two weeks for the publisher's second reprint.",
+          "My grandfather kept a vintage 1950s reprint of the original 1912 newspaper announcing the discovery of the South Pole.",
+          "You can order a high-quality photo reprint of any historical picture displayed in the municipal museum's online archive."
+        ],
+        "business": [
+          "Following unprecedented attendee interest at the international trade expo, the marketing director ordered an immediate reprint of ten thousand product catalogs.",
+          "Our corporate communications team secured official reprint permissions from the Financial Times to include the feature article in our annual shareholder packet.",
+          "The publisher announced that the executive leadership manual had entered its third reprint after exceeding initial quarterly sales projections."
+        ],
+        "conversation": [
+          "\"Are there any spare copies of the compliance handbook left in the supply room?\" \"We've run completely out, but the print shop confirmed that the five-hundred-copy reprint will arrive tomorrow morning.\"",
+          "\"Can we share that technical review from the engineering journal on our client portal?\" \"Only after our legal team finalizes the digital reprint license with the publisher.\""
+        ],
+        "collocations": [
+          "reprint rights",
+          "authorized reprint",
+          "second reprint",
+          "order a reprint",
+          "reprint permission",
+          "article reprint"
+        ]
+      },
+      "wordFamily": {
+        "noun": "reprint, reprinting",
+        "verb": "reprint, print",
+        "adjective": "reprinted, reprintable",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "printing press publication reprint catalog commercial print run paper rolls",
+        "imageDescription": "An industrial offset printing press running at high speed, producing neatly stacked, freshly trimmed pages of a bestselling commercial handbook reprint.",
+        "mnemonic": "RE-PRINT: Stamping (PRINT) the very same approved pages AGAIN (RE) because stock ran out!"
+      },
+      "video": {
+        "description": "An educational tour of a commercial publishing house showing how lithographic plates and digital files are reloaded to execute an authorized reprint of a major corporate textbook."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          5,
+          7
+        ],
+        "exampleQuestion": "Due to unprecedented demand from attendees at the annual technology expo, the marketing division authorized an urgent _____ of the new product catalog.\n(A) reprinted\n(B) reprint\n(C) reprintable\n(D) reprints",
+        "tips": "In TOEIC Part 5, questions often evaluate whether test takers recognize the singular countable noun form following a singular indefinite article and an adjective (\"an urgent _____\"). (B) \"reprint\" is the correct singular noun. (A) is a past tense verb or past participle, (C) is an adjective, and (D) is a plural noun which cannot follow the singular article \"an\". Note also the stress distinction: the noun \"reprint\" is stressed on the first syllable (REE-print)."
+      },
+      "synonyms": [
+        "reissue",
+        "reimpression",
+        "offprint",
+        "facsimile",
+        "re-edition",
+        "duplicate printing"
+      ],
+      "antonyms": [
+        "first edition",
+        "original printing",
+        "manuscript"
+      ],
+      "relatedWords": [
+        "press run",
+        "copyright permission",
+        "reprint rights",
+        "circulation",
+        "out of print",
+        "publication",
+        "typesetting"
+      ]
+    },
+    {
+      "id": "comms-222",
+      "word": "retraction",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/rɪˈtrækʃən/",
+        "syllableBreakdown": "re-trac-tion",
+        "stressPattern": "primary stress on the second syllable (re-TRAC-tion)",
+        "commonMistakes": "Learners often struggle with the consonant blend /tr/ in the stressed syllable (pronouncing it flatly as *re-tak-shun* or *re-trak-shun* without correct affrication) or confuse the open front vowel /æ/ with /e/ or /ʌ/. Semantically, learners often confuse \"retraction\" (a total formal disavowal and withdrawal of a statement, claim, or publication) with a mere \"correction\" (which fixes minor errata like dates or names while affirming the core story) or an \"apology\" (which expresses remorse but does not necessarily nullify legal claims).",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/retraction--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Late Middle English \"retracioun\", borrowed from Anglo-Norman / Old French \"retraction\", derived from Latin \"retractio\" (a drawing back, revocation, withdrawal), the noun of action from the past participle stem of \"retrahere\" (to draw back, pull back, call back), composed of prefix \"re-\" (back, again) + \"trahere\" (to draw, pull, drag).",
+        "rootWord": "Latin \"retrahere\" (from \"re-\" meaning back + \"trahere\" meaning to draw, pull)",
+        "rootMeaning": "\"The physical or verbal act of drawing back\" — pulling back a statement, accusation, promise, or extended claim.",
+        "evolution": "In Classical and Late Latin, \"retractio\" denoted a physical drawing back or intellectual reconsideration (prominently illustrated by Saint Augustine's early 5th-century treatise \"Retractationes\", in which he systematically reviewed and retracted flaws in his earlier writings). Entering Middle English in the late 14th century through Anglo-Norman legal and ecclesiastical channels, the word initially denoted the formal recantation of heresy or false oath before a court. In Anglo-American common law and defamation jurisprudence during the 18th and 19th centuries, \"retraction\" became a crucial legal mechanism: publishing a prominent, full retraction of a defamatory falsehood could mitigate damages or bar punitive recovery in libel lawsuits. In modern media publishing, academic research, and corporate communications, \"retraction\" represents the formal, public withdrawal of an erroneous news story, false marketing claim, or scientifically flawed journal paper.",
+        "relatedLanguages": [
+          "French: rétractation",
+          "Spanish: retractación",
+          "Italian: ritrattazione",
+          "German: Widerruf / Rücknahme"
+        ],
+        "firstRecordedUse": "Late 14th century (c. 1390 in religious and legal recantations; modern journalistic and defamation usage solidified in the 18th century)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A formal, public statement issued to withdraw, disavow, or annul a previously published article, accusation, defamatory statement, or erroneous factual claim; also, the physical action or capacity of drawing something back or inward.",
+        "spatialContext": "Editorial correction columns of major newspapers, digital news homepages, corporate legal counsel boardrooms, academic journal repositories, and press release distribution networks.",
+        "temporalContext": "Issued promptly following the discovery of severe factual inaccuracies, ethical violations, academic fraud, or receipt of a formal legal cease-and-desist letter from opposing counsel.",
+        "emotionalTone": "Solemn, formal, contrite, and legally cautious.",
+        "formalityLevel": "formal",
+        "connotation": "negative"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers treat \"retraction\" with utmost seriousness. Unlike a routine \"clarification\" or \"editor's note\" (which adjusts minor details), a \"retraction\" represents an admission of a catastrophic editorial or factual failure—such as falsely accusing a company of fraud or publishing fabricated experimental data. In corporate communications, issuing a retraction is a high-stakes crisis response, usually drafted word-by-word by legal counsel to forestall costly defamation litigation while preserving whatever stakeholder credibility remains.",
+        "mentalImage": "A somber editorial director and chief legal counsel standing over a printed draft of a boxed front-page notice headlined \"Formal Retraction and Apology\", meticulously verifying that the legal wording fully repudiates yesterday's false headline.",
+        "whenToUse": "Use when an official entity, newspaper, broadcaster, corporation, or scientific journal formally revokes, disavows, and cancels a prior statement, accusation, report, or published paper due to major falsehood or legal exposure (e.g., \"issue a formal retraction\", \"demand a full retraction\", \"publish a retraction\", \"journal retraction\").",
+        "whenNotToUse": "Do not use for minor typographical errors or misspelling of names (use \"correction\" or \"erratum\"). Do not use for canceling a simple appointment or scheduled flight (use \"cancellation\"). Do not use when someone casually changes their mind about personal preferences.",
+        "culturalContext": "In Anglo-American defamation law, many jurisdictions have specific \"retraction statutes\" that provide legal safe harbors: if a news outlet publishes a full and fair retraction within a statutory window upon receiving a formal demand, the plaintiff cannot claim punitive damages. In academic and scientific circles, having a peer-reviewed paper retracted by a journal (a \"paper retraction\") is an indelible stain on professional reputation. In TOEIC Part 7 reading passages, retractions often appear in press notices or corporate letters clarifying mistaken announcements or false market rumors."
+      },
+      "examples": {
+        "daily": [
+          "The city newspaper published a front-page retraction after falsely naming a local shopkeeper as a suspect in the burglary.",
+          "The senator's legal team demanded an immediate retraction from the news blog for publishing unsubstantiated bribery allegations.",
+          "After realizing the viral video had been selectively edited, the social media influencer posted a full retraction and apologized to her followers."
+        ],
+        "business": [
+          "Under threat of a major libel lawsuit, the financial magazine issued a prominent retraction of its allegations regarding the software company's accounting practices.",
+          "Our corporate legal counsel drafted a formal retraction statement after discovering that an erroneous marketing bulletin had misrepresented a competitor's safety record.",
+          "The prestigious medical journal published a formal retraction of the study after an independent audit revealed fabricated data in the laboratory trials."
+        ],
+        "conversation": [
+          "\"Did the news station respond to our cease-and-desist letter regarding the false patent infringement claim?\" \"Yes, their attorney confirmed they will broadcast a complete retraction during the six o'clock evening news.\"",
+          "\"Why is everyone discussing that peer-reviewed engineering paper?\" \"The authors had to issue a formal retraction this morning because their primary simulation results could not be replicated.\""
+        ],
+        "collocations": [
+          "issue a retraction",
+          "demand a retraction",
+          "publish a retraction",
+          "formal retraction",
+          "full retraction",
+          "prompt retraction"
+        ]
+      },
+      "wordFamily": {
+        "noun": "retraction, retractability",
+        "verb": "retract",
+        "adjective": "retractable, retracted",
+        "adverb": "retractably"
+      },
+      "visual": {
+        "imageKeyword": "newspaper retraction legal correction editorial statement apology print",
+        "imageDescription": "A printed newspaper open to the editorial page showing a prominently bordered notice titled \"Formal Retraction and Statement of Error\" with formal legal text.",
+        "mnemonic": "re-TRACT-ion: TRACT means to PULL or DRAG; RE means BACK — you are PULLING BACK a false statement before it causes legal disaster!"
+      },
+      "video": {
+        "description": "A corporate legal and public relations seminar examining real-world crisis case studies where issuing a swift, well-drafted retraction averted multimillion-dollar defamation litigation."
+      },
+      "toeicContext": {
+        "commonParts": [
+          6,
+          7
+        ],
+        "exampleQuestion": "Following the discovery of critical factual errors in its investigative report, the financial journal was legally required to publish a full _____.\n(A) retract\n(B) retractable\n(C) retraction\n(D) retracting",
+        "tips": "In TOEIC Part 5, sentence completion questions often test parts of speech following an adjective. After the adjective \"full\" following the transitive verb phrase \"publish a\", the sentence requires a singular direct object noun: (C) \"retraction\". (A) is a base verb, (B) is an adjective, and (D) is a present participle or gerund that does not typically function as the count noun denoting the published statement itself."
+      },
+      "synonyms": [
+        "recantation",
+        "withdrawal",
+        "disavowal",
+        "revocation",
+        "repudiation",
+        "renunciation"
+      ],
+      "antonyms": [
+        "affirmation",
+        "confirmation",
+        "reaffirmation",
+        "ratification",
+        "endorsement"
+      ],
+      "relatedWords": [
+        "defamation",
+        "libel",
+        "cease-and-desist",
+        "editorial correction",
+        "crisis communications",
+        "reputation management",
+        "apology"
+      ]
+    }
+  ]
+}

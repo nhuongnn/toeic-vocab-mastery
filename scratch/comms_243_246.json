@@ -1,0 +1,476 @@
+{
+  "words": [
+    {
+      "id": "comms-243",
+      "word": "subscription",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/səbˈskrɪp.ʃən/",
+        "syllableBreakdown": "sub-scrip-tion",
+        "stressPattern": "primary stress on the second syllable (sub-SCRIP-tion)",
+        "commonMistakes": "Learners often pronounce the initial prefix with an unreduced vowel /sʌb-/ rather than the unstressed schwa /səb-/. In addition, some speakers inadvertently insert an intrusive epenthetic vowel between the consonant cluster /b/ and /skr/, producing /sə.bəˈskrɪp-/, or fail to palatalize the suffix '-tion', mistakenly pronouncing it as /-tɪ.ɒn/ instead of /-ʃən/.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/subscription--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Late Middle English via Anglo-Norman and Old French 'souscription', directly from Latin 'subscriptio' (a writing underneath, signature, imperial decree), the noun of action from 'subscribere' (to write below), combining 'sub-' (under, beneath) and 'scribere' (to write).",
+        "rootWord": "Latin 'sub-' (under, beneath) + 'scribere' (to write) -> past participle stem 'script-' + suffix '-io'",
+        "rootMeaning": "'A signing of one's name at the bottom of a document to declare formal consent, purchase, or pledged financial contribution'",
+        "evolution": "In Classical and Roman law, 'subscriptio' designated the Emperor's signature at the foot of a petition or a jurist's formal endorsement on a contract. By the 15th century in England, it meant signing an ecclesiastical attestation or legal testament. During the 17th and 18th centuries, publishing revolutionized the concept through 'subscription publishing', where readers paid in advance to underwrite author printing costs (such as Samuel Johnson's Dictionary). In the 19th and 20th centuries, it evolved into the standard recurring commercial model for periodicals, newspapers, and trade journals. In modern telecommunications and digital commerce, it encompasses software-as-a-service (SaaS), cloud computing licenses, and digital news paywalls.",
+        "relatedLanguages": [
+          "French: souscription (legal/pledge) / abonnement (commercial)",
+          "Spanish: suscripción",
+          "Italian: sottoscrizione (formal pledge) / abbonamento (commercial)",
+          "German: Subskription (book publishing) / Abonnement",
+          "Portuguese: subscrição / assinatura"
+        ],
+        "firstRecordedUse": "circa 1420 (Late Middle English, in legal and ecclesiastical deeds denoting a signature of consent)"
+      },
+      "deepMeaning": {
+        "coreConcept": "An advance commercial arrangement in which a customer agrees to pay a recurring periodic fee (monthly, quarterly, or annually) to receive continuous access to a publication, digital news service, telecommunications feed, database, or software application.",
+        "spatialContext": "Corporate procurement portals, online subscription management dashboards, digital news paywalls, enterprise software consoles, and corporate mailrooms receiving print periodicals.",
+        "temporalContext": "Billed on recurring periodic cycles (monthly, annually); subject to renewal notices 30–60 days before expiration; evaluated during quarterly procurement audits.",
+        "emotionalTone": "Contractual, professional, commitment-oriented, and steady.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers, 'subscription' primarily connotes recurring commitment and automated ongoing access, contrasting sharply with a one-time purchase or ad-hoc newsstand sale. In corporate and communications contexts, it evokes paywalls, user seat licensing, continuous updates, and subscription churn or renewal notices. Native speakers instinctively associate 'subscription' with newspapers, professional trade journals, cloud software suites (SaaS), and specialized financial data feeds like Bloomberg or Reuters.",
+        "mentalImage": "A corporate research analyst sitting at her dual-monitor workstation, receiving an automated email alert confirming the annual enterprise subscription renewal for an international financial news service and market intelligence database.",
+        "whenToUse": "Use when discussing periodic recurring memberships or payments for ongoing access to print periodicals, trade journals, streaming services, SaaS platforms, or media feeds (e.g., 'annual subscription', 'subscription renewal', 'corporate multi-user subscription', 'cancel a subscription').",
+        "whenNotToUse": "Do not use for a single, one-off purchase of an issue or article (use 'single-issue purchase' or 'pay-per-article'), a one-time license without renewal, or an informal social media follow (use 'follow' or 'bookmark').",
+        "culturalContext": "In Anglo-American business culture, the transition from transactional sales to recurring subscription models ('the subscription economy') has fundamentally transformed media publishing and software industries. Corporate budgets allocate substantial operational expenditure (OpEx) to enterprise subscriptions for news publications (e.g. Wall Street Journal, Financial Times) and industry market research, with strict internal protocols regarding license seats, renewal deadlines, and auto-cancellation."
+      },
+      "examples": {
+        "daily": [
+          "I decided to cancel my print magazine subscription and switch to their digital-only edition to save shelf space.",
+          "Our household newspaper subscription includes home delivery of the weekend broadsheet along with unlimited tablet access.",
+          "She received an automated notification that her annual streaming subscription would renew at the end of the month."
+        ],
+        "business": [
+          "The corporate communications division upgraded its enterprise subscription to the market intelligence database to grant access to thirty regional analysts.",
+          "Please submit your subscription renewal request for the international trade journal to procurement before the end of the fiscal quarter.",
+          "The media publisher reported a 15 percent increase in recurring subscription revenue following the introduction of tiered digital paywalls."
+        ],
+        "conversation": [
+          "\"Has accounting approved our multi-seat subscription to the financial daily?\" \"Yes, the corporate invoice was cleared this morning, so everyone on the communications team can now bypass the paywall.\"",
+          "\"Why did our access to the industry legal bulletin suddenly expire?\" \"It looks like the departmental subscription was set to manual renewal rather than auto-renew; I will contact the vendor right away.\"",
+          "\"Are we still paying for that quarterly print subscription in the executive lounge?\" \"Yes, but the office manager suggested replacing it with shared digital licenses to cut overhead costs.\""
+        ],
+        "collocations": [
+          "annual subscription",
+          "subscription renewal",
+          "corporate subscription",
+          "subscription fee",
+          "digital subscription",
+          "cancel a subscription"
+        ]
+      },
+      "wordFamily": {
+        "noun": "subscription, subscriber",
+        "verb": "subscribe",
+        "adjective": "subscriptional, subscriptive, subscribed",
+        "adverb": "subscriptively"
+      },
+      "visual": {
+        "imageKeyword": "digital subscription paywall corporate tablet news article account settings",
+        "imageDescription": "A business executive holding a tablet displaying a sleek news paywall overlay with options for 'Annual Corporate Subscription' and 'Monthly Access', illuminated in a modern corporate office.",
+        "mnemonic": "SUB (under) + SCRIPT (write) = SUBSCRIPTION: writing your signature UNDER an agreement to receive continuous issues or services year-round."
+      },
+      "video": {
+        "description": "An executive briefing from a digital publishing conference detailing how legacy print newspapers successfully transitioned their readership into high-retention digital subscription models through targeted paywalls and corporate bundling."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "Subscribers wishing to renew their annual _____ to the Global Logistics Journal before December 1 are eligible for a twenty percent discount on group rates.\n(A) subscribe\n(B) subscription\n(C) subscribed\n(D) subscriber",
+        "tips": "TOEIC Part 5 frequently tests word form distinctions following possessive adjectives and attributive modifiers. In the phrase 'renew their annual _____', the adjective 'annual' and transitive verb 'renew' require a singular count noun representing the object being renewed: (B) 'subscription'. Option (D) 'subscriber' denotes the person, which makes no semantic sense with 'renew their annual...'. Options (A) and (C) are verb forms."
+      },
+      "synonyms": [
+        "membership",
+        "periodical order",
+        "access plan",
+        "enrollment",
+        "standing order",
+        "recurring license"
+      ],
+      "antonyms": [
+        "cancellation",
+        "termination",
+        "unsubscription",
+        "one-off purchase"
+      ],
+      "relatedWords": [
+        "subscriber",
+        "paywall",
+        "recurring billing",
+        "renewal notice",
+        "circulation",
+        "periodical",
+        "opt-in"
+      ]
+    },
+    {
+      "id": "comms-244",
+      "word": "survey",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˈsɝː.veɪ/",
+        "syllableBreakdown": "sur-vey",
+        "stressPattern": "primary stress on the first syllable (SUR-vey) for the noun; stress shifts to the second syllable (sur-VEY) for the verb",
+        "commonMistakes": "The most frequent error among ESL learners is placing the stress on the second syllable (/sərˈveɪ/) when using the word as a noun. In standard English, the noun has initial stress (/ˈsɝːveɪ/), while the verb is stressed on the final syllable (/sərˈveɪ/). Learners also occasionally pronounce the second syllable with a pure vowel /-viː/ instead of the proper diphthong /-veɪ/.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/survey--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Middle English 'surveie', borrowed from Anglo-Norman and Old Northern French 'surveier' (to oversee, examine, supervise), derived from Medieval Latin 'supervidere' (to look over, oversee), from 'super-' (over, above) + 'videre' (to see, view).",
+        "rootWord": "Latin 'super-' (over, above) + 'videre' (to see, look at)",
+        "rootMeaning": "'To look over comprehensively from an elevated position; to supervise or examine in detail'",
+        "evolution": "In 15th-century feudal England, 'survey' was an official administrative and judicial examination of manorial real estate, forestry, and tenant boundaries (as exemplified by the tradition of the Domesday Book). By the 17th and 18th centuries, it took on technical scientific meaning in geodesy, land measuring, and nautical mapping. In the late 19th and early 20th centuries, social scientists, industrial psychologists, and pollsters adapted the term to designate structured questionnaires and empirical statistical sampling of public opinion, consumer preferences, and employee satisfaction. In modern corporate settings, it is a cornerstone of stakeholder communication and market research.",
+        "relatedLanguages": [
+          "French: sondage / enquête (cf. surveiller, 'to oversee/watch')",
+          "Spanish: encuesta / sondeo",
+          "Italian: sondaggio / indagine",
+          "German: Umfrage / Erhebung",
+          "Portuguese: pesquisa / questionário"
+        ],
+        "firstRecordedUse": "circa 1470 (Late Middle English, referring to a formal administrative inspection and valuation of land and property)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A structured research instrument and systematic investigation designed to collect standardized data, opinions, customer ratings, or behavioral feedback from a targeted sample of respondents through questionnaires or interviews.",
+        "spatialContext": "Corporate intranets, online customer feedback portals, marketing research labs, human resources survey software dashboards, and conference evaluation kiosks.",
+        "temporalContext": "Conducted periodically (annual employee satisfaction surveys, quarterly customer satisfaction benchmarks, post-transaction follow-up surveys within 24 hours of client contact).",
+        "emotionalTone": "Inquisitive, analytical, objective, and evaluative.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To a native speaker in a professional environment, 'survey' immediately triggers thoughts of feedback loops, data-driven decisions, sample sizes, and response rates. Whether it is an 'employee engagement survey' or a 'customer satisfaction survey', native speakers view it as the standard mechanism an organization uses to listen to stakeholders and quantify intangible attitudes. Unlike casual conversation or informal feedback, a 'survey' implies formal question design, aggregated statistics, and actionable findings.",
+        "mentalImage": "An HR manager presenting colorful horizontal bar charts and percentage metrics on a meeting room projector screen, reviewing the tabulated findings of the annual employee engagement survey.",
+        "whenToUse": "Use when referring to a structured questionnaire, empirical polling study, or formal data collection effort assessing stakeholder opinions, consumer habits, or workplace sentiment (e.g., 'conduct a survey', 'customer satisfaction survey', 'survey results', 'preliminary survey data').",
+        "whenNotToUse": "Do not use for an open-ended one-on-one spoken discussion (use 'interview'), an informal water-cooler check-in, or an authoritative financial audit (use 'audit' or 'inspection' unless specifically referring to land/building surveying).",
+        "culturalContext": "Surveys are an indispensable fixture of corporate culture in English-speaking countries. Employees are routinely surveyed on everything from workplace culture to benefits packages, and consumers receive automated post-purchase surveys via email or text. In TOEIC reading (Part 7) and listening (Part 3/4), surveys appear constantly—measuring customer satisfaction with travel amenities, public transit rider preferences, or staff responses to revised cafeteria menus."
+      },
+      "examples": {
+        "daily": [
+          "After finishing my telephone call with technical support, I completed a brief two-minute survey regarding the representative's helpfulness.",
+          "The municipal transit authority distributed a commuter survey to assess public interest in extending the evening bus schedules.",
+          "According to a recent nationwide survey, more than sixty percent of urban residents prefer remote grocery delivery."
+        ],
+        "business": [
+          "The marketing department analyzed the results of the quarterly customer satisfaction survey to identify service bottlenecks.",
+          "Human resources distributed an anonymous employee survey to gather frank feedback on the proposed hybrid work schedule.",
+          "Our communications agency commissioned an independent demographic survey prior to launching the regional advertising campaign."
+        ],
+        "conversation": [
+          "\"Have we received enough responses to the client feedback survey?\" \"Yes, over four hundred enterprise clients responded, giving us a statistically significant sample size.\"",
+          "\"When will the executive board review the workplace satisfaction survey?\" \"The findings will be compiled into an executive summary and presented at Thursday's department head meeting.\"",
+          "\"Did you include the open-ended feedback section in the conference survey?\" \"Yes, attendees can write specific recommendations on speaker topics for next year's summit.\""
+        ],
+        "collocations": [
+          "conduct a survey",
+          "customer satisfaction survey",
+          "survey results",
+          "employee survey",
+          "respond to a survey",
+          "preliminary survey"
+        ]
+      },
+      "wordFamily": {
+        "noun": "survey, surveyor, surveillance",
+        "verb": "survey",
+        "adjective": "surveyable, surveyed",
+        "adverb": "surveyingly"
+      },
+      "visual": {
+        "imageKeyword": "customer satisfaction survey clipboard questionnaire analytics checklist tablet feedback",
+        "imageDescription": "A digital tablet showing five-star rating bars and a checklist titled 'Customer Experience Survey', placed on a wooden desk next to a notebook and coffee mug in a sunlit office.",
+        "mnemonic": "SUR (over/super) + VEY (see/view) = SURVEY: to look over everyone's opinions from above to see the big picture!"
+      },
+      "video": {
+        "description": "A corporate analytics training tutorial demonstrating how business analysts design non-biased survey questions, interpret Likert scales, and present survey findings to senior stakeholders using data visualizations."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "exampleQuestion": "According to the latest _____ conducted by the Consumer Insights Group, brand loyalty has increased significantly among younger shoppers.\n(A) survey\n(B) surveyed\n(C) surveyor\n(D) surveying",
+        "tips": "TOEIC Part 5 frequently pairs the noun 'survey' with verbs like 'conduct', 'administer', or 'complete'. Following the superlative adjective 'latest' and preceding the past participle reduced relative clause 'conducted by...', the sentence requires a count noun naming the research study: (A) 'survey'. Option (C) 'surveyor' refers to the human professional (typically a land surveyor), which would not be 'conducted'. Options (B) and (D) are verb participle forms."
+      },
+      "synonyms": [
+        "questionnaire",
+        "poll",
+        "opinion poll",
+        "study",
+        "inquiry",
+        "canvass"
+      ],
+      "antonyms": [
+        "guesswork",
+        "speculation",
+        "unsubstantiated rumor",
+        "conjecture"
+      ],
+      "relatedWords": [
+        "respondent",
+        "sample size",
+        "feedback",
+        "questionnaire",
+        "methodology",
+        "data collection",
+        "Likert scale"
+      ]
+    },
+    {
+      "id": "comms-245",
+      "word": "syndicate",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈsɪn.dɪ.kət/",
+        "syllableBreakdown": "syn-di-cate",
+        "stressPattern": "primary stress on the first syllable (SYN-di-cate) with a reduced unstressed final syllable /-kət/",
+        "commonMistakes": "Learners almost universally mistake the noun pronunciation for the verb pronunciation, uttering the suffix '-cate' with a full diphthong /-keɪt/ instead of the reduced schwa /-kət/ (or /-kɪt/). In addition, speakers from certain language backgrounds confuse the initial /s/ with /ʃ/, pronouncing it like 'shin-di-cate'.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/syndicate--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Early 17th century from French 'syndicat' (office of a syndic, governing committee), from Late Latin 'syndicus' (legal representative, delegate), from Ancient Greek 'σύνδικος' (súndikos: an advocate representing a party in court or city state), from 'σύν' (sun, 'together, with') + 'δίκη' (díkē, 'justice, legal custom').",
+        "rootWord": "Ancient Greek 'σύν' (together) + 'δίκη' (justice, law, dispute) -> 'súndikos' (advocate assisting in a legal cause)",
+        "rootMeaning": "'A collective body or representative appointed to advance common interests and manage shared legal affairs'",
+        "evolution": "In the 1620s, English adopted 'syndicate' to describe a university governing council or municipal committee of 'syndics'. During the industrial boom of the late 19th century in Britain, France, and the United States, financiers borrowed the term to mean a temporary consortium of merchant banks formed to pool risk and capital for massive projects like transcontinental railways or corporate bond offerings. Almost simultaneously in the 1880s, American journalism founded 'newspaper syndicates'—agencies like the McClure Syndicate and King Features that contracted authors, illustrators, and columnists to license and distribute articles, comic strips, and political cartoons to hundreds of independent regional newspapers simultaneously. In modern media and telecommunications, it refers to media publishing consortia, press distribution syndicates, and broadcast content licensing groups.",
+        "relatedLanguages": [
+          "French: syndicat (trade union, or 'syndicat de presse' in media)",
+          "Spanish: sindicato (union, cartel, or media syndicate)",
+          "Italian: sindacato (union / syndicate)",
+          "German: Syndikat (cartel, consortium, or syndication agency)",
+          "Portuguese: sindicato / consórcio"
+        ],
+        "firstRecordedUse": "1624 (in the civic sense of a council of syndics; 1887 in commercial newspaper content syndication)"
+      },
+      "deepMeaning": {
+        "coreConcept": "An association, agency, or consortium of individuals, media enterprises, or financial entities formed to pool resources, co-produce material, and jointly distribute or license content, services, or investments across multiple independent markets.",
+        "spatialContext": "Media distribution agency headquarters, news wire bureaus, international publishing houses, investment banking trading floors, and corporate licensing suites.",
+        "temporalContext": "Maintains ongoing multi-year content licensing agreements; releases syndicated material on strict daily, weekly, or seasonal distribution schedules.",
+        "emotionalTone": "Consensual, commercial, authoritative, and strategic.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "In media and corporate communications, native speakers understand a 'syndicate' as a central licensing and distribution clearinghouse that sells premium content to dozens or hundreds of independent regional outlets. When a journalist writes a syndicated column or a cartoonist draws a syndicated comic, they don't work for just one newspaper—they work through a 'syndicate' that distributes their work everywhere. In finance, it represents a banking group sharing the risk of a multi-million dollar loan or initial public offering. Native speakers recognize that a syndicate represents collective scale and shared distribution leverage.",
+        "mentalImage": "An editorial director in an urban newsroom examining a high-tech content catalog from an international media syndicate, selecting nationally recognized political columns and crossword puzzles to license for the paper's weekend edition.",
+        "whenToUse": "Use when referring to an agency or consortium that licenses articles, features, cartoons, or broadcasts to multiple newspapers and stations; or a group of companies/banks cooperating on a large project (e.g., 'press syndicate', 'newspaper syndicate', 'media syndicate', 'banking syndicate').",
+        "whenNotToUse": "Do not use for a single, independent newspaper or solitary publishing outlet; do not use when referring to a routine trade union representing factory workers (in US/UK English, use 'labor union' or 'trade union'); and avoid using in a criminal sense ('crime syndicate') unless specifically discussing organized illicit activity.",
+        "culturalContext": "In the history of American and British media, newspaper syndicates played a crucial role in nationalizing public discourse. Legendary columnists, political cartoonists, and comic strips (from 'Peanuts' to financial columnists) attained household fame because a syndicate distributed their creations to hundreds of city newspapers simultaneously. In modern corporate communications, pitching stories to an influential media syndicate can generate nationwide media coverage with a single placement."
+      },
+      "examples": {
+        "daily": [
+          "Her favorite editorial cartoonist is distributed nationwide by a major newspaper syndicate.",
+          "The weekend crossword puzzle in our local paper is supplied by an international feature syndicate.",
+          "He read an investigative article on urban housing that was produced by a non-profit journalism syndicate."
+        ],
+        "business": [
+          "The financial news agency formed a syndicate with regional publishers to share investigative reporting on international supply chains.",
+          "Our communications firm negotiated with a prominent media syndicate to distribute our client's thought leadership series to over fifty regional newspapers.",
+          "A banking syndicate led by three international lenders provided the capital needed to complete the telecom fiber network."
+        ],
+        "conversation": [
+          "\"Does our local daily have a reporter stationed in Tokyo?\" \"No, that foreign dispatch came from an international news syndicate they subscribe to.\"",
+          "\"How did that editorial cartoon appear in five different state newspapers this morning?\" \"The artist is represented by a national press syndicate that licenses the artwork simultaneously.\"",
+          "\"Should our media company join the regional broadcasting syndicate?\" \"Yes, pooling our production budgets through the syndicate will allow us to bid for major sports broadcasting rights.\""
+        ],
+        "collocations": [
+          "media syndicate",
+          "newspaper syndicate",
+          "press syndicate",
+          "banking syndicate",
+          "form a syndicate",
+          "join a syndicate"
+        ]
+      },
+      "wordFamily": {
+        "noun": "syndicate, syndication, syndic",
+        "verb": "syndicate",
+        "adjective": "syndicated, syndical",
+        "adverb": "syndically"
+      },
+      "visual": {
+        "imageKeyword": "media syndicate printing press newspapers distribution network consortium globe map",
+        "imageDescription": "A digital network map illustrating a central media syndicate hub radiating content streams out to dozens of regional newspapers, broadcast monitors, and digital news portals.",
+        "mnemonic": "SYN (together) + DIC (speak/proclaim) = SYNDICATE: independent entities banding TOGETHER to SPEAK with one loud, unified voice across many channels!"
+      },
+      "video": {
+        "description": "A media history documentary explaining how feature syndicates transformed early 20th-century journalism by allowing small-town newspapers to afford nationally recognized writers, political columnists, and investigative features."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "The feature column was distributed to more than seventy regional newspapers across the country by an independent media _____ based in Chicago.\n(A) syndicate\n(B) syndication\n(C) syndicated\n(D) syndicating",
+        "tips": "In TOEIC Part 5 and 6, candidates must distinguish between concrete agentive organizations and abstract processes. Following the indefinite article 'an', the modifying adjective 'independent', and compound noun adjunct 'media', the sentence requires a count noun indicating the organization or entity doing the distributing: (A) 'syndicate'. Option (B) 'syndication' refers to the abstract process or business practice, not the organization based in Chicago. Options (C) and (D) are participle forms."
+      },
+      "synonyms": [
+        "consortium",
+        "cooperative",
+        "association",
+        "agency",
+        "publishing alliance",
+        "coalition"
+      ],
+      "antonyms": [
+        "independent entity",
+        "sole proprietorship",
+        "individual enterprise",
+        "standalone operator"
+      ],
+      "relatedWords": [
+        "syndication",
+        "consortium",
+        "licensing rights",
+        "content distribution",
+        "wire service",
+        "press agency",
+        "byline"
+      ]
+    },
+    {
+      "id": "comms-246",
+      "word": "syndication",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "communications",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˌsɪn.dɪˈkeɪ.ʃən/",
+        "syllableBreakdown": "syn-di-ca-tion",
+        "stressPattern": "secondary stress on the first syllable, primary stress on the third syllable (syn-di-CA-tion)",
+        "commonMistakes": "Learners frequently misplace primary stress onto the initial syllable (*SYN-di-ca-tion) instead of following the standard English phonological rule where nouns ending in the suffix '-tion' take primary stress on the penultimate syllable (/ˌsɪn.dɪˈkeɪ.ʃən/). Non-native speakers also sometimes substitute the diphthong /eɪ/ with a flat vowel /æ/ or /ɑː/.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/syndication--_us_1.mp3"
+      },
+      "etymology": {
+        "origin": "Formed in late 19th-century English (circa 1880–1885) from the verb 'syndicate' + standard noun suffix '-ation' (Latin '-atio', denoting action, process, or resulting state), modeled on French 'syndication'.",
+        "rootWord": "Base verb 'syndicate' (from French syndicat / Greek súndikos) + suffix '-ation'",
+        "rootMeaning": "'The systematic act or business process of organizing into a consortium or distributing content simultaneously to multiple outlets'",
+        "evolution": "First appearing in the 1880s during the Gilded Age to describe the formation of financial underwriting syndicates in corporate finance. In the 1890s and 1900s, it quickly transferred to the publishing sector to designate the commercial business model of selling serialized novels, investigative columns, and cartoons to multiple newspapers simultaneously. With the 20th-century advent of broadcast radio and commercial television, 'syndication' became the standard industry term for selling broadcasting rights to independent local stations outside a major network (first-run syndication) or licensing reruns of successful network shows (off-network syndication). In the internet era, the term extended to online digital feeds (most notably RSS, 'Really Simple Syndication') and automated API content licensing.",
+        "relatedLanguages": [
+          "French: syndication",
+          "Spanish: sindicación",
+          "Italian: sindacazione",
+          "German: Syndizierung",
+          "Portuguese: sindicação"
+        ],
+        "firstRecordedUse": "circa 1884 (in financial and publishing trade journals describing shared loan arrangements and newspaper column distribution)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The commercial practice, process, or licensing agreement by which intellectual property, media programming (television, radio, podcasts), articles, or digital content are sold and distributed to multiple independent broadcasters, publishers, or web platforms for simultaneous or secondary dissemination.",
+        "spatialContext": "Television broadcast distribution markets (such as NATPE and MIPCOM), corporate licensing departments, digital content management systems (CMS), and broadcast network affiliates across regional markets.",
+        "temporalContext": "Executed continuously across broadcast seasons; negotiated during annual upfront or international licensing markets; governed by multi-year syndication contracts.",
+        "emotionalTone": "Commercial, strategic, expansive, and contractual.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "In media and business, native speakers immediately associate 'syndication' with massive scalability and long-term residual revenue. For a television producer, reaching 'syndication' (historically the 100-episode milestone) is the ultimate financial triumph, transforming a show into a perpetual revenue engine. In journalism and digital marketing, syndication means your article or column is not confined to one outlet, but amplified across dozens of partner websites and publications through formal licensing or RSS feeds. Native speakers view syndication as the transition from a single local broadcast to widespread national distribution.",
+        "mentalImage": "A media executive standing in an exhibition hall at an international television distribution market, pointing at a digital schedule outlining the global syndication rights and broadcast clearance for an award-winning documentary series.",
+        "whenToUse": "Use when discussing the business process or licensing of media content (TV series reruns, radio shows, newspaper columns, podcasts, web feeds) to multiple external stations, channels, or publishers (e.g., 'television syndication', 'content syndication agreement', 'sold into syndication', 'syndication rights').",
+        "whenNotToUse": "Do not use to describe the initial, original broadcast on a single primary network; do not use when referring to pirate redistribution or unauthorized file sharing (which is 'copyright infringement' or 'bootlegging'); and do not confuse with 'syndicate' (the physical consortium or agency itself).",
+        "culturalContext": "In American television history, syndication made classic sitcoms and dramas ubiquitous cultural touchstones across generations, as local stations aired afternoon reruns for decades. In modern digital B2B communications, 'content syndication' is a multi-billion-dollar marketing strategy where white papers, thought leadership articles, and research reports are co-published on third-party industry portals to capture qualified sales leads."
+      },
+      "examples": {
+        "daily": [
+          "I used to watch reruns of classic comedy series every weekday afternoon through local television syndication.",
+          "The food blogger expanded her readership dramatically once her recipes were picked up for weekly syndication in regional lifestyle magazines.",
+          "Thanks to digital syndication, his travel podcast is broadcast on community radio stations across three states."
+        ],
+        "business": [
+          "The production studio finalized a lucrative syndication agreement that will distribute the business talk show to over eighty television stations nationwide.",
+          "Our corporate content syndication strategy on prominent technology blogs generated more than two thousand prospective client leads last quarter.",
+          "The media company retains exclusive international syndication rights for all original documentary programming produced by its investigative unit."
+        ],
+        "conversation": [
+          "\"Why did the studio celebrate reaching the milestone of one hundred episodes?\" \"Because crossing that threshold makes the series eligible for lucrative off-network syndication across regional television affiliates.\"",
+          "\"Are our white papers generating any traction outside our corporate website?\" \"Yes, our B2B content syndication campaign with the engineering journal led to a sixty percent jump in downloads.\"",
+          "\"How did that small tech review show get airtime in five major metropolitan markets?\" \"They signed a syndication deal with an independent broadcast distributor last autumn.\""
+        ],
+        "collocations": [
+          "television syndication",
+          "content syndication",
+          "syndication rights",
+          "syndication agreement",
+          "enter syndication",
+          "sold into syndication"
+        ]
+      },
+      "wordFamily": {
+        "noun": "syndication, syndicate, syndic",
+        "verb": "syndicate",
+        "adjective": "syndicated, syndicational",
+        "adverb": "syndicationally"
+      },
+      "visual": {
+        "imageKeyword": "television syndication broadcast satellite tower media distribution licensing screen",
+        "imageDescription": "A broadcast master control room with glowing monitor walls showing multiple regional television transmissions of the same syndicated program simultaneously.",
+        "mnemonic": "SYN (together) + DICATION (publishing / declaring) = SYNDICATION: the business of distributing media so it broadcasts TOGETHER across hundreds of stations at once!"
+      },
+      "video": {
+        "description": "An entertainment industry case study breaking down the economics of television syndication, demonstrating how off-network licensing and digital content syndication generate multi-million-dollar residual revenue streams."
+      },
+      "toeicContext": {
+        "commonParts": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "After completing five successful seasons on national television, the award-winning culinary series entered commercial _____ across several regional broadcast networks.\n(A) syndicate\n(B) syndication\n(C) syndicated\n(D) syndicating",
+        "tips": "TOEIC Part 5 tests noun vs. verb and abstract vs. concrete forms. Preceded by the transitive verb 'entered' and the adjective 'commercial', the blank functions as the direct object. The context refers to the phase or business model of programming distribution, requiring the abstract noun: (B) 'syndication' ('entered commercial syndication' is a standard business idiom). Option (A) 'syndicate' refers to an organization rather than the state or process entered into. Options (C) and (D) are participle forms."
+      },
+      "synonyms": [
+        "licensing",
+        "distribution",
+        "broadcast licensing",
+        "rebroadcasting",
+        "content dissemination",
+        "multicasting"
+      ],
+      "antonyms": [
+        "exclusive broadcast",
+        "single-network airing",
+        "in-house distribution",
+        "proprietary retention"
+      ],
+      "relatedWords": [
+        "syndicate",
+        "licensing rights",
+        "broadcast clearance",
+        "rerun",
+        "off-network",
+        "RSS feed",
+        "content marketing"
+      ]
+    }
+  ]
+}

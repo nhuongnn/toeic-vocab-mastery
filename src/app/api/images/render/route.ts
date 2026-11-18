@@ -3,7 +3,6 @@ import fs from 'fs';
 import path from 'path';
 import { isCloudflareAiConfigured, generateCloudflareImage } from '@/lib/cloudflare-ai';
 
-
 function getMimeType(buffer: Buffer | Uint8Array): string {
   if (buffer.length > 3 && buffer[0] === 0xff && buffer[1] === 0xd8 && buffer[2] === 0xff) {
     return 'image/jpeg';
@@ -15,6 +14,31 @@ function getMimeType(buffer: Buffer | Uint8Array): string {
     return 'image/webp';
   }
   return 'image/jpeg';
+}
+
+function safeReadCache(filePath: string): Buffer | null {
+  try {
+    if (fs.existsSync(filePath)) {
+      const cached = fs.readFileSync(filePath);
+      if (cached.length > 1000) return cached;
+    }
+  } catch {
+    // Non-fatal
+  }
+  return null;
+}
+
+function safeWriteCache(filePath: string, dir: string, buffer: Buffer): void {
+  try {
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(filePath, buffer);
+  } catch (err) {
+    // Non-fatal: on serverless platforms (e.g. Vercel), local write errors
+    // must never block image delivery. Vercel Edge CDN caches via s-maxage header.
+    console.warn('[Cache Info] Local disk write skipped:', err instanceof Error ? err.message : err);
+  }
 }
 
 function generateSvgPlaceholder(word: string, description: string, style: string): string {
@@ -61,25 +85,26 @@ export async function GET(request: Request) {
   const fallbackUrl = searchParams.get('fallbackUrl') || '';
   const seed = searchParams.get('seed') ? parseInt(searchParams.get('seed')!, 10) : 42;
 
+  // On Vercel / AWS Lambda, process.cwd() is read-only (/var/task). Use /tmp instead.
+  const isServerless = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+  const cacheDir = isServerless
+    ? path.join('/tmp', 'cache', 'vocabulary')
+    : path.join(process.cwd(), 'public', 'cache', 'vocabulary');
+
   const safeKey = `${word.toLowerCase().replace(/[^a-z0-9_-]/g, '_') || 'word'}-${style}`;
-  const cacheDir = path.join(process.cwd(), 'public', 'cache', 'vocabulary');
   const cacheFilePath = path.join(cacheDir, `${safeKey}.png`);
 
-  // 1. Return from disk cache if already generated and not forced refresh
-  if (!refresh && fs.existsSync(cacheFilePath)) {
-    try {
-      const cachedBuffer = fs.readFileSync(cacheFilePath);
-      if (cachedBuffer.length > 1000) {
-        return new NextResponse(new Uint8Array(cachedBuffer), {
-          headers: {
-            'Content-Type': getMimeType(cachedBuffer),
-            'Cache-Control': 'public, max-age=31536000, immutable',
-            'X-Image-Source': 'local-disk-cache',
-          },
-        });
-      }
-    } catch (e) {
-      console.warn('Cache read error:', e);
+  // 1. Return from disk/tmp cache if already generated and not forced refresh
+  if (!refresh) {
+    const cachedBuffer = safeReadCache(cacheFilePath);
+    if (cachedBuffer) {
+      return new NextResponse(new Uint8Array(cachedBuffer), {
+        headers: {
+          'Content-Type': getMimeType(cachedBuffer),
+          'Cache-Control': 'public, s-maxage=31536000, max-age=31536000, stale-while-revalidate=86400, immutable',
+          'X-Image-Source': isServerless ? 'vercel-tmp-cache' : 'local-disk-cache',
+        },
+      });
     }
   }
 
@@ -102,16 +127,15 @@ export async function GET(request: Request) {
       });
 
       if (buffer && buffer.length > 1000) {
-        // Save to cache
-        if (!fs.existsSync(cacheDir)) {
-          fs.mkdirSync(cacheDir, { recursive: true });
-        }
-        fs.writeFileSync(cacheFilePath, buffer);
+        // Save to cache safely (non-blocking)
+        safeWriteCache(cacheFilePath, cacheDir, buffer);
 
         return new NextResponse(new Uint8Array(buffer), {
           headers: {
             'Content-Type': getMimeType(buffer),
-            'Cache-Control': 'public, max-age=86400',
+            'Cache-Control': refresh
+              ? 'no-cache, no-store, must-revalidate'
+              : 'public, s-maxage=31536000, max-age=31536000, stale-while-revalidate=86400, immutable',
             'X-Image-Source': 'cloudflare-workers-ai',
           },
         });
@@ -141,15 +165,12 @@ export async function GET(request: Request) {
       const buffer = Buffer.from(arrayBuffer);
 
       if (buffer.length > 1000) {
-        if (!fs.existsSync(cacheDir)) {
-          fs.mkdirSync(cacheDir, { recursive: true });
-        }
-        fs.writeFileSync(cacheFilePath, buffer);
+        safeWriteCache(cacheFilePath, cacheDir, buffer);
 
         return new NextResponse(new Uint8Array(buffer), {
           headers: {
             'Content-Type': polliRes.headers.get('content-type') || 'image/jpeg',
-            'Cache-Control': 'public, max-age=86400',
+            'Cache-Control': 'public, s-maxage=86400, max-age=86400',
             'X-Image-Source': 'pollinations-turbo-fallback',
           },
         });

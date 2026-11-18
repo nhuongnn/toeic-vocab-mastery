@@ -3,7 +3,6 @@ import fs from 'fs';
 import path from 'path';
 import { isCloudflareAiConfigured } from '@/lib/cloudflare-ai';
 
-
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const word = searchParams.get('word') || '';
@@ -13,9 +12,8 @@ export async function GET(request: Request) {
   const refresh = searchParams.get('refresh') === 'true';
   const fallbackUrl = searchParams.get('fallbackUrl') || '';
 
+  const isServerless = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
   const safeKey = `${word.toLowerCase().replace(/[^a-z0-9_-]/g, '_') || 'word'}-${style}`;
-  const cacheDir = path.join(process.cwd(), 'public', 'cache', 'vocabulary');
-  const cacheFilePath = path.join(cacheDir, `${safeKey}.png`);
 
   // Deterministic seed based on word + style or random seed if refresh
   const seed = refresh
@@ -26,11 +24,12 @@ export async function GET(request: Request) {
 
   let imageUrl: string;
 
-  // 1. If not refresh and file is already cached on disk, serve as static asset
-  if (!refresh && fs.existsSync(cacheFilePath)) {
+  // On local dev (non-Vercel), if file is already in public/cache, serve static URL
+  const localCachePath = path.join(process.cwd(), 'public', 'cache', 'vocabulary', `${safeKey}.png`);
+  if (!isServerless && !refresh && fs.existsSync(localCachePath)) {
     imageUrl = `/cache/vocabulary/${safeKey}.png`;
   } else {
-    // 2. Delegate to render route handler which handles Cloudflare AI -> Fallbacks -> Caching
+    // On Vercel or when not cached locally, delegate to render endpoint (cached globally by Vercel Edge CDN)
     const renderParams = new URLSearchParams({
       word,
       query,
@@ -67,7 +66,6 @@ export async function GET(request: Request) {
         },
         style,
         seed,
-        isCached: !refresh && fs.existsSync(cacheFilePath),
       },
     ],
   });

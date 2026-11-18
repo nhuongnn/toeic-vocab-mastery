@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { Mail } from 'lucide-react';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { ProgressProvider } from '@/contexts/ProgressContext';
 import { Navbar } from '@/components/shared/Navbar';
@@ -28,10 +29,22 @@ export default function RootLayout({
             <SelectionTranslator />
             <main className="flex-1">{children}</main>
             <footer className="border-t border-slate-900 bg-slate-950 py-8 text-center text-xs text-slate-500">
-              <div className="max-w-7xl mx-auto px-4 space-y-2">
+              <div className="max-w-7xl mx-auto px-4 space-y-3">
                 <p>
                   TOEIC Deep Learning Platform • Native Immersion Methodology • Designed for daily workplace fluency & 700+ score.
                 </p>
+                <div className="flex items-center justify-center gap-2 text-slate-400">
+                  <span className="flex items-center gap-1.5">
+                    <Mail className="w-3.5 h-3.5 text-indigo-400" />
+                    <span>Email liên hệ:</span>
+                  </span>
+                  <a
+                    href="mailto:nhuong2n@gmail.com"
+                    className="text-indigo-400 hover:text-indigo-300 hover:underline font-medium transition-colors"
+                  >
+                    nhuong2n@gmail.com
+                  </a>
+                </div>
                 <p className="text-[11px] text-slate-600">
                   Audio synthesized via Web Speech API & Dictionary API • Images powered by Unsplash
                 </p>

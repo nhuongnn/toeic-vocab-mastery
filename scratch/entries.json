@@ -1,0 +1,323 @@
+{
+  "words": [
+    {
+      "id": "tech-201",
+      "word": "logout",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "technology",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˈlɒɡ.aʊt/",
+        "syllableBreakdown": "log-out",
+        "stressPattern": "Primary stress on the first syllable (LOG-out)",
+        "commonMistakes": "Pronouncing it with equal stress on both syllables or confusing it with the phrasal verb 'log out'.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Derived from the phrasal verb 'log out', originating in computing terminology from the 1960s where 'log' referred to recording a user's session in a system logbook.",
+        "rootWord": "log + out",
+        "rootMeaning": "To record a session entry and subsequently exit.",
+        "evolution": "Transitioned from mainframe computer system logs to modern web applications, desktop OS environments, and mobile applications as a security protocol.",
+        "firstRecordedUse": "1970s (computing nomenclature)",
+        "relatedLanguages": [
+          "Dutch (uitloggen)",
+          "German (abmelden / ausloggen)",
+          "French (déconnexion)"
+        ]
+      },
+      "deepMeaning": {
+        "coreConcept": "The formal act or process of terminating a user session in a computer system, network, or secure application to prevent unauthorized access.",
+        "spatialContext": "Corporate workstations, shared terminals, mobile devices, web browsers, and cloud application dashboards.",
+        "temporalContext": "Occurs at the end of a workday, when stepping away from a shared desk, or automatically after a period of inactivity.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "culturalContext": "In modern corporate and enterprise environments, performing a logout is a critical cybersecurity and compliance requirement to protect sensitive customer data and intellectual property.",
+        "howNativesThink": "Native speakers associate 'logout' instinctively with security compliance, leaving the office, or switching user profiles on a shared computer.",
+        "mentalImage": "An office worker clicking the user profile icon in the top right corner of a software dashboard and selecting 'Logout' before locking their screen and walking away from the desk.",
+        "whenToUse": "When referring to the noun form (e.g., 'Ensure you perform a logout before leaving the terminal').",
+        "whenNotToUse": "Do not use 'logout' as a verb; use the two-word phrasal verb 'log out' instead."
+      },
+      "examples": {
+        "daily": [
+          "Please remember to perform a logout of your online banking session when you finish checking your balance.",
+          "An unexpected logout occurred while she was submitting her online form due to a server timeout.",
+          "The library computer automatically triggers a logout after ten minutes of user inactivity."
+        ],
+        "business": [
+          "Company policy mandates an immediate logout from all enterprise resource planning systems whenever a workstation is unattended.",
+          "The IT security audit flagged several terminals that lacked automatic logout configurations after hours.",
+          "Users experiencing persistent session errors should clear their browser cache following a complete logout."
+        ],
+        "conversation": [
+          "Colleague A: Did you leave your portal open on the conference room computer? \nColleague B: Oh no, I forgot to do a logout! Good thing you noticed."
+        ],
+        "collocations": [
+          "forced logout",
+          "automatic logout",
+          "secure logout",
+          "immediate logout",
+          "logout procedure"
+        ]
+      },
+      "wordFamily": {
+        "noun": "logout",
+        "verb": "log out",
+        "adjective": "logged-out",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "computer screen user profile logout button corporate office",
+        "imageDescription": "A close-up of a modern desktop computer monitor displaying a software application dropdown menu highlighting the 'Logout' option in a brightly lit office.",
+        "mnemonic": "Log (record) + Out (exit) = exiting the system log so nobody else can enter."
+      },
+      "video": {
+        "description": "A cybersecurity training clip demonstrating why employees must perform a manual logout before leaving shared workstations unattended."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "All employees are required to complete a secure _____ upon leaving their terminals to maintain strict corporate data privacy standards.",
+        "tips": "In TOEIC Part 5 grammar questions, distinguish between the noun 'logout' (preceded by an article or adjective like 'secure') and the phrasal verb 'log out'."
+      },
+      "synonyms": [
+        "sign-out",
+        "session termination",
+        "exit",
+        "disconnect"
+      ],
+      "antonyms": [
+        "login",
+        "sign-in",
+        "authentication"
+      ],
+      "relatedWords": [
+        "session",
+        "credentials",
+        "firewall",
+        "authentication",
+        "workstation",
+        "password"
+      ]
+    },
+    {
+      "id": "tech-202",
+      "word": "loop",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "technology",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/luːp/",
+        "syllableBreakdown": "loop",
+        "stressPattern": "Single-syllable word with primary stress",
+        "commonMistakes": "Mispronouncing the vowel sound as /lʊp/ (rhyming with 'up').",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Middle English origin, of uncertain etymology, possibly related to Middle Dutch or Old Norse words for a hinge, bend, or noose.",
+        "rootWord": "loop",
+        "rootMeaning": "A curving or doubling of a string, line, or process so that it returns upon itself.",
+        "evolution": "Expanded from physical ropes and knots to textile manufacturing loops, electronic feedback circuits, and eventually software programming control structures.",
+        "firstRecordedUse": "15th century",
+        "relatedLanguages": [
+          "Dutch (loep)",
+          "German (Lupe / Schlinge)"
+        ]
+      },
+      "deepMeaning": {
+        "coreConcept": "A shape or structure produced by a curve in a line or string that crosses itself, or in technology and business, a closed circuit or repeating sequence of operations.",
+        "spatialContext": "Software development environments, network cabling raceways, manufacturing assembly lines, and email communication chains.",
+        "temporalContext": "Continuous or iterative repetition over time in operational workflows or computational execution.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "culturalContext": "In corporate communication, the idiom 'keep someone in the loop' is ubiquitous for maintaining collaborative alignment across project teams.",
+        "howNativesThink": "Native speakers visualize a closed circle or a repeating cycle where information, code execution, or physical objects continuously circulate.",
+        "mentalImage": "A flowchart diagram showing a decision-making process feeding back into an earlier step, forming a continuous circular loop.",
+        "whenToUse": "When describing iterative processes, closed communication channels, or programming structures.",
+        "whenNotToUse": "Do not use 'loop' when referring to a straight linear progression without feedback or repetition."
+      },
+      "examples": {
+        "daily": [
+          "She tied the ribbon into a neat loop before attaching it to the gift package.",
+          "The walking trail makes a scenic two-mile loop through the nature reserve.",
+          "Make sure the cable is secured in a loose loop to prevent internal wire damage."
+        ],
+        "business": [
+          "Please keep the department director in the loop regarding any changes to the project timeline.",
+          "The software engineer optimized the code to prevent an infinite loop during data processing.",
+          "Our marketing team created an automated feedback loop to gather client responses after every product launch."
+        ],
+        "conversation": [
+          "Colleague A: Are the regional managers aware of the new logistics policy?\nColleague B: Yes, I added them to the email thread yesterday to keep them in the loop."
+        ],
+        "collocations": [
+          "in the loop",
+          "feedback loop",
+          "infinite loop",
+          "closed loop",
+          "communication loop"
+        ]
+      },
+      "wordFamily": {
+        "noun": "loop",
+        "verb": "loop",
+        "adjective": "looped",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "software programming flowchart loop diagram whiteboard corporate",
+        "imageDescription": "A whiteboard in a technology startup office displaying a detailed flowchart with circular process loops mapping out user registration workflows.",
+        "mnemonic": "A loop is shaped like an 'O', going round and round in circles."
+      },
+      "video": {
+        "description": "An educational software engineering tutorial explaining how to construct and optimize execution loops in modern programming languages."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Management wants to ensure that all regional supervisors are kept in the _____ regarding the upcoming software migration schedule.",
+        "tips": "In TOEIC business idioms, the phrase 'in the loop' means to be informed and included in ongoing communications. Watch out for preposition choices (e.g., 'in the loop')."
+      },
+      "synonyms": [
+        "circuit",
+        "cycle",
+        "ring",
+        "spiral",
+        "iteration"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "iteration",
+        "circuit",
+        "workflow",
+        "feedback",
+        "process",
+        "network"
+      ]
+    },
+    {
+      "id": "tech-203",
+      "word": "machine",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "technology",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/məˈʃiːn/",
+        "syllableBreakdown": "ma-chine",
+        "stressPattern": "Primary stress on the second syllable (ma-CHINE)",
+        "commonMistakes": "Placing primary stress on the first syllable (/ˈmæʃ.iːn/).",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Derived from Latin 'machina', from Greek 'mēchanē' meaning contrivance, device, or machine.",
+        "rootWord": "mēchanē",
+        "rootMeaning": "An apparatus or device designed to accomplish a specific mechanical or physical task.",
+        "evolution": "Shifted from ancient Greek theatrical lifting cranes and siege engines to Industrial Revolution steam engines, and today encompasses computers, automated servers, and AI processing units.",
+        "firstRecordedUse": "16th century",
+        "relatedLanguages": [
+          "French (machine)",
+          "German (Maschine)",
+          "Spanish (máquina)",
+          "Italian (macchina)"
+        ]
+      },
+      "deepMeaning": {
+        "coreConcept": "An apparatus consisting of interrelated parts with separate functions, used in performing work or processing data by utilizing mechanical, electrical, or electronic power.",
+        "spatialContext": "Manufacturing factory floors, data server rooms, corporate mailrooms, and office printing stations.",
+        "temporalContext": "Operating continuously on production lines or running automated background tasks 24/7.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "culturalContext": "In modern corporate and industrial discourse, 'machine' can refer both to physical heavy manufacturing equipment and to virtual cloud computing instances ('virtual machines').",
+        "howNativesThink": "Native speakers associate 'machine' with efficiency, automation, heavy hardware, or reliable automated processing.",
+        "mentalImage": "A heavy-duty industrial CNC milling machine precision-cutting a metallic automotive component in a brightly lit manufacturing facility.",
+        "whenToUse": "When referring to mechanical devices, computing servers, or automated office hardware.",
+        "whenNotToUse": "Do not use 'machine' to describe manual hand tools or unpowered instruments."
+      },
+      "examples": {
+        "daily": [
+          "He dropped his soiled garments into the washing machine before heading out to work.",
+          "The coffee machine in the employee breakroom was serviced by a technician this morning.",
+          "She inserted her debit card into the automated teller machine to withdraw cash."
+        ],
+        "business": [
+          "The factory upgraded its packaging line with a high-speed wrapping machine to boost daily output.",
+          "Our IT department provisioned three new virtual machines in the cloud to handle peak web traffic.",
+          "Routine maintenance on the heavy machinery is scheduled for Saturday morning to avoid production downtime."
+        ],
+        "conversation": [
+          "Colleague A: Why is the copy room printer offline?\nColleague B: The main sorting machine jammed during a large batch print job, but maintenance is fixing it now."
+        ],
+        "collocations": [
+          "heavy machinery",
+          "virtual machine",
+          "coffee machine",
+          "automated machine",
+          "machine learning"
+        ]
+      },
+      "wordFamily": {
+        "noun": "machine",
+        "verb": "machine",
+        "adjective": "machined",
+        "adverb": "machined"
+      },
+      "visual": {
+        "imageKeyword": "industrial manufacturing machine factory floor automated production",
+        "imageDescription": "An expansive industrial manufacturing plant showing automated robotic assembly machines welding structural steel parts with sparks flying.",
+        "mnemonic": "A machine makes tedious tasks manageable."
+      },
+      "video": {
+        "description": "A documentary clip showcasing the history of automated manufacturing machines from early steam-powered looms to modern robotic assembly lines."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "All operators must review the safety manual before working with the new heavy _____ installed in Sector B of the manufacturing plant.",
+        "tips": "In TOEIC Listening Part 1, 'machine' often describes industrial equipment, office copiers, or appliances shown in photographs. In Reading Part 7, look out for maintenance schedules related to plant machinery."
+      },
+      "synonyms": [
+        "apparatus",
+        "device",
+        "mechanism",
+        "engine",
+        "instrument"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "automation",
+        "equipment",
+        "hardware",
+        "server",
+        "mechanism",
+        "appliance"
+      ]
+    }
+  ]
+}

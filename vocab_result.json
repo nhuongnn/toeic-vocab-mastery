@@ -1,0 +1,336 @@
+{
+  "words": [
+    {
+      "id": "mfg-174",
+      "word": "manpower",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "manufacturing",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈmænpavər/",
+        "syllableBreakdown": "man-pow-er",
+        "stressPattern": "Primary stress on the first syllable: /ˈmænpavər/.",
+        "commonMistakes": "Learners often mispronounce the second syllable with a long /oʊ/ sound instead of the dipthong /aʊ/ (/ˈmænpəʊər/), or incorrectly place stress on the final syllable.",
+        "audioUrl": "https://example.com/audio/manpower.mp3"
+      },
+      "etymology": {
+        "origin": "Compound of 'man' (from Old English 'mann', human being) and 'power' (from Old French 'poeir', Latin 'potere' to be able).",
+        "rootWord": "man + power",
+        "rootMeaning": "The human force or personnel available for or needed in a task or workforce.",
+        "evolution": "Recorded since the mid-19th century during the Industrial Revolution to quantify the physical labor and operational workforce required to run factories, mines, and civil engineering projects, later broadening to include intellectual and technical personnel.",
+        "relatedLanguages": [
+          "Old English 'mann'",
+          "Old French 'poeir'",
+          "Latin 'potere'"
+        ],
+        "firstRecordedUse": "1841"
+      },
+      "deepMeaning": {
+        "coreConcept": "The total supply of personnel, workers, or human effort available for performing work, operating machinery, or executing industrial and organizational operations.",
+        "spatialContext": "Factory assembly lines, manufacturing plant floors, construction sites, warehouse distribution centers, and corporate resource planning departments.",
+        "temporalContext": "Daily shift planning, weekly production scheduling, and long-term workforce capacity forecasting.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "culturalContext": "In corporate manufacturing and labor economics, manpower represents a vital operational resource alongside capital and machinery. While modern terminology often prefers 'workforce' or 'human resources', 'manpower' remains standard in industrial planning, shift allocation, and cost estimating.",
+        "howNativesThink": "Managers and plant directors instinctively connect the term with staffing levels, labor costs, shift coverage, and productivity bottlenecks.",
+        "mentalImage": "A shift supervisor reviewing a staffing roster on a clipboard inside a bustling automotive assembly plant while hundreds of operators work along the moving production line.",
+        "whenToUse": "Use when discussing industrial staffing, labor allocation, shift requirements, or operational capacity planning.",
+        "whenNotToUse": "Avoid when referring strictly to HR policies, individual employee welfare, or creative office staffing where terms like 'personnel' or 'talent' are more appropriate."
+      },
+      "examples": {
+        "daily": [
+          "The factory manager reviewed the weekly schedule to ensure adequate manpower for the upcoming production surge.",
+          "Recruiting sufficient technical manpower for the new automated packaging line took over two months.",
+          "A sudden flu outbreak reduced available manpower on the night shift by twenty percent."
+        ],
+        "business": [
+          "Executing the plant expansion project on schedule requires mobilizing additional engineering and assembly manpower.",
+          "Management conducted a thorough workforce audit to optimize manpower deployment across all three manufacturing shifts.",
+          "Due to severe manpower shortages in the welding department, the facility missed its monthly output target."
+        ],
+        "conversation": [
+          "\"Do we have enough manpower on the floor to handle the rush order from the client?\"\n\"We're short-handed on the afternoon shift, so I'll authorize two hours of overtime for the assembly team.\"",
+          "\"How are we going to meet the deadline with half the maintenance crew out?\"\n\"We'll have to reallocate manpower from the secondary packaging line until tomorrow.\""
+        ],
+        "collocations": [
+          "manpower shortage",
+          "manpower planning",
+          "adequate manpower",
+          "technical manpower",
+          "mobilize manpower",
+          "manpower requirements"
+        ]
+      },
+      "wordFamily": {
+        "noun": "manpower / man / workforce",
+        "verb": "staff / man",
+        "adjective": "manned",
+        "adverb": "manpower-wise"
+      },
+      "visual": {
+        "imageKeyword": "factory workers assembly line industrial plant",
+        "imageDescription": "A wide-angle photograph of industrial workers wearing high-visibility vests and safety helmets operating machinery on a brightly lit manufacturing plant floor.",
+        "mnemonic": "Think of 'MAN' plus 'POWER': the raw human energy and muscle power required to run heavy machinery."
+      },
+      "video": {
+        "description": "An industrial documentary clip demonstrating how manufacturing plant managers calculate and allocate manpower for high-volume production lines."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Because of unexpected production delays, the plant director requested additional _________ from the temporary staffing agency to complete the holiday order.\n(A) manpower\n(B) manuals\n(C) maneuvers\n(D) mandates",
+        "tips": "In TOEIC Part 5 vocabulary questions, look for nouns that fit operational resource contexts. 'Manpower' collocates with shortages, planning, and requirements."
+      },
+      "synonyms": [
+        "workforce",
+        "personnel",
+        "labor force",
+        "staff",
+        "employees",
+        "hands"
+      ],
+      "antonyms": [
+        "automation",
+        "machinery",
+        "unemployment"
+      ],
+      "relatedWords": [
+        "workforce",
+        "staffing",
+        "labor cost",
+        "shift",
+        "operator",
+        "productivity"
+      ]
+    },
+    {
+      "id": "mfg-175",
+      "word": "manual labor",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "manufacturing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˈmænjuəl ˈleɪbər/",
+        "syllableBreakdown": "man-u-al la-bor",
+        "stressPattern": "Primary stress on the first syllable of 'manual' and the first syllable of 'labor': /ˈmænjuəl ˈleɪbər/.",
+        "commonMistakes": "Pronouncing 'manual' as two syllables instead of three (/ˈmænjəl/), or mispronouncing the vowel sound in 'labor'.",
+        "audioUrl": "https://example.com/audio/manual_labor.mp3"
+      },
+      "etymology": {
+        "origin": "Derived from Latin 'manualis' (pertaining to the hand, from 'manus' hand) combined with Latin 'labor' (toil, exertion, work).",
+        "rootWord": "manus + labor",
+        "rootMeaning": "Work performed physically with one's hands.",
+        "evolution": "Used since Middle English and Latin legal/economic contexts, becoming prominent during the Industrial Revolution to distinguish physical hand work from machine operation and intellectual labor.",
+        "relatedLanguages": [
+          "Latin 'manualis'",
+          "Old French 'manuel'",
+          "Spanish 'manual'"
+        ],
+        "firstRecordedUse": "15th century"
+      },
+      "deepMeaning": {
+        "coreConcept": "Physical work done directly by humans using their hands and bodies, requiring bodily exertion, stamina, and physical skill rather than cognitive or machine-driven processes.",
+        "spatialContext": "Warehouse loading docks, heavy industrial assembly bays, construction sites, material handling zones, and shipping yards.",
+        "temporalContext": "Continuous physical activity spanning multi-hour work shifts, particularly during heavy lifting, loading, and physical fabrication.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "culturalContext": "In industrial manufacturing and logistics, manual labor is increasingly supplemented or replaced by automation and robotics; however, it remains essential for tasks requiring dexterity, unconstrained movement, and complex object handling.",
+        "howNativesThink": "Operations managers and safety coordinators associate manual labor with ergonomics, lifting safety, physical fatigue, and injury prevention.",
+        "mentalImage": "Two warehouse workers in steel-toe boots and safety gloves lifting heavy wooden crates onto a wooden pallet inside a vast distribution hub.",
+        "whenToUse": "Use when discussing physical work tasks, ergonomic safety, workforce requirements, or the transition from human-intensive to automated processes.",
+        "whenNotToUse": "Avoid when referring to office administration, software programming, or automated machine operation."
+      },
+      "examples": {
+        "daily": [
+          "Unloading the container truck required several hours of strenuous manual labor.",
+          "He decided to switch from heavy manual labor to an office-based logistics role after injuring his shoulder.",
+          "The garden landscaping project involved a significant amount of manual labor."
+        ],
+        "business": [
+          "Implementing the new automated conveyor system substantially reduced the need for heavy manual labor in the warehouse.",
+          "OSHA guidelines require regular ergonomic assessments for all employees engaged in repetitive manual labor.",
+          "The company incurred high operational costs due to its heavy reliance on manual labor for sorting and packaging."
+        ],
+        "conversation": [
+          "\"Are the new robotic palletizers fully operational yet?\"\n\"Not quite; we still rely on manual labor for the fragile glass items until the calibration is finished.\"",
+          "\"How does the new material handling system affect staff?\"\n\"It eliminates the most grueling manual labor, allowing operators to focus on quality inspection.\""
+        ],
+        "collocations": [
+          "heavy manual labor",
+          "strenuous manual labor",
+          "manual labor job",
+          "rely on manual labor",
+          "reduce manual labor",
+          "manual labor force"
+        ]
+      },
+      "wordFamily": {
+        "noun": "manual labor / manual",
+        "verb": "labor",
+        "adjective": "manual",
+        "adverb": "manually"
+      },
+      "visual": {
+        "imageKeyword": "warehouse worker lifting heavy box manual labor",
+        "imageDescription": "A warehouse worker wearing safety gear lifting a heavy cardboard carton onto a pallet in a brightly illuminated distribution warehouse.",
+        "mnemonic": "Think of 'MANUAL' (by hand) plus 'LABOR' (work): hard physical toil performed directly with your hands."
+      },
+      "video": {
+        "description": "An instructional ergonomics video showing safe lifting techniques for industrial workers performing manual labor in manufacturing plants."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "To minimize worker injuries and improve fulfillment speed, the logistics center invested in automated conveyor belts to replace strenuous _________.\n(A) manual labor\n(B) manual literacy\n(C) manual operation\n(D) manual schedule",
+        "tips": "In TOEIC reading and listening tests, 'manual labor' frequently appears in contexts discussing warehouse automation, ergonomic safety, and operational efficiency."
+      },
+      "synonyms": [
+        "physical work",
+        "hand labor",
+        "blue-collar work",
+        "toil",
+        "physical exertion"
+      ],
+      "antonyms": [
+        "automation",
+        "intellectual labor",
+        "mental work",
+        "machine work"
+      ],
+      "relatedWords": [
+        "ergonomics",
+        "heavy lifting",
+        "warehouse",
+        "automation",
+        "operator",
+        "injury prevention"
+      ]
+    },
+    {
+      "id": "mfg-176",
+      "word": "manufacturing process",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "manufacturing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˌmænjəˈfæktʃərɪŋ ˈprɒsɛs/",
+        "syllableBreakdown": "man-u-fac-tur-ing pros-ess",
+        "stressPattern": "Primary stress on the third syllable of 'manufacturing' (-fac-) and primary stress on the first syllable of 'process': /ˌmænjəˈfæktʃərɪŋ ˈprɒsɛs/.",
+        "commonMistakes": "Pronouncing 'manufacturing' with blurred middle syllables, or misplacing stress on 'process' as /prəˈsɛs/ instead of the noun form /ˈprɒsɛs/.",
+        "audioUrl": "https://example.com/audio/manufacturing_process.mp3"
+      },
+      "etymology": {
+        "origin": "Compound of 'manufacturing' (from Latin 'manu factura', made by hand, from 'manus' hand + 'facere' to make) and 'process' (from Latin 'processus', a going forward, advancing).",
+        "rootWord": "manu factum + processus",
+        "rootMeaning": "The progressive sequence of operations and steps used to create manufactured goods.",
+        "evolution": "Evolved from artisanal craft production into standardized industrial systems during the Industrial Revolution, expanding in the 20th century to encompass lean manufacturing, Six Sigma, and automated computer-integrated production.",
+        "relatedLanguages": [
+          "Latin 'manufactura'",
+          "French 'fabrication'",
+          "German 'Herstellungsprozess'"
+        ],
+        "firstRecordedUse": "Early 19th century"
+      },
+      "deepMeaning": {
+        "coreConcept": "The structured series of steps, operations, chemical treatments, and mechanical transformations applied to raw materials or components to convert them into finished commercial products.",
+        "spatialContext": "Factory production floors, plant engineering offices, quality control laboratories, and industrial R&D facilities.",
+        "temporalContext": "Continuous production cycles ranging from seconds for high-speed stamping lines to weeks for complex aerospace assemblies.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "culturalContext": "In industrial engineering and business strategy, the manufacturing process is the core engine of production value. Optimizing this process through lean principles, waste reduction, and automation determines profitability and market competitiveness.",
+        "howNativesThink": "Engineers and plant managers instantly evaluate manufacturing processes in terms of cycle time, throughput, yield rate, quality control, and bottleneck identification.",
+        "mentalImage": "A complex multi-stage production line featuring robotic arms welding steel automobile frames under amber safety lighting in a modern assembly plant.",
+        "whenToUse": "Use when discussing industrial production methods, factory operations, quality improvement initiatives, or supply chain engineering.",
+        "whenNotToUse": "Avoid when referring to administrative office workflows, software development lifecycles, or retail merchandising."
+      },
+      "examples": {
+        "daily": [
+          "The plant engineer explained every step of the manufacturing process during the VIP factory tour.",
+          "Improving the heating phase in the manufacturing process reduced overall energy consumption by fifteen percent.",
+          "New employees must complete safety training before observing the active manufacturing process on the shop floor."
+        ],
+        "business": [
+          "The executive team approved a multi-million-dollar investment to upgrade the legacy manufacturing process with state-of-the-art CNC automation.",
+          "Rigorous quality assurance protocols are integrated into every stage of our manufacturing process to eliminate defects.",
+          "An audit of the manufacturing process revealed a critical bottleneck in the final thermal treatment phase."
+        ],
+        "conversation": [
+          "\"Why are we seeing slight dimensional variations in the latest batch of polymer housings?\"\n\"Let's review the injection molding parameters within the manufacturing process; the cooling timer might be too short.\"",
+          "\"How long does the entire manufacturing process take from raw sheet metal to finished chassis?\"\n\"About forty-five minutes across the five automated stamping and welding stations.\""
+        ],
+        "collocations": [
+          "streamline manufacturing process",
+          "optimize manufacturing process",
+          "manufacturing process steps",
+          "refine manufacturing process",
+          "complex manufacturing process",
+          "monitor manufacturing process"
+        ]
+      },
+      "wordFamily": {
+        "noun": "manufacturing process / manufacture / manufacturer",
+        "verb": "manufacture / process",
+        "adjective": "manufactured",
+        "adverb": "manufacturing-wise"
+      },
+      "visual": {
+        "imageKeyword": "automated manufacturing process robotic assembly line",
+        "imageDescription": "A sophisticated automated robotic assembly line in a modern manufacturing facility assembling precision electronic components.",
+        "mnemonic": "Think of 'MANU' (hand/made) + 'FACTURING' (making) + 'PROCESS' (steps): the orderly sequence of steps that transforms raw materials into finished goods."
+      },
+      "video": {
+        "description": "An educational factory walkthrough video illustrating how advanced manufacturing processes integrate robotics, CNC machining, and automated quality control."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "exampleQuestion": "To reduce production costs and eliminate assembly errors, the company's lead engineer proposed a complete redesign of the traditional _________.\n(A) manufacturing process\n(B) manufacturing schedule\n(C) manufacturing employee\n(D) manufacturing office",
+        "tips": "In TOEIC Part 5 and 7 business contexts, 'manufacturing process' is a high-frequency compound noun collocation used when discussing plant upgrades, efficiency, and quality control."
+      },
+      "synonyms": [
+        "production method",
+        "fabrication process",
+        "production workflow",
+        "manufacturing procedure",
+        "industrial process"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "production line",
+        "quality control",
+        "assembly",
+        "throughput",
+        "lean manufacturing",
+        "cycle time"
+      ]
+    }
+  ]
+}

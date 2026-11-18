@@ -1,0 +1,338 @@
+[
+  {
+    "id": "marketing-233",
+    "word": "niche market",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "marketing",
+    "level": "advanced",
+    "toeicFrequency": 7,
+    "pronunciation": {
+      "ipa": "/nɪtʃ ˈmɑːrkɪt/",
+      "syllableBreakdown": "niche mar-ket",
+      "stressPattern": "Primary stress on 'niche' (or secondary) and main stress on 'mar' in market (/ˈnɪtʃ ˈmɑːr.kɪt/ or /niːʃ/ in UK, /nɪtʃ/ in US).",
+      "commonMistakes": "Pronouncing 'niche' as /naɪtʃ/ (rhyming with 'nice') instead of /nɪtʃ/ or /niːʃ/, or misplacing the stress."
+    },
+    "etymology": {
+      "origin": "Middle French 'niche' (alcove, recess, nook, from 'nicher' - to nest, ultimately from Latin 'nidus' - nest) combined with Middle English 'market' (from Old French 'marchiet', from Latin 'mercatus' - trade, market place).",
+      "rootWord": "nidus (nest) + mercatus (trade)",
+      "rootMeaning": "A recessed nest or nook specialized for a distinct trade or refuge.",
+      "evolution": "Originally referring to an architectural recess for a statue or a cozy animal nest, 'niche' evolved in the 20th century via biological ecology ('ecological niche') into business terminology to denote a specialized, focused segment of a broader market.",
+      "relatedLanguages": [
+        "French (niche, marché)",
+        "Latin (nidus, mercatus)",
+        "Italian (nicchia, mercato)",
+        "Spanish (nicho, mercado)"
+      ],
+      "firstRecordedUse": "First used in economic/marketing literature in the mid-20th century (circa 1950s-1960s) to describe specialized product placement."
+    },
+    "deepMeaning": {
+      "coreConcept": "A tightly defined, highly specific segment of a larger market characterized by distinct customer preferences, specialized needs, or unique identity that is often overlooked or underserved by mass-market competitors.",
+      "spatialContext": "Corporate boardrooms, strategic marketing planning sessions, product development workshops, and startup incubator pitch decks.",
+      "temporalContext": "Constantly evaluated during quarterly strategic reviews, annual business planning, and product launch lifecycles.",
+      "emotionalTone": "neutral",
+      "formalityLevel": "formal",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Native business professionals view a niche market not as a limitation, but as a high-margin stronghold where premium pricing, deep customer loyalty, and lack of cutthroat competition create sustainable competitive advantage.",
+      "mentalImage": "A boutique artisan coffee roaster in a vibrant urban neighborhood catering exclusively to single-origin espresso connoisseurs, surrounded by large commercial coffee chains.",
+      "whenToUse": "When discussing targeted marketing strategies, specialized product positioning, overcoming giants through specialization, or identifying unmet consumer demands.",
+      "whenNotToUse": "Do not use when referring to broad consumer demographics, mass-market retail, or undifferentiated commodity trading.",
+      "culturalContext": "In Western corporate and entrepreneurial culture, finding your 'niche' is celebrated as the hallmark of smart, efficient enterprise and sustainable small-to-medium business survival."
+    },
+    "examples": {
+      "daily": [
+        "She decided to open an online bookstore catering exclusively to vintage science fiction collectors.",
+        "Finding a niche market for organic pet supplements allowed their family business to thrive.",
+        "Instead of competing with global sportswear brands, they focused on lightweight gear for ultra-marathoners."
+      ],
+      "business": [
+        "Our marketing team conducted extensive demographic research to identify a profitable niche market within the renewable energy sector.",
+        "By targeting a specialized niche market, the startup achieved a 45% customer retention rate in its first year.",
+        "Entering this niche market requires compliance with strict industry-specific regulatory standards."
+      ],
+      "conversation": [
+        "Colleague A: 'Why are we spending our advertising budget on such a tiny audience?'\nColleague B: 'Because it's a high-value niche market with almost zero direct competition.'",
+        "Client: 'Do you think our software can appeal to everyone?'\nConsultant: 'No, but if we carve out a niche market among boutique accounting firms, we will maximize profitability.'"
+      ],
+      "collocations": [
+        "target a niche market",
+        "profit from a niche market",
+        "profitable niche market",
+        "explore a niche market",
+        "dominate a niche market",
+        "niche market segment"
+      ]
+    },
+    "wordFamily": {
+      "noun": "niche / niche market",
+      "verb": "niche (to place in a niche)",
+      "adjective": "niche (specialized)",
+      "adverb": "nicely (not directly morphologically linked to niche, but niche has no direct adverb)"
+    },
+    "visual": {
+      "imageKeyword": "specialty boutique artisan product display macro business strategy",
+      "imageDescription": "A sleek modern office whiteboard displaying a colorful market segmentation matrix, highlighting a small highlighted circle labeled 'Niche Market' surrounded by larger general market bubbles.",
+      "mnemonic": "Think of a tiny bird in its cozy 'niche' (nest) picking up rare seeds in a giant forest market."
+    },
+    "video": {
+      "description": "A 3-minute executive briefing animation illustrating how small businesses successfully position themselves in specialized consumer segments to avoid price wars with industry giants."
+    },
+    "toeicContext": {
+      "commonParts": [
+        3,
+        4,
+        7
+      ],
+      "exampleQuestion": "To succeed in a highly competitive retail industry, our company must identify and serve an unserved ______ where customer loyalty is exceptionally strong.\n(A) production line\n(B) niche market\n(C) distribution hub\n(D) delivery schedule",
+      "tips": "In TOEIC Business English contexts, words like 'identify', 'serve', 'target', and 'specialize in' frequently collocate with 'niche market'. Look for contextual clues regarding specialized customer needs."
+    },
+    "synonyms": [
+      "specialized market",
+      "micro-market",
+      "boutique sector",
+      "targeted segment",
+      "specialty market"
+    ],
+    "antonyms": [
+      "mass market",
+      "broad market",
+      "commodity market"
+    ],
+    "relatedWords": [
+      "market segmentation",
+      "target audience",
+      "competitive advantage",
+      "brand positioning",
+      "dopamine marketing",
+      "specialized product",
+      "consumer behavior"
+    ]
+  },
+  {
+    "id": "marketing-234",
+    "word": "objective setting",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "marketing",
+    "level": "advanced",
+    "toeicFrequency": 7,
+    "pronunciation": {
+      "ipa": "/əbˈdʒektɪv ˈsetɪŋ/",
+      "syllableBreakdown": "ob-jec-tive set-ting",
+      "stressPattern": "Secondary stress on 'ob', primary stress on 'jec' in objective and 'set' in setting (/əbˈdʒɛk.tɪv ˈsɛt.ɪŋ/).",
+      "commonMistakes": "Pronouncing 'objective' with stress on the first syllable or mispronouncing the 'ct' cluster."
+    },
+    "etymology": {
+      "origin": "Latin 'objectivus' (derived from 'objectum' - something put before the mind, from 'ob- ' against + 'jacere' to throw) combined with Old English 'settan' (to cause to sit, establish).",
+      "rootWord": "objectum (thrown before) + settan (to establish)",
+      "rootMeaning": "The deliberate act of establishing clear goals placed before an organization or individual.",
+      "evolution": "Transitioned from philosophical epistemology (objective reality) into 20th-century management science (Management by Objectives - MBO, Peter Drucker, 1954) to describe strategic goal definition.",
+      "relatedLanguages": [
+        "Latin (objectivus)",
+        "French (objectif)",
+        "German (Zielsetzung)",
+        "Spanish (establecimiento de objetivos)"
+      ],
+      "firstRecordedUse": "Widely adopted in corporate management literature in the mid-1950s with the formalization of strategic planning frameworks."
+    },
+    "deepMeaning": {
+      "coreConcept": "The structured managerial process of defining specific, measurable, achievable, relevant, and time-bound (SMART) goals that guide marketing campaigns, sales targets, and organizational workflows.",
+      "spatialContext": "Executive boardrooms, department strategy alignment workshops, quarterly planning retreats, and project management software dashboards.",
+      "temporalContext": "Conducted annually, quarterly, or at the kickoff phase of any major marketing initiative or campaign.",
+      "emotionalTone": "neutral",
+      "formalityLevel": "formal",
+      "connotation": "positive"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Experienced corporate leaders view objective setting as the vital foundation of operational accountability—without clear objectives, performance cannot be measured and teams drift without alignment.",
+      "mentalImage": "An executive pointing a laser pointer at a high-definition projector screen showing quarterly sales growth charts and key performance indicator milestones during a morning briefing.",
+      "whenToUse": "When discussing strategic planning, performance management, campaign briefs, KPI formulation, or aligning departmental deliverables.",
+      "whenNotToUse": "Do not use when describing spontaneous brainstorming, casual daily tasks, or unstructured creative exploration.",
+      "culturalContext": "In modern corporate governance, objective setting (often tied to frameworks like OKRs - Objectives and Key Results) is deeply embedded in performance reviews and compensation structures."
+    },
+    "examples": {
+      "daily": [
+        "Effective objective setting helps our team stay focused on weekly deliverables rather than getting distracted.",
+        "Before drafting the proposal, we held a workshop dedicated entirely to objective setting.",
+        "Clear objective setting makes it much easier to evaluate whether our project succeeded."
+      ],
+      "business": [
+        "Rigorous objective setting during the Q3 planning session ensured all regional sales teams were aligned with corporate growth targets.",
+        "The marketing director emphasized that objective setting must incorporate measurable KPIs and realistic timelines.",
+        "Without proper objective setting, campaign performance metrics become ambiguous and difficult to analyze."
+      ],
+      "conversation": [
+        "Manager: 'Why did the campaign miss its conversion targets?'\nTeam Lead: 'Our initial objective setting was too vague regarding social media acquisition rates.'",
+        "Colleague A: 'Are we ready to finalize the campaign strategy?'\nColleague B: 'Almost, we just need sign-off on the objective setting from the VP of Marketing.'"
+      ],
+      "collocations": [
+        "participate in objective setting",
+        "strategic objective setting",
+        "objective setting process",
+        "clear objective setting",
+        "facilitate objective setting",
+        "objective setting framework"
+      ]
+    },
+    "wordFamily": {
+      "noun": "objective setting / objective / objectiveness",
+      "verb": "set objectives / objectify",
+      "adjective": "objective",
+      "adverb": "objectively"
+    },
+    "visual": {
+      "imageKeyword": "business strategic planning whiteboard flowchart targets goals",
+      "imageDescription": "A collaborative business meeting where professionals review a large flowchart on a whiteboard mapping out strategic goals, timelines, and measurable success milestones.",
+      "mnemonic": "Think of setting up a camera lens ('objective') to focus precisely on your target."
+    },
+    "video": {
+      "description": "A 4-minute professional development tutorial demonstrating how executive teams conduct effective objective-setting workshops using SMART criteria."
+    },
+    "toeicContext": {
+      "commonParts": [
+        5,
+        6,
+        7
+      ],
+      "exampleQuestion": "During the annual corporate retreat, department heads will collaborate on ______ to ensure all regional branches align with company growth targets.\n(A) objective setting\n(B) product packaging\n(C) office relocation\n(D) inventory auditing",
+      "tips": "In TOEIC Part 5 and 6 grammar/vocabulary questions, look for nominal compounds relating to corporate management. 'Objective setting' pairs naturally with verbs like 'facilitate', 'participate in', and 'refine'."
+    },
+    "synonyms": [
+      "goal formulation",
+      "target setting",
+      "strategic planning",
+      "goal establishment",
+      "benchmark definition"
+    ],
+    "antonyms": [
+      "aimless drift",
+      "stagnation",
+      "improvisation"
+    ],
+    "relatedWords": [
+      "key performance indicator (KPI)",
+      "management by objectives (MBO)",
+      "strategic planning",
+      "performance review",
+      "benchmark",
+      "deliverable",
+      "action plan"
+    ]
+  },
+  {
+    "id": "marketing-235",
+    "word": "offline marketing",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "marketing",
+    "level": "advanced",
+    "toeicFrequency": 7,
+    "pronunciation": {
+      "ipa": "/ˌɔːflaɪn ˈmɑːrkɪtɪŋ/",
+      "syllableBreakdown": "off-line mar-ket-ing",
+      "stressPattern": "Primary stress on 'off' and 'mar' (/ˌɔːf.laɪn ˈmɑːr.kɪ.tɪŋ/).",
+      "commonMistakes": "Treating offline marketing as obsolete without recognizing its modern synergy with digital campaigns."
+    },
+    "etymology": {
+      "origin": "Compound of 'off-line' (originated in telecommunications and computing meaning not connected to a computer or network, 1950s) and 'marketing' (from 'market', Latin 'mercatus').",
+      "rootWord": "off + line + market",
+      "rootMeaning": "Promotional activities conducted in the physical, non-digital world.",
+      "evolution": "While initially 'marketing' was exclusively offline before the digital revolution, the term 'offline marketing' emerged as a retronym in the late 1990s and 2000s to distinguish traditional promotional channels from digital and internet marketing.",
+      "relatedLanguages": [
+        "English coinage (off-line + marketing)",
+        "French (marketing traditionnel / hors ligne)",
+        "Spanish (marketing offline)"
+      ],
+      "firstRecordedUse": "Late 20th century with the advent of digital marketing terminology."
+    },
+    "deepMeaning": {
+      "coreConcept": "Traditional promotional strategies and tangible media channels that do not rely on the internet, including print advertising, billboards, television, radio, direct mail, trade shows, and experiential events.",
+      "spatialContext": "Retail storefronts, trade show exhibition halls, billboard sites along highways, print publishing offices, and corporate marketing strategy rooms.",
+      "temporalContext": "Executed during seasonal product launches, grand openings, nationwide brand awareness campaigns, and corporate exhibitions.",
+      "emotionalTone": "neutral",
+      "formalityLevel": "formal",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Marketing professionals view offline marketing not as old-fashioned, but as a powerful, tactile complement to digital ads that builds physical presence, local community trust, and tangible brand authority.",
+      "mentalImage": "A bustling downtown trade show booth featuring high-end printed brochures, branded giveaways, and a large striking banner backdrop.",
+      "whenToUse": "When discussing multi-channel campaigns involving print media, events, billboards, broadcast advertising, or physical brand activations.",
+      "whenNotToUse": "Do not use when referring exclusively to social media campaigns, PPC ads, email marketing, or SEO.",
+      "culturalContext": "Despite the dominance of digital advertising, offline marketing remains a multi-billion dollar industry, especially crucial for local businesses, luxury goods, and large-scale B2B trade exhibitions."
+    },
+    "examples": {
+      "daily": [
+        "They handed out flyers and coupons as part of their local offline marketing campaign for the grand opening.",
+        "Even digital-first brands sometimes invest in offline marketing like billboards in major metropolitan areas.",
+        "Our local bakery relies heavily on offline marketing, such as community event sponsorships and newspaper ads."
+      ],
+      "business": [
+        "The CMO allocated 30% of the annual budget to offline marketing to capture older demographic segments attending trade shows.",
+        "Integrating QR codes into our print catalog successfully bridged our offline marketing efforts with online analytics.",
+        "While digital ads drive quick conversions, offline marketing builds long-term brand trust and physical presence."
+      ],
+      "conversation": [
+        "Colleague A: 'Are we still printing brochures for the upcoming conference?'\nColleague B: 'Yes, offline marketing is essential for face-to-face networking at industry expos.'",
+        "Client: 'Should we shift all our ad spending online?'\nConsultant: 'Not entirely. A balanced mix of digital and offline marketing yields the highest overall reach.'"
+      ],
+      "collocations": [
+        "offline marketing campaign",
+        "offline marketing strategy",
+        "invest in offline marketing",
+        "traditional offline marketing",
+        "offline marketing channels",
+        "integrate offline and online marketing"
+      ]
+    },
+    "wordFamily": {
+      "noun": "offline marketing / offline",
+      "verb": "market offline",
+      "adjective": "offline",
+      "adverb": "offline"
+    },
+    "visual": {
+      "imageKeyword": "billboard advertising print media trade show booth marketing",
+      "imageDescription": "A professional exhibition booth at a corporate trade show featuring polished roll-up banners, glossy product brochures, and engaged attendees interacting with company representatives.",
+      "mnemonic": "Think of unplugging the computer ('offline') and meeting customers face-to-face in the real world."
+    },
+    "video": {
+      "description": "A 5-minute case study analysis showing how successful retail brands combine offline marketing events with digital social media campaigns for maximum impact."
+    },
+    "toeicContext": {
+      "commonParts": [
+        3,
+        4,
+        7
+      ],
+      "exampleQuestion": "To reach local customers who do not frequently use the internet, the advertising agency recommended supplementing their digital ads with an effective ______ campaign.\n(A) offline marketing\n(B) software upgrade\n(C) inventory control\n(D) payroll processing",
+      "tips": "In TOEIC Listening and Reading sections, vocabulary related to advertising distinguishes between online/digital channels and traditional media (print, billboards, radio, trade shows)."
+    },
+    "synonyms": [
+      "traditional marketing",
+      "above-the-line marketing",
+      "print and broadcast marketing",
+      "physical marketing",
+      "non-digital marketing"
+    ],
+    "antonyms": [
+      "digital marketing",
+      "online marketing",
+      "internet marketing",
+      "e-marketing"
+    ],
+    "relatedWords": [
+      "print advertising",
+      "billboard",
+      "trade show",
+      "direct mail",
+      "broadcast media",
+      "brand awareness",
+      "multi-channel marketing"
+    ]
+  }
+]

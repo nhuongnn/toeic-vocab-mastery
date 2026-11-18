@@ -1,0 +1,277 @@
+{
+  "words": [
+    {
+      "id": "mfg-129",
+      "word": "forklift",
+      "partOfSpeech": ["noun"],
+      "category": "manufacturing",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈfɔːrklɪft/",
+        "syllableBreakdown": "fork·lift",
+        "stressPattern": "Primary stress on the first syllable (FORK-lift).",
+        "commonMistakes": "Mispronouncing as /ˈfɔːrklɪfaɪd/ or placing stress on the second syllable.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Compound of Middle English 'fork' (from Old English 'forca') + 'lift' (from Old Norse 'lyfta').",
+        "rootWord": "fork + lift",
+        "rootMeaning": "A pronged lifting device used for raising and carrying heavy loads.",
+        "evolution": "Emerging in the early 20th century with the rise of mechanized material handling and palletization around World War I and II.",
+        "relatedLanguages": ["Old Norse: lyfta", "Old English: forca", "German: Gabelstapler"],
+        "firstRecordedUse": "1918"
+      },
+      "deepMeaning": {
+        "coreConcept": "A powered industrial truck equipped with a motorized hydraulic lifting mechanism and two parallel steel forks at the front, designed to raise, lower, and transport heavy stacked freight or palletized goods across short distances in warehouses, shipping docks, and manufacturing plants.",
+        "spatialContext": "Busy warehouse floors, shipping and receiving loading docks, distribution centers, factory assembly lines, and lumber yards.",
+        "temporalContext": "Operated continuously throughout the workday during loading, unloading, inventory stocking, and staging operations.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "culturalContext": "Essential emblem of industrial logistics, modern warehouse operations, and supply chain efficiency in Western economies.",
+        "howNativesThink": "Instantly associated with workplace safety regulations, high-visibility vests, backup beepers, warehouse traffic lanes, and certified operator licensing.",
+        "mentalImage": "An operator wearing a hard hat and safety vest sitting inside the protective overhead cage of an electric warehouse forklift, slowly lowering a wooden pallet stacked with corrugated cardboard boxes onto high storage racking.",
+        "whenToUse": "When discussing material handling, warehouse logistics, inventory transport, and freight loading.",
+        "whenNotToUse": "Do not use for standard public highway transport vehicles like delivery trucks or semi-trailers.",
+        "subtleUsageBoundaries": "Refers strictly to industrial rider or pedestrian trucks with lifting tines, not standard construction cranes or flatbed hoists."
+      },
+      "examples": {
+        "daily": [
+          "The hardware store employee used a forklift to retrieve extra bags of cement from the top storage tier.",
+          "Cautionary yellow lines on the warehouse floor keep pedestrians safely away from moving forklifts.",
+          "Drivers must complete a formal certification course before operating a forklift on company property."
+        ],
+        "business": [
+          "Logistics personnel utilized an electric forklift to swiftly unload the palletized components from the incoming container truck.",
+          "Routine daily safety inspections of brakes, steering, and hydraulic lines on all forklifts are mandatory before the morning shift begins.",
+          "The warehouse expansion plan includes acquiring two new narrow-aisle forklifts to maximize high-bay storage capacity."
+        ],
+        "conversation": [
+          "Colleague A: 'Are the raw materials for assembly line three ready?'\nColleague B: 'Yes, the warehouse team is bringing them over by forklift right now.'",
+          "Supervisor: 'Make sure you sound the horn when approaching blind intersections with the forklift.'\nOperator: 'Understood, I'm keeping my speed down and checking the convex mirrors.'"
+        ]
+      },
+      "collocations": [
+        "forklift operator",
+        "electric forklift",
+        "forklift truck",
+        "forklift driver",
+        "forklift maintenance",
+        "forklift lease"
+      ],
+      "wordFamily": {
+        "noun": "forklift, forklift truck, forklift operator",
+        "verb": "forklift (informal: to transport via forklift)",
+        "adjective": "forklift-certified",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "warehouse electric forklift loading pallet",
+        "imageDescription": "An industrial electric forklift with bright yellow bodywork lifting a wooden pallet loaded with shrink-wrapped cartons inside a high-bay distribution center.",
+        "mnemonic": "Think of a giant metal 'FORK' that 'LIFTS' heavy pallets across the warehouse."
+      },
+      "video": {
+        "description": "An instructional warehouse logistics video demonstrating pre-operational safety checks, proper pallet engagement, and stable load balancing on a modern counterbalance forklift."
+      },
+      "toeicContext": {
+        "commonParts": [1, 3, 4, 7],
+        "exampleQuestion": "All employees operating a _______ on warehouse premises must display their valid safety certification badge at all times.",
+        "tips": "In TOEIC Part 5 vocabulary and grammar questions, look for compound nouns related to industrial operations. Here, 'forklift' correctly pairs with 'operator' or functions directly as the equipment being operated.",
+        "exampleOptions": {
+          "A": "forklift",
+          "B": "forking",
+          "C": "lifted",
+          "D": "lifter"
+        }
+      },
+      "synonyms": ["lift truck", "industrial truck", "pallet truck", "reach truck", "stacker"],
+      "antonyms": [],
+      "relatedWords": ["pallet", "warehouse", "loading dock", "inventory", "hydraulic", "shipping"]
+    },
+    {
+      "id": "mfg-130",
+      "word": "foundry",
+      "partOfSpeech": ["noun"],
+      "category": "manufacturing",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈfaʊndri/",
+        "syllableBreakdown": "found·ry",
+        "stressPattern": "Primary stress on the first syllable (FOUND-ree).",
+        "commonMistakes": "Pronouncing with an intrusive 'n' sound in the second syllable or stressing the second syllable.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Derived from Middle French 'fonderie', from Old French 'fondre' (to melt, cast), ultimately from Latin 'fundere' (to pour, melt).",
+        "rootWord": "fundere",
+        "rootMeaning": "To pour or melt metal.",
+        "evolution": "Evolved from medieval metalworking guilds into the mechanized casting plants of the Industrial Revolution.",
+        "relatedLanguages": ["Latin: fundere", "French: fonderie", "Italian: fonderia", "Spanish: fundición"],
+        "firstRecordedUse": "14th century"
+      },
+      "deepMeaning": {
+        "coreConcept": "A specialized manufacturing facility where metal is melted down in high-temperature furnaces, poured into specially prepared molds (sand, ceramic, or metal), and allowed to solidify into intricate engine blocks, structural components, pipes, or machine parts.",
+        "spatialContext": "Heavy industrial zones, sprawling manufacturing complexes featuring towering smoke stacks, casting floors, pattern shops, and cooling yards.",
+        "temporalContext": "Operating around the clock in continuous high-heat production cycles or scheduled casting batches.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "culturalContext": "Symbolizes heavy industry, metallurgy, foundational manufacturing supply chains, and blue-collar labor traditions.",
+        "howNativesThink": "Associated with intense radiant heat, molten orange-red metal, glowing slag, heavy protective gear (face shields, asbestos spats), and rumbling cupola furnaces.",
+        "mentalImage": "Inside a dim, cavernous industrial foundry building where workers in silver heat-reflective suits guide a glowing ladle of molten iron being poured into resin-sand molds.",
+        "whenToUse": "When discussing metal casting, heavy manufacturing supply chains, metallurgical production, and industrial plants.",
+        "whenNotToUse": "Do not use for general stamping plants, assembly plants, or electronic manufacturing facilities that do not melt metal.",
+        "subtleUsageBoundaries": "Specifically denotes a casting facility where metal is liquefied and poured, distinct from rolling mills or forging plants."
+      },
+      "examples": {
+        "daily": [
+          "The local historical museum featured exhibits celebrating the town's century-old iron foundry.",
+          "Heavy trucks transported raw scrap metal daily to supply the regional casting foundry.",
+          "Residents living near the industrial park occasionally noticed rumbling vibrations from the foundry's heavy presses."
+        ],
+        "business": [
+          "The automotive manufacturer contracted an ISO-certified aluminum foundry to supply custom transmission housings.",
+          "Stricter environmental regulations required the foundry to upgrade its exhaust filtration and emissions scrubbers.",
+          "Supply chain disruptions in pig iron delayed scheduled production runs at the primary casting foundry."
+        ],
+        "conversation": [
+          "Manager: 'Why is the prototype engine block delivery delayed by two weeks?'\nEngineer: 'The regional foundry experienced a furnace lining failure and had to pause pouring.'",
+          "Purchasing Agent: 'We need to inspect the quality reports from the new brass foundry before issuing a bulk PO.'\nDirector: 'Agreed, schedule an on-site metallurgical audit for next Tuesday.'"
+        ]
+      },
+      "collocations": [
+        "metal foundry",
+        "iron foundry",
+        "foundry worker",
+        "aluminum foundry",
+        "foundry operations",
+        "foundry casting"
+      ],
+      "wordFamily": {
+        "noun": "foundry, founder, foundation",
+        "verb": "found",
+        "adjective": "foundry-grade",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "industrial metal foundry pouring molten iron",
+        "imageDescription": "A glowing stream of molten orange metal being poured from a heavy industrial ladle into a sand mold inside a dark, cavernous foundry.",
+        "mnemonic": "Think of 'FOUND' metals that are melted down and reshaped in a hot industrial factory."
+      },
+      "video": {
+        "description": "An industrial documentary clip illustrating the complete metal casting process inside a modern automated foundry, from electric induction melting to sand mold shakeout and finishing."
+      },
+      "toeicContext": {
+        "commonParts": [3, 4, 7],
+        "exampleQuestion": "Due to scheduled maintenance on the main induction furnace, the regional _______ will suspend metal pouring operations this weekend.",
+        "tips": "In business listening and reading passages (TOEIC Parts 3, 4, 7), industrial facilities like 'foundry', 'plant', and 'facility' often appear in contexts involving equipment maintenance, production schedules, or supply contracts.",
+        "exampleOptions": {
+          "A": "foundry",
+          "B": "foundation",
+          "C": "founder",
+          "D": "founding"
+        }
+      },
+      "synonyms": ["casting plant", "metalworks", "smelter", "casting shop"],
+      "antonyms": [],
+      "relatedWords": ["casting", "furnace", "molten", "metallurgy", "mold", "slag"]
+    },
+    {
+      "id": "mfg-131",
+      "word": "furnace",
+      "partOfSpeech": ["noun"],
+      "category": "manufacturing",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈfɜːrnɪs/",
+        "syllableBreakdown": "fur·nace",
+        "stressPattern": "Primary stress on the first syllable (FUR-nis).",
+        "commonMistakes": "Mispronouncing the final syllable as /-seɪs/ instead of /-ɪs/.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "From Old French 'fornaise', from Latin 'fornax' (oven, kiln), related to 'fornus' (oven).",
+        "rootWord": "fornax",
+        "rootMeaning": "Oven or vaulted chamber for burning fuel.",
+        "evolution": "Evolved from ancient ceramic kilns and smithing hearths into high-efficiency industrial heating units and commercial HVAC systems.",
+        "relatedLanguages": ["Latin: fornax", "French: fournaise", "Italian: fornace", "Spanish: hornaza"],
+        "firstRecordedUse": "13th century"
+      },
+      "deepMeaning": {
+        "coreConcept": "A specialized enclosed chamber or thermal apparatus in which fuel is burned or electrical energy is applied to generate extreme heat for industrial processing (such as smelting metals, heat-treating steel, or firing ceramics) or for central building climate control.",
+        "spatialContext": "Industrial manufacturing plants, metallurgical foundries, mechanical rooms, basements of commercial buildings, and processing facilities.",
+        "temporalContext": "Operated continuously in industrial production settings or seasonally/thermostatically regulated in commercial HVAC applications.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "culturalContext": "Represents intense heat, foundational industrial transformation, and vital winter climate control infrastructure.",
+        "howNativesThink": "Associated with roaring gas burners, refractory brick linings, digital thermostats, annual HVAC tune-ups, and immense energy consumption.",
+        "mentalImage": "A massive industrial electric induction furnace glowing cherry-red inside a steel mill, surrounded by heavy-duty electrical cables and digital temperature readout panels.",
+        "whenToUse": "When discussing industrial heat treatment, metal melting, manufacturing thermal processes, or building heating systems.",
+        "whenNotToUse": "Do not use for small household cooking ovens, microwave ovens, or small laboratory hot plates.",
+        "subtleUsageBoundaries": "Refers to heavy-duty heating equipment or whole-building heating units, distinct from localized space heaters or kitchen ovens."
+      },
+      "examples": {
+        "daily": [
+          "The homeowner scheduled an annual HVAC inspection to ensure the basement furnace was operating safely before winter.",
+          "During the unexpected cold snap, the office building's central furnace struggled to maintain a steady temperature.",
+          "A strange rattling noise from the utility closet indicated the gas furnace needed immediate professional servicing."
+        ],
+        "business": [
+          "The metallurgy lab relies on a high-precision electric resistance furnace to anneal alloy steel test specimens.",
+          "Upgrading the plant's aging blast furnace to a modern energy-efficient model reduced natural gas consumption by eighteen percent.",
+          "Safety protocols mandate that the industrial heat-treatment furnace cool completely before maintenance staff perform interior refractory repairs."
+        ],
+        "conversation": [
+          "Plant Manager: 'Why is heat-treating batch four running behind schedule?'\nTechnician: 'The main industrial furnace tripped its thermal overload breaker, but we've reset it and temperatures are climbing back up.'",
+          "Facilities Coordinator: 'We need a certified HVAC contractor to inspect the commercial heating furnace on the roof.'\nManager: 'Call them today before the weather drops below freezing.'"
+        ]
+      },
+      "collocations": [
+        "industrial furnace",
+        "gas furnace",
+        "blast furnace",
+        "electric furnace",
+        "furnace maintenance",
+        "heating furnace"
+      ],
+      "wordFamily": {
+        "noun": "furnace",
+        "verb": "",
+        "adjective": "furnace-like",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "industrial heat treatment furnace interior glowing",
+        "imageDescription": "The glowing interior heating elements of a high-temperature industrial furnace used for heat-treating metal components in a manufacturing plant.",
+        "mnemonic": "Think of a 'FURIOUS' blazing fire inside a heavy industrial box ('FURNACE')."
+      },
+      "video": {
+        "description": "An engineering tutorial video explaining the operation, maintenance, and safety controls of industrial gas and electric furnaces used in manufacturing heat treatment."
+      },
+      "toeicContext": {
+        "commonParts": [3, 4, 6, 7],
+        "exampleQuestion": "Building management has announced that routine maintenance on the central heating _______ will take place this coming Saturday.",
+        "tips": "In TOEIC business texts (such as memos regarding facility management), nouns like 'furnace', 'boiler', and 'elevator' frequently appear in contexts requiring scheduled maintenance or repair notices.",
+        "exampleOptions": {
+          "A": "furnace",
+          "B": "furnish",
+          "C": "furniture",
+          "D": "furnishing"
+        }
+      },
+      "synonyms": ["heater", "boiler", "kiln", "oven", "hearth"],
+      "antonyms": [],
+      "relatedWords": ["heating", "boiler", "thermostat", "smelter", "foundry", "HVAC"]
+    }
+  ]
+}

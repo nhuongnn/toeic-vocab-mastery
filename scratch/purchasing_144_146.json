@@ -1,0 +1,339 @@
+{
+  "words": [
+    {
+      "id": "purchasing-144",
+      "word": "fob shipping point",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "purchasing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˌɛf.oʊˈbiː ˈʃɪp.ɪŋ pɔɪnt/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/fob--_us_1.mp3",
+        "syllableBreakdown": "F-O-B ship-ping point",
+        "stressPattern": "Primary stress on the final syllable of the acronym and 'point': FOB SHIP-ping POINT (/ˌɛf.oʊˈbiː ˈʃɪp.ɪŋ pɔɪnt/, ˌ●○' ●○ ●)",
+        "commonMistakes": "Learners frequently confuse FOB Shipping Point with FOB Destination, mistakenly assuming that the seller remains responsible for goods throughout transit. Non-native speakers also sometimes misinterpret 'Free on Board' as meaning free of charge or gratis, failing to realize that 'free' historically meant 'freed' from the seller's liability and cost obligation once loaded. Additionally, students often struggle with the exact accounting timing—failing to recognize that title and risk transfer immediately upon loading at the origin dock, which impacts inventory records and insurance claims."
+      },
+      "etymology": {
+        "origin": "Composed of the acronym FOB (Free on Board), an ancient maritime and commercial trade term derived from English shipping customs, combined with the administrative nouns 'shipping' and 'point'.",
+        "rootWord": "Middle English 'free' (exempt, clear) + 'on board' (loaded onto a vessel or transport vehicle) + Latin 'punctum' (point)",
+        "rootMeaning": "'Free from risk and cost to the seller once loaded at the designated point of origin'",
+        "evolution": "The term 'Free on Board' originated in maritime law and international commerce centuries ago, denoting the exact moment when liability and ownership of cargo transferred from the merchant shipper to the buyer or ship captain as goods crossed the ship's rail. With the rise of modern multimodal transport (rail, truck, air cargo), the concept evolved into standardized commercial shorthand governed by the Uniform Commercial Code (UCC) in the United States and Incoterms internationally. 'FOB shipping point' specifically designated that the buyer assumes freight costs and transit risk from the vendor's loading dock outward.",
+        "relatedLanguages": [
+        "French: franco à bord (FAB) au départ",
+        "German: FOB ab Versandort (frei an Bord)",
+        "Spanish: libre a bordo (LAB) en el punto de expedición",
+        "Italian: franco a bordo (FOB) al punto di spedizione",
+        "Portuguese: franco a bordo (FOB) na origem"
+      ],
+        "firstRecordedUse": "Late 18th century in maritime jurisprudence; mid-20th century in standard commercial accounting and UCC legislation (Uniform Commercial Code § 2-319)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A standardized commercial shipping and accounting term stipulating that the buyer takes legal title, ownership, and risk of loss or damage to goods the exact moment they are loaded onto the transport vehicle at the seller's shipping dock (origin), making the buyer responsible for freight transportation charges and transit insurance.",
+        "spatialContext": "Corporate purchasing departments, vendor loading docks, shipping and receiving warehouses, freight auditing desks, and financial accounting offices managing inventory in transit.",
+        "temporalContext": "Applicable at the precise instant of shipment pickup and loading (origin), governing financial liability and loss recovery throughout the entire transit window until final delivery.",
+        "emotionalTone": "Precise, legally binding, rigorous, and risk-allocating; defines commercial accountability between vendor and buyer.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To procurement managers, supply chain directors, and corporate accountants, 'FOB shipping point' is the definitive dividing line for financial ownership and risk. When negotiating procurement contracts, native professionals pay close attention to this term because it dictates who pays for freight insurance and absorbs losses if cargo is damaged or stolen en route. Buyers negotiating FOB shipping point typically expect lower base pricing from the vendor because the vendor bears no delivery liability past their own loading dock, whereas vendors selling under this term immediately recognize revenue and remove items from inventory upon carrier pickup.",
+        "mentalImage": "A bustling industrial loading dock where a forklift operator loads palletized electronics into an interstate semi-trailer truck, while a logistics coordinator signs the bill of lading, officially transferring legal ownership and transit risk to the purchasing corporation.",
+        "whenToUse": "Use 'FOB shipping point' in purchasing contracts, purchase orders, logistics agreements, and accounting statements when defining that the buyer assumes freight costs, freight insurance responsibilities, and transit risk immediately upon departure from the vendor's facility.",
+        "whenNotToUse": "Do not use 'FOB shipping point' when the vendor is responsible for delivering the goods to the buyer's warehouse and absorbing transit risk—in that case, use 'FOB destination'. Do not use it colloquially in casual conversation.",
+        "culturalContext": "In North American corporate commerce governed by the Uniform Commercial Code (UCC), FOB terms establish clear legal precedents for breach of contract, freight damage claims against common carriers, and inventory taxation. It reflects the Anglo-American legal tradition of decentralized, contract-specific risk allocation."
+      },
+      "examples": {
+        "daily": [
+          "Because our office furniture order was shipped FOB shipping point, we had to file the insurance claim ourselves when the carrier damaged two desks in transit.",
+          "When buying heavy machinery online, always check if the price is quoted FOB shipping point or if delivery is included.",
+          "Since the terms were FOB shipping point, the hardware store charged our corporate account for the freight carrier fee separately."
+        ],
+        "business": [
+          "The procurement department negotiated a ten percent discount on raw materials by agreeing to purchase all component parts on an FOB shipping point basis.",
+          "Under FOB shipping point accounting rules, title to the inventory transfers to our corporation the moment the carrier signs the bill of lading at the supplier's warehouse.",
+          "Logistics auditors reviewed the freight invoices to verify that shipping charges were correctly billed to our account for all inbound orders shipped FOB shipping point."
+        ],
+        "conversation": [
+          "\"Why is our freight expense budget higher this quarter?\" — \"We placed several large raw material orders negotiated under FOB shipping point, meaning our company pays the freight carrier directly from the supplier's plant.\"",
+          "\"Did the supplier accept liability for the lost shipment?\" — \"No, because the purchase order specified FOB shipping point; title transferred at their dock, so our corporate insurance covers the loss.\"",
+          "\"Should we push for FOB shipping point or FOB destination in the new vendor contract?\" — \"Since we have preferential volume rates with our logistics carrier, FOB shipping point will actually lower our total landed cost.\""
+        ],
+        "collocations": [
+          "FOB shipping point",
+          "purchased FOB shipping point",
+          "shipped FOB shipping point",
+          "FOB shipping point terms",
+          "title transfers at FOB shipping point",
+          "FOB shipping point versus destination"
+        ]
+      },
+      "wordFamily": {
+        "noun": "FOB shipping point",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "shipping dock industrial warehouse bill of lading logistics cargo loading",
+        "imageDescription": "An industrial distribution warehouse loading dock where cargo pallets are being loaded onto a freight truck, with a logistics manager reviewing a shipping manifest and signing a bill of lading specifying FOB shipping terms.",
+        "mnemonic": "FOB SHIPPING POINT = From Origin's Bay, Buyer Bears Burden! (The buyer takes the risk right from the shipping point origin)."
+      },
+      "video": {
+        "description": "An educational supply chain management video explaining the legal and accounting differences between FOB shipping point and FOB destination, illustrating how inventory ownership and freight costs transfer between trading partners."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Because the supply contract specifies _______, our manufacturing plant assumes all financial responsibility for freight charges and transit insurance as soon as the materials leave the vendor's warehouse.\n(A) FOB shipping point\n(B) freight forwarder\n(C) customs clearance\n(D) billing cycle",
+        "tips": "In TOEIC Part 5 and Part 7, questions regarding shipping and procurement terms test your understanding of risk and cost allocation. Choice (A) 'FOB shipping point' is the correct term indicating the buyer takes ownership and responsibility for shipping costs at the vendor's dock. Choice (B) 'freight forwarder' is a logistics intermediary, not a shipping term. Choice (C) 'customs clearance' relates to international borders. Choice (D) 'billing cycle' refers to invoice timing."
+      },
+      "synonyms": [
+        "origin freight terms",
+        "free on board origin",
+        "shipping point delivery",
+        "ex works shipping basis"
+      ],
+      "antonyms": [
+        "FOB destination"
+      ],
+      "relatedWords": [
+        "bill of lading",
+        "freight collect",
+        "freight prepaid",
+        "Incoterms",
+        "transit risk",
+        "shipping manifest",
+        "consignee"
+      ]
+    },
+    {
+      "id": "purchasing-145",
+      "word": "freight collect",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "purchasing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˈfreɪt kəˈlɛkt/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/freight--_us_1.mp3",
+        "syllableBreakdown": "freight col-lect",
+        "stressPattern": "Primary stress on 'freight' and the second syllable of collect: FREIGHT col-LECT (/ˈfreɪt kəˈlɛkt/, '● ˌ●○)",
+        "commonMistakes": "Learners often confuse 'freight collect' with 'freight prepaid', incorrectly assuming the shipper pays the transportation carrier upon dispatch. Non-native speakers also sometimes think 'collect' implies gathering items into a warehouse, rather than the carrier collecting shipping fees from the recipient upon delivery. Additionally, students frequently overlook the credit risk implications for carriers, who must ensure the receiving party is solvent and willing to pay before releasing the cargo."
+      },
+      "etymology": {
+        "origin": "Compound of Middle English 'freight' (charge for cargo transport, from Middle Dutch / Middle Low German 'vrecht') and Latinate adjective/verb 'collect' (from 'colligere', to gather together).",
+        "rootWord": "Middle English freight + Latin colligere (to collect, gather)",
+        "rootMeaning": "'Transportation charges to be gathered or collected from the recipient upon delivery'",
+        "evolution": "In early commercial shipping and rail transport, freight charges were either paid upfront by the sender ('prepaid') or payment was 'collected' by the carrier's agent upon final delivery to the consignee. As logistics networks industrialized, 'freight collect' became a formal standard shipping designation indicating that transportation fees are billed to and payable by the receiver.",
+        "relatedLanguages": [
+        "French: port dû / fret payable à destination",
+        "German: Frachtnachnahme / unfreie Fracht",
+        "Spanish: flete por cobrar / flete al cobro",
+        "Italian: porto assegnato / nolo a carico del destinatario",
+        "Portuguese: frete a pagar / frete a cobrar"
+      ],
+        "firstRecordedUse": "Early 19th century in commercial shipping, railway bills, and carrier tariff rulebooks"
+      },
+      "deepMeaning": {
+        "coreConcept": "A shipping arrangement in which the cost of transporting cargo is not paid by the shipper at the origin, but is instead billed to and payable by the receiver (consignee) upon delivery of the goods at the destination.",
+        "spatialContext": "Receiving docks, carrier delivery trucks, freight billing departments, accounts payable offices, and logistics dispatch terminals.",
+        "temporalContext": "Executed at the time of delivery when the consignee inspects the shipment and settles the freight invoice or authorizes the carrier to release the cargo.",
+        "emotionalTone": "Transactionally dependent, financial, conditional, and administrative; dictates payment responsibility for transport.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To logistics managers, accounts payable clerks, and shipping dispatchers, 'freight collect' means the receiver holds the financial burden of paying the carrier. Native professionals use this term when negotiating purchase orders where the buyer has negotiated volume discounts with a preferred shipping carrier and prefers to pay the freight bill directly rather than having the supplier prepay and markup the shipping charges. Carriers, however, treat freight collect shipments with caution because if the receiver refuses the cargo or goes bankrupt, collecting shipping fees becomes difficult.",
+        "mentalImage": "A delivery driver handing a handheld signature terminal and freight invoice to a warehouse receiving clerk, who verifies the incoming pallet before approving the freight collect payment charge.",
+        "whenToUse": "Use 'freight collect' when specifying or describing a shipping arrangement where the consignee (receiver) pays the transportation charges upon delivery to the carrier.",
+        "whenNotToUse": "Do not use 'freight collect' when the sender pays the shipping costs upfront (that is 'freight prepaid'). Do not use it when referring to customer retail collections or debt collection agencies.",
+        "culturalContext": "In global supply chain management, freight collect terms are frequently paired with FOB shipping point contracts, empowering buyers to leverage their own corporate logistics contracts and negotiate lower shipping rates with major carriers."
+      },
+      "examples": {
+        "daily": [
+          "When ordering custom parts from the supplier, we requested that the shipment be sent freight collect so we could use our corporate shipping account discount.",
+          "The delivery driver refused to unload the crated equipment until someone in the receiving office signed the freight collect paperwork.",
+          "Please ensure all return merchandise authorizations are shipped freight collect back to our central distribution center."
+        ],
+        "business": [
+          "The purchasing department updated its standard vendor guidelines to require all inbound component deliveries to be sent freight collect.",
+          "Accounts payable verified the third-party carrier invoice against the freight collect bill of lading before releasing payment for the delivery.",
+          "To optimize transportation expenses, the logistics director consolidated regional inbound orders under a freight collect agreement with our primary carrier."
+        ],
+        "conversation": [
+          "\"How should we handle the shipping charges for this emergency replacement part?\" — \"Instruct the vendor to dispatch it freight collect; our logistics team has a discounted corporate rate with that carrier anyway.\"",
+          "\"Did the warehouse accept the shipment from the new supplier?\" — \"Yes, but there was a brief delay because the paperwork marked it freight collect instead of prepaid, so receiving had to verify our account number.\"",
+          "\"Why do some suppliers refuse to ship freight collect?\" — \"Smaller vendors worry that if the customer disputes the delivery, the carrier will chase the supplier for unpaid freight charges.\""
+        ],
+        "collocations": [
+          "ship freight collect",
+          "freight collect terms",
+          "freight collect shipment",
+          "send freight collect",
+          "freight collect invoice",
+          "paid freight collect"
+        ]
+      },
+      "wordFamily": {
+        "noun": "freight collect",
+        "verb": "",
+        "adjective": "",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "freight delivery receipt signing logistics driver receiver",
+        "imageDescription": "A warehouse receiving clerk signing a digital delivery manifest for a freight collect shipment while a delivery truck is parked at the loading dock bay.",
+        "mnemonic": "FREIGHT COLLECT = Freight charges Collected from Customer upon delivery (The receiver pays the driver)."
+      },
+      "video": {
+        "description": "An instructional logistics video explaining bill of lading payment options, contrasting freight collect and freight prepaid mechanisms in commercial shipping operations."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "To take advantage of our corporate discount agreement with Global Transport, we instructed the manufacturer to send the equipment _______.\n(A) freight collect\n(B) freight forwarder\n(C) customs broker\n(D) shipping manifest",
+        "tips": "In TOEIC Part 5, questions testing shipping terms require distinguishing between payment methods and logistics entities. Choice (A) 'freight collect' is the correct payment term indicating shipping charges are paid by the receiver upon delivery. Choice (B) 'freight forwarder' is a company, not a shipping payment term. Choice (C) 'customs broker' is an agent for import/export documentation. Choice (D) 'shipping manifest' is a cargo document."
+      },
+      "synonyms": [
+        "collect freight",
+        "payable at destination",
+        "consignee-paid freight",
+        "transportation collect"
+      ],
+      "antonyms": [
+        "freight prepaid"
+      ],
+      "relatedWords": [
+        "freight prepaid",
+        "bill of lading",
+        "consignee",
+        "shipping charges",
+        "carrier tariff",
+        "delivery receipt",
+        "FOB shipping point"
+      ]
+    },
+    {
+      "id": "purchasing-146",
+      "word": "freight forwarder",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "purchasing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˈfreɪt ˌfɔːr.wər.dər/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/forwarder--_us_1.mp3",
+        "syllableBreakdown": "freight for-ward-er",
+        "stressPattern": "Primary stress on 'freight' and secondary/primary on the first syllable of forwarder: FREIGHT for-ward-er (/ˈfreɪt ˌfɔːr.wər.dər/, '● ˌ●○○)",
+        "commonMistakes": "Learners often mistake a freight forwarder for an actual shipping carrier (like a trucking company, airline, or ocean liner), failing to understand that forwarders are intermediaries who arrange and manage transport rather than operating the physical vessels or trucks themselves. Non-native speakers also sometimes confuse 'forwarder' with 'foreman' (a factory supervisor) due to phonetic similarity. Additionally, students often overlook the extensive customs brokerage and documentation services that freight forwarders provide."
+      },
+      "etymology": {
+        "origin": "Compound of Middle English 'freight' (cargo charge) and 'forwarder' (agent who forwards or dispatches goods, derived from Old French 'foros' / Germanic root meaning 'forth, forward').",
+        "rootWord": "Middle English freight + forward (adv./v., from Old English foreweard)",
+        "rootMeaning": "'An agent who dispatches or sends cargo onward along a trade route'",
+        "evolution": "In 18th and 19th-century European and American trade hubs, as industrial manufacturing expanded and international shipping networks grew complex, merchants needed specialized agents to coordinate multi-stage transport (canal boats, ocean vessels, and railways). These specialists became known as 'freight forwarders', acting as vital intermediaries who consolidated small shipments, handled customs paperwork, and booked cargo space with transport operators.",
+        "relatedLanguages": [
+        "French: transitaire / commissionnaire de transport",
+        "German: Spediteur / Spedition",
+        "Spanish: transitario / agente de carga",
+        "Italian: spedizioniere",
+        "Portuguese: despachante aduaneiro / transitário"
+      ],
+        "firstRecordedUse": "Late 18th century during the Industrial Revolution and expansion of international mercantile trade"
+      },
+      "deepMeaning": {
+        "coreConcept": "A specialized logistics enterprise or agent that organizes and coordinates international or domestic shipments on behalf of corporations, handling booking with carriers, warehousing, customs documentation, cargo consolidation, and tracking without necessarily owning the physical transport fleet.",
+        "spatialContext": "International trade offices, port customs facilities, air cargo terminals, logistics operations centers, and corporate supply chain management suites.",
+        "temporalContext": "Engaged continuously throughout the procurement lifecycle to plan, execute, and monitor complex multi-modal shipments across global supply chains.",
+        "emotionalTone": "Operational, coordinating, highly professional, problem-solving, and logistical.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To supply chain directors, import-export managers, and procurement specialists, the 'freight forwarder' is an indispensable partner who eliminates the headache of global logistics. Native professionals rely on forwarders to navigate intricate customs regulations, secure container space during peak shipping seasons, and combine smaller shipments (LCL - less than container load) to reduce costs. When supply chain disruptions occur, managers immediately contact their freight forwarder to reroute shipments or secure alternative transport modes.",
+        "mentalImage": "A logistics coordinator in a modern corporate office reviewing global shipping routes on multi-screen monitors while communicating via headset with an international freight forwarder to expedite a delayed container shipment.",
+        "whenToUse": "Use 'freight forwarder' when discussing companies or professionals that organize the storage and shipping of merchandise on behalf of importers and exporters.",
+        "whenNotToUse": "Do not use 'freight forwarder' when referring to the actual transportation operator (such as the airline, shipping line, or trucking company itself) or to a factory supervisor (foreman).",
+        "culturalContext": "In globalized manufacturing and e-commerce, freight forwarders are the backbone of international trade. They bridge cultural, legal, and linguistic divides between overseas factories and domestic markets, ensuring compliance with international trade laws (Incoterms, customs tariffs, and security regulations)."
+      },
+      "examples": {
+        "daily": [
+          "Our small business hired a freight forwarder to handle the complex paperwork and customs clearance for importing handmade rugs from Turkey.",
+          "The freight forwarder called to let us know our container had arrived safely at the port terminal.",
+          "If you plan to ship bulky personal belongings overseas, working with an experienced freight forwarder saves a lot of trouble."
+        ],
+        "business": [
+          "The multinational corporation partnered with a global freight forwarder to streamline its inbound component supply chain across twelve countries.",
+          "Our freight forwarder managed the entire multimodal transport process, seamlessly coordinating ocean freight, rail transit, and final truck delivery.",
+          "During the port labor strike, our freight forwarder successfully rerouted our cargo through an alternative regional hub to prevent production downtime."
+        ],
+        "conversation": [
+          "\"How are we going to get our manufacturing equipment from Germany before the factory opening date?\" — \"I've already contacted our freight forwarder; they are arranging an expedited air charter for the oversized machinery.\"",
+          "\"Are we using multiple trucking companies for our European distribution?\" — \"No, we consolidated everything under a single freight forwarder who manages all warehousing and cross-border customs documentation.\"",
+          "\"Why did our shipping costs spike this month?\" — \"Global container shortages forced our freight forwarder to secure space at premium spot rates.\""
+        ],
+        "collocations": [
+          "hire a freight forwarder",
+          "global freight forwarder",
+          "freight forwarder services",
+          "work with a freight forwarder",
+          "freight forwarder agent",
+          "contact the freight forwarder"
+        ]
+      },
+      "wordFamily": {
+        "noun": "freight forwarder",
+        "verb": "forward",
+        "adjective": "forwarding",
+        "adverb": "forward"
+      },
+      "visual": {
+        "imageKeyword": "freight forwarder logistics office global shipping map cargo containers",
+        "imageDescription": "A professional logistics team in an operations center reviewing global shipping schedules, digital tracking dashboards, and customs documents alongside cargo ship and container port imagery.",
+        "mnemonic": "FREIGHT FORWARDER = Forwarding Freight Further! (An expert agent that moves your cargo onward across the globe)."
+      },
+      "video": {
+        "description": "An industry documentary showcasing the day-to-day operations of an international freight forwarding agency, explaining how they coordinate air, ocean, and land transport for global manufacturing companies."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          7
+        ],
+        "exampleQuestion": "Because our company lacks an in-house logistics department, we hired an experienced _______ to manage international customs clearance and coordinate ocean transport for our imported electronics.\n(A) freight forwarder\n(B) retail consumer\n(C) financial auditor\n(D) human resources manager",
+        "tips": "In TOEIC Part 7 reading passages and Part 3 listening dialogues, terms related to supply chain operations frequently appear. Choice (A) 'freight forwarder' is the correct term for an agency that coordinates international shipments and logistics. Choice (B) 'retail consumer' is an end buyer. Choice (C) 'financial auditor' examines accounts. Choice (D) 'human resources manager' handles personnel."
+      },
+      "synonyms": [
+        "logistics agent",
+        "shipping broker",
+        "cargo consolidator",
+        "transport intermediary",
+        "shipping agent"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "customs broker",
+        "bill of lading",
+        "multimodal transport",
+        "cargo consolidation",
+        "supply chain management",
+        "shipping manifest",
+        "container ship"
+      ]
+    }
+  ]
+}

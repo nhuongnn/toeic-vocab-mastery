@@ -1,0 +1,293 @@
+{
+  "words": [
+    {
+      "id": "travel-251",
+      "word": "tram",
+      "partOfSpeech": ["noun"],
+      "category": "travel",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/træm/",
+        "syllableBreakdown": "tram",
+        "stressPattern": "Primary stress on the single syllable (monosyllabic)",
+        "commonMistakes": "Pronouncing with a long /ɑː/ sound instead of the short lax front /æ/ vowel.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Scots / Northern English dialect",
+        "rootWord": "tram",
+        "rootMeaning": "a beam, wooden shaft, or truck used in coal mines",
+        "evolution": "Derived from Middle English 'tram' (beam or cart), originally referring to coal mine trucks running on wooden rails. Later adopted in the 19th century for street railways (tramcars).",
+        "relatedLanguages": ["Scots", "Old Norse tramr (beam, sledge)", "Middle Dutch tram"],
+        "firstRecordedUsage": "16th century (mining context); 1860s (street railway context)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A passenger vehicle running on rails laid along public streets, powered by overhead electric cables, batteries, or historically by cable or horse.",
+        "spatialContext": "Urban metropolitan streetscapes, downtown commercial zones, dedicated light-rail transit corridors, and historical city centres.",
+        "temporalContext": "High-frequency commuter transit operating on fixed schedules throughout urban daylight and evening hours.",
+        "connotation": "neutral",
+        "formalityLevel": "neutral",
+        "emotionalTone": "efficient, urban, everyday"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Associated with convenient inner-city mobility, eco-friendly public transport, street-level commuting, and scenic urban exploration.",
+        "mentalImage": "A sleek modern low-floor electric tram gliding smoothly along a paved downtown avenue past office buildings and pedestrians.",
+        "whenToUse": "When discussing urban public transit, street-level rail networks, or getting around city centres.",
+        "whenNotToUse": "Do not use for heavy underground metropolitan rail systems (subway/metro) or intercity long-distance passenger trains.",
+        "culturalContext": "Widely embraced in European, Australian, and major North American cities as a sustainable, accessible backbone of urban transit policy."
+      },
+      "examples": {
+        "daily": [
+          "She hopped on the morning tram to avoid downtown traffic congestion.",
+          "The historic wooden tram offers tourists a scenic tour of the old harbour district.",
+          "Tickets must be validated immediately upon boarding the tram."
+        ],
+        "business": [
+          "Employees whose offices are located near the central tram line enjoy a seamless daily commute.",
+          "The municipal transit authority announced extended evening tram services for the annual trade convention.",
+          "Corporate sustainability reports frequently highlight employee utilization of public trams as part of green commuting metrics."
+        ],
+        "conversation": [
+          "Colleague A: Are you taking the subway to the client meeting downtown?\nColleague B: No, the tram stop is right outside our office lobby, so I'll take that instead—it drops us off right across from their tower.",
+          "Visitor: Excuse me, does this tram go directly to the convention centre?\nLocal: Yes, it's only four stops away; you don't even need to transfer."
+        ],
+        "collocations": [
+          "take the tram",
+          "tram line",
+          "tram stop",
+          "tram network",
+          "board a tram"
+        ]
+      },
+      "wordFamily": {
+        "noun": "tram, tramway, tramcar",
+        "verb": "tram",
+        "adjective": "tramline",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "modern urban street tram light rail",
+        "imageDescription": "A modern electric tram vehicle moving along dedicated street-level tracks in a bustling European city center, with commuters waiting at a glass shelter stop.",
+        "mnemonic": "Think of a 'TRain At Minute' intervals running right through the town streets."
+      },
+      "video": {
+        "description": "An instructional overview of modern urban light-rail transit networks, illustrating passenger boarding procedures, ticketing validators, and right-of-way signalling for street trams."
+      },
+      "toeicContext": {
+        "commonParts": [1, 3, 7],
+        "exampleQuestion": "Delegates attending the symposium are advised to use the downtown ---- line rather than driving, due to limited parking near the convention venue.\n(A) tram\n(B) baggage\n(C) luggage\n(D) cargo",
+        "tips": "In TOEIC listening and reading contexts, transportation vocabulary like 'tram line' or 'bus route' frequently appears in notices, announcements, and travel logistics questions. Look for collocating nouns such as 'line', 'stop', or 'station'."
+      },
+      "synonyms": [
+        "streetcar",
+        "light rail",
+        "trolley",
+        "tramcar"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "light rail",
+        "subway",
+        "commuter",
+        "transit",
+        "platform",
+        "schedule",
+        "fare"
+      ]
+    },
+    {
+      "id": "travel-252",
+      "word": "tramway",
+      "partOfSpeech": ["noun"],
+      "category": "travel",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈtræm.weɪ/",
+        "syllableBreakdown": "tram-way",
+        "stressPattern": "Primary stress on the first syllable (TRAM-way)",
+        "commonMistakes": "Placing secondary stress on the second syllable or mispronouncing the diphthong /eɪ/ as /aɪ/.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Compound of 'tram' (mine track/car) + 'way' (road or track)",
+        "rootWord": "tram + way",
+        "rootMeaning": "roadway fitted with tracks for trams or trucks",
+        "evolution": "Originally coined in the late 18th and early 19th centuries in British mining engineering to describe wooden or iron tracks laid for coal carts, later generalized to public street railway tracks and aerial passenger ropeways.",
+        "relatedLanguages": ["English compounding tradition"],
+        "firstRecordedUsage": "18th century (industrial rail); 19th century (public transport)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A track or system of tracks laid for trams, or an aerial cable system for transporting passengers or freight up steep mountain slopes.",
+        "spatialContext": "Urban street corridors, municipal transit right-of-ways, and alpine tourist resorts featuring aerial cable cars.",
+        "temporalContext": "Permanent civil infrastructure operating continuously over decades to support public transit or tourism.",
+        "connotation": "neutral",
+        "formalityLevel": "formal",
+        "emotionalTone": "infrastructural, systemic, engineering-oriented"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Evokes formal infrastructure planning, municipal transit networks, civil engineering projects, and mountain resort transport systems.",
+        "mentalImage": "An overhead view of steel rails embedded in a cobblestone city thoroughfare alongside catenary power wires, or an aerial tramway cabin ascending a steep mountain ridge.",
+        "whenToUse": "When referring to the physical track infrastructure of a tram system or an aerial ropeway/funicular system.",
+        "whenNotToUse": "Do not use for standard heavy freight rail networks or highway asphalt roads.",
+        "culturalContext": "Frequently found in municipal transit legislation, urban planning documents, and tourism descriptions for mountain excursions."
+      },
+      "examples": {
+        "daily": [
+          "Maintenance crews performed overnight repairs along the historic urban tramway.",
+          "The alpine resort features an aerial tramway that transports visitors to the summit viewpoint in minutes.",
+          "City planners proposed extending the municipal tramway to serve the newly developed commercial district."
+        ],
+        "business": [
+          "The transport ministry approved a substantial capital budget upgrade for the regional tramway infrastructure.",
+          "Engineering consultants submitted a comprehensive feasibility study regarding the proposed cross-city tramway expansion.",
+          "Safety inspections of all cable and track components along the coastal tramway are conducted biannually."
+        ],
+        "conversation": [
+          "Engineer: We need to replace the worn track switches along Section B of the tramway before winter.\nProject Manager: Agreed. Let's schedule the overnight maintenance window with the transit authority.",
+          "Tourist: Is the mountain tramway operating in these windy conditions?\nAttendant: Operations are temporarily suspended until the wind speeds subside."
+        ],
+        "collocations": [
+          "tramway system",
+          "aerial tramway",
+          "tramway network",
+          "tramway infrastructure",
+          "municipal tramway"
+        ]
+      },
+      "wordFamily": {
+        "noun": "tramway",
+        "verb": "",
+        "adjective": "tramway",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "aerial tramway cable car mountain resort",
+        "imageDescription": "An aerial tramway cabin carrying passengers across a deep mountain valley toward a snowy alpine station.",
+        "mnemonic": "A 'tram' running all the 'way' across town or up a mountain."
+      },
+      "video": {
+        "description": "A documentary segment examining the engineering, electrical substations, and track maintenance operations of a major municipal tramway system."
+      },
+      "toeicContext": {
+        "commonParts": [6, 7],
+        "exampleQuestion": "Following the recent municipal budget approval, construction on the new downtown ---- is scheduled to begin in early September.\n(A) tramway\n(B) itinerary\n(C) luggage\n(D) hospitality",
+        "tips": "In TOEIC Reading Part 6 and 7 texts (such as municipal memos, news reports, or proposals), vocabulary relating to civil infrastructure like 'tramway', 'transit network', or 'expansion' often requires recognizing the specific physical asset being funded or maintained."
+      },
+      "synonyms": [
+        "street railway",
+        "light rail line",
+        "ropeway",
+        "cableway"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "infrastructure",
+        "track",
+        "catenary",
+        "transit",
+        "funicular",
+        "depot",
+        "engineer"
+      ]
+    },
+    {
+      "id": "travel-253",
+      "word": "transport",
+      "partOfSpeech": ["noun"],
+      "category": "travel",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈtræn.spɔːt/",
+        "syllableBreakdown": "trans-port",
+        "stressPattern": "Primary stress on the first syllable as a noun (TRANS-port); verb stress is on the second (trans-PORT).",
+        "commonMistakes": "Placing stress on the second syllable when using the word as a noun.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Latin",
+        "rootWord": "transportare",
+        "rootMeaning": "trans- (across) + portare (to carry)",
+        "evolution": "Derived from Late Latin 'transportare', passing through Old French 'transporter' into Middle English, originally denoting the carrying or conveyance of goods, prisoners, or feelings across space.",
+        "relatedLanguages": ["Latin transportare", "French transporter", "Spanish transportar", "Italian trasportare"],
+        "firstRecordedUsage": "15th century"
+      },
+      "deepMeaning": {
+        "coreConcept": "The action of carrying people or goods from one place to another, or the system and vehicles used for this purpose.",
+        "spatialContext": "Global supply chains, logistics warehouses, freight terminals, public transit networks, and corporate travel departments.",
+        "temporalContext": "Continuous logistical operations occurring round-the-clock across global shipping lanes and daily commuter schedules.",
+        "connotation": "neutral",
+        "formalityLevel": "formal",
+        "emotionalTone": "operational, systemic, professional"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Associated with corporate logistics, supply chain management, public commuting systems, freight forwarding, and international shipping.",
+        "mentalImage": "A massive cargo ship laden with containers and freight trucks on a highway, representing global commercial transport.",
+        "whenToUse": "When discussing the movement of freight, passengers, or company logistics in a business, administrative, or operational context.",
+        "whenNotToUse": "Do not use when referring specifically to a single passenger ticket or a casual walk; use 'transportation' or 'walk' instead.",
+        "culturalContext": "Pivotal in international trade agreements, corporate travel policies, urban planning, and environmental carbon footprint regulations."
+      },
+      "examples": {
+        "daily": [
+          "Public transport in the city is both reliable and cost-effective.",
+          "We arranged private transport for our international clients arriving at the airport.",
+          "Heavy transport vehicles are restricted from entering the residential zone during rush hours."
+        ],
+        "business": [
+          "The logistics department negotiated a new contract with an international freight transport provider.",
+          "Prompt payment of import duties is required before customs authorities release the transport of electronic goods.",
+          "Corporate travel policy mandates the use of approved ground transport services for all business trips."
+        ],
+        "conversation": [
+          "Logistics Manager: Have we secured the transport for the exhibition displays heading to Frankfurt?\nOperations Coordinator: Yes, the container trucks are booked and will arrive at the warehouse by 6:00 AM.",
+          "Client: Is ground transport included in our conference registration package?\nEvent Planner: Yes, complimentary shuttle service is provided between the hotel and the convention centre."
+        ],
+        "collocations": [
+          "public transport",
+          "ground transport",
+          "freight transport",
+          "transport costs",
+          "mode of transport"
+        ]
+      },
+      "wordFamily": {
+        "noun": "transport, transportation, transporter",
+        "verb": "transport",
+        "adjective": "transportable, transportation",
+        "adverb": ""
+      },
+      "visual": {
+        "imageKeyword": "freight cargo transport logistics container ship",
+        "imageDescription": "An aerial view of a busy container port with cranes loading shipping containers onto intermodal freight transport trucks and cargo vessels.",
+        "mnemonic": "To carry ('port') across ('trans') the country or ocean."
+      },
+      "video": {
+        "description": "An educational case study on multimodal freight transport logistics, demonstrating how goods transition seamlessly from ocean liners to rail and truck transport."
+      },
+      "toeicContext": {
+        "commonParts": [3, 5, 7],
+        "exampleQuestion": "All employees submitting travel expense reports must include itemized receipts for accommodation, meals, and local ----.\n(A) transport\n(B) transporting\n(C) transporter\n(D) transportable",
+        "tips": "In TOEIC Part 5 grammar and vocabulary items, 'transport' functions smoothly as an uncountable noun in compounds like 'local transport', 'public transport', or 'air transport'. Watch out for word form distractions ending in '-er' or '-ing'."
+      },
+      "synonyms": [
+        "transportation",
+        "conveyance",
+        "transit",
+        "shipping",
+        "freight"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "logistics",
+        "freight",
+        "shipment",
+        "transit",
+        "carrier",
+        "vehicle",
+        "distribution"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "words": [
+    {
+      "id": "travel-197",
+      "word": "pathfinder",
+      "partOfSpeech": ["noun"],
+      "category": "travel",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈpæθˌfaɪndər/",
+        "syllableBreakdown": "path-find-er",
+        "stressPattern": "Primary stress on the first syllable (PATH), secondary on the third (find).",
+        "commonMistakes": "Mispronouncing the 'th' sound as /s/ or /t/ (e.g., 'passfinder'), or misplacing stress on the second syllable.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "English compound",
+        "rootWord": "path + finder",
+        "rootMeaning": "One who discovers or charts a way or path through unknown territory.",
+        "evolution": "Derived from Middle English 'path' and Old English 'findan' (to find). Originally used historically for explorers, scouts, and pioneers navigating untamed wilderness, later extended metaphorically to innovators, navigational software, and transit planning tools.",
+        "relatedLanguages": ["German (Wegfinder)", "Dutch (wegwijzer)"],
+        "firstRecordedUse": "Early 19th century (circa 1805-1815), originating in North American frontier exploration."
+      },
+      "deepMeaning": {
+        "coreConcept": "A person who goes ahead and discovers or shows others a path or way, or a specialized navigational tool, vehicle, or guide designed to explore uncharted routes or optimize transit networks.",
+        "spatialContext": "Used in professional logistics centers, transit authority planning rooms, maritime/aviation navigation offices, and wilderness expedition planning.",
+        "temporalContext": "Occurs frequently in contexts of strategic transport planning, infrastructure development, and corporate innovation projects.",
+        "emotionalTone": "positive",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "culturalContext": "In English-speaking corporate and logistical cultures, 'pathfinder' evokes leadership in breaking new ground, pioneering efficient shipping lanes, or introducing innovative transportation management systems.",
+        "howNativesThink": "Native speakers associate the term with cutting-edge exploration, visionary leadership, or reliable transport guidance tools that cut through complex route networks.",
+        "mentalImage": "A modern logistics analyst examining a digital multi-modal transport routing interface on a dual-monitor workstation, mapping out an optimized shipping corridor across continents.",
+        "whenToUse": "Use when referring to an innovator, pioneer, navigational guide, or advanced transit routing software.",
+        "whenNotToUse": "Do not use for routine, everyday commuters or standard municipal buses without pioneering characteristics."
+      },
+      "examples": {
+        "daily": [
+          "The experienced wilderness guide acted as a pathfinder through the dense mountain trails.",
+          "Our travel club relied on the official park pathfinder to locate the hidden waterfall.",
+          "As a pathfinder in electric vehicle touring, she mapped out the first cross-country charging route."
+        ],
+        "business": [
+          "The airline deployed a pathfinder aircraft to test the weather patterns and navigation beacons along the new transatlantic corridor.",
+          "Our logistics firm appointed a senior transport strategist to serve as the pathfinder for our expansion into emerging Asian markets.",
+          "The shipping conglomerate integrated an advanced pathfinder software suite to dynamically optimize container vessel routes against severe weather."
+        ],
+        "conversation": [
+          "Colleague A: 'How did the cargo fleet manage to bypass the storm blockade yesterday?' Colleague B: 'Our new pathfinder routing algorithm rerouted all container ships twelve hours ahead of schedule.'",
+          "Client: 'Are we certain this new supply chain route is viable?' Project Manager: 'Yes, our regional pathfinder team completed test runs last week with zero delays.'"
+        ],
+        "collocations": [
+          "pathfinder vehicle",
+          "pathfinder algorithm",
+          "pathfinder project",
+          "transit pathfinder",
+          "pathfinder mission"
+        ]
+      },
+      "wordFamily": {
+        "noun": "pathfinder",
+        "verb": "pathfind",
+        "adjective": "pathfinding",
+        "adverb": "pathfindingly"
+      },
+      "visual": {
+        "imageKeyword": "logistics route planning map digital interface",
+        "imageDescription": "A high-tech control room displaying a glowing global transport network map with highlighted optimal shipping routes on digital screens.",
+        "mnemonic": "Think of a 'PATH' that you 'FIND' in the wilderness or on a map when exploring new territory."
+      },
+      "video": {
+        "description": "A corporate documentary clip showcasing a transportation logistics team utilizing automated routing software to pilot and optimize global supply chain corridors."
+      },
+      "toeicContext": {
+        "commonParts": [5, 7],
+        "exampleQuestion": "Management appointed a logistics specialist to act as the primary ______ for the company's new international shipping routes.\n(A) pathfinder\n(B) baggage\n(C) itinerary\n(D) platform",
+        "tips": "In TOEIC Part 5 vocabulary questions, look closely at the surrounding context of transportation, supply chain, or exploration. 'Pathfinder' fits professional roles or specialized tools charting new routes."
+      },
+      "synonyms": [
+        "pioneer",
+        "explorer",
+        "navigator",
+        "trailblazer",
+        "scout"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "navigation",
+        "logistics",
+        "route",
+        "transit",
+        "explorer",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "travel-198",
+      "word": "pier",
+      "partOfSpeech": ["noun"],
+      "category": "travel",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/pɪr/",
+        "syllableBreakdown": "pier",
+        "stressPattern": "Single syllable word; primary stress.",
+        "commonMistakes": "Pronouncing the silent 'e' or confusing it with 'peer' (homophone, but distinct context).",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Old French / Medieval Latin",
+        "rootWord": "Old French 'piere' / Late Latin 'petra' (stone)",
+        "rootMeaning": "A stone structure, support, or pier.",
+        "evolution": "Derived from Late Latin 'petra' (stone), passing through Old French 'piere' (meaning stone pillar or masonry support for a bridge), eventually evolving in English to designate both bridge supports and waterfront structures extending into water for vessels and pedestrians.",
+        "relatedLanguages": ["French (pierre)", "Italian (pietra)", "Spanish (piedra)"],
+        "firstRecordedUse": "14th century (Middle English)."
+      },
+      "deepMeaning": {
+        "coreConcept": "A platform or structure extending from the shore out over water, supported by pillars or piles, used for securing vessels, loading cargo, or allowing people to walk over the water.",
+        "spatialContext": "Found in commercial ports, container terminals, coastal marinas, ferry docks, and lakeside resort waterfronts.",
+        "temporalContext": "Used continuously for maritime docking, ferry boarding, passenger cruise disembarkation, and harbor logistics operations.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "culturalContext": "In commercial trade and business travel, piers are critical nodes for intermodal freight transfer, passenger cruise check-ins, and maritime commerce.",
+        "howNativesThink": "Native speakers instantly picture a long wooden or concrete structure jutting into the ocean or a river where boats tie up and travelers board ferries.",
+        "mentalImage": "A bustling container port pier where a massive commercial cargo ship is moored alongside towering gantry cranes loading steel containers.",
+        "whenToUse": "Use when referring to docks, wharves, or wooden/concrete platforms extending into water for docking ships or passenger boarding.",
+        "whenNotToUse": "Do not use for inland roads, airport runways, or general walkways on dry land."
+      },
+      "examples": {
+        "daily": [
+          "We walked along the wooden pier at sunset to watch the fishing boats return.",
+          "The children enjoyed feeding the seagulls from the edge of the community pier.",
+          "Tourists gathered on the municipal pier waiting for the whale-watching excursion boat."
+        ],
+        "business": [
+          "The container vessel successfully docked at Pier 42 for cargo unloading operations.",
+          "The port authority invested fifty million dollars to upgrade the structural integrity of the commercial shipping pier.",
+          "All passengers holding tickets for the international ferry must report to Pier B thirty minutes prior to departure."
+        ],
+        "conversation": [
+          "Traveler A: 'Which pier does the Staten Island ferry depart from?' Traveler B: 'We need to head over to Pier 11 immediately; boarding starts in ten minutes.'",
+          "Port Supervisor: 'Is Pier 7 clear for the incoming grain freighter?' Harbor Master: 'Affirmative, tugboats are guiding it into the berth now.'"
+        ],
+        "collocations": [
+          "loading pier",
+          "commercial pier",
+          "ferry pier",
+          "deep-water pier",
+          "port pier"
+        ]
+      },
+      "wordFamily": {
+        "noun": "pier",
+        "verb": "pierce",
+        "adjective": "pierced"
+      },
+      "visual": {
+        "imageKeyword": "commercial shipping pier container port crane",
+        "imageDescription": "A concrete industrial pier extending into a deep harbor, with heavy cargo cranes loading intermodal shipping containers onto a large vessel.",
+        "mnemonic": "A 'PIER' is a pillar-supported platform where ships 'PEER' out across the water."
+      },
+      "video": {
+        "description": "A timelapse video of container ships docking at a modern commercial pier, showing gantry cranes operating over maritime terminal berths."
+      },
+      "toeicContext": {
+        "commonParts": [1, 3, 7],
+        "exampleQuestion": "All passengers traveling on the afternoon ferry to Victoria must proceed directly to ______ 3 for ticket verification and boarding.\n(A) platform\n(B) terminal\n(C) pier\n(D) hangar",
+        "tips": "In TOEIC Part 1 and Part 7, 'pier' or 'dock' frequently pairs with maritime scenes, ships, and ferry boarding instructions. Do not confuse with 'platform' (trains) or 'hangar' (airplanes)."
+      },
+      "synonyms": [
+        "dock",
+        "wharf",
+        "jetty",
+        "quay",
+        "landing"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "dock",
+        "harbor",
+        "port",
+        "vessel",
+        "ferry",
+        "maritime",
+        "cargo"
+      ]
+    },
+    {
+      "id": "travel-199",
+      "word": "pilot",
+      "partOfSpeech": ["noun", "verb"],
+      "category": "travel",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˈpaɪlət/",
+        "syllableBreakdown": "pi-lot",
+        "stressPattern": "Primary stress on the first syllable (PI).",
+        "commonMistakes": "Mispronouncing the second syllable as /lɒt/ instead of the schwa/reduced sound /lət/.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "French / Italian / Greek",
+        "rootWord": "French 'pilote', Italian 'pilota', from Medieval Greek 'pēdōtēs' (steersman)",
+        "rootMeaning": "Oarsman, helmsman, or one who steers a boat using an oar.",
+        "evolution": "Derived from Ancient Greek 'pēdon' (oar) via Medieval Greek 'pēdōtēs', passing into Italian and French as 'pilota'/'pilote', entering English in the 16th century to denote ship steering guides, later expanding in the 20th century to aircraft commanders and testing metaphorically for trial projects.",
+        "relatedLanguages": [
+          "French (pilote)",
+          "Italian (pilota)",
+          "Spanish (piloto)",
+          "German (Pilot)"
+        ],
+        "firstRecordedUse": "16th century (circa 1530-1540)."
+      },
+      "deepMeaning": {
+        "coreConcept": "A person who operates the flying controls of an aircraft, guides a ship into a harbor, or acts as a trial or experimental model for a project or program.",
+        "spatialContext": "Cockpits of commercial and cargo aircraft, maritime vessel navigation bridges in hazardous harbor waters, and corporate R&D testing environments.",
+        "temporalContext": "Occurs continuously during flight operations, maritime harbor docking, and phase-one trial evaluations of corporate products.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "culturalContext": "In professional and aviation contexts, 'pilot' commands high responsibility, rigorous technical training, and strict adherence to safety protocols.",
+        "howNativesThink": "Native speakers associate 'pilot' with aircraft captains, maritime harbor navigators, or initial trial runs of software and business strategies.",
+        "mentalImage": "An airline captain in a crisp uniform reviewing flight plan documents inside an airliner cockpit before departure.",
+        "whenToUse": "Use when referring to an aircraft operator, a maritime harbor guide, or as an adjective/verb for a trial project (pilot program).",
+        "whenNotToUse": "Do not use for general passengers, flight attendants, or routine ground crew staff."
+      },
+      "examples": {
+        "daily": [
+          "The pilot announced that we would be cruising at an altitude of 35,000 feet.",
+          "My uncle has been a commercial airline pilot for over twenty years.",
+          "The harbor pilot expertly guided the massive oil tanker through the narrow channel."
+        ],
+        "business": [
+          "The airline requires all co-pilots to complete simulator training every six months.",
+          "The human resources department decided to pilot the new remote work scheduling software in the regional office before company-wide rollout.",
+          "A licensed maritime pilot boarded the container ship to ensure safe navigation into the busy port."
+        ],
+        "conversation": [
+          "Passenger: 'Excuse me, will the pilot update us on the weather delay?' Flight Attendant: 'Yes, Captain Miller will make an announcement over the intercom shortly.'",
+          "Manager: 'How did the regional software trial go?' Director: 'The pilot project was a complete success; error rates dropped by forty percent.'"
+        ],
+        "collocations": [
+          "airline pilot",
+          "harbor pilot",
+          "pilot project",
+          "pilot program",
+          "co-pilot",
+          "test pilot"
+        ]
+      },
+      "wordFamily": {
+        "noun": "pilot / pilotage",
+        "verb": "pilot",
+        "adjective": "pilot"
+      },
+      "visual": {
+        "imageKeyword": "airline pilot cockpit flight deck",
+        "imageDescription": "An airline captain sitting in the flight deck cockpit of a commercial jetliner, monitoring digital navigation instruments.",
+        "mnemonic": "A 'PILOT' is someone who 'PI'oneers flight or steering ('LOTS' of controls)."
+      },
+      "video": {
+        "description": "An educational walkthrough of a commercial airline pilot conducting pre-flight cockpit safety checklists and communicating with air traffic control."
+      },
+      "toeicContext": {
+        "commonParts": [3, 5, 7],
+        "exampleQuestion": "The software development team plans to ______ a new customer service portal in the European branch next month before global deployment.\n(A) pilot\n(B) anchor\n(C) board\n(D) dock",
+        "tips": "In TOEIC Part 5, 'pilot' is frequently tested both as a noun (airplane/ship operator) and as a verb meaning to test or launch a trial program ('pilot a program' / 'pilot project')."
+      },
+      "synonyms": [
+        "captain",
+        "aviator",
+        "steersman",
+        "navigator",
+        "trial",
+        "experiment"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "aircraft",
+        "aviation",
+        "captain",
+        "flight",
+        "navigation",
+        "harbor",
+        "trial"
+      ]
+    }
+  ]
+}

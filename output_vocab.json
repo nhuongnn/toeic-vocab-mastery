@@ -1,0 +1,334 @@
+{
+  "words": [
+    {
+      "id": "purchasing-237",
+      "word": "promissory note",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "purchasing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˈprɒmɪsəri noʊt/",
+        "syllableBreakdown": "prom-is-so-ry note",
+        "stressPattern": "PRIMARY-secondary-unstressed PRIMARY",
+        "commonMistakes": "Mispronouncing the middle syllable as /ɪz/ instead of /əri/, or placing incorrect stress on 'note' as the primary stress.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Latin / Middle English",
+        "rootWord": "promissor (one who promises) + nota (mark, letter, written sign)",
+        "rootMeaning": "A written promise to pay a specified sum of money to a designated person or bearer.",
+        "evolution": "Derived from the Latin 'promissorium' and Medieval Latin 'nota', evolving through Middle English legal terminology in the 15th-16th century to denote negotiable financial instruments.",
+        "relatedLanguages": [
+          "French (billet à ordre)",
+          "German (Schuldschein)",
+          "Spanish (pagaré)",
+          "Italian (pagherò)"
+        ],
+        "firstRecordedUse": "1575–1585"
+      },
+      "deepMeaning": {
+        "coreConcept": "A signed negotiable financial instrument containing a written and unconditional promise by one party (the maker or issuer) to pay a definite sum of money to another (the payee), either on demand or at a specified future date.",
+        "spatialContext": "Corporate finance departments, banking boardrooms, legal chambers, and executive procurement offices during high-value vendor financing or debt settlement.",
+        "temporalContext": "Occurs during commercial negotiations, credit extension approvals, and structured settlement agreements, typically holding validity over fixed periods ranging from 30 days to several years.",
+        "emotionalTone": "formal",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native financial and legal professionals view a promissory note not merely as an informal I.O.U., but as a binding, enforceable negotiable instrument under commercial law that carries specific legal recourse and default liabilities.",
+        "mentalImage": "A formal, cream-colored security paper document resting on a polished mahogany desk, bearing embossed corporate seals, an explicit maturity date, principal sum, and bold signature lines.",
+        "whenToUse": "Use when drafting or referencing formal debt instruments, vendor credit agreements, or commercial financing terms where a borrower promises specific repayment.",
+        "whenNotToUse": "Do not use for casual verbal agreements, everyday retail receipts, or standard purchase orders that lack unconditional promise-to-pay phrasing.",
+        "culturalContext": "In Anglo-American commercial law, promissory notes are governed by Article 3 of the Uniform Commercial Code (UCC) in the United States, forming the foundation of commercial paper, loans, and corporate debt markets."
+      },
+      "examples": {
+        "daily": [
+          "He signed a promissory note agreeing to repay the loan in twelve equal monthly installments.",
+          "The small business owner issued a promissory note to secure short-term equipment financing.",
+          "Before handing over the vintage vehicle, she insisted on a notarized promissory note detailing the repayment schedule."
+        ],
+        "business": [
+          "The corporation issued a short-term promissory note to bridge its working capital deficit ahead of the Q4 revenue influx.",
+          "Under the terms of the acquisition, the buyer provided a promissory note covering thirty percent of the purchase price.",
+          "Legal counsel reviewed the promissory note to ensure compliance with federal negotiable instruments regulations."
+        ],
+        "conversation": [
+          "Colleague A: 'Did the supplier accept our credit terms for the bulk raw material order?'\nColleague B: 'They agreed, provided we issue a signed promissory note guaranteeing payment within ninety days.'",
+          "Manager: 'Why is this invoice marked under debt financing rather than accounts payable?'\nAccountant: 'Because the vendor accepted a promissory note in lieu of immediate cash settlement.'"
+        ],
+        "collocations": [
+          "sign a promissory note",
+          "issue a promissory note",
+          "negotiable promissory note",
+          "secured promissory note",
+          "maturity of a promissory note",
+          "default on a promissory note"
+        ]
+      },
+      "wordFamily": {
+        "noun": "promissory note / promisor / promise",
+        "verb": "promise",
+        "adjective": "promissory",
+        "adverb": "promisingly"
+      },
+      "visual": {
+        "imageKeyword": "signed promissory note legal document finance",
+        "imageDescription": "A close-up view of a formal legal financial document titled 'Promissory Note' laid out on a dark desk next to a sleek fountain pen and reading glasses.",
+        "mnemonic": "Think of a 'promise' that is 'noted' down in writing with a specific monetary amount and signature."
+      },
+      "video": {
+        "description": "An educational finance seminar clip explaining the legal anatomy of a promissory note, distinguishing between secured and unsecured debt instruments in corporate procurement."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "To secure the vendor financing for the new manufacturing equipment, the chief financial officer executed a legally binding _______ promising full repayment within six months.",
+        "tips": "In TOEIC Part 5 vocabulary and grammar questions, financial documents like promissory notes often collocate with verbs such as 'issue', 'execute', 'sign', or 'default on'."
+      },
+      "synonyms": [
+        "debt instrument",
+        "commercial paper",
+        "loan note",
+        "negotiable note",
+        "i.o.u."
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "collateral",
+        "payee",
+        "maker",
+        "maturity date",
+        "principal",
+        "interest rate",
+        "default"
+      ]
+    },
+    {
+      "id": "purchasing-238",
+      "word": "proposal request",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "purchasing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/prəˈpoʊzəl rɪˈkwɛst/",
+        "syllableBreakdown": "pro-pos-al re-quest",
+        "stressPattern": "secondary-PRIMARY-unstressed unstressed-PRIMARY",
+        "commonMistakes": "Confusing word order as 'request proposal' (which is valid as a verb phrase but different as a compound noun concept) or misstressing 'proposal'.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Latin / Old French / English compounding",
+        "rootWord": "proponere (to put forth, propose) + requirere (to seek, ask for)",
+        "rootMeaning": "A formal solicitation asking suppliers or contractors to submit bids for a project or service.",
+        "evolution": "Combines the 16th-century administrative noun 'proposal' (from propose) with 'request' (from Old French 'requerre'), becoming standard terminology in 20th-century corporate procurement and government contracting (often abbreviated as RFP).",
+        "relatedLanguages": [
+          "French (demande de proposition)",
+          "German (Angebotsanfrage)",
+          "Spanish (solicitud de propuesta)",
+          "Italian (richiesta di offerta)"
+        ],
+        "firstRecordedUse": "1945–1955 (modern corporate usage)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A formal bidding document issued by an organization that announces a project, outlines its scope and specifications, and invites qualified vendors to submit comprehensive technical and financial bids.",
+        "spatialContext": "Corporate procurement portals, purchasing department workstations, vendor management offices, and B2B digital bidding platforms.",
+        "temporalContext": "Initiated during the early planning phase of major corporate projects, IT upgrades, or vendor replacement cycles, with strict submission deadlines ranging from two to six weeks.",
+        "emotionalTone": "formal",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Procurement specialists view a proposal request as the starting gun of a structured, competitive vendor selection process that requires rigorous evaluation matrices, clear scope of work definitions, and strict adherence to compliance guidelines.",
+        "mentalImage": "A comprehensive digital document displayed on a corporate procurement dashboard, detailing project milestones, evaluation criteria, and a countdown timer for vendor bid submissions.",
+        "whenToUse": "Use when describing the formal process of soliciting bids from external contractors, consultants, or suppliers for corporate projects.",
+        "whenNotToUse": "Do not use for casual price inquiries, over-the-counter retail shopping, or informal quotes requested from a single preferred vendor (which are typically called request for quotes or RFQs).",
+        "culturalContext": "In modern corporate governance, issuing a proposal request (RFP) is mandatory for publicly traded companies and government agencies above specific financial thresholds to ensure fair competition and transparency."
+      },
+      "examples": {
+        "daily": [
+          "Our department drafted a detailed proposal request for the new office renovation project.",
+          "Several marketing agencies rushed to meet the submission deadline outlined in the proposal request.",
+          "She reviewed each proposal request document to ensure all technical requirements were clearly stated."
+        ],
+        "business": [
+          "The procurement committee issued a comprehensive proposal request to solicit competitive bids for enterprise cloud migration.",
+          "Potential contractors must submit their questions regarding the proposal request by Friday afternoon.",
+          "Evaluating over twenty submissions received in response to the proposal request took the engineering team three weeks."
+        ],
+        "conversation": [
+          "Colleague A: 'Have we finalized the vendor requirements for the software upgrade?'\nColleague B: 'Yes, the proposal request is approved and will be published on the vendor portal this morning.'",
+          "Manager: 'Why did we receive so few bids on the last project?'\nPurchasing Lead: 'The timeline specified in the proposal request was too tight for most vendors to prepare a thorough response.'"
+        ],
+        "collocations": [
+          "issue a proposal request",
+          "draft a proposal request",
+          "respond to a proposal request",
+          "proposal request document",
+          "proposal request process",
+          "submit a proposal request"
+        ]
+      },
+      "wordFamily": {
+        "noun": "proposal request / proposal / requester",
+        "verb": "propose / request",
+        "adjective": "proposed",
+        "adverb": "proposedly"
+      },
+      "visual": {
+        "imageKeyword": "business proposal request document review procurement",
+        "imageDescription": "A professional procurement manager reviewing a printed proposal request packet alongside supplier pricing spreadsheets and evaluation scorecards.",
+        "mnemonic": "Think of 'proposing' a project and 'requesting' bids from the best suppliers in the market."
+      },
+      "video": {
+        "description": "A corporate training video demonstrating best practices for writing clear proposal requests and managing vendor responses in enterprise procurement systems."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          6,
+          7
+        ],
+        "exampleQuestion": "All prospective vendors wishing to bid on the municipal infrastructure project must examine the detailed requirements outlined in the official _______.",
+        "tips": "In TOEIC listening and reading sections (especially Parts 3, 6, and 7), 'proposal request' or 'request for proposal (RFP)' frequently appears in contexts involving vendor selection, bidding deadlines, and procurement guidelines."
+      },
+      "synonyms": [
+        "request for proposal",
+        "rfp",
+        "invitation to bid",
+        "solicitation for bids",
+        "tender invitation"
+      ],
+      "antonyms": [
+        "bid submission",
+        "vendor proposal"
+      ],
+      "relatedWords": [
+        "procurement",
+        "vendor",
+        "bidding",
+        "scope of work",
+        "contractor",
+        "evaluation criteria",
+        "quotation"
+      ]
+    },
+    {
+      "id": "purchasing-239",
+      "word": "purchase contract",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "purchasing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˈpɜːrtʃəs ˈkɒntrækt/",
+        "syllableBreakdown": "pur-chase con-tract",
+        "stressPattern": "PRIMARY-unstressed PRIMARY-unstressed",
+        "commonMistakes": "Mispronouncing the verb/noun noun noun stress or slurring 'contract' as /kənˈtrækt/ when functioning as a noun instead of primary stress on the first syllable /ˈkɒntrækt/.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Old French / Latin",
+        "rootWord": "purchacier (to chase, acquire) + contractus (drawn together, agreement)",
+        "rootMeaning": "A binding legal agreement between a buyer and a seller detailing the terms of a sale.",
+        "evolution": "Derived from Middle English 'purchasen' (to acquire property or goods) combined with Latin 'contractus' (an agreement enforceable by law), evolving into core commercial law terminology.",
+        "relatedLanguages": [
+          "French (contrat d'achat)",
+          "German (Kaufvertrag)",
+          "Spanish (contrato de compraventa)",
+          "Italian (contratto di acquisto)"
+        ],
+        "firstRecordedUse": "1400–1450 (legal and mercantile usage)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A legally binding agreement between a buyer and seller that stipulates the description of goods or services, agreed pricing, delivery schedules, warranty terms, and conditions of sale.",
+        "spatialContext": "Legal departments, executive boardrooms, procurement offices, and secure digital signing platforms (e.g., DocuSign).",
+        "temporalContext": "Executed at the culmination of successful commercial negotiations, governing the entire lifecycle of a transaction from order fulfillment through warranty expiration.",
+        "emotionalTone": "formal",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Business executives and purchasing agents view a purchase contract as the ultimate safeguard of commercial interests, defining exact liabilities, breach penalties, payment milestones, and delivery guarantees.",
+        "mentalImage": "Two corporate signatories leaning over a mahogany table, exchanging signed copies of a bound legal contract while legal counsel looks on approvingly.",
+        "whenToUse": "Use when formalizing major business transactions, vendor agreements, real estate acquisitions, or large-scale procurement orders.",
+        "whenNotToUse": "Do not use for everyday retail cash purchases, casual informal agreements, or simple internal purchase requisitions.",
+        "culturalContext": "In commercial law across common-law jurisdictions, a purchase contract establishes enforceable legal remedies under the Uniform Commercial Code (UCC) or equivalent statutes, protecting both parties against non-performance."
+      },
+      "examples": {
+        "daily": [
+          "She carefully read every clause in the purchase contract before buying the commercial property.",
+          "The supplier failed to deliver the machinery by the date specified in the purchase contract.",
+          "Both parties signed the purchase contract during the morning meeting."
+        ],
+        "business": [
+          "Legal counsel reviewed the purchase contract to ensure indemnification clauses protected our company against supplier delays.",
+          "Breaching any provision of the annual purchase contract can result in immediate termination of the vendor relationship.",
+          "The procurement director negotiated a volume discount clause directly into the new purchase contract."
+        ],
+        "conversation": [
+          "Colleague A: 'Are we cleared to send the initial deposit to the overseas manufacturer?'\nColleague B: 'Not yet. The legal team is still finalizing the indemnity clause in the purchase contract.'",
+          "Manager: 'Why did the vendor increase their delivery fees?'\nBuyer: 'Because those charges were excluded from the fixed-price purchase contract we signed last quarter.'"
+        ],
+        "collocations": [
+          "sign a purchase contract",
+          "draft a purchase contract",
+          "negotiate a purchase contract",
+          "breach of purchase contract",
+          "terms of a purchase contract",
+          "execute a purchase contract"
+        ]
+      },
+      "wordFamily": {
+        "noun": "purchase contract / purchaser / contract",
+        "verb": "purchase / contract",
+        "adjective": "contractual",
+        "adverb": "contractually"
+      },
+      "visual": {
+        "imageKeyword": "signed purchase contract legal paperwork pen",
+        "imageDescription": "A fountain pen resting on top of a signed corporate purchase contract document with visible signature lines and company seals.",
+        "mnemonic": "Think of 'purchasing' goods with a secure, legal 'contract' that binds both buyer and seller."
+      },
+      "video": {
+        "description": "An expert legal tutorial video explaining key clauses to include in commercial purchase contracts to mitigate supply chain risks and delivery disputes."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Prior to transferring funds for the machinery acquisition, the finance department verified that all delivery milestones matched the stipulations in the _______.",
+        "tips": "In TOEIC Reading (Parts 5 and 7), 'purchase contract' frequently pairs with verbs like 'execute', 'review', 'amend', or 'breach', and relates to reading comprehension passages about business agreements and vendor terms."
+      },
+      "synonyms": [
+        "sales agreement",
+        "commercial contract",
+        "buyers agreement",
+        "acquisition contract",
+        "sales contract"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "procurement",
+        "vendor",
+        "invoice",
+        "purchase order",
+        "terms and conditions",
+        "delivery schedule",
+        "breach of contract"
+      ]
+    }
+  ]
+}

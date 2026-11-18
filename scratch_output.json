@@ -1,0 +1,301 @@
+{
+  "words": [
+    {
+      "id": "marketing-116",
+      "word": "cookie tracking",
+      "partOfSpeech": ["noun"],
+      "category": "marketing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˈkʊki ˈtrækɪŋ/",
+        "syllableBreakdown": "cook·ie track·ing",
+        "stressPattern": "Primary stress on the first syllable of each word (COOK-ie TRACK-ing).",
+        "commonMistakes": "Learners often mispronounce 'cookie' as /ˈkuːki/ with a long 'oo' or stress 'tracking' too heavily over 'cookie'.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Compound of 'cookie' (computing term coined by browser developer Lou Montulli in 1994, derived from magic cookie in Unix) and 'tracking' (from Old Norse/Middle English via Old French 'tracier').",
+        "rootWord": "cookie + track",
+        "rootMeaning": "A small packet of data sent by a website and stored on a user's web browser, combined with the act of following movement or activity.",
+        "evolution": "Originally used in early Netscape Navigator to manage stateful HTTP sessions (shopping carts), evolved in the late 1990s and 2000s for third-party cross-site behavioral tracking and programmatic advertising.",
+        "relatedLanguages": ["Dutch (koekje)", "Old Norse (trak-)"],
+        "firstRecordedUse": "1994 (computing context), mid-2000s in commercial digital marketing terminology."
+      },
+      "deepMeaning": {
+        "coreConcept": "The practice of using HTTP cookies placed on a user's browser by websites or third-party ad servers to monitor user browsing behavior, collect demographic and interest data, and retarget ads across the web.",
+        "spatialContext": "Digital advertising platforms, programmatic ad exchanges, web analytics dashboards (e.g., Google Analytics), and e-commerce server infrastructure.",
+        "temporalContext": "Continuous, real-time data collection occurring instantly upon page load and user interaction across multiple sessions.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "neutral",
+        "spatialContext": "Digital marketing agencies, e-commerce platforms, and programmatic ad servers.",
+        "temporalContext": "Real-time, continuous background data collection."
+      },
+      "nativeMindset": {
+        "howNativesThink": "Marketers view it as the foundational engine of digital attribution, audience segmentation, and retargeting, whereas privacy advocates and consumers increasingly view it with suspicion regarding data surveillance.",
+        "mentalImage": "A split-screen illustration showing a user browsing a pair of running shoes on an e-commerce site on the left, and identical shoe banner ads appearing on a news portal hours later on the right.",
+        "whenToUse": "When discussing digital advertising attribution, retargeting strategies, data privacy regulations (like GDPR/CCPA), and web analytics.",
+        "whenNotToUse": "Do not use when referring to physical mail tracking or in-store retail foot-traffic monitoring (use 'store traffic analytics' or 'package tracking').",
+        "culturalContext": "Highly sensitive subject in contemporary tech and regulatory discourse, driven by cookie consent banners, browser phase-outs of third-party cookies, and privacy-first marketing."
+      },
+      "examples": {
+        "daily": [
+          "Every time I visit a news website, a popup asks me to accept or manage my cookie tracking preferences.",
+          "Clearing your browser cache and erasing cookies stops basic cookie tracking across most retail sites.",
+          "Many modern web browsers now block third-party cookie tracking by default to protect user privacy."
+        ],
+        "business": [
+          "Our digital marketing team relies on robust cookie tracking to measure return on ad spend and attribute conversions accurately.",
+          "With privacy regulations tightening, the agency is pivoting away from third-party cookie tracking toward first-party data collection.",
+          "The e-commerce platform experienced a drop in retargeting campaign efficiency after stricter browser updates limited cookie tracking capabilities."
+        ],
+        "conversation": [
+          "Colleague A: 'Why are our retargeting conversion rates down this month?'",
+          "Colleague B: 'Safari and Firefox have blocked third-party cookie tracking, so our pixel isn't capturing as many visitor touchpoints.'",
+          "Colleague A: 'We need to accelerate our transition to server-side tagging and first-party IDs immediately.'"
+        ],
+        "collocations": [
+          "third-party cookie tracking",
+          "cookie tracking mechanism",
+          "cookie tracking data",
+          "disable cookie tracking",
+          "cookie tracking policy"
+        ]
+      },
+      "wordFamily": {
+        "noun": "cookie tracking / tracker",
+        "verb": "track cookies / cookie",
+        "adjective": "cookie-based / tracked",
+        "adverb": "trackingly"
+      },
+      "visual": {
+        "imageKeyword": "digital marketing analytics dashboard privacy cookies code",
+        "imageDescription": "A sleek computer monitor displaying a web analytics graph alongside lines of JavaScript code and a stylized padlock icon representing cookie data privacy.",
+        "mnemonic": "Think of leaving a trail of cookie crumbs on the web so an advertiser can follow where you walk!"
+      },
+      "video": {
+        "description": "An instructional webinar clip explaining how third-party cookie tracking enables cross-site retargeting and how impending browser deprecations impact digital marketers."
+      },
+      "toeicContext": {
+        "commonParts": [5, 6, 7],
+        "exampleQuestion": "To comply with recent digital privacy regulations, the marketing department must update its website banner regarding ________.\n(A) cookie tracking\n(B) courier shipping\n(C) corporate leasing\n(D) cafeteria catering",
+        "tips": "In TOEIC Part 5 vocabulary questions, look for collocations related to corporate compliance, IT, and digital marketing. 'Cookie tracking' pairs naturally with privacy policies and data regulations."
+      },
+      "synonyms": [
+        "web tracking",
+        "browser tracking",
+        "digital footprinting",
+        "online surveillance",
+        "behavioral tracking"
+      ],
+      "antonyms": ["cookie blocking", "privacy mode", "anonymous browsing"],
+      "relatedWords": [
+        "retargeting",
+        "conversion rate",
+        "first-party data",
+        "pixel",
+        "ad server",
+        "GDPR"
+      ]
+    },
+    {
+      "id": "marketing-117",
+      "word": "copywriter",
+      "partOfSpeech": ["noun"],
+      "category": "marketing",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈkɒpiˌraɪtər/",
+        "syllableBreakdown": "cop·y·wri·ter",
+        "stressPattern": "Primary stress on the first syllable (COP-y-writer).",
+        "commonMistakes": "Confusing 'copywriter' (someone who writes advertising text) with 'copyright' (legal ownership of intellectual property).",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Compound of 'copy' (printer's term for manuscript text, from Latin 'copia' meaning abundance/matter) and 'writer' (from Old Germanic 'writan' to scratch/draw/write).",
+        "rootWord": "copy + writer",
+        "rootMeaning": "A person who writes text ('copy') for commercial print or digital media.",
+        "evolution": "Emerged in the advertising agencies of the late 19th and 20th centuries to designate creative professionals crafting persuasive sales prose, now expanded into digital UX writing, SEO, and content marketing.",
+        "relatedLanguages": ["Latin (copia)", "German (schreiben)"],
+        "firstRecordedUse": "Late 19th century (c. 1890s during the rise of modern advertising)."
+      },
+      "deepMeaning": {
+        "coreConcept": "A professional writer who specializes in creating compelling, persuasive written content (copy) for advertisements, marketing campaigns, websites, brochures, and email newsletters to drive brand engagement and sales conversions.",
+        "spatialContext": "Advertising agencies, corporate marketing departments, publishing houses, and remote freelance workspaces.",
+        "temporalContext": "Daily ongoing content production aligned with campaign deadlines, product launches, and editorial calendars.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "neutral",
+        "connotation": "positive",
+        "spatialContext": "Creative agencies, corporate marketing departments, and digital media firms.",
+        "temporalContext": "Daily campaign drafting, headline brainstorming, and collaborative editing."
+      },
+      "nativeMindset": {
+        "howNativesThink": "Seen as a blend of creative artist and strategic communicator who understands consumer psychology, brand voice, and conversion metrics.",
+        "mentalImage": "A professional sitting at a dual-monitor workstation, surrounded by sticky notes of headlines, editing a landing page draft in a word processor.",
+        "whenToUse": "When discussing advertising content creation, marketing collateral, brand messaging, and agency staffing.",
+        "whenNotToUse": "Do not use 'copywriter' when referring to legal copyright attorneys or patent filers (that is a copyright lawyer).",
+        "culturalContext": "Pivotal role in Madison Avenue advertising lore as well as modern startup growth hacking and digital brand storytelling."
+      },
+      "examples": {
+        "daily": [
+          "The freelance copywriter drafted catchy headlines for our new organic coffee product line.",
+          "She works as a senior copywriter for an international advertising agency in downtown Chicago.",
+          "Our team hired a technical copywriter to simplify the instruction manual for our software."
+        ],
+        "business": [
+          "The marketing director collaborated with the lead copywriter to refine the value proposition for the product launch.",
+          "A talented copywriter can significantly boost online conversion rates by optimizing email subject lines.",
+          "Applicants for the copywriter position must submit a professional portfolio demonstrating previous campaign success."
+        ],
+        "conversation": [
+          "Colleague A: 'Have the new landing page drafts been finalized?'",
+          "Colleague B: 'Not yet. The senior copywriter is revising the call-to-action buttons to improve click-through rates.'",
+          "Colleague A: 'Great, let me know when they are ready for legal review.'"
+        ],
+        "collocations": [
+          "freelance copywriter",
+          "senior copywriter",
+          "creative copywriter",
+          "copywriter portfolio",
+          "hire a copywriter"
+        ]
+      },
+      "wordFamily": {
+        "noun": "copywriter / copywriting / copy",
+        "verb": "copywrite",
+        "adjective": "copywriting",
+        "adverb": "copywriting-wise"
+      },
+      "visual": {
+        "imageKeyword": "copywriter creative writing laptop marketing agency",
+        "imageDescription": "A close-up of a laptop screen displaying a marketing copy draft with colorful sticky notes and a cup of coffee on a wooden desk.",
+        "mnemonic": "A copy-writer writes the copy that sells!"
+      },
+      "video": {
+        "description": "A career profile video showcasing a day in the life of a corporate copywriter collaborating with art directors and marketing managers on a brand campaign."
+      },
+      "toeicContext": {
+        "commonParts": [6, 7],
+        "exampleQuestion": "The advertising firm is seeking an experienced ________ to craft engaging product descriptions for their upcoming e-commerce catalog.\n(A) copywriter\n(B) accountant\n(C) receptionist\n(D) electrician",
+        "tips": "In TOEIC business contexts, match professional titles to departmental duties. A department dealing with 'advertising' and 'catalog descriptions' requires a 'copywriter', not an accountant or electrician."
+      },
+      "synonyms": [
+        "advertising writer",
+        "content writer",
+        "commercial writer",
+        "scriptwriter",
+        "promotional writer"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "advertising",
+        "content marketing",
+        "headline",
+        "call to action",
+        "brand voice",
+        "portfolio"
+      ]
+    },
+    {
+      "id": "marketing-118",
+      "word": "cost per acquisition",
+      "partOfSpeech": ["noun"],
+      "category": "marketing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/kɒst pɜːr ˌækwɪˈzɪʃən/",
+        "syllableBreakdown": "cost per ac·qui·si·tion",
+        "stressPattern": "Primary stress on 'COST' and 'ZIS' (COST per ac-qui-SI-tion).",
+        "commonMistakes": "Confusing CPA (Cost Per Acquisition) with CPC (Cost Per Click) or CPM (Cost Per Mille).",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Compound of 'cost' (from Latin 'constare' to stand at/cost), 'per' (Latin preposition meaning 'for each'), and 'acquisition' (from Latin 'acquirere' to acquire/obtain).",
+        "rootWord": "cost + per + acquisition",
+        "rootMeaning": "The financial expense incurred to acquire one paying customer or conversion.",
+        "evolution": "Developed alongside digital advertising metrics and performance marketing in the late 1990s and 2000s to measure marketing ROI precisely beyond mere clicks or impressions.",
+        "relatedLanguages": ["Latin (constare, acquirere)", "French (coût)"],
+        "firstRecordedUse": "Late 1990s / early 2000s in digital advertising and performance marketing literature."
+      },
+      "deepMeaning": {
+        "coreConcept": "A key performance indicator (KPI) in digital marketing that measures the total cost of a marketing campaign divided by the total number of new customers acquired.",
+        "spatialContext": "Executive boardrooms, financial spreadsheets, marketing analytics platforms, and performance review meetings.",
+        "temporalContext": "Calculated weekly, monthly, or quarterly to evaluate campaign profitability and budget allocation.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "neutral",
+        "spatialContext": "Financial spreadsheets, executive dashboards, and marketing review meetings.",
+        "temporalContext": "Periodic performance reviews (monthly, quarterly, annually)."
+      },
+      "nativeMindset": {
+        "howNativesThink": "Regarded as the ultimate litmus test for marketing efficiency—lower CPA means profitable customer acquisition, while rising CPA signals campaign fatigue or audience saturation.",
+        "mentalImage": "An executive looking at a financial dashboard where a line graph compares advertising spend against customer acquisition counts.",
+        "whenToUse": "When analyzing advertising profitability, budgeting digital campaigns, and evaluating return on investment (ROI).",
+        "whenNotToUse": "Do not use when discussing raw click counts or brand awareness metrics without actual purchases (use CPC or impressions).",
+        "culturalContext": "Central metric in performance marketing, venture-backed startups, and direct-to-consumer (DTC) retail growth strategies."
+      },
+      "examples": {
+        "daily": [
+          "Our digital ad campaign was successful because we managed to keep the cost per acquisition under twenty dollars.",
+          "Small business owners often calculate their cost per acquisition to see if online advertising is actually profitable.",
+          "When setting our annual marketing budget, we must account for fluctuations in our customer acquisition costs."
+        ],
+        "business": [
+          "The executive team reviewed the quarterly performance report and noted that rising competition had increased our cost per acquisition by fifteen percent.",
+          "By refining our target audience parameters, we successfully lowered our cost per acquisition across all social media channels.",
+          "Investors scrutinize the cost per acquisition alongside customer lifetime value to determine the long-term viability of the subscription model."
+        ],
+        "conversation": [
+          "Colleague A: 'How did the new Facebook ad campaign perform last week?'",
+          "Colleague B: 'Clicks were high, but the cost per acquisition was too high to justify the ad spend.'",
+          "Colleague A: 'Let's pause those ad sets and reallocate the budget to our search engine marketing campaigns.'"
+        ],
+        "collocations": [
+          "lower cost per acquisition",
+          "average cost per acquisition",
+          "target cost per acquisition",
+          "reduce cost per acquisition",
+          "cost per acquisition metric"
+        ]
+      },
+      "wordFamily": {
+        "noun": "cost per acquisition / CPA / acquisition",
+        "verb": "acquire / cost",
+        "adjective": "acquisition-based",
+        "adverb": "acquisitionally"
+      },
+      "visual": {
+        "imageKeyword": "financial chart ROI analytics marketing performance graph",
+        "imageDescription": "A laptop screen displaying financial graphs and performance KPIs showing downward trends in cost per acquisition over a fiscal quarter.",
+        "mnemonic": "Think of CPA (Cost Per Acquisition): Counting Every Penny Spent to Acquire a customer!"
+      },
+      "video": {
+        "description": "An educational finance and marketing video tutorial explaining how to calculate cost per acquisition and optimize ad spend for maximum profitability."
+      },
+      "toeicContext": {
+        "commonParts": [3, 7],
+        "exampleQuestion": "To improve overall profitability, the finance department challenged the marketing team to reduce the ________ on all digital ad campaigns.\n(A) cost per acquisition\n(B) office supply budget\n(C) cafeteria menu price\n(D) employee parking fee",
+        "tips": "In TOEIC Part 7 reading passages and Part 3 conversations about business strategy, financial KPIs like 'cost per acquisition' frequently appear alongside discussions of budget reduction and marketing ROI."
+      },
+      "synonyms": [
+        "CPA",
+        "acquisition cost",
+        "cost per conversion",
+        "customer acquisition cost",
+        "cost per order"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "ROI",
+        "KPI",
+        "customer lifetime value",
+        "conversion rate",
+        "ad spend",
+        "retargeting"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+[
+  {
+    "id": "travel-062",
+    "word": "airport",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "travel",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/\u02c8er.p\u0254\u02d0rt/",
+      "syllableBreakdown": "air-port",
+      "stressPattern": "primary stress on the first syllable (AIR-port)",
+      "commonMistakes": "Learners often mispronounce the diphthong /\u025b\u0259r/ as a pure /\u00e6/ or /\u0251\u02d0/, or misplace stress on the second syllable (*air-PORT*)."
+    },
+    "etymology": {
+      "origin": "Compound of 'air' (from Old French 'air' / Latin 'aer') and 'port' (from Latin 'portus' meaning harbor or gateway)",
+      "rootWord": "aer (atmosphere, sky) + portus (haven, harbor, gateway)",
+      "rootMeaning": "Literally 'a haven or harbor for aircraft'",
+      "evolution": "Coined in the early 20th century (circa 1919) with the rise of commercial aviation, transitioning from simple grass landing fields ('aerodromes') to massive multi-terminal intermodal transportation hubs.",
+      "relatedLanguages": [
+        "French: a\u00e9roport",
+        "Spanish: aeropuerto",
+        "German: Flughafen",
+        "Italian: aeroporto"
+      ],
+      "firstRecordedUse": "1919 (early aviation literature and municipal planning documents)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A complex transportation facility equipped with runways, terminals, air traffic control towers, and passenger amenities designed to handle the arrival, departure, and servicing of commercial and private aircraft.",
+      "spatialContext": "Sprawling municipal aviation complexes featuring security checkpoints, customs and immigration halls, baggage carousels, boarding gates, duty-free retail zones, and runway tarmac areas.",
+      "temporalContext": "Operating 24 hours a day, 365 days a year, with peak passenger congestion during early morning business hours and major holiday travel seasons.",
+      "emotionalTone": "Dynamic, bustling, highly regulated, and time-sensitive.",
+      "formalityLevel": "neutral",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Native speakers associate 'airport' not just with flying, but with complex logistics, rigorous security protocols, strict time management, and transitional anxiety. In business contexts, it represents a primary gateway for corporate travel, client meetings, and international commerce.",
+      "mentalImage": "A bustling international departure terminal featuring soaring glass curtain walls, overhead flight status departure boards, long queues of business travelers at security checkpoints, and wide-body aircraft taxiing on brightly lit tarmac runways.",
+      "whenToUse": "Use when referring to aviation facilities handling passenger or cargo flights (e.g., 'Our corporate travel coordinator booked direct flights out of the municipal airport').",
+      "whenNotToUse": "Do not use when referring to smaller regional helicopter landing pads (helipads) or military-only air bases without civilian passenger facilities.",
+      "culturalContext": "In modern corporate culture, major hub airports are vital economic engines, frequently surrounded by conference hotels, car rental hubs, and corporate headquarters to facilitate seamless global mobility."
+    },
+    "examples": {
+      "daily": [
+        "We arrived at the airport two hours before international departure to clear security and baggage check without rushing.",
+        "Heavy morning fog caused widespread flight delays across the regional airport.",
+        "My colleague left her laptop charger in the airport waiting lounge and had to contact lost and found."
+      ],
+      "business": [
+        "The executive team flew into the city's primary international airport just hours before the quarterly board meeting.",
+        "Our logistics division manages air freight shipments directly from the cargo terminal at the metropolitan airport.",
+        "To minimize travel friction, our corporate travel policy mandates booking hotels located within ten minutes of the airport."
+      ],
+      "conversation": [
+        "\"Did you manage to catch your connecting flight through the Chicago hub?\" \"Barely; a delayed inbound aircraft meant I had to sprint across terminals to make the boarding gate.\"",
+        "\"Are we meeting the overseas client at their hotel or upon arrival?\" \"Let's pick them up directly at the arrivals terminal of the airport to save time.\""
+      ],
+      "collocations": [
+        "international airport",
+        "airport terminal",
+        "airport security",
+        "airport shuttle",
+        "airport lounge",
+        "airport authority"
+      ]
+    },
+    "wordFamily": {
+      "noun": "airport, airfare, airplane, air traveler",
+      "verb": "fly, board, deplane",
+      "adjective": "airborne, airport-adjacent",
+      "adverb": "airward"
+    },
+    "visual": {
+      "imageKeyword": "modern international airport terminal departure board glass architecture",
+      "imageDescription": "A sleek, modern airport terminal with towering glass windows overlooking parked commercial jetliners, digital departure boards glowing overhead, and travelers moving briskly through wide concourses.",
+      "mnemonic": "AIR + PORT: A secure PORT where ships of the AIR dock and load passengers!"
+    },
+    "video": {
+      "description": "An instructional overview of modern airport terminal operations, detailing passenger flow from curbside check-in through automated security screening to international boarding gates."
+    },
+    "toeicContext": {
+      "commonParts": [
+        1,
+        3,
+        7
+      ],
+      "exampleQuestion": "All corporate travelers attending the annual symposium are advised to arrange their ground transportation from the _____ through the corporate travel portal at least forty-eight hours in advance. (A) airport (B) airfare (C) airline (D) airspace",
+      "tips": "In TOEIC Part 5 vocabulary questions, check collocational fit with physical facilities ('ground transportation from the airport'). 'Airfare' is a cost, 'airline' is a company, and 'airspace' is the sky, making 'airport' the only logical facility noun."
+    },
+    "synonyms": [
+      "aviation hub",
+      "air terminal",
+      "aerodrome",
+      "airfield",
+      "flight center"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "terminal",
+      "runway",
+      "boarding gate",
+      "baggage claim",
+      "customs",
+      "layover",
+      "air traffic control"
+    ]
+  },
+  {
+    "id": "travel-063",
+    "word": "aisle",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "travel",
+    "level": "essential",
+    "toeicFrequency": 9,
+    "pronunciation": {
+      "ipa": "/a\u026al/",
+      "syllableBreakdown": "aisle",
+      "stressPattern": "monosyllabic word",
+      "commonMistakes": "Learners frequently mispronounce it by pronouncing the silent 's' (*ay-sel* or *is-le*) instead of rhyming with 'ile' / 'style'."
+    },
+    "etymology": {
+      "origin": "Middle English 'aile', from Old French 'aile' (wing of a building or bird), altered by folk etymology due to association with 'island' (Latin 'insula')",
+      "rootWord": "Latin 'ala' (wing)",
+      "rootMeaning": "Originally 'wing of a church or building', later extended to passageways between rows of seats or shelves",
+      "evolution": "Shifted from architectural church side-naves in medieval England to passenger walkways in aircraft, trains, and theaters, as well as retail store corridors.",
+      "relatedLanguages": [
+        "French: aile",
+        "Spanish: pasillo",
+        "German: Gang",
+        "Italian: navata / corridoio"
+      ],
+      "firstRecordedUse": "14th century (Middle English architecture and structural descriptions)"
+    },
+    "deepMeaning": {
+      "coreConcept": "A longitudinal passageway or corridor separating rows of seats in an aircraft, auditorium, train, or rows of merchandise shelving in a commercial retail store.",
+      "spatialContext": "Aircraft cabins between seat columns (e.g., seats 12A, 12B, 12C), supermarket grocery corridors, train passenger cars, and conference center seating blocks.",
+      "temporalContext": "Occupied during boarding, deplaning, in-flight beverage service, or retail shopping navigation.",
+      "emotionalTone": "Functional, transitional, and spatial.",
+      "formalityLevel": "neutral",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Native speakers instantly associate 'aisle' with seating preferences on flights ('window or aisle?') and navigation paths in retail or transit. In travel contexts, choosing an aisle seat is valued for legroom and ease of restroom access, contrasting with window seats for views.",
+      "mentalImage": "An aircraft interior cabin view showing narrow overhead storage bins, flight attendants pushing a beverage cart down the central aisle, and passengers stabling carry-on luggage.",
+      "whenToUse": "Use when referring to the walking path between seats or shelves (e.g., 'Please keep the aisle clear of baggage during takeoff', 'Our seats are located in the aisle section').",
+      "whenNotToUse": "Do not use when referring to outdoor pathways, hallways in office buildings (use 'corridor' or 'hallway'), or open floor spaces.",
+      "culturalContext": "In commercial aviation, seat selection ('aisle vs. window') is a fundamental preference among business travelers who prioritize mobility over window views."
+    },
+    "examples": {
+      "daily": [
+        "I always request an aisle seat on long-haul flights so I can stretch my legs without disturbing neighbors.",
+        "The flight attendant requested that all passengers stow their carry-on bags completely under the seat and keep the aisle unobstructed.",
+        "We found the office supplies located down aisle four in the superstore."
+      ],
+      "business": [
+        "During the conference keynote, late arrivals had to take folding chairs positioned along the main center aisle.",
+        "The cabin crew secured the beverage cart in the galley before walking down the aisle to perform final safety checks.",
+        "Merchandising teams reorganized product displays along the primary store aisle to improve customer foot traffic flow."
+      ],
+      "conversation": [
+        "\"Would you prefer a window or an aisle seat for the trans-Atlantic flight?\" \"Definitely an aisle seat; I need easy access to walk around during the overnight flight.\"",
+        "\"Where can I find the filing folders?\" \"They are in aisle three, right next to the printer paper display.\""
+      ],
+      "collocations": [
+        "aisle seat",
+        "center aisle",
+        "walk down the aisle",
+        "clear the aisle",
+        "store aisle",
+        "grocery aisle"
+      ]
+    },
+    "wordFamily": {
+      "noun": "aisle, aisleway",
+      "verb": "channel, passage",
+      "adjective": "aisle-side",
+      "adverb": "aisleward"
+    },
+    "visual": {
+      "imageKeyword": "airplane cabin interior aisle seats overhead bins",
+      "imageDescription": "A clean, modern commercial aircraft cabin with rows of passenger seats flanking a central carpeted aisle, overhead luggage compartments closed securely.",
+      "mnemonic": "AISLE rhymes with SMILE: You SMILE when you get extra legroom in the AISLE seat!"
+    },
+    "video": {
+      "description": "An airline safety briefing video demonstrating proper evacuation procedures, emphasizing keeping cabin aisles completely clear of personal belongings during emergencies."
+    },
+    "toeicContext": {
+      "commonParts": [
+        1,
+        3,
+        7
+      ],
+      "exampleQuestion": "Passengers are kindly requested to keep personal belongings stowed securely beneath the seats in front of them so that the main cabin _____ remains unobstructed during boarding and pushback. (A) aisle (B) bridge (C) platform (D) terminal",
+      "tips": "In TOEIC Part 5 & 6, context clues such as 'cabin' and 'unobstructed during boarding' point directly to 'aisle'. 'Bridge', 'platform', and 'terminal' do not fit interior cabin geometry."
+    },
+    "synonyms": [
+      "passageway",
+      "corridor",
+      "walkway",
+      "path",
+      "gangway"
+    ],
+    "antonyms": [],
+    "relatedWords": [
+      "seat",
+      "cabin",
+      "flight attendant",
+      "overhead bin",
+      "row",
+      "boarding",
+      "passenger"
+    ]
+  },
+  {
+    "id": "travel-064",
+    "word": "altogether",
+    "partOfSpeech": [
+      "noun"
+    ],
+    "category": "travel",
+    "level": "intermediate",
+    "toeicFrequency": 8,
+    "pronunciation": {
+      "ipa": "/\u02cc\u0254\u02d0l.t\u0259\u02c8\u0261e\u00f0.\u0259r/",
+      "syllableBreakdown": "al-to-geth-er",
+      "stressPattern": "primary stress on the third syllable (al-to-GETH-er)",
+      "commonMistakes": "Learners sometimes confuse it with 'all together' (separate words meaning everyone assembled together), or mispronounce the voiced dental fricative /\u00f0/ as /z/ or /d/."
+    },
+    "etymology": {
+      "origin": "Old English 'ealltoge\u00feere', combining 'eall' (completely, all) and 'tog\u00e6dere' (together)",
+      "rootWord": "eall (all) + tog\u00e6dere (together)",
+      "rootMeaning": "Completely, entirely, all collected into one whole",
+      "evolution": "Used historically as an intensive adverb meaning 'wholly' or 'completely', and idiomatically as a noun phrase ('in the altogether') representing totality or the nude, though in standard business and travel contexts it functions primarily as an adverb meaning 'completely' or 'on the whole'. (Note: Per prompt specification, classified with noun/adverb flexibility in usage).",
+      "relatedLanguages": [
+        "German: v\u00f6llig / insgesamt",
+        "Dutch: althans / geheel",
+        "Swedish: alldeles"
+      ],
+      "firstRecordedUse": "Before 900 (Old English manuscripts)"
+    },
+    "deepMeaning": {
+      "coreConcept": "Totally, completely, or considered as a whole/ t\u1ed5ng th\u1ec3 (or when used nominally in idiomatic phrasing denoting total sum or entirety). In business travel and general professional contexts, it emphasizes complete or total amounts.",
+      "spatialContext": "Corporate boardrooms, travel expense audits, budget reconciliation meetings, and itinerary planning sessions.",
+      "temporalContext": "Used during summary evaluations, financial audits, or final trip cost assessments.",
+      "emotionalTone": "Definitive, concluding, and comprehensive.",
+      "formalityLevel": "neutral",
+      "connotation": "neutral"
+    },
+    "nativeMindset": {
+      "howNativesThink": "Native speakers use 'altogether' to summarize a total amount or to signal a complete state (e.g., 'altogether different', 'altogether, the trip cost $1,200'). In business and travel planning, it neatly wraps up calculations or emphasizes total elimination of a problem.",
+      "mentalImage": "A financial auditor reviewing a comprehensive corporate travel expense report, tallying hotel, airfare, and dining receipts to arrive at the final altogether sum.",
+      "whenToUse": "Use when summarizing a total amount or indicating completeness (e.g., 'Altogether, the conference expenses exceeded our quarterly travel budget by ten percent').",
+      "whenNotToUse": "Do not confuse with 'all together' meaning a group gathered in one place (e.g., write 'The delegates were all together in the lobby', not 'altogether').",
+      "culturalContext": "In corporate budgeting and expense reporting, summarizing figures accurately using 'altogether' is standard practice in financial reviews."
+    },
+    "examples": {
+      "daily": [
+        "Altogether, we spent three wonderful days exploring the coastal city before catching our return flight.",
+        "The flight cancellation disrupted our plans altogether, forcing us to reschedule the entire client visit.",
+        "Altogether, twelve delegates from our regional office attended the international symposium."
+      ],
+      "business": [
+        "Altogether, the corporate travel expenses for the quarter amounted to over forty-five thousand dollars.",
+        "Due to unforeseen logistical bottlenecks, the project was delayed altogether, pushing the product launch to next quarter.",
+        "Altogether, the revised itinerary provides a much more efficient schedule for meeting overseas partners."
+      ],
+      "conversation": [
+        "\"How much did the hotel and airfare come to in total?\" \"Altogether, the booking came to roughly twelve hundred dollars per traveler.\"",
+        "\"Did you manage to resolve the ticketing error with the airline?\" \"Yes, they waived the change fee altogether after reviewing our corporate account status.\""
+      ],
+      "collocations": [
+        "altogether different",
+        "altogether new",
+        "take altogether",
+        "waive altogether",
+        "amount altogether",
+        "disrupt altogether"
+      ]
+    },
+    "wordFamily": {
+      "noun": "altogether",
+      "verb": "gather",
+      "adjective": "all-inclusive",
+      "adverb": "altogether, wholly, entirely"
+    },
+    "visual": {
+      "imageKeyword": "financial audit expense report calculator total summary",
+      "imageDescription": "A professional desk setup featuring a calculator, itemized travel receipts, and an expense report spreadsheet showing a highlighted final sum total.",
+      "mnemonic": "ALL + TO + GETHER: Bringing everything ALL TO GETHER into one complete total!"
+    },
+    "video": {
+      "description": "A corporate accounting tutorial explaining how to reconcile monthly travel and entertainment expense reports to arrive at accurate altogether totals for corporate tax filings."
+    },
+    "toeicContext": {
+      "commonParts": [
+        5,
+        6,
+        7
+      ],
+      "exampleQuestion": "When the airline policy was updated last month, the carrier decided to eliminate baggage change fees _____ for loyalty program members traveling on business fares. (A) altogether (B) altogether's (C) all together (D) togetherness",
+      "tips": "In TOEIC Part 5 grammar and vocabulary questions, distinguish between the adverb 'altogether' (completely/entirely) and the phrase 'all together' (everyone gathered in one place). Here, the adverb modifying 'eliminate' is required."
+    },
+    "synonyms": [
+      "completely",
+      "entirely",
+      "wholly",
+      "totally",
+      "in total",
+      "outright"
+    ],
+    "antonyms": [
+      "partially",
+      "somewhat",
+      "in part"
+    ],
+    "relatedWords": [
+      "total",
+      "completely",
+      "entirely",
+      "sum",
+      "expense report",
+      "budget",
+      "reconciliation"
+    ]
+  }
+]

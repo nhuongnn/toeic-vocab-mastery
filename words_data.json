@@ -1,0 +1,256 @@
+{
+  "words": [
+    {
+      "id": "tech-207",
+      "word": "mechanism",
+      "partOfSpeech": ["noun"],
+      "category": "technology",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈmɛkəˌnɪzəm/",
+        "syllableBreakdown": "mech·a·nism",
+        "stressPattern": "Primary stress on the first syllable: MECH-a-nism.",
+        "commonMistakes": "Pronouncing it with a /s/ sound instead of /z/ for the suffix '-ism', or misplacing stress on the second syllable.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Greek",
+        "rootWord": "mēchanē",
+        "rootMeaning": "machine, instrument, or contrivance",
+        "evolution": "Derived from ancient Greek mēchanē via Latin mechanismus and modern European languages, originally referring to machine construction and later expanding to abstract systems, processes, and biological functions.",
+        "relatedLanguages": ["Greek (μηχανή)", "Latin (machina)", "French (mécanisme)", "German (Mechanismus)"],
+        "firstRecordedUse": "17th century"
+      },
+      "deepMeaning": {
+        "coreConcept": "A system of parts working together in a machine or a piece of machinery, or a natural/social process by which something takes place or is brought about.",
+        "spatialContext": "Found in hardware engineering laboratories, automated assembly lines, corporate compliance offices, and digital software architecture.",
+        "temporalContext": "Operates continuously within automated systems or is triggered periodically during transactional workflows and administrative reviews.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers view a mechanism as the 'how' behind an outcome—the cogs, gears, rules, or procedural steps that make a system function reliably without manual intervention.",
+        "mentalImage": "A complex clockwork gear train smoothly interacting inside a transparent polished housing, or an interactive flowchart of an automated approval workflow.",
+        "whenToUse": "Use when explaining the underlying process, system, or physical apparatus that achieves a specific result.",
+        "whenNotToUse": "Do not use when referring to a standalone static object without moving parts or an underlying functional process.",
+        "culturalContext": "Frequently invoked in corporate governance, engineering design, and economic policy to describe accountability frameworks and incentive structures."
+      },
+      "examples": {
+        "daily": [
+          "The locking mechanism on the office security door jammed after the power surge.",
+          "She explained the heating mechanism of the espresso machine to the new barista.",
+          "We need to clean the internal gear mechanism of the printer to stop the paper jams."
+        ],
+        "business": [
+          "The board approved a new compensation mechanism to reward high-performing department heads.",
+          "An effective feedback mechanism is essential for continuous quality improvement across manufacturing units.",
+          "The company implemented a robust feedback mechanism for remote employees to report IT issues."
+        ],
+        "conversation": [
+          "Colleague A: 'How do customers sign off on these compliance documents?' \nColleague B: 'We use a digital signature mechanism integrated directly into the portal.'",
+          "Client: 'What guarantees do we have that the refund will be processed?' \nRepresentative: 'The automated reimbursement mechanism initiates transfers within 48 hours.'"
+        ],
+        "collocations": [
+          "feedback mechanism",
+          "locking mechanism",
+          "pricing mechanism",
+          "defense mechanism",
+          "regulatory mechanism",
+          "control mechanism"
+        ]
+      },
+      "wordFamily": {
+        "noun": "mechanistic",
+        "verb": "mechanize",
+        "adjective": "mechanical",
+        "adverb": "mechanically"
+      },
+      "visual": {
+        "imageKeyword": "precision mechanical gears engineering",
+        "imageDescription": "Close-up macro shot of interlocking brass and steel gears in a precision instrument under bright studio lighting.",
+        "mnemonic": "Think of a 'MECHANic' building an 'ISM' (system) of working parts—a mechanism!"
+      },
+      "video": {
+        "description": "An animation breaking down the inner workings of automated sorting mechanisms in a modern logistics fulfillment center."
+      },
+      "toeicContext": {
+        "commonParts": [5, 6, 7],
+        "exampleQuestion": "The management team introduced a new incentive __________ to encourage employees to meet their quarterly productivity milestones.",
+        "tips": "In TOEIC Part 5, nouns ending in '-ism' often follow descriptive adjectives like 'incentive', 'pricing', or 'regulatory'. Pay attention to collocations."
+      },
+      "synonyms": ["apparatus", "device", "system", "procedure", "process", "instrumentality"],
+      "antonyms": [],
+      "relatedWords": ["automation", "machinery", "apparatus", "procedure", "infrastructure", "assembly", "component"]
+    },
+    {
+      "id": "tech-208",
+      "word": "memory",
+      "partOfSpeech": ["noun"],
+      "category": "technology",
+      "level": "essential",
+      "toeicFrequency": 9,
+      "pronunciation": {
+        "ipa": "/ˈmɛməri/",
+        "syllableBreakdown": "mem·o·ry",
+        "stressPattern": "Primary stress on the first syllable: MEM-o-ry.",
+        "commonMistakes": "Pronouncing the middle 'o' as a full vowel sound instead of reducing it to a schwa (/ə/).",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Latin",
+        "rootWord": "memoria",
+        "rootMeaning": "mindfulness, recollection, or memory",
+        "evolution": "Derived from Latin memoria, from memor (mindful), passing through Old French memoire before entering Middle English in the 14th century.",
+        "relatedLanguages": ["Latin (memoria)", "French (mémoire)", "Spanish (memoria)", "Italian (memoria)"],
+        "firstRecordedUse": "14th century"
+      },
+      "deepMeaning": {
+        "coreConcept": "The faculty by which the mind stores and remembers information, or the capacity of a computer or electronic device to store data and instructions.",
+        "spatialContext": "Encountered in corporate IT server rooms, personal computer hardware specifications, boardrooms discussing historical precedent, and archiving departments.",
+        "temporalContext": "Active continuously in electronic storage operations or recalled selectively during strategic planning meetings.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers instantly distinguish between human recollection (personal experience and knowledge) and digital storage capacity (RAM or storage drives in electronic devices).",
+        "mentalImage": "A computer motherboard with RAM sticks securely slotted next to the central processor, glowing under subtle LED case lights.",
+        "whenToUse": "Use when discussing computer hardware capacity, data retention, or human recollection of past events.",
+        "whenNotToUse": "Do not use 'memory' when referring to permanent non-volatile hard disk storage capacity without specifying RAM or volatile cache.",
+        "culturalContext": "Central to modern digital literacy, corporate data management policies, and institutional record-keeping."
+      },
+      "examples": {
+        "daily": [
+          "My smartphone is running out of memory because of too many high-resolution photos.",
+          "She has an incredible memory for remembering clients' birthdays and preferences.",
+          "I need to clear my browser cache and memory to speed up page loading."
+        ],
+        "business": [
+          "The newly purchased enterprise servers feature 256 gigabytes of high-speed memory to handle heavy database queries.",
+          "In memory of our late founder, the board established an annual corporate scholarship fund.",
+          "Upgrading the workstations' memory significantly reduced render times for the design team."
+        ],
+        "conversation": [
+          "Colleague A: 'Why is this software freezing up during export?' \nColleague B: 'We probably need to upgrade the RAM memory on these older workstations.'",
+          "Manager: 'Did you save the client presentation?' \nAssistant: 'Yes, it's saved in the shared drive, but I also keep a copy in local memory.'"
+        ],
+        "collocations": [
+          "random access memory",
+          "flash memory",
+          "memory card",
+          "memory leak",
+          "server memory",
+          "cache memory"
+        ]
+      },
+      "wordFamily": {
+        "noun": "memorization",
+        "verb": "memorize",
+        "adjective": "memorable",
+        "adverb": "memorably"
+      },
+      "visual": {
+        "imageKeyword": "computer RAM memory module circuit board",
+        "imageDescription": "Detailed close-up of a green electronic RAM memory stick with gold contact pins resting on a dark computer motherboard.",
+        "mnemonic": "MEMORy is where you REMEMBER and store your files."
+      },
+      "video": {
+        "description": "A tech review video demonstrating how to install and upgrade memory modules in a high-performance desktop workstation."
+      },
+      "toeicContext": {
+        "commonParts": [1, 5, 7],
+        "exampleQuestion": "Due to an unexpected surge in software data traffic, the IT department recommended upgrading the server's __________ immediately.",
+        "tips": "In TOEIC business contexts, 'memory' frequently appears alongside hardware upgrades, IT budgets, and system performance optimizations."
+      },
+      "synonyms": ["storage", "RAM", "recall", "remembrance", "retention", "cache"],
+      "antonyms": ["forgetfulness"],
+      "relatedWords": ["hardware", "storage", "processor", "server", "data", "cache", "workstation"]
+    },
+    {
+      "id": "tech-209",
+      "word": "message",
+      "partOfSpeech": ["noun"],
+      "category": "technology",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈmɛsɪdʒ/",
+        "syllableBreakdown": "mes·sage",
+        "stressPattern": "Primary stress on the first syllable: MES-sage.",
+        "commonMistakes": "Mispronouncing the final sound as /ʒ/ (like 'beige') instead of the correct affricate /dʒ/.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Latin",
+        "rootWord": "missus",
+        "rootMeaning": "sent (past participle of mittere, to send)",
+        "evolution": "Derived from Vulgar Latin *missaticum (something sent), through Old French message, entering English in the 15th century.",
+        "relatedLanguages": ["Latin (missum)", "French (message)", "Spanish (mensaje)", "Italian (messaggio)"],
+        "firstRecordedUse": "15th century"
+      },
+      "deepMeaning": {
+        "coreConcept": "A discrete communication transmitted by spoken, written, or electronic means from one person or group to another.",
+        "spatialContext": "Exchanged across corporate email clients, instant messaging platforms, customer service portals, and telephone voicemail systems.",
+        "temporalContext": "Transmitted instantly or asynchronously throughout the workday as operational updates or client inquiries.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "neutral",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native speakers regard a message as any actionable piece of information or directive sent across a channel that requires attention or acknowledgement.",
+        "mentalImage": "A glowing notification badge on a smartphone screen showing an unread corporate chat message.",
+        "whenToUse": "Use when referring to an electronic communication, memo, or verbal instruction left for someone.",
+        "whenNotToUse": "Do not use 'message' when referring to large official documents, contracts, or extensive reports.",
+        "culturalContext": "Pivotal in modern business communication etiquette, remote work coordination, and customer relationship management."
+      },
+      "examples": {
+        "daily": [
+          "Please leave a message after the tone if nobody is available to take your call.",
+          "She sent a quick text message to let her team know she would be running late.",
+          "I received an urgent message from the courier regarding the delivery status."
+        ],
+        "business": [
+          "The CEO delivered a powerful opening message at the annual global shareholder meeting.",
+          "Our customer support team automatically logs every client message into the CRM database.",
+          "Make sure to include a clear subject line so your message stands out in the inbox."
+        ],
+        "conversation": [
+          "Colleague A: 'Did Mr. Henderson call while I was in the meeting?' \nColleague B: 'Yes, he left a message asking you to return his call by noon.'",
+          "Manager: 'Did you get my message about rescheduling the client pitch?' \nEmployee: 'Yes, I updated the calendar invite accordingly.'"
+        ],
+        "collocations": [
+          "leave a message",
+          "instant message",
+          "text message",
+          "error message",
+          "clear message",
+          "promotional message"
+        ]
+      },
+      "wordFamily": {
+        "noun": "messenger",
+        "verb": "message",
+        "adjective": "unmessaged",
+        "adverb": "messaging"
+      },
+      "visual": {
+        "imageKeyword": "smartphone notification chat message bubble",
+        "imageDescription": "A sleek modern smartphone displaying an unread chat message notification bubble on its lock screen against a clean wooden desk background.",
+        "mnemonic": "A MESSage is sent by a MESSenger!"
+      },
+      "video": {
+        "description": "A tutorial video explaining how to configure automated customer service messaging bots for e-commerce platforms."
+      },
+      "toeicContext": {
+        "commonParts": [1, 3, 7],
+        "exampleQuestion": "If you are unable to reach your designated account manager, please leave a detailed __________ with the front desk receptionist.",
+        "tips": "In TOEIC Listening Parts 3 and 4, prompts frequently mention leaving or returning telephone messages regarding schedule changes or order status."
+      },
+      "synonyms": ["communication", "note", "memo", "dispatch", "notice", "bulletin"],
+      "antonyms": [],
+      "relatedWords": ["email", "notification", "communication", "memo", "inbox", "voicemail", "chat"]
+    }
+  ]
+}

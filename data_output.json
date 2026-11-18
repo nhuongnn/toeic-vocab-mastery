@@ -1,0 +1,256 @@
+{
+  "words": [
+    {
+      "id": "marketing-176",
+      "word": "growth hacking",
+      "partOfSpeech": ["noun"],
+      "category": "marketing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ɡroʊθ ˈhækɪŋ/",
+        "syllableBreakdown": "growth hack-ing",
+        "stressPattern": "Primary stress on second syllable / secondary on first (growth HACK-ing)",
+        "commonMistakes": "Pronouncing 'hacking' with a hard /æ/ incorrectly or omitting the /θ/ sound in 'growth', resulting in 'grow-hacking'.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Modern coinage originating in Silicon Valley startup culture (early 2010s).",
+        "rootWord": "growth + hacking",
+        "rootMeaning": "'Growth' from Old Norse (grōtta / grōa, to grow) combined with 'hacking' (originally from computer programming meaning to find a clever, quick workaround or solution).",
+        "evolution": "Coined by Sean Ellis in 2010 to describe a marketing discipline focused solely on rapid, scalable growth through low-cost, experimental techniques rather than traditional advertising budgets.",
+        "relatedLanguages": ["Old Norse (grōa)", "English (hack)"],
+        "firstRecordedUse": "2010 by startup marketer Sean Ellis in a seminal blog post defining growth hackers."
+      },
+      "deepMeaning": {
+        "coreConcept": "A marketing subset and experimental strategy employed primarily by startups that focuses on rapid, low-cost, scalable customer acquisition through analytical thinking, product innovation, and social media metrics rather than traditional ad spending.",
+        "spatialContext": "Fast-paced tech startup offices, agile product development bullpens, digital analytics war rooms, and remote growth-squad video conferencing sessions.",
+        "temporalContext": "Continuous, iterative sprints (weekly or bi-weekly A/B testing cycles) focused on real-time funnel conversion metrics.",
+        "emotionalTone": "dynamic",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "culturalContext": "Widely associated with the modern entrepreneurial hustle culture, Silicon Valley tech ecosystems, and data-driven modern business innovation where speed and agility outweigh traditional corporate marketing departments.",
+        "howNativesThink": "Native business speakers view growth hacking as scrappy, unconventional, and highly analytical—distinguishing it from brand-building by its obsession with rapid user acquisition, viral loops, and viral coefficients (K-factor).",
+        "mentalImage": "A team of young data analysts huddled around a glowing dual-monitor setup in a converted loft, furiously studying real-time conversion graphs, user retention funnels, and email signup spikes on a midnight release.",
+        "whenToUse": "When discussing agile startup tactics, viral marketing loops, rapid user acquisition, and data-driven product optimization.",
+        "whenNotToUse": "In traditional corporate settings or long-term brand equity campaigns where patient, institutional brand messaging takes precedence over rapid conversion hacks."
+      },
+      "examples": {
+        "daily": [
+          "Instead of buying billboards, the mobile app developers used creative referral incentives as a growth hacking technique to hit one million users.",
+          "Our startup's growth hacking strategy relies heavily on viral social sharing loops embedded directly into the onboarding workflow.",
+          "She attended a weekend seminar on growth hacking to learn how to optimize web funnel conversions with zero advertising budget."
+        ],
+        "business": [
+          "The venture capital firm insisted that the new portfolio company hire an experienced VP of Growth Hacking to scale their SaaS user base.",
+          "By implementing automated referral discounts and social media sharing prompts, the e-commerce firm achieved unprecedented customer acquisition velocity.",
+          "Traditional marketing agencies often misunderstand growth hacking because they focus on creative impressions rather than rigorous quantitative metrics."
+        ],
+        "conversation": [
+          "Colleague A: 'Our user sign-ups have completely plateaued this quarter.' | Colleague B: 'We need to pivot from traditional advertising to aggressive growth hacking—let's test a referral incentive program by Monday.'",
+          "Manager: 'Is this new landing page optimization part of our standard marketing plan?' | Employee: 'No, it's a growth hacking experiment designed to double our free-trial conversion rate within two weeks.'"
+        ],
+        "collocations": [
+          "growth hacking strategy",
+          "growth hacking technique",
+          "growth hacking tactics",
+          "growth hacking expert",
+          "growth hacking experiment",
+          "growth hacking mindset"
+        ]
+      },
+      "wordFamily": {
+        "noun": "growth hacker / growth hacking",
+        "verb": "to growth-hack",
+        "adjective": "growth-hacking",
+        "adverb": "growth-hackingly"
+      },
+      "visual": {
+        "imageKeyword": "startup analytics dashboard growth hacking",
+        "imageDescription": "A brightly lit modern startup workspace showing multiple computer monitors displaying glowing analytics charts, retention funnels, and code repositories, with sticky notes outlining user acquisition experiments.",
+        "mnemonic": "Think of a 'growth' plant sprouting overnight because you 'hacked' (programmed a clever shortcut into) the watering system!"
+      },
+      "video": {
+        "description": "A 12-minute case study breaking down how early-stage tech companies use viral loops, referral programs, and rapid A/B testing to achieve exponential user growth without traditional ad spend."
+      },
+      "toeicContext": {
+        "commonParts": [3, 4, 7],
+        "exampleQuestion": "To accelerate user acquisition without increasing the quarterly advertising budget, the tech startup brought in a consultant specializing in modern ______ strategies.\n(A) growth hacking\n(B) inventory holding\n(C) payroll processing\n(D) facility leasing",
+        "tips": "In TOEIC business contexts, look for collocating words like 'acquisition', 'startup', and 'metrics' that signal innovative marketing strategies."
+      },
+      "synonyms": ["viral marketing", "rapid customer acquisition", "experimental marketing", "growth marketing", "scrappy marketing"],
+      "antonyms": ["traditional advertising", "brand marketing", "institutional advertising"],
+      "relatedWords": ["funnel optimization", "A/B testing", "user retention", "viral loop", "conversion rate", "metrics"]
+    },
+    {
+      "id": "marketing-177",
+      "word": "guerrilla marketing",
+      "partOfSpeech": ["noun"],
+      "category": "marketing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ɡəˈrɪlə ˈmɑːrkɪtɪŋ/",
+        "syllableBreakdown": "guer-ril-la mar-ket-ing",
+        "stressPattern": "Primary stress on second syllable of guerrilla and first syllable of marketing (gu-RIL-la MAR-ket-ing)",
+        "commonMistakes": "Mispronouncing 'guerrilla' as 'gorilla' (due to homophone confusion) or misplacing stress on the first syllable.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Derived from 'guerrilla warfare' (Spanish 'guerrilla', diminutive of 'guerra', meaning war), combined with 'marketing'.",
+        "rootWord": "guerrilla (little war) + marketing",
+        "rootMeaning": "Refers to unconventional, surprise combat tactics used by smaller forces against traditional armies, metaphorically applied to unconventional business promotion.",
+        "evolution": "Popularized by business author Jay Conrad Levinson in his 1984 book 'Guerrilla Marketing', describing low-budget, high-impact promotional strategies for small businesses.",
+        "relatedLanguages": ["Spanish (guerra)", "Italian (guerra)", "Old High German (werra)"],
+        "firstRecordedUse": "1984 in Jay Conrad Levinson's book 'Guerrilla Marketing'."
+      },
+      "deepMeaning": {
+        "coreConcept": "An unconventional, low-cost marketing strategy that relies on surprise, creativity, and unconventional physical or digital interactions (such as flash mobs, street art, or public stunts) to capture consumer attention in public spaces.",
+        "spatialContext": "Urban pedestrian walkways, subway stations, public plazas, flash-mob event spaces, and unexpected digital pop-up platforms.",
+        "temporalContext": "Short-duration, high-impact tactical campaigns designed for immediate public buzz and viral media coverage.",
+        "emotionalTone": "surprising",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "culturalContext": "Associated with creative advertising agencies, independent filmmakers, and challenger brands looking to punch above their weight class against multinational corporations with massive ad budgets.",
+        "howNativesThink": "Native speakers view guerrilla marketing as clever, bold, and risk-taking—relying on ingenuity and shock value rather than deep corporate pockets.",
+        "mentalImage": "A bustling city sidewalk where a massive 3D street chalk mural creates an optical illusion for pedestrians, stopping commuters in their tracks to take photos for social media.",
+        "whenToUse": "When discussing low-budget, high-creativity campaigns, unconventional publicity stunts, and street-level activations.",
+        "whenNotToUse": "For conservative B2B corporate communications, regulatory-heavy industries, or formal institutional announcements."
+      },
+      "examples": {
+        "daily": [
+          "The coffee shop used guerrilla marketing by placing giant coffee cups on public park benches across the city.",
+          "Instead of buying TV ads, the indie film crew relied on guerrilla marketing tactics like stencil graffiti and flash mobs.",
+          "Her creative guerrilla marketing stunt generated thousands of local news mentions overnight."
+        ],
+        "business": [
+          "With a limited promotional budget, the footwear brand launched a successful guerrilla marketing campaign featuring interactive pop-up installations in downtown transit hubs.",
+          "While effective for building brand buzz, guerrilla marketing requires careful legal review to avoid municipal fines for public disturbances.",
+          "The marketing director presented a bold guerrilla marketing proposal aimed at surprising commuters during morning rush hour."
+        ],
+        "conversation": [
+          "Colleague A: 'How are we going to compete with Nike's million-dollar Super Bowl ad?' | Colleague B: 'We can't match their budget, so let's execute a clever guerrilla marketing campaign in major city squares instead.'",
+          "Manager: 'Did city officials approve our street art installation?' | Employee: 'We secured the necessary permits for the guerrilla marketing activation downtown.'"
+        ],
+        "collocations": [
+          "guerrilla marketing campaign",
+          "guerrilla marketing stunt",
+          "guerrilla marketing tactics",
+          "guerrilla marketing strategy",
+          "guerrilla marketing approach",
+          "guerrilla marketing initiative"
+        ]
+      },
+      "wordFamily": {
+        "noun": "guerrilla marketing / guerrilla marketer",
+        "verb": "to guerrilla-market",
+        "adjective": "guerrilla",
+        "adverb": "guerrillalike"
+      },
+      "visual": {
+        "imageKeyword": "guerrilla marketing urban street installation",
+        "imageDescription": "An imaginative public street installation where a city manhole cover is painted to look like a steaming cup of coffee, surprising pedestrians walking by.",
+        "mnemonic": "Think of 'guerrilla' fighters using surprise hit-and-run tactics in the jungle, just like guerrilla marketers use surprise street tactics in the concrete jungle!"
+      },
+      "video": {
+        "description": "A 10-minute compilation video analyzing the most famous urban guerrilla marketing stunts in advertising history and their impact on viral brand awareness."
+      },
+      "toeicContext": {
+        "commonParts": [3, 7],
+        "exampleQuestion": "Because the new boutique agency lacked the funds for television commercials, they opted for an imaginative ______ campaign featuring interactive sidewalk art.\n(A) guerrilla marketing\n(B) wholesale distribution\n(C) financial auditing\n(D) logistics management",
+        "tips": "Recognize 'guerrilla marketing' as a collocation used in contexts involving limited budgets, high creativity, and unconventional public spaces."
+      },
+      "synonyms": ["unconventional marketing", "ambient marketing", "street marketing", "surprise marketing", "alternative marketing"],
+      "antonyms": ["mainstream advertising", "traditional marketing", "corporate advertising"],
+      "relatedWords": ["publicity stunt", "flash mob", "ambient media", "challenger brand", "viral buzz", "promotional budget"]
+    },
+    {
+      "id": "marketing-178",
+      "word": "hashtag campaign",
+      "partOfSpeech": ["noun"],
+      "category": "marketing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/ˈhæʃtæɡ kæmˈpeɪn/",
+        "syllableBreakdown": "hash-tag cam-paign",
+        "stressPattern": "Primary stress on first syllable of hashtag and second syllable of campaign (HASH-tag cam-PAIGN)",
+        "commonMistakes": "Pronouncing the silent 'g' in campaign incorrectly as /kæmˈpeɪnd/ or placing equal stress on all syllables.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Compound of 'hashtag' (hash '#' symbol + tag) and 'campaign' (from French 'campagne', Italian 'campagna', meaning open country or military expedition).",
+        "rootWord": "hash + tag + campaign",
+        "rootMeaning": "A marked metadata tag (#) used to index messages on social media networks, deployed across an organized promotional series of actions.",
+        "evolution": "Emerging in 2007 on Twitter (proposed by Chris Messina), hashtags evolved into vital corporate marketing tools for aggregating user-generated content and tracking social media engagement.",
+        "relatedLanguages": ["French (campagne)", "Italian (campagna)", "Latin (campania)"],
+        "firstRecordedUse": "Widely adopted in social media marketing globally from the early 2010s onward."
+      },
+      "deepMeaning": {
+        "coreConcept": "A coordinated social media marketing initiative built around a specific, branded metadata keyword preceded by the hash symbol (#) designed to aggregate user posts, stimulate viral conversation, and track brand engagement.",
+        "spatialContext": "Social media platforms (X/Twitter, Instagram, LinkedIn, TikTok), digital marketing dashboards, corporate communications war rooms, and omni-channel advertising billboards.",
+        "temporalContext": "Timed promotional windows (ranging from a 24-hour product launch to a multi-month seasonal brand awareness initiative).",
+        "emotionalTone": "engaging",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "culturalContext": "Central to modern digital culture, influencer partnerships, corporate social responsibility drives, and viral internet trends in English-speaking countries.",
+        "howNativesThink": "Native speakers view hashtag campaigns as collaborative, interactive digital movements that invite public participation and measure consumer sentiment in real time.",
+        "mentalImage": "A massive billboard in Times Square displaying a vibrant neon brand logo alongside a prominent hashtag, while smartphone screens below flicker with thousands of user-submitted photos carrying that exact tag.",
+        "whenToUse": "When discussing social media marketing, user-generated content initiatives, brand awareness drives, and digital community building.",
+        "whenNotToUse": "In formal legal contracts, internal accounting documents, or traditional offline manufacturing operations."
+      },
+      "examples": {
+        "daily": [
+          "She posted her vacation photos on Instagram using the brand's official hashtag campaign.",
+          "Our local animal shelter launched a successful hashtag campaign to encourage pet adoption.",
+          "Thousands of users shared their eco-friendly tips online as part of the earth-day hashtag campaign."
+        ],
+        "business": [
+          "The cosmetics brand experienced a 40% surge in online sales following the viral launch of their inclusive beauty hashtag campaign.",
+          "The public relations team monitored social media analytics closely throughout the duration of the global hashtag campaign.",
+          "During the annual conference, attendees were encouraged to share their insights and questions using the event's designated hashtag campaign."
+        ],
+        "conversation": [
+          "Colleague A: 'How are engagement numbers looking for our new product launch?' | Colleague B: 'Fantastic! The hashtag campaign has already generated over fifty thousand organic posts on Instagram.'",
+          "Marketing Director: 'Make sure every influencer included our exact brand hashtag campaign in their video captions.'"
+        ],
+        "collocations": [
+          "hashtag campaign launch",
+          "social media hashtag campaign",
+          "branded hashtag campaign",
+          "viral hashtag campaign",
+          "hashtag campaign analytics",
+          "successful hashtag campaign"
+        ]
+      },
+      "wordFamily": {
+        "noun": "hashtag campaign / hashtag",
+        "verb": "to hashtag / to campaign",
+        "adjective": "hashtagged",
+        "adverb": "hashtag-driven"
+      },
+      "visual": {
+        "imageKeyword": "social media hashtag campaign smartphone screen analytics",
+        "imageDescription": "A close-up of a smartphone displaying a trending social media feed with a prominent branded hashtag, surrounded by floating heart and share icons against a sleek digital backdrop.",
+        "mnemonic": "Think of the hash sign (#) as a digital fishing net cast into the social media ocean to catch ('tag') every conversation in your campaign!"
+      },
+      "video": {
+        "description": "A 15-minute digital marketing webinar demonstrating how to design, launch, and track high-performing hashtag campaigns across multiple social media platforms."
+      },
+      "toeicContext": {
+        "commonParts": [3, 6, 7],
+        "exampleQuestion": "To measure consumer engagement during the product release, the public relations department tracked the volume of posts associated with their new ______.\n(A) hashtag campaign\n(B) warehouse inventory\n(C) safety protocol\n(D) budget forecast",
+        "tips": "Look for contextual clues like 'social media', 'posts', 'engagement', and 'online reach' when identifying hashtag campaigns in TOEIC readings."
+      },
+      "synonyms": ["social media campaign", "tag campaign", "viral hashtag initiative", "digital campaign", "social initiative"],
+      "antonyms": [],
+      "relatedWords": ["user-generated content", "social listening", "brand awareness", "influencer marketing", "engagement rate", "metadata"]
+    }
+  ]
+}

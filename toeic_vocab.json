@@ -1,0 +1,1020 @@
+{
+  "words": [
+    {
+      "id": "hr-117",
+      "word": "checklist",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "hr-personnel",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/\u02c8t\u0283\u025bk.l\u026ast/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/checklist--_us_1.mp3",
+        "syllableBreakdown": "check-list",
+        "stressPattern": "\u25cf\u25cb",
+        "commonMistakes": "Learners often misplace primary stress onto the second syllable (*check-LIST*) or mispronounce the final consonant cluster /st/ by dropping the /t/ sound when speaking quickly. In professional workplace contexts, non-native speakers sometimes confuse 'checklist' (a systematic verification list of required tasks, procedural steps, or items) with 'schedule' (a chronological timeline or calendar of events) or 'agenda' (an ordered list of meeting topics)."
+      },
+      "etymology": {
+        "origin": "Formed by compounding the verb 'check' (derived through Middle English from Old French 'cheker', ultimately from Persian 'sh\u0101h' in chess, meaning 'king in check') and the noun 'list' (derived from Old English 'list', meaning 'strip, border, edge, or recorded roll').",
+        "rootWord": "Middle English check (verification, control marker) + Old English list (recorded strip or roll of items)",
+        "rootMeaning": "'A verified border-roll or strip used for ticking off completed items to ensure thoroughness and prevent omissions'",
+        "evolution": "The noun compound 'checklist' emerged in American English during the late 19th and early 20th centuries, initially in maritime navigation, industrial manufacturing, and engineering quality assurance. Following World War II and the rapid expansion of aviation safety protocols (notably pioneered by flight test crews and standardized by the FAA), the checklist became ubiquitous across military, medical, and corporate administrative workflows to eliminate human error during complex, multi-step procedures.",
+        "relatedLanguages": [
+          "French: liste de contr\u00f4le (f.) / m\u00e9mo-contr\u00f4le (m.)",
+          "Spanish: lista de verificaci\u00f3n (f.) / lista de comprobaci\u00f3n (f.)",
+          "German: Checkliste (f.) / Pr\u00fcfliste (f.)",
+          "Italian: elenco di controllo (m.) / checklist (f.)"
+        ],
+        "firstRecordedUse": "Late 19th century (c. 1885 in industrial engineering and administrative manuals; standardized widely in aviation and corporate management by the 1940s)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A standardized operational tool consisting of a sequential list of items, tasks, or verification points that a professional systematically consults and ticks off to ensure absolute completeness, procedural compliance, and error prevention during routine or high-stakes workflows.",
+        "spatialContext": "Human resources onboarding desks, pilot flight decks, surgical operating suites, quality assurance inspection stations, and executive project management war rooms.",
+        "temporalContext": "Daily shift handovers, new employee orientation sessions, pre-flight safety checks, product shipment audits, and quarterly regulatory compliance reviews.",
+        "emotionalTone": "Methodical, rigorous, reassuring, structured, and operational.",
+        "formalityLevel": "neutral",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native English speakers in professional environments, a checklist is viewed as an indispensable cognitive aid rather than micromanagement. It embodies the principle of procedural discipline\u2014acknowledging that even highly experienced professionals can experience cognitive fatigue or memory lapses under pressure. Checking off items provides an immediate psychological sense of progress and accountability.",
+        "mentalImage": "A human resources specialist seated at an ergonomic desk holding a laminated new-hire onboarding checklist, systematically verifying identity documents, tax forms, and building access badge issuance alongside a newly hired software engineer.",
+        "whenToUse": "Use when referring to structured verification tools, onboarding requirements, safety audit protocols, or standard operating procedure task lists.",
+        "whenNotToUse": "Do not use to describe unstructured brainstorm notes, vague to-do lists scribbled on scrap paper without formal procedural status, or high-level strategic agendas.",
+        "culturalContext": "In Western corporate culture and highly regulated industries (such as aviation, pharmaceuticals, and finance), checklists are mandated by ISO standards and OSHA guidelines to ensure zero-defect execution and legal liability protection."
+      },
+      "examples": {
+        "daily": [
+          "Before locking up the regional office for the weekend, the facilities manager consulted the security checklist to make sure all perimeter windows were latched.",
+          "She printed out a comprehensive packing checklist to ensure no essential presentation materials or adapters were left behind before her flight to the Chicago branch.",
+          "The administrative assistant went down the event planning checklist item by item, confirming catering deliveries and audio-visual equipment rentals."
+        ],
+        "business": [
+          "Human resources developed a rigorous onboarding checklist to streamline the integration of newly hired personnel across all regional subsidiaries.",
+          "Auditors requested the warehouse compliance checklist to verify that all safety inspection protocols were executed prior to the occupational health evaluation.",
+          "Project managers utilize a standardized deployment checklist to guarantee that all software patches undergo adequate regression testing before production release."
+        ],
+        "conversation": [
+          "Colleague A: 'Have you completed the equipment audit for the inventory room yet?'\nColleague B: 'I'm halfway through. I am following our department's inventory checklist to ensure nothing gets missed.'",
+          "Manager: 'Did the new assistant finish processing the payroll files?'\nSupervisor: 'Yes, she crossed every item off the payroll verification checklist before submitting it to accounting.'"
+        ],
+        "collocations": [
+          "comprehensive checklist",
+          "onboarding checklist",
+          "safety checklist",
+          "verification checklist",
+          "go down a checklist",
+          "follow a checklist"
+        ]
+      },
+      "wordFamily": {
+        "noun": "checklist",
+        "verb": "check",
+        "adjective": "checked",
+        "adverb": "unchecked"
+      },
+      "visual": {
+        "imageKeyword": "professional human resources onboarding checklist clipboard pen office desk",
+        "imageDescription": "A clean, well-lit executive desk featuring a sleek clipboard with a printed HR onboarding checklist, a metallic ballpoint pen resting beside checkbox marks, and an ID badge in the background.",
+        "mnemonic": "A 'checklist' is a list you 'check' off item by item so you never miss a critical detail."
+      },
+      "video": {
+        "description": "A corporate training video demonstrating how human resources departments utilize standardized digital onboarding checklists to streamline new employee orientation and ensure legal compliance."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "All department managers are requested to review the annual safety audit _____ before submitting their facility reports to the compliance director next Friday.\n(A) catalog\n(B) checklist\n(C) agenda\n(D) itinerary",
+        "tips": "In TOEIC Part 5 and 6 context questions, look for collocating verbs and adjectives. 'Safety audit checklist' or 'comprehensive checklist' are standard collocations in administrative texts. 'Catalog' refers to product inventories, 'agenda' to meeting schedules, and 'itinerary' to travel plans."
+      },
+      "synonyms": [
+        "inventory",
+        "schedule",
+        "roster",
+        "outline",
+        "manifest",
+        "index"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "procedure",
+        "protocol",
+        "audit",
+        "guideline",
+        "workflow",
+        "template",
+        "verification"
+      ]
+    },
+    {
+      "id": "hr-118",
+      "word": "citation",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "hr-personnel",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/sa\u026a\u02c8te\u026a.\u0283\u0259n/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/citation--_us_1.mp3",
+        "syllableBreakdown": "ci-ta-tion",
+        "stressPattern": "o-\u25cf-oo",
+        "commonMistakes": "Learners frequently misplace primary stress onto the initial syllable (*CI-ta-tion*) or pronounce the middle vowel as an open /\u00e6/ rather than the long diphthong /e\u026a/. In professional and legal contexts, non-native speakers sometimes confuse 'citation' (an official summons, legal notice of infraction, or formal academic/professional commendation) with 'site' (a physical location) or 'situation' (circumstances)."
+      },
+      "etymology": {
+        "origin": "Derived from Latin 'citationem' (accusative of 'citatio'), meaning 'a summoning' or 'calling forth', from the verb 'citare', meaning 'to rouse, summon, call', an intensive form of 'ciere' ('to set in motion').",
+        "rootWord": "Latin citare (to summon, call forth, rouse)",
+        "rootMeaning": "'An official summoning or formal calling forth of a person before an authority, or the formal summoning of a reference text'",
+        "evolution": "The term entered Middle English during the 14th century via Anglo-Norman legal terminology, initially denoting a formal summons to appear before an ecclesiastical or civil court. By the 16th century, its meaning broadened in scholarly writing to include the summoning of passages from authoritative texts (bibliographic references). In 19th and 20th-century administrative and municipal law, the term acquired its modern dual usage: an official legal notice of a regulatory violation (such as an OSHA safety infraction or parking ticket) and a formal public commendation for heroic or exemplary professional service.",
+        "relatedLanguages": [
+          "French: citation (f.)",
+          "Spanish: citaci\u00f3n (f.) / citatorio (m.)",
+          "German: Vorladung (f.) / Zitation (f.) / Auszeichnung (f.)",
+          "Italian: citazione (f.)"
+        ],
+        "firstRecordedUse": "14th century (c. 1385 in Middle English ecclesiastical and legal treatises; broadened to academic referencing in the 16th century and regulatory/employment citations in the 19th century)"
+      },
+      "deepMeaning": {
+        "coreConcept": "An official legal notice or summons issued by an authorized regulatory agency or employer for a violation of rules, or alternatively, a formal written commendation recognizing exceptional professional achievement or bravery.",
+        "spatialContext": "Occupational Safety and Health Administration (OSHA) inspection reports, municipal traffic courts, academic research bibliographies, and corporate awards banquet stages.",
+        "temporalContext": "Post-inspection regulatory enforcement proceedings, annual employee recognition ceremonies, academic paper publication phases, and municipal hearings.",
+        "emotionalTone": "Authoritative, formal, serious, and legally binding (or highly honorific when used as an award).",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "In professional and legal contexts, native English speakers recognize 'citation' as carrying significant weight. In a regulatory or workplace setting, receiving a citation implies a formal infraction of safety codes, employment laws, or organizational policies that demands immediate remediation and potential financial penalties. Conversely, in academic or institutional settings, a citation represents scholarly attribution or elite recognition of merit.",
+        "mentalImage": "A strict safety inspector handing a formal compliance citation notice to a manufacturing plant manager on the factory floor after discovering an obstructed emergency exit.",
+        "whenToUse": "Use when referring to official regulatory violation notices, OSHA safety infractions, municipal fines, formal academic reference sources, or employee service awards.",
+        "whenNotToUse": "Do not use to describe casual warnings, verbal reprimands between colleagues, general web links without scholarly formatting, or ordinary physical locations.",
+        "culturalContext": "In North American corporate governance, regulatory citations issued by federal bodies like OSHA or the EPA carry severe financial liabilities and public disclosure mandates, making compliance tracking a top priority for human resources and facilities executives."
+      },
+      "examples": {
+        "daily": [
+          "The delivery driver received a parking citation after leaving the van in a loading zone longer than the permitted time limit.",
+          "The researcher included detailed bibliographic citations for every academic study referenced in the market analysis report.",
+          "During the neighborhood inspection, the local zoning board issued a citation for failing to maintain the property perimeter fence."
+        ],
+        "business": [
+          "The manufacturing facility was hit with a major OSHA safety citation after inspectors identified unguarded machinery on the assembly line.",
+          "Human resources reviewed the workplace safety record to ensure no prior citations existed before applying for the regional industry excellence award.",
+          "The corporate legal counsel advised management to contest the environmental citation within thirty days of formal notification."
+        ],
+        "conversation": [
+          "Manager: 'Why did the warehouse supervisor look so stressed this morning?'\nColleague: 'The federal safety inspectors arrived unannounced yesterday and issued a formal citation regarding the forklift pathways.'",
+          "Editor: 'Did you verify all the reference citations in the final draft of the white paper?'\nResearcher: 'Yes, every external source has been checked and formatted according to APA standards.'"
+        ],
+        "collocations": [
+          "safety citation",
+          "receive a citation",
+          "issue a citation",
+          "regulatory citation",
+          "formal citation",
+          "bibliographic citation"
+        ]
+      },
+      "wordFamily": {
+        "noun": "citation",
+        "verb": "cite",
+        "adjective": "citable",
+        "adverb": "explicitly"
+      },
+      "visual": {
+        "imageKeyword": "official legal document regulatory violation citation clipboard inspector",
+        "imageDescription": "A close-up shot of an official regulatory compliance document bearing an official citation stamp and violation notice, resting on a wooden desk next to a pen.",
+        "mnemonic": "A 'citation' is an official notice that 'cites' you either for breaking a rule or for excellence in your field."
+      },
+      "video": {
+        "description": "An educational webinar explaining workplace safety regulations, outlining how OSHA inspectors issue compliance citations and how employers can remediate violations."
+      },
+      "toeicContext": {
+        "commonParts": [
+          6,
+          7
+        ],
+        "exampleQuestion": "Following the recent surprise inspection by the federal labor board, the downtown distribution center was issued a formal _____ for failing to update its hazardous material logs.\n(A) citation\n(B) clearance\n(C) consensus\n(D) credential",
+        "tips": "In TOEIC Part 6 and 7 texts concerning corporate operations and audits, 'citation' frequently collocates with regulatory bodies like OSHA or municipal boards issuing penalties. Distinguish 'citation' (violation notice) from 'clearance' (official authorization) and 'credential' (qualification)."
+      },
+      "synonyms": [
+        "summons",
+        "notice",
+        "penalty",
+        "reference",
+        "commendation",
+        "award"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "infraction",
+        "penalty",
+        "violation",
+        "compliance",
+        "summons",
+        "audit",
+        "inspector"
+      ]
+    },
+    {
+      "id": "hr-119",
+      "word": "clearance",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "hr-personnel",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/\u02c8kl\u026ar.\u0259ns/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/clearance--_us_1.mp3",
+        "syllableBreakdown": "clear-ance",
+        "stressPattern": "\u25cf\u25cb",
+        "commonMistakes": "Learners frequently misplace primary stress onto the second syllable (*clear-ANCE*) or mispronounce the initial vowel cluster by treating it as two distinct syllables rather than the crisp diphthong /\u026a\u0259r/. In corporate and human resources contexts, non-native speakers sometimes confuse 'clearance' (official authorization, security approval, or inventory liquidation sale) with 'clearing' (an open space of land) or 'clarity' (clearness of expression)."
+      },
+      "etymology": {
+        "origin": "Formed by combining the adjective/verb 'clear' (derived from Latin 'clarus', meaning 'bright, clear, distinct') with the nominal suffix '-ance' (denoting state, act, or condition).",
+        "rootWord": "Latin clarus (clear, bright, unobstructed) + English nominal suffix -ance",
+        "rootMeaning": "'The act or state of making or becoming unobstructed, free, or officially authorized'",
+        "evolution": "The noun 'clearance' emerged in Middle English during the 15th century, initially denoting the physical removal of obstructions or the official certification that a ship had fulfilled all customs requirements to depart port (customs clearance). By the 19th century, the term expanded into architecture and engineering (specifying vertical or horizontal spatial separation) and banking (check clearing). In the 20th century, particularly during and after World War II, it became a central term in government and corporate security denoting formal background checks granting access to classified information (security clearance), as well as retail inventory markdown sales.",
+        "relatedLanguages": [
+          "French: autorisation (f.) / d\u00e9douanement (m.) / d\u00e9gagement (m.)",
+          "Spanish: autorizaci\u00f3n (f.) / despacho (m.) / liquidaci\u00f3n (f.)",
+          "German: Freigabe (f.) / Sicherheitsfreigabe (f.) / R\u00e4umung (f.)",
+          "Italian: autorizzazione (f.) / nulla osta (m.) / sdoganamento (m.)"
+        ],
+        "firstRecordedUse": "15th century (c. 1440 in maritime shipping and port customs records; expanded to architectural dimensions in the 18th century and security/administrative authorization in the 20th century)"
+      },
+      "deepMeaning": {
+        "coreConcept": "Official authorization or approval granting access to restricted information, facilities, or transactions; or the physical removal of obstructions or liquidation of surplus inventory.",
+        "spatialContext": "Government defense contractor security offices, human resources background screening departments, corporate customs brokerage desks, and retail stockroom sales floors.",
+        "temporalContext": "New employee onboarding procedures, defense contract bidding phases, annual inventory liquidation sales, and international shipping port arrivals.",
+        "emotionalTone": "Official, secure, authorized, definitive, and regulated.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "To native speakers in professional environments, 'clearance' carries strong connotations of official gatekeeping and validation. In corporate and governmental settings, obtaining 'clearance' means passing rigorous background checks, financial audits, or legal reviews required to handle sensitive data or projects. In commercial retail contexts, it signifies a final promotional sale designed to empty warehouse stock.",
+        "mentalImage": "An employee security badge scanner at a high-security corporate R&D facility entrance flashing green, signifying that the personnel security clearance has been successfully authenticated.",
+        "whenToUse": "Use when referring to official security background checks, administrative approvals, customs import authorizations, or retail inventory markdown sales.",
+        "whenNotToUse": "Do not use to describe general clarity of thought, simple room tidiness, or ordinary verbal permission without formal administrative backing.",
+        "culturalContext": "In defense, aerospace, and government contracting sectors across English-speaking countries, obtaining a top-secret security clearance is a lengthy, highly regulated vetting process managed by specialized federal agencies (such as the US Department of Defense or UK Security Service)."
+      },
+      "examples": {
+        "daily": [
+          "The retail store announced a massive clearance sale to clear out last season's winter apparel before the spring inventory arrives.",
+          "Drivers must check the low bridge height clearance sign before steering large delivery trucks down narrow residential streets.",
+          "The shipping container received customs clearance at the port after inspectors verified all import declarations and duty payments."
+        ],
+        "business": [
+          "Newly hired software engineers working on the defense contract must wait for their security clearance to be finalized before accessing the secure server network.",
+          "Human resources confirmed that all background checks were completed, granting the executive candidate full employment clearance.",
+          "The financial controller secured budgetary clearance from the executive committee before signing the enterprise software acquisition contract."
+        ],
+        "conversation": [
+          "Manager: 'Can the new contractor start working on the classified project database today?'\nSecurity Officer: 'Not yet. We are still waiting for her federal security clearance to clear.'",
+          "Store Associate: 'Should we discount the remaining display models?'\nManager: 'Yes, put them on clearance immediately to make room for the new spring stock.'"
+        ],
+        "collocations": [
+          "security clearance",
+          "obtain clearance",
+          "customs clearance",
+          "clearance sale",
+          "budgetary clearance",
+          "medical clearance"
+        ]
+      },
+      "wordFamily": {
+        "noun": "clearance",
+        "verb": "clear",
+        "adjective": "clear",
+        "adverb": "clearly"
+      },
+      "visual": {
+        "imageKeyword": "secure corporate entrance security badge scanner access clearance door",
+        "imageDescription": "A sleek digital electronic access control scanner mounted on a modern glass office door, glowing with a green verification light indicating successful security clearance.",
+        "mnemonic": "A 'clearance' gives you a 'clear' path or official approval to pass through barriers."
+      },
+      "video": {
+        "description": "An instructional corporate security video explaining the multi-tier security clearance vetting process for government contractors and defense industry employees."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          5,
+          7
+        ],
+        "exampleQuestion": "All contractors assigned to the government technology project must obtain formal security _____ from the federal compliance office prior to entering the restricted laboratory.\n(A) clearance\n(B) citation\n(C) checklist\n(D) catalog",
+        "tips": "In TOEIC Part 5 and 7, 'security clearance' or 'customs clearance' are high-frequency collocation pairs. 'Clearance' denotes official approval or authorization, whereas 'citation' refers to violation notices and 'catalog' to product listings."
+      },
+      "synonyms": [
+        "authorization",
+        "approval",
+        "permission",
+        "sanction",
+        "liquidation",
+        "discharge"
+      ],
+      "antonyms": [
+        "restriction",
+        "denial",
+        "prohibition",
+        "block"
+      ],
+      "relatedWords": [
+        "authorization",
+        "security",
+        "approval",
+        "background check",
+        "customs",
+        "compliance",
+        "vetting"
+      ]
+    },
+    {
+      "id": "hr-139",
+      "word": "confirmation",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "hr-personnel",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/\u02cck\u0252n.f\u0259r\u02c8me\u026a.\u0283\u0259n/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/confirmation--_us_1.mp3",
+        "syllableBreakdown": "con-fir-ma-tion",
+        "stressPattern": "\u25cf\u25cb\u25cb\u25cf\u25cb",
+        "commonMistakes": "Learners often misplace primary stress on the second syllable (con-FIR-ma-tion) instead of the fourth syllable (con-fir-MA-tion). Additionally, non-native speakers sometimes confuse 'confirmation' (the formal act or document verifying an arrangement, appointment, booking, or personnel appointment) with 'affirmation' (a solemn emotional statement or declaration of truth)."
+      },
+      "etymology": {
+        "origin": "Derived from Middle English, from Old French 'confirmacion', and directly from Latin 'confirmationem' (nominative 'confirmatio'), a noun of action from the past participle stem of 'confirmare' (to strengthen, establish, make firm), composed of the intensive prefix 'com-' (together, thoroughly) + 'firmare' (to make firm, from 'firmus', firm or steadfast).",
+        "rootWord": "Latin confirmare (com- intensive + firmare, to make firm or establish)",
+        "rootMeaning": "The act of making firm, thoroughly establishing, or officially corroborating a previous arrangement, booking, or appointment",
+        "evolution": "The term entered Middle English legal and ecclesiastical terminology in the 14th century, initially denoting the formal ratification of a bishop's appointment or legal charter. Over subsequent centuries, its usage broadened into commercial, administrative, and corporate contexts to describe written or electronic receipts, reservation verifications, and formal job offers or employee status transitions.",
+        "relatedLanguages": [
+          "French: confirmation",
+          "Spanish: confirmacion",
+          "German: Bestatigung",
+          "Italian: conferma"
+        ],
+        "firstRecordedUse": "Late 14th century (Middle English ecclesiastical and legal administrative records)"
+      },
+      "deepMeaning": {
+        "coreConcept": "A formal written, electronic, or verbal statement, document, or verification issued by an authority or organization that definitively validates, secures, or corroborates a previous booking, appointment, reservation, or employee probationary status.",
+        "spatialContext": "Corporate human resources portals, travel booking desks, hotel reception terminals, legal compliance archives, and administrative email inboxes.",
+        "temporalContext": "Following booking requests, probationary employment milestone reviews, hotel check-in procedures, and flight reservation completions.",
+        "emotionalTone": "Definitive, authoritative, reassuring, official, and conclusive.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "Native English speakers view confirmation as an essential piece of evidentiary paperwork or digital notification that eliminates ambiguity and provides legal or operational peace of mind. Without a confirmation number or written confirmation, business arrangements are treated as tentative or incomplete.",
+        "mentalImage": "An executive assistant reviewing a printed hotel and flight confirmation itinerary on a corporate desk while speaking on a headset with a travel coordinator.",
+        "whenToUse": "Use when referring to reservation receipts, booking verifications, probationary employment status approvals, or official administrative authorizations.",
+        "whenNotToUse": "Do not use to describe initial inquiries, preliminary estimates, or speculative brainstorming discussions.",
+        "culturalContext": "In modern global commerce and travel industries, automated and manual confirmations serve as legally binding receipts and customer service benchmarks."
+      },
+      "examples": {
+        "daily": [
+          "She checked her email inbox for the booking confirmation before heading to the airport for her morning flight to Atlanta.",
+          "The hotel sent a reservation confirmation containing the check-in time and cancellation policy directly to his smartphone.",
+          "Please keep your payment confirmation receipt in a safe place until the merchandise is delivered."
+        ],
+        "business": [
+          "Human resources issued an official employment confirmation letter to verify the candidate salary and start date for mortgage approval purposes.",
+          "The procurement department awaited written confirmation from the overseas supplier before wiring the final installment.",
+          "Candidates must sign and return their interview appointment confirmation within forty-eight hours to secure their slot."
+        ],
+        "conversation": [
+          "Colleague A: 'Did you receive the flight confirmation from the travel agency yet?'\nColleague B: 'Yes, it just arrived in my inbox with all the seat assignments and boarding pass details.'",
+          "Manager: 'Has the new hire completed their ninety-day probationary period?'\nHR Specialist: 'We are processing his employment confirmation paperwork today.'"
+        ],
+        "collocations": [
+          "written confirmation",
+          "booking confirmation",
+          "reservation confirmation",
+          "order confirmation",
+          "receive confirmation",
+          "await confirmation"
+        ]
+      },
+      "wordFamily": {
+        "noun": "confirmation",
+        "verb": "confirm",
+        "adjective": "confirmed",
+        "adverb": "confirmedly"
+      },
+      "visual": {
+        "imageKeyword": "printed booking confirmation document email smartphone office desk",
+        "imageDescription": "A professional desk featuring a printed airline and hotel confirmation document alongside a smartphone displaying an email confirmation message and a sleek pen.",
+        "mnemonic": "A confirmation makes a temporary booking firm and solid so you know it is secure."
+      },
+      "video": {
+        "description": "An administrative training tutorial demonstrating how enterprise resource planning software automatically generates order and reservation confirmations for global clients."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          4,
+          7
+        ],
+        "exampleQuestion": "All workshop attendees will receive an email _____ containing their assigned seminar room and schedule as soon as their registration fee is processed.\n(A) confirmation\n(B) confirming\n(C) confirmed\n(D) confirm",
+        "tips": "In TOEIC Part 5 and 6 questions, notice that email confirmation is a standard noun compound. Following possessive adjectives or determiners like an email, a noun is required."
+      },
+      "synonyms": [
+        "verification",
+        "validation",
+        "authorization",
+        "ratification",
+        "approval",
+        "endorsement"
+      ],
+      "antonyms": [
+        "cancellation",
+        "rejection",
+        "denial",
+        "revocation"
+      ],
+      "relatedWords": [
+        "reservation",
+        "booking",
+        "receipt",
+        "itinerary",
+        "verification",
+        "approval"
+      ]
+    },
+    {
+      "id": "hr-140",
+      "word": "conformance",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "hr-personnel",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/k\u0259n\u02c8f\u0254\u02d0r.m\u0259ns/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/conformance--_us_1.mp3",
+        "syllableBreakdown": "con-for-mance",
+        "stressPattern": "\u25cb\u25cf\u25cb\u25cb",
+        "commonMistakes": "Learners often confuse 'conformance' (strict adherence to standards, regulations, or specifications) with 'conference' (a formal meeting or convention). Additionally, non-native speakers sometimes mix up conformance with 'compliance', though conformance often specifically emphasizes matching design specifications or quality standards."
+      },
+      "etymology": {
+        "origin": "Formed in English from the verb conform (derived from Middle English conformen, from Old French conformer, from Latin conformare, meaning to form together, fashion like, shape according to, from com- + formare, to form) + the nominal suffix -ance.",
+        "rootWord": "Latin conformare (com- together + formare, to shape or form)",
+        "rootMeaning": "The state or quality of being shaped, structured, or operated in exact agreement with established standards, rules, or specifications",
+        "evolution": "The term emerged in English administrative and legal discourse during the late 16th century, initially relating to religious conformity with church liturgy. In the 20th century, with the rise of industrial engineering, ISO quality management standards, and regulatory oversight, conformance became a foundational technical term in manufacturing, aerospace, and corporate governance.",
+        "relatedLanguages": [
+          "French: conformite",
+          "Spanish: conformidad",
+          "German: Konformitat",
+          "Italian: conformita"
+        ],
+        "firstRecordedUse": "Late 16th century (religious and legal administrative texts; later adopted in 20th-century industrial engineering and quality assurance)"
+      },
+      "deepMeaning": {
+        "coreConcept": "The strict state, act, or quality of adhering completely to established engineering specifications, regulatory guidelines, quality standards, or organizational policies without deviation.",
+        "spatialContext": "Quality assurance testing laboratories, ISO audit compliance offices, manufacturing plant production floors, and corporate legal departments.",
+        "temporalContext": "Quarterly quality audits, pre-shipment inspections, manufacturing assembly checks, and regulatory compliance reviews.",
+        "emotionalTone": "Rigorous, exacting, disciplined, objective, and uncompromising.",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "howNativesThink": "In engineering and corporate compliance environments, native speakers view conformance as the ultimate benchmark of professional quality and safety. It implies that every product, process, or employee behavior matches the exact blueprint or standard mandated by law or corporate policy.",
+        "mentalImage": "An OSHA safety inspector examining factory machinery blueprints while measuring clearance distances with a precision caliper to verify strict conformance.",
+        "whenToUse": "Use when discussing adherence to technical standards, ISO certifications, quality control specifications, or regulatory rules.",
+        "whenNotToUse": "Do not use to describe general agreement in a conversation or casual social conformity.",
+        "culturalContext": "In global manufacturing and regulated industries (e.g., medical devices, aerospace, automotive), proving conformance to international standards is legally mandatory for market access."
+      },
+      "examples": {
+        "daily": [
+          "The building inspector checked every electrical installation to ensure full conformance with municipal fire safety codes.",
+          "She reviewed the furniture assembly manual to guarantee exact conformance with the manufacturer instructions.",
+          "The community center was constructed in strict conformance with local zoning ordinances."
+        ],
+        "business": [
+          "The quality assurance director certified that all exported microchips were manufactured in strict conformance with ISO 9001 standards.",
+          "External auditors examined the company financial records to verify conformance with international accounting principles.",
+          "Failure to maintain operational conformance with environmental protection regulations can result in severe financial penalties."
+        ],
+        "conversation": [
+          "Auditor: 'Did the new production line pass the latest stress tests?'\nPlant Manager: 'Yes, every component was tested and verified for complete conformance with safety specifications.'",
+          "Project Lead: 'Are our software security protocols meeting industry benchmarks?'\nChief Technology Officer: 'Our recent audit confirmed total conformance with ISO 27001 standards.'"
+        ],
+        "collocations": [
+          "in conformance with",
+          "strict conformance",
+          "regulatory conformance",
+          "quality conformance",
+          "ensure conformance",
+          "maintain conformance"
+        ]
+      },
+      "wordFamily": {
+        "noun": "conformance",
+        "verb": "conform",
+        "adjective": "conformable",
+        "adverb": "conformably"
+      },
+      "visual": {
+        "imageKeyword": "quality control inspection machinery measurement blueprint ISO standards",
+        "imageDescription": "An industrial quality inspector in a modern manufacturing plant comparing machine parts against digital engineering schematics on a tablet.",
+        "mnemonic": "To achieve conformance, your work must conform to the exact form of the standard."
+      },
+      "video": {
+        "description": "An industrial engineering documentary explaining how ISO quality management systems audit manufacturing facilities to ensure strict conformance with global standards."
+      },
+      "toeicContext": {
+        "commonParts": [
+          6,
+          7
+        ],
+        "exampleQuestion": "Factory supervisors must conduct weekly equipment audits to ensure ongoing _____ with occupational health and safety regulations.\n(A) conformance\n(B) conforming\n(C) conform\n(D) conformable",
+        "tips": "In TOEIC Part 5 and 6 questions, prepositional phrases like ensure ongoing conformance with frequently require a noun such as conformance or compliance."
+      },
+      "synonyms": [
+        "compliance",
+        "adherence",
+        "observance",
+        "conformity",
+        "consistency",
+        "alignment"
+      ],
+      "antonyms": [
+        "nonconformance",
+        "deviation",
+        "noncompliance",
+        "violation",
+        "infraction"
+      ],
+      "relatedWords": [
+        "compliance",
+        "specification",
+        "standard",
+        "audit",
+        "regulation",
+        "adherence"
+      ]
+    },
+    {
+      "id": "hr-141",
+      "word": "consent",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "hr-personnel",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/k\u0259n\u02c8s\u025bnt/",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/20200429/consent--_us_1.mp3",
+        "syllableBreakdown": "con-sent",
+        "stressPattern": "\u25cb\u25cf",
+        "commonMistakes": "Learners often confuse the noun/verb 'consent' (permission or agreement) with 'content' (satisfaction or the subjects covered in a document). Additionally, non-native speakers sometimes misuse the preposition, saying 'consent for' instead of 'consent to'."
+      },
+      "etymology": {
+        "origin": "Derived from Middle English 'consenten' (verb) and 'consent' (noun), from Old French 'consentir', from Latin 'consentire' (to feel together, agree), composed of 'com-' (together) + 'sentire' (to feel, perceive).",
+        "rootWord": "Latin consentire (com- together + sentire, to feel or perceive)",
+        "rootMeaning": "To feel together in agreement, granting voluntary permission or concurrence",
+        "evolution": "The term entered Middle English in the 14th century through Anglo-Norman legal and theological terminology, denoting voluntary agreement, assent, or permission. Over the centuries, it became a cornerstone concept in constitutional law, contract law, medical ethics, human resources, and data privacy regulations (such as GDPR).",
+        "relatedLanguages": [
+          "French: consentement",
+          "Spanish: consentimiento",
+          "German: Zustimmung",
+          "Italian: consenso"
+        ],
+        "firstRecordedUse": "14th century (Middle English legal, administrative, and theological texts)"
+      },
+      "deepMeaning": {
+        "coreConcept": "Permission, voluntary agreement, or official concurrence given by an individual, employee, or stakeholder to allow an action, procedure, contract, or data collection to take place.",
+        "spatialContext": "Human resources onboarding departments, corporate legal signing rooms, clinical medical research facilities, and data privacy compliance portals.",
+        "temporalContext": "Prior to background checks, contract execution, medical treatments, data processing agreements, and corporate restructuring announcements.",
+        "emotionalTone": "Voluntary, respectful, legally binding, deliberate, and authoritative.",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "howNativesThink": "In professional, legal, and institutional contexts, native speakers treat consent as an absolute prerequisite that protects individual rights and shields organizations from liability. Operating without explicit consent is viewed as a serious ethical and legal breach.",
+        "mentalImage": "An employee signing a written background check consent form across an executive desk while an HR manager hands over a secure pen.",
+        "whenToUse": "Use when referring to formal permission, contractual assent, background check authorizations, or data privacy agreements.",
+        "whenNotToUse": "Do not use to describe mere passive tolerance or general happiness.",
+        "culturalContext": "In modern corporate governance and employment law, obtaining documented employee or client consent is mandatory for background screenings, data handling, and major corporate transactions."
+      },
+      "examples": {
+        "daily": [
+          "Minors participating in the school research study must obtain written parental consent before joining.",
+          "She gave her full consent for the contractor to begin remodeling the office reception area.",
+          "Users must check the box to grant consent for cookie tracking on the company website."
+        ],
+        "business": [
+          "Human resources cannot initiate a criminal background check on job applicants without receiving signed written consent.",
+          "The merger between the two pharmaceutical firms requires regulatory consent from antitrust authorities before finalization.",
+          "Shareholders gave their unanimous consent to restructure the corporate board during the annual general meeting."
+        ],
+        "conversation": [
+          "HR Manager: 'Can we proceed with contacting the applicant's previous employers?'\nRecruiter: 'Yes, we received her signed consent form this morning.'",
+          "Attorney: 'Did the client agree to the settlement terms?'\nParalegal: 'He gave his verbal consent over the phone and is signing the formal agreement now.'"
+        ],
+        "collocations": [
+          "written consent",
+          "informed consent",
+          "give consent",
+          "obtain consent",
+          "without consent",
+          "consent form"
+        ]
+      },
+      "wordFamily": {
+        "noun": "consent",
+        "verb": "consent",
+        "adjective": "consenting",
+        "adverb": "consistently"
+      },
+      "visual": {
+        "imageKeyword": "signed consent form human resources background check office desk pen",
+        "imageDescription": "A close-up of a professional human resources consent form resting on a wooden desk, featuring a signature line and a fountain pen.",
+        "mnemonic": "To consent is to send your agreement together with someone else request."
+      },
+      "video": {
+        "description": "A corporate compliance webinar explaining the legal requirements for obtaining informed employee consent during background screenings and data privacy audits."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "According to company policy, background checks cannot be conducted on prospective employees without their explicit written _____.\n(A) consent\n(B) content\n(C) container\n(D) context",
+        "tips": "In TOEIC Part 5 vocabulary questions, distinguish between easily confused lookalikes: consent (permission), content (satisfaction or substance), and context (surrounding circumstances)."
+      },
+      "synonyms": [
+        "permission",
+        "agreement",
+        "authorization",
+        "assent",
+        "approval",
+        "endorsement"
+      ],
+      "antonyms": [
+        "dissent",
+        "opposition",
+        "refusal",
+        "denial",
+        "prohibition"
+      ],
+      "relatedWords": [
+        "permission",
+        "authorization",
+        "agreement",
+        "assent",
+        "approval",
+        "compliance"
+      ]
+    },
+    {
+      "id": "hr-259",
+      "word": "initiative",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "hr-personnel",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/\u026a\u02c8n\u026a\u0283\u0259t\u026av/",
+        "syllableBreakdown": "i-ni-tia-tive",
+        "stressPattern": "Primary stress on the second syllable (ni).",
+        "commonMistakes": "Mispronouncing the 'ti' as /\u0283i/ rather than /\u0283\u0259/ or misplacing stress on the third syllable.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "From Latin 'initium' (beginning, entrance), from 'initiare' (to begin), formed from 'in-' (into) + 'ire' (to go).",
+        "rootWord": "initium",
+        "rootMeaning": "A beginning or starting point.",
+        "evolution": "Passed into French ('initiative') and English in the late 18th century, initially denoting an introductory act or measure, later acquiring the psychological sense of personal enterprise and self-motivation.",
+        "relatedLanguages": [
+          "Latin",
+          "French",
+          "Italian",
+          "Spanish"
+        ],
+        "firstRecordedUse": "Late 18th century in political and administrative contexts; widely adopted in corporate professional terminology by the 19th century."
+      },
+      "deepMeaning": {
+        "coreConcept": "The power or ability to begin or follow through with a plan independently, or a new strategic plan or administrative project undertaken to resolve a specific issue.",
+        "spatialContext": "Corporate boardrooms, department strategy sessions, project planning offices, and executive team briefings.",
+        "temporalContext": "Evaluated during annual performance reviews, quarterly strategic rollouts, and when unexpected operational challenges arise.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "culturalContext": "In Western corporate culture, taking 'initiative' is prized as a defining hallmark of leadership potential, self-reliance, and proactive problem-solving without waiting for explicit instructions.",
+        "howNativesThink": "Native speakers associate initiative with stepping forward, spotting inefficiencies, proposing actionable solutions, and acting decisively.",
+        "mentalImage": "An employee standing before a whiteboard during a team meeting, presenting a newly drafted workflow optimization plan to department heads.",
+        "whenNotToUse": "Do not use when referring to passive obedience, strict adherence to routine clerical tasks, or waiting for direct orders.",
+        "whenToUse": "Use when praising an employee's proactive problem-solving, launching a new corporate strategic campaign, or describing self-starter behavior."
+      },
+      "examples": {
+        "daily": [
+          "She showed great initiative by organizing the community recycling drive without being asked.",
+          "Residents took the initiative to repair the neighborhood playground equipment over the weekend.",
+          "Taking the initiative to learn new software skills early helped him secure the promotion."
+        ],
+        "business": [
+          "The chief executive announced a new cost-reduction initiative aimed at improving operating margins.",
+          "Employees are encouraged to take initiative when they identify bottlenecks in the supply chain.",
+          "Our marketing department launched a digital outreach initiative to attract international clients."
+        ],
+        "conversation": [
+          "Colleague A: 'How did Marcus handle the client complaint yesterday?' Colleague B: 'He took immediate initiative and issued a full refund before management even had to step in.'",
+          "Colleague A: 'Are we ready to implement the new training program?' Colleague B: 'Yes, the human resources initiative begins on Monday morning.'"
+        ],
+        "collocations": [
+          "take the initiative",
+          "strategic initiative",
+          "new initiative",
+          "launch an initiative",
+          "employee initiative",
+          "policy initiative"
+        ]
+      },
+      "wordFamily": {
+        "noun": "initiative",
+        "verb": "initiate",
+        "adjective": "initial",
+        "adverb": "initially"
+      },
+      "visual": {
+        "imageKeyword": "business professional presenting new strategic initiative whiteboard",
+        "imageDescription": "A confident professional leading a brainstorming session in a glass-walled conference room, pointing to a strategic project roadmap on a whiteboard.",
+        "mnemonic": "Initiative means taking the first 'init-' step into action."
+      },
+      "video": {
+        "description": "A corporate training video illustrating how proactive employees can pitch innovative business initiatives to senior management."
+      },
+      "toeicContext": {
+        "commonParts": [
+          5,
+          6,
+          7
+        ],
+        "exampleQuestion": "Management praised the logistics team for taking the _______ to streamline warehouse inventory procedures ahead of schedule.\n(A) initiative\n(B) initiation\n(C) initiator\n(D) initially",
+        "tips": "In TOEIC Part 5, look out for collocations such as 'take the initiative' or 'launch an initiative'. Note the grammatical distinction between the noun 'initiative' and adverb 'initially'."
+      },
+      "synonyms": [
+        "enterprise",
+        "ambition",
+        "resourcefulness",
+        "drive",
+        "leadership",
+        "proactivity"
+      ],
+      "antonyms": [
+        "apathy",
+        "passivity",
+        "inertia",
+        "hesitation"
+      ],
+      "relatedWords": [
+        "proactive",
+        "strategy",
+        "proposal",
+        "enterprise",
+        "launch",
+        "implementation",
+        "leadership"
+      ]
+    },
+    {
+      "id": "hr-260",
+      "word": "instructor",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "hr-personnel",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/\u026an\u02c8str\u028ckt\u0259r/",
+        "syllableBreakdown": "in-struc-tor",
+        "stressPattern": "Primary stress on the second syllable (struc).",
+        "commonMistakes": "Mispronouncing the suffix as /-to\u028ar/ instead of schwa /-t\u0259r/ or misplacing stress on the first syllable.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "From Latin 'instructor' (a furnisher, teacher), agent noun from 'instruere' (to build, furnish, teach), combining 'in-' (into, upon) + 'struere' (to pile up, build).",
+        "rootWord": "instruere",
+        "rootMeaning": "To build up knowledge or prepare someone mentally.",
+        "evolution": "Entered Middle English via Old French and Latin, originally denoting someone who furnishes or trains, shifting in modern usage to professional teachers, corporate trainers, and driving or fitness instructors.",
+        "relatedLanguages": [
+          "Latin",
+          "French",
+          "Italian",
+          "Spanish"
+        ],
+        "firstRecordedUse": "15th century in ecclesiastical and instructional texts; widely used in educational and corporate training by the 18th and 19th centuries."
+      },
+      "deepMeaning": {
+        "coreConcept": "A person who teaches a skill, subject, or professional procedure, typically in a specialized training center, corporate workshop, or educational institution.",
+        "spatialContext": "Corporate training classrooms, vocational seminar halls, employee onboarding labs, and continuing education centers.",
+        "temporalContext": "Active during scheduled training sessions, onboarding bootcamps, and professional certification workshops.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "culturalContext": "In professional and vocational contexts, an 'instructor' focuses heavily on hands-on practical skill acquisition rather than purely theoretical academic lecturing.",
+        "howNativesThink": "Native speakers view an instructor as an experienced guide who demonstrates practical techniques, oversees practice sessions, and evaluates competency.",
+        "mentalImage": "A corporate IT trainer standing by a projector screen, guiding new hires through software navigation steps in a computer lab.",
+        "whenNotToUse": "Do not use when referring to senior university professors holding tenure or executive corporate board directors.",
+        "whenToUse": "Use when referring to corporate trainers, driving teachers, fitness coaches, or vocational workshop leaders."
+      },
+      "examples": {
+        "daily": [
+          "The yoga instructor reminded the class to maintain steady breathing throughout the stretching routine.",
+          "Driving instructors must ensure all student drivers understand local highway safety regulations.",
+          "She registered for an evening photography workshop taught by a professional nature instructor."
+        ],
+        "business": [
+          "The corporate safety instructor conducted a mandatory fire evacuation drill for all staff members.",
+          "New employees spent three days in technical training supervised by senior software instructors.",
+          "Feedback forms from the seminar participants praised the lead instructor for clarity and patience."
+        ],
+        "conversation": [
+          "Colleague A: 'How was the software onboarding session this morning?' Colleague B: 'It was very informative; the instructor provided clear step-by-step documentation for every module.'",
+          "Colleague A: 'Do we need to sign up for the compliance seminar in advance?' Colleague B: 'Yes, seating is limited, and the instructor requires pre-registration.'"
+        ],
+        "collocations": [
+          "lead instructor",
+          "training instructor",
+          "driving instructor",
+          "fitness instructor",
+          "certified instructor",
+          "workshop instructor"
+        ]
+      },
+      "wordFamily": {
+        "noun": "instruction",
+        "verb": "instruct",
+        "adjective": "instructive",
+        "adverb": "instructively"
+      },
+      "visual": {
+        "imageKeyword": "corporate training instructor leading workshop classroom",
+        "imageDescription": "An experienced corporate instructor standing before attentive employees in a modern training room, demonstrating software workflows on a large monitor.",
+        "mnemonic": "An instructor constructs knowledge step by step inside your mind."
+      },
+      "video": {
+        "description": "An instructional video showcasing a corporate trainer conducting an interactive software certification seminar."
+      },
+      "toeicContext": {
+        "commonParts": [
+          1,
+          3,
+          7
+        ],
+        "exampleQuestion": "All newly hired customer service representatives must attend a customer relations workshop led by a certified training _______.\n(A) instruction\n(B) instruct\n(C) instructor\n(D) instructive",
+        "tips": "In TOEIC Part 1 and Part 3, listen for references to training sessions, workshops, and instructors guiding participants through professional protocols."
+      },
+      "synonyms": [
+        "trainer",
+        "teacher",
+        "educator",
+        "coach",
+        "tutor",
+        "mentor"
+      ],
+      "antonyms": [
+        "student",
+        "pupil",
+        "trainee",
+        "learner"
+      ],
+      "relatedWords": [
+        "training",
+        "workshop",
+        "seminar",
+        "curriculum",
+        "classroom",
+        "student",
+        "certification"
+      ]
+    },
+    {
+      "id": "hr-261",
+      "word": "insurance policy",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "hr-personnel",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/\u026an\u02c8\u0283\u028ar\u0259ns \u02c8p\u0251l\u0259si/",
+        "syllableBreakdown": "in-sur-ance pol-i-cy",
+        "stressPattern": "Primary stress on the second syllable of insurance (shur) and first syllable of policy (pol).",
+        "commonMistakes": "Mispronouncing 'insurance' as /\u026an\u02c8z\u025c\u02d0r\u0259ns/ or confusing 'policy' with 'police'.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Compound of 'insurance' (from Old French 'enseurance', from 'assurer') + 'policy' (from Medieval Latin 'pollizatio', from Italian 'polizza' meaning promissory note or written contract).",
+        "rootWord": "assurer / polizza",
+        "rootMeaning": "A written guarantee or agreement providing financial protection against risk.",
+        "evolution": "Developed out of maritime trade agreements and mercantile contracts in medieval Italy, evolving into standardized commercial and personal indemnity contracts during the Industrial Revolution.",
+        "relatedLanguages": [
+          "Italian",
+          "French",
+          "Spanish",
+          "Latin"
+        ],
+        "firstRecordedUse": "16th century in merchant shipping and mercantile law; widespread commercial and employee benefits usage by the 19th century."
+      },
+      "deepMeaning": {
+        "coreConcept": "A formal legal contract between an individual or corporation and an insurance company outlining the terms, premium payments, coverage limits, and indemnification conditions.",
+        "spatialContext": "Corporate human resources benefits offices, insurance brokerage firms, legal departments, and risk management archives.",
+        "temporalContext": "Reviewed annually during open enrollment periods, upon employee onboarding, or when filing corporate liability claims.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "culturalContext": "In corporate and personal finance, an insurance policy represents essential risk mitigation and legal security against unforeseen financial loss, property damage, or medical liabilities.",
+        "howNativesThink": "Native speakers think of an insurance policy as a binding legal agreement that guarantees financial compensation or coverage when specific misfortunes occur.",
+        "mentalImage": "A human resources manager reviewing corporate health and liability insurance policy documents across a desk with an insurance broker.",
+        "whenNotToUse": "Do not use when referring to general company rulebooks, employee handbooks, or government legislative policies.",
+        "whenToUse": "Use when discussing employee benefits packages, commercial liability coverage, health insurance plans, or risk management contracts."
+      },
+      "examples": {
+        "daily": [
+          "She reviewed her homeowner's insurance policy carefully before filing a claim for roof storm damage.",
+          "The car rental agent explained the optional collision damage waiver included in their insurance policy.",
+          "He filed all his family medical and life insurance policy documents in a secure home safe."
+        ],
+        "business": [
+          "The corporation renewed its comprehensive commercial liability insurance policy for the upcoming fiscal year.",
+          "Human resources provides detailed brochures outlining employee health and dental insurance policy benefits.",
+          "Legal counsel examined the insurance policy terms to ensure adequate coverage against equipment theft."
+        ],
+        "conversation": [
+          "Colleague A: 'Are we fully covered for property damage at the new warehouse location?' Colleague B: 'Yes, our broker updated the commercial property insurance policy last week.'",
+          "Colleague A: 'What does our corporate health insurance policy cover regarding dental care?' Colleague B: 'Let's check the employee benefits handbook or call the provider directly.'"
+        ],
+        "collocations": [
+          "comprehensive insurance policy",
+          "liability insurance policy",
+          "health insurance policy",
+          "insurance policy coverage",
+          "review an insurance policy",
+          "renew an insurance policy"
+        ]
+      },
+      "wordFamily": {
+        "noun": "insurer / insurance",
+        "verb": "ensure / insure",
+        "adjective": "insured",
+        "adverb": "insurably"
+      },
+      "visual": {
+        "imageKeyword": "corporate insurance policy document review business meeting",
+        "imageDescription": "An insurance broker and corporate executive reviewing formal insurance policy contract documents and premium tables across a polished wooden conference table.",
+        "mnemonic": "An insurance policy secures your policy against unpredictable losses."
+      },
+      "video": {
+        "description": "An educational webinar explaining corporate health and liability insurance policies for human resources professionals."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          6,
+          7
+        ],
+        "exampleQuestion": "All full-time employees are eligible to review their health and dental _______ during the annual open enrollment period in November.\n(A) insurance policy\n(B) office directory\n(C) safety instructor\n(D) strategic initiative",
+        "tips": "In TOEIC Part 7 reading passages (such as emails, memos, and insurance notices), pay close attention to coverage terms, premium deadlines, and policy renewal dates."
+      },
+      "synonyms": [
+        "coverage contract",
+        "indemnity agreement",
+        "insurance contract",
+        "protection plan",
+        "policy document"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "coverage",
+        "premium",
+        "claim",
+        "liability",
+        "deductible",
+        "underwriter",
+        "broker"
+      ]
+    }
+  ]
+}

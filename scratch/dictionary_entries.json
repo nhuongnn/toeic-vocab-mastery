@@ -1,0 +1,328 @@
+{
+  "words": [
+    {
+      "id": "marketing-284",
+      "word": "rate card",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "marketing",
+      "level": "intermediate",
+      "toeicFrequency": 8,
+      "pronunciation": {
+        "ipa": "/ˈreɪt kɑːrd/",
+        "syllableBreakdown": "rate card",
+        "stressPattern": "PRIMARY-secondary (or equal heavy stress: /ˈreɪt ˈkɑːrd/)",
+        "commonMistakes": "Learners often pronounce 'card' with a hard rhotic stop or misstress 'rate' as weak; ensure clear American /ɑːr/ or British /ɑː/ vowel quality without intrusive consonants.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Compound of Middle English 'rate' (from Old French 'rate', from Medieval Latin 'rata [pars]', meaning 'calculated fixed proportion') and Middle English 'card' (from Old French 'carte', from Latin 'charta', from Greek 'khártēs', meaning paper/leaf of papyrus).",
+        "rootWord": "rate + card",
+        "rootMeaning": "A formal paper document listing fixed proportional prices or tariffs.",
+        "evolution": "Originally used in late 19th-century print journalism and publishing to distribute standardized advertising tariffs to agencies, evolving into modern digital media kits and programmatic floor price schedules.",
+        "relatedLanguages": [
+          "French (grille tarifaire)",
+          "German (Tarifkarte)",
+          "Spanish (tarifario)"
+        ],
+        "firstRecordedUse": "1895"
+      },
+      "deepMeaning": {
+        "coreConcept": "A formally published document or digital schedule detailing the baseline advertising rates, unit sizes, technical specifications, and discount tiers offered by a publisher, broadcaster, or digital platform.",
+        "spatialContext": "Media planning agencies, publisher sales offices, procurement departments, and digital advertising decks.",
+        "temporalContext": "Typically updated annually or quarterly; consulted constantly during media planning and budget negotiation phases.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "culturalContext": "In corporate advertising and media buying, rate cards represent the official starting point of negotiation. While agencies rarely pay full rate card prices due to volume discounts and agency commissions, the rate card serves as the official anchor for valuation.",
+        "howNativesThink": "Native media planners view a rate card not as a rigid invoice, but as the baseline 'sticker price' from which negotiations begin. They immediately look for volume discounts, package deals, and early-booking incentives.",
+        "mentalImage": "A polished PDF media kit from a major magazine or streaming platform displaying clean tables of column inch prices, homepage banner dimensions, and audience demographic reach metrics.",
+        "whenToUse": "Use when discussing official publisher tariffs, setting baseline media budgets, or evaluating standard advertising costs.",
+        "whenNotToUse": "Do not use for internal project billing rates or employee salary bands (use 'pay scale' or 'bill rate')."
+      },
+      "examples": {
+        "daily": [
+          "The glossy magazine published its updated rate card for the upcoming holiday issue.",
+          "Before booking any ad placements, the media buyer requested the latest digital rate card from the publishing house.",
+          "Our startup cannot afford the baseline rates listed on their standard rate card."
+        ],
+        "business": [
+          "The advertising agency successfully negotiated a 15% discount off the publisher's rate card by committing to a multi-platform quarterly campaign.",
+          "Account executives must submit any proposed deviation from the standard rate card to the VP of Sales for formal approval.",
+          "The broadcaster's new rate card introduces differential pricing for prime-time streaming slots versus overnight reruns."
+        ],
+        "conversation": [
+          "A: Did you see the new pricing structure for the autumn edition? B: Yes, their rate card went up by nearly ten percent across all full-page formats.",
+          "A: Can we get them down from this quote? B: Remember, that's just off the rate card; once we bundle digital and print, we can push for volume rebates."
+        ],
+        "collocations": [
+          "official rate card",
+          "rate card pricing",
+          "rate card discount",
+          "advertising rate card",
+          "publish a rate card",
+          "negotiate off the rate card"
+        ]
+      },
+      "wordFamily": {
+        "noun": "rate card",
+        "verb": "rate",
+        "adjective": "rated",
+        "adverb": "ratably"
+      },
+      "visual": {
+        "imageKeyword": "media rate card document spreadsheet pricing table",
+        "imageDescription": "A professional desk setup featuring a digital tablet displaying an advertising rate card with columns for ad sizes, circulation numbers, and pricing tiers.",
+        "mnemonic": "Imagine a 'card' that tells you the exact 'rate' you must pay to play in the advertising game."
+      },
+      "video": {
+        "description": "A media planning tutorial explaining how to read publisher rate cards, calculate cost-per-thousand (CPM), and negotiate volume discounts with advertising executives."
+      },
+      "toeicContext": {
+        "commonParts": [
+          3,
+          7
+        ],
+        "exampleQuestion": "When planning the annual advertising budget, the marketing director reviewed the publisher's latest ______ to determine the cost of full-page color inserts.\n(A) rate card\n(B) floor plan\n(C) travel itinerary\n(D) safety manual",
+        "tips": "In TOEIC Part 5 and 7, 'rate card' frequently appears in contexts involving advertising contracts, publishing negotiations, and promotional expenditures. Distinguish it from physical floor plans or itineraries."
+      },
+      "synonyms": [
+        "advertising tariff",
+        "media kit pricing",
+        "rate schedule",
+        "price list",
+        "tariff sheet"
+      ],
+      "antonyms": [],
+      "relatedWords": [
+        "media buying",
+        "cost per thousand (CPM)",
+        "insertion order",
+        "advertising agency",
+        "media kit",
+        "discount tier"
+      ]
+    },
+    {
+      "id": "marketing-285",
+      "word": "reach extension",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "marketing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/riːtʃ ɪkˈstɛnʃən/",
+        "syllableBreakdown": "reach ex-ten-sion",
+        "stressPattern": "primary on TEN: reach ex-TEN-sion",
+        "commonMistakes": "Learners often mispronounce 'extension' with an 'ks' sound instead of /kˈstɛnʃən/ or place primary stress incorrectly on 'reach'.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Compound of Middle English 'rechen' (from Old English 'ræcan', Proto-Germanic *raikijaną) and Late Latin 'extensio' (from 'extendere', meaning to stretch out).",
+        "rootWord": "reach + extension",
+        "rootMeaning": "The act of stretching or expanding the boundary of how far an influence or message extends.",
+        "evolution": "Emerged in digital advertising and programmatic media buying terminology during the 2010s to describe audience network expansion beyond core owned-and-operated properties.",
+        "relatedLanguages": [
+          "French (extension de portée)",
+          "German (Reichweitenerweiterung)",
+          "Spanish (ampliación de alcance)"
+        ],
+        "firstRecordedUse": "2008"
+      },
+      "deepMeaning": {
+        "coreConcept": "A digital advertising strategy where a campaign's audience reach is amplified beyond a primary publisher's owned properties or core demographic target by utilizing partner networks, programmatic exchanges, or secondary channels.",
+        "spatialContext": "Programmatic ad-tech dashboards, digital marketing agency strategy sessions, and demand-side platform (DSP) campaign settings.",
+        "temporalContext": "Executed during mid-to-late campaign lifecycle stages when core audience saturation is reached and incremental impressions are required.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "positive"
+      },
+      "nativeMindset": {
+        "culturalContext": "In modern performance marketing, advertisers constantly battle audience fatigue on primary platforms (like social media feeds or high-traffic news portals). Reach extension solves this by letting brands capture incremental users across third-party apps and websites.",
+        "howNativesThink": "Marketers think of reach extension as a growth lever: once you've squeezed all efficiency out of your core audience, you toggle reach extension to sweep up lookalike segments across the open web.",
+        "mentalImage": "A digital dashboard showing a core target audience circle expanding outward with a translucent halo representing secondary network impressions captured across mobile apps and partner websites.",
+        "whenToUse": "Use when discussing programmatic display networks, audience expansion tactics, or scaling digital campaigns beyond initial target limits.",
+        "whenNotToUse": "Do not use for physical product distribution expansion or physical geographic store openings."
+      },
+      "examples": {
+        "daily": [
+          "Our social media campaign plateaued, so we activated a reach extension feature to find new users.",
+          "The agency recommended reach extension to ensure our brand message appeared on trusted news sites outside our primary network.",
+          "We monitored the click-through rates closely to see if the reach extension was actually driving qualified traffic."
+        ],
+        "business": [
+          "By implementing a programmatic reach extension strategy, the campaign achieved a 35% increase in unique monthly impressions without raising the baseline cost-per-acquisition.",
+          "The client expressed concern about brand safety when utilizing automated reach extension across unverified third-party mobile apps.",
+          "Our media team configured strict domain allowlists before enabling reach extension for the luxury automotive product launch."
+        ],
+        "conversation": [
+          "A: Are we hitting our impression targets for Q3? B: We're slightly under on the core news site, but once we turn on reach extension across the partner network, we'll easily clear our KPI.",
+          "A: Isn't reach extension risky for brand alignment? B: It can be if you don't set up category exclusions, but our DSP filters keep us safe."
+        ],
+        "collocations": [
+          "programmatic reach extension",
+          "audience reach extension",
+          "enable reach extension",
+          "reach extension strategy",
+          "reach extension campaign",
+          "third-party reach extension"
+        ]
+      },
+      "wordFamily": {
+        "noun": "reach extension",
+        "verb": "extend reach",
+        "adjective": "extended-reach",
+        "adverb": "extensively"
+      },
+      "visual": {
+        "imageKeyword": "digital marketing programmatic dashboard audience growth graph",
+        "imageDescription": "A laptop screen displaying an ad-tech analytics graph with a highlighted overlay showing audience expansion metrics labeled 'Reach Extension'.",
+        "mnemonic": "Think of 'reaching' your hand further out to grab more customers with an 'extension' cord."
+      },
+      "video": {
+        "description": "An expert webinar demonstration on how programmatic media buyers use reach extension and contextual targeting to scale digital ad campaigns safely."
+      },
+      "toeicContext": {
+        "commonParts": [
+          6,
+          7
+        ],
+        "exampleQuestion": "To maximize the visibility of the new product launch among niche consumers, the digital marketing team decided to implement a targeted ______ across trusted affiliate websites.\n(A) reach extension\n(B) office relocation\n(C) payroll deduction\n(D) inventory audit",
+        "tips": "In advanced TOEIC passages (Parts 6 & 7), technical marketing terms like 'reach extension' appear alongside digital advertising metrics (impressions, CTR, programmatic buying). Look for collocating verbs like 'implement', 'activate', or 'configure'."
+      },
+      "synonyms": [
+        "audience expansion",
+        "network amplification",
+        "impression scaling",
+        "inventory extension",
+        "cross-network targeting"
+      ],
+      "antonyms": [
+        "audience retrenchment",
+        "narrowcasting",
+        "hyper-targeting"
+      ],
+      "relatedWords": [
+        "programmatic advertising",
+        "demand-side platform (DSP)",
+        "impressions",
+        "lookalike audience",
+        "target demographic",
+        "media network"
+      ]
+    },
+    {
+      "id": "marketing-286",
+      "word": "rebranding exercise",
+      "partOfSpeech": [
+        "noun"
+      ],
+      "category": "marketing",
+      "level": "advanced",
+      "toeicFrequency": 7,
+      "pronunciation": {
+        "ipa": "/riːˈbrændɪŋ ˈɛksərsaɪz/",
+        "syllableBreakdown": "re-brand-ing ex-er-cise",
+        "stressPattern": "primary on BRAND and EX: re-BRAND-ing EX-er-cise",
+        "commonMistakes": "Learners often mispronounce 'exercise' as /ˈɛksərsaɪd3/ or blur the syllable boundaries of 'rebranding'.",
+        "audioUrl": ""
+      },
+      "etymology": {
+        "origin": "Compound of prefix 're-' (again, anew), Middle English 'brand' (from Old English, burning torch / mark of ownership), and Old French 'exercice' (from Latin 'exercitium', from 'exercere' to train/practice).",
+        "rootWord": "re- + brand + exercise",
+        "rootMeaning": "A deliberate corporate practice or project to refresh or completely overhaul a brand identity.",
+        "evolution": "Gained massive prominence in late 20th-century corporate strategy as companies shifted from traditional product manufacturing to intangible brand equity management.",
+        "relatedLanguages": [
+          "French (exercice de refonte de marque)",
+          "German (Rebranding-Aktion)",
+          "Spanish (ejercicio de rebranding)"
+        ],
+        "firstRecordedUse": "1984"
+      },
+      "deepMeaning": {
+        "coreConcept": "A comprehensive, planned corporate initiative involving market research, visual identity redesign, messaging overhaul, and stakeholder communication to reposition a company, product, or service in the marketplace.",
+        "spatialContext": "Corporate boardrooms, creative agency studios, stakeholder focus groups, and company-wide town hall meetings.",
+        "temporalContext": "Spans 6 to 18 months; undertaken every 5 to 10 years or following major mergers, acquisitions, or reputational pivots.",
+        "emotionalTone": "neutral",
+        "formalityLevel": "formal",
+        "connotation": "neutral"
+      },
+      "nativeMindset": {
+        "culturalContext": "A rebranding exercise is viewed by executives as both a high-risk gamble and a necessary evolution. It signals to investors and consumers that a company is modernizing, shedding legacy perceptions, or entering new markets.",
+        "howNativesThink": "Corporate leaders approach a rebranding exercise with careful deliberation, knowing it touches everything from letterheads and software UI to customer emotional attachment and trademark filings.",
+        "mentalImage": "A modern design studio wall covered with mood boards, color swatches, new logo iterations, typography samples, and brand guideline manuals.",
+        "whenToUse": "Use when discussing corporate restructuring of brand identity, visual logo redesigns, or market repositioning projects.",
+        "whenNotToUse": "Do not use for routine minor updates like fixing a typo in a brochure or changing a button color."
+      },
+      "examples": {
+        "daily": [
+          "The local coffee shop underwent a complete rebranding exercise to attract younger university students.",
+          "Our marketing team spent three months conducting focus groups as part of our annual rebranding exercise.",
+          "The new logo was unveiled at the end of the rebranding exercise last Friday."
+        ],
+        "business": [
+          "Following the merger, the executive board initiated a multi-million-dollar rebranding exercise to unify the company's disparate product lines under a single global identity.",
+          "A successful rebranding exercise requires absolute alignment between internal human resources and external public relations teams.",
+          "The consultancy firm was hired to oversee the complex rebranding exercise and manage stakeholder communications."
+        ],
+        "conversation": [
+          "A: How is the new logo rollout going? B: It's the final phase of our rebranding exercise; all employee badges and office signage are being updated this week.",
+          "A: Why are we changing our brand colors now? B: Market research from our rebranding exercise showed our core demographic has shifted younger."
+        ],
+        "collocations": [
+          "undertake a rebranding exercise",
+          "comprehensive rebranding exercise",
+          "corporate rebranding exercise",
+          "lead a rebranding exercise",
+          "phase of a rebranding exercise",
+          "strategic rebranding exercise"
+        ]
+      },
+      "wordFamily": {
+        "noun": "rebranding exercise",
+        "verb": "rebrand",
+        "adjective": "rebranded",
+        "adverb": "rebrandably"
+      },
+      "visual": {
+        "imageKeyword": "brand identity design mood board logo agency meeting",
+        "imageDescription": "A collaborative table in a design agency showing brand guidelines books, color palette swatches, logo sketches, and tablet mockups during a corporate rebranding project.",
+        "mnemonic": "Think of giving your company a 'brand new' face through a planned mental and physical 'exercise'."
+      },
+      "video": {
+        "description": "A documentary-style case study of a Fortune 500 company executing a multi-year rebranding exercise, detailing consumer research, visual redesign, and global PR rollout."
+      },
+      "toeicContext": {
+        "commonParts": [
+          7
+        ],
+        "exampleQuestion": "CEO Ms. Vance announced that the upcoming ______ would involve updating all corporate stationery, redesigning the company website, and launching an international advertising campaign.\n(A) rebranding exercise\n(B) safety inspection\n(C) inventory count\n(D) performance review",
+        "tips": "In TOEIC Part 7 reading passages (corporate memos, announcements, and articles), 'rebranding exercise' or similar corporate initiatives test your ability to connect overarching strategic goals with specific operational tasks (website updates, logo changes, stakeholder announcements)."
+      },
+      "synonyms": [
+        "brand overhaul",
+        "corporate repositioning",
+        "brand refresh",
+        "identity redesign",
+        "brand transformation"
+      ],
+      "antonyms": [
+        "brand preservation",
+        "status quo maintenance"
+      ],
+      "relatedWords": [
+        "brand equity",
+        "visual identity",
+        "market positioning",
+        "logo redesign",
+        "stakeholder communication",
+        "corporate image"
+      ]
+    }
+  ]
+}

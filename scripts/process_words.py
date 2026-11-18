@@ -166,22 +166,43 @@ STRICT LINGUISTIC RULES:
 14. Related Words: 5-7 closely connected domain terms.
 """
 
-KEY_ORDER = [
-    "id", "word", "partOfSpeech", "category", "level", "toeicFrequency",
-    "pronunciation", "etymology", "deepMeaning", "nativeMindset",
-    "examples", "wordFamily", "visual", "video", "toeicContext",
-    "synonyms", "antonyms", "relatedWords"
-]
+ALLOWED_KEYS = {
+    "root": [
+        "id", "word", "partOfSpeech", "category", "level", "toeicFrequency",
+        "pronunciation", "etymology", "deepMeaning", "nativeMindset",
+        "examples", "wordFamily", "visual", "video", "toeicContext",
+        "synonyms", "antonyms", "relatedWords"
+    ],
+    "pronunciation": ["ipa", "audioUrl", "syllableBreakdown", "stressPattern", "commonMistakes"],
+    "etymology": ["origin", "rootWord", "rootMeaning", "evolution", "relatedLanguages", "firstRecordedUse"],
+    "deepMeaning": ["coreConcept", "spatialContext", "temporalContext", "emotionalTone", "formalityLevel", "connotation"],
+    "nativeMindset": ["howNativesThink", "mentalImage", "whenToUse", "whenNotToUse", "culturalContext"],
+    "examples": ["daily", "business", "conversation", "collocations"],
+    "wordFamily": ["noun", "verb", "adjective", "adverb"],
+    "visual": ["imageKeyword", "imageDescription", "mnemonic", "imageUrl"],
+    "video": ["youtubeId", "timestamp", "description"],
+    "toeicContext": ["commonParts", "exampleQuestion", "tips"]
+}
 
 def order_keys(obj):
-    ordered = {}
-    for k in KEY_ORDER:
+    if "collocations" in obj:
+        if isinstance(obj.get("examples"), dict) and not obj["examples"].get("collocations"):
+            obj["examples"]["collocations"] = obj["collocations"]
+        del obj["collocations"]
+    
+    clean = {}
+    for k in ALLOWED_KEYS["root"]:
         if k in obj:
-            ordered[k] = obj[k]
-    for k, v in obj.items():
-        if k not in ordered:
-            ordered[k] = v
-    return ordered
+            val = obj[k]
+            if k in ALLOWED_KEYS and isinstance(val, dict):
+                sub_clean = {}
+                for sub_k in ALLOWED_KEYS[k]:
+                    if sub_k in val:
+                        sub_clean[sub_k] = val[sub_k]
+                clean[k] = sub_clean
+            else:
+                clean[k] = val
+    return clean
 
 target_file = args.get("file", "src/data/vocabulary/office-admin.ts")
 target_ids = args.get("ids", None)
@@ -192,13 +213,13 @@ with open(target_file) as f:
     ts_content = f.read()
 
 # Robust extraction of each word block
-id_positions = [m.start() for m in re.finditer(r'[\"\']?id[\"\']?\s*:\s*[\"\']([^\"\']+)[\"\']', ts_content)]
+id_positions = [m.start() for m in re.finditer(r'^\s*[\"\']?id[\"\']?\s*:\s*[\"\']([^\"\']+)[\"\']', ts_content, re.MULTILINE)]
 id_positions.append(len(ts_content))
 
 parsed_blocks = []
 for i in range(len(id_positions) - 1):
     block = ts_content[id_positions[i] : id_positions[i+1]]
-    wid = re.search(r'[\"\']?id[\"\']?\s*:\s*[\"\']([^\"\']+)[\"\']', block).group(1)
+    wid = re.search(r'^\s*[\"\']?id[\"\']?\s*:\s*[\"\']([^\"\']+)[\"\']', block, re.MULTILINE).group(1)
     w_match = re.search(r'\bword\b[\"\']?\s*:\s*[\"\']([^\"\']+)[\"\']', block)
     word = w_match.group(1) if w_match else ""
     pos_match = re.search(r'partOfSpeech[\"\']?\s*:\s*\[([^\]]+)\]', block)
@@ -223,9 +244,10 @@ else:
 
 log(f"Selected {len(selected)} words to process: {[s['id'] + ': ' + s['word'] for s in selected]}")
 
-# Split into parallel chunks of 3 words
+# Split into parallel chunks of 3 words, batched in groups of 15 words (5 chunks) to avoid API socket saturation
 chunk_size = 3
-chunks = [selected[i : i + chunk_size] for i in range(0, len(selected), chunk_size)]
+sub_batch_size = 15
+total_sub_batches = (len(selected) + sub_batch_size - 1) // sub_batch_size
 
 async def process_chunk(chunk):
     items_desc = []
@@ -233,37 +255,51 @@ async def process_chunk(chunk):
         items_desc.append(f'- id: "{e["id"]}", word: "{e["word"]}", partOfSpeech: {json.dumps(e["partOfSpeech"])}, category: "{e["category"]}", level: "{e["level"]}", toeicFrequency: {e["toeicFrequency"]}')
     prompt = BASE_PROMPT + "\n\nWords to generate:\n" + "\n".join(items_desc)
     
-    a = agent(prompt, schema=SCHEMA, role=f"Lexicographer for {chunk[0]['word']}..{chunk[-1]['word']}", model="flash_lite")
-    res = await a
-    return res.get("words", [])
+    for attempt in range(2):
+        try:
+            a = agent(prompt, schema=SCHEMA, role=f"Lexicographer for {chunk[0]['word']}..{chunk[-1]['word']}", model="flash_lite")
+            res = await asyncio.wait_for(a, timeout=90.0)
+            return res.get("words", [])
+        except Exception as exc:
+            log(f"Chunk {chunk[0]['word']} retry {attempt+1}/2 due to: {exc}")
+            if attempt == 1:
+                return []
+    return []
 
-phase(f"Generating {len(selected)} words in parallel ({len(chunks)} agent chunks)")
-results = await parallel(chunks, process_chunk)
+total_updated = 0
 
-all_generated_words = {}
-for word_list in results:
-    for w in word_list:
-        all_generated_words[w["id"]] = order_keys(w)
+for b_idx in range(0, len(selected), sub_batch_size):
+    sub_slice = selected[b_idx : b_idx + sub_batch_size]
+    batch_num = (b_idx // sub_batch_size) + 1
+    phase(f"Sub-batch {batch_num}/{total_sub_batches}: Generating {len(sub_slice)} words ({sub_slice[0]['word']}..{sub_slice[-1]['word']})")
+    
+    chunks = [sub_slice[i : i + chunk_size] for i in range(0, len(sub_slice), chunk_size)]
+    results = await parallel(chunks, process_chunk)
+    
+    sub_generated = {}
+    for word_list in results:
+        for w in word_list:
+            sub_generated[w["id"]] = order_keys(w)
+            
+    with open(target_file) as f:
+        current_content = f.read()
+        
+    updated_sub = 0
+    for wid, wobj in sub_generated.items():
+        pattern = r'\{\s*[\"\']id[\"\']:\s*[\"\']' + re.escape(wid) + r'[\"\'].*?\n  \}(?:,|\s*(?=\n\];))'
+        m = re.search(pattern, current_content, re.DOTALL)
+        if m:
+            is_last = (m.end() == len(current_content) or current_content[m.end():].lstrip().startswith("];"))
+            replacement = json.dumps(wobj, indent=4) + ("" if is_last else ",")
+            current_content = current_content[:m.start()] + replacement + current_content[m.end():]
+            updated_sub += 1
+        else:
+            log(f"Warning: pattern for {wid} not found!")
+            
+    with open(target_file, "w") as f:
+        f.write(current_content)
+        
+    total_updated += updated_sub
+    log(f"Sub-batch {batch_num}/{total_sub_batches} complete! Saved {updated_sub} words. (Total updated: {total_updated}/{len(selected)})")
 
-log(f"Received {len(all_generated_words)} generated words.")
-
-# Update file
-phase("Writing updates to file")
-updated_count = 0
-for wid, wobj in all_generated_words.items():
-    # Matches {\s*["']id["']:\s*["']wid["'].*?\n  }(?:,|\s*(?=\n\];))
-    pattern = r'\{\s*[\"\']id[\"\']:\s*[\"\']' + re.escape(wid) + r'[\"\'].*?\n  \}(?:,|\s*(?=\n\];))'
-    m = re.search(pattern, ts_content, re.DOTALL)
-    if m:
-        is_last = (m.end() == len(ts_content) or ts_content[m.end():].lstrip().startswith("];"))
-        replacement = json.dumps(wobj, indent=4) + ("" if is_last else ",")
-        ts_content = ts_content[:m.start()] + replacement + ts_content[m.end():]
-        updated_count += 1
-    else:
-        log(f"Warning: pattern for {wid} not found!")
-
-with open(target_file, "w") as f:
-    f.write(ts_content)
-
-log(f"Successfully updated {updated_count} words in {target_file}")
-print(f"Updated: {list(all_generated_words.keys())}")
+log(f"All done! Successfully updated {total_updated} words in {target_file}")

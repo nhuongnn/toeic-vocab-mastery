@@ -9,7 +9,7 @@
  *   node scripts/generate-vocabulary-images.mjs [options]
  * 
  * Options:
- *   --engine <pollinations|pixabay|pexels|unsplash|wikimedia>  (default: pollinations)
+ *   --engine <cloudflare|pollinations|pixabay|pexels|unsplash|wikimedia>  (default: cloudflare if keys exist, else pollinations)
  *   --category <category>   Filter words by category (e.g., finance, dining, communications)
  *   --word <word>           Target a specific word
  *   --id <id>               Target a specific word ID
@@ -69,7 +69,8 @@ function getArg(flag, defaultValue = null) {
 }
 const hasArg = (flag) => args.includes(flag);
 
-const ENGINE = getArg('--engine', 'pollinations').toLowerCase();
+const defaultEngine = (process.env.CLOUDFLARE_ACCOUNT_ID && process.env.CLOUDFLARE_API_TOKEN) ? 'cloudflare' : 'pollinations';
+const ENGINE = getArg('--engine', defaultEngine).toLowerCase();
 const CATEGORY = getArg('--category');
 const TARGET_WORD = getArg('--word');
 const TARGET_ID = getArg('--id');
@@ -79,6 +80,8 @@ const UPDATE_DATA = hasArg('--update-data');
 const STYLE = getArg('--style', '3d').toLowerCase();
 const DELAY = getArg('--delay')
   ? parseFloat(getArg('--delay'))
+  : ENGINE === 'cloudflare'
+  ? 0.5
   : ENGINE === 'pollinations' && !process.env.POLLINATIONS_API_KEY
   ? 46 // Pollinations free tier rate limit: 1 request every 45s per IP
   : 1.2;
@@ -150,6 +153,56 @@ async function fetchImageBuffer(url, headers = {}) {
     const text = await res.text().catch(() => '');
     throw new Error(`HTTP ${res.status}: ${res.statusText} - ${text.slice(0, 150)}`);
   }
+  const arrayBuffer = await res.arrayBuffer();
+  return Buffer.from(arrayBuffer);
+}
+
+// Engine: Cloudflare Workers AI
+async function downloadFromCloudflare(wordObj) {
+  const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
+  const apiToken = process.env.CLOUDFLARE_API_TOKEN;
+  if (!accountId || !apiToken) {
+    throw new Error('CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN is not defined in .env.local');
+  }
+
+  const prompt = buildAiPrompt(
+    wordObj.word,
+    wordObj.visual?.imageDescription,
+    wordObj.visual?.imageKeyword,
+    STYLE
+  );
+
+  const model = process.env.CLOUDFLARE_AI_MODEL || '@cf/black-forest-labs/flux-1-schnell';
+  const url = `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${model}`;
+
+  const isFlux = model.includes('flux');
+  const payload = {
+    prompt,
+    ...(isFlux ? { steps: 4 } : { num_steps: 4 }),
+  };
+
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => '');
+    throw new Error(`Cloudflare AI error ${res.status}: ${errText.slice(0, 150)}`);
+  }
+
+  const contentType = res.headers.get('content-type') || '';
+  if (contentType.includes('application/json')) {
+    const data = await res.json();
+    if (data.result?.image) {
+      return Buffer.from(data.result.image, 'base64');
+    }
+  }
+
   const arrayBuffer = await res.arrayBuffer();
   return Buffer.from(arrayBuffer);
 }
@@ -394,7 +447,9 @@ async function main() {
     while (attempts < maxAttempts && !buffer) {
       attempts++;
       try {
-        if (ENGINE === 'pixabay') {
+        if (ENGINE === 'cloudflare') {
+          buffer = await downloadFromCloudflare(wordObj);
+        } else if (ENGINE === 'pixabay') {
           buffer = await downloadFromPixabay(wordObj);
         } else if (ENGINE === 'pexels') {
           buffer = await downloadFromPexels(wordObj);

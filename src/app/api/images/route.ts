@@ -1,4 +1,8 @@
 import { NextResponse } from 'next/server';
+import fs from 'fs';
+import path from 'path';
+import { isCloudflareAiConfigured } from '@/lib/cloudflare-ai';
+
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -7,60 +11,63 @@ export async function GET(request: Request) {
   const description = searchParams.get('description') || '';
   const style = searchParams.get('style') || '3d';
   const refresh = searchParams.get('refresh') === 'true';
+  const fallbackUrl = searchParams.get('fallbackUrl') || '';
 
-  // 1. Core visual scene description is the primary anchor of the prompt
-  const scenePrompt = description || query || word;
+  const safeKey = `${word.toLowerCase().replace(/[^a-z0-9_-]/g, '_') || 'word'}-${style}`;
+  const cacheDir = path.join(process.cwd(), 'public', 'cache', 'vocabulary');
+  const cacheFilePath = path.join(cacheDir, `${safeKey}.png`);
 
-  let styleModifier = '';
-  if (style === 'realistic') {
-    styleModifier =
-      'Award-winning documentary editorial photography, realistic workplace and daily life setting, natural cinematic lighting, 35mm lens, sharp focus, 8k resolution, no text, no watermark, no blur';
-  } else {
-    // Default: 3D Conceptual Anchor
-    styleModifier =
-      'Crisp 3D isometric conceptual illustration, educational visual anchor, Pixar Blender clay style, clean studio rim lighting, vibrant colors, shallow depth of field, 8k render, no text, no letters, no watermark';
-  }
-
-  const fullPrompt = `${scenePrompt}. ${styleModifier}`;
-
-  // Deterministic seed based on word + style so it remains consistent per word per style,
-  // or random seed if user clicks "Đổi ảnh" (refresh=true)
+  // Deterministic seed based on word + style or random seed if refresh
   const seed = refresh
     ? Math.floor(Math.random() * 1000000)
     : Math.abs(
         `${word}-${style}`.split('').reduce((acc, char) => (acc * 31 + char.charCodeAt(0)) | 0, 0) % 1000000
       );
 
-  const polliKey = process.env.POLLINATIONS_API_KEY;
+  let imageUrl: string;
 
-  let aiImageUrl: string;
-  if (polliKey) {
-    // Official Authenticated API endpoint with API Key (ultra-fast FLUX.1-schnell, no logo, no IP throttling)
-    aiImageUrl = `https://gen.pollinations.ai/image/${encodeURIComponent(
-      fullPrompt
-    )}?width=800&height=450&seed=${seed}&model=black-forest-labs/flux.1-schnell&key=${polliKey}`;
+  // 1. If not refresh and file is already cached on disk, serve as static asset
+  if (!refresh && fs.existsSync(cacheFilePath)) {
+    imageUrl = `/cache/vocabulary/${safeKey}.png`;
   } else {
-    // Fallback anonymous FLUX endpoint
-    aiImageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(
-      fullPrompt
-    )}?width=800&height=450&nologo=true&seed=${seed}&model=flux`;
+    // 2. Delegate to render route handler which handles Cloudflare AI -> Fallbacks -> Caching
+    const renderParams = new URLSearchParams({
+      word,
+      query,
+      description,
+      style,
+      seed: String(seed),
+      ...(refresh ? { refresh: 'true' } : {}),
+      ...(fallbackUrl ? { fallbackUrl } : {}),
+    });
+    imageUrl = `/api/images/render?${renderParams.toString()}`;
   }
+
+  const isCf = isCloudflareAiConfigured();
+  const providerLabel = isCf
+    ? style === '3d'
+      ? 'Cloudflare Workers AI (FLUX / SDXL 3D)'
+      : 'Cloudflare Workers AI (Realistic Photo)'
+    : style === '3d'
+    ? 'AI 3D Conceptual Anchor'
+    : 'AI Realistic Photography';
 
   return NextResponse.json({
     results: [
       {
-        id: `flux-${word}-${style}-${seed}`,
+        id: `img-${word}-${style}-${seed}`,
         urls: {
-          regular: aiImageUrl,
-          small: aiImageUrl,
+          regular: imageUrl,
+          small: imageUrl,
         },
         alt_description: description || `Visual illustration of ${word}`,
         user: {
-          name: style === 'realistic' ? 'AI Realistic Photography (FLUX)' : 'AI 3D Conceptual Anchor (FLUX)',
-          links: { html: 'https://pollinations.ai' },
+          name: providerLabel,
+          links: { html: isCf ? 'https://developers.cloudflare.com/workers-ai/' : 'https://toeic-mastery.app' },
         },
         style,
         seed,
+        isCached: !refresh && fs.existsSync(cacheFilePath),
       },
     ],
   });

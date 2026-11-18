@@ -42,6 +42,7 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
           query: visual.imageKeyword || word,
           description: visual.imageDescription || '',
           style: activeStyle,
+          ...(visual.imageUrl ? { fallbackUrl: visual.imageUrl } : {}),
           ...(isRefresh ? { refresh: 'true' } : {}),
         });
 
@@ -190,8 +191,15 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
                 alt={visual.imageDescription || `Minh họa từ ${word}`}
                 onLoad={() => setIsImgLoaded(true)}
                 onError={() => {
-                  setHasImgError(true);
-                  setIsLoading(false);
+                  // If generated image fails, gracefully fallback to reference image if available
+                  if (visual.imageUrl && imageUrl !== visual.imageUrl) {
+                    setImageUrl(visual.imageUrl);
+                    setPhotographer('Reference Visual');
+                    setIsImgLoaded(false);
+                  } else {
+                    setHasImgError(true);
+                    setIsLoading(false);
+                  }
                 }}
                 className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ${
                   isImgLoaded ? 'opacity-100' : 'opacity-0'
@@ -204,12 +212,12 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
                   {style === '3d' ? (
                     <>
                       <Sparkles className="w-3 h-3 text-amber-400" />
-                      <span>FLUX 3D Anchor</span>
+                      <span>{photographer || '3D Anchor'}</span>
                     </>
                   ) : (
                     <>
                       <Camera className="w-3 h-3 text-indigo-400" />
-                      <span>FLUX Realistic Photo</span>
+                      <span>{photographer || 'Realistic Photo'}</span>
                     </>
                   )}
                 </div>

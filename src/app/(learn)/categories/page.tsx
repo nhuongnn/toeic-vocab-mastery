@@ -12,6 +12,9 @@ import {
   X,
   RotateCcw,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  LayoutGrid,
 } from 'lucide-react';
 import { categories } from '@/data/categories';
 import { allVocabularyWords } from '@/data/vocabulary';
@@ -32,6 +35,50 @@ export default function CategoriesPage() {
   const [sortBy, setSortBy] = useState<WordSortOption>('default');
   const [search, setSearch] = useState('');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+
+  // Category horizontal scroll controls & expanded mode
+  const categoryScrollRef = React.useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [isExpandedCategories, setIsExpandedCategories] = useState(false);
+
+  const checkCategoryScroll = React.useCallback(() => {
+    const el = categoryScrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 4);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 4);
+  }, []);
+
+  const scrollCategories = (direction: 'left' | 'right') => {
+    const el = categoryScrollRef.current;
+    if (!el) return;
+    const scrollAmount = 260;
+    el.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth',
+    });
+  };
+
+  const handleCategoryWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    const el = categoryScrollRef.current;
+    if (!el || isExpandedCategories) return;
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      el.scrollLeft += e.deltaY;
+    }
+  };
+
+  React.useEffect(() => {
+    checkCategoryScroll();
+    const el = categoryScrollRef.current;
+    if (!el) return;
+    el.addEventListener('scroll', checkCategoryScroll);
+    window.addEventListener('resize', checkCategoryScroll);
+    return () => {
+      el.removeEventListener('scroll', checkCategoryScroll);
+      window.removeEventListener('resize', checkCategoryScroll);
+    };
+  }, [checkCategoryScroll, isExpandedCategories]);
 
   // Compute dynamic counts per level based on current category and search query
   const levelCounts = useMemo(() => {
@@ -279,47 +326,137 @@ export default function CategoriesPage() {
         </div>
       </div>
 
-      {/* Category Pills Slider */}
+      {/* Category Pills Slider / Grid */}
       <div className="space-y-2">
         <div className="flex items-center justify-between text-xs text-slate-400 px-1">
-          <span className="font-semibold uppercase tracking-wider text-[11px] text-slate-500">
-            Chủ đề làm việc (Categories):
-          </span>
-          <span className="font-mono text-slate-500">
-            {selectedCategoryName}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="font-semibold uppercase tracking-wider text-[11px] text-slate-400">
+              Chủ đề làm việc (Categories):
+            </span>
+            <span className="text-indigo-300 font-semibold">
+              {selectedCategoryName}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            {/* View Mode Toggle: Slider vs Grid */}
+            <button
+              onClick={() => setIsExpandedCategories(!isExpandedCategories)}
+              className="px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 text-indigo-300 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm"
+              title={isExpandedCategories ? 'Chuyển sang dạng thanh cuộn ngang' : 'Hiển thị tất cả 13 chủ đề dạng lưới'}
+            >
+              <LayoutGrid className="w-3.5 h-3.5 text-indigo-400" />
+              <span>{isExpandedCategories ? 'Dạng cuộn ngang' : 'Xem tất cả (Lưới)'}</span>
+            </button>
+          </div>
         </div>
 
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none max-w-full">
-          <button
-            onClick={() => setSelectedCategory('all')}
-            className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors ${
-              selectedCategory === 'all'
-                ? 'bg-indigo-600 text-white'
-                : 'bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800'
-            }`}
-          >
-            Tất cả danh mục ({allVocabularyWords.length})
-          </button>
-          {categories.map((cat) => {
-            const count = allVocabularyWords.filter((w) => w.category === cat.id).length;
-            if (count === 0) return null;
-            return (
+        {isExpandedCategories ? (
+          /* Grid / Wrap Mode */
+          <div className="flex flex-wrap items-center gap-1.5 p-3 rounded-2xl bg-slate-900/60 border border-slate-800">
+            <button
+              onClick={() => setSelectedCategory('all')}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors ${
+                selectedCategory === 'all'
+                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
+                  : 'bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800'
+              }`}
+            >
+              Tất cả danh mục ({allVocabularyWords.length})
+            </button>
+            {categories.map((cat) => {
+              const count = allVocabularyWords.filter((w) => w.category === cat.id).length;
+              if (count === 0) return null;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setSelectedCategory(cat.id)}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors flex items-center gap-1.5 ${
+                    selectedCategory === cat.id
+                      ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
+                      : 'bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800'
+                  }`}
+                >
+                  <span>{cat.name}</span>
+                  <span className="text-[10px] opacity-75 font-mono">({count})</span>
+                </button>
+              );
+            })}
+          </div>
+        ) : (
+          /* Horizontal Slider with Arrows & Visible Scrollbar */
+          <div className="relative group/slider">
+            {/* Scroll Left Arrow */}
+            {canScrollLeft && (
               <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors flex items-center gap-1.5 ${
-                  selectedCategory === cat.id
-                    ? 'bg-indigo-600 text-white'
+                onClick={() => scrollCategories('left')}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-slate-900/95 border border-slate-700 hover:border-indigo-500 text-slate-200 hover:text-white hover:bg-indigo-600 flex items-center justify-center shadow-xl shadow-black/50 transition-all hover:scale-105"
+                title="Cuộn sang trái"
+                aria-label="Cuộn sang trái"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+            )}
+
+            {/* Left fade gradient when scrollable */}
+            {canScrollLeft && (
+              <div className="absolute left-0 top-0 bottom-2 w-8 bg-gradient-to-r from-slate-950 to-transparent pointer-events-none z-10" />
+            )}
+
+            {/* Scrollable Container */}
+            <div
+              ref={categoryScrollRef}
+              onWheel={handleCategoryWheel}
+              className="flex items-center gap-1.5 overflow-x-auto pb-2.5 pt-0.5 px-1 scroll-smooth max-w-full"
+            >
+              <button
+                onClick={() => setSelectedCategory('all')}
+                className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors flex-shrink-0 ${
+                  selectedCategory === 'all'
+                    ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
                     : 'bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800'
                 }`}
               >
-                <span>{cat.name}</span>
-                <span className="text-[10px] opacity-75 font-mono">({count})</span>
+                Tất cả danh mục ({allVocabularyWords.length})
               </button>
-            );
-          })}
-        </div>
+              {categories.map((cat) => {
+                const count = allVocabularyWords.filter((w) => w.category === cat.id).length;
+                if (count === 0) return null;
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => setSelectedCategory(cat.id)}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors flex items-center gap-1.5 flex-shrink-0 ${
+                      selectedCategory === cat.id
+                        ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
+                        : 'bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800'
+                    }`}
+                  >
+                    <span>{cat.name}</span>
+                    <span className="text-[10px] opacity-75 font-mono">({count})</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Right fade gradient when scrollable */}
+            {canScrollRight && (
+              <div className="absolute right-0 top-0 bottom-2 w-8 bg-gradient-to-l from-slate-950 to-transparent pointer-events-none z-10" />
+            )}
+
+            {/* Scroll Right Arrow */}
+            {canScrollRight && (
+              <button
+                onClick={() => scrollCategories('right')}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-slate-900/95 border border-slate-700 hover:border-indigo-500 text-slate-200 hover:text-white hover:bg-indigo-600 flex items-center justify-center shadow-xl shadow-black/50 transition-all hover:scale-105"
+                title="Cuộn sang phải"
+                aria-label="Cuộn sang phải"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Filter Status & Active Badges */}

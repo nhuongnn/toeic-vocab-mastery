@@ -10,9 +10,16 @@ import {
   Share2,
   Sparkles,
   Zap,
+  TrendingUp,
+  MessageCircle,
 } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
 import { useProgress } from '@/contexts/ProgressContext';
+import {
+  LEVEL_CONFIG,
+  getWordPopularityScore,
+  getDailyCommunicationScore,
+} from '@/lib/vocabulary-helpers';
 import { PronunciationPlayer } from './PronunciationPlayer';
 import { EtymologySection } from './EtymologySection';
 import { NativeMindset } from './NativeMindset';
@@ -75,12 +82,25 @@ export function WordDetail({ word, previousWordId, nextWordId }: WordDetailProps
 
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10">
           <div>
-            <div className="flex items-center gap-2 mb-3">
+            <div className="flex items-center gap-2 mb-3 flex-wrap">
               <span className="px-3 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
                 {word.category.replace('-', ' ')}
               </span>
-              <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800 text-slate-400">
-                {word.level}
+              <span
+                className={`px-2.5 py-0.5 rounded-full text-xs font-semibold border ${
+                  LEVEL_CONFIG[word.level]?.badgeClass || 'bg-slate-800 text-slate-400'
+                }`}
+                title={LEVEL_CONFIG[word.level]?.description}
+              >
+                {LEVEL_CONFIG[word.level]?.label || word.level}
+              </span>
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-500/10 border border-indigo-500/30 text-indigo-300">
+                <TrendingUp className="w-3 h-3 text-indigo-400" />
+                <span>TOEIC: {getWordPopularityScore(word)}/10</span>
+              </span>
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">
+                <MessageCircle className="w-3 h-3 text-emerald-400" />
+                <span>Daily: {getDailyCommunicationScore(word)}/10</span>
               </span>
               {currentCard && currentCard.repetitions > 0 && (
                 <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
@@ -143,7 +163,11 @@ export function WordDetail({ word, previousWordId, nextWordId }: WordDetailProps
       />
 
       {/* 7. TOEIC Intelligence Tips */}
-      <ToeicTipsSection toeicContext={word.toeicContext} frequency={word.toeicFrequency} />
+      <ToeicTipsSection
+        toeicContext={word.toeicContext}
+        frequency={word.toeicFrequency}
+        dailyFrequencyScore={getDailyCommunicationScore(word)}
+      />
 
       {/* 8. Video & Multimedia Immersion */}
       <VideoSection key={word.id} video={word.video} word={word.word} category={word.category} />

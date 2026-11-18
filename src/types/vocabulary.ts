@@ -1,11 +1,23 @@
+export type WordLevel = 'essential' | 'intermediate' | 'advanced';
+
+export type WordSortOption =
+  | 'default'
+  | 'popularity-desc'
+  | 'popularity-asc'
+  | 'daily-desc'
+  | 'daily-asc'
+  | 'alpha-asc'
+  | 'alpha-desc';
+
 export interface VocabularyWord {
   // Identity
   id: string;
   word: string;
   partOfSpeech: string[];
   category: CategoryId;
-  level: 'essential' | 'intermediate' | 'advanced';
+  level: WordLevel;
   toeicFrequency: number;
+  dailyFrequency?: number;
 
   // 🔤 Pronunciation
   pronunciation: {

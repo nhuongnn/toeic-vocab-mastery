@@ -1,26 +1,92 @@
 'use client';
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { Layers, Search, Filter, BookOpen } from 'lucide-react';
+import React, { useState, useMemo } from 'react';
+import {
+  Layers,
+  Search,
+  Filter,
+  BookOpen,
+  ArrowUpDown,
+  TrendingUp,
+  MessageCircle,
+  X,
+  RotateCcw,
+  ChevronDown,
+} from 'lucide-react';
 import { categories } from '@/data/categories';
 import { allVocabularyWords } from '@/data/vocabulary';
 import { WordCard } from '@/components/word/WordCard';
-import { CategoryId } from '@/types/vocabulary';
+import { CategoryId, WordLevel, WordSortOption } from '@/types/vocabulary';
+import {
+  LEVEL_CONFIG,
+  SORT_OPTIONS,
+  sortVocabularyWords,
+  filterVocabularyWords,
+} from '@/lib/vocabulary-helpers';
+
+const PAGE_SIZE = 32;
 
 export default function CategoriesPage() {
   const [selectedCategory, setSelectedCategory] = useState<CategoryId | 'all'>('all');
+  const [selectedLevel, setSelectedLevel] = useState<WordLevel | 'all'>('all');
+  const [sortBy, setSortBy] = useState<WordSortOption>('default');
   const [search, setSearch] = useState('');
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  const filteredWords = allVocabularyWords.filter((w) => {
-    const matchesCat = selectedCategory === 'all' || w.category === selectedCategory;
-    const matchesSearch =
-      !search.trim() ||
-      w.word.toLowerCase().includes(search.toLowerCase()) ||
-      w.deepMeaning.coreConcept.toLowerCase().includes(search.toLowerCase()) ||
-      w.etymology.rootWord.toLowerCase().includes(search.toLowerCase());
-    return matchesCat && matchesSearch;
-  });
+  // Compute dynamic counts per level based on current category and search query
+  const levelCounts = useMemo(() => {
+    const baseWords = allVocabularyWords.filter((w) => {
+      const matchCat = selectedCategory === 'all' || w.category === selectedCategory;
+      const cleanSearch = search.trim().toLowerCase();
+      if (!cleanSearch) return matchCat;
+      const matchWord = w.word.toLowerCase().includes(cleanSearch);
+      const matchConcept = w.deepMeaning?.coreConcept?.toLowerCase().includes(cleanSearch);
+      return matchCat && (matchWord || matchConcept);
+    });
+
+    return {
+      all: baseWords.length,
+      essential: baseWords.filter((w) => w.level === 'essential').length,
+      intermediate: baseWords.filter((w) => w.level === 'intermediate').length,
+      advanced: baseWords.filter((w) => w.level === 'advanced').length,
+    };
+  }, [selectedCategory, search]);
+
+  // Filter and sort words
+  const filteredAndSortedWords = useMemo(() => {
+    const filtered = filterVocabularyWords(allVocabularyWords, {
+      category: selectedCategory,
+      level: selectedLevel,
+      search,
+    });
+    return sortVocabularyWords(filtered, sortBy);
+  }, [selectedCategory, selectedLevel, search, sortBy]);
+
+  // Reset pagination when filters or sort change
+  React.useEffect(() => {
+    setVisibleCount(PAGE_SIZE);
+  }, [selectedCategory, selectedLevel, search, sortBy]);
+
+  const displayedWords = filteredAndSortedWords.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredAndSortedWords.length;
+
+  const isFiltered =
+    selectedCategory !== 'all' ||
+    selectedLevel !== 'all' ||
+    sortBy !== 'default' ||
+    search.trim() !== '';
+
+  const handleResetFilters = () => {
+    setSelectedCategory('all');
+    setSelectedLevel('all');
+    setSortBy('default');
+    setSearch('');
+  };
+
+  const selectedCategoryName =
+    selectedCategory === 'all'
+      ? 'Tất cả danh mục'
+      : categories.find((c) => c.id === selectedCategory)?.name || selectedCategory;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
@@ -33,14 +99,197 @@ export default function CategoriesPage() {
         <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
           Workplace Categories & Curated Lexicon
         </h1>
-        <p className="text-slate-400 text-sm max-w-2xl">
-          Deep-dive into words grouped by workplace contexts. Click any word to explore its etymology, native thought patterns, and pronunciation.
+        <p className="text-slate-400 text-sm max-w-3xl leading-relaxed">
+          Kho từ vựng chuyên sâu chuẩn cấu trúc đề thi TOEIC và ngữ cảnh công sở quốc tế. Lọc theo cấp độ độ khó, sắp xếp theo độ phổ biến hoặc tần suất giao tiếp hàng ngày để tối ưu lộ trình học.
         </p>
       </div>
 
-      {/* Filter and Search Bar */}
-      <div className="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between">
-        {/* Category Pills Slider */}
+      {/* Control Panel: Search & Sorters */}
+      <div className="p-4 sm:p-5 rounded-3xl bg-slate-900/80 border border-slate-800 space-y-4">
+        {/* Row 1: Search and Sort Dropdown */}
+        <div className="flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
+          {/* Search bar */}
+          <div className="relative flex-1">
+            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <input
+              type="text"
+              placeholder="Tìm từ vựng, khái niệm cốt lõi, từ gốc..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full bg-slate-950/80 border border-slate-800 rounded-xl pl-10 pr-9 py-2.5 text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+            />
+            {search && (
+              <button
+                onClick={() => setSearch('')}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-200 p-0.5"
+                title="Xóa tìm kiếm"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+
+          {/* Sort selector */}
+          <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+            <div className="relative flex items-center min-w-[240px] sm:min-w-[280px]">
+              <ArrowUpDown className="w-4 h-4 text-indigo-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as WordSortOption)}
+                className="w-full appearance-none bg-slate-950/80 border border-slate-800 rounded-xl pl-10 pr-9 py-2.5 text-xs sm:text-sm font-semibold text-slate-200 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 cursor-pointer"
+              >
+                <option value="default">Mặc định (Thứ tự ban đầu)</option>
+                <optgroup label="Độ phổ biến từ vựng (TOEIC)">
+                  <option value="popularity-desc">Độ phổ biến: Cao nhất (Phổ biến nhất)</option>
+                  <option value="popularity-asc">Độ phổ biến: Thấp nhất</option>
+                </optgroup>
+                <optgroup label="Tần suất giao tiếp hàng ngày">
+                  <option value="daily-desc">Giao tiếp hàng ngày: Hay dùng nhất</option>
+                  <option value="daily-asc">Giao tiếp hàng ngày: Ít gặp hơn</option>
+                </optgroup>
+                <optgroup label="Bảng chữ cái">
+                  <option value="alpha-asc">Bảng chữ cái: A → Z</option>
+                  <option value="alpha-desc">Bảng chữ cái: Z → A</option>
+                </optgroup>
+              </select>
+              <ChevronDown className="w-4 h-4 text-slate-400 absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            </div>
+
+            {/* Reset button */}
+            {isFiltered && (
+              <button
+                onClick={handleResetFilters}
+                className="px-3 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition-colors whitespace-nowrap"
+                title="Đặt lại toàn bộ bộ lọc"
+              >
+                <RotateCcw className="w-3.5 h-3.5" />
+                <span>Đặt lại</span>
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Row 2: Level Filter Pills */}
+        <div className="pt-2 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <Filter className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
+            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              Cấp độ từ vựng:
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none flex-wrap">
+            {/* All Levels */}
+            <button
+              onClick={() => setSelectedLevel('all')}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
+                selectedLevel === 'all'
+                  ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20'
+                  : 'bg-slate-950/80 border border-slate-800 text-slate-300 hover:bg-slate-800'
+              }`}
+            >
+              <span>Tất cả cấp độ</span>
+              <span className="text-[10px] opacity-80 font-mono">({levelCounts.all})</span>
+            </button>
+
+            {/* Essential */}
+            <button
+              onClick={() => setSelectedLevel('essential')}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
+                selectedLevel === 'essential'
+                  ? LEVEL_CONFIG.essential.activeBgClass
+                  : `bg-slate-950/80 border ${LEVEL_CONFIG.essential.pillBorderClass} text-emerald-300 hover:bg-emerald-950/30`
+              }`}
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              <span>Essential</span>
+              <span className="text-[10px] opacity-80 font-mono">({levelCounts.essential})</span>
+            </button>
+
+            {/* Intermediate */}
+            <button
+              onClick={() => setSelectedLevel('intermediate')}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
+                selectedLevel === 'intermediate'
+                  ? LEVEL_CONFIG.intermediate.activeBgClass
+                  : `bg-slate-950/80 border ${LEVEL_CONFIG.intermediate.pillBorderClass} text-sky-300 hover:bg-sky-950/30`
+              }`}
+            >
+              <span className="w-2 h-2 rounded-full bg-sky-400" />
+              <span>Intermediate</span>
+              <span className="text-[10px] opacity-80 font-mono">({levelCounts.intermediate})</span>
+            </button>
+
+            {/* Advanced */}
+            <button
+              onClick={() => setSelectedLevel('advanced')}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
+                selectedLevel === 'advanced'
+                  ? LEVEL_CONFIG.advanced.activeBgClass
+                  : `bg-slate-950/80 border ${LEVEL_CONFIG.advanced.pillBorderClass} text-purple-300 hover:bg-purple-950/30`
+              }`}
+            >
+              <span className="w-2 h-2 rounded-full bg-purple-400" />
+              <span>Advanced</span>
+              <span className="text-[10px] opacity-80 font-mono">({levelCounts.advanced})</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Row 3: Quick Sorting Badges for Popular / Daily Spoken */}
+        <div className="pt-2 border-t border-slate-800/60 flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none flex-wrap">
+          <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider mr-1">
+            Phím tắt sắp xếp:
+          </span>
+
+          <button
+            onClick={() => setSortBy(sortBy === 'popularity-desc' ? 'default' : 'popularity-desc')}
+            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
+              sortBy === 'popularity-desc'
+                ? 'bg-indigo-500/20 text-indigo-300 border border-indigo-500/40'
+                : 'bg-slate-950/60 border border-slate-800 text-slate-400 hover:text-slate-200 hover:border-slate-700'
+            }`}
+          >
+            <TrendingUp className="w-3 h-3 text-indigo-400" />
+            <span>Phổ biến nhất (TOEIC)</span>
+          </button>
+
+          <button
+            onClick={() => setSortBy(sortBy === 'daily-desc' ? 'default' : 'daily-desc')}
+            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
+              sortBy === 'daily-desc'
+                ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
+                : 'bg-slate-950/60 border border-slate-800 text-slate-400 hover:text-slate-200 hover:border-slate-700'
+            }`}
+          >
+            <MessageCircle className="w-3 h-3 text-emerald-400" />
+            <span>Giao tiếp thường gặp nhất</span>
+          </button>
+
+          <button
+            onClick={() => setSortBy(sortBy === 'alpha-asc' ? 'default' : 'alpha-asc')}
+            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all flex items-center gap-1 ${
+              sortBy === 'alpha-asc'
+                ? 'bg-purple-500/20 text-purple-300 border border-purple-500/40'
+                : 'bg-slate-950/60 border border-slate-800 text-slate-400 hover:text-slate-200 hover:border-slate-700'
+            }`}
+          >
+            <span>A → Z</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Category Pills Slider */}
+      <div className="space-y-2">
+        <div className="flex items-center justify-between text-xs text-slate-400 px-1">
+          <span className="font-semibold uppercase tracking-wider text-[11px] text-slate-500">
+            Chủ đề làm việc (Categories):
+          </span>
+          <span className="font-mono text-slate-500">
+            {selectedCategoryName}
+          </span>
+        </div>
+
         <div className="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none max-w-full">
           <button
             onClick={() => setSelectedCategory('all')}
@@ -50,7 +299,7 @@ export default function CategoriesPage() {
                 : 'bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800'
             }`}
           >
-            All Categories ({allVocabularyWords.length})
+            Tất cả danh mục ({allVocabularyWords.length})
           </button>
           {categories.map((cat) => {
             const count = allVocabularyWords.filter((w) => w.category === cat.id).length;
@@ -66,37 +315,106 @@ export default function CategoriesPage() {
                 }`}
               >
                 <span>{cat.name}</span>
-                <span className="text-[10px] opacity-75">({count})</span>
+                <span className="text-[10px] opacity-75 font-mono">({count})</span>
               </button>
             );
           })}
         </div>
+      </div>
 
-        {/* Search */}
-        <div className="relative min-w-[240px]">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
-          <input
-            type="text"
-            placeholder="Filter words..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500"
-          />
+      {/* Filter Status & Active Badges */}
+      <div className="flex items-center justify-between gap-4 flex-wrap text-xs text-slate-400">
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="font-semibold text-slate-300">
+            Kết quả: <strong className="text-white font-mono text-sm">{filteredAndSortedWords.length}</strong> từ vựng
+          </span>
+
+          {selectedLevel !== 'all' && (
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-700 text-slate-200">
+              <span>Level: {LEVEL_CONFIG[selectedLevel].shortLabel}</span>
+              <button
+                onClick={() => setSelectedLevel('all')}
+                className="hover:text-rose-400 ml-0.5"
+                title="Bỏ lọc cấp độ"
+              >
+                <X className="w-3 h-3" />
+              </button>
+            </span>
+          )}
+
+          {sortBy !== 'default' && (
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-700 text-indigo-300">
+              <span>Sắp xếp: {SORT_OPTIONS.find((s) => s.id === sortBy)?.shortLabel}</span>
+              <button
+                onClick={() => setSortBy('default')}
+                className="hover:text-rose-400 ml-0.5"
+                title="Hủy sắp xếp"
+              >
+                <X className="w-3 h-3" />
+              </button>
+            </span>
+          )}
+
+          {selectedCategory !== 'all' && (
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-700 text-slate-200">
+              <span>Danh mục: {selectedCategoryName}</span>
+              <button
+                onClick={() => setSelectedCategory('all')}
+                className="hover:text-rose-400 ml-0.5"
+                title="Bỏ lọc danh mục"
+              >
+                <X className="w-3 h-3" />
+              </button>
+            </span>
+          )}
         </div>
+
+        {displayedWords.length > 0 && (
+          <span className="text-[11px] text-slate-500 font-mono">
+            Đang hiển thị {displayedWords.length} / {filteredAndSortedWords.length} từ
+          </span>
+        )}
       </div>
 
       {/* Words Grid */}
-      {filteredWords.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {filteredWords.map((word) => (
-            <WordCard key={word.id} word={word} />
-          ))}
+      {filteredAndSortedWords.length > 0 ? (
+        <div className="space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {displayedWords.map((word) => (
+              <WordCard key={word.id} word={word} />
+            ))}
+          </div>
+
+          {/* Load More Pagination */}
+          {hasMore && (
+            <div className="text-center pt-4">
+              <button
+                onClick={() => setVisibleCount((prev) => prev + PAGE_SIZE)}
+                className="px-6 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-indigo-600/25 hover:scale-105 active:scale-95"
+              >
+                Xem thêm 32 từ khác (Còn {filteredAndSortedWords.length - displayedWords.length} từ)
+              </button>
+            </div>
+          )}
         </div>
       ) : (
-        <div className="text-center py-20 bg-slate-900/40 rounded-3xl border border-slate-800">
-          <BookOpen className="w-12 h-12 text-slate-600 mx-auto mb-3" />
-          <h3 className="text-base font-bold text-slate-300">No words found</h3>
-          <p className="text-xs text-slate-500 mt-1">Try adjusting your category filter or search query.</p>
+        <div className="text-center py-20 bg-slate-900/40 rounded-3xl border border-slate-800 space-y-4">
+          <BookOpen className="w-12 h-12 text-slate-600 mx-auto" />
+          <div className="space-y-1">
+            <h3 className="text-base font-bold text-slate-300">Không tìm thấy từ vựng phù hợp</h3>
+            <p className="text-xs text-slate-500 max-w-md mx-auto">
+              Không có từ vựng nào khớp với bộ lọc cấp độ, danh mục hoặc từ khóa tìm kiếm của bạn.
+            </p>
+          </div>
+          {isFiltered && (
+            <button
+              onClick={handleResetFilters}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition-colors"
+            >
+              <RotateCcw className="w-3.5 h-3.5" />
+              <span>Đặt lại bộ lọc</span>
+            </button>
+          )}
         </div>
       )}
     </div>

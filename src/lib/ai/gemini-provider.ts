@@ -10,8 +10,14 @@ export function isGeminiConfigured(): boolean {
 }
 
 export function getGeminiModel(): string {
-  return process.env.GEMINI_MODEL?.trim() || 'gemini-2.0-flash';
+  return process.env.GEMINI_MODEL?.trim() || 'gemini-flash-lite-latest';
 }
+
+const FALLBACK_GEMINI_MODELS = [
+  'gemini-flash-lite-latest',
+  'gemini-3.1-flash-lite',
+  'gemini-3-flash-preview',
+];
 
 function getGeminiApiKey(): string {
   const key =
@@ -33,7 +39,6 @@ export async function* streamGemini(
   systemPrompt: string
 ): AsyncGenerator<string, void, unknown> {
   const apiKey = getGeminiApiKey();
-  const model = getGeminiModel();
 
   const ai = new GoogleGenAI({ apiKey });
 
@@ -67,24 +72,48 @@ export async function* streamGemini(
     });
   }
 
-  try {
-    const responseStream = await ai.models.generateContentStream({
-      model,
-      contents: formattedContents,
-      config: {
-        systemInstruction: systemPrompt,
-        temperature: 0.7,
-      },
-    });
+  const primaryModel = getGeminiModel();
+  const modelsToTry = [
+    primaryModel,
+    ...FALLBACK_GEMINI_MODELS.filter((m) => m !== primaryModel),
+  ];
 
-    for await (const chunk of responseStream) {
-      const text = chunk.text;
-      if (text) {
-        yield text;
+  let lastError: unknown = null;
+
+  for (const currentModel of modelsToTry) {
+    try {
+      const responseStream = await ai.models.generateContentStream({
+        model: currentModel,
+        contents: formattedContents,
+        config: {
+          systemInstruction: systemPrompt,
+          temperature: 0.7,
+        },
+      });
+
+      let hasYieldedAny = false;
+      for await (const chunk of responseStream) {
+        const text = chunk.text;
+        if (text) {
+          hasYieldedAny = true;
+          yield text;
+        }
       }
+
+      if (hasYieldedAny) {
+        return;
+      }
+    } catch (err: unknown) {
+      lastError = err;
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn(
+        `[Gemini Provider] Model ${currentModel} failed (${msg}). Trying next Gemini model...`
+      );
+      continue;
     }
-  } catch (err: unknown) {
-    const errMessage = err instanceof Error ? err.message : String(err);
-    throw new Error(`Gemini API Error: ${errMessage}`);
   }
+
+  const errMessage =
+    lastError instanceof Error ? lastError.message : String(lastError);
+  throw new Error(`Gemini API Error: ${errMessage}`);
 }

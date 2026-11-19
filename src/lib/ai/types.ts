@@ -2,6 +2,8 @@ export type Role = 'user' | 'assistant' | 'system';
 
 export type AIProvider = 'gemini' | 'cloudflare';
 
+export type AIModelPreference = 'auto' | 'gemini' | 'cloudflare';
+
 export interface ChatMessage {
   id: string;
   role: Role;
@@ -39,7 +41,7 @@ export interface ChatRequestPayload {
     content: string;
   }>;
   wordContext?: WordContext;
-  providerPreference?: 'auto' | 'gemini' | 'cloudflare';
+  providerPreference?: AIModelPreference;
 }
 
 export interface StreamMetaEvent {

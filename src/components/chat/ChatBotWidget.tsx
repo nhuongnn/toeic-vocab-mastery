@@ -12,6 +12,8 @@ import {
   Square,
   Zap,
   BookOpen,
+  ChevronDown,
+  RefreshCw,
 } from 'lucide-react';
 import { useChat } from '@/contexts/ChatContext';
 import { MarkdownMessage } from './MarkdownMessage';
@@ -24,10 +26,8 @@ export function ChatBotWidget() {
     isLoading,
     activeWordContext,
     setWordContext,
-    activeProvider,
-    activeModel,
-    isFallbackActive,
-    fallbackReason,
+    selectedModel,
+    setSelectedModel,
     sendMessage,
     clearMessages,
     stopGeneration,
@@ -35,8 +35,25 @@ export function ChatBotWidget() {
 
   const [input, setInput] = useState('');
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [modelMenuOpen, setModelMenuOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+  const modelMenuRef = useRef<HTMLDivElement | null>(null);
+
+  // Close model menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (modelMenuRef.current && !modelMenuRef.current.contains(e.target as Node)) {
+        setModelMenuOpen(false);
+      }
+    };
+    if (modelMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [modelMenuOpen]);
 
   // Auto-scroll to bottom of chat
   const scrollToBottom = () => {
@@ -62,10 +79,32 @@ export function ChatBotWidget() {
     if (!input.trim() || isLoading) return;
     const text = input;
     setInput('');
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto';
+    }
     sendMessage(text);
   };
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInput(e.target.value);
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 110)}px`;
+    }
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    // Trên điện thoại / màn hình cảm ứng: cho phép phím Enter tự nhiên xuống dòng
+    // Người dùng chạm nút Gửi (icon mũi tên) để gửi câu hỏi
+    const isMobileOrTouch =
+      typeof window !== 'undefined' &&
+      (window.innerWidth < 768 || window.matchMedia('(pointer: coarse)').matches);
+
+    if (isMobileOrTouch) {
+      return;
+    }
+
+    // Trên máy tính (desktop có bàn phím vật lý): Enter gửi luôn, Shift+Enter xuống dòng
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSend();
@@ -131,28 +170,143 @@ export function ChatBotWidget() {
               <div>
                 <div className="flex items-center gap-2">
                   <h3 className="text-sm font-bold text-slate-100">TOEIC AI Tutor</h3>
-                  {/* Provider Status Pill */}
-                  {isFallbackActive ? (
-                    <span
-                      title={fallbackReason || `Chạy qua Cloudflare Workers AI (${activeModel || 'Llama 3.1'})`}
-                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-[10px] font-semibold text-amber-300"
+
+                  {/* Interactive Model Switcher Button & Dropdown */}
+                  <div className="relative" ref={modelMenuRef}>
+                    <button
+                      type="button"
+                      onClick={() => setModelMenuOpen(!modelMenuOpen)}
+                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold transition-all hover:opacity-90 active:scale-95 cursor-pointer shadow-sm"
+                      title="Bấm để đổi mô hình AI"
                     >
-                      <Zap className="w-2.5 h-2.5 text-amber-400" />
-                      <span>Cloudflare (Fallback)</span>
-                    </span>
-                  ) : activeProvider === 'gemini' ? (
-                    <span
-                      title={`Chạy qua Google Gemini (${activeModel || '2.0 Flash'})`}
-                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-[10px] font-semibold text-emerald-300"
-                    >
-                      <Sparkles className="w-2.5 h-2.5 text-emerald-400" />
-                      <span>Gemini 2.0 Flash</span>
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-[10px] font-semibold text-indigo-300">
-                      <span>Hybrid AI</span>
-                    </span>
-                  )}
+                      {selectedModel === 'auto' ? (
+                        <span className="flex items-center gap-1 text-indigo-300 bg-indigo-500/15 border border-indigo-500/30 px-2 py-0.5 rounded-full">
+                          <RefreshCw className="w-2.5 h-2.5 text-indigo-400" />
+                          <span>Tự động (Hybrid)</span>
+                          <ChevronDown className="w-2.5 h-2.5 text-indigo-400 ml-0.5" />
+                        </span>
+                      ) : selectedModel === 'gemini' ? (
+                        <span className="flex items-center gap-1 text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.5 rounded-full">
+                          <Sparkles className="w-2.5 h-2.5 text-emerald-400" />
+                          <span>Gemini Flash</span>
+                          <ChevronDown className="w-2.5 h-2.5 text-emerald-400 ml-0.5" />
+                        </span>
+                      ) : (
+                        <span className="flex items-center gap-1 text-amber-300 bg-amber-500/15 border border-amber-500/30 px-2 py-0.5 rounded-full">
+                          <Zap className="w-2.5 h-2.5 text-amber-400" />
+                          <span>Cloudflare Llama</span>
+                          <ChevronDown className="w-2.5 h-2.5 text-amber-400 ml-0.5" />
+                        </span>
+                      )}
+                    </button>
+
+                    {/* Model Dropdown Menu */}
+                    {modelMenuOpen && (
+                      <div className="absolute top-full left-0 mt-1.5 w-72 rounded-2xl bg-slate-900/98 border border-slate-700 shadow-2xl p-2 z-50 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
+                        <div className="px-2.5 py-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                          Chọn Mô Hình AI Phản Hồi
+                        </div>
+
+                        <div className="space-y-1 mt-1">
+                          {/* Option 1: Auto Hybrid */}
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setSelectedModel('auto');
+                              setModelMenuOpen(false);
+                            }}
+                            className={`w-full flex items-start gap-2.5 p-2 rounded-xl text-left transition-all ${
+                              selectedModel === 'auto'
+                                ? 'bg-indigo-500/15 border border-indigo-500/40 text-white'
+                                : 'hover:bg-slate-800 text-slate-300'
+                            }`}
+                          >
+                            <div className="p-1.5 rounded-lg bg-indigo-500/20 text-indigo-400 shrink-0 mt-0.5">
+                              <RefreshCw className="w-3.5 h-3.5" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between">
+                                <span className="text-xs font-bold text-slate-100">Tự động (Hybrid)</span>
+                                <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-indigo-500/20 text-indigo-300">
+                                  Khuyên dùng
+                                </span>
+                              </div>
+                              <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">
+                                Ưu tiên Gemini Flash, tự động đổi Cloudflare nếu lỗi
+                              </p>
+                            </div>
+                            {selectedModel === 'auto' && (
+                              <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0 mt-1" />
+                            )}
+                          </button>
+
+                          {/* Option 2: Gemini Flash */}
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setSelectedModel('gemini');
+                              setModelMenuOpen(false);
+                            }}
+                            className={`w-full flex items-start gap-2.5 p-2 rounded-xl text-left transition-all ${
+                              selectedModel === 'gemini'
+                                ? 'bg-emerald-500/15 border border-emerald-500/40 text-white'
+                                : 'hover:bg-slate-800 text-slate-300'
+                            }`}
+                          >
+                            <div className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400 shrink-0 mt-0.5">
+                              <Sparkles className="w-3.5 h-3.5" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between">
+                                <span className="text-xs font-bold text-slate-100">Google Gemini Flash</span>
+                                <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300">
+                                  Chất lượng cao
+                                </span>
+                              </div>
+                              <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">
+                                Tiếng Việt chuẩn xác nhất, giải thích ngữ pháp sâu
+                              </p>
+                            </div>
+                            {selectedModel === 'gemini' && (
+                              <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-1" />
+                            )}
+                          </button>
+
+                          {/* Option 3: Cloudflare Llama */}
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setSelectedModel('cloudflare');
+                              setModelMenuOpen(false);
+                            }}
+                            className={`w-full flex items-start gap-2.5 p-2 rounded-xl text-left transition-all ${
+                              selectedModel === 'cloudflare'
+                                ? 'bg-amber-500/15 border border-amber-500/40 text-white'
+                                : 'hover:bg-slate-800 text-slate-300'
+                            }`}
+                          >
+                            <div className="p-1.5 rounded-lg bg-amber-500/20 text-amber-400 shrink-0 mt-0.5">
+                              <Zap className="w-3.5 h-3.5" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between">
+                                <span className="text-xs font-bold text-slate-100">Cloudflare Llama 3.1</span>
+                                <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300">
+                                  Siêu tốc
+                                </span>
+                              </div>
+                              <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">
+                                Inference cực nhanh trên hạ tầng Edge toàn cầu
+                              </p>
+                            </div>
+                            {selectedModel === 'cloudflare' && (
+                              <Check className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-1" />
+                            )}
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
                 <p className="text-[11px] text-slate-400">
                   {activeWordContext
@@ -236,9 +390,15 @@ export function ChatBotWidget() {
                           <div className="flex items-center justify-between mt-2 pt-1.5 border-t border-slate-700/40 text-[10px] text-slate-400">
                             <span className="flex items-center gap-1">
                               {msg.provider === 'cloudflare' || msg.isFallback ? (
-                                <span className="text-amber-400/90 font-medium">Cloudflare Llama</span>
+                                <span className="text-amber-400/90 font-medium inline-flex items-center gap-1">
+                                  <Zap className="w-2.5 h-2.5" />
+                                  <span>Cloudflare Llama{msg.isFallback ? ' (Dự phòng)' : ''}</span>
+                                </span>
                               ) : (
-                                <span className="text-emerald-400/90 font-medium">Gemini Flash</span>
+                                <span className="text-emerald-400/90 font-medium inline-flex items-center gap-1">
+                                  <Sparkles className="w-2.5 h-2.5" />
+                                  <span>Gemini Flash</span>
+                                </span>
                               )}
                             </span>
                             <button
@@ -291,7 +451,7 @@ export function ChatBotWidget() {
               <textarea
                 ref={textareaRef}
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
                 placeholder={
                   activeWordContext
@@ -300,14 +460,14 @@ export function ChatBotWidget() {
                 }
                 rows={1}
                 disabled={isLoading}
-                className="flex-1 bg-transparent border-0 resize-none text-xs text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-0 max-h-24 px-2 py-1 leading-relaxed"
+                className="flex-1 bg-transparent border-0 resize-none text-xs text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-0 max-h-28 px-2 py-1 leading-relaxed"
               />
 
               {isLoading ? (
                 <button
                   onClick={stopGeneration}
                   title="Dừng phản hồi"
-                  className="p-2 rounded-xl bg-rose-500/20 border border-rose-500/30 text-rose-300 hover:bg-rose-500/30 transition-all"
+                  className="p-2 rounded-xl bg-rose-500/20 border border-rose-500/30 text-rose-300 hover:bg-rose-500/30 transition-all shrink-0"
                 >
                   <Square className="w-3.5 h-3.5 fill-rose-300" />
                 </button>
@@ -316,16 +476,16 @@ export function ChatBotWidget() {
                   onClick={handleSend}
                   disabled={!input.trim()}
                   title="Gửi câu hỏi"
-                  className="p-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500 disabled:opacity-30 disabled:hover:bg-indigo-600 transition-all"
+                  className="p-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500 disabled:opacity-30 disabled:hover:bg-indigo-600 transition-all shrink-0"
                 >
                   <Send className="w-3.5 h-3.5" />
                 </button>
               )}
             </div>
 
-            <div className="flex items-center justify-between mt-1 px-1 text-[10px] text-slate-500">
-              <span>Enter để gửi • Shift+Enter để xuống dòng</span>
-              <span>Hybrid failover ⚡</span>
+            <div className="mt-1 px-1 text-[10px] text-slate-500">
+              <span className="hidden sm:inline">Enter để gửi • Shift+Enter để xuống dòng</span>
+              <span className="sm:hidden">Enter để xuống dòng • Bấm nút gửi</span>
             </div>
           </div>
         </div>

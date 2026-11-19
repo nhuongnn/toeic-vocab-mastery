@@ -5,6 +5,7 @@ import {
   ChatMessage,
   WordContext,
   AIProvider,
+  AIModelPreference,
   StreamEvent,
 } from '@/lib/ai/types';
 
@@ -19,6 +20,8 @@ interface ChatContextType {
   setWordContext: (context: WordContext | null) => void;
   activeProvider: AIProvider | null;
   activeModel: string | null;
+  selectedModel: AIModelPreference;
+  setSelectedModel: (model: AIModelPreference) => void;
   isFallbackActive: boolean;
   fallbackReason: string | null;
   sendMessage: (content: string, overrideWordContext?: WordContext) => Promise<void>;
@@ -44,10 +47,32 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
   const [activeWordContext, setActiveWordContext] = useState<WordContext | null>(null);
   const [activeProvider, setActiveProvider] = useState<AIProvider | null>(null);
   const [activeModel, setActiveModel] = useState<string | null>(null);
+  const [selectedModel, setSelectedModelState] = useState<AIModelPreference>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('toeic_ai_model_preference') as AIModelPreference;
+        if (saved && (saved === 'auto' || saved === 'gemini' || saved === 'cloudflare')) {
+          return saved;
+        }
+      } catch {
+        // ignore
+      }
+    }
+    return 'auto';
+  });
   const [isFallbackActive, setIsFallbackActive] = useState(false);
   const [fallbackReason, setFallbackReason] = useState<string | null>(null);
 
   const abortControllerRef = useRef<AbortController | null>(null);
+
+  const setSelectedModel = (model: AIModelPreference) => {
+    setSelectedModelState(model);
+    try {
+      localStorage.setItem('toeic_ai_model_preference', model);
+    } catch {
+      // ignore
+    }
+  };
 
   // Check providers status on mount
   useEffect(() => {
@@ -151,7 +176,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
             content: m.content,
           })),
           wordContext: currentContext || undefined,
-          providerPreference: 'auto',
+          providerPreference: selectedModel,
         }),
         signal: abortControllerRef.current.signal,
       });
@@ -274,6 +299,8 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         setWordContext: setActiveWordContext,
         activeProvider,
         activeModel,
+        selectedModel,
+        setSelectedModel,
         isFallbackActive,
         fallbackReason,
         sendMessage,

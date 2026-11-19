@@ -12,9 +12,11 @@ import {
   Zap,
   TrendingUp,
   MessageCircle,
+  Bot,
 } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
 import { useProgress } from '@/contexts/ProgressContext';
+import { useChat } from '@/contexts/ChatContext';
 import {
   LEVEL_CONFIG,
   getWordPopularityScore,
@@ -28,6 +30,7 @@ import { VisualAssociation } from './VisualAssociation';
 import { WordFamilySection } from './WordFamilySection';
 import { ToeicTipsSection } from './ToeicTipsSection';
 import { VideoSection } from './VideoSection';
+import { AiTutorSection } from './AiTutorSection';
 
 interface WordDetailProps {
   word: VocabularyWord;
@@ -37,6 +40,7 @@ interface WordDetailProps {
 
 export function WordDetail({ word, previousWordId, nextWordId }: WordDetailProps) {
   const { recordReview, toggleBookmark, isBookmarked, getCard } = useProgress();
+  const { openChat } = useChat();
   const [ratedQuality, setRatedQuality] = useState<number | null>(null);
 
   const bookmarked = isBookmarked(word.id);
@@ -46,6 +50,19 @@ export function WordDetail({ word, previousWordId, nextWordId }: WordDetailProps
     recordReview(word.id, quality);
     setRatedQuality(quality);
     setTimeout(() => setRatedQuality(null), 3000);
+  };
+
+  const handleOpenAi = () => {
+    openChat(undefined, {
+      word: word.word,
+      category: word.category,
+      level: word.level,
+      meaning: word.deepMeaning?.coreConcept,
+      ipa: word.pronunciation?.ipa,
+      partOfSpeech: word.partOfSpeech,
+      synonyms: word.synonyms,
+      antonyms: word.antonyms,
+    });
   };
 
   return (
@@ -62,6 +79,14 @@ export function WordDetail({ word, previousWordId, nextWordId }: WordDetailProps
 
         {/* Action Controls */}
         <div className="flex items-center gap-2">
+          <button
+            onClick={handleOpenAi}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-indigo-500/30 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 text-xs font-semibold transition-all shadow-sm"
+          >
+            <Bot className="w-3.5 h-3.5 text-indigo-400" />
+            <span>Hỏi AI Tutor</span>
+          </button>
+
           <button
             onClick={() => toggleBookmark(word.id)}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all ${
@@ -169,7 +194,10 @@ export function WordDetail({ word, previousWordId, nextWordId }: WordDetailProps
         dailyFrequencyScore={getDailyCommunicationScore(word)}
       />
 
-      {/* 8. Video & Multimedia Immersion */}
+      {/* 8. AI Tutor Interactive Assistant (Hybrid Gemini + Cloudflare) */}
+      <AiTutorSection word={word} />
+
+      {/* 9. Video & Multimedia Immersion */}
       <VideoSection key={word.id} video={word.video} word={word.word} category={word.category} />
 
       {/* SRS Recall Self-Check Bar */}

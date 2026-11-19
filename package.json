@@ -10,6 +10,7 @@
     "generate:images": "node scripts/generate-vocabulary-images.mjs"
   },
   "dependencies": {
+    "@google/genai": "^2.32.0",
     "@supabase/supabase-js": "^2.109.0",
     "@types/web-push": "^3.6.4",
     "lucide-react": "^1.16.0",

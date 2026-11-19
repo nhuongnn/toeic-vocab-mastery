@@ -150,7 +150,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-800/80 bg-slate-950/85 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 gap-3 lg:gap-6">
+        <div className="flex items-center justify-between h-16 gap-2 lg:gap-4 xl:gap-6 flex-nowrap">
           {/* 1. Logo */}
           <Link href="/" className="flex items-center gap-2.5 group shrink-0">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-all">
@@ -167,12 +167,12 @@ export function Navbar() {
           </Link>
 
           {/* 2. Desktop Navigation (Compact, Organized & Elegant) */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 shrink-0 whitespace-nowrap">
             {/* Từ vựng (Vocab) */}
             <Link
               href="/categories"
               data-tour="vocabulary-link"
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs xl:text-sm font-semibold transition-all ${
+              className={`flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-semibold transition-all ${
                 pathname.startsWith('/categories') || pathname.startsWith('/word')
                   ? 'text-indigo-400 bg-indigo-500/10 shadow-sm shadow-indigo-500/5'
                   : 'text-slate-300 hover:text-white hover:bg-slate-900/80'
@@ -338,9 +338,9 @@ export function Navbar() {
           </nav>
 
           {/* 3. Search & User Profile Actions */}
-          <div className="flex items-center gap-2 sm:gap-3 ml-auto lg:ml-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 xl:gap-3 ml-auto lg:ml-0 shrink-0 whitespace-nowrap">
             {/* Compact Search Bar */}
-            <div className="relative hidden md:block w-36 lg:w-44 xl:w-52">
+            <div className="relative hidden md:block w-32 lg:w-36 xl:w-48 shrink-0">
               <div className="relative">
                 <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <input
@@ -383,10 +383,10 @@ export function Navbar() {
             {/* Streak Pill */}
             <div
               data-tour="streak-display"
-              className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/25 text-amber-400 text-xs font-semibold shadow-sm shadow-amber-500/5 hover:border-amber-500/40 transition-colors shrink-0"
+              className="flex items-center gap-1 px-2 xl:px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/25 text-amber-400 text-xs font-semibold shadow-sm shadow-amber-500/5 hover:border-amber-500/40 transition-colors shrink-0 whitespace-nowrap"
               title="Chuỗi ngày học liên tục"
             >
-              <Flame className="w-3.5 h-3.5 fill-amber-400 text-amber-400 animate-pulse" />
+              <Flame className="w-3.5 h-3.5 fill-amber-400 text-amber-400 animate-pulse shrink-0" />
               <span suppressHydrationWarning>{streak} ngày</span>
             </div>
 

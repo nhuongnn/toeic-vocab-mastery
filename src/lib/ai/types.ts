@@ -1,0 +1,72 @@
+export type Role = 'user' | 'assistant' | 'system';
+
+export type AIProvider = 'gemini' | 'cloudflare';
+
+export interface ChatMessage {
+  id: string;
+  role: Role;
+  content: string;
+  timestamp: number;
+  provider?: AIProvider;
+  isFallback?: boolean;
+}
+
+export interface WordContext {
+  word: string;
+  category?: string;
+  level?: string;
+  meaning?: string;
+  ipa?: string;
+  partOfSpeech?: string[];
+  examples?: Array<{ english: string; vietnamese: string }>;
+  etymology?: {
+    origin?: string;
+    evolution?: string;
+    rootBreakdown?: Array<{ prefix?: string; root?: string; suffix?: string; meaning?: string }>;
+  };
+  toeicTips?: {
+    part5Traps?: string[];
+    collocations?: string[];
+    frequencyScore?: number;
+  };
+  synonyms?: string[];
+  antonyms?: string[];
+}
+
+export interface ChatRequestPayload {
+  messages: Array<{
+    role: Role;
+    content: string;
+  }>;
+  wordContext?: WordContext;
+  providerPreference?: 'auto' | 'gemini' | 'cloudflare';
+}
+
+export interface StreamMetaEvent {
+  type: 'meta';
+  provider: AIProvider;
+  model: string;
+  fallback: boolean;
+  reason?: string;
+}
+
+export interface StreamContentEvent {
+  type: 'content';
+  text: string;
+}
+
+export interface StreamErrorEvent {
+  type: 'error';
+  message: string;
+  provider?: AIProvider;
+}
+
+export interface StreamDoneEvent {
+  type: 'done';
+}
+
+export type StreamEvent =
+  | StreamMetaEvent
+  | StreamContentEvent
+  | StreamErrorEvent
+  | StreamDoneEvent;

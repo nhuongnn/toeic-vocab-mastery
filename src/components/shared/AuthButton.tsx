@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useProgress } from '@/contexts/ProgressContext';
 import {
@@ -20,11 +20,16 @@ export function AuthButton() {
   const { user, isConfigured, isLoading, signInWithGoogle, signInWithEmail, signOut } = useAuth();
   const { syncStatus, lastSyncedAt, forceSync } = useProgress();
 
+  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [emailSent, setEmailSent] = useState(false);
   const [emailLoading, setEmailLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleGoogleLogin = async () => {
     try {
@@ -53,7 +58,7 @@ export function AuthButton() {
     await forceSync();
   };
 
-  if (isLoading) {
+  if (!mounted || isLoading) {
     return (
       <div className="w-8 h-8 rounded-xl bg-slate-900 border border-slate-800 animate-pulse" />
     );
@@ -63,32 +68,33 @@ export function AuthButton() {
     <>
       {user ? (
         // Logged In User Pill
-        <div className="relative group">
+        <div className="relative group shrink-0">
           <button
             onClick={() => setIsOpen(true)}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-indigo-500/50 text-slate-200 transition-all text-xs font-semibold"
+            className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-indigo-500/50 text-slate-200 transition-all text-xs font-semibold shrink-0 whitespace-nowrap"
+            title={user.user_metadata?.full_name || user.email || 'Tài khoản của bạn'}
           >
             {user.user_metadata?.avatar_url ? (
               <img
                 src={user.user_metadata.avatar_url}
                 alt="Avatar"
-                className="w-5 h-5 rounded-full object-cover"
+                className="w-5 h-5 rounded-full object-cover shrink-0"
               />
             ) : (
-              <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-[10px] text-white font-bold">
+              <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-[10px] text-white font-bold shrink-0">
                 {user.email ? user.email[0].toUpperCase() : 'U'}
               </div>
             )}
 
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1 shrink-0">
               {syncStatus === 'syncing' ? (
-                <RefreshCw className="w-3.5 h-3.5 text-indigo-400 animate-spin" />
+                <RefreshCw className="w-3.5 h-3.5 text-indigo-400 animate-spin shrink-0" />
               ) : syncStatus === 'error' ? (
-                <CloudAlert className="w-3.5 h-3.5 text-rose-400" />
+                <CloudAlert className="w-3.5 h-3.5 text-rose-400 shrink-0" />
               ) : (
-                <CloudCheck className="w-3.5 h-3.5 text-emerald-400" />
+                <CloudCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
               )}
-              <span className="hidden md:inline max-w-[100px] truncate text-slate-300">
+              <span className="hidden xl:inline max-w-[85px] truncate text-slate-300">
                 {user.user_metadata?.full_name || user.email?.split('@')[0]}
               </span>
             </div>

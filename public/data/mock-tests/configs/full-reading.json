@@ -1,0 +1,28 @@
+{
+  "id": "full-reading",
+  "type": "full-reading",
+  "title": "Full Reading Test",
+  "description": "100 câu hỏi hoàn chỉnh Part 5, 6, 7 trong 75 phút. Mô phỏng 100% độ khó và áp lực thời gian của kỳ thi thật.",
+  "timeLimit": 4500,
+  "totalQuestions": 100,
+  "parts": [
+    {
+      "part": 5,
+      "questionCount": 30,
+      "instructions": "Directions: Incomplete sentences with four choices (A, B, C, D). Select the best choice.",
+      "timeRecommendation": 720
+    },
+    {
+      "part": 6,
+      "questionCount": 16,
+      "instructions": "Directions: Text completion with numbered blanks [1], [2], [3], [4].",
+      "timeRecommendation": 600
+    },
+    {
+      "part": 7,
+      "questionCount": 54,
+      "instructions": "Directions: Reading comprehension single and multi-passages.",
+      "timeRecommendation": 3180
+    }
+  ]
+}

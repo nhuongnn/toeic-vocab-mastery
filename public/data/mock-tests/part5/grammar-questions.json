@@ -1,0 +1,130 @@
+[
+  {
+    "id": "p5-grm-001",
+    "part": 5,
+    "passage": "Neither the department manager nor the project coordinators ______ notified about the sudden change in schedule.",
+    "options": [
+      "were",
+      "was",
+      "is",
+      "has been"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Quy tắc hòa hợp chủ ngữ - vị ngữ với \"neither... nor...\": Động từ chia theo chủ ngữ gần nó nhất. Ở đây \"the project coordinators\" là danh từ số nhiều, và sự việc đã xảy ra nên dùng \"were\".",
+    "skillTested": "grammar",
+    "relatedWordIds": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-grm-002",
+    "part": 5,
+    "passage": "Had the marketing director ______ the client's feedback earlier, the product redesign would have succeeded.",
+    "options": [
+      "received",
+      "receives",
+      "receiving",
+      "receive"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Đảo ngữ câu điều kiện loại 3: \"Had + S + V3/ed... , S + would have + V3/ed\". Chọn \"received\".",
+    "skillTested": "grammar",
+    "relatedWordIds": [],
+    "difficulty": "hard"
+  },
+  {
+    "id": "p5-grm-003",
+    "part": 5,
+    "passage": "The auditor insisted that each branch ______ accurate transaction records on a weekly basis.",
+    "options": [
+      "maintain",
+      "maintains",
+      "maintained",
+      "maintaining"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cấu trúc giả định thức (Subjunctive mood) với động từ \"insist that + S + (should) + V-infinitive\". Do đó dùng động từ nguyên thể \"maintain\".",
+    "skillTested": "grammar",
+    "relatedWordIds": [],
+    "difficulty": "hard"
+  },
+  {
+    "id": "p5-grm-004",
+    "part": 5,
+    "passage": "Mr. Evans is the candidate ______ qualifications and portfolio most closely match our current job vacancy.",
+    "options": [
+      "whose",
+      "whom",
+      "who",
+      "which"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Đại từ quan hệ chỉ sở hữu \"whose\" đứng trước danh từ \"qualifications\" (người mà có bằng cấp và hồ sơ năng lực...).",
+    "skillTested": "grammar",
+    "relatedWordIds": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-grm-005",
+    "part": 5,
+    "passage": "By the time the conference starts next Tuesday, the administrative staff ______ preparing all name tags and badges.",
+    "options": [
+      "will have finished",
+      "have finished",
+      "had finished",
+      "finished"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cụm từ \"By the time + hiện tại đơn (starts)\" chỉ thời điểm trong tương lai, mệnh đề chính dùng thì tương lai hoàn thành \"will have finished\".",
+    "skillTested": "grammar",
+    "relatedWordIds": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-grm-006",
+    "part": 5,
+    "passage": "______ entering the cleanroom facility, all laboratory personnel must put on protective shoe covers.",
+    "options": [
+      "Before",
+      "Prior",
+      "Ahead",
+      "Previous"
+    ],
+    "correctAnswer": 0,
+    "explanation": "\"Before\" vừa là liên từ vừa là giới từ, có thể theo sau bởi V-ing (\"Before entering...\"). \"Prior\" cần đi với \"to\".",
+    "skillTested": "grammar",
+    "relatedWordIds": [],
+    "difficulty": "easy"
+  },
+  {
+    "id": "p5-grm-007",
+    "part": 5,
+    "passage": "The legal department warned that ______ who violate the non-disclosure agreement will face immediate termination.",
+    "options": [
+      "those",
+      "these",
+      "anyone",
+      "them"
+    ],
+    "correctAnswer": 0,
+    "explanation": "\"Those who + V(số nhiều)\" mang nghĩa \"những ai mà...\". Động từ \"violate\" là số nhiều nên không dùng \"anyone\" (vốn đi với số ít \"violates\").",
+    "skillTested": "grammar",
+    "relatedWordIds": [],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-grm-008",
+    "part": 5,
+    "passage": "The executive vice president rarely attends regional networking events, ______ she?",
+    "options": [
+      "does",
+      "doesn't",
+      "is",
+      "isn't"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Câu hỏi đuôi (Tag question): Từ \"rarely\" mang nghĩa bán phủ định (hiếm khi), nên phần câu hỏi đuôi phải ở dạng khẳng định của trợ động từ thì hiện tại đơn -> \"does she?\".",
+    "skillTested": "grammar",
+    "relatedWordIds": [],
+    "difficulty": "medium"
+  }
+]

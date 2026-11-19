@@ -1,0 +1,88 @@
+[
+  {
+    "id": "p7-triple-001",
+    "part": 7,
+    "passageType": "triple",
+    "passages": [
+      {
+        "type": "Job Posting",
+        "content": "AeroLink International Freight\nPosition: Senior Logistics Account Manager\nLocation: Chicago, IL (Hybrid: 3 days in office, 2 days remote)\n\nAbout the Role:\nAeroLink is seeking an experienced logistics professional to manage commercial accounts across our Midwest freight corridor. The successful candidate will build strong client relationships, negotiate vendor contracts, and supervise shipment workflows.\n\nRequirements:\n• Bachelor's degree in supply chain management, business, or related field\n• Minimum 5 years of commercial freight forwarding experience\n• Proficiency with enterprise ERP platforms (SAP or FreightPro preferred)\n• Demonstrated ability to lead cross-functional negotiation teams\n\nCompensation:\n$95,000 - $115,000 base salary plus performance bonuses, comprehensive medical/dental benefits, and 401(k) matching up to 6%.\n\nTo Apply: Submit cover letter, resume, and contact information for three references to careers@aerolinklogistics.com by September 15."
+      },
+      {
+        "type": "Email (Cover Letter)",
+        "content": "To: AeroLink Hiring Committee <careers@aerolinklogistics.com>\nFrom: Thomas Bradley <tbradley92@gmail.com>\nDate: September 10\nSubject: Application — Senior Logistics Account Manager (Thomas Bradley)\n\nDear Members of the Hiring Committee,\n\nI am writing to express my enthusiastic interest in the Senior Logistics Account Manager opening at AeroLink International Freight. \n\nFor the past six years, I have served as Freight Operations Supervisor at Continental Cargo Systems in Chicago. In this role, I have overseen cross-dock distribution for major Midwest manufacturers and led our regional transition to FreightPro ERP software. Last year, my department achieved a 98.4% on-time delivery rate while reducing freight carrier procurement expenses by 12%.\n\nHaving collaborated with AeroLink as a partner carrier throughout my career, I have long admired your reputation for client integrity and technological leadership. I am confident that my operational expertise and deep client relationships will make an immediate contribution to your account portfolio.\n\nMy resume and references are attached for your review. I look forward to discussing my qualifications in an interview.\n\nSincerely,\nThomas Bradley"
+      },
+      {
+        "type": "Interview Invitation Email",
+        "content": "To: Thomas Bradley <tbradley92@gmail.com>\nFrom: Karen Vance <k.vance@aerolinklogistics.com>\nDate: September 22\nSubject: Interview Invitation — AeroLink Senior Logistics Account Manager\n\nDear Mr. Bradley,\n\nThank you for applying for the Senior Logistics Account Manager position. The selection panel was thoroughly impressed by your extensive freight management experience and proven track record with FreightPro ERP.\n\nWe would like to invite you for a 45-minute virtual panel interview on Thursday, September 28 at 2:00 PM CST via Zoom. The interview panel will include myself and our Vice President of Midwest Operations, Gary Sterling. During the session, you will be asked to discuss your carrier procurement strategies and present a brief case study on resolving logistics bottlenecks.\n\nPlease reply to this email by Monday, September 25 to confirm your availability. If the proposed time conflicts with your schedule, please indicate your availability for Friday morning, September 29.\n\nBest regards,\nKaren Vance\nTalent Acquisition Specialist, AeroLink Freight"
+      }
+    ],
+    "questions": [
+      {
+        "id": "p7-q-triple-001-1",
+        "question": "What qualification listed in the job posting does Mr. Bradley specifically mention in his email?",
+        "options": [
+          "Familiarity with FreightPro software",
+          "Fluency in multiple foreign languages",
+          "A master's degree in economics",
+          "Experience in maritime shipping regulations"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Email của Bradley nêu: \"led our regional transition to FreightPro ERP software\", đúng với phần mềm được ưu tiên trong thông báo tuyển dụng.",
+        "questionType": "detail"
+      },
+      {
+        "id": "p7-q-triple-001-2",
+        "question": "How long has Mr. Bradley worked at Continental Cargo Systems?",
+        "options": [
+          "6 years",
+          "5 years",
+          "3 years",
+          "2 years"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Trong email Bradley viết: \"For the past six years, I have served as Freight Operations Supervisor at Continental Cargo Systems\".",
+        "questionType": "detail"
+      },
+      {
+        "id": "p7-q-triple-001-3",
+        "question": "Who will participate in Mr. Bradley's interview along with Ms. Vance?",
+        "options": [
+          "Gary Sterling",
+          "Arthur Pendelton",
+          "Marcus Vance",
+          "Sarah Kensington"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Thư mời phỏng vấn ghi: \"The interview panel will include myself and our Vice President of Midwest Operations, Gary Sterling\".",
+        "questionType": "detail"
+      },
+      {
+        "id": "p7-q-triple-001-4",
+        "question": "What is Mr. Bradley expected to present during the interview?",
+        "options": [
+          "A case study on resolving logistics bottlenecks",
+          "His former company's financial statements",
+          "A recommendation letter from his current CEO",
+          "A complete business proposal for Chicago airport freight"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Email mời phỏng vấn nêu: \"present a brief case study on resolving logistics bottlenecks\".",
+        "questionType": "detail"
+      },
+      {
+        "id": "p7-q-triple-001-5",
+        "question": "By what date must Mr. Bradley confirm his interview slot?",
+        "options": [
+          "September 25",
+          "September 15",
+          "September 28",
+          "September 29"
+        ],
+        "correctAnswer": 0,
+        "explanation": "\"Please reply to this email by Monday, September 25 to confirm your availability.\"",
+        "questionType": "detail"
+      }
+    ]
+  }
+]

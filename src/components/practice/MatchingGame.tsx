@@ -144,7 +144,7 @@ export function MatchingGame() {
         <span>Moves: <strong className="text-purple-400">{moves}</strong></span>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {gameState.cards.map((card) => {
           const isMatched = matchedWordIds.includes(card.wordId);
           const isSelected = selectedFirst?.id === card.id;
@@ -165,9 +165,9 @@ export function MatchingGame() {
               key={card.id}
               disabled={isMatched}
               onClick={() => handleCardClick(card)}
-              className={`min-h-[120px] p-4 rounded-2xl border-2 transition-all flex flex-col justify-center text-center select-none ${style}`}
+              className={`min-h-[90px] sm:min-h-[120px] p-4 rounded-2xl border-2 transition-all flex flex-col justify-center text-center select-none ${style}`}
             >
-              <span className={`text-xs ${card.type === 'word' ? 'font-black tracking-wide uppercase text-sm' : 'line-clamp-4 leading-relaxed'}`}>
+              <span className={`text-xs sm:text-sm ${card.type === 'word' ? 'font-black tracking-wide uppercase text-sm sm:text-base' : 'leading-relaxed'}`}>
                 {card.text}
               </span>
               {isMatched && (

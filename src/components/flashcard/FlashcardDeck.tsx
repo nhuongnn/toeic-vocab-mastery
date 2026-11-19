@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import {
   Volume2,
@@ -15,6 +15,7 @@ import {
 import { VocabularyWord } from '@/types/vocabulary';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useSpeech } from '@/hooks/useSpeech';
+import { useSwipe } from '@/lib/gestures/useSwipe';
 
 interface FlashcardDeckProps {
   words: VocabularyWord[];
@@ -24,6 +25,7 @@ export function FlashcardDeck({ words }: FlashcardDeckProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [completed, setCompleted] = useState(false);
+  const cardRef = useRef<HTMLDivElement | null>(null);
   const { recordReview } = useProgress();
   const { speak } = useSpeech();
 
@@ -32,6 +34,30 @@ export function FlashcardDeck({ words }: FlashcardDeckProps) {
   useEffect(() => {
     setIsFlipped(false);
   }, [currentIndex]);
+
+  const handleRate = (quality: number) => {
+    if (!currentWord) return;
+    recordReview(currentWord.id, quality);
+
+    if (currentIndex + 1 < words.length) {
+      setCurrentIndex((prev) => prev + 1);
+    } else {
+      setCompleted(true);
+    }
+  };
+
+  // Touch Swipe gestures
+  useSwipe(cardRef, {
+    onSwipeLeft: () => setIsFlipped((f) => !f),
+    onSwipeRight: () => setIsFlipped((f) => !f),
+    onSwipeUp: () => {
+      if (isFlipped) handleRate(5);
+    },
+    onSwipeDown: () => {
+      if (isFlipped) handleRate(1);
+    },
+    threshold: 40,
+  });
 
   // Keyboard navigation
   useEffect(() => {
@@ -52,17 +78,6 @@ export function FlashcardDeck({ words }: FlashcardDeckProps) {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isFlipped, completed, currentIndex]);
-
-  const handleRate = (quality: number) => {
-    if (!currentWord) return;
-    recordReview(currentWord.id, quality);
-
-    if (currentIndex + 1 < words.length) {
-      setCurrentIndex((prev) => prev + 1);
-    } else {
-      setCompleted(true);
-    }
-  };
 
   if (words.length === 0) {
     return (
@@ -125,8 +140,9 @@ export function FlashcardDeck({ words }: FlashcardDeckProps) {
           Card {currentIndex + 1} of {words.length}
         </span>
         <div className="flex items-center gap-2">
-          <span className="hidden sm:inline text-slate-500">Hint: Space to flip, 1-4 to rate</span>
-          <div className="w-32 h-2 rounded-full bg-slate-800 overflow-hidden">
+          <span className="hidden sm:inline text-slate-500">Hint: Phím Space để lật, 1-4 để chấm điểm</span>
+          <span className="sm:hidden text-slate-500">Vuốt ngang để lật thẻ</span>
+          <div className="w-24 sm:w-32 h-2 rounded-full bg-slate-800 overflow-hidden">
             <div
               className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-300"
               style={{ width: `${((currentIndex + 1) / words.length) * 100}%` }}
@@ -137,8 +153,9 @@ export function FlashcardDeck({ words }: FlashcardDeckProps) {
 
       {/* Flip Card Container */}
       <div
+        ref={cardRef}
         onClick={() => setIsFlipped(!isFlipped)}
-        className="cursor-pointer min-h-[380px] rounded-3xl bg-slate-900/90 border-2 border-slate-800 hover:border-indigo-500/50 p-8 flex flex-col justify-between transition-all duration-300 shadow-2xl relative overflow-hidden group select-none"
+        className="cursor-pointer min-h-[380px] rounded-3xl bg-slate-900/90 border-2 border-slate-800 hover:border-indigo-500/50 p-8 flex flex-col justify-between transition-all duration-300 shadow-2xl relative overflow-hidden group select-none touch-pan-y"
       >
         <div className="absolute top-4 right-4 flex items-center gap-2">
           <span className="text-[11px] font-semibold text-slate-400 px-2.5 py-1 rounded-full bg-slate-950/80 border border-slate-800 flex items-center gap-1">

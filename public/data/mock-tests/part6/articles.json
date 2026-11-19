@@ -1,0 +1,62 @@
+[
+  {
+    "id": "p6-art-001",
+    "part": 6,
+    "passageType": "article",
+    "passage": "BUSINESS TODAY WEEKLY\nDecember 5 — Global Commercial Outlook\n\nVanguard Automotive Group announced on Thursday that it will invest $450 million in a new manufacturing facility located in northern Texas. The state-of-the-art plant is expected to create over 1,800 engineering and assembly jobs over the next three years.\n\nCompany spokesperson Marcus Sterling noted that the Texas site was chosen because of its strategic proximity to rail networks and an ______ [1] supply of renewable electricity. Construction is scheduled to break ground this coming March, with commercial operations slated to commence by mid-2028.\n\nIndustry analysts view the investment as a decisive move toward expanding Vanguard's market share in clean transportation. ______ [2]. The facility will focus ______ [3] on producing high-efficiency commercial delivery vans for logistics firms.\n\nLocal civic leaders have enthusiastically welcomed the announcement. ______ [4]. Mayor Brenda Ortiz stated that the project will significantly revitalize the local economy and foster workforce development programs.",
+    "questions": [
+      {
+        "id": "p6-art-001-1",
+        "blankNumber": 1,
+        "options": [
+          "abundant",
+          "abundance",
+          "abundantly",
+          "abound"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Trước cụm danh từ \"supply of renewable electricity\", cần tính từ \"abundant\" (dồi dào, phong phú).",
+        "type": "vocabulary"
+      },
+      {
+        "id": "p6-art-001-2",
+        "blankNumber": 2,
+        "options": [
+          "Consumer demand for sustainable commercial vehicles has surged in recent quarters.",
+          "The company reported substantial losses in its aviation division.",
+          "Railroad workers announced plans for an immediate nationwide strike.",
+          "Fuel prices reached an all-time low across the United States."
+        ],
+        "correctAnswer": 0,
+        "explanation": "Giải thích lý do mở rộng thị trường xe sạch: nhu cầu người tiêu dùng với xe thương mại bền vững đang tăng vọt.",
+        "type": "sentence-insertion"
+      },
+      {
+        "id": "p6-art-001-3",
+        "blankNumber": 3,
+        "options": [
+          "primarily",
+          "primary",
+          "primal",
+          "primacy"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Bổ nghĩa cho động từ \"focus on\" cần trạng từ \"primarily\" (tập trung chủ yếu vào việc sản xuất...).",
+        "type": "grammar"
+      },
+      {
+        "id": "p6-art-001-4",
+        "blankNumber": 4,
+        "options": [
+          "They anticipate substantial regional tax revenues and infrastructure improvements.",
+          "The city council decided to reject the preliminary building permit.",
+          "Electric power lines will be dismantled throughout the industrial zone.",
+          "Automotive assembly workers voted against the employment agreement."
+        ],
+        "correctAnswer": 0,
+        "explanation": "Phù hợp với việc lãnh đạo địa phương hồ hởi đón nhận: họ dự báo nguồn thu thuế dồi dào và cải thiện hạ tầng.",
+        "type": "sentence-insertion"
+      }
+    ]
+  }
+]

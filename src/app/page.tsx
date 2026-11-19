@@ -27,17 +27,24 @@ import {
 } from 'lucide-react';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useSpeech } from '@/hooks/useSpeech';
+import { useOnboarding } from '@/contexts/OnboardingContext';
 import { categories } from '@/data/categories';
 import { getWordOfTheDay, allVocabularyWords } from '@/data/vocabulary';
+import { Target } from 'lucide-react';
 
 export default function HomePage() {
   const { progress, dueCount, dueWordIds } = useProgress();
+  const { state: onboardingState } = useOnboarding();
   const { speak } = useSpeech();
   const [wordOfTheDay, setWordOfTheDay] = React.useState(allVocabularyWords[0]);
+  const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
+    setMounted(true);
     setWordOfTheDay(getWordOfTheDay());
   }, []);
+
+  const safeDueCount = mounted ? dueCount : 0;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
@@ -63,10 +70,10 @@ export default function HomePage() {
           </p>
 
           {/* Quick Metrics Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-800/80">
+          <div data-tour="dashboard-score" className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-800/80">
             <div>
-              <div className="text-2xl sm:text-3xl font-black text-white">
-                {progress.stats.totalWordsLearned}
+              <div suppressHydrationWarning className="text-2xl sm:text-3xl font-black text-white">
+                {mounted ? progress.stats.totalWordsLearned : 0}
               </div>
               <div className="text-xs text-slate-400 font-medium">Words Learned</div>
             </div>
@@ -74,21 +81,21 @@ export default function HomePage() {
             <div>
               <div className="text-2xl sm:text-3xl font-black text-amber-400 flex items-center gap-1">
                 <Flame className="w-6 h-6 fill-amber-400" />
-                <span>{progress.stats.currentStreak}d</span>
+                <span suppressHydrationWarning>{mounted ? progress.stats.currentStreak : 0}d</span>
               </div>
               <div className="text-xs text-slate-400 font-medium">Daily Streak</div>
             </div>
 
             <div>
-              <div className="text-2xl sm:text-3xl font-black text-indigo-400">
-                {progress.stats.estimatedToeicScore}
+              <div suppressHydrationWarning className="text-2xl sm:text-3xl font-black text-indigo-400">
+                {mounted ? progress.stats.estimatedToeicScore : 450}
               </div>
               <div className="text-xs text-slate-400 font-medium">Est. TOEIC Score</div>
             </div>
 
             <div>
-              <div className="text-2xl sm:text-3xl font-black text-pink-400">
-                {dueCount}
+              <div suppressHydrationWarning className="text-2xl sm:text-3xl font-black text-pink-400">
+                {safeDueCount}
               </div>
               <div className="text-xs text-slate-400 font-medium">Cards Due Today</div>
             </div>
@@ -96,8 +103,60 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 1.5. Onboarding / Learning Path Status */}
+      {mounted && (
+        !onboardingState.isCompleted ? (
+          <section className="p-6 rounded-2xl bg-gradient-to-r from-indigo-950/60 via-purple-950/40 to-slate-900 border border-indigo-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xl">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
+                <Compass className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white">Chưa thiết lập Lộ trình học cá nhân?</h3>
+                <p className="text-xs text-slate-300">
+                  Làm bài kiểm tra đầu vào 5 phút để xác định trình độ và tối ưu lộ trình 700+ TOEIC.
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/onboarding"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-indigo-600/25 shrink-0"
+            >
+              <span>Thiết lập lộ trình</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </section>
+        ) : onboardingState.learningPath ? (
+          <section className="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center shrink-0">
+                <Target className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-sm font-bold text-white">Lộ trình mục tiêu: {onboardingState.learningPath.targetScore}+ TOEIC</h3>
+                  <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+                    {onboardingState.learningPath.phases[0]?.title}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-400 mt-0.5">
+                  Mục tiêu: {onboardingState.learningPath.dailyGoal} phút/ngày • Dự kiến hoàn thành: {onboardingState.learningPath.estimatedCompletionDate}
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/onboarding"
+              className="inline-flex items-center gap-1 text-xs text-indigo-400 hover:text-indigo-300 font-medium"
+            >
+              <span>Điều chỉnh lộ trình</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </section>
+        ) : null
+      )}
+
       {/* 2. Review Queue Callout (If cards are due) */}
-      {dueCount > 0 && (
+      {mounted && safeDueCount > 0 && (
         <section className="p-6 rounded-2xl bg-gradient-to-r from-pink-950/40 via-purple-950/30 to-indigo-950/20 border border-pink-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-2xl bg-pink-500/20 text-pink-400 flex items-center justify-center flex-shrink-0">
@@ -108,7 +167,7 @@ export default function HomePage() {
                 Spaced Repetition Review Due
               </h3>
               <p className="text-xs text-slate-300">
-                You have {dueCount} cards scheduled for memory reinforcement today.
+                You have {safeDueCount} cards scheduled for memory reinforcement today.
               </p>
             </div>
           </div>
@@ -123,7 +182,7 @@ export default function HomePage() {
       )}
 
       {/* 3. Word of the Day Spotlight */}
-      <section className="rounded-3xl bg-slate-900/80 border border-slate-800 p-6 sm:p-8 space-y-4">
+      <section data-tour="daily-words" className="rounded-3xl bg-slate-900/80 border border-slate-800 p-6 sm:p-8 space-y-4">
         <div className="flex items-center justify-between">
           <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 flex items-center gap-1.5">
             <Sparkles className="w-4 h-4" />

@@ -1,0 +1,28 @@
+{
+  "id": "mini-reading",
+  "type": "mini-reading",
+  "title": "Mini Reading Test",
+  "description": "50 câu hỏi Part 5, 6, 7 trong 30 phút. Phù hợp luyện phản xạ nhanh và đánh giá tiến độ.",
+  "timeLimit": 1800,
+  "totalQuestions": 50,
+  "parts": [
+    {
+      "part": 5,
+      "questionCount": 30,
+      "instructions": "Directions: A word or phrase is missing in each of the sentences below. Four answer choices are given below each sentence. Select the best answer to complete the sentence.",
+      "timeRecommendation": 600
+    },
+    {
+      "part": 6,
+      "questionCount": 8,
+      "instructions": "Directions: Read the texts that follow. A word, phrase, or sentence is missing in parts of each text. Select the best answer.",
+      "timeRecommendation": 360
+    },
+    {
+      "part": 7,
+      "questionCount": 12,
+      "instructions": "Directions: In this part you will read a selection of texts. Select the best answer for each question.",
+      "timeRecommendation": 840
+    }
+  ]
+}

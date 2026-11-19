@@ -1,0 +1,84 @@
+[
+  {
+    "id": "p7-double-001",
+    "part": 7,
+    "passageType": "double",
+    "passages": [
+      {
+        "type": "Order Confirmation",
+        "content": "APEX OFFICE DEPOT — ORDER CONFIRMATION\nOrder Number: AOD-88219\nCustomer: Sarah Kensington, Marketing Director\nCompany: Horizon Media Group, 450 Broadway, New York, NY\nOrder Date: November 3\nEstimated Delivery Date: November 7\n\nItems Ordered:\n1. Ergonomic Mesh Swivel Chair (SKU: ERG-902)\n   Qty: 4 | Unit Price: $220.00 | Total: $880.00\n2. Dual-Monitor Desktop Stand (SKU: MON-410)\n   Qty: 4 | Unit Price: $65.00 | Total: $260.00\n3. Wireless Laser Presenter Pointer (SKU: PRS-104)\n   Qty: 2 | Unit Price: $45.00 | Total: $90.00\n\nSubtotal: $1,230.00\nShipping & Handling (Standard 4-Day): $45.00\nPromotional Code Applied (SAVE10): -$123.00\nTotal Billed to Visa ending in 4102: $1,152.00\n\nTracking information will be emailed once packages depart our distribution center. Items may arrive in separate shipments."
+      },
+      {
+        "type": "Email",
+        "content": "To: Customer Service <support@apexofficedepot.com>\nFrom: Sarah Kensington <skensington@horizonmedia.com>\nDate: November 8\nSubject: Inquiry regarding Order #AOD-88219\n\nDear Customer Support,\n\nI am writing regarding order #AOD-88219 placed on November 3 for delivery to our Broadway office. \n\nYesterday afternoon, our receptionist received two large cartons containing the four dual-monitor stands and the wireless presenter remotes. However, the four ergonomic mesh swivel chairs were not included in the delivery, and the shipping manifest taped to the boxes listed only two packages.\n\nAccording to our order confirmation, the entire order was estimated to arrive by yesterday, November 7. Could you please check your inventory records and provide an updated tracking number for the remaining items? We have four new graphic designers starting next Monday, November 11, so it is imperative that their workstations are fully assembled before their arrival.\n\nThank you for your prompt assistance.\n\nSincerely,\nSarah Kensington\nDirector of Marketing, Horizon Media Group"
+      }
+    ],
+    "questions": [
+      {
+        "id": "p7-q-double-001-1",
+        "question": "What discount was applied to Ms. Kensington's order?",
+        "options": [
+          "10 percent off the subtotal",
+          "Free standard shipping",
+          "Buy-one-get-one on monitor stands",
+          "$50 corporate rebate"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Trong đơn hàng: Subtotal là $1,230.00 và mã SAVE10 trừ -$123.00, tương đương giảm đúng 10%.",
+        "questionType": "detail"
+      },
+      {
+        "id": "p7-q-double-001-2",
+        "question": "Which item(s) did Ms. Kensington NOT receive?",
+        "options": [
+          "The ergonomic swivel chairs",
+          "The dual-monitor desktop stands",
+          "The wireless laser presenters",
+          "The assembly hardware kits"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Email nêu rõ: \"the four ergonomic mesh swivel chairs were not included in the delivery\".",
+        "questionType": "detail"
+      },
+      {
+        "id": "p7-q-double-001-3",
+        "question": "Why is Ms. Kensington eager to receive the remaining items quickly?",
+        "options": [
+          "New employees are joining her department next week",
+          "Her company is relocating to a new building",
+          "An executive board meeting is scheduled for Friday",
+          "The return window for furniture expires shortly"
+        ],
+        "correctAnswer": 0,
+        "explanation": "\"We have four new graphic designers starting next Monday, November 11, so it is imperative that their workstations are fully assembled\".",
+        "questionType": "inference"
+      },
+      {
+        "id": "p7-q-double-001-4",
+        "question": "In the email, the word \"imperative\" in paragraph 3 is closest in meaning to:",
+        "options": [
+          "crucial",
+          "optional",
+          "convenient",
+          "suggested"
+        ],
+        "correctAnswer": 0,
+        "explanation": "\"Imperative\" nghĩa là tối quan trọng, cấp bách (= crucial, essential).",
+        "questionType": "vocabulary"
+      },
+      {
+        "id": "p7-q-double-001-5",
+        "question": "How much was charged for the items that Ms. Kensington actually received?",
+        "options": [
+          "$350.00 before discount",
+          "$880.00 before discount",
+          "$260.00 before discount",
+          "$90.00 before discount"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Các món đã nhận là: 4 monitor stands ($260) + 2 presenter pointers ($90) = $350 trước chiết khấu.",
+        "questionType": "detail"
+      }
+    ]
+  }
+]

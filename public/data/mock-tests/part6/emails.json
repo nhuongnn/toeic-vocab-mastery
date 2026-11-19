@@ -1,0 +1,122 @@
+[
+  {
+    "id": "p6-email-001",
+    "part": 6,
+    "passageType": "email",
+    "passage": "To: All Branch Staff <staff@solaris-retail.com>\nFrom: Elena Rostova <e.rostova@solaris-retail.com>\nDate: October 18\nSubject: New Inventory Management System\n\nDear Colleagues,\n\nWe are pleased to announce that our company will soon transition to the OmniTrack inventory management software. This state-of-the-art platform will allow us to track warehouse shipments in real time and eliminate shipping discrepancies. [1] on Monday, November 4, all store locations will begin using the updated database.\n\nTo ensure a smooth transition, the IT department has scheduled mandatory training sessions. Each employee is required to complete a 45-minute online module before November 1. The instructions for logging in have been sent in a ______ [2] email. \n\nWe understand that adopting new technology can present challenges. ______ [3], our internal helpdesk team will provide 24/7 technical support during the first two weeks of rollout. \n\n______ [4]. Please reach out to your department supervisor if you have questions regarding your training schedule.\n\nSincerely,\nElena Rostova\nDirector of Operations",
+    "questions": [
+      {
+        "id": "p6-q-001-1",
+        "blankNumber": 1,
+        "options": [
+          "Effective",
+          "Effectively",
+          "Effect",
+          "Effectual"
+        ],
+        "correctAnswer": 0,
+        "explanation": "\"Effective + ngày tháng\" là cấu trúc thông báo mang nghĩa \"bắt đầu có hiệu lực từ ngày...\"",
+        "type": "grammar"
+      },
+      {
+        "id": "p6-q-001-2",
+        "blankNumber": 2,
+        "options": [
+          "separate",
+          "separated",
+          "separately",
+          "separation"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Trước danh từ \"email\" cần tính từ \"separate\" (trong một email riêng biệt).",
+        "type": "vocabulary"
+      },
+      {
+        "id": "p6-q-001-3",
+        "blankNumber": 3,
+        "options": [
+          "Consequently",
+          "To that end",
+          "On the contrary",
+          "In fact"
+        ],
+        "correctAnswer": 1,
+        "explanation": "\"To that end\" (Nhằm mục đích đó / Để phục vụ cho điều này) nối kết mục đích giải quyết thách thức bằng đội hỗ trợ 24/7.",
+        "type": "vocabulary"
+      },
+      {
+        "id": "p6-q-001-4",
+        "blankNumber": 4,
+        "options": [
+          "We appreciate your cooperation as we modernize our procedures.",
+          "Warehouse space is currently unavailable for rent.",
+          "Sales revenue has declined over the previous two quarters.",
+          "The customer service hotline has been disconnected."
+        ],
+        "correctAnswer": 0,
+        "explanation": "Câu kết nối tự nhiên và lịch sự trong email thông báo nội bộ: cảm ơn sự hợp tác của nhân viên khi hiện đại hóa quy trình.",
+        "type": "sentence-insertion"
+      }
+    ]
+  },
+  {
+    "id": "p6-email-002",
+    "part": 6,
+    "passageType": "email",
+    "passage": "To: David Chen <dchen@summitlogistics.com>\nFrom: Sarah Jenkins <sjenkins@pacifictrade.org>\nDate: November 12\nSubject: Confirmation of Keynote Address\n\nDear Mr. Chen,\n\nOn behalf of the Pacific Trade Association, I would like to confirm your participation as a keynote speaker at our upcoming Annual Global Logistics Expo. We were thrilled to receive your confirmation letter earlier this week.\n\nYour presentation on \"Artificial Intelligence in Modern Supply Chains\" is scheduled for December 15 at 10:00 AM in Ballroom C. ______ [1] the session, our audiovisual technicians will be available to test your presentation slides and microphone setup. Please arrive at least 30 minutes ______ [2] to ensure everything functions properly.\n\nThe association will cover all travel and lodging expenses. Our travel coordinator, Robert Miller, will contact you shortly to finalize your flight itinerary and hotel ______ [3].\n\n______ [4]. We look forward to welcoming you to the conference.\n\nWarm regards,\nSarah Jenkins\nEvent Coordinator",
+    "questions": [
+      {
+        "id": "p6-q-002-1",
+        "blankNumber": 1,
+        "options": [
+          "Prior to",
+          "According to",
+          "In place of",
+          "Instead of"
+        ],
+        "correctAnswer": 0,
+        "explanation": "\"Prior to + Noun\" = Trước khi buổi thuyết trình diễn ra.",
+        "type": "grammar"
+      },
+      {
+        "id": "p6-q-002-2",
+        "blankNumber": 2,
+        "options": [
+          "early",
+          "ahead",
+          "prior",
+          "beforehand"
+        ],
+        "correctAnswer": 0,
+        "explanation": "\"Arrive 30 minutes early\" (đến sớm 30 phút).",
+        "type": "vocabulary"
+      },
+      {
+        "id": "p6-q-002-3",
+        "blankNumber": 3,
+        "options": [
+          "accommodations",
+          "accommodate",
+          "accommodating",
+          "accommodator"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Cụm từ \"hotel accommodations\" (chỗ ở khách sạn).",
+        "type": "vocabulary"
+      },
+      {
+        "id": "p6-q-002-4",
+        "blankNumber": 4,
+        "options": [
+          "Enclosed is a formal program guide for your reference.",
+          "The hotel banquet hall has been cancelled due to weather.",
+          "We regret to inform you that the conference has been postponed.",
+          "Refund requests cannot be accepted after the deadline."
+        ],
+        "correctAnswer": 0,
+        "explanation": "Câu gửi kèm tài liệu hướng dẫn chương trình họp cho diễn giả.",
+        "type": "sentence-insertion"
+      }
+    ]
+  }
+]

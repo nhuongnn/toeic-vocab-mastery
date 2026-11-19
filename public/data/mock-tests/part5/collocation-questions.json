@@ -1,0 +1,92 @@
+[
+  {
+    "id": "p5-col-001",
+    "part": 5,
+    "passage": "The research institute will ______ a comprehensive survey to evaluate workplace wellness in major corporations.",
+    "options": [
+      "conduct",
+      "make",
+      "produce",
+      "operate"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Collocation chuẩn: \"conduct a survey / study / research\" (tiến hành một cuộc khảo sát/nghiên cứu).",
+    "skillTested": "collocation",
+    "relatedWordIds": [
+      "office-admin-001"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "p5-col-002",
+    "part": 5,
+    "passage": "To ______ the tight production deadline, factory workers agreed to work overtime during the holiday season.",
+    "options": [
+      "meet",
+      "catch",
+      "reach",
+      "gain"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Collocation kinh điển TOEIC: \"meet the deadline\" (kịp thời hạn chót).",
+    "skillTested": "collocation",
+    "relatedWordIds": [
+      "manufacturing-001"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "p5-col-003",
+    "part": 5,
+    "passage": "The purchasing department was able to ______ a favorable agreement with our European component suppliers.",
+    "options": [
+      "reach",
+      "achieve",
+      "arrive",
+      "settle"
+    ],
+    "correctAnswer": 0,
+    "explanation": "\"Reach an agreement\" (đạt được thỏa thuận). \"Arrive\" cần đi với \"at\" (arrive at an agreement).",
+    "skillTested": "collocation",
+    "relatedWordIds": [
+      "purchasing-001"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-col-004",
+    "part": 5,
+    "passage": "Senior executives will ______ into account the results of the market analysis before finalizing the budget.",
+    "options": [
+      "take",
+      "hold",
+      "bring",
+      "make"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Thành ngữ kinh doanh: \"take sth into account\" hoặc \"take sth into consideration\" (tính đến / cân nhắc điều gì).",
+    "skillTested": "collocation",
+    "relatedWordIds": [
+      "finance-001"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "p5-col-005",
+    "part": 5,
+    "passage": "Environmental inspectors praised the processing facility for ______ strict adherence to federal emission guidelines.",
+    "options": [
+      "demonstrating",
+      "indicating",
+      "illustrating",
+      "signaling"
+    ],
+    "correctAnswer": 0,
+    "explanation": "\"Demonstrate adherence to...\" (thể hiện sự tuân thủ nghiêm ngặt đối với quy định).",
+    "skillTested": "collocation",
+    "relatedWordIds": [
+      "manufacturing-002"
+    ],
+    "difficulty": "hard"
+  }
+]

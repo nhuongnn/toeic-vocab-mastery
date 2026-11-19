@@ -1,0 +1,546 @@
+[
+  {
+    "id": "p5-voc-001",
+    "part": 5,
+    "passage": "The company's annual financial statement revealed a significant ______ in overseas revenue compared to the previous fiscal year.",
+    "options": [
+      "increase",
+      "increasing",
+      "increased",
+      "increasingly"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sau mạo từ \"a\" và tính từ \"significant\", ta cần một danh từ để làm tân ngữ của \"revealed\". \"Increase\" vừa là động từ vừa là danh từ mang nghĩa \"sự gia tăng\".",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "finance-001"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "p5-voc-002",
+    "part": 5,
+    "passage": "All department managers are requested to ______ their quarterly budgets to the finance office before Friday afternoon.",
+    "options": [
+      "transmit",
+      "submit",
+      "admit",
+      "permit"
+    ],
+    "correctAnswer": 1,
+    "explanation": "\"Submit\" (nộp/đệ trình) là từ vựng chính xác đi với \"budget/proposal/report\". Các từ khác không phù hợp ngữ cảnh công sở.",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "office-admin-001",
+      "finance-002"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "p5-voc-003",
+    "part": 5,
+    "passage": "Customer satisfaction ratings have improved dramatically since the introduction of the new ______ service portal.",
+    "options": [
+      "interactive",
+      "interaction",
+      "interactively",
+      "interact"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Trước cụm danh từ \"service portal\", ta cần tính từ \"interactive\" (mang tính tương tác) để bổ nghĩa.",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "technology-001"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-voc-004",
+    "part": 5,
+    "passage": "Due to severe weather conditions in the northern territory, delivery of the construction materials may be ______ delayed.",
+    "options": [
+      "temporarily",
+      "temporary",
+      "temporal",
+      "temporariness"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Bổ nghĩa cho động từ/phân từ \"delayed\", ta cần trạng từ \"temporarily\" (tạm thời bị hoãn).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "manufacturing-001"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "p5-voc-005",
+    "part": 5,
+    "passage": "The board of directors commended Mr. Tanaka for his ______ leadership during the company's merger with Apex Technologies.",
+    "options": [
+      "exemplary",
+      "hesitant",
+      "reluctant",
+      "superficial"
+    ],
+    "correctAnswer": 0,
+    "explanation": "\"Exemplary leadership\" (sự lãnh đạo gương mẫu, xuất sắc) là cụm từ khen ngợi phổ biến trong ngữ cảnh kinh doanh. Các từ khác mang nghĩa tiêu cực.",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "hr-personnel-001"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "p5-voc-006",
+    "part": 5,
+    "passage": "Hotel guests are entitled to ______ access to the executive lounge, fitness center, and swimming pool.",
+    "options": [
+      "complimentary",
+      "compliment",
+      "complimenting",
+      "complimentaryly"
+    ],
+    "correctAnswer": 0,
+    "explanation": "\"Complimentary\" mang nghĩa \"miễn phí / tặng kèm\" (bằng free of charge), bổ nghĩa cho danh từ \"access\".",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "dining-001",
+      "travel-001"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-voc-007",
+    "part": 5,
+    "passage": "The executive committee voted unanimously to ______ the existing warranty policy on all industrial machinery.",
+    "options": [
+      "extend",
+      "expand",
+      "elongate",
+      "prolong"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cụm từ cố định trong kinh doanh: \"extend a warranty / contract / deadline\" mang nghĩa gia hạn thời hạn bảo hành/hợp đồng.",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "legal-001",
+      "manufacturing-002"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-voc-008",
+    "part": 5,
+    "passage": "Please review the attached contract carefully and notify legal counsel if any terms appear ______ or contradictory.",
+    "options": [
+      "ambiguous",
+      "ambiguity",
+      "ambiguously",
+      "ambiguousness"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sau động từ nối \"appear\", ta cần tính từ song song với \"contradictory\". Do đó chọn \"ambiguous\" (mơ hồ, đa nghĩa).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "legal-002"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "p5-voc-009",
+    "part": 5,
+    "passage": "The marketing team's promotional campaign resulted in an unprecedented ______ in online pre-orders.",
+    "options": [
+      "surge",
+      "surging",
+      "surged",
+      "surges"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sau mạo từ \"an\" và tính từ \"unprecedented\", ta cần danh từ số ít \"surge\" (sự tăng vọt bất ngờ).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "marketing-001"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-voc-010",
+    "part": 5,
+    "passage": "Ms. Henderson has proven herself to be an ______ negotiator during complex multinational trade discussions.",
+    "options": [
+      "adept",
+      "awkward",
+      "absent",
+      "idle"
+    ],
+    "correctAnswer": 0,
+    "explanation": "\"Adept\" mang nghĩa khéo léo, tinh thông (adept negotiator = nhà đàm phán tài ba).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "hr-personnel-002"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "p5-voc-011",
+    "part": 5,
+    "passage": "To ensure data security, all remote employees must install the software update ______ upon receiving the notification.",
+    "options": [
+      "promptly",
+      "prompt",
+      "promptness",
+      "prompting"
+    ],
+    "correctAnswer": 0,
+    "explanation": "\"Promptly upon...\" (ngay lập tức khi...). Trạng từ \"promptly\" bổ nghĩa cho cụm hành động cài đặt.",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "technology-002"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-voc-012",
+    "part": 5,
+    "passage": "The new employee handbook outlines all workplace guidelines and safety ______ in full detail.",
+    "options": [
+      "protocols",
+      "prototypes",
+      "proposals",
+      "professions"
+    ],
+    "correctAnswer": 0,
+    "explanation": "\"Safety protocols\" (các quy trình/nguyên tắc an toàn) là danh từ thường gặp trong môi trường sản xuất và văn phòng.",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "office-admin-002"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-voc-013",
+    "part": 5,
+    "passage": "The CEO expressed great ______ for the research team's dedication throughout the three-year development cycle.",
+    "options": [
+      "appreciation",
+      "appreciate",
+      "appreciative",
+      "appreciatively"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sau tính từ \"great\", cần danh từ \"appreciation\" (express appreciation for: bày tỏ sự tri ân/đánh giá cao).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "office-admin-003"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "p5-voc-014",
+    "part": 5,
+    "passage": "Our logistics partners have guaranteed that the replacement parts will be delivered ______ 48 hours.",
+    "options": [
+      "within",
+      "among",
+      "between",
+      "during"
+    ],
+    "correctAnswer": 0,
+    "explanation": "\"Within + khoảng thời gian\" biểu thị hành động diễn ra trong vòng bao lâu (within 48 hours).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "purchasing-001"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "p5-voc-015",
+    "part": 5,
+    "passage": "Only candidates who meet the ______ educational requirements will be contacted for an interview.",
+    "options": [
+      "stipulated",
+      "stipulating",
+      "stipulation",
+      "stipulate"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Dùng quá khứ phân từ \"stipulated\" như tính từ mang nghĩa \"đã được quy định/nêu rõ trong tiêu chuẩn tuyển dụng\".",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "hr-personnel-003"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "p5-voc-016",
+    "part": 5,
+    "passage": "The supplier offered an additional 5 percent discount on all items ordered in ______ quantities.",
+    "options": [
+      "bulk",
+      "bulky",
+      "bulking",
+      "bulked"
+    ],
+    "correctAnswer": 0,
+    "explanation": "\"In bulk quantities\" hoặc \"in bulk\" là cụm từ chỉ mua bán với số lượng lớn (sỉ).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "purchasing-002"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-voc-017",
+    "part": 5,
+    "passage": "A comprehensive feasibility study was conducted to determine the ______ of expanding into South American markets.",
+    "options": [
+      "viability",
+      "viable",
+      "viably",
+      "viabilities"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sau \"the\" và trước \"of expanding\", ta cần danh từ không đếm được \"viability\" (tính khả thi/khả năng thành công).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "finance-003"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "p5-voc-018",
+    "part": 5,
+    "passage": "The revised software makes it ______ easier for account managers to generate sales invoices.",
+    "options": [
+      "considerably",
+      "considerable",
+      "considerate",
+      "consideration"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Trạng từ \"considerably\" đứng trước tính từ so sánh hơn \"easier\" để nhấn mạnh mức độ (dễ dàng hơn đáng kể).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "technology-003"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-voc-019",
+    "part": 5,
+    "passage": "The building manager stated that maintenance work on the main elevator will commence ______ Monday morning.",
+    "options": [
+      "effective",
+      "effects",
+      "effectively",
+      "effect"
+    ],
+    "correctAnswer": 0,
+    "explanation": "\"Effective + thời gian\" (có hiệu lực/bắt đầu từ...) là cách diễn đạt phổ biến trong thông báo TOEIC.",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "real-estate-001"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "p5-voc-020",
+    "part": 5,
+    "passage": "Participants in the international conference will receive a comprehensive information ______ upon registration.",
+    "options": [
+      "packet",
+      "package",
+      "pack",
+      "packaging"
+    ],
+    "correctAnswer": 0,
+    "explanation": "\"Information packet\" (tập tài liệu thông tin/tệp thông tin tổng hợp cho người tham dự hội thảo).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "travel-002"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-voc-021",
+    "part": 5,
+    "passage": "The company's legal representatives negotiated ______ to ensure favorable contractual terms for both parties.",
+    "options": [
+      "rigorously",
+      "rigorous",
+      "rigor",
+      "rigorousness"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Bổ nghĩa cho động từ \"negotiated\" cần một trạng từ chỉ thể cách \"rigorously\" (một cách chặt chẽ, khắt khe).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "legal-003"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-voc-022",
+    "part": 5,
+    "passage": "The new hybrid vehicle has exceeded all sales forecasts ______ its innovative battery technology.",
+    "options": [
+      "because of",
+      "although",
+      "in spite of",
+      "even though"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sau chỗ trống là cụm danh từ \"its innovative battery technology\" nêu nguyên nhân thành công, do đó dùng giới từ \"because of\".",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "manufacturing-003"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "p5-voc-023",
+    "part": 5,
+    "passage": "The human resources director emphasized that employee attendance at the seminar is entirely ______.",
+    "options": [
+      "voluntary",
+      "volunteer",
+      "voluntarily",
+      "volunteering"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sau động từ nối \"is\" và trạng từ \"entirely\", cần tính từ \"voluntary\" (hoàn toàn mang tính tự nguyện).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "hr-personnel-004"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "p5-voc-024",
+    "part": 5,
+    "passage": "Inspectors found that the manufacturing plant was in full ______ with state environmental regulations.",
+    "options": [
+      "compliance",
+      "compliant",
+      "comply",
+      "compliantly"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cụm từ cố định: \"in full compliance with\" mang nghĩa tuân thủ đầy đủ các quy định.",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "manufacturing-004",
+      "legal-004"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-voc-025",
+    "part": 5,
+    "passage": "The warranty does not cover damages caused by improper handling or unauthorized ______ of the device.",
+    "options": [
+      "modification",
+      "modify",
+      "modifying",
+      "modified"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sau tính từ \"unauthorized\" và giới từ \"of\", cần danh từ \"modification\" (sự sửa đổi/can thiệp trái phép).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "technology-004"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "p5-voc-026",
+    "part": 5,
+    "passage": "The corporate catering team prepared an ______ selection of gourmet appetizers for the anniversary banquet.",
+    "options": [
+      "exquisite",
+      "exquisitely",
+      "exquisiteness",
+      "exquisite-like"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Đứng trước danh từ \"selection\" cần tính từ \"exquisite\" (tinh tế, tuyệt hảo).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "dining-002"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-voc-027",
+    "part": 5,
+    "passage": "The airline representative assured passengers that their luggage would be delivered to the terminal ______.",
+    "options": [
+      "shortly",
+      "short",
+      "shorten",
+      "shortness"
+    ],
+    "correctAnswer": 0,
+    "explanation": "\"Shortly\" là trạng từ chỉ thời gian mang nghĩa \"chẳng bao lâu nữa / sớm thôi\" (= soon).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "travel-003"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "p5-voc-028",
+    "part": 5,
+    "passage": "Mr. Delgado was selected for the promotion because of his ______ record of meeting project targets.",
+    "options": [
+      "consistent",
+      "consistency",
+      "consistently",
+      "consist"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Trước danh từ \"record\" cần tính từ \"consistent\" (nhất quán, ổn định, đáng tin cậy).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "hr-personnel-005"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "p5-voc-029",
+    "part": 5,
+    "passage": "All attendees are advised to ______ their seats at least fifteen minutes prior to the opening keynote speech.",
+    "options": [
+      "occupy",
+      "occupant",
+      "occupation",
+      "occupied"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cấu trúc \"advise someone to + verb infinitive\": \"occupy one's seat\" (ngồi vào vị trí chỗ ngồi của mình).",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "office-admin-004"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "p5-voc-030",
+    "part": 5,
+    "passage": "The newly appointed CFO proposed a series of measures aimed at ______ operating expenditures across all branches.",
+    "options": [
+      "curtailing",
+      "curtailed",
+      "curtailment",
+      "curtails"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sau giới từ \"at\" cần V-ing. Động từ \"curtail\" mang nghĩa cắt giảm/hạn chế chi tiêu trong kinh doanh.",
+    "skillTested": "vocabulary",
+    "relatedWordIds": [
+      "finance-004"
+    ],
+    "difficulty": "hard"
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "id": "p7-single-001",
+    "part": 7,
+    "passageType": "single",
+    "passages": [
+      {
+        "type": "Advertisement",
+        "content": "Crestview Executive Suites — Premium Co-working & Private Offices\n100 Financial Way, Downtown Seattle\n\nAre you looking for an inspiring, fully serviced workspace to elevate your business? Crestview Executive Suites offers private offices, shared workstations, and fully equipped conference rooms tailored for entrepreneurs, legal practitioners, and remote corporate teams.\n\nAmenities Include:\n• Ultra-fast fiber optic internet and secure Wi-Fi throughout the building\n• Complimentary espresso bar, artisan teas, and catered breakfast on Mondays\n• Executive boardrooms with 4K video conferencing and digital smartboards\n• Professional administrative support, including mail handling and telephone reception\n• 24/7 keycard access with covered parking options available\n\nFlexible Membership Options:\n- Dedicated Desk: $350 / month (Includes 5 hours of conference room credits)\n- Private Executive Office: $850 / month (Includes 15 hours of conference room credits)\n- Virtual Business Address: $89 / month (Mail sorting and scanning included)\n\nSpecial Promotion: Sign an annual lease agreement before November 30 and receive your first month at 50% off, plus 10 additional conference room hours!\n\nSchedule a private guided tour today by contacting leasing agent Claire Reynolds at claire@crestviewsuites.com or call (206) 555-0198."
+      }
+    ],
+    "questions": [
+      {
+        "id": "p7-q-001-1",
+        "question": "What is the primary purpose of the advertisement?",
+        "options": [
+          "To promote office space rentals and co-working memberships",
+          "To announce the relocation of a financial corporation",
+          "To recruit administrative assistants and receptionists",
+          "To solicit investors for a commercial real estate project"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Toàn bộ bài quảng cáo nhằm giới thiệu các gói thuê văn phòng và bàn làm việc tại Crestview Executive Suites.",
+        "questionType": "main-idea"
+      },
+      {
+        "id": "p7-q-001-2",
+        "question": "What amenity is offered free of charge on Monday mornings?",
+        "options": [
+          "Catered breakfast",
+          "Parking permits",
+          "Conference room usage",
+          "Printing supplies"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Đoạn amenities nêu: \"Complimentary espresso bar, artisan teas, and catered breakfast on Mondays\".",
+        "questionType": "detail"
+      },
+      {
+        "id": "p7-q-001-3",
+        "question": "How can a prospective tenant qualify for the 50% discount?",
+        "options": [
+          "By committing to a one-year lease before November 30",
+          "By paying for six months of rent upfront in cash",
+          "By referring two other corporate businesses",
+          "By booking a tour through the website portal"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Đoạn khuyến mãi ghi: \"Sign an annual lease agreement before November 30 and receive your first month at 50% off\".",
+        "questionType": "detail"
+      },
+      {
+        "id": "p7-q-001-4",
+        "question": "The word \"tailored\" in paragraph 1 is closest in meaning to:",
+        "options": [
+          "customized",
+          "manufactured",
+          "clothed",
+          "repaired"
+        ],
+        "correctAnswer": 0,
+        "explanation": "\"Tailored for\" ở đây mang nghĩa được thiết kế riêng/tùy biến (customized) theo nhu cầu khách hàng.",
+        "questionType": "vocabulary"
+      }
+    ]
+  },
+  {
+    "id": "p7-single-002",
+    "part": 7,
+    "passageType": "single",
+    "passages": [
+      {
+        "type": "Memo",
+        "content": "MEMORANDUM\nTo: All Laboratory and Manufacturing Staff\nFrom: Arthur Pendelton, Safety & Compliance Director\nDate: October 14\nSubject: Revision of Hazardous Materials Storage Procedures\n\nIn light of recent updates to OSHA regulatory standards, our company is instituting revised protocols for handling and storing chemical solvents in the east manufacturing wing. \n\nEffective Monday, October 21, all organic solvents must be transferred to certified flame-resistant storage lockers located in Room 104-B. Under no circumstances should containers be left unattended on workbenches after the end of a shift. Furthermore, all personnel entering Room 104-B are strictly required to log container IDs and volume amounts in the digital inventory tablet mounted beside the entrance.\n\nCompliance inspections will be conducted unannounced by our safety audit team throughout the upcoming month. Failure to adhere to these safety standards may result in formal disciplinary action.\n\nShould you have any questions or require updated safety goggles and chemical aprons, please speak with shift supervisor Brenda Walsh during morning roll call. Thank you for your continued commitment to maintaining a secure workplace."
+      }
+    ],
+    "questions": [
+      {
+        "id": "p7-q-002-1",
+        "question": "Why was the memorandum issued?",
+        "options": [
+          "To introduce updated chemical storage guidelines",
+          "To report an industrial accident in the cleanroom",
+          "To announce the appointment of a new compliance director",
+          "To invite employees to a voluntary safety seminar"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Memo thông báo sửa đổi quy trình bảo quản chất nguy hiểm (\"Revision of Hazardous Materials Storage Procedures\").",
+        "questionType": "main-idea"
+      },
+      {
+        "id": "p7-q-002-2",
+        "question": "What is required of employees when entering Room 104-B?",
+        "options": [
+          "Recording chemical information on an electronic tablet",
+          "Presenting an authorization badge to security guards",
+          "Disposing of all personal electronic devices",
+          "Conducting an emergency ventilation drill"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Văn bản nêu: \"strictly required to log container IDs and volume amounts in the digital inventory tablet mounted beside the entrance\".",
+        "questionType": "detail"
+      },
+      {
+        "id": "p7-q-002-3",
+        "question": "When will the new storage rules take effect?",
+        "options": [
+          "October 21",
+          "October 14",
+          "November 1",
+          "October 30"
+        ],
+        "correctAnswer": 0,
+        "explanation": "\"Effective Monday, October 21, all organic solvents must be transferred...\".",
+        "questionType": "detail"
+      },
+      {
+        "id": "p7-q-002-4",
+        "question": "Who should workers contact if they need new protective equipment?",
+        "options": [
+          "Brenda Walsh",
+          "Arthur Pendelton",
+          "OSHA representatives",
+          "Building security personnel"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Đoạn cuối nêu rõ: \"please speak with shift supervisor Brenda Walsh during morning roll call\".",
+        "questionType": "detail"
+      }
+    ]
+  }
+]

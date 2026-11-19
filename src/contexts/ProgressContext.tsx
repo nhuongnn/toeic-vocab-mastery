@@ -19,11 +19,13 @@ export type SyncStatus = 'idle' | 'syncing' | 'synced' | 'error';
 
 interface ProgressContextType {
   progress: UserProgressData;
+  isLoaded: boolean;
   recordReview: (wordId: string, quality: number) => void;
   recordExerciseSession: (session: ExerciseSessionResult) => void;
   toggleBookmark: (wordId: string) => void;
   isBookmarked: (wordId: string) => boolean;
   getCard: (wordId: string) => SRSCard | undefined;
+  updateDailyGoal: (goal: number) => void;
   dueCount: number;
   dueWordIds: string[];
   syncStatus: SyncStatus;
@@ -300,6 +302,22 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     [progress.cards]
   );
 
+  const updateDailyGoal = useCallback(
+    (goal: number) => {
+      setProgress((prev) => {
+        const updated: UserProgressData = {
+          ...prev,
+          stats: { ...prev.stats, dailyGoal: goal },
+          preferences: { ...prev.preferences, dailyGoal: goal },
+        };
+        saveUserProgress(updated);
+        scheduleCloudSync(updated);
+        return updated;
+      });
+    },
+    [scheduleCloudSync]
+  );
+
   const [dueWordIds, setDueWordIds] = useState<string[]>([]);
 
   useEffect(() => {
@@ -314,11 +332,13 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     <ProgressContext.Provider
       value={{
         progress,
+        isLoaded,
         recordReview,
         recordExerciseSession,
         toggleBookmark,
         isBookmarked,
         getCard,
+        updateDailyGoal,
         dueCount: dueWordIds.length,
         dueWordIds,
         syncStatus,

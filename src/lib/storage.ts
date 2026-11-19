@@ -1,4 +1,4 @@
-import { UserProgressData, SRSCard, ExerciseSessionResult } from '@/types/progress';
+import { UserProgressData } from '@/types/progress';
 
 const STORAGE_KEY = 'toeic_vocab_mastery_v1';
 

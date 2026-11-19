@@ -1,0 +1,62 @@
+[
+  {
+    "id": "p6-letter-001",
+    "part": 6,
+    "passageType": "letter",
+    "passage": "Oakridge Community Bank\n1450 Elmhurst Avenue\nSeattle, WA 98101\n\nNovember 20\n\nDear Valued Customer,\n\nThank you for choosing Oakridge Community Bank for your financial needs. We are writing to notify you of an important improvement to our personal banking services. Beginning January 1, our mobile banking application will feature enhanced biometric security and instant account notification services.\n\nThese upgrades are designed to provide you with greater convenience and ______ [1] protection against fraudulent transactions. ______ [2]. Therefore, you will not experience any interruption to your daily account access during the transition period.\n\nTo activate the new features, simply download the latest version of the Oakridge Mobile App when prompted on your smartphone. If you have any inquiries regarding your online credentials, our customer support desk is available ______ [3] phone or live chat.\n\nWe remain committed to ______ [4] you with the highest standard of banking security and service excellence.\n\nSincerely,\nMartin Gallagher\nVice President of Client Relations",
+    "questions": [
+      {
+        "id": "p6-let-001-1",
+        "blankNumber": 1,
+        "options": [
+          "enhanced",
+          "enhance",
+          "enhancement",
+          "enhancing"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Trước danh từ \"protection\", ta cần tính từ phân từ \"enhanced\" (được tăng cường/nâng cấp).",
+        "type": "vocabulary"
+      },
+      {
+        "id": "p6-let-001-2",
+        "blankNumber": 2,
+        "options": [
+          "The scheduled system maintenance will be conducted overnight on weekends.",
+          "Branch locations will be closed permanently next month.",
+          "Interest rates on all savings accounts will be reduced.",
+          "Paper checks will no longer be accepted by our tellers."
+        ],
+        "correctAnswer": 0,
+        "explanation": "Câu tiếp theo nói về việc không bị gián đoạn truy cập, nên câu này phải giải thích là việc bảo trì diễn ra vào ban đêm cuối tuần.",
+        "type": "sentence-insertion"
+      },
+      {
+        "id": "p6-let-001-3",
+        "blankNumber": 3,
+        "options": [
+          "via",
+          "along",
+          "from",
+          "between"
+        ],
+        "correctAnswer": 0,
+        "explanation": "\"Via phone or live chat\" (thông qua điện thoại hoặc trò chuyện trực tuyến).",
+        "type": "grammar"
+      },
+      {
+        "id": "p6-let-001-4",
+        "blankNumber": 4,
+        "options": [
+          "providing",
+          "provide",
+          "provided",
+          "provision"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Cấu trúc \"committed to + V-ing\" (cam kết mang đến cho quý khách...).",
+        "type": "grammar"
+      }
+    ]
+  }
+]

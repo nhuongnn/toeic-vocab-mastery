@@ -55,6 +55,8 @@ export default function RootLayout({
                     isDark = false;
                   } else if (stored === 'dark') {
                     isDark = true;
+                  } else if (stored === 'system') {
+                    isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                   } else {
                     var raw = localStorage.getItem('toeic_vocab_mastery_v1');
                     if (raw) {
@@ -62,12 +64,13 @@ export default function RootLayout({
                       if (p && p.preferences && p.preferences.theme) {
                         if (p.preferences.theme === 'light') isDark = false;
                         else if (p.preferences.theme === 'dark') isDark = true;
-                        else isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                        else if (p.preferences.theme === 'system') isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                        else isDark = true;
                       } else {
-                        isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                        isDark = true;
                       }
                     } else {
-                      isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                      isDark = true;
                     }
                   }
                   var root = document.documentElement;

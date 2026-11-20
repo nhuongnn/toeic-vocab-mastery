@@ -18,7 +18,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const { progress, updatePreferences } = useProgress();
-  const [theme, setThemeState] = useState<ThemeMode>('system');
+  const [theme, setThemeState] = useState<ThemeMode>('dark');
   const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('dark');
   const [mounted, setMounted] = useState(false);
 
@@ -62,7 +62,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   // Initialize on mount
   useEffect(() => {
     setMounted(true);
-    let initialTheme: ThemeMode = 'system';
+    let initialTheme: ThemeMode = 'dark';
 
     try {
       const stored = localStorage.getItem(THEME_STORAGE_KEY) as ThemeMode | null;
@@ -72,7 +72,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         initialTheme = progress.preferences.theme;
       }
     } catch {
-      initialTheme = 'system';
+      initialTheme = 'dark';
     }
 
     setThemeState(initialTheme);

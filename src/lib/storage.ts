@@ -21,7 +21,7 @@ export const DEFAULT_PROGRESS: UserProgressData = {
     autoPlayPronunciation: true,
     speechRate: 0.9,
     speechAccent: 'en-US',
-    theme: 'system',
+    theme: 'dark',
   },
   bookmarkedWordIds: [],
 };

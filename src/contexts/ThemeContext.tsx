@@ -76,12 +76,24 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
 
     setThemeState(initialTheme);
-    applyTheme(initialTheme);
+
+    // If head script already matched DOM, don't re-mutate DOM on mount
+    const root = document.documentElement;
+    const isAlreadyDark = root.classList.contains('dark') && !root.classList.contains('light');
+    const isAlreadyLight = root.classList.contains('light') && !root.classList.contains('dark');
+
+    if (initialTheme === 'dark' && isAlreadyDark) {
+      setResolvedTheme('dark');
+    } else if (initialTheme === 'light' && isAlreadyLight) {
+      setResolvedTheme('light');
+    } else {
+      applyTheme(initialTheme);
+    }
 
     // Listen to OS system preference changes
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleSystemChange = () => {
-      const currentStored = localStorage.getItem(THEME_STORAGE_KEY) || 'system';
+      const currentStored = localStorage.getItem(THEME_STORAGE_KEY) || 'dark';
       if (currentStored === 'system') {
         applyTheme('system');
       }
@@ -99,6 +111,15 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       } catch (e) {
         console.error('Failed to save theme preference:', e);
       }
+
+      // Add smooth transition only during active user switch
+      if (typeof document !== 'undefined') {
+        document.documentElement.classList.add('theme-transition');
+        setTimeout(() => {
+          document.documentElement.classList.remove('theme-transition');
+        }, 300);
+      }
+
       applyTheme(newTheme);
       updatePreferences({ theme: newTheme });
     },

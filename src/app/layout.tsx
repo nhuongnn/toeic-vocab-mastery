@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="h-full antialiased"
+      className="h-full dark antialiased"
       suppressHydrationWarning
     >
       <head>
@@ -89,7 +89,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-slate-950 text-slate-100 selection:bg-indigo-500 selection:text-white pb-16 md:pb-0 transition-colors duration-200">
+      <body className="min-h-full flex flex-col bg-slate-950 text-slate-100 selection:bg-indigo-500 selection:text-white pb-16 md:pb-0">
         <AuthProvider>
           <ProgressProvider>
             <ThemeProvider>

@@ -1,5 +1,3 @@
-import { CategoryId } from './vocabulary';
-
 export interface SRSCard {
   wordId: string;
   repetitions: number;      // Consecutive successful reviews
@@ -36,9 +34,10 @@ export interface UserPreferences {
   dailyGoal: number;
   immersiveOnly: boolean;       // strictly no translation
   autoPlayPronunciation: boolean;
-  speechRate: number;           // 0.8 to 1.0 (default 0.9 for clarity)
-  speechAccent: 'en-US' | 'en-GB';
+  speechRate: number;           // 0.75 to 1.25 (default 0.9 for clarity)
+  speechAccent: 'en-US' | 'en-GB' | 'en-AU';
   theme: 'light' | 'dark' | 'system';
+  language?: 'vi' | 'en';
 }
 
 export interface UserProgressData {

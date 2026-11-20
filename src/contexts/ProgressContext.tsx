@@ -8,7 +8,7 @@ import React, {
   useCallback,
   useRef,
 } from 'react';
-import { UserProgressData, SRSCard, ExerciseSessionResult } from '@/types/progress';
+import { UserProgressData, SRSCard, ExerciseSessionResult, UserPreferences } from '@/types/progress';
 import { DEFAULT_PROGRESS, loadUserProgress, saveUserProgress, updateStreak } from '@/lib/storage';
 import { calculateSM2, createNewCard, calculateEstimatedScore } from '@/lib/srs';
 import { useAuth } from './AuthContext';
@@ -26,6 +26,9 @@ interface ProgressContextType {
   isBookmarked: (wordId: string) => boolean;
   getCard: (wordId: string) => SRSCard | undefined;
   updateDailyGoal: (goal: number) => void;
+  updatePreferences: (prefs: Partial<UserPreferences>) => void;
+  resetProgress: () => void;
+  importProgress: (data: UserProgressData) => boolean;
   dueCount: number;
   dueWordIds: string[];
   syncStatus: SyncStatus;
@@ -318,6 +321,57 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     [scheduleCloudSync]
   );
 
+  const updatePreferences = useCallback(
+    (newPrefs: Partial<UserPreferences>) => {
+      setProgress((prev) => {
+        const updatedPrefs = { ...prev.preferences, ...newPrefs };
+        const updated: UserProgressData = {
+          ...prev,
+          preferences: updatedPrefs,
+          stats: {
+            ...prev.stats,
+            dailyGoal: newPrefs.dailyGoal ?? prev.stats.dailyGoal,
+          },
+        };
+        saveUserProgress(updated);
+        scheduleCloudSync(updated);
+        return updated;
+      });
+    },
+    [scheduleCloudSync]
+  );
+
+  const resetProgress = useCallback(() => {
+    saveUserProgress(DEFAULT_PROGRESS);
+    setProgress(DEFAULT_PROGRESS);
+    scheduleCloudSync(DEFAULT_PROGRESS);
+  }, [scheduleCloudSync]);
+
+  const importProgress = useCallback(
+    (data: UserProgressData): boolean => {
+      try {
+        if (!data || typeof data !== 'object') return false;
+        const validated: UserProgressData = {
+          ...DEFAULT_PROGRESS,
+          ...data,
+          stats: { ...DEFAULT_PROGRESS.stats, ...(data.stats || {}) },
+          preferences: { ...DEFAULT_PROGRESS.preferences, ...(data.preferences || {}) },
+          cards: data.cards || {},
+          history: Array.isArray(data.history) ? data.history : [],
+          bookmarkedWordIds: Array.isArray(data.bookmarkedWordIds) ? data.bookmarkedWordIds : [],
+        };
+        saveUserProgress(validated);
+        setProgress(validated);
+        scheduleCloudSync(validated);
+        return true;
+      } catch (e) {
+        console.error('Failed to import progress data:', e);
+        return false;
+      }
+    },
+    [scheduleCloudSync]
+  );
+
   const [dueWordIds, setDueWordIds] = useState<string[]>([]);
 
   useEffect(() => {
@@ -339,6 +393,9 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         isBookmarked,
         getCard,
         updateDailyGoal,
+        updatePreferences,
+        resetProgress,
+        importProgress,
         dueCount: dueWordIds.length,
         dueWordIds,
         syncStatus,

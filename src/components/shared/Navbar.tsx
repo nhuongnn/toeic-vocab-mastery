@@ -23,6 +23,7 @@ import {
   Zap,
   Puzzle,
   Compass,
+  Settings,
 } from 'lucide-react';
 import { allVocabularyWords } from '@/data/vocabulary';
 
@@ -390,6 +391,18 @@ export function Navbar() {
               <span suppressHydrationWarning>{streak} ngày</span>
             </div>
 
+            {/* Settings Link */}
+            <Link
+              href="/settings"
+              aria-label="Cài đặt hệ thống"
+              title="Cài đặt & Tùy biến"
+              className={`p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-800 transition-all ${
+                pathname === '/settings' ? 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20' : ''
+              }`}
+            >
+              <Settings className="w-4 h-4" />
+            </Link>
+
             {/* Auth Button */}
             <AuthButton />
 
@@ -518,6 +531,21 @@ export function Navbar() {
                 </Link>
               );
             })}
+          </div>
+
+          {/* Section: Cài đặt & Giao diện */}
+          <div className="space-y-2 pt-2 border-t border-slate-800">
+            <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider px-2">
+              Hệ thống & Tùy biến
+            </div>
+            <Link
+              href="/settings"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-900"
+            >
+              <Settings className="w-4 h-4 text-indigo-400" />
+              <span>Cài đặt & Tùy biến</span>
+            </Link>
           </div>
         </div>
       )}

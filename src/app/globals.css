@@ -11,6 +11,215 @@ body {
   min-height: 100vh;
 }
 
+/* =========================================================
+   LIGHT THEME COMPREHENSIVE OVERRIDES
+   ========================================================= */
+
+html.light,
+[data-theme='light'] {
+  color-scheme: light;
+}
+
+html.light body,
+[data-theme='light'] body,
+body.light {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* 1. Surfaces & Backgrounds */
+html.light .bg-slate-950,
+[data-theme='light'] .bg-slate-950,
+html.light [class*="bg-slate-950"],
+[data-theme='light'] [class*="bg-slate-950"] {
+  background-color: #f8fafc !important;
+}
+
+html.light .bg-slate-900,
+[data-theme='light'] .bg-slate-900,
+html.light [class*="bg-slate-900"],
+[data-theme='light'] [class*="bg-slate-900"] {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-slate-850,
+html.light .bg-slate-800,
+[data-theme='light'] .bg-slate-850,
+[data-theme='light'] .bg-slate-800,
+html.light [class*="bg-slate-800"],
+[data-theme='light'] [class*="bg-slate-800"] {
+  background-color: #f1f5f9 !important;
+}
+
+/* 2. Borders & Dividers */
+html.light .border-slate-900,
+html.light .border-slate-800,
+html.light .border-slate-700,
+[data-theme='light'] .border-slate-900,
+[data-theme='light'] .border-slate-800,
+[data-theme='light'] .border-slate-700,
+html.light [class*="border-slate-800"],
+[data-theme='light'] [class*="border-slate-800"],
+html.light [class*="border-slate-900"],
+[data-theme='light'] [class*="border-slate-900"] {
+  border-color: #e2e8f0 !important;
+}
+
+/* 3. Text Colors */
+html.light .text-slate-100,
+[data-theme='light'] .text-slate-100 {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-200,
+[data-theme='light'] .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-300,
+[data-theme='light'] .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400,
+[data-theme='light'] .text-slate-400 {
+  color: #64748b !important;
+}
+
+html.light .text-slate-500,
+[data-theme='light'] .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* 4. Headings & Titles (text-white on normal light cards) */
+html.light .text-white,
+[data-theme='light'] .text-white {
+  color: #0f172a !important;
+}
+
+/* 5. Keep white text on saturated buttons, pills & gradient components */
+html.light button.text-white,
+html.light a.text-white,
+html.light [class*="bg-indigo-"]:not([class*="/10"]):not([class*="/20"]) .text-white,
+html.light [class*="bg-indigo-"]:not([class*="/10"]):not([class*="/20"]).text-white,
+html.light [class*="bg-purple-"]:not([class*="/10"]):not([class*="/20"]) .text-white,
+html.light [class*="bg-purple-"]:not([class*="/10"]):not([class*="/20"]).text-white,
+html.light [class*="bg-pink-"]:not([class*="/10"]):not([class*="/20"]) .text-white,
+html.light [class*="bg-pink-"]:not([class*="/10"]):not([class*="/20"]).text-white,
+html.light [class*="bg-emerald-"]:not([class*="/10"]):not([class*="/20"]) .text-white,
+html.light [class*="bg-emerald-"]:not([class*="/10"]):not([class*="/20"]).text-white,
+html.light [class*="bg-amber-"]:not([class*="/10"]):not([class*="/20"]) .text-white,
+html.light [class*="bg-amber-"]:not([class*="/10"]):not([class*="/20"]).text-white,
+html.light [class*="bg-rose-"]:not([class*="/10"]):not([class*="/20"]) .text-white,
+html.light [class*="bg-rose-"]:not([class*="/10"]):not([class*="/20"]).text-white,
+html.light [class*="bg-sky-"]:not([class*="/10"]):not([class*="/20"]) .text-white,
+html.light [class*="bg-sky-"]:not([class*="/10"]):not([class*="/20"]).text-white,
+html.light [class*="bg-gradient-"] .text-white,
+html.light [class*="bg-gradient-"].text-white,
+html.light [class*="from-indigo-"] .text-white,
+html.light [class*="from-indigo-"].text-white,
+html.light [class*="from-purple-"] .text-white,
+html.light [class*="from-purple-"].text-white,
+html.light .text-white-fixed,
+[data-theme='light'] button.text-white,
+[data-theme='light'] a.text-white,
+[data-theme='light'] [class*="bg-indigo-"]:not([class*="/10"]):not([class*="/20"]) .text-white,
+[data-theme='light'] [class*="bg-indigo-"]:not([class*="/10"]):not([class*="/20"]).text-white,
+[data-theme='light'] [class*="bg-pink-"]:not([class*="/10"]):not([class*="/20"]) .text-white,
+[data-theme='light'] [class*="bg-pink-"]:not([class*="/10"]):not([class*="/20"]).text-white,
+[data-theme='light'] [class*="bg-emerald-"]:not([class*="/10"]):not([class*="/20"]) .text-white,
+[data-theme='light'] [class*="bg-emerald-"]:not([class*="/10"]):not([class*="/20"]).text-white,
+[data-theme='light'] [class*="bg-gradient-"] .text-white,
+[data-theme='light'] [class*="bg-gradient-"].text-white,
+[data-theme='light'] .text-white-fixed {
+  color: #ffffff !important;
+}
+
+/* 6. Header Navigation in light mode */
+html.light header.sticky,
+[data-theme='light'] header.sticky {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: #e2e8f0 !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+/* 7. Footer in light mode */
+html.light footer,
+[data-theme='light'] footer {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* 8. Light mode Gradients (e.g. Target meter banner & callouts) */
+html.light [class*="from-slate-900"],
+[data-theme='light'] [class*="from-slate-900"] {
+  background: linear-gradient(to right, #ffffff, #eef2ff, #faf5ff) !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light [class*="from-indigo-950"],
+[data-theme='light'] [class*="from-indigo-950"] {
+  background: linear-gradient(to right, #eef2ff, #fdf4ff, #ffffff) !important;
+  border-color: #c7d2fe !important;
+}
+
+/* 9. Card Elevation & Shadows */
+html.light .rounded-3xl,
+html.light .rounded-2xl,
+[data-theme='light'] .rounded-3xl,
+[data-theme='light'] .rounded-2xl {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* 10. Inputs & Controls */
+html.light input,
+html.light textarea,
+html.light select,
+[data-theme='light'] input,
+[data-theme='light'] textarea,
+[data-theme='light'] select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light input::placeholder,
+[data-theme='light'] input::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* 11. Hover States */
+html.light [class*="hover:bg-slate-900"]:hover,
+html.light [class*="hover:bg-slate-800"]:hover,
+[data-theme='light'] [class*="hover:bg-slate-900"]:hover,
+[data-theme='light'] [class*="hover:bg-slate-800"]:hover {
+  background-color: #f1f5f9 !important;
+}
+
+html.light [class*="hover:text-white"]:hover,
+[data-theme='light'] [class*="hover:text-white"]:hover {
+  color: #0f172a !important;
+}
+
+/* 12. Dropdown Menus */
+html.light .shadow-2xl[class*="bg-slate-900"],
+html.light .shadow-xl[class*="bg-slate-900"],
+[data-theme='light'] .shadow-2xl[class*="bg-slate-900"],
+[data-theme='light'] .shadow-xl[class*="bg-slate-900"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Smooth transition when toggling themes */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
+}
+
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -40,4 +249,43 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
+}
+
+/* Light scrollbars */
+html.light ::-webkit-scrollbar-track,
+[data-theme='light'] ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+html.light ::-webkit-scrollbar-thumb,
+[data-theme='light'] ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+html.light ::-webkit-scrollbar-thumb:hover,
+[data-theme='light'] ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print Stylesheet for Report Export */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  header,
+  footer,
+  nav,
+  .print-hidden,
+  button:not(.print-visible),
+  .no-print {
+    display: none !important;
+  }
+  .print-block {
+    display: block !important;
+  }
+  .print-break-inside-avoid {
+    break-inside: avoid;
+  }
+  .print-shadow-none {
+    box-shadow: none !important;
+  }
 }

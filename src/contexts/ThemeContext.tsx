@@ -68,8 +68,16 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       const stored = localStorage.getItem(THEME_STORAGE_KEY) as ThemeMode | null;
       if (stored && ['light', 'dark', 'system'].includes(stored)) {
         initialTheme = stored;
-      } else if (progress.preferences?.theme) {
-        initialTheme = progress.preferences.theme;
+      } else {
+        const raw = localStorage.getItem('toeic_vocab_mastery_v1');
+        if (raw) {
+          const p = JSON.parse(raw);
+          if (p?.preferences?.theme === 'light') {
+            initialTheme = 'light';
+          } else if (p?.preferences?.theme === 'dark') {
+            initialTheme = 'dark';
+          }
+        }
       }
     } catch {
       initialTheme = 'dark';
@@ -77,23 +85,48 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     setThemeState(initialTheme);
 
-    // If head script already matched DOM, don't re-mutate DOM on mount
+    const isTargetDark =
+      initialTheme === 'light'
+        ? false
+        : initialTheme === 'system'
+        ? window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        : true;
+
+    setResolvedTheme(isTargetDark ? 'dark' : 'light');
+
+    // Only mutate DOM if not already in the target state
     const root = document.documentElement;
     const isAlreadyDark = root.classList.contains('dark') && !root.classList.contains('light');
     const isAlreadyLight = root.classList.contains('light') && !root.classList.contains('dark');
 
-    if (initialTheme === 'dark' && isAlreadyDark) {
-      setResolvedTheme('dark');
-    } else if (initialTheme === 'light' && isAlreadyLight) {
-      setResolvedTheme('light');
-    } else {
+    if (isTargetDark && !isAlreadyDark) {
       applyTheme(initialTheme);
+    } else if (!isTargetDark && !isAlreadyLight) {
+      applyTheme(initialTheme);
+    } else {
+      // DOM is already in target state, ensure body and data-theme match
+      const body = document.body;
+      if (isTargetDark) {
+        root.setAttribute('data-theme', 'dark');
+        root.style.colorScheme = 'dark';
+        if (body) {
+          body.classList.add('dark');
+          body.classList.remove('light');
+        }
+      } else {
+        root.setAttribute('data-theme', 'light');
+        root.style.colorScheme = 'light';
+        if (body) {
+          body.classList.remove('dark');
+          body.classList.add('light');
+        }
+      }
     }
 
     // Listen to OS system preference changes
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleSystemChange = () => {
-      const currentStored = localStorage.getItem(THEME_STORAGE_KEY) || 'dark';
+      const currentStored = localStorage.getItem(THEME_STORAGE_KEY);
       if (currentStored === 'system') {
         applyTheme('system');
       }

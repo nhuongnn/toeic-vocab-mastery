@@ -33,12 +33,29 @@ export function loadUserProgress(): UserProgressData {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return DEFAULT_PROGRESS;
     const parsed = JSON.parse(raw);
-    return {
+    const loaded = {
       ...DEFAULT_PROGRESS,
       ...parsed,
       stats: { ...DEFAULT_PROGRESS.stats, ...(parsed.stats || {}) },
       preferences: { ...DEFAULT_PROGRESS.preferences, ...(parsed.preferences || {}) },
     };
+
+    // Normalize theme: if legacy had 'system' and no explicit toeic_theme was set, migrate to 'dark'
+    const explicitTheme = localStorage.getItem('toeic_theme');
+    if (explicitTheme && ['light', 'dark', 'system'].includes(explicitTheme)) {
+      loaded.preferences.theme = explicitTheme as 'light' | 'dark' | 'system';
+    } else {
+      // Default theme is strictly 'dark'
+      if (loaded.preferences.theme === 'system' || !loaded.preferences.theme) {
+        loaded.preferences.theme = 'dark';
+        try {
+          localStorage.setItem('toeic_theme', 'dark');
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(loaded));
+        } catch {}
+      }
+    }
+
+    return loaded;
   } catch (err) {
     console.error('Error loading progress from localStorage:', err);
     return DEFAULT_PROGRESS;

@@ -49,39 +49,42 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var stored = localStorage.getItem('toeic_theme');
-                  var isDark = true;
-                  if (stored === 'light') {
-                    isDark = false;
-                  } else if (stored === 'dark') {
-                    isDark = true;
-                  } else if (stored === 'system') {
-                    isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var theme = 'dark';
+                  var explicit = localStorage.getItem('toeic_theme');
+                  if (explicit === 'light' || explicit === 'dark' || explicit === 'system') {
+                    theme = explicit;
                   } else {
                     var raw = localStorage.getItem('toeic_vocab_mastery_v1');
                     if (raw) {
                       var p = JSON.parse(raw);
-                      if (p && p.preferences && p.preferences.theme) {
-                        if (p.preferences.theme === 'light') isDark = false;
-                        else if (p.preferences.theme === 'dark') isDark = true;
-                        else if (p.preferences.theme === 'system') isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                        else isDark = true;
-                      } else {
-                        isDark = true;
+                      if (p && p.preferences && p.preferences.theme === 'light') {
+                        theme = 'light';
+                      } else if (p && p.preferences && p.preferences.theme === 'dark') {
+                        theme = 'dark';
                       }
-                    } else {
-                      isDark = true;
                     }
                   }
+
+                  var isDark = true;
+                  if (theme === 'light') {
+                    isDark = false;
+                  } else if (theme === 'system') {
+                    isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  } else {
+                    isDark = true;
+                  }
+
                   var root = document.documentElement;
                   if (isDark) {
                     root.classList.add('dark');
                     root.classList.remove('light');
                     root.setAttribute('data-theme', 'dark');
+                    root.style.colorScheme = 'dark';
                   } else {
                     root.classList.remove('dark');
                     root.classList.add('light');
                     root.setAttribute('data-theme', 'light');
+                    root.style.colorScheme = 'light';
                   }
                 } catch (e) {}
               })();

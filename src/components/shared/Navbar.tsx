@@ -90,7 +90,8 @@ export function Navbar() {
     pathname.startsWith('/quiz') ||
     pathname.startsWith('/matching') ||
     pathname.startsWith('/fill-blank') ||
-    pathname.startsWith('/context-builder');
+    pathname.startsWith('/context-builder') ||
+    pathname.startsWith('/listening');
 
   const skillItems = [
     {
@@ -145,6 +146,27 @@ export function Navbar() {
       desc: 'Thử thách nối từ với định nghĩa bản xứ',
       icon: Puzzle,
       color: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/20',
+    },
+    {
+      href: '/fill-blank',
+      label: 'Điền từ chỗ trống',
+      desc: 'Gõ từ từ trí nhớ theo ngữ cảnh câu thực tế',
+      icon: BookOpen,
+      color: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+    },
+    {
+      href: '/listening',
+      label: 'Luyện nghe phản xạ',
+      desc: 'Nghe phát âm chuẩn bản xứ & nhận diện từ',
+      icon: Headphones,
+      color: 'text-sky-400 bg-sky-500/10 border-sky-500/20',
+    },
+    {
+      href: '/context-builder',
+      label: 'Ghép câu ngữ cảnh',
+      desc: 'Tái tạo trật tự từ & cấu trúc câu thương mại',
+      icon: Compass,
+      color: 'text-violet-400 bg-violet-500/10 border-violet-500/20',
     },
   ];
 
@@ -207,35 +229,37 @@ export function Navbar() {
               </button>
 
               {activeDropdown === 'skills' && (
-                <div className="absolute top-full left-0 mt-1 w-72 rounded-2xl bg-slate-900/95 border border-slate-800 shadow-2xl p-2 z-50 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
-                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-3 py-1 mb-1">
+                <div className="absolute top-full left-0 mt-1 w-80 sm:w-88 rounded-2xl bg-slate-900/98 border border-slate-800 shadow-2xl p-2.5 z-50 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150 max-h-[calc(100vh-5rem)] overflow-y-auto">
+                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2.5 py-1 mb-1 border-b border-slate-800/60 pb-1.5">
                     4 Kỹ Năng Bổ Trợ
                   </div>
-                  {skillItems.map((item) => {
-                    const Icon = item.icon;
-                    const active = pathname.startsWith(item.href);
-                    return (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className={`flex items-start gap-3 p-2 rounded-xl transition-all ${
-                          active
-                            ? 'bg-indigo-500/10 text-indigo-300'
-                            : 'hover:bg-slate-800/70 text-slate-200'
-                        }`}
-                      >
-                        <div className={`p-2 rounded-lg border shrink-0 mt-0.5 ${item.color}`}>
-                          <Icon className="w-4 h-4" />
-                        </div>
-                        <div className="space-y-0.5">
-                          <div className="text-xs font-semibold">{item.label}</div>
-                          <div className="text-[11px] text-slate-400 leading-snug line-clamp-1">
-                            {item.desc}
+                  <div className="space-y-1">
+                    {skillItems.map((item) => {
+                      const Icon = item.icon;
+                      const active = pathname.startsWith(item.href);
+                      return (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className={`flex items-start gap-3 p-2 rounded-xl transition-all ${
+                            active
+                              ? 'bg-indigo-500/10 text-indigo-300'
+                              : 'hover:bg-slate-800/70 text-slate-200'
+                          }`}
+                        >
+                          <div className={`p-2 rounded-lg border shrink-0 mt-0.5 ${item.color}`}>
+                            <Icon className="w-4 h-4" />
                           </div>
-                        </div>
-                      </Link>
-                    );
-                  })}
+                          <div className="space-y-0.5 min-w-0 flex-1">
+                            <div className="text-xs font-semibold">{item.label}</div>
+                            <div className="text-[11px] text-slate-400 leading-snug">
+                              {item.desc}
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
             </div>
@@ -267,42 +291,44 @@ export function Navbar() {
               </button>
 
               {activeDropdown === 'practice' && (
-                <div className="absolute top-full left-0 mt-1 w-72 rounded-2xl bg-slate-900/95 border border-slate-800 shadow-2xl p-2 z-50 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
-                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-3 py-1 mb-1">
+                <div className="absolute top-full left-0 mt-1 w-80 sm:w-88 rounded-2xl bg-slate-900/98 border border-slate-800 shadow-2xl p-2.5 z-50 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150 max-h-[calc(100vh-5rem)] overflow-y-auto">
+                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2.5 py-1 mb-1 border-b border-slate-800/60 pb-1.5">
                     Chế Độ Rèn Luyện
                   </div>
-                  {practiceItems.map((item) => {
-                    const Icon = item.icon;
-                    const active = pathname.startsWith(item.href);
-                    return (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className={`flex items-start justify-between gap-2 p-2 rounded-xl transition-all ${
-                          active
-                            ? 'bg-indigo-500/10 text-indigo-300'
-                            : 'hover:bg-slate-800/70 text-slate-200'
-                        }`}
-                      >
-                        <div className="flex items-start gap-3">
-                          <div className={`p-2 rounded-lg border shrink-0 mt-0.5 ${item.color}`}>
-                            <Icon className="w-4 h-4" />
-                          </div>
-                          <div className="space-y-0.5">
-                            <div className="text-xs font-semibold">{item.label}</div>
-                            <div className="text-[11px] text-slate-400 leading-snug line-clamp-1">
-                              {item.desc}
+                  <div className="space-y-1">
+                    {practiceItems.map((item) => {
+                      const Icon = item.icon;
+                      const active = pathname.startsWith(item.href);
+                      return (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className={`flex items-start justify-between gap-2.5 p-2 rounded-xl transition-all ${
+                            active
+                              ? 'bg-indigo-500/10 text-indigo-300'
+                              : 'hover:bg-slate-800/70 text-slate-200'
+                          }`}
+                        >
+                          <div className="flex items-start gap-3 min-w-0 flex-1">
+                            <div className={`p-2 rounded-lg border shrink-0 mt-0.5 ${item.color}`}>
+                              <Icon className="w-4 h-4" />
+                            </div>
+                            <div className="space-y-0.5 min-w-0 flex-1">
+                              <div className="text-xs font-semibold">{item.label}</div>
+                              <div className="text-[11px] text-slate-400 leading-snug">
+                                {item.desc}
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        {item.badge && (
-                          <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-500/20 border border-pink-500/40 text-pink-400 shrink-0">
-                            {item.badge}
-                          </span>
-                        )}
-                      </Link>
-                    );
-                  })}
+                          {item.badge && (
+                            <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-500/20 border border-pink-500/40 text-pink-400 shrink-0 mt-0.5">
+                              {item.badge}
+                            </span>
+                          )}
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
             </div>
@@ -487,7 +513,7 @@ export function Navbar() {
           {/* Section: 4 Kỹ năng */}
           <div className="space-y-1">
             <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider px-2">
-              4 Kỹ năng
+              4 Kỹ năng Bổ trợ
             </div>
             {skillItems.map((item) => {
               const Icon = item.icon;
@@ -496,10 +522,15 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-900"
+                  className="flex items-start gap-3 px-3 py-2 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-900 transition-colors"
                 >
-                  <Icon className="w-4 h-4 text-indigo-400" />
-                  <span>{item.label}</span>
+                  <div className={`p-1.5 rounded-lg border shrink-0 mt-0.5 ${item.color}`}>
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-slate-200">{item.label}</div>
+                    <div className="text-[11px] text-slate-400 leading-snug">{item.desc}</div>
+                  </div>
                 </Link>
               );
             })}
@@ -508,7 +539,7 @@ export function Navbar() {
           {/* Section: Luyện tập */}
           <div className="space-y-1">
             <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider px-2">
-              Luyện tập
+              Chế độ Rèn luyện
             </div>
             {practiceItems.map((item) => {
               const Icon = item.icon;
@@ -517,14 +548,19 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-900"
+                  className="flex items-start justify-between gap-2 px-3 py-2 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-900 transition-colors"
                 >
-                  <div className="flex items-center gap-3">
-                    <Icon className="w-4 h-4 text-pink-400" />
-                    <span>{item.label}</span>
+                  <div className="flex items-start gap-3 min-w-0">
+                    <div className={`p-1.5 rounded-lg border shrink-0 mt-0.5 ${item.color}`}>
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-slate-200">{item.label}</div>
+                      <div className="text-[11px] text-slate-400 leading-snug">{item.desc}</div>
+                    </div>
                   </div>
                   {item.badge && (
-                    <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-500/20 text-pink-400">
+                    <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-500/20 text-pink-400 shrink-0 mt-0.5">
                       {item.badge}
                     </span>
                   )}

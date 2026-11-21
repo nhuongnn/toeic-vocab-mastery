@@ -14,7 +14,7 @@ import { OnboardingTour } from '@/components/onboarding/OnboardingTour';
 import { ChatBotWidget } from '@/components/chat/ChatBotWidget';
 
 export const metadata: Metadata = {
-  title: 'TOEIC Deep Mastery • Immersive Native Vocabulary (700+ Score Target)',
+  title: 'TOEIC Deep Mastery • Immersive Native Vocabulary',
   description:
     'Master high-yield TOEIC English vocabulary through etymology, spatial perception, native mindset, and spaced repetition without word-by-word Vietnamese translation.',
   manifest: '/manifest.json',
@@ -109,7 +109,7 @@ export default function RootLayout({
                     <footer className="border-t border-slate-900 bg-slate-950 py-8 text-center text-xs text-slate-500">
                       <div className="max-w-7xl mx-auto px-4 space-y-3">
                         <p>
-                          TOEIC Deep Learning Platform • Native Immersion Methodology • Designed for daily workplace fluency & 700+ score.
+                          TOEIC Deep Learning Platform • Native Immersion Methodology • Designed for daily workplace fluency.
                         </p>
                         <div className="flex items-center justify-center gap-2 text-slate-400">
                           <span className="flex items-center gap-1.5">

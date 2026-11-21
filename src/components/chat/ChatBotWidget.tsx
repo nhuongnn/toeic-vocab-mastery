@@ -162,17 +162,17 @@ export function ChatBotWidget() {
       {isOpen && (
         <div className="w-[94vw] sm:w-[420px] max-h-[82vh] sm:max-h-[620px] h-[580px] flex flex-col rounded-3xl bg-slate-900/95 backdrop-blur-xl border border-slate-800 shadow-2xl shadow-black/80 overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-200">
           {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3.5 border-b border-slate-800 bg-slate-950/80">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20">
+          <div className="relative flex items-center justify-between px-4 py-3.5 border-b border-slate-800 bg-slate-950/80">
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 shrink-0">
                 <Bot className="w-4 h-4" />
               </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <h3 className="text-sm font-bold text-slate-100">TOEIC AI Tutor</h3>
+              <div className="min-w-0">
+                <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+                  <h3 className="text-sm font-bold text-slate-100 shrink-0">TOEIC AI Tutor</h3>
 
                   {/* Interactive Model Switcher Button & Dropdown */}
-                  <div className="relative" ref={modelMenuRef}>
+                  <div ref={modelMenuRef}>
                     <button
                       type="button"
                       onClick={() => setModelMenuOpen(!modelMenuOpen)}
@@ -202,12 +202,22 @@ export function ChatBotWidget() {
 
                     {/* Model Dropdown Menu */}
                     {modelMenuOpen && (
-                      <div className="absolute top-full left-0 mt-1.5 w-72 rounded-2xl bg-slate-900/98 border border-slate-700 shadow-2xl p-2 z-50 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
-                        <div className="px-2.5 py-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-                          Chọn Mô Hình AI Phản Hồi
+                      <div className="absolute top-full left-3 right-3 sm:left-4 sm:right-4 mt-2 rounded-2xl bg-slate-900/98 border border-slate-700 shadow-2xl p-2.5 z-50 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
+                        <div className="flex items-center justify-between px-2.5 py-1 mb-1 border-b border-slate-800/80 pb-1.5">
+                          <span className="text-[10px] font-bold text-slate-300 uppercase tracking-wider">
+                            Chọn Mô Hình AI Phản Hồi
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => setModelMenuOpen(false)}
+                            className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                            title="Đóng menu"
+                          >
+                            <X className="w-3.5 h-3.5" />
+                          </button>
                         </div>
 
-                        <div className="space-y-1 mt-1">
+                        <div className="space-y-1.5 mt-1">
                           {/* Option 1: Auto Hybrid */}
                           <button
                             type="button"
@@ -311,7 +321,7 @@ export function ChatBotWidget() {
                 <p className="text-[11px] text-slate-400">
                   {activeWordContext
                     ? `Hỗ trợ học từ: "${activeWordContext.word}"`
-                    : 'Trợ lý luyện thi 700+ & tiếng Anh công sở'}
+                    : 'Trợ lý luyện thi & tiếng Anh công sở'}
                 </p>
               </div>
             </div>

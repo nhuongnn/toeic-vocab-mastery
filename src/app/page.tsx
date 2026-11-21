@@ -66,7 +66,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-            No word-by-word Vietnamese translation. Master vocabulary, practical grammar, native pronunciation, speed reading, and corporate business writing to reach 700+ TOEIC naturally.
+            No word-by-word Vietnamese translation. Master vocabulary, practical grammar, native pronunciation, speed reading, and corporate business writing.
           </p>
 
           {/* Quick Metrics Bar */}

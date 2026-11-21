@@ -8,6 +8,8 @@ import { ThemeProvider } from '@/contexts/ThemeContext';
 import { OnboardingProvider } from '@/contexts/OnboardingContext';
 import { ChatProvider } from '@/contexts/ChatContext';
 import { Navbar } from '@/components/shared/Navbar';
+import { AuthModal } from '@/components/shared/AuthModal';
+import { AccountLinkBanner } from '@/components/shared/AccountLinkBanner';
 import { SelectionTranslator } from '@/components/shared/SelectionTranslator';
 import { PwaProvider } from '@/components/pwa/PwaProvider';
 import { OnboardingTour } from '@/components/onboarding/OnboardingTour';
@@ -102,6 +104,8 @@ export default function RootLayout({
                     <Suspense fallback={<header className="h-16 w-full border-b border-slate-800/80 bg-slate-950/80" />}>
                       <Navbar />
                     </Suspense>
+                    <AccountLinkBanner />
+                    <AuthModal />
                     <SelectionTranslator />
                     <OnboardingTour />
                     <main className="flex-1">{children}</main>

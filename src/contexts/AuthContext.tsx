@@ -12,6 +12,9 @@ interface AuthContextType {
   signInWithGoogle: () => Promise<void>;
   signInWithEmail: (email: string) => Promise<{ error: string | null }>;
   signOut: () => Promise<void>;
+  isAuthModalOpen: boolean;
+  openAuthModal: () => void;
+  closeAuthModal: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -19,11 +22,14 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => Boolean(supabase));
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+
+  const openAuthModal = useCallback(() => setIsAuthModalOpen(true), []);
+  const closeAuthModal = useCallback(() => setIsAuthModalOpen(false), []);
 
   useEffect(() => {
     if (!supabase) {
-      setIsLoading(false);
       return;
     }
 
@@ -86,6 +92,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         signInWithGoogle,
         signInWithEmail,
         signOut,
+        isAuthModalOpen,
+        openAuthModal,
+        closeAuthModal,
       }}
     >
       {children}

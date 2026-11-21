@@ -19,11 +19,13 @@ import { MockTestResult } from '@/types/mockTest';
 interface ScoreTrendSectionProps {
   currentEstimatedScore: number;
   totalWordsLearned: number;
+  targetScore?: number;
 }
 
 export function ScoreTrendSection({
   currentEstimatedScore,
   totalWordsLearned,
+  targetScore = 650,
 }: ScoreTrendSectionProps) {
   const [testHistory, setTestHistory] = useState<MockTestResult[]>([]);
 
@@ -73,31 +75,33 @@ export function ScoreTrendSection({
       type: 'current',
     });
 
-    // Future Projections towards 700 and 850
-    if (currentEstimatedScore < 700) {
+    // Future Projections towards targetScore
+    if (currentEstimatedScore < targetScore) {
       data.push({
-        label: 'Mục tiêu 1',
-        score: 700,
+        label: `Mục tiêu`,
+        score: targetScore,
         type: 'projected',
       });
+      if (targetScore < 850) {
+        data.push({
+          label: 'Kỳ vọng',
+          score: Math.min(990, targetScore + 100),
+          type: 'projected',
+        });
+      }
+    } else if (currentEstimatedScore < 900) {
       data.push({
-        label: 'Kỳ vọng',
-        score: 800,
-        type: 'projected',
-      });
-    } else if (currentEstimatedScore < 850) {
-      data.push({
-        label: 'Mục tiêu 2',
-        score: 850,
+        label: 'Mục tiêu tiếp theo',
+        score: Math.min(990, targetScore + 100),
         type: 'projected',
       });
     }
 
     return data;
-  }, [currentEstimatedScore, testHistory]);
+  }, [currentEstimatedScore, testHistory, targetScore]);
 
   // Target estimation in weeks
-  const remainingPoints = Math.max(0, 700 - currentEstimatedScore);
+  const remainingPoints = Math.max(0, targetScore - currentEstimatedScore);
   const estimatedWeeksToGoal = Math.max(1, Math.ceil(remainingPoints / 25));
 
   const milestones = [
@@ -132,13 +136,13 @@ export function ScoreTrendSection({
         <div className="flex items-center gap-3">
           <Sparkles className="w-5 h-5 text-indigo-400 shrink-0" />
           <p className="text-slate-300">
-            {currentEstimatedScore >= 700 ? (
+            {currentEstimatedScore >= targetScore ? (
               <span>
-                🎉 Chúc mừng! Bạn đã chạm mốc năng lực <strong className="text-emerald-400">700+ TOEIC</strong>. Tiếp tục hoàn thiện 3,675 từ để bứt phá lên 850+!
+                🎉 Chúc mừng! Bạn đã chạm mốc năng lực <strong className="text-emerald-400">{targetScore}+ TOEIC</strong>. Tiếp tục hoàn thiện 3,675 từ để bứt phá lên đỉnh cao!
               </span>
             ) : (
               <span>
-                Với tốc độ học hiện tại, bạn dự kiến chạm mốc <strong className="text-indigo-300">700+ TOEIC</strong> sau khoảng <strong className="text-white font-bold">{estimatedWeeksToGoal} tuần</strong> nữa!
+                Với tốc độ học hiện tại, bạn dự kiến chạm mốc <strong className="text-indigo-300">{targetScore}+ TOEIC</strong> sau khoảng <strong className="text-white font-bold">{estimatedWeeksToGoal} tuần</strong> nữa!
               </span>
             )}
           </p>
@@ -186,13 +190,13 @@ export function ScoreTrendSection({
                 return null;
               }}
             />
-            {/* Target 700 line */}
+            {/* Target line */}
             <ReferenceLine
-              y={700}
+              y={targetScore}
               stroke="#ec4899"
               strokeDasharray="4 4"
               label={{
-                value: 'Mục tiêu 700+',
+                value: `Mục tiêu ${targetScore}+`,
                 fill: '#ec4899',
                 fontSize: 10,
                 position: 'right',

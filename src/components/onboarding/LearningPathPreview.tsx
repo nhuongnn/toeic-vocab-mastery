@@ -3,19 +3,22 @@
 import React from 'react';
 import { LearningPath, PlacementResult } from '@/types/onboarding';
 import { getLevelDescription } from '@/lib/placement/levelEstimator';
-import { Trophy, Calendar, CheckCircle2, ArrowRight, Flame, Layers } from 'lucide-react';
+import { categories } from '@/data/categories';
+import { Trophy, Calendar, CheckCircle2, ArrowRight, Flame, Layers, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 
 interface LearningPathPreviewProps {
   learningPath: LearningPath;
   placementResult: PlacementResult | null;
   onFinish: () => void;
+  onEditGoal?: () => void;
 }
 
 export function LearningPathPreview({
   learningPath,
   placementResult,
   onFinish,
+  onEditGoal,
 }: LearningPathPreviewProps) {
   const levelInfo = getLevelDescription(learningPath.currentLevel);
 
@@ -95,9 +98,28 @@ export function LearningPathPreview({
               </span>
             </div>
 
-            <p className="text-xs text-slate-400 leading-relaxed mb-4">
+            <p className="text-xs text-slate-400 leading-relaxed mb-3">
               {phase.description}
             </p>
+
+            {/* Target categories pills with links */}
+            <div className="flex flex-wrap items-center gap-1.5 mb-4">
+              <span className="text-[11px] text-slate-400 font-medium">Chủ đề từ vựng:</span>
+              {phase.categoryIds.map((catId) => {
+                const cat = categories.find((c) => c.id === catId);
+                return (
+                  <Link
+                    key={catId}
+                    href={`/categories?category=${catId}&level=${phase.wordLevel}`}
+                    className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 hover:text-white border border-indigo-500/30 text-[11px] font-medium transition-all"
+                    title={`Xem danh sách từ vựng ${cat?.name || catId}`}
+                  >
+                    <span>{cat?.name || catId}</span>
+                    <ArrowRight className="w-2.5 h-2.5 text-indigo-400" />
+                  </Link>
+                );
+              })}
+            </div>
 
             {/* Milestones list */}
             <div className="space-y-2 pt-2 border-t border-slate-800/80">
@@ -136,6 +158,18 @@ export function LearningPathPreview({
           <span>Xem tất cả chủ đề</span>
         </Link>
       </div>
+
+      {onEditGoal && (
+        <div className="mt-4 text-center">
+          <button
+            type="button"
+            onClick={onEditGoal}
+            className="text-xs text-indigo-400 hover:text-indigo-300 font-medium transition-colors underline underline-offset-4"
+          >
+            ← Thay đổi mục tiêu điểm số & thời lượng học
+          </button>
+        </div>
+      )}
     </div>
   );
 }

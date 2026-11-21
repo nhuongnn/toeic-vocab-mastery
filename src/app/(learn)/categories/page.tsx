@@ -15,11 +15,14 @@ import {
   ChevronLeft,
   ChevronRight,
   LayoutGrid,
+  Target,
+  Sparkles,
 } from 'lucide-react';
 import { categories } from '@/data/categories';
 import { allVocabularyWords } from '@/data/vocabulary';
 import { WordCard } from '@/components/word/WordCard';
 import { CategoryId, WordLevel, WordSortOption } from '@/types/vocabulary';
+import { useOnboarding } from '@/contexts/OnboardingContext';
 import {
   LEVEL_CONFIG,
   SORT_OPTIONS,
@@ -30,11 +33,27 @@ import {
 const PAGE_SIZE = 32;
 
 export default function CategoriesPage() {
+  const { state: onboardingState } = useOnboarding();
   const [selectedCategory, setSelectedCategory] = useState<CategoryId | 'all'>('all');
   const [selectedLevel, setSelectedLevel] = useState<WordLevel | 'all'>('all');
   const [sortBy, setSortBy] = useState<WordSortOption>('default');
   const [search, setSearch] = useState('');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+
+  // Read URL query parameters on mount
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const catParam = params.get('category');
+      const lvlParam = params.get('level');
+      if (catParam) {
+        setSelectedCategory(catParam as CategoryId);
+      }
+      if (lvlParam && (lvlParam === 'essential' || lvlParam === 'intermediate' || lvlParam === 'advanced')) {
+        setSelectedLevel(lvlParam as WordLevel);
+      }
+    }
+  }, []);
 
   // Category horizontal scroll controls & expanded mode
   const categoryScrollRef = React.useRef<HTMLDivElement>(null);
@@ -150,6 +169,47 @@ export default function CategoriesPage() {
           Kho từ vựng chuyên sâu chuẩn cấu trúc đề thi TOEIC và ngữ cảnh công sở quốc tế. Lọc theo cấp độ độ khó, sắp xếp theo độ phổ biến hoặc tần suất giao tiếp hàng ngày để tối ưu lộ trình học.
         </p>
       </div>
+
+      {/* Learning Path Quick Filter Banner */}
+      {onboardingState.learningPath && (
+        <section className="p-5 rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950/60 to-purple-950/40 border border-indigo-500/30 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xl">
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-2xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center shrink-0">
+              <Target className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-bold text-white">
+                  Lộ trình mục tiêu: {onboardingState.learningPath.targetScore}+ TOEIC
+                </span>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-semibold border border-indigo-500/30">
+                  Đang kích hoạt
+                </span>
+              </div>
+              <p className="text-xs text-slate-300 mt-0.5">
+                Xem ngay các nhóm từ vựng tương ứng theo từng giai đoạn trong lộ trình cá nhân hóa của bạn:
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            {onboardingState.learningPath.phases.map((phase, idx) => (
+              <button
+                key={phase.id}
+                type="button"
+                onClick={() => {
+                  setSelectedCategory(phase.categoryIds[0] || 'all');
+                  setSelectedLevel(phase.wordLevel);
+                }}
+                className="px-3.5 py-2 rounded-xl bg-indigo-600/30 hover:bg-indigo-600 text-indigo-200 hover:text-white border border-indigo-500/40 text-xs font-semibold transition-all hover:scale-[1.02] shadow-sm flex items-center gap-1.5"
+              >
+                <span>Giai đoạn {idx + 1}</span>
+                <span className="text-[10px] text-indigo-300/80 font-normal">({phase.targetWords} từ • {phase.wordLevel})</span>
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Control Panel: Search & Sorters */}
       <div className="p-4 sm:p-5 rounded-3xl bg-slate-900/80 border border-slate-800 space-y-4">

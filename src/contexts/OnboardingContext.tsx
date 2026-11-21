@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import {
   OnboardingState,
   OnboardingStep,
@@ -29,7 +29,7 @@ const STORAGE_KEY = 'onboarding_state_v1';
 const DEFAULT_STATE: OnboardingState = {
   isCompleted: false,
   currentStep: 'welcome',
-  targetScore: 700,
+  targetScore: 650,
   dailyMinutes: 20,
   experienceLevel: null,
   placementResult: null,
@@ -57,90 +57,124 @@ export function OnboardingProvider({ children }: { children: React.ReactNode }) 
     }
   }, []);
 
-  const saveState = (newState: OnboardingState) => {
-    setState(newState);
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(newState));
-    } catch (e) {
-      console.error('Failed to save onboarding state:', e);
-    }
-  };
-
-  const setStep = (step: OnboardingStep) => {
-    saveState({ ...state, currentStep: step });
-  };
-
-  const setTargetScore = (score: number) => {
-    saveState({ ...state, targetScore: score });
-  };
-
-  const setDailyMinutes = (minutes: number) => {
-    saveState({ ...state, dailyMinutes: minutes });
-  };
-
-  const setExperienceLevel = (exp: 'beginner' | 'intermediate' | 'experienced') => {
-    saveState({ ...state, experienceLevel: exp });
-  };
-
-  const savePlacementResult = (result: PlacementResult) => {
-    const learningPath = generateLearningPath(
-      state.targetScore || 700,
-      result.level,
-      state.dailyMinutes || 20
-    );
-
-    saveState({
-      ...state,
-      placementResult: result,
-      learningPath,
-      currentStep: 'result',
+  const updateState = useCallback((updater: (prev: OnboardingState) => OnboardingState) => {
+    setState((prev) => {
+      const next = updater(prev);
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+      } catch (e) {
+        console.error('Failed to save onboarding state:', e);
+      }
+      return next;
     });
-  };
+  }, []);
 
-  const skipPlacementTest = (level: WordLevel = 'essential') => {
-    const dummyResult: PlacementResult = {
-      level,
-      score: level === 'essential' ? 450 : level === 'intermediate' ? 650 : 800,
-      questionsAnswered: 0,
-      correctAnswers: 0,
-      accuracy: 0,
-      testedQuestions: [],
-    };
+  const setStep = useCallback((step: OnboardingStep) => {
+    updateState((prev) => ({ ...prev, currentStep: step }));
+  }, [updateState]);
 
-    const learningPath = generateLearningPath(
-      state.targetScore || 700,
-      level,
-      state.dailyMinutes || 20
-    );
-
-    saveState({
-      ...state,
-      placementResult: dummyResult,
-      learningPath,
-      currentStep: 'result',
+  const setTargetScore = useCallback((score: number) => {
+    updateState((prev) => {
+      let updatedLearningPath = prev.learningPath;
+      if (updatedLearningPath) {
+        const level = prev.placementResult?.level || updatedLearningPath.currentLevel || 'essential';
+        const minutes = prev.dailyMinutes || updatedLearningPath.dailyGoal || 20;
+        updatedLearningPath = generateLearningPath(score, level, minutes);
+      }
+      return {
+        ...prev,
+        targetScore: score,
+        learningPath: updatedLearningPath,
+      };
     });
-  };
+  }, [updateState]);
 
-  const finishOnboarding = () => {
-    saveState({
-      ...state,
+  const setDailyMinutes = useCallback((minutes: number) => {
+    updateState((prev) => {
+      let updatedLearningPath = prev.learningPath;
+      if (updatedLearningPath) {
+        const score = prev.targetScore || updatedLearningPath.targetScore || 650;
+        const level = prev.placementResult?.level || updatedLearningPath.currentLevel || 'essential';
+        updatedLearningPath = generateLearningPath(score, level, minutes);
+      }
+      return {
+        ...prev,
+        dailyMinutes: minutes,
+        learningPath: updatedLearningPath,
+      };
+    });
+  }, [updateState]);
+
+  const setExperienceLevel = useCallback((exp: 'beginner' | 'intermediate' | 'experienced') => {
+    updateState((prev) => ({ ...prev, experienceLevel: exp }));
+  }, [updateState]);
+
+  const savePlacementResult = useCallback((result: PlacementResult) => {
+    updateState((prev) => {
+      const learningPath = generateLearningPath(
+        prev.targetScore || 650,
+        result.level,
+        prev.dailyMinutes || 20
+      );
+
+      return {
+        ...prev,
+        placementResult: result,
+        learningPath,
+        currentStep: 'result',
+      };
+    });
+  }, [updateState]);
+
+  const skipPlacementTest = useCallback((level: WordLevel = 'essential') => {
+    updateState((prev) => {
+      const dummyResult: PlacementResult = {
+        level,
+        score: level === 'essential' ? 450 : level === 'intermediate' ? 650 : 800,
+        questionsAnswered: 0,
+        correctAnswers: 0,
+        accuracy: 0,
+        testedQuestions: [],
+      };
+
+      const learningPath = generateLearningPath(
+        prev.targetScore || 650,
+        level,
+        prev.dailyMinutes || 20
+      );
+
+      return {
+        ...prev,
+        placementResult: dummyResult,
+        learningPath,
+        currentStep: 'result',
+      };
+    });
+  }, [updateState]);
+
+  const finishOnboarding = useCallback(() => {
+    updateState((prev) => ({
+      ...prev,
       isCompleted: true,
       completedAt: new Date().toISOString(),
-    });
-  };
+    }));
+  }, [updateState]);
 
-  const resetOnboarding = () => {
-    const reset = { ...DEFAULT_STATE, isCompleted: false, currentStep: 'welcome' as OnboardingStep };
-    saveState(reset);
-  };
+  const resetOnboarding = useCallback(() => {
+    updateState(() => ({
+      ...DEFAULT_STATE,
+      isCompleted: false,
+      currentStep: 'welcome' as OnboardingStep,
+    }));
+  }, [updateState]);
 
-  const startTour = () => {
-    saveState({ ...state, tourCompleted: false });
-  };
+  const startTour = useCallback(() => {
+    updateState((prev) => ({ ...prev, tourCompleted: false }));
+  }, [updateState]);
 
-  const completeTour = () => {
-    saveState({ ...state, tourCompleted: true });
-  };
+  const completeTour = useCallback(() => {
+    updateState((prev) => ({ ...prev, tourCompleted: true }));
+  }, [updateState]);
 
   return (
     <OnboardingContext.Provider

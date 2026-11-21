@@ -45,6 +45,7 @@ export default function HomePage() {
   }, []);
 
   const safeDueCount = mounted ? dueCount : 0;
+  const effectiveTargetScore = onboardingState.learningPath?.targetScore || onboardingState.targetScore || 650;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
@@ -55,7 +56,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-3xl space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
-            <span>Immersive Native English • TOEIC 700+ Master Plan</span>
+            <span>Immersive Native English • TOEIC {effectiveTargetScore}+ Master Plan</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
@@ -114,7 +115,7 @@ export default function HomePage() {
               <div>
                 <h3 className="text-lg font-bold text-white">Chưa thiết lập Lộ trình học cá nhân?</h3>
                 <p className="text-xs text-slate-300">
-                  Làm bài kiểm tra đầu vào 5 phút để xác định trình độ và tối ưu lộ trình 700+ TOEIC.
+                  Làm bài kiểm tra đầu vào 5 phút để xác định trình độ và tối ưu lộ trình {effectiveTargetScore}+ TOEIC.
                 </p>
               </div>
             </div>
@@ -134,7 +135,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="text-sm font-bold text-white">Lộ trình mục tiêu: {onboardingState.learningPath.targetScore}+ TOEIC</h3>
+                  <h3 className="text-sm font-bold text-white">Lộ trình mục tiêu: {effectiveTargetScore}+ TOEIC</h3>
                   <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
                     {onboardingState.learningPath.phases[0]?.title}
                   </span>
@@ -145,7 +146,7 @@ export default function HomePage() {
               </div>
             </div>
             <Link
-              href="/onboarding"
+              href="/onboarding?step=goal"
               className="inline-flex items-center gap-1 text-xs text-indigo-400 hover:text-indigo-300 font-medium"
             >
               <span>Điều chỉnh lộ trình</span>

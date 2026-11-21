@@ -37,6 +37,15 @@ export default function OnboardingPage() {
   const [qCount, setQCount] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('step') === 'goal') {
+        setStep('goal');
+      }
+    }
+  }, [setStep]);
+
   // Initialize test session when entering placement step
   const handleStartPlacement = () => {
     const pool = generatePlacementQuestionPool();
@@ -89,7 +98,7 @@ export default function OnboardingPage() {
 
       {state.currentStep === 'goal' && (
         <GoalSelector
-          selectedScore={state.targetScore || 700}
+          selectedScore={state.targetScore || 650}
           onSelect={(s) => setTargetScore(s)}
           onNext={() => setStep('schedule')}
         />
@@ -145,6 +154,7 @@ export default function OnboardingPage() {
           learningPath={state.learningPath}
           placementResult={state.placementResult}
           onFinish={handleFinish}
+          onEditGoal={() => setStep('goal')}
         />
       )}
     </div>

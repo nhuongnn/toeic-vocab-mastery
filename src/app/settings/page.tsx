@@ -29,6 +29,7 @@ import {
 import { useProgress } from '@/contexts/ProgressContext';
 import { useTheme, ThemeMode } from '@/contexts/ThemeContext';
 import { useAuth } from '@/contexts/AuthContext';
+import { useOnboarding } from '@/contexts/OnboardingContext';
 import { useSpeech } from '@/hooks/useSpeech';
 import { NotificationSettings } from '@/components/notifications/NotificationSettings';
 
@@ -62,10 +63,18 @@ export default function SettingsPage() {
     setTimeout(() => setToastMessage(null), 3500);
   };
 
+  const { state: onboardingState, setTargetScore } = useOnboarding();
+  const currentTargetScore = onboardingState.learningPath?.targetScore || onboardingState.targetScore || 650;
+
   // 1. Goal & Learning updates
   const handleDailyGoalChange = (goal: number) => {
     updatePreferences({ dailyGoal: goal });
     showToast(`Đã cập nhật mục tiêu học: ${goal} từ mỗi ngày!`);
+  };
+
+  const handleTargetScoreChange = (score: number, title: string) => {
+    setTargetScore(score);
+    showToast(`Đã cập nhật mục tiêu TOEIC: ${title}!`);
   };
 
   const handleToggleImmersive = () => {
@@ -239,6 +248,67 @@ export default function SettingsPage() {
       {/* Tab 1: General & Daily Goals */}
       {activeTab === 'general' && (
         <div className="space-y-6 animate-fadeIn">
+          {/* Target TOEIC Score Section */}
+          <div className="p-6 sm:p-7 rounded-3xl bg-slate-900 border border-slate-800 space-y-5">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                <Target className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-white">Mục Tiêu Điểm Số TOEIC</h3>
+                <p className="text-xs text-slate-400">
+                  Lộ trình và ngân hàng từ vựng trọng tâm sẽ được cá nhân hóa theo ngưỡng điểm bạn hướng tới.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+              {[
+                { score: 550, title: '500 - 550+', badge: 'Khởi đầu' },
+                { score: 650, title: '600 - 650+', badge: 'Phổ biến' },
+                { score: 750, title: '700 - 750+', badge: 'Khuyên dùng' },
+                { score: 850, title: '800 - 850+', badge: 'Chuyên sâu' },
+                { score: 950, title: '900 - 990', badge: 'Bản xứ' },
+              ].map((goal) => {
+                const isSelected = currentTargetScore === goal.score;
+                return (
+                  <button
+                    key={goal.score}
+                    type="button"
+                    onClick={() => handleTargetScoreChange(goal.score, goal.title)}
+                    className={`p-3.5 rounded-2xl border text-center transition-all flex flex-col items-center justify-center gap-1.5 ${
+                      isSelected
+                        ? 'bg-indigo-600 text-white border-indigo-500 shadow-md shadow-indigo-600/30 font-bold scale-[1.02]'
+                        : 'bg-slate-950 border-slate-800 text-slate-300 hover:border-slate-700'
+                    }`}
+                  >
+                    <span className="text-sm font-black">{goal.title}</span>
+                    <span
+                      className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${
+                        isSelected
+                          ? 'bg-indigo-700/60 text-indigo-100 border border-indigo-400/40'
+                          : 'bg-slate-900 border border-slate-800 text-slate-400'
+                      }`}
+                    >
+                      {goal.badge}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+              <span>Mục tiêu hiện tại: <strong className="text-indigo-400">{currentTargetScore}+ TOEIC</strong></span>
+              <Link
+                href="/onboarding?step=goal"
+                className="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center gap-1"
+              >
+                <span>Tùy chỉnh lộ trình đầy đủ</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+
           {/* Daily Goal Section */}
           <div className="p-6 sm:p-7 rounded-3xl bg-slate-900 border border-slate-800 space-y-5">
             <div className="flex items-center gap-3">

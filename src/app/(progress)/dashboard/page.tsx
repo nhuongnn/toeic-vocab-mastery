@@ -17,6 +17,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { useProgress } from '@/contexts/ProgressContext';
+import { useOnboarding } from '@/contexts/OnboardingContext';
 import { allVocabularyWords, wordsById } from '@/data/vocabulary';
 import { StudyHeatmap } from '@/components/analytics/StudyHeatmap';
 import { ProgressVelocityChart } from '@/components/analytics/ProgressVelocityChart';
@@ -27,6 +28,7 @@ import { ExportReportModal } from '@/components/analytics/ExportReportModal';
 
 export default function ProgressDashboardPage() {
   const { progress, dueCount } = useProgress();
+  const { state: onboardingState } = useOnboarding();
   const [mounted, setMounted] = useState(false);
   const [exportModalOpen, setExportModalOpen] = useState(false);
 
@@ -34,6 +36,7 @@ export default function ProgressDashboardPage() {
     setMounted(true);
   }, []);
 
+  const targetScore = onboardingState.learningPath?.targetScore || onboardingState.targetScore || 650;
   const cardsList = Object.values(progress.cards);
   const masteredCards = cardsList.filter((c) => c.interval >= 14);
 
@@ -60,7 +63,7 @@ export default function ProgressDashboardPage() {
             Trung Tâm Phân Tích & Tiến Trình Học
           </h1>
           <p className="text-sm text-slate-400 max-w-2xl">
-            Theo dõi chuyên sâu tốc độ ghi nhớ dài hạn, chẩn đoán lỗ hổng kiến thức và dự phóng điểm số mục tiêu 700+ TOEIC.
+            Theo dõi chuyên sâu tốc độ ghi nhớ dài hạn, chẩn đoán lỗ hổng kiến thức và dự phóng điểm số mục tiêu {targetScore}+ TOEIC.
           </p>
         </div>
 
@@ -100,16 +103,16 @@ export default function ProgressDashboardPage() {
           <div className="flex items-center gap-2">
             <span className="px-3.5 py-2 rounded-xl bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-xs font-bold flex items-center gap-2">
               <Target className="w-4 h-4" />
-              <span>Mục tiêu: 700+ TOEIC</span>
+              <span>Mục tiêu: {targetScore}+ TOEIC</span>
             </span>
           </div>
         </div>
 
-        {/* Progress Bar towards 700 */}
+        {/* Progress Bar towards targetScore */}
         <div className="space-y-2">
           <div className="flex items-center justify-between text-xs text-slate-400">
             <span>Khởi điểm (400)</span>
-            <span className="text-indigo-400 font-bold">Mục tiêu (700)</span>
+            <span className="text-indigo-400 font-bold">Mục tiêu ({targetScore})</span>
             <span>Tối đa (990)</span>
           </div>
           <div className="w-full h-3 rounded-full bg-slate-950 border border-slate-800 overflow-hidden relative">
@@ -118,7 +121,7 @@ export default function ProgressDashboardPage() {
               style={{
                 width: `${Math.min(
                   100,
-                  Math.max(0, ((progress.stats.estimatedToeicScore - 400) / (700 - 400)) * 100)
+                  Math.max(0, ((progress.stats.estimatedToeicScore - 400) / (targetScore - 400)) * 100)
                 )}%`,
               }}
             />
@@ -216,6 +219,7 @@ export default function ProgressDashboardPage() {
       <ScoreTrendSection
         currentEstimatedScore={progress.stats.estimatedToeicScore}
         totalWordsLearned={progress.stats.totalWordsLearned}
+        targetScore={targetScore}
       />
 
       {/* Bookmarked Words Table */}
@@ -302,6 +306,7 @@ export default function ProgressDashboardPage() {
         progress={progress}
         isOpen={exportModalOpen}
         onClose={() => setExportModalOpen(false)}
+        targetScore={targetScore}
       />
     </div>
   );

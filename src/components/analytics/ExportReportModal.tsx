@@ -26,9 +26,15 @@ interface ExportReportModalProps {
   progress: UserProgressData;
   isOpen: boolean;
   onClose: () => void;
+  targetScore?: number;
 }
 
-export function ExportReportModal({ progress, isOpen, onClose }: ExportReportModalProps) {
+export function ExportReportModal({
+  progress,
+  isOpen,
+  onClose,
+  targetScore = 650,
+}: ExportReportModalProps) {
   const { user } = useAuth();
   const [copied, setCopied] = useState(false);
   const [todayStr, setTodayStr] = useState('');
@@ -84,7 +90,7 @@ export function ExportReportModal({ progress, isOpen, onClose }: ExportReportMod
   const reportSummaryText = `🎯 BÁO CÁO TIẾN ĐỘ TOEIC VOCABULARY MASTERY
 Ngày lập: ${todayStr}
 ----------------------------------------
-📊 Điểm TOEIC dự đoán: ${progress.stats.estimatedToeicScore} / 990 (Mục tiêu: 700+)
+📊 Điểm TOEIC dự đoán: ${progress.stats.estimatedToeicScore} / 990 (Mục tiêu: ${targetScore}+)
 📚 Tổng từ vựng đã học: ${progress.stats.totalWordsLearned} từ (Thành thục: ${masteredCount} từ - ${masteryRate}%)
 🔥 Chuỗi học liên tục: ${progress.stats.currentStreak} ngày (Kỷ lục: ${progress.stats.longestStreak} ngày)
 🌟 Điểm mạnh: ${topStrong.map((c) => `${c.name} (${c.rate}%)`).join(', ') || 'Chưa ghi nhận'}
@@ -107,7 +113,7 @@ Học từ vựng TOEIC đa giác quan & tư duy bản ngữ cùng TOEIC Deep Ma
       reportDate: new Date().toISOString(),
       studentEmail: user?.email || 'Guest User',
       estimatedToeicScore: progress.stats.estimatedToeicScore,
-      targetScore: 700,
+      targetScore: targetScore,
       stats: progress.stats,
       masteryBreakdown: {
         totalWords: progress.stats.totalWordsLearned,
@@ -188,7 +194,7 @@ Học từ vựng TOEIC đa giác quan & tư duy bản ngữ cùng TOEIC Deep Ma
               <span className="text-2xl font-black text-indigo-400 print:text-indigo-600 font-mono">
                 {progress.stats.estimatedToeicScore}
               </span>
-              <span className="text-[10px] text-slate-500 block mt-0.5">Mục tiêu: 700+</span>
+              <span className="text-[10px] text-slate-500 block mt-0.5">Mục tiêu: {targetScore}+</span>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 print:bg-slate-50 print:border-slate-200">

@@ -39,6 +39,51 @@ export function generateLearningPath(
         },
       ],
     });
+  } else if (targetScore <= 650) {
+    phases.push(
+      {
+        id: 'phase-1-foundation-review',
+        title: 'Giai đoạn 1: Củng cố từ vựng cốt lõi & giao tiếp công sở',
+        description: 'Bao quát các chủ đề hành chính, ăn uống công tác và nhân sự cơ bản.',
+        categoryIds: ['office-admin', 'dining', 'travel'] as CategoryId[],
+        wordLevel: currentLevel === 'essential' ? 'essential' : 'intermediate',
+        targetWords: 600,
+        estimatedDays: Math.ceil(600 / wordsPerDay),
+        milestones: [
+          {
+            wordsLearned: 200,
+            description: 'Nắm vững 200 từ vựng công sở thiết yếu',
+            reward: '📋 Workplace Fluency',
+          },
+          {
+            wordsLearned: 600,
+            description: 'Làm chủ 600 từ vựng nền tảng công sở',
+            reward: '🎖️ Nền Tảng Vững Vàng',
+          },
+        ],
+      },
+      {
+        id: 'phase-2-target650',
+        title: 'Giai đoạn 2: Tăng tốc 650+ TOEIC',
+        description: 'Tập trung từ vựng nhân sự, mua sắm giao thương và tiếp thị để chạm ngưỡng 650+.',
+        categoryIds: ['hr-personnel', 'purchasing', 'marketing'] as CategoryId[],
+        wordLevel: 'intermediate',
+        targetWords: 1000,
+        estimatedDays: Math.ceil(1000 / wordsPerDay),
+        milestones: [
+          {
+            wordsLearned: 500,
+            description: 'Tự tin đọc hiểu email và hợp đồng đơn giản',
+            reward: '💼 Business Ready',
+          },
+          {
+            wordsLearned: 1000,
+            description: 'Hoàn thành toàn diện lộ trình 650+',
+            reward: '🏆 Chinh phục mục tiêu 650+ TOEIC',
+          },
+        ],
+      }
+    );
   } else if (targetScore <= 750) {
     phases.push(
       {
@@ -63,8 +108,8 @@ export function generateLearningPath(
         ],
       },
       {
-        id: 'phase-2-target700',
-        title: 'Giai đoạn 2: Tăng tốc 700+ TOEIC',
+        id: 'phase-2-target750',
+        title: 'Giai đoạn 2: Tăng tốc 750+ TOEIC',
         description: 'Tập trung từ vựng hợp đồng pháp lý, tài chính chuyên sâu và phân tích tiếp thị.',
         categoryIds: ['finance', 'marketing', 'legal'] as CategoryId[],
         wordLevel: 'intermediate',
@@ -78,8 +123,8 @@ export function generateLearningPath(
           },
           {
             wordsLearned: 1200,
-            description: 'Hoàn thành toàn diện lộ trình 700+',
-            reward: '🏆 Chinh phục mục tiêu 700+ TOEIC',
+            description: 'Hoàn thành toàn diện lộ trình 750+',
+            reward: '🏆 Chinh phục mục tiêu 750+ TOEIC',
           },
         ],
       }

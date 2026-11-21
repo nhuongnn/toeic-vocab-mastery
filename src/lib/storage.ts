@@ -22,6 +22,7 @@ export const DEFAULT_PROGRESS: UserProgressData = {
     speechRate: 0.9,
     speechAccent: 'en-US',
     theme: 'dark',
+    preferredDictionary: 'cambridge',
   },
   bookmarkedWordIds: [],
 };

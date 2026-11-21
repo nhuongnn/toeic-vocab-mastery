@@ -16,6 +16,7 @@ import { VocabularyWord } from '@/types/vocabulary';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useSpeech } from '@/hooks/useSpeech';
 import { useSwipe } from '@/lib/gestures/useSwipe';
+import { DictionaryLinks } from '@/components/word/DictionaryLinks';
 
 interface FlashcardDeckProps {
   words: VocabularyWord[];
@@ -236,6 +237,12 @@ export function FlashcardDeck({ words }: FlashcardDeckProps) {
             {/* Business Example */}
             <div className="p-3 rounded-xl bg-indigo-950/20 border border-indigo-900/30 text-xs text-indigo-200 italic">
               "{currentWord.examples.business[0]}"
+            </div>
+
+            {/* Dictionary Quick Links */}
+            <div className="pt-2 flex items-center justify-between border-t border-slate-800/60">
+              <span className="text-[11px] text-slate-400">Tra từ điển chuyên sâu:</span>
+              <DictionaryLinks word={currentWord.word} variant="buttons" />
             </div>
           </div>
         )}

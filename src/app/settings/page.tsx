@@ -24,6 +24,7 @@ import {
   ShieldAlert,
   Play,
   RotateCcw,
+  BookOpen,
 } from 'lucide-react';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useTheme, ThemeMode } from '@/contexts/ThemeContext';
@@ -82,6 +83,15 @@ export default function SettingsPage() {
     updatePreferences({ autoPlayPronunciation: nextVal });
     showToast(
       nextVal ? 'Đã bật tự động phát âm thanh khi mở từ' : 'Đã tắt tự động phát âm thanh'
+    );
+  };
+
+  const handlePreferredDictChange = (dict: 'cambridge' | 'oxford') => {
+    updatePreferences({ preferredDictionary: dict });
+    showToast(
+      dict === 'cambridge'
+        ? 'Đã chọn từ điển mặc định: Cambridge Advanced Learner\'s'
+        : 'Đã chọn từ điển mặc định: Oxford Advanced Learner\'s (OALD)'
     );
   };
 
@@ -316,6 +326,81 @@ export default function SettingsPage() {
                   }`}
                 />
               </button>
+            </div>
+          </div>
+
+          {/* Preferred Online Dictionary Section */}
+          <div className="p-6 sm:p-7 rounded-3xl bg-slate-900 border border-slate-800 space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                <BookOpen className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-white">Từ Điển Tra Cứu Trực Tuyến Ưa Thích</h3>
+                <p className="text-xs text-slate-400">
+                  Lựa chọn từ điển chuẩn quốc tế mặc định khi bấm tra cứu nhanh từ vựng tại trang chi tiết, danh sách từ và thẻ flashcard.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+              {/* Cambridge Card */}
+              <div
+                onClick={() => handlePreferredDictChange('cambridge')}
+                className={`cursor-pointer rounded-2xl p-5 border transition-all space-y-3 ${
+                  (progress.preferences.preferredDictionary || 'cambridge') === 'cambridge'
+                    ? 'border-amber-500 bg-amber-500/10 ring-2 ring-amber-500/30'
+                    : 'border-slate-800 bg-slate-950 hover:border-slate-700'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                    <span className="font-bold text-sm text-white">Cambridge Dictionary</span>
+                  </div>
+                  {(progress.preferences.preferredDictionary || 'cambridge') === 'cambridge' && (
+                    <span className="flex items-center gap-1 text-[11px] font-bold text-amber-400 bg-amber-500/20 px-2 py-0.5 rounded-full border border-amber-500/30">
+                      <Check className="w-3 h-3" />
+                      <span>Mặc định</span>
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Cambridge Advanced Learner’s Dictionary: Giải nghĩa trực quan, định nghĩa Anh - Anh súc tích, câu ví dụ gần gũi và ngữ pháp rõ ràng.
+                </p>
+                <div className="text-[11px] font-mono text-amber-400/80">
+                  dictionary.cambridge.org
+                </div>
+              </div>
+
+              {/* Oxford Card */}
+              <div
+                onClick={() => handlePreferredDictChange('oxford')}
+                className={`cursor-pointer rounded-2xl p-5 border transition-all space-y-3 ${
+                  progress.preferences.preferredDictionary === 'oxford'
+                    ? 'border-sky-500 bg-sky-500/10 ring-2 ring-sky-500/30'
+                    : 'border-slate-800 bg-slate-950 hover:border-slate-700'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-sky-400" />
+                    <span className="font-bold text-sm text-white">Oxford Learner&apos;s (OALD)</span>
+                  </div>
+                  {progress.preferences.preferredDictionary === 'oxford' && (
+                    <span className="flex items-center gap-1 text-[11px] font-bold text-sky-400 bg-sky-500/20 px-2 py-0.5 rounded-full border border-sky-500/30">
+                      <Check className="w-3 h-3" />
+                      <span>Mặc định</span>
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Oxford Advanced Learner’s Dictionary: Chuẩn học thuật CEFR (A1-C2), collocations toàn diện, họ từ và phát âm chi tiết chuẩn Oxford.
+                </p>
+                <div className="text-[11px] font-mono text-sky-400/80">
+                  oxfordlearnersdictionaries.com
+                </div>
+              </div>
             </div>
           </div>
         </div>

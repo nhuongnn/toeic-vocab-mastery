@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { Film, Play, ExternalLink, Sparkles, Volume2, Globe, RefreshCw, Languages, X, Search } from 'lucide-react';
 import { useSpeech } from '@/hooks/useSpeech';
+import { getCambridgeUrl, getOxfordUrl } from '@/lib/dictionary';
 
 interface VideoSectionProps {
   video?: {
@@ -402,19 +403,33 @@ export function VideoSection({ video, word, category }: VideoSectionProps) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-rose-400 hover:text-rose-300 font-semibold transition-colors"
             >
-              <span>Tìm "{word}" trên YouTube</span>
+              <span>Tìm &ldquo;{word}&rdquo; trên YouTube</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
 
             <span className="text-slate-700">•</span>
 
             <a
-              href={`https://dictionary.cambridge.org/dictionary/english/${encodeURIComponent(word)}`}
+              href={getCambridgeUrl(word)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-slate-400 hover:text-slate-300 transition-colors"
+              className="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 transition-colors"
+              title="Tra cứu trên Cambridge Dictionary"
             >
               <span>Cambridge</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+
+            <span className="text-slate-700">•</span>
+
+            <a
+              href={getOxfordUrl(word)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 transition-colors"
+              title="Tra cứu trên Oxford Learner's Dictionaries"
+            >
+              <span>Oxford</span>
               <ExternalLink className="w-3 h-3" />
             </a>
           </div>

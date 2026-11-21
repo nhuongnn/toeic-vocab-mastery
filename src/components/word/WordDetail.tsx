@@ -7,8 +7,6 @@ import {
   ArrowRight,
   Bookmark,
   CheckCircle,
-  Share2,
-  Sparkles,
   Zap,
   TrendingUp,
   MessageCircle,
@@ -31,6 +29,7 @@ import { WordFamilySection } from './WordFamilySection';
 import { ToeicTipsSection } from './ToeicTipsSection';
 import { VideoSection } from './VideoSection';
 import { AiTutorSection } from './AiTutorSection';
+import { DictionaryLinks } from './DictionaryLinks';
 
 interface WordDetailProps {
   word: VocabularyWord;
@@ -79,6 +78,8 @@ export function WordDetail({ word, previousWordId, nextWordId }: WordDetailProps
 
         {/* Action Controls */}
         <div className="flex items-center gap-2">
+          <DictionaryLinks word={word.word} variant="dropdown" />
+
           <button
             onClick={handleOpenAi}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-indigo-500/30 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 text-xs font-semibold transition-all shadow-sm"
@@ -141,6 +142,12 @@ export function WordDetail({ word, previousWordId, nextWordId }: WordDetailProps
             <p className="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">
               {word.deepMeaning.coreConcept}
             </p>
+
+            {/* Quick Dictionary lookup buttons */}
+            <div className="mt-4 flex flex-wrap items-center gap-2.5">
+              <span className="text-xs text-slate-400 font-medium">Tra từ điển:</span>
+              <DictionaryLinks word={word.word} variant="buttons" />
+            </div>
           </div>
 
           {/* Quick parts of speech tag */}

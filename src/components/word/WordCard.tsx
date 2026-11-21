@@ -13,6 +13,7 @@ import {
   getWordPopularity,
   getDailyCommunicationFrequency,
 } from '@/lib/vocabulary-helpers';
+import { DictionaryLinks } from './DictionaryLinks';
 
 interface WordCardProps {
   word: VocabularyWord;
@@ -54,16 +55,19 @@ export function WordCard({ word }: WordCardProps) {
               </span>
             )}
           </div>
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              toggleBookmark(word.id);
-            }}
-            className="text-slate-500 hover:text-amber-400 p-1 transition-colors flex-shrink-0"
-            title="Bookmark word"
-          >
-            <Bookmark className={`w-4 h-4 ${bookmarked ? 'fill-amber-400 text-amber-400' : ''}`} />
-          </button>
+          <div className="flex items-center gap-1 shrink-0">
+            <DictionaryLinks word={word.word} variant="compact" />
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                toggleBookmark(word.id);
+              }}
+              className="text-slate-500 hover:text-amber-400 p-1 transition-colors flex-shrink-0"
+              title="Bookmark word"
+            >
+              <Bookmark className={`w-4 h-4 ${bookmarked ? 'fill-amber-400 text-amber-400' : ''}`} />
+            </button>
+          </div>
         </div>
 
         {/* Word Title and IPA */}

@@ -38,6 +38,7 @@ export interface UserPreferences {
   speechAccent: 'en-US' | 'en-GB' | 'en-AU';
   theme: 'light' | 'dark' | 'system';
   language?: 'vi' | 'en';
+  preferredDictionary?: 'cambridge' | 'oxford';
 }
 
 export interface UserProgressData {

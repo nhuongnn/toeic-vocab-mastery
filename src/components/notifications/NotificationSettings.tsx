@@ -419,9 +419,12 @@ export function NotificationSettings() {
             )}
           </div>
           <div className="bg-slate-950/70 p-3 rounded-xl border border-slate-800 flex items-start gap-3">
-            <div className="w-9 h-9 rounded-xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shrink-0 mt-0.5">
-              <Bell className="w-4 h-4" />
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/notification-icon-192.png"
+              alt="TOEIC Logo"
+              className="w-10 h-10 rounded-xl object-contain shadow-md shrink-0 border border-indigo-500/30"
+            />
             <div className="min-w-0 flex-1">
               <div className="text-sm font-bold text-white">{previewNotification.title}</div>
               <div className="text-xs text-slate-300 mt-0.5 leading-relaxed">{previewNotification.body}</div>

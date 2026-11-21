@@ -1,5 +1,5 @@
 // Unified Service Worker: Caching + Offline Support + Web Push Notifications
-const CACHE_VERSION = 'v1.0.0';
+const CACHE_VERSION = 'v1.1.0';
 const STATIC_CACHE = `toeic-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE = `toeic-dynamic-${CACHE_VERSION}`;
 const DATA_CACHE = `toeic-data-${CACHE_VERSION}`;

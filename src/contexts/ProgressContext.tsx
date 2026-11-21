@@ -119,6 +119,12 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         if (data && data.data) {
           const merged = mergeUserProgress(localData, data.data as UserProgressData);
           saveUserProgress(merged);
+          if (merged.onboarding) {
+            try {
+              localStorage.setItem('onboarding_state_v1', JSON.stringify(merged.onboarding));
+              window.dispatchEvent(new Event('onboarding-synced'));
+            } catch {}
+          }
           if (isMounted) {
             setProgress(merged);
             setSyncStatus('synced');
@@ -182,6 +188,12 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       }
 
       saveUserProgress(finalData);
+      if (finalData.onboarding) {
+        try {
+          localStorage.setItem('onboarding_state_v1', JSON.stringify(finalData.onboarding));
+          window.dispatchEvent(new Event('onboarding-synced'));
+        } catch {}
+      }
       setProgress(finalData);
 
       await supabase

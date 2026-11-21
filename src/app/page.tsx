@@ -106,28 +106,7 @@ export default function HomePage() {
 
       {/* 1.5. Onboarding / Learning Path Status */}
       {mounted && (
-        !onboardingState.isCompleted ? (
-          <section className="p-6 rounded-2xl bg-gradient-to-r from-indigo-950/60 via-purple-950/40 to-slate-900 border border-indigo-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xl">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
-                <Compass className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-white">Chưa thiết lập Lộ trình học cá nhân?</h3>
-                <p className="text-xs text-slate-300">
-                  Làm bài kiểm tra đầu vào 5 phút để xác định trình độ và tối ưu lộ trình {effectiveTargetScore}+ TOEIC.
-                </p>
-              </div>
-            </div>
-            <Link
-              href="/onboarding"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-indigo-600/25 shrink-0"
-            >
-              <span>Thiết lập lộ trình</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </section>
-        ) : onboardingState.learningPath ? (
+        onboardingState.learningPath ? (
           <section className="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center shrink-0">
@@ -151,6 +130,27 @@ export default function HomePage() {
             >
               <span>Điều chỉnh lộ trình</span>
               <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </section>
+        ) : !onboardingState.isCompleted ? (
+          <section className="p-6 rounded-2xl bg-gradient-to-r from-indigo-950/60 via-purple-950/40 to-slate-900 border border-indigo-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xl">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
+                <Compass className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white">Chưa thiết lập Lộ trình học cá nhân?</h3>
+                <p className="text-xs text-slate-300">
+                  Làm bài kiểm tra đầu vào 5 phút để xác định trình độ và tối ưu lộ trình {effectiveTargetScore}+ TOEIC.
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/onboarding"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-indigo-600/25 shrink-0"
+            >
+              <span>Thiết lập lộ trình</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </section>
         ) : null

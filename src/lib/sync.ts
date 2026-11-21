@@ -1,5 +1,7 @@
 import { UserProgressData, SRSCard, ExerciseSessionResult } from '@/types/progress';
+import { OnboardingState } from '@/types/onboarding';
 import { calculateEstimatedScore } from './srs';
+import { generateLearningPath } from './placement/learningPath';
 
 /**
  * Merge two SRSCards for the same word.
@@ -76,22 +78,60 @@ export function mergeUserProgress(
 
   const estimatedScore = calculateEstimatedScore(totalLearned, masteryRate);
 
-  // 5. Merge onboarding & learning path state
-  let mergedOnboarding = local.onboarding || remote.onboarding;
-  if (local.onboarding && remote.onboarding) {
-    const localCompleted = local.onboarding.isCompleted;
-    const remoteCompleted = remote.onboarding.isCompleted;
-    if (remoteCompleted && !localCompleted) {
-      mergedOnboarding = remote.onboarding;
-    } else if (localCompleted && !remoteCompleted) {
-      mergedOnboarding = local.onboarding;
-    } else if (remote.onboarding.learningPath && !local.onboarding.learningPath) {
-      mergedOnboarding = remote.onboarding;
-    } else if (local.onboarding.learningPath && !remote.onboarding.learningPath) {
-      mergedOnboarding = local.onboarding;
-    } else {
-      mergedOnboarding = local.onboarding;
-    }
+  // 5. Merge onboarding & learning path state (preserve learning path across devices)
+  let mergedOnboarding: OnboardingState | undefined = undefined;
+  if (local.onboarding || remote.onboarding) {
+    const oLocal = local.onboarding;
+    const oRemote = remote.onboarding;
+
+    // Prefer non-null learningPath (remote takes precedence if available or if set on another device)
+    const effectiveLearningPath =
+      oRemote?.learningPath ||
+      oLocal?.learningPath ||
+      null;
+
+    const effectiveTargetScore =
+      oRemote?.learningPath?.targetScore ||
+      oRemote?.targetScore ||
+      oLocal?.learningPath?.targetScore ||
+      oLocal?.targetScore ||
+      650;
+
+    const effectivePlacement =
+      oRemote?.placementResult ||
+      oLocal?.placementResult ||
+      null;
+
+    const effectiveMinutes =
+      oRemote?.dailyMinutes ||
+      oLocal?.dailyMinutes ||
+      20;
+
+    const effectiveCompleted = Boolean(
+      oRemote?.isCompleted ||
+      oLocal?.isCompleted ||
+      effectiveLearningPath
+    );
+
+    mergedOnboarding = {
+      isCompleted: effectiveCompleted,
+      currentStep: effectiveCompleted ? 'result' : (oRemote?.currentStep || oLocal?.currentStep || 'welcome'),
+      targetScore: effectiveTargetScore,
+      dailyMinutes: effectiveMinutes,
+      experienceLevel: oRemote?.experienceLevel || oLocal?.experienceLevel || null,
+      placementResult: effectivePlacement,
+      learningPath:
+        effectiveLearningPath ||
+        (effectiveCompleted && effectiveTargetScore
+          ? generateLearningPath(
+              effectiveTargetScore,
+              effectivePlacement?.level || 'essential',
+              effectiveMinutes
+            )
+          : null),
+      tourCompleted: Boolean(oRemote?.tourCompleted || oLocal?.tourCompleted),
+      completedAt: oRemote?.completedAt || oLocal?.completedAt,
+    };
   }
 
   return {

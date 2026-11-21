@@ -66,7 +66,33 @@ export function OnboardingProvider({ children }: { children: React.ReactNode }) 
         const raw = localStorage.getItem(STORAGE_KEY);
         if (raw) {
           const parsed = JSON.parse(raw);
-          setState((prev) => ({ ...prev, ...parsed }));
+          setState((prev) => {
+            const merged: OnboardingState = {
+              ...prev,
+              ...parsed,
+              learningPath: parsed.learningPath || prev.learningPath,
+              targetScore: parsed.targetScore || prev.targetScore || 650,
+              placementResult: parsed.placementResult || prev.placementResult,
+              dailyMinutes: parsed.dailyMinutes || prev.dailyMinutes || 20,
+              isCompleted: Boolean(
+                parsed.isCompleted ||
+                prev.isCompleted ||
+                parsed.learningPath ||
+                prev.learningPath
+              ),
+            };
+
+            if (!merged.learningPath && merged.targetScore) {
+              merged.learningPath = generateLearningPath(
+                merged.targetScore,
+                merged.placementResult?.level || 'essential',
+                merged.dailyMinutes || 20
+              );
+              merged.isCompleted = true;
+            }
+
+            return merged;
+          });
         }
       } catch {}
     };
@@ -98,19 +124,43 @@ export function OnboardingProvider({ children }: { children: React.ReactNode }) 
         if (!isMounted) return;
 
         setState((prev) => {
-          const shouldUseRemote =
-            (!prev.learningPath && remoteOnboarding.learningPath) ||
-            (!prev.isCompleted && remoteOnboarding.isCompleted) ||
-            (Boolean(remoteOnboarding.learningPath) && remoteOnboarding.targetScore !== prev.targetScore);
+          const merged: OnboardingState = {
+            ...DEFAULT_STATE,
+            ...prev,
+            ...remoteOnboarding,
+            learningPath: remoteOnboarding.learningPath || prev.learningPath,
+            targetScore: remoteOnboarding.targetScore || prev.targetScore || 650,
+            placementResult: remoteOnboarding.placementResult || prev.placementResult,
+            dailyMinutes: remoteOnboarding.dailyMinutes || prev.dailyMinutes || 20,
+            isCompleted: Boolean(
+              remoteOnboarding.isCompleted ||
+              prev.isCompleted ||
+              remoteOnboarding.learningPath ||
+              prev.learningPath
+            ),
+            tourCompleted: Boolean(remoteOnboarding.tourCompleted || prev.tourCompleted),
+          };
 
-          if (shouldUseRemote) {
-            const merged = { ...prev, ...remoteOnboarding };
-            try {
-              localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
-            } catch {}
-            return merged;
+          if (!merged.learningPath && merged.targetScore) {
+            merged.learningPath = generateLearningPath(
+              merged.targetScore,
+              merged.placementResult?.level || 'essential',
+              merged.dailyMinutes || 20
+            );
+            merged.isCompleted = true;
           }
-          return prev;
+
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+            const rawMain = localStorage.getItem('toeic_vocab_mastery_v1');
+            if (rawMain) {
+              const parsedMain = JSON.parse(rawMain);
+              parsedMain.onboarding = merged;
+              localStorage.setItem('toeic_vocab_mastery_v1', JSON.stringify(parsedMain));
+            }
+          } catch {}
+
+          return merged;
         });
       } catch (e) {
         console.error('Error fetching remote onboarding:', e);
@@ -164,6 +214,12 @@ export function OnboardingProvider({ children }: { children: React.ReactNode }) 
         const next = updater(prev);
         try {
           localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+          const rawMain = localStorage.getItem('toeic_vocab_mastery_v1');
+          if (rawMain) {
+            const parsedMain = JSON.parse(rawMain);
+            parsedMain.onboarding = next;
+            localStorage.setItem('toeic_vocab_mastery_v1', JSON.stringify(parsedMain));
+          }
         } catch (e) {
           console.error('Failed to save onboarding state:', e);
         }
@@ -180,32 +236,30 @@ export function OnboardingProvider({ children }: { children: React.ReactNode }) 
 
   const setTargetScore = useCallback((score: number) => {
     updateState((prev) => {
-      let updatedLearningPath = prev.learningPath;
-      if (updatedLearningPath) {
-        const level = prev.placementResult?.level || updatedLearningPath.currentLevel || 'essential';
-        const minutes = prev.dailyMinutes || updatedLearningPath.dailyGoal || 20;
-        updatedLearningPath = generateLearningPath(score, level, minutes);
-      }
+      const level = prev.placementResult?.level || prev.learningPath?.currentLevel || 'essential';
+      const minutes = prev.dailyMinutes || prev.learningPath?.dailyGoal || 20;
+      const updatedLearningPath = generateLearningPath(score, level, minutes);
+
       return {
         ...prev,
         targetScore: score,
         learningPath: updatedLearningPath,
+        isCompleted: true,
       };
     });
   }, [updateState]);
 
   const setDailyMinutes = useCallback((minutes: number) => {
     updateState((prev) => {
-      let updatedLearningPath = prev.learningPath;
-      if (updatedLearningPath) {
-        const score = prev.targetScore || updatedLearningPath.targetScore || 650;
-        const level = prev.placementResult?.level || updatedLearningPath.currentLevel || 'essential';
-        updatedLearningPath = generateLearningPath(score, level, minutes);
-      }
+      const score = prev.targetScore || prev.learningPath?.targetScore || 650;
+      const level = prev.placementResult?.level || prev.learningPath?.currentLevel || 'essential';
+      const updatedLearningPath = generateLearningPath(score, level, minutes);
+
       return {
         ...prev,
         dailyMinutes: minutes,
         learningPath: updatedLearningPath,
+        isCompleted: true,
       };
     });
   }, [updateState]);

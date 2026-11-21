@@ -56,15 +56,30 @@ export function loadUserProgress(): UserProgressData {
       }
     }
 
-    // Attach onboarding if present in separate localStorage key
-    if (!loaded.onboarding) {
-      try {
-        const rawOnboarding = localStorage.getItem('onboarding_state_v1');
-        if (rawOnboarding) {
-          loaded.onboarding = JSON.parse(rawOnboarding);
+    // Merge onboarding from separate localStorage key if present
+    try {
+      const rawOnboarding = localStorage.getItem('onboarding_state_v1');
+      if (rawOnboarding) {
+        const parsedOnboarding = JSON.parse(rawOnboarding);
+        if (!loaded.onboarding) {
+          loaded.onboarding = parsedOnboarding;
+        } else {
+          // Merge to preserve whichever has learningPath
+          loaded.onboarding = {
+            ...loaded.onboarding,
+            ...parsedOnboarding,
+            learningPath: parsedOnboarding.learningPath || loaded.onboarding.learningPath,
+            targetScore: parsedOnboarding.targetScore || loaded.onboarding.targetScore || 650,
+            isCompleted: Boolean(
+              parsedOnboarding.isCompleted ||
+              loaded.onboarding.isCompleted ||
+              parsedOnboarding.learningPath ||
+              loaded.onboarding.learningPath
+            ),
+          };
         }
-      } catch {}
-    }
+      }
+    } catch {}
 
     return loaded;
   } catch (err) {

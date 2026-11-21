@@ -76,6 +76,24 @@ export function mergeUserProgress(
 
   const estimatedScore = calculateEstimatedScore(totalLearned, masteryRate);
 
+  // 5. Merge onboarding & learning path state
+  let mergedOnboarding = local.onboarding || remote.onboarding;
+  if (local.onboarding && remote.onboarding) {
+    const localCompleted = local.onboarding.isCompleted;
+    const remoteCompleted = remote.onboarding.isCompleted;
+    if (remoteCompleted && !localCompleted) {
+      mergedOnboarding = remote.onboarding;
+    } else if (localCompleted && !remoteCompleted) {
+      mergedOnboarding = local.onboarding;
+    } else if (remote.onboarding.learningPath && !local.onboarding.learningPath) {
+      mergedOnboarding = remote.onboarding;
+    } else if (local.onboarding.learningPath && !remote.onboarding.learningPath) {
+      mergedOnboarding = local.onboarding;
+    } else {
+      mergedOnboarding = local.onboarding;
+    }
+  }
+
   return {
     version: Math.max(local.version || 1, remote.version || 1),
     cards: mergedCards,
@@ -94,5 +112,6 @@ export function mergeUserProgress(
       dailyGoal: remote.stats?.dailyGoal || local.stats?.dailyGoal || 10,
       estimatedToeicScore: estimatedScore,
     },
+    onboarding: mergedOnboarding,
   };
 }

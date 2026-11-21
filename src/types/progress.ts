@@ -1,3 +1,5 @@
+import { OnboardingState } from './onboarding';
+
 export interface SRSCard {
   wordId: string;
   repetitions: number;      // Consecutive successful reviews
@@ -48,4 +50,5 @@ export interface UserProgressData {
   history: ExerciseSessionResult[];
   preferences: UserPreferences;
   bookmarkedWordIds: string[];
+  onboarding?: OnboardingState;
 }

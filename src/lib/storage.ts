@@ -56,6 +56,16 @@ export function loadUserProgress(): UserProgressData {
       }
     }
 
+    // Attach onboarding if present in separate localStorage key
+    if (!loaded.onboarding) {
+      try {
+        const rawOnboarding = localStorage.getItem('onboarding_state_v1');
+        if (rawOnboarding) {
+          loaded.onboarding = JSON.parse(rawOnboarding);
+        }
+      } catch {}
+    }
+
     return loaded;
   } catch (err) {
     console.error('Error loading progress from localStorage:', err);
@@ -68,6 +78,13 @@ export function saveUserProgress(data: UserProgressData): void {
 
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+    if (data.onboarding) {
+      try {
+        localStorage.setItem('onboarding_state_v1', JSON.stringify(data.onboarding));
+        window.dispatchEvent(new Event('onboarding-synced'));
+      } catch {}
+    }
   } catch (err) {
     console.error('Error saving progress to localStorage:', err);
   }

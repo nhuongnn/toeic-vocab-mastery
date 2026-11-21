@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 import {
   OnboardingState,
   OnboardingStep,
@@ -9,6 +9,8 @@ import {
 } from '@/types/onboarding';
 import { generateLearningPath } from '@/lib/placement/learningPath';
 import { WordLevel } from '@/types/vocabulary';
+import { useAuth } from './AuthContext';
+import { supabase } from '@/lib/supabase';
 
 interface OnboardingContextType {
   state: OnboardingState;
@@ -40,9 +42,12 @@ const DEFAULT_STATE: OnboardingState = {
 const OnboardingContext = createContext<OnboardingContextType | undefined>(undefined);
 
 export function OnboardingProvider({ children }: { children: React.ReactNode }) {
+  const { user } = useAuth();
   const [state, setState] = useState<OnboardingState>(DEFAULT_STATE);
   const [loaded, setLoaded] = useState(false);
+  const syncTimerRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Load from localStorage on mount & listen for sync events
   useEffect(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -55,19 +60,119 @@ export function OnboardingProvider({ children }: { children: React.ReactNode }) 
     } finally {
       setLoaded(true);
     }
+
+    const handleSync = () => {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          setState((prev) => ({ ...prev, ...parsed }));
+        }
+      } catch {}
+    };
+
+    window.addEventListener('onboarding-synced', handleSync);
+    window.addEventListener('storage', handleSync);
+    return () => {
+      window.removeEventListener('onboarding-synced', handleSync);
+      window.removeEventListener('storage', handleSync);
+    };
   }, []);
 
-  const updateState = useCallback((updater: (prev: OnboardingState) => OnboardingState) => {
-    setState((prev) => {
-      const next = updater(prev);
+  // Fetch remote onboarding state from Supabase when user logs in
+  useEffect(() => {
+    if (!user || !supabase) return;
+
+    let isMounted = true;
+    async function syncRemoteOnboarding() {
       try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+        const { data, error } = await supabase!
+          .from('user_progress')
+          .select('data')
+          .eq('user_id', user!.id)
+          .maybeSingle();
+
+        if (error || !data?.data?.onboarding) return;
+
+        const remoteOnboarding = data.data.onboarding as OnboardingState;
+        if (!isMounted) return;
+
+        setState((prev) => {
+          const shouldUseRemote =
+            (!prev.learningPath && remoteOnboarding.learningPath) ||
+            (!prev.isCompleted && remoteOnboarding.isCompleted) ||
+            (Boolean(remoteOnboarding.learningPath) && remoteOnboarding.targetScore !== prev.targetScore);
+
+          if (shouldUseRemote) {
+            const merged = { ...prev, ...remoteOnboarding };
+            try {
+              localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+            } catch {}
+            return merged;
+          }
+          return prev;
+        });
       } catch (e) {
-        console.error('Failed to save onboarding state:', e);
+        console.error('Error fetching remote onboarding:', e);
       }
-      return next;
-    });
-  }, []);
+    }
+
+    syncRemoteOnboarding();
+    return () => {
+      isMounted = false;
+    };
+  }, [user]);
+
+  // Debounced cloud sync to Supabase
+  const scheduleOnboardingCloudSync = useCallback(
+    (nextState: OnboardingState) => {
+      if (!user || !supabase) return;
+      if (syncTimerRef.current) clearTimeout(syncTimerRef.current);
+
+      syncTimerRef.current = setTimeout(async () => {
+        try {
+          const { data: remoteData } = await supabase!
+            .from('user_progress')
+            .select('data')
+            .eq('user_id', user.id)
+            .maybeSingle();
+
+          const currentProgressData = remoteData?.data || {};
+          const updatedProgressData = {
+            ...currentProgressData,
+            onboarding: nextState,
+          };
+
+          await supabase!
+            .from('user_progress')
+            .upsert({
+              user_id: user.id,
+              data: updatedProgressData,
+              updated_at: new Date().toISOString(),
+            });
+        } catch (err) {
+          console.error('Failed to sync onboarding to cloud:', err);
+        }
+      }, 1000);
+    },
+    [user]
+  );
+
+  const updateState = useCallback(
+    (updater: (prev: OnboardingState) => OnboardingState) => {
+      setState((prev) => {
+        const next = updater(prev);
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+        } catch (e) {
+          console.error('Failed to save onboarding state:', e);
+        }
+        scheduleOnboardingCloudSync(next);
+        return next;
+      });
+    },
+    [scheduleOnboardingCloudSync]
+  );
 
   const setStep = useCallback((step: OnboardingStep) => {
     updateState((prev) => ({ ...prev, currentStep: step }));

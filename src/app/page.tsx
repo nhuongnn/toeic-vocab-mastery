@@ -70,7 +70,7 @@ export default function HomePage() {
           </p>
 
           {/* Quick Metrics Bar */}
-          <div data-tour="dashboard-score" className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-800/80">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-800/80">
             <div>
               <div suppressHydrationWarning className="text-2xl sm:text-3xl font-black text-white">
                 {mounted ? progress.stats.totalWordsLearned : 0}
@@ -86,7 +86,7 @@ export default function HomePage() {
               <div className="text-xs text-slate-400 font-medium">Daily Streak</div>
             </div>
 
-            <div>
+            <div data-tour="dashboard-score" className="p-1 -m-1 rounded-xl">
               <div suppressHydrationWarning className="text-2xl sm:text-3xl font-black text-indigo-400">
                 {mounted ? progress.stats.estimatedToeicScore : 450}
               </div>

@@ -24,8 +24,8 @@ export function MobileBottomNav() {
 
   const items = [
     { href: '/', label: 'Trang chủ', icon: Home, exact: true },
-    { href: '/categories', label: 'Từ vựng', icon: Layers },
-    { href: '/mock-test', label: 'Thi thử', icon: FileText, highlight: true },
+    { href: '/categories', label: 'Từ vựng', icon: Layers, tourKey: 'vocabulary-link' },
+    { href: '/mock-test', label: 'Thi thử', icon: FileText, highlight: true, tourKey: 'mock-test-link' },
     {
       href: '/flashcards',
       label: 'Flashcard',
@@ -48,6 +48,7 @@ export function MobileBottomNav() {
             <Link
               key={item.href}
               href={item.href}
+              data-tour={item.tourKey}
               className={`relative flex flex-col items-center justify-center py-1 px-3 rounded-xl transition-all ${
                 isActive
                   ? 'text-indigo-400 font-semibold'

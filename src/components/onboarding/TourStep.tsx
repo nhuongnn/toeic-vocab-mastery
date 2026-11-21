@@ -9,6 +9,8 @@ interface TourStepProps {
   stepIndex: number;
   totalSteps: number;
   position: { top: number; left: number };
+  placement?: 'top' | 'bottom' | 'right';
+  arrowOffset?: number;
   onNext: () => void;
   onSkip: () => void;
 }
@@ -18,6 +20,8 @@ export function TourStep({
   stepIndex,
   totalSteps,
   position,
+  placement = 'bottom',
+  arrowOffset = 32,
   onNext,
   onSkip,
 }: TourStepProps) {
@@ -26,18 +30,32 @@ export function TourStep({
   return (
     <div
       style={{
-        top: `${Math.max(20, position.top)}px`,
+        top: `${Math.max(16, position.top)}px`,
         left: `${Math.max(16, position.left)}px`,
       }}
-      className="fixed z-50 w-80 max-w-[calc(100vw-32px)] bg-slate-900 border border-indigo-500/40 rounded-2xl p-4 shadow-2xl backdrop-blur-xl animate-in fade-in duration-200"
+      className="fixed z-50 w-80 max-w-[calc(100vw-32px)] bg-slate-900 border border-indigo-500/50 rounded-2xl p-4 shadow-2xl backdrop-blur-xl animate-in fade-in duration-200"
     >
+      {/* Directional pointer arrow */}
+      {placement === 'bottom' && (
+        <div
+          style={{ left: `${arrowOffset}px` }}
+          className="absolute -top-1.5 w-3 h-3 bg-slate-900 border-t border-l border-indigo-500/50 rotate-45 pointer-events-none"
+        />
+      )}
+      {placement === 'top' && (
+        <div
+          style={{ left: `${arrowOffset}px` }}
+          className="absolute -bottom-1.5 w-3 h-3 bg-slate-900 border-b border-r border-indigo-500/50 rotate-45 pointer-events-none"
+        />
+      )}
+
       <div className="flex items-center justify-between mb-2">
         <span className="text-[11px] font-semibold text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-2 py-0.5 rounded-full">
           Bước {stepIndex + 1} / {totalSteps}
         </span>
         <button
           onClick={onSkip}
-          className="text-xs text-slate-400 hover:text-slate-200"
+          className="text-xs text-slate-400 hover:text-slate-200 cursor-pointer"
         >
           Bỏ qua hướng dẫn
         </button>
@@ -49,7 +67,7 @@ export function TourStep({
       <div className="flex items-center justify-end gap-2">
         <button
           onClick={onNext}
-          className="flex items-center gap-1.5 px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold transition-colors shadow-sm"
+          className="flex items-center gap-1.5 px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold transition-colors shadow-sm cursor-pointer active:scale-95"
         >
           <span>{isLast ? 'Hoàn thành' : 'Tiếp theo'}</span>
           {isLast ? <Check className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}

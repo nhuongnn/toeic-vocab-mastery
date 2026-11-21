@@ -88,7 +88,7 @@ export default function ProgressDashboardPage() {
       {/* Target Meter Card */}
       <section className="rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950/70 to-purple-950/50 border border-slate-800 p-6 sm:p-8 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
+          <div data-tour="dashboard-score" className="p-1 -m-1 rounded-xl">
             <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 block mb-1">
               Estimated TOEIC English Proficiency
             </span>

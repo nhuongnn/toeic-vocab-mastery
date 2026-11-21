@@ -17,12 +17,15 @@ import {
   LayoutGrid,
   Target,
   Sparkles,
+  CheckCircle2,
+  Clock,
 } from 'lucide-react';
 import { categories } from '@/data/categories';
 import { allVocabularyWords } from '@/data/vocabulary';
 import { WordCard } from '@/components/word/WordCard';
 import { CategoryId, WordLevel, WordSortOption } from '@/types/vocabulary';
 import { useOnboarding } from '@/contexts/OnboardingContext';
+import { useProgress } from '@/contexts/ProgressContext';
 import {
   LEVEL_CONFIG,
   SORT_OPTIONS,
@@ -34,8 +37,10 @@ const PAGE_SIZE = 32;
 
 export default function CategoriesPage() {
   const { state: onboardingState } = useOnboarding();
+  const { progress } = useProgress();
   const [selectedCategory, setSelectedCategory] = useState<CategoryId | 'all'>('all');
   const [selectedLevel, setSelectedLevel] = useState<WordLevel | 'all'>('all');
+  const [statusFilter, setStatusFilter] = useState<'all' | 'unlearned' | 'learning' | 'mastered'>('all');
   const [sortBy, setSortBy] = useState<WordSortOption>('default');
   const [search, setSearch] = useState('');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
@@ -118,20 +123,56 @@ export default function CategoriesPage() {
     };
   }, [selectedCategory, search]);
 
+  // Count learning status
+  const statusCounts = useMemo(() => {
+    let unlearned = 0;
+    let learning = 0;
+    let mastered = 0;
+
+    allVocabularyWords.forEach((w) => {
+      const card = progress.cards[w.id];
+      if (!card) {
+        unlearned++;
+      } else if (card.interval >= 14) {
+        mastered++;
+      } else {
+        learning++;
+      }
+    });
+
+    return {
+      total: allVocabularyWords.length,
+      unlearned,
+      learning,
+      mastered,
+    };
+  }, [progress.cards]);
+
   // Filter and sort words
   const filteredAndSortedWords = useMemo(() => {
-    const filtered = filterVocabularyWords(allVocabularyWords, {
+    let filtered = filterVocabularyWords(allVocabularyWords, {
       category: selectedCategory,
       level: selectedLevel,
       search,
     });
+
+    if (statusFilter !== 'all') {
+      filtered = filtered.filter((word) => {
+        const card = progress.cards[word.id];
+        if (statusFilter === 'unlearned') return !card;
+        if (statusFilter === 'mastered') return Boolean(card && card.interval >= 14);
+        if (statusFilter === 'learning') return Boolean(card && card.interval < 14);
+        return true;
+      });
+    }
+
     return sortVocabularyWords(filtered, sortBy);
-  }, [selectedCategory, selectedLevel, search, sortBy]);
+  }, [selectedCategory, selectedLevel, search, sortBy, statusFilter, progress.cards]);
 
   // Reset pagination when filters or sort change
   React.useEffect(() => {
     setVisibleCount(PAGE_SIZE);
-  }, [selectedCategory, selectedLevel, search, sortBy]);
+  }, [selectedCategory, selectedLevel, search, sortBy, statusFilter]);
 
   const displayedWords = filteredAndSortedWords.slice(0, visibleCount);
   const hasMore = visibleCount < filteredAndSortedWords.length;
@@ -139,12 +180,14 @@ export default function CategoriesPage() {
   const isFiltered =
     selectedCategory !== 'all' ||
     selectedLevel !== 'all' ||
+    statusFilter !== 'all' ||
     sortBy !== 'default' ||
     search.trim() !== '';
 
   const handleResetFilters = () => {
     setSelectedCategory('all');
     setSelectedLevel('all');
+    setStatusFilter('all');
     setSortBy('default');
     setSearch('');
   };
@@ -343,6 +386,76 @@ export default function CategoriesPage() {
           </div>
         </div>
 
+        {/* Row 2.5: Learning Status Filter Pills */}
+        <div className="pt-2 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="w-3.5 h-3.5 text-indigo-400 flex-shrink-0" />
+            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              Trạng thái học:
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none flex-wrap">
+            {/* All */}
+            <button
+              onClick={() => setStatusFilter('all')}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
+                statusFilter === 'all'
+                  ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20'
+                  : 'bg-slate-950/80 border border-slate-800 text-slate-300 hover:bg-slate-800'
+              }`}
+            >
+              <span>Tất cả</span>
+              <span className="text-[10px] opacity-80 font-mono">({statusCounts.total})</span>
+            </button>
+
+            {/* Unlearned (New words) */}
+            <button
+              onClick={() => setStatusFilter('unlearned')}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
+                statusFilter === 'unlearned'
+                  ? 'bg-slate-700 text-white border border-slate-500 shadow-md shadow-slate-900/40'
+                  : 'bg-slate-950/80 border border-slate-800 text-slate-400 hover:text-slate-200 hover:bg-slate-850'
+              }`}
+              title="Chỉ hiển thị các từ vựng bạn chưa từng học"
+            >
+              <Sparkles className="w-3 h-3 text-slate-400" />
+              <span>Chưa học (Từ mới)</span>
+              <span className="text-[10px] opacity-80 font-mono">({statusCounts.unlearned})</span>
+            </button>
+
+            {/* Learning */}
+            <button
+              onClick={() => setStatusFilter('learning')}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
+                statusFilter === 'learning'
+                  ? 'bg-amber-600/30 text-amber-200 border border-amber-500/50 shadow-md shadow-amber-900/20'
+                  : 'bg-slate-950/80 border border-amber-900/30 text-amber-300/80 hover:bg-amber-950/20'
+              }`}
+              title="Các từ đang trong chu kỳ lặp lại ngắt quãng SM-2"
+            >
+              <Clock className="w-3 h-3 text-amber-400" />
+              <span>Đang học</span>
+              <span className="text-[10px] opacity-80 font-mono">({statusCounts.learning})</span>
+            </button>
+
+            {/* Mastered */}
+            <button
+              onClick={() => setStatusFilter('mastered')}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
+                statusFilter === 'mastered'
+                  ? 'bg-emerald-600/30 text-emerald-200 border border-emerald-500/50 shadow-md shadow-emerald-900/20'
+                  : 'bg-slate-950/80 border border-emerald-900/30 text-emerald-300/80 hover:bg-emerald-950/20'
+              }`}
+              title="Các từ đã thuộc nhuần nhuyễn (chu kỳ ôn từ 14 ngày trở lên)"
+            >
+              <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+              <span>Đã thuộc</span>
+              <span className="text-[10px] opacity-80 font-mono">({statusCounts.mastered})</span>
+            </button>
+          </div>
+        </div>
+
         {/* Row 3: Quick Sorting Badges for Popular / Daily Spoken */}
         <div className="pt-2 border-t border-slate-800/60 flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none flex-wrap">
           <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider mr-1">
@@ -533,6 +646,26 @@ export default function CategoriesPage() {
                 onClick={() => setSelectedLevel('all')}
                 className="hover:text-rose-400 ml-0.5"
                 title="Bỏ lọc cấp độ"
+              >
+                <X className="w-3 h-3" />
+              </button>
+            </span>
+          )}
+
+          {statusFilter !== 'all' && (
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-700 text-indigo-200">
+              <span>
+                Trạng thái:{' '}
+                {statusFilter === 'unlearned'
+                  ? 'Chưa học'
+                  : statusFilter === 'learning'
+                  ? 'Đang học'
+                  : 'Đã thuộc'}
+              </span>
+              <button
+                onClick={() => setStatusFilter('all')}
+                className="hover:text-rose-400 ml-0.5"
+                title="Bỏ lọc trạng thái"
               >
                 <X className="w-3 h-3" />
               </button>

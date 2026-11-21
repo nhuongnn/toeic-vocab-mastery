@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Volume2, Bookmark, CheckCircle2, TrendingUp, MessageCircle } from 'lucide-react';
+import { Volume2, Bookmark, CheckCircle2, TrendingUp, MessageCircle, Clock, Sparkles } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useSpeech } from '@/hooks/useSpeech';
@@ -25,7 +25,8 @@ export function WordCard({ word }: WordCardProps) {
 
   const bookmarked = isBookmarked(word.id);
   const cardData = getCard(word.id);
-  const isMastered = cardData && cardData.interval >= 14;
+  const isMastered = Boolean(cardData && cardData.interval >= 14);
+  const isLearning = Boolean(cardData && cardData.interval < 14);
 
   const levelConfig = LEVEL_CONFIG[word.level] || LEVEL_CONFIG.intermediate;
   const popularityScore = getWordPopularityScore(word);
@@ -48,10 +49,29 @@ export function WordCard({ word }: WordCardProps) {
             >
               {levelConfig.shortLabel}
             </span>
-            {isMastered && (
-              <span className="flex items-center gap-1 text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+            {isMastered ? (
+              <span
+                className="flex items-center gap-1 text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20"
+                title={`Đã thuộc vững chắc • Chu kỳ ôn ${cardData?.interval} ngày`}
+              >
                 <CheckCircle2 className="w-3 h-3" />
-                <span>Mastered</span>
+                <span>Đã thuộc</span>
+              </span>
+            ) : isLearning ? (
+              <span
+                className="flex items-center gap-1 text-[10px] font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20"
+                title={`Đang rèn luyện • Đã ôn ${cardData?.repetitions} lần`}
+              >
+                <Clock className="w-3 h-3" />
+                <span>Đang học ({cardData?.repetitions})</span>
+              </span>
+            ) : (
+              <span
+                className="flex items-center gap-1 text-[10px] font-medium text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-slate-700/60"
+                title="Từ này chưa học"
+              >
+                <Sparkles className="w-3 h-3 text-slate-400" />
+                <span>Chưa học</span>
               </span>
             )}
           </div>

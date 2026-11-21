@@ -10,8 +10,12 @@ import { categories } from '@/data/categories';
 import { CategoryId } from '@/types/vocabulary';
 
 export default function FlashcardsPage() {
-  const { dueWordIds } = useProgress();
-  const [deckFilter, setDeckFilter] = useState<'due' | CategoryId | 'all'>('due');
+  const { dueWordIds, progress } = useProgress();
+  const [deckFilter, setDeckFilter] = useState<'due' | 'unlearned' | CategoryId | 'all'>('due');
+
+  const unlearnedWords = React.useMemo(() => {
+    return allVocabularyWords.filter((w) => !progress.cards[w.id]);
+  }, [progress.cards]);
 
   // Determine which words to present in the deck
   let deckWords = allVocabularyWords;
@@ -19,6 +23,8 @@ export default function FlashcardsPage() {
   if (deckFilter === 'due') {
     const dueList = dueWordIds.map((id) => wordsById[id]).filter(Boolean);
     deckWords = dueList.length > 0 ? dueList : allVocabularyWords.slice(0, 10);
+  } else if (deckFilter === 'unlearned') {
+    deckWords = unlearnedWords.length > 0 ? unlearnedWords : allVocabularyWords.slice(0, 10);
   } else if (deckFilter !== 'all') {
     deckWords = allVocabularyWords.filter((w) => w.category === deckFilter);
   }
@@ -45,8 +51,9 @@ export default function FlashcardsPage() {
             onChange={(e) => setDeckFilter(e.target.value as any)}
             className="bg-slate-900 border border-slate-800 text-slate-200 text-xs font-semibold rounded-xl px-3 py-2 focus:outline-none focus:border-indigo-500"
           >
-            <option value="due">Due For Review ({dueWordIds.length})</option>
-            <option value="all">All Words ({allVocabularyWords.length})</option>
+            <option value="due">Cần ôn tập ngay ({dueWordIds.length})</option>
+            <option value="unlearned">Học từ mới — Chưa học ({unlearnedWords.length})</option>
+            <option value="all">Tất cả từ vựng ({allVocabularyWords.length})</option>
             {categories.map((c) => (
               <option key={c.id} value={c.id}>
                 {c.name}

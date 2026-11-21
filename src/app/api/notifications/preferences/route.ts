@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
-import { DEFAULT_NOTIFICATION_PREFERENCES } from '@/lib/notifications/notificationScheduler';
+import {
+  DEFAULT_NOTIFICATION_PREFERENCES,
+  sortReminderTimes,
+} from '@/lib/notifications/notificationScheduler';
 
 export async function GET(req: NextRequest) {
   try {
@@ -20,14 +23,21 @@ export async function GET(req: NextRequest) {
       return NextResponse.json(DEFAULT_NOTIFICATION_PREFERENCES);
     }
 
+    const rawTimes = Array.isArray(data.daily_reminder_times) && data.daily_reminder_times.length > 0
+      ? data.daily_reminder_times
+      : (data.daily_reminder_time ? [data.daily_reminder_time] : DEFAULT_NOTIFICATION_PREFERENCES.dailyReminderTimes);
+
+    const sortedTimes = sortReminderTimes(rawTimes);
+
     return NextResponse.json({
-      dailyReminderEnabled: data.daily_reminder_enabled,
-      dailyReminderTime: data.daily_reminder_time,
-      streakWarningEnabled: data.streak_warning_enabled,
-      streakWarningTime: data.streak_warning_time,
-      weeklySummaryEnabled: data.weekly_summary_enabled,
-      srsDueReminderEnabled: data.srs_due_reminder_enabled,
-      milestoneEnabled: data.milestone_enabled,
+      dailyReminderEnabled: data.daily_reminder_enabled ?? true,
+      dailyReminderTime: sortedTimes[0] || data.daily_reminder_time || '08:00',
+      dailyReminderTimes: sortedTimes,
+      streakWarningEnabled: data.streak_warning_enabled ?? true,
+      streakWarningTime: data.streak_warning_time || '20:00',
+      weeklySummaryEnabled: data.weekly_summary_enabled ?? true,
+      srsDueReminderEnabled: data.srs_due_reminder_enabled ?? true,
+      milestoneEnabled: data.milestone_enabled ?? true,
       timezone: data.timezone || 'Asia/Ho_Chi_Minh',
     });
   } catch (error) {
@@ -45,21 +55,37 @@ export async function POST(req: NextRequest) {
     }
 
     if (supabase) {
-      await supabase.from('notification_preferences').upsert(
-        {
-          user_id: userId,
-          daily_reminder_enabled: preferences.dailyReminderEnabled,
-          daily_reminder_time: preferences.dailyReminderTime,
-          streak_warning_enabled: preferences.streakWarningEnabled,
-          streak_warning_time: preferences.streakWarningTime,
-          weekly_summary_enabled: preferences.weeklySummaryEnabled,
-          srs_due_reminder_enabled: preferences.srsDueReminderEnabled,
-          milestone_enabled: preferences.milestoneEnabled,
-          timezone: preferences.timezone,
-          updated_at: new Date().toISOString(),
-        },
-        { onConflict: 'user_id' }
-      );
+      const rawTimes = Array.isArray(preferences.dailyReminderTimes) && preferences.dailyReminderTimes.length > 0
+        ? preferences.dailyReminderTimes
+        : (preferences.dailyReminderTime ? [preferences.dailyReminderTime] : ['08:00']);
+
+      const sortedTimes = sortReminderTimes(rawTimes);
+
+      const upsertData: Record<string, unknown> = {
+        user_id: userId,
+        daily_reminder_enabled: preferences.dailyReminderEnabled,
+        daily_reminder_time: sortedTimes[0] || '08:00',
+        daily_reminder_times: sortedTimes,
+        streak_warning_enabled: preferences.streakWarningEnabled,
+        streak_warning_time: preferences.streakWarningTime,
+        weekly_summary_enabled: preferences.weeklySummaryEnabled,
+        srs_due_reminder_enabled: preferences.srsDueReminderEnabled,
+        milestone_enabled: preferences.milestoneEnabled,
+        timezone: preferences.timezone || 'Asia/Ho_Chi_Minh',
+        updated_at: new Date().toISOString(),
+      };
+
+      const { error } = await supabase
+        .from('notification_preferences')
+        .upsert(upsertData, { onConflict: 'user_id' });
+
+      // If the table doesn't have daily_reminder_times column yet, retry without it
+      if (error && error.message && error.message.includes('daily_reminder_times')) {
+        delete upsertData.daily_reminder_times;
+        await supabase
+          .from('notification_preferences')
+          .upsert(upsertData, { onConflict: 'user_id' });
+      }
     }
 
     return NextResponse.json({ success: true, message: 'Preferences updated' });

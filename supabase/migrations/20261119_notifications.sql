@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS notification_preferences (
   user_id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
   daily_reminder_enabled BOOLEAN DEFAULT true,
   daily_reminder_time TIME DEFAULT '08:00',
+  daily_reminder_times TEXT[] DEFAULT ARRAY['08:00', '12:30', '20:00']::TEXT[],
   streak_warning_enabled BOOLEAN DEFAULT true,
   streak_warning_time TIME DEFAULT '20:00',
   weekly_summary_enabled BOOLEAN DEFAULT true,

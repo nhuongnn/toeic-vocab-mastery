@@ -13,12 +13,12 @@ interface VideoSectionProps {
     description: string;
   };
   word: string;
-  category: string;
+  category?: string;
 }
 
 type AccentType = 'all' | 'us' | 'uk' | 'aus';
 
-export function VideoSection({ video, word, category }: VideoSectionProps) {
+export function VideoSection({ video, word }: VideoSectionProps) {
   const pathname = usePathname();
   const [isPlaying, setIsPlaying] = useState(false);
   const [accent, setAccent] = useState<AccentType>('all');
@@ -150,17 +150,21 @@ export function VideoSection({ video, word, category }: VideoSectionProps) {
     }
   };
 
-  // Embed URL for YouGlish YouTube Immersion
-  const youGlishEmbedUrl = `https://youglish.com/pronounce/${encodeURIComponent(
+  // URL for YouGlish in new window (avoids X-Frame-Options blocking in Firefox/Chrome)
+  const youGlishUrl = `https://youglish.com/pronounce/${encodeURIComponent(
     word
-  )}/english/${accent}?emb=1`;
+  )}/english/${accent}`;
 
-  // Embed URL for direct YouTube clip
+  // Embed URL for YouTube in-app player (YouTube allows embedding without X-Frame-Options block)
+  const defaultYouTubeEmbedUrl = `https://www.youtube-nocookie.com/embed?listType=search&list=${encodeURIComponent(
+    `${word} pronunciation in context english`
+  )}&autoplay=1&rel=0`;
+
   const directYouTubeUrl = customVideoId
     ? `https://www.youtube-nocookie.com/embed/${customVideoId}?start=${video?.timestamp || 0}&autoplay=1&rel=0`
-    : null;
+    : defaultYouTubeEmbedUrl;
 
-  const currentEmbedUrl = activeTab === 'immersion' ? youGlishEmbedUrl : directYouTubeUrl;
+  const currentEmbedUrl = activeTab === 'custom' && customVideoId ? directYouTubeUrl : defaultYouTubeEmbedUrl;
 
   const accentLabels: { key: AccentType; label: string; badge: string }[] = [
     { key: 'all', label: 'Tất cả (All)', badge: 'Đa dạng' },
@@ -205,7 +209,7 @@ export function VideoSection({ video, word, category }: VideoSectionProps) {
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            Ngữ cảnh bản xứ (YouGlish)
+            Ngữ cảnh bản xứ (YouTube & YouGlish)
           </button>
           <button
             onClick={() => setActiveTab('custom')}
@@ -219,29 +223,42 @@ export function VideoSection({ video, word, category }: VideoSectionProps) {
           </button>
         </div>
 
-        {/* Accent Selector (for Immersion tab) */}
+        {/* Accent Selector & YouGlish Action (for Immersion tab) */}
         {activeTab === 'immersion' && (
-          <div className="flex items-center gap-1 flex-wrap">
-            <span className="text-[11px] text-slate-400 mr-1 flex items-center gap-1">
-              <Globe className="w-3 h-3 text-slate-500" /> Giọng:
-            </span>
-            {accentLabels.map((item) => (
-              <button
-                key={item.key}
-                onClick={() => {
-                  setAccent(item.key);
-                  setIframeKey((prev) => prev + 1);
-                }}
-                className={`px-2 py-0.5 rounded-md text-[11px] font-medium transition-all ${
-                  accent === item.key
-                    ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
-                    : 'bg-slate-950/70 text-slate-400 hover:text-slate-200 border border-slate-800/80'
-                }`}
-                title={item.badge}
-              >
-                {item.label}
-              </button>
-            ))}
+          <div className="flex items-center gap-2 flex-wrap">
+            <div className="flex items-center gap-1 flex-wrap">
+              <span className="text-[11px] text-slate-400 mr-1 flex items-center gap-1">
+                <Globe className="w-3 h-3 text-slate-500" /> Giọng:
+              </span>
+              {accentLabels.map((item) => (
+                <button
+                  key={item.key}
+                  onClick={() => {
+                    setAccent(item.key);
+                    setIframeKey((prev) => prev + 1);
+                  }}
+                  className={`px-2 py-0.5 rounded-md text-[11px] font-medium transition-all ${
+                    accent === item.key
+                      ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
+                      : 'bg-slate-950/70 text-slate-400 hover:text-slate-200 border border-slate-800/80'
+                  }`}
+                  title={item.badge}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+
+            <a
+              href={youGlishUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-semibold transition-all shadow-sm group"
+              title="Mở ngữ cảnh YouGlish trong tab mới (không bị chặn bảo mật iframe)"
+            >
+              <span>Mở YouGlish ({accentLabels.find((a) => a.key === accent)?.label})</span>
+              <ExternalLink className="w-3 h-3 text-amber-400/80 group-hover:translate-x-0.5 transition-transform" />
+            </a>
           </div>
         )}
       </div>
@@ -286,13 +303,23 @@ export function VideoSection({ video, word, category }: VideoSectionProps) {
                   <Film className="w-10 h-10 text-slate-600" />
                   <p className="text-xs">Chưa có video YouTube nào được chọn.</p>
                   <p className="text-[11px] text-slate-500">
-                    Vui lòng chuyển sang tab <strong>"Ngữ cảnh bản xứ"</strong> hoặc dán link YouTube để xem.
+                    Vui lòng chuyển sang tab <strong>&ldquo;Ngữ cảnh bản xứ&rdquo;</strong> hoặc dán link YouTube để xem.
                   </p>
                 </div>
               )}
 
               {/* Action Toolbar on Top Right of Player */}
               <div className="absolute top-2 right-2 flex items-center gap-1.5 z-20">
+                <a
+                  href={youGlishUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-2 py-1 rounded-lg bg-slate-900/90 hover:bg-slate-800 text-amber-300 border border-amber-500/40 shadow-md backdrop-blur text-[11px] font-semibold transition-colors flex items-center gap-1"
+                  title="Mở ngữ cảnh YouGlish trong tab mới"
+                >
+                  <span>YouGlish</span>
+                  <ExternalLink className="w-3 h-3 text-amber-400" />
+                </a>
                 <button
                   onClick={() => setIframeKey((prev) => prev + 1)}
                   className="p-1.5 rounded-lg bg-slate-900/90 hover:bg-slate-800 text-slate-300 border border-slate-700/60 shadow-md backdrop-blur transition-colors"
@@ -328,14 +355,14 @@ export function VideoSection({ video, word, category }: VideoSectionProps) {
 
                 <div>
                   <h4 className="text-base font-bold text-white tracking-wide flex items-center justify-center gap-2">
-                    Xem người bản xứ nói <span className="text-rose-400 uppercase italic">"{word}"</span>
+                    Xem người bản xứ nói <span className="text-rose-400 uppercase italic">&ldquo;{word}&rdquo;</span>
                   </h4>
                   <p className="text-xs text-slate-400 mt-1">
-                    Hàng nghìn trích đoạn video YouTube thực tế trong bài diễn thuyết, hội nghị và công việc với phụ đề trực tiếp.
+                    Hàng nghìn trích đoạn video thực tế trong bài diễn thuyết, hội nghị và công việc với phụ đề trực tiếp.
                   </p>
                 </div>
 
-                <div className="flex items-center gap-2 pt-1">
+                <div className="flex items-center gap-2 pt-1 flex-wrap justify-center">
                   <button
                     onClick={() => setIsPlaying(true)}
                     className="px-4 py-1.5 rounded-lg bg-rose-600/90 hover:bg-rose-500 text-white text-xs font-semibold shadow-sm transition-colors flex items-center gap-1.5"
@@ -343,6 +370,17 @@ export function VideoSection({ video, word, category }: VideoSectionProps) {
                     <Play className="w-3.5 h-3.5 fill-white" />
                     <span>Xem video ngay</span>
                   </button>
+
+                  <a
+                    href={youGlishUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 text-xs font-semibold border border-amber-500/30 transition-colors flex items-center gap-1.5"
+                    title="Mở ngữ cảnh YouGlish trong tab mới (không bị chặn bảo mật)"
+                  >
+                    <span>Mở YouGlish</span>
+                    <ExternalLink className="w-3 h-3 text-amber-400" />
+                  </a>
 
                   <button
                     onClick={() => speak(word)}
@@ -405,6 +443,19 @@ export function VideoSection({ video, word, category }: VideoSectionProps) {
             >
               <span>Tìm &ldquo;{word}&rdquo; trên YouTube</span>
               <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+
+            <span className="text-slate-700">•</span>
+
+            <a
+              href={youGlishUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-orange-400 hover:text-orange-300 transition-colors"
+              title="Tra cứu phát âm ngữ cảnh trên YouGlish"
+            >
+              <span>YouGlish</span>
+              <ExternalLink className="w-3 h-3" />
             </a>
 
             <span className="text-slate-700">•</span>

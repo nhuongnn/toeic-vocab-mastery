@@ -5,7 +5,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-001',
     word: 'revenue',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 92,
     pronunciation: {
@@ -101,7 +101,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-002',
     word: 'budget',
     partOfSpeech: ['noun', 'verb', 'adjective'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 90,
     pronunciation: {
@@ -201,7 +201,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-003',
     word: 'reimburse',
     partOfSpeech: ['verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 78,
     pronunciation: {
@@ -297,7 +297,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-004',
     word: 'deduct',
     partOfSpeech: ['verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 75,
     pronunciation: {
@@ -395,7 +395,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-005',
     word: 'audit',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 80,
     pronunciation: {
@@ -495,7 +495,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-006',
     word: 'invoice',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 85,
     pronunciation: {
@@ -594,7 +594,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-007',
     word: 'expenditure',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'advanced',
     toeicFrequency: 72,
     pronunciation: {
@@ -692,7 +692,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-008',
     word: 'subsidize',
     partOfSpeech: ['verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'advanced',
     toeicFrequency: 68,
     pronunciation: {
@@ -790,7 +790,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-009',
     word: 'asset',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 88,
     pronunciation: {
@@ -885,7 +885,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-010',
     word: 'liability',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 86,
     pronunciation: {
@@ -980,7 +980,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-011',
     word: 'quarterly',
     partOfSpeech: ['adjective', 'adverb', 'noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 94,
     pronunciation: {
@@ -1077,7 +1077,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-012',
     word: 'forecast',
     partOfSpeech: ['verb', 'noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 91,
     pronunciation: {
@@ -1173,7 +1173,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-013',
     word: 'commission',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 89,
     pronunciation: {
@@ -1269,7 +1269,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-014',
     word: 'inflation',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 87,
     pronunciation: {
@@ -1366,7 +1366,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-015',
     word: 'bond',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 84,
     pronunciation: {
@@ -1462,7 +1462,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-016',
     word: 'mortgage',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 90,
     pronunciation: {
@@ -1558,7 +1558,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-017',
     word: 'turnover',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 88,
     pronunciation: {
@@ -1654,7 +1654,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-018',
     word: 'overhead',
     partOfSpeech: ['noun', 'adjective', 'adverb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 86,
     pronunciation: {
@@ -1751,7 +1751,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-019',
     word: 'payable',
     partOfSpeech: ['adjective', 'noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 91,
     pronunciation: {
@@ -1848,7 +1848,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-020',
     word: 'receivable',
     partOfSpeech: ['adjective', 'noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 91,
     pronunciation: {
@@ -1945,7 +1945,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-021',
     word: 'surplus',
     partOfSpeech: ['noun', 'adjective'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 89,
     pronunciation: {
@@ -2041,7 +2041,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-022',
     word: 'deficit',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 89,
     pronunciation: {
@@ -2137,7 +2137,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-023',
     word: 'portfolio',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 88,
     pronunciation: {
@@ -2232,7 +2232,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-024',
     word: 'dividend',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 86,
     pronunciation: {
@@ -2327,7 +2327,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-025',
     word: 'equity',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 87,
     pronunciation: {
@@ -2424,7 +2424,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-026',
     word: 'bankruptcy',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 85,
     pronunciation: {
@@ -2521,7 +2521,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-027',
     word: 'yield',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 85,
     pronunciation: {
@@ -2618,7 +2618,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-028',
     word: 'collateral',
     partOfSpeech: ['noun', 'adjective'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 84,
     pronunciation: {
@@ -2716,7 +2716,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-029',
     word: 'accrue',
     partOfSpeech: ['verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 86,
     pronunciation: {
@@ -2813,7 +2813,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-030',
     word: 'capitalize',
     partOfSpeech: ['verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 85,
     pronunciation: {
@@ -2910,7 +2910,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-031',
     word: 'exemption',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 85,
     pronunciation: {
@@ -3007,7 +3007,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-032',
     word: 'appraisal',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 86,
     pronunciation: {
@@ -3103,7 +3103,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-033',
     word: 'fluctuate',
     partOfSpeech: ['verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 89,
     pronunciation: {
@@ -3200,7 +3200,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-034',
     word: 'compound',
     partOfSpeech: ['verb', 'noun', 'adjective'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 87,
     pronunciation: {
@@ -3297,7 +3297,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-035',
     word: 'remittance',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 84,
     pronunciation: {
@@ -3393,7 +3393,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-036',
     word: 'merger',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 90,
     pronunciation: {
@@ -3489,7 +3489,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-037',
     word: 'acquisition',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 90,
     pronunciation: {
@@ -3586,7 +3586,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-038',
     word: 'securities',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 86,
     pronunciation: {
@@ -3683,7 +3683,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-039',
     word: 'amortize',
     partOfSpeech: ['verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'advanced',
     toeicFrequency: 82,
     pronunciation: {
@@ -3780,7 +3780,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-040',
     word: 'appropriation',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'advanced',
     toeicFrequency: 81,
     pronunciation: {
@@ -3877,7 +3877,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-041',
     word: 'disbursement',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'advanced',
     toeicFrequency: 82,
     pronunciation: {
@@ -3973,7 +3973,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-042',
     word: 'solvent',
     partOfSpeech: ['adjective', 'noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'advanced',
     toeicFrequency: 82,
     pronunciation: {
@@ -4069,7 +4069,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-043',
     word: 'endowment',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'advanced',
     toeicFrequency: 80,
     pronunciation: {
@@ -4166,7 +4166,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-044',
     word: 'promissory',
     partOfSpeech: ['adjective'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'advanced',
     toeicFrequency: 80,
     pronunciation: {
@@ -4263,7 +4263,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-045',
     word: 'annuity',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'advanced',
     toeicFrequency: 81,
     pronunciation: {
@@ -4361,7 +4361,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-046',
     word: 'allocate',
     partOfSpeech: ['verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 93,
     pronunciation: {
@@ -4458,7 +4458,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-047',
     word: 'depreciation',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 89,
     pronunciation: {
@@ -4555,7 +4555,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-048',
     word: 'ledger',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 86,
     pronunciation: {
@@ -4650,7 +4650,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-049',
     word: 'fiscal',
     partOfSpeech: ['adjective'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 94,
     pronunciation: {
@@ -4747,7 +4747,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-050',
     word: 'reconcile',
     partOfSpeech: ['verb'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 90,
     pronunciation: {
@@ -4844,7 +4844,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-051',
     word: 'installment',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'essential',
     toeicFrequency: 92,
     pronunciation: {
@@ -4940,7 +4940,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-052',
     word: 'maturity',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 88,
     pronunciation: {
@@ -5037,7 +5037,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-053',
     word: 'arrears',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'advanced',
     toeicFrequency: 81,
     pronunciation: {
@@ -5132,7 +5132,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-054',
     word: 'default',
     partOfSpeech: ['verb', 'noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'intermediate',
     toeicFrequency: 89,
     pronunciation: {
@@ -5228,7 +5228,7 @@ export const financeWords: VocabularyWord[] = [
     id: 'finance-055',
     word: 'recapitalization',
     partOfSpeech: ['noun'],
-    category: 'Finance & Budgeting',
+    category: 'finance',
     level: 'advanced',
     toeicFrequency: 80,
     pronunciation: {

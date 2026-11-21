@@ -128,7 +128,11 @@ export function filterVocabularyWords(
   return words.filter((w) => {
     // Category check
     if (category !== 'all' && w.category !== category) {
-      return false;
+      const normW = w.category.toLowerCase().replace(/[^a-z0-9]/g, '');
+      const normFilter = category.toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (normW !== normFilter) {
+        return false;
+      }
     }
 
     // Level check

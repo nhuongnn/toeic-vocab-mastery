@@ -5,7 +5,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-001',
     word: 'launch',
     partOfSpeech: ['verb', 'noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 92,
     pronunciation: {
@@ -87,7 +87,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-002',
     word: 'endorse',
     partOfSpeech: ['verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 78,
     pronunciation: {
@@ -169,7 +169,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-003',
     word: 'incentive',
     partOfSpeech: ['noun', 'adjective'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 85,
     pronunciation: {
@@ -252,7 +252,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-004',
     word: 'promotional',
     partOfSpeech: ['adjective'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 88,
     pronunciation: {
@@ -336,7 +336,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-005',
     word: 'merchandise',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 75,
     pronunciation: {
@@ -419,7 +419,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-006',
     word: 'warranty',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 80,
     pronunciation: {
@@ -502,7 +502,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-007',
     word: 'campaign',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 90,
     pronunciation: {
@@ -586,7 +586,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-008',
     word: 'demographic',
     partOfSpeech: ['noun', 'adjective'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'advanced',
     toeicFrequency: 72,
     pronunciation: {
@@ -670,7 +670,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-009',
     word: 'target',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -751,7 +751,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-010',
     word: 'consumer',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -832,7 +832,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-011',
     word: 'advertise',
     partOfSpeech: ['verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -913,7 +913,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-012',
     word: 'brand',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -994,7 +994,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-013',
     word: 'retail',
     partOfSpeech: ['noun', 'verb', 'adjective', 'adverb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -1075,7 +1075,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-014',
     word: 'wholesale',
     partOfSpeech: ['noun', 'verb', 'adjective', 'adverb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -1157,7 +1157,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-015',
     word: 'catalog',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -1238,7 +1238,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-016',
     word: 'competitor',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -1320,7 +1320,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-017',
     word: 'sponsor',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -1401,7 +1401,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-018',
     word: 'revenue',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -1481,7 +1481,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-019',
     word: 'forecast',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -1562,7 +1562,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-020',
     word: 'distribute',
     partOfSpeech: ['verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -1643,7 +1643,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-021',
     word: 'inventory',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -1723,7 +1723,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-022',
     word: 'loyalty',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -1804,7 +1804,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-023',
     word: 'quarterly',
     partOfSpeech: ['adjective', 'adverb', 'noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -1885,7 +1885,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-024',
     word: 'coupon',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -1964,7 +1964,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-025',
     word: 'slogan',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -2044,7 +2044,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-026',
     word: 'publicity',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -2125,7 +2125,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-027',
     word: 'showcase',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -2206,7 +2206,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-028',
     word: 'clientele',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -2285,7 +2285,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-029',
     word: 'commission',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -2366,7 +2366,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-030',
     word: 'quota',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -2445,7 +2445,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-031',
     word: 'prospect',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -2526,7 +2526,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-032',
     word: 'conversion',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -2607,7 +2607,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-033',
     word: 'penetration',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'advanced',
     toeicFrequency: 8,
     pronunciation: {
@@ -2688,7 +2688,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-034',
     word: 'segment',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -2769,7 +2769,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-035',
     word: 'niche',
     partOfSpeech: ['noun', 'adjective'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'advanced',
     toeicFrequency: 8,
     pronunciation: {
@@ -2849,7 +2849,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-036',
     word: 'premium',
     partOfSpeech: ['noun', 'adjective'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'advanced',
     toeicFrequency: 9,
     pronunciation: {
@@ -2929,7 +2929,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-037',
     word: 'benchmark',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'advanced',
     toeicFrequency: 8,
     pronunciation: {
@@ -3010,7 +3010,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-038',
     word: 'prospective',
     partOfSpeech: ['adjective'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'advanced',
     toeicFrequency: 9,
     pronunciation: {
@@ -3091,7 +3091,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-039',
     word: 'markup',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'advanced',
     toeicFrequency: 8,
     pronunciation: {
@@ -3171,7 +3171,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-040',
     word: 'procurement',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'advanced',
     toeicFrequency: 8,
     pronunciation: {
@@ -3251,7 +3251,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-041',
     word: 'trademark',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -3332,7 +3332,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-042',
     word: 'vendor',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -3412,7 +3412,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-043',
     word: 'discount',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -3493,7 +3493,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-044',
     word: 'refund',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -3574,7 +3574,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-045',
     word: 'turnover',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'advanced',
     toeicFrequency: 8,
     pronunciation: {
@@ -3654,7 +3654,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-046',
     word: 'clearance',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -3735,7 +3735,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-047',
     word: 'flyer',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -3815,7 +3815,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-048',
     word: 'sample',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -3895,7 +3895,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-049',
     word: 'outlet',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -3974,7 +3974,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-050',
     word: 'commercial',
     partOfSpeech: ['noun', 'adjective'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -4056,7 +4056,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-051',
     word: 'retention',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -4137,7 +4137,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-052',
     word: 'patronize',
     partOfSpeech: ['verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -4218,7 +4218,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-053',
     word: 'subscriber',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -4298,7 +4298,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-054',
     word: 'franchise',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -4378,7 +4378,7 @@ export const marketingWords: VocabularyWord[] = [
     id: 'marketing-055',
     word: 'consignment',
     partOfSpeech: ['noun'],
-    category: 'Marketing & Sales',
+    category: 'marketing',
     level: 'advanced',
     toeicFrequency: 8,
     pronunciation: {

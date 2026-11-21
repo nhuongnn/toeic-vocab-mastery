@@ -103,25 +103,18 @@ export interface VocabularyWord {
 
 export type CategoryId =
   | 'office-admin'
-  | 'Office & Administration'
   | 'hr-personnel'
-  | 'Personnel & HR'
   | 'finance'
-  | 'Finance & Budgeting'
   | 'purchasing'
-  | 'Purchasing & Contracts'
   | 'travel'
-  | 'Travel & Transport'
   | 'marketing'
-  | 'Marketing & Sales'
   | 'technology'
   | 'manufacturing'
   | 'health'
   | 'dining'
   | 'real-estate'
   | 'communications'
-  | 'legal'
-  | (string & {});
+  | 'legal';
 
 export interface Category {
   id: CategoryId;

@@ -641,7 +641,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-009',
     word: 'recruit',
     partOfSpeech: ['verb', 'noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -720,7 +720,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-010',
     word: 'resume',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -799,7 +799,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-011',
     word: 'vacancy',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -880,7 +880,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-012',
     word: 'qualifications',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -960,7 +960,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-013',
     word: 'payroll',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -1038,7 +1038,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-014',
     word: 'promotion',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -1118,7 +1118,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-015',
     word: 'benefits',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -1199,7 +1199,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-016',
     word: 'overtime',
     partOfSpeech: ['noun', 'adverb'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -1278,7 +1278,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-017',
     word: 'evaluation',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -1358,7 +1358,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-018',
     word: 'intern',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -1437,7 +1437,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-019',
     word: 'resign',
     partOfSpeech: ['verb'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -1517,7 +1517,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-020',
     word: 'workforce',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -1595,7 +1595,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-021',
     word: 'incentive',
     partOfSpeech: ['noun', 'adjective'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -1675,7 +1675,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-022',
     word: 'appraise',
     partOfSpeech: ['verb'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -1756,7 +1756,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-023',
     word: 'mentor',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -1835,7 +1835,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-024',
     word: 'screening',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -1914,7 +1914,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-025',
     word: 'turnover',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -1993,7 +1993,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-026',
     word: 'seniority',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -2072,7 +2072,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-027',
     word: 'layoff',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -2151,7 +2151,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-028',
     word: 'severance',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -2231,7 +2231,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-029',
     word: 'remuneration',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -2311,7 +2311,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-030',
     word: 'stipend',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 7,
     pronunciation: {
@@ -2390,7 +2390,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-031',
     word: 'contractual',
     partOfSpeech: ['adjective'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -2471,7 +2471,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-032',
     word: 'absenteeism',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 7,
     pronunciation: {
@@ -2551,7 +2551,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-033',
     word: 'compliance',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 10,
     pronunciation: {
@@ -2632,7 +2632,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-034',
     word: 'onboard',
     partOfSpeech: ['verb'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -2711,7 +2711,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-035',
     word: 'tenure',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'advanced',
     toeicFrequency: 7,
     pronunciation: {
@@ -2790,7 +2790,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-036',
     word: 'apprentice',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'advanced',
     toeicFrequency: 7,
     pronunciation: {
@@ -2869,7 +2869,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-037',
     word: 'redundancy',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'advanced',
     toeicFrequency: 7,
     pronunciation: {
@@ -2949,7 +2949,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-038',
     word: 'sabbatical',
     partOfSpeech: ['noun', 'adjective'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'advanced',
     toeicFrequency: 7,
     pronunciation: {
@@ -3028,7 +3028,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-039',
     word: 'reprimand',
     partOfSpeech: ['verb', 'noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'advanced',
     toeicFrequency: 7,
     pronunciation: {
@@ -3107,7 +3107,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-040',
     word: 'commend',
     partOfSpeech: ['verb'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'advanced',
     toeicFrequency: 8,
     pronunciation: {
@@ -3188,7 +3188,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-041',
     word: 'pension',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -3268,7 +3268,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-042',
     word: 'shortlist',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -3347,7 +3347,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-043',
     word: 'reassign',
     partOfSpeech: ['verb'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -3426,7 +3426,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-044',
     word: 'flextime',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'essential',
     toeicFrequency: 8,
     pronunciation: {
@@ -3506,7 +3506,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-045',
     word: 'headhunter',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -3585,7 +3585,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-046',
     word: 'misconduct',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -3664,7 +3664,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-047',
     word: 'harassment',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -3744,7 +3744,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-048',
     word: 'telecommute',
     partOfSpeech: ['verb', 'noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -3823,7 +3823,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-049',
     word: 'freelance',
     partOfSpeech: ['adjective', 'verb', 'noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -3904,7 +3904,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-050',
     word: 'demote',
     partOfSpeech: ['verb'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'intermediate',
     toeicFrequency: 7,
     pronunciation: {
@@ -3983,7 +3983,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-051',
     word: 'succession',
     partOfSpeech: ['noun'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'advanced',
     toeicFrequency: 8,
     pronunciation: {
@@ -4064,7 +4064,7 @@ export const hrPersonnelWords: VocabularyWord[] = [
     id: 'hr-052',
     word: 'retrench',
     partOfSpeech: ['verb'],
-    category: 'Personnel & HR',
+    category: 'hr-personnel',
     level: 'advanced',
     toeicFrequency: 7,
     pronunciation: {

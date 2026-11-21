@@ -5,7 +5,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-001',
     word: 'collaborate',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 85,
     pronunciation: {
@@ -88,7 +88,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-002',
     word: 'agenda',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 90,
     pronunciation: {
@@ -171,7 +171,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-003',
     word: 'allocate',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 80,
     pronunciation: {
@@ -254,7 +254,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-004',
     word: 'deadline',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 95,
     pronunciation: {
@@ -336,7 +336,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-005',
     word: 'memorandum',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 75,
     pronunciation: {
@@ -418,7 +418,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-006',
     word: 'implement',
     partOfSpeech: ['verb', 'noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 88,
     pronunciation: {
@@ -502,7 +502,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-007',
     word: 'supervise',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 78,
     pronunciation: {
@@ -586,7 +586,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-008',
     word: 'delegate',
     partOfSpeech: ['verb', 'noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 76,
     pronunciation: {
@@ -670,7 +670,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-009',
     word: 'coordinate',
     partOfSpeech: ['verb', 'noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -754,7 +754,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-010',
     word: 'schedule',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -838,7 +838,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-011',
     word: 'submit',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 10,
     pronunciation: {
@@ -921,7 +921,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-012',
     word: 'authorize',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -1004,7 +1004,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-013',
     word: 'facilitate',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -1087,7 +1087,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-014',
     word: 'streamline',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -1170,7 +1170,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-015',
     word: 'oversee',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -1253,7 +1253,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-016',
     word: 'correspond',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -1337,7 +1337,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-017',
     word: 'procedure',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -1421,7 +1421,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-018',
     word: 'priority',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -1505,7 +1505,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-019',
     word: 'productivity',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 8,
     pronunciation: {
@@ -1589,7 +1589,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-020',
     word: 'personnel',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -1672,7 +1672,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-021',
     word: 'briefing',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 7,
     pronunciation: {
@@ -1756,7 +1756,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-022',
     word: 'postpone',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -1839,7 +1839,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-023',
     word: 'adjourn',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'advanced',
     toeicFrequency: 7,
     pronunciation: {
@@ -1922,7 +1922,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-024',
     word: 'mandatory',
     partOfSpeech: ['adjective'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -2006,7 +2006,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-025',
     word: 'confidential',
     partOfSpeech: ['adjective'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -2089,7 +2089,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-026',
     word: 'circulate',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 7,
     pronunciation: {
@@ -2172,7 +2172,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-027',
     word: 'amendment',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'advanced',
     toeicFrequency: 7,
     pronunciation: {
@@ -2255,7 +2255,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-028',
     word: 'comply',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -2338,7 +2338,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-029',
     word: 'proficient',
     partOfSpeech: ['adjective'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -2421,7 +2421,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-030',
     word: 'prerequisite',
     partOfSpeech: ['noun', 'adjective'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'advanced',
     toeicFrequency: 7,
     pronunciation: {
@@ -2504,7 +2504,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-031',
     word: 'orientation',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 8,
     pronunciation: {
@@ -2587,7 +2587,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-032',
     word: 'compliance',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 9,
     pronunciation: {
@@ -2670,7 +2670,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-033',
     word: 'grievance',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'advanced',
     toeicFrequency: 6,
     pronunciation: {
@@ -2754,7 +2754,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-034',
     word: 'accommodate',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -2837,7 +2837,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-035',
     word: 'acknowledge',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -2920,7 +2920,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-036',
     word: 'adhere',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -3003,7 +3003,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-037',
     word: 'administer',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 7,
     pronunciation: {
@@ -3087,7 +3087,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-038',
     word: 'administrative',
     partOfSpeech: ['adjective'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -3171,7 +3171,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-039',
     word: 'appoint',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -3254,7 +3254,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-040',
     word: 'archive',
     partOfSpeech: ['verb', 'noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 7,
     pronunciation: {
@@ -3338,7 +3338,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-041',
     word: 'minutes',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 8,
     pronunciation: {
@@ -3420,7 +3420,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-042',
     word: 'requisition',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'advanced',
     toeicFrequency: 7,
     pronunciation: {
@@ -3503,7 +3503,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-043',
     word: 'inventory',
     partOfSpeech: ['noun', 'verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 8,
     pronunciation: {
@@ -3585,7 +3585,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-044',
     word: 'clerical',
     partOfSpeech: ['adjective'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 7,
     pronunciation: {
@@ -3668,7 +3668,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-045',
     word: 'protocol',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'advanced',
     toeicFrequency: 7,
     pronunciation: {
@@ -3750,7 +3750,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-046',
     word: 'designate',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -3833,7 +3833,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-047',
     word: 'verify',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 9,
     pronunciation: {
@@ -3916,7 +3916,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-048',
     word: 'clarify',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 8,
     pronunciation: {
@@ -4000,7 +4000,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-049',
     word: 'consolidate',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -4083,7 +4083,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-050',
     word: 'expedite',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -4167,7 +4167,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-051',
     word: 'stationery',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'essential',
     toeicFrequency: 8,
     pronunciation: {
@@ -4248,7 +4248,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-052',
     word: 'duplicate',
     partOfSpeech: ['verb', 'noun', 'adjective'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 8,
     pronunciation: {
@@ -4331,7 +4331,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-053',
     word: 'dispatch',
     partOfSpeech: ['verb', 'noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 7,
     pronunciation: {
@@ -4414,7 +4414,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-054',
     word: 'custodian',
     partOfSpeech: ['noun'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'intermediate',
     toeicFrequency: 7,
     pronunciation: {
@@ -4496,7 +4496,7 @@ export const officeAdminWords: VocabularyWord[] = [
     id: 'office-admin-055',
     word: 'terminate',
     partOfSpeech: ['verb'],
-    category: 'Office & Administration',
+    category: 'office-admin',
     level: 'advanced',
     toeicFrequency: 8,
     pronunciation: {

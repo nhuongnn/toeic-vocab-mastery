@@ -150,21 +150,25 @@ export function VideoSection({ video, word }: VideoSectionProps) {
     }
   };
 
-  // URL for YouGlish in new window (avoids X-Frame-Options blocking in Firefox/Chrome)
+  // Clean word for YouGlish lookup
+  const cleanWord = word.trim().toLowerCase().replace(/['’]/g, '').replace(/\s+/g, '-');
+
+  // URL for YouGlish in new window
   const youGlishUrl = `https://youglish.com/pronounce/${encodeURIComponent(
-    word
+    cleanWord
   )}/english/${accent}`;
 
-  // Embed URL for YouTube in-app player (YouTube allows embedding without X-Frame-Options block)
-  const defaultYouTubeEmbedUrl = `https://www.youtube-nocookie.com/embed?listType=search&list=${encodeURIComponent(
-    `${word} pronunciation in context english`
-  )}&autoplay=1&rel=0`;
+  // Official YouGlish Embedded Player URL (using official /emb=1&e_id= path recognized by YouGlish)
+  const youGlishEmbedUrl = `https://youglish.com/pronounce/${encodeURIComponent(
+    cleanWord
+  )}/english/${accent}/emb=1&e_id=yg_${encodeURIComponent(cleanWord)}&e_comp=8415`;
 
+  // Custom YouTube video embed (when a valid YouTube ID is provided)
   const directYouTubeUrl = customVideoId
     ? `https://www.youtube-nocookie.com/embed/${customVideoId}?start=${video?.timestamp || 0}&autoplay=1&rel=0`
-    : defaultYouTubeEmbedUrl;
+    : null;
 
-  const currentEmbedUrl = activeTab === 'custom' && customVideoId ? directYouTubeUrl : defaultYouTubeEmbedUrl;
+  const currentEmbedUrl = activeTab === 'custom' ? directYouTubeUrl : youGlishEmbedUrl;
 
   const accentLabels: { key: AccentType; label: string; badge: string }[] = [
     { key: 'all', label: 'Tất cả (All)', badge: 'Đa dạng' },
@@ -209,7 +213,7 @@ export function VideoSection({ video, word }: VideoSectionProps) {
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            Ngữ cảnh bản xứ (YouTube & YouGlish)
+            Ngữ cảnh bản xứ (YouGlish)
           </button>
           <button
             onClick={() => setActiveTab('custom')}
@@ -355,10 +359,10 @@ export function VideoSection({ video, word }: VideoSectionProps) {
 
                 <div>
                   <h4 className="text-base font-bold text-white tracking-wide flex items-center justify-center gap-2">
-                    Xem người bản xứ nói <span className="text-rose-400 uppercase italic">&ldquo;{word}&rdquo;</span>
+                    Xem người bản xứ phát âm <span className="text-rose-400 uppercase italic">&ldquo;{word}&rdquo;</span> trên YouGlish
                   </h4>
                   <p className="text-xs text-slate-400 mt-1">
-                    Hàng nghìn trích đoạn video thực tế trong bài diễn thuyết, hội nghị và công việc với phụ đề trực tiếp.
+                    Hàng nghìn trích đoạn video YouTube thực tế kèm phụ đề tương tác YouGlish.
                   </p>
                 </div>
 
@@ -368,7 +372,7 @@ export function VideoSection({ video, word }: VideoSectionProps) {
                     className="px-4 py-1.5 rounded-lg bg-rose-600/90 hover:bg-rose-500 text-white text-xs font-semibold shadow-sm transition-colors flex items-center gap-1.5"
                   >
                     <Play className="w-3.5 h-3.5 fill-white" />
-                    <span>Xem video ngay</span>
+                    <span>Xem video YouGlish</span>
                   </button>
 
                   <a

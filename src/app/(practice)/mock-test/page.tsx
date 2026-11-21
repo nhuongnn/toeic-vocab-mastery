@@ -6,7 +6,7 @@ import { ScoreTrendChart } from '@/components/mockTest/ScoreTrendChart';
 import { TestHistoryTable } from '@/components/mockTest/TestHistoryTable';
 import { getMockTestHistory } from '@/lib/mockTest/storage';
 import { MockTestResult } from '@/types/mockTest';
-import { Trophy, Zap, FileText, TrendingUp, Sparkles, BookOpen } from 'lucide-react';
+import { Trophy, Zap, FileText, TrendingUp, Sparkles, BookOpen, Headphones, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function MockTestHubPage() {
@@ -102,6 +102,33 @@ export default function MockTestHubPage() {
             badge="Mô phỏng thi thật 100%"
             isPopular={false}
           />
+        </div>
+
+        {/* Listening Mock Lab Callout */}
+        <div className="p-5 rounded-3xl bg-gradient-to-r from-sky-950/40 via-slate-900 to-indigo-950/40 border border-sky-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6">
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center flex-shrink-0">
+              <Headphones className="w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="text-sm font-bold text-white flex items-center gap-2">
+                <span>Luyện thi Listening Full Parts 1 - 4 & Video Thực Chiến</span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sky-500/20 text-sky-300">
+                  Mới Cập Nhật
+                </span>
+              </h3>
+              <p className="text-xs text-slate-400">
+                Thử sức với 42 câu Audio chuẩn format ETS (Mô tả tranh, Hỏi-Đáp, Hội thoại 3 người, Thư thoại) và 6 video tình huống công sở đời thực.
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/listening"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold shadow-md shadow-sky-600/30 transition-all flex-shrink-0"
+          >
+            <span>Vào Phòng Luyện Nghe</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 

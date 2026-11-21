@@ -281,14 +281,14 @@ export default function HomePage() {
                 <Volume2 className="w-5 h-5" />
               </div>
               <h3 className="font-bold text-white group-hover:text-sky-400 transition-colors">
-                Listening Lab
+                Full Listening Lab
               </h3>
               <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                Ear training for rapid audio recognition in native American & British cadences.
+                Full TOEIC Audio Parts 1-4, real-world videos, dictation drills & ETS 2024-2025 exam traps.
               </p>
             </div>
             <span className="text-xs text-sky-400 font-semibold mt-4 flex items-center gap-1">
-              Train Ears →
+              Luyện Nghe Thực Chiến →
             </span>
           </Link>
 

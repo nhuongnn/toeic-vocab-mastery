@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useProgress } from '@/contexts/ProgressContext';
+import { useMounted } from '@/hooks/useMounted';
 import { AuthButton } from './AuthButton';
 import {
   Sparkles,
@@ -25,31 +26,47 @@ import {
   Compass,
   Settings,
   Bot,
+  ArrowRight,
 } from 'lucide-react';
 import { allVocabularyWords } from '@/data/vocabulary';
+import { LEVEL_CONFIG } from '@/lib/vocabulary-helpers';
 
 export function Navbar() {
+  const router = useRouter();
   const pathname = usePathname();
   const { progress, dueCount } = useProgress();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<typeof allVocabularyWords>([]);
+  const [totalMatches, setTotalMatches] = useState(0);
   const [searchFocused, setSearchFocused] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useMounted();
   const [activeDropdown, setActiveDropdown] = useState<'skills' | 'practice' | null>(null);
 
   const dropdownTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
+  const prevPathnameRef = useRef(pathname);
 
+  // Listen for clicks outside search dropdown to close it gracefully
   useEffect(() => {
-    setMounted(true);
+    const handleClickOutside = (e: MouseEvent) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(e.target as Node)) {
+        setSearchFocused(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   // Close dropdowns on page route change
   useEffect(() => {
-    setActiveDropdown(null);
-    setMobileMenuOpen(false);
-    setSearchFocused(false);
-    setSearchQuery('');
+    if (prevPathnameRef.current !== pathname) {
+      prevPathnameRef.current = pathname;
+      setActiveDropdown(null);
+      setMobileMenuOpen(false);
+      setSearchFocused(false);
+      setSearchQuery('');
+    }
   }, [pathname]);
 
   const streak = mounted ? progress.stats.currentStreak : 0;
@@ -70,14 +87,65 @@ export function Navbar() {
 
   const handleSearch = (q: string) => {
     setSearchQuery(q);
-    if (!q.trim()) {
+    const trimmed = q.trim().toLowerCase();
+    if (!trimmed) {
       setSearchResults([]);
+      setTotalMatches(0);
       return;
     }
-    const filtered = allVocabularyWords
-      .filter((w) => w.word.toLowerCase().includes(q.toLowerCase()))
-      .slice(0, 5);
-    setSearchResults(filtered);
+
+    const allMatches = allVocabularyWords.filter((w) => {
+      const matchWord = w.word.toLowerCase().includes(trimmed);
+      const matchConcept = w.deepMeaning?.coreConcept?.toLowerCase().includes(trimmed);
+      const matchRoot = w.etymology?.rootWord?.toLowerCase().includes(trimmed);
+      const matchPos = w.partOfSpeech?.some((p) => p.toLowerCase().includes(trimmed));
+      return matchWord || matchConcept || matchRoot || matchPos;
+    });
+
+    // Prioritize exact match and words starting with the query
+    allMatches.sort((a, b) => {
+      const aWord = a.word.toLowerCase();
+      const bWord = b.word.toLowerCase();
+      const aExact = aWord === trimmed;
+      const bExact = bWord === trimmed;
+      if (aExact && !bExact) return -1;
+      if (!aExact && bExact) return 1;
+
+      const aStarts = aWord.startsWith(trimmed);
+      const bStarts = bWord.startsWith(trimmed);
+      if (aStarts && !bStarts) return -1;
+      if (!aStarts && bStarts) return 1;
+
+      const aWordMatch = aWord.includes(trimmed);
+      const bWordMatch = bWord.includes(trimmed);
+      if (aWordMatch && !bWordMatch) return -1;
+      if (!aWordMatch && bWordMatch) return 1;
+
+      return 0;
+    });
+
+    setTotalMatches(allMatches.length);
+    setSearchResults(allMatches.slice(0, 10));
+  };
+
+  const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      const trimmed = searchQuery.trim();
+      if (!trimmed) return;
+      e.preventDefault();
+      const exactMatch = allVocabularyWords.find(
+        (w) => w.word.toLowerCase() === trimmed.toLowerCase()
+      );
+      if (exactMatch) {
+        router.push(`/word/${exactMatch.id}`);
+      } else {
+        router.push(`/categories?search=${encodeURIComponent(trimmed)}`);
+      }
+      setSearchFocused(false);
+      setMobileMenuOpen(false);
+    } else if (e.key === 'Escape') {
+      setSearchFocused(false);
+    }
   };
 
   const isSkillsActive =
@@ -383,8 +451,11 @@ export function Navbar() {
 
           {/* 3. Search & User Profile Actions */}
           <div className="flex items-center gap-1.5 sm:gap-2 xl:gap-3 ml-auto lg:ml-0 shrink-0 whitespace-nowrap">
-            {/* Compact Search Bar */}
-            <div className="relative hidden md:block w-32 lg:w-36 xl:w-48 shrink-0">
+            {/* Expandable Search Bar */}
+            <div
+              ref={searchContainerRef}
+              className="relative hidden md:block w-36 lg:w-44 xl:w-56 focus-within:w-52 lg:focus-within:w-64 xl:focus-within:w-72 transition-all duration-200 shrink-0"
+            >
               <div className="relative">
                 <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <input
@@ -393,33 +464,105 @@ export function Navbar() {
                   value={searchQuery}
                   onChange={(e) => handleSearch(e.target.value)}
                   onFocus={() => setSearchFocused(true)}
-                  onBlur={() => setTimeout(() => setSearchFocused(false), 200)}
-                  className="w-full bg-slate-900/90 border border-slate-800 rounded-lg pl-8 pr-2.5 py-1 text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
+                  onKeyDown={handleSearchKeyDown}
+                  className="w-full bg-slate-900/90 border border-slate-800 rounded-lg pl-8 pr-7 py-1 text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
                 />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSearchQuery('');
+                      setSearchResults([]);
+                      setTotalMatches(0);
+                    }}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-200 p-0.5"
+                    title="Xóa tìm kiếm"
+                  >
+                    <X className="w-3 h-3" />
+                  </button>
+                )}
               </div>
 
               {/* Search Dropdown */}
-              {searchFocused && searchResults.length > 0 && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 z-50 overflow-hidden">
-                  {searchResults.map((word) => (
-                    <Link
-                      key={word.id}
-                      href={`/word/${word.id}`}
-                      className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-800/80 transition-colors group"
-                    >
-                      <div className="min-w-0 pr-2">
-                        <div className="font-semibold text-xs text-slate-100 group-hover:text-indigo-400 transition-colors truncate">
-                          {word.word}
-                        </div>
-                        <div className="text-[10px] text-slate-400 truncate">
-                          {word.deepMeaning.coreConcept}
-                        </div>
-                      </div>
-                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 shrink-0">
-                        {word.pronunciation.ipa}
-                      </span>
-                    </Link>
-                  ))}
+              {searchFocused && searchQuery.trim() && (
+                <div
+                  onMouseDown={(e) => e.preventDefault()}
+                  className="absolute top-full right-0 mt-2 w-[22rem] sm:w-[26rem] md:w-[28rem] max-w-[calc(100vw-2rem)] bg-slate-900/98 border border-slate-700/80 rounded-2xl shadow-2xl p-2.5 z-50 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150 whitespace-normal"
+                >
+                  <div className="flex items-center justify-between px-2.5 py-1 text-[11px] font-semibold text-slate-400 border-b border-slate-800/80 mb-1.5">
+                    <span>Kết quả tìm kiếm ({totalMatches} từ)</span>
+                    <span className="text-[10px] text-slate-500 hidden sm:inline">
+                      Nhấn Enter để mở
+                    </span>
+                  </div>
+
+                  {searchResults.length > 0 ? (
+                    <div className="max-h-[min(24rem,calc(100vh-8rem))] overflow-y-auto divide-y divide-slate-800/60 pr-1 space-y-0.5">
+                      {searchResults.map((word) => {
+                        const levelInfo = LEVEL_CONFIG[word.level];
+                        return (
+                          <Link
+                            key={word.id}
+                            href={`/word/${word.id}`}
+                            onClick={() => {
+                              setSearchFocused(false);
+                              setSearchQuery('');
+                            }}
+                            className="flex items-start justify-between gap-3 p-2.5 rounded-xl hover:bg-slate-800/80 transition-all group pt-2 pb-2"
+                          >
+                            <div className="min-w-0 flex-1 space-y-1">
+                              <div className="flex items-center gap-2 flex-wrap">
+                                <span className="font-bold text-xs sm:text-sm text-slate-100 group-hover:text-indigo-400 transition-colors">
+                                  {word.word}
+                                </span>
+                                {word.partOfSpeech && word.partOfSpeech.length > 0 && (
+                                  <span className="text-[10px] font-medium text-slate-400 bg-slate-800/80 px-1.5 py-0.2 rounded border border-slate-700/60">
+                                    {word.partOfSpeech.join(', ')}
+                                  </span>
+                                )}
+                                {levelInfo && (
+                                  <span
+                                    className={`text-[9px] font-semibold px-1.5 py-0.2 rounded border ${levelInfo.badgeClass}`}
+                                  >
+                                    {levelInfo.shortLabel}
+                                  </span>
+                                )}
+                              </div>
+                              <p className="text-[11px] sm:text-xs text-slate-300 line-clamp-2 leading-relaxed">
+                                {word.deepMeaning?.coreConcept || 'Không có mô tả'}
+                              </p>
+                            </div>
+
+                            <div className="flex flex-col items-end gap-1 shrink-0 pt-0.5">
+                              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/90 text-slate-300 border border-slate-700/70 whitespace-nowrap">
+                                {word.pronunciation.ipa}
+                              </span>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <div className="p-4 text-center text-xs text-slate-400">
+                      Không tìm thấy từ vựng nào khớp với &ldquo;{searchQuery}&rdquo;
+                    </div>
+                  )}
+
+                  {totalMatches > 0 && (
+                    <div className="pt-2 border-t border-slate-800/80 mt-1.5">
+                      <Link
+                        href={`/categories?search=${encodeURIComponent(searchQuery.trim())}`}
+                        onClick={() => {
+                          setSearchFocused(false);
+                          setSearchQuery('');
+                        }}
+                        className="flex items-center justify-center gap-2 w-full p-2 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 hover:text-indigo-300 text-xs font-semibold border border-indigo-500/20 transition-all text-center"
+                      >
+                        <span>Xem tất cả {totalMatches} từ trong Kho từ vựng</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -472,21 +615,84 @@ export function Navbar() {
               placeholder="Tìm kiếm từ vựng..."
               value={searchQuery}
               onChange={(e) => handleSearch(e.target.value)}
-              className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500"
+              onKeyDown={handleSearchKeyDown}
+              className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-8 py-2 text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500"
             />
-            {searchResults.length > 0 && searchQuery && (
-              <div className="mt-2 bg-slate-900 border border-slate-800 rounded-xl p-1.5 space-y-1">
-                {searchResults.map((word) => (
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => {
+                  setSearchQuery('');
+                  setSearchResults([]);
+                  setTotalMatches(0);
+                }}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-200 p-0.5"
+                title="Xóa tìm kiếm"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
+
+            {searchQuery.trim() && (
+              <div className="mt-2 bg-slate-900 border border-slate-800 rounded-xl p-2 space-y-1">
+                <div className="flex items-center justify-between px-1.5 py-1 text-[11px] font-semibold text-slate-400 border-b border-slate-800/80 mb-1">
+                  <span>Kết quả ({totalMatches} từ)</span>
+                </div>
+                {searchResults.length > 0 ? (
+                  <div className="max-h-64 overflow-y-auto divide-y divide-slate-800/60 pr-1">
+                    {searchResults.map((word) => {
+                      const levelInfo = LEVEL_CONFIG[word.level];
+                      return (
+                        <Link
+                          key={word.id}
+                          href={`/word/${word.id}`}
+                          onClick={() => {
+                            setMobileMenuOpen(false);
+                            setSearchQuery('');
+                          }}
+                          className="flex items-start justify-between gap-2 p-2 rounded-lg hover:bg-slate-800/80 transition-colors"
+                        >
+                          <div className="min-w-0 flex-1 space-y-0.5">
+                            <div className="flex items-center gap-1.5 flex-wrap">
+                              <span className="text-xs font-bold text-white">{word.word}</span>
+                              {levelInfo && (
+                                <span
+                                  className={`text-[9px] font-semibold px-1 py-0.2 rounded border ${levelInfo.badgeClass}`}
+                                >
+                                  {levelInfo.shortLabel}
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-[11px] text-slate-400 line-clamp-1">
+                              {word.deepMeaning?.coreConcept || ''}
+                            </p>
+                          </div>
+                          <span className="text-[10px] font-mono text-slate-400 shrink-0 bg-slate-800/90 px-1.5 py-0.5 rounded border border-slate-700/60">
+                            {word.pronunciation.ipa}
+                          </span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="p-3 text-center text-xs text-slate-400">
+                    Không tìm thấy từ vựng nào khớp với &ldquo;{searchQuery}&rdquo;
+                  </div>
+                )}
+
+                {totalMatches > 0 && (
                   <Link
-                    key={word.id}
-                    href={`/word/${word.id}`}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-800"
+                    href={`/categories?search=${encodeURIComponent(searchQuery.trim())}`}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      setSearchQuery('');
+                    }}
+                    className="flex items-center justify-center gap-1.5 w-full p-2 mt-1 rounded-lg bg-indigo-500/10 text-indigo-400 text-xs font-semibold border border-indigo-500/20 text-center"
                   >
-                    <span className="text-xs font-semibold text-white">{word.word}</span>
-                    <span className="text-[10px] text-slate-400">{word.pronunciation.ipa}</span>
+                    <span>Xem tất cả {totalMatches} kết quả</span>
+                    <ArrowRight className="w-3 h-3" />
                   </Link>
-                ))}
+                )}
               </div>
             )}
           </div>

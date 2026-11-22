@@ -45,19 +45,28 @@ export default function CategoriesPage() {
   const [search, setSearch] = useState('');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  // Read URL query parameters on mount
+  // Read URL query parameters on mount & URL updates
   React.useEffect(() => {
-    if (typeof window !== 'undefined') {
+    const parseParams = () => {
+      if (typeof window === 'undefined') return;
       const params = new URLSearchParams(window.location.search);
       const catParam = params.get('category');
       const lvlParam = params.get('level');
+      const searchParam = params.get('search') || params.get('q');
       if (catParam) {
         setSelectedCategory(catParam as CategoryId);
       }
       if (lvlParam && (lvlParam === 'essential' || lvlParam === 'intermediate' || lvlParam === 'advanced')) {
         setSelectedLevel(lvlParam as WordLevel);
       }
-    }
+      if (searchParam !== null) {
+        setSearch(searchParam);
+      }
+    };
+
+    parseParams();
+    window.addEventListener('popstate', parseParams);
+    return () => window.removeEventListener('popstate', parseParams);
   }, []);
 
   // Category horizontal scroll controls & expanded mode

@@ -48,6 +48,8 @@ export interface RoleplayPreferences {
   character?: CharacterConfig;
   scenarioId?: string;
   customScenarios?: RoleplayScenario[];
+  userAvatar?: string;
+  userName?: string;
   updatedAt?: string;
 }
 

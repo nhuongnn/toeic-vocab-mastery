@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
+import { useMounted } from '@/hooks/useMounted';
 import {
   Send,
   Volume2,
@@ -47,6 +49,7 @@ interface RoleplayChatRoomProps {
 
 export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   const { progress, saveRoleplaySettings } = useProgress();
+  const mounted = useMounted();
 
   // 1. Initial State from user progress / sync / defaults
   const [character, setCharacter] = useState<CharacterConfig>(() => {
@@ -59,6 +62,13 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
     }
     return PRESET_SCENARIOS[0];
   });
+  const [userAvatar, setUserAvatar] = useState<string>(() => {
+    return progress.roleplay?.userAvatar || 'shiba-intern';
+  });
+  const [userName, setUserName] = useState<string>(() => {
+    return progress.roleplay?.userName || 'Bạn';
+  });
+  const [setupInitialTab, setSetupInitialTab] = useState<'character' | 'user' | 'scenario'>('character');
 
   // Sync state if progress.roleplay updates from cloud or another tab
   useEffect(() => {
@@ -67,6 +77,12 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       if (progress.roleplay.scenarioId) {
         const found = PRESET_SCENARIOS.find((s) => s.id === progress.roleplay?.scenarioId);
         if (found) setScenario(found);
+      }
+      if (progress.roleplay.userAvatar) {
+        setUserAvatar(progress.roleplay.userAvatar);
+      }
+      if (progress.roleplay.userName) {
+        setUserName(progress.roleplay.userName);
       }
     }
   }, [progress.roleplay]);
@@ -484,8 +500,25 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
         {/* Action Controls */}
         <div className="flex items-center gap-1.5 sm:gap-2">
+          {/* User Avatar Button */}
           <button
-            onClick={() => setIsSetupOpen(true)}
+            onClick={() => {
+              setSetupInitialTab('user');
+              setIsSetupOpen(true);
+            }}
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-slate-200 text-xs font-semibold transition-all border border-slate-700/80 hover:border-indigo-500/50"
+            title="Đổi avatar & tên hiển thị của bạn"
+          >
+            <CharacterAvatar avatarId={userAvatar} size="xs" />
+            <span className="hidden md:inline text-slate-300 font-medium">{userName}</span>
+            <span className="text-[10px] text-indigo-400 font-bold hidden sm:inline">Avatar bạn</span>
+          </button>
+
+          <button
+            onClick={() => {
+              setSetupInitialTab('character');
+              setIsSetupOpen(true);
+            }}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-all border border-slate-700"
             title="Đổi nhân vật hoặc tình huống"
           >
@@ -560,9 +593,17 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
             >
               {/* Avatar Icon */}
               {isUser ? (
-                <div className="w-8 h-8 rounded-xl flex items-center justify-center text-xs font-bold shrink-0 mt-1 shadow-sm bg-slate-700 text-white">
-                  <User className="w-4 h-4" />
-                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSetupInitialTab('user');
+                    setIsSetupOpen(true);
+                  }}
+                  title="Bấm để đổi avatar của bạn"
+                  className="shrink-0 mt-1 cursor-pointer hover:opacity-80 transition-opacity"
+                >
+                  <CharacterAvatar avatarId={userAvatar} size="sm" />
+                </button>
               ) : (
                 <CharacterAvatar avatarId={character.avatar} size="sm" className="mt-1" />
               )}
@@ -751,16 +792,21 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         currentCharacter={character}
         currentScenario={scenario}
         userContext={userContext}
-        onApply={(newChar, newScen) => {
+        currentUserAvatar={userAvatar}
+        currentUserName={userName}
+        initialTab={setupInitialTab}
+        onApply={(newChar, newScen, newUserAvatar, newUserName) => {
           setCharacter(newChar);
           setScenario(newScen);
-          saveRoleplaySettings(newChar, newScen.id);
+          setUserAvatar(newUserAvatar);
+          setUserName(newUserName);
+          saveRoleplaySettings(newChar, newScen.id, newUserAvatar, newUserName);
         }}
       />
 
       {/* 7. Summary & Evaluation Modal */}
-      {isSummaryOpen && summaryData && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-150">
+      {isSummaryOpen && summaryData && mounted && createPortal(
+        <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md animate-in fade-in duration-150">
           <div className="w-full max-w-lg rounded-3xl bg-slate-900 border border-slate-800 p-6 shadow-2xl space-y-6">
             <div className="text-center space-y-2">
               <div className="flex items-center justify-center gap-3">
@@ -813,7 +859,8 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
               </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

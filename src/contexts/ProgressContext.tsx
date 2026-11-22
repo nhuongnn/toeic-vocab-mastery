@@ -41,7 +41,12 @@ interface ProgressContextType {
   syncStatus: SyncStatus;
   lastSyncedAt: Date | null;
   forceSync: () => Promise<void>;
-  saveRoleplaySettings: (character: CharacterConfig, scenarioId?: string) => void;
+  saveRoleplaySettings: (
+    character: CharacterConfig,
+    scenarioId?: string,
+    userAvatar?: string,
+    userName?: string
+  ) => void;
 }
 
 const ProgressContext = createContext<ProgressContextType | undefined>(undefined);
@@ -391,11 +396,18 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   );
 
   const saveRoleplaySettings = useCallback(
-    (character: CharacterConfig, scenarioId?: string) => {
+    (
+      character: CharacterConfig,
+      scenarioId?: string,
+      userAvatar?: string,
+      userName?: string
+    ) => {
       setProgress((prev) => {
         const updatedRoleplay: RoleplayPreferences = {
           character,
           scenarioId: scenarioId || prev.roleplay?.scenarioId,
+          userAvatar: userAvatar !== undefined ? userAvatar : prev.roleplay?.userAvatar,
+          userName: userName !== undefined ? userName : prev.roleplay?.userName,
           updatedAt: new Date().toISOString(),
         };
         const updated: UserProgressData = {

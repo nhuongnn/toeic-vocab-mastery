@@ -134,7 +134,8 @@ export function Navbar() {
       desc: 'Nhập vai giao tiếp với Sếp, Đồng nghiệp & Nhân viên',
       icon: Bot,
       color: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20',
-      badge: 'Mới • AI',
+      badge: 'Mới',
+      badgeColor: 'bg-indigo-500/20 border-indigo-500/35 text-indigo-300',
     },
     {
       href: '/flashcards',
@@ -143,6 +144,7 @@ export function Navbar() {
       icon: Sparkles,
       color: 'text-pink-400 bg-pink-500/10 border-pink-500/20',
       badge: safeDueCount > 0 ? `${safeDueCount} cần ôn` : undefined,
+      badgeColor: 'bg-pink-500/20 border-pink-500/40 text-pink-400',
     },
     {
       href: '/quiz',
@@ -314,28 +316,32 @@ export function Navbar() {
                         <Link
                           key={item.href}
                           href={item.href}
-                          className={`flex items-start justify-between gap-2.5 p-2 rounded-xl transition-all ${
+                          className={`flex items-start gap-3 p-2 rounded-xl transition-all ${
                             active
                               ? 'bg-indigo-500/10 text-indigo-300'
                               : 'hover:bg-slate-800/70 text-slate-200'
                           }`}
                         >
-                          <div className="flex items-start gap-3 min-w-0 flex-1">
-                            <div className={`p-2 rounded-lg border shrink-0 mt-0.5 ${item.color}`}>
-                              <Icon className="w-4 h-4" />
+                          <div className={`p-2 rounded-lg border shrink-0 mt-0.5 ${item.color}`}>
+                            <Icon className="w-4 h-4" />
+                          </div>
+                          <div className="space-y-0.5 min-w-0 flex-1">
+                            <div className="flex items-center gap-2">
+                              <span className="text-xs font-semibold text-slate-100">{item.label}</span>
+                              {item.badge && (
+                                <span
+                                  className={`px-1.5 py-0.2 rounded-full text-[9px] font-bold border shrink-0 whitespace-nowrap ${
+                                    item.badgeColor || 'bg-pink-500/20 border-pink-500/40 text-pink-400'
+                                  }`}
+                                >
+                                  {item.badge}
+                                </span>
+                              )}
                             </div>
-                            <div className="space-y-0.5 min-w-0 flex-1">
-                              <div className="text-xs font-semibold">{item.label}</div>
-                              <div className="text-[11px] text-slate-400 leading-snug">
-                                {item.desc}
-                              </div>
+                            <div className="text-[11px] text-slate-400 leading-snug">
+                              {item.desc}
                             </div>
                           </div>
-                          {item.badge && (
-                            <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-500/20 border border-pink-500/40 text-pink-400 shrink-0 mt-0.5">
-                              {item.badge}
-                            </span>
-                          )}
                         </Link>
                       );
                     })}
@@ -559,22 +565,26 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-start justify-between gap-2 px-3 py-2 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-900 transition-colors"
+                  className="flex items-start gap-3 px-3 py-2 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-900 transition-colors"
                 >
-                  <div className="flex items-start gap-3 min-w-0">
-                    <div className={`p-1.5 rounded-lg border shrink-0 mt-0.5 ${item.color}`}>
-                      <Icon className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-slate-200">{item.label}</div>
-                      <div className="text-[11px] text-slate-400 leading-snug">{item.desc}</div>
-                    </div>
+                  <div className={`p-1.5 rounded-lg border shrink-0 mt-0.5 ${item.color}`}>
+                    <Icon className="w-4 h-4" />
                   </div>
-                  {item.badge && (
-                    <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-500/20 text-pink-400 shrink-0 mt-0.5">
-                      {item.badge}
-                    </span>
-                  )}
+                  <div className="space-y-0.5 min-w-0 flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-slate-200">{item.label}</span>
+                      {item.badge && (
+                        <span
+                          className={`px-1.5 py-0.2 rounded-full text-[9px] font-bold border shrink-0 whitespace-nowrap ${
+                            item.badgeColor || 'bg-pink-500/20 text-pink-400'
+                          }`}
+                        >
+                          {item.badge}
+                        </span>
+                      )}
+                    </div>
+                    <div className="text-[11px] text-slate-400 leading-snug">{item.desc}</div>
+                  </div>
                 </Link>
               );
             })}

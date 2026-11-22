@@ -36,7 +36,9 @@ import {
 import { DEFAULT_CHARACTERS, PRESET_SCENARIOS } from '@/lib/roleplay/scenarios';
 import { SuggestionDrawer } from './SuggestionDrawer';
 import { RoleplaySetupModal } from './RoleplaySetupModal';
+import { CharacterAvatar } from './CharacterAvatar';
 import { useSpeech } from '@/hooks/useSpeech';
+import { useProgress } from '@/contexts/ProgressContext';
 import { StreamEvent } from '@/lib/ai/types';
 
 interface RoleplayChatRoomProps {
@@ -44,9 +46,30 @@ interface RoleplayChatRoomProps {
 }
 
 export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
-  // 1. Initial State from user roadmap / defaults
-  const [character, setCharacter] = useState<CharacterConfig>(DEFAULT_CHARACTERS.boss);
-  const [scenario, setScenario] = useState<RoleplayScenario>(PRESET_SCENARIOS[0]);
+  const { progress, saveRoleplaySettings } = useProgress();
+
+  // 1. Initial State from user progress / sync / defaults
+  const [character, setCharacter] = useState<CharacterConfig>(() => {
+    return progress.roleplay?.character || DEFAULT_CHARACTERS.boss;
+  });
+  const [scenario, setScenario] = useState<RoleplayScenario>(() => {
+    if (progress.roleplay?.scenarioId) {
+      const found = PRESET_SCENARIOS.find((s) => s.id === progress.roleplay?.scenarioId);
+      if (found) return found;
+    }
+    return PRESET_SCENARIOS[0];
+  });
+
+  // Sync state if progress.roleplay updates from cloud or another tab
+  useEffect(() => {
+    if (progress.roleplay?.character) {
+      setCharacter(progress.roleplay.character);
+      if (progress.roleplay.scenarioId) {
+        const found = PRESET_SCENARIOS.find((s) => s.id === progress.roleplay?.scenarioId);
+        if (found) setScenario(found);
+      }
+    }
+  }, [progress.roleplay]);
 
   // Messages
   const [messages, setMessages] = useState<RoleplayMessage[]>([]);
@@ -429,10 +452,8 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         <div className="flex items-center gap-3 min-w-0">
           {/* Avatar */}
           <div className="relative">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 font-bold text-sm">
-              {character.name.charAt(0)}
-            </div>
-            <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 ring-2 ring-slate-950" />
+            <CharacterAvatar avatarId={character.avatar} size="md" />
+            <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-emerald-500 ring-2 ring-slate-950" />
           </div>
 
           {/* Details */}
@@ -538,15 +559,13 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
               className={`flex items-start gap-3 ${isUser ? 'flex-row-reverse' : 'flex-row'}`}
             >
               {/* Avatar Icon */}
-              <div
-                className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-bold shrink-0 mt-1 shadow-sm ${
-                  isUser
-                    ? 'bg-slate-700 text-white'
-                    : 'bg-gradient-to-tr from-indigo-600 to-violet-600 text-white'
-                }`}
-              >
-                {isUser ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
-              </div>
+              {isUser ? (
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center text-xs font-bold shrink-0 mt-1 shadow-sm bg-slate-700 text-white">
+                  <User className="w-4 h-4" />
+                </div>
+              ) : (
+                <CharacterAvatar avatarId={character.avatar} size="sm" className="mt-1" />
+              )}
 
               {/* Message Bubble Container */}
               <div className={`max-w-[85%] sm:max-w-[75%] space-y-1.5 ${isUser ? 'items-end' : 'items-start'}`}>
@@ -620,9 +639,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         {/* Loading Indicator */}
         {isLoading && (
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600 text-white flex items-center justify-center shrink-0">
-              <Bot className="w-4 h-4" />
-            </div>
+            <CharacterAvatar avatarId={character.avatar} size="sm" />
             <div className="p-3 rounded-2xl bg-slate-800/90 border border-slate-700/70 text-slate-400 text-xs flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
               <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse delay-75" />
@@ -737,6 +754,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         onApply={(newChar, newScen) => {
           setCharacter(newChar);
           setScenario(newScen);
+          saveRoleplaySettings(newChar, newScen.id);
         }}
       />
 
@@ -745,11 +763,16 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-150">
           <div className="w-full max-w-lg rounded-3xl bg-slate-900 border border-slate-800 p-6 shadow-2xl space-y-6">
             <div className="text-center space-y-2">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-500 text-white flex items-center justify-center mx-auto shadow-lg shadow-amber-500/20">
-                <Trophy className="w-7 h-7" />
+              <div className="flex items-center justify-center gap-3">
+                <CharacterAvatar avatarId={character.avatar} size="lg" />
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-500 text-white flex items-center justify-center shadow-lg shadow-amber-500/20">
+                  <Trophy className="w-7 h-7" />
+                </div>
               </div>
               <h3 className="text-xl font-black text-white">Hoàn Thành Buổi Luyện Giao Tiếp!</h3>
-              <p className="text-xs text-slate-400">{summaryData.scenarioTitle}</p>
+              <p className="text-xs text-slate-400">
+                Đối thoại cùng {character.name} • {summaryData.scenarioTitle}
+              </p>
             </div>
 
             <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-slate-950/60 border border-slate-800 text-center">

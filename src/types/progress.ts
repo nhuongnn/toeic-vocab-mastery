@@ -1,4 +1,5 @@
 import { OnboardingState } from './onboarding';
+import { CharacterConfig, RoleplayScenario } from './roleplay';
 
 export interface SRSCard {
   wordId: string;
@@ -43,6 +44,13 @@ export interface UserPreferences {
   preferredDictionary?: 'cambridge' | 'oxford';
 }
 
+export interface RoleplayPreferences {
+  character?: CharacterConfig;
+  scenarioId?: string;
+  customScenarios?: RoleplayScenario[];
+  updatedAt?: string;
+}
+
 export interface UserProgressData {
   version: number;
   cards: Record<string, SRSCard>;
@@ -51,4 +59,5 @@ export interface UserProgressData {
   preferences: UserPreferences;
   bookmarkedWordIds: string[];
   onboarding?: OnboardingState;
+  roleplay?: RoleplayPreferences;
 }

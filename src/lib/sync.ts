@@ -153,6 +153,18 @@ export function mergeUserProgress(
     };
   }
 
+  // 6. Merge roleplay character settings (preserve most recently updated)
+  let mergedRoleplay = local.roleplay;
+  if (remote.roleplay) {
+    if (!local.roleplay) {
+      mergedRoleplay = remote.roleplay;
+    } else {
+      const timeLocal = local.roleplay.updatedAt ? new Date(local.roleplay.updatedAt).getTime() : 0;
+      const timeRemote = remote.roleplay.updatedAt ? new Date(remote.roleplay.updatedAt).getTime() : 0;
+      mergedRoleplay = timeRemote > timeLocal ? remote.roleplay : local.roleplay;
+    }
+  }
+
   return {
     version: Math.max(local.version || 1, remote.version || 1),
     cards: mergedCards,
@@ -172,5 +184,6 @@ export function mergeUserProgress(
       estimatedToeicScore: estimatedScore,
     },
     onboarding: mergedOnboarding,
+    roleplay: mergedRoleplay,
   };
 }

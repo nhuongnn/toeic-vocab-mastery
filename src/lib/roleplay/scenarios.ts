@@ -7,7 +7,7 @@ export const DEFAULT_CHARACTERS: Record<CharacterRole, CharacterConfig> = {
     gender: 'male',
     age: 45,
     department: 'Marketing & Strategy',
-    avatar: 'boss-male',
+    avatar: 'cat-boss',
     personality: 'Chuyên nghiệp, thẳng thắn, coi trọng kết quả và quản lý thời gian hiệu quả.',
   },
   colleague: {
@@ -16,7 +16,7 @@ export const DEFAULT_CHARACTERS: Record<CharacterRole, CharacterConfig> = {
     gender: 'female',
     age: 29,
     department: 'Product & Design',
-    avatar: 'colleague-female',
+    avatar: 'coffee-zombie',
     personality: 'Nhiệt tình, thân thiện, thích làm việc nhóm và chia sẻ kinh nghiệm công sở.',
   },
   staff: {
@@ -25,7 +25,7 @@ export const DEFAULT_CHARACTERS: Record<CharacterRole, CharacterConfig> = {
     gender: 'male',
     age: 24,
     department: 'Operations & Admin',
-    avatar: 'staff-male',
+    avatar: 'shiba-intern',
     personality: 'Chăm chỉ, lễ phép, ham học hỏi và luôn chủ động cập nhật công việc.',
   },
 };

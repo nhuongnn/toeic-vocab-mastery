@@ -8,7 +8,14 @@ import React, {
   useCallback,
   useRef,
 } from 'react';
-import { UserProgressData, SRSCard, ExerciseSessionResult, UserPreferences } from '@/types/progress';
+import {
+  UserProgressData,
+  SRSCard,
+  ExerciseSessionResult,
+  UserPreferences,
+  RoleplayPreferences,
+} from '@/types/progress';
+import { CharacterConfig } from '@/types/roleplay';
 import { DEFAULT_PROGRESS, loadUserProgress, saveUserProgress, updateStreak } from '@/lib/storage';
 import { calculateSM2, createNewCard, calculateEstimatedScore } from '@/lib/srs';
 import { useAuth } from './AuthContext';
@@ -34,6 +41,7 @@ interface ProgressContextType {
   syncStatus: SyncStatus;
   lastSyncedAt: Date | null;
   forceSync: () => Promise<void>;
+  saveRoleplaySettings: (character: CharacterConfig, scenarioId?: string) => void;
 }
 
 const ProgressContext = createContext<ProgressContextType | undefined>(undefined);
@@ -47,11 +55,28 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
 
   const syncTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Load from localStorage on mount
+  // Load from localStorage on mount & listen for sync events
   useEffect(() => {
     const loaded = loadUserProgress();
     setProgress(loaded);
     setIsLoaded(true);
+
+    const handleRoleplaySync = () => {
+      const reloaded = loadUserProgress();
+      if (reloaded.roleplay) {
+        setProgress((prev) => ({
+          ...prev,
+          roleplay: reloaded.roleplay,
+        }));
+      }
+    };
+
+    window.addEventListener('roleplay-synced', handleRoleplaySync);
+    window.addEventListener('storage', handleRoleplaySync);
+    return () => {
+      window.removeEventListener('roleplay-synced', handleRoleplaySync);
+      window.removeEventListener('storage', handleRoleplaySync);
+    };
   }, []);
 
   // Schedule background debounced sync to Supabase
@@ -125,6 +150,12 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
               window.dispatchEvent(new Event('onboarding-synced'));
             } catch {}
           }
+          if (merged.roleplay) {
+            try {
+              localStorage.setItem('roleplay_settings_v1', JSON.stringify(merged.roleplay));
+              window.dispatchEvent(new Event('roleplay-synced'));
+            } catch {}
+          }
           if (isMounted) {
             setProgress(merged);
             setSyncStatus('synced');
@@ -192,6 +223,12 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         try {
           localStorage.setItem('onboarding_state_v1', JSON.stringify(finalData.onboarding));
           window.dispatchEvent(new Event('onboarding-synced'));
+        } catch {}
+      }
+      if (finalData.roleplay) {
+        try {
+          localStorage.setItem('roleplay_settings_v1', JSON.stringify(finalData.roleplay));
+          window.dispatchEvent(new Event('roleplay-synced'));
         } catch {}
       }
       setProgress(finalData);
@@ -353,6 +390,26 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     [scheduleCloudSync]
   );
 
+  const saveRoleplaySettings = useCallback(
+    (character: CharacterConfig, scenarioId?: string) => {
+      setProgress((prev) => {
+        const updatedRoleplay: RoleplayPreferences = {
+          character,
+          scenarioId: scenarioId || prev.roleplay?.scenarioId,
+          updatedAt: new Date().toISOString(),
+        };
+        const updated: UserProgressData = {
+          ...prev,
+          roleplay: updatedRoleplay,
+        };
+        saveUserProgress(updated);
+        scheduleCloudSync(updated);
+        return updated;
+      });
+    },
+    [scheduleCloudSync]
+  );
+
   const resetProgress = useCallback(() => {
     saveUserProgress(DEFAULT_PROGRESS);
     setProgress(DEFAULT_PROGRESS);
@@ -413,6 +470,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         syncStatus,
         lastSyncedAt,
         forceSync,
+        saveRoleplaySettings,
       }}
     >
       {children}

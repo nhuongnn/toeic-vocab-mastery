@@ -81,6 +81,23 @@ export function loadUserProgress(): UserProgressData {
       }
     } catch {}
 
+    // Merge roleplay character settings from separate key if present
+    try {
+      const rawRoleplay = localStorage.getItem('roleplay_settings_v1');
+      if (rawRoleplay) {
+        const parsedRoleplay = JSON.parse(rawRoleplay);
+        if (!loaded.roleplay) {
+          loaded.roleplay = parsedRoleplay;
+        } else {
+          const timeStored = loaded.roleplay.updatedAt ? new Date(loaded.roleplay.updatedAt).getTime() : 0;
+          const timeParsed = parsedRoleplay.updatedAt ? new Date(parsedRoleplay.updatedAt).getTime() : 0;
+          if (timeParsed >= timeStored) {
+            loaded.roleplay = { ...loaded.roleplay, ...parsedRoleplay };
+          }
+        }
+      }
+    } catch {}
+
     return loaded;
   } catch (err) {
     console.error('Error loading progress from localStorage:', err);
@@ -98,6 +115,13 @@ export function saveUserProgress(data: UserProgressData): void {
       try {
         localStorage.setItem('onboarding_state_v1', JSON.stringify(data.onboarding));
         window.dispatchEvent(new Event('onboarding-synced'));
+      } catch {}
+    }
+
+    if (data.roleplay) {
+      try {
+        localStorage.setItem('roleplay_settings_v1', JSON.stringify(data.roleplay));
+        window.dispatchEvent(new Event('roleplay-synced'));
       } catch {}
     }
   } catch (err) {

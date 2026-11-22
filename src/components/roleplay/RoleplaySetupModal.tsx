@@ -30,6 +30,8 @@ import {
   getRecommendedScenarios,
   isScenarioMatchingScore,
 } from '@/lib/roleplay/scenarios';
+import { AVATAR_PRESETS, getAvatarPreset } from '@/lib/roleplay/avatars';
+import { CharacterAvatar } from './CharacterAvatar';
 
 interface RoleplaySetupModalProps {
   isOpen: boolean;
@@ -57,6 +59,10 @@ export function RoleplaySetupModal({
   const [age, setAge] = useState<number>(currentCharacter.age);
   const [department, setDepartment] = useState<string>(currentCharacter.department);
   const [personality, setPersonality] = useState<string>(currentCharacter.personality);
+  const [avatar, setAvatar] = useState<string>(
+    currentCharacter.avatar || DEFAULT_CHARACTERS[currentCharacter.role]?.avatar || 'cat-boss'
+  );
+  const [avatarCategory, setAvatarCategory] = useState<'chibi' | 'genz' | 'classic'>('chibi');
 
   // Scenario State
   const [selectedScenarioId, setSelectedScenarioId] = useState<string>(currentScenario.id);
@@ -80,6 +86,7 @@ export function RoleplaySetupModal({
     setAge(defaults.age);
     setDepartment(defaults.department);
     setPersonality(defaults.personality);
+    setAvatar(defaults.avatar || (newRole === 'boss' ? 'cat-boss' : newRole === 'colleague' ? 'coffee-zombie' : 'shiba-intern'));
 
     // Pick first recommended scenario for this role
     const matching = PRESET_SCENARIOS.filter((s) => s.role === newRole);
@@ -113,7 +120,7 @@ export function RoleplaySetupModal({
       gender,
       age: Number(age) || 30,
       department,
-      avatar: `${role}-${gender}`,
+      avatar,
       personality,
     };
 
@@ -258,6 +265,125 @@ export function RoleplaySetupModal({
                     <span className="text-xs font-bold">Nhân Viên</span>
                     <span className="text-[10px] text-slate-400 mt-0.5">Office Staff / Junior</span>
                   </button>
+                </div>
+              </div>
+
+              {/* Avatar Selector (Chibi, Gen Z & Công Sở) */}
+              <div className="space-y-3 p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-bold text-slate-200 uppercase tracking-wider">
+                      Chọn Avatar Nhân Vật
+                    </span>
+                    {avatarCategory === 'chibi' ? (
+                      <span className="text-[10px] font-bold px-2 py-0.2 rounded-full bg-pink-500/20 border border-pink-500/35 text-pink-300">
+                        🌸 Phong cách Chibi
+                      </span>
+                    ) : avatarCategory === 'genz' ? (
+                      <span className="text-[10px] font-bold px-2 py-0.2 rounded-full bg-amber-500/20 border border-amber-500/35 text-amber-300">
+                        🔥 Hài hước & Gen Z
+                      </span>
+                    ) : (
+                      <span className="text-[10px] font-bold px-2 py-0.2 rounded-full bg-indigo-500/20 border border-indigo-500/35 text-indigo-300">
+                        👔 Công sở chỉn chu
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Filter tabs */}
+                  <div className="flex items-center gap-1 bg-slate-900 p-0.5 rounded-xl border border-slate-800 overflow-x-auto">
+                    <button
+                      type="button"
+                      onClick={() => setAvatarCategory('chibi')}
+                      className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap ${
+                        avatarCategory === 'chibi'
+                          ? 'bg-pink-500/20 text-pink-300 border border-pink-500/35 shadow-sm'
+                          : 'text-slate-400 hover:text-slate-200'
+                      }`}
+                    >
+                      🌸 Chibi Dễ Thương
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setAvatarCategory('genz')}
+                      className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap ${
+                        avatarCategory === 'genz'
+                          ? 'bg-amber-500/20 text-amber-300 border border-amber-500/35 shadow-sm'
+                          : 'text-slate-400 hover:text-slate-200'
+                      }`}
+                    >
+                      🔥 Hài Hước / Gen Z
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setAvatarCategory('classic')}
+                      className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap ${
+                        avatarCategory === 'classic'
+                          ? 'bg-indigo-500/20 text-indigo-300 border border-indigo-500/35 shadow-sm'
+                          : 'text-slate-400 hover:text-slate-200'
+                      }`}
+                    >
+                      👔 Truyền Thống
+                    </button>
+                  </div>
+                </div>
+
+                {/* Current Avatar Highlight Card */}
+                {(() => {
+                  const currentPreset = getAvatarPreset(avatar);
+                  return (
+                    <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                      <CharacterAvatar avatarId={avatar} size="lg" />
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-bold text-white">{currentPreset.name}</span>
+                          <span className="text-[10px] px-2 py-0.2 rounded bg-indigo-500/20 text-indigo-300 font-semibold border border-indigo-500/30">
+                            Đang chọn
+                          </span>
+                        </div>
+                        <p
+                          className={`text-[11px] italic truncate mt-0.5 ${
+                            currentPreset.category === 'chibi'
+                              ? 'text-pink-300'
+                              : currentPreset.category === 'genz'
+                              ? 'text-amber-300'
+                              : 'text-slate-300'
+                          }`}
+                        >
+                          {currentPreset.vibe}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* Avatar Selection Grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 max-h-48 overflow-y-auto pr-1">
+                  {AVATAR_PRESETS.filter((p) => p.category === avatarCategory).map((preset) => {
+                    const isSelected = avatar === preset.id;
+                    return (
+                      <button
+                        key={preset.id}
+                        type="button"
+                        onClick={() => setAvatar(preset.id)}
+                        className={`flex items-center gap-2.5 p-2 rounded-xl border text-left transition-all ${
+                          isSelected
+                            ? 'border-indigo-500 bg-indigo-500/15 ring-2 ring-indigo-500/30'
+                            : 'border-slate-800/80 bg-slate-900/50 hover:border-slate-700 hover:bg-slate-900'
+                        }`}
+                      >
+                        <CharacterAvatar preset={preset} size="sm" />
+                        <div className="min-w-0 flex-1">
+                          <div className="text-[11px] font-bold text-slate-200 truncate leading-tight">
+                            {preset.name}
+                          </div>
+                          <div className="text-[9px] text-slate-400 truncate leading-tight mt-0.5">
+                            {preset.vibe.replace(/^"|"$/g, '')}
+                          </div>
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -538,11 +664,14 @@ export function RoleplaySetupModal({
 
         {/* Modal Footer */}
         <div className="flex items-center justify-between px-6 py-4 border-t border-slate-800 bg-slate-950/80">
-          <div className="text-xs text-slate-400">
-            Nhân vật:{' '}
-            <strong className="text-white">
-              {name} ({role === 'boss' ? 'Sếp' : role === 'colleague' ? 'Đồng nghiệp' : 'Nhân viên'}, {age} tuổi)
-            </strong>
+          <div className="text-xs text-slate-400 flex items-center gap-2">
+            <CharacterAvatar avatarId={avatar} size="xs" />
+            <span>
+              Nhân vật:{' '}
+              <strong className="text-white">
+                {name} ({role === 'boss' ? 'Sếp' : role === 'colleague' ? 'Đồng nghiệp' : 'Nhân viên'}, {age} tuổi)
+              </strong>
+            </span>
           </div>
 
           <div className="flex items-center gap-2">

@@ -401,3 +401,74 @@ export function isScenarioMatchingScore(level: ScenarioLevel, targetScore: numbe
   if (targetScore <= 780) return level === 'intermediate';
   return level === 'advanced';
 }
+
+/**
+ * Returns a spontaneous opening sentence variation based on role, character, and scenario.
+ * Ensures initial greetings are never static or repetitive.
+ */
+export function getRandomOpeningVariation(
+  character: CharacterConfig,
+  scenario: RoleplayScenario,
+  userName?: string
+): { english: string; vietnamese: string } {
+  const nameGreeting = userName && userName !== 'Bạn' ? `${userName}, ` : '';
+  const role = character.role;
+
+  const bossOpenings = [
+    {
+      english: `Good morning, ${nameGreeting}do you have a brief moment to sync? I was going over the requirements for "${scenario.title}" and want to make sure we're on track. Where do things stand?`,
+      vietnamese: `Chào buổi sáng! Bạn có chút thời gian để trao đổi nhanh không? Tôi vừa xem qua các yêu cầu cho "${scenario.vietnameseTitle}" và muốn chắc chắn chúng ta đang đúng tiến độ. Tình hình thế nào rồi?`,
+    },
+    {
+      english: `Hi ${nameGreeting}please have a seat. Regarding our "${scenario.title}" agenda, I have a few specific questions before our executive briefing. Are you ready to walk me through the key updates?`,
+      vietnamese: `Chào bạn, mời ngồi. Liên quan đến "${scenario.vietnameseTitle}", tôi có vài câu hỏi cụ thể trước cuộc họp ban giám đốc. Bạn đã sẵn sàng trình bày những điểm cập nhật chính chưa?`,
+    },
+    {
+      english: `Hello ${nameGreeting}I'm following up on our ${character.department || scenario.department} schedule today. We need to align on our priority deliverables for "${scenario.title}". How is your progress coming along?`,
+      vietnamese: `Chào bạn, tôi muốn theo dõi tiến độ hôm nay của phòng ${character.department || scenario.department}. Chúng ta cần thống nhất các đầu việc ưu tiên cho "${scenario.vietnameseTitle}". Tiến độ của bạn đến đâu rồi?`,
+    },
+    {
+      english: `Morning ${nameGreeting}thanks for stopping by. We have some important decisions to make regarding "${scenario.title}" before noon. Can you give me a status report?`,
+      vietnamese: `Chào bạn, cảm ơn đã ghé qua. Chúng ta có một vài quyết định quan trọng cần đưa ra cho "${scenario.vietnameseTitle}" trước trưa nay. Bạn có thể báo cáo nhanh tình hình được không?`,
+    },
+  ];
+
+  const colleagueOpenings = [
+    {
+      english: `Hey ${nameGreeting}got a quick second? I was just reviewing our tasks for "${scenario.title}", and I'd love to coordinate with you on the next steps. What are your thoughts?`,
+      vietnamese: `Chào bạn! Có rảnh một phút không? Mình vừa xem lại phần công việc cho "${scenario.vietnameseTitle}" và muốn cùng bạn phối hợp các bước tiếp theo. Bạn thấy thế nào?`,
+    },
+    {
+      english: `Morning ${nameGreeting}hope your day is going smoothly! I saw the latest update on "${scenario.title}" and thought we should quickly align before the deadline. Do you have a minute to brainstorm?`,
+      vietnamese: `Chào buổi sáng! Chúc một ngày làm việc thuận lợi nhé. Mình thấy cập nhật mới nhất về "${scenario.vietnameseTitle}" và nghĩ chúng mình nên trao đổi nhanh trước hạn chót. Bạn có vài phút để thảo luận không?`,
+    },
+    {
+      english: `Hi ${nameGreeting}hope I'm not interrupting anything urgent. We need to finalize our approach for "${scenario.title}" this week. Could we bounce a couple of ideas off each other?`,
+      vietnamese: `Chào bạn, hy vọng mình không làm gián đoạn việc gấp của bạn. Tuần này chúng mình cần chốt phương án cho "${scenario.vietnameseTitle}". Chúng ta cùng trao đổi nhanh vài ý tưởng nhé?`,
+    },
+    {
+      english: `Hey there! Just grabbing some coffee. Did you get a chance to look at "${scenario.title}" yet? Let's figure out how we should split the workload.`,
+      vietnamese: `Chào cậu! Mình đang tranh thủ lấy cốc cà phê. Cậu đã kịp xem qua "${scenario.vietnameseTitle}" chưa? Chúng mình cùng bàn xem nên phân chia công việc thế nào nhé.`,
+    },
+  ];
+
+  const staffOpenings = [
+    {
+      english: `Good morning, ${nameGreeting}excuse me for checking in. I've prepared the initial materials for "${scenario.title}" and wanted to confirm if you'd like me to focus on the summary or detailed metrics first?`,
+      vietnamese: `Chào buổi sáng! Xin lỗi vì đã làm phiền. Em/tôi đã chuẩn bị tài liệu ban đầu cho "${scenario.vietnameseTitle}" và muốn xin ý kiến xem nên ưu tiên phần tóm tắt hay số liệu chi tiết trước ạ?`,
+    },
+    {
+      english: `Hi ${nameGreeting}I've completed the first draft regarding "${scenario.title}". Whenever you have a free moment, could you please review it and give me some guidance on our next steps?`,
+      vietnamese: `Chào bạn/anh/chị, em/tôi đã hoàn thành bản thảo đầu tiên về "${scenario.vietnameseTitle}". Khi nào rảnh, xin nhờ anh/chị xem qua và cho em xin hướng dẫn các bước tiếp theo với ạ?`,
+    },
+    {
+      english: `Good day, ${nameGreeting}I wanted to give you a quick status update on our ${character.department || scenario.department} assignment. Everything is moving forward, but I have a couple of points I'd appreciate your confirmation on. May I run them by you?`,
+      vietnamese: `Chào bạn/anh/chị, em muốn báo cáo nhanh tiến độ công việc tại phòng ${character.department || scenario.department}. Mọi thứ đang tiến triển tốt, nhưng em có vài điểm muốn xin xác nhận. Em có thể trình bày nhanh được không ạ?`,
+    },
+  ];
+
+  const pool = role === 'boss' ? bossOpenings : role === 'colleague' ? colleagueOpenings : staffOpenings;
+  const picked = pool[Math.floor(Math.random() * pool.length)];
+
+  return picked || { english: scenario.initialMessage, vietnamese: scenario.initialTranslation };
+}

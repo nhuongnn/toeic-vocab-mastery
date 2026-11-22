@@ -1,4 +1,4 @@
-import { buildRoleplaySystemPrompt, buildSuggestionsPrompt } from './ai-prompt';
+import { buildRoleplaySystemPrompt, buildSuggestionsPrompt, buildDynamicOpeningPrompt } from './ai-prompt';
 import {
   isGeminiConfigured,
   getGeminiModel,
@@ -16,6 +16,7 @@ import {
   UserLearningContext,
   RoleplaySuggestion,
 } from '@/types/roleplay';
+import { getRandomOpeningVariation } from './scenarios';
 import { GoogleGenAI } from '@google/genai';
 
 export interface RoleplayChatPayload {
@@ -348,4 +349,85 @@ function generateFallbackSuggestions(
       keyVocabulary: ['credentials', 'access'],
     },
   ];
+}
+
+/**
+ * Generate a dynamic, spontaneous opening sentence for the character and scenario.
+ * Tries Gemini Flash -> Cloudflare Llama -> Heuristic Fallback Variations.
+ */
+export async function generateDynamicOpening(
+  character: CharacterConfig,
+  scenario: RoleplayScenario,
+  userContext?: Partial<UserLearningContext>,
+  userName?: string
+): Promise<{ english: string; vietnamese: string; source: 'gemini' | 'cloudflare' | 'fallback' }> {
+  const prompt = buildDynamicOpeningPrompt(character, scenario, userContext, userName);
+
+  // 1. Try Google Gemini Flash
+  if (isGeminiConfigured()) {
+    try {
+      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      const response = await ai.models.generateContent({
+        model: getGeminiModel(),
+        contents: prompt,
+        config: {
+          temperature: 0.85,
+          responseMimeType: 'application/json',
+        },
+      });
+
+      const text = response.text?.trim();
+      if (text) {
+        const parsed = JSON.parse(cleanJsonString(text));
+        if (parsed.english && parsed.vietnamese) {
+          return {
+            english: parsed.english.trim(),
+            vietnamese: parsed.vietnamese.trim(),
+            source: 'gemini',
+          };
+        }
+      }
+    } catch (e) {
+      console.warn('[Roleplay Dynamic Opening] Gemini generation failed, trying Cloudflare...', e);
+    }
+  }
+
+  // 2. Try Cloudflare Workers AI
+  if (isCloudflareChatConfigured()) {
+    try {
+      let accumulated = '';
+      for await (const chunk of streamCloudflare(
+        [{ role: 'user', content: prompt }],
+        'You are an expert TOEIC roleplay tutor. Output valid raw JSON object only without markdown backticks.'
+      )) {
+        accumulated += chunk;
+      }
+      const parsed = JSON.parse(cleanJsonString(accumulated));
+      if (parsed.english && parsed.vietnamese) {
+        return {
+          english: parsed.english.trim(),
+          vietnamese: parsed.vietnamese.trim(),
+          source: 'cloudflare',
+        };
+      }
+    } catch (e) {
+      console.warn('[Roleplay Dynamic Opening] Cloudflare generation failed:', e);
+    }
+  }
+
+  // 3. Smart Heuristic Fallback with Random Variation
+  return generateFallbackOpening(character, scenario, userName);
+}
+
+export function generateFallbackOpening(
+  character: CharacterConfig,
+  scenario: RoleplayScenario,
+  userName?: string
+): { english: string; vietnamese: string; source: 'fallback' } {
+  const variation = getRandomOpeningVariation(character, scenario, userName);
+  return {
+    english: variation.english,
+    vietnamese: variation.vietnamese,
+    source: 'fallback',
+  };
 }

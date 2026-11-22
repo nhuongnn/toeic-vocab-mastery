@@ -26,6 +26,7 @@ import {
   Briefcase,
   Mic,
   MicOff,
+  Dice5,
 } from 'lucide-react';
 import {
   CharacterConfig,
@@ -35,7 +36,7 @@ import {
   UserLearningContext,
   RoleplaySessionSummary,
 } from '@/types/roleplay';
-import { DEFAULT_CHARACTERS, PRESET_SCENARIOS } from '@/lib/roleplay/scenarios';
+import { DEFAULT_CHARACTERS, PRESET_SCENARIOS, getRandomOpeningVariation } from '@/lib/roleplay/scenarios';
 import { SuggestionDrawer } from './SuggestionDrawer';
 import { RoleplaySetupModal } from './RoleplaySetupModal';
 import { CharacterAvatar } from './CharacterAvatar';
@@ -105,6 +106,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   const [isSummaryOpen, setIsSummaryOpen] = useState(false);
   const [summaryData, setSummaryData] = useState<RoleplaySessionSummary | null>(null);
   const [showObjective, setShowObjective] = useState(true);
+  const [isOpeningLoading, setIsOpeningLoading] = useState(false);
 
   // Speech Recognition (Voice Input)
   const [isListening, setIsListening] = useState(false);
@@ -120,21 +122,86 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   const abortControllerRef = useRef<AbortController | null>(null);
   const sessionStartTimeRef = useRef<number>(0);
 
-  // Initialize first scenario message
+  // Generate dynamic, spontaneous opening sentence from AI or smart variation
+  const handleGenerateDynamicOpening = useCallback(
+    async (forceFresh = false) => {
+      setIsOpeningLoading(true);
+      sessionStartTimeRef.current = Date.now();
+
+      try {
+        const res = await fetch('/api/roleplay/opening', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            character,
+            scenario,
+            userContext,
+            userName,
+          }),
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.english) {
+            const dynamicMsgId = `initial-${Date.now()}`;
+            const dynamicMsg: RoleplayMessage = {
+              id: dynamicMsgId,
+              role: 'assistant',
+              content: data.english,
+              translation: data.vietnamese,
+              timestamp: Date.now(),
+            };
+            setMessages([dynamicMsg]);
+            if (data.vietnamese) {
+              setTranslations((prev) => ({ ...prev, [dynamicMsgId]: data.vietnamese }));
+            }
+            setIsOpeningLoading(false);
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn('[Roleplay Dynamic Opening] API request failed:', err);
+      }
+
+      // Fallback: Pick a spontaneous opening variation from preset pool
+      const variation = getRandomOpeningVariation(character, scenario, userName);
+      const fallbackMsgId = `initial-${Date.now()}`;
+      const fallbackMsg: RoleplayMessage = {
+        id: fallbackMsgId,
+        role: 'assistant',
+        content: variation.english,
+        translation: variation.vietnamese,
+        timestamp: Date.now(),
+      };
+      setMessages([fallbackMsg]);
+      if (variation.vietnamese) {
+        setTranslations((prev) => ({ ...prev, [fallbackMsgId]: variation.vietnamese }));
+      }
+      setIsOpeningLoading(false);
+    },
+    [character, scenario, userContext, userName]
+  );
+
+  // Initialize dynamic opening on mount or when scenario/character changes
   useEffect(() => {
-    sessionStartTimeRef.current = Date.now();
+    // Immediate instant variation to ensure 0ms render
+    const instantVariation = getRandomOpeningVariation(character, scenario, userName);
+    const initialMsgId = `initial-${Date.now()}`;
     const initialMsg: RoleplayMessage = {
-      id: `initial-${Date.now()}`,
+      id: initialMsgId,
       role: 'assistant',
-      content: scenario.initialMessage,
-      translation: scenario.initialTranslation,
+      content: instantVariation.english,
+      translation: instantVariation.vietnamese,
       timestamp: Date.now(),
     };
     setMessages([initialMsg]);
-    if (scenario.initialTranslation) {
-      setTranslations({ [initialMsg.id]: scenario.initialTranslation });
+    if (instantVariation.vietnamese) {
+      setTranslations((prev) => ({ ...prev, [initialMsgId]: instantVariation.vietnamese }));
     }
-  }, [scenario, character]);
+
+    // Then quietly request fresh AI generation in background
+    handleGenerateDynamicOpening(true);
+  }, [scenario.id, character.role, character.name]);
 
   // Auto-scroll
   const scrollToBottom = useCallback(() => {
@@ -388,16 +455,9 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
   const handleResetConversation = () => {
     if (confirm('Bạn có chắc muốn bắt đầu lại cuộc hội thoại từ đầu không?')) {
-      const initialMsg: RoleplayMessage = {
-        id: `initial-${Date.now()}`,
-        role: 'assistant',
-        content: scenario.initialMessage,
-        translation: scenario.initialTranslation,
-        timestamp: Date.now(),
-      };
-      setMessages([initialMsg]);
       setInput('');
       setShowSuggestions(false);
+      handleGenerateDynamicOpening(true);
     }
   };
 
@@ -546,20 +606,34 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
       {/* 2. Collapsible Scenario Objective Banner */}
       <div className="px-4 sm:px-6 py-2 bg-indigo-950/40 border-b border-indigo-500/20 text-xs">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 truncate">
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 truncate min-w-0">
             <Target className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
             <span className="text-indigo-200 truncate">
               <strong>Mục tiêu:</strong> {scenario.objective}
             </span>
           </div>
-          <button
-            onClick={() => setShowObjective(!showObjective)}
-            className="text-[10px] text-indigo-400 hover:text-indigo-200 flex items-center gap-0.5 shrink-0 ml-2"
-          >
-            <span>{showObjective ? 'Thu gọn' : 'Xem chi tiết'}</span>
-            {showObjective ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
-          </button>
+          <div className="flex items-center gap-2 shrink-0">
+            {messages.length <= 1 && (
+              <button
+                type="button"
+                onClick={() => handleGenerateDynamicOpening(true)}
+                disabled={isOpeningLoading}
+                className="text-[10px] px-2 py-0.5 rounded-lg bg-indigo-500/15 hover:bg-indigo-500/25 border border-indigo-500/30 text-indigo-300 font-semibold flex items-center gap-1 transition-all disabled:opacity-50"
+                title="Tạo một câu mở đầu ngẫu nhiên mới từ AI cho tình huống này"
+              >
+                <Dice5 className={`w-3 h-3 ${isOpeningLoading ? 'animate-spin' : ''}`} />
+                <span className="hidden sm:inline">Đổi câu mở đầu</span>
+              </button>
+            )}
+            <button
+              onClick={() => setShowObjective(!showObjective)}
+              className="text-[10px] text-indigo-400 hover:text-indigo-200 flex items-center gap-0.5"
+            >
+              <span>{showObjective ? 'Thu gọn' : 'Xem chi tiết'}</span>
+              {showObjective ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+            </button>
+          </div>
         </div>
 
         {showObjective && scenario.keyPhrases?.length > 0 && (
@@ -582,7 +656,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
       {/* 3. Messages Scroll Area */}
       <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
-        {messages.map((msg) => {
+        {messages.map((msg, idx) => {
           const isUser = msg.role === 'user';
           const isSpeakingThis = activeSpeakingId === msg.id && isPlaying;
 
@@ -662,6 +736,23 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                             : 'Xem bản dịch'}
                         </span>
                       </button>
+
+                      {/* Reroll Opening button - Available on opening message when conversation has just started */}
+                      {idx === 0 && messages.length === 1 && (
+                        <>
+                          <span>•</span>
+                          <button
+                            type="button"
+                            onClick={() => handleGenerateDynamicOpening(true)}
+                            disabled={isOpeningLoading}
+                            className="inline-flex items-center gap-1 text-indigo-400 hover:text-indigo-300 font-semibold transition-colors disabled:opacity-50"
+                            title="Tạo câu mở đầu ngẫu nhiên khác từ AI cho tình huống này"
+                          >
+                            <Dice5 className={`w-3.5 h-3.5 ${isOpeningLoading ? 'animate-spin' : ''}`} />
+                            <span>{isOpeningLoading ? 'Đang đổi...' : 'Đổi câu mở đầu'}</span>
+                          </button>
+                        </>
+                      )}
                     </div>
                   )}
 

@@ -108,3 +108,43 @@ Trả về DUY NHẤT một mảng JSON (không có markdown backticks, không k
   }
 ]`;
 }
+
+export function buildDynamicOpeningPrompt(
+  character: CharacterConfig,
+  scenario: RoleplayScenario,
+  userContext?: Partial<UserLearningContext>,
+  userName?: string
+): string {
+  const targetScore = userContext?.targetScore || 650;
+  const userDisplayName = userName && userName !== 'Bạn' ? userName : 'the colleague / team member';
+
+  const roleStyle = {
+    boss: `You are the manager / supervisor (${character.name}). Open the conversation professionally, directly, and with authority or urgency. You can address ${userDisplayName} by name, or ask them into your office, or ping them about the priority task.`,
+    colleague: `You are a friendly, collaborative peer colleague (${character.name}). Start with a natural workplace greeting (e.g. coffee station, desk drop-by, Slack ping), mentioning ${userDisplayName} naturally.`,
+    staff: `You are a respectful junior staff / assistant (${character.name}). Approach ${userDisplayName} politely to report, submit an item, or ask for guidance on the scenario task.`,
+  }[character.role];
+
+  return `You are ${character.name}, a ${character.age}-year-old ${character.role} in ${character.department}.
+Personality: ${character.personality}
+Role Style: ${roleStyle}
+
+Workplace Scenario: "${scenario.title}" (${scenario.vietnameseTitle})
+Scenario Context & Objective: ${scenario.objective}
+Target TOEIC Level: ${scenario.targetScoreRange} (${scenario.level}, target score: ${targetScore}+)
+Partner Name: ${userDisplayName}
+
+YOUR TASK:
+Generate a spontaneous, fresh, unique OPENING MESSAGE in character (2 to 3 sentences, around 25 to 50 words) to kickstart this conversation naturally.
+- DO NOT just repeat the static initial phrase: "${scenario.initialMessage}".
+- Create a distinct angle (e.g., dropping by the desk, a quick morning check-in, an urgent update, or catching up over coffee).
+- Tone must align with ${character.role.toUpperCase()} and ${character.personality}.
+- End with a direct question or prompt that encourages ${userDisplayName} to respond.
+${scenario.suggestedVocabulary?.length ? `- If natural, include 1-2 keywords: ${scenario.suggestedVocabulary.slice(0, 4).join(', ')}` : ''}
+
+RETURN FORMAT:
+Return ONLY a valid JSON object (no markdown backticks, no other text):
+{
+  "english": "Opening lines in English here...",
+  "vietnamese": "Natural Vietnamese translation here..."
+}`;
+}

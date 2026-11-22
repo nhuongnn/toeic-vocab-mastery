@@ -29,6 +29,7 @@ import {
   Dice5,
   History,
   Plus,
+  MoreVertical,
 } from 'lucide-react';
 import {
   CharacterConfig,
@@ -126,6 +127,25 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   const sessionCreatedAtRef = useRef<number>(0);
   const isSelectingConversationRef = useRef<boolean>(false);
 
+  // Mobile More Actions Dropdown
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement | null>(null);
+
+  // Close mobile actions menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    if (isMobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
+
   // Speech Recognition (Voice Input)
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef<any>(null);
@@ -133,6 +153,13 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   // Audio TTS
   const { speak, stop, isPlaying } = useSpeech();
   const [activeSpeakingId, setActiveSpeakingId] = useState<string | null>(null);
+
+  // Reset active speaking id when audio playback finishes
+  useEffect(() => {
+    if (!isPlaying) {
+      setActiveSpeakingId(null);
+    }
+  }, [isPlaying]);
 
   // Refs
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
@@ -665,11 +692,11 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
   const roleIcon =
     character.role === 'boss' ? (
-      <Shield className="w-4 h-4 text-purple-400" />
+      <Shield className="w-3.5 h-3.5 text-purple-400 shrink-0" />
     ) : character.role === 'colleague' ? (
-      <Users className="w-4 h-4 text-indigo-400" />
+      <Users className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
     ) : (
-      <Briefcase className="w-4 h-4 text-emerald-400" />
+      <Briefcase className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
     );
 
   const roleBadge =
@@ -682,20 +709,30 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   return (
     <div className="flex flex-col h-[78vh] sm:h-[82vh] max-w-5xl mx-auto rounded-3xl bg-slate-900/90 border border-slate-800 shadow-2xl overflow-hidden backdrop-blur-xl">
       {/* 1. Header Bar */}
-      <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 border-b border-slate-800 bg-slate-950/80">
-        <div className="flex items-center gap-3 min-w-0">
-          {/* Avatar */}
-          <div className="relative">
+      <div className="flex items-center justify-between px-3 sm:px-6 py-2.5 sm:py-3.5 border-b border-slate-800 bg-slate-950/80 gap-2">
+        <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1 mr-1 sm:mr-2">
+          {/* Avatar (Clickable to switch character) */}
+          <button
+            type="button"
+            onClick={() => {
+              setSetupInitialTab('character');
+              setIsSetupOpen(true);
+            }}
+            className="relative shrink-0 text-left focus:outline-none group"
+            title="Nhấn để đổi nhân vật hoặc tình huống"
+          >
             <CharacterAvatar avatarId={character.avatar} size="md" />
             <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-emerald-500 ring-2 ring-slate-950" />
-          </div>
+          </button>
 
           {/* Details */}
-          <div className="min-w-0">
-            <div className="flex items-center gap-2 flex-wrap">
-              <h3 className="text-sm font-bold text-white truncate">{character.name}</h3>
+          <div className="min-w-0 flex-1">
+            <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+              <h3 className="text-xs sm:text-sm font-bold text-white truncate shrink min-w-0">
+                {character.name}
+              </h3>
               <span
-                className={`inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.2 rounded-full border ${roleBadge}`}
+                className={`inline-flex items-center gap-1 text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded-full border shrink-0 ${roleBadge}`}
               >
                 {roleIcon}
                 <span>
@@ -706,7 +743,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                     : 'Nhân viên'}
                 </span>
               </span>
-              <span className="text-[10px] text-slate-400 font-medium hidden sm:inline">
+              <span className="text-[10px] text-slate-400 font-medium hidden sm:inline shrink-0">
                 • {character.age} tuổi • {character.gender === 'male' ? 'Nam' : character.gender === 'female' ? 'Nữ' : 'Khác'}
               </span>
             </div>
@@ -717,14 +754,14 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         </div>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
+        <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
           {/* Conversation History Button */}
           <button
             onClick={() => setIsHistoryOpen(true)}
-            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-all border border-slate-700/80 hover:border-indigo-500/50"
+            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-all border border-slate-700/80 hover:border-indigo-500/50 shrink-0"
             title="Lịch sử các cuộc hội thoại (tối đa 10 cuộc trò chuyện gần nhất)"
           >
-            <History className="w-3.5 h-3.5 text-indigo-400" />
+            <History className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
             <span className="hidden sm:inline">Lịch sử</span>
             {historyList.length > 0 && (
               <span className="px-1.5 py-0.2 rounded-full bg-indigo-500/25 border border-indigo-500/40 text-indigo-300 font-bold text-[10px]">
@@ -733,53 +770,113 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
             )}
           </button>
 
-          {/* New Conversation Button */}
+          {/* New Conversation Button (Desktop) */}
           <button
             onClick={handleStartNewConversation}
-            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-all border border-slate-700/80 hover:border-indigo-500/50"
+            className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-all border border-slate-700/80 hover:border-indigo-500/50 shrink-0"
             title="Bắt đầu cuộc trò chuyện mới"
           >
             <Plus className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Mới</span>
+            <span>Mới</span>
           </button>
 
-          {/* User Avatar Button */}
+          {/* User Avatar Button (Desktop) */}
           <button
             onClick={() => {
               setSetupInitialTab('user');
               setIsSetupOpen(true);
             }}
-            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-slate-200 text-xs font-semibold transition-all border border-slate-700/80 hover:border-indigo-500/50"
+            className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-slate-200 text-xs font-semibold transition-all border border-slate-700/80 hover:border-indigo-500/50 shrink-0"
             title="Đổi avatar & tên hiển thị của bạn"
           >
             <CharacterAvatar avatarId={userAvatar} size="xs" />
             <span className="hidden md:inline text-slate-300 font-medium">{userName}</span>
-            <span className="text-[10px] text-indigo-400 font-bold hidden sm:inline">Avatar bạn</span>
+            <span className="text-[10px] text-indigo-400 font-bold">Avatar bạn</span>
           </button>
 
+          {/* Customize Character / Scenario Button */}
           <button
             onClick={() => {
               setSetupInitialTab('character');
               setIsSetupOpen(true);
             }}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-all border border-slate-700"
+            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-all border border-slate-700 shrink-0"
             title="Đổi nhân vật hoặc tình huống"
           >
             <Settings className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">Tùy biến</span>
           </button>
 
+          {/* Reset Conversation Button (Desktop) */}
           <button
             onClick={handleResetConversation}
-            className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="hidden sm:inline-flex p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors shrink-0"
             title="Bắt đầu lại"
           >
             <RefreshCw className="w-3.5 h-3.5" />
           </button>
 
+          {/* Mobile More Options Dropdown */}
+          <div className="relative sm:hidden" ref={mobileMenuRef}>
+            <button
+              type="button"
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+              className={`p-1.5 rounded-xl text-slate-300 hover:text-white transition-colors border ${
+                isMobileMenuOpen
+                  ? 'bg-slate-700 border-indigo-500/50 text-white'
+                  : 'bg-slate-800/80 hover:bg-slate-700 border-slate-700/80'
+              }`}
+              title="Tùy chọn khác"
+              aria-label="Tùy chọn khác"
+            >
+              <MoreVertical className="w-3.5 h-3.5" />
+            </button>
+
+            {isMobileMenuOpen && (
+              <div className="absolute right-0 top-full mt-2 w-48 rounded-2xl bg-slate-900 border border-slate-700/90 shadow-2xl p-1.5 z-50 animate-in fade-in zoom-in-95 duration-100">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    handleStartNewConversation();
+                  }}
+                  className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800 hover:text-white transition-colors text-left"
+                >
+                  <Plus className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                  <span>Đoạn chat mới</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    handleResetConversation();
+                  }}
+                  className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800 hover:text-white transition-colors text-left"
+                >
+                  <RefreshCw className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span>Bắt đầu lại</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setSetupInitialTab('user');
+                    setIsSetupOpen(true);
+                  }}
+                  className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-800 hover:text-white transition-colors text-left"
+                >
+                  <CharacterAvatar avatarId={userAvatar} size="xs" />
+                  <span className="truncate">Avatar bạn ({userName})</span>
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* End Session Button */}
           <button
             onClick={handleEndSession}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-all shadow-md shadow-indigo-500/20"
+            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-all shadow-md shadow-indigo-500/20 shrink-0"
+            title="Kết thúc và xem đánh giá"
           >
             <CheckCircle2 className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">Kết thúc</span>
@@ -788,7 +885,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       </div>
 
       {/* 2. Collapsible Scenario Objective Banner */}
-      <div className="px-4 sm:px-6 py-2 bg-indigo-950/40 border-b border-indigo-500/20 text-xs">
+      <div className="px-3 sm:px-6 py-2 bg-indigo-950/40 border-b border-indigo-500/20 text-xs">
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2 truncate min-w-0">
             <Target className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
@@ -883,20 +980,32 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                 >
                   <p className="whitespace-pre-wrap">{msg.content || '...'}</p>
 
-                  {/* Character Message Actions (Audio, Translation) */}
-                  {!isUser && msg.content && (
-                    <div className="flex items-center gap-2 mt-2 pt-2 border-t border-slate-700/50 text-[11px] text-slate-400">
+                  {/* Message Actions (Audio, Translation) */}
+                  {msg.content && (
+                    <div
+                      className={`flex items-center gap-2 mt-2 pt-2 text-[11px] ${
+                        isUser
+                          ? 'border-t border-white/20 text-indigo-100/80'
+                          : 'border-t border-slate-700/50 text-slate-400'
+                      }`}
+                    >
                       {/* Audio Button */}
                       <button
                         onClick={() => handlePlayAudio(msg.id, msg.content)}
-                        className={`inline-flex items-center gap-1 hover:text-white transition-colors ${
-                          isSpeakingThis ? 'text-indigo-400 font-bold' : ''
+                        className={`inline-flex items-center gap-1 transition-colors ${
+                          isUser
+                            ? isSpeakingThis
+                              ? 'text-amber-300 font-bold'
+                              : 'hover:text-white text-indigo-100/90'
+                            : isSpeakingThis
+                            ? 'text-indigo-400 font-bold'
+                            : 'hover:text-white'
                         }`}
-                        title="Nghe phát âm tự nhiên"
+                        title={isUser ? 'Nghe phát âm tin nhắn của bạn' : 'Nghe phát âm tự nhiên'}
                       >
                         {isSpeakingThis ? (
                           <>
-                            <VolumeX className="w-3.5 h-3.5 animate-pulse" />
+                            <VolumeX className="w-3.5 h-3.5 animate-pulse text-amber-300" />
                             <span>Dừng nghe</span>
                           </>
                         ) : (
@@ -913,7 +1022,9 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                       <button
                         onClick={() => handleToggleTranslation(msg.id, msg.content)}
                         disabled={isTranslatingId === msg.id}
-                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
+                        className={`inline-flex items-center gap-1 transition-colors disabled:opacity-50 ${
+                          isUser ? 'hover:text-white text-indigo-100/90' : 'hover:text-white'
+                        }`}
                         title="Dịch nghĩa tiếng Việt"
                       >
                         <Languages className="w-3.5 h-3.5" />
@@ -927,7 +1038,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                       </button>
 
                       {/* Reroll Opening button - Available on opening message when conversation has just started */}
-                      {idx === 0 && messages.length === 1 && (
+                      {!isUser && idx === 0 && messages.length === 1 && (
                         <>
                           <span>•</span>
                           <button
@@ -946,8 +1057,14 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                   )}
 
                   {/* Inline Translation Display */}
-                  {!isUser && showTranslations[msg.id] && translations[msg.id] && (
-                    <div className="mt-2 p-2 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs text-indigo-200 italic leading-snug animate-in fade-in duration-150">
+                  {showTranslations[msg.id] && translations[msg.id] && (
+                    <div
+                      className={`mt-2 p-2 rounded-xl text-xs italic leading-snug animate-in fade-in duration-150 ${
+                        isUser
+                          ? 'bg-black/25 border border-white/20 text-indigo-100'
+                          : 'bg-slate-900/80 border border-slate-700/60 text-indigo-200'
+                      }`}
+                    >
                       💡 {translations[msg.id]}
                     </div>
                   )}

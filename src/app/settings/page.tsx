@@ -75,6 +75,11 @@ export default function SettingsPage() {
   const handleTargetScoreChange = (score: number, title: string) => {
     setTargetScore(score);
     showToast(`Đã cập nhật mục tiêu TOEIC: ${title}!`);
+    if (user) {
+      setTimeout(() => {
+        forceSync();
+      }, 150);
+    }
   };
 
   const handleToggleImmersive = () => {

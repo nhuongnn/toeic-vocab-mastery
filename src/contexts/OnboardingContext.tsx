@@ -211,7 +211,12 @@ export function OnboardingProvider({ children }: { children: React.ReactNode }) 
   const updateState = useCallback(
     (updater: (prev: OnboardingState) => OnboardingState) => {
       setState((prev) => {
-        const next = updater(prev);
+        const nextWithoutTimestamp = updater(prev);
+        const next: OnboardingState = {
+          ...nextWithoutTimestamp,
+          updatedAt: new Date().toISOString(),
+        };
+
         try {
           localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
           const rawMain = localStorage.getItem('toeic_vocab_mastery_v1');
@@ -223,7 +228,13 @@ export function OnboardingProvider({ children }: { children: React.ReactNode }) 
         } catch (e) {
           console.error('Failed to save onboarding state:', e);
         }
+
         scheduleOnboardingCloudSync(next);
+
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(new Event('onboarding-synced'));
+        }
+
         return next;
       });
     },

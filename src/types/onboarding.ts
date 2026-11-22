@@ -82,4 +82,5 @@ export interface OnboardingState {
   learningPath: LearningPath | null;
   tourCompleted: boolean;
   completedAt?: string;
+  updatedAt?: string;
 }

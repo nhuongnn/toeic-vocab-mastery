@@ -78,59 +78,78 @@ export function mergeUserProgress(
 
   const estimatedScore = calculateEstimatedScore(totalLearned, masteryRate);
 
-  // 5. Merge onboarding & learning path state (preserve learning path across devices)
+  // 5. Merge onboarding & learning path state (preserve latest across devices)
   let mergedOnboarding: OnboardingState | undefined = undefined;
   if (local.onboarding || remote.onboarding) {
     const oLocal = local.onboarding;
     const oRemote = remote.onboarding;
 
-    // Prefer non-null learningPath (remote takes precedence if available or if set on another device)
-    const effectiveLearningPath =
-      oRemote?.learningPath ||
-      oLocal?.learningPath ||
-      null;
+    const timeLocal = oLocal?.updatedAt ? new Date(oLocal.updatedAt).getTime() : (oLocal?.completedAt ? new Date(oLocal.completedAt).getTime() : 0);
+    const timeRemote = oRemote?.updatedAt ? new Date(oRemote.updatedAt).getTime() : (oRemote?.completedAt ? new Date(oRemote.completedAt).getTime() : 0);
 
-    const effectiveTargetScore =
-      oRemote?.learningPath?.targetScore ||
-      oRemote?.targetScore ||
-      oLocal?.learningPath?.targetScore ||
-      oLocal?.targetScore ||
-      650;
+    // Pick winner based on newer update timestamp
+    let winner: OnboardingState | undefined;
+    let fallback: OnboardingState | undefined;
 
-    const effectivePlacement =
-      oRemote?.placementResult ||
-      oLocal?.placementResult ||
-      null;
+    if (timeLocal > timeRemote) {
+      winner = oLocal;
+      fallback = oRemote;
+    } else if (timeRemote > timeLocal) {
+      winner = oRemote;
+      fallback = oLocal;
+    } else {
+      // If timestamps equal or absent:
+      // If one has learningPath and other doesn't, prefer the one with learningPath
+      if (oLocal?.learningPath && !oRemote?.learningPath) {
+        winner = oLocal;
+        fallback = oRemote;
+      } else if (oRemote?.learningPath && !oLocal?.learningPath) {
+        winner = oRemote;
+        fallback = oLocal;
+      } else {
+        // Prefer local (active user's current session)
+        winner = oLocal || oRemote;
+        fallback = oRemote || oLocal;
+      }
+    }
 
-    const effectiveMinutes =
-      oRemote?.dailyMinutes ||
-      oLocal?.dailyMinutes ||
-      20;
-
+    const effectiveTargetScore = winner?.targetScore || fallback?.targetScore || 650;
+    const effectivePlacement = winner?.placementResult || fallback?.placementResult || null;
+    const effectiveMinutes = winner?.dailyMinutes || fallback?.dailyMinutes || 20;
     const effectiveCompleted = Boolean(
-      oRemote?.isCompleted ||
-      oLocal?.isCompleted ||
-      effectiveLearningPath
+      winner?.isCompleted ||
+      fallback?.isCompleted ||
+      winner?.learningPath ||
+      fallback?.learningPath
     );
+
+    // Ensure the learning path matches effectiveTargetScore consistently
+    let effectiveLearningPath = winner?.learningPath || fallback?.learningPath || null;
+    if (effectiveLearningPath && effectiveLearningPath.targetScore !== effectiveTargetScore) {
+      effectiveLearningPath = generateLearningPath(
+        effectiveTargetScore,
+        effectivePlacement?.level || effectiveLearningPath.currentLevel || 'essential',
+        effectiveMinutes
+      );
+    } else if (!effectiveLearningPath && effectiveCompleted && effectiveTargetScore) {
+      effectiveLearningPath = generateLearningPath(
+        effectiveTargetScore,
+        effectivePlacement?.level || 'essential',
+        effectiveMinutes
+      );
+    }
 
     mergedOnboarding = {
       isCompleted: effectiveCompleted,
-      currentStep: effectiveCompleted ? 'result' : (oRemote?.currentStep || oLocal?.currentStep || 'welcome'),
+      currentStep: effectiveCompleted ? 'result' : (winner?.currentStep || fallback?.currentStep || 'welcome'),
       targetScore: effectiveTargetScore,
       dailyMinutes: effectiveMinutes,
-      experienceLevel: oRemote?.experienceLevel || oLocal?.experienceLevel || null,
+      experienceLevel: winner?.experienceLevel || fallback?.experienceLevel || null,
       placementResult: effectivePlacement,
-      learningPath:
-        effectiveLearningPath ||
-        (effectiveCompleted && effectiveTargetScore
-          ? generateLearningPath(
-              effectiveTargetScore,
-              effectivePlacement?.level || 'essential',
-              effectiveMinutes
-            )
-          : null),
-      tourCompleted: Boolean(oRemote?.tourCompleted || oLocal?.tourCompleted),
-      completedAt: oRemote?.completedAt || oLocal?.completedAt,
+      learningPath: effectiveLearningPath,
+      tourCompleted: Boolean(winner?.tourCompleted || fallback?.tourCompleted),
+      completedAt: winner?.completedAt || fallback?.completedAt,
+      updatedAt: winner?.updatedAt || fallback?.updatedAt || new Date().toISOString(),
     };
   }
 

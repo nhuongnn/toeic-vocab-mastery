@@ -23,6 +23,7 @@ export interface KeyPhrase {
 export interface RoleplayScenario {
   id: string;
   title: string;
+  englishTitle?: string;
   vietnameseTitle: string;
   description: string;
   role: CharacterRole;

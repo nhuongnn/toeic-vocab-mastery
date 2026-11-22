@@ -117,6 +117,7 @@ export function buildDynamicOpeningPrompt(
 ): string {
   const targetScore = userContext?.targetScore || 650;
   const userDisplayName = userName && userName !== 'Bạn' ? userName : 'the colleague / team member';
+  const scenarioEnglishTopic = scenario.englishTitle || 'the current workplace agenda';
 
   const roleStyle = {
     boss: `You are the manager / supervisor (${character.name}). Open the conversation professionally, directly, and with authority or urgency. You can address ${userDisplayName} by name, or ask them into your office, or ping them about the priority task.`,
@@ -128,13 +129,15 @@ export function buildDynamicOpeningPrompt(
 Personality: ${character.personality}
 Role Style: ${roleStyle}
 
-Workplace Scenario: "${scenario.title}" (${scenario.vietnameseTitle})
-Scenario Context & Objective: ${scenario.objective}
+Workplace Scenario (English): "${scenarioEnglishTopic}"
+Scenario Context (Vietnamese): "${scenario.vietnameseTitle}"
+Scenario Objective: ${scenario.objective}
 Target TOEIC Level: ${scenario.targetScoreRange} (${scenario.level}, target score: ${targetScore}+)
 Partner Name: ${userDisplayName}
 
 YOUR TASK:
 Generate a spontaneous, fresh, unique OPENING MESSAGE in character (2 to 3 sentences, around 25 to 50 words) to kickstart this conversation naturally.
+- CRITICAL REQUIREMENT: The "english" field must be 100% in natural, professional English. DO NOT insert Vietnamese phrases, Vietnamese titles, or Vietnamese words into the English line.
 - DO NOT just repeat the static initial phrase: "${scenario.initialMessage}".
 - Create a distinct angle (e.g., dropping by the desk, a quick morning check-in, an urgent update, or catching up over coffee).
 - Tone must align with ${character.role.toUpperCase()} and ${character.personality}.
@@ -144,7 +147,7 @@ ${scenario.suggestedVocabulary?.length ? `- If natural, include 1-2 keywords: ${
 RETURN FORMAT:
 Return ONLY a valid JSON object (no markdown backticks, no other text):
 {
-  "english": "Opening lines in English here...",
+  "english": "Opening lines strictly in English here...",
   "vietnamese": "Natural Vietnamese translation here..."
 }`;
 }

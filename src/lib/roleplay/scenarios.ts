@@ -77,6 +77,7 @@ export const PRESET_SCENARIOS: RoleplayScenario[] = [
   {
     id: 'boss-deadline-extension',
     title: 'Xin gia hạn Deadline dự án',
+    englishTitle: 'the project deadline extension',
     vietnameseTitle: 'Báo cáo khó khăn & Xin dời lịch hoàn thành báo cáo',
     description: 'Báo cáo tiến độ hiện tại với sếp, giải thích nguyên nhân chậm trễ và đàm phán xin lùi deadline thêm 2 ngày một cách chuyên nghiệp.',
     role: 'boss',
@@ -108,6 +109,7 @@ export const PRESET_SCENARIOS: RoleplayScenario[] = [
   {
     id: 'boss-daily-task-clarification',
     title: 'Làm rõ yêu cầu công việc mới',
+    englishTitle: 'the daily task priorities',
     vietnameseTitle: 'Nhận chỉ đạo công việc & Xác nhận thứ tự ưu tiên',
     description: 'Sếp giao cho bạn 2 đầu việc gấp. Hãy hỏi lại để làm rõ thứ tự ưu tiên và phạm vi công việc cần xử lý trước.',
     role: 'boss',
@@ -134,6 +136,7 @@ export const PRESET_SCENARIOS: RoleplayScenario[] = [
   {
     id: 'boss-budget-review',
     title: 'Bảo vệ Đề xuất Ngân sách Quý tới',
+    englishTitle: 'the quarterly budget proposal',
     vietnameseTitle: 'Trình bày và thuyết phục sếp duyệt chi phí đầu tư công nghệ',
     description: 'Sếp đang băn khoăn về chi phí phần mềm mới vượt dự toán 15%. Bạn cần giải thích tỷ suất hoàn vốn (ROI) và lợi ích dài hạn.',
     role: 'boss',
@@ -160,6 +163,7 @@ export const PRESET_SCENARIOS: RoleplayScenario[] = [
   {
     id: 'boss-performance-review',
     title: 'Đánh giá Hiệu suất & Thăng tiến',
+    englishTitle: 'the quarterly performance review',
     vietnameseTitle: 'Buổi họp 1-on-1 định kỳ với cấp trên về kết quả công việc',
     description: 'Trò chuyện trong buổi đánh giá quý (Performance Review), tổng kết thành tích đạt được và thảo luận về cơ hội phát triển sự nghiệp.',
     role: 'boss',
@@ -188,6 +192,7 @@ export const PRESET_SCENARIOS: RoleplayScenario[] = [
   {
     id: 'colleague-coffee-chit-chat',
     title: 'Trò chuyện Giờ Giải lao & Kế hoạch Cuối tuần',
+    englishTitle: 'weekend plans and work small talk',
     vietnameseTitle: 'Giao tiếp hàng ngày, Small Talk thân thiện tại khu vực Pantry',
     description: 'Gặp đồng nghiệp tại quầy cà phê công ty. Hỏi thăm công việc tuần qua và chia sẻ kế hoạch nghỉ ngơi cuối tuần.',
     role: 'colleague',
@@ -214,6 +219,7 @@ export const PRESET_SCENARIOS: RoleplayScenario[] = [
   {
     id: 'colleague-presentation-prep',
     title: 'Phối hợp Soạn Slide Thuyết trình',
+    englishTitle: 'the presentation slide deck',
     vietnameseTitle: 'Cùng phân chia công việc chuẩn bị cho buổi họp với đối tác',
     description: 'Cùng đồng nghiệp rà soát lại bài thuyết trình cho khách hàng vào ngày mai. Phân chia ai phụ trách phần dữ liệu tài chính và ai nói phần giải pháp.',
     role: 'colleague',
@@ -240,6 +246,7 @@ export const PRESET_SCENARIOS: RoleplayScenario[] = [
   {
     id: 'colleague-brainstorm-campaign',
     title: 'Động não Ý tưởng Chiến dịch Mới',
+    englishTitle: 'the new marketing campaign',
     vietnameseTitle: 'Thảo luận ý tưởng truyền thông thu hút tệp khách hàng trẻ',
     description: 'Hai đồng nghiệp cùng ngồi brainstorm giải pháp quảng bá sản phẩm mới trên mạng xã hội với ngân sách tối ưu.',
     role: 'colleague',
@@ -266,6 +273,7 @@ export const PRESET_SCENARIOS: RoleplayScenario[] = [
   {
     id: 'colleague-urgent-support',
     title: 'Nhờ Đồng nghiệp Hỗ trợ Tài liệu Gấp',
+    englishTitle: 'the urgent sales report backup',
     vietnameseTitle: 'Hỏi xin file dữ liệu bán hàng tháng trước khi hệ thống bị chậm',
     description: 'Hệ thống ERP nội bộ đang bảo trì, bạn cần đồng nghiệp gửi gấp bản sao lưu dữ liệu doanh số để kịp nộp khách hàng.',
     role: 'colleague',
@@ -294,6 +302,7 @@ export const PRESET_SCENARIOS: RoleplayScenario[] = [
   {
     id: 'staff-onboarding-guidance',
     title: 'Nhân viên Mới Xin Hướng dẫn Quy trình',
+    englishTitle: 'the expense reimbursement procedure',
     vietnameseTitle: 'Cấp dưới hỏi về quy định gửi hóa đơn và thanh toán chi phí',
     description: 'Một nhân viên cấp dưới mới vào làm hỏi bạn về quy trình kê khai hóa đơn taxi công tác và hoàn ứng.',
     role: 'staff',
@@ -320,6 +329,7 @@ export const PRESET_SCENARIOS: RoleplayScenario[] = [
   {
     id: 'staff-leave-request',
     title: 'Nhân viên Bàn giao Công việc để Nghỉ phép',
+    englishTitle: 'the annual leave handover plan',
     vietnameseTitle: 'Nhân viên xin nghỉ phép 3 ngày và bàn giao đầu mối xử lý việc',
     description: 'Nhân viên văn phòng đến trao đổi về việc xin nghỉ phép năm và chủ động bàn giao các đầu việc đang dang dở.',
     role: 'staff',
@@ -346,6 +356,7 @@ export const PRESET_SCENARIOS: RoleplayScenario[] = [
   {
     id: 'staff-survey-results',
     title: 'Nhân viên Báo cáo Khảo sát Khách hàng',
+    englishTitle: 'the customer satisfaction survey findings',
     vietnameseTitle: 'Nhân viên phòng ban trình bày các phản hồi nổi bật từ khách hàng',
     description: 'Nhân viên báo cáo kết quả khảo sát mức độ hài lòng khách hàng (CSAT) tháng qua và chỉ ra các điểm cần khắc phục.',
     role: 'staff',
@@ -413,56 +424,57 @@ export function getRandomOpeningVariation(
 ): { english: string; vietnamese: string } {
   const nameGreeting = userName && userName !== 'Bạn' ? `${userName}, ` : '';
   const role = character.role;
+  const topic = scenario.englishTitle || 'the current workplace deliverables';
 
   const bossOpenings = [
     {
-      english: `Good morning, ${nameGreeting}do you have a brief moment to sync? I was going over the requirements for "${scenario.title}" and want to make sure we're on track. Where do things stand?`,
+      english: `Good morning, ${nameGreeting}do you have a brief moment to sync? I was going over the requirements for ${topic} and want to make sure we're on track. Where do things stand?`,
       vietnamese: `Chào buổi sáng! Bạn có chút thời gian để trao đổi nhanh không? Tôi vừa xem qua các yêu cầu cho "${scenario.vietnameseTitle}" và muốn chắc chắn chúng ta đang đúng tiến độ. Tình hình thế nào rồi?`,
     },
     {
-      english: `Hi ${nameGreeting}please have a seat. Regarding our "${scenario.title}" agenda, I have a few specific questions before our executive briefing. Are you ready to walk me through the key updates?`,
+      english: `Hi ${nameGreeting}please have a seat. Regarding our agenda for ${topic}, I have a few specific questions before our executive briefing. Are you ready to walk me through the key updates?`,
       vietnamese: `Chào bạn, mời ngồi. Liên quan đến "${scenario.vietnameseTitle}", tôi có vài câu hỏi cụ thể trước cuộc họp ban giám đốc. Bạn đã sẵn sàng trình bày những điểm cập nhật chính chưa?`,
     },
     {
-      english: `Hello ${nameGreeting}I'm following up on our ${character.department || scenario.department} schedule today. We need to align on our priority deliverables for "${scenario.title}". How is your progress coming along?`,
+      english: `Hello ${nameGreeting}I'm following up on our ${character.department || scenario.department} schedule today. We need to align on ${topic}. How is your progress coming along?`,
       vietnamese: `Chào bạn, tôi muốn theo dõi tiến độ hôm nay của phòng ${character.department || scenario.department}. Chúng ta cần thống nhất các đầu việc ưu tiên cho "${scenario.vietnameseTitle}". Tiến độ của bạn đến đâu rồi?`,
     },
     {
-      english: `Morning ${nameGreeting}thanks for stopping by. We have some important decisions to make regarding "${scenario.title}" before noon. Can you give me a status report?`,
+      english: `Morning ${nameGreeting}thanks for stopping by. We have some important decisions to make regarding ${topic} before noon. Can you give me a status report?`,
       vietnamese: `Chào bạn, cảm ơn đã ghé qua. Chúng ta có một vài quyết định quan trọng cần đưa ra cho "${scenario.vietnameseTitle}" trước trưa nay. Bạn có thể báo cáo nhanh tình hình được không?`,
     },
   ];
 
   const colleagueOpenings = [
     {
-      english: `Hey ${nameGreeting}got a quick second? I was just reviewing our tasks for "${scenario.title}", and I'd love to coordinate with you on the next steps. What are your thoughts?`,
+      english: `Hey ${nameGreeting}got a quick second? I was just reviewing our tasks for ${topic}, and I'd love to coordinate with you on the next steps. What are your thoughts?`,
       vietnamese: `Chào bạn! Có rảnh một phút không? Mình vừa xem lại phần công việc cho "${scenario.vietnameseTitle}" và muốn cùng bạn phối hợp các bước tiếp theo. Bạn thấy thế nào?`,
     },
     {
-      english: `Morning ${nameGreeting}hope your day is going smoothly! I saw the latest update on "${scenario.title}" and thought we should quickly align before the deadline. Do you have a minute to brainstorm?`,
+      english: `Morning ${nameGreeting}hope your day is going smoothly! I saw the latest update on ${topic} and thought we should quickly align before the deadline. Do you have a minute to brainstorm?`,
       vietnamese: `Chào buổi sáng! Chúc một ngày làm việc thuận lợi nhé. Mình thấy cập nhật mới nhất về "${scenario.vietnameseTitle}" và nghĩ chúng mình nên trao đổi nhanh trước hạn chót. Bạn có vài phút để thảo luận không?`,
     },
     {
-      english: `Hi ${nameGreeting}hope I'm not interrupting anything urgent. We need to finalize our approach for "${scenario.title}" this week. Could we bounce a couple of ideas off each other?`,
+      english: `Hi ${nameGreeting}hope I'm not interrupting anything urgent. We need to finalize our approach for ${topic} this week. Could we bounce a couple of ideas off each other?`,
       vietnamese: `Chào bạn, hy vọng mình không làm gián đoạn việc gấp của bạn. Tuần này chúng mình cần chốt phương án cho "${scenario.vietnameseTitle}". Chúng ta cùng trao đổi nhanh vài ý tưởng nhé?`,
     },
     {
-      english: `Hey there! Just grabbing some coffee. Did you get a chance to look at "${scenario.title}" yet? Let's figure out how we should split the workload.`,
+      english: `Hey there! Just grabbing some coffee. Did you get a chance to look over ${topic} yet? Let's figure out how we should split the workload.`,
       vietnamese: `Chào cậu! Mình đang tranh thủ lấy cốc cà phê. Cậu đã kịp xem qua "${scenario.vietnameseTitle}" chưa? Chúng mình cùng bàn xem nên phân chia công việc thế nào nhé.`,
     },
   ];
 
   const staffOpenings = [
     {
-      english: `Good morning, ${nameGreeting}excuse me for checking in. I've prepared the initial materials for "${scenario.title}" and wanted to confirm if you'd like me to focus on the summary or detailed metrics first?`,
+      english: `Good morning, ${nameGreeting}excuse me for checking in. I've prepared the initial materials for ${topic} and wanted to confirm if you'd like me to focus on the summary or detailed metrics first?`,
       vietnamese: `Chào buổi sáng! Xin lỗi vì đã làm phiền. Em/tôi đã chuẩn bị tài liệu ban đầu cho "${scenario.vietnameseTitle}" và muốn xin ý kiến xem nên ưu tiên phần tóm tắt hay số liệu chi tiết trước ạ?`,
     },
     {
-      english: `Hi ${nameGreeting}I've completed the first draft regarding "${scenario.title}". Whenever you have a free moment, could you please review it and give me some guidance on our next steps?`,
+      english: `Hi ${nameGreeting}I've completed the first draft regarding ${topic}. Whenever you have a free moment, could you please review it and give me some guidance on our next steps?`,
       vietnamese: `Chào bạn/anh/chị, em/tôi đã hoàn thành bản thảo đầu tiên về "${scenario.vietnameseTitle}". Khi nào rảnh, xin nhờ anh/chị xem qua và cho em xin hướng dẫn các bước tiếp theo với ạ?`,
     },
     {
-      english: `Good day, ${nameGreeting}I wanted to give you a quick status update on our ${character.department || scenario.department} assignment. Everything is moving forward, but I have a couple of points I'd appreciate your confirmation on. May I run them by you?`,
+      english: `Good day, ${nameGreeting}I wanted to give you a quick status update on our ${character.department || scenario.department} assignment. Everything is moving forward, but I have a couple of points regarding ${topic} I'd appreciate your confirmation on. May I run them by you?`,
       vietnamese: `Chào bạn/anh/chị, em muốn báo cáo nhanh tiến độ công việc tại phòng ${character.department || scenario.department}. Mọi thứ đang tiến triển tốt, nhưng em có vài điểm muốn xin xác nhận. Em có thể trình bày nhanh được không ạ?`,
     },
   ];

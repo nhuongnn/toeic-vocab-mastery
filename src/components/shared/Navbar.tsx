@@ -24,6 +24,7 @@ import {
   Puzzle,
   Compass,
   Settings,
+  Bot,
 } from 'lucide-react';
 import { allVocabularyWords } from '@/data/vocabulary';
 
@@ -91,7 +92,9 @@ export function Navbar() {
     pathname.startsWith('/matching') ||
     pathname.startsWith('/fill-blank') ||
     pathname.startsWith('/context-builder') ||
-    pathname.startsWith('/listening');
+    pathname.startsWith('/listening') ||
+    pathname.startsWith('/chat-room') ||
+    pathname.startsWith('/ai-chat');
 
   const skillItems = [
     {
@@ -125,6 +128,14 @@ export function Navbar() {
   ];
 
   const practiceItems = [
+    {
+      href: '/chat-room',
+      label: 'Phòng chat AI công sở',
+      desc: 'Nhập vai giao tiếp với Sếp, Đồng nghiệp & Nhân viên',
+      icon: Bot,
+      color: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20',
+      badge: 'Mới • AI',
+    },
     {
       href: '/flashcards',
       label: 'Flashcard SRS',

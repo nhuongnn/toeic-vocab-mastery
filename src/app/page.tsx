@@ -24,6 +24,8 @@ import {
   Mail,
   FileSignature,
   Send,
+  Bot,
+  MessageSquare,
 } from 'lucide-react';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useSpeech } from '@/hooks/useSpeech';
@@ -222,6 +224,34 @@ export default function HomePage() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white text-xs font-bold transition-all flex-shrink-0"
           >
             <span>Deep Dive Into Word</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+
+      {/* 3.5. AI Roleplay Chat Room Spotlight */}
+      <section className="relative rounded-3xl bg-gradient-to-r from-indigo-950/90 via-slate-900 to-purple-950/80 border border-indigo-500/30 p-6 sm:p-8 overflow-hidden shadow-2xl">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+          <div className="space-y-2 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-semibold">
+              <Sparkles className="w-3.5 h-3.5 text-indigo-400 animate-pulse" />
+              <span>Tính Năng Mới • Phòng Chat AI Nhập Vai Công Sở</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+              Luyện Giao Tiếp Với Sếp, Đồng Nghiệp & Nhân Viên
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Tùy biến tên, tuổi, giới tính nhân vật. Đặt ra các tình huống công sở thực tế dựa trên lộ trình mục tiêu TOEIC ({effectiveTargetScore}+). Hệ thống hỗ trợ gợi ý câu trả lời & câu hỏi khi bạn chủ động yêu cầu!
+            </p>
+          </div>
+
+          <Link
+            href="/chat-room"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-indigo-600/30 flex-shrink-0"
+          >
+            <Bot className="w-4 h-4" />
+            <span>Vào Phòng Chat AI Ngay</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

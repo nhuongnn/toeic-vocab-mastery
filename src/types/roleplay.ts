@@ -1,0 +1,86 @@
+export type CharacterRole = 'colleague' | 'boss' | 'staff';
+
+export type CharacterGender = 'male' | 'female' | 'other';
+
+export interface CharacterConfig {
+  name: string;
+  role: CharacterRole;
+  gender: CharacterGender;
+  age: number;
+  department: string;
+  avatar: string;
+  personality: string;
+}
+
+export type ScenarioLevel = 'essential' | 'intermediate' | 'advanced';
+
+export interface KeyPhrase {
+  phrase: string;
+  meaning: string;
+  usageTip?: string;
+}
+
+export interface RoleplayScenario {
+  id: string;
+  title: string;
+  vietnameseTitle: string;
+  description: string;
+  role: CharacterRole;
+  level: ScenarioLevel;
+  targetScoreRange: string; // e.g. "450 - 600", "650 - 750", "800+"
+  department: string;
+  objective: string; // Mục tiêu cần đạt được trong cuộc hội thoại
+  initialMessage: string;
+  initialTranslation: string;
+  suggestedVocabulary: string[];
+  keyPhrases: KeyPhrase[];
+  isCustom?: boolean;
+}
+
+export interface RoleplayMessage {
+  id: string;
+  role: 'user' | 'assistant' | 'system';
+  content: string;
+  translation?: string;
+  timestamp: number;
+  provider?: 'gemini' | 'cloudflare';
+  isFallback?: boolean;
+  feedback?: {
+    correction?: string;
+    betterPhrasing?: string;
+    explanation?: string;
+  };
+}
+
+export interface RoleplaySuggestion {
+  id: string;
+  type: 'formal' | 'casual' | 'clarifying';
+  label: string; // e.g., "Trang trọng & Lịch sự", "Tự nhiên & Thân mật", "Hỏi để làm rõ"
+  english: string;
+  vietnamese: string;
+  explanation: string;
+  keyVocabulary?: string[];
+}
+
+export interface UserLearningContext {
+  targetScore: number;
+  currentLevel: string;
+  dailyMinutes: number;
+  totalWordsLearned: number;
+  estimatedToeicScore: number;
+  recentWords: string[];
+  focusCategories: string[];
+}
+
+export interface RoleplaySessionSummary {
+  scenarioTitle: string;
+  characterName: string;
+  characterRole: CharacterRole;
+  messageCount: number;
+  durationSeconds: number;
+  targetScore: number;
+  feedbackOverall: string;
+  scoreEstimate: number;
+  vocabularyUsed: string[];
+  completedAt: string;
+}

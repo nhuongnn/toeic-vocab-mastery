@@ -18,6 +18,7 @@ interface OnboardingContextType {
   setTargetScore: (score: number) => void;
   setDailyMinutes: (minutes: number) => void;
   setExperienceLevel: (exp: 'beginner' | 'intermediate' | 'experienced') => void;
+  setCurrentLevel: (level: WordLevel) => void;
   savePlacementResult: (result: PlacementResult) => void;
   skipPlacementTest: (level?: WordLevel) => void;
   finishOnboarding: () => void;
@@ -279,6 +280,33 @@ export function OnboardingProvider({ children }: { children: React.ReactNode }) 
     updateState((prev) => ({ ...prev, experienceLevel: exp }));
   }, [updateState]);
 
+  const setCurrentLevel = useCallback(
+    (level: WordLevel) => {
+      updateState((prev) => {
+        const score = prev.targetScore || prev.learningPath?.targetScore || 650;
+        const minutes = prev.dailyMinutes || prev.learningPath?.dailyGoal || 20;
+        const updatedLearningPath = generateLearningPath(score, level, minutes);
+
+        return {
+          ...prev,
+          learningPath: updatedLearningPath,
+          placementResult: prev.placementResult
+            ? { ...prev.placementResult, level }
+            : {
+                level,
+                score: level === 'essential' ? 450 : level === 'intermediate' ? 650 : 800,
+                questionsAnswered: 0,
+                correctAnswers: 0,
+                accuracy: 0,
+                testedQuestions: [],
+              },
+          isCompleted: true,
+        };
+      });
+    },
+    [updateState]
+  );
+
   const savePlacementResult = useCallback((result: PlacementResult) => {
     updateState((prev) => {
       const learningPath = generateLearningPath(
@@ -354,6 +382,7 @@ export function OnboardingProvider({ children }: { children: React.ReactNode }) 
         setTargetScore,
         setDailyMinutes,
         setExperienceLevel,
+        setCurrentLevel,
         savePlacementResult,
         skipPlacementTest,
         finishOnboarding,

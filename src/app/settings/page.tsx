@@ -25,7 +25,10 @@ import {
   Play,
   RotateCcw,
   BookOpen,
+  Compass,
 } from 'lucide-react';
+import { WordLevel } from '@/types/vocabulary';
+import { LEVEL_CONFIG } from '@/lib/vocabulary-helpers';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useTheme, ThemeMode } from '@/contexts/ThemeContext';
 import { useAuth } from '@/contexts/AuthContext';
@@ -63,8 +66,25 @@ export default function SettingsPage() {
     setTimeout(() => setToastMessage(null), 3500);
   };
 
-  const { state: onboardingState, setTargetScore } = useOnboarding();
+  const { state: onboardingState, setTargetScore, setCurrentLevel } = useOnboarding();
   const currentTargetScore = onboardingState.learningPath?.targetScore || onboardingState.targetScore || 650;
+  const currentLearningLevel =
+    onboardingState.learningPath?.currentLevel ||
+    onboardingState.placementResult?.level ||
+    'essential';
+
+  const handleLearningLevelChange = (lvl: WordLevel) => {
+    setCurrentLevel(lvl);
+    try {
+      localStorage.setItem('toeic_study_navigation_level', lvl);
+    } catch {}
+    showToast(`Đã cập nhật cấp độ học mục tiêu: ${LEVEL_CONFIG[lvl]?.label || lvl}!`);
+    if (user) {
+      setTimeout(() => {
+        forceSync();
+      }, 150);
+    }
+  };
 
   // 1. Goal & Learning updates
   const handleDailyGoalChange = (goal: number) => {
@@ -311,6 +331,75 @@ export default function SettingsPage() {
                 <span>Tùy chỉnh lộ trình đầy đủ</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
+            </div>
+          </div>
+
+          {/* Learning Level Target Section */}
+          <div className="p-6 sm:p-7 rounded-3xl bg-slate-900 border border-slate-800 space-y-5">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                <Compass className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-white">Cấp Độ Từ Vựng Thiết Lập (Learning Level)</h3>
+                <p className="text-xs text-slate-400">
+                  Cấp độ từ vựng trọng tâm trong lộ trình học. Khi học từ, nút &ldquo;Next Word&rdquo; sẽ tự động chuyển tiếp các từ trong cùng cấp độ này.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                {
+                  id: 'essential' as WordLevel,
+                  label: 'Essential (Căn bản)',
+                  desc: '450 - 600 TOEIC • Từ vựng cốt lõi thường gặp nhất',
+                },
+                {
+                  id: 'intermediate' as WordLevel,
+                  label: 'Intermediate (Trung cấp)',
+                  desc: '600 - 750 TOEIC • Họp hành, email & thương thảo',
+                },
+                {
+                  id: 'advanced' as WordLevel,
+                  label: 'Advanced (Nâng cao)',
+                  desc: '750 - 990 TOEIC • Báo cáo điều hành & chuyên sâu',
+                },
+              ].map((lvl) => {
+                const isSelected = currentLearningLevel === lvl.id;
+                return (
+                  <button
+                    key={lvl.id}
+                    type="button"
+                    onClick={() => handleLearningLevelChange(lvl.id)}
+                    className={`p-4 rounded-2xl border text-left transition-all space-y-1.5 ${
+                      isSelected
+                        ? 'bg-indigo-600/20 border-indigo-500 text-white shadow-lg shadow-indigo-500/10 scale-[1.01]'
+                        : 'bg-slate-950 border-slate-800 text-slate-300 hover:border-slate-700'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-bold text-white">{lvl.label}</span>
+                      {isSelected && (
+                        <span className="w-2.5 h-2.5 rounded-full bg-indigo-400 animate-pulse" />
+                      )}
+                    </div>
+                    <p className="text-xs text-slate-400 leading-relaxed">{lvl.desc}</p>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+              <span>
+                Cấp độ hiện tại:{' '}
+                <strong className="text-indigo-400">
+                  {LEVEL_CONFIG[currentLearningLevel]?.label || currentLearningLevel}
+                </strong>
+              </span>
+              <span className="text-[11px] text-emerald-400 font-semibold">
+                ✓ Áp dụng tự động cho nút Next Word
+              </span>
             </div>
           </div>
 

@@ -5,6 +5,7 @@ import { WordDetail } from '@/components/word/WordDetail';
 
 interface Props {
   params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ level?: string; category?: string }>;
 }
 
 export async function generateStaticParams() {
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-async function WordDetailContent({ params }: Props) {
+async function WordDetailContent({ params, searchParams }: Props) {
   const { slug } = await params;
   const word = getWordById(slug);
 
@@ -33,12 +34,23 @@ async function WordDetailContent({ params }: Props) {
     return null;
   }
 
-  // Find previous and next words for fluid navigation
-  const currentIndex = allVocabularyWords.findIndex((w) => w.id === word.id);
-  const previousWord = currentIndex > 0 ? allVocabularyWords[currentIndex - 1] : undefined;
+  const search = searchParams ? await searchParams : undefined;
+  const initialLevel = typeof search?.level === 'string' ? search.level : undefined;
+  const initialCategory = typeof search?.category === 'string' ? search.category : undefined;
+
+  // Find previous and next words based on initialLevel if provided, otherwise words of the same level
+  const effectiveLevel = initialLevel || word.level;
+  const candidateWords = allVocabularyWords.filter((w) => {
+    if (effectiveLevel && effectiveLevel !== 'all' && w.level !== effectiveLevel) return false;
+    if (initialCategory && w.category !== initialCategory) return false;
+    return true;
+  });
+
+  const currentIndex = candidateWords.findIndex((w) => w.id === word.id);
+  const previousWord = currentIndex > 0 ? candidateWords[currentIndex - 1] : undefined;
   const nextWord =
-    currentIndex < allVocabularyWords.length - 1
-      ? allVocabularyWords[currentIndex + 1]
+    currentIndex >= 0 && currentIndex < candidateWords.length - 1
+      ? candidateWords[currentIndex + 1]
       : undefined;
 
   return (
@@ -47,6 +59,8 @@ async function WordDetailContent({ params }: Props) {
       word={word}
       previousWordId={previousWord?.id}
       nextWordId={nextWord?.id}
+      initialLevel={initialLevel}
+      initialCategory={initialCategory}
     />
   );
 }
@@ -77,10 +91,10 @@ function WordDetailSkeleton() {
   );
 }
 
-export default function WordDetailPage({ params }: Props) {
+export default function WordDetailPage({ params, searchParams }: Props) {
   return (
     <Suspense fallback={<WordDetailSkeleton />}>
-      <WordDetailContent params={params} />
+      <WordDetailContent params={params} searchParams={searchParams} />
     </Suspense>
   );
 }

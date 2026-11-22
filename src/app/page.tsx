@@ -220,7 +220,7 @@ export default function HomePage() {
           </div>
 
           <Link
-            href={`/word/${wordOfTheDay.id}`}
+            href={`/word/${wordOfTheDay.id}?level=${wordOfTheDay.level}`}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white text-xs font-bold transition-all flex-shrink-0"
           >
             <span>Deep Dive Into Word</span>

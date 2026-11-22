@@ -93,7 +93,7 @@ export function WordCard({ word }: WordCardProps) {
         {/* Word Title and IPA */}
         <div className="flex items-baseline justify-between gap-2 mb-2">
           <Link
-            href={`/word/${word.id}`}
+            href={`/word/${word.id}?level=${word.level}`}
             className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors uppercase tracking-tight"
           >
             {word.word}
@@ -147,7 +147,7 @@ export function WordCard({ word }: WordCardProps) {
           Root: <strong className="text-slate-300">{word.etymology.rootWord}</strong>
         </span>
         <Link
-          href={`/word/${word.id}`}
+          href={`/word/${word.id}?level=${word.level}`}
           className="text-indigo-400 font-semibold group-hover:underline flex items-center gap-1"
         >
           <span>Explore</span>

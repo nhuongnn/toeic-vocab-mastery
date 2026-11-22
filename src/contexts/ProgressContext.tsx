@@ -15,7 +15,7 @@ import {
   UserPreferences,
   RoleplayPreferences,
 } from '@/types/progress';
-import { CharacterConfig } from '@/types/roleplay';
+import { CharacterConfig, RoleplayConversation } from '@/types/roleplay';
 import { DEFAULT_PROGRESS, loadUserProgress, saveUserProgress, updateStreak } from '@/lib/storage';
 import { calculateSM2, createNewCard, calculateEstimatedScore } from '@/lib/srs';
 import { useAuth } from './AuthContext';
@@ -47,6 +47,7 @@ interface ProgressContextType {
     userAvatar?: string,
     userName?: string
   ) => void;
+  syncChatRoomHistory: (history: RoleplayConversation[]) => void;
 }
 
 const ProgressContext = createContext<ProgressContextType | undefined>(undefined);
@@ -404,10 +405,31 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     ) => {
       setProgress((prev) => {
         const updatedRoleplay: RoleplayPreferences = {
+          ...(prev.roleplay || {}),
           character,
           scenarioId: scenarioId || prev.roleplay?.scenarioId,
           userAvatar: userAvatar !== undefined ? userAvatar : prev.roleplay?.userAvatar,
           userName: userName !== undefined ? userName : prev.roleplay?.userName,
+          updatedAt: new Date().toISOString(),
+        };
+        const updated: UserProgressData = {
+          ...prev,
+          roleplay: updatedRoleplay,
+        };
+        saveUserProgress(updated);
+        scheduleCloudSync(updated);
+        return updated;
+      });
+    },
+    [scheduleCloudSync]
+  );
+
+  const syncChatRoomHistory = useCallback(
+    (history: RoleplayConversation[]) => {
+      setProgress((prev) => {
+        const updatedRoleplay: RoleplayPreferences = {
+          ...(prev.roleplay || {}),
+          chatHistory: history.slice(0, 10),
           updatedAt: new Date().toISOString(),
         };
         const updated: UserProgressData = {
@@ -483,6 +505,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         lastSyncedAt,
         forceSync,
         saveRoleplaySettings,
+        syncChatRoomHistory,
       }}
     >
       {children}

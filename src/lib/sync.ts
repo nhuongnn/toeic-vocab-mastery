@@ -1,5 +1,6 @@
-import { UserProgressData, SRSCard, ExerciseSessionResult } from '@/types/progress';
+import { UserProgressData, SRSCard, ExerciseSessionResult, RoleplayPreferences } from '@/types/progress';
 import { OnboardingState } from '@/types/onboarding';
+import { RoleplayConversation } from '@/types/roleplay';
 import { calculateEstimatedScore } from './srs';
 import { generateLearningPath } from './placement/learningPath';
 
@@ -153,16 +154,37 @@ export function mergeUserProgress(
     };
   }
 
-  // 6. Merge roleplay character settings (preserve most recently updated)
-  let mergedRoleplay = local.roleplay;
-  if (remote.roleplay) {
-    if (!local.roleplay) {
-      mergedRoleplay = remote.roleplay;
-    } else {
-      const timeLocal = local.roleplay.updatedAt ? new Date(local.roleplay.updatedAt).getTime() : 0;
-      const timeRemote = remote.roleplay.updatedAt ? new Date(remote.roleplay.updatedAt).getTime() : 0;
-      mergedRoleplay = timeRemote > timeLocal ? remote.roleplay : local.roleplay;
+  // 6. Merge roleplay character settings & chat history
+  let mergedRoleplay: RoleplayPreferences | undefined = undefined;
+  if (local.roleplay || remote.roleplay) {
+    const timeLocal = local.roleplay?.updatedAt ? new Date(local.roleplay.updatedAt).getTime() : 0;
+    const timeRemote = remote.roleplay?.updatedAt ? new Date(remote.roleplay.updatedAt).getTime() : 0;
+    const baseRoleplay = timeRemote > timeLocal ? (remote.roleplay || local.roleplay) : (local.roleplay || remote.roleplay);
+
+    // Merge chat history across devices, deduplicating by ID and preserving latest updates
+    const historyMap = new Map<string, RoleplayConversation>();
+    const allHistory = [
+      ...(local.roleplay?.chatHistory || []),
+      ...(remote.roleplay?.chatHistory || []),
+    ];
+
+    for (const conv of allHistory) {
+      if (!conv || !conv.id) continue;
+      const existing = historyMap.get(conv.id);
+      if (!existing || (conv.updatedAt || 0) > (existing.updatedAt || 0)) {
+        historyMap.set(conv.id, conv);
+      }
     }
+
+    const mergedChatHistory = Array.from(historyMap.values())
+      .sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0))
+      .slice(0, 10);
+
+    mergedRoleplay = {
+      ...baseRoleplay,
+      chatHistory: mergedChatHistory,
+      updatedAt: new Date(Math.max(timeLocal, timeRemote, Date.now())).toISOString(),
+    };
   }
 
   return {

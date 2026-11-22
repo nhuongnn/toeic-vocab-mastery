@@ -85,3 +85,20 @@ export interface RoleplaySessionSummary {
   vocabularyUsed: string[];
   completedAt: string;
 }
+
+export interface RoleplayConversation {
+  id: string;
+  title: string;
+  character: CharacterConfig;
+  scenario: RoleplayScenario;
+  userAvatar?: string;
+  userName?: string;
+  messages: RoleplayMessage[];
+  translations?: Record<string, string>;
+  createdAt: number;
+  updatedAt: number;
+  messageCount: number;
+  lastMessageSnippet?: string;
+  summary?: RoleplaySessionSummary;
+}
+

@@ -27,6 +27,8 @@ import {
   Mic,
   MicOff,
   Dice5,
+  History,
+  Plus,
 } from 'lucide-react';
 import {
   CharacterConfig,
@@ -35,11 +37,20 @@ import {
   RoleplaySuggestion,
   UserLearningContext,
   RoleplaySessionSummary,
+  RoleplayConversation,
 } from '@/types/roleplay';
 import { DEFAULT_CHARACTERS, PRESET_SCENARIOS, getRandomOpeningVariation } from '@/lib/roleplay/scenarios';
 import { SuggestionDrawer } from './SuggestionDrawer';
 import { RoleplaySetupModal } from './RoleplaySetupModal';
 import { CharacterAvatar } from './CharacterAvatar';
+import { ChatRoomHistoryModal } from './ChatRoomHistoryModal';
+import {
+  getChatRoomHistory,
+  saveChatRoomConversation,
+  deleteChatRoomConversation,
+  clearAllChatRoomHistory,
+  generateConversationId,
+} from '@/lib/roleplay/history';
 import { useSpeech } from '@/hooks/useSpeech';
 import { useProgress } from '@/contexts/ProgressContext';
 import { StreamEvent } from '@/lib/ai/types';
@@ -49,7 +60,7 @@ interface RoleplayChatRoomProps {
 }
 
 export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
-  const { progress, saveRoleplaySettings } = useProgress();
+  const { progress, saveRoleplaySettings, syncChatRoomHistory } = useProgress();
   const mounted = useMounted();
 
   // 1. Initial State from user progress / sync / defaults
@@ -108,6 +119,13 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   const [showObjective, setShowObjective] = useState(true);
   const [isOpeningLoading, setIsOpeningLoading] = useState(false);
 
+  // History State (Max 10 conversations)
+  const [activeSessionId, setActiveSessionId] = useState<string>('');
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+  const [historyList, setHistoryList] = useState<RoleplayConversation[]>([]);
+  const sessionCreatedAtRef = useRef<number>(0);
+  const isSelectingConversationRef = useRef<boolean>(false);
+
   // Speech Recognition (Voice Input)
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef<any>(null);
@@ -121,6 +139,80 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
   const sessionStartTimeRef = useRef<number>(0);
+
+  // Load conversation history on mount & subscribe to cross-tab/component updates
+  useEffect(() => {
+    setActiveSessionId((prev) => prev || generateConversationId());
+    if (!sessionCreatedAtRef.current) {
+      sessionCreatedAtRef.current = Date.now();
+    }
+    setHistoryList(getChatRoomHistory());
+
+    const handleHistoryUpdate = (e: any) => {
+      if (e?.detail && Array.isArray(e.detail)) {
+        setHistoryList(e.detail);
+      } else {
+        setHistoryList(getChatRoomHistory());
+      }
+    };
+
+    window.addEventListener('chat-room-history-updated', handleHistoryUpdate);
+    window.addEventListener('storage', handleHistoryUpdate);
+    return () => {
+      window.removeEventListener('chat-room-history-updated', handleHistoryUpdate);
+      window.removeEventListener('storage', handleHistoryUpdate);
+    };
+  }, []);
+
+  // Helper to auto-save current conversation state into localStorage (max 10)
+  const autoSaveConversation = useCallback(
+    (
+      msgs: RoleplayMessage[],
+      customSummary?: RoleplaySessionSummary,
+      customTranslations?: Record<string, string>,
+      customChar = character,
+      customScen = scenario,
+      customAvatar = userAvatar,
+      customName = userName
+    ) => {
+      // Only save if user has sent at least one message
+      const hasUserMsg = msgs.some((m) => m.role === 'user');
+      if (!hasUserMsg) return;
+
+      const targetSessionId = activeSessionId || generateConversationId();
+      if (!activeSessionId) {
+        setActiveSessionId(targetSessionId);
+      }
+      const createdAt = sessionCreatedAtRef.current || Date.now();
+      if (!sessionCreatedAtRef.current) {
+        sessionCreatedAtRef.current = createdAt;
+      }
+
+      const lastMsg = msgs[msgs.length - 1];
+      const snippet = lastMsg?.content ? lastMsg.content.slice(0, 120) : '';
+
+      const conv: RoleplayConversation = {
+        id: targetSessionId,
+        title: `${customScen.title} - ${customChar.name}`,
+        character: customChar,
+        scenario: customScen,
+        userAvatar: customAvatar,
+        userName: customName,
+        messages: msgs,
+        translations: customTranslations || translations,
+        createdAt,
+        updatedAt: Date.now(),
+        messageCount: msgs.length,
+        lastMessageSnippet: snippet,
+        summary: customSummary || summaryData || undefined,
+      };
+
+      const updated = saveChatRoomConversation(conv);
+      setHistoryList(updated);
+      syncChatRoomHistory(updated);
+    },
+    [activeSessionId, character, scenario, userAvatar, userName, translations, summaryData, syncChatRoomHistory]
+  );
 
   // Generate dynamic, spontaneous opening sentence from AI or smart variation
   const handleGenerateDynamicOpening = useCallback(
@@ -184,6 +276,12 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
   // Initialize dynamic opening on mount or when scenario/character changes
   useEffect(() => {
+    // If we just loaded a conversation from history, skip auto-generating opening
+    if (isSelectingConversationRef.current) {
+      isSelectingConversationRef.current = false;
+      return;
+    }
+
     // Immediate instant variation to ensure 0ms render
     const instantVariation = getRandomOpeningVariation(character, scenario, userName);
     const initialMsgId = `initial-${Date.now()}`;
@@ -290,8 +388,10 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       if (res.ok) {
         const data = await res.json();
         if (data.translatedText) {
-          setTranslations((prev) => ({ ...prev, [id]: data.translatedText }));
+          const nextTranslations = { ...translations, [id]: data.translatedText };
+          setTranslations(nextTranslations);
           setShowTranslations((prev) => ({ ...prev, [id]: true }));
+          autoSaveConversation(messages, undefined, nextTranslations);
         }
       }
     } catch (e) {
@@ -442,6 +542,11 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
     } finally {
       setIsLoading(false);
       abortControllerRef.current = null;
+      // Auto-save the conversation after sending & receiving response
+      setMessages((current) => {
+        autoSaveConversation(current);
+        return current;
+      });
     }
   };
 
@@ -451,13 +556,65 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       abortControllerRef.current = null;
     }
     setIsLoading(false);
+    setMessages((current) => {
+      autoSaveConversation(current);
+      return current;
+    });
   };
+
+  // Start a fresh, clean conversation session
+  const handleStartNewConversation = useCallback(() => {
+    const newId = generateConversationId();
+    setActiveSessionId(newId);
+    sessionCreatedAtRef.current = Date.now();
+    setInput('');
+    setShowSuggestions(false);
+    setSummaryData(null);
+    setIsSummaryOpen(false);
+    handleGenerateDynamicOpening(true);
+  }, [handleGenerateDynamicOpening]);
+
+  // Select and load a saved conversation from history
+  const handleSelectConversation = useCallback((conv: RoleplayConversation) => {
+    isSelectingConversationRef.current = true;
+    setActiveSessionId(conv.id);
+    sessionCreatedAtRef.current = conv.createdAt || Date.now();
+    setCharacter(conv.character);
+    setScenario(conv.scenario);
+    if (conv.userAvatar) setUserAvatar(conv.userAvatar);
+    if (conv.userName) setUserName(conv.userName);
+    setMessages(conv.messages);
+    setTranslations(conv.translations || {});
+    setShowTranslations({});
+    setSummaryData(conv.summary || null);
+    setInput('');
+    setShowSuggestions(false);
+  }, []);
+
+  // Delete a saved conversation
+  const handleDeleteConversation = useCallback(
+    (id: string) => {
+      const updated = deleteChatRoomConversation(id);
+      setHistoryList(updated);
+      syncChatRoomHistory(updated);
+      if (id === activeSessionId) {
+        handleStartNewConversation();
+      }
+    },
+    [activeSessionId, handleStartNewConversation, syncChatRoomHistory]
+  );
+
+  // Clear all saved conversations
+  const handleClearAllHistory = useCallback(() => {
+    clearAllChatRoomHistory();
+    setHistoryList([]);
+    syncChatRoomHistory([]);
+    handleStartNewConversation();
+  }, [handleStartNewConversation, syncChatRoomHistory]);
 
   const handleResetConversation = () => {
     if (confirm('Bạn có chắc muốn bắt đầu lại cuộc hội thoại từ đầu không?')) {
-      setInput('');
-      setShowSuggestions(false);
-      handleGenerateDynamicOpening(true);
+      handleStartNewConversation();
     }
   };
 
@@ -489,6 +646,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
     setSummaryData(summary);
     setIsSummaryOpen(true);
+    autoSaveConversation(messages, summary);
   };
 
   // Keyboard shortcut
@@ -560,6 +718,31 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
         {/* Action Controls */}
         <div className="flex items-center gap-1.5 sm:gap-2">
+          {/* Conversation History Button */}
+          <button
+            onClick={() => setIsHistoryOpen(true)}
+            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-all border border-slate-700/80 hover:border-indigo-500/50"
+            title="Lịch sử các cuộc hội thoại (tối đa 10 cuộc trò chuyện gần nhất)"
+          >
+            <History className="w-3.5 h-3.5 text-indigo-400" />
+            <span className="hidden sm:inline">Lịch sử</span>
+            {historyList.length > 0 && (
+              <span className="px-1.5 py-0.2 rounded-full bg-indigo-500/25 border border-indigo-500/40 text-indigo-300 font-bold text-[10px]">
+                {historyList.length}
+              </span>
+            )}
+          </button>
+
+          {/* New Conversation Button */}
+          <button
+            onClick={handleStartNewConversation}
+            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-all border border-slate-700/80 hover:border-indigo-500/50"
+            title="Bắt đầu cuộc trò chuyện mới"
+          >
+            <Plus className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Mới</span>
+          </button>
+
           {/* User Avatar Button */}
           <button
             onClick={() => {
@@ -612,6 +795,12 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
             <span className="text-indigo-200 truncate">
               <strong>Mục tiêu:</strong> {scenario.objective}
             </span>
+            {historyList.some((c) => c.id === activeSessionId) && (
+              <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-500/20 border border-indigo-500/35 text-indigo-300 shrink-0">
+                <History className="w-3 h-3 text-indigo-400" />
+                <span>Đang xem lại</span>
+              </span>
+            )}
           </div>
           <div className="flex items-center gap-2 shrink-0">
             {messages.length <= 1 && (
@@ -953,6 +1142,18 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         </div>,
         document.body
       )}
+
+      {/* 8. Conversation History Modal */}
+      <ChatRoomHistoryModal
+        isOpen={isHistoryOpen}
+        onClose={() => setIsHistoryOpen(false)}
+        history={historyList}
+        activeConversationId={activeSessionId}
+        onSelectConversation={handleSelectConversation}
+        onNewConversation={handleStartNewConversation}
+        onDeleteConversation={handleDeleteConversation}
+        onClearAll={handleClearAllHistory}
+      />
     </div>
   );
 }

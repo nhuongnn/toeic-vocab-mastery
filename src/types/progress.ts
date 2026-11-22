@@ -1,5 +1,5 @@
 import { OnboardingState } from './onboarding';
-import { CharacterConfig, RoleplayScenario } from './roleplay';
+import { CharacterConfig, RoleplayScenario, RoleplayConversation } from './roleplay';
 
 export interface SRSCard {
   wordId: string;
@@ -51,6 +51,7 @@ export interface RoleplayPreferences {
   userAvatar?: string;
   userName?: string;
   updatedAt?: string;
+  chatHistory?: RoleplayConversation[];
 }
 
 export interface UserProgressData {

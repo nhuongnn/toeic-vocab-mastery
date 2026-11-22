@@ -32,9 +32,8 @@ export function loadUserProgress(): UserProgressData {
 
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return DEFAULT_PROGRESS;
-    const parsed = JSON.parse(raw);
-    const loaded = {
+    const parsed = raw ? JSON.parse(raw) : {};
+    const loaded: UserProgressData = {
       ...DEFAULT_PROGRESS,
       ...parsed,
       stats: { ...DEFAULT_PROGRESS.stats, ...(parsed.stats || {}) },
@@ -98,6 +97,34 @@ export function loadUserProgress(): UserProgressData {
       }
     } catch {}
 
+    // Merge chat room history from separate key if present
+    try {
+      const rawChatHistory = localStorage.getItem('toeic_chat_room_history_v1');
+      if (rawChatHistory) {
+        const parsedHistory = JSON.parse(rawChatHistory);
+        if (Array.isArray(parsedHistory) && parsedHistory.length > 0) {
+          if (!loaded.roleplay) {
+            loaded.roleplay = {};
+          }
+          if (!loaded.roleplay.chatHistory || loaded.roleplay.chatHistory.length === 0) {
+            loaded.roleplay.chatHistory = parsedHistory.slice(0, 10);
+          } else {
+            const map = new Map<string, any>();
+            for (const c of [...(loaded.roleplay.chatHistory || []), ...parsedHistory]) {
+              if (!c?.id) continue;
+              const ex = map.get(c.id);
+              if (!ex || (c.updatedAt || 0) > (ex.updatedAt || 0)) {
+                map.set(c.id, c);
+              }
+            }
+            loaded.roleplay.chatHistory = Array.from(map.values())
+              .sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0))
+              .slice(0, 10);
+          }
+        }
+      }
+    } catch {}
+
     return loaded;
   } catch (err) {
     console.error('Error loading progress from localStorage:', err);
@@ -123,6 +150,15 @@ export function saveUserProgress(data: UserProgressData): void {
         localStorage.setItem('roleplay_settings_v1', JSON.stringify(data.roleplay));
         window.dispatchEvent(new Event('roleplay-synced'));
       } catch {}
+
+      if (Array.isArray(data.roleplay.chatHistory)) {
+        try {
+          localStorage.setItem('toeic_chat_room_history_v1', JSON.stringify(data.roleplay.chatHistory));
+          window.dispatchEvent(
+            new CustomEvent('chat-room-history-updated', { detail: data.roleplay.chatHistory })
+          );
+        } catch {}
+      }
     }
   } catch (err) {
     console.error('Error saving progress to localStorage:', err);

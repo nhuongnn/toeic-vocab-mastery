@@ -541,406 +541,419 @@ export function ChatBotWidget() {
             {/* Header */}
             <div
               onDoubleClick={handleHeaderDoubleClick}
-              className="relative flex items-center justify-between px-4 py-3.5 border-b border-slate-800 bg-slate-950/80 shrink-0 select-none cursor-default"
+              className="relative border-b border-slate-800 bg-slate-950/90 shrink-0 select-none cursor-default"
               title="Bấm đúp vào thanh tiêu đề để phóng to / thu nhỏ"
             >
-            {activeTab === 'chat' ? (
-              <div className="flex items-center gap-3 min-w-0">
-                <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 shrink-0">
-                  <Bot className="w-4 h-4" />
-                </div>
-                <div className="min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
-                    <h3 className="text-sm font-bold text-slate-100 shrink-0">TOEIC AI Tutor</h3>
-
-                    {/* Interactive Model Switcher Button & Dropdown */}
-                    <div ref={modelMenuRef}>
-                      <button
-                        type="button"
-                        onClick={() => setModelMenuOpen(!modelMenuOpen)}
-                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold transition-all hover:opacity-90 active:scale-95 cursor-pointer shadow-sm"
-                        title="Bấm để đổi mô hình AI"
-                      >
-                        {selectedModel === 'auto' ? (
-                          <span className="flex items-center gap-1 text-indigo-300 bg-indigo-500/15 border border-indigo-500/30 px-2 py-0.5 rounded-full">
-                            <RefreshCw className="w-2.5 h-2.5 text-indigo-400" />
-                            <span>Tự động (Hybrid)</span>
-                            <ChevronDown className="w-2.5 h-2.5 text-indigo-400 ml-0.5" />
-                          </span>
-                        ) : selectedModel === 'gemini' ? (
-                          <span className="flex items-center gap-1 text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.5 rounded-full">
-                            <Sparkles className="w-2.5 h-2.5 text-emerald-400" />
-                            <span>Gemini Flash</span>
-                            <ChevronDown className="w-2.5 h-2.5 text-emerald-400 ml-0.5" />
-                          </span>
-                        ) : (
-                          <span className="flex items-center gap-1 text-amber-300 bg-amber-500/15 border border-amber-500/30 px-2 py-0.5 rounded-full">
-                            <Zap className="w-2.5 h-2.5 text-amber-400" />
-                            <span>Cloudflare Llama</span>
-                            <ChevronDown className="w-2.5 h-2.5 text-amber-400 ml-0.5" />
-                          </span>
-                        )}
-                      </button>
-
-                      {/* Model Dropdown Menu */}
-                      {modelMenuOpen && (
-                        <div className="absolute top-full left-3 right-3 sm:left-4 sm:right-4 mt-2 rounded-2xl bg-slate-900/98 border border-slate-700 shadow-2xl p-2.5 z-50 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
-                          <div className="flex items-center justify-between px-2.5 py-1 mb-1 border-b border-slate-800/80 pb-1.5">
-                            <span className="text-[10px] font-bold text-slate-300 uppercase tracking-wider">
-                              Chọn Mô Hình AI Phản Hồi
-                            </span>
-                            <button
-                              type="button"
-                              onClick={() => setModelMenuOpen(false)}
-                              className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-                              title="Đóng menu"
-                            >
-                              <X className="w-3.5 h-3.5" />
-                            </button>
-                          </div>
-
-                          <div className="space-y-1.5 mt-1">
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setSelectedModel('auto');
-                                setModelMenuOpen(false);
-                              }}
-                              className={`w-full flex items-start gap-2.5 p-2 rounded-xl text-left transition-all ${
-                                selectedModel === 'auto'
-                                  ? 'bg-indigo-500/15 border border-indigo-500/40 text-white'
-                                  : 'hover:bg-slate-800 text-slate-300'
-                              }`}
-                            >
-                              <div className="p-1.5 rounded-lg bg-indigo-500/20 text-indigo-400 shrink-0 mt-0.5">
-                                <RefreshCw className="w-3.5 h-3.5" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="flex items-center justify-between">
-                                  <span className="text-xs font-bold text-slate-100">
-                                    Tự động (Hybrid)
-                                  </span>
-                                  <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-indigo-500/20 text-indigo-300">
-                                    Khuyên dùng
-                                  </span>
-                                </div>
-                                <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">
-                                  Ưu tiên Gemini Flash, tự động đổi Cloudflare nếu lỗi
-                                </p>
-                              </div>
-                              {selectedModel === 'auto' && (
-                                <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0 mt-1" />
-                              )}
-                            </button>
-
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setSelectedModel('gemini');
-                                setModelMenuOpen(false);
-                              }}
-                              className={`w-full flex items-start gap-2.5 p-2 rounded-xl text-left transition-all ${
-                                selectedModel === 'gemini'
-                                  ? 'bg-emerald-500/15 border border-emerald-500/40 text-white'
-                                  : 'hover:bg-slate-800 text-slate-300'
-                              }`}
-                            >
-                              <div className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400 shrink-0 mt-0.5">
-                                <Sparkles className="w-3.5 h-3.5" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="flex items-center justify-between">
-                                  <span className="text-xs font-bold text-slate-100">
-                                    Google Gemini Flash
-                                  </span>
-                                  <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300">
-                                    Chất lượng cao
-                                  </span>
-                                </div>
-                                <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">
-                                  Tiếng Việt chuẩn xác nhất, giải thích ngữ pháp sâu
-                                </p>
-                              </div>
-                              {selectedModel === 'gemini' && (
-                                <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-1" />
-                              )}
-                            </button>
-
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setSelectedModel('cloudflare');
-                                setModelMenuOpen(false);
-                              }}
-                              className={`w-full flex items-start gap-2.5 p-2 rounded-xl text-left transition-all ${
-                                selectedModel === 'cloudflare'
-                                  ? 'bg-amber-500/15 border border-amber-500/40 text-white'
-                                  : 'hover:bg-slate-800 text-slate-300'
-                              }`}
-                            >
-                              <div className="p-1.5 rounded-lg bg-amber-500/20 text-amber-400 shrink-0 mt-0.5">
-                                <Zap className="w-3.5 h-3.5" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="flex items-center justify-between">
-                                  <span className="text-xs font-bold text-slate-100">
-                                    Cloudflare Llama 3.1
-                                  </span>
-                                  <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300">
-                                    Siêu tốc
-                                  </span>
-                                </div>
-                                <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">
-                                  Inference cực nhanh trên hạ tầng Edge toàn cầu
-                                </p>
-                              </div>
-                              {selectedModel === 'cloudflare' && (
-                                <Check className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-1" />
-                              )}
-                            </button>
-                          </div>
-                        </div>
-                      )}
+              {/* Top Row: Title & Action Buttons */}
+              <div className="flex items-center justify-between px-4 py-2.5">
+                {activeTab === 'chat' ? (
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 shrink-0">
+                      <Bot className="w-4 h-4" />
                     </div>
-
-                    {/* Guest Quota Badge in Header */}
-                    {!user && userQuota && (
-                      <span
-                        className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold border ${
-                          userQuota.remaining <= 0
-                            ? 'bg-rose-500/15 border-rose-500/30 text-rose-300'
-                            : 'bg-slate-800 border-slate-700 text-slate-300'
-                        }`}
-                        title={`Hạn mức khách chưa đăng nhập: còn ${userQuota.remaining}/${userQuota.limit} lượt hôm nay`}
-                      >
-                        <span>Khách: {userQuota.remaining}/{userQuota.limit}</span>
-                      </span>
-                    )}
+                    <div className="min-w-0">
+                      <h3 className="text-sm font-bold text-slate-100 truncate">
+                        TOEIC AI Tutor
+                      </h3>
+                    </div>
                   </div>
-                  <p className="text-[11px] text-slate-400 truncate">
-                    {activeWordContext
-                      ? `Hỗ trợ học từ: "${activeWordContext.word}"`
-                      : 'Trợ lý luyện thi & tiếng Anh công sở'}
-                  </p>
-                </div>
-              </div>
-            ) : (
-              /* History Header */
-              <div className="flex items-center gap-2.5 min-w-0">
-                <button
-                  type="button"
-                  onClick={() => setActiveTab('chat')}
-                  className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-                  title="Quay lại đoạn chat"
-                >
-                  <ArrowLeft className="w-4 h-4" />
-                </button>
-                <div className="flex items-center gap-2">
-                  <h3 className="text-sm font-bold text-slate-100">Lịch Sử Hội Thoại</h3>
-                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/15 border border-indigo-500/30 text-indigo-300">
-                    {user ? `${history.length}/5 gần nhất` : 'Yêu cầu đăng nhập'}
-                  </span>
-                </div>
-              </div>
-            )}
-
-            {/* Action Buttons */}
-            <div
-              className="flex items-center gap-1 shrink-0"
-              onDoubleClick={(e) => e.stopPropagation()}
-            >
-              {/* New Conversation Button */}
-              <button
-                type="button"
-                onClick={() => {
-                  startNewConversation();
-                  setActiveTab('chat');
-                }}
-                title="Bắt đầu cuộc trò chuyện mới"
-                className="p-1.5 rounded-lg text-slate-400 hover:text-indigo-300 hover:bg-slate-800 transition-colors"
-              >
-                <Plus className="w-4 h-4" />
-              </button>
-
-              {/* Toggle History / Chat Button */}
-              {activeTab === 'chat' ? (
-                <button
-                  type="button"
-                  onClick={() => setActiveTab('history')}
-                  title="Xem lịch sử 5 cuộc hội thoại gần nhất"
-                  className="relative p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
-                >
-                  <History className="w-4 h-4" />
-                  {user && history.length > 0 && (
-                    <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-indigo-500 ring-2 ring-slate-900" />
-                  )}
-                </button>
-              ) : null}
-
-              {/* Trash Button in Chat View */}
-              {activeTab === 'chat' && (
-                <button
-                  type="button"
-                  onClick={() => setShowClearCurrentConfirm(true)}
-                  title="Xóa cuộc trò chuyện này"
-                  className="p-1.5 rounded-lg text-slate-400 hover:text-rose-400 hover:bg-slate-800 transition-colors"
-                >
-                  <Trash2 className="w-4 h-4" />
-                </button>
-              )}
-
-              {/* Size Preset Menu Button */}
-              <div ref={sizeMenuRef} className="relative">
-                <button
-                  type="button"
-                  onClick={() => setSizeMenuOpen(!sizeMenuOpen)}
-                  title="Tùy chọn kích thước khung chat"
-                  className={`p-1.5 rounded-lg transition-colors ${
-                    sizeMenuOpen
-                      ? 'text-indigo-300 bg-slate-800'
-                      : 'text-slate-400 hover:text-indigo-300 hover:bg-slate-800'
-                  }`}
-                >
-                  <Scaling className="w-4 h-4" />
-                </button>
-
-                {/* Size Presets Dropdown */}
-                {sizeMenuOpen && (
-                  <div className="absolute top-full right-0 mt-2 w-64 rounded-2xl bg-slate-900/98 border border-slate-700 shadow-2xl p-2 z-50 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
-                    <div className="px-2.5 py-1 mb-1 border-b border-slate-800 text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
-                      <span>Kích thước khung chat</span>
-                      <span className="font-mono text-[9px] text-indigo-400">
-                        {isMaximized ? 'Toàn màn hình' : `${size.width}×${size.height}`}
+                ) : (
+                  /* History Header */
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <button
+                      type="button"
+                      onClick={() => setActiveTab('chat')}
+                      className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                      title="Quay lại đoạn chat"
+                    >
+                      <ArrowLeft className="w-4 h-4" />
+                    </button>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-sm font-bold text-slate-100">Lịch Sử Hội Thoại</h3>
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/15 border border-indigo-500/30 text-indigo-300">
+                        {user ? `${history.length}/5 gần nhất` : 'Yêu cầu đăng nhập'}
                       </span>
                     </div>
+                  </div>
+                )}
 
-                    <div className="space-y-1">
-                      {/* Default Preset (420 x 580) */}
-                      <button
-                        type="button"
-                        onClick={() => {
-                          applyPreset(DEFAULT_WIDTH, DEFAULT_HEIGHT);
-                          setSizeMenuOpen(false);
-                        }}
-                        className={`w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-left text-xs transition-all ${
-                          !isMaximized && size.width === DEFAULT_WIDTH && size.height === DEFAULT_HEIGHT
-                            ? 'bg-indigo-500/15 border border-indigo-500/30 text-white font-semibold'
-                            : 'hover:bg-slate-800/80 text-slate-300'
-                        }`}
-                      >
-                        <div className="flex items-center gap-2">
-                          <span className="text-base">📱</span>
-                          <div>
-                            <div className="font-bold text-slate-200">Tiêu chuẩn</div>
-                            <div className="text-[10px] text-slate-400">420 × 580 px (Gọn gàng)</div>
-                          </div>
+                {/* Action Buttons */}
+                <div
+                  className="flex items-center gap-1 shrink-0"
+                  onDoubleClick={(e) => e.stopPropagation()}
+                >
+                  {/* New Conversation Button */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      startNewConversation();
+                      setActiveTab('chat');
+                    }}
+                    title="Bắt đầu cuộc trò chuyện mới"
+                    className="p-1.5 rounded-lg text-slate-400 hover:text-indigo-300 hover:bg-slate-800 transition-colors"
+                  >
+                    <Plus className="w-4 h-4" />
+                  </button>
+
+                  {/* Toggle History / Chat Button */}
+                  {activeTab === 'chat' ? (
+                    <button
+                      type="button"
+                      onClick={() => setActiveTab('history')}
+                      title="Xem lịch sử 5 cuộc hội thoại gần nhất"
+                      className="relative p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
+                    >
+                      <History className="w-4 h-4" />
+                      {user && history.length > 0 && (
+                        <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-indigo-500 ring-2 ring-slate-900" />
+                      )}
+                    </button>
+                  ) : null}
+
+                  {/* Trash Button in Chat View */}
+                  {activeTab === 'chat' && (
+                    <button
+                      type="button"
+                      onClick={() => setShowClearCurrentConfirm(true)}
+                      title="Xóa cuộc trò chuyện này"
+                      className="p-1.5 rounded-lg text-slate-400 hover:text-rose-400 hover:bg-slate-800 transition-colors"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  )}
+
+                  {/* Size Preset Menu Button */}
+                  <div ref={sizeMenuRef} className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setSizeMenuOpen(!sizeMenuOpen)}
+                      title="Tùy chọn kích thước khung chat"
+                      className={`p-1.5 rounded-lg transition-colors ${
+                        sizeMenuOpen
+                          ? 'text-indigo-300 bg-slate-800'
+                          : 'text-slate-400 hover:text-indigo-300 hover:bg-slate-800'
+                      }`}
+                    >
+                      <Scaling className="w-4 h-4" />
+                    </button>
+
+                    {/* Size Presets Dropdown */}
+                    {sizeMenuOpen && (
+                      <div className="absolute top-full right-0 mt-2 w-64 rounded-2xl bg-slate-900/98 border border-slate-700 shadow-2xl p-2 z-50 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
+                        <div className="px-2.5 py-1 mb-1 border-b border-slate-800 text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
+                          <span>Kích thước khung chat</span>
+                          <span className="font-mono text-[9px] text-indigo-400">
+                            {isMaximized ? 'Toàn màn hình' : `${size.width}×${size.height}`}
+                          </span>
                         </div>
-                        {!isMaximized && size.width === DEFAULT_WIDTH && size.height === DEFAULT_HEIGHT && (
-                          <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
-                        )}
-                      </button>
 
-                      {/* Expanded Preset (680 x 700) */}
-                      <button
-                        type="button"
-                        onClick={() => {
-                          applyPreset(EXPANDED_WIDTH, EXPANDED_HEIGHT);
-                          setSizeMenuOpen(false);
-                        }}
-                        className={`w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-left text-xs transition-all ${
-                          !isMaximized && size.width === EXPANDED_WIDTH && size.height === EXPANDED_HEIGHT
-                            ? 'bg-indigo-500/15 border border-indigo-500/30 text-white font-semibold'
-                            : 'hover:bg-slate-800/80 text-slate-300'
-                        }`}
-                      >
-                        <div className="flex items-center gap-2">
-                          <span className="text-base">🖥️</span>
-                          <div>
-                            <div className="font-bold text-slate-200">Mở rộng</div>
-                            <div className="text-[10px] text-slate-400">680 × 700 px (Dễ đọc câu dài)</div>
-                          </div>
-                        </div>
-                        {!isMaximized && size.width === EXPANDED_WIDTH && size.height === EXPANDED_HEIGHT && (
-                          <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
-                        )}
-                      </button>
-
-                      {/* Maximized Preset */}
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setIsMaximized(true);
-                          saveSizeState({ ...size, isMaximized: true });
-                          setSizeMenuOpen(false);
-                        }}
-                        className={`w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-left text-xs transition-all ${
-                          isMaximized
-                            ? 'bg-indigo-500/15 border border-indigo-500/30 text-white font-semibold'
-                            : 'hover:bg-slate-800/80 text-slate-300'
-                        }`}
-                      >
-                        <div className="flex items-center gap-2">
-                          <span className="text-base">🔲</span>
-                          <div>
-                            <div className="font-bold text-slate-200">Cực đại</div>
-                            <div className="text-[10px] text-slate-400">Toàn màn hình học tập</div>
-                          </div>
-                        </div>
-                        {isMaximized && (
-                          <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
-                        )}
-                      </button>
-
-                      {/* Reset Custom Size if applicable */}
-                      {isCustomSize && !isMaximized && (
-                        <div className="pt-1 mt-1 border-t border-slate-800">
+                        <div className="space-y-1">
+                          {/* Default Preset (420 x 580) */}
                           <button
                             type="button"
                             onClick={() => {
                               applyPreset(DEFAULT_WIDTH, DEFAULT_HEIGHT);
                               setSizeMenuOpen(false);
                             }}
-                            className="w-full flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-slate-400 hover:text-indigo-300 hover:bg-slate-800/60 text-[11px] transition-colors"
+                            className={`w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-left text-xs transition-all ${
+                              !isMaximized && size.width === DEFAULT_WIDTH && size.height === DEFAULT_HEIGHT
+                                ? 'bg-indigo-500/15 border border-indigo-500/30 text-white font-semibold'
+                                : 'hover:bg-slate-800/80 text-slate-300'
+                            }`}
                           >
-                            <RotateCcw className="w-3 h-3" />
-                            <span>Đặt lại kích thước mặc định</span>
+                            <div className="flex items-center gap-2">
+                              <span className="text-base">📱</span>
+                              <div>
+                                <div className="font-bold text-slate-200">Tiêu chuẩn</div>
+                                <div className="text-[10px] text-slate-400">420 × 580 px (Gọn gàng)</div>
+                              </div>
+                            </div>
+                            {!isMaximized && size.width === DEFAULT_WIDTH && size.height === DEFAULT_HEIGHT && (
+                              <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                            )}
                           </button>
-                        </div>
-                      )}
-                    </div>
 
-                    <div className="mt-2 pt-1.5 border-t border-slate-800/60 px-2 text-[10px] text-slate-500 text-center">
-                      💡 Kéo góc trên hoặc mép trái để tùy chỉnh tự do
-                    </div>
+                          {/* Expanded Preset (680 x 700) */}
+                          <button
+                            type="button"
+                            onClick={() => {
+                              applyPreset(EXPANDED_WIDTH, EXPANDED_HEIGHT);
+                              setSizeMenuOpen(false);
+                            }}
+                            className={`w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-left text-xs transition-all ${
+                              !isMaximized && size.width === EXPANDED_WIDTH && size.height === EXPANDED_HEIGHT
+                                ? 'bg-indigo-500/15 border border-indigo-500/30 text-white font-semibold'
+                                : 'hover:bg-slate-800/80 text-slate-300'
+                            }`}
+                          >
+                            <div className="flex items-center gap-2">
+                              <span className="text-base">🖥️</span>
+                              <div>
+                                <div className="font-bold text-slate-200">Mở rộng</div>
+                                <div className="text-[10px] text-slate-400">680 × 700 px (Dễ đọc câu dài)</div>
+                              </div>
+                            </div>
+                            {!isMaximized && size.width === EXPANDED_WIDTH && size.height === EXPANDED_HEIGHT && (
+                              <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                            )}
+                          </button>
+
+                          {/* Maximized Preset */}
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setIsMaximized(true);
+                              saveSizeState({ ...size, isMaximized: true });
+                              setSizeMenuOpen(false);
+                            }}
+                            className={`w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-left text-xs transition-all ${
+                              isMaximized
+                                ? 'bg-indigo-500/15 border border-indigo-500/30 text-white font-semibold'
+                                : 'hover:bg-slate-800/80 text-slate-300'
+                            }`}
+                          >
+                            <div className="flex items-center gap-2">
+                              <span className="text-base">🔲</span>
+                              <div>
+                                <div className="font-bold text-slate-200">Cực đại</div>
+                                <div className="text-[10px] text-slate-400">Toàn màn hình học tập</div>
+                              </div>
+                            </div>
+                            {isMaximized && (
+                              <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                            )}
+                          </button>
+
+                          {/* Reset Custom Size if applicable */}
+                          {isCustomSize && !isMaximized && (
+                            <div className="pt-1 mt-1 border-t border-slate-800">
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  applyPreset(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+                                  setSizeMenuOpen(false);
+                                }}
+                                className="w-full flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-slate-400 hover:text-indigo-300 hover:bg-slate-800/60 text-[11px] transition-colors"
+                              >
+                                <RotateCcw className="w-3 h-3" />
+                                <span>Đặt lại kích thước mặc định</span>
+                              </button>
+                            </div>
+                          )}
+                        </div>
+
+                        <div className="mt-2 pt-1.5 border-t border-slate-800/60 px-2 text-[10px] text-slate-500 text-center">
+                          💡 Kéo góc trên hoặc mép trái để tùy chỉnh tự do
+                        </div>
+                      </div>
+                    )}
                   </div>
-                )}
+
+                  {/* Maximize / Restore Button */}
+                  <button
+                    type="button"
+                    onClick={toggleMaximize}
+                    title={
+                      isMaximized
+                        ? 'Thu nhỏ về kích thước cũ (hoặc bấm đúp tiêu đề)'
+                        : 'Phóng cực đại toàn màn hình (hoặc bấm đúp tiêu đề)'
+                    }
+                    className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
+                  >
+                    {isMaximized ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
+                  </button>
+
+                  {/* Minimize / Close Window */}
+                  <button
+                    type="button"
+                    onClick={() => setIsOpen(false)}
+                    title="Thu nhỏ khung chat"
+                    className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
 
-              {/* Maximize / Restore Button */}
-              <button
-                type="button"
-                onClick={toggleMaximize}
-                title={
-                  isMaximized
-                    ? 'Thu nhỏ về kích thước cũ (hoặc bấm đúp tiêu đề)'
-                    : 'Phóng cực đại toàn màn hình (hoặc bấm đúp tiêu đề)'
-                }
-                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
-              >
-                {isMaximized ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
-              </button>
+              {/* Sub-Bar: AI Model Combobox & Quota Status (Only in Chat view) */}
+              {activeTab === 'chat' && (
+                <div
+                  className="flex items-center justify-between px-4 py-1.5 text-xs border-t border-slate-800/50 bg-slate-950/40"
+                  onDoubleClick={(e) => e.stopPropagation()}
+                >
+                  {/* Interactive Model Switcher Button & Dropdown */}
+                  <div ref={modelMenuRef} className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setModelMenuOpen(!modelMenuOpen)}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium transition-all hover:opacity-90 active:scale-95 cursor-pointer shadow-sm border border-slate-700/60 bg-slate-900/80 hover:bg-slate-800/80"
+                      title="Bấm để đổi mô hình AI phản hồi"
+                    >
+                      <span className="text-[10px] text-slate-400">Mô hình:</span>
+                      {selectedModel === 'auto' ? (
+                        <span className="flex items-center gap-1 text-indigo-300 font-semibold">
+                          <RefreshCw className="w-2.5 h-2.5 text-indigo-400" />
+                          <span>Tự động (Hybrid)</span>
+                          <ChevronDown className="w-2.5 h-2.5 text-indigo-400 ml-0.5" />
+                        </span>
+                      ) : selectedModel === 'gemini' ? (
+                        <span className="flex items-center gap-1 text-emerald-300 font-semibold">
+                          <Sparkles className="w-2.5 h-2.5 text-emerald-400" />
+                          <span>Gemini Flash</span>
+                          <ChevronDown className="w-2.5 h-2.5 text-emerald-400 ml-0.5" />
+                        </span>
+                      ) : (
+                        <span className="flex items-center gap-1 text-amber-300 font-semibold">
+                          <Zap className="w-2.5 h-2.5 text-amber-400" />
+                          <span>Cloudflare Llama</span>
+                          <ChevronDown className="w-2.5 h-2.5 text-amber-400 ml-0.5" />
+                        </span>
+                      )}
+                    </button>
 
-              {/* Minimize / Close Window */}
-              <button
-                type="button"
-                onClick={() => setIsOpen(false)}
-                title="Thu nhỏ khung chat"
-                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
-              >
-                <X className="w-4 h-4" />
-              </button>
+                    {/* Model Dropdown Menu */}
+                    {modelMenuOpen && (
+                      <div className="absolute top-full left-0 mt-1.5 w-72 sm:w-80 rounded-2xl bg-slate-900/98 border border-slate-700 shadow-2xl p-2.5 z-50 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
+                        <div className="flex items-center justify-between px-2.5 py-1 mb-1 border-b border-slate-800/80 pb-1.5">
+                          <span className="text-[10px] font-bold text-slate-300 uppercase tracking-wider">
+                            Chọn Mô Hình AI Phản Hồi
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => setModelMenuOpen(false)}
+                            className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                            title="Đóng menu"
+                          >
+                            <X className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+
+                        <div className="space-y-1.5 mt-1">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setSelectedModel('auto');
+                              setModelMenuOpen(false);
+                            }}
+                            className={`w-full flex items-start gap-2.5 p-2 rounded-xl text-left transition-all ${
+                              selectedModel === 'auto'
+                                ? 'bg-indigo-500/15 border border-indigo-500/40 text-white'
+                                : 'hover:bg-slate-800 text-slate-300'
+                            }`}
+                          >
+                            <div className="p-1.5 rounded-lg bg-indigo-500/20 text-indigo-400 shrink-0 mt-0.5">
+                              <RefreshCw className="w-3.5 h-3.5" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between">
+                                <span className="text-xs font-bold text-slate-100">
+                                  Tự động (Hybrid)
+                                </span>
+                                <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-indigo-500/20 text-indigo-300">
+                                  Khuyên dùng
+                                </span>
+                              </div>
+                              <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">
+                                Ưu tiên Gemini Flash, tự động đổi Cloudflare nếu lỗi
+                              </p>
+                            </div>
+                            {selectedModel === 'auto' && (
+                              <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0 mt-1" />
+                            )}
+                          </button>
+
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setSelectedModel('gemini');
+                              setModelMenuOpen(false);
+                            }}
+                            className={`w-full flex items-start gap-2.5 p-2 rounded-xl text-left transition-all ${
+                              selectedModel === 'gemini'
+                                ? 'bg-emerald-500/15 border border-emerald-500/40 text-white'
+                                : 'hover:bg-slate-800 text-slate-300'
+                            }`}
+                          >
+                            <div className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400 shrink-0 mt-0.5">
+                              <Sparkles className="w-3.5 h-3.5" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between">
+                                <span className="text-xs font-bold text-slate-100">
+                                  Google Gemini Flash
+                                </span>
+                                <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300">
+                                  Chất lượng cao
+                                </span>
+                              </div>
+                              <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">
+                                Tiếng Việt chuẩn xác nhất, giải thích ngữ pháp sâu
+                              </p>
+                            </div>
+                            {selectedModel === 'gemini' && (
+                              <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-1" />
+                            )}
+                          </button>
+
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setSelectedModel('cloudflare');
+                              setModelMenuOpen(false);
+                            }}
+                            className={`w-full flex items-start gap-2.5 p-2 rounded-xl text-left transition-all ${
+                              selectedModel === 'cloudflare'
+                                ? 'bg-amber-500/15 border border-amber-500/40 text-white'
+                                : 'hover:bg-slate-800 text-slate-300'
+                            }`}
+                          >
+                            <div className="p-1.5 rounded-lg bg-amber-500/20 text-amber-400 shrink-0 mt-0.5">
+                              <Zap className="w-3.5 h-3.5" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between">
+                                <span className="text-xs font-bold text-slate-100">
+                                  Cloudflare Llama 3.1
+                                </span>
+                                <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300">
+                                  Siêu tốc
+                                </span>
+                              </div>
+                              <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">
+                                Inference cực nhanh trên hạ tầng Edge toàn cầu
+                              </p>
+                            </div>
+                            {selectedModel === 'cloudflare' && (
+                              <Check className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-1" />
+                            )}
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Right side of Sub-Bar: Guest Quota or Subtitle */}
+                  {!user && userQuota ? (
+                    <span
+                      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold border shrink-0 ${
+                        userQuota.remaining <= 0
+                          ? 'bg-rose-500/15 border-rose-500/30 text-rose-300'
+                          : 'bg-slate-800 border-slate-700 text-slate-300'
+                      }`}
+                      title={`Hạn mức khách chưa đăng nhập: còn ${userQuota.remaining}/${userQuota.limit} lượt hôm nay`}
+                    >
+                      <span>Khách: {userQuota.remaining}/{userQuota.limit}</span>
+                    </span>
+                  ) : (
+                    <span className="text-[10px] text-slate-400 truncate max-w-[200px] text-right">
+                      {activeWordContext
+                        ? `Từ: "${activeWordContext.word}"`
+                        : 'Trợ lý TOEIC & Công sở'}
+                    </span>
+                  )}
+                </div>
+              )}
             </div>
-          </div>
 
           {/* Clear Current Chat Confirmation Banner */}
           {showClearCurrentConfirm && (

@@ -15,8 +15,17 @@ NGUYÊN TẮC GIẢNG DẠY & PHẢN HỒI:
    - Các câu ví dụ Tiếng Anh nên để trong dấu ngoặc kép hoặc blockquote ">", kèm nghĩa Tiếng Việt tương ứng.
    - Luôn ngắn gọn, súc tích, đi thẳng vào trọng tâm, tránh dài dòng lan man.`;
 
-  if (wordContext && wordContext.word) {
-    prompt += `\n\n---
+  if (wordContext) {
+    if (wordContext.selectedText) {
+      prompt += `\n\n---
+NGỮ CẢNH ĐOẠN VĂN BẢN NGƯỜI HỌC VỪA CHỌN TRÊN TRANG:
+"${wordContext.selectedText}"
+Yêu cầu: Người học chọn đoạn trích này làm ngữ cảnh trao đổi. Hãy ưu tiên phân tích ngữ pháp, bẫy TOEIC, giải thích từ vựng hoặc trả lời câu hỏi trực tiếp dựa trên đoạn văn bản này.
+---`;
+    }
+
+    if (wordContext.word && !wordContext.selectedText) {
+      prompt += `\n\n---
 NGỮ CẢNH TỪ VỰNG NGƯỜI DÙNG ĐANG HỌC:
 - Từ vựng: "${wordContext.word.toUpperCase()}"
 ${wordContext.ipa ? `- Phiên âm IPA: /${wordContext.ipa}/` : ''}
@@ -59,6 +68,7 @@ ${
 }
 ---
 Khi người học đặt câu hỏi liên quan đến từ "${wordContext.word}", hãy tận dụng tối đa các thông tin ngữ cảnh trên để đưa ra câu trả lời chuẩn xác, gắn với bài thi TOEIC và tình huống công việc thực tế.`;
+    }
   }
 
   return prompt;

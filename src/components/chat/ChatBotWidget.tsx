@@ -138,19 +138,27 @@ export function ChatBotWidget() {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
-  const wordSuggestionChips = activeWordContext
-    ? [
-        `💡 Bẫy Part 5 & lưu ý khi dùng từ "${activeWordContext.word}"`,
-        `📧 3 câu ví dụ email công việc với "${activeWordContext.word}"`,
-        `🔄 Phân biệt "${activeWordContext.word}" với từ đồng nghĩa`,
-        `🎯 Tạo 1 câu hỏi trắc nghiệm TOEIC với "${activeWordContext.word}"`,
-      ]
-    : [
-        '📝 Mẹo phân biệt thì HTHT và QKĐ trong TOEIC',
-        '⚡ Cách xử lý nhanh Part 5 ngữ pháp dưới 30 giây',
-        '💼 Mẫu câu email xin dời lịch hẹn bằng tiếng Anh chuyên nghiệp',
-        '🧩 Giải thích cách dùng mệnh đề quan hệ rút gọn',
-      ];
+  const wordSuggestionChips =
+    activeWordContext?.selectedText && activeWordContext.selectedText.length > 25
+      ? [
+          '💡 Giải thích ngữ pháp & cấu trúc câu của đoạn này',
+          '🔍 Phân tích các từ vựng và cụm collocation quan trọng',
+          '📝 Dịch chuẩn và viết lại theo phong cách email công sở',
+          '🎯 Tạo 1 câu hỏi trắc nghiệm TOEIC dựa trên câu này',
+        ]
+      : activeWordContext
+      ? [
+          `💡 Bẫy Part 5 & lưu ý khi dùng từ "${activeWordContext.word}"`,
+          `📧 3 câu ví dụ email công việc với "${activeWordContext.word}"`,
+          `🔄 Phân biệt "${activeWordContext.word}" với từ đồng nghĩa`,
+          `🎯 Tạo 1 câu hỏi trắc nghiệm TOEIC với "${activeWordContext.word}"`,
+        ]
+      : [
+          '📝 Mẹo phân biệt thì HTHT và QKĐ trong TOEIC',
+          '⚡ Cách xử lý nhanh Part 5 ngữ pháp dưới 30 giây',
+          '💼 Mẫu câu email xin dời lịch hẹn bằng tiếng Anh chuyên nghiệp',
+          '🧩 Giải thích cách dùng mệnh đề quan hệ rút gọn',
+        ];
 
   const handleSelectHistoryItem = (id: string) => {
     loadConversation(id);
@@ -174,7 +182,7 @@ export function ChatBotWidget() {
   };
 
   return (
-    <div className="fixed bottom-20 md:bottom-6 right-4 sm:right-6 z-50">
+    <div data-chat-widget="true" className="fixed bottom-20 md:bottom-6 right-4 sm:right-6 z-50">
       {/* Floating Trigger Button */}
       {!isOpen && (
         <button
@@ -189,7 +197,11 @@ export function ChatBotWidget() {
           </div>
 
           <span className="text-xs font-bold tracking-wide">
-            {activeWordContext ? `Hỏi AI: ${activeWordContext.word}` : 'Hỏi AI Tutor'}
+            {activeWordContext?.selectedText && activeWordContext.selectedText.length > 25
+              ? 'Hỏi AI: Đoạn văn đã chọn'
+              : activeWordContext
+              ? `Hỏi AI: ${activeWordContext.word}`
+              : 'Hỏi AI Tutor'}
           </span>
 
           {activeWordContext && (
@@ -602,9 +614,13 @@ export function ChatBotWidget() {
 
                         {/* Word Context Tag if present */}
                         {conv.wordContext && (
-                          <div className="mb-1.5 flex items-center gap-1 text-[10px] text-indigo-300 bg-indigo-950/50 border border-indigo-500/20 rounded-md px-2 py-0.5 w-fit">
-                            <BookOpen className="w-2.5 h-2.5" />
-                            <span>Từ vựng: {conv.wordContext.word}</span>
+                          <div className="mb-1.5 flex items-center gap-1 text-[10px] text-indigo-300 bg-indigo-950/50 border border-indigo-500/20 rounded-md px-2 py-0.5 w-fit max-w-full truncate">
+                            <BookOpen className="w-2.5 h-2.5 shrink-0" />
+                            <span className="truncate">
+                              {conv.wordContext.selectedText
+                                ? `Đoạn trích: "${conv.wordContext.selectedText.slice(0, 30)}..."`
+                                : `Từ vựng: ${conv.wordContext.word}`}
+                            </span>
                           </div>
                         )}
 
@@ -706,8 +722,12 @@ export function ChatBotWidget() {
                     <BookOpen className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
                     <span className="truncate">
                       Ngữ cảnh:{' '}
-                      <strong className="font-bold text-white uppercase">
-                        {activeWordContext.word}
+                      <strong className="font-bold text-white">
+                        {activeWordContext.selectedText
+                          ? activeWordContext.selectedText.length > 36
+                            ? `"${activeWordContext.selectedText.slice(0, 36)}..."`
+                            : `"${activeWordContext.selectedText}"`
+                          : activeWordContext.word.toUpperCase()}
                       </strong>
                       {activeWordContext.ipa && ` /${activeWordContext.ipa}/`}
                     </span>
@@ -715,7 +735,7 @@ export function ChatBotWidget() {
                   <button
                     onClick={() => setWordContext(null)}
                     className="text-[10px] text-indigo-300/70 hover:text-indigo-200 underline shrink-0 ml-2"
-                    title="Bỏ ngữ cảnh từ này để hỏi câu hỏi chung"
+                    title="Bỏ ngữ cảnh này để hỏi câu hỏi chung"
                   >
                     Bỏ chọn
                   </button>
@@ -826,7 +846,9 @@ export function ChatBotWidget() {
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown}
                     placeholder={
-                      activeWordContext
+                      activeWordContext?.selectedText && activeWordContext.selectedText.length > 25
+                        ? 'Đặt câu hỏi về đoạn văn bản vừa chọn...'
+                        : activeWordContext
                         ? `Hỏi bất kỳ điều gì về từ "${activeWordContext.word}"...`
                         : 'Đặt câu hỏi ngữ pháp, bài tập TOEIC hoặc từ vựng...'
                     }

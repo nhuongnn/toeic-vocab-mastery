@@ -15,6 +15,7 @@ export interface ChatMessage {
 
 export interface WordContext {
   word: string;
+  selectedText?: string;
   category?: string;
   level?: string;
   meaning?: string;

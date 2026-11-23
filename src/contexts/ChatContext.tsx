@@ -52,6 +52,7 @@ interface ChatContextType {
   loadConversation: (id: string) => void;
   deleteConversation: (id: string) => void;
   clearAllHistory: () => void;
+  addSnippetContext: (snippet: string, initialPrompt?: string) => void;
 }
 
 const ChatContext = createContext<ChatContextType | undefined>(undefined);
@@ -417,7 +418,9 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
           const finalMessages = [...nextMessages, finalAssistantMsg];
 
           const existingConv = historyRef.current.find((c) => c.id === convId);
-          const autoTitle = currentContext?.word
+          const autoTitle = currentContext?.selectedText
+            ? `Đoạn trích: "${currentContext.selectedText.slice(0, 30)}..."`
+            : currentContext?.word
             ? `Từ vựng: ${currentContext.word}`
             : trimmed.length > 40
             ? `${trimmed.slice(0, 40)}...`
@@ -476,6 +479,28 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     [messages, startNewConversation, sendMessage]
   );
 
+  const addSnippetContext = useCallback(
+    (snippet: string, initialPrompt?: string) => {
+      const trimmed = snippet.trim();
+      if (!trimmed) return;
+
+      const snippetContext: WordContext = {
+        word: trimmed.length > 40 ? `${trimmed.slice(0, 40)}...` : trimmed,
+        selectedText: trimmed,
+      };
+
+      startNewConversation(snippetContext);
+      setIsOpen(true);
+
+      if (initialPrompt && initialPrompt.trim()) {
+        setTimeout(() => {
+          sendMessage(initialPrompt, snippetContext);
+        }, 100);
+      }
+    },
+    [startNewConversation, sendMessage]
+  );
+
   return (
     <ChatContext.Provider
       value={{
@@ -502,6 +527,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         loadConversation,
         deleteConversation,
         clearAllHistory,
+        addSnippetContext,
       }}
     >
       {children}

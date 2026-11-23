@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import {
-  getSystemAISettings,
+  getSystemAISettingsAsync,
   updateSystemAISettings,
   resetDailyQuota,
   ADMIN_EMAIL,
@@ -22,7 +22,7 @@ export async function GET(request: Request) {
       );
     }
 
-    const settings = getSystemAISettings();
+    const settings = await getSystemAISettingsAsync();
     const remainingToday = Math.max(0, settings.dailyLimit - settings.usedToday);
 
     return NextResponse.json({
@@ -68,7 +68,7 @@ export async function POST(request: Request) {
     }
 
     if (action === 'reset_quota') {
-      const updated = resetDailyQuota();
+      const updated = await resetDailyQuota();
       return NextResponse.json({
         success: true,
         message: 'Đã đặt lại hạn ngạch (quota) hôm nay về 0.',
@@ -86,7 +86,7 @@ export async function POST(request: Request) {
         );
       }
 
-      const updated = updateSystemAISettings({
+      const updated = await updateSystemAISettings({
         ...(typeof partialSettings.globalEnabled === 'boolean' && {
           globalEnabled: partialSettings.globalEnabled,
         }),

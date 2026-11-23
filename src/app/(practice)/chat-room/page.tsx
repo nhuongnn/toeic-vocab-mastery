@@ -55,7 +55,7 @@ export default function ChatRoomPage() {
           <span>Phòng Chat AI Thực Chiến</span>
         </h1>
         <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-          Nhập vai giao tiếp tiếng Anh thực chiến với Bạn bè, Người thân, Người yêu, Người phỏng vấn IT, Người lạ, Sếp hay Đồng nghiệp. Khám phá phong phú chủ đề: giải trí, du lịch, nấu ăn, hỏi đường & phương tiện, địa danh, podcast và phỏng vấn xin việc IT ({userContext.targetScore}+ TOEIC).
+          Nhập vai giao tiếp tiếng Anh thực chiến với Bạn bè, Người thân, Người yêu, Người phỏng vấn IT, Người lạ, Sếp hay Đồng nghiệp. Khám phá phong phú chủ đề: giải trí, du lịch, mua sắm (shopping), thời tiết, nấu ăn, hỏi đường & phương tiện, địa danh, podcast và phỏng vấn xin việc IT ({userContext.targetScore}+ TOEIC).
         </p>
       </div>
 

@@ -577,6 +577,54 @@ export const AVATAR_PRESETS: AvatarPreset[] = [
     bgGradient: 'from-purple-500/30 via-pink-500/25 to-amber-500/30',
     borderColor: 'border-purple-400/60',
   },
+
+  // ================= MUA SẮM & BÁN LẺ =================
+  {
+    id: 'shop-assistant-corgi',
+    emoji: '🛍️',
+    badgeEmoji: '✨',
+    name: 'Corgi Tư Vấn Mua Sắm',
+    vibe: '"Dạ em chào quý khách, để em tìm đúng size chuẩn cho anh/chị nhé!"',
+    roleFit: 'stranger',
+    category: 'chibi',
+    bgGradient: 'from-pink-400/30 via-amber-300/25 to-rose-300/30',
+    borderColor: 'border-pink-400/60',
+  },
+  {
+    id: 'fashion-stylist',
+    emoji: '👗',
+    badgeEmoji: '🕶️',
+    name: 'Stylist Thời Trang Sành Điệu',
+    vibe: '"Set đồ này tôn dáng và chuẩn gu thời trang mùa này luôn bạn ơi!"',
+    roleFit: 'friend',
+    category: 'genz',
+    bgGradient: 'from-violet-500/30 via-purple-600/25 to-pink-500/30',
+    borderColor: 'border-violet-400/60',
+  },
+
+  // ================= THỜI TIẾT & MÔI TRƯỜNG =================
+  {
+    id: 'weather-froggy',
+    emoji: '🐸',
+    badgeEmoji: '☔',
+    name: 'Bé Ếch Dự Báo Thời Tiết',
+    vibe: '"Hôm nay dự báo có mưa rào, bạn nhớ mang ô theo nhé!"',
+    roleFit: 'colleague',
+    category: 'chibi',
+    bgGradient: 'from-emerald-400/30 via-teal-300/25 to-sky-400/30',
+    borderColor: 'border-emerald-400/60',
+  },
+  {
+    id: 'sunshine-sunflower',
+    emoji: '🌻',
+    badgeEmoji: '☀️',
+    name: 'Hướng Dương Đón Nắng Ấm',
+    vibe: '"Thời tiết hôm nay trong xanh, ngập tràn năng lượng tích cực!"',
+    roleFit: 'friend',
+    category: 'genz',
+    bgGradient: 'from-amber-400/30 via-yellow-300/25 to-orange-400/30',
+    borderColor: 'border-yellow-400/60',
+  },
 ];
 
 export function getAvatarPreset(id?: string): AvatarPreset {

@@ -22,6 +22,8 @@ import {
   Compass,
   Home,
   Laptop,
+  Search,
+  MessageSquare,
 } from 'lucide-react';
 import {
   CharacterConfig,
@@ -118,6 +120,7 @@ export function RoleplaySetupModal({
   // Scenario State
   const [selectedScenarioId, setSelectedScenarioId] = useState<string>(currentScenario.id);
   const [scenarioFilterRole, setScenarioFilterRole] = useState<CharacterRole | 'all'>(role);
+  const [scenarioSearch, setScenarioSearch] = useState<string>('');
   const [isCustomScenario, setIsCustomScenario] = useState<boolean>(Boolean(currentScenario.isCustom));
   const [customTitle, setCustomTitle] = useState<string>('');
   const [customObjective, setCustomObjective] = useState<string>('');
@@ -166,6 +169,19 @@ export function RoleplaySetupModal({
     userContext,
     scenarioFilterRole === 'all' ? undefined : scenarioFilterRole
   );
+
+  const filteredScenarios = recommendedScenarios.filter((sc) => {
+    if (!scenarioSearch.trim()) return true;
+    const q = scenarioSearch.toLowerCase().trim();
+    return (
+      sc.title.toLowerCase().includes(q) ||
+      sc.vietnameseTitle?.toLowerCase().includes(q) ||
+      sc.description.toLowerCase().includes(q) ||
+      sc.objective.toLowerCase().includes(q) ||
+      sc.department.toLowerCase().includes(q) ||
+      sc.suggestedVocabulary?.some((w) => w.toLowerCase().includes(q))
+    );
+  });
 
   const handleSaveAndStart = () => {
     const character: CharacterConfig = {
@@ -217,7 +233,7 @@ export function RoleplaySetupModal({
       }}
       className="fixed inset-0 z-[120] flex items-center justify-center p-3 sm:p-4 bg-slate-950/85 backdrop-blur-md animate-in fade-in duration-150 overflow-y-auto"
     >
-      <div className="relative w-full max-w-2xl h-[90vh] sm:h-[86vh] max-h-[820px] flex flex-col rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl overflow-hidden my-auto">
+      <div className="relative w-full max-w-3xl lg:max-w-4xl h-[92vh] sm:h-[88vh] max-h-[860px] flex flex-col rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl overflow-hidden my-auto">
         {/* Header */}
         <div className="flex items-center justify-between px-5 sm:px-6 py-3.5 sm:py-4 border-b border-slate-800 bg-slate-950/90 shrink-0">
           <div className="flex items-center gap-3">
@@ -367,7 +383,7 @@ export function RoleplaySetupModal({
                           {item.icon}
                         </div>
                         <span className="text-xs font-bold leading-tight">{item.name}</span>
-                        <span className="text-[10px] text-slate-400 mt-0.5 truncate max-w-full">
+                        <span className="text-[10px] text-slate-400 mt-0.5 text-center leading-snug line-clamp-2">
                           {item.subtitle}
                         </span>
                       </button>
@@ -450,7 +466,7 @@ export function RoleplaySetupModal({
                           </span>
                         </div>
                         <p
-                          className={`text-[11px] italic truncate mt-0.5 ${
+                          className={`text-xs italic leading-relaxed mt-0.5 ${
                             currentPreset.category === 'chibi'
                               ? 'text-pink-300'
                               : currentPreset.category === 'genz'
@@ -695,7 +711,7 @@ export function RoleplaySetupModal({
                           </span>
                         </div>
                         <p
-                          className={`text-[11px] italic truncate mt-0.5 ${
+                          className={`text-xs italic leading-relaxed mt-0.5 ${
                             currentPreset.category === 'chibi'
                               ? 'text-pink-300'
                               : currentPreset.category === 'genz'
@@ -761,48 +777,85 @@ export function RoleplaySetupModal({
                 </span>
               </div>
 
-              {/* Filter Tabs by Role */}
-              <div className="flex items-center gap-1.5 pt-1 overflow-x-auto no-scrollbar pb-1">
-                {[
-                  { id: 'all' as const, label: 'Tất cả' },
-                  { id: 'friend' as const, label: 'Bạn bè' },
-                  { id: 'family' as const, label: 'Gia đình' },
-                  { id: 'lover' as const, label: 'Người yêu' },
-                  { id: 'interviewer' as const, label: 'Phỏng vấn IT' },
-                  { id: 'stranger' as const, label: 'Người lạ / Bản địa' },
-                  { id: 'colleague' as const, label: 'Đồng nghiệp' },
-                  { id: 'boss' as const, label: 'Người sếp' },
-                  { id: 'staff' as const, label: 'Nhân viên' },
-                ].map((item) => (
+              {/* Search Bar */}
+              <div className="relative">
+                <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+                <input
+                  type="text"
+                  value={scenarioSearch}
+                  onChange={(e) => setScenarioSearch(e.target.value)}
+                  placeholder="Tìm kiếm chủ đề (ví dụ: mua sắm, thời tiết, du lịch, xem phim, phỏng vấn IT, nấu ăn...)"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-9 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors"
+                />
+                {scenarioSearch && (
                   <button
-                    key={item.id}
                     type="button"
-                    onClick={() => {
-                      setScenarioFilterRole(item.id);
-                      setIsCustomScenario(false);
-                    }}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
-                      scenarioFilterRole === item.id && !isCustomScenario
-                        ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/20'
-                        : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-slate-200'
+                    onClick={() => setScenarioSearch('')}
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 p-1"
+                    title="Xóa tìm kiếm"
+                  >
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+                )}
+              </div>
+
+              {/* Filter Tabs by Role */}
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-1.5 pt-1 overflow-x-auto no-scrollbar pb-1">
+                  {[
+                    { id: 'all' as const, label: 'Tất cả' },
+                    { id: 'friend' as const, label: 'Bạn bè' },
+                    { id: 'family' as const, label: 'Gia đình' },
+                    { id: 'lover' as const, label: 'Người yêu' },
+                    { id: 'interviewer' as const, label: 'Phỏng vấn IT' },
+                    { id: 'stranger' as const, label: 'Người lạ / Bản địa' },
+                    { id: 'colleague' as const, label: 'Đồng nghiệp' },
+                    { id: 'boss' as const, label: 'Người sếp' },
+                    { id: 'staff' as const, label: 'Nhân viên' },
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => {
+                        setScenarioFilterRole(item.id);
+                        setIsCustomScenario(false);
+                      }}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
+                        scenarioFilterRole === item.id && !isCustomScenario
+                          ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/20'
+                          : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-slate-200'
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+
+                  <button
+                    type="button"
+                    onClick={() => setIsCustomScenario(true)}
+                    className={`ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
+                      isCustomScenario
+                        ? 'bg-violet-600 text-white shadow-md shadow-violet-600/20'
+                        : 'bg-slate-950 border border-slate-800 text-violet-400 hover:text-violet-300'
                     }`}
                   >
-                    {item.label}
+                    <Plus className="w-3.5 h-3.5" />
+                    <span>Tự tạo tình huống</span>
                   </button>
-                ))}
+                </div>
 
-                <button
-                  type="button"
-                  onClick={() => setIsCustomScenario(true)}
-                  className={`ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
-                    isCustomScenario
-                      ? 'bg-violet-600 text-white shadow-md shadow-violet-600/20'
-                      : 'bg-slate-950 border border-slate-800 text-violet-400 hover:text-violet-300'
-                  }`}
-                >
-                  <Plus className="w-3.5 h-3.5" />
-                  <span>Tự tạo tình huống</span>
-                </button>
+                {!isCustomScenario && (
+                  <div className="flex items-center justify-between text-[11px] text-slate-400 px-1">
+                    <span>
+                      Hiển thị <strong className="text-white">{filteredScenarios.length}</strong> chủ đề
+                    </span>
+                    {scenarioSearch && (
+                      <span className="text-indigo-400">
+                        Đang lọc: &ldquo;{scenarioSearch}&rdquo;
+                      </span>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Scenarios List OR Custom Scenario Form */}
@@ -859,78 +912,144 @@ export function RoleplaySetupModal({
                   </div>
                 </div>
               ) : (
-                <div className="space-y-2.5 max-h-[380px] overflow-y-auto pr-1">
-                  {recommendedScenarios.map((sc) => {
-                    const isSelected = selectedScenarioId === sc.id;
-                    const isRoadmapMatch = isScenarioMatchingScore(sc.level, targetScore);
-
-                    return (
-                      <div
-                        key={sc.id}
-                        onClick={() => setSelectedScenarioId(sc.id)}
-                        className={`group relative p-3.5 rounded-2xl border cursor-pointer transition-all ${
-                          isSelected
-                            ? 'border-indigo-500 bg-indigo-500/15 shadow-md'
-                            : 'border-slate-800 bg-slate-950/60 hover:border-slate-700 hover:bg-slate-950'
-                        }`}
+                <div className="space-y-3 pr-1">
+                  {filteredScenarios.length === 0 ? (
+                    <div className="text-center py-10 px-4 rounded-2xl bg-slate-950/40 border border-dashed border-slate-800">
+                      <p className="text-xs text-slate-400">
+                        Không tìm thấy chủ đề nào khớp với từ khóa{' '}
+                        <span className="text-white font-medium">&ldquo;{scenarioSearch}&rdquo;</span>
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setScenarioSearch('');
+                          setScenarioFilterRole('all');
+                        }}
+                        className="mt-3 px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-semibold transition-colors"
                       >
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="space-y-1 flex-1">
-                            <div className="flex items-center gap-2 flex-wrap">
-                              <span className="text-xs font-bold text-white group-hover:text-indigo-300 transition-colors">
-                                {sc.title}
-                              </span>
-                              {isRoadmapMatch && (
-                                <span className="inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.2 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30">
-                                  <Sparkles className="w-2.5 h-2.5" />
-                                  <span>Theo lộ trình</span>
+                        Xóa bộ lọc tìm kiếm
+                      </button>
+                    </div>
+                  ) : (
+                    filteredScenarios.map((sc) => {
+                      const isSelected = selectedScenarioId === sc.id;
+                      const isRoadmapMatch = isScenarioMatchingScore(sc.level, targetScore);
+
+                      return (
+                        <div
+                          key={sc.id}
+                          onClick={() => setSelectedScenarioId(sc.id)}
+                          className={`group relative p-4 rounded-2xl border cursor-pointer transition-all ${
+                            isSelected
+                              ? 'border-indigo-500 bg-indigo-500/15 shadow-lg shadow-indigo-950/40 ring-1 ring-indigo-500/30'
+                              : 'border-slate-800 bg-slate-950/60 hover:border-slate-700 hover:bg-slate-950'
+                          }`}
+                        >
+                          <div className="flex items-start justify-between gap-3">
+                            <div className="space-y-2 flex-1 min-w-0">
+                              {/* Title & Badges */}
+                              <div className="flex items-center gap-2 flex-wrap">
+                                <span className="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors">
+                                  {sc.title}
                                 </span>
+                                {sc.vietnameseTitle && (
+                                  <span className="text-xs font-medium text-indigo-300/90">
+                                    • {sc.vietnameseTitle}
+                                  </span>
+                                )}
+                                {isRoadmapMatch && (
+                                  <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                                    <Sparkles className="w-2.5 h-2.5" />
+                                    <span>Theo lộ trình</span>
+                                  </span>
+                                )}
+                                <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-400">
+                                  TOEIC {sc.targetScoreRange}
+                                </span>
+                                <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 border border-slate-700/60">
+                                  {sc.role === 'friend'
+                                    ? 'Bạn bè'
+                                    : sc.role === 'family'
+                                    ? 'Gia đình'
+                                    : sc.role === 'lover'
+                                    ? 'Người yêu'
+                                    : sc.role === 'interviewer'
+                                    ? 'Phỏng vấn IT'
+                                    : sc.role === 'stranger'
+                                    ? 'Người lạ / Bản địa'
+                                    : sc.role === 'boss'
+                                    ? 'Người sếp'
+                                    : sc.role === 'colleague'
+                                    ? 'Đồng nghiệp'
+                                    : 'Nhân viên'}
+                                </span>
+                                {sc.department && (
+                                  <span className="text-[10px] font-medium px-2 py-0.5 rounded bg-indigo-950/40 text-indigo-300 border border-indigo-500/20">
+                                    {sc.department}
+                                  </span>
+                                )}
+                              </div>
+
+                              {/* Description: full display without truncation */}
+                              <p className="text-xs text-slate-300 leading-relaxed font-normal">
+                                {sc.description}
+                              </p>
+
+                              {/* Objective: clearly visible without truncation */}
+                              <div className="flex items-start gap-2 p-2.5 rounded-xl bg-slate-900/80 border border-slate-800/80">
+                                <Target className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                                <div className="text-xs leading-relaxed">
+                                  <span className="font-semibold text-amber-300 mr-1.5">Mục tiêu:</span>
+                                  <span className="text-slate-200">{sc.objective}</span>
+                                </div>
+                              </div>
+
+                              {/* Extended details when selected */}
+                              {isSelected && (
+                                <div className="space-y-2 pt-2 border-t border-slate-800/60 mt-2">
+                                  {/* Opening Message Preview */}
+                                  <div className="p-2.5 rounded-xl bg-indigo-950/30 border border-indigo-500/20 text-xs space-y-1">
+                                    <div className="flex items-center gap-1.5 text-indigo-400 font-semibold text-[11px]">
+                                      <MessageSquare className="w-3.5 h-3.5" />
+                                      <span>Lời AI mở màn hội thoại:</span>
+                                    </div>
+                                    <p className="text-slate-200 italic font-medium">&ldquo;{sc.initialMessage}&rdquo;</p>
+                                    <p className="text-slate-400 text-[11px]">Dịch: {sc.initialTranslation}</p>
+                                  </div>
+
+                                  {/* Suggested Vocab */}
+                                  {sc.suggestedVocabulary && sc.suggestedVocabulary.length > 0 && (
+                                    <div className="flex items-center gap-1.5 flex-wrap pt-0.5 text-[11px]">
+                                      <span className="text-slate-400 font-medium">Từ vựng gợi ý:</span>
+                                      {sc.suggestedVocabulary.map((word) => (
+                                        <span
+                                          key={word}
+                                          className="px-2 py-0.5 rounded-md bg-slate-800/80 border border-slate-700/60 text-indigo-300 font-mono text-[10px]"
+                                        >
+                                          {word}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
                               )}
-                              <span className="text-[10px] font-semibold px-2 py-0.2 rounded bg-slate-800 text-slate-400">
-                                TOEIC {sc.targetScoreRange}
-                              </span>
-                              <span className="text-[10px] font-semibold px-2 py-0.2 rounded bg-slate-800/80 text-slate-300 border border-slate-700/60">
-                                {sc.role === 'friend'
-                                  ? 'Bạn bè'
-                                  : sc.role === 'family'
-                                  ? 'Gia đình'
-                                  : sc.role === 'lover'
-                                  ? 'Người yêu'
-                                  : sc.role === 'interviewer'
-                                  ? 'Phỏng vấn IT'
-                                  : sc.role === 'stranger'
-                                  ? 'Người lạ / Bản địa'
-                                  : sc.role === 'boss'
-                                  ? 'Người sếp'
-                                  : sc.role === 'colleague'
-                                  ? 'Đồng nghiệp'
-                                  : 'Nhân viên'}
-                              </span>
                             </div>
 
-                            <p className="text-[11px] text-slate-400 leading-snug">
-                              {sc.description}
-                            </p>
-
-                            <div className="flex items-center gap-1.5 pt-1 text-[10px] text-indigo-300">
-                              <span className="font-semibold">Mục tiêu:</span>
-                              <span className="text-slate-300 truncate">{sc.objective}</span>
+                            {/* Selection Radio Circle */}
+                            <div
+                              className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 mt-1 transition-all ${
+                                isSelected
+                                  ? 'border-indigo-500 bg-indigo-600 text-white'
+                                  : 'border-slate-700 bg-slate-900'
+                              }`}
+                            >
+                              {isSelected && <div className="w-2 h-2 rounded-full bg-white" />}
                             </div>
-                          </div>
-
-                          <div
-                            className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 mt-1 transition-all ${
-                              isSelected
-                                ? 'border-indigo-500 bg-indigo-600 text-white'
-                                : 'border-slate-700 bg-slate-900'
-                            }`}
-                          >
-                            {isSelected && <div className="w-2 h-2 rounded-full bg-white" />}
                           </div>
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })
+                  )}
                 </div>
               )}
             </div>

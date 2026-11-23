@@ -210,7 +210,7 @@ export function SelectionTranslator() {
   };
 
   const handleAddToAiTutor = () => {
-    addSnippetContext(state.originalText);
+    addSnippetContext(state.originalText, undefined, true);
     setState((prev) => ({ ...prev, visible: false }));
     window.getSelection()?.removeAllRanges();
   };

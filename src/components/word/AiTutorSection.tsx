@@ -9,6 +9,8 @@ import {
   FileText,
   Mail,
   ArrowRight,
+  Plus,
+  Check,
 } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
 import { useChat } from '@/contexts/ChatContext';
@@ -19,9 +21,11 @@ interface AiTutorSectionProps {
 }
 
 export function AiTutorSection({ word }: AiTutorSectionProps) {
-  const { openChat } = useChat();
+  const { openChat, addWordContext, activeWordContexts } = useChat();
 
   const wordContext: WordContext = {
+    id: `word-${word.id}`,
+    type: 'word',
     word: word.word,
     category: word.category,
     level: word.level,
@@ -44,6 +48,10 @@ export function AiTutorSection({ word }: AiTutorSectionProps) {
     synonyms: word.synonyms,
     antonyms: word.antonyms,
   };
+
+  const isAlreadyInContext = activeWordContexts.some(
+    (c) => c.word.toLowerCase() === word.word.toLowerCase()
+  );
 
   const prompts = [
     {
@@ -77,7 +85,7 @@ export function AiTutorSection({ word }: AiTutorSectionProps) {
   ];
 
   const handleAsk = (question: string) => {
-    openChat(question, wordContext);
+    openChat(question, wordContext, { append: true });
   };
 
   return (
@@ -105,14 +113,34 @@ export function AiTutorSection({ word }: AiTutorSectionProps) {
           </div>
         </div>
 
-        <button
-          onClick={() => openChat(undefined, wordContext)}
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600/90 hover:bg-indigo-600 text-white text-xs font-semibold shadow-md shadow-indigo-600/20 hover:scale-[1.02] active:scale-[0.98] transition-all self-start sm:self-auto"
-        >
-          <MessageSquare className="w-3.5 h-3.5" />
-          <span>Mở khung Chatbot</span>
-          <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
-        </button>
+        <div className="flex items-center gap-2 self-start sm:self-auto flex-wrap">
+          {activeWordContexts.length > 0 && !isAlreadyInContext && (
+            <button
+              onClick={() => addWordContext(wordContext, true)}
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-indigo-300 border border-indigo-500/30 text-xs font-semibold shadow-xs hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+              title="Thêm từ này vào ngữ cảnh hiện tại để so sánh và học nhiều từ cùng lúc"
+            >
+              <Plus className="w-3.5 h-3.5 text-indigo-400" />
+              <span>+ Thêm vào ngữ cảnh ({activeWordContexts.length})</span>
+            </button>
+          )}
+
+          {isAlreadyInContext && (
+            <span className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-semibold">
+              <Check className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Đang trong ngữ cảnh AI</span>
+            </span>
+          )}
+
+          <button
+            onClick={() => openChat(undefined, wordContext, { append: true })}
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600/90 hover:bg-indigo-600 text-white text-xs font-semibold shadow-md shadow-indigo-600/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+          >
+            <MessageSquare className="w-3.5 h-3.5" />
+            <span>Mở khung Chatbot</span>
+            <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
+          </button>
+        </div>
       </div>
 
       {/* Quick Interactive Prompt Buttons */}

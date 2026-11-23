@@ -47,19 +47,28 @@ export interface UserQuotaStatus {
 interface ChatContextType {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
-  openChat: (initialPrompt?: string, wordContext?: WordContext) => void;
+  openChat: (
+    initialPrompt?: string,
+    wordContext?: WordContext | WordContext[],
+    options?: { append?: boolean }
+  ) => void;
   closeChat: () => void;
   messages: ChatMessage[];
   isLoading: boolean;
   activeWordContext: WordContext | null;
+  activeWordContexts: WordContext[];
   setWordContext: (context: WordContext | null) => void;
+  setWordContexts: (contexts: WordContext[]) => void;
+  addWordContext: (context: WordContext, autoOpen?: boolean) => void;
+  removeWordContext: (idOrWord: string) => void;
+  clearWordContexts: () => void;
   activeProvider: AIProvider | null;
   activeModel: string | null;
   selectedModel: AIModelPreference;
   setSelectedModel: (model: AIModelPreference) => void;
   isFallbackActive: boolean;
   fallbackReason: string | null;
-  sendMessage: (content: string, overrideWordContext?: WordContext) => Promise<void>;
+  sendMessage: (content: string, overrideWordContexts?: WordContext[]) => Promise<void>;
   retryMessage: (failedAssistantMsgId?: string, overrideModel?: AIModelPreference) => Promise<void>;
   clearMessages: () => void;
   stopGeneration: () => void;
@@ -73,11 +82,11 @@ interface ChatContextType {
   // Multi-conversation & History features
   currentConversationId: string | null;
   history: AiTutorConversation[];
-  startNewConversation: (wordContext?: WordContext) => void;
+  startNewConversation: (wordContext?: WordContext | WordContext[]) => void;
   loadConversation: (id: string) => void;
   deleteConversation: (id: string) => void;
   clearAllHistory: () => void;
-  addSnippetContext: (snippet: string, initialPrompt?: string) => void;
+  addSnippetContext: (snippet: string, initialPrompt?: string, append?: boolean) => void;
 }
 
 const ChatContext = createContext<ChatContextType | undefined>(undefined);
@@ -86,7 +95,7 @@ const INITIAL_WELCOME_MESSAGE: ChatMessage = {
   id: 'welcome-msg',
   role: 'assistant',
   content:
-    'Chào bạn! Mình là **TOEIC AI Tutor** 🤖. Bạn có thể hỏi mình về nghĩa từ vựng chuyên sâu, cách dùng trong bài thi TOEIC (Part 5, 6, 7), bẫy ngữ pháp, hoặc tạo câu ví dụ trong ngữ cảnh công sở. Hãy chọn một câu hỏi gợi ý bên dưới hoặc gõ câu hỏi của bạn nhé!',
+    'Chào bạn! Mình là **TOEIC AI Tutor** 🤖. Bạn có thể hỏi mình về nghĩa từ vựng chuyên sâu, cách dùng trong bài thi TOEIC (Part 5, 6, 7), bẫy ngữ pháp, hoặc tạo câu ví dụ trong ngữ cảnh công sở. Bạn có thể thêm **nhiều ngữ cảnh (từ vựng, đoạn trích)** để so sánh hoặc học kết hợp nhé!',
   timestamp: 0,
   provider: 'gemini',
 };
@@ -100,7 +109,9 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
   const [history, setHistory] = useState<AiTutorConversation[]>([]);
   const [messages, setMessages] = useState<ChatMessage[]>([INITIAL_WELCOME_MESSAGE]);
   const [isLoading, setIsLoading] = useState(false);
-  const [activeWordContext, setActiveWordContext] = useState<WordContext | null>(null);
+  const [activeWordContexts, setActiveWordContexts] = useState<WordContext[]>([]);
+  const activeWordContext = activeWordContexts.length > 0 ? activeWordContexts[0] : null;
+
   const [activeProvider, setActiveProvider] = useState<AIProvider | null>(null);
   const [activeModel, setActiveModel] = useState<string | null>(null);
   const [selectedModel, setSelectedModelState] = useState<AIModelPreference>(() => {
@@ -163,7 +174,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
   const abortControllerRef = useRef<AbortController | null>(null);
   const currentConversationIdRef = useRef<string | null>(null);
   const historyRef = useRef<AiTutorConversation[]>(history);
-  const activeWordContextRef = useRef<WordContext | null>(activeWordContext);
+  const activeWordContextsRef = useRef<WordContext[]>(activeWordContexts);
 
   useEffect(() => {
     currentConversationIdRef.current = currentConversationId;
@@ -174,8 +185,8 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
   }, [history]);
 
   useEffect(() => {
-    activeWordContextRef.current = activeWordContext;
-  }, [activeWordContext]);
+    activeWordContextsRef.current = activeWordContexts;
+  }, [activeWordContexts]);
 
   const setSelectedModel = (model: AIModelPreference) => {
     setSelectedModelState(model);
@@ -185,6 +196,73 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
       // ignore
     }
   };
+
+  const addWordContext = useCallback((context: WordContext, autoOpen = true) => {
+    setActiveWordContexts((prev) => {
+      const isSnippet = Boolean(context.selectedText);
+      const targetKey = isSnippet
+        ? (context.selectedText || '').trim()
+        : context.word.trim().toLowerCase();
+
+      const exists = prev.some((c) => {
+        const cKey = c.selectedText
+          ? (c.selectedText || '').trim()
+          : c.word.trim().toLowerCase();
+        return cKey === targetKey;
+      });
+
+      if (exists) {
+        return prev.map((c) => {
+          const cKey = c.selectedText
+            ? (c.selectedText || '').trim()
+            : c.word.trim().toLowerCase();
+          return cKey === targetKey ? { ...c, ...context } : c;
+        });
+      }
+
+      const newId =
+        context.id || `ctx-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
+      return [...prev, { ...context, id: newId }];
+    });
+
+    if (autoOpen) {
+      setIsOpen(true);
+    }
+  }, []);
+
+  const removeWordContext = useCallback((idOrWord: string) => {
+    const target = idOrWord.trim().toLowerCase();
+    setActiveWordContexts((prev) =>
+      prev.filter(
+        (c) =>
+          c.id !== idOrWord &&
+          c.word.trim().toLowerCase() !== target &&
+          (c.selectedText ? c.selectedText.trim() !== idOrWord.trim() : true)
+      )
+    );
+  }, []);
+
+  const clearWordContexts = useCallback(() => {
+    setActiveWordContexts([]);
+  }, []);
+
+  const setWordContext = useCallback((context: WordContext | null) => {
+    if (!context) {
+      setActiveWordContexts([]);
+    } else {
+      const newId = context.id || `ctx-${Date.now()}`;
+      setActiveWordContexts([{ ...context, id: newId }]);
+    }
+  }, []);
+
+  const setWordContexts = useCallback((contexts: WordContext[]) => {
+    setActiveWordContexts(
+      contexts.map((c, idx) => ({
+        ...c,
+        id: c.id || `ctx-${Date.now()}-${idx}-${Math.random().toString(36).substring(2, 6)}`,
+      }))
+    );
+  }, []);
 
   // Sync user state on mount and auth changes:
   // Strictly isolate history per user; if user is not logged in, history is empty and nothing is saved
@@ -199,7 +277,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
       setCurrentConversationId(null);
       currentConversationIdRef.current = null;
       setMessages([INITIAL_WELCOME_MESSAGE]);
-      setActiveWordContext(null);
+      setActiveWordContexts([]);
     }
   }, [user]);
 
@@ -250,18 +328,27 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     setIsLoading(false);
   }, []);
 
-  const startNewConversation = useCallback((wordContext?: WordContext) => {
-    stopGeneration();
-    setCurrentConversationId(null);
-    currentConversationIdRef.current = null;
-    setMessages([
-      {
-        ...INITIAL_WELCOME_MESSAGE,
-        timestamp: Date.now(),
-      },
-    ]);
-    setActiveWordContext(wordContext || null);
-  }, [stopGeneration]);
+  const startNewConversation = useCallback(
+    (wordContext?: WordContext | WordContext[]) => {
+      stopGeneration();
+      setCurrentConversationId(null);
+      currentConversationIdRef.current = null;
+      setMessages([
+        {
+          ...INITIAL_WELCOME_MESSAGE,
+          timestamp: Date.now(),
+        },
+      ]);
+      if (Array.isArray(wordContext)) {
+        setWordContexts(wordContext);
+      } else if (wordContext) {
+        setWordContexts([wordContext]);
+      } else {
+        setActiveWordContexts([]);
+      }
+    },
+    [stopGeneration, setWordContexts]
+  );
 
   const loadConversation = useCallback((id: string) => {
     stopGeneration();
@@ -273,7 +360,13 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
       setCurrentConversationId(conv.id);
       currentConversationIdRef.current = conv.id;
       setMessages(conv.messages.length > 0 ? conv.messages : [INITIAL_WELCOME_MESSAGE]);
-      setActiveWordContext(conv.wordContext || null);
+      const restored =
+        conv.wordContexts && conv.wordContexts.length > 0
+          ? conv.wordContexts
+          : conv.wordContext
+          ? [conv.wordContext]
+          : [];
+      setActiveWordContexts(restored);
     }
   }, [stopGeneration, user]);
 
@@ -313,7 +406,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
       contextMessages: ChatMessage[],
       assistantMsgId: string,
       modelPreference: AIModelPreference,
-      currentContext: WordContext | null,
+      currentContexts: WordContext[],
       convId: string,
       lastUserPrompt?: string
     ) => {
@@ -348,7 +441,8 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
               role: m.role,
               content: m.content,
             })),
-            wordContext: currentContext || undefined,
+            wordContext: currentContexts[0] || undefined,
+            wordContexts: currentContexts.length > 0 ? currentContexts : undefined,
             providerPreference: modelPreference,
             userId: user?.id,
             userEmail: user?.email,
@@ -538,19 +632,34 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
             contextMessages.filter((m) => m.role === 'user').slice(-1)[0]?.content ||
             '';
 
-          const autoTitle = currentContext?.selectedText
-            ? `Đoạn trích: "${currentContext.selectedText.slice(0, 30)}..."`
-            : currentContext?.word
-            ? `Từ vựng: ${currentContext.word}`
-            : promptSnippet.length > 40
-            ? `${promptSnippet.slice(0, 40)}...`
-            : promptSnippet || 'Hội thoại AI Tutor';
+          let autoTitle = 'Hội thoại AI Tutor';
+          if (currentContexts.length > 1) {
+            const names = currentContexts.map((c) =>
+              c.selectedText
+                ? `"${c.selectedText.slice(0, 16)}..."`
+                : c.word
+            );
+            autoTitle =
+              names.slice(0, 2).join(' + ') +
+              (currentContexts.length > 2 ? ` (+${currentContexts.length - 2})` : '');
+          } else if (currentContexts.length === 1) {
+            const single = currentContexts[0];
+            autoTitle = single.selectedText
+              ? `Đoạn trích: "${single.selectedText.slice(0, 30)}..."`
+              : `Từ vựng: ${single.word}`;
+          } else if (promptSnippet) {
+            autoTitle =
+              promptSnippet.length > 40
+                ? `${promptSnippet.slice(0, 40)}...`
+                : promptSnippet;
+          }
 
           const convToSave: AiTutorConversation = {
             id: convId,
             title: existingConv?.title || autoTitle,
             messages: finalMessages,
-            wordContext: currentContext || null,
+            wordContext: currentContexts[0] || null,
+            wordContexts: currentContexts,
             createdAt: existingConv?.createdAt || Date.now(),
             updatedAt: Date.now(),
             messageCount: finalMessages.filter((m) => m.role === 'user').length,
@@ -569,11 +678,11 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
   );
 
   const sendMessage = useCallback(
-    async (content: string, overrideWordContext?: WordContext) => {
+    async (content: string, overrideWordContexts?: WordContext[]) => {
       const trimmed = content.trim();
       if (!trimmed || isLoading) return;
 
-      const currentContext = overrideWordContext || activeWordContextRef.current;
+      const currentContexts = overrideWordContexts || activeWordContextsRef.current;
 
       // Assign or create conversation ID
       let convId = currentConversationIdRef.current;
@@ -606,7 +715,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         nextMessages,
         assistantMsgId,
         selectedModel,
-        currentContext,
+        currentContexts,
         convId,
         trimmed
       );
@@ -670,7 +779,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         contextMessages,
         newAssistantMsgId,
         modelToUse,
-        activeWordContextRef.current,
+        activeWordContextsRef.current,
         convId,
         lastUserMsg?.content
       );
@@ -679,49 +788,57 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
   );
 
   const openChat = useCallback(
-    (initialPrompt?: string, wordContext?: WordContext) => {
+    (
+      initialPrompt?: string,
+      wordContext?: WordContext | WordContext[],
+      options?: { append?: boolean }
+    ) => {
       if (wordContext) {
-        // If switching to a different word or if existing conversation has user messages, start fresh
-        if (
-          (activeWordContextRef.current &&
-            activeWordContextRef.current.word !== wordContext.word) ||
-          messages.some((m) => m.role === 'user')
-        ) {
-          startNewConversation(wordContext);
+        const incoming = Array.isArray(wordContext) ? wordContext : [wordContext];
+        const hasUserMessages = messages.some((m) => m.role === 'user');
+
+        if (options?.append || hasUserMessages) {
+          incoming.forEach((ctx) => addWordContext(ctx, false));
         } else {
-          setActiveWordContext(wordContext);
+          setWordContexts(incoming);
         }
       }
       setIsOpen(true);
       if (initialPrompt && initialPrompt.trim()) {
         setTimeout(() => {
-          sendMessage(initialPrompt, wordContext);
+          sendMessage(initialPrompt);
         }, 100);
       }
     },
-    [messages, startNewConversation, sendMessage]
+    [messages, addWordContext, setWordContexts, sendMessage]
   );
 
   const addSnippetContext = useCallback(
-    (snippet: string, initialPrompt?: string) => {
+    (snippet: string, initialPrompt?: string, append = true) => {
       const trimmed = snippet.trim();
       if (!trimmed) return;
 
       const snippetContext: WordContext = {
+        id: `snippet-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+        type: 'snippet',
         word: trimmed.length > 40 ? `${trimmed.slice(0, 40)}...` : trimmed,
         selectedText: trimmed,
       };
 
-      startNewConversation(snippetContext);
+      if (append) {
+        addWordContext(snippetContext, true);
+      } else {
+        startNewConversation(snippetContext);
+      }
       setIsOpen(true);
 
       if (initialPrompt && initialPrompt.trim()) {
         setTimeout(() => {
-          sendMessage(initialPrompt, snippetContext);
+          sendMessage(initialPrompt);
         }, 100);
       }
     },
-    [startNewConversation, sendMessage]
+    [addWordContext, startNewConversation, sendMessage]
   );
 
   return (
@@ -734,7 +851,12 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         messages,
         isLoading,
         activeWordContext,
-        setWordContext: setActiveWordContext,
+        activeWordContexts,
+        setWordContext,
+        setWordContexts,
+        addWordContext,
+        removeWordContext,
+        clearWordContexts,
         activeProvider,
         activeModel,
         selectedModel,

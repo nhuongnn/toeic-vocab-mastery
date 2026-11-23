@@ -190,16 +190,22 @@ export function WordDetail({
   };
 
   const handleOpenAi = () => {
-    openChat(undefined, {
-      word: word.word,
-      category: word.category,
-      level: word.level,
-      meaning: word.deepMeaning?.coreConcept,
-      ipa: word.pronunciation?.ipa,
-      partOfSpeech: word.partOfSpeech,
-      synonyms: word.synonyms,
-      antonyms: word.antonyms,
-    });
+    openChat(
+      undefined,
+      {
+        id: `word-${word.id}`,
+        type: 'word',
+        word: word.word,
+        category: word.category,
+        level: word.level,
+        meaning: word.deepMeaning?.coreConcept,
+        ipa: word.pronunciation?.ipa,
+        partOfSpeech: word.partOfSpeech,
+        synonyms: word.synonyms,
+        antonyms: word.antonyms,
+      },
+      { append: true }
+    );
   };
 
   return (

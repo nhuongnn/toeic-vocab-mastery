@@ -27,11 +27,16 @@ import {
   Minimize2,
   Scaling,
   RotateCcw,
+  FileText,
+  Search,
+  Layers,
 } from 'lucide-react';
 import { useChat } from '@/contexts/ChatContext';
 import { useAuth } from '@/contexts/AuthContext';
 import { formatConversationTime } from '@/lib/ai/history';
 import { MarkdownMessage } from './MarkdownMessage';
+import { allVocabularyWords } from '@/data/vocabulary';
+import { WordContext } from '@/lib/ai/types';
 
 const DEFAULT_WIDTH = 420;
 const DEFAULT_HEIGHT = 580;
@@ -56,7 +61,12 @@ export function ChatBotWidget() {
     messages,
     isLoading,
     activeWordContext,
+    activeWordContexts,
+    addWordContext,
+    removeWordContext,
+    clearWordContexts,
     setWordContext,
+    setWordContexts,
     selectedModel,
     setSelectedModel,
     sendMessage,
@@ -82,6 +92,98 @@ export function ChatBotWidget() {
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
   const [showClearAllConfirm, setShowClearAllConfirm] = useState(false);
   const [showClearCurrentConfirm, setShowClearCurrentConfirm] = useState(false);
+
+  // Multi-context management states
+  const [addContextModalOpen, setAddContextModalOpen] = useState(false);
+  const [contextModalTab, setContextModalTab] = useState<'word' | 'snippet'>('word');
+  const [wordSearchInput, setWordSearchInput] = useState('');
+  const [snippetTextInput, setSnippetTextInput] = useState('');
+  const [snippetLabelInput, setSnippetLabelInput] = useState('');
+
+  const QUICK_ADD_WORDS = [
+    'evaluate',
+    'negotiate',
+    'implement',
+    'revenue',
+    'compliance',
+    'collaborate',
+    'warranty',
+    'agenda',
+  ];
+
+  const filteredVocabulary = React.useMemo(() => {
+    const q = wordSearchInput.trim().toLowerCase();
+    if (!q) {
+      return allVocabularyWords.slice(0, 10);
+    }
+    return allVocabularyWords
+      .filter(
+        (w) =>
+          w.word.toLowerCase().includes(q) ||
+          w.deepMeaning?.coreConcept?.toLowerCase().includes(q)
+      )
+      .slice(0, 20);
+  }, [wordSearchInput]);
+
+  const handleAddVocabWord = (wordObj: (typeof allVocabularyWords)[0]) => {
+    const newContext: WordContext = {
+      id: `word-${wordObj.id}`,
+      type: 'word',
+      word: wordObj.word,
+      category: wordObj.category,
+      level: wordObj.level,
+      meaning: wordObj.deepMeaning?.coreConcept,
+      ipa: wordObj.pronunciation?.ipa,
+      partOfSpeech: wordObj.partOfSpeech,
+      examples: [
+        ...(wordObj.examples?.business || []).slice(0, 2).map((e) => ({ english: e, vietnamese: '' })),
+        ...(wordObj.examples?.daily || []).slice(0, 1).map((e) => ({ english: e, vietnamese: '' })),
+      ],
+      etymology: {
+        origin: wordObj.etymology?.origin,
+        evolution: wordObj.etymology?.evolution,
+      },
+      toeicTips: {
+        part5Traps: wordObj.toeicContext?.tips ? [wordObj.toeicContext.tips] : [],
+        collocations: wordObj.examples?.collocations || [],
+        frequencyScore: wordObj.toeicFrequency,
+      },
+      synonyms: wordObj.synonyms,
+      antonyms: wordObj.antonyms,
+    };
+    addWordContext(newContext);
+    setWordSearchInput('');
+    setAddContextModalOpen(false);
+  };
+
+  const handleAddCustomWord = () => {
+    const trimmed = wordSearchInput.trim();
+    if (!trimmed) return;
+    addWordContext({
+      id: `custom-word-${Date.now()}`,
+      type: 'word',
+      word: trimmed,
+    });
+    setWordSearchInput('');
+    setAddContextModalOpen(false);
+  };
+
+  const handleAddSnippet = () => {
+    const trimmed = snippetTextInput.trim();
+    if (!trimmed) return;
+    const label =
+      snippetLabelInput.trim() ||
+      (trimmed.length > 30 ? `${trimmed.slice(0, 30)}...` : trimmed);
+    addWordContext({
+      id: `snippet-${Date.now()}`,
+      type: 'snippet',
+      word: label,
+      selectedText: trimmed,
+    });
+    setSnippetTextInput('');
+    setSnippetLabelInput('');
+    setAddContextModalOpen(false);
+  };
 
   // Window size & maximized states (lazy initialized from localStorage)
   const [size, setSize] = useState<WidgetSizeState>(() => {
@@ -364,27 +466,53 @@ export function ChatBotWidget() {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
-  const wordSuggestionChips =
-    activeWordContext?.selectedText && activeWordContext.selectedText.length > 25
-      ? [
+  const wordSuggestionChips = (() => {
+    if (activeWordContexts.length >= 2) {
+      const hasSnippet = activeWordContexts.some((c) => Boolean(c.selectedText));
+      const wordNames = activeWordContexts.filter((c) => !c.selectedText).map((c) => c.word);
+
+      if (hasSnippet && wordNames.length > 0) {
+        return [
+          `🔍 Phân tích các từ "${wordNames.slice(0, 2).join(', ')}" trong đoạn văn`,
+          `📝 Viết lại đoạn văn sử dụng từ "${wordNames[0]}"`,
+          `🎯 Tạo 1 câu hỏi TOEIC kết hợp từ vựng và đoạn văn`,
+          `💡 Giải thích ngữ pháp & bẫy TOEIC trong đoạn văn`,
+        ];
+      }
+
+      return [
+        `🔄 So sánh sự khác nhau và sắc thái giữa ${wordNames.slice(0, 3).map((w) => `"${w}"`).join(' và ')}`,
+        `💼 Viết 1 email công sở ngắn kết hợp các từ trên`,
+        `🎯 Tạo 1 câu hỏi Part 5 phân biệt các từ này`,
+        `💡 Phân biệt bẫy từ loại và Collocations của các từ trên`,
+      ];
+    }
+
+    if (activeWordContexts.length === 1) {
+      const ctx = activeWordContexts[0];
+      if (ctx.selectedText && ctx.selectedText.length > 25) {
+        return [
           '💡 Giải thích ngữ pháp & cấu trúc câu của đoạn này',
           '🔍 Phân tích các từ vựng và cụm collocation quan trọng',
           '📝 Dịch chuẩn và viết lại theo phong cách email công sở',
           '🎯 Tạo 1 câu hỏi trắc nghiệm TOEIC dựa trên câu này',
-        ]
-      : activeWordContext
-      ? [
-          `💡 Bẫy Part 5 & lưu ý khi dùng từ "${activeWordContext.word}"`,
-          `📧 3 câu ví dụ email công việc với "${activeWordContext.word}"`,
-          `🔄 Phân biệt "${activeWordContext.word}" với từ đồng nghĩa`,
-          `🎯 Tạo 1 câu hỏi trắc nghiệm TOEIC với "${activeWordContext.word}"`,
-        ]
-      : [
-          '📝 Mẹo phân biệt thì HTHT và QKĐ trong TOEIC',
-          '⚡ Cách xử lý nhanh Part 5 ngữ pháp dưới 30 giây',
-          '💼 Mẫu câu email xin dời lịch hẹn bằng tiếng Anh chuyên nghiệp',
-          '🧩 Giải thích cách dùng mệnh đề quan hệ rút gọn',
         ];
+      }
+      return [
+        `💡 Bẫy Part 5 & lưu ý khi dùng từ "${ctx.word}"`,
+        `📧 3 câu ví dụ email công việc với "${ctx.word}"`,
+        `🔄 Phân biệt "${ctx.word}" với từ đồng nghĩa`,
+        `🎯 Tạo 1 câu hỏi trắc nghiệm TOEIC với "${ctx.word}"`,
+      ];
+    }
+
+    return [
+      '📝 Mẹo phân biệt thì HTHT và QKĐ trong TOEIC',
+      '⚡ Cách xử lý nhanh Part 5 ngữ pháp dưới 30 giây',
+      '💼 Mẫu câu email xin dời lịch hẹn bằng tiếng Anh chuyên nghiệp',
+      '🧩 Giải thích cách dùng mệnh đề quan hệ rút gọn',
+    ];
+  })();
 
   const handleSelectHistoryItem = (id: string) => {
     loadConversation(id);
@@ -440,18 +568,25 @@ export function ChatBotWidget() {
             </div>
 
             <span className="text-xs font-bold tracking-wide">
-              {activeWordContext?.selectedText && activeWordContext.selectedText.length > 25
-                ? 'Hỏi AI: Đoạn văn đã chọn'
-                : activeWordContext
-                ? `Hỏi AI: ${activeWordContext.word}`
+              {activeWordContexts.length > 1
+                ? `Hỏi AI: ${activeWordContexts[0].word} (+${activeWordContexts.length - 1})`
+                : activeWordContexts.length === 1
+                ? activeWordContexts[0].selectedText &&
+                  activeWordContexts[0].selectedText.length > 25
+                  ? 'Hỏi AI: Đoạn văn đã chọn'
+                  : `Hỏi AI: ${activeWordContexts[0].word}`
                 : 'Hỏi AI Tutor'}
             </span>
 
-            {activeWordContext && (
+            {activeWordContexts.length > 1 ? (
+              <span className="px-1.5 py-0.5 rounded-full bg-white/20 text-[10px] font-semibold">
+                {activeWordContexts.length} ngữ cảnh
+              </span>
+            ) : activeWordContext ? (
               <span className="px-1.5 py-0.5 rounded-full bg-white/20 text-[10px] font-semibold uppercase">
                 {activeWordContext.level || 'TOEIC'}
               </span>
-            )}
+            ) : null}
 
             {!user && userQuota && (
               <span
@@ -947,11 +1082,24 @@ export function ChatBotWidget() {
                       <span>Khách: {userQuota.remaining}/{userQuota.limit}</span>
                     </span>
                   ) : (
-                    <span className="text-[10px] text-slate-400 truncate max-w-[200px] text-right">
-                      {activeWordContext
-                        ? `Từ: "${activeWordContext.word}"`
-                        : 'Trợ lý TOEIC & Công sở'}
-                    </span>
+                    <div className="flex items-center gap-2 truncate max-w-[240px]">
+                      <span className="text-[10px] text-slate-400 truncate text-right">
+                        {activeWordContexts.length > 1
+                          ? `${activeWordContexts.length} ngữ cảnh: ${activeWordContexts.map((c) => c.word).slice(0, 2).join(', ')}...`
+                          : activeWordContext
+                          ? `Từ: "${activeWordContext.word}"`
+                          : 'Trợ lý TOEIC & Công sở'}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setAddContextModalOpen(true)}
+                        className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 text-[10px] font-semibold transition-colors shrink-0 cursor-pointer"
+                        title="Thêm ngữ cảnh (từ vựng, đoạn trích...)"
+                      >
+                        <Plus className="w-2.5 h-2.5" />
+                        <span>Ngữ cảnh</span>
+                      </button>
+                    </div>
                   )}
                 </div>
               )}
@@ -1103,8 +1251,28 @@ export function ChatBotWidget() {
                           </div>
                         </div>
 
-                        {/* Word Context Tag if present */}
-                        {conv.wordContext && (
+                        {/* Context Tags if present */}
+                        {conv.wordContexts && conv.wordContexts.length > 0 ? (
+                          <div className="mb-1.5 flex flex-wrap gap-1">
+                            {conv.wordContexts.map((ctx, idx) => (
+                              <span
+                                key={idx}
+                                className="inline-flex items-center gap-1 text-[10px] text-indigo-300 bg-indigo-950/60 border border-indigo-500/25 rounded-md px-1.5 py-0.5 truncate max-w-[160px]"
+                              >
+                                {ctx.selectedText ? (
+                                  <FileText className="w-2.5 h-2.5 text-sky-400 shrink-0" />
+                                ) : (
+                                  <BookOpen className="w-2.5 h-2.5 text-indigo-400 shrink-0" />
+                                )}
+                                <span className="truncate">
+                                  {ctx.selectedText
+                                    ? `Đoạn trích: "${ctx.selectedText.slice(0, 15)}..."`
+                                    : ctx.word}
+                                </span>
+                              </span>
+                            ))}
+                          </div>
+                        ) : conv.wordContext ? (
                           <div className="mb-1.5 flex items-center gap-1 text-[10px] text-indigo-300 bg-indigo-950/50 border border-indigo-500/20 rounded-md px-2 py-0.5 w-fit max-w-full truncate">
                             <BookOpen className="w-2.5 h-2.5 shrink-0" />
                             <span className="truncate">
@@ -1113,7 +1281,7 @@ export function ChatBotWidget() {
                                 : `Từ vựng: ${conv.wordContext.word}`}
                             </span>
                           </div>
-                        )}
+                        ) : null}
 
                         {/* Snippet */}
                         {conv.lastMessageSnippet && (
@@ -1206,30 +1374,358 @@ export function ChatBotWidget() {
           ) : (
             /* MAIN BODY: CHAT VIEW */
             <>
-              {/* Active Context Banner */}
-              {activeWordContext && (
-                <div className="flex items-center justify-between px-4 py-2 bg-indigo-950/40 border-b border-indigo-500/20 text-xs text-indigo-200 shrink-0">
-                  <div className="flex items-center gap-2 truncate">
-                    <BookOpen className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
-                    <span className="truncate">
-                      Ngữ cảnh:{' '}
-                      <strong className="font-bold text-white">
-                        {activeWordContext.selectedText
-                          ? activeWordContext.selectedText.length > 36
-                            ? `"${activeWordContext.selectedText.slice(0, 36)}..."`
-                            : `"${activeWordContext.selectedText}"`
-                          : activeWordContext.word.toUpperCase()}
-                      </strong>
-                      {activeWordContext.ipa && ` /${activeWordContext.ipa}/`}
-                    </span>
+              {/* Active Multi-Context Bar */}
+              {activeWordContexts.length > 0 ? (
+                <div className="px-3.5 py-2 bg-gradient-to-r from-indigo-950/60 via-slate-900/90 to-violet-950/40 border-b border-indigo-500/20 text-xs text-indigo-200 shrink-0 space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <Layers className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                      <span className="text-[11px] font-semibold text-slate-300">
+                        Ngữ cảnh đang chọn
+                      </span>
+                      <span className="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                        {activeWordContexts.length}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setAddContextModalOpen(true)}
+                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-200 border border-indigo-500/30 text-[10px] font-semibold transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                        title="Thêm ngữ cảnh (từ vựng khác hoặc đoạn trích) để so sánh/học kết hợp"
+                      >
+                        <Plus className="w-3 h-3" />
+                        <span>Thêm ngữ cảnh</span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={clearWordContexts}
+                        className="text-[10px] text-slate-400 hover:text-rose-300 transition-colors cursor-pointer"
+                        title="Xóa tất cả ngữ cảnh"
+                      >
+                        Xóa hết
+                      </button>
+                    </div>
                   </div>
+
+                  {/* Scrollable Context Chips */}
+                  <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 scrollbar-thin">
+                    {activeWordContexts.map((ctx) => {
+                      const isSnippet = Boolean(ctx.selectedText);
+                      const key = ctx.id || (isSnippet ? ctx.selectedText : ctx.word);
+                      return (
+                        <div
+                          key={key}
+                          className="group inline-flex items-center gap-1 px-2 py-1 rounded-xl bg-slate-900/90 border border-indigo-500/30 hover:border-indigo-400/60 text-[11px] text-slate-200 shrink-0 shadow-xs transition-all"
+                        >
+                          {isSnippet ? (
+                            <FileText className="w-3 h-3 text-sky-400 shrink-0" />
+                          ) : (
+                            <BookOpen className="w-3 h-3 text-indigo-400 shrink-0" />
+                          )}
+                          <span
+                            className="font-medium max-w-[130px] truncate"
+                            title={
+                              isSnippet
+                                ? `Đoạn trích: "${ctx.selectedText}"`
+                                : `${ctx.word}${ctx.meaning ? ` - ${ctx.meaning}` : ''}`
+                            }
+                          >
+                            {isSnippet
+                              ? ctx.selectedText && ctx.selectedText.length > 20
+                                ? `"${ctx.selectedText.slice(0, 18)}..."`
+                                : `"${ctx.selectedText}"`
+                              : ctx.word}
+                          </span>
+
+                          {!isSnippet && ctx.level && (
+                            <span className="text-[9px] px-1 py-0 rounded bg-indigo-500/20 text-indigo-300 font-semibold uppercase">
+                              {ctx.level.slice(0, 3)}
+                            </span>
+                          )}
+
+                          <button
+                            type="button"
+                            onClick={() => removeWordContext(ctx.id || ctx.word)}
+                            className="p-0.5 rounded-full hover:bg-slate-800 text-slate-400 hover:text-rose-400 transition-colors shrink-0 ml-0.5 cursor-pointer"
+                            title={`Xóa ngữ cảnh "${ctx.word}"`}
+                          >
+                            <X className="w-3 h-3" />
+                          </button>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              ) : (
+                <div className="px-4 py-1.5 bg-slate-950/30 border-b border-slate-800/40 flex items-center justify-between text-xs text-slate-400 shrink-0">
+                  <span className="text-[11px] flex items-center gap-1.5">
+                    <Sparkles className="w-3 h-3 text-indigo-400" />
+                    <span>Chưa có ngữ cảnh riêng (đang hỏi tự do)</span>
+                  </span>
                   <button
-                    onClick={() => setWordContext(null)}
-                    className="text-[10px] text-indigo-300/70 hover:text-indigo-200 underline shrink-0 ml-2"
-                    title="Bỏ ngữ cảnh này để hỏi câu hỏi chung"
+                    type="button"
+                    onClick={() => setAddContextModalOpen(true)}
+                    className="inline-flex items-center gap-1 text-[10px] font-semibold text-indigo-400 hover:text-indigo-300 hover:underline cursor-pointer"
                   >
-                    Bỏ chọn
+                    <Plus className="w-3 h-3" />
+                    <span>+ Thêm ngữ cảnh (Từ vựng, Đoạn trích)</span>
                   </button>
+                </div>
+              )}
+
+              {/* Modal: Add Multiple Contexts */}
+              {addContextModalOpen && (
+                <div
+                  className="absolute inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex flex-col p-4 animate-in fade-in duration-150 rounded-3xl"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* Header */}
+                  <div className="flex items-center justify-between pb-3 border-b border-slate-800 shrink-0">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-lg bg-indigo-600/30 border border-indigo-500/40 text-indigo-300 flex items-center justify-center shrink-0">
+                        <Layers className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-bold text-white">Thêm Ngữ Cảnh Học Tập</h4>
+                        <p className="text-[10px] text-slate-400">
+                          Thêm từ vựng hoặc đoạn trích để đối chiếu, so sánh và tạo bài tập
+                        </p>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setAddContextModalOpen(false);
+                        setWordSearchInput('');
+                      }}
+                      className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+
+                  {/* Tabs */}
+                  <div className="flex items-center gap-1.5 p-1 bg-slate-900 border border-slate-800 rounded-xl my-3 shrink-0">
+                    <button
+                      type="button"
+                      onClick={() => setContextModalTab('word')}
+                      className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                        contextModalTab === 'word'
+                          ? 'bg-indigo-600 text-white shadow-xs'
+                          : 'text-slate-400 hover:text-slate-200'
+                      }`}
+                    >
+                      <BookOpen className="w-3.5 h-3.5" />
+                      <span>Từ vựng TOEIC</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setContextModalTab('snippet')}
+                      className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                        contextModalTab === 'snippet'
+                          ? 'bg-indigo-600 text-white shadow-xs'
+                          : 'text-slate-400 hover:text-slate-200'
+                      }`}
+                    >
+                      <FileText className="w-3.5 h-3.5" />
+                      <span>Đoạn trích / Ghi chú</span>
+                    </button>
+                  </div>
+
+                  {/* Tab 1: Word Search & Suggestions */}
+                  {contextModalTab === 'word' ? (
+                    <div className="flex-1 flex flex-col min-h-0 space-y-3">
+                      <div className="relative shrink-0">
+                        <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                        <input
+                          type="text"
+                          value={wordSearchInput}
+                          onChange={(e) => setWordSearchInput(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                              e.preventDefault();
+                              handleAddCustomWord();
+                            }
+                          }}
+                          placeholder="Tìm kiếm từ vựng (ví dụ: evaluate, contract...)"
+                          className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500"
+                          autoFocus
+                        />
+                        {wordSearchInput && (
+                          <button
+                            type="button"
+                            onClick={() => setWordSearchInput('')}
+                            className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 text-xs cursor-pointer"
+                          >
+                            <X className="w-3.5 h-3.5" />
+                          </button>
+                        )}
+                      </div>
+
+                      {/* Quick suggestion tags if search is empty */}
+                      {!wordSearchInput.trim() && (
+                        <div className="shrink-0 space-y-1.5">
+                          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                            Từ vựng TOEIC gợi ý
+                          </div>
+                          <div className="flex flex-wrap gap-1.5">
+                            {QUICK_ADD_WORDS.map((w) => {
+                              const wordObj = allVocabularyWords.find(
+                                (item) => item.word.toLowerCase() === w.toLowerCase()
+                              );
+                              const isAdded = activeWordContexts.some(
+                                (c) => c.word.toLowerCase() === w.toLowerCase()
+                              );
+                              return (
+                                <button
+                                  key={w}
+                                  type="button"
+                                  disabled={isAdded}
+                                  onClick={() => wordObj && handleAddVocabWord(wordObj)}
+                                  className={`text-[11px] px-2.5 py-1 rounded-lg border transition-all flex items-center gap-1 ${
+                                    isAdded
+                                      ? 'bg-slate-900 border-slate-800 text-slate-500 opacity-60 cursor-not-allowed'
+                                      : 'bg-slate-900/80 border-indigo-500/30 hover:border-indigo-500 text-indigo-300 hover:text-white cursor-pointer active:scale-95'
+                                  }`}
+                                >
+                                  <span>{w}</span>
+                                  {isAdded ? (
+                                    <Check className="w-3 h-3 text-emerald-400" />
+                                  ) : (
+                                    <Plus className="w-3 h-3 opacity-60" />
+                                  )}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Filtered Word List */}
+                      <div className="flex-1 overflow-y-auto space-y-1.5 pr-1 scrollbar-thin">
+                        {wordSearchInput.trim() && (
+                          <button
+                            type="button"
+                            onClick={handleAddCustomWord}
+                            className="w-full flex items-center justify-between p-2.5 rounded-xl bg-indigo-950/40 hover:bg-indigo-950/70 border border-indigo-500/40 text-left transition-colors text-xs text-indigo-200 cursor-pointer"
+                          >
+                            <div className="flex items-center gap-2">
+                              <Plus className="w-3.5 h-3.5 text-indigo-400" />
+                              <span>
+                                Thêm từ tùy chỉnh: <strong>&quot;{wordSearchInput.trim()}&quot;</strong>
+                              </span>
+                            </div>
+                            <span className="text-[10px] px-2 py-0.5 rounded bg-indigo-600 text-white font-semibold">
+                              Thêm
+                            </span>
+                          </button>
+                        )}
+
+                        {filteredVocabulary.map((wordObj) => {
+                          const isAdded = activeWordContexts.some(
+                            (c) => c.word.toLowerCase() === wordObj.word.toLowerCase()
+                          );
+                          return (
+                            <div
+                              key={wordObj.id}
+                              className={`flex items-center justify-between p-2 rounded-xl border transition-all ${
+                                isAdded
+                                  ? 'bg-slate-900/60 border-slate-800/60 opacity-60'
+                                  : 'bg-slate-900/90 hover:bg-slate-800/80 border-slate-800 hover:border-indigo-500/40 cursor-pointer'
+                              }`}
+                              onClick={() => !isAdded && handleAddVocabWord(wordObj)}
+                            >
+                              <div className="min-w-0 pr-2">
+                                <div className="flex items-center gap-1.5">
+                                  <span className="text-xs font-bold text-white">
+                                    {wordObj.word}
+                                  </span>
+                                  {wordObj.pronunciation?.ipa && (
+                                    <span className="text-[10px] text-slate-400 font-mono">
+                                      /{wordObj.pronunciation.ipa}/
+                                    </span>
+                                  )}
+                                  <span className="text-[9px] font-semibold px-1 py-0.2 rounded bg-indigo-500/20 text-indigo-300">
+                                    {wordObj.level}
+                                  </span>
+                                </div>
+                                <p className="text-[11px] text-slate-400 truncate mt-0.5">
+                                  {wordObj.deepMeaning?.coreConcept || ''}
+                                </p>
+                              </div>
+
+                              <button
+                                type="button"
+                                disabled={isAdded}
+                                className={`px-2 py-1 rounded-lg text-[10px] font-semibold shrink-0 transition-colors ${
+                                  isAdded
+                                    ? 'bg-slate-800 text-emerald-400'
+                                    : 'bg-indigo-600 hover:bg-indigo-500 text-white cursor-pointer'
+                                }`}
+                              >
+                                {isAdded ? 'Đã có' : '+ Thêm'}
+                              </button>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ) : (
+                    /* Tab 2: Custom Snippet / Passage */
+                    <div className="flex-1 flex flex-col min-h-0 space-y-3">
+                      <div className="space-y-1">
+                        <label className="text-[11px] font-semibold text-slate-300">
+                          Nội dung đoạn văn, câu hỏi hoặc ghi chú:
+                        </label>
+                        <textarea
+                          value={snippetTextInput}
+                          onChange={(e) => setSnippetTextInput(e.target.value)}
+                          placeholder="Dán câu hỏi Part 5, đoạn văn Part 7, email công sở hoặc bất kỳ câu nào bạn muốn AI Tutor phân tích..."
+                          rows={5}
+                          className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 resize-none leading-relaxed"
+                          autoFocus
+                        />
+                      </div>
+
+                      <div className="space-y-1">
+                        <label className="text-[11px] font-semibold text-slate-300">
+                          Tên gọi / Nhãn ngữ cảnh (tùy chọn):
+                        </label>
+                        <input
+                          type="text"
+                          value={snippetLabelInput}
+                          onChange={(e) => setSnippetLabelInput(e.target.value)}
+                          placeholder="Ví dụ: Đoạn trích email Part 7, Bẫy liên từ Part 5..."
+                          className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500"
+                        />
+                      </div>
+
+                      <div className="pt-2 flex justify-end gap-2">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setSnippetTextInput('');
+                            setSnippetLabelInput('');
+                            setAddContextModalOpen(false);
+                          }}
+                          className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition-colors cursor-pointer"
+                        >
+                          Hủy
+                        </button>
+                        <button
+                          type="button"
+                          onClick={handleAddSnippet}
+                          disabled={!snippetTextInput.trim()}
+                          className="px-4 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white text-xs font-bold transition-all shadow-md shadow-indigo-600/30 cursor-pointer"
+                        >
+                          Thêm vào ngữ cảnh
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -1545,10 +2041,14 @@ export function ChatBotWidget() {
                     placeholder={
                       !user && userQuota && userQuota.remaining <= 0
                         ? 'Đã hết lượt hỏi cho khách. Đăng nhập để tiếp tục...'
-                        : activeWordContext?.selectedText && activeWordContext.selectedText.length > 25
+                        : activeWordContexts.length > 1
+                        ? `Hỏi về ${activeWordContexts.map((c) => c.word).slice(0, 2).join(', ')}${activeWordContexts.length > 2 ? ` (+${activeWordContexts.length - 2} ngữ cảnh)` : ''}...`
+                        : activeWordContexts.length === 1 &&
+                          activeWordContexts[0].selectedText &&
+                          activeWordContexts[0].selectedText.length > 25
                         ? 'Đặt câu hỏi về đoạn văn bản vừa chọn...'
-                        : activeWordContext
-                        ? `Hỏi bất kỳ điều gì về từ "${activeWordContext.word}"...`
+                        : activeWordContexts.length === 1
+                        ? `Hỏi bất kỳ điều gì về từ "${activeWordContexts[0].word}"...`
                         : 'Đặt câu hỏi ngữ pháp, bài tập TOEIC hoặc từ vựng...'
                     }
                     rows={1}

@@ -11,6 +11,7 @@ import {
   formatConversationTime,
   MAX_AI_TUTOR_CONVERSATIONS,
 } from '../ai/history.ts';
+import { buildSystemPrompt } from '../ai/system-prompt.ts';
 import { mergeUserProgress } from '../sync.ts';
 import { DEFAULT_PROGRESS } from '../storage.ts';
 
@@ -278,5 +279,50 @@ describe('AI Tutor 5-Conversation History Manager (User-Scoped)', () => {
     // conv_1 (1000) should be pruned as the 6th
     const hasConv1 = merged.aiTutorHistory.some((c) => c.id === 'conv_1');
     assert.strictEqual(hasConv1, false);
+  });
+
+  it('saves and restores conversations with multiple wordContexts', () => {
+    const userId = 'user_multi_context';
+    const multiContextConv = {
+      ...createDummyTutorConversation('conv_multi', 2000, 'evaluate + assess'),
+      wordContext: { word: 'evaluate', level: 'intermediate' },
+      wordContexts: [
+        { id: 'ctx_1', word: 'evaluate', meaning: 'đánh giá định lượng' },
+        { id: 'ctx_2', word: 'assess', meaning: 'đánh giá tổng thể' },
+        { id: 'ctx_3', word: 'Đoạn trích', selectedText: 'The board evaluated the annual proposal.' },
+      ],
+    };
+
+    saveAiTutorConversation(userId, multiContextConv);
+    const loaded = getAiTutorHistory(userId);
+    assert.strictEqual(loaded.length, 1);
+    assert.strictEqual(loaded[0].wordContexts?.length, 3);
+    assert.strictEqual(loaded[0].wordContexts[0].word, 'evaluate');
+    assert.strictEqual(loaded[0].wordContexts[1].word, 'assess');
+    assert.strictEqual(loaded[0].wordContexts[2].selectedText, 'The board evaluated the annual proposal.');
+    assert.strictEqual(loaded[0].wordContext?.word, 'evaluate');
+  });
+
+  it('buildSystemPrompt formats single and multiple contexts properly', () => {
+    // 1. Single context
+    const singleWord = { word: 'evaluate', meaning: 'đánh giá', ipa: 'ɪˈvæl.ju.eɪt' };
+    const promptSingle = buildSystemPrompt(singleWord);
+    assert.ok(promptSingle.includes('NGỮ CẢNH TỪ VỰNG NGƯỜI DÙNG ĐANG HỌC'));
+    assert.ok(promptSingle.includes('"EVALUATE"'));
+    assert.ok(promptSingle.includes('đánh giá'));
+
+    // 2. Multiple contexts (2 words + 1 snippet)
+    const contexts = [
+      { id: '1', word: 'evaluate', meaning: 'đánh giá' },
+      { id: '2', word: 'assess', meaning: 'định giá' },
+      { id: '3', word: 'snippet', selectedText: 'Quarterly review report' },
+    ];
+    const promptMulti = buildSystemPrompt(contexts);
+    assert.ok(promptMulti.includes('DANH SÁCH CÁC NGỮ CẢNH ĐỒNG THỜI NGƯỜI HỌC ĐANG CUNG CẤP (3 NGỮ CẢNH)'));
+    assert.ok(promptMulti.includes('Ngữ cảnh #1'));
+    assert.ok(promptMulti.includes('Ngữ cảnh #2'));
+    assert.ok(promptMulti.includes('Ngữ cảnh #3'));
+    assert.ok(promptMulti.includes('HƯỚNG DẪN XỬ LÝ NHIỀU NGỮ CẢNH KHI TRẢ LỜI'));
+    assert.ok(promptMulti.includes('So sánh & Phân biệt') || promptMulti.includes('so sánh hoặc phân biệt'));
   });
 });

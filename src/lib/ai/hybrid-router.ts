@@ -22,8 +22,9 @@ import { canUseProvider, checkUserAIQuota, recordUserAIUsage } from './system-ai
 export async function* routeHybridChat(
   payload: ChatRequestPayload
 ): AsyncGenerator<StreamEvent, void, unknown> {
-  const { messages, wordContext, providerPreference = 'auto', userId, userEmail, guestId } = payload;
-  const systemPrompt = buildSystemPrompt(wordContext);
+  const { messages, wordContext, wordContexts, providerPreference = 'auto', userId, userEmail, guestId } = payload;
+  const contexts = wordContexts && wordContexts.length > 0 ? wordContexts : (wordContext ? [wordContext] : []);
+  const systemPrompt = buildSystemPrompt(contexts);
 
   // 1. Check user and system-wide AI quota limits
   const quotaCheck = await checkUserAIQuota({ userId, userEmail, guestId });

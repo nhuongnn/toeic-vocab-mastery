@@ -17,6 +17,8 @@ export interface ChatMessage {
 }
 
 export interface WordContext {
+  id?: string;
+  type?: 'word' | 'snippet' | 'custom';
   word: string;
   selectedText?: string;
   category?: string;
@@ -45,6 +47,7 @@ export interface ChatRequestPayload {
     content: string;
   }>;
   wordContext?: WordContext;
+  wordContexts?: WordContext[];
   providerPreference?: AIModelPreference;
   userId?: string;
   userEmail?: string;
@@ -89,6 +92,7 @@ export interface AiTutorConversation {
   title: string;
   messages: ChatMessage[];
   wordContext?: WordContext | null;
+  wordContexts?: WordContext[];
   createdAt: number;
   updatedAt: number;
   messageCount: number;

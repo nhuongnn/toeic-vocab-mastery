@@ -16,6 +16,8 @@ import {
   RoleplayPreferences,
 } from '@/types/progress';
 import { CharacterConfig, RoleplayConversation } from '@/types/roleplay';
+import { AiTutorConversation } from '@/lib/ai/types';
+import { MAX_AI_TUTOR_CONVERSATIONS, getAiTutorHistoryKey } from '@/lib/ai/history';
 import { DEFAULT_PROGRESS, loadUserProgress, saveUserProgress, updateStreak } from '@/lib/storage';
 import { calculateSM2, createNewCard, calculateEstimatedScore } from '@/lib/srs';
 import { useAuth } from './AuthContext';
@@ -48,6 +50,7 @@ interface ProgressContextType {
     userName?: string
   ) => void;
   syncChatRoomHistory: (history: RoleplayConversation[]) => void;
+  syncAiTutorHistory: (history: AiTutorConversation[]) => void;
 }
 
 const ProgressContext = createContext<ProgressContextType | undefined>(undefined);
@@ -160,6 +163,19 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
             try {
               localStorage.setItem('roleplay_settings_v1', JSON.stringify(merged.roleplay));
               window.dispatchEvent(new Event('roleplay-synced'));
+            } catch {}
+          }
+          if (merged.aiTutorHistory && user?.id) {
+            try {
+              localStorage.setItem(
+                getAiTutorHistoryKey(user.id),
+                JSON.stringify(merged.aiTutorHistory)
+              );
+              window.dispatchEvent(
+                new CustomEvent('ai-tutor-history-updated', {
+                  detail: { userId: user.id, history: merged.aiTutorHistory },
+                })
+              );
             } catch {}
           }
           if (isMounted) {
@@ -444,6 +460,22 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     [scheduleCloudSync]
   );
 
+  const syncAiTutorHistory = useCallback(
+    (history: AiTutorConversation[]) => {
+      if (!user) return; // STRICT: only save and sync for authenticated users
+      setProgress((prev) => {
+        const updated: UserProgressData = {
+          ...prev,
+          aiTutorHistory: history.slice(0, MAX_AI_TUTOR_CONVERSATIONS),
+        };
+        saveUserProgress(updated);
+        scheduleCloudSync(updated);
+        return updated;
+      });
+    },
+    [user, scheduleCloudSync]
+  );
+
   const resetProgress = useCallback(() => {
     saveUserProgress(DEFAULT_PROGRESS);
     setProgress(DEFAULT_PROGRESS);
@@ -506,6 +538,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         forceSync,
         saveRoleplaySettings,
         syncChatRoomHistory,
+        syncAiTutorHistory,
       }}
     >
       {children}

@@ -1,6 +1,8 @@
 import { UserProgressData, SRSCard, ExerciseSessionResult, RoleplayPreferences } from '@/types/progress';
 import { OnboardingState } from '@/types/onboarding';
 import { RoleplayConversation } from '@/types/roleplay';
+import { AiTutorConversation } from '@/lib/ai/types';
+import { MAX_AI_TUTOR_CONVERSATIONS } from '@/lib/ai/history';
 import { calculateEstimatedScore } from './srs';
 import { generateLearningPath } from './placement/learningPath';
 
@@ -187,6 +189,28 @@ export function mergeUserProgress(
     };
   }
 
+  // 7. Merge AI Tutor conversation history across devices (strictly up to 5 most recent)
+  let mergedAiTutorHistory: AiTutorConversation[] | undefined = undefined;
+  if (local.aiTutorHistory || remote.aiTutorHistory) {
+    const tutorHistoryMap = new Map<string, AiTutorConversation>();
+    const allTutorHistory = [
+      ...(local.aiTutorHistory || []),
+      ...(remote.aiTutorHistory || []),
+    ];
+
+    for (const conv of allTutorHistory) {
+      if (!conv || !conv.id) continue;
+      const existing = tutorHistoryMap.get(conv.id);
+      if (!existing || (conv.updatedAt || 0) > (existing.updatedAt || 0)) {
+        tutorHistoryMap.set(conv.id, conv);
+      }
+    }
+
+    mergedAiTutorHistory = Array.from(tutorHistoryMap.values())
+      .sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0))
+      .slice(0, MAX_AI_TUTOR_CONVERSATIONS);
+  }
+
   return {
     version: Math.max(local.version || 1, remote.version || 1),
     cards: mergedCards,
@@ -207,5 +231,6 @@ export function mergeUserProgress(
     },
     onboarding: mergedOnboarding,
     roleplay: mergedRoleplay,
+    aiTutorHistory: mergedAiTutorHistory,
   };
 }

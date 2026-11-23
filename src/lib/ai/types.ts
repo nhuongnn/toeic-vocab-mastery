@@ -72,3 +72,14 @@ export type StreamEvent =
   | StreamContentEvent
   | StreamErrorEvent
   | StreamDoneEvent;
+
+export interface AiTutorConversation {
+  id: string;
+  title: string;
+  messages: ChatMessage[];
+  wordContext?: WordContext | null;
+  createdAt: number;
+  updatedAt: number;
+  messageCount: number;
+  lastMessageSnippet?: string;
+}

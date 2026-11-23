@@ -1,5 +1,6 @@
 import { OnboardingState } from './onboarding';
 import { CharacterConfig, RoleplayScenario, RoleplayConversation } from './roleplay';
+import { AiTutorConversation } from '@/lib/ai/types';
 
 export interface SRSCard {
   wordId: string;
@@ -63,4 +64,5 @@ export interface UserProgressData {
   bookmarkedWordIds: string[];
   onboarding?: OnboardingState;
   roleplay?: RoleplayPreferences;
+  aiTutorHistory?: AiTutorConversation[];
 }

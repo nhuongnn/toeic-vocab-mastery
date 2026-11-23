@@ -11,6 +11,9 @@ export interface ChatMessage {
   timestamp: number;
   provider?: AIProvider;
   isFallback?: boolean;
+  fallbackReason?: string;
+  isError?: boolean;
+  errorMessage?: string;
 }
 
 export interface WordContext {

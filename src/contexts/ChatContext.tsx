@@ -60,6 +60,7 @@ interface ChatContextType {
   isFallbackActive: boolean;
   fallbackReason: string | null;
   sendMessage: (content: string, overrideWordContext?: WordContext) => Promise<void>;
+  retryMessage: (failedAssistantMsgId?: string, overrideModel?: AIModelPreference) => Promise<void>;
   clearMessages: () => void;
   stopGeneration: () => void;
 
@@ -307,6 +308,266 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     setIsOpen(false);
   }, []);
 
+  const executeChatStream = useCallback(
+    async (
+      contextMessages: ChatMessage[],
+      assistantMsgId: string,
+      modelPreference: AIModelPreference,
+      currentContext: WordContext | null,
+      convId: string,
+      lastUserPrompt?: string
+    ) => {
+      setIsLoading(true);
+      setQuotaExceededInfo(null);
+
+      abortControllerRef.current = new AbortController();
+
+      let accumulatedContent = '';
+      let streamProvider: AIProvider =
+        modelPreference === 'cloudflare'
+          ? 'cloudflare'
+          : activeProvider || 'gemini';
+      let streamFallback = false;
+      let streamFallbackReason: string | undefined = undefined;
+      let hasError = false;
+      let lastErrorMessage = '';
+
+      const guestId = !user ? getGuestId() : undefined;
+
+      try {
+        const response = await fetch('/api/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(user?.id ? { 'x-user-id': user.id } : {}),
+            ...(user?.email ? { 'x-user-email': user.email } : {}),
+            ...(guestId ? { 'x-guest-id': guestId } : {}),
+          },
+          body: JSON.stringify({
+            messages: contextMessages.map((m) => ({
+              role: m.role,
+              content: m.content,
+            })),
+            wordContext: currentContext || undefined,
+            providerPreference: modelPreference,
+            userId: user?.id,
+            userEmail: user?.email,
+            guestId,
+          }),
+          signal: abortControllerRef.current.signal,
+        });
+
+        if (!response.ok) {
+          let errDesc = 'Failed to connect to AI server';
+          let errCode: string | undefined;
+          let limit = 0;
+          let usedToday = 0;
+          let isGuest = !user;
+
+          try {
+            const errData = await response.json();
+            errDesc = errData.error || errDesc;
+            errCode = errData.code;
+            limit = errData.limit || 0;
+            usedToday = errData.usedToday || 0;
+            if (typeof errData.isGuest === 'boolean') {
+              isGuest = errData.isGuest;
+            }
+          } catch {
+            // ignore
+          }
+
+          if (
+            errCode === 'GUEST_LIMIT_REACHED' ||
+            errCode === 'USER_LIMIT_REACHED' ||
+            response.status === 429
+          ) {
+            setQuotaExceededInfo({
+              code: errCode || (isGuest ? 'GUEST_LIMIT_REACHED' : 'USER_LIMIT_REACHED'),
+              message: errDesc,
+              limit,
+              usedToday,
+              isGuest,
+            });
+          }
+
+          hasError = true;
+          lastErrorMessage = errDesc;
+          throw new Error(errDesc);
+        }
+
+        if (!response.body) {
+          hasError = true;
+          lastErrorMessage = 'No response stream received';
+          throw new Error('No response stream received');
+        }
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split('\n');
+          buffer = lines.pop() || '';
+
+          for (const line of lines) {
+            const trimmedLine = line.trim();
+            if (!trimmedLine || !trimmedLine.startsWith('data:')) continue;
+
+            const dataStr = trimmedLine.slice(5).trim();
+            if (dataStr === '[DONE]') break;
+
+            try {
+              const event: StreamEvent = JSON.parse(dataStr);
+
+              if (event.type === 'meta') {
+                streamProvider = event.provider;
+                streamFallback = event.fallback;
+                streamFallbackReason = event.reason;
+                setActiveProvider(event.provider);
+                setActiveModel(event.model);
+                setIsFallbackActive(event.fallback);
+                if (event.reason) {
+                  setFallbackReason(event.reason);
+                }
+                setMessages((prev) =>
+                  prev.map((msg) =>
+                    msg.id === assistantMsgId
+                      ? {
+                          ...msg,
+                          provider: event.provider,
+                          isFallback: event.fallback,
+                          fallbackReason: event.reason,
+                        }
+                      : msg
+                  )
+                );
+              } else if (event.type === 'content') {
+                accumulatedContent += event.text;
+                setMessages((prev) =>
+                  prev.map((msg) =>
+                    msg.id === assistantMsgId
+                      ? { ...msg, content: accumulatedContent, isError: false, errorMessage: undefined }
+                      : msg
+                  )
+                );
+              } else if (event.type === 'error') {
+                hasError = true;
+                lastErrorMessage = event.message;
+                if (
+                  event.code === 'GUEST_LIMIT_REACHED' ||
+                  event.code === 'USER_LIMIT_REACHED'
+                ) {
+                  setQuotaExceededInfo({
+                    code: event.code,
+                    message: event.message,
+                    limit: event.limit || 0,
+                    usedToday: event.usedToday || 0,
+                    isGuest: Boolean(event.isGuest ?? !user),
+                  });
+                }
+                setMessages((prev) =>
+                  prev.map((msg) =>
+                    msg.id === assistantMsgId
+                      ? {
+                          ...msg,
+                          content: accumulatedContent,
+                          isError: true,
+                          errorMessage: event.message,
+                        }
+                      : msg
+                  )
+                );
+              }
+            } catch {
+              // ignore JSON parse on incomplete chunks
+            }
+          }
+        }
+      } catch (err: unknown) {
+        if (err instanceof Error && err.name === 'AbortError') {
+          // Stopped by user
+          return;
+        }
+        const errMsg = err instanceof Error ? err.message : String(err);
+        hasError = true;
+        lastErrorMessage = errMsg;
+        accumulatedContent =
+          accumulatedContent || `⚠️ Không thể kết nối tới AI. Chi tiết: ${errMsg}`;
+        setMessages((prev) =>
+          prev.map((msg) =>
+            msg.id === assistantMsgId
+              ? {
+                  ...msg,
+                  content: accumulatedContent,
+                  isError: true,
+                  errorMessage: errMsg,
+                }
+              : msg
+          )
+        );
+      } finally {
+        setIsLoading(false);
+        abortControllerRef.current = null;
+        refreshUserQuota();
+
+        // STRICT REQUIREMENT: Only save conversation if user is logged in!
+        // Do NOT save if user is not authenticated.
+        if (user?.id) {
+          const finalAssistantMsg: ChatMessage = {
+            id: assistantMsgId,
+            role: 'assistant',
+            content: accumulatedContent,
+            timestamp: Date.now(),
+            provider: streamProvider,
+            isFallback: streamFallback,
+            fallbackReason: streamFallbackReason,
+            isError: hasError,
+            errorMessage: hasError ? lastErrorMessage : undefined,
+          };
+
+          const finalMessages = [...contextMessages, finalAssistantMsg];
+
+          const existingConv = historyRef.current.find((c) => c.id === convId);
+          const promptSnippet =
+            lastUserPrompt ||
+            contextMessages.filter((m) => m.role === 'user').slice(-1)[0]?.content ||
+            '';
+
+          const autoTitle = currentContext?.selectedText
+            ? `Đoạn trích: "${currentContext.selectedText.slice(0, 30)}..."`
+            : currentContext?.word
+            ? `Từ vựng: ${currentContext.word}`
+            : promptSnippet.length > 40
+            ? `${promptSnippet.slice(0, 40)}...`
+            : promptSnippet || 'Hội thoại AI Tutor';
+
+          const convToSave: AiTutorConversation = {
+            id: convId,
+            title: existingConv?.title || autoTitle,
+            messages: finalMessages,
+            wordContext: currentContext || null,
+            createdAt: existingConv?.createdAt || Date.now(),
+            updatedAt: Date.now(),
+            messageCount: finalMessages.filter((m) => m.role === 'user').length,
+            lastMessageSnippet:
+              (accumulatedContent || promptSnippet).slice(0, 90).replace(/[*#`_]/g, '') ||
+              promptSnippet.slice(0, 90),
+          };
+
+          const updated = saveAiTutorConversation(user.id, convToSave);
+          setHistory(updated);
+          syncAiTutorHistory(updated);
+        }
+      }
+    },
+    [user, activeProvider, refreshUserQuota, syncAiTutorHistory]
+  );
+
   const sendMessage = useCallback(
     async (content: string, overrideWordContext?: WordContext) => {
       const trimmed = content.trim();
@@ -340,225 +601,81 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
 
       const nextMessages = [...messages, userMessage];
       setMessages([...nextMessages, initialAssistantMessage]);
-      setIsLoading(true);
-      setQuotaExceededInfo(null);
 
-      abortControllerRef.current = new AbortController();
+      await executeChatStream(
+        nextMessages,
+        assistantMsgId,
+        selectedModel,
+        currentContext,
+        convId,
+        trimmed
+      );
+    },
+    [isLoading, messages, activeProvider, selectedModel, executeChatStream]
+  );
 
-      let accumulatedContent = '';
-      let streamProvider: AIProvider = activeProvider || 'gemini';
-      let streamFallback = false;
+  const retryMessage = useCallback(
+    async (failedAssistantMsgId?: string, overrideModel?: AIModelPreference) => {
+      if (isLoading) return;
 
-      const guestId = !user ? getGuestId() : undefined;
+      const modelToUse = overrideModel || selectedModel;
+      if (overrideModel && overrideModel !== selectedModel) {
+        setSelectedModel(overrideModel);
+      }
 
-      try {
-        const response = await fetch('/api/chat', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            ...(user?.id ? { 'x-user-id': user.id } : {}),
-            ...(user?.email ? { 'x-user-email': user.email } : {}),
-            ...(guestId ? { 'x-guest-id': guestId } : {}),
-          },
-          body: JSON.stringify({
-            messages: nextMessages.map((m) => ({
-              role: m.role,
-              content: m.content,
-            })),
-            wordContext: currentContext || undefined,
-            providerPreference: selectedModel,
-            userId: user?.id,
-            userEmail: user?.email,
-            guestId,
-          }),
-          signal: abortControllerRef.current.signal,
-        });
-
-        if (!response.ok) {
-          let errDesc = 'Failed to connect to AI server';
-          let errCode: string | undefined;
-          let limit = 0;
-          let usedToday = 0;
-          let isGuest = !user;
-
-          try {
-            const errData = await response.json();
-            errDesc = errData.error || errDesc;
-            errCode = errData.code;
-            limit = errData.limit || 0;
-            usedToday = errData.usedToday || 0;
-            if (typeof errData.isGuest === 'boolean') {
-              isGuest = errData.isGuest;
-            }
-          } catch {
-            // ignore
+      // Find the assistant message index
+      let assistantIndex = -1;
+      if (failedAssistantMsgId) {
+        assistantIndex = messages.findIndex((m) => m.id === failedAssistantMsgId);
+      } else {
+        for (let i = messages.length - 1; i >= 0; i--) {
+          if (messages[i].role === 'assistant') {
+            assistantIndex = i;
+            break;
           }
-
-          if (errCode === 'GUEST_LIMIT_REACHED' || errCode === 'USER_LIMIT_REACHED' || response.status === 429) {
-            setQuotaExceededInfo({
-              code: errCode || (isGuest ? 'GUEST_LIMIT_REACHED' : 'USER_LIMIT_REACHED'),
-              message: errDesc,
-              limit,
-              usedToday,
-              isGuest,
-            });
-          }
-
-          throw new Error(errDesc);
-        }
-
-        if (!response.body) {
-          throw new Error('No response stream received');
-        }
-
-        const reader = response.body.getReader();
-        const decoder = new TextDecoder();
-        let buffer = '';
-
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-
-          buffer += decoder.decode(value, { stream: true });
-          const lines = buffer.split('\n');
-          buffer = lines.pop() || '';
-
-          for (const line of lines) {
-            const trimmedLine = line.trim();
-            if (!trimmedLine || !trimmedLine.startsWith('data:')) continue;
-
-            const dataStr = trimmedLine.slice(5).trim();
-            if (dataStr === '[DONE]') break;
-
-            try {
-              const event: StreamEvent = JSON.parse(dataStr);
-
-              if (event.type === 'meta') {
-                streamProvider = event.provider;
-                streamFallback = event.fallback;
-                setActiveProvider(event.provider);
-                setActiveModel(event.model);
-                setIsFallbackActive(event.fallback);
-                if (event.reason) {
-                  setFallbackReason(event.reason);
-                }
-                setMessages((prev) =>
-                  prev.map((msg) =>
-                    msg.id === assistantMsgId
-                      ? {
-                          ...msg,
-                          provider: event.provider,
-                          isFallback: event.fallback,
-                        }
-                      : msg
-                  )
-                );
-              } else if (event.type === 'content') {
-                accumulatedContent += event.text;
-                setMessages((prev) =>
-                  prev.map((msg) =>
-                    msg.id === assistantMsgId
-                      ? { ...msg, content: accumulatedContent }
-                      : msg
-                  )
-                );
-              } else if (event.type === 'error') {
-                if (event.code === 'GUEST_LIMIT_REACHED' || event.code === 'USER_LIMIT_REACHED') {
-                  setQuotaExceededInfo({
-                    code: event.code,
-                    message: event.message,
-                    limit: event.limit || 0,
-                    usedToday: event.usedToday || 0,
-                    isGuest: Boolean(event.isGuest ?? !user),
-                  });
-                }
-                accumulatedContent += `\n\n> ⚠️ *Lỗi: ${event.message}*`;
-                setMessages((prev) =>
-                  prev.map((msg) =>
-                    msg.id === assistantMsgId
-                      ? { ...msg, content: accumulatedContent }
-                      : msg
-                  )
-                );
-              }
-            } catch {
-              // ignore JSON parse on incomplete chunks
-            }
-          }
-        }
-      } catch (err: unknown) {
-        if (err instanceof Error && err.name === 'AbortError') {
-          // Stopped by user
-          return;
-        }
-        const errMsg = err instanceof Error ? err.message : String(err);
-        accumulatedContent =
-          accumulatedContent || `⚠️ Không thể kết nối tới AI. Chi tiết: ${errMsg}`;
-        setMessages((prev) =>
-          prev.map((msg) =>
-            msg.id === assistantMsgId
-              ? {
-                  ...msg,
-                  content: accumulatedContent,
-                }
-              : msg
-          )
-        );
-      } finally {
-        setIsLoading(false);
-        abortControllerRef.current = null;
-        refreshUserQuota();
-
-        // STRICT REQUIREMENT: Only save conversation if user is logged in!
-        // Do NOT save if user is not authenticated.
-        if (user?.id) {
-          const finalAssistantMsg: ChatMessage = {
-            id: assistantMsgId,
-            role: 'assistant',
-            content: accumulatedContent,
-            timestamp: Date.now(),
-            provider: streamProvider,
-            isFallback: streamFallback,
-          };
-
-          const finalMessages = [...nextMessages, finalAssistantMsg];
-
-          const existingConv = historyRef.current.find((c) => c.id === convId);
-          const autoTitle = currentContext?.selectedText
-            ? `Đoạn trích: "${currentContext.selectedText.slice(0, 30)}..."`
-            : currentContext?.word
-            ? `Từ vựng: ${currentContext.word}`
-            : trimmed.length > 40
-            ? `${trimmed.slice(0, 40)}...`
-            : trimmed;
-
-          const convToSave: AiTutorConversation = {
-            id: convId,
-            title: existingConv?.title || autoTitle,
-            messages: finalMessages,
-            wordContext: currentContext || null,
-            createdAt: existingConv?.createdAt || Date.now(),
-            updatedAt: Date.now(),
-            messageCount: finalMessages.filter((m) => m.role === 'user').length,
-            lastMessageSnippet:
-              (accumulatedContent || trimmed).slice(0, 90).replace(/[*#`_]/g, '') ||
-              trimmed.slice(0, 90),
-          };
-
-          const updated = saveAiTutorConversation(user.id, convToSave);
-          setHistory(updated);
-          syncAiTutorHistory(updated);
         }
       }
+
+      if (assistantIndex === -1) return;
+
+      // Messages up to the assistant message
+      const contextMessages = messages.slice(0, assistantIndex);
+
+      // Must have at least one preceding user message
+      const hasUserMsg = contextMessages.some((m) => m.role === 'user');
+      if (!hasUserMsg) return;
+
+      let convId = currentConversationIdRef.current;
+      if (!convId) {
+        convId = generateTutorConversationId();
+        currentConversationIdRef.current = convId;
+        setCurrentConversationId(convId);
+      }
+
+      const newAssistantMsgId = `assistant-${Date.now()}`;
+      const newAssistantMessage: ChatMessage = {
+        id: newAssistantMsgId,
+        role: 'assistant',
+        content: '',
+        timestamp: Date.now(),
+        provider: modelToUse === 'cloudflare' ? 'cloudflare' : 'gemini',
+      };
+
+      // Replace the assistant message with the new assistant message
+      setMessages([...contextMessages, newAssistantMessage]);
+
+      const lastUserMsg = contextMessages.filter((m) => m.role === 'user').slice(-1)[0];
+
+      await executeChatStream(
+        contextMessages,
+        newAssistantMsgId,
+        modelToUse,
+        activeWordContextRef.current,
+        convId,
+        lastUserMsg?.content
+      );
     },
-    [
-      isLoading,
-      messages,
-      activeProvider,
-      selectedModel,
-      user,
-      syncAiTutorHistory,
-    ]
+    [isLoading, messages, selectedModel, executeChatStream]
   );
 
   const openChat = useCallback(
@@ -625,6 +742,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         isFallbackActive,
         fallbackReason,
         sendMessage,
+        retryMessage,
         clearMessages,
         stopGeneration,
         currentConversationId,

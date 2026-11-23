@@ -87,8 +87,23 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   });
   const [setupInitialTab, setSetupInitialTab] = useState<'character' | 'user' | 'scenario'>('character');
 
+  // History State (Max 10 conversations)
+  const [activeSessionId, setActiveSessionId] = useState<string>('');
+  const activeSessionIdRef = useRef<string>('');
+  const [isReviewingHistory, setIsReviewingHistory] = useState<boolean>(false);
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+  const [historyList, setHistoryList] = useState<RoleplayConversation[]>([]);
+  const sessionCreatedAtRef = useRef<number>(0);
+  const isSelectingConversationRef = useRef<boolean>(false);
+  const openingAbortControllerRef = useRef<AbortController | null>(null);
+
   // Sync state if progress.roleplay updates from cloud or another tab
   useEffect(() => {
+    // If user is currently reviewing a historical conversation, don't overwrite its character/scenario
+    if (isReviewingHistory) {
+      return;
+    }
+
     if (progress.roleplay?.character) {
       setCharacter(progress.roleplay.character);
       if (progress.roleplay.scenarioId) {
@@ -102,7 +117,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         setUserName(progress.roleplay.userName);
       }
     }
-  }, [progress.roleplay]);
+  }, [progress.roleplay, isReviewingHistory]);
 
   // Messages
   const [messages, setMessages] = useState<RoleplayMessage[]>([]);
@@ -123,13 +138,6 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   const [summaryData, setSummaryData] = useState<RoleplaySessionSummary | null>(null);
   const [showObjective, setShowObjective] = useState(true);
   const [isOpeningLoading, setIsOpeningLoading] = useState(false);
-
-  // History State (Max 10 conversations)
-  const [activeSessionId, setActiveSessionId] = useState<string>('');
-  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
-  const [historyList, setHistoryList] = useState<RoleplayConversation[]>([]);
-  const sessionCreatedAtRef = useRef<number>(0);
-  const isSelectingConversationRef = useRef<boolean>(false);
 
   // AI Model Preference (auto, gemini, cloudflare)
   const [selectedModel, setSelectedModel] = useState<AIModelPreference>(() => {
@@ -212,7 +220,11 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
   // Load conversation history on mount & subscribe to cross-tab/component updates
   useEffect(() => {
-    setActiveSessionId((prev) => prev || generateConversationId());
+    setActiveSessionId((prev) => {
+      const id = prev || generateConversationId();
+      activeSessionIdRef.current = id;
+      return id;
+    });
     if (!sessionCreatedAtRef.current) {
       sessionCreatedAtRef.current = Date.now();
     }
@@ -234,6 +246,18 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
     };
   }, []);
 
+  // Cleanup abort controllers on unmount
+  useEffect(() => {
+    return () => {
+      if (openingAbortControllerRef.current) {
+        openingAbortControllerRef.current.abort();
+      }
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+    };
+  }, []);
+
   // Helper to auto-save current conversation state into localStorage (max 10)
   const autoSaveConversation = useCallback(
     (
@@ -252,6 +276,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       const targetSessionId = activeSessionId || generateConversationId();
       if (!activeSessionId) {
         setActiveSessionId(targetSessionId);
+        activeSessionIdRef.current = targetSessionId;
       }
       const createdAt = sessionCreatedAtRef.current || Date.now();
       if (!sessionCreatedAtRef.current) {
@@ -287,6 +312,22 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   // Generate dynamic, spontaneous opening sentence from AI or smart variation
   const handleGenerateDynamicOpening = useCallback(
     async (forceFresh = false) => {
+      // If user is currently reviewing a conversation from history, NEVER auto-generate opening!
+      if (isReviewingHistory) {
+        setIsOpeningLoading(false);
+        return;
+      }
+
+      // Abort any prior in-flight opening fetch
+      if (openingAbortControllerRef.current) {
+        openingAbortControllerRef.current.abort();
+        openingAbortControllerRef.current = null;
+      }
+
+      const controller = new AbortController();
+      openingAbortControllerRef.current = controller;
+      const targetSessionId = activeSessionIdRef.current;
+
       setIsOpeningLoading(true);
       sessionStartTimeRef.current = Date.now();
 
@@ -301,10 +342,29 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
             userName,
             providerPreference: selectedModel,
           }),
+          signal: controller.signal,
         });
+
+        if (
+          controller.signal.aborted ||
+          isReviewingHistory ||
+          (targetSessionId && activeSessionIdRef.current !== targetSessionId)
+        ) {
+          setIsOpeningLoading(false);
+          return;
+        }
 
         if (res.ok) {
           const data = await res.json();
+          if (
+            controller.signal.aborted ||
+            isReviewingHistory ||
+            (targetSessionId && activeSessionIdRef.current !== targetSessionId)
+          ) {
+            setIsOpeningLoading(false);
+            return;
+          }
+
           if (data && data.english) {
             const isCf = data.source === 'cloudflare';
             const isFb = data.source === 'fallback';
@@ -333,8 +393,21 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
             return;
           }
         }
-      } catch (err) {
+      } catch (err: any) {
+        if (err?.name === 'AbortError' || controller.signal.aborted) {
+          setIsOpeningLoading(false);
+          return;
+        }
         console.warn('[Roleplay Dynamic Opening] API request failed:', err);
+      }
+
+      if (
+        controller.signal.aborted ||
+        isReviewingHistory ||
+        (targetSessionId && activeSessionIdRef.current !== targetSessionId)
+      ) {
+        setIsOpeningLoading(false);
+        return;
       }
 
       // Fallback: Pick a spontaneous opening variation from preset pool
@@ -356,11 +429,16 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       }
       setIsOpeningLoading(false);
     },
-    [character, scenario, userContext, userName, selectedModel]
+    [character, scenario, userContext, userName, selectedModel, isReviewingHistory]
   );
 
   // Initialize dynamic opening on mount or when scenario/character changes
   useEffect(() => {
+    // If we are currently reviewing a conversation from history, skip auto-generating opening
+    if (isReviewingHistory) {
+      return;
+    }
+
     // If we just loaded a conversation from history, skip auto-generating opening
     if (isSelectingConversationRef.current) {
       isSelectingConversationRef.current = false;
@@ -384,7 +462,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
     // Then quietly request fresh AI generation in background
     handleGenerateDynamicOpening(true);
-  }, [scenario.id, character.role, character.name]);
+  }, [scenario.id, character.role, character.name, isReviewingHistory]);
 
   // Auto-scroll
   const scrollToBottom = useCallback(() => {
@@ -664,21 +742,65 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
   // Start a fresh, clean conversation session
   const handleStartNewConversation = useCallback(() => {
+    // Abort any pending opening fetch
+    if (openingAbortControllerRef.current) {
+      openingAbortControllerRef.current.abort();
+      openingAbortControllerRef.current = null;
+    }
+    setIsOpeningLoading(false);
+
+    setIsReviewingHistory(false);
+    isSelectingConversationRef.current = false;
+
     const newId = generateConversationId();
+    activeSessionIdRef.current = newId;
     setActiveSessionId(newId);
     sessionCreatedAtRef.current = Date.now();
     setInput('');
     setShowSuggestions(false);
     setSummaryData(null);
     setIsSummaryOpen(false);
+
+    // Immediate instant variation to ensure 0ms render
+    const instantVariation = getRandomOpeningVariation(character, scenario, userName);
+    const initialMsgId = `initial-${Date.now()}`;
+    const initialMsg: RoleplayMessage = {
+      id: initialMsgId,
+      role: 'assistant',
+      content: instantVariation.english,
+      translation: instantVariation.vietnamese,
+      timestamp: Date.now(),
+    };
+    setMessages([initialMsg]);
+    if (instantVariation.vietnamese) {
+      setTranslations({ [initialMsgId]: instantVariation.vietnamese });
+    } else {
+      setTranslations({});
+    }
+    setShowTranslations({});
+
     handleGenerateDynamicOpening(true);
-  }, [handleGenerateDynamicOpening]);
+  }, [character, scenario, userName, handleGenerateDynamicOpening]);
 
   // Select and load a saved conversation from history
   const handleSelectConversation = useCallback((conv: RoleplayConversation) => {
+    // 1. Abort any pending background opening generation immediately
+    if (openingAbortControllerRef.current) {
+      openingAbortControllerRef.current.abort();
+      openingAbortControllerRef.current = null;
+    }
+    setIsOpeningLoading(false);
+
+    // 2. Set review state flags
+    setIsReviewingHistory(true);
     isSelectingConversationRef.current = true;
+
+    // 3. Set active session ID to this conversation's ID
+    activeSessionIdRef.current = conv.id;
     setActiveSessionId(conv.id);
     sessionCreatedAtRef.current = conv.createdAt || Date.now();
+
+    // 4. Load the conversation's settings and content
     setCharacter(conv.character);
     setScenario(conv.scenario);
     if (conv.userAvatar) setUserAvatar(conv.userAvatar);
@@ -1145,15 +1267,26 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
             <span className="text-indigo-200 truncate">
               <strong>Mục tiêu:</strong> {scenario.objective}
             </span>
-            {historyList.some((c) => c.id === activeSessionId) && (
-              <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-500/20 border border-indigo-500/35 text-indigo-300 shrink-0">
-                <History className="w-3 h-3 text-indigo-400" />
+            {(isReviewingHistory || historyList.some((c) => c.id === activeSessionId)) && (
+              <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/35 text-amber-300 shrink-0">
+                <History className="w-3 h-3 text-amber-400" />
                 <span>Đang xem lại</span>
               </span>
             )}
           </div>
           <div className="flex items-center gap-2 shrink-0">
-            {messages.length <= 1 && (
+            {isReviewingHistory && (
+              <button
+                type="button"
+                onClick={handleStartNewConversation}
+                className="text-[10px] px-2.5 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold flex items-center gap-1 transition-all shadow-sm"
+                title="Bắt đầu cuộc trò chuyện mới"
+              >
+                <Plus className="w-3 h-3" />
+                <span>Tạo hội thoại mới</span>
+              </button>
+            )}
+            {!isReviewingHistory && messages.length <= 1 && (
               <button
                 type="button"
                 onClick={() => handleGenerateDynamicOpening(true)}
@@ -1186,7 +1319,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                 className="text-[10px] px-2 py-0.5 rounded-lg bg-indigo-500/10 border border-indigo-500/30 text-indigo-200"
                 title={kp.meaning}
               >
-                "{kp.phrase}"
+                &ldquo;{kp.phrase}&rdquo;
               </span>
             ))}
           </div>
@@ -1310,8 +1443,8 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                         </>
                       )}
 
-                      {/* Reroll Opening button - Available on opening message when conversation has just started */}
-                      {!isUser && idx === 0 && messages.length === 1 && (
+                      {/* Reroll Opening button - Available on opening message when conversation has just started (not when reviewing history) */}
+                      {!isReviewingHistory && !isUser && idx === 0 && messages.length === 1 && (
                         <>
                           <span>•</span>
                           <button
@@ -1478,11 +1611,53 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         currentUserName={userName}
         initialTab={setupInitialTab}
         onApply={(newChar, newScen, newUserAvatar, newUserName) => {
+          // If user was reviewing history and chooses new setup, exit review mode and start new conversation
+          if (openingAbortControllerRef.current) {
+            openingAbortControllerRef.current.abort();
+            openingAbortControllerRef.current = null;
+          }
+          setIsOpeningLoading(false);
+
+          setIsReviewingHistory(false);
+          isSelectingConversationRef.current = false;
+
+          const newId = generateConversationId();
+          activeSessionIdRef.current = newId;
+          setActiveSessionId(newId);
+          sessionCreatedAtRef.current = Date.now();
+
+          const hasCharOrScenChanged =
+            newScen.id !== scenario.id ||
+            newChar.role !== character.role ||
+            newChar.name !== character.name;
+
           setCharacter(newChar);
           setScenario(newScen);
           setUserAvatar(newUserAvatar);
           setUserName(newUserName);
           saveRoleplaySettings(newChar, newScen.id, newUserAvatar, newUserName);
+
+          // If scenario/character didn't change, useEffect([scenario.id, ...]) won't trigger,
+          // so manually initiate the opening message
+          if (!hasCharOrScenChanged) {
+            const instantVariation = getRandomOpeningVariation(newChar, newScen, newUserName);
+            const initialMsgId = `initial-${Date.now()}`;
+            const initialMsg: RoleplayMessage = {
+              id: initialMsgId,
+              role: 'assistant',
+              content: instantVariation.english,
+              translation: instantVariation.vietnamese,
+              timestamp: Date.now(),
+            };
+            setMessages([initialMsg]);
+            if (instantVariation.vietnamese) {
+              setTranslations({ [initialMsgId]: instantVariation.vietnamese });
+            } else {
+              setTranslations({});
+            }
+            setShowTranslations({});
+            handleGenerateDynamicOpening(true);
+          }
         }}
       />
 

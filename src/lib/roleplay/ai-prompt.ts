@@ -58,23 +58,58 @@ export function buildSuggestionsPrompt(
   chatHistory: Array<{ role: 'user' | 'assistant'; content: string }>,
   targetScore: number = 650
 ): string {
-  const lastCharacterMessage = [...chatHistory].reverse().find((m) => m.role === 'assistant')?.content || scenario.initialMessage;
+  // Lấy tối đa 10 lượt trao đổi gần nhất để giữ trọn vẹn ngữ cảnh diễn biến
+  const recentHistory = chatHistory.slice(-10);
+  const formattedDialogue =
+    recentHistory.length > 0
+      ? recentHistory
+          .map((m, index) => {
+            const speaker = m.role === 'user' ? 'Người học' : `${character.name} (${character.role})`;
+            return `[Lượt ${index + 1}] ${speaker}: "${m.content.trim()}"`;
+          })
+          .join('\n')
+      : `[Lượt 1] ${character.name}: "${scenario.initialMessage}"`;
+
+  const lastCharacterMessage =
+    [...chatHistory].reverse().find((m) => m.role === 'assistant')?.content || scenario.initialMessage;
+
+  const previousUserMessages = chatHistory
+    .filter((m) => m.role === 'user')
+    .map((m) => m.content.trim());
+  const previousUserPoints =
+    previousUserMessages.length > 0
+      ? previousUserMessages.map((msg, i) => `- Lượt ${i + 1}: "${msg}"`).join('\n')
+      : '(Chưa có câu trả lời nào từ người học - đây là lượt phản hồi đầu tiên)';
 
   return `Bạn là Chuyên gia Đào tạo Tiếng Anh Công sở TOEIC (Native Coach).
-Người học đang trong cuộc hội thoại đóng vai với ${character.name} (Vai trò: ${character.role === 'boss' ? 'Sếp' : character.role === 'colleague' ? 'Đồng nghiệp' : 'Nhân viên'}, ${character.age} tuổi, phòng ${character.department}).
+Người học đang trong cuộc hội thoại đóng vai với ${character.name} (Vai trò: ${character.role === 'boss' ? 'Sếp/Quản lý' : character.role === 'colleague' ? 'Đồng nghiệp' : 'Nhân viên'}, ${character.age} tuổi, phòng ${character.department}).
 
-Tình huống: "${scenario.title}" - ${scenario.description}
-Mục tiêu của người học: "${scenario.objective}"
-Điểm TOEIC mục tiêu của người học: ${targetScore}+
+THÔNG TIN TÌNH HUỐNG:
+- Tình huống: "${scenario.title}" - ${scenario.description}
+- Mục tiêu của người học cần đạt được: "${scenario.objective}"
+- Điểm TOEIC mục tiêu của người học: ${targetScore}+
+${scenario.suggestedVocabulary?.length ? `- Từ vựng gợi ý cho tình huống: ${scenario.suggestedVocabulary.join(', ')}` : ''}
 
-Tin nhắn gần nhất của nhân vật ${character.name}:
+DIỄN BIẾN TOÀN BỘ CUỘC HỘI THOẠI ĐẾN HIỆN TẠI:
+${formattedDialogue}
+
+CÁC Ý NGƯỜI HỌC ĐÃ TỪNG NÓI TRƯỚC ĐÓ:
+${previousUserPoints}
+
+TIN NHẮN MỚI NHẤT CỦA ${character.name} CẦN PHẢN HỒI:
 "${lastCharacterMessage}"
 
 NHIỆM VỤ CỦA BẠN:
-Tạo đúng 3 phương án gợi ý để người học có thể chọn trả lời hoặc đặt câu hỏi tiếp nối. 3 gợi ý gồm:
-1. 'formal': Câu trả lời lịch sự, trang trọng, chuyên nghiệp (Professional / Formal).
-2. 'casual': Câu trả lời tự nhiên, thân thiện, thẳng thắn (Casual / Direct).
-3. 'clarifying': Một câu hỏi chủ động để làm rõ vấn đề hoặc khai thác thêm thông tin (Clarifying / Follow-up Question).
+Phân tích toàn bộ diễn biến cuộc hội thoại ở trên để tạo ĐÚNG 3 phương án gợi ý giúp người học trả lời lượt tiếp theo.
+3 gợi ý gồm:
+1. 'formal': Câu trả lời lịch sự, trang trọng, chuyên nghiệp (Professional / Formal). Đưa ra đề xuất hoặc cam kết giải pháp cụ thể tiếp nối diễn biến.
+2. 'casual': Câu trả lời tự nhiên, thân thiện, ngắn gọn và trực diện (Casual / Direct).
+3. 'clarifying': Một câu hỏi chủ động làm rõ thông tin MỚI phát sinh trong lời nói gần nhất của đối phương hoặc xác nhận bước hành động tiếp theo (Clarifying / Follow-up Question).
+
+QUY TẮC CỐT LÕI (BẮT BUỘC):
+1. TIẾP NỐI DIỄN BIẾN: Câu trả lời phải kết nối trực tiếp với tin nhắn mới nhất của ${character.name} và thúc đẩy cuộc đối thoại tiến gần hơn tới mục tiêu: "${scenario.objective}".
+2. TUYỆT ĐỐI KHÔNG LẶP LẠI: Không gợi ý lại những ý kiến, lý do, câu hỏi hoặc cấu trúc mà người học đã từng dùng ở các lượt trước.
+3. KHÔNG THOÁT VAI & ĐÚNG ĐỘ KHÓ TOEIC ${targetScore}+: Câu tiếng Anh tự nhiên, chuẩn công sở, không dùng mẫu câu sáo rỗng.
 
 YÊU CẦU ĐỊNH DẠNG TRẢ VỀ:
 Trả về DUY NHẤT một mảng JSON (không có markdown backticks, không kèm văn bản thừa) theo cấu trúc sau:
@@ -82,28 +117,28 @@ Trả về DUY NHẤT một mảng JSON (không có markdown backticks, không k
   {
     "id": "sug-1",
     "type": "formal",
-    "label": "Trang trọng & Lịch sự",
+    "label": "Trang trọng & Chuyên nghiệp",
     "english": "English sentence here...",
     "vietnamese": "Dịch nghĩa tiếng Việt tự nhiên...",
-    "explanation": "Giải thích ngắn 1 câu về điểm ngữ pháp hoặc cụm từ hay nên dùng (ví dụ: Sử dụng cụm 'I would like to propose...' để đề xuất ý kiến trang trọng)",
+    "explanation": "Giải thích ngắn 1 câu về cấu trúc hoặc cụm từ hay được dùng trong ngữ cảnh này",
     "keyVocabulary": ["từ/cụm 1", "từ/cụm 2"]
   },
   {
     "id": "sug-2",
     "type": "casual",
-    "label": "Tự nhiên & Thân mật",
+    "label": "Tự nhiên & Trực diện",
     "english": "English sentence here...",
     "vietnamese": "Dịch nghĩa tiếng Việt tự nhiên...",
-    "explanation": "Giải thích ngắn về cụm từ đời sống công sở...",
+    "explanation": "Giải thích ngắn về cụm từ thực tế công sở...",
     "keyVocabulary": ["từ/cụm 1", "từ/cụm 2"]
   },
   {
     "id": "sug-3",
     "type": "clarifying",
-    "label": "Hỏi để làm rõ thông tin",
+    "label": "Hỏi để làm rõ bước tiếp theo",
     "english": "English question here...",
     "vietnamese": "Dịch nghĩa tiếng Việt tự nhiên...",
-    "explanation": "Giải thích cấu trúc câu hỏi hiệu quả...",
+    "explanation": "Giải thích cách đặt câu hỏi làm rõ vấn đề...",
     "keyVocabulary": ["từ/cụm 1", "từ/cụm 2"]
   }
 ]`;

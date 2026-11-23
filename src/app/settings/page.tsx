@@ -26,6 +26,7 @@ import {
   RotateCcw,
   BookOpen,
   Compass,
+  Cpu,
 } from 'lucide-react';
 import { WordLevel } from '@/types/vocabulary';
 import { LEVEL_CONFIG } from '@/lib/vocabulary-helpers';
@@ -35,6 +36,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useOnboarding } from '@/contexts/OnboardingContext';
 import { useSpeech } from '@/hooks/useSpeech';
 import { NotificationSettings } from '@/components/notifications/NotificationSettings';
+import { AdminAISettingsSection } from '@/components/admin/AdminAISettingsSection';
 
 export default function SettingsPage() {
   const {
@@ -51,8 +53,10 @@ export default function SettingsPage() {
   const { user, signOut } = useAuth();
   const { speak, isPlaying } = useSpeech();
 
+  const isAdmin = user?.email?.toLowerCase() === 'nhuong2n@gmail.com';
+
   const [activeTab, setActiveTab] = useState<
-    'general' | 'theme' | 'speech' | 'notifications' | 'data' | 'account'
+    'general' | 'theme' | 'speech' | 'notifications' | 'data' | 'account' | 'ai'
   >('general');
 
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -215,6 +219,7 @@ export default function SettingsPage() {
     id: typeof activeTab;
     label: string;
     icon: typeof Target;
+    badge?: string;
   }[] = [
     { id: 'general', label: 'Mục tiêu & Thói quen', icon: Target },
     { id: 'theme', label: 'Giao diện & Hiển thị', icon: Sun },
@@ -222,6 +227,16 @@ export default function SettingsPage() {
     { id: 'notifications', label: 'Thông báo & Nhắc nhở', icon: Bell },
     { id: 'data', label: 'Dữ liệu & Sao lưu', icon: Database },
     { id: 'account', label: 'Tài khoản & Cloud', icon: User },
+    ...(isAdmin
+      ? [
+          {
+            id: 'ai' as const,
+            label: 'Quản trị AI Hệ thống',
+            icon: Cpu,
+            badge: 'Admin',
+          },
+        ]
+      : []),
   ];
 
   return (
@@ -259,12 +274,19 @@ export default function SettingsPage() {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
                 isActive
-                  ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/25'
+                  ? tab.id === 'ai'
+                    ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30'
+                    : 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/25'
                   : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900'
               }`}
             >
               <Icon className="w-4 h-4" />
               <span>{tab.label}</span>
+              {tab.badge && (
+                <span className="text-[9px] font-bold px-1.5 py-0.2 rounded-full bg-purple-500/30 text-purple-200 border border-purple-400/40">
+                  {tab.badge}
+                </span>
+              )}
             </button>
           );
         })}
@@ -985,6 +1007,11 @@ export default function SettingsPage() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Tab 7: Admin AI System Management (nhuong2n@gmail.com only) */}
+      {activeTab === 'ai' && isAdmin && user?.email && (
+        <AdminAISettingsSection userEmail={user.email} onShowToast={showToast} />
       )}
 
       {/* Confirmation Reset Modal */}

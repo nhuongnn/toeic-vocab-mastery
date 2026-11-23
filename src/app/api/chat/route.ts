@@ -6,16 +6,22 @@ import {
   getCloudflareChatModel,
 } from '@/lib/ai/cloudflare-provider';
 import { ChatRequestPayload } from '@/lib/ai/types';
+import { getSystemAISettings } from '@/lib/ai/system-ai-settings';
 
 /**
  * GET /api/chat - Returns AI status and available providers
  */
 export async function GET() {
-  const geminiReady = isGeminiConfigured();
-  const cfReady = isCloudflareChatConfigured();
+  const { globalEnabled, geminiEnabled, cloudflareEnabled, usedToday, dailyLimit } = getSystemAISettings();
+  const quotaReached = usedToday >= dailyLimit;
+
+  const geminiReady = globalEnabled && geminiEnabled && !quotaReached && isGeminiConfigured();
+  const cfReady = globalEnabled && cloudflareEnabled && !quotaReached && isCloudflareChatConfigured();
 
   return NextResponse.json({
-    hybridEnabled: geminiReady || cfReady,
+    hybridEnabled: globalEnabled && (geminiReady || cfReady),
+    globalEnabled,
+    quotaReached,
     providers: {
       gemini: {
         available: geminiReady,

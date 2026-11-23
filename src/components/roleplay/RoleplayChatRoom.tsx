@@ -30,6 +30,10 @@ import {
   History,
   Plus,
   MoreVertical,
+  Zap,
+  Check,
+  X,
+  AlertTriangle,
 } from 'lucide-react';
 import {
   CharacterConfig,
@@ -54,7 +58,7 @@ import {
 } from '@/lib/roleplay/history';
 import { useSpeech } from '@/hooks/useSpeech';
 import { useProgress } from '@/contexts/ProgressContext';
-import { StreamEvent } from '@/lib/ai/types';
+import { StreamEvent, AIModelPreference } from '@/lib/ai/types';
 
 interface RoleplayChatRoomProps {
   userContext: Partial<UserLearningContext>;
@@ -126,6 +130,45 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   const [historyList, setHistoryList] = useState<RoleplayConversation[]>([]);
   const sessionCreatedAtRef = useRef<number>(0);
   const isSelectingConversationRef = useRef<boolean>(false);
+
+  // AI Model Preference (auto, gemini, cloudflare)
+  const [selectedModel, setSelectedModel] = useState<AIModelPreference>(() => {
+    if (typeof window !== 'undefined') {
+      const saved =
+        localStorage.getItem('toeic_roleplay_model_preference') ||
+        localStorage.getItem('toeic_ai_model_preference');
+      if (saved === 'auto' || saved === 'gemini' || saved === 'cloudflare') {
+        return saved as AIModelPreference;
+      }
+    }
+    return 'auto';
+  });
+  const [modelMenuOpen, setModelMenuOpen] = useState(false);
+  const modelMenuRef = useRef<HTMLDivElement | null>(null);
+
+  const handleSelectModel = (model: AIModelPreference) => {
+    setSelectedModel(model);
+    setModelMenuOpen(false);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('toeic_roleplay_model_preference', model);
+      localStorage.setItem('toeic_ai_model_preference', model);
+    }
+  };
+
+  // Close model menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (modelMenuRef.current && !modelMenuRef.current.contains(e.target as Node)) {
+        setModelMenuOpen(false);
+      }
+    };
+    if (modelMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [modelMenuOpen]);
 
   // Mobile More Actions Dropdown
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -256,12 +299,17 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
             scenario,
             userContext,
             userName,
+            providerPreference: selectedModel,
           }),
         });
 
         if (res.ok) {
           const data = await res.json();
           if (data && data.english) {
+            const isCf = data.source === 'cloudflare';
+            const isFb = data.source === 'fallback';
+            const isFallback = isFb || (isCf && selectedModel === 'gemini');
+
             const dynamicMsgId = `initial-${Date.now()}`;
             const dynamicMsg: RoleplayMessage = {
               id: dynamicMsgId,
@@ -269,6 +317,13 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
               content: data.english,
               translation: data.vietnamese,
               timestamp: Date.now(),
+              provider: isCf ? 'cloudflare' : 'gemini',
+              isFallback,
+              fallbackReason: isFb
+                ? 'Không thể kết nối đến máy chủ AI, sử dụng kịch bản dự phòng.'
+                : isCf && selectedModel !== 'cloudflare'
+                ? 'Mô hình Gemini tạm thời không khả dụng, hệ thống đã chuyển sang Cloudflare Llama dự phòng.'
+                : undefined,
             };
             setMessages([dynamicMsg]);
             if (data.vietnamese) {
@@ -291,6 +346,9 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         content: variation.english,
         translation: variation.vietnamese,
         timestamp: Date.now(),
+        provider: 'gemini',
+        isFallback: true,
+        fallbackReason: 'Không thể kết nối đến máy chủ AI, sử dụng kịch bản dự phòng.',
       };
       setMessages([fallbackMsg]);
       if (variation.vietnamese) {
@@ -298,7 +356,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       }
       setIsOpeningLoading(false);
     },
-    [character, scenario, userContext, userName]
+    [character, scenario, userContext, userName, selectedModel]
   );
 
   // Initialize dynamic opening on mount or when scenario/character changes
@@ -442,6 +500,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
           scenario,
           chatHistory: messages.map((m) => ({ role: m.role, content: m.content })),
           targetScore: userContext.targetScore || 650,
+          providerPreference: selectedModel,
         }),
       });
 
@@ -465,6 +524,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
     setInput('');
     setShowSuggestions(false); // Close suggestions drawer upon sending
+    setSuggestions([]); // Reset stale suggestions so old responses are not displayed
 
     const userMessage: RoleplayMessage = {
       id: `user-${Date.now()}`,
@@ -499,7 +559,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
           character,
           scenario,
           userContext,
-          providerPreference: 'auto',
+          providerPreference: selectedModel,
         }),
         signal: abortControllerRef.current.signal,
       });
@@ -534,7 +594,20 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
           try {
             const event: StreamEvent = JSON.parse(dataStr);
-            if (event.type === 'content') {
+            if (event.type === 'meta') {
+              setMessages((prev) =>
+                prev.map((msg) =>
+                  msg.id === assistantMsgId
+                    ? {
+                        ...msg,
+                        provider: event.provider,
+                        isFallback: event.fallback,
+                        fallbackReason: event.reason,
+                      }
+                    : msg
+                )
+              );
+            } else if (event.type === 'content') {
               accumulatedContent += event.text;
               setMessages((prev) =>
                 prev.map((msg) =>
@@ -727,7 +800,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
           {/* Details */}
           <div className="min-w-0 flex-1">
-            <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+            <div className="flex items-center gap-1.5 sm:gap-2 min-w-0 flex-wrap">
               <h3 className="text-xs sm:text-sm font-bold text-white truncate shrink min-w-0">
                 {character.name}
               </h3>
@@ -743,7 +816,146 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                     : 'Nhân viên'}
                 </span>
               </span>
-              <span className="text-[10px] text-slate-400 font-medium hidden sm:inline shrink-0">
+
+              {/* Model Switcher Button & Dropdown */}
+              <div className="relative shrink-0" ref={modelMenuRef}>
+                <button
+                  type="button"
+                  onClick={() => setModelMenuOpen(!modelMenuOpen)}
+                  className="inline-flex items-center gap-1 text-[10px] font-semibold transition-all hover:opacity-90 active:scale-95 cursor-pointer shadow-sm"
+                  title="Bấm để đổi mô hình AI"
+                >
+                  {selectedModel === 'auto' ? (
+                    <span className="flex items-center gap-1 text-indigo-300 bg-indigo-500/15 border border-indigo-500/30 px-2 py-0.5 rounded-full">
+                      <RefreshCw className="w-2.5 h-2.5 text-indigo-400" />
+                      <span>Tự động (Hybrid)</span>
+                      <ChevronDown className="w-2.5 h-2.5 text-indigo-400 ml-0.5" />
+                    </span>
+                  ) : selectedModel === 'gemini' ? (
+                    <span className="flex items-center gap-1 text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.5 rounded-full">
+                      <Sparkles className="w-2.5 h-2.5 text-emerald-400" />
+                      <span>Gemini Flash</span>
+                      <ChevronDown className="w-2.5 h-2.5 text-emerald-400 ml-0.5" />
+                    </span>
+                  ) : (
+                    <span className="flex items-center gap-1 text-amber-300 bg-amber-500/15 border border-amber-500/30 px-2 py-0.5 rounded-full">
+                      <Zap className="w-2.5 h-2.5 text-amber-400" />
+                      <span>Cloudflare Llama</span>
+                      <ChevronDown className="w-2.5 h-2.5 text-amber-400 ml-0.5" />
+                    </span>
+                  )}
+                </button>
+
+                {/* Model Dropdown Menu */}
+                {modelMenuOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-72 rounded-2xl bg-slate-900/98 border border-slate-700 shadow-2xl p-2.5 z-50 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
+                    <div className="flex items-center justify-between px-2.5 py-1 mb-1 border-b border-slate-800/80 pb-1.5">
+                      <span className="text-[10px] font-bold text-slate-300 uppercase tracking-wider">
+                        Chọn Mô Hình AI Đóng Vai
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setModelMenuOpen(false)}
+                        className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                        title="Đóng menu"
+                      >
+                        <X className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+
+                    <div className="space-y-1.5 mt-1">
+                      {/* Option 1: Auto Hybrid */}
+                      <button
+                        type="button"
+                        onClick={() => handleSelectModel('auto')}
+                        className={`w-full flex items-start gap-2.5 p-2 rounded-xl text-left transition-all ${
+                          selectedModel === 'auto'
+                            ? 'bg-indigo-500/15 border border-indigo-500/40 text-white'
+                            : 'hover:bg-slate-800 text-slate-300'
+                        }`}
+                      >
+                        <div className="p-1.5 rounded-lg bg-indigo-500/20 text-indigo-400 shrink-0 mt-0.5">
+                          <RefreshCw className="w-3.5 h-3.5" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-bold text-slate-100">Tự động (Hybrid)</span>
+                            <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-indigo-500/20 text-indigo-300">
+                              Khuyên dùng
+                            </span>
+                          </div>
+                          <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">
+                            Ưu tiên Gemini Flash, tự động đổi Cloudflare nếu lỗi
+                          </p>
+                        </div>
+                        {selectedModel === 'auto' && (
+                          <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0 mt-1" />
+                        )}
+                      </button>
+
+                      {/* Option 2: Gemini Flash */}
+                      <button
+                        type="button"
+                        onClick={() => handleSelectModel('gemini')}
+                        className={`w-full flex items-start gap-2.5 p-2 rounded-xl text-left transition-all ${
+                          selectedModel === 'gemini'
+                            ? 'bg-emerald-500/15 border border-emerald-500/40 text-white'
+                            : 'hover:bg-slate-800 text-slate-300'
+                        }`}
+                      >
+                        <div className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400 shrink-0 mt-0.5">
+                          <Sparkles className="w-3.5 h-3.5" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-bold text-slate-100">Google Gemini Flash</span>
+                            <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300">
+                              Chất lượng cao
+                            </span>
+                          </div>
+                          <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">
+                            Đóng vai tự nhiên, ngữ điệu và phản xạ tiếng Anh chuẩn
+                          </p>
+                        </div>
+                        {selectedModel === 'gemini' && (
+                          <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-1" />
+                        )}
+                      </button>
+
+                      {/* Option 3: Cloudflare Llama */}
+                      <button
+                        type="button"
+                        onClick={() => handleSelectModel('cloudflare')}
+                        className={`w-full flex items-start gap-2.5 p-2 rounded-xl text-left transition-all ${
+                          selectedModel === 'cloudflare'
+                            ? 'bg-amber-500/15 border border-amber-500/40 text-white'
+                            : 'hover:bg-slate-800 text-slate-300'
+                        }`}
+                      >
+                        <div className="p-1.5 rounded-lg bg-amber-500/20 text-amber-400 shrink-0 mt-0.5">
+                          <Zap className="w-3.5 h-3.5" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-bold text-slate-100">Cloudflare Llama 3.1</span>
+                            <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300">
+                              Siêu tốc
+                            </span>
+                          </div>
+                          <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">
+                            Inference cực nhanh trên hạ tầng Edge toàn cầu
+                          </p>
+                        </div>
+                        {selectedModel === 'cloudflare' && (
+                          <Check className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-1" />
+                        )}
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <span className="text-[10px] text-slate-400 font-medium hidden md:inline shrink-0">
                 • {character.age} tuổi • {character.gender === 'male' ? 'Nam' : character.gender === 'female' ? 'Nữ' : 'Khác'}
               </span>
             </div>
@@ -833,7 +1045,48 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
             </button>
 
             {isMobileMenuOpen && (
-              <div className="absolute right-0 top-full mt-2 w-48 rounded-2xl bg-slate-900 border border-slate-700/90 shadow-2xl p-1.5 z-50 animate-in fade-in zoom-in-95 duration-100">
+              <div className="absolute right-0 top-full mt-2 w-52 rounded-2xl bg-slate-900 border border-slate-700/90 shadow-2xl p-1.5 z-50 animate-in fade-in zoom-in-95 duration-100">
+                <div className="px-3 py-1.5 border-b border-slate-800 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                  Mô hình: {selectedModel === 'auto' ? 'Hybrid' : selectedModel === 'gemini' ? 'Gemini' : 'Cloudflare'}
+                </div>
+                <div className="flex gap-1 p-1.5 border-b border-slate-800">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      handleSelectModel('auto');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={`flex-1 py-1 text-[10px] font-semibold rounded-lg text-center transition-colors ${
+                      selectedModel === 'auto' ? 'bg-indigo-600 text-white' : 'bg-slate-800 text-slate-300'
+                    }`}
+                  >
+                    Auto
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      handleSelectModel('gemini');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={`flex-1 py-1 text-[10px] font-semibold rounded-lg text-center transition-colors ${
+                      selectedModel === 'gemini' ? 'bg-emerald-600 text-white' : 'bg-slate-800 text-slate-300'
+                    }`}
+                  >
+                    Gemini
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      handleSelectModel('cloudflare');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={`flex-1 py-1 text-[10px] font-semibold rounded-lg text-center transition-colors ${
+                      selectedModel === 'cloudflare' ? 'bg-amber-600 text-white' : 'bg-slate-800 text-slate-300'
+                    }`}
+                  >
+                    Llama
+                  </button>
+                </div>
                 <button
                   type="button"
                   onClick={() => {
@@ -1037,6 +1290,26 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                         </span>
                       </button>
 
+                      {/* AI Provider Info Badge for Assistant */}
+                      {!isUser && (
+                        <>
+                          <span>•</span>
+                          <span className="flex items-center gap-1">
+                            {msg.provider === 'cloudflare' || msg.isFallback ? (
+                              <span className="text-amber-400 font-medium inline-flex items-center gap-1">
+                                <Zap className="w-3 h-3 text-amber-400" />
+                                <span>Cloudflare Llama{msg.isFallback ? ' (Dự phòng)' : ''}</span>
+                              </span>
+                            ) : (
+                              <span className="text-emerald-400 font-medium inline-flex items-center gap-1">
+                                <Sparkles className="w-3 h-3 text-emerald-400" />
+                                <span>Gemini Flash</span>
+                              </span>
+                            )}
+                          </span>
+                        </>
+                      )}
+
                       {/* Reroll Opening button - Available on opening message when conversation has just started */}
                       {!isUser && idx === 0 && messages.length === 1 && (
                         <>
@@ -1053,6 +1326,18 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                           </button>
                         </>
                       )}
+                    </div>
+                  )}
+
+                  {/* Fallback Notification Banner */}
+                  {!isUser && msg.isFallback && (
+                    <div className="mt-2.5 p-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-[11px] text-amber-200 flex items-start gap-1.5 animate-in fade-in duration-150">
+                      <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
+                      <div className="min-w-0 flex-1 leading-snug">
+                        <span className="font-semibold text-amber-300">Chế độ dự phòng tự động:</span>{' '}
+                        {msg.fallbackReason ||
+                          'Mô hình chính gặp sự cố hoặc vượt giới hạn, hệ thống đã tự động chuyển sang Cloudflare Llama để đảm bảo cuộc hội thoại không bị gián đoạn.'}
+                      </div>
                     </div>
                   )}
 

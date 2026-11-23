@@ -13,6 +13,7 @@ import {
   ChatRequestPayload,
   StreamEvent,
 } from './types';
+import { canUseAI, canUseProvider, recordAIUsage } from './system-ai-settings';
 
 /**
  * Hybrid Router: Coordinates Gemini Flash (primary) and Cloudflare Workers AI (fallback).
@@ -24,15 +25,28 @@ export async function* routeHybridChat(
   const { messages, wordContext, providerPreference = 'auto' } = payload;
   const systemPrompt = buildSystemPrompt(wordContext);
 
-  const canUseGemini = isGeminiConfigured();
-  const canUseCloudflare = isCloudflareChatConfigured();
+  // 1. Check system-wide AI availability and quota
+  const aiCheck = canUseAI();
+  if (!aiCheck.allowed) {
+    yield {
+      type: 'error',
+      message: aiCheck.reason || 'Hệ thống AI hiện đang tạm tắt.',
+    };
+    yield { type: 'done' };
+    return;
+  }
+
+  const canUseGemini = canUseProvider('gemini') && isGeminiConfigured();
+  const canUseCloudflare = canUseProvider('cloudflare') && isCloudflareChatConfigured();
 
   // Explicit Cloudflare preference
   if (providerPreference === 'cloudflare') {
     if (!canUseCloudflare) {
       yield {
         type: 'error',
-        message: 'Cloudflare Workers AI credentials missing in environment.',
+        message: !canUseProvider('cloudflare')
+          ? 'Mô hình Cloudflare Workers AI hiện đang bị tạm tắt trong cấu hình hệ thống.'
+          : 'Cloudflare Workers AI credentials missing in environment.',
         provider: 'cloudflare',
       };
       yield { type: 'done' };
@@ -47,7 +61,12 @@ export async function* routeHybridChat(
     };
 
     try {
+      let recorded = false;
       for await (const chunk of streamCloudflare(messages, systemPrompt)) {
+        if (!recorded) {
+          recordAIUsage('cloudflare');
+          recorded = true;
+        }
         yield { type: 'content', text: chunk };
       }
     } catch (err: unknown) {
@@ -63,7 +82,9 @@ export async function* routeHybridChat(
     if (!canUseGemini) {
       yield {
         type: 'error',
-        message: 'Google Gemini API key (GEMINI_API_KEY) is not configured.',
+        message: !canUseProvider('gemini')
+          ? 'Mô hình Google Gemini hiện đang bị tạm tắt trong cấu hình hệ thống.'
+          : 'Google Gemini API key (GEMINI_API_KEY) is not configured.',
         provider: 'gemini',
       };
       yield { type: 'done' };
@@ -78,7 +99,12 @@ export async function* routeHybridChat(
     };
 
     try {
+      let recorded = false;
       for await (const chunk of streamGemini(messages, systemPrompt)) {
+        if (!recorded) {
+          recordAIUsage('gemini');
+          recorded = true;
+        }
         yield { type: 'content', text: chunk };
       }
     } catch (err: unknown) {
@@ -100,6 +126,8 @@ export async function* routeHybridChat(
 
       if (!firstResult.done && firstResult.value) {
         geminiStartedYielding = true;
+        recordAIUsage('gemini');
+
         yield {
           type: 'meta',
           provider: 'gemini',
@@ -140,6 +168,8 @@ export async function* routeHybridChat(
   if (canUseCloudflare) {
     const reason = canUseGemini
       ? 'Gemini API gặp sự cố hoặc quá tải quota, tự động chuyển sang Cloudflare Workers AI (Llama 3.1).'
+      : !canUseProvider('gemini')
+      ? 'Mô hình Gemini tạm tắt trong hệ thống, tự động sử dụng Cloudflare Workers AI (Llama 3.1).'
       : 'Chưa cấu hình GEMINI_API_KEY, tự động sử dụng Cloudflare Workers AI (Llama 3.1).';
 
     yield {
@@ -151,7 +181,12 @@ export async function* routeHybridChat(
     };
 
     try {
+      let recorded = false;
       for await (const chunk of streamCloudflare(messages, systemPrompt)) {
+        if (!recorded) {
+          recordAIUsage('cloudflare');
+          recorded = true;
+        }
         yield { type: 'content', text: chunk };
       }
     } catch (cfError: unknown) {
@@ -168,7 +203,7 @@ export async function* routeHybridChat(
     yield {
       type: 'error',
       message:
-        'Hệ thống AI chưa được cấu hình. Vui lòng thêm GEMINI_API_KEY hoặc Cloudflare credentials vào .env.local.',
+        'Không có mô hình AI nào khả dụng. Vui lòng kiểm tra lại cấu hình hoặc liên hệ quản trị viên.',
     };
   }
 

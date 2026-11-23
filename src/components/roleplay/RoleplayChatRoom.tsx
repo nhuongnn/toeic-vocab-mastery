@@ -141,6 +141,12 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [suggestions, setSuggestions] = useState<RoleplaySuggestion[]>([]);
   const [isSuggestionsLoading, setIsSuggestionsLoading] = useState(false);
+  const [suggestionMeta, setSuggestionMeta] = useState<{
+    provider?: 'gemini' | 'cloudflare' | 'fallback';
+    model?: string;
+    isFallback?: boolean;
+    fallbackReason?: string;
+  }>({});
 
   // Modals & Panels
   const [isSetupOpen, setIsSetupOpen] = useState(false);
@@ -614,6 +620,12 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         const data = await res.json();
         if (data.suggestions && Array.isArray(data.suggestions)) {
           setSuggestions(data.suggestions);
+          setSuggestionMeta({
+            provider: data.provider,
+            model: data.model,
+            isFallback: data.isFallback,
+            fallbackReason: data.fallbackReason,
+          });
         }
       }
     } catch (err) {
@@ -623,34 +635,13 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
     }
   };
 
-  // Send message
-  const handleSendMessage = async (textToSend?: string) => {
-    const content = (textToSend || input).trim();
-    if (!content || isLoading) return;
-
-    setInput('');
-    setShowSuggestions(false); // Close suggestions drawer upon sending
-    setSuggestions([]); // Reset stale suggestions so old responses are not displayed
-
-    const userMessage: RoleplayMessage = {
-      id: `user-${Date.now()}`,
-      role: 'user',
-      content,
-      timestamp: Date.now(),
-    };
-
-    const assistantMsgId = `assistant-${Date.now()}`;
-    const assistantMessage: RoleplayMessage = {
-      id: assistantMsgId,
-      role: 'assistant',
-      content: '',
-      timestamp: Date.now(),
-    };
-
-    const updatedMessages = [...messages, userMessage];
-    setMessages([...updatedMessages, assistantMessage]);
+  // Execute chat streaming logic (shared between Send and Retry)
+  const executeChatStream = async (
+    contextMessages: RoleplayMessage[],
+    assistantMsgId: string,
+    modelPref: AIModelPreference = selectedModel
+  ) => {
     setIsLoading(true);
-
     abortControllerRef.current = new AbortController();
 
     try {
@@ -664,14 +655,14 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
           ...(guestId ? { 'x-guest-id': guestId } : {}),
         },
         body: JSON.stringify({
-          messages: updatedMessages.map((m) => ({
+          messages: contextMessages.map((m) => ({
             role: m.role,
             content: m.content,
           })),
           character,
           scenario,
           userContext,
-          providerPreference: selectedModel,
+          providerPreference: modelPref,
           userId: user?.id,
           userEmail: user?.email,
           guestId,
@@ -740,7 +731,9 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
               accumulatedContent += event.text;
               setMessages((prev) =>
                 prev.map((msg) =>
-                  msg.id === assistantMsgId ? { ...msg, content: accumulatedContent } : msg
+                  msg.id === assistantMsgId
+                    ? { ...msg, content: accumulatedContent, isError: false, errorMessage: undefined }
+                    : msg
                 )
               );
             } else if (event.type === 'error') {
@@ -754,7 +747,14 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
               accumulatedContent += `\n\n*(Lỗi kết nối AI: ${event.message})*`;
               setMessages((prev) =>
                 prev.map((msg) =>
-                  msg.id === assistantMsgId ? { ...msg, content: accumulatedContent } : msg
+                  msg.id === assistantMsgId
+                    ? {
+                        ...msg,
+                        content: accumulatedContent,
+                        isError: true,
+                        errorMessage: event.message,
+                      }
+                    : msg
                 )
               );
             }
@@ -771,7 +771,12 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       setMessages((prev) =>
         prev.map((m) =>
           m.id === assistantMsgId
-            ? { ...m, content: m.content || `⚠️ Không thể phản hồi: ${msg}` }
+            ? {
+                ...m,
+                content: m.content || `⚠️ Không thể phản hồi: ${msg}`,
+                isError: true,
+                errorMessage: msg,
+              }
             : m
         )
       );
@@ -784,6 +789,86 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         return current;
       });
     }
+  };
+
+  // Send message
+  const handleSendMessage = async (textToSend?: string) => {
+    const content = (textToSend || input).trim();
+    if (!content || isLoading) return;
+
+    setInput('');
+    setShowSuggestions(false); // Close suggestions drawer upon sending
+    setSuggestions([]); // Reset stale suggestions so old responses are not displayed
+    setSuggestionMeta({});
+
+    const userMessage: RoleplayMessage = {
+      id: `user-${Date.now()}`,
+      role: 'user',
+      content,
+      timestamp: Date.now(),
+    };
+
+    const assistantMsgId = `assistant-${Date.now()}`;
+    const assistantMessage: RoleplayMessage = {
+      id: assistantMsgId,
+      role: 'assistant',
+      content: '',
+      timestamp: Date.now(),
+    };
+
+    const updatedMessages = [...messages, userMessage];
+    setMessages([...updatedMessages, assistantMessage]);
+
+    await executeChatStream(updatedMessages, assistantMsgId, selectedModel);
+  };
+
+  // Retry generating an assistant response (can retry with current or alternative model)
+  const handleRetryMessage = async (failedAssistantMsgId?: string, overrideModel?: AIModelPreference) => {
+    if (isLoading) return;
+
+    const modelToUse = overrideModel || selectedModel;
+    if (overrideModel && overrideModel !== selectedModel) {
+      handleSelectModel(overrideModel);
+    }
+
+    // Find the assistant message index
+    let assistantIndex = -1;
+    if (failedAssistantMsgId) {
+      assistantIndex = messages.findIndex((m) => m.id === failedAssistantMsgId);
+    } else {
+      for (let i = messages.length - 1; i >= 0; i--) {
+        if (messages[i].role === 'assistant') {
+          assistantIndex = i;
+          break;
+        }
+      }
+    }
+
+    if (assistantIndex === -1) return;
+
+    // Messages up to the assistant message
+    const contextMessages = messages.slice(0, assistantIndex);
+
+    // If there is no preceding user message (e.g. initial greeting), reroll opening
+    const hasPrecedingUserMsg = contextMessages.some((m) => m.role === 'user');
+    if (!hasPrecedingUserMsg) {
+      handleGenerateDynamicOpening(true);
+      return;
+    }
+
+    const newAssistantMsgId = `assistant-${Date.now()}`;
+    const newAssistantMessage: RoleplayMessage = {
+      id: newAssistantMsgId,
+      role: 'assistant',
+      content: '',
+      timestamp: Date.now(),
+      provider: modelToUse === 'cloudflare' ? 'cloudflare' : 'gemini',
+    };
+
+    // Replace the failed assistant message with the new loading message
+    setMessages([...contextMessages, newAssistantMessage]);
+
+    await executeChatStream(contextMessages, newAssistantMsgId, modelToUse);
   };
 
   const handleStopGeneration = () => {
@@ -1509,11 +1594,28 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                             type="button"
                             onClick={() => handleGenerateDynamicOpening(true)}
                             disabled={isOpeningLoading}
-                            className="inline-flex items-center gap-1 text-indigo-400 hover:text-indigo-300 font-semibold transition-colors disabled:opacity-50"
+                            className="inline-flex items-center gap-1 text-indigo-400 hover:text-indigo-300 font-semibold transition-colors disabled:opacity-50 cursor-pointer"
                             title="Tạo câu mở đầu ngẫu nhiên khác từ AI cho tình huống này"
                           >
                             <Dice5 className={`w-3.5 h-3.5 ${isOpeningLoading ? 'animate-spin' : ''}`} />
                             <span>{isOpeningLoading ? 'Đang đổi...' : 'Đổi câu mở đầu'}</span>
+                          </button>
+                        </>
+                      )}
+
+                      {/* Regenerate / Retry response button for the latest assistant message */}
+                      {!isReviewingHistory && !isUser && idx === messages.length - 1 && idx > 0 && !msg.isError && !msg.content?.startsWith('⚠️ Không thể phản hồi') && (
+                        <>
+                          <span>•</span>
+                          <button
+                            type="button"
+                            onClick={() => handleRetryMessage(msg.id)}
+                            disabled={isLoading}
+                            className="inline-flex items-center gap-1 text-slate-400 hover:text-indigo-300 font-semibold transition-colors disabled:opacity-50 cursor-pointer"
+                            title="Yêu cầu AI tạo lại câu trả lời này"
+                          >
+                            <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin' : ''}`} />
+                            <span>Tạo lại</span>
                           </button>
                         </>
                       )}
@@ -1528,6 +1630,64 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                         <span className="font-semibold text-amber-300">Chế độ dự phòng tự động:</span>{' '}
                         {msg.fallbackReason ||
                           'Mô hình chính gặp sự cố hoặc vượt giới hạn, hệ thống đã tự động chuyển sang Cloudflare Llama để đảm bảo cuộc hội thoại không bị gián đoạn.'}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Error Recovery Card with Manual Retry Buttons */}
+                  {!isUser && (msg.isError || msg.content?.startsWith('⚠️ Không thể phản hồi') || msg.content?.includes('Lỗi kết nối AI')) && (
+                    <div className="mt-3 p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-200 space-y-2 animate-in fade-in duration-150">
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-rose-300">
+                        <AlertTriangle className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+                        <span>Không thể nhận phản hồi từ máy chủ AI</span>
+                      </div>
+                      <p className="text-[11px] text-rose-300/80 leading-snug">
+                        {msg.errorMessage || 'Mô hình AI hiện tại có thể đang bị quá tải hoặc gặp sự cố kết nối. Bạn hãy chọn thử lại bên dưới.'}
+                      </p>
+                      <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-rose-500/20">
+                        {/* Retry with current model */}
+                        <button
+                          type="button"
+                          onClick={() => handleRetryMessage(msg.id)}
+                          disabled={isLoading}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold shadow-sm transition-all active:scale-95 disabled:opacity-50 cursor-pointer"
+                        >
+                          <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin' : ''}`} />
+                          <span>Thử lại ngay</span>
+                        </button>
+
+                        {/* Alternative model buttons */}
+                        {selectedModel === 'gemini' ? (
+                          <button
+                            type="button"
+                            onClick={() => handleRetryMessage(msg.id, 'cloudflare')}
+                            disabled={isLoading}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-600/30 hover:bg-amber-600/50 border border-amber-500/40 text-amber-200 text-xs font-medium transition-all active:scale-95 disabled:opacity-50 cursor-pointer"
+                          >
+                            <Zap className="w-3.5 h-3.5 text-amber-400" />
+                            <span>Đổi sang Cloudflare Llama và thử lại</span>
+                          </button>
+                        ) : selectedModel === 'cloudflare' ? (
+                          <button
+                            type="button"
+                            onClick={() => handleRetryMessage(msg.id, 'gemini')}
+                            disabled={isLoading}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 text-emerald-200 text-xs font-medium transition-all active:scale-95 disabled:opacity-50 cursor-pointer"
+                          >
+                            <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                            <span>Đổi sang Gemini Flash và thử lại</span>
+                          </button>
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() => handleRetryMessage(msg.id, 'cloudflare')}
+                            disabled={isLoading}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-600/30 hover:bg-amber-600/50 border border-amber-500/40 text-amber-200 text-xs font-medium transition-all active:scale-95 disabled:opacity-50 cursor-pointer"
+                          >
+                            <Zap className="w-3.5 h-3.5 text-amber-400" />
+                            <span>Thử lại với Cloudflare Llama</span>
+                          </button>
+                        )}
                       </div>
                     </div>
                   )}
@@ -1573,6 +1733,10 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
           onClose={() => setShowSuggestions(false)}
           suggestions={suggestions}
           isLoading={isSuggestionsLoading}
+          provider={suggestionMeta.provider}
+          model={suggestionMeta.model}
+          isFallback={suggestionMeta.isFallback}
+          fallbackReason={suggestionMeta.fallbackReason}
           onRefresh={handleFetchSuggestions}
           onSelectSuggestion={(text, autoSend) => {
             if (autoSend) {

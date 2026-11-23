@@ -14,18 +14,19 @@ export function getGeminiModel(): string {
   if (model.startsWith('models/')) {
     model = model.replace(/^models\//, '');
   }
-  // Automatically migrate deprecated models (e.g. gemini-2.0-flash is discontinued by Google)
-  if (!model || model.startsWith('gemini-2.0')) {
-    return 'gemini-3.8-flash';
+  // Default to fast, reliable gemini-flash-lite-latest to avoid 503 high-demand spikes
+  if (!model || model.startsWith('gemini-2.0') || model === 'gemini-3.8-flash') {
+    return 'gemini-flash-lite-latest';
   }
   return model;
 }
 
 export const FALLBACK_GEMINI_MODELS = [
-  'gemini-3.8-flash',
   'gemini-flash-lite-latest',
   'gemini-3.1-flash-lite',
-  'gemini-2.5-flash',
+  'gemini-flash-latest',
+  'gemini-3.8-flash',
+  'gemini-2.5-flash-lite',
 ];
 
 export function getGeminiApiKey(): string {

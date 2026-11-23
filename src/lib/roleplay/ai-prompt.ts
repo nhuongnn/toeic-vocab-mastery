@@ -110,6 +110,7 @@ QUY TẮC CỐT LÕI (BẮT BUỘC):
 1. TIẾP NỐI DIỄN BIẾN: Câu trả lời phải kết nối trực tiếp với tin nhắn mới nhất của ${character.name} và thúc đẩy cuộc đối thoại tiến gần hơn tới mục tiêu: "${scenario.objective}".
 2. TUYỆT ĐỐI KHÔNG LẶP LẠI: Không gợi ý lại những ý kiến, lý do, câu hỏi hoặc cấu trúc mà người học đã từng dùng ở các lượt trước.
 3. KHÔNG THOÁT VAI & ĐÚNG ĐỘ KHÓ TOEIC ${targetScore}+: Câu tiếng Anh tự nhiên, chuẩn công sở, không dùng mẫu câu sáo rỗng.
+4. ĐỊNH DẠNG JSON CHUẨN: Tuyệt đối không dùng dấu ngoặc kép đôi " bên trong nội dung giá trị (dùng dấu nháy đơn ' thay thế nếu cần trích dẫn).
 
 YÊU CẦU ĐỊNH DẠNG TRẢ VỀ:
 Trả về DUY NHẤT một mảng JSON (không có markdown backticks, không kèm văn bản thừa) theo cấu trúc sau:

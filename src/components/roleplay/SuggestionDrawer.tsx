@@ -19,6 +19,10 @@ interface SuggestionDrawerProps {
   onClose: () => void;
   suggestions: RoleplaySuggestion[];
   isLoading: boolean;
+  provider?: 'gemini' | 'cloudflare' | 'fallback';
+  model?: string;
+  isFallback?: boolean;
+  fallbackReason?: string;
   onRefresh: () => void;
   onSelectSuggestion: (text: string, autoSend?: boolean) => void;
 }
@@ -28,6 +32,10 @@ export function SuggestionDrawer({
   onClose,
   suggestions,
   isLoading,
+  provider,
+  model,
+  isFallback,
+  fallbackReason,
   onRefresh,
   onSelectSuggestion,
 }: SuggestionDrawerProps) {
@@ -38,19 +46,52 @@ export function SuggestionDrawer({
       {/* Header */}
       <div className="flex items-center justify-between pb-2 border-b border-slate-800">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center">
+          <div className="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
             <Lightbulb className="w-4 h-4 fill-amber-400/20" />
           </div>
           <div>
-            <h4 className="text-xs font-bold text-white flex items-center gap-1.5">
-              <span>Gợi Ý Câu Giao Tiếp Theo Ngữ Cảnh</span>
+            <div className="flex flex-wrap items-center gap-1.5">
+              <h4 className="text-xs font-bold text-white">
+                Gợi Ý Câu Giao Tiếp Theo Ngữ Cảnh
+              </h4>
               <span className="text-[10px] font-semibold px-2 py-0.2 rounded-full bg-indigo-500/20 text-indigo-300">
                 Chủ động chọn
               </span>
-            </h4>
-            <p className="text-[11px] text-slate-400">
-              Chọn một câu phù hợp để điền vào khung chat hoặc tham khảo cách diễn đạt
-            </p>
+              {provider && (
+                <span
+                  className={`inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.2 rounded-full border ${
+                    provider === 'gemini'
+                      ? 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
+                      : provider === 'cloudflare'
+                      ? 'bg-amber-500/10 text-amber-300 border-amber-500/30'
+                      : 'bg-slate-800 text-slate-300 border-slate-700'
+                  }`}
+                  title={model ? `Mô hình: ${model}` : undefined}
+                >
+                  <Sparkles className="w-2.5 h-2.5" />
+                  <span>
+                    {provider === 'gemini'
+                      ? 'Gemini Flash'
+                      : provider === 'cloudflare'
+                      ? 'Cloudflare Llama'
+                      : 'Gợi ý Tình huống'}
+                  </span>
+                  {isFallback && (
+                    <span className="text-amber-400 font-bold ml-0.5">• Dự phòng</span>
+                  )}
+                </span>
+              )}
+            </div>
+            <div className="flex items-center gap-2 mt-0.5">
+              <p className="text-[11px] text-slate-400">
+                Chọn một câu phù hợp để điền vào khung chat hoặc tham khảo cách diễn đạt
+              </p>
+              {isFallback && fallbackReason && (
+                <span className="text-[10px] text-amber-300/90 italic hidden sm:inline">
+                  • {fallbackReason}
+                </span>
+              )}
+            </div>
           </div>
         </div>
 

@@ -46,6 +46,30 @@ export async function* routeHybridChat(
   // Explicit Cloudflare preference
   if (providerPreference === 'cloudflare') {
     if (!canUseCloudflare) {
+      if (canUseGemini) {
+        yield {
+          type: 'meta',
+          provider: 'gemini',
+          model: getGeminiModel(),
+          fallback: true,
+          reason: 'Cloudflare Workers AI chưa sẵn sàng, tự động chuyển sang Gemini dự phòng.',
+        };
+        try {
+          let recorded = false;
+          for await (const chunk of streamGemini(messages, systemPrompt)) {
+            if (!recorded) {
+              recordUserAIUsage({ userId, userEmail, guestId, provider: 'gemini' });
+              recorded = true;
+            }
+            yield { type: 'content', text: chunk };
+          }
+        } catch (err: unknown) {
+          const msg = err instanceof Error ? err.message : String(err);
+          yield { type: 'error', message: msg, provider: 'gemini' };
+        }
+        yield { type: 'done' };
+        return;
+      }
       yield {
         type: 'error',
         message: !canUseProvider('cloudflare')
@@ -57,33 +81,95 @@ export async function* routeHybridChat(
       return;
     }
 
-    yield {
-      type: 'meta',
-      provider: 'cloudflare',
-      model: getCloudflareChatModel(),
-      fallback: false,
-    };
-
+    let cfStartedYielding = false;
     try {
-      let recorded = false;
-      for await (const chunk of streamCloudflare(messages, systemPrompt)) {
-        if (!recorded) {
-          recordUserAIUsage({ userId, userEmail, guestId, provider: 'cloudflare' });
-          recorded = true;
+      const cfGen = streamCloudflare(messages, systemPrompt);
+      const first = await cfGen.next();
+      if (!first.done && first.value) {
+        cfStartedYielding = true;
+        recordUserAIUsage({ userId, userEmail, guestId, provider: 'cloudflare' });
+        yield {
+          type: 'meta',
+          provider: 'cloudflare',
+          model: getCloudflareChatModel(),
+          fallback: false,
+        };
+        yield { type: 'content', text: first.value };
+        for await (const chunk of cfGen) {
+          yield { type: 'content', text: chunk };
         }
-        yield { type: 'content', text: chunk };
+        yield { type: 'done' };
+        return;
       }
     } catch (err: unknown) {
+      console.warn('[Hybrid Router] Cloudflare preferred failed:', err);
+      if (cfStartedYielding) {
+        const msg = err instanceof Error ? err.message : String(err);
+        yield { type: 'error', message: msg, provider: 'cloudflare' };
+        yield { type: 'done' };
+        return;
+      }
+      // Fallback to Gemini if Cloudflare failed before streaming
+      if (canUseGemini) {
+        yield {
+          type: 'meta',
+          provider: 'gemini',
+          model: getGeminiModel(),
+          fallback: true,
+          reason: 'Cloudflare Workers AI gặp lỗi, tự động chuyển sang Google Gemini dự phòng.',
+        };
+        try {
+          let recorded = false;
+          for await (const chunk of streamGemini(messages, systemPrompt)) {
+            if (!recorded) {
+              recordUserAIUsage({ userId, userEmail, guestId, provider: 'gemini' });
+              recorded = true;
+            }
+            yield { type: 'content', text: chunk };
+          }
+          yield { type: 'done' };
+          return;
+        } catch (geminiErr: unknown) {
+          const msg = geminiErr instanceof Error ? geminiErr.message : String(geminiErr);
+          yield { type: 'error', message: `Cả hai nhà cung cấp đều không phản hồi: ${msg}`, provider: 'gemini' };
+          yield { type: 'done' };
+          return;
+        }
+      }
       const msg = err instanceof Error ? err.message : String(err);
       yield { type: 'error', message: msg, provider: 'cloudflare' };
+      yield { type: 'done' };
+      return;
     }
-    yield { type: 'done' };
-    return;
   }
 
   // Explicit Gemini preference
   if (providerPreference === 'gemini') {
     if (!canUseGemini) {
+      if (canUseCloudflare) {
+        yield {
+          type: 'meta',
+          provider: 'cloudflare',
+          model: getCloudflareChatModel(),
+          fallback: true,
+          reason: 'Google Gemini chưa sẵn sàng, tự động chuyển sang Cloudflare Workers AI dự phòng.',
+        };
+        try {
+          let recorded = false;
+          for await (const chunk of streamCloudflare(messages, systemPrompt)) {
+            if (!recorded) {
+              recordUserAIUsage({ userId, userEmail, guestId, provider: 'cloudflare' });
+              recorded = true;
+            }
+            yield { type: 'content', text: chunk };
+          }
+        } catch (err: unknown) {
+          const msg = err instanceof Error ? err.message : String(err);
+          yield { type: 'error', message: msg, provider: 'cloudflare' };
+        }
+        yield { type: 'done' };
+        return;
+      }
       yield {
         type: 'error',
         message: !canUseProvider('gemini')
@@ -95,28 +181,66 @@ export async function* routeHybridChat(
       return;
     }
 
-    yield {
-      type: 'meta',
-      provider: 'gemini',
-      model: getGeminiModel(),
-      fallback: false,
-    };
-
+    let geminiStartedYielding = false;
     try {
-      let recorded = false;
-      for await (const chunk of streamGemini(messages, systemPrompt)) {
-        if (!recorded) {
-          recordUserAIUsage({ userId, userEmail, guestId, provider: 'gemini' });
-          recorded = true;
+      const geminiGen = streamGemini(messages, systemPrompt);
+      const first = await geminiGen.next();
+      if (!first.done && first.value) {
+        geminiStartedYielding = true;
+        recordUserAIUsage({ userId, userEmail, guestId, provider: 'gemini' });
+        yield {
+          type: 'meta',
+          provider: 'gemini',
+          model: getGeminiModel(),
+          fallback: false,
+        };
+        yield { type: 'content', text: first.value };
+        for await (const chunk of geminiGen) {
+          yield { type: 'content', text: chunk };
         }
-        yield { type: 'content', text: chunk };
+        yield { type: 'done' };
+        return;
       }
     } catch (err: unknown) {
+      console.warn('[Hybrid Router] Gemini preferred failed:', err);
+      if (geminiStartedYielding) {
+        const msg = err instanceof Error ? err.message : String(err);
+        yield { type: 'error', message: msg, provider: 'gemini' };
+        yield { type: 'done' };
+        return;
+      }
+      // Fallback to Cloudflare if Gemini failed before streaming (e.g. 503 high demand or 429 quota)
+      if (canUseCloudflare) {
+        yield {
+          type: 'meta',
+          provider: 'cloudflare',
+          model: getCloudflareChatModel(),
+          fallback: true,
+          reason: 'Gemini API gặp sự cố hoặc quá tải quota (503/429), tự động chuyển sang Cloudflare Workers AI.',
+        };
+        try {
+          let recorded = false;
+          for await (const chunk of streamCloudflare(messages, systemPrompt)) {
+            if (!recorded) {
+              recordUserAIUsage({ userId, userEmail, guestId, provider: 'cloudflare' });
+              recorded = true;
+            }
+            yield { type: 'content', text: chunk };
+          }
+          yield { type: 'done' };
+          return;
+        } catch (cfErr: unknown) {
+          const msg = cfErr instanceof Error ? cfErr.message : String(cfErr);
+          yield { type: 'error', message: `Cả hai nhà cung cấp đều không phản hồi: ${msg}`, provider: 'cloudflare' };
+          yield { type: 'done' };
+          return;
+        }
+      }
       const msg = err instanceof Error ? err.message : String(err);
       yield { type: 'error', message: msg, provider: 'gemini' };
+      yield { type: 'done' };
+      return;
     }
-    yield { type: 'done' };
-    return;
   }
 
   // AUTO / HYBRID MODE (Primary: Gemini -> Fallback: Cloudflare)

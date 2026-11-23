@@ -47,6 +47,8 @@ export interface RoleplayMessage {
   provider?: 'gemini' | 'cloudflare';
   isFallback?: boolean;
   fallbackReason?: string;
+  isError?: boolean;
+  errorMessage?: string;
   feedback?: {
     correction?: string;
     betterPhrasing?: string;

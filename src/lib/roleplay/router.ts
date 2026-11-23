@@ -31,8 +31,16 @@ export interface RoleplayChatPayload {
   guestId?: string;
 }
 
+export interface RoleplaySuggestionsResult {
+  suggestions: RoleplaySuggestion[];
+  provider: 'gemini' | 'cloudflare' | 'fallback';
+  model?: string;
+  isFallback: boolean;
+  fallbackReason?: string;
+}
+
 /**
- * Route streaming roleplay conversation with Hybrid Failover (Gemini -> Cloudflare)
+ * Route streaming roleplay conversation with Hybrid Failover (Gemini <-> Cloudflare)
  */
 export async function* routeHybridRoleplayChat(
   payload: RoleplayChatPayload
@@ -58,9 +66,33 @@ export async function* routeHybridRoleplayChat(
   const canUseGemini = canUseProvider('gemini') && isGeminiConfigured();
   const canUseCloudflare = canUseProvider('cloudflare') && isCloudflareChatConfigured();
 
-  // Cloudflare forced
+  // Cloudflare preferred
   if (providerPreference === 'cloudflare') {
     if (!canUseCloudflare) {
+      if (canUseGemini) {
+        yield {
+          type: 'meta',
+          provider: 'gemini',
+          model: getGeminiModel(),
+          fallback: true,
+          reason: 'Cloudflare Workers AI chưa sẵn sàng, tự động chuyển sang Gemini dự phòng.',
+        };
+        try {
+          let recorded = false;
+          for await (const chunk of streamGemini(messages, systemPrompt)) {
+            if (!recorded) {
+              recordUserAIUsage({ userId, userEmail, guestId, provider: 'gemini' });
+              recorded = true;
+            }
+            yield { type: 'content', text: chunk };
+          }
+        } catch (err: unknown) {
+          const msg = err instanceof Error ? err.message : String(err);
+          yield { type: 'error', message: msg, provider: 'gemini' };
+        }
+        yield { type: 'done' };
+        return;
+      }
       yield {
         type: 'error',
         message: !canUseProvider('cloudflare')
@@ -72,66 +104,218 @@ export async function* routeHybridRoleplayChat(
       return;
     }
 
-    yield {
-      type: 'meta',
-      provider: 'cloudflare',
-      model: getCloudflareChatModel(),
-      fallback: false,
-    };
-
+    let cfStartedYielding = false;
     try {
-      let recorded = false;
-      for await (const chunk of streamCloudflare(messages, systemPrompt)) {
-        if (!recorded) {
-          recordUserAIUsage({ userId, userEmail, guestId, provider: 'cloudflare' });
-          recorded = true;
+      const cfGen = streamCloudflare(messages, systemPrompt);
+      const first = await cfGen.next();
+      if (!first.done && first.value) {
+        cfStartedYielding = true;
+        recordUserAIUsage({ userId, userEmail, guestId, provider: 'cloudflare' });
+        yield {
+          type: 'meta',
+          provider: 'cloudflare',
+          model: getCloudflareChatModel(),
+          fallback: false,
+        };
+        yield { type: 'content', text: first.value };
+        for await (const chunk of cfGen) {
+          yield { type: 'content', text: chunk };
         }
-        yield { type: 'content', text: chunk };
+        yield { type: 'done' };
+        return;
       }
-    } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : String(err);
-      yield { type: 'error', message: msg, provider: 'cloudflare' };
+    } catch (cfErr: unknown) {
+      console.warn('[Roleplay Router] Cloudflare preferred failed:', cfErr);
+      if (cfStartedYielding) {
+        yield {
+          type: 'error',
+          message: 'Connection interrupted during Cloudflare streaming',
+          provider: 'cloudflare',
+        };
+        yield { type: 'done' };
+        return;
+      }
+      // Fallback to Gemini if Cloudflare failed before streaming
+      if (canUseGemini) {
+        yield {
+          type: 'meta',
+          provider: 'gemini',
+          model: getGeminiModel(),
+          fallback: true,
+          reason: 'Cloudflare Workers AI gặp lỗi, hệ thống tự động chuyển sang Google Gemini dự phòng.',
+        };
+        try {
+          let recorded = false;
+          for await (const chunk of streamGemini(messages, systemPrompt)) {
+            if (!recorded) {
+              recordUserAIUsage({ userId, userEmail, guestId, provider: 'gemini' });
+              recorded = true;
+            }
+            yield { type: 'content', text: chunk };
+          }
+          yield { type: 'done' };
+          return;
+        } catch (geminiErr: unknown) {
+          const msg = geminiErr instanceof Error ? geminiErr.message : String(geminiErr);
+          console.warn('[Roleplay Router] Both Cloudflare and Gemini failed:', msg);
+          const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
+          yield {
+            type: 'meta',
+            provider: 'gemini',
+            model: 'contingency-engine',
+            fallback: true,
+            reason: `Dịch vụ AI trực tuyến tạm gián đoạn (${msg}). Hệ thống tự động kích hoạt phản hồi tình huống dự phòng.`,
+          };
+          yield { type: 'content', text: fallbackText };
+          yield { type: 'done' };
+          return;
+        }
+      }
+      const msg = cfErr instanceof Error ? cfErr.message : String(cfErr);
+      console.warn('[Roleplay Router] Cloudflare failed and Gemini unavailable:', msg);
+      const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
+      yield {
+        type: 'meta',
+        provider: 'cloudflare',
+        model: 'contingency-engine',
+        fallback: true,
+        reason: `Mô hình Cloudflare gặp sự cố (${msg}). Tự động phản hồi theo kịch bản tình huống.`,
+      };
+      yield { type: 'content', text: fallbackText };
+      yield { type: 'done' };
+      return;
     }
-    yield { type: 'done' };
-    return;
   }
 
-  // Gemini forced
+  // Gemini preferred
   if (providerPreference === 'gemini') {
     if (!canUseGemini) {
+      if (canUseCloudflare) {
+        yield {
+          type: 'meta',
+          provider: 'cloudflare',
+          model: getCloudflareChatModel(),
+          fallback: true,
+          reason: 'Google Gemini chưa sẵn sàng, tự động chuyển sang Cloudflare Workers AI dự phòng.',
+        };
+        try {
+          let recorded = false;
+          for await (const chunk of streamCloudflare(messages, systemPrompt)) {
+            if (!recorded) {
+              recordUserAIUsage({ userId, userEmail, guestId, provider: 'cloudflare' });
+              recorded = true;
+            }
+            yield { type: 'content', text: chunk };
+          }
+        } catch (cfErr: unknown) {
+          const msg = cfErr instanceof Error ? cfErr.message : String(cfErr);
+          const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
+          yield {
+            type: 'meta',
+            provider: 'cloudflare',
+            model: 'contingency-engine',
+            fallback: true,
+            reason: `Cả Gemini và Cloudflare đều gặp sự cố (${msg}). Tự động phản hồi theo kịch bản tình huống.`,
+          };
+          yield { type: 'content', text: fallbackText };
+        }
+        yield { type: 'done' };
+        return;
+      }
+      const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
       yield {
-        type: 'error',
-        message: !canUseProvider('gemini')
-          ? 'Mô hình Google Gemini hiện đang bị tạm tắt trong cấu hình hệ thống.'
-          : 'Google Gemini API key (GEMINI_API_KEY) is not configured.',
+        type: 'meta',
         provider: 'gemini',
+        model: 'contingency-engine',
+        fallback: true,
+        reason: 'Mô hình Google Gemini chưa sẵn sàng. Tự động phản hồi theo kịch bản tình huống.',
       };
+      yield { type: 'content', text: fallbackText };
       yield { type: 'done' };
       return;
     }
 
-    yield {
-      type: 'meta',
-      provider: 'gemini',
-      model: getGeminiModel(),
-      fallback: false,
-    };
-
+    let geminiStartedYielding = false;
     try {
-      let recorded = false;
-      for await (const chunk of streamGemini(messages, systemPrompt)) {
-        if (!recorded) {
-          recordUserAIUsage({ userId, userEmail, guestId, provider: 'gemini' });
-          recorded = true;
+      const geminiGen = streamGemini(messages, systemPrompt);
+      const first = await geminiGen.next();
+      if (!first.done && first.value) {
+        geminiStartedYielding = true;
+        recordUserAIUsage({ userId, userEmail, guestId, provider: 'gemini' });
+        yield {
+          type: 'meta',
+          provider: 'gemini',
+          model: getGeminiModel(),
+          fallback: false,
+        };
+        yield { type: 'content', text: first.value };
+        for await (const chunk of geminiGen) {
+          yield { type: 'content', text: chunk };
         }
-        yield { type: 'content', text: chunk };
+        yield { type: 'done' };
+        return;
       }
-    } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : String(err);
-      yield { type: 'error', message: msg, provider: 'gemini' };
+    } catch (geminiErr: unknown) {
+      console.warn('[Roleplay Router] Gemini preferred failed, falling back to Cloudflare...', geminiErr);
+      if (geminiStartedYielding) {
+        yield {
+          type: 'error',
+          message: 'Connection interrupted during Gemini streaming',
+          provider: 'gemini',
+        };
+        yield { type: 'done' };
+        return;
+      }
+      // Fallback to Cloudflare if Gemini failed before streaming (e.g. 503 high demand or 429 quota)
+      if (canUseCloudflare) {
+        yield {
+          type: 'meta',
+          provider: 'cloudflare',
+          model: getCloudflareChatModel(),
+          fallback: true,
+          reason: 'Google Gemini đang tạm quá tải (503/429), hệ thống tự động chuyển sang Cloudflare Workers AI dự phòng.',
+        };
+        try {
+          let recorded = false;
+          for await (const chunk of streamCloudflare(messages, systemPrompt)) {
+            if (!recorded) {
+              recordUserAIUsage({ userId, userEmail, guestId, provider: 'cloudflare' });
+              recorded = true;
+            }
+            yield { type: 'content', text: chunk };
+          }
+          yield { type: 'done' };
+          return;
+        } catch (cfErr: unknown) {
+          const msg = cfErr instanceof Error ? cfErr.message : String(cfErr);
+          console.warn('[Roleplay Router] Both Gemini and Cloudflare failed:', msg);
+          const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
+          yield {
+            type: 'meta',
+            provider: 'cloudflare',
+            model: 'contingency-engine',
+            fallback: true,
+            reason: `Cả Gemini và Cloudflare đều gặp sự cố (${msg}). Tự động phản hồi theo kịch bản tình huống.`,
+          };
+          yield { type: 'content', text: fallbackText };
+          yield { type: 'done' };
+          return;
+        }
+      }
+      const msg = geminiErr instanceof Error ? geminiErr.message : String(geminiErr);
+      console.warn('[Roleplay Router] Gemini failed and Cloudflare unavailable:', msg);
+      const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
+      yield {
+        type: 'meta',
+        provider: 'gemini',
+        model: 'contingency-engine',
+        fallback: true,
+        reason: `Mô hình Gemini gặp sự cố (${msg}). Tự động phản hồi theo kịch bản tình huống.`,
+      };
+      yield { type: 'content', text: fallbackText };
+      yield { type: 'done' };
+      return;
     }
-    yield { type: 'done' };
-    return;
   }
 
   // AUTO / HYBRID: Gemini primary -> Cloudflare fallback
@@ -200,20 +384,107 @@ export async function* routeHybridRoleplayChat(
       }
     } catch (cfErr: unknown) {
       const msg = cfErr instanceof Error ? cfErr.message : String(cfErr);
-      yield { type: 'error', message: `Cloudflare AI error: ${msg}`, provider: 'cloudflare' };
+      const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
+      yield {
+        type: 'meta',
+        provider: 'cloudflare',
+        model: 'contingency-engine',
+        fallback: true,
+        reason: `Mô hình AI gặp sự cố (${msg}). Tự động phản hồi theo kịch bản tình huống.`,
+      };
+      yield { type: 'content', text: fallbackText };
     }
   } else {
+    const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
     yield {
-      type: 'error',
-      message: 'Không có mô hình AI nào khả dụng theo cấu hình hệ thống hiện tại.',
+      type: 'meta',
+      provider: 'cloudflare',
+      model: 'contingency-engine',
+      fallback: true,
+      reason: 'Không có mô hình AI trực tuyến. Tự động phản hồi theo kịch bản tình huống.',
     };
+    yield { type: 'content', text: fallbackText };
   }
 
   yield { type: 'done' };
 }
 
+export function extractJsonArray(str: string): string {
+  let cleaned = str.trim();
+  const firstBracket = cleaned.indexOf('[');
+  const lastBracket = cleaned.lastIndexOf(']');
+  if (firstBracket !== -1 && lastBracket !== -1 && lastBracket > firstBracket) {
+    return cleaned.substring(firstBracket, lastBracket + 1);
+  }
+  return cleanJsonString(cleaned);
+}
+
+export function extractJsonObject(str: string): string {
+  let cleaned = str.trim();
+  const firstBrace = cleaned.indexOf('{');
+  const lastBrace = cleaned.lastIndexOf('}');
+  if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+    return cleaned.substring(firstBrace, lastBrace + 1);
+  }
+  return cleanJsonString(cleaned);
+}
+
+export function safeParseJsonArray<T = unknown>(str: string): T[] | null {
+  const extracted = extractJsonArray(str);
+  try {
+    const parsed = JSON.parse(extracted);
+    if (Array.isArray(parsed)) return parsed as T[];
+  } catch {
+    // If strict parse fails (e.g. unescaped inner quotes), attempt regex item extraction
+    try {
+      const items: T[] = [];
+      const itemBlocks = extracted.match(/\{[\s\S]*?\}(?=\s*,|\s*\])/g);
+      if (itemBlocks) {
+        for (const block of itemBlocks) {
+          try {
+            items.push(JSON.parse(block) as T);
+          } catch {
+            // ignore malformed item
+          }
+        }
+      }
+      if (items.length >= 2) return items;
+    } catch {
+      // ignore
+    }
+  }
+  return null;
+}
+
+export function safeParseJsonObject<T = unknown>(str: string): T | null {
+  const extracted = extractJsonObject(str);
+  try {
+    const parsed = JSON.parse(extracted);
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+      return parsed as T;
+    }
+  } catch {
+    // ignore
+  }
+  return null;
+}
+
+export function cleanJsonString(str: string): string {
+  let cleaned = str.trim();
+  if (cleaned.startsWith('```json')) {
+    cleaned = cleaned.slice(7);
+  } else if (cleaned.startsWith('```')) {
+    cleaned = cleaned.slice(3);
+  }
+  if (cleaned.endsWith('```')) {
+    cleaned = cleaned.slice(0, -3);
+  }
+  return cleaned.trim();
+}
+
 /**
- * Generate 3 contextual communication suggestions (strictly on demand)
+ * Generate 3 contextual communication suggestions (strictly on demand).
+ * Follows the user selected model preference with automatic failover (Gemini <-> Cloudflare -> Static Fallback).
  */
 export async function generateRoleplaySuggestions(
   character: CharacterConfig,
@@ -222,14 +493,19 @@ export async function generateRoleplaySuggestions(
   targetScore: number = 650,
   providerPreference: AIModelPreference = 'auto',
   userInfo?: { userId?: string; userEmail?: string; guestId?: string }
-): Promise<RoleplaySuggestion[]> {
+): Promise<RoleplaySuggestionsResult> {
   const quotaCheck = await checkUserAIQuota({
     userId: userInfo?.userId,
     userEmail: userInfo?.userEmail,
     guestId: userInfo?.guestId,
   });
   if (!quotaCheck.allowed) {
-    return generateFallbackSuggestions(character, scenario, chatHistory);
+    return {
+      suggestions: generateFallbackSuggestions(character, scenario, chatHistory),
+      provider: 'fallback',
+      isFallback: true,
+      fallbackReason: quotaCheck.reason || 'Hạn mức AI hôm nay đã đạt giới hạn.',
+    };
   }
 
   const prompt = buildSuggestionsPrompt(character, scenario, chatHistory, targetScore);
@@ -247,15 +523,15 @@ export async function generateRoleplaySuggestions(
       });
 
       if (text) {
-        const parsed = JSON.parse(cleanJsonString(text));
-        if (Array.isArray(parsed) && parsed.length >= 2) {
+        const parsed = safeParseJsonArray<RoleplaySuggestion>(text);
+        if (parsed && Array.isArray(parsed) && parsed.length >= 2) {
           recordUserAIUsage({
             userId: userInfo?.userId,
             userEmail: userInfo?.userEmail,
             guestId: userInfo?.guestId,
             provider: 'gemini',
           });
-          return parsed as RoleplaySuggestion[];
+          return parsed;
         }
       }
     } catch (e) {
@@ -271,19 +547,19 @@ export async function generateRoleplaySuggestions(
       let accumulated = '';
       for await (const chunk of streamCloudflare(
         [{ role: 'user', content: prompt }],
-        'You are an expert TOEIC tutor. Output valid raw JSON array only without markdown backticks.'
+        'You are an expert TOEIC tutor. Output strictly a valid raw JSON array containing exactly 3 suggestion objects without markdown backticks or python code or introductory text.'
       )) {
         accumulated += chunk;
       }
-      const parsed = JSON.parse(cleanJsonString(accumulated));
-      if (Array.isArray(parsed) && parsed.length >= 2) {
+      const parsed = safeParseJsonArray<RoleplaySuggestion>(accumulated);
+      if (parsed && Array.isArray(parsed) && parsed.length >= 2) {
         recordUserAIUsage({
           userId: userInfo?.userId,
           userEmail: userInfo?.userEmail,
           guestId: userInfo?.guestId,
           provider: 'cloudflare',
         });
-        return parsed as RoleplaySuggestion[];
+        return parsed;
       }
     } catch (e) {
       console.warn('[Roleplay Suggestions] Cloudflare generation failed:', e);
@@ -291,41 +567,97 @@ export async function generateRoleplaySuggestions(
     return null;
   };
 
-  // 1. Force Cloudflare
+  // 1. User selected Cloudflare
   if (providerPreference === 'cloudflare') {
     const cfResult = await callCloudflare();
-    if (cfResult) return cfResult;
-    return generateFallbackSuggestions(character, scenario, chatHistory);
+    if (cfResult) {
+      return {
+        suggestions: cfResult,
+        provider: 'cloudflare',
+        model: getCloudflareChatModel(),
+        isFallback: false,
+      };
+    }
+    // Fallback to Gemini if Cloudflare failed
+    console.warn('[Roleplay Suggestions] Cloudflare failed, falling back to Gemini...');
+    const geminiFallback = await callGemini();
+    if (geminiFallback) {
+      return {
+        suggestions: geminiFallback,
+        provider: 'gemini',
+        model: getGeminiModel(),
+        isFallback: true,
+        fallbackReason: 'Mô hình Cloudflare tạm thời không khả dụng, đã tự động chuyển sang Google Gemini dự phòng.',
+      };
+    }
+    return {
+      suggestions: generateFallbackSuggestions(character, scenario, chatHistory),
+      provider: 'fallback',
+      isFallback: true,
+      fallbackReason: 'Tất cả mô hình AI đang bận, hệ thống cung cấp gợi ý tình huống phù hợp.',
+    };
   }
 
-  // 2. Force Gemini
+  // 2. User selected Gemini
   if (providerPreference === 'gemini') {
     const geminiResult = await callGemini();
-    if (geminiResult) return geminiResult;
-    return generateFallbackSuggestions(character, scenario, chatHistory);
+    if (geminiResult) {
+      return {
+        suggestions: geminiResult,
+        provider: 'gemini',
+        model: getGeminiModel(),
+        isFallback: false,
+      };
+    }
+    // Fallback to Cloudflare if Gemini failed (e.g. 503 high demand or 429 quota)
+    console.warn('[Roleplay Suggestions] Gemini failed, falling back to Cloudflare Workers AI...');
+    const cfFallback = await callCloudflare();
+    if (cfFallback) {
+      return {
+        suggestions: cfFallback,
+        provider: 'cloudflare',
+        model: getCloudflareChatModel(),
+        isFallback: true,
+        fallbackReason: 'Google Gemini đang tạm quá tải (503/429), đã tự động chuyển sang Cloudflare Workers AI dự phòng.',
+      };
+    }
+    return {
+      suggestions: generateFallbackSuggestions(character, scenario, chatHistory),
+      provider: 'fallback',
+      isFallback: true,
+      fallbackReason: 'Tất cả mô hình AI đang bận, hệ thống cung cấp gợi ý tình huống phù hợp.',
+    };
   }
 
-  // 3. Auto / Hybrid (Gemini -> Cloudflare -> Fallback)
+  // 3. Auto / Hybrid mode (Gemini -> Cloudflare -> Static Fallback)
   const geminiRes = await callGemini();
-  if (geminiRes) return geminiRes;
+  if (geminiRes) {
+    return {
+      suggestions: geminiRes,
+      provider: 'gemini',
+      model: getGeminiModel(),
+      isFallback: false,
+    };
+  }
 
+  console.warn('[Roleplay Suggestions] Auto hybrid: Gemini failed, trying Cloudflare...');
   const cfRes = await callCloudflare();
-  if (cfRes) return cfRes;
-
-  return generateFallbackSuggestions(character, scenario, chatHistory);
-}
-
-function cleanJsonString(str: string): string {
-  let cleaned = str.trim();
-  if (cleaned.startsWith('```json')) {
-    cleaned = cleaned.slice(7);
-  } else if (cleaned.startsWith('```')) {
-    cleaned = cleaned.slice(3);
+  if (cfRes) {
+    return {
+      suggestions: cfRes,
+      provider: 'cloudflare',
+      model: getCloudflareChatModel(),
+      isFallback: true,
+      fallbackReason: 'Gemini tạm thời không khả dụng, đã tự động chuyển sang Cloudflare Workers AI dự phòng.',
+    };
   }
-  if (cleaned.endsWith('```')) {
-    cleaned = cleaned.slice(0, -3);
-  }
-  return cleaned.trim();
+
+  return {
+    suggestions: generateFallbackSuggestions(character, scenario, chatHistory),
+    provider: 'fallback',
+    isFallback: true,
+    fallbackReason: 'Tất cả mô hình AI đang bận, hệ thống cung cấp gợi ý tình huống phù hợp.',
+  };
 }
 
 function generateFallbackSuggestions(
@@ -669,8 +1001,8 @@ export async function generateDynamicOpening(
       });
 
       if (text) {
-        const parsed = JSON.parse(cleanJsonString(text));
-        if (parsed.english && parsed.vietnamese) {
+        const parsed = safeParseJsonObject<{ english: string; vietnamese: string }>(text);
+        if (parsed?.english && parsed?.vietnamese) {
           recordUserAIUsage({
             userId: userInfo?.userId,
             userEmail: userInfo?.userEmail,
@@ -697,12 +1029,12 @@ export async function generateDynamicOpening(
       let accumulated = '';
       for await (const chunk of streamCloudflare(
         [{ role: 'user', content: prompt }],
-        'You are an expert TOEIC roleplay tutor. Output valid raw JSON object only without markdown backticks.'
+        'You are an expert TOEIC roleplay tutor. Output strictly a valid raw JSON object only without markdown backticks or commentary.'
       )) {
         accumulated += chunk;
       }
-      const parsed = JSON.parse(cleanJsonString(accumulated));
-      if (parsed.english && parsed.vietnamese) {
+      const parsed = safeParseJsonObject<{ english: string; vietnamese: string }>(accumulated);
+      if (parsed?.english && parsed?.vietnamese) {
         recordUserAIUsage({
           userId: userInfo?.userId,
           userEmail: userInfo?.userEmail,
@@ -725,6 +1057,8 @@ export async function generateDynamicOpening(
   if (providerPreference === 'cloudflare') {
     const cfRes = await callCloudflare();
     if (cfRes) return cfRes;
+    const geminiFallback = await callGemini();
+    if (geminiFallback) return geminiFallback;
     return generateFallbackOpening(character, scenario, userName);
   }
 
@@ -732,6 +1066,8 @@ export async function generateDynamicOpening(
   if (providerPreference === 'gemini') {
     const geminiRes = await callGemini();
     if (geminiRes) return geminiRes;
+    const cfFallback = await callCloudflare();
+    if (cfFallback) return cfFallback;
     return generateFallbackOpening(character, scenario, userName);
   }
 
@@ -757,4 +1093,44 @@ export function generateFallbackOpening(
     vietnamese: variation.vietnamese,
     source: 'fallback',
   };
+}
+
+/**
+ * Generate a contextual, in-character fallback response when all AI providers are unavailable.
+ * Ensures the roleplay conversation is never broken into a raw dead-end error.
+ */
+export function generateFallbackRoleplayReply(
+  character: CharacterConfig,
+  scenario: RoleplayScenario,
+  messages: Array<{ role: 'user' | 'assistant'; content: string }>
+): string {
+  const userTurnCount = messages.filter((m) => m.role === 'user').length;
+  const keyPhrases = scenario.keyPhrases || [];
+  const phrase = keyPhrases[userTurnCount % Math.max(keyPhrases.length, 1)]?.phrase;
+
+  if (character.role === 'boss') {
+    if (userTurnCount <= 1) {
+      return `Thank you for following up on this matter. In order to achieve our objective ("${scenario.objective}"), let's make sure we address the highest-priority items first. ${
+        phrase ? `Keep in mind: "${phrase}". ` : ''
+      }Could you give me a brief outline of the immediate steps you are taking?`;
+    }
+    return `Understood. Your perspective makes sense given the current schedule. Please continue with the proposed plan, ensure the deliverables meet our quality standards, and provide an updated summary by tomorrow afternoon.`;
+  }
+
+  if (character.role === 'colleague') {
+    if (userTurnCount <= 1) {
+      return `Thanks for bringing this up! I completely agree with your general approach. To help us hit our target ("${scenario.objective}"), let's divide the tasks so we don't duplicate effort. ${
+        phrase ? `As we discussed: "${phrase}". ` : ''
+      }Which portion would you prefer to handle first?`;
+    }
+    return `That sounds like a great plan! I'm glad we are on the same page regarding this. I will take care of my assigned part right away, and let's touch base again once the initial draft is ready.`;
+  }
+
+  // Staff role
+  if (userTurnCount <= 1) {
+    return `Thank you for your detailed instructions. I have noted down the core guidelines regarding "${scenario.objective}". ${
+      phrase ? `I will follow the approach: "${phrase}". ` : ''
+    }I will start compiling the necessary materials right now and inform you as soon as the first draft is ready.`;
+  }
+  return `Everything is progressing according to schedule on my side. I will finalize all details and send the complete files over for your review shortly. Please let me know if any other urgent matters need my attention.`;
 }

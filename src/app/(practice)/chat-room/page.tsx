@@ -44,7 +44,7 @@ export default function ChatRoomPage() {
 
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-semibold shadow-sm">
           <Sparkles className="w-3.5 h-3.5 text-indigo-400 animate-pulse" />
-          <span>Phòng Giao Tiếp AI Công Sở • Tùy Biến Nhân Vật</span>
+          <span>Phòng Giao Tiếp AI Thực Chiến • Đa Dạng Nhân Vật & Đời Sống</span>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ export default function ChatRoomPage() {
           <span>Phòng Chat AI Thực Chiến</span>
         </h1>
         <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-          Nhập vai giao tiếp với Sếp, Đồng nghiệp hoặc Nhân viên văn phòng. Kịch bản được tự động đề xuất dựa trên lộ trình mục tiêu TOEIC ({userContext.targetScore}+) và từ vựng bạn đang học.
+          Nhập vai giao tiếp tiếng Anh thực chiến với Bạn bè, Người thân, Người yêu, Người phỏng vấn IT, Người lạ, Sếp hay Đồng nghiệp. Khám phá phong phú chủ đề: giải trí, du lịch, nấu ăn, hỏi đường & phương tiện, địa danh, podcast và phỏng vấn xin việc IT ({userContext.targetScore}+ TOEIC).
         </p>
       </div>
 

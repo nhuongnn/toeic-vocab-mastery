@@ -35,6 +35,11 @@ import {
   X,
   AlertTriangle,
   Lock,
+  Smile,
+  Compass,
+  Home,
+  Laptop,
+  Heart,
 } from 'lucide-react';
 import {
   CharacterConfig,
@@ -1033,8 +1038,18 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       <Shield className="w-3.5 h-3.5 text-purple-400 shrink-0" />
     ) : character.role === 'colleague' ? (
       <Users className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
-    ) : (
+    ) : character.role === 'staff' ? (
       <Briefcase className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+    ) : character.role === 'friend' ? (
+      <Smile className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+    ) : character.role === 'family' ? (
+      <Home className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+    ) : character.role === 'lover' ? (
+      <Heart className="w-3.5 h-3.5 text-pink-400 shrink-0" />
+    ) : character.role === 'interviewer' ? (
+      <Laptop className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+    ) : (
+      <Compass className="w-3.5 h-3.5 text-teal-400 shrink-0" />
     );
 
   const roleBadge =
@@ -1042,7 +1057,34 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       ? 'bg-purple-500/15 border-purple-500/30 text-purple-300'
       : character.role === 'colleague'
       ? 'bg-indigo-500/15 border-indigo-500/30 text-indigo-300'
-      : 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300';
+      : character.role === 'staff'
+      ? 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300'
+      : character.role === 'friend'
+      ? 'bg-amber-500/15 border-amber-500/30 text-amber-300'
+      : character.role === 'family'
+      ? 'bg-rose-500/15 border-rose-500/30 text-rose-300'
+      : character.role === 'lover'
+      ? 'bg-pink-500/15 border-pink-500/30 text-pink-300'
+      : character.role === 'interviewer'
+      ? 'bg-blue-500/15 border-blue-500/30 text-blue-300'
+      : 'bg-teal-500/15 border-teal-500/30 text-teal-300';
+
+  const roleLabel =
+    character.role === 'boss'
+      ? 'Sếp'
+      : character.role === 'colleague'
+      ? 'Đồng nghiệp'
+      : character.role === 'staff'
+      ? 'Nhân viên'
+      : character.role === 'friend'
+      ? 'Bạn bè'
+      : character.role === 'family'
+      ? 'Người thân'
+      : character.role === 'lover'
+      ? 'Người yêu'
+      : character.role === 'interviewer'
+      ? 'Phỏng vấn IT'
+      : 'Người lạ / Bản địa';
 
   return (
     <div className="flex flex-col h-[78vh] sm:h-[82vh] max-h-[82dvh] max-w-5xl mx-auto rounded-3xl bg-slate-900/90 border border-slate-800 shadow-2xl overflow-hidden backdrop-blur-xl">
@@ -1073,13 +1115,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                 className={`inline-flex items-center gap-1 text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded-full border shrink-0 ${roleBadge}`}
               >
                 {roleIcon}
-                <span>
-                  {character.role === 'boss'
-                    ? 'Sếp'
-                    : character.role === 'colleague'
-                    ? 'Đồng nghiệp'
-                    : 'Nhân viên'}
-                </span>
+                <span>{roleLabel}</span>
               </span>
 
               {/* Model Switcher Button & Dropdown */}

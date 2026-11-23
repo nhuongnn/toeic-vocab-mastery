@@ -21,6 +21,11 @@ import {
   Check,
   Bot,
   User,
+  Smile,
+  Compass,
+  Home,
+  Laptop,
+  Heart,
 } from 'lucide-react';
 import { RoleplayConversation } from '@/types/roleplay';
 import { CharacterAvatar } from './CharacterAvatar';
@@ -209,15 +214,35 @@ export function ChatRoomHistoryModal({
                   ? 'bg-purple-500/15 border-purple-500/30 text-purple-300'
                   : conv.character.role === 'colleague'
                   ? 'bg-indigo-500/15 border-indigo-500/30 text-indigo-300'
-                  : 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300';
+                  : conv.character.role === 'staff'
+                  ? 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300'
+                  : conv.character.role === 'friend'
+                  ? 'bg-amber-500/15 border-amber-500/30 text-amber-300'
+                  : conv.character.role === 'family'
+                  ? 'bg-rose-500/15 border-rose-500/30 text-rose-300'
+                  : conv.character.role === 'lover'
+                  ? 'bg-pink-500/15 border-pink-500/30 text-pink-300'
+                  : conv.character.role === 'interviewer'
+                  ? 'bg-blue-500/15 border-blue-500/30 text-blue-300'
+                  : 'bg-teal-500/15 border-teal-500/30 text-teal-300';
 
               const roleIcon =
                 conv.character.role === 'boss' ? (
                   <Shield className="w-3 h-3 text-purple-400" />
                 ) : conv.character.role === 'colleague' ? (
                   <Users className="w-3 h-3 text-indigo-400" />
-                ) : (
+                ) : conv.character.role === 'staff' ? (
                   <Briefcase className="w-3 h-3 text-emerald-400" />
+                ) : conv.character.role === 'friend' ? (
+                  <Smile className="w-3 h-3 text-amber-400" />
+                ) : conv.character.role === 'family' ? (
+                  <Home className="w-3 h-3 text-rose-400" />
+                ) : conv.character.role === 'lover' ? (
+                  <Heart className="w-3 h-3 text-pink-400" />
+                ) : conv.character.role === 'interviewer' ? (
+                  <Laptop className="w-3 h-3 text-blue-400" />
+                ) : (
+                  <Compass className="w-3 h-3 text-teal-400" />
                 );
 
               const roleLabel =
@@ -225,7 +250,17 @@ export function ChatRoomHistoryModal({
                   ? 'Sếp'
                   : conv.character.role === 'colleague'
                   ? 'Đồng nghiệp'
-                  : 'Nhân viên';
+                  : conv.character.role === 'staff'
+                  ? 'Nhân viên'
+                  : conv.character.role === 'friend'
+                  ? 'Bạn bè'
+                  : conv.character.role === 'family'
+                  ? 'Người thân'
+                  : conv.character.role === 'lover'
+                  ? 'Người yêu'
+                  : conv.character.role === 'interviewer'
+                  ? 'Phỏng vấn IT'
+                  : 'Người lạ / Bản địa';
 
               return (
                 <div

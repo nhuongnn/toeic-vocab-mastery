@@ -738,6 +738,166 @@ function generateFallbackSuggestions(
       ];
     }
 
+    if (character.role === 'friend') {
+      return [
+        {
+          id: `fallback-stage0-1`,
+          type: 'formal',
+          label: 'Lịch sự & Nhiệt tình',
+          english: kp1?.phrase || 'That sounds like a wonderful plan! Let us coordinate the details and set a time.',
+          vietnamese: kp1?.meaning || 'Kế hoạch đó nghe tuyệt quá! Chúng mình cùng thống nhất chi tiết và chốt giờ nhé.',
+          explanation: kp1?.usageTip || 'Lời đáp nhiệt tình, sẵn sàng cùng bạn bè lên kế hoạch.',
+          keyVocabulary: ['coordinate', 'details'],
+        },
+        {
+          id: `fallback-stage0-2`,
+          type: 'casual',
+          label: 'Thân mật & Hào hứng',
+          english: 'Hey! I was just thinking about that. I am totally down to hang out and do this together!',
+          vietnamese: 'Chào bạn! Mình cũng đang tính rủ bạn đây. Mình sẵn sàng tụ tập và cùng làm việc này rồi!',
+          explanation: '"Be down for something" là cách diễn đạt tự nhiên khi đồng ý rủ rê.',
+          keyVocabulary: ['totally down', 'hang out'],
+        },
+        {
+          id: `fallback-stage0-3`,
+          type: 'clarifying',
+          label: 'Hỏi để chốt thời gian & địa điểm',
+          english: kp2?.phrase || 'What time works best for you, and where should we meet up first?',
+          vietnamese: kp2?.meaning || 'Mấy giờ thì tiện nhất cho bạn, và chúng mình nên gặp nhau ở đâu trước?',
+          explanation: kp2?.usageTip || 'Hỏi nhanh để thống nhất lịch trình.',
+          keyVocabulary: ['works best', 'meet up'],
+        },
+      ];
+    }
+
+    if (character.role === 'family') {
+      return [
+        {
+          id: `fallback-stage0-1`,
+          type: 'formal',
+          label: 'Lễ phép & Ấm áp',
+          english: kp1?.phrase || 'Hello! It is so comforting to hear your voice. Everything is going well on my end.',
+          vietnamese: kp1?.meaning || 'Alo ạ! Nghe giọng bố/mẹ con thấy ấm lòng quá. Mọi việc bên con đều đang ổn thỏa ạ.',
+          explanation: kp1?.usageTip || 'Lời chào kính trọng và đầy ắp tình cảm gia đình.',
+          keyVocabulary: ['comforting', 'on my end'],
+        },
+        {
+          id: `fallback-stage0-2`,
+          type: 'casual',
+          label: 'Tự nhiên & Gần gũi',
+          english: 'Hi! I miss home so much. I have been eating well and staying healthy, so please do not worry.',
+          vietnamese: 'Con chào bố/mẹ! Con nhớ nhà lắm. Con vẫn ăn uống đầy đủ và khỏe mạnh, bố/mẹ đừng lo nhé.',
+          explanation: 'Trấn an người thân một cách tự nhiên.',
+          keyVocabulary: ['miss home', 'staying healthy'],
+        },
+        {
+          id: `fallback-stage0-3`,
+          type: 'clarifying',
+          label: 'Hỏi thăm sức khỏe người thân',
+          english: kp2?.phrase || 'How is everyone at home doing? How has your and Dad’s health been lately?',
+          vietnamese: kp2?.meaning || 'Mọi người ở nhà dạo này thế nào ạ? Sức khỏe của bố mẹ dạo này ra sao rồi?',
+          explanation: kp2?.usageTip || 'Hỏi thăm sức khỏe chu đáo.',
+          keyVocabulary: ['health', 'lately'],
+        },
+      ];
+    }
+
+    if (character.role === 'lover') {
+      return [
+        {
+          id: `fallback-stage0-1`,
+          type: 'formal',
+          label: 'Dịu dàng & Tinh tế',
+          english: kp1?.phrase || 'Hello my love! I have been eagerly looking forward to our time together.',
+          vietnamese: kp1?.meaning || 'Chào em/anh yêu! Cả ngày hôm nay em/anh cứ mong đến lúc hai đứa mình được gặp nhau.',
+          explanation: kp1?.usageTip || 'Mở đầu ngọt ngào và chan chứa yêu thương.',
+          keyVocabulary: ['eagerly', 'looking forward'],
+        },
+        {
+          id: `fallback-stage0-2`,
+          type: 'casual',
+          label: 'Ngọt ngào & Thân mật',
+          english: 'Hey sweetheart! Seeing your text completely made my day. I missed you so much!',
+          vietnamese: 'Chào tình yêu của em/anh! Thấy tin nhắn của em/anh là cả ngày vui lên hẳn. Em/anh nhớ nhiều lắm!',
+          explanation: 'Bày tỏ cảm xúc hạnh phúc tức thì.',
+          keyVocabulary: ['made my day', 'missed you'],
+        },
+        {
+          id: `fallback-stage0-3`,
+          type: 'clarifying',
+          label: 'Hỏi sở thích của người yêu',
+          english: kp2?.phrase || 'What kind of mood are you in tonight—a quiet candlelit dinner or a relaxing walk?',
+          vietnamese: kp2?.meaning || 'Tối nay em/anh thích không gian thế nào—một bữa tối ấm cúng hay đi dạo ngắm phố?',
+          explanation: kp2?.usageTip || 'Lắng nghe và chiều theo sở thích của đối phương.',
+          keyVocabulary: ['in the mood', 'candlelit'],
+        },
+      ];
+    }
+
+    if (character.role === 'interviewer') {
+      return [
+        {
+          id: `fallback-stage0-1`,
+          type: 'formal',
+          label: 'Trang trọng & Chuyên nghiệp',
+          english: kp1?.phrase || 'Good day! Thank you for the opportunity. I am excited to discuss my technical background and project experience.',
+          vietnamese: kp1?.meaning || 'Xin chào quý công ty! Cảm ơn cơ hội này. Tôi rất hào hứng được trình bày về nền tảng kỹ thuật và kinh nghiệm dự án của mình.',
+          explanation: kp1?.usageTip || 'Mở đầu phỏng vấn tự tin, chuẩn mực.',
+          keyVocabulary: ['opportunity', 'technical background'],
+        },
+        {
+          id: `fallback-stage0-2`,
+          type: 'casual',
+          label: 'Trực diện & Súc tích',
+          english: 'Hello! I am glad to be here today. I am well prepared to discuss my architectural choices and software engineering work.',
+          vietnamese: 'Xin chào! Rất vui được có mặt hôm nay. Tôi đã chuẩn bị sẵn sàng để chia sẻ về các quyết định kiến trúc và công việc lập trình của mình.',
+          explanation: 'Phong thái kỹ sư phần mềm chủ động.',
+          keyVocabulary: ['architectural choices', 'engineering work'],
+        },
+        {
+          id: `fallback-stage0-3`,
+          type: 'clarifying',
+          label: 'Hỏi về định hướng kỹ thuật của team',
+          english: kp2?.phrase || 'Could you briefly share which key tech stack or performance challenges your team is focusing on right now?',
+          vietnamese: kp2?.meaning || 'Anh/chị có thể chia sẻ ngắn gọn về tech stack chính hoặc bài toán hiệu năng mà team đang tập trung hiện nay không ạ?',
+          explanation: kp2?.usageTip || 'Hỏi ngược lại nhà tuyển dụng câu hỏi kỹ thuật thông minh.',
+          keyVocabulary: ['tech stack', 'performance challenges'],
+        },
+      ];
+    }
+
+    if (character.role === 'stranger') {
+      return [
+        {
+          id: `fallback-stage0-1`,
+          type: 'formal',
+          label: 'Lịch thiệp & Cầu thị',
+          english: kp1?.phrase || 'Excuse me, good day! Could you please help me with some directions? I want to make sure I am on the right track.',
+          vietnamese: kp1?.meaning || 'Xin lỗi làm phiền bạn! Bạn có thể chỉ giúp tôi đường đi được không? Tôi muốn chắc chắn mình đang đi đúng hướng.',
+          explanation: kp1?.usageTip || 'Cách hỏi đường nhã nhặn với người lạ.',
+          keyVocabulary: ['excuse me', 'right track'],
+        },
+        {
+          id: `fallback-stage0-2`,
+          type: 'casual',
+          label: 'Thân thiện & Tự nhiên',
+          english: 'Hi there! Pardon the interruption, but do you happen to know the best way to get there from here?',
+          vietnamese: 'Chào bạn! Xin lỗi vì đã ngắt lời, bạn có biết cách nào nhanh nhất để đến đó từ đây không?',
+          explanation: 'Diễn đạt tự nhiên đời thường khi giao tiếp nơi công cộng.',
+          keyVocabulary: ['pardon the interruption', 'happen to know'],
+        },
+        {
+          id: `fallback-stage0-3`,
+          type: 'clarifying',
+          label: 'Hỏi điểm mốc nhận diện',
+          english: kp2?.phrase || 'Is there a prominent landmark nearby so I know when I have arrived?',
+          vietnamese: kp2?.meaning || 'Gần đó có cột mốc nổi bật nào để tôi biết mình đã đến nơi không ạ?',
+          explanation: kp2?.usageTip || 'Hỏi đặc điểm nhận dạng vị trí.',
+          keyVocabulary: ['landmark', 'prominent'],
+        },
+      ];
+    }
+
     // Staff role
     return [
       {
@@ -836,6 +996,166 @@ function generateFallbackSuggestions(
       ];
     }
 
+    if (character.role === 'friend') {
+      return [
+        {
+          id: `fallback-stage1-1`,
+          type: 'formal',
+          label: 'Đề xuất lựa chọn hợp lý',
+          english: kp2?.phrase || 'I believe that option gives us the best balance of time, cost, and enjoyment.',
+          vietnamese: kp2?.meaning || 'Mình tin rằng phương án đó sẽ mang lại sự cân bằng tốt nhất giữa thời gian, chi phí và sự vui vẻ.',
+          explanation: kp2?.usageTip || 'Đưa ra nhận định thuyết phục bạn bè.',
+          keyVocabulary: ['balance', 'enjoyment'],
+        },
+        {
+          id: `fallback-stage1-2`,
+          type: 'casual',
+          label: 'Hào hứng & Đồng tình',
+          english: 'I love that idea! That will make our outing so much more fun and memorable.',
+          vietnamese: 'Mình thích ý tưởng đó lắm! Chắc chắn sẽ làm chuyến đi chơi vui và đáng nhớ hơn nhiều.',
+          explanation: 'Tạo không khí vui vẻ, ủng hộ ý tưởng của bạn.',
+          keyVocabulary: ['love that idea', 'memorable'],
+        },
+        {
+          id: `fallback-stage1-3`,
+          type: 'clarifying',
+          label: 'Hỏi kiểm tra chi tiết trước',
+          english: kp3?.phrase || 'Have you checked the schedule or ticket availability, or should I book it right away?',
+          vietnamese: kp3?.meaning || 'Bạn đã kiểm tra lịch hoặc tình trạng vé chưa, hay để mình đặt ngay bây giờ?',
+          explanation: kp3?.usageTip || 'Chủ động hỏi để thực hiện việc đặt vé.',
+          keyVocabulary: ['availability', 'book right away'],
+        },
+      ];
+    }
+
+    if (character.role === 'family') {
+      return [
+        {
+          id: `fallback-stage1-1`,
+          type: 'formal',
+          label: 'Chia sẻ chân thành & Lắng nghe',
+          english: kp2?.phrase || 'Things have been quite demanding at work lately, but your advice really keeps me grounded.',
+          vietnamese: kp2?.meaning || 'Dạo này công việc cũng khá nhiều áp lực, nhưng lời khuyên của bố/mẹ luôn giúp con giữ vững tâm thế.',
+          explanation: kp2?.usageTip || 'Bộc bạch lòng mình với người thân.',
+          keyVocabulary: ['demanding', 'keeps me grounded'],
+        },
+        {
+          id: `fallback-stage1-2`,
+          type: 'casual',
+          label: 'Tâm sự cởi mở',
+          english: 'Hearing from you always lifts my spirits whenever I feel tired from the daily grind.',
+          vietnamese: 'Nói chuyện với bố/mẹ luôn làm con thấy phấn chấn hơn mỗi khi mệt mỏi vì bộn bề cuộc sống.',
+          explanation: 'Gắn kết tình cảm gia đình.',
+          keyVocabulary: ['lifts my spirits', 'daily grind'],
+        },
+        {
+          id: `fallback-stage1-3`,
+          type: 'clarifying',
+          label: 'Hỏi sắp xếp lịch về thăm nhà',
+          english: kp3?.phrase || 'Would it be convenient if I come home for a visit towards the end of this month?',
+          vietnamese: kp3?.meaning || 'Nếu con sắp xếp về thăm nhà vào cuối tháng này thì có tiện cho bố/mẹ không ạ?',
+          explanation: kp3?.usageTip || 'Bàn chuyện về quê sum họp gia đình.',
+          keyVocabulary: ['convenient', 'visit home'],
+        },
+      ];
+    }
+
+    if (character.role === 'lover') {
+      return [
+        {
+          id: `fallback-stage1-1`,
+          type: 'formal',
+          label: 'Bày tỏ ngọt ngào & Tinh tế',
+          english: kp2?.phrase || 'Being with you makes every simple moment feel extraordinarily meaningful.',
+          vietnamese: kp2?.meaning || 'Ở bên cạnh em/anh làm cho từng khoảnh khắc giản đơn nhất cũng trở nên vô cùng ý nghĩa.',
+          explanation: kp2?.usageTip || 'Lời bày tỏ tình cảm chân thành.',
+          keyVocabulary: ['extraordinarily', 'meaningful'],
+        },
+        {
+          id: `fallback-stage1-2`,
+          type: 'casual',
+          label: 'Ngọt ngào & Chiều chuộng',
+          english: 'Whatever you prefer, I am completely happy with! Let us go to that cozy place you like.',
+          vietnamese: 'Bất cứ điều gì em/anh thích thì anh/em đều thấy vui hết! Chúng mình đến quán ấm cúng mà em/anh thích nhé.',
+          explanation: 'Thể hiện sự quan tâm, chiều chuộng người yêu.',
+          keyVocabulary: ['completely happy', 'cozy place'],
+        },
+        {
+          id: `fallback-stage1-3`,
+          type: 'clarifying',
+          label: 'Hỏi để đặt bàn trước',
+          english: kp3?.phrase || 'Should I make a reservation by the window in advance so we have a great spot?',
+          vietnamese: kp3?.meaning || 'Em/anh có muốn anh/em đặt bàn trước cạnh cửa sổ để có chỗ ngồi thật đẹp không?',
+          explanation: kp3?.usageTip || 'Chu đáo chuẩn bị cho buổi hẹn.',
+          keyVocabulary: ['reservation', 'great spot'],
+        },
+      ];
+    }
+
+    if (character.role === 'interviewer') {
+      return [
+        {
+          id: `fallback-stage1-1`,
+          type: 'formal',
+          label: 'Trình bày giải pháp kỹ thuật',
+          english: kp2?.phrase || 'In our production system, we resolved query bottlenecks by introducing distributed caching and database indexing.',
+          vietnamese: kp2?.meaning || 'Trong hệ thống thực tế, chúng tôi giải quyết điểm nghẽn truy vấn bằng cách áp dụng bộ đệm phân tán và đánh chỉ mục cơ sở dữ liệu.',
+          explanation: kp2?.usageTip || 'Trả lời kỹ thuật IT chuyên nghiệp và cụ thể.',
+          keyVocabulary: ['bottlenecks', 'distributed caching', 'indexing'],
+        },
+        {
+          id: `fallback-stage1-2`,
+          type: 'casual',
+          label: 'Chia sẻ kinh nghiệm thực chiến',
+          english: 'When that high-severity incident struck, our team collaborated closely in a war-room setup to isolate the root cause rapidly.',
+          vietnamese: 'Khi xảy ra sự cố nghiêm trọng, team chúng tôi đã phối hợp chặt chẽ để nhanh chóng khoanh vùng và tìm ra nguyên nhân gốc rễ.',
+          explanation: 'Thể hiện kỹ năng xử lý khủng hoảng và làm việc nhóm.',
+          keyVocabulary: ['incident', 'root cause', 'isolate'],
+        },
+        {
+          id: `fallback-stage1-3`,
+          type: 'clarifying',
+          label: 'Hỏi về quy trình triển khai CI/CD',
+          english: kp3?.phrase || 'How does your engineering team automate integration testing and deployment across environments?',
+          vietnamese: kp3?.meaning || 'Đội ngũ kỹ thuật của công ty tự động hóa quy trình kiểm thử tích hợp và triển khai qua các môi trường như thế nào ạ?',
+          explanation: kp3?.usageTip || 'Thể hiện sự quan tâm sâu sắc tới DevOps và chất lượng phần mềm.',
+          keyVocabulary: ['automate', 'integration testing', 'deployment'],
+        },
+      ];
+    }
+
+    if (character.role === 'stranger') {
+      return [
+        {
+          id: `fallback-stage1-1`,
+          type: 'formal',
+          label: 'Xác nhận lại chỉ dẫn rõ ràng',
+          english: kp2?.phrase || 'So I should continue straight past the intersection, and then the entrance will be on my right?',
+          vietnamese: kp2?.meaning || 'Vậy tôi cứ tiếp tục đi thẳng qua ngã tư, rồi lối vào sẽ nằm ở phía tay phải đúng không ạ?',
+          explanation: kp2?.usageTip || 'Xác nhận lại chỉ dẫn để không bị đi nhầm.',
+          keyVocabulary: ['continue straight', 'entrance'],
+        },
+        {
+          id: `fallback-stage1-2`,
+          type: 'casual',
+          label: 'Tiếp thu nhanh & Thân thiện',
+          english: 'Got it! That sounds very straightforward. Thanks for explaining the route so clearly.',
+          vietnamese: 'Tôi hiểu rồi! Đường đi nghe rất dễ tìm. Cảm ơn bạn đã giải thích lộ trình rõ ràng như vậy nhé.',
+          explanation: 'Phản hồi tích cực khi được hướng dẫn đường đi.',
+          keyVocabulary: ['straightforward', 'clearly'],
+        },
+        {
+          id: `fallback-stage1-3`,
+          type: 'clarifying',
+          label: 'Hỏi thời gian di chuyển ước tính',
+          english: kp3?.phrase || 'Approximately how many minutes does it take to walk there from here?',
+          vietnamese: kp3?.meaning || 'Ước tính mất khoảng bao nhiêu phút để đi bộ từ đây đến đó ạ?',
+          explanation: kp3?.usageTip || 'Ước lượng thời gian di chuyển thực tế.',
+          keyVocabulary: ['approximately', 'minutes to walk'],
+        },
+      ];
+    }
+
     // Staff role
     return [
       {
@@ -929,6 +1249,166 @@ function generateFallbackSuggestions(
         vietnamese: 'Sáng mai chúng mình trao đổi nhanh lại một chút để đảm bảo mọi thứ đã được gửi đi ổn thỏa chứ?',
         explanation: '"Touch base" là cụm từ kinh điển nơi công sở mang nghĩa liên lạc/nói chuyện ngắn.',
         keyVocabulary: ['touch base', 'properly'],
+      },
+    ];
+  }
+
+  if (character.role === 'friend') {
+    return [
+      {
+        id: `fallback-stage2-1`,
+        type: 'formal',
+        label: 'Chốt kế hoạch chu đáo',
+        english: kp3?.phrase || 'Wonderful, our plan is set! I look forward to catching up and having a great time together.',
+        vietnamese: kp3?.meaning || 'Tuyệt vời, kế hoạch của tụi mình đã chốt xong! Rất mong đến lúc gặp bạn và có khoảng thời gian vui vẻ.',
+        explanation: kp3?.usageTip || 'Khẳng định sự háo hức trước cuộc hẹn.',
+        keyVocabulary: ['plan is set', 'catching up'],
+      },
+      {
+        id: `fallback-stage2-2`,
+        type: 'casual',
+        label: 'Hẹn gặp cuối tuần',
+        english: 'It is a deal! Text me as soon as you are on your way, and see you very soon!',
+        vietnamese: 'Chốt kèo nhé! Khi nào xuất phát thì nhắn mình liền, hẹn sớm gặp lại bạn nha!',
+        explanation: '"It is a deal" là cách chốt hẹn sảng khoái giữa bạn bè.',
+        keyVocabulary: ['it is a deal', 'see you soon'],
+      },
+      {
+        id: `fallback-stage2-3`,
+        type: 'clarifying',
+        label: 'Hỏi phương tiện đưa đón',
+        english: 'Would you like me to swing by and pick you up, or should we meet right at the entrance?',
+        vietnamese: 'Bạn có muốn mình ghé qua đón luôn không, hay tụi mình gặp nhau ngay trước cổng vào?',
+        explanation: '"Swing by" thể hiện sự chu đáo và tiện đường ghé đón.',
+        keyVocabulary: ['swing by', 'pick you up'],
+      },
+    ];
+  }
+
+  if (character.role === 'family') {
+    return [
+      {
+        id: `fallback-stage2-1`,
+        type: 'formal',
+        label: 'Bày tỏ lòng hiếu thảo & Yêu thương',
+        english: kp3?.phrase || 'Thank you so much for your unconditional support. Please take good care of your health at home.',
+        vietnamese: kp3?.meaning || 'Con cảm ơn sự ủng hộ vô điều kiện của bố/mẹ. Bố/mẹ ở quê nhớ giữ gìn sức khỏe thật tốt nhé.',
+        explanation: kp3?.usageTip || 'Lời cảm ơn hiếu thảo và ấm áp.',
+        keyVocabulary: ['unconditional support', 'take good care'],
+      },
+      {
+        id: `fallback-stage2-2`,
+        type: 'casual',
+        label: 'Tình cảm ruột thịt',
+        english: 'I love you so much! I will call again this Sunday, and I cannot wait to see everyone soon.',
+        vietnamese: 'Con yêu bố/mẹ nhiều lắm! Chủ nhật này con sẽ gọi lại, con mong sớm được về gặp cả nhà.',
+        explanation: 'Lời kết ngọt ngào giữa các thành viên gia đình.',
+        keyVocabulary: ['love you so much', 'cannot wait'],
+      },
+      {
+        id: `fallback-stage2-3`,
+        type: 'clarifying',
+        label: 'Hỏi quà mang về cho gia đình',
+        english: 'Is there any special treat from the city that you would like me to bring back home?',
+        vietnamese: 'Có món quà hay đặc sản nào trên thành phố mà bố/mẹ muốn con mua mang về nhà không ạ?',
+        explanation: 'Hỏi han chu đáo trước khi về thăm nhà.',
+        keyVocabulary: ['special treat', 'bring back home'],
+      },
+    ];
+  }
+
+  if (character.role === 'lover') {
+    return [
+      {
+        id: `fallback-stage2-1`,
+        type: 'formal',
+        label: 'Cam kết đồng hành ngọt ngào',
+        english: kp3?.phrase || 'Thank you for making my life so beautiful. I cherish our bond more and more each day.',
+        vietnamese: kp3?.meaning || 'Cảm ơn em/anh đã làm cuộc sống của anh/em tươi đẹp đến thế. Mỗi ngày anh/em càng trân quý tình yêu này hơn.',
+        explanation: kp3?.usageTip || 'Khẳng định tình yêu vững bền, lãng mạn.',
+        keyVocabulary: ['cherish', 'bond'],
+      },
+      {
+        id: `fallback-stage2-2`,
+        type: 'casual',
+        label: 'Hẹn hò hào hứng',
+        english: 'I cannot wait to see your smile! I am heading over now, see you in just a little bit!',
+        vietnamese: 'Anh/em mong được nhìn thấy nụ cười của em/anh quá! Anh/em đang qua đây, gặp lại em/anh một lát nữa nhé!',
+        explanation: 'Háo hức trước khoảnh khắc gặp gỡ người yêu.',
+        keyVocabulary: ['cannot wait', 'heading over'],
+      },
+      {
+        id: `fallback-stage2-3`,
+        type: 'clarifying',
+        label: 'Hỏi xem đối phương đã chuẩn bị xong chưa',
+        english: 'Are you almost ready, or do you need a few more minutes before I arrive?',
+        vietnamese: 'Em/anh đã chuẩn bị xong chưa, hay em/anh cần thêm vài phút trước khi anh/em tới nơi?',
+        explanation: 'Quan tâm khéo léo để đối phương không phải vội.',
+        keyVocabulary: ['almost ready', 'arrive'],
+      },
+    ];
+  }
+
+  if (character.role === 'interviewer') {
+    return [
+      {
+        id: `fallback-stage2-1`,
+        type: 'formal',
+        label: 'Cảm ơn & Thể hiện nguyện vọng cống hiến',
+        english: kp3?.phrase || 'Thank you very much for your time and insights today. I am very enthusiastic about contributing to your team.',
+        vietnamese: kp3?.meaning || 'Rất cảm ơn thời gian và những chia sẻ quý báu của anh/chị hôm nay. Tôi rất mong muốn được cống hiến cho đội ngũ của công ty.',
+        explanation: kp3?.usageTip || 'Kết thúc buổi phỏng vấn chuẩn mực, để lại ấn tượng chuyên nghiệp.',
+        keyVocabulary: ['insights', 'enthusiastic', 'contributing'],
+      },
+      {
+        id: `fallback-stage2-2`,
+        type: 'casual',
+        label: 'Giao lưu chân thành & Tự tin',
+        english: 'It was a pleasure discussing engineering challenges with you today. I really enjoyed learning about your architectural roadmap.',
+        vietnamese: 'Thật tuyệt khi được trao đổi về các thách thức kỹ thuật hôm nay. Tôi rất thích lộ trình phát triển kiến trúc của quý công ty.',
+        explanation: 'Tạo thiện cảm và thể hiện đam mê công nghệ.',
+        keyVocabulary: ['pleasure', 'roadmap'],
+      },
+      {
+        id: `fallback-stage2-3`,
+        type: 'clarifying',
+        label: 'Hỏi về các bước tiếp theo trong quy trình tuyển dụng',
+        english: 'Could you share what the subsequent steps and expected timeline are for this hiring process?',
+        vietnamese: 'Anh/chị có thể chia sẻ các bước tiếp theo và khung thời gian dự kiến của quy trình tuyển dụng này không ạ?',
+        explanation: 'Câu hỏi chuyên nghiệp ứng viên nên hỏi ở cuối buổi phỏng vấn.',
+        keyVocabulary: ['subsequent steps', 'expected timeline', 'hiring process'],
+      },
+    ];
+  }
+
+  if (character.role === 'stranger') {
+    return [
+      {
+        id: `fallback-stage2-1`,
+        type: 'formal',
+        label: 'Cảm ơn sâu sắc sự giúp đỡ',
+        english: kp3?.phrase || 'Thank you immensely for your directions. Your assistance made navigating this city effortless!',
+        vietnamese: kp3?.meaning || 'Vô cùng cảm ơn sự chỉ dẫn của bạn. Sự giúp đỡ nhiệt tình của bạn khiến việc đi lại trong thành phố trở nên dễ dàng hơn nhiều!',
+        explanation: kp3?.usageTip || 'Bày tỏ lòng biết ơn trang trọng tới người lạ/người bản địa.',
+        keyVocabulary: ['immensely', 'effortless'],
+      },
+      {
+        id: `fallback-stage2-2`,
+        type: 'casual',
+        label: 'Cảm ơn thân thiện',
+        english: 'You have been super helpful, thank you so much! Wishing you a fantastic day ahead!',
+        vietnamese: 'Bạn đã giúp tôi rất nhiều, cảm ơn bạn rất nhiều nhé! Chúc bạn một ngày thật tuyệt vời phía trước!',
+        explanation: 'Lời chào tạm biệt tươi vui, lịch thiệp nơi công cộng.',
+        keyVocabulary: ['super helpful', 'fantastic day'],
+      },
+      {
+        id: `fallback-stage2-3`,
+        type: 'clarifying',
+        label: 'Hỏi gợi ý ẩm thực hoặc điểm tham quan lân cận',
+        english: 'By the way, is there a good local eatery or specialty around here that you would personally recommend?',
+        vietnamese: 'Nhân tiện, quanh đây có quán ăn ngon hoặc đặc sản địa phương nào mà bạn khuyên nên thử không ạ?',
+        explanation: 'Hỏi xin mẹo ẩm thực địa phương từ người bản xứ.',
+        keyVocabulary: ['local eatery', 'specialty', 'recommend'],
       },
     ];
   }
@@ -1124,6 +1604,51 @@ export function generateFallbackRoleplayReply(
       }Which portion would you prefer to handle first?`;
     }
     return `That sounds like a great plan! I'm glad we are on the same page regarding this. I will take care of my assigned part right away, and let's touch base again once the initial draft is ready.`;
+  }
+
+  if (character.role === 'friend') {
+    if (userTurnCount <= 1) {
+      return `That sounds awesome! I'm really excited we're doing this together. ${
+        phrase ? `Just like you said: "${phrase}". ` : ''
+      }What time works best for you, and should we invite anyone else along?`;
+    }
+    return `I completely agree! Everything is set up nicely. Let's make sure we meet on time, and I can't wait to catch up and have a blast with you!`;
+  }
+
+  if (character.role === 'family') {
+    if (userTurnCount <= 1) {
+      return `It warms my heart so much to talk with you, my dear. ${
+        phrase ? `Always remember: "${phrase}". ` : ''
+      }Make sure you don't overwork yourself and always take good care of your meals and rest, okay?`;
+    }
+    return `Hearing your voice brings so much comfort to the whole family. We are always praying for your success and happiness. Call me whenever you have free time, sweetheart!`;
+  }
+
+  if (character.role === 'lover') {
+    if (userTurnCount <= 1) {
+      return `I love hearing your thoughts, sweetheart. Every moment we share feels so special. ${
+        phrase ? `Just as you mentioned: "${phrase}". ` : ''
+      }What else would make this time together unforgettable for you?`;
+    }
+    return `You mean the world to me, and I'm so grateful to have you by my side. Let's enjoy every single minute of this date together!`;
+  }
+
+  if (character.role === 'interviewer') {
+    if (userTurnCount <= 1) {
+      return `Thank you for sharing your experience and technical perspective. Regarding "${scenario.objective}", ${
+        phrase ? `you highlighted: "${phrase}". ` : ''
+      }Could you elaborate on how you evaluate trade-offs between delivery speed and system maintainability?`;
+    }
+    return `Your technical explanation is well reasoned and demonstrates solid engineering discipline. We have covered our main agenda today. Thank you for participating, and our recruitment team will reach out with next steps soon.`;
+  }
+
+  if (character.role === 'stranger') {
+    if (userTurnCount <= 1) {
+      return `Happy to help! Regarding "${scenario.objective}", ${
+        phrase ? `keep this tip in mind: "${phrase}". ` : ''
+      }Are you all set, or would you like me to clarify anything else about the route or schedule?`;
+    }
+    return `You're very welcome! You should have no problem finding it from here. Enjoy your journey, and have a wonderful time exploring!`;
   }
 
   // Staff role

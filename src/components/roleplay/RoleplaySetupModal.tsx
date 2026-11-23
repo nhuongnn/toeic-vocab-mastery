@@ -18,6 +18,10 @@ import {
   Plus,
   Bot,
   User,
+  Smile,
+  Compass,
+  Home,
+  Laptop,
 } from 'lucide-react';
 import {
   CharacterConfig,
@@ -129,12 +133,14 @@ export function RoleplaySetupModal({
     setRole(newRole);
     setScenarioFilterRole(newRole);
     const defaults = DEFAULT_CHARACTERS[newRole];
-    setName(defaults.name);
-    setGender(defaults.gender);
-    setAge(defaults.age);
-    setDepartment(defaults.department);
-    setPersonality(defaults.personality);
-    setAvatar(defaults.avatar || (newRole === 'boss' ? 'cat-boss' : newRole === 'colleague' ? 'coffee-zombie' : 'shiba-intern'));
+    if (defaults) {
+      setName(defaults.name);
+      setGender(defaults.gender);
+      setAge(defaults.age);
+      setDepartment(defaults.department);
+      setPersonality(defaults.personality);
+      setAvatar(defaults.avatar || 'cat-boss');
+    }
 
     // Pick first recommended scenario for this role
     const matching = PRESET_SCENARIOS.filter((s) => s.role === newRole);
@@ -280,60 +286,93 @@ export function RoleplaySetupModal({
             <div className="space-y-6">
               {/* Role Selector */}
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-300 uppercase tracking-wider">
-                  Chọn Vai Trò Nhân Vật AI
-                </label>
-                <div className="grid grid-cols-3 gap-3">
-                  {/* Colleague */}
-                  <button
-                    type="button"
-                    onClick={() => handleRoleChange('colleague')}
-                    className={`flex flex-col items-center text-center p-3.5 rounded-2xl border transition-all ${
-                      role === 'colleague'
-                        ? 'border-indigo-500 bg-indigo-500/15 text-white ring-2 ring-indigo-500/30'
-                        : 'border-slate-800 bg-slate-950/60 text-slate-300 hover:border-slate-700'
-                    }`}
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-300 flex items-center justify-center mb-2">
-                      <Users className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-bold">Đồng Nghiệp</span>
-                    <span className="text-[10px] text-slate-400 mt-0.5">Colleague (Ngang hàng)</span>
-                  </button>
-
-                  {/* Boss */}
-                  <button
-                    type="button"
-                    onClick={() => handleRoleChange('boss')}
-                    className={`flex flex-col items-center text-center p-3.5 rounded-2xl border transition-all ${
-                      role === 'boss'
-                        ? 'border-purple-500 bg-purple-500/15 text-white ring-2 ring-purple-500/30'
-                        : 'border-slate-800 bg-slate-950/60 text-slate-300 hover:border-slate-700'
-                    }`}
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-300 flex items-center justify-center mb-2">
-                      <Shield className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-bold">Người Sếp</span>
-                    <span className="text-[10px] text-slate-400 mt-0.5">Manager / Boss</span>
-                  </button>
-
-                  {/* Staff */}
-                  <button
-                    type="button"
-                    onClick={() => handleRoleChange('staff')}
-                    className={`flex flex-col items-center text-center p-3.5 rounded-2xl border transition-all ${
-                      role === 'staff'
-                        ? 'border-emerald-500 bg-emerald-500/15 text-white ring-2 ring-emerald-500/30'
-                        : 'border-slate-800 bg-slate-950/60 text-slate-300 hover:border-slate-700'
-                    }`}
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center mb-2">
-                      <Briefcase className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-bold">Nhân Viên</span>
-                    <span className="text-[10px] text-slate-400 mt-0.5">Office Staff / Junior</span>
-                  </button>
+                <div className="flex items-center justify-between">
+                  <label className="text-xs font-bold text-slate-300 uppercase tracking-wider">
+                    Chọn Vai Trò Nhân Vật AI
+                  </label>
+                  <span className="text-[10px] text-slate-500">8 vai trò thực chiến đa dạng</span>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                  {[
+                    {
+                      id: 'friend' as CharacterRole,
+                      name: 'Bạn Bè',
+                      subtitle: 'Giải trí, Du lịch & Đời sống',
+                      icon: <Smile className="w-4 h-4 text-amber-400" />,
+                      activeClass: 'border-amber-500 bg-amber-500/15 text-white ring-2 ring-amber-500/30',
+                    },
+                    {
+                      id: 'family' as CharacterRole,
+                      name: 'Người Thân',
+                      subtitle: 'Tâm sự, Sức khỏe & Bố mẹ',
+                      icon: <Home className="w-4 h-4 text-rose-400" />,
+                      activeClass: 'border-rose-500 bg-rose-500/15 text-white ring-2 ring-rose-500/30',
+                    },
+                    {
+                      id: 'lover' as CharacterRole,
+                      name: 'Người Yêu',
+                      subtitle: 'Hẹn hò lãng mạn & Tương lai',
+                      icon: <Heart className="w-4 h-4 text-pink-400" />,
+                      activeClass: 'border-pink-500 bg-pink-500/15 text-white ring-2 ring-pink-500/30',
+                    },
+                    {
+                      id: 'interviewer' as CharacterRole,
+                      name: 'Phỏng Vấn IT',
+                      subtitle: 'Kỹ thuật, Kiến trúc & Agile',
+                      icon: <Laptop className="w-4 h-4 text-blue-400" />,
+                      activeClass: 'border-blue-500 bg-blue-500/15 text-white ring-2 ring-blue-500/30',
+                    },
+                    {
+                      id: 'stranger' as CharacterRole,
+                      name: 'Người Lạ / Bản Địa',
+                      subtitle: 'Hỏi đường, Bus, Metro & Bay',
+                      icon: <Compass className="w-4 h-4 text-teal-400" />,
+                      activeClass: 'border-teal-500 bg-teal-500/15 text-white ring-2 ring-teal-500/30',
+                    },
+                    {
+                      id: 'colleague' as CharacterRole,
+                      name: 'Đồng Nghiệp',
+                      subtitle: 'Colleague (Ngang hàng)',
+                      icon: <Users className="w-4 h-4 text-indigo-400" />,
+                      activeClass: 'border-indigo-500 bg-indigo-500/15 text-white ring-2 ring-indigo-500/30',
+                    },
+                    {
+                      id: 'boss' as CharacterRole,
+                      name: 'Người Sếp',
+                      subtitle: 'Manager / Boss (Cấp trên)',
+                      icon: <Shield className="w-4 h-4 text-purple-400" />,
+                      activeClass: 'border-purple-500 bg-purple-500/15 text-white ring-2 ring-purple-500/30',
+                    },
+                    {
+                      id: 'staff' as CharacterRole,
+                      name: 'Nhân Viên',
+                      subtitle: 'Office Staff (Cấp dưới)',
+                      icon: <Briefcase className="w-4 h-4 text-emerald-400" />,
+                      activeClass: 'border-emerald-500 bg-emerald-500/15 text-white ring-2 ring-emerald-500/30',
+                    },
+                  ].map((item) => {
+                    const isSelected = role === item.id;
+                    return (
+                      <button
+                        key={item.id}
+                        type="button"
+                        onClick={() => handleRoleChange(item.id)}
+                        className={`flex flex-col items-center text-center p-3 rounded-2xl border transition-all ${
+                          isSelected
+                            ? item.activeClass
+                            : 'border-slate-800 bg-slate-950/60 text-slate-300 hover:border-slate-700'
+                        }`}
+                      >
+                        <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800/80 flex items-center justify-center mb-1.5 shrink-0">
+                          {item.icon}
+                        </div>
+                        <span className="text-xs font-bold leading-tight">{item.name}</span>
+                        <span className="text-[10px] text-slate-400 mt-0.5 truncate max-w-full">
+                          {item.subtitle}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -723,37 +762,41 @@ export function RoleplaySetupModal({
               </div>
 
               {/* Filter Tabs by Role */}
-              <div className="flex items-center gap-2 pt-1">
-                {(['all', 'colleague', 'boss', 'staff'] as const).map((r) => (
+              <div className="flex items-center gap-1.5 pt-1 overflow-x-auto no-scrollbar pb-1">
+                {[
+                  { id: 'all' as const, label: 'Tất cả' },
+                  { id: 'friend' as const, label: 'Bạn bè' },
+                  { id: 'family' as const, label: 'Gia đình' },
+                  { id: 'lover' as const, label: 'Người yêu' },
+                  { id: 'interviewer' as const, label: 'Phỏng vấn IT' },
+                  { id: 'stranger' as const, label: 'Người lạ / Bản địa' },
+                  { id: 'colleague' as const, label: 'Đồng nghiệp' },
+                  { id: 'boss' as const, label: 'Người sếp' },
+                  { id: 'staff' as const, label: 'Nhân viên' },
+                ].map((item) => (
                   <button
-                    key={r}
+                    key={item.id}
                     type="button"
                     onClick={() => {
-                      setScenarioFilterRole(r);
+                      setScenarioFilterRole(item.id);
                       setIsCustomScenario(false);
                     }}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
-                      scenarioFilterRole === r && !isCustomScenario
-                        ? 'bg-indigo-600 text-white'
+                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
+                      scenarioFilterRole === item.id && !isCustomScenario
+                        ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/20'
                         : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-slate-200'
                     }`}
                   >
-                    {r === 'all'
-                      ? 'Tất cả'
-                      : r === 'colleague'
-                      ? 'Đồng nghiệp'
-                      : r === 'boss'
-                      ? 'Người sếp'
-                      : 'Nhân viên'}
+                    {item.label}
                   </button>
                 ))}
 
                 <button
                   type="button"
                   onClick={() => setIsCustomScenario(true)}
-                  className={`ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                  className={`ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
                     isCustomScenario
-                      ? 'bg-violet-600 text-white'
+                      ? 'bg-violet-600 text-white shadow-md shadow-violet-600/20'
                       : 'bg-slate-950 border border-slate-800 text-violet-400 hover:text-violet-300'
                   }`}
                 >
@@ -845,6 +888,23 @@ export function RoleplaySetupModal({
                               )}
                               <span className="text-[10px] font-semibold px-2 py-0.2 rounded bg-slate-800 text-slate-400">
                                 TOEIC {sc.targetScoreRange}
+                              </span>
+                              <span className="text-[10px] font-semibold px-2 py-0.2 rounded bg-slate-800/80 text-slate-300 border border-slate-700/60">
+                                {sc.role === 'friend'
+                                  ? 'Bạn bè'
+                                  : sc.role === 'family'
+                                  ? 'Gia đình'
+                                  : sc.role === 'lover'
+                                  ? 'Người yêu'
+                                  : sc.role === 'interviewer'
+                                  ? 'Phỏng vấn IT'
+                                  : sc.role === 'stranger'
+                                  ? 'Người lạ / Bản địa'
+                                  : sc.role === 'boss'
+                                  ? 'Người sếp'
+                                  : sc.role === 'colleague'
+                                  ? 'Đồng nghiệp'
+                                  : 'Nhân viên'}
                               </span>
                             </div>
 

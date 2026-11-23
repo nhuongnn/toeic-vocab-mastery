@@ -1,4 +1,12 @@
-export type CharacterRole = 'colleague' | 'boss' | 'staff';
+export type CharacterRole =
+  | 'colleague'
+  | 'boss'
+  | 'staff'
+  | 'friend'
+  | 'family'
+  | 'lover'
+  | 'interviewer'
+  | 'stranger';
 
 export type CharacterGender = 'male' | 'female' | 'other';
 
@@ -30,6 +38,7 @@ export interface RoleplayScenario {
   level: ScenarioLevel;
   targetScoreRange: string; // e.g. "450 - 600", "650 - 750", "800+"
   department: string;
+  category?: string;
   objective: string; // Mục tiêu cần đạt được trong cuộc hội thoại
   initialMessage: string;
   initialTranslation: string;

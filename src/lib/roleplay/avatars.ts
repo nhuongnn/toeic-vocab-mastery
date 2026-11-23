@@ -4,7 +4,7 @@ export interface AvatarPreset {
   badgeEmoji?: string;
   name: string;
   vibe: string; // Fun catchphrase
-  roleFit: 'all' | 'boss' | 'colleague' | 'staff';
+  roleFit: 'all' | 'boss' | 'colleague' | 'staff' | 'friend' | 'family' | 'lover' | 'interviewer' | 'stranger';
   category: 'chibi' | 'genz' | 'classic';
   bgGradient: string;
   borderColor: string;
@@ -390,6 +390,193 @@ export const AVATAR_PRESETS: AvatarPreset[] = [
     bgGradient: 'from-sky-600/25 to-indigo-800/40',
     borderColor: 'border-sky-500/40',
   },
+
+  // ================= BẠN BÈ, GIA ĐÌNH, NGƯỜI YÊU, PHỎNG VẤN & NGƯỜI LẠ =================
+  // Bạn bè
+  {
+    id: 'chibi-corgi-friend',
+    emoji: '🐶',
+    badgeEmoji: '🎉',
+    name: 'Corgi Bạn Thân Hóm Hỉnh',
+    vibe: '"Cuối tuần này lên đồ đi cà phê quẩy thôi bạn ơi!"',
+    roleFit: 'friend',
+    category: 'chibi',
+    bgGradient: 'from-amber-400/30 via-orange-300/25 to-yellow-400/30',
+    borderColor: 'border-amber-400/60',
+  },
+  {
+    id: 'gamer-cat',
+    emoji: '🐱',
+    badgeEmoji: '🎮',
+    name: 'Mèo Game Thủ Thức Đêm',
+    vibe: '"Cày game leo rank co-op, đêm nay không ngủ!"',
+    roleFit: 'friend',
+    category: 'genz',
+    bgGradient: 'from-purple-500/30 via-violet-600/25 to-pink-500/30',
+    borderColor: 'border-purple-400/60',
+  },
+  {
+    id: 'bestie-coffee',
+    emoji: '👯',
+    badgeEmoji: '☕',
+    name: 'Cạ Cứng Cà Phê Chém Gió',
+    vibe: '"Gặp nhau buôn chuyện giải tỏa mọi áp lực cuộc sống."',
+    roleFit: 'friend',
+    category: 'classic',
+    bgGradient: 'from-yellow-600/25 to-amber-800/40',
+    borderColor: 'border-yellow-500/40',
+  },
+
+  // Gia đình
+  {
+    id: 'chibi-mom-cook',
+    emoji: '🍲',
+    badgeEmoji: '❤️',
+    name: 'Mẹ Hiền Nấu Cơm Ngon',
+    vibe: '"Ăn uống đầy đủ giữ gìn sức khỏe nghe con yêu!"',
+    roleFit: 'family',
+    category: 'chibi',
+    bgGradient: 'from-rose-400/30 via-red-300/25 to-pink-300/30',
+    borderColor: 'border-rose-400/60',
+  },
+  {
+    id: 'family-dad-care',
+    emoji: '👨‍👧',
+    badgeEmoji: '🏡',
+    name: 'Bố Điềm Đạm Chu Đáo',
+    vibe: '"Bố luôn ở đây lắng nghe và ủng hộ mọi quyết định của con."',
+    roleFit: 'family',
+    category: 'classic',
+    bgGradient: 'from-emerald-600/25 to-teal-800/40',
+    borderColor: 'border-emerald-500/40',
+  },
+  {
+    id: 'chibi-sister-sweet',
+    emoji: '👧',
+    badgeEmoji: '🎀',
+    name: 'Em Gái Nhí Nhảnh',
+    vibe: '"Cuối tuần anh/chị có về nhà nấu món ngon cho em không?"',
+    roleFit: 'family',
+    category: 'chibi',
+    bgGradient: 'from-pink-300/30 via-rose-200/25 to-fuchsia-300/30',
+    borderColor: 'border-pink-300/60',
+  },
+
+  // Người yêu
+  {
+    id: 'chibi-bunny-love',
+    emoji: '🐰',
+    badgeEmoji: '💐',
+    name: 'Thỏ Con Người Yêu Ngọt Ngào',
+    vibe: '"Nhớ bạn quá, hôm nay cùng mình đi dạo phố nhé!"',
+    roleFit: 'lover',
+    category: 'chibi',
+    bgGradient: 'from-pink-400/35 via-rose-300/30 to-red-300/35',
+    borderColor: 'border-pink-400/60',
+  },
+  {
+    id: 'lover-heart-cat',
+    emoji: '😻',
+    badgeEmoji: '💕',
+    name: 'Bé Mèo Người Yêu Tinh Tế',
+    vibe: '"Luôn bên cạnh thấu hiểu và sẻ chia mọi buồn vui cùng bạn."',
+    roleFit: 'lover',
+    category: 'genz',
+    bgGradient: 'from-rose-500/30 via-pink-600/25 to-purple-600/30',
+    borderColor: 'border-rose-400/60',
+  },
+  {
+    id: 'lover-cool-partner',
+    emoji: '🧑‍🤝‍🧑',
+    badgeEmoji: '✨',
+    name: 'Người Yêu Ấm Áp Đồng Hành',
+    vibe: '"Cùng nhau xây đắp những ước mơ và tương lai hạnh phúc."',
+    roleFit: 'lover',
+    category: 'classic',
+    bgGradient: 'from-fuchsia-600/25 to-rose-800/40',
+    borderColor: 'border-fuchsia-500/40',
+  },
+
+  // Người phỏng vấn IT
+  {
+    id: 'tech-lead-interviewer',
+    emoji: '👨‍💻',
+    badgeEmoji: '🎯',
+    name: 'Tech Lead Phỏng Vấn IT',
+    vibe: '"Hãy chia sẻ về kiến trúc hệ thống và cách bạn tối ưu performance."',
+    roleFit: 'interviewer',
+    category: 'classic',
+    bgGradient: 'from-blue-600/30 via-indigo-600/25 to-cyan-700/30',
+    borderColor: 'border-blue-400/60',
+  },
+  {
+    id: 'hr-recruiter-sharp',
+    emoji: '👩‍💼',
+    badgeEmoji: '📋',
+    name: 'HR IT Săn Đầu Người Sắc Sảo',
+    vibe: '"Bạn thấy mình phù hợp thế nào với văn hóa Agile công nghệ?"',
+    roleFit: 'interviewer',
+    category: 'classic',
+    bgGradient: 'from-sky-600/25 to-blue-800/40',
+    borderColor: 'border-sky-500/40',
+  },
+  {
+    id: 'chibi-owl-examiner',
+    emoji: '🦉',
+    badgeEmoji: '💡',
+    name: 'Cú Mèo Giám Khảo Thuật Toán',
+    vibe: '"Một thử thách tư duy lập trình thú vị dành cho bạn!"',
+    roleFit: 'interviewer',
+    category: 'chibi',
+    bgGradient: 'from-violet-400/30 via-indigo-300/25 to-sky-400/30',
+    borderColor: 'border-violet-400/60',
+  },
+
+  // Người lạ / Người bản địa / Phương tiện
+  {
+    id: 'friendly-local-guide',
+    emoji: '🧭',
+    badgeEmoji: '🎒',
+    name: 'Người Bản Địa Chỉ Đường',
+    vibe: '"Bạn cần đến phố cổ hay ga tàu? Để mình chỉ hướng cho nhé!"',
+    roleFit: 'stranger',
+    category: 'genz',
+    bgGradient: 'from-teal-500/30 via-emerald-600/25 to-cyan-600/30',
+    borderColor: 'border-teal-400/60',
+  },
+  {
+    id: 'transit-station-guide',
+    emoji: '🚇',
+    badgeEmoji: '🎫',
+    name: 'Nhân Viên Hướng Dẫn Ga Tàu',
+    vibe: '"Chuyến tàu kế tiếp sẽ đến sau 3 phút tại ke ga số 2."',
+    roleFit: 'stranger',
+    category: 'classic',
+    bgGradient: 'from-cyan-600/25 to-teal-800/40',
+    borderColor: 'border-cyan-500/40',
+  },
+  {
+    id: 'airport-staff-helper',
+    emoji: '✈️',
+    badgeEmoji: '🛫',
+    name: 'Nhân Viên Sân Bay Chu Đáo',
+    vibe: '"Cổng khởi hành của quý khách ở Gate 14, quầy an ninh phía trước."',
+    roleFit: 'stranger',
+    category: 'classic',
+    bgGradient: 'from-sky-600/30 via-blue-700/25 to-indigo-800/30',
+    borderColor: 'border-sky-400/60',
+  },
+  {
+    id: 'podcast-host-friend',
+    emoji: '🎙️',
+    badgeEmoji: '🎧',
+    name: 'Host Podcast Đời Sống',
+    vibe: '"Chào mừng bạn đến với số podcast chia sẻ về quan điểm sống hôm nay."',
+    roleFit: 'friend',
+    category: 'genz',
+    bgGradient: 'from-purple-500/30 via-pink-500/25 to-amber-500/30',
+    borderColor: 'border-purple-400/60',
+  },
 ];
 
 export function getAvatarPreset(id?: string): AvatarPreset {
@@ -401,6 +588,11 @@ export function getAvatarPreset(id?: string): AvatarPreset {
   if (id.includes('boss')) return AVATAR_PRESETS.find((a) => a.id === 'cat-boss') || AVATAR_PRESETS[0];
   if (id.includes('colleague')) return AVATAR_PRESETS.find((a) => a.id === 'coffee-zombie') || AVATAR_PRESETS[2];
   if (id.includes('staff')) return AVATAR_PRESETS.find((a) => a.id === 'shiba-intern') || AVATAR_PRESETS[1];
+  if (id.includes('friend')) return AVATAR_PRESETS.find((a) => a.id === 'chibi-corgi-friend') || AVATAR_PRESETS[0];
+  if (id.includes('family')) return AVATAR_PRESETS.find((a) => a.id === 'chibi-mom-cook') || AVATAR_PRESETS[0];
+  if (id.includes('lover')) return AVATAR_PRESETS.find((a) => a.id === 'chibi-bunny-love') || AVATAR_PRESETS[0];
+  if (id.includes('interview')) return AVATAR_PRESETS.find((a) => a.id === 'tech-lead-interviewer') || AVATAR_PRESETS[0];
+  if (id.includes('stranger')) return AVATAR_PRESETS.find((a) => a.id === 'friendly-local-guide') || AVATAR_PRESETS[0];
 
   return AVATAR_PRESETS[0];
 }

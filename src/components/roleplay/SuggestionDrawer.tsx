@@ -42,24 +42,29 @@ export function SuggestionDrawer({
   if (!isOpen) return null;
 
   return (
-    <div className="rounded-2xl border border-indigo-500/30 bg-slate-900/95 p-4 shadow-2xl backdrop-blur-xl animate-in fade-in slide-in-from-bottom-2 duration-200 space-y-3 mb-2">
+    <div className="rounded-2xl border border-indigo-500/30 bg-slate-900/95 p-3.5 sm:p-4 shadow-2xl backdrop-blur-xl animate-in fade-in slide-in-from-bottom-2 duration-200 mb-2 flex flex-col max-h-[46vh] sm:max-h-[52vh] min-h-0">
       {/* Header */}
-      <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-        <div className="flex items-center gap-2">
+      <div className="flex items-center justify-between pb-2.5 border-b border-slate-800 shrink-0 gap-2">
+        <div className="flex items-center gap-2 min-w-0 flex-1">
           <div className="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
             <Lightbulb className="w-4 h-4 fill-amber-400/20" />
           </div>
-          <div>
+          <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-1.5">
               <h4 className="text-xs font-bold text-white">
                 Gợi Ý Câu Giao Tiếp Theo Ngữ Cảnh
               </h4>
-              <span className="text-[10px] font-semibold px-2 py-0.2 rounded-full bg-indigo-500/20 text-indigo-300">
+              <span className="text-[10px] font-semibold px-2 py-0.2 rounded-full bg-indigo-500/20 text-indigo-300 shrink-0">
                 Chủ động chọn
               </span>
+              {suggestions.length > 0 && (
+                <span className="text-[10px] font-semibold px-2 py-0.2 rounded-full bg-slate-800 text-slate-300 border border-slate-700 shrink-0">
+                  {suggestions.length} gợi ý
+                </span>
+              )}
               {provider && (
                 <span
-                  className={`inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.2 rounded-full border ${
+                  className={`inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.2 rounded-full border shrink-0 ${
                     provider === 'gemini'
                       ? 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
                       : provider === 'cloudflare'
@@ -83,11 +88,11 @@ export function SuggestionDrawer({
               )}
             </div>
             <div className="flex items-center gap-2 mt-0.5">
-              <p className="text-[11px] text-slate-400">
+              <p className="text-[11px] text-slate-400 truncate">
                 Chọn một câu phù hợp để điền vào khung chat hoặc tham khảo cách diễn đạt
               </p>
               {isFallback && fallbackReason && (
-                <span className="text-[10px] text-amber-300/90 italic hidden sm:inline">
+                <span className="text-[10px] text-amber-300/90 italic hidden sm:inline shrink-0">
                   • {fallbackReason}
                 </span>
               )}
@@ -95,18 +100,18 @@ export function SuggestionDrawer({
           </div>
         </div>
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 shrink-0">
           <button
             onClick={onRefresh}
             disabled={isLoading}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-indigo-300 hover:bg-slate-800 transition-colors disabled:opacity-40"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-indigo-300 hover:bg-slate-800 transition-colors disabled:opacity-40 cursor-pointer"
             title="Tạo gợi ý khác"
           >
             <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin text-indigo-400' : ''}`} />
           </button>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
             title="Đóng bảng gợi ý"
           >
             <X className="w-4 h-4" />
@@ -116,17 +121,28 @@ export function SuggestionDrawer({
 
       {/* Loading state */}
       {isLoading ? (
-        <div className="py-8 flex flex-col items-center justify-center space-y-3 text-slate-400">
-          <div className="w-8 h-8 rounded-full border-2 border-indigo-500 border-t-transparent animate-spin" />
+        <div className="py-6 flex flex-col items-center justify-center space-y-2.5 text-slate-400">
+          <div className="w-7 h-7 rounded-full border-2 border-indigo-500 border-t-transparent animate-spin" />
           <p className="text-xs">Đang phân tích cuộc hội thoại & gợi ý câu trả lời phù hợp...</p>
         </div>
       ) : suggestions.length === 0 ? (
-        <div className="py-6 text-center text-xs text-slate-400">
+        <div className="py-5 text-center text-xs text-slate-400">
           Chưa có gợi ý sẵn sàng. Bấm nút làm mới để tạo gợi ý!
         </div>
       ) : (
-        /* Suggestion cards */
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        /* Scrollable suggestions container */
+        <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain pt-2 pb-1 pr-1 -mr-1">
+          {/* Mobile hint if multiple suggestions */}
+          {suggestions.length > 1 && (
+            <div className="md:hidden flex items-center justify-between pb-2 text-[10px] text-slate-400 px-0.5">
+              <span className="text-indigo-300 font-medium flex items-center gap-1">
+                <span>↕</span> Cuộn xuống để xem tất cả {suggestions.length} gợi ý
+              </span>
+              <span className="text-slate-500">Chạm để dùng hoặc gửi</span>
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 sm:gap-3">
           {suggestions.map((sug) => {
             const isFormal = sug.type === 'formal';
             const isCasual = sug.type === 'casual';
@@ -205,6 +221,7 @@ export function SuggestionDrawer({
               </div>
             );
           })}
+          </div>
         </div>
       )}
     </div>

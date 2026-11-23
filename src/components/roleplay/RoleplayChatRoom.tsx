@@ -1045,7 +1045,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       : 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300';
 
   return (
-    <div className="flex flex-col h-[78vh] sm:h-[82vh] max-w-5xl mx-auto rounded-3xl bg-slate-900/90 border border-slate-800 shadow-2xl overflow-hidden backdrop-blur-xl">
+    <div className="flex flex-col h-[78vh] sm:h-[82vh] max-h-[82dvh] max-w-5xl mx-auto rounded-3xl bg-slate-900/90 border border-slate-800 shadow-2xl overflow-hidden backdrop-blur-xl">
       {/* 1. Header Bar */}
       <div className="flex items-center justify-between px-3 sm:px-6 py-2.5 sm:py-3.5 border-b border-slate-800 bg-slate-950/80 gap-2">
         <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1 mr-1 sm:mr-2">
@@ -1470,7 +1470,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       </div>
 
       {/* 3. Messages Scroll Area */}
-      <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
+      <div className="flex-1 min-h-0 overflow-y-auto p-4 sm:p-6 space-y-4">
         {messages.map((msg, idx) => {
           const isUser = msg.role === 'user';
           const isSpeakingThis = activeSpeakingId === msg.id && isPlaying;
@@ -1727,7 +1727,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       </div>
 
       {/* 4. Suggestion Drawer (Strictly on demand: Only shown when user clicks button) */}
-      <div className="px-4 sm:px-6">
+      <div className="px-3 sm:px-6 shrink-0 min-h-0">
         <SuggestionDrawer
           isOpen={showSuggestions}
           onClose={() => setShowSuggestions(false)}

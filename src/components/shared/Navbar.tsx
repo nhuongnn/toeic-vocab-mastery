@@ -27,6 +27,7 @@ import {
   Settings,
   Bot,
   ArrowRight,
+  MessageSquare,
 } from 'lucide-react';
 import { allVocabularyWords } from '@/data/vocabulary';
 import { LEVEL_CONFIG } from '@/lib/vocabulary-helpers';
@@ -152,7 +153,8 @@ export function Navbar() {
     pathname.startsWith('/grammar') ||
     pathname.startsWith('/pronunciation') ||
     pathname.startsWith('/reading') ||
-    pathname.startsWith('/writing');
+    pathname.startsWith('/writing') ||
+    pathname.startsWith('/patterns');
 
   const isPracticeActive =
     pathname.startsWith('/flashcards') ||
@@ -165,6 +167,15 @@ export function Navbar() {
     pathname.startsWith('/ai-chat');
 
   const skillItems = [
+    {
+      href: '/patterns',
+      label: 'Mẫu câu & Collocations',
+      desc: 'Mẫu câu giao tiếp, Collocations thực chiến & Idioms',
+      icon: MessageSquare,
+      color: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
+      badge: 'Mới',
+      badgeColor: 'bg-amber-500/20 border-amber-500/35 text-amber-300',
+    },
     {
       href: '/grammar',
       label: 'Ngữ pháp thực tế',
@@ -312,7 +323,7 @@ export function Navbar() {
               {activeDropdown === 'skills' && (
                 <div className="absolute top-full left-0 mt-1 w-80 sm:w-88 rounded-2xl bg-slate-900/98 border border-slate-800 shadow-2xl p-2.5 z-50 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150 max-h-[calc(100vh-5rem)] overflow-y-auto">
                   <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2.5 py-1 mb-1 border-b border-slate-800/60 pb-1.5">
-                    4 Kỹ Năng Bổ Trợ
+                    Kỹ Năng & Mẫu Câu Thực Chiến
                   </div>
                   <div className="space-y-1">
                     {skillItems.map((item) => {
@@ -332,7 +343,16 @@ export function Navbar() {
                             <Icon className="w-4 h-4" />
                           </div>
                           <div className="space-y-0.5 min-w-0 flex-1">
-                            <div className="text-xs font-semibold">{item.label}</div>
+                            <div className="flex items-center gap-2">
+                              <span className="text-xs font-semibold">{item.label}</span>
+                              {item.badge && (
+                                <span
+                                  className={`text-[9px] px-1.5 py-0.2 rounded font-bold border ${item.badgeColor || 'bg-indigo-500/20 text-indigo-300 border-indigo-500/30'}`}
+                                >
+                                  {item.badge}
+                                </span>
+                              )}
+                            </div>
                             <div className="text-[11px] text-slate-400 leading-snug">
                               {item.desc}
                             </div>
@@ -733,10 +753,10 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Section: 4 Kỹ năng */}
+          {/* Section: Kỹ năng */}
           <div className="space-y-1">
             <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider px-2">
-              4 Kỹ năng Bổ trợ
+              Kỹ năng & Mẫu câu Thực chiến
             </div>
             {skillItems.map((item) => {
               const Icon = item.icon;
@@ -751,7 +771,16 @@ export function Navbar() {
                     <Icon className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="font-semibold text-slate-200">{item.label}</div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-slate-200">{item.label}</span>
+                      {item.badge && (
+                        <span
+                          className={`text-[9px] px-1.5 py-0.2 rounded font-bold border ${item.badgeColor || 'bg-indigo-500/20 text-indigo-300 border-indigo-500/30'}`}
+                        >
+                          {item.badge}
+                        </span>
+                      )}
+                    </div>
                     <div className="text-[11px] text-slate-400 leading-snug">{item.desc}</div>
                   </div>
                 </Link>

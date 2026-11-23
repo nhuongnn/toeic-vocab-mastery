@@ -26,6 +26,7 @@ import {
   Send,
   Bot,
   MessageSquare,
+  Bookmark,
 } from 'lucide-react';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useSpeech } from '@/hooks/useSpeech';
@@ -452,6 +453,98 @@ export default function HomePage() {
             </p>
             <span className="text-[11px] text-emerald-400 font-semibold block pt-1">
               Email chuẩn bản xứ →
+            </span>
+          </Link>
+        </div>
+      </section>
+
+      {/* Featured Sentence Patterns, Collocations & Idioms Hub */}
+      <section className="rounded-3xl bg-gradient-to-r from-slate-900 via-amber-950/40 to-slate-900 border border-amber-500/30 p-6 sm:p-8 space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-400">
+              <MessageSquare className="w-4 h-4" />
+              <span>Kho Tinh Hoa Ngôn Ngữ Thực Chiến</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+              Mẫu câu Giao tiếp, Collocations & Idioms Bản xứ
+            </h2>
+            <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
+              Xóa tan lối dịch từ-sang-từ vụng về. Làm chủ các cặp từ cố định (meet the deadline, inclement weather), mẫu câu đàm phán tế nhị và thành ngữ kinh điển trong công sở và đề thi TOEIC.
+            </p>
+          </div>
+
+          <Link
+            href="/patterns"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-amber-600/30 flex-shrink-0"
+          >
+            <span>Khám Phá Ngay</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+          <Link
+            href="/patterns"
+            className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 hover:border-amber-500/40 transition-all space-y-2 group"
+          >
+            <div className="flex items-center gap-2 text-amber-400 text-xs font-bold">
+              <MessageSquare className="w-4 h-4" />
+              <span>Mẫu câu Đàm phán & Nhờ vả</span>
+            </div>
+            <p className="text-xs text-slate-300 group-hover:text-white transition-colors">
+              I was wondering if you might..., Would you mind..., I see your point, but...
+            </p>
+            <span className="text-[11px] text-amber-400 font-semibold block pt-1">
+              Khéo léo & Lịch thiệp →
+            </span>
+          </Link>
+
+          <Link
+            href="/patterns"
+            className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 hover:border-emerald-500/40 transition-all space-y-2 group"
+          >
+            <div className="flex items-center gap-2 text-emerald-400 text-xs font-bold">
+              <Bookmark className="w-4 h-4" />
+              <span>Collocations Vàng TOEIC</span>
+            </div>
+            <p className="text-xs text-slate-300 group-hover:text-white transition-colors">
+              Meet the deadline, conduct a survey, in accordance with, readily available.
+            </p>
+            <span className="text-[11px] text-emerald-400 font-semibold block pt-1">
+              Tránh bẫy Part 5 & 6 →
+            </span>
+          </Link>
+
+          <Link
+            href="/patterns"
+            className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 hover:border-pink-500/40 transition-all space-y-2 group"
+          >
+            <div className="flex items-center gap-2 text-pink-400 text-xs font-bold">
+              <Brain className="w-4 h-4" />
+              <span>Idioms Bản xứ Công sở</span>
+            </div>
+            <p className="text-xs text-slate-300 group-hover:text-white transition-colors">
+              On the same page, touch base, cut corners, bite the bullet, call it a day.
+            </p>
+            <span className="text-[11px] text-pink-400 font-semibold block pt-1">
+              Phản xạ như người bản xứ →
+            </span>
+          </Link>
+
+          <Link
+            href="/patterns"
+            className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 hover:border-cyan-500/40 transition-all space-y-2 group"
+          >
+            <div className="flex items-center gap-2 text-cyan-400 text-xs font-bold">
+              <Zap className="w-4 h-4" />
+              <span>Trắc nghiệm Phản xạ</span>
+            </div>
+            <p className="text-xs text-slate-300 group-hover:text-white transition-colors">
+              Kiểm tra khả năng nhận diện cụm từ cố định và giải mã thành ngữ trong ngữ cảnh đề thi.
+            </p>
+            <span className="text-[11px] text-cyan-400 font-semibold block pt-1">
+              Luyện phản xạ 3 giây →
             </span>
           </Link>
         </div>

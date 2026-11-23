@@ -23,8 +23,26 @@ import {
   clearAllAiTutorHistory,
   generateTutorConversationId,
 } from '@/lib/ai/history';
+import { getGuestId } from '@/lib/ai/guest-id';
 import { useAuth } from './AuthContext';
 import { useProgress } from './ProgressContext';
+
+export interface QuotaExceededInfo {
+  code: string;
+  message: string;
+  limit: number;
+  usedToday: number;
+  isGuest: boolean;
+}
+
+export interface UserQuotaStatus {
+  limit: number;
+  usedToday: number;
+  remaining: number;
+  isGuest: boolean;
+  guestLimit: number;
+  userLimit: number;
+}
 
 interface ChatContextType {
   isOpen: boolean;
@@ -44,6 +62,12 @@ interface ChatContextType {
   sendMessage: (content: string, overrideWordContext?: WordContext) => Promise<void>;
   clearMessages: () => void;
   stopGeneration: () => void;
+
+  // Quota tracking & Guest login prompt
+  quotaExceededInfo: QuotaExceededInfo | null;
+  clearQuotaError: () => void;
+  userQuota: UserQuotaStatus | null;
+  refreshUserQuota: () => Promise<void>;
 
   // Multi-conversation & History features
   currentConversationId: string | null;
@@ -93,6 +117,47 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
   });
   const [isFallbackActive, setIsFallbackActive] = useState(false);
   const [fallbackReason, setFallbackReason] = useState<string | null>(null);
+
+  // Quota & Guest limits state
+  const [quotaExceededInfo, setQuotaExceededInfo] = useState<QuotaExceededInfo | null>(null);
+  const [userQuota, setUserQuota] = useState<UserQuotaStatus | null>(null);
+
+  const clearQuotaError = useCallback(() => {
+    setQuotaExceededInfo(null);
+  }, []);
+
+  const refreshUserQuota = useCallback(async () => {
+    try {
+      const guestId = !user ? getGuestId() : '';
+      const params = new URLSearchParams();
+      if (guestId) params.set('guestId', guestId);
+      if (user?.id) params.set('userId', user.id);
+      if (user?.email) params.set('email', user.email);
+
+      const res = await fetch(`/api/chat?${params.toString()}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.userQuota) {
+          setUserQuota(data.userQuota);
+        }
+        if (data.providers?.gemini?.available) {
+          setActiveProvider('gemini');
+          setActiveModel(data.providers.gemini.model);
+        } else if (data.providers?.cloudflare?.available) {
+          setActiveProvider('cloudflare');
+          setActiveModel(data.providers.cloudflare.model);
+          setIsFallbackActive(true);
+          setFallbackReason('Using Cloudflare Workers AI');
+        }
+      }
+    } catch {
+      // ignore
+    }
+  }, [user]);
+
+  useEffect(() => {
+    refreshUserQuota();
+  }, [refreshUserQuota]);
 
   const abortControllerRef = useRef<AbortController | null>(null);
   const currentConversationIdRef = useRef<string | null>(null);
@@ -276,6 +341,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
       const nextMessages = [...messages, userMessage];
       setMessages([...nextMessages, initialAssistantMessage]);
       setIsLoading(true);
+      setQuotaExceededInfo(null);
 
       abortControllerRef.current = new AbortController();
 
@@ -283,11 +349,16 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
       let streamProvider: AIProvider = activeProvider || 'gemini';
       let streamFallback = false;
 
+      const guestId = !user ? getGuestId() : undefined;
+
       try {
         const response = await fetch('/api/chat', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            ...(user?.id ? { 'x-user-id': user.id } : {}),
+            ...(user?.email ? { 'x-user-email': user.email } : {}),
+            ...(guestId ? { 'x-guest-id': guestId } : {}),
           },
           body: JSON.stringify({
             messages: nextMessages.map((m) => ({
@@ -296,18 +367,43 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
             })),
             wordContext: currentContext || undefined,
             providerPreference: selectedModel,
+            userId: user?.id,
+            userEmail: user?.email,
+            guestId,
           }),
           signal: abortControllerRef.current.signal,
         });
 
         if (!response.ok) {
           let errDesc = 'Failed to connect to AI server';
+          let errCode: string | undefined;
+          let limit = 0;
+          let usedToday = 0;
+          let isGuest = !user;
+
           try {
             const errData = await response.json();
             errDesc = errData.error || errDesc;
+            errCode = errData.code;
+            limit = errData.limit || 0;
+            usedToday = errData.usedToday || 0;
+            if (typeof errData.isGuest === 'boolean') {
+              isGuest = errData.isGuest;
+            }
           } catch {
             // ignore
           }
+
+          if (errCode === 'GUEST_LIMIT_REACHED' || errCode === 'USER_LIMIT_REACHED' || response.status === 429) {
+            setQuotaExceededInfo({
+              code: errCode || (isGuest ? 'GUEST_LIMIT_REACHED' : 'USER_LIMIT_REACHED'),
+              message: errDesc,
+              limit,
+              usedToday,
+              isGuest,
+            });
+          }
+
           throw new Error(errDesc);
         }
 
@@ -367,6 +463,15 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
                   )
                 );
               } else if (event.type === 'error') {
+                if (event.code === 'GUEST_LIMIT_REACHED' || event.code === 'USER_LIMIT_REACHED') {
+                  setQuotaExceededInfo({
+                    code: event.code,
+                    message: event.message,
+                    limit: event.limit || 0,
+                    usedToday: event.usedToday || 0,
+                    isGuest: Boolean(event.isGuest ?? !user),
+                  });
+                }
                 accumulatedContent += `\n\n> ⚠️ *Lỗi: ${event.message}*`;
                 setMessages((prev) =>
                   prev.map((msg) =>
@@ -402,6 +507,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
       } finally {
         setIsLoading(false);
         abortControllerRef.current = null;
+        refreshUserQuota();
 
         // STRICT REQUIREMENT: Only save conversation if user is logged in!
         // Do NOT save if user is not authenticated.
@@ -528,6 +634,10 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         deleteConversation,
         clearAllHistory,
         addSnippetContext,
+        quotaExceededInfo,
+        clearQuotaError,
+        userQuota,
+        refreshUserQuota,
       }}
     >
       {children}

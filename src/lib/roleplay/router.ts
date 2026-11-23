@@ -18,7 +18,7 @@ import {
   RoleplaySuggestion,
 } from '@/types/roleplay';
 import { getRandomOpeningVariation } from './scenarios';
-import { canUseAI, canUseProvider, recordAIUsage } from '@/lib/ai/system-ai-settings';
+import { canUseProvider, checkUserAIQuota, recordUserAIUsage } from '@/lib/ai/system-ai-settings';
 
 export interface RoleplayChatPayload {
   messages: Array<{ role: 'user' | 'assistant'; content: string }>;
@@ -26,6 +26,9 @@ export interface RoleplayChatPayload {
   scenario: RoleplayScenario;
   userContext?: Partial<UserLearningContext>;
   providerPreference?: AIModelPreference;
+  userId?: string;
+  userEmail?: string;
+  guestId?: string;
 }
 
 /**
@@ -34,15 +37,19 @@ export interface RoleplayChatPayload {
 export async function* routeHybridRoleplayChat(
   payload: RoleplayChatPayload
 ): AsyncGenerator<StreamEvent, void, unknown> {
-  const { messages, character, scenario, userContext, providerPreference = 'auto' } = payload;
+  const { messages, character, scenario, userContext, providerPreference = 'auto', userId, userEmail, guestId } = payload;
   const systemPrompt = buildRoleplaySystemPrompt(character, scenario, userContext);
 
-  // 1. Check system-wide AI availability and quota
-  const aiCheck = canUseAI();
-  if (!aiCheck.allowed) {
+  // 1. Check user and system-wide AI availability and quota
+  const quotaCheck = await checkUserAIQuota({ userId, userEmail, guestId });
+  if (!quotaCheck.allowed) {
     yield {
       type: 'error',
-      message: aiCheck.reason || 'Hệ thống AI hiện đang tạm tắt.',
+      message: quotaCheck.reason || 'Hạn mức AI hôm nay đã đạt giới hạn.',
+      code: quotaCheck.code,
+      limit: quotaCheck.limit,
+      usedToday: quotaCheck.usedToday,
+      isGuest: quotaCheck.isGuest,
     };
     yield { type: 'done' };
     return;
@@ -76,7 +83,7 @@ export async function* routeHybridRoleplayChat(
       let recorded = false;
       for await (const chunk of streamCloudflare(messages, systemPrompt)) {
         if (!recorded) {
-          recordAIUsage('cloudflare');
+          recordUserAIUsage({ userId, userEmail, guestId, provider: 'cloudflare' });
           recorded = true;
         }
         yield { type: 'content', text: chunk };
@@ -114,7 +121,7 @@ export async function* routeHybridRoleplayChat(
       let recorded = false;
       for await (const chunk of streamGemini(messages, systemPrompt)) {
         if (!recorded) {
-          recordAIUsage('gemini');
+          recordUserAIUsage({ userId, userEmail, guestId, provider: 'gemini' });
           recorded = true;
         }
         yield { type: 'content', text: chunk };
@@ -136,7 +143,7 @@ export async function* routeHybridRoleplayChat(
 
       if (!first.done && first.value) {
         geminiStartedYielding = true;
-        recordAIUsage('gemini');
+        recordUserAIUsage({ userId, userEmail, guestId, provider: 'gemini' });
 
         yield {
           type: 'meta',
@@ -186,7 +193,7 @@ export async function* routeHybridRoleplayChat(
       let recorded = false;
       for await (const chunk of streamCloudflare(messages, systemPrompt)) {
         if (!recorded) {
-          recordAIUsage('cloudflare');
+          recordUserAIUsage({ userId, userEmail, guestId, provider: 'cloudflare' });
           recorded = true;
         }
         yield { type: 'content', text: chunk };
@@ -213,10 +220,15 @@ export async function generateRoleplaySuggestions(
   scenario: RoleplayScenario,
   chatHistory: Array<{ role: 'user' | 'assistant'; content: string }>,
   targetScore: number = 650,
-  providerPreference: AIModelPreference = 'auto'
+  providerPreference: AIModelPreference = 'auto',
+  userInfo?: { userId?: string; userEmail?: string; guestId?: string }
 ): Promise<RoleplaySuggestion[]> {
-  const aiCheck = canUseAI();
-  if (!aiCheck.allowed) {
+  const quotaCheck = await checkUserAIQuota({
+    userId: userInfo?.userId,
+    userEmail: userInfo?.userEmail,
+    guestId: userInfo?.guestId,
+  });
+  if (!quotaCheck.allowed) {
     return generateFallbackSuggestions(character, scenario, chatHistory);
   }
 
@@ -237,7 +249,12 @@ export async function generateRoleplaySuggestions(
       if (text) {
         const parsed = JSON.parse(cleanJsonString(text));
         if (Array.isArray(parsed) && parsed.length >= 2) {
-          recordAIUsage('gemini');
+          recordUserAIUsage({
+            userId: userInfo?.userId,
+            userEmail: userInfo?.userEmail,
+            guestId: userInfo?.guestId,
+            provider: 'gemini',
+          });
           return parsed as RoleplaySuggestion[];
         }
       }
@@ -260,7 +277,12 @@ export async function generateRoleplaySuggestions(
       }
       const parsed = JSON.parse(cleanJsonString(accumulated));
       if (Array.isArray(parsed) && parsed.length >= 2) {
-        recordAIUsage('cloudflare');
+        recordUserAIUsage({
+          userId: userInfo?.userId,
+          userEmail: userInfo?.userEmail,
+          guestId: userInfo?.guestId,
+          provider: 'cloudflare',
+        });
         return parsed as RoleplaySuggestion[];
       }
     } catch (e) {
@@ -620,10 +642,15 @@ export async function generateDynamicOpening(
   scenario: RoleplayScenario,
   userContext?: Partial<UserLearningContext>,
   userName?: string,
-  providerPreference: AIModelPreference = 'auto'
+  providerPreference: AIModelPreference = 'auto',
+  userInfo?: { userId?: string; userEmail?: string; guestId?: string }
 ): Promise<{ english: string; vietnamese: string; source: 'gemini' | 'cloudflare' | 'fallback' }> {
-  const aiCheck = canUseAI();
-  if (!aiCheck.allowed) {
+  const quotaCheck = await checkUserAIQuota({
+    userId: userInfo?.userId,
+    userEmail: userInfo?.userEmail,
+    guestId: userInfo?.guestId,
+  });
+  if (!quotaCheck.allowed) {
     return generateFallbackOpening(character, scenario, userName);
   }
 
@@ -644,7 +671,12 @@ export async function generateDynamicOpening(
       if (text) {
         const parsed = JSON.parse(cleanJsonString(text));
         if (parsed.english && parsed.vietnamese) {
-          recordAIUsage('gemini');
+          recordUserAIUsage({
+            userId: userInfo?.userId,
+            userEmail: userInfo?.userEmail,
+            guestId: userInfo?.guestId,
+            provider: 'gemini',
+          });
           return {
             english: parsed.english.trim(),
             vietnamese: parsed.vietnamese.trim(),
@@ -671,7 +703,12 @@ export async function generateDynamicOpening(
       }
       const parsed = JSON.parse(cleanJsonString(accumulated));
       if (parsed.english && parsed.vietnamese) {
-        recordAIUsage('cloudflare');
+        recordUserAIUsage({
+          userId: userInfo?.userId,
+          userEmail: userInfo?.userEmail,
+          guestId: userInfo?.guestId,
+          provider: 'cloudflare',
+        });
         return {
           english: parsed.english.trim(),
           vietnamese: parsed.vietnamese.trim(),

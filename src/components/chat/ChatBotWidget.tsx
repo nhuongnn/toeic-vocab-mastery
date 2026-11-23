@@ -48,6 +48,9 @@ export function ChatBotWidget() {
     loadConversation,
     deleteConversation,
     clearAllHistory,
+    quotaExceededInfo,
+    userQuota,
+    clearQuotaError,
   } = useChat();
 
   const [activeTab, setActiveTab] = useState<'chat' | 'history'>('chat');
@@ -207,6 +210,18 @@ export function ChatBotWidget() {
           {activeWordContext && (
             <span className="px-1.5 py-0.5 rounded-full bg-white/20 text-[10px] font-semibold uppercase">
               {activeWordContext.level || 'TOEIC'}
+            </span>
+          )}
+
+          {!user && userQuota && (
+            <span
+              className={`px-1.5 py-0.5 rounded-full text-[10px] font-semibold border ${
+                userQuota.remaining <= 0
+                  ? 'bg-rose-500/30 text-rose-200 border-rose-400/50'
+                  : 'bg-indigo-900/60 text-indigo-200 border-indigo-400/30'
+              }`}
+            >
+              {userQuota.remaining <= 0 ? 'Hết lượt khách' : `${userQuota.remaining}/${userQuota.limit} lượt`}
             </span>
           )}
 
@@ -384,6 +399,20 @@ export function ChatBotWidget() {
                         </div>
                       )}
                     </div>
+
+                    {/* Guest Quota Badge in Header */}
+                    {!user && userQuota && (
+                      <span
+                        className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold border ${
+                          userQuota.remaining <= 0
+                            ? 'bg-rose-500/15 border-rose-500/30 text-rose-300'
+                            : 'bg-slate-800 border-slate-700 text-slate-300'
+                        }`}
+                        title={`Hạn mức khách chưa đăng nhập: còn ${userQuota.remaining}/${userQuota.limit} lượt hôm nay`}
+                      >
+                        <span>Khách: {userQuota.remaining}/{userQuota.limit}</span>
+                      </span>
+                    )}
                   </div>
                   <p className="text-[11px] text-slate-400 truncate">
                     {activeWordContext
@@ -821,6 +850,58 @@ export function ChatBotWidget() {
                 <div ref={messagesEndRef} />
               </div>
 
+              {/* Guest Limit Reached Notification Banner */}
+              {((quotaExceededInfo && quotaExceededInfo.isGuest) || (!user && userQuota && userQuota.remaining <= 0)) && (
+                <div className="p-3.5 mx-3 my-2 rounded-2xl bg-gradient-to-r from-amber-950/50 via-purple-950/40 to-indigo-950/50 border border-amber-500/40 text-slate-200 space-y-2.5 animate-in fade-in duration-200 shrink-0 shadow-xl shadow-black/50">
+                  <div className="flex items-start gap-2.5">
+                    <div className="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5 border border-amber-500/30">
+                      <Sparkles className="w-4 h-4" />
+                    </div>
+                    <div className="space-y-1 flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-xs font-bold text-amber-300">Đã Hết Lượt Dùng AI Dành Cho Khách</span>
+                        <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-amber-500/20 text-amber-200 border border-amber-500/30 font-semibold">
+                          {userQuota?.guestLimit || 5} lượt/ngày
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Bạn đã đạt giới hạn hạn mức AI hôm nay cho khách chưa đăng nhập. Vui lòng đăng nhập tài khoản để được nâng hạn mức sử dụng lên <strong>{userQuota?.userLimit || 50} lượt/ngày</strong> và lưu trữ lịch sử học tập!
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between gap-2 pt-1 border-t border-slate-800/80">
+                    <span className="text-[10px] text-emerald-400 font-semibold">✓ Đăng ký & Sử dụng miễn phí</span>
+                    <button
+                      type="button"
+                      onClick={openAuthModal}
+                      className="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-bold shadow-md shadow-indigo-600/30 transition-all flex items-center gap-1.5 cursor-pointer active:scale-95"
+                    >
+                      <Lock className="w-3.5 h-3.5" />
+                      <span>Đăng nhập ngay để nâng hạn mức</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Logged-in User Limit Reached Banner */}
+              {quotaExceededInfo && !quotaExceededInfo.isGuest && (
+                <div className="p-3 mx-3 my-2 rounded-2xl bg-rose-950/40 border border-rose-500/40 text-rose-200 text-xs flex items-center justify-between gap-2 shrink-0 animate-in fade-in">
+                  <div className="flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
+                    <span className="leading-snug">{quotaExceededInfo.message || 'Bạn đã đạt giới hạn hạn mức AI hôm nay.'}</span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={clearQuotaError}
+                    className="p-1 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-white shrink-0"
+                    title="Đóng thông báo"
+                  >
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              )}
+
               {/* Suggested Quick Chips */}
               <div className="px-3 py-2 bg-slate-950/60 border-t border-slate-800/80 shrink-0">
                 <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
@@ -828,7 +909,7 @@ export function ChatBotWidget() {
                     <button
                       key={idx}
                       onClick={() => sendMessage(chip)}
-                      disabled={isLoading}
+                      disabled={isLoading || Boolean(!user && userQuota && userQuota.remaining <= 0)}
                       className="shrink-0 text-[11px] px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 hover:bg-indigo-950/30 text-slate-300 hover:text-indigo-200 transition-all disabled:opacity-40"
                     >
                       {chip}
@@ -846,15 +927,17 @@ export function ChatBotWidget() {
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown}
                     placeholder={
-                      activeWordContext?.selectedText && activeWordContext.selectedText.length > 25
+                      !user && userQuota && userQuota.remaining <= 0
+                        ? 'Đã hết lượt hỏi cho khách. Đăng nhập để tiếp tục...'
+                        : activeWordContext?.selectedText && activeWordContext.selectedText.length > 25
                         ? 'Đặt câu hỏi về đoạn văn bản vừa chọn...'
                         : activeWordContext
                         ? `Hỏi bất kỳ điều gì về từ "${activeWordContext.word}"...`
                         : 'Đặt câu hỏi ngữ pháp, bài tập TOEIC hoặc từ vựng...'
                     }
                     rows={1}
-                    disabled={isLoading}
-                    className="flex-1 bg-transparent border-0 resize-none text-xs text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-0 max-h-28 px-2 py-1 leading-relaxed"
+                    disabled={isLoading || Boolean(!user && userQuota && userQuota.remaining <= 0)}
+                    className="flex-1 bg-transparent border-0 resize-none text-xs text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-0 max-h-28 px-2 py-1 leading-relaxed disabled:opacity-50"
                   />
 
                   {isLoading ? (
@@ -868,7 +951,7 @@ export function ChatBotWidget() {
                   ) : (
                     <button
                       onClick={handleSend}
-                      disabled={!input.trim()}
+                      disabled={!input.trim() || Boolean(!user && userQuota && userQuota.remaining <= 0)}
                       title="Gửi câu hỏi"
                       className="p-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500 disabled:opacity-30 disabled:hover:bg-indigo-600 transition-all shrink-0"
                     >

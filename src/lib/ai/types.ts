@@ -43,6 +43,9 @@ export interface ChatRequestPayload {
   }>;
   wordContext?: WordContext;
   providerPreference?: AIModelPreference;
+  userId?: string;
+  userEmail?: string;
+  guestId?: string;
 }
 
 export interface StreamMetaEvent {
@@ -62,6 +65,10 @@ export interface StreamErrorEvent {
   type: 'error';
   message: string;
   provider?: AIProvider;
+  code?: 'GUEST_LIMIT_REACHED' | 'USER_LIMIT_REACHED' | 'SYSTEM_LIMIT_REACHED' | 'AI_DISABLED';
+  limit?: number;
+  usedToday?: number;
+  isGuest?: boolean;
 }
 
 export interface StreamDoneEvent {

@@ -13,8 +13,26 @@ import {
   RotateCcw,
   Activity,
   Layers,
+  Users,
+  UserCheck,
+  UserPlus,
+  UserCog,
+  Trash2,
+  Edit3,
+  Search,
+  Check,
+  X,
+  Lock,
 } from 'lucide-react';
-import { SystemAISettings } from '@/lib/ai/system-ai-settings';
+import { SystemAISettings, UserQuotaOverride } from '@/lib/ai/system-ai-settings';
+
+const ADMIN_EMAIL = 'nhuong2n@gmail.com';
+
+interface RegisteredUser {
+  id: string;
+  email: string;
+  createdAt?: string;
+}
 
 interface AdminAISettingsSectionProps {
   userEmail: string;
@@ -29,14 +47,28 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
 
   const [settings, setSettings] = useState<SystemAISettings | null>(null);
   const [remainingToday, setRemainingToday] = useState<number>(0);
+  const [registeredUsers, setRegisteredUsers] = useState<RegisteredUser[]>([]);
+  const [userUsageToday, setUserUsageToday] = useState<Record<string, { usedToday: number; email?: string; isGuest: boolean }>>({});
   const [providers, setProviders] = useState<{
     gemini: { configured: boolean; model: string; enabled: boolean };
     cloudflare: { configured: boolean; model: string; enabled: boolean };
   } | null>(null);
 
+  // Form Inputs
   const [dailyLimitInput, setDailyLimitInput] = useState<number>(1500);
+  const [guestDailyLimitInput, setGuestDailyLimitInput] = useState<number>(5);
+  const [userDailyLimitInput, setUserDailyLimitInput] = useState<number>(50);
 
-  // Fetch current system AI settings
+  // Override Management State
+  const [overrideTargetEmail, setOverrideTargetEmail] = useState('');
+  const [overrideLimitInput, setOverrideLimitInput] = useState<number>(100);
+  const [overrideNoteInput, setOverrideNoteInput] = useState('');
+  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
+  const [overrideFilterText, setOverrideFilterText] = useState('');
+  const [deletingOverrideId, setDeletingOverrideId] = useState<string | null>(null);
+  const [resettingUserQuotaId, setResettingUserQuotaId] = useState<string | null>(null);
+
+  // Fetch current system AI settings & registered users
   const fetchSettings = useCallback(async (isManual = false) => {
     if (isManual) setLoading(true);
     try {
@@ -47,7 +79,11 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
           setSettings(data.settings);
           setRemainingToday(data.remainingToday);
           setProviders(data.providers);
+          setRegisteredUsers(data.registeredUsers || []);
+          setUserUsageToday(data.userUsageToday || {});
           setDailyLimitInput(data.settings.dailyLimit);
+          setGuestDailyLimitInput(data.settings.guestDailyLimit ?? 5);
+          setUserDailyLimitInput(data.settings.userDailyLimit ?? 50);
         } else {
           onShowToast(data.error || 'Lỗi khi tải thông tin AI hệ thống.');
         }
@@ -72,7 +108,11 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
           setSettings(data.settings);
           setRemainingToday(data.remainingToday);
           setProviders(data.providers);
+          setRegisteredUsers(data.registeredUsers || []);
+          setUserUsageToday(data.userUsageToday || {});
           setDailyLimitInput(data.settings.dailyLimit);
+          setGuestDailyLimitInput(data.settings.guestDailyLimit ?? 5);
+          setUserDailyLimitInput(data.settings.userDailyLimit ?? 50);
         }
         setLoading(false);
       })
@@ -119,7 +159,7 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
     }
   };
 
-  // Reset quota handler
+  // Reset global quota handler
   const handleResetQuota = async () => {
     setResetting(true);
     try {
@@ -150,6 +190,107 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
     }
   };
 
+  // Add or update individual user override
+  const handleSaveUserOverride = async () => {
+    const target = overrideTargetEmail.trim();
+    if (!target) {
+      onShowToast('Vui lòng chọn hoặc nhập Email / User ID của người dùng.');
+      return;
+    }
+    if (overrideLimitInput < 1) {
+      onShowToast('Hạn mức riêng phải từ 1 lượt trở lên.');
+      return;
+    }
+
+    setSaving(true);
+    try {
+      const res = await fetch('/api/admin/ai-settings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: userEmail,
+          action: 'set_user_override',
+          override: {
+            identifier: target,
+            email: target,
+            dailyLimit: overrideLimitInput,
+            note: overrideNoteInput,
+          },
+        }),
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setSettings(data.settings);
+        onShowToast(data.message || `Đã thiết lập hạn mức riêng cho ${target}!`);
+        setOverrideTargetEmail('');
+        setOverrideNoteInput('');
+        setOverrideLimitInput(100);
+      } else {
+        onShowToast(data.error || 'Không thể thiết lập hạn mức riêng.');
+      }
+    } catch {
+      onShowToast('Lỗi kết nối khi lưu hạn mức riêng.');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  // Delete user override
+  const handleRemoveOverride = async (identifier: string) => {
+    setSaving(true);
+    try {
+      const res = await fetch('/api/admin/ai-settings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: userEmail,
+          action: 'remove_user_override',
+          identifier,
+        }),
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setSettings(data.settings);
+        setDeletingOverrideId(null);
+        onShowToast(data.message || `Đã xóa hạn mức riêng của ${identifier}!`);
+      } else {
+        onShowToast(data.error || 'Không thể xóa hạn mức riêng.');
+      }
+    } catch {
+      onShowToast('Lỗi kết nối khi xóa hạn mức riêng.');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  // Reset a specific user's quota today
+  const handleResetUserQuota = async (identifier: string) => {
+    try {
+      const res = await fetch('/api/admin/ai-settings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: userEmail,
+          action: 'reset_user_quota',
+          identifier,
+        }),
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setUserUsageToday(data.userUsageToday || {});
+        setResettingUserQuotaId(null);
+        onShowToast(`Đã đặt lại số lượt dùng hôm nay của ${identifier} về 0!`);
+      } else {
+        onShowToast(data.error || 'Không thể đặt lại lượt dùng.');
+      }
+    } catch {
+      onShowToast('Lỗi kết nối khi đặt lại lượt dùng.');
+    }
+  };
+
   if (loading) {
     return (
       <div className="p-12 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col items-center justify-center gap-3 text-slate-400">
@@ -177,6 +318,18 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
   const isNearLimit = usedPercentage >= 80;
   const isOverLimit = settings.usedToday >= settings.dailyLimit;
 
+  // Filter overrides list
+  const activeOverrides: UserQuotaOverride[] = settings.userOverrides || [];
+  const filteredOverrides = activeOverrides.filter((o) => {
+    if (!overrideFilterText.trim()) return true;
+    const q = overrideFilterText.toLowerCase();
+    return (
+      (o.identifier && o.identifier.toLowerCase().includes(q)) ||
+      (o.email && o.email.toLowerCase().includes(q)) ||
+      (o.note && o.note.toLowerCase().includes(q))
+    );
+  });
+
   return (
     <div className="space-y-6 animate-fadeIn">
       {/* 1. Header Banner */}
@@ -193,11 +346,11 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
                   Admin Only
                 </span>
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-                  Áp dụng toàn bộ người dùng
+                  Hạn Mức Theo User & Toàn Hệ Thống
                 </span>
               </div>
               <p className="text-xs text-slate-400 mt-0.5">
-                Quản lý số lượng quota đã dùng, quota còn lại và bật/tắt các mô hình AI áp dụng cho toàn hệ thống.
+                Quản lý số lượng quota toàn hệ thống, hạn mức khách vãng lai, hạn mức thành viên và thiết lập hạn mức riêng cho từng user.
               </p>
             </div>
           </div>
@@ -232,7 +385,7 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
         {/* Card 1: Used Quota Today */}
         <div className="p-5 rounded-3xl bg-slate-900 border border-slate-800 space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-slate-400">Quota Đã Dùng Hôm Nay</span>
+            <span className="text-xs font-bold text-slate-400">Quota Hệ Thống Đã Dùng Hôm Nay</span>
             <Activity className="w-4 h-4 text-indigo-400" />
           </div>
           <div className="flex items-baseline gap-2">
@@ -269,7 +422,7 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
         {/* Card 2: Remaining Quota Today */}
         <div className="p-5 rounded-3xl bg-slate-900 border border-slate-800 space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-slate-400">Quota Còn Lại Hôm Nay</span>
+            <span className="text-xs font-bold text-slate-400">Quota Hệ Thống Còn Lại Hôm Nay</span>
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
           </div>
           <div className="flex items-baseline gap-2">
@@ -305,28 +458,38 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
               className="text-[11px] text-indigo-400 hover:text-indigo-300 font-bold inline-flex items-center gap-1 disabled:opacity-50"
             >
               <RotateCcw className="w-3 h-3" />
-              <span>Đặt lại Quota hôm nay</span>
+              <span>Đặt lại Quota hệ thống</span>
             </button>
           </div>
         </div>
 
-        {/* Card 3: Lifetime Total Calls */}
+        {/* Card 3: User Quotas Summary */}
         <div className="p-5 rounded-3xl bg-slate-900 border border-slate-800 space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-slate-400">Tổng Lượt Gọi Toàn Thời Gian</span>
-            <Layers className="w-4 h-4 text-purple-400" />
+            <span className="text-xs font-bold text-slate-400">Định Mức Người Dùng</span>
+            <Users className="w-4 h-4 text-purple-400" />
           </div>
-          <div className="flex items-baseline gap-2">
-            <span className="text-3xl font-black text-white">{settings.totalUsed.toLocaleString()}</span>
-            <span className="text-xs text-slate-400 font-semibold">lượt từ trước tới nay</span>
+          <div className="space-y-1">
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-slate-400">Khách chưa đăng nhập:</span>
+              <strong className="text-amber-400">{settings.guestDailyLimit ?? 5} lượt/ngày</strong>
+            </div>
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-slate-400">User đã đăng nhập:</span>
+              <strong className="text-emerald-400">{settings.userDailyLimit ?? 50} lượt/ngày</strong>
+            </div>
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-slate-400">Hạn mức riêng cấu hình:</span>
+              <strong className="text-indigo-400">{activeOverrides.length} người dùng</strong>
+            </div>
           </div>
 
-          <p className="text-[11px] text-slate-400 leading-snug">
-            Bộ đếm theo ngày tự động chuyển mới sau 00:00 (chu kỳ ngày: <strong className="text-slate-300">{settings.lastResetDate}</strong>).
+          <p className="text-[11px] text-slate-400 leading-snug pt-1">
+            Bộ đếm tự động làm mới sau 00:00 (chu kỳ ngày: <strong className="text-slate-300">{settings.lastResetDate}</strong>).
           </p>
 
           <div className="pt-2 border-t border-slate-800/80 text-[11px] text-slate-500">
-            Cập nhật lần cuối: {new Date(settings.updatedAt).toLocaleTimeString('vi-VN')} {new Date(settings.updatedAt).toLocaleDateString('vi-VN')}
+            Tổng lượt gọi toàn thời gian: <strong>{settings.totalUsed.toLocaleString()}</strong> lượt
           </div>
         </div>
       </div>
@@ -491,16 +654,474 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
         </div>
       </div>
 
-      {/* 4. Cấu Hình Hạn Ngạch Quota Mỗi Ngày (Daily Limit Config) */}
+      {/* 4. Cấu Hình Hạn Ngạch Quota Khách & Thành Viên (Guest vs Logged-In Limits) */}
+      <div className="p-6 sm:p-7 rounded-3xl bg-slate-900 border border-slate-800 space-y-6">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+            <Users className="w-5 h-5" />
+          </div>
+          <div>
+            <h3 className="text-base font-bold text-white">Thiết Lập Hạn Mức AI Theo Nhóm Người Dùng</h3>
+            <p className="text-xs text-slate-400">
+              Phân định hạn ngạch sử dụng AI giữa khách vãng lai chưa đăng nhập và người dùng đã đăng nhập tài khoản.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {/* Box A: Khách chưa đăng nhập (Guest Limit) */}
+          <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-4 flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 rounded-lg bg-amber-500/15 text-amber-400 flex items-center justify-center">
+                    <Lock className="w-3.5 h-3.5" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-white">Khách Vãng Lai Chưa Đăng Nhập</h4>
+                    <span className="text-[10px] text-amber-400 font-medium">Hiện tại: {settings.guestDailyLimit ?? 5} lượt / ngày</span>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Số lượt gọi AI tối đa mỗi ngày cho người dùng chưa đăng nhập. Khi đạt tới hạn mức này, hệ thống sẽ <strong>hiển thị thông báo yêu cầu đăng nhập tài khoản</strong> để tiếp tục sử dụng và nâng hạn mức.
+              </p>
+
+              {/* Quick Presets */}
+              <div className="space-y-1.5 pt-1">
+                <label className="text-[11px] font-semibold text-slate-400">Chọn nhanh:</label>
+                <div className="grid grid-cols-5 gap-1.5">
+                  {[2, 3, 5, 10, 15].map((preset) => {
+                    const isSelected = guestDailyLimitInput === preset;
+                    return (
+                      <button
+                        key={preset}
+                        type="button"
+                        onClick={() => setGuestDailyLimitInput(preset)}
+                        className={`py-1.5 px-2 rounded-xl border text-xs font-bold transition-all text-center ${
+                          isSelected
+                            ? 'bg-amber-600 text-white border-amber-500 shadow-md shadow-amber-600/20'
+                            : 'bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700'
+                        }`}
+                      >
+                        {preset} lượt
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-2 border-t border-slate-800/80 flex items-center gap-2.5">
+              <div className="relative flex-1">
+                <input
+                  type="number"
+                  min={1}
+                  max={100}
+                  value={guestDailyLimitInput}
+                  onChange={(e) => setGuestDailyLimitInput(Math.max(1, parseInt(e.target.value) || 1))}
+                  className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500"
+                />
+                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] text-slate-500">lượt/ngày</span>
+              </div>
+              <button
+                type="button"
+                disabled={saving || guestDailyLimitInput === (settings.guestDailyLimit ?? 5)}
+                onClick={() =>
+                  handleUpdate(
+                    { guestDailyLimit: guestDailyLimitInput },
+                    `Đã cập nhật hạn mức khách vãng lai thành ${guestDailyLimitInput} lượt/ngày!`
+                  )
+                }
+                className="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition-all shadow-md shadow-amber-600/20 disabled:opacity-40"
+              >
+                {saving ? 'Lưu...' : 'Lưu Hạn Mức'}
+              </button>
+            </div>
+          </div>
+
+          {/* Box B: Người dùng đã đăng nhập (Logged-in Limit) */}
+          <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-4 flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center">
+                    <UserCheck className="w-3.5 h-3.5" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-white">Thành Viên Đã Đăng Nhập (Mặc Định)</h4>
+                    <span className="text-[10px] text-emerald-400 font-medium">Hiện tại: {settings.userDailyLimit ?? 50} lượt / ngày</span>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Hạn mức tiêu chuẩn áp dụng cho tất cả tài khoản học viên đã đăng nhập vào hệ thống. Được làm mới tự động sau 00:00 hàng ngày (trừ tài khoản có thiết lập riêng bên dưới).
+              </p>
+
+              {/* Quick Presets */}
+              <div className="space-y-1.5 pt-1">
+                <label className="text-[11px] font-semibold text-slate-400">Chọn nhanh:</label>
+                <div className="grid grid-cols-5 gap-1.5">
+                  {[20, 30, 50, 100, 200].map((preset) => {
+                    const isSelected = userDailyLimitInput === preset;
+                    return (
+                      <button
+                        key={preset}
+                        type="button"
+                        onClick={() => setUserDailyLimitInput(preset)}
+                        className={`py-1.5 px-2 rounded-xl border text-xs font-bold transition-all text-center ${
+                          isSelected
+                            ? 'bg-emerald-600 text-white border-emerald-500 shadow-md shadow-emerald-600/20'
+                            : 'bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700'
+                        }`}
+                      >
+                        {preset} lượt
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-2 border-t border-slate-800/80 flex items-center gap-2.5">
+              <div className="relative flex-1">
+                <input
+                  type="number"
+                  min={1}
+                  max={1000}
+                  value={userDailyLimitInput}
+                  onChange={(e) => setUserDailyLimitInput(Math.max(1, parseInt(e.target.value) || 1))}
+                  className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
+                />
+                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] text-slate-500">lượt/ngày</span>
+              </div>
+              <button
+                type="button"
+                disabled={saving || userDailyLimitInput === (settings.userDailyLimit ?? 50)}
+                onClick={() =>
+                  handleUpdate(
+                    { userDailyLimit: userDailyLimitInput },
+                    `Đã cập nhật hạn mức user đã đăng nhập thành ${userDailyLimitInput} lượt/ngày!`
+                  )
+                }
+                className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md shadow-emerald-600/20 disabled:opacity-40"
+              >
+                {saving ? 'Lưu...' : 'Lưu Hạn Mức'}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 5. Cấu Hình Hạn Mức Riêng Cho 1 User Cụ Thể (Individual User Overrides) */}
+      <div className="p-6 sm:p-7 rounded-3xl bg-slate-900 border border-slate-800 space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+              <UserCog className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h3 className="text-base font-bold text-white">Thiết Lập Hạn Mức Riêng Cho 1 User Cụ Thể</h3>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                  {activeOverrides.length} user tùy chỉnh
+                </span>
+              </div>
+              <p className="text-xs text-slate-400">
+                Gán hạn mức quota đặc biệt cho học viên VIP, tài khoản kiểm thử hoặc giới hạn riêng cho 1 cá nhân cụ thể.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Add / Edit Override Form */}
+        <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-4">
+          <h4 className="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
+            <UserPlus className="w-3.5 h-3.5 text-indigo-400" />
+            <span>Thêm hoặc Cập Nhật Hạn Mức Riêng Cho User</span>
+          </h4>
+
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 items-end">
+            {/* Input 1: User Email or Selection */}
+            <div className="sm:col-span-5 space-y-1.5 relative">
+              <label className="text-[11px] font-semibold text-slate-300 block">
+                Email / User ID:
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  value={overrideTargetEmail}
+                  onChange={(e) => {
+                    setOverrideTargetEmail(e.target.value);
+                    setUserDropdownOpen(true);
+                  }}
+                  onFocus={() => setUserDropdownOpen(true)}
+                  placeholder="Nhập email hoặc chọn học viên..."
+                  className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-indigo-500"
+                />
+                {registeredUsers.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setUserDropdownOpen(!userDropdownOpen)}
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-bold text-indigo-400 hover:text-indigo-300 px-1.5 py-0.5 rounded bg-indigo-500/10"
+                  >
+                    Gợi ý ({registeredUsers.length})
+                  </button>
+                )}
+              </div>
+
+              {/* Dropdown of Registered Users */}
+              {userDropdownOpen && registeredUsers.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-1 rounded-xl bg-slate-900 border border-slate-700 shadow-2xl p-1.5 z-40 max-h-48 overflow-y-auto">
+                  <div className="flex items-center justify-between px-2 py-1 text-[10px] text-slate-400 border-b border-slate-800">
+                    <span>Chọn từ danh sách đã đăng ký ({registeredUsers.length}):</span>
+                    <button
+                      type="button"
+                      onClick={() => setUserDropdownOpen(false)}
+                      className="text-slate-500 hover:text-white"
+                    >
+                      <X className="w-3 h-3" />
+                    </button>
+                  </div>
+                  {registeredUsers
+                    .filter((u) => !overrideTargetEmail || u.email.toLowerCase().includes(overrideTargetEmail.toLowerCase()))
+                    .map((u) => (
+                      <button
+                        key={u.id}
+                        type="button"
+                        onClick={() => {
+                          setOverrideTargetEmail(u.email);
+                          setUserDropdownOpen(false);
+                        }}
+                        className="w-full text-left px-2.5 py-1.5 rounded-lg text-xs hover:bg-slate-800 text-slate-200 flex items-center justify-between transition-colors"
+                      >
+                        <span className="font-medium truncate">{u.email}</span>
+                        <span className="text-[10px] text-slate-500 font-mono ml-2 shrink-0">
+                          {u.email.toLowerCase() === ADMIN_EMAIL.toLowerCase() ? 'Admin' : 'Học viên'}
+                        </span>
+                      </button>
+                    ))}
+                </div>
+              )}
+            </div>
+
+            {/* Input 2: Quota Daily Limit */}
+            <div className="sm:col-span-3 space-y-1.5">
+              <label className="text-[11px] font-semibold text-slate-300 block">
+                Hạn Mức Riêng / Ngày:
+              </label>
+              <div className="relative">
+                <input
+                  type="number"
+                  min={1}
+                  max={50000}
+                  value={overrideLimitInput}
+                  onChange={(e) => setOverrideLimitInput(Math.max(1, parseInt(e.target.value) || 1))}
+                  className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"
+                />
+                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-slate-500">lượt/ngày</span>
+              </div>
+            </div>
+
+            {/* Input 3: Note / Label */}
+            <div className="sm:col-span-2 space-y-1.5">
+              <label className="text-[11px] font-semibold text-slate-300 block">
+                Ghi Chú / Nhãn:
+              </label>
+              <input
+                type="text"
+                value={overrideNoteInput}
+                onChange={(e) => setOverrideNoteInput(e.target.value)}
+                placeholder="VD: VIP, Tester..."
+                className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-indigo-500"
+              />
+            </div>
+
+            {/* Button: Submit */}
+            <div className="sm:col-span-2">
+              <button
+                type="button"
+                disabled={saving || !overrideTargetEmail.trim()}
+                onClick={handleSaveUserOverride}
+                className="w-full py-2 px-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-all shadow-md shadow-indigo-600/25 disabled:opacity-40"
+              >
+                {saving ? 'Đang lưu...' : 'Lưu Hạn Mức'}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Overrides Table / Cards List */}
+        <div className="space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider">
+              Danh Sách Hạn Mức Riêng Đang Áp Dụng ({activeOverrides.length})
+            </h4>
+
+            {activeOverrides.length > 3 && (
+              <div className="relative w-full sm:w-64">
+                <Search className="w-3.5 h-3.5 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                <input
+                  type="text"
+                  value={overrideFilterText}
+                  onChange={(e) => setOverrideFilterText(e.target.value)}
+                  placeholder="Tìm email, ghi chú..."
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-indigo-500"
+                />
+              </div>
+            )}
+          </div>
+
+          {activeOverrides.length === 0 ? (
+            <div className="p-8 rounded-2xl bg-slate-950/60 border border-slate-800/80 text-center space-y-2 text-slate-400">
+              <UserCog className="w-8 h-8 mx-auto text-slate-600" />
+              <p className="text-xs">
+                Chưa có người dùng nào được thiết lập hạn mức riêng. Tất cả thành viên đã đăng nhập đang áp dụng hạn mức mặc định: <strong>{settings.userDailyLimit ?? 50} lượt/ngày</strong>.
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-2.5">
+              {filteredOverrides.map((ov) => {
+                const identifierKey = (ov.email || ov.identifier).toLowerCase();
+                const usage = userUsageToday[identifierKey]?.usedToday ?? userUsageToday[ov.identifier]?.usedToday ?? 0;
+                const pct = Math.min(100, Math.round((usage / Math.max(1, ov.dailyLimit)) * 100));
+                const isOver = usage >= ov.dailyLimit;
+
+                return (
+                  <div
+                    key={ov.identifier}
+                    className="p-4 rounded-2xl bg-slate-950 border border-slate-800/80 hover:border-slate-700 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                  >
+                    <div className="space-y-1 min-w-0 flex-1">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-xs font-bold text-white truncate max-w-xs sm:max-w-md">
+                          {ov.email || ov.identifier}
+                        </span>
+                        {ov.note && (
+                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                            {ov.note}
+                          </span>
+                        )}
+                        {ov.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase() && (
+                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                            Quản trị viên
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="flex items-center gap-4 text-[11px] text-slate-400">
+                        <span>
+                          Hạn mức riêng: <strong className="text-indigo-400">{ov.dailyLimit.toLocaleString()} lượt/ngày</strong>
+                        </span>
+                        <span>
+                          Đã dùng hôm nay: <strong className={isOver ? 'text-rose-400' : 'text-emerald-400'}>{usage} lượt</strong> ({pct}%)
+                        </span>
+                      </div>
+
+                      {/* Mini Progress bar */}
+                      <div className="w-full max-w-sm h-1.5 rounded-full bg-slate-800 overflow-hidden mt-1">
+                        <div
+                          className={`h-full transition-all ${isOver ? 'bg-rose-500' : 'bg-gradient-to-r from-indigo-500 to-emerald-400'}`}
+                          style={{ width: `${pct}%` }}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Actions */}
+                    <div className="flex items-center gap-2 shrink-0 self-end sm:self-center">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setOverrideTargetEmail(ov.email || ov.identifier);
+                          setOverrideLimitInput(ov.dailyLimit);
+                          setOverrideNoteInput(ov.note || '');
+                        }}
+                        className="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold inline-flex items-center gap-1 transition-colors"
+                        title="Tải vào biểu mẫu để sửa"
+                      >
+                        <Edit3 className="w-3 h-3 text-slate-400" />
+                        <span>Sửa</span>
+                      </button>
+
+                      {resettingUserQuotaId === ov.identifier ? (
+                        <div className="inline-flex items-center gap-1 bg-amber-500/15 border border-amber-500/30 rounded-xl px-2 py-1 text-xs">
+                          <span className="text-[10px] text-amber-300">Đặt về 0?</span>
+                          <button
+                            type="button"
+                            onClick={() => handleResetUserQuota(ov.identifier)}
+                            className="px-1.5 py-0.5 rounded bg-amber-600 hover:bg-amber-500 text-white font-bold text-[10px]"
+                          >
+                            Có
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setResettingUserQuotaId(null)}
+                            className="px-1 py-0.5 text-slate-400 hover:text-white text-[10px]"
+                          >
+                            Hủy
+                          </button>
+                        </div>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => setResettingUserQuotaId(ov.identifier)}
+                          className="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold inline-flex items-center gap-1 transition-colors"
+                          title="Đặt lại lượt dùng hôm nay của user này về 0"
+                        >
+                          <RotateCcw className="w-3 h-3 text-slate-400" />
+                          <span>Reset</span>
+                        </button>
+                      )}
+
+                      {deletingOverrideId === ov.identifier ? (
+                        <div className="inline-flex items-center gap-1 bg-rose-500/15 border border-rose-500/30 rounded-xl px-2 py-1 text-xs">
+                          <span className="text-[10px] text-rose-300">Xóa override?</span>
+                          <button
+                            type="button"
+                            onClick={() => handleRemoveOverride(ov.identifier)}
+                            className="px-1.5 py-0.5 rounded bg-rose-600 hover:bg-rose-500 text-white font-bold text-[10px]"
+                          >
+                            Xóa
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setDeletingOverrideId(null)}
+                            className="px-1 py-0.5 text-slate-400 hover:text-white text-[10px]"
+                          >
+                            Hủy
+                          </button>
+                        </div>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => setDeletingOverrideId(ov.identifier)}
+                          className="p-1.5 rounded-xl text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"
+                          title="Xóa hạn mức riêng (chuyển về hạn mức mặc định)"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* 6. Cấu Hình Hạn Ngạch Quota Toàn Hệ Thống Mỗi Ngày (System Daily Limit Config) */}
       <div className="p-6 sm:p-7 rounded-3xl bg-slate-900 border border-slate-800 space-y-5">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
             <Sliders className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="text-base font-bold text-white">Thiết Lập Hạn Ngạch Quota Tối Đa Mỗi Ngày</h3>
+            <h3 className="text-base font-bold text-white">Thiết Lập Hạn Ngạch Quota Tổng Cả Hệ Thống</h3>
             <p className="text-xs text-slate-400">
-              Tổng số lượt gọi AI tối đa cho phép trên toàn bộ hệ thống mỗi ngày (đặt lại vào lúc 00:00).
+              Tổng số lượt gọi AI tối đa cho phép trên toàn bộ hệ thống mỗi ngày tính chung tất cả người dùng (đặt lại vào lúc 00:00).
             </p>
           </div>
         </div>
@@ -560,7 +1181,7 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
         </div>
       </div>
 
-      {/* Confirmation Modal for Quota Reset */}
+      {/* Confirmation Modal for Global Quota Reset */}
       {showResetConfirm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150">
           <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-7 max-w-md w-full shadow-2xl space-y-5">
@@ -569,9 +1190,9 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-lg font-black text-white">Xác nhận đặt lại Quota hôm nay?</h3>
+              <h3 className="text-lg font-black text-white">Xác nhận đặt lại Quota hệ thống hôm nay?</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Số lượng quota đã dùng hôm nay ({settings.usedToday} lượt) sẽ được đặt về 0. Toàn bộ người dùng sẽ được tiếp tục sử dụng AI với đầy đủ hạn ngạch ({settings.dailyLimit} lượt).
+                Số lượng quota toàn hệ thống đã dùng hôm nay ({settings.usedToday} lượt) sẽ được đặt về 0. Toàn bộ người dùng sẽ được tiếp tục sử dụng AI với đầy đủ hạn ngạch ({settings.dailyLimit} lượt).
               </p>
             </div>
 

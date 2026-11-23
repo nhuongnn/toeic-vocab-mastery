@@ -13,7 +13,7 @@ import {
   ChatRequestPayload,
   StreamEvent,
 } from './types';
-import { canUseAI, canUseProvider, recordAIUsage } from './system-ai-settings';
+import { canUseProvider, checkUserAIQuota, recordUserAIUsage } from './system-ai-settings';
 
 /**
  * Hybrid Router: Coordinates Gemini Flash (primary) and Cloudflare Workers AI (fallback).
@@ -22,15 +22,19 @@ import { canUseAI, canUseProvider, recordAIUsage } from './system-ai-settings';
 export async function* routeHybridChat(
   payload: ChatRequestPayload
 ): AsyncGenerator<StreamEvent, void, unknown> {
-  const { messages, wordContext, providerPreference = 'auto' } = payload;
+  const { messages, wordContext, providerPreference = 'auto', userId, userEmail, guestId } = payload;
   const systemPrompt = buildSystemPrompt(wordContext);
 
-  // 1. Check system-wide AI availability and quota
-  const aiCheck = canUseAI();
-  if (!aiCheck.allowed) {
+  // 1. Check user and system-wide AI quota limits
+  const quotaCheck = await checkUserAIQuota({ userId, userEmail, guestId });
+  if (!quotaCheck.allowed) {
     yield {
       type: 'error',
-      message: aiCheck.reason || 'Hệ thống AI hiện đang tạm tắt.',
+      message: quotaCheck.reason || 'Hạn mức AI hôm nay đã đạt giới hạn.',
+      code: quotaCheck.code,
+      limit: quotaCheck.limit,
+      usedToday: quotaCheck.usedToday,
+      isGuest: quotaCheck.isGuest,
     };
     yield { type: 'done' };
     return;
@@ -64,7 +68,7 @@ export async function* routeHybridChat(
       let recorded = false;
       for await (const chunk of streamCloudflare(messages, systemPrompt)) {
         if (!recorded) {
-          recordAIUsage('cloudflare');
+          recordUserAIUsage({ userId, userEmail, guestId, provider: 'cloudflare' });
           recorded = true;
         }
         yield { type: 'content', text: chunk };
@@ -102,7 +106,7 @@ export async function* routeHybridChat(
       let recorded = false;
       for await (const chunk of streamGemini(messages, systemPrompt)) {
         if (!recorded) {
-          recordAIUsage('gemini');
+          recordUserAIUsage({ userId, userEmail, guestId, provider: 'gemini' });
           recorded = true;
         }
         yield { type: 'content', text: chunk };
@@ -126,7 +130,7 @@ export async function* routeHybridChat(
 
       if (!firstResult.done && firstResult.value) {
         geminiStartedYielding = true;
-        recordAIUsage('gemini');
+        recordUserAIUsage({ userId, userEmail, guestId, provider: 'gemini' });
 
         yield {
           type: 'meta',
@@ -184,7 +188,7 @@ export async function* routeHybridChat(
       let recorded = false;
       for await (const chunk of streamCloudflare(messages, systemPrompt)) {
         if (!recorded) {
-          recordAIUsage('cloudflare');
+          recordUserAIUsage({ userId, userEmail, guestId, provider: 'cloudflare' });
           recorded = true;
         }
         yield { type: 'content', text: chunk };

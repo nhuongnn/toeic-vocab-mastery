@@ -6,22 +6,38 @@ import {
   getCloudflareChatModel,
 } from '@/lib/ai/cloudflare-provider';
 import { ChatRequestPayload } from '@/lib/ai/types';
-import { getSystemAISettingsAsync } from '@/lib/ai/system-ai-settings';
+import { getSystemAISettingsAsync, checkUserAIQuota } from '@/lib/ai/system-ai-settings';
 
 /**
- * GET /api/chat - Returns AI status and available providers
+ * GET /api/chat - Returns AI status, available providers, and caller's quota info
  */
-export async function GET() {
-  const { globalEnabled, geminiEnabled, cloudflareEnabled, usedToday, dailyLimit } = await getSystemAISettingsAsync();
-  const quotaReached = usedToday >= dailyLimit;
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const guestId = searchParams.get('guestId');
+  const userId = searchParams.get('userId');
+  const userEmail = searchParams.get('email');
 
-  const geminiReady = globalEnabled && geminiEnabled && !quotaReached && isGeminiConfigured();
-  const cfReady = globalEnabled && cloudflareEnabled && !quotaReached && isCloudflareChatConfigured();
+  const settings = await getSystemAISettingsAsync();
+  const quotaReached = settings.usedToday >= settings.dailyLimit;
+
+  const geminiReady = settings.globalEnabled && settings.geminiEnabled && !quotaReached && isGeminiConfigured();
+  const cfReady = settings.globalEnabled && settings.cloudflareEnabled && !quotaReached && isCloudflareChatConfigured();
+
+  // Check quota for the specific requester
+  const userQuota = await checkUserAIQuota({ userId, userEmail, guestId });
 
   return NextResponse.json({
-    hybridEnabled: globalEnabled && (geminiReady || cfReady),
-    globalEnabled,
+    hybridEnabled: settings.globalEnabled && (geminiReady || cfReady),
+    globalEnabled: settings.globalEnabled,
     quotaReached,
+    userQuota: {
+      limit: userQuota.limit,
+      usedToday: userQuota.usedToday,
+      remaining: userQuota.remaining,
+      isGuest: userQuota.isGuest,
+      guestLimit: settings.guestDailyLimit,
+      userLimit: settings.userDailyLimit,
+    },
     providers: {
       gemini: {
         available: geminiReady,
@@ -43,7 +59,7 @@ export async function GET() {
 }
 
 /**
- * POST /api/chat - SSE Stream Chat with Hybrid Failover
+ * POST /api/chat - SSE Stream Chat with Hybrid Failover and Per-User Quota Enforcement
  */
 export async function POST(request: Request) {
   try {
@@ -60,11 +76,39 @@ export async function POST(request: Request) {
       );
     }
 
+    // Extract user/guest identity from payload or request headers
+    const userId = payload.userId || request.headers.get('x-user-id') || undefined;
+    const userEmail = payload.userEmail || request.headers.get('x-user-email') || undefined;
+    const guestId = payload.guestId || request.headers.get('x-guest-id') || undefined;
+
+    const mergedPayload: ChatRequestPayload = {
+      ...payload,
+      userId,
+      userEmail,
+      guestId,
+    };
+
+    // Pre-check quota before establishing SSE stream
+    const quotaCheck = await checkUserAIQuota({ userId, userEmail, guestId });
+    if (!quotaCheck.allowed) {
+      return NextResponse.json(
+        {
+          error: quotaCheck.reason,
+          code: quotaCheck.code,
+          limit: quotaCheck.limit,
+          usedToday: quotaCheck.usedToday,
+          remaining: 0,
+          isGuest: quotaCheck.isGuest,
+        },
+        { status: 429 }
+      );
+    }
+
     const stream = new ReadableStream({
       async start(controller) {
         const encoder = new TextEncoder();
         try {
-          for await (const event of routeHybridChat(payload)) {
+          for await (const event of routeHybridChat(mergedPayload)) {
             const sseData = `data: ${JSON.stringify(event)}\n\n`;
             controller.enqueue(encoder.encode(sseData));
           }

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { routeHybridRoleplayChat, RoleplayChatPayload } from '@/lib/roleplay/router';
+import { checkUserAIQuota } from '@/lib/ai/system-ai-settings';
 
 export async function POST(request: Request) {
   try {
@@ -12,11 +13,38 @@ export async function POST(request: Request) {
       );
     }
 
+    const userId = payload.userId || request.headers.get('x-user-id') || undefined;
+    const userEmail = payload.userEmail || request.headers.get('x-user-email') || undefined;
+    const guestId = payload.guestId || request.headers.get('x-guest-id') || undefined;
+
+    const mergedPayload: RoleplayChatPayload = {
+      ...payload,
+      userId,
+      userEmail,
+      guestId,
+    };
+
+    // Pre-check quota before starting stream
+    const quotaCheck = await checkUserAIQuota({ userId, userEmail, guestId });
+    if (!quotaCheck.allowed) {
+      return NextResponse.json(
+        {
+          error: quotaCheck.reason,
+          code: quotaCheck.code,
+          limit: quotaCheck.limit,
+          usedToday: quotaCheck.usedToday,
+          remaining: 0,
+          isGuest: quotaCheck.isGuest,
+        },
+        { status: 429 }
+      );
+    }
+
     const stream = new ReadableStream({
       async start(controller) {
         const encoder = new TextEncoder();
         try {
-          for await (const event of routeHybridRoleplayChat(payload)) {
+          for await (const event of routeHybridRoleplayChat(mergedPayload)) {
             const sseData = `data: ${JSON.stringify(event)}\n\n`;
             controller.enqueue(encoder.encode(sseData));
           }

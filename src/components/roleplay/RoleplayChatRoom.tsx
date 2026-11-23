@@ -34,6 +34,7 @@ import {
   Check,
   X,
   AlertTriangle,
+  Lock,
 } from 'lucide-react';
 import {
   CharacterConfig,
@@ -58,6 +59,8 @@ import {
 } from '@/lib/roleplay/history';
 import { useSpeech } from '@/hooks/useSpeech';
 import { useProgress } from '@/contexts/ProgressContext';
+import { useAuth } from '@/contexts/AuthContext';
+import { getGuestId } from '@/lib/ai/guest-id';
 import { StreamEvent, AIModelPreference } from '@/lib/ai/types';
 
 interface RoleplayChatRoomProps {
@@ -66,7 +69,14 @@ interface RoleplayChatRoomProps {
 
 export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   const { progress, saveRoleplaySettings, syncChatRoomHistory } = useProgress();
+  const { user, openAuthModal } = useAuth();
   const mounted = useMounted();
+
+  const [guestLimitInfo, setGuestLimitInfo] = useState<{
+    limit: number;
+    usedToday: number;
+    message?: string;
+  } | null>(null);
 
   // 1. Initial State from user progress / sync / defaults
   const [character, setCharacter] = useState<CharacterConfig>(() => {
@@ -332,15 +342,24 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       sessionStartTimeRef.current = Date.now();
 
       try {
+        const guestId = !user ? getGuestId() : undefined;
         const res = await fetch('/api/roleplay/opening', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            ...(user?.id ? { 'x-user-id': user.id } : {}),
+            ...(user?.email ? { 'x-user-email': user.email } : {}),
+            ...(guestId ? { 'x-guest-id': guestId } : {}),
+          },
           body: JSON.stringify({
             character,
             scenario,
             userContext,
             userName,
             providerPreference: selectedModel,
+            userId: user?.id,
+            userEmail: user?.email,
+            guestId,
           }),
           signal: controller.signal,
         });
@@ -570,15 +589,24 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
     setIsSuggestionsLoading(true);
 
     try {
+      const guestId = !user ? getGuestId() : undefined;
       const res = await fetch('/api/roleplay/suggest', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          ...(user?.id ? { 'x-user-id': user.id } : {}),
+          ...(user?.email ? { 'x-user-email': user.email } : {}),
+          ...(guestId ? { 'x-guest-id': guestId } : {}),
+        },
         body: JSON.stringify({
           character,
           scenario,
           chatHistory: messages.map((m) => ({ role: m.role, content: m.content })),
           targetScore: userContext.targetScore || 650,
           providerPreference: selectedModel,
+          userId: user?.id,
+          userEmail: user?.email,
+          guestId,
         }),
       });
 
@@ -626,9 +654,15 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
     abortControllerRef.current = new AbortController();
 
     try {
+      const guestId = !user ? getGuestId() : undefined;
       const res = await fetch('/api/roleplay/chat', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          ...(user?.id ? { 'x-user-id': user.id } : {}),
+          ...(user?.email ? { 'x-user-email': user.email } : {}),
+          ...(guestId ? { 'x-guest-id': guestId } : {}),
+        },
         body: JSON.stringify({
           messages: updatedMessages.map((m) => ({
             role: m.role,
@@ -638,12 +672,29 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
           scenario,
           userContext,
           providerPreference: selectedModel,
+          userId: user?.id,
+          userEmail: user?.email,
+          guestId,
         }),
         signal: abortControllerRef.current.signal,
       });
 
       if (!res.ok) {
-        throw new Error('Không thể kết nối đến máy chủ AI');
+        let errDesc = 'Không thể kết nối đến máy chủ AI';
+        try {
+          const errData = await res.json();
+          errDesc = errData.error || errDesc;
+          if (errData.code === 'GUEST_LIMIT_REACHED' || (res.status === 429 && !user)) {
+            setGuestLimitInfo({
+              limit: errData.limit || 5,
+              usedToday: errData.usedToday || 5,
+              message: errDesc,
+            });
+          }
+        } catch {
+          // ignore
+        }
+        throw new Error(errDesc);
       }
 
       if (!res.body) {
@@ -693,6 +744,13 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                 )
               );
             } else if (event.type === 'error') {
+              if (event.code === 'GUEST_LIMIT_REACHED') {
+                setGuestLimitInfo({
+                  limit: event.limit || 5,
+                  usedToday: event.usedToday || 5,
+                  message: event.message,
+                });
+              }
               accumulatedContent += `\n\n*(Lỗi kết nối AI: ${event.message})*`;
               setMessages((prev) =>
                 prev.map((msg) =>
@@ -1529,17 +1587,51 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       </div>
 
       {/* 5. Input Control Area */}
+      {guestLimitInfo && !user && (
+        <div className="mx-4 sm:mx-6 mb-3 p-4 rounded-3xl bg-gradient-to-r from-amber-950/40 via-purple-950/40 to-indigo-950/40 border border-amber-500/40 text-slate-200 shadow-xl shadow-black/50 animate-in fade-in space-y-3">
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/30">
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <div className="space-y-1 flex-1">
+              <div className="flex items-center gap-2 flex-wrap">
+                <h4 className="text-sm font-bold text-amber-300">Đã Hết Hạn Mức Thực Chiến Dành Cho Khách</h4>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-200 border border-amber-500/30 font-semibold">
+                  {guestLimitInfo.limit} lượt/ngày
+                </span>
+              </div>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                {guestLimitInfo.message || 'Bạn đã sử dụng hết lượt AI miễn phí hôm nay dành cho khách chưa đăng nhập. Hãy đăng nhập tài khoản để được nâng hạn mức sử dụng và tiếp tục thực chiến!'}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2 border-t border-slate-800/80">
+            <span className="text-xs text-emerald-400 font-semibold">✓ Đăng nhập nhanh bằng Google chỉ 3 giây</span>
+            <button
+              type="button"
+              onClick={openAuthModal}
+              className="px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-bold shadow-lg shadow-indigo-600/30 transition-all flex items-center justify-center gap-2"
+            >
+              <Lock className="w-4 h-4" />
+              <span>Đăng nhập ngay để nâng hạn mức</span>
+            </button>
+          </div>
+        </div>
+      )}
+
       <div className="p-3 sm:p-4 border-t border-slate-800 bg-slate-950/95 space-y-2">
         {/* Helper Hint Trigger Bar */}
         <div className="flex items-center justify-between px-1">
           <button
             type="button"
             onClick={showSuggestions ? () => setShowSuggestions(false) : handleFetchSuggestions}
+            disabled={Boolean(guestLimitInfo && !user)}
             className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold transition-all ${
               showSuggestions
                 ? 'bg-amber-500/20 border border-amber-500/40 text-amber-300'
                 : 'bg-slate-900 border border-slate-800 hover:border-amber-500/40 text-slate-300 hover:text-amber-300'
-            }`}
+            } disabled:opacity-40`}
             title="Nhận gợi ý câu trả lời hoặc câu hỏi tiếp theo"
           >
             <Lightbulb className="w-3.5 h-3.5 text-amber-400" />
@@ -1558,17 +1650,22 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            disabled={isLoading}
-            placeholder={`Nói chuyện bằng tiếng Anh với ${character.name}...`}
+            disabled={isLoading || Boolean(guestLimitInfo && !user)}
+            placeholder={
+              guestLimitInfo && !user
+                ? 'Đã hết hạn mức AI cho khách. Vui lòng đăng nhập để tiếp tục...'
+                : `Nói chuyện bằng tiếng Anh với ${character.name}...`
+            }
             rows={1}
-            className="flex-1 bg-transparent border-0 resize-none text-xs sm:text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-0 max-h-28 px-2 py-1 leading-relaxed"
+            className="flex-1 bg-transparent border-0 resize-none text-xs sm:text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-0 max-h-28 px-2 py-1 leading-relaxed disabled:opacity-50"
           />
 
           {/* Voice Input Toggle Button */}
           <button
             type="button"
             onClick={toggleVoiceInput}
-            className={`p-2 rounded-xl transition-all shrink-0 ${
+            disabled={Boolean(guestLimitInfo && !user)}
+            className={`p-2 rounded-xl transition-all shrink-0 disabled:opacity-30 ${
               isListening
                 ? 'bg-rose-500 text-white animate-pulse'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
@@ -1590,7 +1687,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
           ) : (
             <button
               onClick={() => handleSendMessage()}
-              disabled={!input.trim()}
+              disabled={!input.trim() || Boolean(guestLimitInfo && !user)}
               title="Gửi câu trả lời"
               className="p-2.5 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500 disabled:opacity-30 disabled:hover:bg-indigo-600 transition-all shrink-0 shadow-md shadow-indigo-500/20"
             >

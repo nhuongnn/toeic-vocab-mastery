@@ -6,12 +6,15 @@ import { AIModelPreference } from '@/lib/ai/types';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { character, scenario, chatHistory, targetScore, providerPreference } = body as {
+    const { character, scenario, chatHistory, targetScore, providerPreference, userId, userEmail, guestId } = body as {
       character: CharacterConfig;
       scenario: RoleplayScenario;
       chatHistory: Array<{ role: 'user' | 'assistant'; content: string }>;
       targetScore?: number;
       providerPreference?: AIModelPreference;
+      userId?: string;
+      userEmail?: string;
+      guestId?: string;
     };
 
     if (!character || !scenario) {
@@ -21,12 +24,17 @@ export async function POST(request: Request) {
       );
     }
 
+    const effectiveUserId = userId || request.headers.get('x-user-id') || undefined;
+    const effectiveEmail = userEmail || request.headers.get('x-user-email') || undefined;
+    const effectiveGuestId = guestId || request.headers.get('x-guest-id') || undefined;
+
     const suggestions = await generateRoleplaySuggestions(
       character,
       scenario,
       chatHistory || [],
       targetScore || 650,
-      providerPreference || 'auto'
+      providerPreference || 'auto',
+      { userId: effectiveUserId, userEmail: effectiveEmail, guestId: effectiveGuestId }
     );
 
     return NextResponse.json({

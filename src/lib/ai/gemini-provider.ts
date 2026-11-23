@@ -10,16 +10,25 @@ export function isGeminiConfigured(): boolean {
 }
 
 export function getGeminiModel(): string {
-  return process.env.GEMINI_MODEL?.trim() || 'gemini-flash-lite-latest';
+  let model = process.env.GEMINI_MODEL?.trim() || '';
+  if (model.startsWith('models/')) {
+    model = model.replace(/^models\//, '');
+  }
+  // Automatically migrate deprecated models (e.g. gemini-2.0-flash is discontinued by Google)
+  if (!model || model.startsWith('gemini-2.0')) {
+    return 'gemini-3.8-flash';
+  }
+  return model;
 }
 
-const FALLBACK_GEMINI_MODELS = [
+export const FALLBACK_GEMINI_MODELS = [
+  'gemini-3.8-flash',
   'gemini-flash-lite-latest',
   'gemini-3.1-flash-lite',
-  'gemini-3-flash-preview',
+  'gemini-2.5-flash',
 ];
 
-function getGeminiApiKey(): string {
+export function getGeminiApiKey(): string {
   const key =
     process.env.GEMINI_API_KEY?.trim() ||
     process.env.GOOGLE_API_KEY?.trim() ||
@@ -29,6 +38,50 @@ function getGeminiApiKey(): string {
     throw new Error('GEMINI_API_KEY is not configured in environment variables.');
   }
   return key;
+}
+
+/**
+ * Reusable helper to generate content with automatic model fallback
+ */
+export async function generateContentGemini(params: {
+  contents: unknown;
+  config?: unknown;
+}): Promise<string> {
+  const apiKey = getGeminiApiKey();
+  const ai = new GoogleGenAI({ apiKey });
+
+  const primaryModel = getGeminiModel();
+  const modelsToTry = [
+    primaryModel,
+    ...FALLBACK_GEMINI_MODELS.filter((m) => m !== primaryModel),
+  ];
+
+  let lastError: unknown = null;
+  for (const currentModel of modelsToTry) {
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const response = await ai.models.generateContent({
+        model: currentModel,
+        contents: params.contents as any,
+        config: params.config as any,
+      });
+
+      const text = response.text?.trim();
+      if (text) {
+        return text;
+      }
+    } catch (err: unknown) {
+      lastError = err;
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn(
+        `[Gemini Provider] generateContent model ${currentModel} failed (${msg}). Trying next fallback model...`
+      );
+      continue;
+    }
+  }
+
+  const errMessage = lastError instanceof Error ? lastError.message : String(lastError);
+  throw new Error(`Gemini generateContent error: ${errMessage}`);
 }
 
 /**

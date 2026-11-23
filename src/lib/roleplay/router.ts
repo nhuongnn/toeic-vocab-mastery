@@ -3,6 +3,7 @@ import {
   isGeminiConfigured,
   getGeminiModel,
   streamGemini,
+  generateContentGemini,
 } from '@/lib/ai/gemini-provider';
 import {
   isCloudflareChatConfigured,
@@ -17,7 +18,6 @@ import {
   RoleplaySuggestion,
 } from '@/types/roleplay';
 import { getRandomOpeningVariation } from './scenarios';
-import { GoogleGenAI } from '@google/genai';
 import { canUseAI, canUseProvider, recordAIUsage } from '@/lib/ai/system-ai-settings';
 
 export interface RoleplayChatPayload {
@@ -226,17 +226,7 @@ export async function generateRoleplaySuggestions(
   const callGemini = async (): Promise<RoleplaySuggestion[] | null> => {
     if (!canUseProvider('gemini') || !isGeminiConfigured()) return null;
     try {
-      const apiKey =
-        process.env.GEMINI_API_KEY?.trim() ||
-        process.env.GOOGLE_API_KEY?.trim() ||
-        process.env.GOOGLE_GENERATIVE_AI_API_KEY?.trim() ||
-        '';
-
-      const ai = new GoogleGenAI({ apiKey });
-      const model = getGeminiModel();
-
-      const response = await ai.models.generateContent({
-        model,
+      const text = await generateContentGemini({
         contents: [{ role: 'user', parts: [{ text: prompt }] }],
         config: {
           temperature: 0.5,
@@ -244,7 +234,6 @@ export async function generateRoleplaySuggestions(
         },
       });
 
-      const text = response.text?.trim();
       if (text) {
         const parsed = JSON.parse(cleanJsonString(text));
         if (Array.isArray(parsed) && parsed.length >= 2) {
@@ -644,9 +633,7 @@ export async function generateDynamicOpening(
   const callGemini = async (): Promise<{ english: string; vietnamese: string; source: 'gemini' } | null> => {
     if (!canUseProvider('gemini') || !isGeminiConfigured()) return null;
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-      const response = await ai.models.generateContent({
-        model: getGeminiModel(),
+      const text = await generateContentGemini({
         contents: prompt,
         config: {
           temperature: 0.85,
@@ -654,7 +641,6 @@ export async function generateDynamicOpening(
         },
       });
 
-      const text = response.text?.trim();
       if (text) {
         const parsed = JSON.parse(cleanJsonString(text));
         if (parsed.english && parsed.vietnamese) {

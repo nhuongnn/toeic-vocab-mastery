@@ -32,16 +32,52 @@ const DEFAULT_SETTINGS: SystemAISettings = {
 // In-memory cache for ultra-fast access during streaming/API requests
 let memoryCache: SystemAISettings | null = null;
 
-function getConfigFilePath(): string {
-  const dir = path.join(process.cwd(), 'public', 'cache');
-  if (!fs.existsSync(dir)) {
+function isServerless(): boolean {
+  return Boolean(
+    process.env.VERCEL ||
+    process.env.AWS_LAMBDA_FUNCTION_NAME ||
+    process.env.NOW_REGION ||
+    process.env.LAMBDA_TASK_ROOT
+  );
+}
+
+function getWritableFilePath(): string {
+  // In serverless environments (e.g. Vercel, AWS Lambda), process.cwd() (/var/task) is read-only.
+  // /tmp is the only writable directory available.
+  if (isServerless()) {
+    const dir = path.join('/tmp', 'cache');
     try {
-      fs.mkdirSync(dir, { recursive: true });
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
     } catch {
       // ignore
     }
+    return path.join(dir, 'system-ai-settings.json');
+  }
+
+  const dir = path.join(process.cwd(), 'public', 'cache');
+  try {
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+  } catch {
+    // ignore
   }
   return path.join(dir, 'system-ai-settings.json');
+}
+
+function getReadableFilePath(): string {
+  const writablePath = getWritableFilePath();
+  if (fs.existsSync(writablePath)) {
+    return writablePath;
+  }
+  // Check if bundled into public/cache
+  const bundledPath = path.join(process.cwd(), 'public', 'cache', 'system-ai-settings.json');
+  if (fs.existsSync(bundledPath)) {
+    return bundledPath;
+  }
+  return writablePath;
 }
 
 /**
@@ -52,7 +88,7 @@ export function getSystemAISettings(): SystemAISettings {
   const today = new Date().toISOString().split('T')[0];
 
   if (!memoryCache) {
-    const filePath = getConfigFilePath();
+    const filePath = getReadableFilePath();
     if (fs.existsSync(filePath)) {
       try {
         const fileContent = fs.readFileSync(filePath, 'utf-8');
@@ -93,10 +129,15 @@ export function saveSystemAISettings(settings: SystemAISettings): SystemAISettin
   memoryCache = updated;
 
   try {
-    const filePath = getConfigFilePath();
+    const filePath = getWritableFilePath();
+    const dir = path.dirname(filePath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
     fs.writeFileSync(filePath, JSON.stringify(updated, null, 2), 'utf-8');
   } catch (err) {
-    console.error('[SystemAISettings] Failed to save config to disk:', err);
+    // Non-fatal in read-only / serverless environments; in-memory cache preserves runtime state
+    console.warn('[SystemAISettings] Local disk write skipped (in-memory cache preserved):', (err as Error)?.message || err);
   }
 
   return { ...updated };

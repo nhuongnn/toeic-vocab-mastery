@@ -23,8 +23,18 @@ import {
   Check,
   X,
   Lock,
+  Play,
+  CheckCircle2,
+  XCircle,
+  Clock,
+  Terminal,
 } from 'lucide-react';
 import { SystemAISettings, UserQuotaOverride } from '@/lib/ai/system-ai-settings';
+import {
+  ModelTestResult,
+  POPULAR_GEMINI_MODELS,
+  POPULAR_CLOUDFLARE_MODELS,
+} from '@/lib/ai/test-model';
 
 const ADMIN_EMAIL = 'nhuong2n@gmail.com';
 
@@ -68,6 +78,68 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
   const [deletingOverrideId, setDeletingOverrideId] = useState<string | null>(null);
   const [resettingUserQuotaId, setResettingUserQuotaId] = useState<string | null>(null);
 
+  // Model Testing State (Max 5 Retries)
+  const [testProvider, setTestProvider] = useState<'gemini' | 'cloudflare'>('gemini');
+  const [testModel, setTestModel] = useState<string>('gemini-flash-lite-latest');
+  const [isCustomModel, setIsCustomModel] = useState(false);
+  const [customModelInput, setCustomModelInput] = useState('');
+  const [testPrompt, setTestPrompt] = useState('Xin chào! Hãy phản hồi "AI OK" và xác nhận hệ thống đang hoạt động trong dưới 15 từ.');
+  const [testingModel, setTestingModel] = useState(false);
+  const [testResult, setTestResult] = useState<ModelTestResult | null>(null);
+  const [popularModels, setPopularModels] = useState<{
+    gemini: Array<{ id: string; name: string; note: string }>;
+    cloudflare: Array<{ id: string; name: string; note: string }>;
+  }>({
+    gemini: POPULAR_GEMINI_MODELS,
+    cloudflare: POPULAR_CLOUDFLARE_MODELS,
+  });
+
+  // Handle Model Test with up to 5 Retries
+  const handleTestModel = async (overrideProvider?: 'gemini' | 'cloudflare', overrideModel?: string) => {
+    setTestingModel(true);
+    setTestResult(null);
+
+    const providerToUse = overrideProvider || testProvider;
+    let modelToUse = overrideModel;
+    if (!modelToUse) {
+      modelToUse = isCustomModel ? customModelInput.trim() : testModel;
+    }
+
+    try {
+      const res = await fetch('/api/admin/ai-settings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: userEmail,
+          action: 'test_model',
+          provider: providerToUse,
+          model: modelToUse || undefined,
+          prompt: testPrompt?.trim() || undefined,
+        }),
+      });
+
+      const data = await res.json();
+      if (data.success && data.testResult) {
+        setTestResult(data.testResult);
+        if (data.testResult.success) {
+          onShowToast(
+            `✓ Test thành công: Model ${data.testResult.model} hoạt động tốt (lần thử ${data.testResult.succeededAtAttempt}/5)!`
+          );
+        } else {
+          onShowToast(
+            `✕ Test thất bại: Đã thử 5 lần nhưng không thể gọi model ${data.testResult.model}.`
+          );
+        }
+      } else {
+        onShowToast(data.error || 'Lỗi khi kiểm tra model AI.');
+      }
+    } catch {
+      onShowToast('Lỗi kết nối khi gửi yêu cầu test model AI.');
+    } finally {
+      setTestingModel(false);
+    }
+  };
+
   // Fetch current system AI settings & registered users
   const fetchSettings = useCallback(async (isManual = false) => {
     if (isManual) setLoading(true);
@@ -79,6 +151,7 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
           setSettings(data.settings);
           setRemainingToday(data.remainingToday);
           setProviders(data.providers);
+          if (data.popularModels) setPopularModels(data.popularModels);
           setRegisteredUsers(data.registeredUsers || []);
           setUserUsageToday(data.userUsageToday || {});
           setDailyLimitInput(data.settings.dailyLimit);
@@ -108,6 +181,7 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
           setSettings(data.settings);
           setRemainingToday(data.remainingToday);
           setProviders(data.providers);
+          if (data.popularModels) setPopularModels(data.popularModels);
           setRegisteredUsers(data.registeredUsers || []);
           setUserUsageToday(data.userUsageToday || {});
           setDailyLimitInput(data.settings.dailyLimit);
@@ -582,25 +656,44 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
               </p>
             </div>
 
-            <button
-              type="button"
-              disabled={saving}
-              onClick={() =>
-                handleUpdate(
-                  { geminiEnabled: !settings.geminiEnabled },
-                  settings.geminiEnabled ? 'Đã tắt mô hình Google Gemini.' : 'Đã bật mô hình Google Gemini.'
-                )
-              }
-              className={`relative inline-flex h-7 w-13 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none disabled:opacity-50 self-end sm:self-center ${
-                settings.geminiEnabled ? 'bg-emerald-600' : 'bg-slate-700'
-              }`}
-            >
-              <span
-                className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out ${
-                  settings.geminiEnabled ? 'translate-x-6' : 'translate-x-0'
+            <div className="flex items-center gap-3 self-end sm:self-center">
+              <button
+                type="button"
+                disabled={testingModel}
+                onClick={() => {
+                  setTestProvider('gemini');
+                  const targetModel = providers?.gemini?.model || 'gemini-flash-lite-latest';
+                  setTestModel(targetModel);
+                  setIsCustomModel(false);
+                  handleTestModel('gemini', targetModel);
+                }}
+                className="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-emerald-400 text-xs font-semibold flex items-center gap-1.5 transition-all disabled:opacity-50"
+                title="Kiểm tra khả năng gọi của model Gemini này (retry tối đa 5 lần)"
+              >
+                <Play className="w-3.5 h-3.5 fill-current" />
+                <span>{testingModel && testProvider === 'gemini' ? 'Đang test...' : 'Test gọi (5x)'}</span>
+              </button>
+
+              <button
+                type="button"
+                disabled={saving}
+                onClick={() =>
+                  handleUpdate(
+                    { geminiEnabled: !settings.geminiEnabled },
+                    settings.geminiEnabled ? 'Đã tắt mô hình Google Gemini.' : 'Đã bật mô hình Google Gemini.'
+                  )
+                }
+                className={`relative inline-flex h-7 w-13 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none disabled:opacity-50 ${
+                  settings.geminiEnabled ? 'bg-emerald-600' : 'bg-slate-700'
                 }`}
-              />
-            </button>
+              >
+                <span
+                  className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out ${
+                    settings.geminiEnabled ? 'translate-x-6' : 'translate-x-0'
+                  }`}
+                />
+              </button>
+            </div>
           </div>
 
           {/* Item 3: Cloudflare Workers AI Switch */}
@@ -629,29 +722,331 @@ export function AdminAISettingsSection({ userEmail, onShowToast }: AdminAISettin
               </p>
             </div>
 
+            <div className="flex items-center gap-3 self-end sm:self-center">
+              <button
+                type="button"
+                disabled={testingModel}
+                onClick={() => {
+                  setTestProvider('cloudflare');
+                  const targetModel = providers?.cloudflare?.model || '@cf/meta/llama-3.1-8b-instruct';
+                  setTestModel(targetModel);
+                  setIsCustomModel(false);
+                  handleTestModel('cloudflare', targetModel);
+                }}
+                className="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-amber-400 text-xs font-semibold flex items-center gap-1.5 transition-all disabled:opacity-50"
+                title="Kiểm tra khả năng gọi của model Cloudflare này (retry tối đa 5 lần)"
+              >
+                <Play className="w-3.5 h-3.5 fill-current" />
+                <span>{testingModel && testProvider === 'cloudflare' ? 'Đang test...' : 'Test gọi (5x)'}</span>
+              </button>
+
+              <button
+                type="button"
+                disabled={saving}
+                onClick={() =>
+                  handleUpdate(
+                    { cloudflareEnabled: !settings.cloudflareEnabled },
+                    settings.cloudflareEnabled
+                      ? 'Đã tắt mô hình Cloudflare Workers AI.'
+                      : 'Đã bật mô hình Cloudflare Workers AI.'
+                  )
+                }
+                className={`relative inline-flex h-7 w-13 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none disabled:opacity-50 ${
+                  settings.cloudflareEnabled ? 'bg-amber-600' : 'bg-slate-700'
+                }`}
+              >
+                <span
+                  className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out ${
+                    settings.cloudflareEnabled ? 'translate-x-6' : 'translate-x-0'
+                  }`}
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 4. Khối Test Khả Năng Gọi Model AI (Diagnostics & Retry Test up to 5x) */}
+      <div className="p-6 sm:p-7 rounded-3xl bg-slate-900 border border-slate-800 space-y-6">
+        <div className="flex items-center justify-between flex-wrap gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+              <Terminal className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="text-base font-bold text-white">Kiểm Tra Khả Năng Gọi Của Model AI</h3>
+              <p className="text-xs text-slate-400">
+                Thử nghiệm gửi prompt kiểm tra tới từng model AI. Hệ thống tự động <strong>thử lại (retry) tối đa 5 lần</strong> nếu gặp sự cố.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 bg-slate-950 p-1 rounded-2xl border border-slate-800">
             <button
               type="button"
-              disabled={saving}
-              onClick={() =>
-                handleUpdate(
-                  { cloudflareEnabled: !settings.cloudflareEnabled },
-                  settings.cloudflareEnabled
-                    ? 'Đã tắt mô hình Cloudflare Workers AI.'
-                    : 'Đã bật mô hình Cloudflare Workers AI.'
-                )
-              }
-              className={`relative inline-flex h-7 w-13 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none disabled:opacity-50 self-end sm:self-center ${
-                settings.cloudflareEnabled ? 'bg-amber-600' : 'bg-slate-700'
+              onClick={() => {
+                setTestProvider('gemini');
+                setTestModel('gemini-flash-lite-latest');
+                setIsCustomModel(false);
+              }}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                testProvider === 'gemini'
+                  ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/20'
+                  : 'text-slate-400 hover:text-white'
               }`}
             >
-              <span
-                className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out ${
-                  settings.cloudflareEnabled ? 'translate-x-6' : 'translate-x-0'
-                }`}
-              />
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Google Gemini</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setTestProvider('cloudflare');
+                setTestModel('@cf/meta/llama-3.1-8b-instruct');
+                setIsCustomModel(false);
+              }}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                testProvider === 'cloudflare'
+                  ? 'bg-amber-600 text-white shadow-md shadow-amber-600/20'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              <Zap className="w-3.5 h-3.5" />
+              <span>Cloudflare Workers AI</span>
             </button>
           </div>
         </div>
+
+        {/* Model Selector & Configuration */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+          {/* Model selection */}
+          <div className="md:col-span-5 space-y-1.5">
+            <label className="text-[11px] font-semibold text-slate-300 block">
+              Chọn Model AI Muốn Test:
+            </label>
+            <select
+              value={isCustomModel ? 'custom' : testModel}
+              onChange={(e) => {
+                if (e.target.value === 'custom') {
+                  setIsCustomModel(true);
+                  setCustomModelInput('');
+                } else {
+                  setIsCustomModel(false);
+                  setTestModel(e.target.value);
+                }
+              }}
+              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-500"
+            >
+              <optgroup label={testProvider === 'gemini' ? 'Mô hình Google Gemini phổ biến' : 'Mô hình Cloudflare Workers AI phổ biến'}>
+                {(testProvider === 'gemini' ? popularModels.gemini : popularModels.cloudflare).map((m) => (
+                  <option key={m.id} value={m.id}>
+                    {m.name} ({m.id})
+                  </option>
+                ))}
+              </optgroup>
+              <option value="custom">-- Nhập tên model tùy chỉnh khác... --</option>
+            </select>
+
+            {isCustomModel && (
+              <div className="pt-1.5 animate-in fade-in duration-150">
+                <input
+                  type="text"
+                  value={customModelInput}
+                  onChange={(e) => setCustomModelInput(e.target.value)}
+                  placeholder={testProvider === 'gemini' ? 'Ví dụ: gemini-2.5-flash' : 'Ví dụ: @cf/meta/llama-3-8b-instruct'}
+                  className="w-full bg-slate-950 border border-cyan-500/50 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-400"
+                />
+              </div>
+            )}
+          </div>
+
+          {/* Test Prompt */}
+          <div className="md:col-span-7 space-y-1.5">
+            <div className="flex items-center justify-between">
+              <label className="text-[11px] font-semibold text-slate-300 block">
+                Nội Dung Prompt Kiểm Tra:
+              </label>
+              <button
+                type="button"
+                onClick={() => setTestPrompt('Xin chào! Hãy phản hồi "AI OK" và xác nhận hệ thống đang hoạt động trong dưới 15 từ.')}
+                className="text-[10px] text-cyan-400 hover:underline"
+              >
+                Khôi phục prompt mặc định
+              </button>
+            </div>
+            <input
+              type="text"
+              value={testPrompt}
+              onChange={(e) => setTestPrompt(e.target.value)}
+              placeholder="Nhập prompt thử nghiệm..."
+              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500"
+            />
+          </div>
+        </div>
+
+        {/* Action Button */}
+        <div className="flex items-center justify-between flex-wrap gap-3 pt-1 border-t border-slate-800/80">
+          <div className="flex items-center gap-2 text-xs text-slate-400">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <span>
+              Mục tiêu test:{' '}
+              <strong className="text-white font-mono">
+                {isCustomModel ? customModelInput || 'Chưa nhập tên' : testModel}
+              </strong>{' '}
+              (Provider:{' '}
+              <span className="capitalize text-slate-300 font-semibold">{testProvider}</span>)
+            </span>
+          </div>
+
+          <button
+            type="button"
+            disabled={testingModel || (isCustomModel && !customModelInput.trim())}
+            onClick={() => handleTestModel()}
+            className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white text-xs font-bold shadow-lg shadow-cyan-600/20 transition-all flex items-center gap-2 disabled:opacity-50 cursor-pointer"
+          >
+            {testingModel ? (
+              <>
+                <RefreshCw className="w-4 h-4 animate-spin" />
+                <span>Đang Kiểm Tra & Retry (Tối Đa 5 Lần)...</span>
+              </>
+            ) : (
+              <>
+                <Play className="w-4 h-4 fill-current" />
+                <span>Bắt Đầu Kiểm Tra Model (Tối Đa 5 Lần Thử)</span>
+              </>
+            )}
+          </button>
+        </div>
+
+        {/* Test Result Display */}
+        {testResult && (
+          <div className="mt-4 p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-4 animate-in fade-in duration-200">
+            {/* Status Banner */}
+            <div
+              className={`p-4 rounded-xl border flex items-start sm:items-center justify-between flex-wrap gap-3 ${
+                testResult.success
+                  ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300'
+                  : 'bg-rose-500/10 border-rose-500/30 text-rose-300'
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                {testResult.success ? (
+                  <CheckCircle2 className="w-6 h-6 text-emerald-400 shrink-0" />
+                ) : (
+                  <XCircle className="w-6 h-6 text-rose-400 shrink-0" />
+                )}
+                <div>
+                  <h4 className="text-sm font-bold text-white flex items-center gap-2">
+                    {testResult.success ? 'MÔ HÌNH HOẠT ĐỘNG TỐT (HEALTHY)' : 'KHÔNG THỂ GỌI MÔ HÌNH (UNHEALTHY)'}
+                    <span className="text-xs font-mono font-normal opacity-80">
+                      [{testResult.provider.toUpperCase()} - {testResult.model}]
+                    </span>
+                  </h4>
+                  <p className="text-xs mt-0.5 opacity-90">
+                    {testResult.success ? (
+                      <>
+                        Gọi thành công ở <strong>lần thử {testResult.succeededAtAttempt}/{testResult.maxRetries}</strong>. Tổng thời gian phản hồi: <strong>{testResult.totalDurationMs.toLocaleString()}ms</strong>.
+                      </>
+                    ) : (
+                      <>
+                        Đã thử <strong>tất cả {testResult.maxRetries} lần (retry 5x)</strong> nhưng mô hình không phản hồi thành công.
+                      </>
+                    )}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 text-xs">
+                <span className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700 text-slate-300 font-mono">
+                  {testResult.attemptsCount} / {testResult.maxRetries} lần thử
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700 text-slate-300 font-mono">
+                  {testResult.totalDurationMs}ms
+                </span>
+              </div>
+            </div>
+
+            {/* Response Preview Box */}
+            {testResult.success && testResult.responseSnippet && (
+              <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1.5">
+                <div className="flex items-center justify-between text-[11px] text-slate-400">
+                  <span className="font-semibold text-slate-300 flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                    Nội Dung Phản Hồi Từ Model:
+                  </span>
+                  <span className="text-emerald-400 font-mono">Status: 200 OK</span>
+                </div>
+                <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800/80 text-xs text-slate-200 font-mono leading-relaxed whitespace-pre-wrap break-words">
+                  {testResult.responseSnippet}
+                </div>
+              </div>
+            )}
+
+            {/* Error Message */}
+            {!testResult.success && testResult.error && (
+              <div className="p-3.5 rounded-xl bg-rose-950/30 border border-rose-800/50 space-y-1">
+                <span className="text-[11px] font-semibold text-rose-300 block">Lỗi chi tiết lần thử cuối:</span>
+                <p className="text-xs text-rose-400 font-mono break-all">{testResult.error}</p>
+              </div>
+            )}
+
+            {/* Attempts History Log */}
+            <div className="space-y-2 pt-2 border-t border-slate-800/80">
+              <span className="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5 text-slate-400" />
+                Nhật Ký Từng Lần Thử Nghiệm ({testResult.attempts.length} lần):
+              </span>
+
+              <div className="space-y-1.5">
+                {testResult.attempts.map((att) => (
+                  <div
+                    key={att.attemptNumber}
+                    className={`p-2.5 rounded-xl border flex items-center justify-between text-xs transition-colors ${
+                      att.success
+                        ? 'bg-emerald-950/20 border-emerald-500/20 text-slate-200'
+                        : 'bg-rose-950/20 border-rose-500/20 text-slate-300'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5 min-w-0 flex-1 mr-2">
+                      <span
+                        className={`w-5 h-5 rounded-md flex items-center justify-center font-bold text-[10px] shrink-0 ${
+                          att.success
+                            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                            : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
+                        }`}
+                      >
+                        #{att.attemptNumber}
+                      </span>
+                      <span className="font-semibold text-white shrink-0">
+                        Lần {att.attemptNumber}:
+                      </span>
+                      <span className="truncate text-slate-400 text-[11px]">
+                        {att.success ? (
+                          <span className="text-emerald-400 font-medium">✓ Phản hồi thành công</span>
+                        ) : (
+                          <span className="text-rose-400 font-mono truncate">{att.error || 'Thất bại không rõ nguyên nhân'}</span>
+                        )}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-3 shrink-0 text-[11px] text-slate-400 font-mono">
+                      <span>{att.durationMs}ms</span>
+                      <span
+                        className={`px-1.5 py-0.5 rounded text-[10px] font-bold ${
+                          att.success
+                            ? 'bg-emerald-500/20 text-emerald-300'
+                            : 'bg-rose-500/20 text-rose-300'
+                        }`}
+                      >
+                        {att.success ? 'SUCCESS' : 'FAILED'}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* 4. Cấu Hình Hạn Ngạch Quota Khách & Thành Viên (Guest vs Logged-In Limits) */}

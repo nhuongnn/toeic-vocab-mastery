@@ -14,6 +14,11 @@ import {
 import { isGeminiConfigured, getGeminiModel } from '@/lib/ai/gemini-provider';
 import { isCloudflareChatConfigured, getCloudflareChatModel } from '@/lib/ai/cloudflare-provider';
 import { supabaseAdmin } from '@/lib/supabase';
+import {
+  testAIModel,
+  POPULAR_GEMINI_MODELS,
+  POPULAR_CLOUDFLARE_MODELS,
+} from '@/lib/ai/test-model';
 
 export async function GET(request: Request) {
   try {
@@ -74,6 +79,10 @@ export async function GET(request: Request) {
           enabled: settings.cloudflareEnabled,
         },
       },
+      popularModels: {
+        gemini: POPULAR_GEMINI_MODELS,
+        cloudflare: POPULAR_CLOUDFLARE_MODELS,
+      },
     });
   } catch (error: unknown) {
     console.error('Error in GET /api/admin/ai-settings:', error);
@@ -100,7 +109,8 @@ export async function POST(request: Request) {
         | 'reset_quota'
         | 'set_user_override'
         | 'remove_user_override'
-        | 'reset_user_quota';
+        | 'reset_user_quota'
+        | 'test_model';
       settings?: Partial<SystemAISettings>;
       override?: {
         identifier: string;
@@ -229,6 +239,31 @@ export async function POST(request: Request) {
         message: 'Cập nhật thiết lập AI hệ thống thành công.',
         settings: updated,
         remainingToday: Math.max(0, updated.dailyLimit - updated.usedToday),
+      });
+    }
+
+    // 6. Test an AI Model with up to 5 retries
+    if (action === 'test_model') {
+      const {
+        provider = 'gemini',
+        model,
+        prompt,
+      } = body as {
+        provider?: 'gemini' | 'cloudflare';
+        model?: string;
+        prompt?: string;
+      };
+
+      const result = await testAIModel({
+        provider,
+        model,
+        prompt,
+        maxRetries: 5,
+      });
+
+      return NextResponse.json({
+        success: true,
+        testResult: result,
       });
     }
 

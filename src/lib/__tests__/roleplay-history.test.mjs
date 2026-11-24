@@ -8,6 +8,7 @@ import {
   deleteChatRoomConversation,
   clearAllChatRoomHistory,
   formatConversationTime,
+  renameChatRoomConversation,
   CHAT_ROOM_HISTORY_KEY,
   MAX_CHAT_ROOM_CONVERSATIONS,
 } from '../roleplay/history.ts';
@@ -196,6 +197,22 @@ describe('Chat Room Conversation History Manager', () => {
 
     clearAllChatRoomHistory();
     assert.deepStrictEqual(getChatRoomHistory(), []);
+  });
+
+  it('allows user to rename an existing roleplay conversation', () => {
+    const conv = createDummyConversation('conv_ren_rp', 1000);
+    conv.title = 'Tên ban đầu';
+    saveChatRoomConversation(conv);
+
+    const updated = renameChatRoomConversation('conv_ren_rp', 'Tên hội thoại mới');
+    assert.strictEqual(updated[0].title, 'Tên hội thoại mới');
+
+    const found = getChatRoomConversationById('conv_ren_rp');
+    assert.strictEqual(found?.title, 'Tên hội thoại mới');
+
+    // Blank name should be ignored
+    const unchanged = renameChatRoomConversation('conv_ren_rp', '   ');
+    assert.strictEqual(unchanged[0].title, 'Tên hội thoại mới');
   });
 
   it('formats conversation time properly into human readable strings', () => {

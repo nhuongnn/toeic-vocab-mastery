@@ -22,6 +22,7 @@ import {
   deleteAiTutorConversation,
   clearAllAiTutorHistory,
   generateTutorConversationId,
+  renameAiTutorConversation,
 } from '@/lib/ai/history';
 import { getGuestId } from '@/lib/ai/guest-id';
 import { useAuth } from './AuthContext';
@@ -81,10 +82,12 @@ interface ChatContextType {
 
   // Multi-conversation & History features
   currentConversationId: string | null;
+  currentConversationTitle: string | null;
   history: AiTutorConversation[];
   startNewConversation: (wordContext?: WordContext | WordContext[]) => void;
   loadConversation: (id: string) => void;
   deleteConversation: (id: string) => void;
+  renameConversation: (id: string, newTitle: string) => void;
   clearAllHistory: () => void;
   addSnippetContext: (snippet: string, initialPrompt?: string, append?: boolean) => void;
 }
@@ -106,6 +109,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
 
   const [isOpen, setIsOpen] = useState(false);
   const [currentConversationId, setCurrentConversationId] = useState<string | null>(null);
+  const [currentConversationTitle, setCurrentConversationTitle] = useState<string | null>(null);
   const [history, setHistory] = useState<AiTutorConversation[]>([]);
   const [messages, setMessages] = useState<ChatMessage[]>([INITIAL_WELCOME_MESSAGE]);
   const [isLoading, setIsLoading] = useState(false);
@@ -173,12 +177,17 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
 
   const abortControllerRef = useRef<AbortController | null>(null);
   const currentConversationIdRef = useRef<string | null>(null);
+  const currentConversationTitleRef = useRef<string | null>(null);
   const historyRef = useRef<AiTutorConversation[]>(history);
   const activeWordContextsRef = useRef<WordContext[]>(activeWordContexts);
 
   useEffect(() => {
     currentConversationIdRef.current = currentConversationId;
   }, [currentConversationId]);
+
+  useEffect(() => {
+    currentConversationTitleRef.current = currentConversationTitle;
+  }, [currentConversationTitle]);
 
   useEffect(() => {
     historyRef.current = history;
@@ -276,6 +285,8 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
       setHistory([]);
       setCurrentConversationId(null);
       currentConversationIdRef.current = null;
+      setCurrentConversationTitle(null);
+      currentConversationTitleRef.current = null;
       setMessages([INITIAL_WELCOME_MESSAGE]);
       setActiveWordContexts([]);
     }
@@ -333,6 +344,8 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
       stopGeneration();
       setCurrentConversationId(null);
       currentConversationIdRef.current = null;
+      setCurrentConversationTitle(null);
+      currentConversationTitleRef.current = null;
       setMessages([
         {
           ...INITIAL_WELCOME_MESSAGE,
@@ -359,6 +372,8 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     if (conv) {
       setCurrentConversationId(conv.id);
       currentConversationIdRef.current = conv.id;
+      setCurrentConversationTitle(conv.title || null);
+      currentConversationTitleRef.current = conv.title || null;
       setMessages(conv.messages.length > 0 ? conv.messages : [INITIAL_WELCOME_MESSAGE]);
       const restored =
         conv.wordContexts && conv.wordContexts.length > 0
@@ -380,6 +395,25 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
       startNewConversation();
     }
   }, [user, syncAiTutorHistory, startNewConversation]);
+
+  const renameConversation = useCallback(
+    (id: string, newTitle: string) => {
+      const trimmed = newTitle.trim();
+      if (!trimmed) return;
+
+      if (currentConversationIdRef.current === id) {
+        setCurrentConversationTitle(trimmed);
+        currentConversationTitleRef.current = trimmed;
+      }
+
+      if (user?.id) {
+        const updated = renameAiTutorConversation(user.id, id, trimmed);
+        setHistory(updated);
+        syncAiTutorHistory(updated);
+      }
+    },
+    [user, syncAiTutorHistory]
+  );
 
   const clearAllHistory = useCallback(() => {
     if (!user?.id) return;
@@ -656,7 +690,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
 
           const convToSave: AiTutorConversation = {
             id: convId,
-            title: existingConv?.title || autoTitle,
+            title: currentConversationTitleRef.current || existingConv?.title || autoTitle,
             messages: finalMessages,
             wordContext: currentContexts[0] || null,
             wordContexts: currentContexts,
@@ -868,10 +902,12 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         clearMessages,
         stopGeneration,
         currentConversationId,
+        currentConversationTitle,
         history,
         startNewConversation,
         loadConversation,
         deleteConversation,
+        renameConversation,
         clearAllHistory,
         addSnippetContext,
         quotaExceededInfo,

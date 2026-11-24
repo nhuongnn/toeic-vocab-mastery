@@ -1,6 +1,6 @@
 import { AiTutorConversation } from './types';
 
-export const MAX_AI_TUTOR_CONVERSATIONS = 5;
+export const MAX_AI_TUTOR_CONVERSATIONS = 10;
 
 /**
  * Returns the localStorage key scoped to the specific user.
@@ -19,7 +19,7 @@ export function generateTutorConversationId(): string {
 }
 
 /**
- * Retrieve saved AI tutor history for a specific user (up to 5 most recent).
+ * Retrieve saved AI tutor history for a specific user (up to 10 most recent).
  * Strictly returns an empty array if user is not logged in (!userId).
  */
 export function getAiTutorHistory(userId?: string | null): AiTutorConversation[] {
@@ -54,7 +54,7 @@ export function getAiTutorConversationById(
 /**
  * Save or update a conversation in history for a specific user.
  * STRICT: Does NOT save if user is not logged in (!userId).
- * Automatically caps history at MAX_AI_TUTOR_CONVERSATIONS (5) most recent.
+ * Automatically caps history at MAX_AI_TUTOR_CONVERSATIONS (10) most recent.
  */
 export function saveAiTutorConversation(
   userId: string | null | undefined,
@@ -83,6 +83,45 @@ export function saveAiTutorConversation(
     return updated;
   } catch (err) {
     console.error('Failed to save AI tutor conversation to localStorage:', err);
+    return [];
+  }
+}
+
+/**
+ * Rename a specific conversation by ID for a user.
+ */
+export function renameAiTutorConversation(
+  userId: string | null | undefined,
+  id: string,
+  newTitle: string
+): AiTutorConversation[] {
+  if (typeof window === 'undefined' || !userId) return [];
+  try {
+    const trimmed = newTitle.trim();
+    if (!trimmed) return getAiTutorHistory(userId);
+
+    const existing = getAiTutorHistory(userId);
+    const updated = existing.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          title: trimmed,
+        };
+      }
+      return item;
+    });
+
+    localStorage.setItem(getAiTutorHistoryKey(userId), JSON.stringify(updated));
+
+    window.dispatchEvent(
+      new CustomEvent('ai-tutor-history-updated', {
+        detail: { userId, history: updated },
+      })
+    );
+
+    return updated;
+  } catch (err) {
+    console.error('Failed to rename AI tutor conversation in localStorage:', err);
     return [];
   }
 }

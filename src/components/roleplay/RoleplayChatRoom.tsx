@@ -61,6 +61,7 @@ import {
   deleteChatRoomConversation,
   clearAllChatRoomHistory,
   generateConversationId,
+  renameChatRoomConversation,
 } from '@/lib/roleplay/history';
 import { useSpeech } from '@/hooks/useSpeech';
 import { useProgress } from '@/contexts/ProgressContext';
@@ -981,6 +982,15 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
     syncChatRoomHistory([]);
     handleStartNewConversation();
   }, [handleStartNewConversation, syncChatRoomHistory]);
+
+  const handleRenameConversation = useCallback(
+    (id: string, newTitle: string) => {
+      const updated = renameChatRoomConversation(id, newTitle);
+      setHistoryList(updated);
+      syncChatRoomHistory(updated);
+    },
+    [syncChatRoomHistory]
+  );
 
   const handleResetConversation = () => {
     if (confirm('Bạn có chắc muốn bắt đầu lại cuộc hội thoại từ đầu không?')) {
@@ -2026,6 +2036,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         onSelectConversation={handleSelectConversation}
         onNewConversation={handleStartNewConversation}
         onDeleteConversation={handleDeleteConversation}
+        onRenameConversation={handleRenameConversation}
         onClearAll={handleClearAllHistory}
       />
     </div>

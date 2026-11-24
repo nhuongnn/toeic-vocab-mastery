@@ -9,6 +9,7 @@ import {
   deleteAiTutorConversation,
   clearAllAiTutorHistory,
   formatConversationTime,
+  renameAiTutorConversation,
   MAX_AI_TUTOR_CONVERSATIONS,
 } from '../ai/history.ts';
 import { buildSystemPrompt } from '../ai/system-prompt.ts';
@@ -74,7 +75,7 @@ const createDummyTutorConversation = (id, updatedAt, title) => ({
   lastMessageSnippet: `Explanation in ${id}`,
 });
 
-describe('AI Tutor 5-Conversation History Manager (User-Scoped)', () => {
+describe('AI Tutor 10-Conversation History Manager (User-Scoped)', () => {
   beforeEach(() => {
     mockStorage.clear();
   });
@@ -143,29 +144,51 @@ describe('AI Tutor 5-Conversation History Manager (User-Scoped)', () => {
     assert.strictEqual(updatedList[0].lastMessageSnippet, 'Updated assistant reply');
   });
 
-  it('strictly caps history at MAX_AI_TUTOR_CONVERSATIONS (5) and prunes older ones', () => {
-    assert.strictEqual(MAX_AI_TUTOR_CONVERSATIONS, 5);
+  it('strictly caps history at MAX_AI_TUTOR_CONVERSATIONS (10) and prunes older ones', () => {
+    assert.strictEqual(MAX_AI_TUTOR_CONVERSATIONS, 10);
     const userId = 'user_quota_test';
 
-    // Save 8 conversations with increasing timestamps
-    for (let i = 1; i <= 8; i++) {
+    // Save 14 conversations with increasing timestamps
+    for (let i = 1; i <= 14; i++) {
       const conv = createDummyTutorConversation(`conv_${i}`, i * 1000, `Hội thoại ${i}`);
       saveAiTutorConversation(userId, conv);
     }
 
     const history = getAiTutorHistory(userId);
-    assert.strictEqual(history.length, 5);
+    assert.strictEqual(history.length, 10);
 
-    // Most recent is conv_8 down to conv_4
-    assert.strictEqual(history[0].id, 'conv_8');
-    assert.strictEqual(history[1].id, 'conv_7');
-    assert.strictEqual(history[2].id, 'conv_6');
-    assert.strictEqual(history[3].id, 'conv_5');
-    assert.strictEqual(history[4].id, 'conv_4');
+    // Most recent is conv_14 down to conv_5
+    assert.strictEqual(history[0].id, 'conv_14');
+    assert.strictEqual(history[1].id, 'conv_13');
+    assert.strictEqual(history[2].id, 'conv_12');
+    assert.strictEqual(history[3].id, 'conv_11');
+    assert.strictEqual(history[4].id, 'conv_10');
+    assert.strictEqual(history[5].id, 'conv_9');
+    assert.strictEqual(history[6].id, 'conv_8');
+    assert.strictEqual(history[7].id, 'conv_7');
+    assert.strictEqual(history[8].id, 'conv_6');
+    assert.strictEqual(history[9].id, 'conv_5');
 
-    // The oldest 3 (conv_1, conv_2, conv_3) must be pruned
-    const hasOld = history.some((c) => ['conv_1', 'conv_2', 'conv_3'].includes(c.id));
+    // The oldest 4 (conv_1, conv_2, conv_3, conv_4) must be pruned
+    const hasOld = history.some((c) => ['conv_1', 'conv_2', 'conv_3', 'conv_4'].includes(c.id));
     assert.strictEqual(hasOld, false);
+  });
+
+  it('allows user to rename an existing conversation', () => {
+    const userId = 'user_rename';
+    const conv = createDummyTutorConversation('conv_ren_1', 1000, 'Tên cũ');
+    saveAiTutorConversation(userId, conv);
+
+    const updated = renameAiTutorConversation(userId, 'conv_ren_1', 'Tên mới tùy chỉnh');
+    assert.strictEqual(updated.length, 1);
+    assert.strictEqual(updated[0].title, 'Tên mới tùy chỉnh');
+
+    const loaded = getAiTutorConversationById(userId, 'conv_ren_1');
+    assert.strictEqual(loaded?.title, 'Tên mới tùy chỉnh');
+
+    // Blank name should be ignored
+    const unchanged = renameAiTutorConversation(userId, 'conv_ren_1', '   ');
+    assert.strictEqual(unchanged[0].title, 'Tên mới tùy chỉnh');
   });
 
   it('strictly isolates history between different users', () => {
@@ -240,45 +263,40 @@ describe('AI Tutor 5-Conversation History Manager (User-Scoped)', () => {
     assert.strictEqual(formatConversationTime(now - 2 * 24 * 3600 * 1000), '2 ngày trước');
   });
 
-  it('merges cross-device AI tutor history in mergeUserProgress and strictly caps at 5', () => {
-    const conv1 = createDummyTutorConversation('conv_1', 1000);
-    const conv2 = createDummyTutorConversation('conv_shared', 2000);
-    const conv3 = createDummyTutorConversation('conv_3', 3000);
-    const convSharedUpdated = {
-      ...conv2,
-      updatedAt: 4000,
-      lastMessageSnippet: 'Updated on phone',
-    };
-    const conv4 = createDummyTutorConversation('conv_4', 5000);
-    const conv5 = createDummyTutorConversation('conv_5', 6000);
-    const conv6 = createDummyTutorConversation('conv_6', 7000);
+  it('merges cross-device AI tutor history in mergeUserProgress and strictly caps at 10', () => {
+    // Create 12 conversations
+    const localConvs = [];
+    const remoteConvs = [];
+
+    for (let i = 1; i <= 6; i++) {
+      localConvs.push(createDummyTutorConversation(`conv_${i}`, i * 1000));
+    }
+    for (let i = 7; i <= 12; i++) {
+      remoteConvs.push(createDummyTutorConversation(`conv_${i}`, i * 1000));
+    }
 
     const localProgress = {
       ...DEFAULT_PROGRESS,
-      aiTutorHistory: [conv2, conv1],
+      aiTutorHistory: localConvs,
     };
 
     const remoteProgress = {
       ...DEFAULT_PROGRESS,
-      aiTutorHistory: [conv6, conv5, conv4, conv3, convSharedUpdated],
+      aiTutorHistory: remoteConvs,
     };
 
     const merged = mergeUserProgress(localProgress, remoteProgress);
     assert.ok(merged.aiTutorHistory);
-    // Even though there are 6 unique conversations (conv_1, shared, 3, 4, 5, 6), merged is strictly capped at 5!
-    assert.strictEqual(merged.aiTutorHistory.length, 5);
+    // 12 unique conversations merged is strictly capped at 10!
+    assert.strictEqual(merged.aiTutorHistory.length, 10);
 
-    // Most recent is conv_6 (7000), then conv_5 (6000), then conv_4 (5000), then conv_shared (4000), then conv_3 (3000)
-    assert.strictEqual(merged.aiTutorHistory[0].id, 'conv_6');
-    assert.strictEqual(merged.aiTutorHistory[1].id, 'conv_5');
-    assert.strictEqual(merged.aiTutorHistory[2].id, 'conv_4');
-    assert.strictEqual(merged.aiTutorHistory[3].id, 'conv_shared');
-    assert.strictEqual(merged.aiTutorHistory[3].lastMessageSnippet, 'Updated on phone');
-    assert.strictEqual(merged.aiTutorHistory[4].id, 'conv_3');
+    // Most recent is conv_12 down to conv_3
+    assert.strictEqual(merged.aiTutorHistory[0].id, 'conv_12');
+    assert.strictEqual(merged.aiTutorHistory[9].id, 'conv_3');
 
-    // conv_1 (1000) should be pruned as the 6th
-    const hasConv1 = merged.aiTutorHistory.some((c) => c.id === 'conv_1');
-    assert.strictEqual(hasConv1, false);
+    // conv_1 and conv_2 should be pruned
+    assert.strictEqual(merged.aiTutorHistory.some((c) => c.id === 'conv_1'), false);
+    assert.strictEqual(merged.aiTutorHistory.some((c) => c.id === 'conv_2'), false);
   });
 
   it('saves and restores conversations with multiple wordContexts', () => {

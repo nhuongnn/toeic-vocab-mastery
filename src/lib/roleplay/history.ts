@@ -94,6 +94,42 @@ export function deleteChatRoomConversation(id: string): RoleplayConversation[] {
 }
 
 /**
+ * Rename a specific chat room conversation by ID.
+ */
+export function renameChatRoomConversation(
+  id: string,
+  newTitle: string
+): RoleplayConversation[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const trimmed = newTitle.trim();
+    if (!trimmed) return getChatRoomHistory();
+
+    const existing = getChatRoomHistory();
+    const updated = existing.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          title: trimmed,
+        };
+      }
+      return item;
+    });
+
+    localStorage.setItem(CHAT_ROOM_HISTORY_KEY, JSON.stringify(updated));
+
+    window.dispatchEvent(
+      new CustomEvent('chat-room-history-updated', { detail: updated })
+    );
+
+    return updated;
+  } catch (err) {
+    console.error('Failed to rename chat room conversation in localStorage:', err);
+    return [];
+  }
+}
+
+/**
  * Clear all chat room conversations.
  */
 export function clearAllChatRoomHistory(): void {

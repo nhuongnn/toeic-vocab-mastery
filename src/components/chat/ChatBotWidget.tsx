@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import {
   Sparkles,
   Bot,
@@ -30,13 +30,14 @@ import {
   FileText,
   Search,
   Layers,
+  Pencil,
 } from 'lucide-react';
 import { useChat } from '@/contexts/ChatContext';
 import { useAuth } from '@/contexts/AuthContext';
-import { formatConversationTime } from '@/lib/ai/history';
+import { formatConversationTime, MAX_AI_TUTOR_CONVERSATIONS } from '@/lib/ai/history';
 import { MarkdownMessage } from './MarkdownMessage';
 import { allVocabularyWords } from '@/data/vocabulary';
-import { WordContext } from '@/lib/ai/types';
+import { WordContext, AiTutorConversation } from '@/lib/ai/types';
 
 const DEFAULT_WIDTH = 420;
 const DEFAULT_HEIGHT = 580;
@@ -74,6 +75,8 @@ export function ChatBotWidget() {
     clearMessages,
     stopGeneration,
     currentConversationId,
+    currentConversationTitle,
+    renameConversation,
     history,
     startNewConversation,
     loadConversation,
@@ -92,6 +95,13 @@ export function ChatBotWidget() {
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
   const [showClearAllConfirm, setShowClearAllConfirm] = useState(false);
   const [showClearCurrentConfirm, setShowClearCurrentConfirm] = useState(false);
+
+  // History search and conversation rename states
+  const [historySearchQuery, setHistorySearchQuery] = useState('');
+  const [editingConvId, setEditingConvId] = useState<string | null>(null);
+  const [editingTitleInput, setEditingTitleInput] = useState('');
+  const [isEditingCurrentTitle, setIsEditingCurrentTitle] = useState(false);
+  const [currentTitleInput, setCurrentTitleInput] = useState('');
 
   // Multi-context management states
   const [addContextModalOpen, setAddContextModalOpen] = useState(false);
@@ -514,6 +524,55 @@ export function ChatBotWidget() {
     ];
   })();
 
+  const filteredHistory = useMemo<AiTutorConversation[]>(() => {
+    const q = historySearchQuery.trim().toLowerCase();
+    if (!q) return history;
+    return history.filter((conv: AiTutorConversation) => {
+      if (conv.title.toLowerCase().includes(q)) return true;
+      if (conv.lastMessageSnippet?.toLowerCase().includes(q)) return true;
+      if (conv.wordContext?.word.toLowerCase().includes(q)) return true;
+      if (conv.wordContext?.selectedText?.toLowerCase().includes(q)) return true;
+      if (
+        conv.wordContexts?.some(
+          (wc) =>
+            wc.word.toLowerCase().includes(q) ||
+            wc.selectedText?.toLowerCase().includes(q)
+        )
+      ) {
+        return true;
+      }
+      return conv.messages.some((m) => m.content.toLowerCase().includes(q));
+    });
+  }, [history, historySearchQuery]);
+
+  const handleStartRename = (id: string, currentTitle: string, e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setEditingConvId(id);
+    setEditingTitleInput(currentTitle);
+  };
+
+  const handleSaveRename = (id: string, e?: React.MouseEvent | React.KeyboardEvent) => {
+    e?.stopPropagation();
+    const trimmed = editingTitleInput.trim();
+    if (trimmed) {
+      renameConversation(id, trimmed);
+    }
+    setEditingConvId(null);
+  };
+
+  const handleCancelRename = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setEditingConvId(null);
+  };
+
+  const handleSaveCurrentTitle = () => {
+    const trimmed = currentTitleInput.trim();
+    if (trimmed && currentConversationId) {
+      renameConversation(currentConversationId, trimmed);
+    }
+    setIsEditingCurrentTitle(false);
+  };
+
   const handleSelectHistoryItem = (id: string) => {
     loadConversation(id);
     setActiveTab('chat');
@@ -684,14 +743,80 @@ export function ChatBotWidget() {
               {/* Top Row: Title & Action Buttons */}
               <div className="flex items-center justify-between px-4 py-2.5">
                 {activeTab === 'chat' ? (
-                  <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="flex items-center gap-2 min-w-0 flex-1 mr-2">
                     <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 shrink-0">
                       <Bot className="w-4 h-4" />
                     </div>
-                    <div className="min-w-0">
-                      <h3 className="text-sm font-bold text-slate-100 truncate">
-                        TOEIC AI Tutor
-                      </h3>
+                    <div className="min-w-0 flex-1">
+                      {isEditingCurrentTitle ? (
+                        <div
+                          className="flex items-center gap-1"
+                          onDoubleClick={(e) => e.stopPropagation()}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <input
+                            type="text"
+                            autoFocus
+                            value={currentTitleInput}
+                            onChange={(e) => setCurrentTitleInput(e.target.value)}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter') handleSaveCurrentTitle();
+                              if (e.key === 'Escape') setIsEditingCurrentTitle(false);
+                            }}
+                            className="px-2 py-0.5 text-xs bg-slate-900 border border-indigo-500 rounded-lg text-white focus:outline-none w-full max-w-[200px]"
+                            placeholder="Tên cuộc hội thoại..."
+                          />
+                          <button
+                            type="button"
+                            onClick={handleSaveCurrentTitle}
+                            className="p-1 rounded text-emerald-400 hover:bg-emerald-500/15"
+                            title="Lưu tên"
+                          >
+                            <Check className="w-3.5 h-3.5" />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setIsEditingCurrentTitle(false)}
+                            className="p-1 rounded text-slate-400 hover:bg-slate-800"
+                            title="Hủy"
+                          >
+                            <X className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-1.5 min-w-0">
+                          <h3
+                            className="text-sm font-bold text-slate-100 truncate cursor-pointer hover:text-indigo-300 transition-colors"
+                            title={
+                              currentConversationTitle
+                                ? `Cuộc hội thoại: ${currentConversationTitle} (Nhấp để đổi tên)`
+                                : 'TOEIC AI Tutor (Nhấp để đặt tên)'
+                            }
+                            onClick={() => {
+                              if (user && currentConversationId) {
+                                setCurrentTitleInput(currentConversationTitle || '');
+                                setIsEditingCurrentTitle(true);
+                              }
+                            }}
+                          >
+                            {currentConversationTitle || 'TOEIC AI Tutor'}
+                          </h3>
+                          {user && currentConversationId && (
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setCurrentTitleInput(currentConversationTitle || '');
+                                setIsEditingCurrentTitle(true);
+                              }}
+                              className="p-1 rounded-md text-slate-400 hover:text-indigo-300 hover:bg-slate-800 transition-colors shrink-0"
+                              title="Đổi tên cuộc hội thoại này"
+                            >
+                              <Pencil className="w-3 h-3" />
+                            </button>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 ) : (
@@ -708,7 +833,11 @@ export function ChatBotWidget() {
                     <div className="flex items-center gap-2">
                       <h3 className="text-sm font-bold text-slate-100">Lịch Sử Hội Thoại</h3>
                       <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/15 border border-indigo-500/30 text-indigo-300">
-                        {user ? `${history.length}/5 gần nhất` : 'Yêu cầu đăng nhập'}
+                        {user
+                          ? historySearchQuery.trim()
+                            ? `${filteredHistory.length}/${history.length} tìm thấy`
+                            : `${history.length}/${MAX_AI_TUTOR_CONVERSATIONS} gần nhất`
+                          : 'Yêu cầu đăng nhập'}
                       </span>
                     </div>
                   </div>
@@ -737,7 +866,7 @@ export function ChatBotWidget() {
                     <button
                       type="button"
                       onClick={() => setActiveTab('history')}
-                      title="Xem lịch sử 5 cuộc hội thoại gần nhất"
+                      title={`Xem lịch sử ${MAX_AI_TUTOR_CONVERSATIONS} cuộc hội thoại gần nhất`}
                       className="relative p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
                     >
                       <History className="w-4 h-4" />
@@ -1136,7 +1265,7 @@ export function ChatBotWidget() {
                 <div className="px-4 py-2.5 bg-rose-500/15 border-b border-rose-500/30 flex items-center justify-between gap-2 text-xs text-rose-300 shrink-0 animate-in fade-in duration-150">
                   <div className="flex items-center gap-1.5">
                     <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                    <span>Xóa toàn bộ 5 cuộc hội thoại?</span>
+                    <span>Xóa toàn bộ {history.length} cuộc hội thoại?</span>
                   </div>
                   <div className="flex items-center gap-1.5 shrink-0">
                     <button
@@ -1170,7 +1299,7 @@ export function ChatBotWidget() {
                         Chưa đăng nhập tài khoản
                       </h4>
                       <p className="text-xs text-slate-400 max-w-xs mx-auto leading-relaxed">
-                        Hệ thống chỉ tự động lưu <strong>5 cuộc hội thoại gần nhất</strong> khi bạn đã đăng nhập tài khoản nhằm bảo mật thông tin và đồng bộ khi học trên nhiều thiết bị.
+                        Hệ thống chỉ tự động lưu <strong>{MAX_AI_TUTOR_CONVERSATIONS} cuộc hội thoại gần nhất</strong> khi bạn đã đăng nhập tài khoản nhằm bảo mật thông tin và đồng bộ khi học trên nhiều thiết bị.
                       </p>
                     </div>
                     <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2">
@@ -1201,7 +1330,7 @@ export function ChatBotWidget() {
                         Chưa có cuộc hội thoại nào
                       </h4>
                       <p className="text-xs text-slate-400 max-w-xs mx-auto leading-relaxed">
-                        Khi bạn đặt câu hỏi với AI Tutor, 5 cuộc hội thoại gần nhất sẽ tự động được lưu lại tại đây theo tài khoản của bạn.
+                        Khi bạn đặt câu hỏi với AI Tutor, {MAX_AI_TUTOR_CONVERSATIONS} cuộc hội thoại gần nhất sẽ tự động được lưu lại tại đây theo tài khoản của bạn.
                       </p>
                     </div>
                     <button
@@ -1218,133 +1347,224 @@ export function ChatBotWidget() {
                   </div>
                 ) : (
                   /* Case 3: User is logged in and has conversations */
-                  history.map((conv) => {
-                    const isActive = conv.id === currentConversationId;
-                    const isConfirmingDelete = confirmDeleteId === conv.id;
+                  <>
+                    {/* Search Bar in History Screen */}
+                    <div className="relative mb-2 shrink-0">
+                      <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                      <input
+                        type="text"
+                        value={historySearchQuery}
+                        onChange={(e) => setHistorySearchQuery(e.target.value)}
+                        placeholder="Tìm kiếm cuộc hội thoại (tên, từ vựng, nội dung)..."
+                        className="w-full pl-8 pr-7 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/30 transition-all"
+                      />
+                      {historySearchQuery && (
+                        <button
+                          type="button"
+                          onClick={() => setHistorySearchQuery('')}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 p-0.5 text-slate-400 hover:text-white rounded-md hover:bg-slate-800 transition-colors"
+                          title="Xóa tìm kiếm"
+                        >
+                          <X className="w-3 h-3" />
+                        </button>
+                      )}
+                    </div>
 
-                    return (
-                      <div
-                        key={conv.id}
-                        onClick={() => handleSelectHistoryItem(conv.id)}
-                        className={`group relative rounded-2xl border p-3 cursor-pointer transition-all ${
-                          isActive
-                            ? 'bg-slate-800/95 border-indigo-500/60 shadow-md shadow-indigo-500/10'
-                            : 'bg-slate-900/80 hover:bg-slate-800/60 border-slate-800/80 hover:border-slate-700'
-                        }`}
-                      >
-                        {/* Top row: Title + Time */}
-                        <div className="flex items-start justify-between gap-2 mb-1.5">
-                          <div className="min-w-0 flex items-center gap-1.5">
-                            <span className="text-xs font-bold text-white truncate">
-                              {conv.title}
-                            </span>
-                            {isActive && (
-                              <span className="inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shrink-0">
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                                <span>Đang mở</span>
-                              </span>
-                            )}
-                          </div>
-                          <div className="flex items-center gap-1 text-[10px] text-slate-400 shrink-0">
-                            <Clock className="w-3 h-3 text-slate-500" />
-                            <span>{formatConversationTime(conv.updatedAt)}</span>
-                          </div>
-                        </div>
-
-                        {/* Context Tags if present */}
-                        {conv.wordContexts && conv.wordContexts.length > 0 ? (
-                          <div className="mb-1.5 flex flex-wrap gap-1">
-                            {conv.wordContexts.map((ctx, idx) => (
-                              <span
-                                key={idx}
-                                className="inline-flex items-center gap-1 text-[10px] text-indigo-300 bg-indigo-950/60 border border-indigo-500/25 rounded-md px-1.5 py-0.5 truncate max-w-[160px]"
-                              >
-                                {ctx.selectedText ? (
-                                  <FileText className="w-2.5 h-2.5 text-sky-400 shrink-0" />
-                                ) : (
-                                  <BookOpen className="w-2.5 h-2.5 text-indigo-400 shrink-0" />
-                                )}
-                                <span className="truncate">
-                                  {ctx.selectedText
-                                    ? `Đoạn trích: "${ctx.selectedText.slice(0, 15)}..."`
-                                    : ctx.word}
-                                </span>
-                              </span>
-                            ))}
-                          </div>
-                        ) : conv.wordContext ? (
-                          <div className="mb-1.5 flex items-center gap-1 text-[10px] text-indigo-300 bg-indigo-950/50 border border-indigo-500/20 rounded-md px-2 py-0.5 w-fit max-w-full truncate">
-                            <BookOpen className="w-2.5 h-2.5 shrink-0" />
-                            <span className="truncate">
-                              {conv.wordContext.selectedText
-                                ? `Đoạn trích: "${conv.wordContext.selectedText.slice(0, 30)}..."`
-                                : `Từ vựng: ${conv.wordContext.word}`}
-                            </span>
-                          </div>
-                        ) : null}
-
-                        {/* Snippet */}
-                        {conv.lastMessageSnippet && (
-                          <p className="text-[11px] text-slate-300 line-clamp-2 leading-relaxed bg-slate-950/50 rounded-lg p-2 border border-slate-800/60 italic mb-2">
-                            &ldquo;{conv.lastMessageSnippet}&rdquo;
-                          </p>
-                        )}
-
-                        {/* Bottom Row: Message count + Delete Action */}
-                        <div className="flex items-center justify-between pt-1 border-t border-slate-800/50 text-[11px] text-slate-400">
-                          <span className="inline-flex items-center gap-1">
-                            <MessageSquare className="w-3 h-3 text-slate-500" />
-                            <span>{conv.messageCount} câu hỏi</span>
-                          </span>
-
-                          <div className="flex items-center gap-1.5">
-                            {isConfirmingDelete ? (
-                              <div
-                                onClick={(e) => e.stopPropagation()}
-                                className="inline-flex items-center gap-1 bg-rose-500/20 border border-rose-500/40 rounded-lg px-2 py-0.5 text-[10px]"
-                              >
-                                <span className="text-rose-300">Xác nhận xóa?</span>
-                                <button
-                                  type="button"
-                                  onClick={(e) => handleConfirmDelete(conv.id, e)}
-                                  className="px-1.5 py-0.2 rounded bg-rose-600 hover:bg-rose-500 text-white font-bold"
-                                >
-                                  Xóa
-                                </button>
-                                <button
-                                  type="button"
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    setConfirmDeleteId(null);
-                                  }}
-                                  className="px-1 py-0.2 text-slate-400 hover:text-white"
-                                >
-                                  Hủy
-                                </button>
-                              </div>
-                            ) : (
-                              <button
-                                type="button"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setConfirmDeleteId(conv.id);
-                                }}
-                                title="Xóa cuộc hội thoại này"
-                                className="p-1 rounded-md text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"
-                              >
-                                <Trash2 className="w-3.5 h-3.5" />
-                              </button>
-                            )}
-
-                            <span className="inline-flex items-center gap-1 text-[10px] text-indigo-400 font-semibold group-hover:translate-x-0.5 transition-transform">
-                              <span>Xem lại</span>
-                              <ArrowRight className="w-3 h-3" />
-                            </span>
-                          </div>
-                        </div>
+                    {filteredHistory.length === 0 ? (
+                      <div className="py-8 px-3 text-center space-y-2">
+                        <Search className="w-6 h-6 text-slate-500 mx-auto" />
+                        <p className="text-xs font-semibold text-slate-300">
+                          Không tìm thấy cuộc hội thoại nào
+                        </p>
+                        <p className="text-[11px] text-slate-500">
+                          Không có kết quả phù hợp với từ khóa &ldquo;{historySearchQuery}&rdquo;
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() => setHistorySearchQuery('')}
+                          className="inline-block px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-[11px] text-slate-300 transition-colors cursor-pointer"
+                        >
+                          Xóa tìm kiếm
+                        </button>
                       </div>
-                    );
-                  })
+                    ) : (
+                      filteredHistory.map((conv) => {
+                        const isActive = conv.id === currentConversationId;
+                        const isConfirmingDelete = confirmDeleteId === conv.id;
+                        const isEditingThis = editingConvId === conv.id;
+
+                        return (
+                          <div
+                            key={conv.id}
+                            onClick={() => handleSelectHistoryItem(conv.id)}
+                            className={`group relative rounded-2xl border p-3 cursor-pointer transition-all ${
+                              isActive
+                                ? 'bg-slate-800/95 border-indigo-500/60 shadow-md shadow-indigo-500/10'
+                                : 'bg-slate-900/80 hover:bg-slate-800/60 border-slate-800/80 hover:border-slate-700'
+                            }`}
+                          >
+                            {/* Top row: Title + Time */}
+                            <div className="flex items-start justify-between gap-2 mb-1.5">
+                              {isEditingThis ? (
+                                <div
+                                  className="flex items-center gap-1.5 flex-1 min-w-0"
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  <input
+                                    type="text"
+                                    autoFocus
+                                    value={editingTitleInput}
+                                    onChange={(e) => setEditingTitleInput(e.target.value)}
+                                    onKeyDown={(e) => {
+                                      if (e.key === 'Enter') handleSaveRename(conv.id, e);
+                                      if (e.key === 'Escape') handleCancelRename(e as unknown as React.MouseEvent);
+                                    }}
+                                    className="flex-1 min-w-0 px-2 py-0.5 text-xs bg-slate-950 border border-indigo-500 rounded-lg text-white focus:outline-none focus:ring-1 focus:ring-indigo-500/50"
+                                    placeholder="Nhập tên cuộc hội thoại..."
+                                  />
+                                  <button
+                                    type="button"
+                                    onClick={(e) => handleSaveRename(conv.id, e)}
+                                    className="p-1 rounded text-emerald-400 hover:bg-emerald-500/15 transition-colors"
+                                    title="Lưu tên"
+                                  >
+                                    <Check className="w-3.5 h-3.5" />
+                                  </button>
+                                  <button
+                                    type="button"
+                                    onClick={handleCancelRename}
+                                    className="p-1 rounded text-slate-400 hover:bg-slate-800 transition-colors"
+                                    title="Hủy"
+                                  >
+                                    <X className="w-3.5 h-3.5" />
+                                  </button>
+                                </div>
+                              ) : (
+                                <div className="min-w-0 flex items-center gap-1.5 flex-1">
+                                  <span
+                                    className="text-xs font-bold text-white truncate max-w-[200px]"
+                                    title={conv.title}
+                                  >
+                                    {conv.title}
+                                  </span>
+                                  <button
+                                    type="button"
+                                    onClick={(e) => handleStartRename(conv.id, conv.title, e)}
+                                    className="p-1 rounded-md text-slate-400 hover:text-indigo-300 hover:bg-slate-800 transition-colors"
+                                    title="Đổi tên cuộc hội thoại"
+                                  >
+                                    <Pencil className="w-3 h-3" />
+                                  </button>
+                                  {isActive && (
+                                    <span className="inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shrink-0">
+                                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                                      <span>Đang mở</span>
+                                    </span>
+                                  )}
+                                </div>
+                              )}
+                              <div className="flex items-center gap-1 text-[10px] text-slate-400 shrink-0">
+                                <Clock className="w-3 h-3 text-slate-500" />
+                                <span>{formatConversationTime(conv.updatedAt)}</span>
+                              </div>
+                            </div>
+
+                            {/* Context Tags if present */}
+                            {conv.wordContexts && conv.wordContexts.length > 0 ? (
+                              <div className="mb-1.5 flex flex-wrap gap-1">
+                                {conv.wordContexts.map((ctx, idx) => (
+                                  <span
+                                    key={idx}
+                                    className="inline-flex items-center gap-1 text-[10px] text-indigo-300 bg-indigo-950/60 border border-indigo-500/25 rounded-md px-1.5 py-0.5 truncate max-w-[160px]"
+                                  >
+                                    {ctx.selectedText ? (
+                                      <FileText className="w-2.5 h-2.5 text-sky-400 shrink-0" />
+                                    ) : (
+                                      <BookOpen className="w-2.5 h-2.5 text-indigo-400 shrink-0" />
+                                    )}
+                                    <span className="truncate">
+                                      {ctx.selectedText
+                                        ? `Đoạn trích: "${ctx.selectedText.slice(0, 15)}..."`
+                                        : ctx.word}
+                                    </span>
+                                  </span>
+                                ))}
+                              </div>
+                            ) : conv.wordContext ? (
+                              <div className="mb-1.5 flex items-center gap-1 text-[10px] text-indigo-300 bg-indigo-950/50 border border-indigo-500/20 rounded-md px-2 py-0.5 w-fit max-w-full truncate">
+                                <BookOpen className="w-2.5 h-2.5 shrink-0" />
+                                <span className="truncate">
+                                  {conv.wordContext.selectedText
+                                    ? `Đoạn trích: "${conv.wordContext.selectedText.slice(0, 30)}..."`
+                                    : `Từ vựng: ${conv.wordContext.word}`}
+                                </span>
+                              </div>
+                            ) : null}
+
+                            {/* Snippet */}
+                            {conv.lastMessageSnippet && (
+                              <p className="text-[11px] text-slate-300 line-clamp-2 leading-relaxed bg-slate-950/50 rounded-lg p-2 border border-slate-800/60 italic mb-2">
+                                &ldquo;{conv.lastMessageSnippet}&rdquo;
+                              </p>
+                            )}
+
+                            {/* Bottom Row: Message count + Delete Action */}
+                            <div className="flex items-center justify-between pt-1 border-t border-slate-800/50 text-[11px] text-slate-400">
+                              <span className="inline-flex items-center gap-1">
+                                <MessageSquare className="w-3 h-3 text-slate-500" />
+                                <span>{conv.messageCount} câu hỏi</span>
+                              </span>
+
+                              <div className="flex items-center gap-1.5">
+                                {isConfirmingDelete ? (
+                                  <div
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="inline-flex items-center gap-1 bg-rose-500/20 border border-rose-500/40 rounded-lg px-2 py-0.5 text-[10px]"
+                                  >
+                                    <span className="text-rose-300">Xác nhận xóa?</span>
+                                    <button
+                                      type="button"
+                                      onClick={(e) => handleConfirmDelete(conv.id, e)}
+                                      className="px-1.5 py-0.2 rounded bg-rose-600 hover:bg-rose-500 text-white font-bold"
+                                    >
+                                      Xóa
+                                    </button>
+                                    <button
+                                      type="button"
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setConfirmDeleteId(null);
+                                      }}
+                                      className="px-1 py-0.2 text-slate-400 hover:text-white"
+                                    >
+                                      Hủy
+                                    </button>
+                                  </div>
+                                ) : (
+                                  <button
+                                    type="button"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setConfirmDeleteId(conv.id);
+                                    }}
+                                    title="Xóa cuộc hội thoại này"
+                                    className="p-1 rounded-md text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"
+                                  >
+                                    <Trash2 className="w-3.5 h-3.5" />
+                                  </button>
+                                )}
+
+                                <span className="inline-flex items-center gap-1 text-[10px] text-indigo-400 font-semibold group-hover:translate-x-0.5 transition-transform">
+                                  <span>Xem lại</span>
+                                  <ArrowRight className="w-3 h-3" />
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })
+                    )}
+                  </>
                 )}
               </div>
 

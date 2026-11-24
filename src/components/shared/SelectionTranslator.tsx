@@ -161,7 +161,7 @@ export function SelectionTranslator() {
       if (rect.width === 0 || rect.height === 0) return;
 
       // Calculate position
-      const menuWidth = Math.min(480, typeof window !== 'undefined' ? window.innerWidth - 24 : 480);
+      const menuWidth = Math.min(780, typeof window !== 'undefined' ? window.innerWidth - 24 : 780);
       const padding = 12;
       let x = rect.left + rect.width / 2;
       // Bound horizontally to window
@@ -235,22 +235,22 @@ export function SelectionTranslator() {
     };
   }, [handleSelection]);
 
-  const handleQuickTranslate = () => {
+  const handleQuickTranslate = useCallback(() => {
     setState((prev) => ({
       ...prev,
       mode: 'translation',
       loading: true,
     }));
     translateText(state.originalText);
-  };
+  }, [state.originalText, translateText]);
 
-  const handleAddToAiTutor = () => {
+  const handleAddToAiTutor = useCallback(() => {
     addSnippetContext(state.originalText, undefined, true);
     setState((prev) => ({ ...prev, visible: false }));
     window.getSelection()?.removeAllRanges();
-  };
+  }, [addSnippetContext, state.originalText]);
 
-  const handleAddToNotebook = () => {
+  const handleAddToNotebook = useCallback(() => {
     window.dispatchEvent(
       new CustomEvent('open-custom-vocab-modal', {
         detail: {
@@ -261,9 +261,9 @@ export function SelectionTranslator() {
     );
     setState((prev) => ({ ...prev, visible: false }));
     window.getSelection()?.removeAllRanges();
-  };
+  }, [state.originalText, state.translatedText]);
 
-  const handleCopyOriginal = async (e?: React.MouseEvent) => {
+  const handleCopyOriginal = useCallback(async (e?: React.MouseEvent) => {
     e?.stopPropagation();
     if (!state.originalText) return;
     const ok = await copyToClipboard(state.originalText);
@@ -271,9 +271,9 @@ export function SelectionTranslator() {
       setCopiedOriginal(true);
       setTimeout(() => setCopiedOriginal(false), 2000);
     }
-  };
+  }, [state.originalText]);
 
-  const handleCopyTranslation = async (e?: React.MouseEvent) => {
+  const handleCopyTranslation = useCallback(async (e?: React.MouseEvent) => {
     e?.stopPropagation();
     if (!state.translatedText) return;
     const ok = await copyToClipboard(state.translatedText);
@@ -281,12 +281,143 @@ export function SelectionTranslator() {
       setCopiedTranslation(true);
       setTimeout(() => setCopiedTranslation(false), 2000);
     }
-  };
+  }, [state.translatedText]);
+
+  const handleSpeak = useCallback((e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (!state.originalText) return;
+    speak(state.originalText);
+  }, [speak, state.originalText]);
+
+  const handleOpenBothDictionaries = useCallback((e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (!state.originalText) return;
+    const cUrl = getCambridgeUrl(state.originalText);
+    const oUrl = getOxfordUrl(state.originalText);
+    window.open(cUrl, '_blank', 'noopener,noreferrer');
+    window.open(oUrl, '_blank', 'noopener,noreferrer');
+  }, [state.originalText]);
+
+  const cambridgeUrl = state.originalText ? getCambridgeUrl(state.originalText) : '';
+  const oxfordUrl = state.originalText ? getOxfordUrl(state.originalText) : '';
+
+  // Shortcut keys 1 through 9 handler
+  useEffect(() => {
+    if (!state.visible) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Do not trigger if any modifier key is pressed (avoids browser shortcut conflicts like Ctrl+1..9 / Cmd+1..9)
+      if (e.ctrlKey || e.altKey || e.metaKey || e.shiftKey) {
+        return;
+      }
+
+      // Do not trigger if user is typing in an input, textarea or contenteditable element
+      const activeEl = document.activeElement;
+      if (
+        activeEl &&
+        (activeEl.tagName === 'INPUT' ||
+          activeEl.tagName === 'TEXTAREA' ||
+          (activeEl as HTMLElement).isContentEditable)
+      ) {
+        return;
+      }
+
+      let digit: number | null = null;
+      if (e.key >= '1' && e.key <= '9') {
+        digit = parseInt(e.key, 10);
+      } else if (/^Digit([1-9])$/.test(e.code)) {
+        digit = parseInt(e.code.replace('Digit', ''), 10);
+      } else if (/^Numpad([1-9])$/.test(e.code)) {
+        digit = parseInt(e.code.replace('Numpad', ''), 10);
+      }
+
+      if (!digit) return;
+
+      e.preventDefault();
+
+      if (state.mode === 'menu') {
+        switch (digit) {
+          case 1: // Copy original text
+            handleCopyOriginal();
+            break;
+          case 2: // Cambridge Dictionary
+            window.open(cambridgeUrl, '_blank', 'noopener,noreferrer');
+            break;
+          case 3: // Oxford Dictionary
+            window.open(oxfordUrl, '_blank', 'noopener,noreferrer');
+            break;
+          case 4: // Quick translate
+            handleQuickTranslate();
+            break;
+          case 5: // Pronounce
+            handleSpeak();
+            break;
+          case 6: // Ask AI Tutor
+            handleAddToAiTutor();
+            break;
+          case 7: // Save to Notebook
+            handleAddToNotebook();
+            break;
+          case 8: // Both Dictionaries
+            handleOpenBothDictionaries();
+            break;
+          case 9: // Close menu
+            setState((prev) => ({ ...prev, visible: false }));
+            break;
+        }
+      } else {
+        // Translation Details View
+        switch (digit) {
+          case 1: // Copy original text
+            handleCopyOriginal();
+            break;
+          case 2: // Cambridge Dictionary
+            window.open(cambridgeUrl, '_blank', 'noopener,noreferrer');
+            break;
+          case 3: // Oxford Dictionary
+            window.open(oxfordUrl, '_blank', 'noopener,noreferrer');
+            break;
+          case 4: // Copy translated text
+            handleCopyTranslation();
+            break;
+          case 5: // Pronounce
+            handleSpeak();
+            break;
+          case 6: // Ask AI Tutor
+            handleAddToAiTutor();
+            break;
+          case 7: // Save to Notebook
+            handleAddToNotebook();
+            break;
+          case 8: // Both Dictionaries
+            handleOpenBothDictionaries();
+            break;
+          case 9: // Close modal
+            setState((prev) => ({ ...prev, visible: false }));
+            break;
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [
+    state.visible,
+    state.mode,
+    cambridgeUrl,
+    oxfordUrl,
+    handleCopyOriginal,
+    handleCopyTranslation,
+    handleQuickTranslate,
+    handleSpeak,
+    handleAddToAiTutor,
+    handleAddToNotebook,
+    handleOpenBothDictionaries,
+  ]);
 
   if (!state.visible) return null;
-
-  const cambridgeUrl = getCambridgeUrl(state.originalText);
-  const oxfordUrl = getOxfordUrl(state.originalText);
 
   return (
     <div
@@ -298,14 +429,14 @@ export function SelectionTranslator() {
       }}
       className={`fixed z-50 transition-all duration-150 animate-in fade-in zoom-in-95 ${
         state.mode === 'menu'
-          ? 'flex flex-wrap sm:flex-nowrap items-center justify-center gap-1 sm:gap-1.5 p-1.5 rounded-2xl bg-slate-900/95 border border-indigo-500/40 shadow-2xl backdrop-blur-xl max-w-[calc(100vw-24px)]'
+          ? 'flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 p-1.5 rounded-2xl bg-slate-900/95 border border-indigo-500/40 shadow-2xl backdrop-blur-xl max-w-[calc(100vw-24px)]'
           : 'w-88 sm:w-96 max-w-[94vw] rounded-2xl bg-slate-900/95 border border-indigo-500/40 p-4 shadow-2xl backdrop-blur-xl'
       }`}
     >
       {state.mode === 'menu' ? (
         /* Floating Selection Menu */
         <>
-          {/* Copy original text */}
+          {/* 1. Copy original text */}
           <button
             type="button"
             onClick={handleCopyOriginal}
@@ -314,7 +445,7 @@ export function SelectionTranslator() {
                 ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
                 : 'bg-slate-800/90 hover:bg-slate-700/90 text-slate-200 hover:text-white border border-slate-700/60'
             }`}
-            title="Sao chép đoạn văn bản đã chọn vào bộ nhớ tạm"
+            title="Sao chép đoạn văn bản đã chọn (Phím 1)"
           >
             {copiedOriginal ? (
               <>
@@ -327,83 +458,132 @@ export function SelectionTranslator() {
                 <span>Sao chép</span>
               </>
             )}
+            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-slate-700/50 text-slate-300 border border-slate-600/50 ml-0.5">
+              1
+            </kbd>
           </button>
 
-          <div className="w-px h-4 bg-slate-700/80 hidden sm:block" />
-
-          {/* Cambridge Dictionary link */}
+          {/* 2. Cambridge Dictionary link */}
           <a
             href={cambridgeUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
             className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/35 text-amber-300 hover:text-amber-200 text-xs font-semibold transition-all shadow-sm group whitespace-nowrap"
-            title="Tra từ điển Cambridge (Định nghĩa Anh - Anh chuẩn xác)"
+            title="Tra từ điển Cambridge (Phím 2)"
           >
             <BookOpen className="w-3.5 h-3.5 text-amber-400 group-hover:scale-110 transition-transform" />
             <span>Cambridge</span>
             <ExternalLink className="w-3 h-3 text-amber-400/70 group-hover:text-amber-300" />
+            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-amber-900/40 text-amber-300/80 border border-amber-700/40 ml-0.5">
+              2
+            </kbd>
           </a>
 
-          {/* Oxford Dictionary link */}
+          {/* 3. Oxford Dictionary link */}
           <a
             href={oxfordUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
             className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-sky-500/15 hover:bg-sky-500/25 border border-sky-500/35 text-sky-300 hover:text-sky-200 text-xs font-semibold transition-all shadow-sm group whitespace-nowrap"
-            title="Tra từ điển Oxford (Cấp độ CEFR A1-C2, collocations)"
+            title="Tra từ điển Oxford (Phím 3)"
           >
             <BookOpen className="w-3.5 h-3.5 text-sky-400 group-hover:scale-110 transition-transform" />
             <span>Oxford</span>
             <ExternalLink className="w-3 h-3 text-sky-400/70 group-hover:text-sky-300" />
+            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-sky-900/40 text-sky-300/80 border border-sky-700/40 ml-0.5">
+              3
+            </kbd>
           </a>
 
           <div className="w-px h-4 bg-slate-700/80 hidden sm:block" />
 
-          {/* Quick Translate button */}
+          {/* 4. Quick Translate button */}
           <button
             type="button"
             onClick={handleQuickTranslate}
             className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-indigo-600/20 hover:bg-indigo-600/35 border border-indigo-500/30 text-indigo-300 hover:text-white text-xs font-semibold transition-all shadow-sm whitespace-nowrap"
-            title="Dịch nhanh đoạn này sang tiếng Việt"
+            title="Dịch nhanh đoạn này sang tiếng Việt (Phím 4)"
           >
             <Languages className="w-3.5 h-3.5 text-indigo-400" />
             <span>Dịch nhanh</span>
+            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-indigo-900/40 text-indigo-300/80 border border-indigo-700/40 ml-0.5">
+              4
+            </kbd>
           </button>
 
-          {/* Ask AI Tutor */}
+          {/* 5. Pronounce original text */}
           <button
             type="button"
-            onClick={handleAddToAiTutor}
-            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-violet-600/20 hover:bg-violet-600/35 border border-violet-500/30 text-violet-300 hover:text-white text-xs font-semibold transition-all shadow-sm whitespace-nowrap"
-            title="Thêm đoạn này làm ngữ cảnh vào AI Tutor"
+            onClick={handleSpeak}
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-blue-600/20 hover:bg-blue-600/35 border border-blue-500/30 text-blue-300 hover:text-white text-xs font-semibold transition-all shadow-sm whitespace-nowrap"
+            title="Nghe phát âm tiếng Anh (Phím 5)"
           >
-            <Bot className="w-3.5 h-3.5 text-violet-400" />
-            <span>Hỏi AI Tutor</span>
-          </button>
-
-          {/* Add to Notebook */}
-          <button
-            type="button"
-            onClick={handleAddToNotebook}
-            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/35 border border-emerald-500/35 text-emerald-300 hover:text-white text-xs font-semibold transition-all shadow-sm whitespace-nowrap"
-            title="Thêm từ vựng hoặc mẫu câu này vào Sổ tay cá nhân"
-          >
-            <BookmarkPlus className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Lưu Sổ tay</span>
+            <Volume2 className="w-3.5 h-3.5 text-blue-400" />
+            <span>Phát âm</span>
+            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-blue-900/40 text-blue-300/80 border border-blue-700/40 ml-0.5">
+              5
+            </kbd>
           </button>
 
           <div className="w-px h-4 bg-slate-700/80 hidden sm:block" />
 
-          {/* Close menu */}
+          {/* 6. Ask AI Tutor */}
+          <button
+            type="button"
+            onClick={handleAddToAiTutor}
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-violet-600/20 hover:bg-violet-600/35 border border-violet-500/30 text-violet-300 hover:text-white text-xs font-semibold transition-all shadow-sm whitespace-nowrap"
+            title="Thêm đoạn này làm ngữ cảnh vào AI Tutor (Phím 6)"
+          >
+            <Bot className="w-3.5 h-3.5 text-violet-400" />
+            <span>Hỏi AI</span>
+            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-violet-900/40 text-violet-300/80 border border-violet-700/40 ml-0.5">
+              6
+            </kbd>
+          </button>
+
+          {/* 7. Add to Notebook */}
+          <button
+            type="button"
+            onClick={handleAddToNotebook}
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/35 border border-emerald-500/35 text-emerald-300 hover:text-white text-xs font-semibold transition-all shadow-sm whitespace-nowrap"
+            title="Lưu vào Sổ tay cá nhân (Phím 7)"
+          >
+            <BookmarkPlus className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Lưu Sổ tay</span>
+            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-emerald-900/40 text-emerald-300/80 border border-emerald-700/40 ml-0.5">
+              7
+            </kbd>
+          </button>
+
+          {/* 8. Both Dictionaries */}
+          <button
+            type="button"
+            onClick={handleOpenBothDictionaries}
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-teal-500/15 hover:bg-teal-500/25 border border-teal-500/35 text-teal-300 hover:text-teal-200 text-xs font-semibold transition-all shadow-sm group whitespace-nowrap"
+            title="Mở cả 2 từ điển Cambridge & Oxford cùng lúc (Phím 8)"
+          >
+            <BookOpen className="w-3.5 h-3.5 text-teal-400 group-hover:scale-110 transition-transform" />
+            <span>2 Từ điển</span>
+            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-teal-900/40 text-teal-300/80 border border-teal-700/40 ml-0.5">
+              8
+            </kbd>
+          </button>
+
+          <div className="w-px h-4 bg-slate-700/80 hidden sm:block" />
+
+          {/* 9. Close menu */}
           <button
             type="button"
             onClick={() => setState((prev) => ({ ...prev, visible: false }))}
-            className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-            title="Đóng menu"
+            className="flex items-center gap-1 p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            title="Đóng menu (Phím 9 hoặc Esc)"
           >
             <X className="w-3.5 h-3.5" />
+            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-slate-800/80 text-slate-400 border border-slate-700/60">
+              9
+            </kbd>
           </button>
         </>
       ) : (
@@ -417,33 +597,47 @@ export function SelectionTranslator() {
             </div>
 
             <div className="flex items-center gap-1">
+              {/* 5. Pronounce in header */}
               <button
                 type="button"
-                onClick={() => speak(state.originalText)}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-indigo-300 hover:bg-slate-800 transition-colors"
-                title="Nghe phát âm tiếng Anh"
+                onClick={handleSpeak}
+                className="flex items-center gap-1 p-1.5 rounded-lg text-slate-400 hover:text-indigo-300 hover:bg-slate-800 transition-colors"
+                title="Nghe phát âm tiếng Anh (Phím 5)"
               >
                 <Volume2 className="w-3.5 h-3.5" />
+                <kbd className="hidden sm:inline-flex items-center justify-center min-w-3.5 h-3.5 px-0.5 text-[9px] font-mono font-medium rounded bg-slate-800 text-slate-400 border border-slate-700">
+                  5
+                </kbd>
               </button>
+
+              {/* 1. Copy original text in header */}
               <button
                 type="button"
                 onClick={handleCopyOriginal}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-indigo-300 hover:bg-slate-800 transition-colors"
-                title={copiedOriginal ? 'Đã sao chép đoạn tiếng Anh' : 'Sao chép đoạn tiếng Anh'}
+                className="flex items-center gap-1 p-1.5 rounded-lg text-slate-400 hover:text-indigo-300 hover:bg-slate-800 transition-colors"
+                title={copiedOriginal ? 'Đã sao chép đoạn tiếng Anh' : 'Sao chép đoạn tiếng Anh (Phím 1)'}
               >
                 {copiedOriginal ? (
                   <Check className="w-3.5 h-3.5 text-emerald-400" />
                 ) : (
                   <Copy className="w-3.5 h-3.5" />
                 )}
+                <kbd className="hidden sm:inline-flex items-center justify-center min-w-3.5 h-3.5 px-0.5 text-[9px] font-mono font-medium rounded bg-slate-800 text-slate-400 border border-slate-700">
+                  1
+                </kbd>
               </button>
+
+              {/* 9. Close in header */}
               <button
                 type="button"
                 onClick={() => setState((prev) => ({ ...prev, visible: false }))}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
-                title="Đóng cửa sổ dịch"
+                className="flex items-center gap-1 p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
+                title="Đóng cửa sổ dịch (Phím 9 hoặc Esc)"
               >
                 <X className="w-3.5 h-3.5" />
+                <kbd className="hidden sm:inline-flex items-center justify-center min-w-3.5 h-3.5 px-0.5 text-[9px] font-mono font-medium rounded bg-slate-800 text-slate-400 border border-slate-700">
+                  9
+                </kbd>
               </button>
             </div>
           </div>
@@ -457,30 +651,53 @@ export function SelectionTranslator() {
             {/* Quick Dictionary lookup buttons inside translation card */}
             <div className="flex flex-wrap items-center gap-1.5 mt-2">
               <span className="text-[11px] text-slate-400 font-medium">Tra từ điển:</span>
+              {/* 2. Cambridge */}
               <a
                 href={cambridgeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
                 className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-xs font-semibold bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 transition-all group"
-                title="Mở Cambridge Advanced Learner's Dictionary"
+                title="Mở Cambridge Advanced Learner's Dictionary (Phím 2)"
               >
                 <BookOpen className="w-3 h-3 text-amber-400 group-hover:scale-110 transition-transform" />
                 <span>Cambridge</span>
                 <ExternalLink className="w-2.5 h-2.5 text-amber-400/70" />
+                <kbd className="hidden sm:inline-flex items-center justify-center min-w-3.5 h-3.5 px-0.5 text-[9px] font-mono font-medium rounded bg-amber-950/60 text-amber-300 border border-amber-700/50">
+                  2
+                </kbd>
               </a>
+
+              {/* 3. Oxford */}
               <a
                 href={oxfordUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
                 className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-xs font-semibold bg-sky-500/15 hover:bg-sky-500/25 text-sky-300 border border-sky-500/30 transition-all group"
-                title="Mở Oxford Learner's Dictionaries (OALD)"
+                title="Mở Oxford Learner's Dictionaries (OALD) (Phím 3)"
               >
                 <BookOpen className="w-3 h-3 text-sky-400 group-hover:scale-110 transition-transform" />
                 <span>Oxford</span>
                 <ExternalLink className="w-2.5 h-2.5 text-sky-400/70" />
+                <kbd className="hidden sm:inline-flex items-center justify-center min-w-3.5 h-3.5 px-0.5 text-[9px] font-mono font-medium rounded bg-sky-950/60 text-sky-300 border border-sky-700/50">
+                  3
+                </kbd>
               </a>
+
+              {/* 8. Both Dictionaries */}
+              <button
+                type="button"
+                onClick={handleOpenBothDictionaries}
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-xs font-semibold bg-teal-500/15 hover:bg-teal-500/25 text-teal-300 border border-teal-500/30 transition-all group"
+                title="Mở cả 2 từ điển Cambridge & Oxford cùng lúc (Phím 8)"
+              >
+                <BookOpen className="w-3 h-3 text-teal-400 group-hover:scale-110 transition-transform" />
+                <span>Cả 2</span>
+                <kbd className="hidden sm:inline-flex items-center justify-center min-w-3.5 h-3.5 px-0.5 text-[9px] font-mono font-medium rounded bg-teal-950/60 text-teal-300 border border-teal-700/50">
+                  8
+                </kbd>
+              </button>
             </div>
           </div>
 
@@ -499,10 +716,12 @@ export function SelectionTranslator() {
                   {state.translatedText}
                 </p>
                 <div className="flex items-center justify-end pt-1">
+                  {/* 4. Copy translation in details card */}
                   <button
                     type="button"
                     onClick={handleCopyTranslation}
-                    className="flex items-center gap-1 text-[11px] font-semibold text-slate-400 hover:text-slate-200 transition-colors"
+                    className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-400 hover:text-slate-200 transition-colors"
+                    title="Sao chép bản dịch tiếng Việt (Phím 4)"
                   >
                     {copiedTranslation ? (
                       <>
@@ -515,47 +734,63 @@ export function SelectionTranslator() {
                         <span>Sao chép bản dịch</span>
                       </>
                     )}
+                    <kbd className="hidden sm:inline-flex items-center justify-center min-w-3.5 h-3.5 px-1 text-[9px] font-mono font-medium rounded bg-slate-800 text-slate-400 border border-slate-700">
+                      4
+                    </kbd>
                   </button>
                 </div>
               </div>
             )}
           </div>
 
-          {/* Action: Open in AI Tutor from Translation View */}
+          {/* 6. Action: Open in AI Tutor from Translation View */}
           <button
             type="button"
             onClick={handleAddToAiTutor}
             className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-gradient-to-r from-indigo-600/30 to-violet-600/30 hover:from-indigo-600/50 hover:to-violet-600/50 border border-indigo-500/30 text-indigo-200 hover:text-white text-xs font-semibold transition-all mb-2 shadow-sm"
+            title="Thêm vào AI Tutor hỏi ngữ pháp & bẫy thi (Phím 6)"
           >
             <Bot className="w-3.5 h-3.5 text-indigo-400" />
             <span>Thêm vào AI Tutor hỏi ngữ pháp & bẫy thi</span>
+            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-indigo-900/50 text-indigo-300 border border-indigo-700/50 ml-1">
+              6
+            </kbd>
           </button>
 
-          {/* Action: Save to Personal Notebook */}
+          {/* 7. Action: Save to Personal Notebook */}
           <button
             type="button"
             onClick={handleAddToNotebook}
             className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-emerald-600/25 hover:bg-emerald-600/40 border border-emerald-500/35 text-emerald-200 hover:text-white text-xs font-semibold transition-all mb-2 shadow-sm"
+            title="Lưu vào Sổ tay cá nhân (Phím 7)"
           >
             <BookmarkPlus className="w-3.5 h-3.5 text-emerald-400" />
             <span>Lưu vào Sổ tay cá nhân</span>
+            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-emerald-900/50 text-emerald-300 border border-emerald-700/50 ml-1">
+              7
+            </kbd>
           </button>
 
-          {/* Micro footer hint */}
-          <div className="text-[10px] text-slate-500 text-center flex items-center justify-between">
-            <span>Bôi đen bất kỳ đoạn nào để tra cứu</span>
-            <button
-              type="button"
-              onClick={() => {
-                const next = !isEnabled;
-                setIsEnabled(next);
-                localStorage.setItem('selection_translate_enabled', String(next));
-                if (!next) setState((prev) => ({ ...prev, visible: false }));
-              }}
-              className="text-slate-400 hover:text-indigo-400 transition-colors underline"
-            >
-              {isEnabled ? 'Tắt menu nhanh' : 'Bật menu nhanh'}
-            </button>
+          {/* Micro footer hint with shortcut key map */}
+          <div className="pt-1 border-t border-slate-800/60">
+            <div className="text-[10px] text-slate-500 text-center flex items-center justify-between mb-1">
+              <span>Bôi đen bất kỳ đoạn nào để tra cứu</span>
+              <button
+                type="button"
+                onClick={() => {
+                  const next = !isEnabled;
+                  setIsEnabled(next);
+                  localStorage.setItem('selection_translate_enabled', String(next));
+                  if (!next) setState((prev) => ({ ...prev, visible: false }));
+                }}
+                className="text-slate-400 hover:text-indigo-400 transition-colors underline"
+              >
+                {isEnabled ? 'Tắt menu nhanh' : 'Bật menu nhanh'}
+              </button>
+            </div>
+            <p className="text-[10px] text-slate-500 text-center font-mono">
+              Phím tắt: [1] Chép • [2] Cambridge • [3] Oxford • [4] Dịch/Chép • [5] Loa • [6] AI • [7] Sổ tay • [8] 2 Từ điển • [9] Đóng
+            </p>
           </div>
         </>
       )}

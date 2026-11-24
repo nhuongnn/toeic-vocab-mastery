@@ -161,7 +161,7 @@ export function SelectionTranslator() {
       if (rect.width === 0 || rect.height === 0) return;
 
       // Calculate position
-      const menuWidth = Math.min(780, typeof window !== 'undefined' ? window.innerWidth - 24 : 780);
+      const menuWidth = Math.min(720, typeof window !== 'undefined' ? window.innerWidth - 24 : 720);
       const padding = 12;
       let x = rect.left + rect.width / 2;
       // Bound horizontally to window
@@ -289,24 +289,15 @@ export function SelectionTranslator() {
     speak(state.originalText);
   }, [speak, state.originalText]);
 
-  const handleOpenBothDictionaries = useCallback((e?: React.MouseEvent) => {
-    e?.stopPropagation();
-    if (!state.originalText) return;
-    const cUrl = getCambridgeUrl(state.originalText);
-    const oUrl = getOxfordUrl(state.originalText);
-    window.open(cUrl, '_blank', 'noopener,noreferrer');
-    window.open(oUrl, '_blank', 'noopener,noreferrer');
-  }, [state.originalText]);
-
   const cambridgeUrl = state.originalText ? getCambridgeUrl(state.originalText) : '';
   const oxfordUrl = state.originalText ? getOxfordUrl(state.originalText) : '';
 
-  // Shortcut keys 1 through 9 handler
+  // Shortcut keys 1 through 7 handler
   useEffect(() => {
     if (!state.visible) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Do not trigger if any modifier key is pressed (avoids browser shortcut conflicts like Ctrl+1..9 / Cmd+1..9)
+      // Do not trigger if any modifier key is pressed (avoids browser shortcut conflicts like Ctrl+1..7 / Cmd+1..7)
       if (e.ctrlKey || e.altKey || e.metaKey || e.shiftKey) {
         return;
       }
@@ -323,11 +314,11 @@ export function SelectionTranslator() {
       }
 
       let digit: number | null = null;
-      if (e.key >= '1' && e.key <= '9') {
+      if (e.key >= '1' && e.key <= '7') {
         digit = parseInt(e.key, 10);
-      } else if (/^Digit([1-9])$/.test(e.code)) {
+      } else if (/^Digit([1-7])$/.test(e.code)) {
         digit = parseInt(e.code.replace('Digit', ''), 10);
-      } else if (/^Numpad([1-9])$/.test(e.code)) {
+      } else if (/^Numpad([1-7])$/.test(e.code)) {
         digit = parseInt(e.code.replace('Numpad', ''), 10);
       }
 
@@ -358,12 +349,6 @@ export function SelectionTranslator() {
           case 7: // Save to Notebook
             handleAddToNotebook();
             break;
-          case 8: // Both Dictionaries
-            handleOpenBothDictionaries();
-            break;
-          case 9: // Close menu
-            setState((prev) => ({ ...prev, visible: false }));
-            break;
         }
       } else {
         // Translation Details View
@@ -389,12 +374,6 @@ export function SelectionTranslator() {
           case 7: // Save to Notebook
             handleAddToNotebook();
             break;
-          case 8: // Both Dictionaries
-            handleOpenBothDictionaries();
-            break;
-          case 9: // Close modal
-            setState((prev) => ({ ...prev, visible: false }));
-            break;
         }
       }
     };
@@ -414,7 +393,6 @@ export function SelectionTranslator() {
     handleSpeak,
     handleAddToAiTutor,
     handleAddToNotebook,
-    handleOpenBothDictionaries,
   ]);
 
   if (!state.visible) return null;
@@ -557,33 +535,16 @@ export function SelectionTranslator() {
             </kbd>
           </button>
 
-          {/* 8. Both Dictionaries */}
-          <button
-            type="button"
-            onClick={handleOpenBothDictionaries}
-            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-teal-500/15 hover:bg-teal-500/25 border border-teal-500/35 text-teal-300 hover:text-teal-200 text-xs font-semibold transition-all shadow-sm group whitespace-nowrap"
-            title="Mở cả 2 từ điển Cambridge & Oxford cùng lúc (Phím 8)"
-          >
-            <BookOpen className="w-3.5 h-3.5 text-teal-400 group-hover:scale-110 transition-transform" />
-            <span>2 Từ điển</span>
-            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-teal-900/40 text-teal-300/80 border border-teal-700/40 ml-0.5">
-              8
-            </kbd>
-          </button>
-
           <div className="w-px h-4 bg-slate-700/80 hidden sm:block" />
 
-          {/* 9. Close menu */}
+          {/* Close menu (No shortcut number 9, dismissable by click or Escape) */}
           <button
             type="button"
             onClick={() => setState((prev) => ({ ...prev, visible: false }))}
-            className="flex items-center gap-1 p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-            title="Đóng menu (Phím 9 hoặc Esc)"
+            className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            title="Đóng menu (Esc)"
           >
             <X className="w-3.5 h-3.5" />
-            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-slate-800/80 text-slate-400 border border-slate-700/60">
-              9
-            </kbd>
           </button>
         </>
       ) : (
@@ -627,17 +588,14 @@ export function SelectionTranslator() {
                 </kbd>
               </button>
 
-              {/* 9. Close in header */}
+              {/* Close in header (No shortcut number 9, dismissable by click or Escape) */}
               <button
                 type="button"
                 onClick={() => setState((prev) => ({ ...prev, visible: false }))}
-                className="flex items-center gap-1 p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
-                title="Đóng cửa sổ dịch (Phím 9 hoặc Esc)"
+                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
+                title="Đóng cửa sổ dịch (Esc)"
               >
                 <X className="w-3.5 h-3.5" />
-                <kbd className="hidden sm:inline-flex items-center justify-center min-w-3.5 h-3.5 px-0.5 text-[9px] font-mono font-medium rounded bg-slate-800 text-slate-400 border border-slate-700">
-                  9
-                </kbd>
               </button>
             </div>
           </div>
@@ -684,20 +642,6 @@ export function SelectionTranslator() {
                   3
                 </kbd>
               </a>
-
-              {/* 8. Both Dictionaries */}
-              <button
-                type="button"
-                onClick={handleOpenBothDictionaries}
-                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-xs font-semibold bg-teal-500/15 hover:bg-teal-500/25 text-teal-300 border border-teal-500/30 transition-all group"
-                title="Mở cả 2 từ điển Cambridge & Oxford cùng lúc (Phím 8)"
-              >
-                <BookOpen className="w-3 h-3 text-teal-400 group-hover:scale-110 transition-transform" />
-                <span>Cả 2</span>
-                <kbd className="hidden sm:inline-flex items-center justify-center min-w-3.5 h-3.5 px-0.5 text-[9px] font-mono font-medium rounded bg-teal-950/60 text-teal-300 border border-teal-700/50">
-                  8
-                </kbd>
-              </button>
             </div>
           </div>
 
@@ -789,7 +733,7 @@ export function SelectionTranslator() {
               </button>
             </div>
             <p className="text-[10px] text-slate-500 text-center font-mono">
-              Phím tắt: [1] Chép • [2] Cambridge • [3] Oxford • [4] Dịch/Chép • [5] Loa • [6] AI • [7] Sổ tay • [8] 2 Từ điển • [9] Đóng
+              Phím tắt: [1] Chép • [2] Cambridge • [3] Oxford • [4] Dịch/Chép • [5] Loa • [6] AI • [7] Sổ tay • [Esc] Đóng
             </p>
           </div>
         </>

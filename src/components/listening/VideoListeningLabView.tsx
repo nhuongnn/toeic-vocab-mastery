@@ -1,10 +1,9 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import {
   Film,
   Play,
-  RotateCcw,
   CheckCircle2,
   XCircle,
   Lightbulb,
@@ -16,8 +15,9 @@ import {
   Headphones,
   FileText,
   Volume2,
-  ArrowRight,
   Zap,
+  Filter,
+  Tag,
 } from 'lucide-react';
 import { VideoListeningExercise, VideoDictationTask } from '@/types/listening';
 import { useSpeech } from '@/hooks/useSpeech';
@@ -26,20 +26,86 @@ interface VideoListeningLabViewProps {
   exercises: VideoListeningExercise[];
 }
 
+const categoryLabels: Record<string, { labelVi: string; color: string }> = {
+  all: { labelVi: 'Tất cả chủ đề', color: 'text-slate-300 border-slate-700 bg-slate-800/80' },
+  'Office & Administration': {
+    labelVi: 'Văn phòng & Quản lý',
+    color: 'text-blue-400 border-blue-500/30 bg-blue-500/10',
+  },
+  'Travel & Transport': {
+    labelVi: 'Du lịch & Sân bay',
+    color: 'text-sky-400 border-sky-500/30 bg-sky-500/10',
+  },
+  'Personnel & HR': {
+    labelVi: 'Nhân sự & Phỏng vấn',
+    color: 'text-purple-400 border-purple-500/30 bg-purple-500/10',
+  },
+  'Dining & Hospitality': {
+    labelVi: 'Ẩm thực & Nhà hàng',
+    color: 'text-amber-400 border-amber-500/30 bg-amber-500/10',
+  },
+  'Communications & Media': {
+    labelVi: 'Dịch vụ & Khiếu nại',
+    color: 'text-cyan-400 border-cyan-500/30 bg-cyan-500/10',
+  },
+  'Marketing & Sales': {
+    labelVi: 'Marketing & Bán hàng',
+    color: 'text-rose-400 border-rose-500/30 bg-rose-500/10',
+  },
+  'Purchasing & Contracts': {
+    labelVi: 'Mua sắm & Hợp đồng',
+    color: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10',
+  },
+  'Finance & Budgeting': {
+    labelVi: 'Tài chính & Ngân sách',
+    color: 'text-teal-400 border-teal-500/30 bg-teal-500/10',
+  },
+  'Technology & IT': {
+    labelVi: 'Công nghệ & IT Support',
+    color: 'text-indigo-400 border-indigo-500/30 bg-indigo-500/10',
+  },
+};
+
 export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps) {
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedId, setSelectedId] = useState<string>(exercises[0]?.id || '');
   const [activeTab, setActiveTab] = useState<'quiz' | 'dictation' | 'transcript'>('quiz');
   const [quizAnswers, setQuizAnswers] = useState<Record<string, number | null>>({});
   const [dictationInputs, setDictationInputs] = useState<Record<string, string>>({});
   const [dictationResults, setDictationResults] = useState<Record<string, boolean | null>>({});
   const [showHints, setShowHints] = useState<Record<string, boolean>>({});
-  const [isPlayingVideo, setIsPlayingVideo] = useState(false);
+  const [, setIsPlayingVideo] = useState(false);
   const [currentTimestamp, setCurrentTimestamp] = useState<number | null>(null);
 
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const { speak, stop } = useSpeech();
 
-  const currentExercise = exercises.find((e) => e.id === selectedId) || exercises[0];
+  // Extract unique categories from exercises
+  const availableCategories = useMemo(() => {
+    const set = new Set<string>();
+    exercises.forEach((e) => {
+      if (e.category) set.add(e.category);
+    });
+    return ['all', ...Array.from(set)];
+  }, [exercises]);
+
+  // Filter exercises by category
+  const filteredExercises = useMemo(() => {
+    if (selectedCategory === 'all') return exercises;
+    return exercises.filter(
+      (e) => e.category === selectedCategory || e.categoryId === selectedCategory
+    );
+  }, [exercises, selectedCategory]);
+
+  // Keep selectedId valid when filter changes
+  useEffect(() => {
+    if (filteredExercises.length > 0 && !filteredExercises.some((e) => e.id === selectedId)) {
+      setSelectedId(filteredExercises[0].id);
+    }
+  }, [filteredExercises, selectedId]);
+
+  const currentExercise =
+    exercises.find((e) => e.id === selectedId) || filteredExercises[0] || exercises[0];
 
   // Stop video iframe safely
   const stopIframeVideo = useCallback(() => {
@@ -92,23 +158,81 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
     setDictationResults((prev) => ({ ...prev, [task.id]: isMatch }));
   };
 
+  const currentCatMeta = categoryLabels[currentExercise.category] || {
+    labelVi: currentExercise.category,
+    color: 'text-rose-400 border-rose-500/30 bg-rose-500/10',
+  };
+
   return (
     <div className="space-y-8">
+      {/* Category Filter Bar */}
+      <div className="space-y-3">
+        <div className="flex items-center justify-between">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+            <Filter className="w-4 h-4 text-rose-500" />
+            <span>Lọc Tình Huống Theo Chủ Đề:</span>
+          </h2>
+          <span className="text-xs text-slate-400">
+            {filteredExercises.length} / {exercises.length} kịch bản chuẩn ETS
+          </span>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2">
+          {availableCategories.map((catKey) => {
+            const isCatActive = selectedCategory === catKey;
+            const meta = categoryLabels[catKey] || {
+              labelVi: catKey,
+              color: 'text-slate-300 border-slate-700 bg-slate-800',
+            };
+            const count =
+              catKey === 'all'
+                ? exercises.length
+                : exercises.filter((e) => e.category === catKey).length;
+
+            return (
+              <button
+                key={catKey}
+                onClick={() => setSelectedCategory(catKey)}
+                className={`px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1.5 ${
+                  isCatActive
+                    ? 'bg-rose-600 text-white border-rose-500 shadow-md shadow-rose-600/30'
+                    : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200 hover:border-slate-700'
+                }`}
+              >
+                <span>{meta.labelVi}</span>
+                <span
+                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
+                    isCatActive ? 'bg-white/20 text-white' : 'bg-slate-800 text-slate-400'
+                  }`}
+                >
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       {/* Scenario Navigation Tabs / Horizontal Cards */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <h2 className="text-sm font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
             <Film className="w-4 h-4 text-rose-500" />
-            <span>Chọn Tình Huống Video Thực Chiến:</span>
+            <span>Chọn Video Thực Chiến:</span>
           </h2>
-          <span className="text-xs text-slate-400">
-            {exercises.length} kịch bản chuẩn giao tiếp & đề thi ETS
+          <span className="text-xs text-rose-400 font-medium">
+            Đang học: {currentExercise.titleVi}
           </span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {exercises.map((ex, idx) => {
+          {filteredExercises.map((ex, idx) => {
             const isSelected = ex.id === selectedId;
+            const exCatMeta = categoryLabels[ex.category] || {
+              labelVi: ex.category,
+              color: 'text-slate-400 border-slate-700 bg-slate-800',
+            };
+
             return (
               <button
                 key={ex.id}
@@ -121,8 +245,10 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-1.5">
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-800 text-rose-400">
-                      Scenario {idx + 1}
+                    <span
+                      className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${exCatMeta.color}`}
+                    >
+                      {exCatMeta.labelVi}
                     </span>
                     <span className="text-[10px] text-slate-400 font-mono">
                       {ex.level}
@@ -135,15 +261,17 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
                   >
                     {ex.titleVi}
                   </h3>
-                  <p className="text-[11px] text-slate-400 line-clamp-1 mt-0.5">
-                    {ex.category}
+                  <p className="text-[11px] text-slate-400 line-clamp-1 mt-0.5 font-medium">
+                    {ex.title}
                   </p>
                 </div>
 
                 <div className="flex items-center justify-between text-[11px] text-slate-400 pt-1 border-t border-slate-800/60">
                   <span className="flex items-center gap-1">
                     <Clock className="w-3 h-3 text-slate-500" />
-                    <span>{Math.floor(ex.durationSeconds / 60)}m {ex.durationSeconds % 60}s</span>
+                    <span>
+                      {Math.floor(ex.durationSeconds / 60)}m {ex.durationSeconds % 60}s
+                    </span>
                   </span>
                   <span
                     className={`font-semibold flex items-center gap-0.5 ${
@@ -164,6 +292,42 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Column (6 Cols): Embedded Video & Real-world context */}
         <div className="lg:col-span-6 space-y-4">
+          {/* Active Scenario Header Banner */}
+          <div className="p-4 rounded-2xl bg-gradient-to-r from-slate-900 via-rose-950/20 to-slate-900 border border-slate-800 flex items-start justify-between gap-3">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <span
+                  className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${currentCatMeta.color}`}
+                >
+                  {currentCatMeta.labelVi}
+                </span>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 font-mono">
+                  {currentExercise.level}
+                </span>
+                <span className="text-[10px] text-emerald-400 font-semibold flex items-center gap-1">
+                  <Sparkles className="w-3 h-3" />
+                  <span>Chuẩn đề ETS</span>
+                </span>
+              </div>
+              <h1 className="text-sm sm:text-base font-black text-white leading-tight">
+                {currentExercise.titleVi}
+              </h1>
+              <p className="text-xs text-slate-400">{currentExercise.title}</p>
+            </div>
+
+            <a
+              href={`https://www.youtube.com/watch?v=${currentExercise.youtubeId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-colors flex items-center gap-1 flex-shrink-0"
+              title="Mở video trực tiếp trên YouTube"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">YouTube</span>
+            </a>
+          </div>
+
+          {/* Embedded YouTube Player */}
           <div className="relative rounded-3xl overflow-hidden border border-slate-800 bg-slate-950 shadow-2xl aspect-video group">
             <iframe
               ref={iframeRef}
@@ -179,7 +343,7 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
 
           {/* Quick Jump Buttons to Specific Timestamps */}
           <div className="flex flex-wrap items-center gap-2 text-xs">
-            <span className="text-slate-400 font-medium">Tua nhanh phân cảnh:</span>
+            <span className="text-slate-400 font-medium">Tua nhanh mốc hội thoại:</span>
             {currentExercise.fullTranscript.map((t, idx) => {
               const [min, sec] = t.time.split(':').map(Number);
               const totalSec = (min || 0) * 60 + (sec || 0);
@@ -201,10 +365,11 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
           <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2 text-xs">
             <div className="flex items-center gap-2 text-rose-400 font-bold">
               <Sparkles className="w-4 h-4" />
-              <span>Ngữ Cảnh Thực Tế & Ứng Dụng TOEIC:</span>
+              <span>Bối Cảnh Thực Tế & Ứng Dụng Đề Thi TOEIC:</span>
             </div>
-            <p className="text-slate-300 leading-relaxed">
-              {currentExercise.realWorldContext}
+            <p className="text-slate-300 leading-relaxed">{currentExercise.realWorldContext}</p>
+            <p className="text-slate-400 text-[11px] leading-relaxed italic border-t border-slate-800/80 pt-2 mt-2">
+              📌 {currentExercise.scenarioDescriptionVi}
             </p>
           </div>
 
@@ -217,7 +382,10 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
 
             <div className="space-y-2.5">
               {currentExercise.nativeSpeechHacks.map((hack, hIdx) => (
-                <div key={hIdx} className="space-y-1 bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/80">
+                <div
+                  key={hIdx}
+                  className="space-y-1 bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/80"
+                >
                   <div className="font-bold text-slate-200 flex items-center justify-between">
                     <span>{hack.hackTitle}</span>
                     <span className="font-mono text-[10px] text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded">
@@ -295,6 +463,13 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
                           <span className="text-xs font-semibold text-white">
                             {q.questionEn}
                           </span>
+                          <button
+                            onClick={() => speak(q.questionEn, 'en-US', 0.9)}
+                            className="p-1 rounded text-slate-400 hover:text-rose-400 hover:bg-slate-800 transition-colors"
+                            title="Nghe phát âm câu hỏi"
+                          >
+                            <Volume2 className="w-3.5 h-3.5" />
+                          </button>
                         </div>
                         <p className="text-[11px] text-slate-400 italic pl-5 mt-0.5">
                           {q.questionVi}
@@ -318,7 +493,8 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
                         const isThisSelected = selectedOpt === optIdx;
                         const isThisCorrect = optIdx === q.correctAnswer;
 
-                        let style = 'bg-slate-950/70 border-slate-800 hover:border-slate-700 text-slate-300';
+                        let style =
+                          'bg-slate-950/70 border-slate-800 hover:border-slate-700 text-slate-300';
                         if (isAnswered) {
                           if (isThisCorrect) {
                             style = 'bg-emerald-950/40 border-emerald-500 text-emerald-300';
@@ -338,7 +514,9 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
                           >
                             <span
                               className={`w-6 h-6 rounded-lg flex items-center justify-center font-bold text-xs flex-shrink-0 ${
-                                isThisSelected ? 'bg-rose-600 text-white' : 'bg-slate-800 text-slate-300'
+                                isThisSelected
+                                  ? 'bg-rose-600 text-white'
+                                  : 'bg-slate-800 text-slate-300'
                               }`}
                             >
                               {optLabel}
@@ -368,9 +546,13 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
           {activeTab === 'dictation' && (
             <div className="space-y-4">
               <div className="p-3.5 rounded-2xl bg-slate-950 border border-rose-500/30 text-xs text-slate-300 space-y-1">
-                <span className="font-bold text-rose-400">Hướng dẫn Nghe Chép Chính Tả (Dictation):</span>
+                <span className="font-bold text-rose-400">
+                  Hướng dẫn Nghe Chép Chính Tả (Dictation):
+                </span>
                 <p className="text-slate-400">
-                  Lắng nghe đoạn video tại giây tương ứng, sau đó gõ chính xác cụm từ bản xứ còn thiếu vào ô trống. Nhấn "Kiểm tra" để đối chiếu kết quả.
+                  Lắng nghe đoạn video tại giây tương ứng hoặc bấm "Nghe Audio mẫu", sau đó gõ
+                  chính xác cụm từ bản xứ còn thiếu vào ô trống. Nhấn "Kiểm tra" để đối chiếu kết
+                  quả.
                 </p>
               </div>
 
@@ -384,21 +566,41 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
                     key={task.id}
                     className="p-4 rounded-3xl bg-slate-900/90 border border-slate-800 space-y-3.5 shadow-md"
                   >
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between flex-wrap gap-2">
                       <div className="flex items-center gap-2">
                         <span className="text-[11px] font-bold px-2 py-0.5 rounded-lg bg-rose-500/20 text-rose-300">
                           Đoạn {tIndex + 1}
                         </span>
-                        <span className="text-xs font-bold text-white">{task.segmentTitle}</span>
+                        <span className="text-xs font-bold text-white">
+                          {task.segmentTitle}
+                        </span>
                       </div>
 
-                      <button
-                        onClick={() => jumpToTime(task.audioTimestamp)}
-                        className="inline-flex items-center gap-1 text-[11px] text-rose-400 hover:text-rose-300 bg-rose-500/10 px-2.5 py-1 rounded-lg transition-colors font-medium"
-                      >
-                        <Play className="w-3 h-3 fill-rose-400" />
-                        <span>Nghe tại {task.audioTimestamp}s</span>
-                      </button>
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          onClick={() => jumpToTime(task.audioTimestamp)}
+                          className="inline-flex items-center gap-1 text-[11px] text-sky-400 hover:text-sky-300 bg-sky-500/10 px-2 py-1 rounded-lg transition-colors font-medium"
+                          title="Xem mốc thời gian trên video"
+                        >
+                          <Play className="w-3 h-3 fill-sky-400" />
+                          <span>Video {task.audioTimestamp}s</span>
+                        </button>
+
+                        <button
+                          onClick={() =>
+                            speak(
+                              `${task.contextLeadIn} ${task.blankText} ${task.contextFollowUp}`,
+                              'en-US',
+                              0.9
+                            )
+                          }
+                          className="inline-flex items-center gap-1 text-[11px] text-rose-400 hover:text-rose-300 bg-rose-500/10 px-2 py-1 rounded-lg transition-colors font-medium"
+                          title="Phát âm câu hoàn chỉnh bằng giọng đọc chuẩn (TTS)"
+                        >
+                          <Volume2 className="w-3 h-3" />
+                          <span>Nghe Audio mẫu</span>
+                        </button>
+                      </div>
                     </div>
 
                     {/* Sentence with blank */}
@@ -447,7 +649,9 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
                             Đáp án: "{task.blankText}"
                           </span>
                         </div>
-                        <p className="text-[11px] text-slate-300 font-mono">Phiên âm IPA: {task.ipa}</p>
+                        <p className="text-[11px] text-slate-300 font-mono">
+                          Phiên âm IPA: {task.ipa}
+                        </p>
                         <p className="text-[11px] text-slate-400">💡 {task.speechTipVi}</p>
                       </div>
                     )}
@@ -479,9 +683,12 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
           {/* TAB 3: BILINGUAL TRANSCRIPT */}
           {activeTab === 'transcript' && (
             <div className="p-4 rounded-3xl bg-slate-900/90 border border-slate-800 space-y-3 shadow-md max-h-[550px] overflow-y-auto">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block">
-                Bấm vào mốc thời gian để xem video tương ứng:
-              </span>
+              <div className="flex items-center justify-between text-xs text-slate-400 pb-1 border-b border-slate-800">
+                <span className="font-bold uppercase tracking-wider">
+                  Kịch Bản Hội Thoại Song Ngữ:
+                </span>
+                <span className="text-[11px]">Bấm Play để nhảy video, hoặc biểu tượng Loa để nghe câu</span>
+              </div>
 
               <div className="space-y-3">
                 {currentExercise.fullTranscript.map((line, lIdx) => {
@@ -491,19 +698,35 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
                   return (
                     <div
                       key={lIdx}
-                      className="p-3 rounded-2xl bg-slate-950/60 border border-slate-800/80 space-y-1 text-xs hover:border-slate-700 transition-colors"
+                      className="p-3 rounded-2xl bg-slate-950/60 border border-slate-800/80 space-y-1.5 text-xs hover:border-slate-700 transition-colors"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="font-bold text-rose-400">{line.speaker}</span>
-                        <button
-                          onClick={() => jumpToTime(totalSec)}
-                          className="inline-flex items-center gap-1 text-[11px] text-sky-400 hover:text-sky-300 bg-sky-500/10 px-2 py-0.5 rounded font-mono"
-                        >
-                          <Play className="w-2.5 h-2.5 fill-sky-400" />
-                          <span>{line.time}</span>
-                        </button>
+                        <span className="font-bold text-rose-400 flex items-center gap-1.5">
+                          <Tag className="w-3 h-3 text-rose-500" />
+                          <span>{line.speaker}</span>
+                        </span>
+
+                        <div className="flex items-center gap-1.5">
+                          <button
+                            onClick={() => jumpToTime(totalSec)}
+                            className="inline-flex items-center gap-1 text-[11px] text-sky-400 hover:text-sky-300 bg-sky-500/10 px-2 py-0.5 rounded font-mono transition-colors"
+                            title="Nhảy đến phân cảnh này trong video"
+                          >
+                            <Play className="w-2.5 h-2.5 fill-sky-400" />
+                            <span>{line.time}</span>
+                          </button>
+
+                          <button
+                            onClick={() => speak(line.en, 'en-US', 0.9)}
+                            className="inline-flex items-center gap-1 text-[11px] text-rose-400 hover:text-rose-300 bg-rose-500/10 px-2 py-0.5 rounded transition-colors"
+                            title="Nghe phát âm chuẩn giọng bản xứ (TTS)"
+                          >
+                            <Volume2 className="w-3 h-3" />
+                            <span>Audio</span>
+                          </button>
+                        </div>
                       </div>
-                      <p className="text-slate-200 leading-relaxed">{line.en}</p>
+                      <p className="text-slate-200 leading-relaxed font-medium">{line.en}</p>
                       <p className="text-slate-400 italic text-[11px]">{line.vi}</p>
                     </div>
                   );

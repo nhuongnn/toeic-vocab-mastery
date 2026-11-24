@@ -176,6 +176,7 @@ export interface VideoListeningExercise {
   title: string;
   titleVi: string;
   category: string;
+  categoryId?: string;
   level: 'Intermediate' | 'Upper-Intermediate' | 'Advanced';
   youtubeId: string;
   startTimestamp: number;

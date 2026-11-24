@@ -242,6 +242,16 @@ export function lemmatizeWord(rawWord: string): string {
 }
 
 /**
+ * Checks whether an input contains only a single word (no internal whitespace or line breaks).
+ */
+export function isSingleWord(input: string): boolean {
+  if (!input) return false;
+  const trimmed = input.trim();
+  if (!trimmed) return false;
+  return !/\s+/.test(trimmed);
+}
+
+/**
  * Converts a word or multi-word phrase into its base/lemma form.
  * If multi-word (e.g. "looking after", "carried out", "setting up"),
  * the head verb is lemmatized while preserving prepositions/particles.
@@ -260,32 +270,43 @@ export function lemmatizePhrase(phrase: string): string {
 }
 
 /**
- * Converts any input (single word or phrase) to base/uninflected form.
+ * Converts an input to base/uninflected form ONLY if it is a single word.
+ * If the user selected an entire passage, sentence, or multiple words,
+ * it strictly returns the original text without converting to base form.
  */
 export function toBaseForm(input: string): string {
   if (!input) return '';
   const trimmed = input.trim();
-  if (trimmed.includes(' ')) {
-    return lemmatizePhrase(trimmed);
+  // Only convert when user selected a single word
+  if (!isSingleWord(trimmed)) {
+    return trimmed;
   }
   return lemmatizeWord(trimmed);
 }
 
 /**
  * Checks whether an input string is already in its base form.
+ * If multiple words or a passage are selected, returns true (no conversion applied).
  */
 export function isBaseForm(input: string): boolean {
   if (!input) return true;
-  const cleaned = cleanToken(input).toLowerCase();
-  return toBaseForm(cleaned) === cleaned;
+  const trimmed = input.trim();
+  if (!isSingleWord(trimmed)) return true;
+  const cleaned = cleanToken(trimmed).toLowerCase();
+  return lemmatizeWord(cleaned) === cleaned;
 }
 
 /**
- * Cleans and normalizes an input word/phrase specifically for Oxford lookup.
- * Automatically converts inflected word forms to their base lemma.
+ * Cleans and normalizes an input word specifically for Oxford lookup.
+ * Automatically converts inflected word forms to their base lemma ONLY when a single word is selected.
  */
 export function cleanWordForOxford(word: string): string {
-  return toBaseForm(word)
+  if (!word) return '';
+  const trimmed = word.trim();
+  if (!isSingleWord(trimmed)) {
+    return trimmed.toLowerCase().replace(/['’]/g, '');
+  }
+  return lemmatizeWord(trimmed)
     .trim()
     .toLowerCase()
     .replace(/['’]/g, '');
@@ -293,19 +314,33 @@ export function cleanWordForOxford(word: string): string {
 
 /**
  * Returns detailed base form information for UI tooltips or status displays.
+ * If input is multiple words (passage/sentence), isConverted is false and baseForm is original text.
  */
 export function getBaseFormInfo(input: string): {
   original: string;
   baseForm: string;
   isConverted: boolean;
+  isSingleWord: boolean;
 } {
-  const original = input.trim();
-  const baseForm = toBaseForm(original);
-  const isConverted = baseForm.toLowerCase() !== original.toLowerCase();
+  const original = (input || '').trim();
+  const single = isSingleWord(original);
+
+  if (!single) {
+    return {
+      original,
+      baseForm: original,
+      isConverted: false,
+      isSingleWord: false,
+    };
+  }
+
+  const baseForm = lemmatizeWord(original);
+  const isConverted = baseForm.toLowerCase() !== cleanToken(original).toLowerCase();
 
   return {
     original,
     baseForm,
     isConverted,
+    isSingleWord: true,
   };
 }

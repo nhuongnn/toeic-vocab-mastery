@@ -277,34 +277,51 @@ describe('English Lemmatizer (toBaseForm)', () => {
     assert.strictEqual(lemmatizeWord('criteria,'), 'criterion');
   });
 
-  it('lemmatizes multi-word phrases and phrasal verbs', () => {
-    assert.strictEqual(toBaseForm('looking for'), 'look for');
-    assert.strictEqual(toBaseForm('worked out'), 'work out');
-    assert.strictEqual(toBaseForm('carrying out'), 'carry out');
-    assert.strictEqual(toBaseForm('setting up'), 'set up');
-    assert.strictEqual(toBaseForm('taken care of'), 'take care of');
-    assert.strictEqual(toBaseForm('employees benefits'), 'employee benefits');
+  it('does NOT convert to base form when selecting multiple words or an entire passage', () => {
+    // Whole passage / sentence / multiple words should NOT be converted to base form
+    assert.strictEqual(
+      toBaseForm('The company reported higher earnings.'),
+      'The company reported higher earnings.'
+    );
+    assert.strictEqual(toBaseForm('looking for'), 'looking for');
+    assert.strictEqual(toBaseForm('taking care of'), 'taking care of');
+    assert.strictEqual(toBaseForm('worked out'), 'worked out');
+    assert.strictEqual(toBaseForm('employees and managers'), 'employees and managers');
+
+    // getBaseFormInfo should indicate isSingleWord = false, isConverted = false
+    const passageInfo = getBaseFormInfo('The board approved the plan.');
+    assert.strictEqual(passageInfo.isSingleWord, false);
+    assert.strictEqual(passageInfo.isConverted, false);
+    assert.strictEqual(passageInfo.baseForm, 'The board approved the plan.');
+
+    const phraseInfo = getBaseFormInfo('looking for');
+    assert.strictEqual(phraseInfo.isSingleWord, false);
+    assert.strictEqual(phraseInfo.isConverted, false);
+    assert.strictEqual(phraseInfo.baseForm, 'looking for');
   });
 
-  it('correctly provides getBaseFormInfo metadata', () => {
+  it('correctly provides getBaseFormInfo metadata for single words', () => {
     const info1 = getBaseFormInfo('negotiating');
     assert.strictEqual(info1.original, 'negotiating');
     assert.strictEqual(info1.baseForm, 'negotiate');
     assert.strictEqual(info1.isConverted, true);
+    assert.strictEqual(info1.isSingleWord, true);
 
     const info2 = getBaseFormInfo('business');
     assert.strictEqual(info2.original, 'business');
     assert.strictEqual(info2.baseForm, 'business');
     assert.strictEqual(info2.isConverted, false);
+    assert.strictEqual(info2.isSingleWord, true);
 
     assert.strictEqual(isBaseForm('negotiating'), false);
     assert.strictEqual(isBaseForm('negotiate'), true);
     assert.strictEqual(isBaseForm('business'), true);
+    assert.strictEqual(isBaseForm('The company reported higher earnings.'), true);
   });
 });
 
 describe('Oxford Dictionary URL Integration with Lemmatizer', () => {
-  it('automatically converts inflected words to base form in getOxfordUrl', () => {
+  it('automatically converts inflected words to base form in getOxfordUrl for single words', () => {
     assert.strictEqual(
       getOxfordUrl('employees'),
       'https://www.oxfordlearnersdictionaries.com/definition/english/employee'
@@ -374,18 +391,22 @@ describe('Oxford Dictionary URL Integration with Lemmatizer', () => {
     );
   });
 
-  it('routes multi-word phrases to Oxford search URL with lemmatized headword', () => {
+  it('routes multi-word passages directly to Oxford search URL without modifying text', () => {
     assert.strictEqual(
       getOxfordUrl('looking for'),
-      'https://www.oxfordlearnersdictionaries.com/search/english/?q=look%20for'
+      'https://www.oxfordlearnersdictionaries.com/search/english/?q=looking%20for'
     );
     assert.strictEqual(
       getOxfordUrl('taking care of'),
-      'https://www.oxfordlearnersdictionaries.com/search/english/?q=take%20care%20of'
+      'https://www.oxfordlearnersdictionaries.com/search/english/?q=taking%20care%20of'
     );
     assert.strictEqual(
       getOxfordUrl('worked out'),
-      'https://www.oxfordlearnersdictionaries.com/search/english/?q=work%20out'
+      'https://www.oxfordlearnersdictionaries.com/search/english/?q=worked%20out'
+    );
+    assert.strictEqual(
+      getOxfordUrl('The company reported higher earnings.'),
+      'https://www.oxfordlearnersdictionaries.com/search/english/?q=The%20company%20reported%20higher%20earnings.'
     );
   });
 
@@ -397,6 +418,10 @@ describe('Oxford Dictionary URL Integration with Lemmatizer', () => {
     assert.strictEqual(
       getDictionaryUrl('employees', 'cambridge'),
       'https://dictionary.cambridge.org/dictionary/english/employees'
+    );
+    assert.strictEqual(
+      getDictionaryUrl('looking for', 'oxford'),
+      'https://www.oxfordlearnersdictionaries.com/search/english/?q=looking%20for'
     );
   });
 });

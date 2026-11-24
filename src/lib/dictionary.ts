@@ -1,4 +1,4 @@
-import { toBaseForm, cleanWordForOxford, getBaseFormInfo, isBaseForm } from '@/lib/lemmatizer';
+import { toBaseForm, cleanWordForOxford, getBaseFormInfo, isBaseForm, isSingleWord } from '@/lib/lemmatizer';
 
 export type DictionaryProvider = 'cambridge' | 'oxford';
 
@@ -59,28 +59,29 @@ export function getCambridgeUrl(word: string): string {
 /**
  * Generates Oxford Learner's Dictionaries URL for the word.
  * Automatically converts inflected word forms to their uninflected base lemma (nguyên mẫu)
- * before looking up, preventing 404 errors on Oxford Learner's Dictionaries.
+ * ONLY when a single word is selected.
+ * If user selected an entire passage or multiple words, preserves original text and searches on Oxford.
  */
 export function getOxfordUrl(word: string): string {
   if (!word || !word.trim()) {
     return 'https://www.oxfordlearnersdictionaries.com/';
   }
 
-  // Convert to base form (lemma)
-  const lemma = toBaseForm(word);
+  const trimmed = word.trim();
+
+  // If user selected multiple words / a whole passage: do NOT convert to base form!
+  // Route to Oxford's search URL with the original text intact.
+  if (!isSingleWord(trimmed)) {
+    const cleanPassage = trimmed.replace(/\s+/g, ' ');
+    return `https://www.oxfordlearnersdictionaries.com/search/english/?q=${encodeURIComponent(cleanPassage)}`;
+  }
+
+  // Single word: convert to base form (lemma)
+  const lemma = toBaseForm(trimmed);
   const clean = lemma
-    .trim()
     .toLowerCase()
     .replace(/['’]/g, '');
 
-  // If the query contains multiple words separated by spaces (e.g. "take care of", "look for"),
-  // use Oxford's search URL which automatically redirects to the exact idiom/phrasal entry
-  if (clean.includes(' ')) {
-    return `https://www.oxfordlearnersdictionaries.com/search/english/?q=${encodeURIComponent(clean)}`;
-  }
-
-  // For single words or hyphenated compounds (e.g. "employee", "negotiate", "well-known"),
-  // direct definition URL leads straight to the entry
   return `https://www.oxfordlearnersdictionaries.com/definition/english/${encodeURIComponent(clean)}`;
 }
 
@@ -95,5 +96,5 @@ export function getDictionaryUrl(
 }
 
 // Re-export lemmatizer helpers for components
-export { toBaseForm, cleanWordForOxford, getBaseFormInfo, isBaseForm };
+export { toBaseForm, cleanWordForOxford, getBaseFormInfo, isBaseForm, isSingleWord };
 

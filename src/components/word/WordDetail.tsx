@@ -170,7 +170,9 @@ export function WordDetail({
       ) {
         return;
       }
-      if (e.key === 'ArrowRight' && nextWord) {
+      if (e.key === 'Escape') {
+        router.back();
+      } else if (e.key === 'ArrowRight' && nextWord) {
         router.push(buildWordUrl(nextWord.id));
       } else if (e.key === 'ArrowLeft' && prevWord) {
         router.push(buildWordUrl(prevWord.id));

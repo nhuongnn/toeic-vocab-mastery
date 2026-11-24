@@ -16,7 +16,9 @@ import {
 } from 'lucide-react';
 import { CustomItemType, CustomVocabItem } from '@/types/custom-vocab';
 import { useProgress } from '@/contexts/ProgressContext';
+import { useAuth } from '@/contexts/AuthContext';
 import { useSpeech } from '@/hooks/useSpeech';
+import { getGuestId } from '@/lib/ai/guest-id';
 
 export interface OpenCustomVocabModalDetail {
   editItem?: CustomVocabItem;
@@ -29,6 +31,7 @@ export interface OpenCustomVocabModalDetail {
 
 export function CustomVocabModal() {
   const { addCustomItem, updateCustomItem } = useProgress();
+  const { user } = useAuth();
   const { speak } = useSpeech();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -104,6 +107,20 @@ export function CustomVocabModal() {
     setAiTarget(null);
   }, []);
 
+  // Close modal when pressing Escape key
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, handleClose]);
+
   // Request AI Assistance
   const handleAiAssist = async (field: 'all' | 'explanation' | 'context') => {
     const trimmedText = text.trim();
@@ -117,13 +134,22 @@ export function CustomVocabModal() {
     setErrorMsg(null);
 
     try {
+      const guestId = !user ? getGuestId() : undefined;
       const res = await fetch('/api/custom-vocab/ai-assist', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          ...(user?.id ? { 'x-user-id': user.id } : {}),
+          ...(user?.email ? { 'x-user-email': user.email } : {}),
+          ...(guestId ? { 'x-guest-id': guestId } : {}),
+        },
         body: JSON.stringify({
           text: trimmedText,
           type,
           field,
+          userId: user?.id,
+          userEmail: user?.email,
+          guestId,
         }),
       });
 
@@ -142,14 +168,18 @@ export function CustomVocabModal() {
         setContext(data.context);
       }
 
-      setSuccessMsg(
-        field === 'all'
-          ? 'AI đã hoàn tất tạo giải thích và ngữ cảnh mẫu!'
-          : field === 'explanation'
-          ? 'AI đã hoàn tất tạo giải thích!'
-          : 'AI đã hoàn tất tạo ví dụ ngữ cảnh!'
-      );
-      setTimeout(() => setSuccessMsg(null), 3000);
+      if (data.isFallback && data.fallbackReason) {
+        setErrorMsg(data.fallbackReason);
+      } else {
+        setSuccessMsg(
+          field === 'all'
+            ? 'AI đã hoàn tất tạo giải thích và ngữ cảnh mẫu!'
+            : field === 'explanation'
+            ? 'AI đã hoàn tất tạo giải thích!'
+            : 'AI đã hoàn tất tạo ví dụ ngữ cảnh!'
+        );
+        setTimeout(() => setSuccessMsg(null), 3000);
+      }
     } catch (err) {
       console.error('AI assist error:', err);
       setErrorMsg('Gặp lỗi khi tạo nội dung với AI. Bạn có thể tự nhập trực tiếp.');

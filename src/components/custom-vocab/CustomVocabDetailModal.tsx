@@ -36,6 +36,20 @@ export function CustomVocabDetailModal({
   const [copied, setCopied] = React.useState(false);
   const [showConfirmDelete, setShowConfirmDelete] = React.useState(false);
 
+  // Close modal when pressing Escape key
+  React.useEffect(() => {
+    if (!item) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [item, onClose]);
+
   if (!item) return null;
 
   const handleCopy = async () => {

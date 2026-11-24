@@ -1,4 +1,4 @@
-import { toBaseForm, cleanWordForOxford, getBaseFormInfo, isBaseForm, isSingleWord } from '@/lib/lemmatizer';
+import { toBaseForm, cleanWordForOxford, getBaseFormInfo, isBaseForm, isSingleWord, lemmatizeWord } from '@/lib/lemmatizer';
 
 export type DictionaryProvider = 'cambridge' | 'oxford';
 
@@ -96,5 +96,5 @@ export function getDictionaryUrl(
 }
 
 // Re-export lemmatizer helpers for components
-export { toBaseForm, cleanWordForOxford, getBaseFormInfo, isBaseForm, isSingleWord };
+export { toBaseForm, cleanWordForOxford, getBaseFormInfo, isBaseForm, isSingleWord, lemmatizeWord };
 

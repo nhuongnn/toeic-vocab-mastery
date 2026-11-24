@@ -109,15 +109,16 @@ export function lemmatizeWord(rawWord: string): string {
     return cleaned;
   }
 
-  if (cleaned.endsWith('eed') || cleaned === 'bed' || cleaned === 'red' || cleaned === 'shed') {
-    return cleaned;
-  }
-
   // 3. Regular morphological detachment rules
 
   // --- Suffix -ing (present participle / gerund) ---
   if (cleaned.endsWith('ing') && cleaned.length > 4) {
     const stem = cleaned.slice(0, -3);
+
+    // Base ending in -ee: agreeing -> agree, guaranteeing -> guarantee, seeing -> see, freeing -> free
+    if (cleaned.endsWith('eeing')) {
+      return stem;
+    }
 
     // Doubled consonant: e.g. running -> run, stopping -> stop, planning -> plan
     if (hasInflectedDoubleConsonant(stem)) {
@@ -130,6 +131,16 @@ export function lemmatizeWord(rawWord: string): string {
         return stem.slice(0, -1) + 'ie'; // dying -> die, lying -> lie, tying -> tie
       }
       return stem.slice(0, -1) + 'y';
+    }
+
+    // Base ending in -ue: issuing -> issue, continuing -> continue, pursuing -> pursue, arguing -> argue, rescuing -> rescue, valuing -> value
+    if (stem.endsWith('u')) {
+      return stem + 'e';
+    }
+
+    // Base ending in syllabic -le: handling -> handle, settling -> settle, enabling -> enable, assembling -> assemble, struggling -> struggle
+    if (/[^aeiou]l$/.test(stem)) {
+      return stem + 'e';
     }
 
     // Suffixes that invariably restore silent -e (e.g. creating, negotiating, contributing, inviting, deciding, living, closing)
@@ -166,6 +177,22 @@ export function lemmatizeWord(rawWord: string): string {
     }
 
     const stemWithoutEd = cleaned.slice(0, -2);
+    const stemWithE = cleaned.slice(0, -1);
+
+    // Base ending in -ee: agreed -> agree, guaranteed -> guarantee, freed -> free, decreed -> decree
+    if (stemWithE.endsWith('ee')) {
+      return stemWithE;
+    }
+
+    // Base ending in -ue: issued -> issue, continued -> continue, pursued -> pursue, argued -> argue, rescued -> rescue, valued -> value
+    if (stemWithE.endsWith('ue')) {
+      return stemWithE;
+    }
+
+    // Base ending in syllabic -le: handled -> handle, settled -> settle, enabled -> enable, assembled -> assemble, struggled -> struggle
+    if (/[^aeiou]le$/.test(stemWithE)) {
+      return stemWithE;
+    }
 
     // Doubled consonant: stopped -> stop, planned -> plan, referred -> refer
     if (hasInflectedDoubleConsonant(stemWithoutEd)) {
@@ -178,7 +205,6 @@ export function lemmatizeWord(rawWord: string): string {
     }
 
     // Base verb ending in -e with -d added: negotiated -> negotiate, decided -> decide, created -> create
-    const stemWithE = cleaned.slice(0, -1);
     if (/(?:(?:[aeiou][bdfgklmnprstvz]|(?:rv|lv|rg|ng|nc|rc|tc|sc|lc|qu|ch|sh))[e]|[vcgz]e|[aeiou]se)$/.test(stemWithE)) {
       return stemWithE;
     }

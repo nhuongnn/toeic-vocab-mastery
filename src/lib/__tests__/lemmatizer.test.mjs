@@ -97,6 +97,10 @@ describe('English Lemmatizer (toBaseForm)', () => {
     assert.strictEqual(lemmatizeWord('giving'), 'give');
     assert.strictEqual(lemmatizeWord('reducing'), 'reduce');
     assert.strictEqual(lemmatizeWord('producing'), 'produce');
+    assert.strictEqual(lemmatizeWord('issuing'), 'issue');
+    assert.strictEqual(lemmatizeWord('continuing'), 'continue');
+    assert.strictEqual(lemmatizeWord('handling'), 'handle');
+    assert.strictEqual(lemmatizeWord('agreeing'), 'agree');
 
     // -ying -> -ie or -y
     assert.strictEqual(lemmatizeWord('tying'), 'tie');
@@ -142,6 +146,12 @@ describe('English Lemmatizer (toBaseForm)', () => {
     assert.strictEqual(lemmatizeWord('received'), 'receive');
     assert.strictEqual(lemmatizeWord('produced'), 'produce');
     assert.strictEqual(lemmatizeWord('reduced'), 'reduce');
+    assert.strictEqual(lemmatizeWord('issued'), 'issue');
+    assert.strictEqual(lemmatizeWord('continued'), 'continue');
+    assert.strictEqual(lemmatizeWord('pursued'), 'pursue');
+    assert.strictEqual(lemmatizeWord('handled'), 'handle');
+    assert.strictEqual(lemmatizeWord('agreed'), 'agree');
+    assert.strictEqual(lemmatizeWord('guaranteed'), 'guarantee');
 
     // standard -ed
     assert.strictEqual(lemmatizeWord('worked'), 'work');
@@ -192,6 +202,7 @@ describe('English Lemmatizer (toBaseForm)', () => {
     assert.strictEqual(lemmatizeWord('commitments'), 'commitment');
     assert.strictEqual(lemmatizeWord('customers'), 'customer');
     assert.strictEqual(lemmatizeWord('documents'), 'document');
+    assert.strictEqual(lemmatizeWord('issues'), 'issue');
   });
 
   it('correctly lemmatizes regular comparatives and superlatives', () => {
@@ -333,6 +344,18 @@ describe('Oxford Dictionary URL Integration with Lemmatizer', () => {
     assert.strictEqual(
       getOxfordUrl('negotiating'),
       'https://www.oxfordlearnersdictionaries.com/definition/english/negotiate'
+    );
+    assert.strictEqual(
+      getOxfordUrl('issued'),
+      'https://www.oxfordlearnersdictionaries.com/definition/english/issue'
+    );
+    assert.strictEqual(
+      getOxfordUrl('continued'),
+      'https://www.oxfordlearnersdictionaries.com/definition/english/continue'
+    );
+    assert.strictEqual(
+      getOxfordUrl('handled'),
+      'https://www.oxfordlearnersdictionaries.com/definition/english/handle'
     );
     assert.strictEqual(
       getOxfordUrl('categories'),

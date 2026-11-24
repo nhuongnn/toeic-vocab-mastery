@@ -132,6 +132,20 @@ export function CustomVocabDetailModal({
               <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight break-words">
                 {item.text}
               </h3>
+              {(item.ipa || item.partOfSpeech) && (
+                <div className="flex items-center gap-2 flex-wrap pt-1">
+                  {item.ipa && (
+                    <span className="font-mono text-xs sm:text-sm text-indigo-300 bg-indigo-500/15 px-2 py-0.5 rounded-md border border-indigo-500/30">
+                      {item.ipa}
+                    </span>
+                  )}
+                  {item.partOfSpeech && (
+                    <span className="text-xs font-semibold text-amber-300 bg-amber-500/15 px-2 py-0.5 rounded-md border border-amber-500/30">
+                      {item.partOfSpeech}
+                    </span>
+                  )}
+                </div>
+              )}
             </div>
             <div className="flex items-center gap-1.5 shrink-0 pt-1">
               <button

@@ -51,25 +51,33 @@ export function CustomVocabCard({
       <div className="space-y-3">
         {/* Top Badges & Actions */}
         <div className="flex items-center justify-between gap-2">
-          <span
-            className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-[11px] font-bold border ${
-              item.type === 'pattern'
-                ? 'bg-amber-500/10 border-amber-500/25 text-amber-300'
-                : 'bg-indigo-500/10 border-indigo-500/25 text-indigo-300'
-            }`}
-          >
-            {item.type === 'pattern' ? (
-              <>
-                <MessageSquare className="w-3 h-3 text-amber-400" />
-                <span>Mẫu câu</span>
-              </>
-            ) : (
-              <>
-                <FileText className="w-3 h-3 text-indigo-400" />
-                <span>Từ vựng</span>
-              </>
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <span
+              className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-[11px] font-bold border ${
+                item.type === 'pattern'
+                  ? 'bg-amber-500/10 border-amber-500/25 text-amber-300'
+                  : 'bg-indigo-500/10 border-indigo-500/25 text-indigo-300'
+              }`}
+            >
+              {item.type === 'pattern' ? (
+                <>
+                  <MessageSquare className="w-3 h-3 text-amber-400" />
+                  <span>Mẫu câu</span>
+                </>
+              ) : (
+                <>
+                  <FileText className="w-3 h-3 text-indigo-400" />
+                  <span>Từ vựng</span>
+                </>
+              )}
+            </span>
+
+            {item.partOfSpeech && (
+              <span className="text-[10px] font-medium text-slate-300 bg-slate-800/80 px-1.5 py-0.5 rounded-md border border-slate-700/60">
+                {item.partOfSpeech}
+              </span>
             )}
-          </span>
+          </div>
 
           <div className="flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
             <button
@@ -99,11 +107,18 @@ export function CustomVocabCard({
           </div>
         </div>
 
-        {/* 1. Word / Pattern Text */}
+        {/* 1. Word / Pattern Text with IPA */}
         <div>
-          <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors break-words leading-snug">
-            {item.text}
-          </h3>
+          <div className="flex items-baseline gap-2 flex-wrap">
+            <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors break-words leading-snug">
+              {item.text}
+            </h3>
+            {item.ipa && (
+              <span className="font-mono text-xs text-indigo-400/90 font-medium">
+                {item.ipa}
+              </span>
+            )}
+          </div>
         </div>
 
         {/* 2. Giải thích */}

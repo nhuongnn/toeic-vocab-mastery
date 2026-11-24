@@ -13,6 +13,14 @@ interface RequestBody {
   guestId?: string;
 }
 
+interface CustomAssistResult {
+  type: CustomItemType;
+  explanation: string;
+  context: string;
+  ipa?: string;
+  partOfSpeech?: string;
+}
+
 function safeParseJsonObject<T>(str: string): T | null {
   try {
     let clean = str.trim();
@@ -35,11 +43,46 @@ function safeParseJsonObject<T>(str: string): T | null {
 async function generateSmartFallback(
   text: string,
   preferredType?: CustomItemType
-): Promise<{ type: CustomItemType; explanation: string; context: string }> {
+): Promise<CustomAssistResult> {
   const trimmed = text.trim();
   const wordCount = trimmed.split(/\s+/).length;
   const inferredType: CustomItemType =
     preferredType || (wordCount > 3 || /^(if|when|should|please|we|i|in order|as soon|would|could)/i.test(trimmed) ? 'pattern' : 'vocabulary');
+
+  let ipa = '';
+  let partOfSpeech = inferredType === 'pattern' ? 'sentence pattern (mẫu câu)' : 'vocabulary (từ vựng)';
+
+  // Try dictionary API for single word or short phrase to get real IPA and part of speech
+  if (wordCount <= 2) {
+    try {
+      const dictRes = await fetch(
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(trimmed.toLowerCase())}`,
+        { next: { revalidate: 86400 } }
+      );
+      if (dictRes.ok) {
+        const dictData = await dictRes.json();
+        if (Array.isArray(dictData) && dictData.length > 0) {
+          const entry = dictData[0];
+          ipa = entry.phonetic || entry.phonetics?.find((p: { text?: string }) => p.text)?.text || '';
+          const pos = entry.meanings?.[0]?.partOfSpeech;
+          if (pos) {
+            const posMap: Record<string, string> = {
+              noun: 'noun (danh từ)',
+              verb: 'verb (động từ)',
+              adjective: 'adjective (tính từ)',
+              adverb: 'adverb (phó từ)',
+              preposition: 'preposition (giới từ)',
+              conjunction: 'conjunction (liên từ)',
+              interjection: 'interjection (thán từ)',
+            };
+            partOfSpeech = posMap[pos.toLowerCase()] || `${pos}`;
+          }
+        }
+      }
+    } catch {
+      // ignore
+    }
+  }
 
   let translatedMeaning = '';
   try {
@@ -62,6 +105,8 @@ async function generateSmartFallback(
   if (inferredType === 'vocabulary') {
     return {
       type: 'vocabulary',
+      ipa: ipa || undefined,
+      partOfSpeech,
       explanation: `${cleanTranslation}\n• Phân loại: Từ vựng TOEIC thường gặp.\n• Lưu ý: Thường xuất hiện trong các bài đọc thông báo, email hoặc giao dịch thương mại.`,
       context: `The department announced that "${trimmed}" will be implemented in the upcoming project phase.\n(Bộ phận đã thông báo rằng việc áp dụng này sẽ được triển khai trong giai đoạn dự án sắp tới.)`,
     };
@@ -69,6 +114,8 @@ async function generateSmartFallback(
 
   return {
     type: 'pattern',
+    ipa: ipa || undefined,
+    partOfSpeech: 'sentence pattern (mẫu câu)',
     explanation: `${cleanTranslation}\n• Phân loại: Mẫu câu giao tiếp & soạn thảo văn bản.\n• Cấu trúc thường dùng trong thư từ thương mại hoặc đàm phán công việc.`,
     context: `Please be reminded that "${trimmed}" to ensure operational efficiency.\n(Xin vui lòng lưu ý cấu trúc này nhằm đảm bảo hiệu quả vận hành công việc.)`,
   };
@@ -105,6 +152,8 @@ export async function POST(request: Request) {
         type: fallback.type,
         explanation: fallback.explanation,
         context: fallback.context,
+        ipa: fallback.ipa,
+        partOfSpeech: fallback.partOfSpeech,
         provider: 'fallback',
         isFallback: true,
         fallbackReason: quotaCheck.reason || 'Hạn mức AI hôm nay đã đạt giới hạn.',
@@ -121,25 +170,31 @@ Requested Field: "${field}"
 
 Requirements:
 1. "type": Must be either "vocabulary" or "pattern".
-2. "explanation":
-   - Provide a natural Vietnamese explanation specifically tailored for TOEIC & workplace communication.
-   - For vocabulary: mention part of speech, core workplace meaning, and practical collocations or synonyms.
+2. "ipa":
+   - Standard International Phonetic Alphabet (IPA) transcription enclosed in slashes, e.g. "/ˌfiːzəˈbɪləti/" or "/kəmˈplaɪ wɪð/".
+3. "partOfSpeech":
+   - Concise classification in English and Vietnamese, e.g. "noun (danh từ)", "verb (động từ)", "adjective (tính từ)", "phrasal verb (cụm động từ)", "prepositional phrase (cụm giới từ)", "sentence pattern (mẫu câu)", or "idiom (thành ngữ)".
+4. "explanation":
+   - Natural Vietnamese explanation specifically tailored for TOEIC & workplace communication.
+   - For vocabulary: mention core workplace meaning, nuance, and practical collocations or synonyms.
    - For pattern: explain the structure/formula, communicative purpose (e.g. polite inquiry, confirmation, declining an offer), and formality level.
-3. "context":
+5. "context":
    - 1-2 realistic corporate / business sentences using this exact text naturally (e.g., from emails, memos, customer inquiries, meetings, or contract negotiations).
    - Follow each sentence with its accurate, natural Vietnamese translation in parentheses.
-   - Highlight or quote the keyword/pattern in the sentence.
+   - Quote or highlight the keyword/pattern in the sentence.
 
 Output strictly a single valid JSON object with the following schema:
 {
   "type": "vocabulary" | "pattern",
+  "ipa": "/.../",
+  "partOfSpeech": "noun (danh từ)",
   "explanation": "Chi tiết giải thích bằng tiếng Việt...",
   "context": "Ví dụ thực tế tiếng Anh\\n(Bản dịch tiếng Việt...)"
 }
 Do NOT include markdown fences, backticks, or explanatory text outside the JSON object.`;
 
     // 3. Helper: call Gemini
-    const callGemini = async (): Promise<{ type: CustomItemType; explanation: string; context: string } | null> => {
+    const callGemini = async (): Promise<CustomAssistResult | null> => {
       if (!canUseProvider('gemini') || !isGeminiConfigured()) return null;
       try {
         const rawText = await generateContentGemini({
@@ -151,7 +206,14 @@ Do NOT include markdown fences, backticks, or explanatory text outside the JSON 
         });
 
         if (rawText) {
-          const parsed = safeParseJsonObject<{ type?: string; explanation?: string; context?: string }>(rawText);
+          const parsed = safeParseJsonObject<{
+            type?: string;
+            ipa?: string;
+            partOfSpeech?: string;
+            explanation?: string;
+            context?: string;
+          }>(rawText);
+
           if (parsed && (parsed.explanation || parsed.context)) {
             recordUserAIUsage({
               userId: effectiveUserId,
@@ -161,6 +223,8 @@ Do NOT include markdown fences, backticks, or explanatory text outside the JSON 
             });
             return {
               type: parsed.type === 'pattern' ? 'pattern' : 'vocabulary',
+              ipa: parsed.ipa?.trim() || undefined,
+              partOfSpeech: parsed.partOfSpeech?.trim() || undefined,
               explanation: parsed.explanation || '',
               context: parsed.context || '',
             };
@@ -173,7 +237,7 @@ Do NOT include markdown fences, backticks, or explanatory text outside the JSON 
     };
 
     // 4. Helper: call Cloudflare
-    const callCloudflare = async (): Promise<{ type: CustomItemType; explanation: string; context: string } | null> => {
+    const callCloudflare = async (): Promise<CustomAssistResult | null> => {
       if (!canUseProvider('cloudflare') || !isCloudflareChatConfigured()) return null;
       try {
         let accumulated = '';
@@ -184,7 +248,14 @@ Do NOT include markdown fences, backticks, or explanatory text outside the JSON 
           accumulated += chunk;
         }
 
-        const parsed = safeParseJsonObject<{ type?: string; explanation?: string; context?: string }>(accumulated);
+        const parsed = safeParseJsonObject<{
+          type?: string;
+          ipa?: string;
+          partOfSpeech?: string;
+          explanation?: string;
+          context?: string;
+        }>(accumulated);
+
         if (parsed && (parsed.explanation || parsed.context)) {
           recordUserAIUsage({
             userId: effectiveUserId,
@@ -194,6 +265,8 @@ Do NOT include markdown fences, backticks, or explanatory text outside the JSON 
           });
           return {
             type: parsed.type === 'pattern' ? 'pattern' : 'vocabulary',
+            ipa: parsed.ipa?.trim() || undefined,
+            partOfSpeech: parsed.partOfSpeech?.trim() || undefined,
             explanation: parsed.explanation || '',
             context: parsed.context || '',
           };
@@ -210,6 +283,8 @@ Do NOT include markdown fences, backticks, or explanatory text outside the JSON 
       return NextResponse.json({
         success: true,
         type: type || geminiResult.type,
+        ipa: geminiResult.ipa,
+        partOfSpeech: geminiResult.partOfSpeech,
         explanation: geminiResult.explanation,
         context: geminiResult.context,
         provider: 'gemini',
@@ -224,6 +299,8 @@ Do NOT include markdown fences, backticks, or explanatory text outside the JSON 
       return NextResponse.json({
         success: true,
         type: type || cfResult.type,
+        ipa: cfResult.ipa,
+        partOfSpeech: cfResult.partOfSpeech,
         explanation: cfResult.explanation,
         context: cfResult.context,
         provider: 'cloudflare',
@@ -238,6 +315,8 @@ Do NOT include markdown fences, backticks, or explanatory text outside the JSON 
     return NextResponse.json({
       success: true,
       type: fallback.type,
+      ipa: fallback.ipa,
+      partOfSpeech: fallback.partOfSpeech,
       explanation: fallback.explanation,
       context: fallback.context,
       provider: 'fallback',
@@ -251,6 +330,8 @@ Do NOT include markdown fences, backticks, or explanatory text outside the JSON 
       {
         success: true,
         type: fallback.type,
+        ipa: fallback.ipa,
+        partOfSpeech: fallback.partOfSpeech,
         explanation: fallback.explanation,
         context: fallback.context,
         provider: 'fallback',

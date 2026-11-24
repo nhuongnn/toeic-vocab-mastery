@@ -27,6 +27,8 @@ export interface OpenCustomVocabModalDetail {
   context?: string;
   notes?: string;
   type?: CustomItemType;
+  ipa?: string;
+  partOfSpeech?: string;
 }
 
 export function CustomVocabModal() {
@@ -37,9 +39,11 @@ export function CustomVocabModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
 
-  // The 5 core fields
+  // The core fields
   const [text, setText] = useState('');
   const [type, setType] = useState<CustomItemType>('vocabulary');
+  const [ipa, setIpa] = useState('');
+  const [partOfSpeech, setPartOfSpeech] = useState('');
   const [explanation, setExplanation] = useState('');
   const [notes, setNotes] = useState('');
   const [context, setContext] = useState('');
@@ -60,6 +64,8 @@ export function CustomVocabModal() {
         setEditingId(detail.editItem.id);
         setText(detail.editItem.text || '');
         setType(detail.editItem.type || 'vocabulary');
+        setIpa(detail.editItem.ipa || '');
+        setPartOfSpeech(detail.editItem.partOfSpeech || '');
         setExplanation(detail.editItem.explanation || '');
         setNotes(detail.editItem.notes || '');
         setContext(detail.editItem.context || '');
@@ -78,6 +84,8 @@ export function CustomVocabModal() {
           setType('vocabulary');
         }
 
+        setIpa(detail.ipa || '');
+        setPartOfSpeech(detail.partOfSpeech || '');
         setExplanation(detail.explanation || '');
         setNotes(detail.notes || '');
         setContext(detail.context || '');
@@ -98,6 +106,8 @@ export function CustomVocabModal() {
     setIsOpen(false);
     setEditingId(null);
     setText('');
+    setIpa('');
+    setPartOfSpeech('');
     setExplanation('');
     setNotes('');
     setContext('');
@@ -161,6 +171,12 @@ export function CustomVocabModal() {
       if (data.type && field === 'all') {
         setType(data.type);
       }
+      if (data.ipa && (field === 'all' || field === 'explanation')) {
+        setIpa(data.ipa);
+      }
+      if (data.partOfSpeech && (field === 'all' || field === 'explanation')) {
+        setPartOfSpeech(data.partOfSpeech);
+      }
       if (data.explanation && (field === 'all' || field === 'explanation')) {
         setExplanation(data.explanation);
       }
@@ -210,6 +226,8 @@ export function CustomVocabModal() {
         await updateCustomItem(editingId, {
           text: trimmedText,
           type,
+          ipa: ipa.trim() || undefined,
+          partOfSpeech: partOfSpeech.trim() || undefined,
           explanation: explanation.trim(),
           notes: notes.trim(),
           context: context.trim(),
@@ -218,6 +236,8 @@ export function CustomVocabModal() {
         await addCustomItem({
           text: trimmedText,
           type,
+          ipa: ipa.trim() || undefined,
+          partOfSpeech: partOfSpeech.trim() || undefined,
           explanation: explanation.trim(),
           notes: notes.trim(),
           context: context.trim(),
@@ -338,6 +358,55 @@ export function CustomVocabModal() {
               onChange={(e) => setText(e.target.value)}
               className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950/60 border border-slate-700/80 text-white placeholder:text-slate-500 text-sm font-semibold focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
             />
+          </div>
+
+          {/* Phiên âm (IPA) & Loại từ (Part of Speech) - Hỗ trợ AI tự tạo */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 rounded-xl bg-slate-950/50 border border-slate-800/80">
+            {/* Phiên âm (IPA) */}
+            <div className="space-y-1">
+              <div className="flex items-center justify-between">
+                <label className="text-xs font-bold text-slate-200 flex items-center gap-1.5">
+                  <span>Phiên âm (IPA)</span>
+                  <span className="text-[10px] text-indigo-400 font-semibold bg-indigo-500/10 px-1.5 py-0.2 rounded border border-indigo-500/20">
+                    AI tự tạo
+                  </span>
+                </label>
+                {ipa && (
+                  <button
+                    type="button"
+                    onClick={() => speak(text.trim())}
+                    className="text-[11px] text-indigo-400 hover:text-indigo-300 font-medium flex items-center gap-0.5"
+                    title="Nghe đọc"
+                  >
+                    <Volume2 className="w-3 h-3" />
+                  </button>
+                )}
+              </div>
+              <input
+                type="text"
+                placeholder="Ví dụ: /ˌfiːzəˈbɪləti/"
+                value={ipa}
+                onChange={(e) => setIpa(e.target.value)}
+                className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-200 placeholder:text-slate-500 text-xs font-mono focus:outline-none focus:border-indigo-500 transition-all"
+              />
+            </div>
+
+            {/* Loại từ (Part of Speech) */}
+            <div className="space-y-1">
+              <label className="text-xs font-bold text-slate-200 flex items-center gap-1.5">
+                <span>Loại từ (Part of Speech)</span>
+                <span className="text-[10px] text-amber-400 font-semibold bg-amber-500/10 px-1.5 py-0.2 rounded border border-amber-500/20">
+                  AI tự tạo
+                </span>
+              </label>
+              <input
+                type="text"
+                placeholder="Ví dụ: noun (danh từ), phrasal verb, idiom..."
+                value={partOfSpeech}
+                onChange={(e) => setPartOfSpeech(e.target.value)}
+                className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-200 placeholder:text-slate-500 text-xs focus:outline-none focus:border-indigo-500 transition-all"
+              />
+            </div>
           </div>
 
           {/* Field 5: Phân loại là từ vựng hoặc mẫu câu */}

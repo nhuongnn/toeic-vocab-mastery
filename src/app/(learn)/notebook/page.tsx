@@ -81,7 +81,9 @@ export default function NotebookPage() {
         const matchExpl = item.explanation.toLowerCase().includes(query);
         const matchNotes = (item.notes || '').toLowerCase().includes(query);
         const matchContext = item.context.toLowerCase().includes(query);
-        return matchText || matchExpl || matchNotes || matchContext;
+        const matchPos = (item.partOfSpeech || '').toLowerCase().includes(query);
+        const matchIpa = (item.ipa || '').toLowerCase().includes(query);
+        return matchText || matchExpl || matchNotes || matchContext || matchPos || matchIpa;
       }
 
       return true;

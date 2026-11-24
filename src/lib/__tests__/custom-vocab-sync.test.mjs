@@ -147,4 +147,43 @@ describe('Custom Vocab & Patterns Cloud Synchronization', () => {
     assert.strictEqual(merged.customItems[0].id, 'item-active');
     assert.ok(merged.deletedCustomItemIds.includes('item-deleted'));
   });
+
+  it('correctly syncs and preserves IPA pronunciation and part of speech', () => {
+    const local = {
+      version: 1,
+      cards: {},
+      stats: {},
+      history: [],
+      preferences: {},
+      bookmarkedWordIds: [],
+      customItems: [
+        {
+          id: 'item-ipa',
+          type: 'vocabulary',
+          text: 'feasibility',
+          ipa: '/ˌfiːzəˈbɪləti/',
+          partOfSpeech: 'noun (danh từ)',
+          explanation: 'tính khả thi',
+          context: 'A feasibility study is needed.',
+          createdAt: '2026-11-20T10:00:00.000Z',
+          updatedAt: '2026-11-20T10:00:00.000Z',
+        },
+      ],
+    };
+
+    const remote = {
+      version: 1,
+      cards: {},
+      stats: {},
+      history: [],
+      preferences: {},
+      bookmarkedWordIds: [],
+      customItems: [],
+    };
+
+    const merged = mergeUserProgress(local, remote);
+    assert.strictEqual(merged.customItems.length, 1);
+    assert.strictEqual(merged.customItems[0].ipa, '/ˌfiːzəˈbɪləti/');
+    assert.strictEqual(merged.customItems[0].partOfSpeech, 'noun (danh từ)');
+  });
 });

@@ -15,6 +15,7 @@ import {
   UserPreferences,
   RoleplayPreferences,
 } from '@/types/progress';
+import { CustomVocabItem } from '@/types/custom-vocab';
 import { CharacterConfig, RoleplayConversation } from '@/types/roleplay';
 import { AiTutorConversation } from '@/lib/ai/types';
 import { MAX_AI_TUTOR_CONVERSATIONS, getAiTutorHistoryKey } from '@/lib/ai/history';
@@ -51,6 +52,10 @@ interface ProgressContextType {
   ) => void;
   syncChatRoomHistory: (history: RoleplayConversation[]) => void;
   syncAiTutorHistory: (history: AiTutorConversation[]) => void;
+  customItems: CustomVocabItem[];
+  addCustomItem: (item: Omit<CustomVocabItem, 'id' | 'createdAt' | 'updatedAt'>) => Promise<CustomVocabItem>;
+  updateCustomItem: (id: string, updates: Partial<Omit<CustomVocabItem, 'id' | 'createdAt'>>) => Promise<void>;
+  deleteCustomItem: (id: string) => Promise<void>;
 }
 
 const ProgressContext = createContext<ProgressContextType | undefined>(undefined);
@@ -80,11 +85,26 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       }
     };
 
+    const handleCustomVocabSync = () => {
+      const reloaded = loadUserProgress();
+      if (reloaded.customItems) {
+        setProgress((prev) => ({
+          ...prev,
+          customItems: reloaded.customItems,
+          deletedCustomItemIds: reloaded.deletedCustomItemIds,
+        }));
+      }
+    };
+
     window.addEventListener('roleplay-synced', handleRoleplaySync);
+    window.addEventListener('custom-vocab-synced', handleCustomVocabSync);
     window.addEventListener('storage', handleRoleplaySync);
+    window.addEventListener('storage', handleCustomVocabSync);
     return () => {
       window.removeEventListener('roleplay-synced', handleRoleplaySync);
+      window.removeEventListener('custom-vocab-synced', handleCustomVocabSync);
       window.removeEventListener('storage', handleRoleplaySync);
+      window.removeEventListener('storage', handleCustomVocabSync);
     };
   }, []);
 
@@ -507,6 +527,80 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     [scheduleCloudSync]
   );
 
+  const addCustomItem = useCallback(
+    async (item: Omit<CustomVocabItem, 'id' | 'createdAt' | 'updatedAt'>): Promise<CustomVocabItem> => {
+      const newItem: CustomVocabItem = {
+        ...item,
+        id: `cst_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      };
+
+      setProgress((prev) => {
+        const existing = prev.customItems || [];
+        const updatedList = [newItem, ...existing.filter((i) => i.id !== newItem.id)];
+        const nextProgress: UserProgressData = {
+          ...prev,
+          customItems: updatedList,
+        };
+        saveUserProgress(nextProgress);
+        scheduleCloudSync(nextProgress);
+        return nextProgress;
+      });
+
+      return newItem;
+    },
+    [scheduleCloudSync]
+  );
+
+  const updateCustomItem = useCallback(
+    async (id: string, updates: Partial<Omit<CustomVocabItem, 'id' | 'createdAt'>>): Promise<void> => {
+      setProgress((prev) => {
+        const existing = prev.customItems || [];
+        const index = existing.findIndex((i) => i.id === id);
+        if (index === -1) return prev;
+
+        const updatedItem: CustomVocabItem = {
+          ...existing[index],
+          ...updates,
+          updatedAt: new Date().toISOString(),
+        };
+
+        const updatedList = [...existing];
+        updatedList[index] = updatedItem;
+
+        const nextProgress: UserProgressData = {
+          ...prev,
+          customItems: updatedList,
+        };
+        saveUserProgress(nextProgress);
+        scheduleCloudSync(nextProgress);
+        return nextProgress;
+      });
+    },
+    [scheduleCloudSync]
+  );
+
+  const deleteCustomItem = useCallback(
+    async (id: string): Promise<void> => {
+      setProgress((prev) => {
+        const existing = prev.customItems || [];
+        const updatedList = existing.filter((i) => i.id !== id);
+        const updatedDeletedIds = Array.from(new Set([...(prev.deletedCustomItemIds || []), id]));
+
+        const nextProgress: UserProgressData = {
+          ...prev,
+          customItems: updatedList,
+          deletedCustomItemIds: updatedDeletedIds,
+        };
+        saveUserProgress(nextProgress);
+        scheduleCloudSync(nextProgress);
+        return nextProgress;
+      });
+    },
+    [scheduleCloudSync]
+  );
+
   const [dueWordIds, setDueWordIds] = useState<string[]>([]);
 
   useEffect(() => {
@@ -539,6 +633,10 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         saveRoleplaySettings,
         syncChatRoomHistory,
         syncAiTutorHistory,
+        customItems: progress.customItems || [],
+        addCustomItem,
+        updateCustomItem,
+        deleteCustomItem,
       }}
     >
       {children}

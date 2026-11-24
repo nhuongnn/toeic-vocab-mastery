@@ -11,6 +11,7 @@ import {
   Bot,
   BookOpen,
   ExternalLink,
+  BookmarkPlus,
 } from 'lucide-react';
 import { useSpeech } from '@/hooks/useSpeech';
 import { useChat } from '@/contexts/ChatContext';
@@ -249,6 +250,19 @@ export function SelectionTranslator() {
     window.getSelection()?.removeAllRanges();
   };
 
+  const handleAddToNotebook = () => {
+    window.dispatchEvent(
+      new CustomEvent('open-custom-vocab-modal', {
+        detail: {
+          text: state.originalText,
+          explanation: state.translatedText || '',
+        },
+      })
+    );
+    setState((prev) => ({ ...prev, visible: false }));
+    window.getSelection()?.removeAllRanges();
+  };
+
   const handleCopyOriginal = async (e?: React.MouseEvent) => {
     e?.stopPropagation();
     if (!state.originalText) return;
@@ -367,6 +381,17 @@ export function SelectionTranslator() {
           >
             <Bot className="w-3.5 h-3.5 text-violet-400" />
             <span>Hỏi AI Tutor</span>
+          </button>
+
+          {/* Add to Notebook */}
+          <button
+            type="button"
+            onClick={handleAddToNotebook}
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/35 border border-emerald-500/35 text-emerald-300 hover:text-white text-xs font-semibold transition-all shadow-sm whitespace-nowrap"
+            title="Thêm từ vựng hoặc mẫu câu này vào Sổ tay cá nhân"
+          >
+            <BookmarkPlus className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Lưu Sổ tay</span>
           </button>
 
           <div className="w-px h-4 bg-slate-700/80 hidden sm:block" />
@@ -504,6 +529,16 @@ export function SelectionTranslator() {
           >
             <Bot className="w-3.5 h-3.5 text-indigo-400" />
             <span>Thêm vào AI Tutor hỏi ngữ pháp & bẫy thi</span>
+          </button>
+
+          {/* Action: Save to Personal Notebook */}
+          <button
+            type="button"
+            onClick={handleAddToNotebook}
+            className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-emerald-600/25 hover:bg-emerald-600/40 border border-emerald-500/35 text-emerald-200 hover:text-white text-xs font-semibold transition-all mb-2 shadow-sm"
+          >
+            <BookmarkPlus className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Lưu vào Sổ tay cá nhân</span>
           </button>
 
           {/* Micro footer hint */}

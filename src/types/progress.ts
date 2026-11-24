@@ -1,6 +1,7 @@
 import { OnboardingState } from './onboarding';
 import { CharacterConfig, RoleplayScenario, RoleplayConversation } from './roleplay';
 import { AiTutorConversation } from '@/lib/ai/types';
+import { CustomVocabItem } from './custom-vocab';
 
 export interface SRSCard {
   wordId: string;
@@ -65,4 +66,6 @@ export interface UserProgressData {
   onboarding?: OnboardingState;
   roleplay?: RoleplayPreferences;
   aiTutorHistory?: AiTutorConversation[];
+  customItems?: CustomVocabItem[];
+  deletedCustomItemIds?: string[];
 }

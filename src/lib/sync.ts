@@ -1,4 +1,5 @@
 import { UserProgressData, SRSCard, ExerciseSessionResult, RoleplayPreferences } from '@/types/progress';
+import { CustomVocabItem } from '@/types/custom-vocab';
 import { OnboardingState } from '@/types/onboarding';
 import { RoleplayConversation } from '@/types/roleplay';
 import { AiTutorConversation } from '@/lib/ai/types';
@@ -211,6 +212,33 @@ export function mergeUserProgress(
       .slice(0, MAX_AI_TUTOR_CONVERSATIONS);
   }
 
+  // 8. Merge custom vocabulary & sentence patterns across devices
+  const mergedDeletedIds = new Set<string>([
+    ...(local.deletedCustomItemIds || []),
+    ...(remote.deletedCustomItemIds || []),
+  ]);
+
+  const customItemMap = new Map<string, CustomVocabItem>();
+  const allCustom = [
+    ...(local.customItems || []),
+    ...(remote.customItems || []),
+  ];
+
+  for (const item of allCustom) {
+    if (!item || !item.id) continue;
+    if (mergedDeletedIds.has(item.id)) continue;
+    const existing = customItemMap.get(item.id);
+    const itemTime = item.updatedAt ? new Date(item.updatedAt).getTime() : 0;
+    const existingTime = existing?.updatedAt ? new Date(existing.updatedAt).getTime() : 0;
+    if (!existing || itemTime >= existingTime) {
+      customItemMap.set(item.id, item);
+    }
+  }
+
+  const mergedCustomItems = Array.from(customItemMap.values()).sort(
+    (a, b) => new Date(b.updatedAt || b.createdAt).getTime() - new Date(a.updatedAt || a.createdAt).getTime()
+  );
+
   return {
     version: Math.max(local.version || 1, remote.version || 1),
     cards: mergedCards,
@@ -232,5 +260,7 @@ export function mergeUserProgress(
     onboarding: mergedOnboarding,
     roleplay: mergedRoleplay,
     aiTutorHistory: mergedAiTutorHistory,
+    customItems: mergedCustomItems,
+    deletedCustomItemIds: Array.from(mergedDeletedIds),
   };
 }

@@ -25,6 +25,8 @@ export const DEFAULT_PROGRESS: UserProgressData = {
     preferredDictionary: 'cambridge',
   },
   bookmarkedWordIds: [],
+  customItems: [],
+  deletedCustomItemIds: [],
 };
 
 export function loadUserProgress(): UserProgressData {
@@ -125,6 +127,34 @@ export function loadUserProgress(): UserProgressData {
       }
     } catch {}
 
+    // Merge custom vocabulary / sentence patterns from separate key if needed
+    try {
+      const rawCustom = localStorage.getItem('toeic_custom_vocab_v1');
+      if (rawCustom) {
+        const parsedCustom = JSON.parse(rawCustom);
+        if (Array.isArray(parsedCustom) && parsedCustom.length > 0) {
+          if (!loaded.customItems || loaded.customItems.length === 0) {
+            loaded.customItems = parsedCustom;
+          } else {
+            const map = new Map<string, any>();
+            for (const item of [...(loaded.customItems || []), ...parsedCustom]) {
+              if (!item?.id) continue;
+              const ex = map.get(item.id);
+              const curTime = item.updatedAt ? new Date(item.updatedAt).getTime() : 0;
+              const exTime = ex?.updatedAt ? new Date(ex.updatedAt).getTime() : 0;
+              if (!ex || curTime >= exTime) {
+                map.set(item.id, item);
+              }
+            }
+            loaded.customItems = Array.from(map.values());
+          }
+        }
+      }
+    } catch {}
+
+    loaded.customItems = loaded.customItems || [];
+    loaded.deletedCustomItemIds = loaded.deletedCustomItemIds || [];
+
     return loaded;
   } catch (err) {
     console.error('Error loading progress from localStorage:', err);
@@ -159,6 +189,15 @@ export function saveUserProgress(data: UserProgressData): void {
           );
         } catch {}
       }
+    }
+
+    if (data.customItems) {
+      try {
+        localStorage.setItem('toeic_custom_vocab_v1', JSON.stringify(data.customItems));
+        window.dispatchEvent(
+          new CustomEvent('custom-vocab-synced', { detail: data.customItems })
+        );
+      } catch {}
     }
   } catch (err) {
     console.error('Error saving progress to localStorage:', err);

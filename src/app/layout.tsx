@@ -11,6 +11,7 @@ import { Navbar } from '@/components/shared/Navbar';
 import { AuthModal } from '@/components/shared/AuthModal';
 import { AccountLinkBanner } from '@/components/shared/AccountLinkBanner';
 import { SelectionTranslator } from '@/components/shared/SelectionTranslator';
+import { CustomVocabModal } from '@/components/custom-vocab/CustomVocabModal';
 import { PwaProvider } from '@/components/pwa/PwaProvider';
 import { OnboardingTour } from '@/components/onboarding/OnboardingTour';
 import { ChatBotWidget } from '@/components/chat/ChatBotWidget';
@@ -107,6 +108,7 @@ export default function RootLayout({
                     <AccountLinkBanner />
                     <AuthModal />
                     <SelectionTranslator />
+                    <CustomVocabModal />
                     <OnboardingTour />
                     <main className="flex-1">{children}</main>
                     <ChatBotWidget />

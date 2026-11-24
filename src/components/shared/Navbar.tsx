@@ -28,6 +28,7 @@ import {
   Bot,
   ArrowRight,
   MessageSquare,
+  Bookmark,
 } from 'lucide-react';
 import { allVocabularyWords } from '@/data/vocabulary';
 import { LEVEL_CONFIG } from '@/lib/vocabulary-helpers';
@@ -35,7 +36,7 @@ import { LEVEL_CONFIG } from '@/lib/vocabulary-helpers';
 export function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
-  const { progress, dueCount } = useProgress();
+  const { progress, dueCount, customItems } = useProgress();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<typeof allVocabularyWords>([]);
@@ -295,6 +296,24 @@ export function Navbar() {
             >
               <Layers className="w-4 h-4 shrink-0" />
               <span>Từ vựng</span>
+            </Link>
+
+            {/* Sổ tay cá nhân (Custom Vocab & Patterns) */}
+            <Link
+              href="/notebook"
+              className={`flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-semibold transition-all ${
+                pathname === '/notebook'
+                  ? 'text-indigo-400 bg-indigo-500/10 shadow-sm shadow-indigo-500/5'
+                  : 'text-slate-300 hover:text-white hover:bg-slate-900/80'
+              }`}
+            >
+              <Bookmark className="w-4 h-4 shrink-0 text-emerald-400" />
+              <span>Sổ tay</span>
+              {mounted && customItems && customItems.length > 0 && (
+                <span className="text-[10px] font-bold px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  {customItems.length}
+                </span>
+              )}
             </Link>
 
             {/* Kỹ năng Dropdown */}
@@ -729,6 +748,21 @@ export function Navbar() {
             >
               <Layers className="w-4 h-4 text-indigo-400" />
               <span>Kho từ vựng bản xứ</span>
+            </Link>
+            <Link
+              href="/notebook"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium text-slate-200 hover:bg-slate-900"
+            >
+              <div className="flex items-center gap-3">
+                <Bookmark className="w-4 h-4 text-emerald-400" />
+                <span>Sổ tay Từ vựng & Mẫu câu</span>
+              </div>
+              {customItems && customItems.length > 0 && (
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">
+                  {customItems.length}
+                </span>
+              )}
             </Link>
             <Link
               href="/mock-test"

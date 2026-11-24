@@ -12,6 +12,9 @@ import {
   BookOpen,
   ExternalLink,
   BookmarkPlus,
+  MessageSquare,
+  MessageSquarePlus,
+  ChevronDown,
 } from 'lucide-react';
 import { useSpeech } from '@/hooks/useSpeech';
 import { useChat } from '@/contexts/ChatContext';
@@ -67,6 +70,7 @@ export function SelectionTranslator() {
 
   const [copiedOriginal, setCopiedOriginal] = useState(false);
   const [copiedTranslation, setCopiedTranslation] = useState(false);
+  const [aiMenuOpen, setAiMenuOpen] = useState(false);
   const [isEnabled, setIsEnabled] = useState(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('selection_translate_enabled');
@@ -188,6 +192,7 @@ export function SelectionTranslator() {
       });
       setCopiedOriginal(false);
       setCopiedTranslation(false);
+      setAiMenuOpen(false);
     } catch {
       // Ignore selection range errors
     }
@@ -198,6 +203,7 @@ export function SelectionTranslator() {
     const handleClickOutside = (e: MouseEvent) => {
       if (tooltipRef.current && !tooltipRef.current.contains(e.target as Node)) {
         setState((prev) => ({ ...prev, visible: false }));
+        setAiMenuOpen(false);
       }
     };
 
@@ -219,6 +225,7 @@ export function SelectionTranslator() {
     const handleKeyUp = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setState((prev) => ({ ...prev, visible: false }));
+        setAiMenuOpen(false);
       }
     };
 
@@ -241,14 +248,19 @@ export function SelectionTranslator() {
       mode: 'translation',
       loading: true,
     }));
+    setAiMenuOpen(false);
     translateText(state.originalText);
   }, [state.originalText, translateText]);
 
-  const handleAddToAiTutor = useCallback(() => {
-    addSnippetContext(state.originalText, undefined, true);
-    setState((prev) => ({ ...prev, visible: false }));
-    window.getSelection()?.removeAllRanges();
-  }, [addSnippetContext, state.originalText]);
+  const handleAddToAiTutor = useCallback(
+    (append = true) => {
+      addSnippetContext(state.originalText, undefined, append);
+      setState((prev) => ({ ...prev, visible: false }));
+      setAiMenuOpen(false);
+      window.getSelection()?.removeAllRanges();
+    },
+    [addSnippetContext, state.originalText]
+  );
 
   const handleAddToNotebook = useCallback(() => {
     window.dispatchEvent(
@@ -260,6 +272,7 @@ export function SelectionTranslator() {
       })
     );
     setState((prev) => ({ ...prev, visible: false }));
+    setAiMenuOpen(false);
     window.getSelection()?.removeAllRanges();
   }, [state.originalText, state.translatedText]);
 
@@ -313,6 +326,30 @@ export function SelectionTranslator() {
         return;
       }
 
+      // If AI Tutor sub-menu popover is open
+      if (aiMenuOpen) {
+        if (e.key === '1' || e.code === 'Digit1' || e.code === 'Numpad1') {
+          e.preventDefault();
+          handleAddToAiTutor(true); // Chat hiện tại
+          return;
+        }
+        if (e.key === '2' || e.code === 'Digit2' || e.code === 'Numpad2') {
+          e.preventDefault();
+          handleAddToAiTutor(false); // Chat mới
+          return;
+        }
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          setAiMenuOpen(false);
+          return;
+        }
+        if (e.key === '6' || e.key === 'Enter') {
+          e.preventDefault();
+          handleAddToAiTutor(true); // Mặc định chat hiện tại
+          return;
+        }
+      }
+
       let digit: number | null = null;
       if (e.key >= '1' && e.key <= '7') {
         digit = parseInt(e.key, 10);
@@ -343,8 +380,8 @@ export function SelectionTranslator() {
           case 5: // Pronounce
             handleSpeak();
             break;
-          case 6: // Ask AI Tutor
-            handleAddToAiTutor();
+          case 6: // Ask AI Tutor: toggle options popover
+            setAiMenuOpen((prev) => !prev);
             break;
           case 7: // Save to Notebook
             handleAddToNotebook();
@@ -368,8 +405,8 @@ export function SelectionTranslator() {
           case 5: // Pronounce
             handleSpeak();
             break;
-          case 6: // Ask AI Tutor
-            handleAddToAiTutor();
+          case 6: // Ask AI Tutor (thêm vào chat hiện tại)
+            handleAddToAiTutor(true);
             break;
           case 7: // Save to Notebook
             handleAddToNotebook();
@@ -385,6 +422,7 @@ export function SelectionTranslator() {
   }, [
     state.visible,
     state.mode,
+    aiMenuOpen,
     cambridgeUrl,
     oxfordUrl,
     handleCopyOriginal,
@@ -507,19 +545,72 @@ export function SelectionTranslator() {
 
           <div className="w-px h-4 bg-slate-700/80 hidden sm:block" />
 
-          {/* 6. Ask AI Tutor */}
-          <button
-            type="button"
-            onClick={handleAddToAiTutor}
-            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-violet-600/20 hover:bg-violet-600/35 border border-violet-500/30 text-violet-300 hover:text-white text-xs font-semibold transition-all shadow-sm whitespace-nowrap"
-            title="Thêm đoạn này làm ngữ cảnh vào AI Tutor (Phím 6)"
-          >
-            <Bot className="w-3.5 h-3.5 text-violet-400" />
-            <span>Hỏi AI</span>
-            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-violet-900/40 text-violet-300/80 border border-violet-700/40 ml-0.5">
-              6
-            </kbd>
-          </button>
+          {/* 6. Ask AI Tutor with dropdown: Chat hiện tại hoặc Chat mới */}
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => setAiMenuOpen((prev) => !prev)}
+              className={`flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all shadow-sm whitespace-nowrap ${
+                aiMenuOpen
+                  ? 'bg-violet-600/40 border-violet-400 text-white shadow-violet-500/20'
+                  : 'bg-violet-600/20 hover:bg-violet-600/35 border-violet-500/30 text-violet-300 hover:text-white'
+              }`}
+              title="Hỏi AI Tutor: Thêm vào chat hiện tại hoặc tạo chat mới (Phím 6)"
+            >
+              <Bot className="w-3.5 h-3.5 text-violet-400" />
+              <span>Hỏi AI</span>
+              <ChevronDown
+                className={`w-3 h-3 text-violet-300/70 transition-transform duration-150 ${
+                  aiMenuOpen ? 'rotate-180' : ''
+                }`}
+              />
+              <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-violet-900/40 text-violet-300/80 border border-violet-700/40 ml-0.5">
+                6
+              </kbd>
+            </button>
+
+            {/* Sub-menu popover: Chat hiện tại vs Chat mới */}
+            {aiMenuOpen && (
+              <div
+                className={`absolute z-60 ${
+                  state.isAbove ? 'top-full mt-2' : 'bottom-full mb-2'
+                } left-1/2 -translate-x-1/2 w-56 p-1.5 rounded-2xl bg-slate-900/98 border border-violet-500/40 shadow-2xl backdrop-blur-xl animate-in fade-in zoom-in-95`}
+              >
+                <div className="px-2.5 py-1 text-[10px] font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-800/80 mb-1 flex items-center justify-between">
+                  <span>Hỏi AI Tutor</span>
+                  <span className="text-[9px] text-violet-400 lowercase font-normal">chọn ngữ cảnh</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleAddToAiTutor(true)}
+                  className="w-full flex items-center justify-between gap-2 px-2.5 py-2 rounded-xl text-xs font-medium text-slate-200 hover:text-white hover:bg-indigo-600/30 transition-colors text-left group"
+                  title="Thêm ngữ cảnh vào cuộc trò chuyện đang có"
+                >
+                  <span className="flex items-center gap-2">
+                    <MessageSquare className="w-3.5 h-3.5 text-indigo-400 group-hover:scale-110 transition-transform" />
+                    <span>Chat hiện tại</span>
+                  </span>
+                  <kbd className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
+                    1
+                  </kbd>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleAddToAiTutor(false)}
+                  className="w-full flex items-center justify-between gap-2 px-2.5 py-2 rounded-xl text-xs font-medium text-slate-200 hover:text-white hover:bg-violet-600/30 transition-colors text-left group"
+                  title="Mở cuộc trò chuyện mới tinh chỉ với ngữ cảnh này"
+                >
+                  <span className="flex items-center gap-2">
+                    <MessageSquarePlus className="w-3.5 h-3.5 text-violet-400 group-hover:scale-110 transition-transform" />
+                    <span>Tạo chat mới</span>
+                  </span>
+                  <kbd className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
+                    2
+                  </kbd>
+                </button>
+              </div>
+            )}
+          </div>
 
           {/* 7. Add to Notebook */}
           <button
@@ -540,7 +631,10 @@ export function SelectionTranslator() {
           {/* Close menu (No shortcut number 9, dismissable by click or Escape) */}
           <button
             type="button"
-            onClick={() => setState((prev) => ({ ...prev, visible: false }))}
+            onClick={() => {
+              setState((prev) => ({ ...prev, visible: false }));
+              setAiMenuOpen(false);
+            }}
             className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
             title="Đóng menu (Esc)"
           >
@@ -591,7 +685,10 @@ export function SelectionTranslator() {
               {/* Close in header (No shortcut number 9, dismissable by click or Escape) */}
               <button
                 type="button"
-                onClick={() => setState((prev) => ({ ...prev, visible: false }))}
+                onClick={() => {
+                  setState((prev) => ({ ...prev, visible: false }));
+                  setAiMenuOpen(false);
+                }}
                 className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
                 title="Đóng cửa sổ dịch (Esc)"
               >
@@ -687,19 +784,38 @@ export function SelectionTranslator() {
             )}
           </div>
 
-          {/* 6. Action: Open in AI Tutor from Translation View */}
-          <button
-            type="button"
-            onClick={handleAddToAiTutor}
-            className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-gradient-to-r from-indigo-600/30 to-violet-600/30 hover:from-indigo-600/50 hover:to-violet-600/50 border border-indigo-500/30 text-indigo-200 hover:text-white text-xs font-semibold transition-all mb-2 shadow-sm"
-            title="Thêm vào AI Tutor hỏi ngữ pháp & bẫy thi (Phím 6)"
-          >
-            <Bot className="w-3.5 h-3.5 text-indigo-400" />
-            <span>Thêm vào AI Tutor hỏi ngữ pháp & bẫy thi</span>
-            <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-indigo-900/50 text-indigo-300 border border-indigo-700/50 ml-1">
-              6
-            </kbd>
-          </button>
+          {/* 6. Action: Hỏi AI Tutor (Chat hiện tại hoặc Chat mới) */}
+          <div className="space-y-1.5 mb-2.5">
+            <div className="flex items-center justify-between px-0.5">
+              <span className="text-[11px] font-medium text-slate-400 flex items-center gap-1">
+                <Bot className="w-3.5 h-3.5 text-indigo-400" />
+                <span>Hỏi AI Tutor về đoạn này:</span>
+              </span>
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={() => handleAddToAiTutor(true)}
+                className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl bg-indigo-600/20 hover:bg-indigo-600/35 border border-indigo-500/30 text-indigo-200 hover:text-white text-xs font-semibold transition-all shadow-sm group"
+                title="Thêm ngữ cảnh vào cuộc trò chuyện đang có (Phím 6)"
+              >
+                <MessageSquare className="w-3.5 h-3.5 text-indigo-400 group-hover:scale-110 transition-transform" />
+                <span>Chat hiện tại</span>
+                <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[9px] font-mono font-medium rounded bg-indigo-900/40 text-indigo-300 border border-indigo-700/40">
+                  6
+                </kbd>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleAddToAiTutor(false)}
+                className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl bg-violet-600/20 hover:bg-violet-600/35 border border-violet-500/30 text-violet-200 hover:text-white text-xs font-semibold transition-all shadow-sm group"
+                title="Bắt đầu cuộc trò chuyện AI mới tinh với đoạn văn bản này"
+              >
+                <MessageSquarePlus className="w-3.5 h-3.5 text-violet-400 group-hover:scale-110 transition-transform" />
+                <span>Tạo chat mới</span>
+              </button>
+            </div>
+          </div>
 
           {/* 7. Action: Save to Personal Notebook */}
           <button
@@ -725,7 +841,10 @@ export function SelectionTranslator() {
                   const next = !isEnabled;
                   setIsEnabled(next);
                   localStorage.setItem('selection_translate_enabled', String(next));
-                  if (!next) setState((prev) => ({ ...prev, visible: false }));
+                  if (!next) {
+                    setState((prev) => ({ ...prev, visible: false }));
+                    setAiMenuOpen(false);
+                  }
                 }}
                 className="text-slate-400 hover:text-indigo-400 transition-colors underline"
               >

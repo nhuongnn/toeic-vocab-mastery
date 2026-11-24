@@ -44,6 +44,28 @@ export default function CategoriesPage() {
   const [sortBy, setSortBy] = useState<WordSortOption>('default');
   const [search, setSearch] = useState('');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const searchInputRef = React.useRef<HTMLInputElement>(null);
+
+  // Keyboard shortcut '/' focuses the category search input when not typing in an input
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      const isEditing =
+        target instanceof HTMLInputElement ||
+        target instanceof HTMLTextAreaElement ||
+        target instanceof HTMLSelectElement ||
+        Boolean(target?.isContentEditable);
+
+      if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey && !isEditing) {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+        searchInputRef.current?.select();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   // Read URL query parameters on mount & URL updates
   React.useEffect(() => {
@@ -269,22 +291,42 @@ export default function CategoriesPage() {
         <div className="flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
           {/* Search bar */}
           <div className="relative flex-1">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
+              ref={searchInputRef}
               type="text"
               placeholder="Tìm từ vựng, khái niệm cốt lõi, từ gốc..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full bg-slate-950/80 border border-slate-800 rounded-xl pl-10 pr-9 py-2.5 text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
+              onKeyDown={(e) => {
+                if (e.key === 'Escape') {
+                  e.preventDefault();
+                  if (search) {
+                    setSearch('');
+                  } else {
+                    searchInputRef.current?.blur();
+                  }
+                }
+              }}
+              title="Tìm kiếm từ vựng (Nhấn / để tìm nhanh, Esc để xóa)"
+              className="w-full bg-slate-950/80 border border-slate-800 rounded-xl pl-10 pr-10 py-2.5 text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
             />
-            {search && (
+            {search ? (
               <button
+                type="button"
                 onClick={() => setSearch('')}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-200 p-0.5"
-                title="Xóa tìm kiếm"
+                title="Xóa tìm kiếm (Esc)"
               >
                 <X className="w-4 h-4" />
               </button>
+            ) : (
+              <kbd
+                className="hidden sm:inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono text-slate-400 bg-slate-900 border border-slate-700/80 rounded select-none pointer-events-none absolute right-3 top-1/2 -translate-y-1/2"
+                title="Nhấn / để tìm kiếm"
+              >
+                /
+              </kbd>
             )}
           </div>
 

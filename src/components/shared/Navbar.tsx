@@ -42,18 +42,95 @@ export function Navbar() {
   const [searchResults, setSearchResults] = useState<typeof allVocabularyWords>([]);
   const [totalMatches, setTotalMatches] = useState(0);
   const [searchFocused, setSearchFocused] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState<number>(-1);
+  const [isMac, setIsMac] = useState(false);
   const mounted = useMounted();
   const [activeDropdown, setActiveDropdown] = useState<'skills' | 'practice' | null>(null);
 
   const dropdownTimerRef = useRef<NodeJS.Timeout | null>(null);
   const searchContainerRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const mobileSearchInputRef = useRef<HTMLInputElement>(null);
+  const resultsListRef = useRef<HTMLDivElement>(null);
   const prevPathnameRef = useRef(pathname);
+
+  // Detect Mac vs Windows/Linux for keyboard badge
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsMac(/(Mac|iPhone|iPod|iPad)/i.test(navigator.userAgent));
+    }
+  }, []);
+
+  // Global keyboard shortcuts (Ctrl+K / Cmd+K and '/')
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      const isK = e.key === 'k' || e.key === 'K';
+      const isModK = isK && (e.ctrlKey || e.metaKey);
+
+      const target = e.target as HTMLElement | null;
+      const isEditing =
+        target instanceof HTMLInputElement ||
+        target instanceof HTMLTextAreaElement ||
+        target instanceof HTMLSelectElement ||
+        Boolean(target?.isContentEditable);
+
+      if (isModK) {
+        e.preventDefault();
+        if (window.innerWidth < 768) {
+          setMobileMenuOpen(true);
+          setTimeout(() => {
+            mobileSearchInputRef.current?.focus();
+            mobileSearchInputRef.current?.select();
+          }, 50);
+        } else {
+          searchInputRef.current?.focus();
+          searchInputRef.current?.select();
+          setSearchFocused(true);
+        }
+        return;
+      }
+
+      // Shortcut '/' opens search when not currently typing in an input
+      if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey && !isEditing) {
+        // If on pages with dedicated local filter search (categories or notebook), let those handle '/'
+        if (pathname === '/categories' || pathname === '/notebook') {
+          return;
+        }
+        e.preventDefault();
+        if (window.innerWidth < 768) {
+          setMobileMenuOpen(true);
+          setTimeout(() => {
+            mobileSearchInputRef.current?.focus();
+            mobileSearchInputRef.current?.select();
+          }, 50);
+        } else {
+          searchInputRef.current?.focus();
+          searchInputRef.current?.select();
+          setSearchFocused(true);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, [pathname]);
+
+  // Auto scroll highlighted search item into view
+  useEffect(() => {
+    if (selectedIndex >= 0 && resultsListRef.current) {
+      const itemEl = resultsListRef.current.children[selectedIndex] as HTMLElement | undefined;
+      if (itemEl) {
+        itemEl.scrollIntoView({ block: 'nearest' });
+      }
+    }
+  }, [selectedIndex]);
 
   // Listen for clicks outside search dropdown to close it gracefully
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (searchContainerRef.current && !searchContainerRef.current.contains(e.target as Node)) {
         setSearchFocused(false);
+        setSelectedIndex(-1);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -68,6 +145,7 @@ export function Navbar() {
       setMobileMenuOpen(false);
       setSearchFocused(false);
       setSearchQuery('');
+      setSelectedIndex(-1);
     }
   }, [pathname]);
 
@@ -89,6 +167,7 @@ export function Navbar() {
 
   const handleSearch = (q: string) => {
     setSearchQuery(q);
+    setSelectedIndex(-1);
     const trimmed = q.trim().toLowerCase();
     if (!trimmed) {
       setSearchResults([]);
@@ -131,22 +210,63 @@ export function Navbar() {
   };
 
   const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    const totalItems = searchResults.length + (totalMatches > 0 ? 1 : 0);
+    const hasDropdown = searchFocused && searchQuery.trim().length > 0;
+
+    if (e.key === 'ArrowDown') {
+      if (hasDropdown && totalItems > 0) {
+        e.preventDefault();
+        setSelectedIndex((prev) => (prev + 1 < totalItems ? prev + 1 : 0));
+      }
+    } else if (e.key === 'ArrowUp') {
+      if (hasDropdown && totalItems > 0) {
+        e.preventDefault();
+        setSelectedIndex((prev) => (prev > 0 ? prev - 1 : totalItems - 1));
+      }
+    } else if (e.key === 'Enter') {
       const trimmed = searchQuery.trim();
       if (!trimmed) return;
       e.preventDefault();
-      const exactMatch = allVocabularyWords.find(
-        (w) => w.word.toLowerCase() === trimmed.toLowerCase()
-      );
-      if (exactMatch) {
-        router.push(`/word/${exactMatch.id}`);
-      } else {
+
+      if (selectedIndex >= 0 && selectedIndex < searchResults.length) {
+        const word = searchResults[selectedIndex];
+        router.push(`/word/${word.id}`);
+        setSearchFocused(false);
+        setMobileMenuOpen(false);
+        setSelectedIndex(-1);
+      } else if (selectedIndex === searchResults.length && totalMatches > 0) {
         router.push(`/categories?search=${encodeURIComponent(trimmed)}`);
+        setSearchFocused(false);
+        setMobileMenuOpen(false);
+        setSelectedIndex(-1);
+      } else {
+        const exactMatch = allVocabularyWords.find(
+          (w) => w.word.toLowerCase() === trimmed.toLowerCase()
+        );
+        if (exactMatch) {
+          router.push(`/word/${exactMatch.id}`);
+        } else if (searchResults.length > 0) {
+          router.push(`/word/${searchResults[0].id}`);
+        } else {
+          router.push(`/categories?search=${encodeURIComponent(trimmed)}`);
+        }
+        setSearchFocused(false);
+        setMobileMenuOpen(false);
+        setSelectedIndex(-1);
       }
-      setSearchFocused(false);
-      setMobileMenuOpen(false);
     } else if (e.key === 'Escape') {
-      setSearchFocused(false);
+      e.preventDefault();
+      if (searchQuery) {
+        setSearchQuery('');
+        setSearchResults([]);
+        setTotalMatches(0);
+        setSelectedIndex(-1);
+      } else {
+        setSearchFocused(false);
+        setSelectedIndex(-1);
+        searchInputRef.current?.blur();
+        mobileSearchInputRef.current?.blur();
+      }
     }
   };
 
@@ -498,27 +618,37 @@ export function Navbar() {
               <div className="relative">
                 <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <input
+                  ref={searchInputRef}
                   type="text"
                   placeholder="Tìm từ vựng..."
                   value={searchQuery}
                   onChange={(e) => handleSearch(e.target.value)}
                   onFocus={() => setSearchFocused(true)}
                   onKeyDown={handleSearchKeyDown}
-                  className="w-full bg-slate-900/90 border border-slate-800 rounded-lg pl-8 pr-7 py-1 text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
+                  className="w-full bg-slate-900/90 border border-slate-800 rounded-lg pl-8 pr-12 py-1 text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
+                  title={`Tìm kiếm từ vựng (${isMac ? '⌘K' : 'Ctrl+K'} hoặc /)`}
                 />
-                {searchQuery && (
+                {searchQuery ? (
                   <button
                     type="button"
                     onClick={() => {
                       setSearchQuery('');
                       setSearchResults([]);
                       setTotalMatches(0);
+                      setSelectedIndex(-1);
                     }}
                     className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-200 p-0.5"
-                    title="Xóa tìm kiếm"
+                    title="Xóa tìm kiếm (Esc)"
                   >
                     <X className="w-3 h-3" />
                   </button>
+                ) : (
+                  <kbd
+                    className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[9px] font-medium font-mono text-slate-400 bg-slate-800/90 border border-slate-700/70 rounded shadow-xs select-none pointer-events-none absolute right-2 top-1/2 -translate-y-1/2"
+                    title={`Phím tắt tìm kiếm: ${isMac ? '⌘K' : 'Ctrl+K'} hoặc /`}
+                  >
+                    {isMac ? '⌘K' : 'Ctrl K'}
+                  </kbd>
                 )}
               </div>
 
@@ -530,15 +660,27 @@ export function Navbar() {
                 >
                   <div className="flex items-center justify-between px-2.5 py-1 text-[11px] font-semibold text-slate-400 border-b border-slate-800/80 mb-1.5">
                     <span>Kết quả tìm kiếm ({totalMatches} từ)</span>
-                    <span className="text-[10px] text-slate-500 hidden sm:inline">
-                      Nhấn Enter để mở
-                    </span>
+                    <div className="hidden sm:flex items-center gap-2 text-[10px] text-slate-400 font-normal">
+                      <span className="flex items-center gap-0.5">
+                        <kbd className="px-1 py-0.2 rounded bg-slate-800 text-[9px] font-mono border border-slate-700 text-slate-300">↑↓</kbd> Chọn
+                      </span>
+                      <span className="flex items-center gap-0.5">
+                        <kbd className="px-1 py-0.2 rounded bg-slate-800 text-[9px] font-mono border border-slate-700 text-slate-300">↵</kbd> Mở
+                      </span>
+                      <span className="flex items-center gap-0.5">
+                        <kbd className="px-1 py-0.2 rounded bg-slate-800 text-[9px] font-mono border border-slate-700 text-slate-300">esc</kbd> Đóng
+                      </span>
+                    </div>
                   </div>
 
                   {searchResults.length > 0 ? (
-                    <div className="max-h-[min(24rem,calc(100vh-8rem))] overflow-y-auto divide-y divide-slate-800/60 pr-1 space-y-0.5">
-                      {searchResults.map((word) => {
+                    <div
+                      ref={resultsListRef}
+                      className="max-h-[min(24rem,calc(100vh-8rem))] overflow-y-auto divide-y divide-slate-800/60 pr-1 space-y-0.5"
+                    >
+                      {searchResults.map((word, idx) => {
                         const levelInfo = LEVEL_CONFIG[word.level];
+                        const isSelected = selectedIndex === idx;
                         return (
                           <Link
                             key={word.id}
@@ -546,12 +688,21 @@ export function Navbar() {
                             onClick={() => {
                               setSearchFocused(false);
                               setSearchQuery('');
+                              setSelectedIndex(-1);
                             }}
-                            className="flex items-start justify-between gap-3 p-2.5 rounded-xl hover:bg-slate-800/80 transition-all group pt-2 pb-2"
+                            className={`flex items-start justify-between gap-3 p-2.5 rounded-xl transition-all group pt-2 pb-2 ${
+                              isSelected
+                                ? 'bg-indigo-600/25 ring-1 ring-indigo-500/60 shadow-sm'
+                                : 'hover:bg-slate-800/80'
+                            }`}
                           >
                             <div className="min-w-0 flex-1 space-y-1">
                               <div className="flex items-center gap-2 flex-wrap">
-                                <span className="font-bold text-xs sm:text-sm text-slate-100 group-hover:text-indigo-400 transition-colors">
+                                <span
+                                  className={`font-bold text-xs sm:text-sm transition-colors ${
+                                    isSelected ? 'text-indigo-300' : 'text-slate-100 group-hover:text-indigo-400'
+                                  }`}
+                                >
                                   {word.word}
                                 </span>
                                 {word.partOfSpeech && word.partOfSpeech.length > 0 && (
@@ -572,10 +723,16 @@ export function Navbar() {
                               </p>
                             </div>
 
-                            <div className="flex flex-col items-end gap-1 shrink-0 pt-0.5">
+                            <div className="flex flex-col items-end gap-1.5 shrink-0 pt-0.5">
                               <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/90 text-slate-300 border border-slate-700/70 whitespace-nowrap">
                                 {word.pronunciation.ipa}
                               </span>
+                              {isSelected && (
+                                <span className="flex items-center gap-0.5 text-[10px] font-medium text-indigo-300 bg-indigo-500/20 px-1.5 py-0.5 rounded border border-indigo-500/40 animate-in fade-in">
+                                  <span>Mở</span>
+                                  <kbd className="font-mono text-[9px]">↵</kbd>
+                                </span>
+                              )}
                             </div>
                           </Link>
                         );
@@ -594,11 +751,19 @@ export function Navbar() {
                         onClick={() => {
                           setSearchFocused(false);
                           setSearchQuery('');
+                          setSelectedIndex(-1);
                         }}
-                        className="flex items-center justify-center gap-2 w-full p-2 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 hover:text-indigo-300 text-xs font-semibold border border-indigo-500/20 transition-all text-center"
+                        className={`flex items-center justify-center gap-2 w-full p-2 rounded-xl text-xs font-semibold border transition-all text-center ${
+                          selectedIndex === searchResults.length
+                            ? 'bg-indigo-600 text-white border-indigo-500 ring-2 ring-indigo-400/50 shadow-md'
+                            : 'bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 hover:text-indigo-300 border-indigo-500/20'
+                        }`}
                       >
                         <span>Xem tất cả {totalMatches} từ trong Kho từ vựng</span>
                         <ArrowRight className="w-3.5 h-3.5" />
+                        {selectedIndex === searchResults.length && (
+                          <kbd className="font-mono text-[9px] bg-indigo-700 px-1.5 py-0.5 rounded border border-indigo-400">↵</kbd>
+                        )}
                       </Link>
                     </div>
                   )}
@@ -650,8 +815,9 @@ export function Navbar() {
           <div className="relative">
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
+              ref={mobileSearchInputRef}
               type="text"
-              placeholder="Tìm kiếm từ vựng..."
+              placeholder="Tìm kiếm từ vựng... (Esc để đóng)"
               value={searchQuery}
               onChange={(e) => handleSearch(e.target.value)}
               onKeyDown={handleSearchKeyDown}
@@ -664,9 +830,10 @@ export function Navbar() {
                   setSearchQuery('');
                   setSearchResults([]);
                   setTotalMatches(0);
+                  setSelectedIndex(-1);
                 }}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-200 p-0.5"
-                title="Xóa tìm kiếm"
+                title="Xóa tìm kiếm (Esc)"
               >
                 <X className="w-4 h-4" />
               </button>

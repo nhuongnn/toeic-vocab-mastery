@@ -1,3 +1,5 @@
+import { toBaseForm, cleanWordForOxford, getBaseFormInfo, isBaseForm } from '@/lib/lemmatizer';
+
 export type DictionaryProvider = 'cambridge' | 'oxford';
 
 export interface DictionaryOption {
@@ -56,9 +58,29 @@ export function getCambridgeUrl(word: string): string {
 
 /**
  * Generates Oxford Learner's Dictionaries URL for the word.
+ * Automatically converts inflected word forms to their uninflected base lemma (nguyên mẫu)
+ * before looking up, preventing 404 errors on Oxford Learner's Dictionaries.
  */
 export function getOxfordUrl(word: string): string {
-  const clean = cleanWordForDictionary(word);
+  if (!word || !word.trim()) {
+    return 'https://www.oxfordlearnersdictionaries.com/';
+  }
+
+  // Convert to base form (lemma)
+  const lemma = toBaseForm(word);
+  const clean = lemma
+    .trim()
+    .toLowerCase()
+    .replace(/['’]/g, '');
+
+  // If the query contains multiple words separated by spaces (e.g. "take care of", "look for"),
+  // use Oxford's search URL which automatically redirects to the exact idiom/phrasal entry
+  if (clean.includes(' ')) {
+    return `https://www.oxfordlearnersdictionaries.com/search/english/?q=${encodeURIComponent(clean)}`;
+  }
+
+  // For single words or hyphenated compounds (e.g. "employee", "negotiate", "well-known"),
+  // direct definition URL leads straight to the entry
   return `https://www.oxfordlearnersdictionaries.com/definition/english/${encodeURIComponent(clean)}`;
 }
 
@@ -71,3 +93,7 @@ export function getDictionaryUrl(
 ): string {
   return provider === 'oxford' ? getOxfordUrl(word) : getCambridgeUrl(word);
 }
+
+// Re-export lemmatizer helpers for components
+export { toBaseForm, cleanWordForOxford, getBaseFormInfo, isBaseForm };
+

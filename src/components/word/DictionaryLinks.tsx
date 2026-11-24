@@ -13,6 +13,7 @@ import {
   getCambridgeUrl,
   getOxfordUrl,
   getDictionaryUrl,
+  getBaseFormInfo,
 } from '@/lib/dictionary';
 import { useProgress } from '@/contexts/ProgressContext';
 
@@ -62,6 +63,7 @@ export function DictionaryLinks({
 
   const cambridgeUrl = getCambridgeUrl(word);
   const oxfordUrl = getOxfordUrl(word);
+  const oxfordInfo = getBaseFormInfo(word);
 
   // 1. Buttons Variant: Side-by-side clear action buttons
   if (variant === 'buttons') {
@@ -94,10 +96,19 @@ export function DictionaryLinks({
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-sky-500/10 hover:bg-sky-500/20 text-sky-300 border border-sky-500/30 hover:border-sky-500/60 transition-all shadow-sm group"
-          title="Tra cứu từ này trên Oxford Advanced Learner's Dictionary (OALD)"
+          title={
+            oxfordInfo.isConverted
+              ? `Tra cứu từ này trên Oxford Advanced Learner's Dictionary (Nguyên mẫu: "${oxfordInfo.baseForm}")`
+              : "Tra cứu từ này trên Oxford Advanced Learner's Dictionary (OALD)"
+          }
         >
           <BookOpen className="w-3.5 h-3.5 text-sky-400 group-hover:scale-110 transition-transform" />
           <span>Oxford</span>
+          {oxfordInfo.isConverted && (
+            <span className="text-[10px] text-sky-400/80 font-normal">
+              ({oxfordInfo.baseForm})
+            </span>
+          )}
           {preferredDict === 'oxford' && (
             <span
               className="w-1.5 h-1.5 rounded-full bg-sky-400"
@@ -194,9 +205,19 @@ export function DictionaryLinks({
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs text-sky-300 hover:bg-sky-500/10 transition-colors group"
+              title={
+                oxfordInfo.isConverted
+                  ? `Mở trên Oxford Learner's Dictionaries (Nguyên mẫu: "${oxfordInfo.baseForm}")`
+                  : undefined
+              }
             >
               <div className="flex items-center gap-2">
                 <span className="font-semibold">Oxford (OALD)</span>
+                {oxfordInfo.isConverted && (
+                  <span className="text-[10px] text-sky-400/80 font-normal">
+                    ({oxfordInfo.baseForm})
+                  </span>
+                )}
                 {preferredDict === 'oxford' && (
                   <span className="text-[10px] px-1 py-0.2 bg-sky-500/20 text-sky-400 rounded">
                     Mặc định

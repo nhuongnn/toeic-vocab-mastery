@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import { useSpeech } from '@/hooks/useSpeech';
 import { useChat } from '@/contexts/ChatContext';
-import { getCambridgeUrl, getOxfordUrl } from '@/lib/dictionary';
+import { getCambridgeUrl, getOxfordUrl, getBaseFormInfo } from '@/lib/dictionary';
 
 interface SelectionState {
   originalText: string;
@@ -304,6 +304,7 @@ export function SelectionTranslator() {
 
   const cambridgeUrl = state.originalText ? getCambridgeUrl(state.originalText) : '';
   const oxfordUrl = state.originalText ? getOxfordUrl(state.originalText) : '';
+  const oxfordInfo = state.originalText ? getBaseFormInfo(state.originalText) : null;
 
   // Shortcut keys 1 through 7 handler
   useEffect(() => {
@@ -503,10 +504,19 @@ export function SelectionTranslator() {
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
             className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-sky-500/15 hover:bg-sky-500/25 border border-sky-500/35 text-sky-300 hover:text-sky-200 text-xs font-semibold transition-all shadow-sm group whitespace-nowrap"
-            title="Tra từ điển Oxford (Phím 3)"
+            title={
+              oxfordInfo?.isConverted
+                ? `Tra từ điển Oxford (Tự động chuyển về nguyên mẫu: "${oxfordInfo.baseForm}") (Phím 3)`
+                : 'Tra từ điển Oxford (Phím 3)'
+            }
           >
             <BookOpen className="w-3.5 h-3.5 text-sky-400 group-hover:scale-110 transition-transform" />
             <span>Oxford</span>
+            {oxfordInfo?.isConverted && (
+              <span className="text-[10px] text-sky-400/80 font-normal">
+                ({oxfordInfo.baseForm})
+              </span>
+            )}
             <ExternalLink className="w-3 h-3 text-sky-400/70 group-hover:text-sky-300" />
             <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-sky-900/40 text-sky-300/80 border border-sky-700/40 ml-0.5">
               3
@@ -730,10 +740,19 @@ export function SelectionTranslator() {
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
                 className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-xs font-semibold bg-sky-500/15 hover:bg-sky-500/25 text-sky-300 border border-sky-500/30 transition-all group"
-                title="Mở Oxford Learner's Dictionaries (OALD) (Phím 3)"
+                title={
+                  oxfordInfo?.isConverted
+                    ? `Mở Oxford Learner's Dictionaries (Tự động chuyển về nguyên mẫu: "${oxfordInfo.baseForm}") (Phím 3)`
+                    : "Mở Oxford Learner's Dictionaries (OALD) (Phím 3)"
+                }
               >
                 <BookOpen className="w-3 h-3 text-sky-400 group-hover:scale-110 transition-transform" />
                 <span>Oxford</span>
+                {oxfordInfo?.isConverted && (
+                  <span className="text-[10px] text-sky-400/80 font-normal">
+                    ({oxfordInfo.baseForm})
+                  </span>
+                )}
                 <ExternalLink className="w-2.5 h-2.5 text-sky-400/70" />
                 <kbd className="hidden sm:inline-flex items-center justify-center min-w-3.5 h-3.5 px-0.5 text-[9px] font-mono font-medium rounded bg-sky-950/60 text-sky-300 border border-sky-700/50">
                   3

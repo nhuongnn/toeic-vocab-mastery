@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 import { CustomVocabItem } from '@/types/custom-vocab';
 import { useSpeech } from '@/hooks/useSpeech';
-import { getCambridgeUrl, getOxfordUrl } from '@/lib/dictionary';
+import { getCambridgeUrl, getOxfordUrl, getBaseFormInfo } from '@/lib/dictionary';
 
 interface CustomVocabDetailModalProps {
   item: CustomVocabItem | null;
@@ -64,6 +64,7 @@ export function CustomVocabDetailModal({
 
   const cambridgeUrl = getCambridgeUrl(item.text);
   const oxfordUrl = getOxfordUrl(item.text);
+  const oxfordInfo = getBaseFormInfo(item.text);
 
   const formattedCreated = item.createdAt
     ? new Date(item.createdAt).toLocaleDateString('vi-VN', {
@@ -185,9 +186,19 @@ export function CustomVocabDetailModal({
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-sky-500/10 hover:bg-sky-500/20 text-sky-300 border border-sky-500/25 transition-all"
+              title={
+                oxfordInfo.isConverted
+                  ? `Mở trên Oxford Learner's Dictionaries (Tự động chuyển về nguyên mẫu: "${oxfordInfo.baseForm}")`
+                  : "Mở trên Oxford Learner's Dictionaries"
+              }
             >
               <BookOpen className="w-3 h-3 text-sky-400" />
               <span>Oxford</span>
+              {oxfordInfo.isConverted && (
+                <span className="text-[10px] text-sky-400/80 font-normal">
+                  ({oxfordInfo.baseForm})
+                </span>
+              )}
               <ExternalLink className="w-2.5 h-2.5 text-sky-400/60" />
             </a>
           </div>

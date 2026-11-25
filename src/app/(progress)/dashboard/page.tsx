@@ -15,6 +15,7 @@ import {
   Share2,
   Settings,
   Sparkles,
+  Brain,
 } from 'lucide-react';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useOnboarding } from '@/contexts/OnboardingContext';
@@ -68,6 +69,14 @@ export default function ProgressDashboardPage() {
         </div>
 
         <div className="flex items-center gap-2 self-start sm:self-auto shrink-0">
+          <Link
+            href="/mind-map?mode=progress"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/30 text-purple-200 font-bold text-xs uppercase tracking-wider transition-all"
+          >
+            <Brain className="w-4 h-4 text-purple-400" />
+            <span>Knowledge Graph</span>
+          </Link>
+
           <button
             type="button"
             onClick={() => setExportModalOpen(true)}

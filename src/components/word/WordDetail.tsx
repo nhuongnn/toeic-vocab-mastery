@@ -15,6 +15,7 @@ import {
   Compass,
   Target,
   Sparkles,
+  Brain,
 } from 'lucide-react';
 import { VocabularyWord, WordLevel } from '@/types/vocabulary';
 import { useProgress } from '@/contexts/ProgressContext';
@@ -227,6 +228,14 @@ export function WordDetail({
         {/* Action Controls */}
         <div className="flex items-center gap-2">
           <DictionaryLinks word={word.word} variant="dropdown" />
+
+          <Link
+            href={`/mind-map?word=${encodeURIComponent(word.id)}`}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-purple-500/30 bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 text-xs font-semibold transition-all shadow-sm"
+          >
+            <Brain className="w-3.5 h-3.5 text-purple-400" />
+            <span className="hidden sm:inline">Mind Map</span>
+          </Link>
 
           <button
             onClick={handleOpenAi}

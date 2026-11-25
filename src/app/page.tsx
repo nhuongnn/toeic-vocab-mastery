@@ -260,9 +260,18 @@ export default function HomePage() {
 
       {/* 4. Quick Practice Drill Launchers */}
       <section className="space-y-4">
-        <h2 className="text-lg font-bold text-white uppercase tracking-wider">
-          Practice Drills & Retention Exercises
-        </h2>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <h2 className="text-lg font-bold text-white uppercase tracking-wider">
+            Practice Drills & Retention Exercises
+          </h2>
+          <Link
+            href="/mind-map"
+            className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/30 text-purple-300 text-xs font-bold transition-all self-start sm:self-auto"
+          >
+            <Brain className="w-4 h-4 text-purple-400" />
+            <span>Mind Map Vocabulary →</span>
+          </Link>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           <Link
             href="/quiz"

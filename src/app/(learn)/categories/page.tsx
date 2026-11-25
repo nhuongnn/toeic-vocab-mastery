@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import Link from 'next/link';
 import {
   Layers,
   Search,
@@ -19,6 +20,7 @@ import {
   Sparkles,
   CheckCircle2,
   Clock,
+  Brain,
 } from 'lucide-react';
 import { categories } from '@/data/categories';
 import { allVocabularyWords } from '@/data/vocabulary';
@@ -231,17 +233,27 @@ export default function CategoriesPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Header */}
-      <div className="space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold">
-          <Layers className="w-3.5 h-3.5 text-indigo-400" />
-          <span>TOEIC Topic Hub</span>
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div className="space-y-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold">
+            <Layers className="w-3.5 h-3.5 text-indigo-400" />
+            <span>TOEIC Topic Hub</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+            Workplace Categories & Curated Lexicon
+          </h1>
+          <p className="text-slate-400 text-sm max-w-3xl leading-relaxed">
+            Kho từ vựng chuyên sâu chuẩn cấu trúc đề thi TOEIC và ngữ cảnh công sở quốc tế. Lọc theo cấp độ độ khó, sắp xếp theo độ phổ biến hoặc tần suất giao tiếp hàng ngày để tối ưu lộ trình học.
+          </p>
         </div>
-        <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-          Workplace Categories & Curated Lexicon
-        </h1>
-        <p className="text-slate-400 text-sm max-w-3xl leading-relaxed">
-          Kho từ vựng chuyên sâu chuẩn cấu trúc đề thi TOEIC và ngữ cảnh công sở quốc tế. Lọc theo cấp độ độ khó, sắp xếp theo độ phổ biến hoặc tần suất giao tiếp hàng ngày để tối ưu lộ trình học.
-        </p>
+
+        <Link
+          href={`/mind-map?mode=category&category=${selectedCategory === 'all' ? 'office-admin' : selectedCategory}`}
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/30 text-purple-200 hover:text-white text-xs font-bold transition-all self-start sm:self-auto shrink-0"
+        >
+          <Brain className="w-4 h-4 text-purple-400" />
+          <span>Xem dạng Mind Map</span>
+        </Link>
       </div>
 
       {/* Learning Path Quick Filter Banner */}

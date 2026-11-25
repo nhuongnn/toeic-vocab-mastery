@@ -9,8 +9,15 @@ import {
   Languages,
   Loader2,
   Sparkles,
+  Lightbulb,
+  RefreshCw,
+  CornerDownLeft,
 } from 'lucide-react';
-import { RoleplayConversation, RoleplayMessage } from '@/types/roleplay';
+import {
+  RoleplayConversation,
+  RoleplayMessage,
+  RoleplaySuggestion,
+} from '@/types/roleplay';
 import { CharacterAvatar } from '@/components/roleplay/CharacterAvatar';
 import { MarkdownMessage } from '@/components/chat/MarkdownMessage';
 import { useAuth } from '@/contexts/AuthContext';
@@ -28,6 +35,8 @@ interface ChatBubbleWindowProps {
   onOpenSettings: () => void;
 }
 
+const getNow = () => Date.now();
+
 export function ChatBubbleWindow({
   conversation,
   onUpdateConversation,
@@ -42,8 +51,12 @@ export function ChatBubbleWindow({
   const [isStreaming, setIsStreaming] = useState(false);
   const [translatingIds, setTranslatingIds] = useState<Record<string, boolean>>({});
   const [speakingId, setSpeakingId] = useState<string | null>(null);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [suggestions, setSuggestions] = useState<RoleplaySuggestion[]>([]);
+  const [isSuggestionsLoading, setIsSuggestionsLoading] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -97,12 +110,12 @@ export function ChatBubbleWindow({
     }
   };
 
-  const handleSend = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const trimmed = input.trim();
+  const sendTextMessage = async (text: string) => {
+    const trimmed = text.trim();
     if (!trimmed || isStreaming || !user?.id) return;
 
-    const now = Date.now();
+    setShowSuggestions(false);
+    const now = getNow();
     const userMsg: RoleplayMessage = {
       id: `user-${now}`,
       role: 'user',
@@ -218,7 +231,7 @@ export function ChatBubbleWindow({
       const finalConv: RoleplayConversation = {
         ...conversation,
         messages: finalMessages,
-        updatedAt: Date.now(),
+        updatedAt: getNow(),
         messageCount: finalMessages.length,
         lastMessageSnippet: (fullContent || trimmed).slice(0, 120),
         isAutoBubble: true,
@@ -242,12 +255,63 @@ export function ChatBubbleWindow({
             errorMessage: errMsg,
           },
         ],
-        updatedAt: Date.now(),
+        updatedAt: getNow(),
         messageCount: withUserMsgs.length + 1,
       };
       onUpdateConversation(failedConv);
     } finally {
       setIsStreaming(false);
+    }
+  };
+
+  const handleSend = (e: React.FormEvent) => {
+    e.preventDefault();
+    sendTextMessage(input);
+  };
+
+  const handleFetchSuggestions = async () => {
+    if (!user?.id) return;
+    setShowSuggestions(true);
+    setIsSuggestionsLoading(true);
+    try {
+      const res = await fetch('/api/roleplay/suggest', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-user-id': user.id,
+          ...(user.email ? { 'x-user-email': user.email } : {}),
+        },
+        body: JSON.stringify({
+          character: conversation.character,
+          scenario: conversation.scenario,
+          chatHistory: conversation.messages.map((m) => ({
+            role: m.role,
+            content: m.content,
+          })),
+          targetScore: 650,
+          providerPreference: 'auto',
+          userId: user.id,
+          userEmail: user.email,
+        }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setSuggestions(Array.isArray(data.suggestions) ? data.suggestions : []);
+      }
+    } catch (err) {
+      console.warn('Bubble fetch suggestions failed:', err);
+    } finally {
+      setIsSuggestionsLoading(false);
+    }
+  };
+
+  const handleSelectSuggestion = (text: string, autoSend = false) => {
+    if (autoSend) {
+      sendTextMessage(text);
+    } else {
+      setInput(text);
+      setShowSuggestions(false);
+      inputRef.current?.focus();
     }
   };
 
@@ -379,18 +443,123 @@ export function ChatBubbleWindow({
         <div ref={messagesEndRef} />
       </div>
 
+      {/* AI Suggestions Panel */}
+      {showSuggestions && (
+        <div className="border-t border-indigo-500/30 bg-slate-950/95 p-3 max-h-[210px] flex flex-col gap-2 shrink-0 animate-in slide-in-from-bottom-2 duration-150">
+          <div className="flex items-center justify-between gap-2 shrink-0">
+            <div className="flex items-center gap-1.5 text-[11px] font-bold text-amber-300">
+              <Lightbulb className="w-3.5 h-3.5" />
+              <span>Gợi ý câu trả lời AI</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                onClick={handleFetchSuggestions}
+                disabled={isSuggestionsLoading}
+                className="p-1 rounded-md text-slate-400 hover:text-indigo-300 hover:bg-slate-800 transition-colors disabled:opacity-40"
+                title="Tạo gợi ý khác"
+              >
+                <RefreshCw
+                  className={`w-3.5 h-3.5 ${isSuggestionsLoading ? 'animate-spin text-indigo-400' : ''}`}
+                />
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowSuggestions(false)}
+                className="p-1 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                title="Đóng gợi ý"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+
+          {isSuggestionsLoading ? (
+            <div className="py-4 flex items-center justify-center gap-2 text-[11px] text-slate-400">
+              <Loader2 className="w-4 h-4 animate-spin text-indigo-400" />
+              <span>Đang tạo gợi ý theo ngữ cảnh...</span>
+            </div>
+          ) : suggestions.length === 0 ? (
+            <p className="py-3 text-center text-[11px] text-slate-400">
+              Chưa có gợi ý. Bấm làm mới để thử lại.
+            </p>
+          ) : (
+            <div className="flex-1 min-h-0 overflow-y-auto space-y-2 pr-1">
+              {suggestions.map((sug) => (
+                <div
+                  key={sug.id}
+                  className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/40 space-y-1.5"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">
+                      {sug.label}
+                    </span>
+                  </div>
+                  <p className="text-[11px] font-semibold text-slate-100 leading-snug">
+                    &ldquo;{sug.english}&rdquo;
+                  </p>
+                  <p className="text-[10px] text-slate-400 italic leading-snug">
+                    {sug.vietnamese}
+                  </p>
+                  <div className="flex items-center gap-1.5 pt-1">
+                    <button
+                      type="button"
+                      onClick={() => handleSelectSuggestion(sug.english, false)}
+                      className="flex-1 inline-flex items-center justify-center gap-1 px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-[10px] font-medium transition-colors"
+                    >
+                      <CornerDownLeft className="w-3 h-3 text-indigo-400" />
+                      <span>Dùng câu này</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleSelectSuggestion(sug.english, true)}
+                      disabled={isStreaming}
+                      className="inline-flex items-center justify-center gap-1 px-2.5 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-semibold transition-colors disabled:opacity-50"
+                    >
+                      <Send className="w-2.5 h-2.5" />
+                      <span>Gửi luôn</span>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Footer */}
       <form
         onSubmit={handleSend}
         className="p-3 bg-slate-950/90 border-t border-slate-800 flex items-center gap-2 shrink-0"
       >
+        <button
+          type="button"
+          onClick={() => {
+            if (showSuggestions) {
+              setShowSuggestions(false);
+            } else {
+              handleFetchSuggestions();
+            }
+          }}
+          disabled={isStreaming}
+          className={`p-2 rounded-xl border transition-colors shrink-0 disabled:opacity-50 ${
+            showSuggestions
+              ? 'bg-amber-500/20 border-amber-500/40 text-amber-300'
+              : 'bg-slate-900 border-slate-800 text-amber-400 hover:bg-slate-800'
+          }`}
+          title="Gợi ý câu trả lời từ AI"
+          aria-label="Gợi ý câu trả lời từ AI"
+        >
+          <Lightbulb className="w-4 h-4" />
+        </button>
         <input
+          ref={inputRef}
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Nhập tin nhắn tiếng Anh..."
           disabled={isStreaming}
-          className="flex-1 px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 disabled:opacity-60"
+          className="flex-1 min-w-0 px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 disabled:opacity-60"
         />
         <button
           type="submit"

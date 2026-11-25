@@ -29,6 +29,7 @@ import {
   ArrowRight,
   MessageSquare,
   Bookmark,
+  Brain,
 } from 'lucide-react';
 import { allVocabularyWords } from '@/data/vocabulary';
 import { LEVEL_CONFIG } from '@/lib/vocabulary-helpers';
@@ -288,6 +289,15 @@ export function Navbar() {
     pathname.startsWith('/ai-chat');
 
   const skillItems = [
+    {
+      href: '/mind-map',
+      label: 'Mind Map Từ vựng',
+      desc: 'Khám phá mạng lưới đồng nghĩa, họ từ & gốc từ trực quan',
+      icon: Brain,
+      color: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
+      badge: 'Mới',
+      badgeColor: 'bg-purple-500/20 border-purple-500/35 text-purple-300',
+    },
     {
       href: '/patterns',
       label: 'Mẫu câu & Collocations',

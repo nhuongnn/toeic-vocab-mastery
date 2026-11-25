@@ -118,11 +118,20 @@ async function handleAutoChatCron(req: NextRequest) {
 
     let sentCount = 0;
     let failedCount = 0;
+    const diagnostics = {
+      matchedUsers: settingsList.length,
+      skippedWindow: 0,
+      skippedInterval: 0,
+      skippedNoSub: 0,
+      skippedQuota: 0,
+      skippedAIError: 0,
+    };
 
     for (const row of settingsList) {
       const tz = row.timezone || 'Asia/Ho_Chi_Minh';
       const currentMinutes = getMinutesInTimezone(now, tz);
       if (!isWithinWindow(currentMinutes, row.start_time || '08:00', row.end_time || '22:00')) {
+        diagnostics.skippedWindow++;
         continue;
       }
 
@@ -130,6 +139,7 @@ async function handleAutoChatCron(req: NextRequest) {
       if (row.last_sent_at) {
         const elapsed = now.getTime() - new Date(row.last_sent_at).getTime();
         if (elapsed < intervalMs) {
+          diagnostics.skippedInterval++;
           continue;
         }
       }
@@ -140,11 +150,13 @@ async function handleAutoChatCron(req: NextRequest) {
         .eq('user_id', row.user_id);
 
       if (!subs || subs.length === 0) {
+        diagnostics.skippedNoSub++;
         continue;
       }
 
       const quotaCheck = await checkUserAIQuota({ userId: row.user_id });
       if (!quotaCheck.allowed) {
+        diagnostics.skippedQuota++;
         continue;
       }
 
@@ -174,10 +186,12 @@ async function handleAutoChatCron(req: NextRequest) {
         }
       } catch (aiErr) {
         console.warn('Auto-chat cron AI generation error:', aiErr);
+        diagnostics.skippedAIError++;
         continue;
       }
 
       if (!messageContent.trim()) {
+        diagnostics.skippedAIError++;
         continue;
       }
 
@@ -225,6 +239,7 @@ async function handleAutoChatCron(req: NextRequest) {
       success: true,
       sentCount,
       failedCount,
+      diagnostics,
       serverTime: now.toISOString(),
     });
   } catch (error) {

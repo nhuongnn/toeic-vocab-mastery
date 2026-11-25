@@ -125,6 +125,7 @@ async function handleAutoChatCron(req: NextRequest) {
       skippedNoSub: 0,
       skippedQuota: 0,
       skippedAIError: 0,
+      lastPushError: null as string | null,
     };
 
     for (const row of settingsList) {
@@ -217,7 +218,10 @@ async function handleAutoChatCron(req: NextRequest) {
           deliveredToAny = true;
         } catch (err: unknown) {
           failedCount++;
-          const statusCode = (err as { statusCode?: number })?.statusCode;
+          const pushErr = err as { statusCode?: number; body?: string; message?: string };
+          const statusCode = pushErr?.statusCode;
+          diagnostics.lastPushError = `${statusCode ?? 'ERR'}: ${pushErr?.body || pushErr?.message || String(err)}`;
+          console.error('Auto-chat web-push error:', diagnostics.lastPushError);
           if (statusCode === 404 || statusCode === 410) {
             await dbClient
               .from('push_subscriptions')

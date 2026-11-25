@@ -112,5 +112,6 @@ export interface RoleplayConversation {
   messageCount: number;
   lastMessageSnippet?: string;
   summary?: RoleplaySessionSummary;
+  isAutoBubble?: boolean;
 }
 

@@ -27,6 +27,7 @@ import {
   BookOpen,
   Compass,
   Cpu,
+  MessageCircle,
 } from 'lucide-react';
 import { WordLevel } from '@/types/vocabulary';
 import { LEVEL_CONFIG } from '@/lib/vocabulary-helpers';
@@ -37,6 +38,7 @@ import { useOnboarding } from '@/contexts/OnboardingContext';
 import { useSpeech } from '@/hooks/useSpeech';
 import { NotificationSettings } from '@/components/notifications/NotificationSettings';
 import { AdminAISettingsSection } from '@/components/admin/AdminAISettingsSection';
+import { AutoChatSettingsSection } from '@/components/chat-bubble/AutoChatSettingsSection';
 
 export default function SettingsPage() {
   const {
@@ -56,7 +58,7 @@ export default function SettingsPage() {
   const isAdmin = user?.email?.toLowerCase() === 'nhuong2n@gmail.com';
 
   const [activeTab, setActiveTab] = useState<
-    'general' | 'theme' | 'speech' | 'notifications' | 'data' | 'account' | 'ai'
+    'general' | 'theme' | 'speech' | 'notifications' | 'auto-chat' | 'data' | 'account' | 'ai'
   >('general');
 
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -225,6 +227,7 @@ export default function SettingsPage() {
     { id: 'theme', label: 'Giao diện & Hiển thị', icon: Sun },
     { id: 'speech', label: 'Giọng đọc & Phát âm', icon: Volume2 },
     { id: 'notifications', label: 'Thông báo & Nhắc nhở', icon: Bell },
+    { id: 'auto-chat', label: 'Chat Bubble & Tự động', icon: MessageCircle },
     { id: 'data', label: 'Dữ liệu & Sao lưu', icon: Database },
     { id: 'account', label: 'Tài khoản & Cloud', icon: User },
     ...(isAdmin
@@ -1012,6 +1015,11 @@ export default function SettingsPage() {
       {/* Tab 7: Admin AI System Management (nhuong2n@gmail.com only) */}
       {activeTab === 'ai' && isAdmin && user?.email && (
         <AdminAISettingsSection userEmail={user.email} onShowToast={showToast} />
+      )}
+
+      {/* Tab 8: Chat Bubble & Auto-Chat */}
+      {activeTab === 'auto-chat' && (
+        <AutoChatSettingsSection onShowToast={showToast} />
       )}
 
       {/* Confirmation Reset Modal */}

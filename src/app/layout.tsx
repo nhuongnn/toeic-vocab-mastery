@@ -15,6 +15,7 @@ import { CustomVocabModal } from '@/components/custom-vocab/CustomVocabModal';
 import { PwaProvider } from '@/components/pwa/PwaProvider';
 import { OnboardingTour } from '@/components/onboarding/OnboardingTour';
 import { ChatBotWidget } from '@/components/chat/ChatBotWidget';
+import { ChatBubble } from '@/components/chat-bubble/ChatBubble';
 
 export const metadata: Metadata = {
   title: 'TOEIC Deep Mastery • Immersive Native Vocabulary',
@@ -112,6 +113,7 @@ export default function RootLayout({
                     <OnboardingTour />
                     <main className="flex-1">{children}</main>
                     <ChatBotWidget />
+                    <ChatBubble />
                     <footer className="border-t border-slate-900 bg-slate-950 py-8 text-center text-xs text-slate-500">
                       <div className="max-w-7xl mx-auto px-4 space-y-3">
                         <p>

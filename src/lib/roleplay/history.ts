@@ -42,6 +42,25 @@ export function getChatRoomConversationById(id: string): RoleplayConversation | 
 }
 
 /**
+ * Retrieve chat room conversations created today.
+ */
+export function getTodayConversations(): RoleplayConversation[] {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth();
+  const day = now.getDate();
+
+  return getChatRoomHistory().filter((conv) => {
+    const date = new Date(conv.createdAt);
+    return (
+      date.getFullYear() === year &&
+      date.getMonth() === month &&
+      date.getDate() === day
+    );
+  });
+}
+
+/**
  * Save or update a conversation in history.
  * Automatically keeps only the 10 most recent conversations.
  */

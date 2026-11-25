@@ -116,6 +116,8 @@ async function handleAutoChatCron(req: NextRequest) {
       );
     }
 
+    const force = req.nextUrl.searchParams.get('force') === '1';
+
     let sentCount = 0;
     let failedCount = 0;
     const diagnostics = {
@@ -137,7 +139,7 @@ async function handleAutoChatCron(req: NextRequest) {
       }
 
       const intervalMs = Math.max(10, Number(row.interval_minutes || 30)) * 60 * 1000;
-      if (row.last_sent_at) {
+      if (!force && row.last_sent_at) {
         const elapsed = now.getTime() - new Date(row.last_sent_at).getTime();
         if (elapsed < intervalMs) {
           diagnostics.skippedInterval++;

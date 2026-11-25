@@ -125,14 +125,26 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
     }
   }, []);
 
-  // Jump video to specific second
-  const jumpToTime = (seconds: number) => {
+  // Jump video to specific second smoothly via YouTube IFrame Player API
+  const jumpToTime = useCallback((seconds: number) => {
     setCurrentTimestamp(seconds);
     setIsPlayingVideo(true);
-    if (iframeRef.current) {
-      iframeRef.current.src = `https://www.youtube.com/embed/${currentExercise.youtubeId}?autoplay=1&start=${seconds}&rel=0&enablejsapi=1`;
+    const win = iframeRef.current?.contentWindow;
+    if (win) {
+      try {
+        win.postMessage(
+          JSON.stringify({ event: 'command', func: 'seekTo', args: [seconds, true] }),
+          '*'
+        );
+        win.postMessage(
+          JSON.stringify({ event: 'command', func: 'playVideo', args: [] }),
+          '*'
+        );
+      } catch {
+        // Ignore cross origin
+      }
     }
-  };
+  }, []);
 
   useEffect(() => {
     stopIframeVideo();
@@ -330,10 +342,9 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
           {/* Embedded YouTube Player */}
           <div className="relative rounded-3xl overflow-hidden border border-slate-800 bg-slate-950 shadow-2xl aspect-video group">
             <iframe
+              key={currentExercise.id}
               ref={iframeRef}
-              src={`https://www.youtube.com/embed/${currentExercise.youtubeId}?start=${
-                currentTimestamp ?? currentExercise.startTimestamp
-              }&end=${currentExercise.endTimestamp}&rel=0&enablejsapi=1`}
+              src={`https://www.youtube.com/embed/${currentExercise.youtubeId}?start=${currentExercise.startTimestamp}&end=${currentExercise.endTimestamp}&rel=0&enablejsapi=1`}
               title={currentExercise.title}
               className="w-full h-full border-0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -347,11 +358,16 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
             {currentExercise.fullTranscript.map((t, idx) => {
               const [min, sec] = t.time.split(':').map(Number);
               const totalSec = (min || 0) * 60 + (sec || 0);
+              const isCurrent = currentTimestamp === totalSec;
               return (
                 <button
                   key={idx}
                   onClick={() => jumpToTime(totalSec)}
-                  className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-rose-500/60 transition-colors flex items-center gap-1"
+                  className={`px-2.5 py-1 rounded-lg border transition-colors flex items-center gap-1 ${
+                    isCurrent
+                      ? 'bg-rose-600/20 border-rose-500 text-white'
+                      : 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white hover:border-rose-500/60'
+                  }`}
                 >
                   <Play className="w-2.5 h-2.5 fill-rose-500 text-rose-500" />
                   <span>{t.time}</span>
@@ -694,11 +710,16 @@ export function VideoListeningLabView({ exercises }: VideoListeningLabViewProps)
                 {currentExercise.fullTranscript.map((line, lIdx) => {
                   const [min, sec] = line.time.split(':').map(Number);
                   const totalSec = (min || 0) * 60 + (sec || 0);
+                  const isCurrent = currentTimestamp === totalSec;
 
                   return (
                     <div
                       key={lIdx}
-                      className="p-3 rounded-2xl bg-slate-950/60 border border-slate-800/80 space-y-1.5 text-xs hover:border-slate-700 transition-colors"
+                      className={`p-3 rounded-2xl border space-y-1.5 text-xs transition-colors ${
+                        isCurrent
+                          ? 'bg-rose-950/30 border-rose-500/70'
+                          : 'bg-slate-950/60 border-slate-800/80 hover:border-slate-700'
+                      }`}
                     >
                       <div className="flex items-center justify-between">
                         <span className="font-bold text-rose-400 flex items-center gap-1.5">

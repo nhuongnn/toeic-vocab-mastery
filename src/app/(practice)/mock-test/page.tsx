@@ -118,7 +118,7 @@ export default function MockTestHubPage() {
                 </span>
               </h3>
               <p className="text-xs text-slate-400">
-                Thử sức với 42 câu Audio chuẩn format ETS (Mô tả tranh, Hỏi-Đáp, Hội thoại 3 người, Thư thoại) và 6 video tình huống công sở đời thực.
+                Thử sức với 42 câu Audio chuẩn format ETS (Mô tả tranh, Hỏi-Đáp, Hội thoại 3 người, Thư thoại) và 9 video tình huống công sở đời thực.
               </p>
             </div>
           </div>

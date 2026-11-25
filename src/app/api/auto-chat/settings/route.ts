@@ -25,6 +25,7 @@ export async function GET(req: NextRequest) {
 
   return NextResponse.json({
     enabled: data.enabled,
+    pushEnabled: data.push_enabled ?? true,
     startTime: data.start_time,
     endTime: data.end_time,
     intervalMinutes: data.interval_minutes,
@@ -54,6 +55,7 @@ export async function PUT(req: NextRequest) {
       {
         user_id: userId,
         enabled: Boolean(body.enabled ?? false),
+        push_enabled: body.pushEnabled !== false,
         start_time: body.startTime ?? '08:00',
         end_time: body.endTime ?? '22:00',
         interval_minutes: intervalMinutes,

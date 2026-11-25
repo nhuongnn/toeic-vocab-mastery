@@ -23,6 +23,10 @@ import {
   getChatRoomHistory,
   saveChatRoomConversation,
 } from '@/lib/roleplay/history';
+import {
+  getNotificationPermission,
+  subscribeToPush,
+} from '@/lib/notifications/pushManager';
 
 const LAST_SENT_KEY = 'toeic_auto_chat_last_sent';
 const UNREAD_KEY = 'toeic_chat_bubble_unread';
@@ -352,6 +356,46 @@ export function useAutoChatScheduler() {
   const closeBubble = useCallback(() => {
     setBubbleState((prev) => ({ ...prev, isOpen: false }));
   }, []);
+
+  // Auto-open chat bubble when launched from a Web Push notification
+  useEffect(() => {
+    if (!user?.id) return;
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('openChatBubble') === '1') {
+      const openTimer = setTimeout(() => {
+        openBubble();
+      }, 0);
+      params.delete('openChatBubble');
+      const nextSearch = params.toString();
+      const nextUrl = `${window.location.pathname}${nextSearch ? `?${nextSearch}` : ''}${window.location.hash}`;
+      window.history.replaceState({}, '', nextUrl);
+      return () => clearTimeout(openTimer);
+    }
+  }, [user?.id, openBubble]);
+
+  useEffect(() => {
+    if (!user?.id || typeof navigator === 'undefined' || !('serviceWorker' in navigator)) {
+      return;
+    }
+    const handleSwMessage = (event: MessageEvent) => {
+      if (event.data?.type === 'OPEN_CHAT_BUBBLE') {
+        openBubble();
+      }
+    };
+    navigator.serviceWorker.addEventListener('message', handleSwMessage);
+    return () => {
+      navigator.serviceWorker.removeEventListener('message', handleSwMessage);
+    };
+  }, [user?.id, openBubble]);
+
+  // Ensure push subscription is registered when enabled + permission already granted
+  useEffect(() => {
+    if (!user?.id || !settings.enabled || !settings.pushEnabled) return;
+    if (getNotificationPermission() === 'granted') {
+      subscribeToPush(user.id).catch(() => {});
+    }
+  }, [user?.id, settings.enabled, settings.pushEnabled]);
 
   const dismissPreview = useCallback(() => {
     setNewMessagePreview(null);

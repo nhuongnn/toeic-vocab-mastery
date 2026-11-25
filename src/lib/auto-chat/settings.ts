@@ -9,6 +9,7 @@ function sanitizeSettings(raw: Partial<AutoChatSettings>): AutoChatSettings {
   return {
     ...merged,
     enabled: Boolean(merged.enabled),
+    pushEnabled: merged.pushEnabled !== false,
     intervalMinutes: Number.isFinite(interval) && interval >= 10 ? interval : 30,
   };
 }

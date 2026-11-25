@@ -2,6 +2,7 @@ import { CharacterRole } from './roleplay';
 
 export interface AutoChatSettings {
   enabled: boolean;
+  pushEnabled: boolean;
   startTime: string; // "HH:mm" (e.g. "08:00")
   endTime: string; // "HH:mm" (e.g. "22:00")
   intervalMinutes: number; // >= 10 (10 | 15 | 20 | 30 | 45 | 60 | 120)
@@ -12,6 +13,7 @@ export interface AutoChatSettings {
 
 export const DEFAULT_AUTO_CHAT_SETTINGS: AutoChatSettings = {
   enabled: false,
+  pushEnabled: true,
   startTime: '08:00',
   endTime: '22:00',
   intervalMinutes: 30,

@@ -2,7 +2,9 @@
 
 import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import { X, Settings, Clock, Users, BookOpen, Check, Loader2 } from 'lucide-react';
+import { X, Settings, Clock, Users, BookOpen, Check, Loader2, Bell } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
+import { subscribeToPush } from '@/lib/notifications/pushManager';
 import {
   AutoChatSettings,
   INTERVAL_OPTIONS,
@@ -23,6 +25,7 @@ export function ChatBubbleSettingsModal({
   onClose,
   onSave,
 }: ChatBubbleSettingsModalProps) {
+  const { user } = useAuth();
   const [draft, setDraft] = useState<AutoChatSettings>(settings);
   const [isSaving, setIsSaving] = useState(false);
 
@@ -54,6 +57,9 @@ export function ChatBubbleSettingsModal({
     e.preventDefault();
     setIsSaving(true);
     try {
+      if (draft.enabled && draft.pushEnabled && user?.id) {
+        await subscribeToPush(user.id);
+      }
       await onSave(draft);
       onClose();
     } finally {
@@ -122,6 +128,36 @@ export function ChatBubbleSettingsModal({
               <span
                 className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow transition duration-200 ${
                   draft.enabled ? 'translate-x-5' : 'translate-x-0'
+                }`}
+              />
+            </button>
+          </div>
+
+          {/* Web Push Toggle */}
+          <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-950 border border-slate-800">
+            <div className="pr-3">
+              <span className="text-xs font-bold text-white flex items-center gap-1.5">
+                <Bell className="w-3.5 h-3.5 text-indigo-400" />
+                <span>Thông báo đẩy ngoài màn hình (Web Push)</span>
+              </span>
+              <span className="text-[11px] text-slate-400 block mt-0.5">
+                Nhận tin nhắn AI trên điện thoại ngay cả khi không mở trình duyệt
+              </span>
+            </div>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={draft.pushEnabled}
+              onClick={() =>
+                setDraft((prev) => ({ ...prev, pushEnabled: !prev.pushEnabled }))
+              }
+              className={`relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 focus:outline-none ${
+                draft.pushEnabled ? 'bg-emerald-600' : 'bg-slate-700'
+              }`}
+            >
+              <span
+                className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow transition duration-200 ${
+                  draft.pushEnabled ? 'translate-x-5' : 'translate-x-0'
                 }`}
               />
             </button>

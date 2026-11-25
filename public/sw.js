@@ -157,10 +157,12 @@ self.addEventListener('push', (event) => {
       url: data.url || '/',
       dateOfArrival: Date.now(),
     },
-    actions: [
-      { action: 'study', title: '📚 Học ngay' },
-      { action: 'dismiss', title: 'Đóng' },
-    ],
+    actions: Array.isArray(data.actions) && data.actions.length > 0
+      ? data.actions
+      : [
+          { action: 'study', title: '📚 Học ngay' },
+          { action: 'dismiss', title: 'Đóng' },
+        ],
     vibrate: [200, 100, 200],
     requireInteraction: false,
   };
@@ -180,10 +182,17 @@ self.addEventListener('notificationclick', (event) => {
 
   event.waitUntil(
     clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
+      const wantsChatBubble = targetUrl.includes('openChatBubble=1');
       // Focus existing tab if open
       for (const client of clientList) {
-        if (client.url.includes(targetUrl) && 'focus' in client) {
-          return client.focus();
+        if ('focus' in client) {
+          if (wantsChatBubble) {
+            client.postMessage({ type: 'OPEN_CHAT_BUBBLE' });
+            return client.focus();
+          }
+          if (client.url.includes(targetUrl)) {
+            return client.focus();
+          }
         }
       }
       // Open new tab/window

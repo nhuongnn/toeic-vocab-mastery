@@ -10,8 +10,10 @@ import {
   Check,
   Loader2,
   Sparkles,
+  Bell,
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
+import { subscribeToPush } from '@/lib/notifications/pushManager';
 import {
   AutoChatSettings,
   DEFAULT_AUTO_CHAT_SETTINGS,
@@ -54,6 +56,14 @@ export function AutoChatSettingsSection({
     if (!user?.id) return;
     setIsSaving(true);
     try {
+      if (next.enabled && next.pushEnabled) {
+        const sub = await subscribeToPush(user.id);
+        if (!sub) {
+          onShowToast(
+            'Đã lưu cài đặt, nhưng trình duyệt chưa cấp quyền Thông báo đẩy.'
+          );
+        }
+      }
       const updated = await updateAutoChatSettings(
         user.id,
         user.email ?? undefined,
@@ -143,6 +153,38 @@ export function AutoChatSettingsSection({
             <span
               className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow transition duration-200 ${
                 settings.enabled ? 'translate-x-5' : 'translate-x-0'
+              }`}
+            />
+          </button>
+        </div>
+
+        {/* Web Push Notification Toggle */}
+        <div className="flex items-center justify-between gap-4 p-4 rounded-2xl bg-slate-950 border border-slate-800">
+          <div>
+            <span className="text-xs font-bold text-white flex items-center gap-2">
+              <Bell className="w-4 h-4 text-emerald-400" />
+              <span>Thông báo đẩy ngoài màn hình (Web Push)</span>
+            </span>
+            <p className="text-[11px] text-slate-400 mt-1">
+              Gửi tin nhắn AI thành thông báo đẩy trên điện thoại ngay cả khi bạn đóng app. Chạm vào thông báo để mở ngay cửa sổ chat.
+            </p>
+          </div>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={settings.pushEnabled}
+            onClick={() => {
+              const next = { ...settings, pushEnabled: !settings.pushEnabled };
+              setSettings(next);
+              handleSave(next);
+            }}
+            className={`relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 focus:outline-none ${
+              settings.pushEnabled ? 'bg-emerald-600' : 'bg-slate-700'
+            }`}
+          >
+            <span
+              className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow transition duration-200 ${
+                settings.pushEnabled ? 'translate-x-5' : 'translate-x-0'
               }`}
             />
           </button>

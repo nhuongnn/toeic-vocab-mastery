@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabase, supabaseAdmin } from '@/lib/supabase';
+
+const dbClient = supabaseAdmin || supabase;
 
 export async function POST(req: NextRequest) {
   try {
@@ -9,8 +11,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing endpoint' }, { status: 400 });
     }
 
-    if (supabase) {
-      await supabase.from('push_subscriptions').delete().eq('endpoint', endpoint);
+    if (dbClient) {
+      await dbClient.from('push_subscriptions').delete().eq('endpoint', endpoint);
     }
 
     return NextResponse.json({ success: true, message: 'Unsubscribed successfully' });

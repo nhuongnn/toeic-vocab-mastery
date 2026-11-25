@@ -224,7 +224,8 @@ async function handleAutoChatCron(req: NextRequest) {
           const statusCode = pushErr?.statusCode;
           diagnostics.lastPushError = `${statusCode ?? 'ERR'}: ${pushErr?.body || pushErr?.message || String(err)}`;
           console.error('Auto-chat web-push error:', diagnostics.lastPushError);
-          if (statusCode === 404 || statusCode === 410) {
+          // Remove expired (404, 410) or VAPID-mismatched (403) subscriptions
+          if (statusCode === 403 || statusCode === 404 || statusCode === 410) {
             await dbClient
               .from('push_subscriptions')
               .delete()

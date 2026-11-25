@@ -79,9 +79,21 @@ export async function subscribeToPush(userId?: string): Promise<PushSubscription
     }
 
     let subscription = await registration.pushManager.getSubscription();
+    const convertedKey = urlBase64ToUint8Array(VAPID_PUBLIC_KEY);
+
+    // If an existing subscription used a different VAPID key, unsubscribe and recreate it
+    if (subscription && subscription.options?.applicationServerKey) {
+      const existingKey = new Uint8Array(subscription.options.applicationServerKey);
+      const isSameKey =
+        existingKey.length === convertedKey.length &&
+        existingKey.every((byte, idx) => byte === convertedKey[idx]);
+      if (!isSameKey) {
+        await subscription.unsubscribe().catch(() => {});
+        subscription = null;
+      }
+    }
 
     if (!subscription) {
-      const convertedKey = urlBase64ToUint8Array(VAPID_PUBLIC_KEY);
       subscription = await registration.pushManager.subscribe({
         userVisibleOnly: true,
         applicationServerKey: convertedKey as unknown as BufferSource,

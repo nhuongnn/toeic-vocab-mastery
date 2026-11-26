@@ -7,9 +7,21 @@ import {
   VAPID_SUBJECT,
 } from '@/lib/notifications/vapidKeys';
 import { DEFAULT_CHARACTERS, PRESET_SCENARIOS } from '@/lib/roleplay/scenarios';
-import { CharacterRole } from '@/types/roleplay';
+import {
+  CharacterRole,
+  RoleplayConversation,
+  RoleplayMessage,
+} from '@/types/roleplay';
+import { UserProgressData } from '@/types/progress';
+import { AutoChatSettings } from '@/types/auto-chat';
 import { routeHybridRoleplayChat } from '@/lib/roleplay/router';
 import { buildAutoChatTurnPrompt } from '@/lib/roleplay/ai-prompt';
+import { findTodayAutoChatConversation } from '@/lib/auto-chat/conversation-manager';
+import {
+  generateConversationId,
+  MAX_CHAT_ROOM_CONVERSATIONS,
+} from '@/lib/roleplay/history';
+import { DEFAULT_PROGRESS } from '@/lib/storage';
 import { checkUserAIQuota } from '@/lib/ai/system-ai-settings';
 
 try {
@@ -168,28 +180,87 @@ async function handleAutoChatCron(req: NextRequest) {
         continue;
       }
 
-      const { character, scenario } = pickCharacterAndScenario(
-        row.character_role || 'random',
-        row.scenario_id || 'random'
+      const { data: progressRow, error: progressFetchError } = await dbClient
+        .from('user_progress')
+        .select('data')
+        .eq('user_id', row.user_id)
+        .maybeSingle();
+
+      const progressData = (progressRow?.data || {}) as Partial<UserProgressData>;
+      const existingHistory: RoleplayConversation[] = Array.isArray(
+        progressData.roleplay?.chatHistory
+      )
+        ? progressData.roleplay.chatHistory
+        : [];
+
+      const userChatSettings: Pick<AutoChatSettings, 'characterRole' | 'scenarioId'> = {
+        characterRole: (row.character_role || 'random') as AutoChatSettings['characterRole'],
+        scenarioId: row.scenario_id || 'random',
+      };
+
+      const existingTodayConv = findTodayAutoChatConversation(
+        existingHistory,
+        userChatSettings,
+        now,
+        tz
       );
 
+      const nowMs = now.getTime();
+      const targetConv: RoleplayConversation = existingTodayConv
+        ? existingTodayConv
+        : (() => {
+            const picked = pickCharacterAndScenario(
+              userChatSettings.characterRole,
+              userChatSettings.scenarioId
+            );
+            return {
+              id: generateConversationId(),
+              title: `🫧 ${picked.scenario.vietnameseTitle || picked.scenario.title} - ${picked.character.name}`,
+              character: picked.character,
+              scenario: picked.scenario,
+              userAvatar: progressData.roleplay?.userAvatar || 'shiba-intern',
+              userName: progressData.roleplay?.userName || 'Bạn',
+              messages: [],
+              translations: {},
+              createdAt: nowMs,
+              updatedAt: nowMs,
+              messageCount: 0,
+              lastMessageSnippet: '',
+              isAutoBubble: true,
+            };
+          })();
+
+      const { character, scenario } = targetConv;
+
       let messageContent = '';
+      let aiProvider: 'gemini' | 'cloudflare' = 'gemini';
       try {
         for await (const event of routeHybridRoleplayChat({
           messages: [
             {
               role: 'user',
-              content: buildAutoChatTurnPrompt(character, scenario, []),
+              content: buildAutoChatTurnPrompt(
+                character,
+                scenario,
+                targetConv.messages || [],
+                targetConv.userName || progressData.roleplay?.userName
+              ),
             },
           ],
           character,
           scenario,
+          userContext: {
+            targetScore: progressData.onboarding?.targetScore || 650,
+            totalWordsLearned: Object.keys(progressData.cards || {}).length,
+          },
           providerPreference: 'auto',
           isAutoProactive: true,
           userId: row.user_id,
         })) {
           if (event.type === 'content') {
             messageContent += event.text;
+          } else if (event.type === 'meta' && event.provider) {
+            aiProvider = event.provider;
           }
         }
       } catch (aiErr) {
@@ -198,14 +269,15 @@ async function handleAutoChatCron(req: NextRequest) {
         continue;
       }
 
-      if (!messageContent.trim()) {
+      const trimmedContent = messageContent.trim();
+      if (!trimmedContent) {
         diagnostics.skippedAIError++;
         continue;
       }
 
       const payloadString = JSON.stringify({
         title: `💬 ${character.name}`,
-        body: messageContent.trim().slice(0, 180),
+        body: trimmedContent.slice(0, 180),
         tag: 'auto-chat-bubble',
         url: '/?openChatBubble=1',
         actions: [
@@ -240,6 +312,48 @@ async function handleAutoChatCron(req: NextRequest) {
       }
 
       if (deliveredToAny) {
+        const newMsg: RoleplayMessage = {
+          id: `auto-${nowMs}`,
+          role: 'assistant',
+          content: trimmedContent,
+          timestamp: nowMs,
+          provider: aiProvider,
+        };
+        const nextMessages = [...(targetConv.messages || []), newMsg];
+        const updatedConv: RoleplayConversation = {
+          ...targetConv,
+          messages: nextMessages,
+          updatedAt: nowMs,
+          messageCount: nextMessages.length,
+          lastMessageSnippet: trimmedContent.slice(0, 120),
+          isAutoBubble: true,
+        };
+        const updatedHistory = [
+          updatedConv,
+          ...existingHistory.filter((c) => c?.id !== updatedConv.id),
+        ]
+          .sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0))
+          .slice(0, MAX_CHAT_ROOM_CONVERSATIONS);
+
+        if (!progressFetchError) {
+          const baseProgress = progressRow?.data ? progressData : DEFAULT_PROGRESS;
+          const updatedProgressData: Partial<UserProgressData> = {
+            ...baseProgress,
+            roleplay: {
+              ...(progressData.roleplay || {}),
+              chatHistory: updatedHistory,
+              updatedAt: now.toISOString(),
+            },
+          };
+          await dbClient
+            .from('user_progress')
+            .upsert({
+              user_id: row.user_id,
+              data: updatedProgressData,
+              updated_at: now.toISOString(),
+            });
+        }
+
         await dbClient
           .from('auto_chat_settings')
           .update({ last_sent_at: now.toISOString(), updated_at: now.toISOString() })

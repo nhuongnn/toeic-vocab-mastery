@@ -9,6 +9,7 @@ import { DEFAULT_CHARACTERS, PRESET_SCENARIOS } from '../roleplay/scenarios.ts';
 import {
   clearTodayAutoBubbleConversationId,
   doesConversationMatchSettings,
+  findTodayAutoChatConversation,
   getOrCreateTodayConversation,
   getTodayAutoBubbleConversation,
   pickCharacter,
@@ -122,21 +123,56 @@ describe('Auto-Chat Prompt & Conversation Context', () => {
     assert.ok(reply.toLowerCase().includes('checking in'));
   });
 
-  it('does not hijack non-auto-bubble chat-room conversations', () => {
+  it('reuses existing conversation created today (including chat-room) and ignores previous days', () => {
     const now = Date.now();
+    const yesterday = now - 24 * 60 * 60 * 1000;
+
     saveChatRoomConversation({
-      id: 'conv_regular_chatroom',
-      title: 'Regular Chat Room',
-      character: DEFAULT_CHARACTERS.stranger,
-      scenario: PRESET_SCENARIOS.find((s) => s.role === 'stranger'),
+      id: 'conv_yesterday',
+      title: 'Yesterday Bubble',
+      character: DEFAULT_CHARACTERS.boss,
+      scenario: bossScenario,
       messages: [],
-      createdAt: now,
-      updatedAt: now,
+      createdAt: yesterday,
+      updatedAt: yesterday,
       messageCount: 0,
-      isAutoBubble: false,
+      isAutoBubble: true,
     });
 
     assert.strictEqual(getTodayAutoBubbleConversation(), null);
+
+    saveChatRoomConversation({
+      id: 'conv_today_chatroom',
+      title: 'Today Chat Room',
+      character: DEFAULT_CHARACTERS.stranger,
+      scenario: PRESET_SCENARIOS.find((s) => s.role === 'stranger'),
+      messages: [
+        {
+          id: 'm1',
+          role: 'assistant',
+          content: 'Excuse me, where are you heading?',
+          timestamp: now,
+        },
+      ],
+      createdAt: now,
+      updatedAt: now,
+      messageCount: 1,
+      isAutoBubble: false,
+    });
+
+    const foundLocal = getTodayAutoBubbleConversation();
+    assert.ok(foundLocal);
+    assert.strictEqual(foundLocal.id, 'conv_today_chatroom');
+
+    const foundServer = findTodayAutoChatConversation(
+      [foundLocal],
+      { characterRole: 'random', scenarioId: 'random' },
+      new Date(now),
+      'Asia/Ho_Chi_Minh'
+    );
+    assert.ok(foundServer);
+    assert.strictEqual(foundServer.id, 'conv_today_chatroom');
+    assert.strictEqual(foundServer.messages.length, 1);
   });
 
   it('re-creates today conversation when characterRole or scenarioId changes in settings', () => {

@@ -22,10 +22,32 @@ export function clearTodayAutoBubbleConversationId(): void {
   } catch {}
 }
 
+/** Lấy chuỗi ngày YYYY-MM-DD theo timezone để so sánh cùng ngày chính xác */
+export function getDateKeyInTimezone(
+  timestampMs: number,
+  timezone?: string
+): string {
+  const date = new Date(timestampMs);
+  if (timezone) {
+    try {
+      return new Intl.DateTimeFormat('en-CA', {
+        timeZone: timezone,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      }).format(date);
+    } catch {}
+  }
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+}
+
 /** Kiểm tra conversation hiện tại có khớp với cài đặt characterRole / scenarioId hay không */
 export function doesConversationMatchSettings(
   conv: RoleplayConversation,
-  settings: AutoChatSettings
+  settings: Pick<AutoChatSettings, 'characterRole' | 'scenarioId'>
 ): boolean {
   if (
     settings.characterRole !== 'random' &&
@@ -49,22 +71,53 @@ export function doesConversationMatchSettings(
   return true;
 }
 
-/** Lọc conversations của chat-room được tạo hôm nay, chỉ lấy conversation của auto-bubble */
+/**
+ * Tìm cuộc hội thoại đã tạo trong ngày từ danh sách chatHistory (dùng chung cho cả client và cron server).
+ * Ưu tiên conversation có isAutoBubble, nếu chưa có thì lấy conversation mới nhất tạo trong ngày.
+ */
+export function findTodayAutoChatConversation(
+  chatHistory: RoleplayConversation[],
+  settings: Pick<AutoChatSettings, 'characterRole' | 'scenarioId'>,
+  now: Date = new Date(),
+  timezone?: string
+): RoleplayConversation | null {
+  if (!Array.isArray(chatHistory) || chatHistory.length === 0) return null;
+  const todayKey = getDateKeyInTimezone(now.getTime(), timezone);
+  const todayConvs = chatHistory.filter(
+    (c) =>
+      Boolean(c?.id) &&
+      typeof c.createdAt === 'number' &&
+      getDateKeyInTimezone(c.createdAt, timezone) === todayKey
+  );
+  if (todayConvs.length === 0) return null;
+
+  const autoBubbleMatch = todayConvs.find(
+    (c) => c.isAutoBubble && doesConversationMatchSettings(c, settings)
+  );
+  if (autoBubbleMatch) return autoBubbleMatch;
+
+  const anyTodayMatch = todayConvs.find((c) =>
+    doesConversationMatchSettings(c, settings)
+  );
+  return anyTodayMatch || null;
+}
+
+/** Lọc conversations của chat-room được tạo hôm nay, ưu tiên isAutoBubble hoặc hội thoại đã tạo hôm nay */
 export function getTodayAutoBubbleConversation(): RoleplayConversation | null {
   if (typeof window === 'undefined') return null;
-  const todayConvs = getTodayConversations().filter((c) => c.isAutoBubble);
+  const todayConvs = getTodayConversations();
 
   try {
     const cachedId = localStorage.getItem(TODAY_CONV_KEY);
     if (cachedId) {
       const cached = todayConvs.find((c) => c.id === cachedId);
       if (cached) return cached;
-      // Stale ID from previous day, deleted conversation, or non-bubble conversation
+      // Stale ID from previous day or deleted conversation
       localStorage.removeItem(TODAY_CONV_KEY);
     }
   } catch {}
 
-  const autoBubbleConv = todayConvs[0] || null;
+  const autoBubbleConv = todayConvs.find((c) => c.isAutoBubble) || todayConvs[0] || null;
   if (autoBubbleConv) {
     try {
       localStorage.setItem(TODAY_CONV_KEY, autoBubbleConv.id);

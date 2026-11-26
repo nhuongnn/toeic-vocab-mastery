@@ -174,8 +174,28 @@ export function mergeUserProgress(
     for (const conv of allHistory) {
       if (!conv || !conv.id) continue;
       const existing = historyMap.get(conv.id);
-      if (!existing || (conv.updatedAt || 0) > (existing.updatedAt || 0)) {
+      if (!existing) {
         historyMap.set(conv.id, conv);
+      } else {
+        const msgMap = new Map<string, RoleplayConversation['messages'][number]>();
+        for (const m of [...(existing.messages || []), ...(conv.messages || [])]) {
+          if (m?.id) msgMap.set(m.id, m);
+        }
+        const mergedMessages = Array.from(msgMap.values()).sort(
+          (a, b) => (a.timestamp || 0) - (b.timestamp || 0)
+        );
+        const newer = (conv.updatedAt || 0) > (existing.updatedAt || 0) ? conv : existing;
+        const hasMoreMessages =
+          mergedMessages.length > (newer.messages?.length || 0);
+        historyMap.set(conv.id, {
+          ...newer,
+          messages: mergedMessages.length > 0 ? mergedMessages : newer.messages,
+          messageCount: mergedMessages.length || newer.messageCount,
+          lastMessageSnippet:
+            hasMoreMessages && mergedMessages.length > 0
+              ? mergedMessages[mergedMessages.length - 1].content.slice(0, 120)
+              : newer.lastMessageSnippet,
+        });
       }
     }
 

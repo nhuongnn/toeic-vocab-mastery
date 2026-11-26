@@ -46,7 +46,7 @@ export interface NewMessagePreview {
 
 export function useAutoChatScheduler() {
   const { user } = useAuth();
-  const { progress, syncChatRoomHistory } = useProgress();
+  const { progress, syncChatRoomHistory, forceSync } = useProgress();
 
   const [settings, setSettings] = useState<AutoChatSettings>(() =>
     getLocalAutoChatSettings()
@@ -73,10 +73,15 @@ export function useAutoChatScheduler() {
     userAvatar: progress.roleplay?.userAvatar || 'shiba-intern',
     userName: progress.roleplay?.userName || 'Bạn',
   });
+  const syncHistoryRef = useRef(syncChatRoomHistory);
 
   useEffect(() => {
     settingsRef.current = settings;
   }, [settings]);
+
+  useEffect(() => {
+    syncHistoryRef.current = syncChatRoomHistory;
+  }, [syncChatRoomHistory]);
 
   useEffect(() => {
     userRoleplayRef.current = {
@@ -163,6 +168,7 @@ export function useAutoChatScheduler() {
             userAvatar,
             userName
           );
+          syncHistoryRef.current(getChatRoomHistory());
           setConversation(freshConv);
           setBubbleState((prevState) => ({
             ...prevState,
@@ -399,6 +405,7 @@ export function useAutoChatScheduler() {
     try {
       localStorage.setItem(UNREAD_KEY, '0');
     } catch {}
+    const existing = getTodayAutoBubbleConversation();
     const userAvatar = progress.roleplay?.userAvatar || 'shiba-intern';
     const userName = progress.roleplay?.userName || 'Bạn';
     const conv = getOrCreateTodayConversation(
@@ -406,8 +413,11 @@ export function useAutoChatScheduler() {
       userAvatar,
       userName
     );
+    if (!existing || existing.id !== conv.id) {
+      syncChatRoomHistory(getChatRoomHistory());
+    }
     setConversation(conv);
-  }, [progress.roleplay]);
+  }, [progress.roleplay, syncChatRoomHistory]);
 
   const closeBubble = useCallback(() => {
     setBubbleState((prev) => ({ ...prev, isOpen: false }));
@@ -421,6 +431,7 @@ export function useAutoChatScheduler() {
     if (params.get('openChatBubble') === '1') {
       const openTimer = setTimeout(() => {
         openBubble();
+        forceSync().catch(() => {});
       }, 0);
       params.delete('openChatBubble');
       const nextSearch = params.toString();
@@ -428,7 +439,7 @@ export function useAutoChatScheduler() {
       window.history.replaceState({}, '', nextUrl);
       return () => clearTimeout(openTimer);
     }
-  }, [user?.id, openBubble]);
+  }, [user?.id, openBubble, forceSync]);
 
   useEffect(() => {
     if (!user?.id || typeof navigator === 'undefined' || !('serviceWorker' in navigator)) {
@@ -437,13 +448,14 @@ export function useAutoChatScheduler() {
     const handleSwMessage = (event: MessageEvent) => {
       if (event.data?.type === 'OPEN_CHAT_BUBBLE') {
         openBubble();
+        forceSync().catch(() => {});
       }
     };
     navigator.serviceWorker.addEventListener('message', handleSwMessage);
     return () => {
       navigator.serviceWorker.removeEventListener('message', handleSwMessage);
     };
-  }, [user?.id, openBubble]);
+  }, [user?.id, openBubble, forceSync]);
 
   // Ensure push subscription is registered when enabled + permission already granted
   useEffect(() => {

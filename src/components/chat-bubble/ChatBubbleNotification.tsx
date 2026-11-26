@@ -8,6 +8,8 @@ interface ChatBubbleNotificationProps {
   preview: NewMessagePreview | null;
   onDismiss: () => void;
   onOpenBubble: () => void;
+  style?: React.CSSProperties;
+  positionClassName?: string;
 }
 
 function playSoftNotificationChime() {
@@ -46,6 +48,8 @@ export function ChatBubbleNotification({
   preview,
   onDismiss,
   onOpenBubble,
+  style,
+  positionClassName = 'bottom-36 md:bottom-24 left-4 sm:left-6',
 }: ChatBubbleNotificationProps) {
   useEffect(() => {
     if (!preview) return;
@@ -68,7 +72,8 @@ export function ChatBubbleNotification({
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') onOpenBubble();
       }}
-      className="fixed bottom-36 md:bottom-24 left-4 sm:left-6 z-50 max-w-[270px] sm:max-w-[300px] p-3.5 rounded-2xl bg-slate-900/95 backdrop-blur-md border border-indigo-500/40 shadow-2xl shadow-indigo-950/50 cursor-pointer animate-in fade-in slide-in-from-bottom-3 duration-200 group"
+      style={style}
+      className={`fixed ${positionClassName} z-50 max-w-[270px] sm:max-w-[300px] p-3.5 rounded-2xl bg-slate-900/95 backdrop-blur-md border border-indigo-500/40 shadow-2xl shadow-indigo-950/50 cursor-pointer animate-in fade-in slide-in-from-bottom-3 duration-200 group`}
     >
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-1.5 text-[11px] font-bold text-indigo-400">

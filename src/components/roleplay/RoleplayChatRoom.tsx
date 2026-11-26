@@ -68,6 +68,7 @@ import { useProgress } from '@/contexts/ProgressContext';
 import { useAuth } from '@/contexts/AuthContext';
 import { getGuestId } from '@/lib/ai/guest-id';
 import { StreamEvent, AIModelPreference } from '@/lib/ai/types';
+import { formatMessageFullTime, formatMessageTime } from '@/lib/utils';
 
 interface RoleplayChatRoomProps {
   userContext: Partial<UserLearningContext>;
@@ -1520,6 +1521,8 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         {messages.map((msg, idx) => {
           const isUser = msg.role === 'user';
           const isSpeakingThis = activeSpeakingId === msg.id && isPlaying;
+          const timeLabel = formatMessageTime(msg.timestamp);
+          const fullTimeLabel = formatMessageFullTime(msg.timestamp);
 
           return (
             <div
@@ -1544,7 +1547,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
               )}
 
               {/* Message Bubble Container */}
-              <div className={`max-w-[85%] sm:max-w-[75%] space-y-1.5 ${isUser ? 'items-end' : 'items-start'}`}>
+              <div className={`max-w-[85%] sm:max-w-[75%] flex flex-col space-y-1.5 ${isUser ? 'items-end' : 'items-start'}`}>
                 {/* Bubble */}
                 <div
                   className={`rounded-2xl px-4 py-3 text-sm leading-relaxed ${
@@ -1751,6 +1754,15 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
                     </div>
                   )}
                 </div>
+
+                {timeLabel && (
+                  <span
+                    className="px-1 text-[11px] text-slate-400/90 tabular-nums"
+                    title={fullTimeLabel}
+                  >
+                    {timeLabel}
+                  </span>
+                )}
               </div>
             </div>
           );

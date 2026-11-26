@@ -27,12 +27,15 @@ import {
   getChatRoomHistory,
   saveChatRoomConversation,
 } from '@/lib/roleplay/history';
+import { formatMessageFullTime, formatMessageTime } from '@/lib/utils';
 
 interface ChatBubbleWindowProps {
   conversation: RoleplayConversation | null;
   onUpdateConversation: (conv: RoleplayConversation) => void;
   onClose: () => void;
   onOpenSettings: () => void;
+  anchorStyle?: React.CSSProperties;
+  positionClassName?: string;
 }
 
 const getNow = () => Date.now();
@@ -42,6 +45,8 @@ export function ChatBubbleWindow({
   onUpdateConversation,
   onClose,
   onOpenSettings,
+  anchorStyle,
+  positionClassName = 'bottom-20 left-4 sm:left-6',
 }: ChatBubbleWindowProps) {
   const { user } = useAuth();
   const { progress, syncChatRoomHistory } = useProgress();
@@ -316,7 +321,10 @@ export function ChatBubbleWindow({
   };
 
   return (
-    <div className="fixed bottom-20 left-4 sm:left-6 z-50 w-[94vw] sm:w-[360px] h-[70vh] sm:h-[480px] max-h-[calc(100vh-6rem)] flex flex-col rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl shadow-black/60 overflow-hidden animate-in slide-in-from-bottom-5 fade-in duration-200">
+    <div
+      style={anchorStyle}
+      className={`fixed ${positionClassName} z-50 w-[94vw] sm:w-[360px] h-[70vh] sm:h-[480px] max-h-[calc(100vh-6rem)] flex flex-col rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl shadow-black/60 overflow-hidden animate-in slide-in-from-bottom-5 fade-in duration-200`}
+    >
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 bg-slate-950/90 border-b border-slate-800 shrink-0">
         <div className="flex items-center gap-2.5 min-w-0">
@@ -370,6 +378,8 @@ export function ChatBubbleWindow({
             const translation = translations[msg.id];
             const isTranslating = translatingIds[msg.id];
             const isSpeaking = activeSpeakingId === msg.id;
+            const timeLabel = formatMessageTime(msg.timestamp);
+            const fullTimeLabel = formatMessageFullTime(msg.timestamp);
 
             return (
               <div
@@ -403,7 +413,7 @@ export function ChatBubbleWindow({
                   )}
                 </div>
 
-                {!isUser && msg.content && !msg.isError && (
+                {!isUser && msg.content && !msg.isError ? (
                   <div className="flex items-center gap-2 mt-1 px-1">
                     <button
                       type="button"
@@ -434,7 +444,24 @@ export function ChatBubbleWindow({
                           : 'Dịch'}
                       </span>
                     </button>
+                    {timeLabel && (
+                      <span
+                        className="text-[10px] text-slate-500 tabular-nums"
+                        title={fullTimeLabel}
+                      >
+                        • {timeLabel}
+                      </span>
+                    )}
                   </div>
+                ) : (
+                  timeLabel && (
+                    <span
+                      className="mt-1 px-1 text-[10px] text-slate-500 tabular-nums"
+                      title={fullTimeLabel}
+                    >
+                      {timeLabel}
+                    </span>
+                  )
                 )}
               </div>
             );

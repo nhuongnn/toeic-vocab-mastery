@@ -35,6 +35,7 @@ import {
 import { useChat } from '@/contexts/ChatContext';
 import { useAuth } from '@/contexts/AuthContext';
 import { formatConversationTime, MAX_AI_TUTOR_CONVERSATIONS } from '@/lib/ai/history';
+import { formatMessageFullTime, formatMessageTime } from '@/lib/utils';
 import { MarkdownMessage } from './MarkdownMessage';
 import { allVocabularyWords } from '@/data/vocabulary';
 import { WordContext, AiTutorConversation } from '@/lib/ai/types';
@@ -1954,6 +1955,8 @@ export function ChatBotWidget() {
                 {messages.map((msg, idx) => {
                   const isUser = msg.role === 'user';
                   const isWelcomeMsg = msg.id === 'welcome-msg';
+                  const timeLabel = formatMessageTime(msg.timestamp);
+                  const fullTimeLabel = formatMessageFullTime(msg.timestamp);
                   const isErrorMessage =
                     !isUser &&
                     !isWelcomeMsg &&
@@ -2175,6 +2178,16 @@ export function ChatBotWidget() {
                           </div>
                         )}
                       </div>
+
+                      {timeLabel && (
+                        <span
+                          className="mt-1 px-1 inline-flex items-center gap-1 text-[10px] text-slate-400/90 tabular-nums"
+                          title={fullTimeLabel}
+                        >
+                          <Clock className="w-2.5 h-2.5 opacity-70" />
+                          <span>{timeLabel}</span>
+                        </span>
+                      )}
                     </div>
                   );
                 })}

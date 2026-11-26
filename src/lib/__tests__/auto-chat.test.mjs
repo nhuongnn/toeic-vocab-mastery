@@ -17,6 +17,7 @@ import {
 } from '../auto-chat/conversation-manager.ts';
 import { saveChatRoomConversation } from '../roleplay/history.ts';
 import { DEFAULT_AUTO_CHAT_SETTINGS } from '../../types/auto-chat.ts';
+import { formatMessageFullTime, formatMessageTime } from '../utils.ts';
 
 class MockLocalStorage {
   constructor() {
@@ -175,5 +176,20 @@ describe('Auto-Chat Prompt & Conversation Context', () => {
     const pickedScen = pickScenario(settings, pickedChar.role);
     assert.strictEqual(pickedChar.role, friendScenario.role);
     assert.strictEqual(pickedScen.id, friendScenario.id);
+  });
+
+  it('formats message timestamps cleanly for today, same year, and invalid values', () => {
+    assert.strictEqual(formatMessageTime(0), '');
+    assert.strictEqual(formatMessageTime(undefined), '');
+    assert.strictEqual(formatMessageFullTime(0), '');
+
+    const today = new Date();
+    today.setHours(9, 5, 30, 0);
+    assert.strictEqual(formatMessageTime(today.getTime()), '09:05');
+    assert.ok(formatMessageFullTime(today.getTime()).startsWith('09:05:30 '));
+
+    const earlierYear = new Date(2024, 2, 7, 14, 22, 9); // 07/03/2024 14:22:09
+    assert.strictEqual(formatMessageTime(earlierYear.getTime()), '14:22 07/03/2024');
+    assert.strictEqual(formatMessageFullTime(earlierYear.getTime()), '14:22:09 07/03/2024');
   });
 });

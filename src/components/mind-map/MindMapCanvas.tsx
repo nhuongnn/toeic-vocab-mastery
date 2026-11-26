@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { MindMapGraph, MindMapNode, MindMapState } from '@/lib/mind-map/types';
+import { extractMindMapLookupTerms } from '@/lib/mind-map/lookup';
 import { renderMindMap } from '@/lib/mind-map/canvasRenderer';
 import { hitTestNode, screenToWorld } from '@/lib/mind-map/interactions';
 
@@ -399,10 +400,16 @@ export function MindMapCanvas({
               {tooltip.node.meta.coreConcept}
             </p>
           )}
-          {tooltip.node.wordId && (
+          {tooltip.node.wordId ? (
             <div className="text-[10px] text-indigo-400 mt-1 font-medium">
               Click để xem • Double-click để mở map
             </div>
+          ) : (
+            extractMindMapLookupTerms(tooltip.node.label, tooltip.node.type).length > 0 && (
+              <div className="text-[10px] text-amber-400 mt-1 font-medium">
+                Click để tra từ điển Cambridge / Oxford
+              </div>
+            )
           )}
         </div>
       )}

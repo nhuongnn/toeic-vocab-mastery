@@ -13,13 +13,16 @@ import {
   Tag,
   Layers,
   Lightbulb,
+  BookOpen,
 } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
 import { SRSCard } from '@/types/progress';
 import { MindMapGraph, MindMapNode, NODE_TYPE_LABELS } from '@/lib/mind-map/types';
+import { extractMindMapLookupTerms } from '@/lib/mind-map/lookup';
 import { categories } from '@/data/categories';
 import { useSpeech } from '@/hooks/useSpeech';
 import { useProgress } from '@/contexts/ProgressContext';
+import { DictionaryLinks } from '@/components/word/DictionaryLinks';
 
 interface MindMapNodeDetailProps {
   node: MindMapNode | null;
@@ -56,6 +59,10 @@ export function MindMapNodeDetail({
 
   const connectedEdges = graph
     ? graph.edges.filter((e) => e.source === node.id || e.target === node.id)
+    : [];
+
+  const lookupTerms = !word
+    ? extractMindMapLookupTerms(node.label, node.type)
     : [];
 
   const synCount = word?.synonyms?.length ?? 0;
@@ -95,8 +102,8 @@ export function MindMapNodeDetail({
             />
             <span>{NODE_TYPE_LABELS[node.type]}</span>
           </div>
-          <h2 className="text-xl font-black text-white truncate">{node.label}</h2>
-          {word?.pronunciation?.ipa && (
+          <h2 className="text-xl font-black text-white break-words">{node.label}</h2>
+          {word?.pronunciation?.ipa ? (
             <div className="flex items-center gap-2 mt-1">
               <span className="text-xs font-mono text-indigo-300">
                 {word.pronunciation.ipa}
@@ -111,13 +118,33 @@ export function MindMapNodeDetail({
                 <Volume2 className="w-3.5 h-3.5" />
               </button>
             </div>
+          ) : (
+            !word &&
+            lookupTerms.length > 0 && (
+              <div className="flex items-center gap-2 mt-1">
+                {node.meta?.posLabel && (
+                  <span className="text-[11px] font-mono text-violet-300 bg-violet-500/15 px-2 py-0.5 rounded-md border border-violet-500/25">
+                    {node.meta.posLabel}
+                  </span>
+                )}
+                <button
+                  type="button"
+                  onClick={() => speak(lookupTerms[0])}
+                  className="p-1 rounded-lg bg-indigo-500/15 hover:bg-indigo-500/30 text-indigo-300 transition-colors"
+                  title="Nghe phát âm"
+                  aria-label="Nghe phát âm"
+                >
+                  <Volume2 className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            )
           )}
         </div>
 
         <button
           type="button"
           onClick={onClose}
-          className="p-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+          className="p-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors shrink-0"
           aria-label="Đóng chi tiết"
         >
           <X className="w-4 h-4" />
@@ -160,6 +187,41 @@ export function MindMapNodeDetail({
           <p className="text-xs text-slate-200 leading-relaxed">
             {word.deepMeaning.coreConcept}
           </p>
+        </div>
+      )}
+
+      {/* External Dictionary Links for nodes not in the system's current vocabulary list */}
+      {!word && lookupTerms.length > 0 && (
+        <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2.5">
+          <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-amber-400">
+            <BookOpen className="w-3.5 h-3.5" />
+            <span>Tra cứu từ điển</span>
+          </div>
+          <p className="text-[11px] text-slate-400 leading-relaxed">
+            Từ/cụm từ này chưa thuộc danh sách từ vựng hiện tại của hệ thống. Tra nhanh trên Cambridge hoặc Oxford:
+          </p>
+          {lookupTerms.length === 1 ? (
+            <DictionaryLinks word={lookupTerms[0]} variant="buttons" />
+          ) : (
+            <div className="space-y-1.5">
+              {lookupTerms.map((term) => (
+                <div
+                  key={term}
+                  className="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800/80"
+                >
+                  <span className="text-xs font-semibold text-slate-200 truncate">
+                    {term}
+                  </span>
+                  <DictionaryLinks
+                    word={term}
+                    variant="inline"
+                    showLabel={false}
+                    className="shrink-0"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
 

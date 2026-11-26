@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Volume2, Bookmark, CheckCircle2, TrendingUp, MessageCircle, Clock, Sparkles } from 'lucide-react';
+import { Volume2, Bookmark, CheckCircle2, TrendingUp, MessageCircle, Clock, Sparkles, Brain } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useSpeech } from '@/hooks/useSpeech';
@@ -12,6 +12,7 @@ import {
   getDailyCommunicationScore,
   getWordPopularity,
   getDailyCommunicationFrequency,
+  getWordMindMapUrl,
 } from '@/lib/vocabulary-helpers';
 import { DictionaryLinks } from './DictionaryLinks';
 
@@ -76,6 +77,15 @@ export function WordCard({ word }: WordCardProps) {
             )}
           </div>
           <div className="flex items-center gap-1 shrink-0">
+            <Link
+              href={getWordMindMapUrl(word.id, '/categories')}
+              onClick={(e) => e.stopPropagation()}
+              className="p-1.5 rounded-lg text-slate-400 hover:text-purple-300 hover:bg-purple-500/10 transition-colors"
+              title={`Xem Vocabulary Mind Map của "${word.word}"`}
+              aria-label={`Xem Vocabulary Mind Map của ${word.word}`}
+            >
+              <Brain className="w-4 h-4" />
+            </Link>
             <DictionaryLinks word={word.word} variant="compact" />
             <button
               onClick={(e) => {

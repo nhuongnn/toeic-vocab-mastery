@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import {
   X,
   Volume2,
@@ -14,10 +15,13 @@ import {
   StickyNote,
   Calendar,
   ExternalLink,
+  Brain,
 } from 'lucide-react';
 import { CustomVocabItem } from '@/types/custom-vocab';
 import { useSpeech } from '@/hooks/useSpeech';
 import { getCambridgeUrl, getOxfordUrl, getBaseFormInfo } from '@/lib/dictionary';
+import { allVocabularyWords } from '@/data/vocabulary';
+import { getWordMindMapUrl } from '@/lib/vocabulary-helpers';
 
 interface CustomVocabDetailModalProps {
   item: CustomVocabItem | null;
@@ -49,6 +53,16 @@ export function CustomVocabDetailModal({
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [item, onClose]);
+
+  const matchedVocabWord = React.useMemo(() => {
+    if (!item || item.type !== 'vocabulary') return undefined;
+    const raw = item.text.trim().toLowerCase();
+    const base = getBaseFormInfo(item.text).baseForm.trim().toLowerCase();
+    return allVocabularyWords.find((w) => {
+      const lower = w.word.toLowerCase();
+      return lower === raw || lower === base;
+    });
+  }, [item]);
 
   if (!item) return null;
 
@@ -201,6 +215,17 @@ export function CustomVocabDetailModal({
               )}
               <ExternalLink className="w-2.5 h-2.5 text-sky-400/60" />
             </a>
+            {matchedVocabWord && (
+              <Link
+                href={getWordMindMapUrl(matchedVocabWord.id, '/notebook')}
+                onClick={onClose}
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 transition-all"
+                title={`Xem Vocabulary Mind Map của "${matchedVocabWord.word}"`}
+              >
+                <Brain className="w-3 h-3 text-purple-400" />
+                <span>Mind Map</span>
+              </Link>
+            )}
           </div>
 
           {/* 2. Phần giải thích */}

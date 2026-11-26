@@ -25,6 +25,7 @@ import {
   LEVEL_CONFIG,
   getWordPopularityScore,
   getDailyCommunicationScore,
+  getWordMindMapUrl,
 } from '@/lib/vocabulary-helpers';
 import { allVocabularyWords } from '@/data/vocabulary';
 import { PronunciationPlayer } from './PronunciationPlayer';
@@ -230,7 +231,9 @@ export function WordDetail({
           <DictionaryLinks word={word.word} variant="dropdown" />
 
           <Link
-            href={`/mind-map?word=${encodeURIComponent(word.id)}`}
+            href={getWordMindMapUrl(word.id, buildWordUrl(word.id))}
+            title="Xem Vocabulary Mind Map của từ này"
+            aria-label="Xem Vocabulary Mind Map của từ này"
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-purple-500/30 bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 text-xs font-semibold transition-all shadow-sm"
           >
             <Brain className="w-3.5 h-3.5 text-purple-400" />
@@ -420,10 +423,18 @@ export function WordDetail({
               {word.deepMeaning.coreConcept}
             </p>
 
-            {/* Quick Dictionary lookup buttons */}
+            {/* Quick Dictionary & Mind Map lookup buttons */}
             <div className="mt-4 flex flex-wrap items-center gap-2.5">
-              <span className="text-xs text-slate-400 font-medium">Tra từ điển:</span>
+              <span className="text-xs text-slate-400 font-medium">Tra cứu &amp; Khám phá:</span>
               <DictionaryLinks word={word.word} variant="buttons" />
+              <Link
+                href={getWordMindMapUrl(word.id, buildWordUrl(word.id))}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 hover:border-purple-500/60 transition-all shadow-sm group"
+                title={`Mở Vocabulary Mind Map của "${word.word}"`}
+              >
+                <Brain className="w-3.5 h-3.5 text-purple-400 group-hover:scale-110 transition-transform" />
+                <span>Vocabulary Mind Map</span>
+              </Link>
             </div>
           </div>
 
@@ -452,7 +463,11 @@ export function WordDetail({
       />
 
       {/* 2. Etymology & Origins */}
-      <EtymologySection etymology={word.etymology} />
+      <EtymologySection
+        etymology={word.etymology}
+        wordId={word.id}
+        returnTo={buildWordUrl(word.id)}
+      />
 
       {/* 3. Native Speaker Mindset & Perception */}
       <NativeMindset nativeMindset={word.nativeMindset} deepMeaning={word.deepMeaning} />
@@ -469,6 +484,8 @@ export function WordDetail({
         synonyms={word.synonyms}
         antonyms={word.antonyms}
         currentWord={word.word}
+        wordId={word.id}
+        returnTo={buildWordUrl(word.id)}
       />
 
       {/* 7. TOEIC Intelligence Tips */}

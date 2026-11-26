@@ -2,10 +2,11 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, RotateCcw, Lightbulb, Trophy, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, RotateCcw, Lightbulb, Trophy, CheckCircle2, Brain } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
 import { useProgress } from '@/contexts/ProgressContext';
 import { getRandomWords } from '@/data/vocabulary';
+import { getWordMindMapUrl } from '@/lib/vocabulary-helpers';
 
 export function FillBlankExercise() {
   const { recordReview, recordExerciseSession } = useProgress();
@@ -228,9 +229,18 @@ export function FillBlankExercise() {
                 </>
               )}
             </div>
-            <p className="text-xs text-slate-300">
-              Pronunciation: <span className="font-mono">{currentWord.pronunciation.ipa}</span> ({currentWord.pronunciation.syllableBreakdown})
-            </p>
+            <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
+              <p className="text-xs text-slate-300">
+                Pronunciation: <span className="font-mono">{currentWord.pronunciation.ipa}</span> ({currentWord.pronunciation.syllableBreakdown})
+              </p>
+              <Link
+                href={getWordMindMapUrl(currentWord.id, '/fill-blank')}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-bold transition-colors"
+              >
+                <Brain className="w-3.5 h-3.5 text-purple-400" />
+                <span>Mind Map</span>
+              </Link>
+            </div>
           </div>
         )}
       </div>

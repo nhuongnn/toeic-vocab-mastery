@@ -253,3 +253,25 @@ export const SORT_OPTIONS: {
     category: 'alphabetical',
   },
 ];
+
+/**
+ * Builds the Vocabulary Mind Map URL focused on a specific word, optionally preserving a safe return path.
+ */
+export function getWordMindMapUrl(wordId: string, from?: string): string {
+  const params = new URLSearchParams();
+  params.set('word', wordId);
+  if (from && from.startsWith('/') && !from.startsWith('//')) {
+    params.set('from', from);
+  }
+  return `/mind-map?${params.toString()}`;
+}
+
+/**
+ * Validates an internal return path from query parameters to prevent open redirects.
+ */
+export function getSafeReturnPath(from: string | null | undefined, fallback = '/categories'): string {
+  if (from && from.startsWith('/') && !from.startsWith('//')) {
+    return from;
+  }
+  return fallback;
+}

@@ -1,22 +1,37 @@
 import React from 'react';
-import { History, BookOpen, Compass, Share2 } from 'lucide-react';
+import Link from 'next/link';
+import { History, BookOpen, Brain } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
+import { getWordMindMapUrl } from '@/lib/vocabulary-helpers';
 
 interface EtymologySectionProps {
   etymology: VocabularyWord['etymology'];
+  wordId?: string;
+  returnTo?: string;
 }
 
-export function EtymologySection({ etymology }: EtymologySectionProps) {
+export function EtymologySection({ etymology, wordId, returnTo }: EtymologySectionProps) {
   return (
     <div className="rounded-2xl bg-gradient-to-br from-slate-900/90 to-slate-900/40 border border-slate-800 p-6 relative overflow-hidden">
       {/* Decorative background glow */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="flex items-center gap-2 mb-4 text-indigo-400">
-        <History className="w-5 h-5" />
-        <h3 className="text-base font-bold uppercase tracking-wider text-slate-200">
-          Etymology & Historical Roots
-        </h3>
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+        <div className="flex items-center gap-2 text-indigo-400">
+          <History className="w-5 h-5" />
+          <h3 className="text-base font-bold uppercase tracking-wider text-slate-200">
+            Etymology & Historical Roots
+          </h3>
+        </div>
+        {wordId && (
+          <Link
+            href={getWordMindMapUrl(wordId, returnTo)}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-semibold transition-all"
+          >
+            <Brain className="w-3.5 h-3.5 text-purple-400" />
+            <span>Xem Mind Map gốc từ →</span>
+          </Link>
+        )}
       </div>
 
       {/* Root Word Pill Card */}

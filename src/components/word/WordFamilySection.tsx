@@ -1,12 +1,16 @@
 import React from 'react';
-import { Network, ArrowRightLeft } from 'lucide-react';
+import Link from 'next/link';
+import { Network, Brain } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
+import { getWordMindMapUrl } from '@/lib/vocabulary-helpers';
 
 interface WordFamilySectionProps {
   wordFamily: VocabularyWord['wordFamily'];
   synonyms: string[];
   antonyms: string[];
   currentWord: string;
+  wordId?: string;
+  returnTo?: string;
 }
 
 export function WordFamilySection({
@@ -14,6 +18,8 @@ export function WordFamilySection({
   synonyms,
   antonyms,
   currentWord,
+  wordId,
+  returnTo,
 }: WordFamilySectionProps) {
   const forms = [
     { label: 'Verb', value: wordFamily.verb, badge: 'v.' },
@@ -25,11 +31,22 @@ export function WordFamilySection({
   return (
     <div className="rounded-2xl bg-gradient-to-br from-slate-900/90 to-slate-900/40 border border-slate-800 p-6 space-y-6">
       {/* Header */}
-      <div className="flex items-center gap-2 text-emerald-400">
-        <Network className="w-5 h-5" />
-        <h3 className="text-base font-bold uppercase tracking-wider text-slate-200">
-          Word Family & Grammatical Forms (TOEIC Part 5 Focus)
-        </h3>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex items-center gap-2 text-emerald-400">
+          <Network className="w-5 h-5" />
+          <h3 className="text-base font-bold uppercase tracking-wider text-slate-200">
+            Word Family & Grammatical Forms (TOEIC Part 5 Focus)
+          </h3>
+        </div>
+        {wordId && (
+          <Link
+            href={getWordMindMapUrl(wordId, returnTo)}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-semibold transition-all"
+          >
+            <Brain className="w-3.5 h-3.5 text-purple-400" />
+            <span>Mở Mind Map họ từ →</span>
+          </Link>
+        )}
       </div>
 
       {/* Grid of Parts of Speech */}

@@ -17,6 +17,7 @@ import { useProgress } from '@/contexts/ProgressContext';
 import { useSpeech } from '@/hooks/useSpeech';
 import { useSwipe } from '@/lib/gestures/useSwipe';
 import { DictionaryLinks } from '@/components/word/DictionaryLinks';
+import { getWordMindMapUrl } from '@/lib/vocabulary-helpers';
 
 interface FlashcardDeckProps {
   words: VocabularyWord[];
@@ -239,9 +240,20 @@ export function FlashcardDeck({ words }: FlashcardDeckProps) {
               "{currentWord.examples.business[0]}"
             </div>
 
-            {/* Dictionary Quick Links */}
-            <div className="pt-2 flex items-center justify-between border-t border-slate-800/60">
-              <span className="text-[11px] text-slate-400">Tra từ điển chuyên sâu:</span>
+            {/* Dictionary & Mind Map Quick Links */}
+            <div className="pt-2 flex flex-wrap items-center justify-between gap-2 border-t border-slate-800/60">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-[11px] text-slate-400">Tra cứu &amp; Khám phá:</span>
+                <Link
+                  href={getWordMindMapUrl(currentWord.id, '/flashcards')}
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 hover:border-purple-500/60 transition-all shadow-sm"
+                  title={`Xem Vocabulary Mind Map của "${currentWord.word}"`}
+                >
+                  <Brain className="w-3.5 h-3.5 text-purple-400" />
+                  <span>Mind Map</span>
+                </Link>
+              </div>
               <DictionaryLinks word={currentWord.word} variant="buttons" />
             </div>
           </div>

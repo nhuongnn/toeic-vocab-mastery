@@ -2,10 +2,11 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { CheckCircle2, XCircle, ArrowRight, RotateCcw, Trophy, Sparkles } from 'lucide-react';
+import { CheckCircle2, XCircle, ArrowRight, RotateCcw, Trophy, Brain } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
 import { useProgress } from '@/contexts/ProgressContext';
 import { allVocabularyWords, getRandomWords } from '@/data/vocabulary';
+import { getWordMindMapUrl } from '@/lib/vocabulary-helpers';
 
 interface QuizQuestion {
   word: VocabularyWord;
@@ -208,7 +209,14 @@ export function QuizExercise() {
             <p className="text-xs text-slate-300 leading-relaxed">
               {currentQ.word.nativeMindset.howNativesThink}
             </p>
-            <div className="pt-2 text-right">
+            <div className="pt-2 flex items-center justify-between gap-3">
+              <Link
+                href={getWordMindMapUrl(currentQ.word.id, '/quiz')}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-bold transition-colors"
+              >
+                <Brain className="w-3.5 h-3.5 text-purple-400" />
+                <span>Xem Mind Map từ này</span>
+              </Link>
               <button
                 onClick={handleNext}
                 className="inline-flex items-center gap-1.5 px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-colors"

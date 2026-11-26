@@ -7,6 +7,8 @@ import {
   getDailyCommunicationScore,
   sortVocabularyWords,
   filterVocabularyWords,
+  getWordMindMapUrl,
+  getSafeReturnPath,
 } from '../vocabulary-helpers.ts';
 
 // Sample mock words
@@ -174,5 +176,28 @@ describe('Vocabulary Helpers - Popularity & Daily Communication', () => {
     const searched = filterVocabularyWords(mockWords, { search: 'dispute' });
     assert.strictEqual(searched.length, 1);
     assert.strictEqual(searched[0].word, 'arbitration');
+  });
+
+  it('builds safe mind map URLs and validates return paths', () => {
+    assert.strictEqual(getWordMindMapUrl('collaborate'), '/mind-map?word=collaborate');
+    assert.strictEqual(
+      getWordMindMapUrl('collaborate', '/word/collaborate?level=essential'),
+      '/mind-map?word=collaborate&from=%2Fword%2Fcollaborate%3Flevel%3Dessential'
+    );
+    // Rejects external or protocol-relative return paths
+    assert.strictEqual(
+      getWordMindMapUrl('collaborate', 'https://evil.example'),
+      '/mind-map?word=collaborate'
+    );
+    assert.strictEqual(
+      getWordMindMapUrl('collaborate', '//evil.example'),
+      '/mind-map?word=collaborate'
+    );
+
+    assert.strictEqual(getSafeReturnPath('/word/collaborate'), '/word/collaborate');
+    assert.strictEqual(getSafeReturnPath('/flashcards'), '/flashcards');
+    assert.strictEqual(getSafeReturnPath('https://evil.example'), '/categories');
+    assert.strictEqual(getSafeReturnPath('//evil.example', '/'), '/');
+    assert.strictEqual(getSafeReturnPath(null), '/categories');
   });
 });

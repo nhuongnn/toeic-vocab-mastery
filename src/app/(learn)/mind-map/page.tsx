@@ -23,6 +23,7 @@ import {
   saveCachedLayout,
 } from '@/lib/mind-map/layoutEngine';
 import { computeFitView } from '@/lib/mind-map/interactions';
+import { getSafeReturnPath, getWordMindMapUrl } from '@/lib/vocabulary-helpers';
 import { MindMapGraph, MindMapMode, MindMapNode, MindMapState } from '@/lib/mind-map/types';
 import { MindMapCanvas } from '@/components/mind-map/MindMapCanvas';
 import { MindMapControls } from '@/components/mind-map/MindMapControls';
@@ -178,14 +179,20 @@ function MindMapWorkspace() {
     setSearchQuery('');
   }, [handleFitView]);
 
+  const backHref = useMemo(
+    () => getSafeReturnPath(searchParams.get('from'), '/categories'),
+    [searchParams]
+  );
+
   const handleExploreWord = useCallback(
     (word: VocabularyWord) => {
       setSelectedWord(word);
       setMode('word-explorer');
       resetInteractionState();
-      router.replace(`/mind-map?word=${encodeURIComponent(word.id)}`, { scroll: false });
+      const from = searchParams.get('from');
+      router.replace(getWordMindMapUrl(word.id, from || undefined), { scroll: false });
     },
-    [router, resetInteractionState]
+    [router, resetInteractionState, searchParams]
   );
 
   const handleDrillIn = useCallback(
@@ -286,7 +293,7 @@ function MindMapWorkspace() {
       <div className="flex items-center justify-between gap-3 shrink-0">
         <div className="flex items-center gap-3">
           <Link
-            href="/categories"
+            href={backHref}
             className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
             title="Quay lại"
           >

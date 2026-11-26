@@ -33,6 +33,7 @@ import { useSpeech } from '@/hooks/useSpeech';
 import { useOnboarding } from '@/contexts/OnboardingContext';
 import { categories } from '@/data/categories';
 import { getWordOfTheDay, allVocabularyWords } from '@/data/vocabulary';
+import { getWordMindMapUrl } from '@/lib/vocabulary-helpers';
 import { Target } from 'lucide-react';
 
 export default function HomePage() {
@@ -220,13 +221,22 @@ export default function HomePage() {
             </div>
           </div>
 
-          <Link
-            href={`/word/${wordOfTheDay.id}?level=${wordOfTheDay.level}`}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white text-xs font-bold transition-all flex-shrink-0"
-          >
-            <span>Deep Dive Into Word</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="flex flex-wrap items-center gap-2.5 flex-shrink-0">
+            <Link
+              href={getWordMindMapUrl(wordOfTheDay.id, '/')}
+              className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/30 text-purple-200 hover:text-white text-xs font-bold transition-all"
+            >
+              <Brain className="w-4 h-4 text-purple-400" />
+              <span>Mind Map</span>
+            </Link>
+            <Link
+              href={`/word/${wordOfTheDay.id}?level=${wordOfTheDay.level}`}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white text-xs font-bold transition-all"
+            >
+              <span>Deep Dive Into Word</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 

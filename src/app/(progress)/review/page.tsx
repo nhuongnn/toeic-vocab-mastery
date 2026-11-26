@@ -13,10 +13,12 @@ import {
   ArrowLeft,
   Flame,
   Award,
+  Brain,
 } from 'lucide-react';
 import { useProgress } from '@/contexts/ProgressContext';
 import { allVocabularyWords, wordsById } from '@/data/vocabulary';
 import { SRSCard } from '@/types/progress';
+import { getWordMindMapUrl } from '@/lib/vocabulary-helpers';
 
 export default function ReviewQueuePage() {
   const { progress, dueCount, dueWordIds } = useProgress();
@@ -252,13 +254,25 @@ export default function ReviewQueuePage() {
                     </div>
                   </div>
 
-                  <Link
-                    href={`/word/${word.id}`}
-                    className="w-full py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
-                  >
-                    <span>Inspect Deep Meaning</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                  <div className="flex items-center gap-2">
+                    <Link
+                      href={`/word/${word.id}`}
+                      className="flex-1 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                    >
+                      <span>Inspect Deep Meaning</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                    {wordsById[card.wordId] && (
+                      <Link
+                        href={getWordMindMapUrl(word.id, '/review')}
+                        className="px-3 py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-300 hover:text-purple-200 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                        title={`Xem Vocabulary Mind Map của "${word.word}"`}
+                      >
+                        <Brain className="w-3.5 h-3.5 text-purple-400" />
+                        <span>Mind Map</span>
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </div>
             );

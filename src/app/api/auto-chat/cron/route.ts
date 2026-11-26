@@ -9,6 +9,7 @@ import {
 import { DEFAULT_CHARACTERS, PRESET_SCENARIOS } from '@/lib/roleplay/scenarios';
 import { CharacterRole } from '@/types/roleplay';
 import { routeHybridRoleplayChat } from '@/lib/roleplay/router';
+import { buildAutoChatTurnPrompt } from '@/lib/roleplay/ai-prompt';
 import { checkUserAIQuota } from '@/lib/ai/system-ai-settings';
 
 try {
@@ -53,24 +54,28 @@ function isWithinWindow(
 }
 
 function pickCharacterAndScenario(characterRole: string, scenarioId: string) {
-  const roles = Object.keys(DEFAULT_CHARACTERS) as CharacterRole[];
-  const role: CharacterRole =
-    characterRole !== 'random' && DEFAULT_CHARACTERS[characterRole as CharacterRole]
-      ? (characterRole as CharacterRole)
-      : roles[Math.floor(Math.random() * roles.length)];
-
-  const character = DEFAULT_CHARACTERS[role];
   const explicitScenario =
     scenarioId !== 'random'
       ? PRESET_SCENARIOS.find((s) => s.id === scenarioId)
       : undefined;
 
+  const roles = Object.keys(DEFAULT_CHARACTERS) as CharacterRole[];
+  const role: CharacterRole =
+    characterRole !== 'random' && DEFAULT_CHARACTERS[characterRole as CharacterRole]
+      ? (characterRole as CharacterRole)
+      : explicitScenario
+      ? explicitScenario.role
+      : roles[Math.floor(Math.random() * roles.length)];
+
+  const character = DEFAULT_CHARACTERS[role];
+
   const matching = PRESET_SCENARIOS.filter((s) => s.role === role);
   const scenario =
-    explicitScenario ||
-    (matching.length > 0
+    explicitScenario && (characterRole === 'random' || explicitScenario.role === role)
+      ? explicitScenario
+      : matching.length > 0
       ? matching[Math.floor(Math.random() * matching.length)]
-      : PRESET_SCENARIOS[Math.floor(Math.random() * PRESET_SCENARIOS.length)]);
+      : PRESET_SCENARIOS[Math.floor(Math.random() * PRESET_SCENARIOS.length)];
 
   return { character, scenario };
 }
@@ -174,13 +179,13 @@ async function handleAutoChatCron(req: NextRequest) {
           messages: [
             {
               role: 'user',
-              content:
-                '[System: Hãy gửi một tin nhắn ngắn gọn, tự nhiên bằng tiếng Anh (1-2 câu) để hỏi thăm hoặc gợi mở cuộc trò chuyện với người dùng.]',
+              content: buildAutoChatTurnPrompt(character, scenario, []),
             },
           ],
           character,
           scenario,
           providerPreference: 'auto',
+          isAutoProactive: true,
           userId: row.user_id,
         })) {
           if (event.type === 'content') {

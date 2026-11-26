@@ -174,6 +174,93 @@ Trả về DUY NHẤT một mảng JSON (không có markdown backticks, không k
 ]`;
 }
 
+export const AUTO_CHAT_HISTORY_WINDOW = 12;
+
+export function buildAutoChatTurnPrompt(
+  character: CharacterConfig,
+  scenario: RoleplayScenario,
+  chatHistory: Array<{ role: 'user' | 'assistant' | 'system'; content: string; isError?: boolean }>,
+  userName?: string
+): string {
+  const learnerLabel = userName && userName !== 'Bạn' ? userName : 'Learner';
+  const scenarioTitle = scenario.englishTitle || scenario.title;
+
+  const validHistory = (Array.isArray(chatHistory) ? chatHistory : [])
+    .filter((m) => !m.isError && m.role !== 'system' && Boolean(m.content?.trim()))
+    .slice(-AUTO_CHAT_HISTORY_WINDOW);
+
+  if (validHistory.length === 0) {
+    return `[PROACTIVE MESSAGE DIRECTIVE]
+You are ${character.name} (${character.role} in ${character.department}).
+Scenario: "${scenarioTitle}" (${scenario.vietnameseTitle})
+Scenario Objective: ${scenario.objective}
+Conversation Partner: ${learnerLabel}
+
+The conversation has not started yet.
+Send a natural, friendly OPENING message in English (1-3 sentences) to initiate this conversation with ${learnerLabel}, staying 100% in character as ${character.name} and strictly within this scenario.
+- End with a natural question or prompt inviting ${learnerLabel} to respond.
+- Output ONLY the message text in English (no quotes, no speaker prefix, no Vietnamese, no meta notes).`;
+  }
+
+  const transcript = validHistory
+    .map((m) => {
+      const speaker = m.role === 'user' ? learnerLabel : `${character.name} (YOU)`;
+      return `- ${speaker}: "${m.content.trim()}"`;
+    })
+    .join('\n');
+
+  const lastMessage = validHistory[validHistory.length - 1];
+  const isWaitingForLearnerReply = lastMessage.role === 'assistant';
+
+  if (isWaitingForLearnerReply) {
+    const unansweredLines: string[] = [];
+    for (let i = validHistory.length - 1; i >= 0; i--) {
+      if (validHistory[i].role === 'assistant') {
+        unansweredLines.unshift(`"${validHistory[i].content.trim()}"`);
+      } else {
+        break;
+      }
+    }
+
+    return `[PROACTIVE FOLLOW-UP DIRECTIVE]
+You are ${character.name} (${character.role} in ${character.department}).
+Scenario: "${scenarioTitle}" (${scenario.vietnameseTitle})
+Scenario Objective: ${scenario.objective}
+
+Recent conversation transcript (for context only):
+${transcript}
+
+YOUR UNANSWERED MESSAGE(S) ABOVE:
+${unansweredLines.join('\n')}
+
+CURRENT SITUATION:
+${learnerLabel} has NOT replied to your previous message(s) yet.
+Send ONE new, short proactive follow-up message in English (1-3 sentences) as ${character.name}, staying strictly in character and within this scenario.
+
+CRITICAL RULES (MUST OBEY):
+1. DO NOT answer your own previous question(s) above. You asked them to ${learnerLabel}; NEVER provide an answer to them yourself.
+2. DO NOT pretend ${learnerLabel} replied, and DO NOT thank them for a response they did not send.
+3. DO NOT roleplay as ${learnerLabel} or switch roles.
+4. DO NOT repeat your previous message verbatim.
+5. Keep the conversation alive naturally: share a small new update, a helpful hint/thought from ${character.name}'s perspective in this scenario, or ask a gentler/simpler follow-up question.
+6. Output ONLY your spoken/chat message in English (no quotes, no speaker prefix, no Vietnamese, no meta notes).`;
+  }
+
+  return `[PROACTIVE CONTINUATION DIRECTIVE]
+You are ${character.name} (${character.role} in ${character.department}).
+Scenario: "${scenarioTitle}" (${scenario.vietnameseTitle})
+Scenario Objective: ${scenario.objective}
+
+Recent conversation transcript:
+${transcript}
+
+CURRENT SITUATION:
+${learnerLabel} sent the latest message above: "${lastMessage.content.trim()}".
+Continue the conversation naturally in English (2-3 sentences) as ${character.name}, responding directly to ${learnerLabel}'s latest message while staying strictly in character and advancing the scenario.
+- End with a natural follow-up question or prompt.
+- Output ONLY your spoken/chat message in English (no quotes, no speaker prefix, no Vietnamese, no meta notes).`;
+}
+
 export function buildDynamicOpeningPrompt(
   character: CharacterConfig,
   scenario: RoleplayScenario,

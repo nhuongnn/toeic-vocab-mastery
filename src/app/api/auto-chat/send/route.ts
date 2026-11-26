@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { routeHybridRoleplayChat, RoleplayChatPayload } from '@/lib/roleplay/router';
+import { buildAutoChatTurnPrompt } from '@/lib/roleplay/ai-prompt';
 import { checkUserAIQuota } from '@/lib/ai/system-ai-settings';
 
 const MAX_DAILY_AUTO_MESSAGES = 100;
@@ -32,7 +33,7 @@ export async function POST(req: NextRequest) {
     const headerUserId = req.headers.get('x-user-id');
     const userId = headerUserId || body.userId;
     const userEmail = req.headers.get('x-user-email') || body.userEmail;
-    const { character, scenario, chatHistory = [], userContext } = body;
+    const { character, scenario, chatHistory = [], userContext, userName } = body;
 
     if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -65,31 +66,22 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Xây dựng messages context — AI tự khởi xướng hoặc tiếp tục hội thoại
-    const contextMessages =
-      !Array.isArray(chatHistory) || chatHistory.length === 0
-        ? [
-            {
-              role: 'user' as const,
-              content:
-                '[System: Hãy bắt đầu cuộc hội thoại với người dùng một cách tự nhiên, thân thiện bằng tiếng Anh phù hợp với vai trò và bối cảnh.]',
-            },
-          ]
-        : [
-            ...chatHistory,
-            {
-              role: 'user' as const,
-              content:
-                '[System: Hãy tiếp tục hội thoại một cách tự nhiên, hỏi thêm hoặc chia sẻ thông tin mới liên quan đến chủ đề. Nếu user chưa trả lời, hãy nhẹ nhàng gợi mở hoặc hỏi một câu ngắn gọn.]',
-            },
-          ];
+    // Xây dựng directive message duy nhất với transcript được gắn nhãn rõ ràng
+    // để AI không bị nhầm lẫn tự trả lời câu hỏi trước đó của chính mình
+    const turnPrompt = buildAutoChatTurnPrompt(
+      character,
+      scenario,
+      Array.isArray(chatHistory) ? chatHistory : [],
+      typeof userName === 'string' ? userName : undefined
+    );
 
     const payload: RoleplayChatPayload = {
-      messages: contextMessages,
+      messages: [{ role: 'user', content: turnPrompt }],
       character,
       scenario,
       userContext,
       providerPreference: 'auto',
+      isAutoProactive: true,
       userId,
       userEmail,
     };

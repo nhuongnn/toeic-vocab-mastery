@@ -26,6 +26,7 @@ export interface RoleplayChatPayload {
   scenario: RoleplayScenario;
   userContext?: Partial<UserLearningContext>;
   providerPreference?: AIModelPreference;
+  isAutoProactive?: boolean;
   userId?: string;
   userEmail?: string;
   guestId?: string;
@@ -45,7 +46,7 @@ export interface RoleplaySuggestionsResult {
 export async function* routeHybridRoleplayChat(
   payload: RoleplayChatPayload
 ): AsyncGenerator<StreamEvent, void, unknown> {
-  const { messages, character, scenario, userContext, providerPreference = 'auto', userId, userEmail, guestId } = payload;
+  const { messages, character, scenario, userContext, providerPreference = 'auto', isAutoProactive = false, userId, userEmail, guestId } = payload;
   const systemPrompt = buildRoleplaySystemPrompt(character, scenario, userContext);
 
   // 1. Check user and system-wide AI availability and quota
@@ -158,7 +159,7 @@ export async function* routeHybridRoleplayChat(
         } catch (geminiErr: unknown) {
           const msg = geminiErr instanceof Error ? geminiErr.message : String(geminiErr);
           console.warn('[Roleplay Router] Both Cloudflare and Gemini failed:', msg);
-          const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
+          const fallbackText = generateFallbackRoleplayReply(character, scenario, messages, isAutoProactive);
           yield {
             type: 'meta',
             provider: 'gemini',
@@ -173,7 +174,7 @@ export async function* routeHybridRoleplayChat(
       }
       const msg = cfErr instanceof Error ? cfErr.message : String(cfErr);
       console.warn('[Roleplay Router] Cloudflare failed and Gemini unavailable:', msg);
-      const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
+      const fallbackText = generateFallbackRoleplayReply(character, scenario, messages, isAutoProactive);
       yield {
         type: 'meta',
         provider: 'cloudflare',
@@ -209,7 +210,7 @@ export async function* routeHybridRoleplayChat(
           }
         } catch (cfErr: unknown) {
           const msg = cfErr instanceof Error ? cfErr.message : String(cfErr);
-          const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
+          const fallbackText = generateFallbackRoleplayReply(character, scenario, messages, isAutoProactive);
           yield {
             type: 'meta',
             provider: 'cloudflare',
@@ -222,7 +223,7 @@ export async function* routeHybridRoleplayChat(
         yield { type: 'done' };
         return;
       }
-      const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
+      const fallbackText = generateFallbackRoleplayReply(character, scenario, messages, isAutoProactive);
       yield {
         type: 'meta',
         provider: 'gemini',
@@ -289,7 +290,7 @@ export async function* routeHybridRoleplayChat(
         } catch (cfErr: unknown) {
           const msg = cfErr instanceof Error ? cfErr.message : String(cfErr);
           console.warn('[Roleplay Router] Both Gemini and Cloudflare failed:', msg);
-          const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
+          const fallbackText = generateFallbackRoleplayReply(character, scenario, messages, isAutoProactive);
           yield {
             type: 'meta',
             provider: 'cloudflare',
@@ -304,7 +305,7 @@ export async function* routeHybridRoleplayChat(
       }
       const msg = geminiErr instanceof Error ? geminiErr.message : String(geminiErr);
       console.warn('[Roleplay Router] Gemini failed and Cloudflare unavailable:', msg);
-      const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
+      const fallbackText = generateFallbackRoleplayReply(character, scenario, messages, isAutoProactive);
       yield {
         type: 'meta',
         provider: 'gemini',
@@ -384,7 +385,7 @@ export async function* routeHybridRoleplayChat(
       }
     } catch (cfErr: unknown) {
       const msg = cfErr instanceof Error ? cfErr.message : String(cfErr);
-      const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
+      const fallbackText = generateFallbackRoleplayReply(character, scenario, messages, isAutoProactive);
       yield {
         type: 'meta',
         provider: 'cloudflare',
@@ -395,7 +396,7 @@ export async function* routeHybridRoleplayChat(
       yield { type: 'content', text: fallbackText };
     }
   } else {
-    const fallbackText = generateFallbackRoleplayReply(character, scenario, messages);
+    const fallbackText = generateFallbackRoleplayReply(character, scenario, messages, isAutoProactive);
     yield {
       type: 'meta',
       provider: 'cloudflare',
@@ -1579,11 +1580,40 @@ export function generateFallbackOpening(
  * Generate a contextual, in-character fallback response when all AI providers are unavailable.
  * Ensures the roleplay conversation is never broken into a raw dead-end error.
  */
+export function generateFallbackProactiveReply(
+  character: CharacterConfig,
+  scenario: RoleplayScenario
+): string {
+  const topic = scenario.englishTitle || scenario.title;
+  const phrase = scenario.keyPhrases?.[0]?.phrase;
+
+  const byRole: Record<string, string> = {
+    boss: `Hi there, just checking in on ${topic}. Whenever you have a moment, could you share a quick update on where things stand?`,
+    colleague: `Hey! Just nudging you about ${topic}. Do you have a quick minute to share your thoughts so we can move forward?`,
+    staff: `Hello! Checking in regarding ${topic}. Please let me know how you would like me to proceed when you're free.`,
+    friend: `Hey! Still thinking about ${topic}${phrase ? ` — "${phrase}"` : ''}. What do you think about it?`,
+    family: `Hi sweetheart, just checking in to see how you're doing today. Have you had a chance to relax a bit?`,
+    lover: `Hey love, just thinking of you and ${topic}. How is your day going so far?`,
+    interviewer: `Hello! Whenever you're ready, we can continue discussing ${topic}. What's your perspective on this?`,
+    stranger: `Excuse me, just checking if you still need any help regarding ${topic}? Feel free to ask anytime!`,
+  };
+
+  return (
+    byRole[character.role] ||
+    `Hi! Just checking in about ${topic}. Let me know your thoughts whenever you're ready!`
+  );
+}
+
 export function generateFallbackRoleplayReply(
   character: CharacterConfig,
   scenario: RoleplayScenario,
-  messages: Array<{ role: 'user' | 'assistant'; content: string }>
+  messages: Array<{ role: 'user' | 'assistant'; content: string }>,
+  isAutoProactive = false
 ): string {
+  if (isAutoProactive) {
+    return generateFallbackProactiveReply(character, scenario);
+  }
+
   const userTurnCount = messages.filter((m) => m.role === 'user').length;
   const keyPhrases = scenario.keyPhrases || [];
   const phrase = keyPhrases[userTurnCount % Math.max(keyPhrases.length, 1)]?.phrase;

@@ -16,8 +16,13 @@ import {
   updateAutoChatSettings,
 } from '@/lib/auto-chat/settings';
 import {
+  clearTodayAutoBubbleConversationId,
+  createTodayAutoBubbleConversation,
+  doesConversationMatchSettings,
   getOrCreateTodayConversation,
   getTodayAutoBubbleConversation,
+  pickCharacter,
+  pickScenario,
 } from '@/lib/auto-chat/conversation-manager';
 import {
   getChatRoomHistory,
@@ -64,10 +69,21 @@ export function useAutoChatScheduler() {
   const isSendingRef = useRef(false);
   const isOpenRef = useRef(bubbleState.isOpen);
   const quotaCooldownUntilRef = useRef<number>(0);
+  const userRoleplayRef = useRef({
+    userAvatar: progress.roleplay?.userAvatar || 'shiba-intern',
+    userName: progress.roleplay?.userName || 'Bạn',
+  });
 
   useEffect(() => {
     settingsRef.current = settings;
   }, [settings]);
+
+  useEffect(() => {
+    userRoleplayRef.current = {
+      userAvatar: progress.roleplay?.userAvatar || 'shiba-intern',
+      userName: progress.roleplay?.userName || 'Bạn',
+    };
+  }, [progress.roleplay?.userAvatar, progress.roleplay?.userName]);
 
   useEffect(() => {
     isOpenRef.current = bubbleState.isOpen;
@@ -81,7 +97,12 @@ export function useAutoChatScheduler() {
 
     let cancelled = false;
     fetchAutoChatSettings(user.id, user.email ?? undefined).then((loaded) => {
-      if (!cancelled) setSettings(loaded);
+      if (!cancelled) {
+        setSettings(loaded);
+        setConversation((prev) =>
+          prev && !doesConversationMatchSettings(prev, loaded) ? null : prev
+        );
+      }
     });
 
     const timer = setTimeout(() => {
@@ -112,10 +133,42 @@ export function useAutoChatScheduler() {
   useEffect(() => {
     const handleSettingsUpdated = (e: Event) => {
       const custom = e as CustomEvent<AutoChatSettings>;
-      if (custom.detail) {
-        setSettings(custom.detail);
-      } else {
-        setSettings(getLocalAutoChatSettings());
+      const next = custom.detail || getLocalAutoChatSettings();
+      const prev = settingsRef.current;
+      const roleOrScenarioChanged =
+        prev.characterRole !== next.characterRole ||
+        prev.scenarioId !== next.scenarioId;
+
+      setSettings(next);
+
+      if (roleOrScenarioChanged) {
+        const existing = getTodayAutoBubbleConversation();
+        let hasCachedKey = false;
+        try {
+          hasCachedKey = Boolean(localStorage.getItem('toeic_auto_chat_today_conv_id'));
+        } catch {}
+
+        if (
+          !existing ||
+          !doesConversationMatchSettings(existing, next) ||
+          !hasCachedKey
+        ) {
+          clearTodayAutoBubbleConversationId();
+          const { userAvatar, userName } = userRoleplayRef.current;
+          const character = pickCharacter(next);
+          const scenario = pickScenario(next, character.role);
+          const freshConv = createTodayAutoBubbleConversation(
+            character,
+            scenario,
+            userAvatar,
+            userName
+          );
+          setConversation(freshConv);
+          setBubbleState((prevState) => ({
+            ...prevState,
+            currentConversationId: freshConv.id,
+          }));
+        }
       }
     };
 
@@ -209,14 +262,17 @@ export function useAutoChatScheduler() {
         body: JSON.stringify({
           character: conv.character,
           scenario: conv.scenario,
-          chatHistory: conv.messages.map((m) => ({
-            role: m.role,
-            content: m.content,
-          })),
+          chatHistory: conv.messages
+            .filter((m) => !m.isError && Boolean(m.content?.trim()))
+            .map((m) => ({
+              role: m.role,
+              content: m.content,
+            })),
           userContext: {
             targetScore: 650,
             totalWordsLearned: Object.keys(progress.cards || {}).length,
           },
+          userName,
           userId: user.id,
           userEmail: user.email,
         }),

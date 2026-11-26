@@ -118,11 +118,11 @@ export async function* streamGemini(
     }
   }
 
-  // Ensure first message is 'user'
+  // Ensure first message is 'user' without injecting unrelated topic prompts
   if (formattedContents.length === 0 || formattedContents[0].role !== 'user') {
     formattedContents.unshift({
       role: 'user',
-      parts: [{ text: 'Xin chào, hãy bắt đầu buổi học TOEIC hôm nay.' }],
+      parts: [{ text: '(Conversation started)' }],
     });
   }
 

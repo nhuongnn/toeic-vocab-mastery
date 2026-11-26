@@ -22,39 +22,73 @@ export function clearTodayAutoBubbleConversationId(): void {
   } catch {}
 }
 
-/** Lọc conversations của chat-room được tạo hôm nay, ưu tiên conversation đã cache hoặc isAutoBubble */
+/** Kiểm tra conversation hiện tại có khớp với cài đặt characterRole / scenarioId hay không */
+export function doesConversationMatchSettings(
+  conv: RoleplayConversation,
+  settings: AutoChatSettings
+): boolean {
+  if (
+    settings.characterRole !== 'random' &&
+    conv.character?.role !== settings.characterRole
+  ) {
+    return false;
+  }
+  if (
+    settings.scenarioId !== 'random' &&
+    conv.scenario?.id !== settings.scenarioId
+  ) {
+    return false;
+  }
+  if (
+    settings.scenarioId === 'random' &&
+    settings.characterRole !== 'random' &&
+    conv.scenario?.role !== settings.characterRole
+  ) {
+    return false;
+  }
+  return true;
+}
+
+/** Lọc conversations của chat-room được tạo hôm nay, chỉ lấy conversation của auto-bubble */
 export function getTodayAutoBubbleConversation(): RoleplayConversation | null {
   if (typeof window === 'undefined') return null;
-  const todayConvs = getTodayConversations();
+  const todayConvs = getTodayConversations().filter((c) => c.isAutoBubble);
 
   try {
     const cachedId = localStorage.getItem(TODAY_CONV_KEY);
     if (cachedId) {
       const cached = todayConvs.find((c) => c.id === cachedId);
       if (cached) return cached;
-      // Stale ID from previous day or deleted conversation
+      // Stale ID from previous day, deleted conversation, or non-bubble conversation
       localStorage.removeItem(TODAY_CONV_KEY);
     }
   } catch {}
 
-  const autoBubbleConv = todayConvs.find((c) => c.isAutoBubble);
-  const fallbackConv = autoBubbleConv || todayConvs[0] || null;
-  if (fallbackConv) {
+  const autoBubbleConv = todayConvs[0] || null;
+  if (autoBubbleConv) {
     try {
-      localStorage.setItem(TODAY_CONV_KEY, fallbackConv.id);
+      localStorage.setItem(TODAY_CONV_KEY, autoBubbleConv.id);
     } catch {}
   }
 
-  return fallbackConv;
+  return autoBubbleConv;
 }
 
-/** Chọn character dựa trên settings */
+/** Chọn character dựa trên settings (đồng bộ với scenarioId nếu scenario được chỉ định) */
 export function pickCharacter(settings: AutoChatSettings): CharacterConfig {
   if (
     settings.characterRole !== 'random' &&
     DEFAULT_CHARACTERS[settings.characterRole as CharacterRole]
   ) {
     return DEFAULT_CHARACTERS[settings.characterRole as CharacterRole];
+  }
+  if (settings.scenarioId !== 'random') {
+    const matchedScenario = PRESET_SCENARIOS.find(
+      (s) => s.id === settings.scenarioId
+    );
+    if (matchedScenario && DEFAULT_CHARACTERS[matchedScenario.role]) {
+      return DEFAULT_CHARACTERS[matchedScenario.role];
+    }
   }
   const roles = Object.keys(DEFAULT_CHARACTERS) as CharacterRole[];
   const randomRole = roles[Math.floor(Math.random() * roles.length)];
@@ -68,7 +102,12 @@ export function pickScenario(
 ): RoleplayScenario {
   if (settings.scenarioId !== 'random') {
     const found = PRESET_SCENARIOS.find((s) => s.id === settings.scenarioId);
-    if (found) return found;
+    if (
+      found &&
+      (settings.characterRole === 'random' || found.role === characterRole)
+    ) {
+      return found;
+    }
   }
   const matching = PRESET_SCENARIOS.filter((s) => s.role === characterRole);
   if (matching.length > 0) {
@@ -112,8 +151,8 @@ export function createTodayAutoBubbleConversation(
 
 /**
  * Lấy hoặc tạo conversation hôm nay cho auto-chat bubble.
- * - Nếu đã có conversation hôm nay → trả về conversation đó
- * - Nếu chưa có → tạo mới với character/scenario theo settings
+ * - Nếu đã có conversation hôm nay VÀ khớp settings → trả về conversation đó
+ * - Nếu chưa có hoặc không khớp settings → tạo mới với character/scenario theo settings
  */
 export function getOrCreateTodayConversation(
   settings: AutoChatSettings,
@@ -121,7 +160,9 @@ export function getOrCreateTodayConversation(
   userName: string
 ): RoleplayConversation {
   const existing = getTodayAutoBubbleConversation();
-  if (existing) return existing;
+  if (existing && doesConversationMatchSettings(existing, settings)) {
+    return existing;
+  }
 
   const character = pickCharacter(settings);
   const scenario = pickScenario(settings, character.role);

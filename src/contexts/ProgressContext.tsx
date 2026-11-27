@@ -42,6 +42,7 @@ interface ProgressContextType {
   dueCount: number;
   dueWordIds: string[];
   syncStatus: SyncStatus;
+  isInitialCloudSyncDone: boolean;
   lastSyncedAt: Date | null;
   forceSync: () => Promise<void>;
   saveRoleplaySettings: (
@@ -65,7 +66,10 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const [progress, setProgress] = useState<UserProgressData>(DEFAULT_PROGRESS);
   const [isLoaded, setIsLoaded] = useState(false);
   const [syncStatus, setSyncStatus] = useState<SyncStatus>('idle');
+  const [syncedUserId, setSyncedUserId] = useState<string | null>(null);
   const [lastSyncedAt, setLastSyncedAt] = useState<Date | null>(null);
+
+  const isInitialCloudSyncDone = !user || !supabase || syncedUserId === user.id;
 
   const syncTimerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -227,6 +231,10 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       } catch (err) {
         console.error('Sync failed:', err);
         if (isMounted) setSyncStatus('error');
+      } finally {
+        if (isMounted && user?.id) {
+          setSyncedUserId(user.id);
+        }
       }
     }
 
@@ -628,6 +636,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         dueCount: dueWordIds.length,
         dueWordIds,
         syncStatus,
+        isInitialCloudSyncDone,
         lastSyncedAt,
         forceSync,
         saveRoleplaySettings,

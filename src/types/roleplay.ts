@@ -113,5 +113,6 @@ export interface RoleplayConversation {
   lastMessageSnippet?: string;
   summary?: RoleplaySessionSummary;
   isAutoBubble?: boolean;
+  lastUserInteractionAt?: number;
 }
 

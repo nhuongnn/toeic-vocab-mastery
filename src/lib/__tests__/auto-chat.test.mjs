@@ -7,9 +7,13 @@ import {
 import { generateFallbackRoleplayReply } from '../roleplay/router.ts';
 import { DEFAULT_CHARACTERS, PRESET_SCENARIOS } from '../roleplay/scenarios.ts';
 import {
+  buildDailyAutoConversation,
   clearTodayAutoBubbleConversationId,
   doesConversationMatchSettings,
   findTodayAutoChatConversation,
+  getDailyAutoConversationId,
+  getDateKeyInTimezone,
+  getLastUserInteractionAt,
   getOrCreateTodayConversation,
   getTodayAutoBubbleConversation,
   pickCharacter,
@@ -175,17 +179,31 @@ describe('Auto-Chat Prompt & Conversation Context', () => {
     assert.strictEqual(foundServer.messages.length, 1);
   });
 
-  it('re-creates today conversation when characterRole or scenarioId changes in settings', () => {
+  it('creates at most one auto conversation per day even when characterRole or scenarioId changes', () => {
     const initialSettings = {
       ...DEFAULT_AUTO_CHAT_SETTINGS,
       characterRole: 'boss',
       scenarioId: bossScenario.id,
     };
+    const todayKey = getDateKeyInTimezone(Date.now(), initialSettings.timezone);
     const first = getOrCreateTodayConversation(initialSettings, 'shiba-intern', 'Minh');
+    assert.strictEqual(first.id, getDailyAutoConversationId(todayKey));
     assert.strictEqual(first.character.role, 'boss');
     assert.strictEqual(first.scenario.id, bossScenario.id);
     assert.strictEqual(localStorage.getItem(TODAY_CONV_KEY), first.id);
 
+    // Server cron helper uses the exact same deterministic daily ID
+    const serverBuilt = buildDailyAutoConversation(
+      bossChar,
+      bossScenario,
+      'shiba-intern',
+      'Minh',
+      new Date(),
+      initialSettings.timezone
+    );
+    assert.strictEqual(serverBuilt.id, first.id);
+
+    // Changing settings on the same day must NOT create a second conversation
     const updatedSettings = {
       ...DEFAULT_AUTO_CHAT_SETTINGS,
       characterRole: 'friend',
@@ -194,12 +212,128 @@ describe('Auto-Chat Prompt & Conversation Context', () => {
     assert.strictEqual(doesConversationMatchSettings(first, updatedSettings), false);
 
     const second = getOrCreateTodayConversation(updatedSettings, 'shiba-intern', 'Minh');
-    assert.notStrictEqual(second.id, first.id);
-    assert.strictEqual(second.character.role, 'friend');
-    assert.strictEqual(second.scenario.id, friendScenario.id);
+    assert.strictEqual(second.id, first.id);
+    assert.strictEqual(second.character.role, 'boss');
 
     clearTodayAutoBubbleConversationId();
     assert.strictEqual(localStorage.getItem(TODAY_CONV_KEY), null);
+  });
+
+  it('tracks the most recently user-interacted conversation (switching from A to B and back)', () => {
+    const now = Date.now();
+    const yesterday = now - 24 * 60 * 60 * 1000;
+    const tz = 'Asia/Ho_Chi_Minh';
+
+    // 1. System auto-creates conversation A today
+    const convA = getOrCreateTodayConversation(
+      {
+        ...DEFAULT_AUTO_CHAT_SETTINGS,
+        characterRole: 'boss',
+        scenarioId: bossScenario.id,
+        timezone: tz,
+      },
+      'shiba-intern',
+      'Minh'
+    );
+    // AI sends opening message in A; user has not replied yet
+    convA.messages.push({
+      id: 'auto-1',
+      role: 'assistant',
+      content: 'Hi Minh, how is the report?',
+      timestamp: now - 60000,
+    });
+    convA.updatedAt = now - 60000;
+    saveChatRoomConversation(convA);
+
+    assert.strictEqual(getLastUserInteractionAt(convA), 0);
+    assert.strictEqual(getTodayAutoBubbleConversation(tz)?.id, convA.id);
+
+    // 2. User replies in A -> AI continues in A
+    convA.messages.push({
+      id: 'user-1',
+      role: 'user',
+      content: 'Almost done!',
+      timestamp: now - 50000,
+    });
+    convA.updatedAt = now - 50000;
+    saveChatRoomConversation(convA);
+
+    assert.strictEqual(getTodayAutoBubbleConversation(tz)?.id, convA.id);
+    assert.strictEqual(
+      findTodayAutoChatConversation([convA], undefined, new Date(now), tz)?.id,
+      convA.id
+    );
+
+    // 3. User replies in a different conversation B (even if B was created yesterday and is not isAutoBubble)
+    const convB = {
+      id: 'conv_chatroom_B',
+      title: 'Friend Chat B',
+      character: DEFAULT_CHARACTERS.friend,
+      scenario: friendScenario,
+      messages: [
+        {
+          id: 'b-init',
+          role: 'assistant',
+          content: 'Hey, free tonight?',
+          timestamp: yesterday,
+        },
+        {
+          id: 'b-user-1',
+          role: 'user',
+          content: 'Yes! Let us grab coffee.',
+          timestamp: now - 20000,
+        },
+      ],
+      createdAt: yesterday,
+      updatedAt: now - 20000,
+      messageCount: 2,
+      isAutoBubble: false,
+    };
+    saveChatRoomConversation(convB);
+
+    // Even if A receives an AI follow-up timestamp newer than B's user message, B must still win
+    // because user's latest interaction was in B (now - 20000 > now - 50000)
+    convA.messages.push({
+      id: 'auto-2',
+      role: 'assistant',
+      content: 'Great, send it by 5 PM.',
+      timestamp: now - 10000,
+    });
+    convA.updatedAt = now - 10000;
+    saveChatRoomConversation(convA);
+
+    assert.strictEqual(getTodayAutoBubbleConversation(tz)?.id, convB.id);
+    assert.strictEqual(
+      findTodayAutoChatConversation([convA, convB], undefined, new Date(now), tz)?.id,
+      convB.id
+    );
+
+    // AI auto-replies in B -> B stays active
+    convB.messages.push({
+      id: 'auto-3',
+      role: 'assistant',
+      content: 'Awesome, how about 7 PM?',
+      timestamp: now - 5000,
+    });
+    convB.updatedAt = now - 5000;
+    saveChatRoomConversation(convB);
+    assert.strictEqual(getTodayAutoBubbleConversation(tz)?.id, convB.id);
+
+    // 4. User later replies in A again -> A becomes active again
+    convA.messages.push({
+      id: 'user-2',
+      role: 'user',
+      content: 'Sent the report just now!',
+      timestamp: now,
+    });
+    convA.updatedAt = now;
+    saveChatRoomConversation(convA);
+
+    assert.strictEqual(getTodayAutoBubbleConversation(tz)?.id, convA.id);
+    assert.strictEqual(
+      findTodayAutoChatConversation([convA, convB], undefined, new Date(now), tz)?.id,
+      convA.id
+    );
   });
 
   it('aligns character role with explicit scenarioId when characterRole is random', () => {

@@ -9,6 +9,7 @@ export interface AutoChatSettings {
   characterRole: CharacterRole | 'random';
   scenarioId: string | 'random';
   timezone: string;
+  lastSentAt?: string | null;
 }
 
 export const DEFAULT_AUTO_CHAT_SETTINGS: AutoChatSettings = {

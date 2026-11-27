@@ -16,11 +16,11 @@ import { UserProgressData } from '@/types/progress';
 import { AutoChatSettings } from '@/types/auto-chat';
 import { routeHybridRoleplayChat } from '@/lib/roleplay/router';
 import { buildAutoChatTurnPrompt } from '@/lib/roleplay/ai-prompt';
-import { findTodayAutoChatConversation } from '@/lib/auto-chat/conversation-manager';
 import {
-  generateConversationId,
-  MAX_CHAT_ROOM_CONVERSATIONS,
-} from '@/lib/roleplay/history';
+  buildDailyAutoConversation,
+  findTodayAutoChatConversation,
+} from '@/lib/auto-chat/conversation-manager';
+import { MAX_CHAT_ROOM_CONVERSATIONS } from '@/lib/roleplay/history';
 import { DEFAULT_PROGRESS } from '@/lib/storage';
 import { checkUserAIQuota } from '@/lib/ai/system-ai-settings';
 
@@ -213,21 +213,14 @@ async function handleAutoChatCron(req: NextRequest) {
               userChatSettings.characterRole,
               userChatSettings.scenarioId
             );
-            return {
-              id: generateConversationId(),
-              title: `🫧 ${picked.scenario.vietnameseTitle || picked.scenario.title} - ${picked.character.name}`,
-              character: picked.character,
-              scenario: picked.scenario,
-              userAvatar: progressData.roleplay?.userAvatar || 'shiba-intern',
-              userName: progressData.roleplay?.userName || 'Bạn',
-              messages: [],
-              translations: {},
-              createdAt: nowMs,
-              updatedAt: nowMs,
-              messageCount: 0,
-              lastMessageSnippet: '',
-              isAutoBubble: true,
-            };
+            return buildDailyAutoConversation(
+              picked.character,
+              picked.scenario,
+              progressData.roleplay?.userAvatar || 'shiba-intern',
+              progressData.roleplay?.userName || 'Bạn',
+              now,
+              tz
+            );
           })();
 
       const { character, scenario } = targetConv;
@@ -326,7 +319,6 @@ async function handleAutoChatCron(req: NextRequest) {
           updatedAt: nowMs,
           messageCount: nextMessages.length,
           lastMessageSnippet: trimmedContent.slice(0, 120),
-          isAutoBubble: true,
         };
         const updatedHistory = [
           updatedConv,

@@ -187,6 +187,13 @@ export function mergeUserProgress(
         const newer = (conv.updatedAt || 0) > (existing.updatedAt || 0) ? conv : existing;
         const hasMoreMessages =
           mergedMessages.length > (newer.messages?.length || 0);
+        const mergedInteractionAt = Math.max(
+          existing.lastUserInteractionAt || 0,
+          conv.lastUserInteractionAt || 0
+        );
+        const mergedIsAutoBubble = Boolean(
+          existing.isAutoBubble || conv.isAutoBubble
+        );
         historyMap.set(conv.id, {
           ...newer,
           messages: mergedMessages.length > 0 ? mergedMessages : newer.messages,
@@ -195,6 +202,10 @@ export function mergeUserProgress(
             hasMoreMessages && mergedMessages.length > 0
               ? mergedMessages[mergedMessages.length - 1].content.slice(0, 120)
               : newer.lastMessageSnippet,
+          ...(mergedInteractionAt > 0
+            ? { lastUserInteractionAt: mergedInteractionAt }
+            : {}),
+          ...(mergedIsAutoBubble ? { isAutoBubble: true } : {}),
         });
       }
     }

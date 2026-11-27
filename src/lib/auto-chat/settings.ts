@@ -1,5 +1,4 @@
 import { AutoChatSettings, DEFAULT_AUTO_CHAT_SETTINGS } from '@/types/auto-chat';
-import { clearTodayAutoBubbleConversationId } from './conversation-manager';
 
 const STORAGE_KEY = 'toeic_auto_chat_settings';
 export const AUTO_CHAT_SETTINGS_EVENT = 'auto-chat-settings-updated';
@@ -12,6 +11,7 @@ function sanitizeSettings(raw: Partial<AutoChatSettings>): AutoChatSettings {
     enabled: Boolean(merged.enabled),
     pushEnabled: merged.pushEnabled !== false,
     intervalMinutes: Number.isFinite(interval) && interval >= 10 ? interval : 30,
+    lastSentAt: merged.lastSentAt ?? null,
   };
 }
 
@@ -67,12 +67,6 @@ export async function updateAutoChatSettings(
 ): Promise<AutoChatSettings> {
   const current = getLocalAutoChatSettings();
   const updated = sanitizeSettings({ ...current, ...settings });
-  if (
-    current.characterRole !== updated.characterRole ||
-    current.scenarioId !== updated.scenarioId
-  ) {
-    clearTodayAutoBubbleConversationId();
-  }
   saveLocalAutoChatSettings(updated);
 
   try {

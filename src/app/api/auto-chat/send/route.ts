@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { routeHybridRoleplayChat, RoleplayChatPayload } from '@/lib/roleplay/router';
 import { buildAutoChatTurnPrompt } from '@/lib/roleplay/ai-prompt';
 import { checkUserAIQuota } from '@/lib/ai/system-ai-settings';
+import { supabase, supabaseAdmin } from '@/lib/supabase';
+
+const dbClient = supabaseAdmin || supabase;
 
 const MAX_DAILY_AUTO_MESSAGES = 100;
 const dailyAutoMessageCounts = new Map<string, number>();
@@ -106,6 +109,14 @@ export async function POST(req: NextRequest) {
         { error: streamError.message, code: streamError.code },
         { status }
       );
+    }
+
+    if (fullContent.trim() && dbClient) {
+      const nowIso = new Date().toISOString();
+      await dbClient
+        .from('auto_chat_settings')
+        .update({ last_sent_at: nowIso, updated_at: nowIso })
+        .eq('user_id', userId);
     }
 
     return NextResponse.json({

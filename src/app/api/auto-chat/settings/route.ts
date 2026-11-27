@@ -32,6 +32,7 @@ export async function GET(req: NextRequest) {
     characterRole: data.character_role,
     scenarioId: data.scenario_id,
     timezone: data.timezone,
+    lastSentAt: data.last_sent_at || null,
   });
 }
 

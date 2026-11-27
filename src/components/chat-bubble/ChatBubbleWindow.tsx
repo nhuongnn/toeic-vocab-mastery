@@ -237,9 +237,9 @@ export function ChatBubbleWindow({
         ...conversation,
         messages: finalMessages,
         updatedAt: getNow(),
+        lastUserInteractionAt: now,
         messageCount: finalMessages.length,
         lastMessageSnippet: (fullContent || trimmed).slice(0, 120),
-        isAutoBubble: true,
       };
 
       const updatedHistory = saveChatRoomConversation(finalConv);

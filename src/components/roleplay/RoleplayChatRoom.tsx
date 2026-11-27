@@ -57,6 +57,7 @@ import { CharacterAvatar } from './CharacterAvatar';
 import { ChatRoomHistoryModal } from './ChatRoomHistoryModal';
 import {
   getChatRoomHistory,
+  getChatRoomConversationById,
   saveChatRoomConversation,
   deleteChatRoomConversation,
   clearAllChatRoomHistory,
@@ -308,10 +309,17 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
       const lastMsg = msgs[msgs.length - 1];
       const snippet = lastMsg?.content ? lastMsg.content.slice(0, 120) : '';
+      const existingConv = getChatRoomConversationById(targetSessionId);
+      const latestUserMsgTs = msgs.reduce((maxTs, m) => {
+        if (m.role === 'user' && !m.isError && typeof m.timestamp === 'number') {
+          return Math.max(maxTs, m.timestamp);
+        }
+        return maxTs;
+      }, existingConv?.lastUserInteractionAt || 0);
 
       const conv: RoleplayConversation = {
         id: targetSessionId,
-        title: `${customScen.title} - ${customChar.name}`,
+        title: existingConv?.title || `${customScen.title} - ${customChar.name}`,
         character: customChar,
         scenario: customScen,
         userAvatar: customAvatar,
@@ -323,6 +331,8 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
         messageCount: msgs.length,
         lastMessageSnippet: snippet,
         summary: customSummary || summaryData || undefined,
+        ...(existingConv?.isAutoBubble ? { isAutoBubble: true } : {}),
+        ...(latestUserMsgTs > 0 ? { lastUserInteractionAt: latestUserMsgTs } : {}),
       };
 
       const updated = saveChatRoomConversation(conv);
@@ -825,6 +835,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
     const updatedMessages = [...messages, userMessage];
     setMessages([...updatedMessages, assistantMessage]);
+    autoSaveConversation(updatedMessages);
 
     await executeChatStream(updatedMessages, assistantMsgId, selectedModel);
   };

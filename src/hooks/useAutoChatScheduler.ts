@@ -16,15 +16,11 @@ import {
   updateAutoChatSettings,
 } from '@/lib/auto-chat/settings';
 import {
-  clearTodayAutoBubbleConversationId,
-  createTodayAutoBubbleConversation,
-  doesConversationMatchSettings,
   getOrCreateTodayConversation,
   getTodayAutoBubbleConversation,
-  pickCharacter,
-  pickScenario,
 } from '@/lib/auto-chat/conversation-manager';
 import {
+  CHAT_ROOM_HISTORY_KEY,
   getChatRoomHistory,
   saveChatRoomConversation,
 } from '@/lib/roleplay/history';
@@ -46,7 +42,7 @@ export interface NewMessagePreview {
 
 export function useAutoChatScheduler() {
   const { user } = useAuth();
-  const { progress, syncChatRoomHistory, forceSync } = useProgress();
+  const { progress, syncChatRoomHistory, forceSync, isInitialCloudSyncDone } = useProgress();
 
   const [settings, setSettings] = useState<AutoChatSettings>(() =>
     getLocalAutoChatSettings()
@@ -68,6 +64,7 @@ export function useAutoChatScheduler() {
   const settingsRef = useRef<AutoChatSettings>(settings);
   const isSendingRef = useRef(false);
   const isOpenRef = useRef(bubbleState.isOpen);
+  const isInitialCloudSyncDoneRef = useRef(isInitialCloudSyncDone);
   const quotaCooldownUntilRef = useRef<number>(0);
   const userRoleplayRef = useRef({
     userAvatar: progress.roleplay?.userAvatar || 'shiba-intern',
@@ -94,6 +91,10 @@ export function useAutoChatScheduler() {
     isOpenRef.current = bubbleState.isOpen;
   }, [bubbleState.isOpen]);
 
+  useEffect(() => {
+    isInitialCloudSyncDoneRef.current = isInitialCloudSyncDone;
+  }, [isInitialCloudSyncDone]);
+
   // Load settings khi user đăng nhập
   useEffect(() => {
     if (!user?.id) {
@@ -104,15 +105,28 @@ export function useAutoChatScheduler() {
     fetchAutoChatSettings(user.id, user.email ?? undefined).then((loaded) => {
       if (!cancelled) {
         setSettings(loaded);
-        setConversation((prev) =>
-          prev && !doesConversationMatchSettings(prev, loaded) ? null : prev
-        );
+        if (loaded.lastSentAt) {
+          const serverTs = new Date(loaded.lastSentAt).getTime();
+          if (Number.isFinite(serverTs) && serverTs > 0) {
+            try {
+              const localTs =
+                parseInt(localStorage.getItem(LAST_SENT_KEY) || '0', 10) || 0;
+              if (serverTs > localTs) {
+                localStorage.setItem(LAST_SENT_KEY, String(serverTs));
+                setBubbleState((prev) => ({
+                  ...prev,
+                  lastSentTimestamp: serverTs,
+                }));
+              }
+            } catch {}
+          }
+        }
       }
     });
 
     const timer = setTimeout(() => {
       if (cancelled) return;
-      const existingConv = getTodayAutoBubbleConversation();
+      const existingConv = getTodayAutoBubbleConversation(settingsRef.current.timezone);
       if (existingConv) {
         setConversation(existingConv);
       }
@@ -134,55 +148,32 @@ export function useAutoChatScheduler() {
     };
   }, [user?.id, user?.email]);
 
+  // Cập nhật hội thoại hiển thị ngay khi cloud sync ban đầu hoàn tất
+  useEffect(() => {
+    if (!user?.id || !isInitialCloudSyncDone) return;
+    const latest = getTodayAutoBubbleConversation(settingsRef.current.timezone);
+    setConversation(latest);
+    setBubbleState((prev) => ({
+      ...prev,
+      currentConversationId: latest?.id ?? null,
+    }));
+  }, [user?.id, isInitialCloudSyncDone]);
+
   // Lắng nghe thay đổi settings & history từ tab khác hoặc Settings page / Chat Room
   useEffect(() => {
     const handleSettingsUpdated = (e: Event) => {
       const custom = e as CustomEvent<AutoChatSettings>;
       const next = custom.detail || getLocalAutoChatSettings();
-      const prev = settingsRef.current;
-      const roleOrScenarioChanged =
-        prev.characterRole !== next.characterRole ||
-        prev.scenarioId !== next.scenarioId;
-
       setSettings(next);
-
-      if (roleOrScenarioChanged) {
-        const existing = getTodayAutoBubbleConversation();
-        let hasCachedKey = false;
-        try {
-          hasCachedKey = Boolean(localStorage.getItem('toeic_auto_chat_today_conv_id'));
-        } catch {}
-
-        if (
-          !existing ||
-          !doesConversationMatchSettings(existing, next) ||
-          !hasCachedKey
-        ) {
-          clearTodayAutoBubbleConversationId();
-          const { userAvatar, userName } = userRoleplayRef.current;
-          const character = pickCharacter(next);
-          const scenario = pickScenario(next, character.role);
-          const freshConv = createTodayAutoBubbleConversation(
-            character,
-            scenario,
-            userAvatar,
-            userName
-          );
-          syncHistoryRef.current(getChatRoomHistory());
-          setConversation(freshConv);
-          setBubbleState((prevState) => ({
-            ...prevState,
-            currentConversationId: freshConv.id,
-          }));
-        }
-      }
     };
 
     const handleHistoryUpdated = () => {
-      const latest = getTodayAutoBubbleConversation();
-      if (latest) {
-        setConversation(latest);
-      }
+      const latest = getTodayAutoBubbleConversation(settingsRef.current.timezone);
+      setConversation(latest);
+      setBubbleState((prev) => ({
+        ...prev,
+        currentConversationId: latest?.id ?? null,
+      }));
     };
 
     const handleStorage = (e: StorageEvent) => {
@@ -198,6 +189,11 @@ export function useAutoChatScheduler() {
           ...prev,
           lastSentTimestamp: e.newValue ? parseInt(e.newValue, 10) || null : null,
         }));
+      } else if (
+        e.key === CHAT_ROOM_HISTORY_KEY ||
+        e.key === 'toeic_vocab_mastery_v1'
+      ) {
+        handleHistoryUpdated();
       }
     };
 
@@ -234,21 +230,43 @@ export function useAutoChatScheduler() {
 
   /** Gửi tin nhắn tự động từ AI */
   const sendAutoMessage = useCallback(async () => {
-    if (!user?.id || isSendingRef.current) return;
+    if (!user?.id || isSendingRef.current || !isInitialCloudSyncDoneRef.current) return;
     if (!isWithinSendWindow()) return;
     if (Date.now() < quotaCooldownUntilRef.current) return;
 
     const s = settingsRef.current;
     if (!s.enabled) return;
 
-    // Kiểm tra interval
+    // Kiểm tra interval (đồng bộ giữa local, server last_sent_at và tin nhắn auto gần nhất trong lịch sử)
+    const existingConv = getTodayAutoBubbleConversation(s.timezone);
+    let latestSentMs = 0;
     try {
       const lastSent = localStorage.getItem(LAST_SENT_KEY);
       if (lastSent) {
-        const elapsed = Date.now() - parseInt(lastSent, 10);
-        if (elapsed < s.intervalMinutes * 60 * 1000) return;
+        latestSentMs = Math.max(latestSentMs, parseInt(lastSent, 10) || 0);
       }
     } catch {}
+    if (s.lastSentAt) {
+      const serverTs = new Date(s.lastSentAt).getTime();
+      if (Number.isFinite(serverTs)) {
+        latestSentMs = Math.max(latestSentMs, serverTs);
+      }
+    }
+    if (existingConv?.messages?.length) {
+      for (const m of existingConv.messages) {
+        if (
+          m.role === 'assistant' &&
+          !m.isError &&
+          m.id?.startsWith('auto-') &&
+          typeof m.timestamp === 'number'
+        ) {
+          latestSentMs = Math.max(latestSentMs, m.timestamp);
+        }
+      }
+    }
+    if (latestSentMs > 0 && Date.now() - latestSentMs < s.intervalMinutes * 60 * 1000) {
+      return;
+    }
 
     isSendingRef.current = true;
     setIsSending(true);
@@ -306,13 +324,16 @@ export function useAutoChatScheduler() {
           provider: data.provider as 'gemini' | 'cloudflare',
         };
 
+        // Re-read latest conversation state in case user interacted while AI was generating
+        const latestConv =
+          getChatRoomHistory().find((c) => c.id === conv.id) || conv;
+        const nextMessages = [...latestConv.messages, newMsg];
         const updatedConv: RoleplayConversation = {
-          ...conv,
-          messages: [...conv.messages, newMsg],
+          ...latestConv,
+          messages: nextMessages,
           updatedAt: now,
-          messageCount: conv.messages.length + 1,
+          messageCount: nextMessages.length,
           lastMessageSnippet: data.content.slice(0, 120),
-          isAutoBubble: true,
         };
 
         const updatedHistory = saveChatRoomConversation(updatedConv);
@@ -354,9 +375,9 @@ export function useAutoChatScheduler() {
     }
   }, [user, isWithinSendWindow, progress.roleplay, progress.cards, syncChatRoomHistory]);
 
-  // Khởi động / dừng scheduler
+  // Khởi động / dừng scheduler (chỉ chạy sau khi đã đồng bộ dữ liệu từ cloud xong)
   useEffect(() => {
-    if (!user?.id || !settings.enabled) {
+    if (!user?.id || !settings.enabled || !isInitialCloudSyncDone) {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
         intervalRef.current = null;
@@ -366,7 +387,7 @@ export function useAutoChatScheduler() {
 
     // Check ngay lần đầu và kiểm tra mỗi 60 giây
     const initialTimer = setTimeout(() => {
-      const existingConv = getTodayAutoBubbleConversation();
+      const existingConv = getTodayAutoBubbleConversation(settingsRef.current.timezone);
       if (existingConv) setConversation(existingConv);
       sendAutoMessage();
     }, 0);
@@ -382,7 +403,7 @@ export function useAutoChatScheduler() {
         intervalRef.current = null;
       }
     };
-  }, [user?.id, settings.enabled, sendAutoMessage]);
+  }, [user?.id, settings.enabled, isInitialCloudSyncDone, sendAutoMessage]);
 
   const updateSettings = useCallback(
     async (partial: Partial<AutoChatSettings>) => {
@@ -405,19 +426,52 @@ export function useAutoChatScheduler() {
     try {
       localStorage.setItem(UNREAD_KEY, '0');
     } catch {}
-    const existing = getTodayAutoBubbleConversation();
-    const userAvatar = progress.roleplay?.userAvatar || 'shiba-intern';
-    const userName = progress.roleplay?.userName || 'Bạn';
+
+    const existing = getTodayAutoBubbleConversation(settingsRef.current.timezone);
+    if (existing) {
+      setConversation(existing);
+      setBubbleState((prev) => ({ ...prev, currentConversationId: existing.id }));
+      return;
+    }
+
+    if (!isInitialCloudSyncDoneRef.current) {
+      forceSync()
+        .catch(() => {})
+        .finally(() => {
+          const syncedExisting = getTodayAutoBubbleConversation(
+            settingsRef.current.timezone
+          );
+          if (syncedExisting) {
+            setConversation(syncedExisting);
+            setBubbleState((prev) => ({
+              ...prev,
+              currentConversationId: syncedExisting.id,
+            }));
+            return;
+          }
+          const { userAvatar, userName } = userRoleplayRef.current;
+          const conv = getOrCreateTodayConversation(
+            settingsRef.current,
+            userAvatar,
+            userName
+          );
+          syncHistoryRef.current(getChatRoomHistory());
+          setConversation(conv);
+          setBubbleState((prev) => ({ ...prev, currentConversationId: conv.id }));
+        });
+      return;
+    }
+
+    const { userAvatar, userName } = userRoleplayRef.current;
     const conv = getOrCreateTodayConversation(
       settingsRef.current,
       userAvatar,
       userName
     );
-    if (!existing || existing.id !== conv.id) {
-      syncChatRoomHistory(getChatRoomHistory());
-    }
+    syncChatRoomHistory(getChatRoomHistory());
     setConversation(conv);
-  }, [progress.roleplay, syncChatRoomHistory]);
+    setBubbleState((prev) => ({ ...prev, currentConversationId: conv.id }));
+  }, [forceSync, syncChatRoomHistory]);
 
   const closeBubble = useCallback(() => {
     setBubbleState((prev) => ({ ...prev, isOpen: false }));
@@ -430,8 +484,11 @@ export function useAutoChatScheduler() {
     const params = new URLSearchParams(window.location.search);
     if (params.get('openChatBubble') === '1') {
       const openTimer = setTimeout(() => {
-        openBubble();
-        forceSync().catch(() => {});
+        forceSync()
+          .catch(() => {})
+          .finally(() => {
+            openBubble();
+          });
       }, 0);
       params.delete('openChatBubble');
       const nextSearch = params.toString();
@@ -447,8 +504,11 @@ export function useAutoChatScheduler() {
     }
     const handleSwMessage = (event: MessageEvent) => {
       if (event.data?.type === 'OPEN_CHAT_BUBBLE') {
-        openBubble();
-        forceSync().catch(() => {});
+        forceSync()
+          .catch(() => {})
+          .finally(() => {
+            openBubble();
+          });
       }
     };
     navigator.serviceWorker.addEventListener('message', handleSwMessage);

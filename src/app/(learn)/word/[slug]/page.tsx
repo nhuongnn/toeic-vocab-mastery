@@ -5,7 +5,7 @@ import { WordDetail } from '@/components/word/WordDetail';
 
 interface Props {
   params: Promise<{ slug: string }>;
-  searchParams?: Promise<{ level?: string; category?: string }>;
+  searchParams?: Promise<{ level?: string; category?: string; phase?: string }>;
 }
 
 export async function generateStaticParams() {
@@ -37,6 +37,7 @@ async function WordDetailContent({ params, searchParams }: Props) {
   const search = searchParams ? await searchParams : undefined;
   const initialLevel = typeof search?.level === 'string' ? search.level : undefined;
   const initialCategory = typeof search?.category === 'string' ? search.category : undefined;
+  const initialPhase = typeof search?.phase === 'string' ? search.phase : undefined;
 
   // Find previous and next words based on initialLevel if provided, otherwise words of the same level
   const effectiveLevel = initialLevel || word.level;
@@ -61,6 +62,7 @@ async function WordDetailContent({ params, searchParams }: Props) {
       nextWordId={nextWord?.id}
       initialLevel={initialLevel}
       initialCategory={initialCategory}
+      initialPhase={initialPhase}
     />
   );
 }

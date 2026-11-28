@@ -14,13 +14,19 @@ import {
   ExerciseSessionResult,
   UserPreferences,
   RoleplayPreferences,
+  RecentVocabEntry,
+  VocabStudyLevelMode,
+  VocabStudySource,
+  VocabStudyState,
 } from '@/types/progress';
+import { CategoryId } from '@/types/vocabulary';
 import { CustomVocabItem } from '@/types/custom-vocab';
 import { CharacterConfig, RoleplayConversation } from '@/types/roleplay';
 import { AiTutorConversation } from '@/lib/ai/types';
 import { MAX_AI_TUTOR_CONVERSATIONS, getAiTutorHistoryKey } from '@/lib/ai/history';
 import { DEFAULT_PROGRESS, loadUserProgress, saveUserProgress, updateStreak } from '@/lib/storage';
 import { calculateSM2, createNewCard, calculateEstimatedScore } from '@/lib/srs';
+import { upsertRecentVocabEntry } from '@/lib/vocab-study';
 import { useAuth } from './AuthContext';
 import { supabase } from '@/lib/supabase';
 import { mergeUserProgress } from '@/lib/sync';
@@ -57,6 +63,21 @@ interface ProgressContextType {
   addCustomItem: (item: Omit<CustomVocabItem, 'id' | 'createdAt' | 'updatedAt'>) => Promise<CustomVocabItem>;
   updateCustomItem: (id: string, updates: Partial<Omit<CustomVocabItem, 'id' | 'createdAt'>>) => Promise<void>;
   deleteCustomItem: (id: string) => Promise<void>;
+  recentVocabHistory: RecentVocabEntry[];
+  vocabStudyState?: VocabStudyState;
+  recordVocabStudy: (params: {
+    wordId: string;
+    studyModeLevel: VocabStudyLevelMode;
+    categoryId?: CategoryId | 'all';
+    categoryLocked?: boolean;
+    phaseId?: string;
+    source?: VocabStudySource;
+    preserveStudyState?: boolean;
+  }) => void;
+  updateVocabStudyState: (
+    updates: Partial<Omit<VocabStudyState, 'updatedAt'>>
+  ) => void;
+  clearRecentVocabHistory: () => void;
 }
 
 const ProgressContext = createContext<ProgressContextType | undefined>(undefined);
@@ -100,15 +121,23 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       }
     };
 
+    const handleStorageSync = (e: StorageEvent) => {
+      if (e.key === 'toeic_vocab_mastery_v1') {
+        const reloaded = loadUserProgress();
+        setProgress(reloaded);
+      } else {
+        handleRoleplaySync();
+        handleCustomVocabSync();
+      }
+    };
+
     window.addEventListener('roleplay-synced', handleRoleplaySync);
     window.addEventListener('custom-vocab-synced', handleCustomVocabSync);
-    window.addEventListener('storage', handleRoleplaySync);
-    window.addEventListener('storage', handleCustomVocabSync);
+    window.addEventListener('storage', handleStorageSync);
     return () => {
       window.removeEventListener('roleplay-synced', handleRoleplaySync);
       window.removeEventListener('custom-vocab-synced', handleCustomVocabSync);
-      window.removeEventListener('storage', handleRoleplaySync);
-      window.removeEventListener('storage', handleCustomVocabSync);
+      window.removeEventListener('storage', handleStorageSync);
     };
   }, []);
 
@@ -522,6 +551,8 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
           cards: data.cards || {},
           history: Array.isArray(data.history) ? data.history : [],
           bookmarkedWordIds: Array.isArray(data.bookmarkedWordIds) ? data.bookmarkedWordIds : [],
+          recentVocabHistory: Array.isArray(data.recentVocabHistory) ? data.recentVocabHistory : [],
+          vocabStudyState: data.vocabStudyState,
         };
         saveUserProgress(validated);
         setProgress(validated);
@@ -609,6 +640,113 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     [scheduleCloudSync]
   );
 
+  const recordVocabStudy = useCallback(
+    (params: {
+      wordId: string;
+      studyModeLevel: VocabStudyLevelMode;
+      categoryId?: CategoryId | 'all';
+      categoryLocked?: boolean;
+      phaseId?: string;
+      source?: VocabStudySource;
+      preserveStudyState?: boolean;
+    }) => {
+      if (!params.wordId) return;
+      const nowIso = new Date().toISOString();
+
+      setProgress((prev) => {
+        const entry: RecentVocabEntry = {
+          wordId: params.wordId,
+          viewedAt: nowIso,
+          studyModeLevel: params.studyModeLevel,
+          categoryId: params.categoryId,
+          categoryLocked: params.categoryLocked,
+          phaseId: params.phaseId,
+          source: params.source || 'word-detail',
+        };
+
+        const updatedHistory = upsertRecentVocabEntry(prev.recentVocabHistory, entry);
+
+        const nextStudyState: VocabStudyState = params.preserveStudyState
+          ? {
+              studyModeLevel: prev.vocabStudyState?.studyModeLevel || params.studyModeLevel,
+              ...(prev.vocabStudyState || {}),
+              lastWordId: params.wordId,
+              lastStudiedAt: nowIso,
+              updatedAt: nowIso,
+            }
+          : {
+              ...(prev.vocabStudyState || {}),
+              lastWordId: params.wordId,
+              lastStudiedAt: nowIso,
+              studyModeLevel: params.studyModeLevel,
+              categoryLocked: Boolean(params.categoryLocked),
+              lockedCategoryId:
+                params.categoryLocked && params.categoryId && params.categoryId !== 'all'
+                  ? params.categoryId
+                  : undefined,
+              activePhaseId: params.phaseId || undefined,
+              updatedAt: nowIso,
+            };
+
+        const nextProgress: UserProgressData = {
+          ...prev,
+          recentVocabHistory: updatedHistory,
+          vocabStudyState: nextStudyState,
+        };
+
+        saveUserProgress(nextProgress);
+        scheduleCloudSync(nextProgress);
+        return nextProgress;
+      });
+    },
+    [scheduleCloudSync]
+  );
+
+  const updateVocabStudyState = useCallback(
+    (updates: Partial<Omit<VocabStudyState, 'updatedAt'>>) => {
+      const nowIso = new Date().toISOString();
+      setProgress((prev) => {
+        const nextStudyState: VocabStudyState = {
+          studyModeLevel: prev.vocabStudyState?.studyModeLevel || 'essential',
+          ...(prev.vocabStudyState || {}),
+          ...updates,
+          updatedAt: nowIso,
+        };
+
+        const nextProgress: UserProgressData = {
+          ...prev,
+          vocabStudyState: nextStudyState,
+        };
+
+        saveUserProgress(nextProgress);
+        scheduleCloudSync(nextProgress);
+        return nextProgress;
+      });
+    },
+    [scheduleCloudSync]
+  );
+
+  const clearRecentVocabHistory = useCallback(() => {
+    const nowIso = new Date().toISOString();
+    setProgress((prev) => {
+      const nextProgress: UserProgressData = {
+        ...prev,
+        recentVocabHistory: [],
+        vocabStudyState: prev.vocabStudyState
+          ? {
+              ...prev.vocabStudyState,
+              lastWordId: undefined,
+              lastStudiedAt: undefined,
+              updatedAt: nowIso,
+            }
+          : undefined,
+      };
+      saveUserProgress(nextProgress);
+      scheduleCloudSync(nextProgress);
+      return nextProgress;
+    });
+  }, [scheduleCloudSync]);
+
   const [dueWordIds, setDueWordIds] = useState<string[]>([]);
 
   useEffect(() => {
@@ -646,6 +784,11 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         addCustomItem,
         updateCustomItem,
         deleteCustomItem,
+        recentVocabHistory: progress.recentVocabHistory || [],
+        vocabStudyState: progress.vocabStudyState,
+        recordVocabStudy,
+        updateVocabStudyState,
+        clearRecentVocabHistory,
       }}
     >
       {children}

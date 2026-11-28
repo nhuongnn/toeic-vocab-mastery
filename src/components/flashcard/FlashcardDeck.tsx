@@ -28,7 +28,7 @@ export function FlashcardDeck({ words }: FlashcardDeckProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [completed, setCompleted] = useState(false);
   const cardRef = useRef<HTMLDivElement | null>(null);
-  const { recordReview } = useProgress();
+  const { recordReview, recordVocabStudy, vocabStudyState } = useProgress();
   const { speak } = useSpeech();
 
   const currentWord = words[currentIndex];
@@ -40,6 +40,13 @@ export function FlashcardDeck({ words }: FlashcardDeckProps) {
   const handleRate = (quality: number) => {
     if (!currentWord) return;
     recordReview(currentWord.id, quality);
+    recordVocabStudy({
+      wordId: currentWord.id,
+      studyModeLevel: vocabStudyState?.studyModeLevel || currentWord.level,
+      categoryId: currentWord.category,
+      source: 'flashcard',
+      preserveStudyState: true,
+    });
 
     if (currentIndex + 1 < words.length) {
       setCurrentIndex((prev) => prev + 1);

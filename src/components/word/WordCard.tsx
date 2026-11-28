@@ -18,9 +18,10 @@ import { DictionaryLinks } from './DictionaryLinks';
 
 interface WordCardProps {
   word: VocabularyWord;
+  studyQueryString?: string;
 }
 
-export function WordCard({ word }: WordCardProps) {
+export function WordCard({ word, studyQueryString }: WordCardProps) {
   const { toggleBookmark, isBookmarked, getCard } = useProgress();
   const { speak } = useSpeech();
 
@@ -34,6 +35,10 @@ export function WordCard({ word }: WordCardProps) {
   const popularityPercent = getWordPopularity(word);
   const dailyScore = getDailyCommunicationScore(word);
   const dailyPercent = getDailyCommunicationFrequency(word);
+
+  const wordDetailHref = studyQueryString
+    ? `/word/${word.id}?${studyQueryString}`
+    : `/word/${word.id}?level=${word.level}`;
 
   return (
     <div className="group relative rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 p-5 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/5 flex flex-col justify-between">
@@ -103,7 +108,7 @@ export function WordCard({ word }: WordCardProps) {
         {/* Word Title and IPA */}
         <div className="flex items-baseline justify-between gap-2 mb-2">
           <Link
-            href={`/word/${word.id}?level=${word.level}`}
+            href={wordDetailHref}
             className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors uppercase tracking-tight"
           >
             {word.word}
@@ -157,7 +162,7 @@ export function WordCard({ word }: WordCardProps) {
           Root: <strong className="text-slate-300">{word.etymology.rootWord}</strong>
         </span>
         <Link
-          href={`/word/${word.id}?level=${word.level}`}
+          href={wordDetailHref}
           className="text-indigo-400 font-semibold group-hover:underline flex items-center gap-1"
         >
           <span>Explore</span>

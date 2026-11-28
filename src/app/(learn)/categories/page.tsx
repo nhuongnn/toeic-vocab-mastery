@@ -25,6 +25,7 @@ import {
 import { categories } from '@/data/categories';
 import { allVocabularyWords } from '@/data/vocabulary';
 import { WordCard } from '@/components/word/WordCard';
+import { RecentVocabAndResumeSection } from '@/components/word/RecentVocabAndResumeSection';
 import { CategoryId, WordLevel, WordSortOption } from '@/types/vocabulary';
 import { useOnboarding } from '@/contexts/OnboardingContext';
 import { useProgress } from '@/contexts/ProgressContext';
@@ -34,19 +35,26 @@ import {
   sortVocabularyWords,
   filterVocabularyWords,
 } from '@/lib/vocabulary-helpers';
+import { getPhaseProgress } from '@/lib/vocab-study';
 
 const PAGE_SIZE = 32;
 
 export default function CategoriesPage() {
   const { state: onboardingState } = useOnboarding();
-  const { progress } = useProgress();
+  const { progress, updateVocabStudyState } = useProgress();
   const [selectedCategory, setSelectedCategory] = useState<CategoryId | 'all'>('all');
   const [selectedLevel, setSelectedLevel] = useState<WordLevel | 'all'>('all');
+  const [selectedPhaseId, setSelectedPhaseId] = useState<string | null>(null);
   const [statusFilter, setStatusFilter] = useState<'all' | 'unlearned' | 'learning' | 'mastered'>('all');
   const [sortBy, setSortBy] = useState<WordSortOption>('default');
   const [search, setSearch] = useState('');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const searchInputRef = React.useRef<HTMLInputElement>(null);
+
+  const activePhase = useMemo(() => {
+    if (!selectedPhaseId || !onboardingState.learningPath) return null;
+    return onboardingState.learningPath.phases.find((p) => p.id === selectedPhaseId) || null;
+  }, [selectedPhaseId, onboardingState.learningPath]);
 
   // Keyboard shortcut '/' focuses the category search input when not typing in an input
   React.useEffect(() => {
@@ -76,12 +84,16 @@ export default function CategoriesPage() {
       const params = new URLSearchParams(window.location.search);
       const catParam = params.get('category');
       const lvlParam = params.get('level');
+      const phaseParam = params.get('phase');
       const searchParam = params.get('search') || params.get('q');
       if (catParam) {
         setSelectedCategory(catParam as CategoryId);
       }
       if (lvlParam && (lvlParam === 'essential' || lvlParam === 'intermediate' || lvlParam === 'advanced')) {
         setSelectedLevel(lvlParam as WordLevel);
+      }
+      if (phaseParam) {
+        setSelectedPhaseId(phaseParam);
       }
       if (searchParam !== null) {
         setSearch(searchParam);
@@ -137,9 +149,10 @@ export default function CategoriesPage() {
     };
   }, [checkCategoryScroll, isExpandedCategories]);
 
-  // Compute dynamic counts per level based on current category and search query
+  // Compute dynamic counts per level based on current category, phase, and search query
   const levelCounts = useMemo(() => {
     const baseWords = allVocabularyWords.filter((w) => {
+      if (activePhase && !activePhase.categoryIds.includes(w.category)) return false;
       const matchCat = selectedCategory === 'all' || w.category === selectedCategory;
       const cleanSearch = search.trim().toLowerCase();
       if (!cleanSearch) return matchCat;
@@ -154,7 +167,7 @@ export default function CategoriesPage() {
       intermediate: baseWords.filter((w) => w.level === 'intermediate').length,
       advanced: baseWords.filter((w) => w.level === 'advanced').length,
     };
-  }, [selectedCategory, search]);
+  }, [selectedCategory, activePhase, search]);
 
   // Count learning status
   const statusCounts = useMemo(() => {
@@ -189,6 +202,11 @@ export default function CategoriesPage() {
       search,
     });
 
+    if (activePhase) {
+      const phaseCats = new Set(activePhase.categoryIds);
+      filtered = filtered.filter((w) => phaseCats.has(w.category));
+    }
+
     if (statusFilter !== 'all') {
       filtered = filtered.filter((word) => {
         const card = progress.cards[word.id];
@@ -200,12 +218,12 @@ export default function CategoriesPage() {
     }
 
     return sortVocabularyWords(filtered, sortBy);
-  }, [selectedCategory, selectedLevel, search, sortBy, statusFilter, progress.cards]);
+  }, [selectedCategory, selectedLevel, activePhase, search, sortBy, statusFilter, progress.cards]);
 
   // Reset pagination when filters or sort change
   React.useEffect(() => {
     setVisibleCount(PAGE_SIZE);
-  }, [selectedCategory, selectedLevel, search, sortBy, statusFilter]);
+  }, [selectedCategory, selectedLevel, selectedPhaseId, search, sortBy, statusFilter]);
 
   const displayedWords = filteredAndSortedWords.slice(0, visibleCount);
   const hasMore = visibleCount < filteredAndSortedWords.length;
@@ -213,6 +231,7 @@ export default function CategoriesPage() {
   const isFiltered =
     selectedCategory !== 'all' ||
     selectedLevel !== 'all' ||
+    selectedPhaseId !== null ||
     statusFilter !== 'all' ||
     sortBy !== 'default' ||
     search.trim() !== '';
@@ -220,10 +239,25 @@ export default function CategoriesPage() {
   const handleResetFilters = () => {
     setSelectedCategory('all');
     setSelectedLevel('all');
+    setSelectedPhaseId(null);
     setStatusFilter('all');
     setSortBy('default');
     setSearch('');
   };
+
+  const studyQueryString = useMemo(() => {
+    const params = new URLSearchParams();
+    if (selectedLevel !== 'all') {
+      params.set('level', selectedLevel);
+    }
+    if (selectedCategory !== 'all') {
+      params.set('category', selectedCategory);
+    }
+    if (selectedPhaseId) {
+      params.set('phase', selectedPhaseId);
+    }
+    return params.toString();
+  }, [selectedLevel, selectedCategory, selectedPhaseId]);
 
   const selectedCategoryName =
     selectedCategory === 'all'
@@ -279,23 +313,65 @@ export default function CategoriesPage() {
           </div>
 
           <div className="flex flex-wrap items-center gap-2 shrink-0">
-            {onboardingState.learningPath.phases.map((phase, idx) => (
-              <button
-                key={phase.id}
-                type="button"
-                onClick={() => {
-                  setSelectedCategory(phase.categoryIds[0] || 'all');
-                  setSelectedLevel(phase.wordLevel);
-                }}
-                className="px-3.5 py-2 rounded-xl bg-indigo-600/30 hover:bg-indigo-600 text-indigo-200 hover:text-white border border-indigo-500/40 text-xs font-semibold transition-all hover:scale-[1.02] shadow-sm flex items-center gap-1.5"
-              >
-                <span>Giai đoạn {idx + 1}</span>
-                <span className="text-[10px] text-indigo-300/80 font-normal">({phase.targetWords} từ • {phase.wordLevel})</span>
-              </button>
-            ))}
+            {onboardingState.learningPath.phases.map((phase, idx) => {
+              const phaseStats = getPhaseProgress(allVocabularyWords, phase, progress.cards);
+              const isSelectedPhase = selectedPhaseId === phase.id;
+              return (
+                <button
+                  key={phase.id}
+                  type="button"
+                  onClick={() => {
+                    if (isSelectedPhase) {
+                      setSelectedPhaseId(null);
+                      updateVocabStudyState({ activePhaseId: undefined });
+                    } else {
+                      setSelectedPhaseId(phase.id);
+                      setSelectedCategory('all');
+                      setSelectedLevel(phase.wordLevel);
+                      updateVocabStudyState({
+                        activePhaseId: phase.id,
+                        studyModeLevel: phase.wordLevel,
+                        categoryLocked: false,
+                        lockedCategoryId: undefined,
+                      });
+                    }
+                  }}
+                  className={`px-3.5 py-2 rounded-xl border text-xs font-semibold transition-all hover:scale-[1.02] shadow-sm flex items-center gap-1.5 cursor-pointer ${
+                    isSelectedPhase
+                      ? 'bg-indigo-600 text-white border-indigo-400 shadow-indigo-600/30'
+                      : 'bg-indigo-600/30 hover:bg-indigo-600 text-indigo-200 hover:text-white border-indigo-500/40'
+                  }`}
+                >
+                  <span>Giai đoạn {idx + 1}</span>
+                  <span className="text-[10px] opacity-85 font-normal">
+                    ({phaseStats.learnedCount}/{phaseStats.totalWords} từ • {phase.wordLevel})
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </section>
       )}
+
+      {/* Recent Vocabulary & Resume Learning Hub */}
+      <RecentVocabAndResumeSection
+        activeCategory={selectedCategory}
+        activeLevel={selectedLevel}
+        activePhaseId={selectedPhaseId}
+        onSelectPhase={(phaseId) => {
+          setSelectedPhaseId(phaseId);
+          if (phaseId && onboardingState.learningPath) {
+            const matched = onboardingState.learningPath.phases.find((p) => p.id === phaseId);
+            if (matched) {
+              setSelectedCategory('all');
+              setSelectedLevel(matched.wordLevel);
+            }
+          }
+        }}
+        onSelectStudyLevel={(lvl) => {
+          setSelectedLevel(lvl);
+        }}
+      />
 
       {/* Control Panel: Search & Sorters */}
       <div className="p-4 sm:p-5 rounded-3xl bg-slate-900/80 border border-slate-800 space-y-4">
@@ -748,6 +824,19 @@ export default function CategoriesPage() {
             </span>
           )}
 
+          {activePhase && (
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-indigo-200">
+              <span>Lộ trình: {activePhase.title.split(':')[0]}</span>
+              <button
+                onClick={() => setSelectedPhaseId(null)}
+                className="hover:text-rose-400 ml-0.5"
+                title="Bỏ lọc giai đoạn lộ trình"
+              >
+                <X className="w-3 h-3" />
+              </button>
+            </span>
+          )}
+
           {selectedCategory !== 'all' && (
             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-700 text-slate-200">
               <span>Danh mục: {selectedCategoryName}</span>
@@ -774,7 +863,11 @@ export default function CategoriesPage() {
         <div className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {displayedWords.map((word) => (
-              <WordCard key={word.id} word={word} />
+              <WordCard
+                key={word.id}
+                word={word}
+                studyQueryString={studyQueryString || undefined}
+              />
             ))}
           </div>
 

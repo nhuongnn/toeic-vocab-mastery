@@ -6,6 +6,7 @@ import { AiTutorConversation } from '@/lib/ai/types';
 import { MAX_AI_TUTOR_CONVERSATIONS } from '@/lib/ai/history';
 import { calculateEstimatedScore } from './srs';
 import { generateLearningPath } from './placement/learningPath';
+import { mergeRecentVocabHistory, mergeVocabStudyState } from './vocab-study';
 
 /**
  * Merge two SRSCards for the same word.
@@ -270,6 +271,16 @@ export function mergeUserProgress(
     (a, b) => new Date(b.updatedAt || b.createdAt).getTime() - new Date(a.updatedAt || a.createdAt).getTime()
   );
 
+  // 9. Merge recent vocabulary study history & active study state across devices
+  const mergedRecentVocabHistory = mergeRecentVocabHistory(
+    local.recentVocabHistory,
+    remote.recentVocabHistory
+  );
+  const mergedVocabStudyState = mergeVocabStudyState(
+    local.vocabStudyState,
+    remote.vocabStudyState
+  );
+
   return {
     version: Math.max(local.version || 1, remote.version || 1),
     cards: mergedCards,
@@ -293,5 +304,7 @@ export function mergeUserProgress(
     aiTutorHistory: mergedAiTutorHistory,
     customItems: mergedCustomItems,
     deletedCustomItemIds: Array.from(mergedDeletedIds),
+    recentVocabHistory: mergedRecentVocabHistory,
+    vocabStudyState: mergedVocabStudyState,
   };
 }

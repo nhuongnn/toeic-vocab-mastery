@@ -1,4 +1,5 @@
-import { UserProgressData } from '@/types/progress';
+import { UserProgressData, VocabStudyLevelMode } from '@/types/progress';
+import { STUDY_NAVIGATION_LEVEL_KEY } from './vocab-study';
 
 const STORAGE_KEY = 'toeic_vocab_mastery_v1';
 
@@ -30,6 +31,7 @@ export const DEFAULT_PROGRESS: UserProgressData = {
   bookmarkedWordIds: [],
   customItems: [],
   deletedCustomItemIds: [],
+  recentVocabHistory: [],
 };
 
 export function loadUserProgress(): UserProgressData {
@@ -157,6 +159,24 @@ export function loadUserProgress(): UserProgressData {
 
     loaded.customItems = loaded.customItems || [];
     loaded.deletedCustomItemIds = loaded.deletedCustomItemIds || [];
+    loaded.recentVocabHistory = Array.isArray(loaded.recentVocabHistory)
+      ? loaded.recentVocabHistory
+      : [];
+
+    // Migrate legacy localStorage study navigation level if vocabStudyState is absent
+    try {
+      const savedNavLevel = localStorage.getItem(STUDY_NAVIGATION_LEVEL_KEY);
+      if (
+        !loaded.vocabStudyState &&
+        savedNavLevel &&
+        ['essential', 'intermediate', 'advanced', 'all'].includes(savedNavLevel)
+      ) {
+        loaded.vocabStudyState = {
+          studyModeLevel: savedNavLevel as VocabStudyLevelMode,
+          updatedAt: new Date(0).toISOString(),
+        };
+      }
+    } catch {}
 
     return loaded;
   } catch (err) {
@@ -200,6 +220,13 @@ export function saveUserProgress(data: UserProgressData): void {
         window.dispatchEvent(
           new CustomEvent('custom-vocab-synced', { detail: data.customItems })
         );
+      } catch {}
+    }
+
+    if (data.vocabStudyState?.studyModeLevel) {
+      try {
+        localStorage.setItem(STUDY_NAVIGATION_LEVEL_KEY, data.vocabStudyState.studyModeLevel);
+        window.dispatchEvent(new Event('vocab-study-synced'));
       } catch {}
     }
   } catch (err) {

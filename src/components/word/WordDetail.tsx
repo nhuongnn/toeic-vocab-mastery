@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import {
@@ -16,18 +16,32 @@ import {
   Target,
   Sparkles,
   Brain,
+  History,
+  Cloud,
+  CloudCheck,
+  RefreshCw,
 } from 'lucide-react';
 import { VocabularyWord, WordLevel } from '@/types/vocabulary';
+import { VocabStudyLevelMode } from '@/types/progress';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useChat } from '@/contexts/ChatContext';
 import { useOnboarding } from '@/contexts/OnboardingContext';
+import { useAuth } from '@/contexts/AuthContext';
 import {
   LEVEL_CONFIG,
   getWordPopularityScore,
   getDailyCommunicationScore,
   getWordMindMapUrl,
 } from '@/lib/vocabulary-helpers';
-import { allVocabularyWords } from '@/data/vocabulary';
+import {
+  STUDY_NAVIGATION_LEVEL_KEY,
+  buildWordStudyUrl,
+  filterRecentVocabEntries,
+  formatRelativeTimeVi,
+  getWordsForStudyContext,
+  resolveActivePhase,
+} from '@/lib/vocab-study';
+import { allVocabularyWords, wordsById } from '@/data/vocabulary';
 import { PronunciationPlayer } from './PronunciationPlayer';
 import { EtymologySection } from './EtymologySection';
 import { NativeMindset } from './NativeMindset';
@@ -45,6 +59,7 @@ interface WordDetailProps {
   nextWordId?: string;
   initialLevel?: string;
   initialCategory?: string;
+  initialPhase?: string;
 }
 
 export function WordDetail({
@@ -53,12 +68,29 @@ export function WordDetail({
   nextWordId,
   initialLevel,
   initialCategory,
+  initialPhase,
 }: WordDetailProps) {
   const router = useRouter();
-  const { recordReview, toggleBookmark, isBookmarked, getCard } = useProgress();
+  const {
+    isLoaded,
+    recordReview,
+    toggleBookmark,
+    isBookmarked,
+    getCard,
+    recentVocabHistory,
+    vocabStudyState,
+    recordVocabStudy,
+    updateVocabStudyState,
+    syncStatus,
+    forceSync,
+  } = useProgress();
   const { state: onboardingState, setCurrentLevel } = useOnboarding();
+  const { user, openAuthModal } = useAuth();
   const { openChat } = useChat();
   const [ratedQuality, setRatedQuality] = useState<number | null>(null);
+  const [showRecentDrawer, setShowRecentDrawer] = useState(false);
+  const [recentScope, setRecentScope] = useState<'mode' | 'path' | 'all'>('mode');
+  const hasRecordedVisitRef = useRef<string | null>(null);
 
   const establishedLevel: WordLevel =
     onboardingState.learningPath?.currentLevel ||
@@ -66,7 +98,7 @@ export function WordDetail({
     'essential';
 
   // Active level for learning navigation
-  const [selectedLevel, setSelectedLevel] = useState<WordLevel | 'all'>(() => {
+  const [selectedLevel, setSelectedLevel] = useState<VocabStudyLevelMode>(() => {
     if (
       initialLevel === 'essential' ||
       initialLevel === 'intermediate' ||
@@ -77,7 +109,7 @@ export function WordDetail({
     }
     if (typeof window !== 'undefined') {
       try {
-        const saved = localStorage.getItem('toeic_study_navigation_level');
+        const saved = localStorage.getItem(STUDY_NAVIGATION_LEVEL_KEY);
         if (
           saved === 'essential' ||
           saved === 'intermediate' ||
@@ -94,34 +126,115 @@ export function WordDetail({
   });
 
   const [categoryLock, setCategoryLock] = useState<boolean>(Boolean(initialCategory));
+  const [selectedPhaseId, setSelectedPhaseId] = useState<string | null>(initialPhase || null);
 
-  const handleLevelChange = (lvl: WordLevel | 'all') => {
+  const activePhase = useMemo(() => {
+    if (!selectedPhaseId || !onboardingState.learningPath) return null;
+    return resolveActivePhase(onboardingState.learningPath, selectedPhaseId);
+  }, [selectedPhaseId, onboardingState.learningPath]);
+
+  // Record this word study visit once progress is loaded
+  useEffect(() => {
+    if (!isLoaded) return;
+    if (hasRecordedVisitRef.current === word.id) return;
+    hasRecordedVisitRef.current = word.id;
+
+    recordVocabStudy({
+      wordId: word.id,
+      studyModeLevel: activePhase ? activePhase.wordLevel : selectedLevel,
+      categoryId: categoryLock ? word.category : 'all',
+      categoryLocked: categoryLock,
+      phaseId: activePhase?.id,
+      source: activePhase ? 'learning-path' : 'word-detail',
+    });
+  }, [isLoaded, word.id, word.category, selectedLevel, categoryLock, activePhase, recordVocabStudy]);
+
+  const handleLevelChange = (lvl: VocabStudyLevelMode) => {
     setSelectedLevel(lvl);
+    setSelectedPhaseId(null);
     try {
-      localStorage.setItem('toeic_study_navigation_level', lvl);
+      localStorage.setItem(STUDY_NAVIGATION_LEVEL_KEY, lvl);
     } catch {
       // ignore
     }
+    updateVocabStudyState({
+      studyModeLevel: lvl,
+      activePhaseId: undefined,
+      lastWordId: word.id,
+    });
+  };
+
+  const handleToggleCategoryLock = (checked: boolean) => {
+    setCategoryLock(checked);
+    updateVocabStudyState({
+      categoryLocked: checked,
+      lockedCategoryId: checked ? word.category : undefined,
+    });
+  };
+
+  const handleSelectPhase = (phaseId: string | null) => {
+    setSelectedPhaseId(phaseId);
+    if (phaseId && onboardingState.learningPath) {
+      const matched = resolveActivePhase(onboardingState.learningPath, phaseId);
+      if (matched) {
+        setSelectedLevel(matched.wordLevel);
+        updateVocabStudyState({
+          activePhaseId: matched.id,
+          studyModeLevel: matched.wordLevel,
+          lastWordId: word.id,
+        });
+        return;
+      }
+    }
+    updateVocabStudyState({
+      activePhaseId: undefined,
+      studyModeLevel: selectedLevel,
+    });
   };
 
   const handleSyncToLearningPath = (lvl: WordLevel) => {
     setCurrentLevel(lvl);
     setSelectedLevel(lvl);
     try {
-      localStorage.setItem('toeic_study_navigation_level', lvl);
+      localStorage.setItem(STUDY_NAVIGATION_LEVEL_KEY, lvl);
     } catch {
       // ignore
     }
+    updateVocabStudyState({
+      studyModeLevel: lvl,
+    });
   };
 
-  // Filter word bank according to chosen level & category lock
+  // Filter word bank according to chosen phase, level & category lock
   const filteredWords = useMemo(() => {
-    return allVocabularyWords.filter((w) => {
-      if (selectedLevel !== 'all' && w.level !== selectedLevel) return false;
-      if (categoryLock && w.category !== word.category) return false;
-      return true;
+    return getWordsForStudyContext(allVocabularyWords, {
+      studyModeLevel: selectedLevel,
+      categoryLocked: categoryLock,
+      lockedCategoryId: word.category,
+      activePhase,
+      sortBy: vocabStudyState?.sortBy || 'default',
     });
-  }, [selectedLevel, categoryLock, word.category]);
+  }, [selectedLevel, categoryLock, word.category, activePhase, vocabStudyState?.sortBy]);
+
+  const recentFilteredWords = useMemo(() => {
+    const scopeMap =
+      recentScope === 'mode' ? 'study-mode' : recentScope === 'path' ? 'learning-path' : 'all';
+    return filterRecentVocabEntries(recentVocabHistory, wordsById, scopeMap, {
+      studyModeLevel: selectedLevel,
+      categoryLocked: categoryLock,
+      lockedCategoryId: word.category,
+      learningPath: onboardingState.learningPath,
+      phaseId: activePhase?.id || 'all',
+    }).slice(0, 8);
+  }, [
+    recentVocabHistory,
+    recentScope,
+    selectedLevel,
+    categoryLock,
+    word.category,
+    onboardingState.learningPath,
+    activePhase,
+  ]);
 
   const currentIndex = useMemo(() => {
     return filteredWords.findIndex((w) => w.id === word.id);
@@ -148,18 +261,23 @@ export function WordDetail({
 
   const buildWordUrl = React.useCallback(
     (targetWordId: string) => {
-      const params = new URLSearchParams();
-      if (selectedLevel !== 'all') {
-        params.set('level', selectedLevel);
-      }
-      if (categoryLock) {
-        params.set('category', word.category);
-      }
-      const qs = params.toString();
-      return `/word/${targetWordId}${qs ? `?${qs}` : ''}`;
+      return buildWordStudyUrl(targetWordId, {
+        level: selectedLevel,
+        category: categoryLock ? word.category : undefined,
+        phaseId: activePhase?.id || undefined,
+      });
     },
-    [selectedLevel, categoryLock, word.category]
+    [selectedLevel, categoryLock, word.category, activePhase]
   );
+
+  const backToCatalogHref = useMemo(() => {
+    const params = new URLSearchParams();
+    if (selectedLevel !== 'all') params.set('level', selectedLevel);
+    if (categoryLock) params.set('category', word.category);
+    if (activePhase?.id) params.set('phase', activePhase.id);
+    const qs = params.toString();
+    return `/categories${qs ? `?${qs}` : ''}`;
+  }, [selectedLevel, categoryLock, word.category, activePhase]);
 
   // Keyboard navigation shortcuts: ArrowRight -> Next, ArrowLeft -> Prev
   useEffect(() => {
@@ -217,7 +335,7 @@ export function WordDetail({
       {/* Top Navigation Bar */}
       <div className="flex items-center justify-between gap-4">
         <Link
-          href={`/categories${selectedLevel !== 'all' ? `?level=${selectedLevel}` : ''}`}
+          href={backToCatalogHref}
           className="flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-slate-200 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
@@ -304,14 +422,19 @@ export function WordDetail({
                 {currentRank ? (
                   <span>
                     Từ số <strong className="text-white">{currentRank}</strong> /{' '}
-                    <strong className="text-white">{totalInLevel.toLocaleString()}</strong> trong cấp độ{' '}
+                    <strong className="text-white">{totalInLevel.toLocaleString()}</strong> trong{' '}
                     <span className="text-indigo-300 font-semibold">
-                      {selectedLevel === 'all' ? 'kho từ' : LEVEL_CONFIG[selectedLevel as WordLevel]?.shortLabel}
+                      {activePhase
+                        ? activePhase.title.split(':')[0]
+                        : selectedLevel === 'all'
+                        ? 'kho từ'
+                        : LEVEL_CONFIG[selectedLevel as WordLevel]?.shortLabel}
                     </span>
                   </span>
                 ) : (
                   <span className="text-amber-400">
-                    Từ hiện tại là {word.level}. Bạn đang chọn xem trước danh sách {selectedLevel}.
+                    Từ hiện tại là {word.level}. Bạn đang chọn xem danh sách{' '}
+                    {activePhase ? activePhase.title.split(':')[0] : selectedLevel}.
                   </span>
                 )}
                 {categoryLock && (
@@ -354,30 +477,165 @@ export function WordDetail({
           </div>
         </div>
 
-        {/* Category Lock & Set as Default Level Options */}
-        <div className="pt-2.5 border-t border-slate-800/70 flex items-center justify-between gap-3 flex-wrap text-xs">
-          <label className="flex items-center gap-2 cursor-pointer text-slate-400 hover:text-slate-300">
-            <input
-              type="checkbox"
-              checked={categoryLock}
-              onChange={(e) => setCategoryLock(e.target.checked)}
-              className="rounded bg-slate-950 border-slate-800 text-indigo-600 focus:ring-0 focus:ring-offset-0 w-3.5 h-3.5 cursor-pointer"
-            />
-            <span>
-              Chỉ học trong chủ đề &ldquo;{word.category}&rdquo; ({filteredWords.length} từ)
-            </span>
-          </label>
+        {/* Category Lock, Learning Path Mode, Recent Words & Sync Controls */}
+        <div className="pt-2.5 border-t border-slate-800/70 space-y-3 text-xs">
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <label className="flex items-center gap-2 cursor-pointer text-slate-400 hover:text-slate-300">
+              <input
+                type="checkbox"
+                checked={categoryLock}
+                onChange={(e) => handleToggleCategoryLock(e.target.checked)}
+                className="rounded bg-slate-950 border-slate-800 text-indigo-600 focus:ring-0 focus:ring-offset-0 w-3.5 h-3.5 cursor-pointer"
+              />
+              <span>
+                Chỉ học trong chủ đề &ldquo;{word.category}&rdquo; ({filteredWords.length} từ)
+              </span>
+            </label>
 
-          {selectedLevel !== 'all' && selectedLevel !== establishedLevel && (
-            <button
-              type="button"
-              onClick={() => handleSyncToLearningPath(selectedLevel as WordLevel)}
-              className="text-[11px] font-semibold text-indigo-400 hover:text-indigo-300 hover:underline flex items-center gap-1"
-            >
-              <Sparkles className="w-3 h-3" />
-              <span>Đặt &ldquo;{LEVEL_CONFIG[selectedLevel as WordLevel]?.shortLabel}&rdquo; làm Cấp độ Lộ trình mặc định</span>
-              <ArrowRight className="w-3 h-3" />
-            </button>
+            <div className="flex items-center gap-2 flex-wrap">
+              {selectedLevel !== 'all' && selectedLevel !== establishedLevel && (
+                <button
+                  type="button"
+                  onClick={() => handleSyncToLearningPath(selectedLevel as WordLevel)}
+                  className="text-[11px] font-semibold text-indigo-400 hover:text-indigo-300 hover:underline flex items-center gap-1 cursor-pointer"
+                >
+                  <Sparkles className="w-3 h-3" />
+                  <span>Đặt &ldquo;{LEVEL_CONFIG[selectedLevel as WordLevel]?.shortLabel}&rdquo; làm Cấp độ Lộ trình mặc định</span>
+                  <ArrowRight className="w-3 h-3" />
+                </button>
+              )}
+
+              <button
+                type="button"
+                onClick={() => setShowRecentDrawer((v) => !v)}
+                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-[11px] font-semibold transition-all cursor-pointer ${
+                  showRecentDrawer
+                    ? 'bg-indigo-600/20 border-indigo-500/40 text-indigo-200'
+                    : 'bg-slate-950 border-slate-800 text-slate-300 hover:border-slate-700'
+                }`}
+              >
+                <History className="w-3.5 h-3.5 text-indigo-400" />
+                <span>Từ học gần nhất ({recentVocabHistory.length})</span>
+              </button>
+
+              {user ? (
+                <button
+                  type="button"
+                  onClick={() => forceSync()}
+                  disabled={syncStatus === 'syncing'}
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 hover:border-emerald-500/40 text-[11px] font-semibold text-emerald-300 transition-colors cursor-pointer disabled:opacity-50"
+                  title="Đồng bộ tiến độ từ vựng giữa các thiết bị"
+                >
+                  {syncStatus === 'syncing' ? (
+                    <RefreshCw className="w-3 h-3 animate-spin text-indigo-400" />
+                  ) : (
+                    <CloudCheck className="w-3 h-3 text-emerald-400" />
+                  )}
+                  <span>{syncStatus === 'syncing' ? 'Đang đồng bộ' : 'Đã đồng bộ'}</span>
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={openAuthModal}
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/30 hover:bg-indigo-500/20 text-[11px] font-semibold text-indigo-300 transition-colors cursor-pointer"
+                >
+                  <Cloud className="w-3 h-3 text-indigo-400" />
+                  <span>Đồng bộ thiết bị</span>
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Learning Path Phase Switcher */}
+          {onboardingState.learningPath && (
+            <div className="flex items-center gap-1.5 flex-wrap pt-1">
+              <span className="text-[11px] text-slate-400 font-semibold mr-1">
+                Lộ trình {onboardingState.learningPath.targetScore}+:
+              </span>
+              {onboardingState.learningPath.phases.map((phase, idx) => {
+                const isSelected = activePhase?.id === phase.id;
+                return (
+                  <button
+                    key={phase.id}
+                    type="button"
+                    onClick={() => handleSelectPhase(isSelected ? null : phase.id)}
+                    className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold border transition-all cursor-pointer ${
+                      isSelected
+                        ? 'bg-purple-600 text-white border-purple-500 shadow-sm'
+                        : 'bg-slate-950 text-slate-300 border-slate-800 hover:border-purple-500/40'
+                    }`}
+                  >
+                    Giai đoạn {idx + 1} ({phase.wordLevel})
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
+          {/* Quick Recent Words Drawer */}
+          {showRecentDrawer && (
+            <div className="p-3 rounded-2xl bg-slate-950/85 border border-slate-800 space-y-2.5">
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  {(
+                    [
+                      { id: 'mode', label: 'Theo chế độ hiện tại' },
+                      { id: 'path', label: 'Theo lộ trình' },
+                      { id: 'all', label: 'Tất cả gần đây' },
+                    ] as const
+                  ).map((tab) => (
+                    <button
+                      key={tab.id}
+                      type="button"
+                      onClick={() => setRecentScope(tab.id)}
+                      className={`px-2.5 py-1 rounded-lg text-[11px] font-bold transition-colors cursor-pointer ${
+                        recentScope === tab.id
+                          ? 'bg-indigo-600 text-white'
+                          : 'bg-slate-900 text-slate-400 hover:text-slate-200'
+                      }`}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
+                <Link
+                  href={backToCatalogHref}
+                  className="text-[11px] font-semibold text-indigo-400 hover:text-indigo-300"
+                >
+                  Xem đầy đủ trong Kho từ vựng →
+                </Link>
+              </div>
+
+              {recentFilteredWords.length > 0 ? (
+                <div className="flex flex-wrap gap-1.5">
+                  {recentFilteredWords.map((entry) => {
+                    const rw = wordsById[entry.wordId];
+                    if (!rw) return null;
+                    const isCurrent = rw.id === word.id;
+                    return (
+                      <Link
+                        key={entry.wordId}
+                        href={buildWordUrl(rw.id)}
+                        className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border text-[11px] font-semibold transition-all ${
+                          isCurrent
+                            ? 'bg-indigo-600/25 border-indigo-500 text-white'
+                            : 'bg-slate-900 border-slate-800 text-slate-200 hover:border-indigo-500/40 hover:text-white'
+                        }`}
+                      >
+                        <span className="uppercase">{rw.word}</span>
+                        <span className="text-[10px] text-slate-400 font-normal">
+                          ({formatRelativeTimeVi(entry.viewedAt)})
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="text-[11px] text-slate-400">
+                  Chưa có từ vựng nào trong bộ lọc gần đây này.
+                </div>
+              )}
+            </div>
           )}
         </div>
       </section>
@@ -558,9 +816,11 @@ export function WordDetail({
           <div className="flex items-center gap-2">
             <Target className="w-4 h-4 text-indigo-400" />
             <span>
-              Cấp độ đang học:{' '}
+              {activePhase ? 'Đang học theo lộ trình: ' : 'Cấp độ đang học: '}
               <strong className="text-white">
-                {selectedLevel === 'all'
+                {activePhase
+                  ? activePhase.title
+                  : selectedLevel === 'all'
                   ? 'Tất cả các từ'
                   : LEVEL_CONFIG[selectedLevel as WordLevel]?.label}
               </strong>
@@ -610,7 +870,13 @@ export function WordDetail({
             >
               <div className="text-right">
                 <div className="text-[10px] text-indigo-200 uppercase tracking-wider font-bold">
-                  Từ tiếp theo ({selectedLevel !== 'all' ? LEVEL_CONFIG[selectedLevel as WordLevel]?.shortLabel : 'Tiếp theo'})
+                  Từ tiếp theo (
+                  {activePhase
+                    ? activePhase.title.split(':')[0]
+                    : selectedLevel !== 'all'
+                    ? LEVEL_CONFIG[selectedLevel as WordLevel]?.shortLabel
+                    : 'Tiếp theo'}
+                  )
                 </div>
                 <div className="font-bold truncate max-w-[120px] sm:max-w-[200px]">
                   {nextWord.word}

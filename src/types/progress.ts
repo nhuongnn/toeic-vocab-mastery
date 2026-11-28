@@ -2,6 +2,7 @@ import { OnboardingState } from './onboarding';
 import { CharacterConfig, RoleplayScenario, RoleplayConversation } from './roleplay';
 import { AiTutorConversation } from '@/lib/ai/types';
 import { CustomVocabItem } from './custom-vocab';
+import { CategoryId, WordLevel, WordSortOption } from './vocabulary';
 
 export interface SRSCard {
   wordId: string;
@@ -61,6 +62,31 @@ export interface RoleplayPreferences {
   chatHistory?: RoleplayConversation[];
 }
 
+export type VocabStudyLevelMode = WordLevel | 'all';
+
+export type VocabStudySource = 'word-detail' | 'flashcard' | 'categories' | 'learning-path';
+
+export interface RecentVocabEntry {
+  wordId: string;
+  viewedAt: string; // ISO timestamp
+  studyModeLevel: VocabStudyLevelMode;
+  categoryId?: CategoryId | 'all';
+  categoryLocked?: boolean;
+  phaseId?: string;
+  source?: VocabStudySource;
+}
+
+export interface VocabStudyState {
+  lastWordId?: string;
+  lastStudiedAt?: string; // ISO timestamp
+  studyModeLevel: VocabStudyLevelMode;
+  categoryLocked?: boolean;
+  lockedCategoryId?: CategoryId;
+  activePhaseId?: string;
+  sortBy?: WordSortOption;
+  updatedAt: string; // ISO timestamp
+}
+
 export interface UserProgressData {
   version: number;
   cards: Record<string, SRSCard>;
@@ -73,4 +99,6 @@ export interface UserProgressData {
   aiTutorHistory?: AiTutorConversation[];
   customItems?: CustomVocabItem[];
   deletedCustomItemIds?: string[];
+  recentVocabHistory?: RecentVocabEntry[];
+  vocabStudyState?: VocabStudyState;
 }

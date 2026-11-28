@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import {
   Languages,
   Volume2,
@@ -23,6 +23,13 @@ import { getCambridgeUrl, getOxfordUrl, getBaseFormInfo } from '@/lib/dictionary
 import { TranslationProvider } from '@/types/progress';
 import { TRANSLATION_PROVIDER_LABELS } from '@/lib/translate-client';
 
+interface SelectionRect {
+  top: number;
+  bottom: number;
+  left: number;
+  width: number;
+}
+
 interface SelectionState {
   originalText: string;
   translatedText: string | null;
@@ -31,9 +38,7 @@ interface SelectionState {
   fallbackReason: string | null;
   loading: boolean;
   error: string | null;
-  x: number;
-  y: number;
-  isAbove: boolean;
+  selectionRect: SelectionRect | null;
   visible: boolean;
   mode: 'menu' | 'translation';
 }
@@ -71,9 +76,7 @@ export function SelectionTranslator() {
     fallbackReason: null,
     loading: false,
     error: null,
-    x: 0,
-    y: 0,
-    isAbove: true,
+    selectionRect: null,
     visible: false,
     mode: 'menu',
   });
@@ -181,21 +184,6 @@ export function SelectionTranslator() {
 
       if (rect.width === 0 || rect.height === 0) return;
 
-      // Calculate position
-      const menuWidth = Math.min(720, typeof window !== 'undefined' ? window.innerWidth - 24 : 720);
-      const padding = 12;
-      let x = rect.left + rect.width / 2;
-      // Bound horizontally to window
-      x = Math.max(menuWidth / 2 + padding, Math.min(window.innerWidth - menuWidth / 2 - padding, x));
-
-      // Place above if space permits, else below
-      let isAbove = true;
-      let y = rect.top - 10;
-      if (y < 130) {
-        y = rect.bottom + 10;
-        isAbove = false;
-      }
-
       setState({
         originalText: rawText,
         translatedText: null,
@@ -204,9 +192,12 @@ export function SelectionTranslator() {
         fallbackReason: null,
         loading: false,
         error: null,
-        x,
-        y,
-        isAbove,
+        selectionRect: {
+          top: rect.top,
+          bottom: rect.bottom,
+          left: rect.left,
+          width: rect.width,
+        },
         visible: true,
         mode: 'menu',
       });
@@ -454,20 +445,90 @@ export function SelectionTranslator() {
     handleAddToNotebook,
   ]);
 
+  const positionTooltip = useCallback(() => {
+    const el = tooltipRef.current;
+    const rect = state.selectionRect;
+    if (!state.visible || !el || !rect) return;
+
+    const padding = 12;
+    const gap = 10;
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const { width: popupWidth, height: popupHeight } = el.getBoundingClientRect();
+
+    const maxLeft = Math.max(padding, vw - popupWidth - padding);
+    const rawLeft = rect.left + rect.width / 2 - popupWidth / 2;
+    const left = Math.min(maxLeft, Math.max(padding, rawLeft));
+
+    // Reserve sticky navbar height (~64px) when deciding whether to prefer placing above
+    const stickyHeaderEl = document.querySelector('header');
+    const headerBottom = stickyHeaderEl
+      ? Math.max(0, stickyHeaderEl.getBoundingClientRect().bottom)
+      : 0;
+    const preferredTopBound = Math.max(padding, headerBottom + 8);
+
+    const spaceAbovePreferred = rect.top - preferredTopBound;
+    const spaceBelow = vh - rect.bottom - padding;
+
+    let rawTop: number;
+    if (spaceAbovePreferred >= popupHeight + gap) {
+      rawTop = rect.top - popupHeight - gap;
+    } else if (spaceBelow >= popupHeight + gap) {
+      rawTop = rect.bottom + gap;
+    } else if (spaceBelow >= rect.top - padding) {
+      rawTop = rect.bottom + gap;
+    } else {
+      rawTop = rect.top - popupHeight - gap;
+    }
+
+    // Clamp strictly inside the viewport so the popup is never cut off on any edge
+    const maxTop = Math.max(padding, vh - popupHeight - padding);
+    const top = Math.min(maxTop, Math.max(padding, rawTop));
+
+    el.style.top = `${Math.round(top)}px`;
+    el.style.left = `${Math.round(left)}px`;
+  }, [state.visible, state.selectionRect]);
+
+  useLayoutEffect(() => {
+    if (!state.visible) return;
+    positionTooltip();
+
+    const el = tooltipRef.current;
+    const observer =
+      el && typeof ResizeObserver !== 'undefined'
+        ? new ResizeObserver(() => positionTooltip())
+        : null;
+    if (el && observer) {
+      observer.observe(el);
+    }
+
+    window.addEventListener('resize', positionTooltip);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('resize', positionTooltip);
+    };
+  }, [
+    state.visible,
+    state.mode,
+    state.loading,
+    state.translatedText,
+    state.error,
+    state.originalText,
+    state.selectionRect,
+    positionTooltip,
+  ]);
+
   if (!state.visible) return null;
+
+  const openAiBelow = state.selectionRect ? state.selectionRect.top < 220 : true;
 
   return (
     <div
       ref={tooltipRef}
-      style={{
-        top: `${state.y}px`,
-        left: `${state.x}px`,
-        transform: state.isAbove ? 'translate(-50%, -100%)' : 'translate(-50%, 0)',
-      }}
-      className={`fixed z-50 transition-all duration-150 animate-in fade-in zoom-in-95 ${
+      className={`fixed z-[70] animate-in fade-in duration-150 ${
         state.mode === 'menu'
           ? 'flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 p-1.5 rounded-2xl bg-slate-900/95 border border-indigo-500/40 shadow-2xl backdrop-blur-xl max-w-[calc(100vw-24px)]'
-          : 'w-88 sm:w-96 max-w-[94vw] rounded-2xl bg-slate-900/95 border border-indigo-500/40 p-4 shadow-2xl backdrop-blur-xl'
+          : 'w-88 sm:w-96 max-w-[calc(100vw-24px)] max-h-[calc(100vh-24px)] overflow-y-auto rounded-2xl bg-slate-900/95 border border-indigo-500/40 p-4 shadow-2xl backdrop-blur-xl'
       }`}
     >
       {state.mode === 'menu' ? (
@@ -603,8 +664,8 @@ export function SelectionTranslator() {
             {aiMenuOpen && (
               <div
                 className={`absolute z-60 ${
-                  state.isAbove ? 'top-full mt-2' : 'bottom-full mb-2'
-                } left-1/2 -translate-x-1/2 w-56 p-1.5 rounded-2xl bg-slate-900/98 border border-violet-500/40 shadow-2xl backdrop-blur-xl animate-in fade-in zoom-in-95`}
+                  openAiBelow ? 'top-full mt-2' : 'bottom-full mb-2'
+                } left-1/2 -translate-x-1/2 w-56 max-w-[calc(100vw-24px)] p-1.5 rounded-2xl bg-slate-900/98 border border-violet-500/40 shadow-2xl backdrop-blur-xl animate-in fade-in zoom-in-95`}
               >
                 <div className="px-2.5 py-1 text-[10px] font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-800/80 mb-1 flex items-center justify-between">
                   <span>Hỏi AI Tutor</span>

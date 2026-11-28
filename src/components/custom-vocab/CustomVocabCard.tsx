@@ -9,6 +9,8 @@ import {
   StickyNote,
   MessageSquare,
   FileText,
+  Brain,
+  Sparkles,
 } from 'lucide-react';
 import { CustomVocabItem } from '@/types/custom-vocab';
 import { useSpeech } from '@/hooks/useSpeech';
@@ -18,6 +20,7 @@ interface CustomVocabCardProps {
   onView: (item: CustomVocabItem) => void;
   onEdit: (item: CustomVocabItem) => void;
   onDelete: (id: string) => void;
+  onOpenMindMap?: (item: CustomVocabItem) => void;
 }
 
 export function CustomVocabCard({
@@ -25,6 +28,7 @@ export function CustomVocabCard({
   onView,
   onEdit,
   onDelete,
+  onOpenMindMap,
 }: CustomVocabCardProps) {
   const { speak } = useSpeech();
 
@@ -88,6 +92,27 @@ export function CustomVocabCard({
             >
               <Volume2 className="w-4 h-4" />
             </button>
+            {item.type === 'vocabulary' && onOpenMindMap && (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpenMindMap(item);
+                }}
+                className={`p-1.5 rounded-lg transition-colors ${
+                  item.mindMap
+                    ? 'text-purple-300 bg-purple-500/15 hover:bg-purple-500/25'
+                    : 'text-slate-400 hover:text-purple-300 hover:bg-slate-800'
+                }`}
+                title={
+                  item.mindMap
+                    ? 'Xem Vocab Mind Map (AI)'
+                    : 'Tạo Vocab Mind Map bằng AI'
+                }
+              >
+                <Brain className="w-4 h-4" />
+              </button>
+            )}
             <button
               type="button"
               onClick={handleEdit}
@@ -142,9 +167,37 @@ export function CustomVocabCard({
       </div>
 
       {/* Card Bottom: Click to view details prompt */}
-      <div className="pt-3 mt-3 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-500">
+      <div className="pt-3 mt-3 border-t border-slate-800/60 flex items-center justify-between gap-2 text-[11px] text-slate-500">
         <span>Nhấn để xem chi tiết</span>
-        <Eye className="w-3.5 h-3.5 group-hover:text-indigo-400 transition-colors" />
+        <div className="flex items-center gap-2">
+          {item.type === 'vocabulary' && onOpenMindMap && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onOpenMindMap(item);
+              }}
+              className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-semibold border transition-colors ${
+                item.mindMap
+                  ? 'bg-purple-500/15 border-purple-500/30 text-purple-300 hover:bg-purple-500/25'
+                  : 'bg-slate-800/80 border-slate-700/80 text-slate-300 hover:text-purple-300 hover:border-purple-500/40'
+              }`}
+              title={
+                item.mindMap
+                  ? 'Xem Vocab Mind Map đã tạo'
+                  : 'Tạo Vocab Mind Map bằng AI'
+              }
+            >
+              {item.mindMap ? (
+                <Brain className="w-3 h-3 text-purple-400" />
+              ) : (
+                <Sparkles className="w-3 h-3 text-purple-400" />
+              )}
+              <span>{item.mindMap ? 'Mind Map AI' : 'Tạo Mind Map'}</span>
+            </button>
+          )}
+          <Eye className="w-3.5 h-3.5 group-hover:text-indigo-400 transition-colors" />
+        </div>
       </div>
     </div>
   );

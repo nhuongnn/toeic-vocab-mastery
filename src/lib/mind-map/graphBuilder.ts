@@ -1,5 +1,6 @@
 import { CategoryId, VocabularyWord, WordLevel } from '@/types/vocabulary';
 import { SRSCard } from '@/types/progress';
+import { CustomVocabItem } from '@/types/custom-vocab';
 import { isCardDue } from '@/lib/srs';
 import { RootFamily } from '@/data/mind-map/rootFamilies';
 import {
@@ -109,32 +110,37 @@ function createEdge(
   };
 }
 
-/**
- * Mode 1: Word Explorer — explores a single word's semantic network
- * (synonyms, antonyms, word family, collocations, related words).
- */
-export function buildWordExplorerGraph(
-  word: VocabularyWord,
-  allWords: VocabularyWord[],
-  srsCards: Record<string, SRSCard>
-): MindMapGraph {
-  const lookup = buildWordLookup(allWords);
-  const nodes: MindMapNode[] = [];
-  const edges: MindMapEdge[] = [];
-  const seenLabels = new Set<string>([word.word.toLowerCase()]);
+function populateSemanticBranches(params: {
+  centerId: string;
+  centerText: string;
+  synonyms?: string[];
+  antonyms?: string[];
+  wordFamily?: Record<string, string | undefined>;
+  collocations?: string[];
+  relatedWords?: string[];
+  nodeNotes?: Record<string, string>;
+  allWords: VocabularyWord[];
+  srsCards: Record<string, SRSCard>;
+  nodes: MindMapNode[];
+  edges: MindMapEdge[];
+}): void {
+  const {
+    centerId,
+    centerText,
+    synonyms = [],
+    antonyms = [],
+    wordFamily = {},
+    collocations = [],
+    relatedWords = [],
+    nodeNotes,
+    allWords,
+    srsCards,
+    nodes,
+    edges,
+  } = params;
 
-  const centerId = `word:${word.id}`;
-  nodes.push(
-    createNode({
-      id: centerId,
-      label: word.word,
-      type: 'center',
-      word,
-      radius: 42,
-      srsCards,
-      meta: { isExpanded: true },
-    })
-  );
+  const lookup = buildWordLookup(allWords);
+  const seenLabels = new Set<string>([centerText.toLowerCase()]);
 
   const addBranch = (
     items: string[],
@@ -149,15 +155,17 @@ export function buildWordExplorerGraph(
       if (added >= maxCount) break;
       const clean = raw.trim();
       if (!clean) continue;
-      const key = `${nodeType}:${clean.toLowerCase()}`;
-      if (seenLabels.has(clean.toLowerCase()) || seenLabels.has(key)) continue;
-      seenLabels.add(clean.toLowerCase());
+      const lower = clean.toLowerCase();
+      const key = `${nodeType}:${lower}`;
+      if (seenLabels.has(lower) || seenLabels.has(key)) continue;
+      seenLabels.add(lower);
       seenLabels.add(key);
 
-      const matched = lookup.get(clean.toLowerCase());
-      const nodeId = matched ? `word:${matched.id}` : `${nodeType}:${clean.toLowerCase()}`;
+      const matched = lookup.get(lower);
+      const nodeId = matched ? `word:${matched.id}` : `${nodeType}:${lower}`;
       if (nodes.some((n) => n.id === nodeId)) continue;
 
+      const noteConcept = nodeNotes?.[lower];
       nodes.push(
         createNode({
           id: nodeId,
@@ -165,6 +173,7 @@ export function buildWordExplorerGraph(
           type: nodeType,
           word: matched,
           srsCards,
+          meta: !matched && noteConcept ? { coreConcept: noteConcept } : undefined,
         })
       );
       edges.push(createEdge(centerId, nodeId, edgeType, edgeLabel, weight));
@@ -172,26 +181,21 @@ export function buildWordExplorerGraph(
     }
   };
 
-  // Synonyms
-  addBranch(word.synonyms || [], 'synonym', 'synonym', 'synonym', 6, 1.1);
+  addBranch(synonyms, 'synonym', 'synonym', 'synonym', 6, 1.1);
+  addBranch(antonyms, 'antonym', 'antonym', 'antonym', 5, 0.9);
 
-  // Antonyms
-  addBranch(word.antonyms || [], 'antonym', 'antonym', 'antonym', 5, 0.9);
-
-  // Word Family (noun, verb, adjective, adverb)
-  const familyEntries = Object.entries(word.wordFamily || {});
-  for (const [pos, formStr] of familyEntries) {
+  for (const [pos, formStr] of Object.entries(wordFamily)) {
     if (!formStr) continue;
-    // Handle forms like "collaboration / collaborator"
-    const forms = formStr.split('/').map((s) => s.trim()).filter(Boolean);
+    const forms = formStr.split(/[,/]/).map((s) => s.trim()).filter(Boolean);
     for (const form of forms.slice(0, 2)) {
       const lower = form.toLowerCase();
-      if (lower === word.word.toLowerCase() || seenLabels.has(lower)) continue;
+      if (lower === centerText.toLowerCase() || seenLabels.has(lower)) continue;
       seenLabels.add(lower);
       const matched = lookup.get(lower);
       const nodeId = matched ? `word:${matched.id}` : `family:${lower}`;
       if (nodes.some((n) => n.id === nodeId)) continue;
 
+      const noteConcept = nodeNotes?.[lower];
       nodes.push(
         createNode({
           id: nodeId,
@@ -199,18 +203,114 @@ export function buildWordExplorerGraph(
           type: 'family',
           word: matched,
           srsCards,
-          meta: { posLabel: pos },
+          meta: {
+            posLabel: pos,
+            ...(!matched && noteConcept ? { coreConcept: noteConcept } : {}),
+          },
         })
       );
       edges.push(createEdge(centerId, nodeId, 'family', pos, 1.2));
     }
   }
 
-  // Collocations
-  addBranch(word.examples?.collocations || [], 'collocation', 'collocation', 'collocation', 5, 0.85);
+  addBranch(collocations, 'collocation', 'collocation', 'collocation', 5, 0.85);
+  addBranch(relatedWords, 'related', 'related', 'related', 5, 1.0);
+}
 
-  // Related words
-  addBranch(word.relatedWords || [], 'related', 'related', 'related', 5, 1.0);
+/**
+ * Mode 1: Word Explorer — explores a single word's semantic network
+ * (synonyms, antonyms, word family, collocations, related words).
+ */
+export function buildWordExplorerGraph(
+  word: VocabularyWord,
+  allWords: VocabularyWord[],
+  srsCards: Record<string, SRSCard>
+): MindMapGraph {
+  const nodes: MindMapNode[] = [];
+  const edges: MindMapEdge[] = [];
+
+  const centerId = `word:${word.id}`;
+  nodes.push(
+    createNode({
+      id: centerId,
+      label: word.word,
+      type: 'center',
+      word,
+      radius: 42,
+      srsCards,
+      meta: { isExpanded: true },
+    })
+  );
+
+  populateSemanticBranches({
+    centerId,
+    centerText: word.word,
+    synonyms: word.synonyms,
+    antonyms: word.antonyms,
+    wordFamily: word.wordFamily,
+    collocations: word.examples?.collocations,
+    relatedWords: word.relatedWords,
+    allWords,
+    srsCards,
+    nodes,
+    edges,
+  });
+
+  return { nodes, edges, centerNodeId: centerId };
+}
+
+/**
+ * Builds an interactive semantic Mind Map graph for a custom notebook vocabulary item.
+ * Strictly applies only to items of type 'vocabulary' (never 'pattern').
+ */
+export function buildCustomVocabGraph(
+  item: CustomVocabItem,
+  allWords: VocabularyWord[],
+  srsCards: Record<string, SRSCard>
+): MindMapGraph {
+  const centerId = `custom:${item.id}`;
+  const mindMap = item.mindMap;
+  const centerPos = mindMap?.partOfSpeech || item.partOfSpeech;
+
+  const nodes: MindMapNode[] = [
+    createNode({
+      id: centerId,
+      label: item.text.trim(),
+      type: 'center',
+      radius: 42,
+      srsCards,
+      meta: {
+        ipa: mindMap?.ipa || item.ipa,
+        partOfSpeech: centerPos ? [centerPos] : undefined,
+        coreConcept: mindMap?.coreConcept || item.explanation,
+        rootMeaning: mindMap?.rootInfo
+          ? `${mindMap.rootInfo.root}: ${mindMap.rootInfo.meaning}`
+          : undefined,
+        origin: mindMap?.rootInfo?.origin,
+        isExpanded: true,
+      },
+    }),
+  ];
+  const edges: MindMapEdge[] = [];
+
+  if (item.type !== 'vocabulary' || !mindMap) {
+    return { nodes, edges, centerNodeId: centerId };
+  }
+
+  populateSemanticBranches({
+    centerId,
+    centerText: item.text.trim(),
+    synonyms: mindMap.synonyms,
+    antonyms: mindMap.antonyms,
+    wordFamily: mindMap.wordFamily,
+    collocations: mindMap.collocations,
+    relatedWords: mindMap.relatedWords,
+    nodeNotes: mindMap.nodeNotes,
+    allWords,
+    srsCards,
+    nodes,
+    edges,
+  });
 
   return { nodes, edges, centerNodeId: centerId };
 }

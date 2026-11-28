@@ -16,6 +16,7 @@ import {
   Calendar,
   ExternalLink,
   Brain,
+  Sparkles,
 } from 'lucide-react';
 import { CustomVocabItem } from '@/types/custom-vocab';
 import { useSpeech } from '@/hooks/useSpeech';
@@ -28,6 +29,7 @@ interface CustomVocabDetailModalProps {
   onClose: () => void;
   onEdit: (item: CustomVocabItem) => void;
   onDelete: (id: string) => void;
+  onOpenMindMap?: (item: CustomVocabItem) => void;
 }
 
 export function CustomVocabDetailModal({
@@ -35,6 +37,7 @@ export function CustomVocabDetailModal({
   onClose,
   onEdit,
   onDelete,
+  onOpenMindMap,
 }: CustomVocabDetailModalProps) {
   const { speak } = useSpeech();
   const [copied, setCopied] = React.useState(false);
@@ -215,15 +218,37 @@ export function CustomVocabDetailModal({
               )}
               <ExternalLink className="w-2.5 h-2.5 text-sky-400/60" />
             </a>
+            {item.type === 'vocabulary' && onOpenMindMap && (
+              <button
+                type="button"
+                onClick={() => {
+                  onClose();
+                  onOpenMindMap(item);
+                }}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold bg-purple-500/15 hover:bg-purple-500/25 text-purple-300 border border-purple-500/35 transition-all"
+                title={
+                  item.mindMap
+                    ? `Xem Vocab Mind Map (AI) của "${item.text}"`
+                    : `Tạo Vocab Mind Map bằng AI cho "${item.text}"`
+                }
+              >
+                {item.mindMap ? (
+                  <Brain className="w-3.5 h-3.5 text-purple-400" />
+                ) : (
+                  <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+                )}
+                <span>{item.mindMap ? 'Xem Mind Map AI' : 'Tạo Mind Map AI'}</span>
+              </button>
+            )}
             {matchedVocabWord && (
               <Link
                 href={getWordMindMapUrl(matchedVocabWord.id, '/notebook')}
                 onClick={onClose}
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 transition-all"
-                title={`Xem Vocabulary Mind Map của "${matchedVocabWord.word}"`}
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 transition-all"
+                title={`Xem Vocabulary Mind Map hệ thống của "${matchedVocabWord.word}"`}
               >
-                <Brain className="w-3 h-3 text-purple-400" />
-                <span>Mind Map</span>
+                <Brain className="w-3 h-3 text-indigo-400" />
+                <span>{onOpenMindMap ? 'Mind Map hệ thống' : 'Mind Map'}</span>
               </Link>
             )}
           </div>

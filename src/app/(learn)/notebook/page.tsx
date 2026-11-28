@@ -25,6 +25,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { CustomItemType, CustomVocabItem } from '@/types/custom-vocab';
 import { CustomVocabCard } from '@/components/custom-vocab/CustomVocabCard';
 import { CustomVocabDetailModal } from '@/components/custom-vocab/CustomVocabDetailModal';
+import { CustomVocabMindMapModal } from '@/components/custom-vocab/CustomVocabMindMapModal';
 
 export default function NotebookPage() {
   const { customItems, deleteCustomItem, syncStatus, lastSyncedAt, forceSync } = useProgress();
@@ -36,9 +37,23 @@ export default function NotebookPage() {
 
   // Modal states
   const [detailItem, setDetailItem] = useState<CustomVocabItem | null>(null);
+  const [mindMapItemId, setMindMapItemId] = useState<string | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [isManualSyncing, setIsManualSyncing] = useState(false);
   const searchInputRef = React.useRef<HTMLInputElement>(null);
+
+  const mindMapItem = useMemo(
+    () =>
+      mindMapItemId
+        ? customItems.find((it) => it.id === mindMapItemId && it.type === 'vocabulary') || null
+        : null,
+    [customItems, mindMapItemId]
+  );
+
+  const handleOpenMindMap = (item: CustomVocabItem) => {
+    if (item.type !== 'vocabulary') return;
+    setMindMapItemId(item.id);
+  };
 
   // Keyboard shortcut '/' focuses the notebook search input when not typing in an input
   React.useEffect(() => {
@@ -193,7 +208,8 @@ export default function NotebookPage() {
             </h1>
             <p className="text-xs sm:text-sm text-slate-400 max-w-2xl leading-relaxed">
               Tự do lưu trữ từ vựng, collocation và mẫu câu tâm đắc. Hỗ trợ trí tuệ nhân tạo (AI)
-              tự động phân tích ý nghĩa và tạo ví dụ ngữ cảnh doanh nghiệp thực tế.
+              tự động phân tích ý nghĩa, tạo ví dụ ngữ cảnh doanh nghiệp và vẽ{' '}
+              <span className="text-purple-300 font-medium">Vocab Mind Map</span> cho các từ vựng.
             </p>
           </div>
 
@@ -384,6 +400,7 @@ export default function NotebookPage() {
               onView={(it) => setDetailItem(it)}
               onEdit={(it) => handleOpenEditModal(it)}
               onDelete={(id) => setDeletingId(id)}
+              onOpenMindMap={handleOpenMindMap}
             />
           ))}
         </div>
@@ -440,6 +457,13 @@ export default function NotebookPage() {
         onClose={() => setDetailItem(null)}
         onEdit={(item) => handleOpenEditModal(item)}
         onDelete={(id) => deleteCustomItem(id)}
+        onOpenMindMap={handleOpenMindMap}
+      />
+
+      {/* 5b. AI Vocab Mind Map Modal (Vocabulary items only) */}
+      <CustomVocabMindMapModal
+        item={mindMapItem}
+        onClose={() => setMindMapItemId(null)}
       />
 
       {/* 6. Quick Delete Confirmation Dialog */}

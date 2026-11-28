@@ -118,27 +118,34 @@ export function MindMapNodeDetail({
                 <Volume2 className="w-3.5 h-3.5" />
               </button>
             </div>
-          ) : (
-            !word &&
-            lookupTerms.length > 0 && (
-              <div className="flex items-center gap-2 mt-1">
-                {node.meta?.posLabel && (
-                  <span className="text-[11px] font-mono text-violet-300 bg-violet-500/15 px-2 py-0.5 rounded-md border border-violet-500/25">
-                    {node.meta.posLabel}
-                  </span>
-                )}
+          ) : !word && (node.meta?.ipa || lookupTerms.length > 0 || node.type === 'center') ? (
+            <div className="flex items-center gap-2 mt-1 flex-wrap">
+              {node.meta?.ipa && (
+                <span className="text-xs font-mono text-indigo-300">{node.meta.ipa}</span>
+              )}
+              {node.meta?.posLabel && (
+                <span className="text-[11px] font-mono text-violet-300 bg-violet-500/15 px-2 py-0.5 rounded-md border border-violet-500/25">
+                  {node.meta.posLabel}
+                </span>
+              )}
+              {!node.meta?.posLabel && node.meta?.partOfSpeech && node.meta.partOfSpeech.length > 0 && (
+                <span className="text-[11px] text-amber-300 bg-amber-500/15 px-2 py-0.5 rounded-md border border-amber-500/25">
+                  {node.meta.partOfSpeech.join(', ')}
+                </span>
+              )}
+              {(lookupTerms.length > 0 || node.type === 'center') && (
                 <button
                   type="button"
-                  onClick={() => speak(lookupTerms[0])}
+                  onClick={() => speak(lookupTerms[0] || node.label)}
                   className="p-1 rounded-lg bg-indigo-500/15 hover:bg-indigo-500/30 text-indigo-300 transition-colors"
                   title="Nghe phát âm"
                   aria-label="Nghe phát âm"
                 >
                   <Volume2 className="w-3.5 h-3.5" />
                 </button>
-              </div>
-            )
-          )}
+              )}
+            </div>
+          ) : null}
         </div>
 
         <button
@@ -178,30 +185,35 @@ export function MindMapNodeDetail({
       )}
 
       {/* Core Concept */}
-      {word?.deepMeaning?.coreConcept && (
+      {(word?.deepMeaning?.coreConcept || node.meta?.coreConcept) && (
         <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1.5">
           <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-indigo-400">
             <Lightbulb className="w-3.5 h-3.5" />
-            <span>Core Concept</span>
+            <span>{word ? 'Core Concept' : 'Ý nghĩa & Khái niệm'}</span>
           </div>
           <p className="text-xs text-slate-200 leading-relaxed">
-            {word.deepMeaning.coreConcept}
+            {word?.deepMeaning?.coreConcept || node.meta?.coreConcept}
           </p>
         </div>
       )}
 
       {/* External Dictionary Links for nodes not in the system's current vocabulary list */}
-      {!word && lookupTerms.length > 0 && (
+      {!word && (lookupTerms.length > 0 || node.id.startsWith('custom:')) && (
         <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2.5">
           <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-amber-400">
             <BookOpen className="w-3.5 h-3.5" />
             <span>Tra cứu từ điển</span>
           </div>
           <p className="text-[11px] text-slate-400 leading-relaxed">
-            Từ/cụm từ này chưa thuộc danh sách từ vựng hiện tại của hệ thống. Tra nhanh trên Cambridge hoặc Oxford:
+            {node.id.startsWith('custom:')
+              ? 'Tra nhanh từ vựng trong Sổ tay trên Cambridge hoặc Oxford:'
+              : 'Từ/cụm từ này chưa thuộc danh sách từ vựng hiện tại của hệ thống. Tra nhanh trên Cambridge hoặc Oxford:'}
           </p>
-          {lookupTerms.length === 1 ? (
-            <DictionaryLinks word={lookupTerms[0]} variant="buttons" />
+          {(lookupTerms.length > 0 ? lookupTerms : [node.label]).length === 1 ? (
+            <DictionaryLinks
+              word={(lookupTerms.length > 0 ? lookupTerms : [node.label])[0]}
+              variant="buttons"
+            />
           ) : (
             <div className="space-y-1.5">
               {lookupTerms.map((term) => (

@@ -38,6 +38,7 @@ export function CustomVocabModal() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [editingOriginalText, setEditingOriginalText] = useState<string>('');
 
   // The core fields
   const [text, setText] = useState('');
@@ -62,6 +63,7 @@ export function CustomVocabModal() {
 
       if (detail.editItem) {
         setEditingId(detail.editItem.id);
+        setEditingOriginalText(detail.editItem.text || '');
         setText(detail.editItem.text || '');
         setType(detail.editItem.type || 'vocabulary');
         setIpa(detail.editItem.ipa || '');
@@ -71,6 +73,7 @@ export function CustomVocabModal() {
         setContext(detail.editItem.context || '');
       } else {
         setEditingId(null);
+        setEditingOriginalText('');
         const initialText = (detail.text || '').trim();
         setText(initialText);
 
@@ -105,6 +108,7 @@ export function CustomVocabModal() {
   const handleClose = useCallback(() => {
     setIsOpen(false);
     setEditingId(null);
+    setEditingOriginalText('');
     setText('');
     setIpa('');
     setPartOfSpeech('');
@@ -223,6 +227,9 @@ export function CustomVocabModal() {
 
     try {
       if (editingId) {
+        const shouldResetMindMap =
+          type === 'pattern' ||
+          trimmedText.toLowerCase() !== editingOriginalText.trim().toLowerCase();
         await updateCustomItem(editingId, {
           text: trimmedText,
           type,
@@ -231,6 +238,7 @@ export function CustomVocabModal() {
           explanation: explanation.trim(),
           notes: notes.trim(),
           context: context.trim(),
+          ...(shouldResetMindMap ? { mindMap: undefined } : {}),
         });
       } else {
         await addCustomItem({

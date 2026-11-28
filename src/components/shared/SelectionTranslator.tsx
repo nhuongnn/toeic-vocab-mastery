@@ -1,6 +1,8 @@
 'use client';
 
-import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef, useCallback, useMemo } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import {
   Languages,
   Volume2,
@@ -16,6 +18,8 @@ import {
   MessageSquarePlus,
   ChevronDown,
   RefreshCw,
+  Sparkles,
+  ArrowUpRight,
 } from 'lucide-react';
 import { useSpeech } from '@/hooks/useSpeech';
 import { useTranslate } from '@/hooks/useTranslate';
@@ -28,6 +32,14 @@ import {
   TRANSLATION_CLOUDFLARE_MODELS,
   formatShortModelName,
 } from '@/lib/translate-models';
+import { allVocabularyWords } from '@/data/vocabulary';
+import {
+  findSystemVocabMatchesForSelection,
+  getLevelBadgeColor,
+  getSystemWordDetailUrl,
+  MATCH_TYPE_LABELS,
+  VocabMatchType,
+} from '@/lib/selection-vocab-search';
 
 interface SelectionRect {
   top: number;
@@ -70,7 +82,17 @@ const copyToClipboard = async (text: string): Promise<boolean> => {
   }
 };
 
+const MATCH_TYPE_BADGE_CLASS: Record<VocabMatchType, string> = {
+  headword: 'bg-teal-500/20 text-teal-200 border-teal-400/40',
+  'word-family': 'bg-violet-500/20 text-violet-200 border-violet-400/40',
+  synonym: 'bg-emerald-500/20 text-emerald-200 border-emerald-400/40',
+  antonym: 'bg-rose-500/20 text-rose-200 border-rose-400/40',
+  related: 'bg-amber-500/20 text-amber-200 border-amber-400/40',
+  collocation: 'bg-sky-500/20 text-sky-200 border-sky-400/40',
+};
+
 export function SelectionTranslator() {
+  const router = useRouter();
   const { addSnippetContext } = useChat();
   const { speak } = useSpeech();
   const {
@@ -100,6 +122,7 @@ export function SelectionTranslator() {
   const [copiedOriginal, setCopiedOriginal] = useState(false);
   const [copiedTranslation, setCopiedTranslation] = useState(false);
   const [aiMenuOpen, setAiMenuOpen] = useState(false);
+  const [vocabMenuOpen, setVocabMenuOpen] = useState(false);
   const [isEnabled, setIsEnabled] = useState(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('selection_translate_enabled');
@@ -234,6 +257,7 @@ export function SelectionTranslator() {
       setCopiedOriginal(false);
       setCopiedTranslation(false);
       setAiMenuOpen(false);
+      setVocabMenuOpen(false);
     } catch {
       // Ignore selection range errors
     }
@@ -245,6 +269,7 @@ export function SelectionTranslator() {
       if (tooltipRef.current && !tooltipRef.current.contains(e.target as Node)) {
         setState((prev) => ({ ...prev, visible: false }));
         setAiMenuOpen(false);
+        setVocabMenuOpen(false);
       }
     };
 
@@ -267,6 +292,7 @@ export function SelectionTranslator() {
       if (e.key === 'Escape') {
         setState((prev) => ({ ...prev, visible: false }));
         setAiMenuOpen(false);
+        setVocabMenuOpen(false);
       }
     };
 
@@ -283,6 +309,13 @@ export function SelectionTranslator() {
     };
   }, [handleSelection]);
 
+  const handleCloseAfterNavigate = useCallback(() => {
+    setState((prev) => ({ ...prev, visible: false }));
+    setAiMenuOpen(false);
+    setVocabMenuOpen(false);
+    window.getSelection()?.removeAllRanges();
+  }, []);
+
   const handleQuickTranslate = useCallback(() => {
     setState((prev) => ({
       ...prev,
@@ -290,6 +323,7 @@ export function SelectionTranslator() {
       loading: true,
     }));
     setAiMenuOpen(false);
+    setVocabMenuOpen(false);
     translateText(state.originalText);
   }, [state.originalText, translateText]);
 
@@ -298,6 +332,7 @@ export function SelectionTranslator() {
       addSnippetContext(state.originalText, undefined, append);
       setState((prev) => ({ ...prev, visible: false }));
       setAiMenuOpen(false);
+      setVocabMenuOpen(false);
       window.getSelection()?.removeAllRanges();
     },
     [addSnippetContext, state.originalText]
@@ -314,6 +349,7 @@ export function SelectionTranslator() {
     );
     setState((prev) => ({ ...prev, visible: false }));
     setAiMenuOpen(false);
+    setVocabMenuOpen(false);
     window.getSelection()?.removeAllRanges();
   }, [state.originalText, state.translatedText]);
 
@@ -347,12 +383,22 @@ export function SelectionTranslator() {
   const oxfordUrl = state.originalText ? getOxfordUrl(state.originalText) : '';
   const oxfordInfo = state.originalText ? getBaseFormInfo(state.originalText) : null;
 
-  // Shortcut keys 1 through 7 handler
+  const vocabSearch = useMemo(() => {
+    if (!state.visible || !state.originalText) return null;
+    return findSystemVocabMatchesForSelection(state.originalText, allVocabularyWords, {
+      maxResults: 12,
+    });
+  }, [state.visible, state.originalText]);
+
+  const vocabMatches = useMemo(() => vocabSearch?.matches ?? [], [vocabSearch]);
+  const totalVocabMatches = vocabSearch?.totalMatches ?? 0;
+
+  // Shortcut keys 1 through 8 handler
   useEffect(() => {
     if (!state.visible) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Do not trigger if any modifier key is pressed (avoids browser shortcut conflicts like Ctrl+1..7 / Cmd+1..7)
+      // Do not trigger if any modifier key is pressed (avoids browser shortcut conflicts like Ctrl+1..8 / Cmd+1..8)
       if (e.ctrlKey || e.altKey || e.metaKey || e.shiftKey) {
         return;
       }
@@ -366,6 +412,28 @@ export function SelectionTranslator() {
           (activeEl as HTMLElement).isContentEditable)
       ) {
         return;
+      }
+
+      // If System Vocab matches drawer is open
+      if (vocabMenuOpen) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          setVocabMenuOpen(false);
+          return;
+        }
+        if (e.key === '8' || e.code === 'Digit8' || e.code === 'Numpad8') {
+          e.preventDefault();
+          setVocabMenuOpen(false);
+          return;
+        }
+        const navMatch = e.key >= '1' && e.key <= '9' ? parseInt(e.key, 10) : null;
+        if (navMatch && navMatch <= vocabMatches.length) {
+          e.preventDefault();
+          const chosen = vocabMatches[navMatch - 1];
+          handleCloseAfterNavigate();
+          router.push(getSystemWordDetailUrl(chosen.word.id));
+          return;
+        }
       }
 
       // If AI Tutor sub-menu popover is open
@@ -393,11 +461,11 @@ export function SelectionTranslator() {
       }
 
       let digit: number | null = null;
-      if (e.key >= '1' && e.key <= '7') {
+      if (e.key >= '1' && e.key <= '8') {
         digit = parseInt(e.key, 10);
-      } else if (/^Digit([1-7])$/.test(e.code)) {
+      } else if (/^Digit([1-8])$/.test(e.code)) {
         digit = parseInt(e.code.replace('Digit', ''), 10);
-      } else if (/^Numpad([1-7])$/.test(e.code)) {
+      } else if (/^Numpad([1-8])$/.test(e.code)) {
         digit = parseInt(e.code.replace('Numpad', ''), 10);
       }
 
@@ -423,10 +491,21 @@ export function SelectionTranslator() {
             handleSpeak();
             break;
           case 6: // Ask AI Tutor: toggle options popover
+            setVocabMenuOpen(false);
             setAiMenuOpen((prev) => !prev);
             break;
           case 7: // Save to Notebook
             handleAddToNotebook();
+            break;
+          case 8: // System Vocabulary detail link
+            if (vocabMatches.length === 1) {
+              const target = vocabMatches[0];
+              handleCloseAfterNavigate();
+              router.push(getSystemWordDetailUrl(target.word.id));
+            } else if (vocabMatches.length > 1) {
+              setAiMenuOpen(false);
+              setVocabMenuOpen((prev) => !prev);
+            }
             break;
         }
       } else {
@@ -453,6 +532,13 @@ export function SelectionTranslator() {
           case 7: // Save to Notebook
             handleAddToNotebook();
             break;
+          case 8: // Open primary matched system vocab word
+            if (vocabMatches.length > 0) {
+              const target = vocabMatches[0];
+              handleCloseAfterNavigate();
+              router.push(getSystemWordDetailUrl(target.word.id));
+            }
+            break;
         }
       }
     };
@@ -465,14 +551,18 @@ export function SelectionTranslator() {
     state.visible,
     state.mode,
     aiMenuOpen,
+    vocabMenuOpen,
+    vocabMatches,
     cambridgeUrl,
     oxfordUrl,
+    router,
     handleCopyOriginal,
     handleCopyTranslation,
     handleQuickTranslate,
     handleSpeak,
     handleAddToAiTutor,
     handleAddToNotebook,
+    handleCloseAfterNavigate,
   ]);
 
   const positionTooltip = useCallback(() => {
@@ -545,25 +635,93 @@ export function SelectionTranslator() {
     state.error,
     state.originalText,
     state.selectionRect,
+    vocabMenuOpen,
+    vocabMatches.length,
     positionTooltip,
   ]);
 
   if (!state.visible) return null;
 
   const openAiBelow = state.selectionRect ? state.selectionRect.top < 220 : true;
+  const primaryMatch = vocabMatches[0];
+  const hasMultipleMatches = vocabMatches.length > 1;
+  const showNormalizedHint = Boolean(
+    vocabSearch &&
+      vocabSearch.normalizedBase &&
+      vocabSearch.cleanedSelection &&
+      vocabSearch.normalizedBase.toLowerCase() !== vocabSearch.cleanedSelection.toLowerCase()
+  );
+
+  const renderSystemVocabMatchesList = (showShortcutDigits: boolean) => (
+    <div className="space-y-1.5 max-h-56 overflow-y-auto pr-0.5">
+      {vocabMatches.map((m, idx) => (
+        <Link
+          key={m.word.id}
+          href={getSystemWordDetailUrl(m.word.id)}
+          onClick={handleCloseAfterNavigate}
+          className="flex items-start justify-between gap-2 p-2 rounded-xl bg-slate-950/75 hover:bg-teal-950/40 border border-slate-800/80 hover:border-teal-500/40 transition-all group"
+        >
+          <div className="min-w-0 flex-1 space-y-0.5">
+            <div className="flex items-center gap-1.5 flex-wrap">
+              <span className="text-xs font-bold text-white group-hover:text-teal-200 transition-colors">
+                {m.word.word}
+              </span>
+              {m.word.pronunciation?.ipa && (
+                <span className="text-[10px] font-mono text-indigo-300/80">
+                  {m.word.pronunciation.ipa}
+                </span>
+              )}
+              <span
+                className={`text-[9px] font-semibold px-1.5 py-0.2 rounded-full border ${getLevelBadgeColor(m.word.level)}`}
+              >
+                {m.word.level}
+              </span>
+              <span
+                className={`text-[9px] font-semibold px-1.5 py-0.2 rounded-full border ${MATCH_TYPE_BADGE_CLASS[m.matchType]}`}
+              >
+                {MATCH_TYPE_LABELS[m.matchType]}
+                {m.familyPos ? ` (${m.familyPos})` : ''}
+              </span>
+            </div>
+            {m.matchType !== 'headword' && (
+              <p className="text-[10px] text-teal-300/85 truncate">
+                Khớp {MATCH_TYPE_LABELS[m.matchType].toLowerCase()}: &ldquo;{m.matchedTerm}&rdquo;
+              </p>
+            )}
+            {m.word.deepMeaning?.coreConcept && (
+              <p className="text-[11px] text-slate-400 line-clamp-1">
+                {m.word.deepMeaning.coreConcept}
+              </p>
+            )}
+          </div>
+          <div className="flex items-center gap-1 shrink-0 pt-0.5">
+            {showShortcutDigits && idx < 9 && (
+              <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[9px] font-mono font-medium rounded bg-slate-800 text-slate-400 border border-slate-700">
+                {idx + 1}
+              </kbd>
+            )}
+            <ArrowUpRight className="w-3.5 h-3.5 text-teal-400/80 group-hover:text-teal-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
 
   return (
     <div
       ref={tooltipRef}
       className={`fixed z-[70] animate-in fade-in duration-150 ${
         state.mode === 'menu'
-          ? 'flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 p-1.5 rounded-2xl bg-slate-900/95 border border-indigo-500/40 shadow-2xl backdrop-blur-xl max-w-[calc(100vw-24px)]'
+          ? vocabMenuOpen
+            ? 'flex flex-col gap-2 p-2 rounded-2xl bg-slate-900/95 border border-indigo-500/40 shadow-2xl backdrop-blur-xl w-[min(24rem,calc(100vw-24px))] max-w-[calc(100vw-24px)]'
+            : 'flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 p-1.5 rounded-2xl bg-slate-900/95 border border-indigo-500/40 shadow-2xl backdrop-blur-xl max-w-[calc(100vw-24px)]'
           : 'w-88 sm:w-96 max-w-[calc(100vw-24px)] max-h-[calc(100vh-24px)] overflow-y-auto rounded-2xl bg-slate-900/95 border border-indigo-500/40 p-4 shadow-2xl backdrop-blur-xl'
       }`}
     >
       {state.mode === 'menu' ? (
         /* Floating Selection Menu */
         <>
+          <div className={vocabMenuOpen ? 'flex flex-wrap items-center justify-center gap-1 sm:gap-1.5' : 'contents'}>
           {/* 1. Copy original text */}
           <button
             type="button"
@@ -670,7 +828,10 @@ export function SelectionTranslator() {
           <div className="relative">
             <button
               type="button"
-              onClick={() => setAiMenuOpen((prev) => !prev)}
+              onClick={() => {
+                setVocabMenuOpen(false);
+                setAiMenuOpen((prev) => !prev);
+              }}
               className={`flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all shadow-sm whitespace-nowrap ${
                 aiMenuOpen
                   ? 'bg-violet-600/40 border-violet-400 text-white shadow-violet-500/20'
@@ -747,6 +908,58 @@ export function SelectionTranslator() {
             </kbd>
           </button>
 
+          {/* 8. Link to System Vocabulary detail (if matched directly or via Mind Map) */}
+          {primaryMatch && (
+            hasMultipleMatches ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setAiMenuOpen(false);
+                  setVocabMenuOpen((prev) => !prev);
+                }}
+                className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all shadow-sm whitespace-nowrap ${
+                  vocabMenuOpen
+                    ? 'bg-teal-500/35 border-teal-400 text-white shadow-teal-500/20'
+                    : 'bg-teal-500/20 hover:bg-teal-500/30 border-teal-400/40 text-teal-200 hover:text-white'
+                }`}
+                title={`Tìm thấy ${totalVocabMatches} từ vựng liên quan trong hệ thống (Phím 8)`}
+              >
+                <Sparkles className="w-3.5 h-3.5 text-teal-300" />
+                <span>{primaryMatch.word.word}</span>
+                <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-teal-950/70 text-teal-300 border border-teal-500/30">
+                  +{totalVocabMatches - 1}
+                </span>
+                <ChevronDown
+                  className={`w-3 h-3 text-teal-300/80 transition-transform duration-150 ${
+                    vocabMenuOpen ? 'rotate-180' : ''
+                  }`}
+                />
+                <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-teal-900/50 text-teal-200 border border-teal-600/40 ml-0.5">
+                  8
+                </kbd>
+              </button>
+            ) : (
+              <Link
+                href={getSystemWordDetailUrl(primaryMatch.word.id)}
+                onClick={handleCloseAfterNavigate}
+                className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-teal-500/20 hover:bg-teal-500/35 border border-teal-400/45 text-teal-200 hover:text-white text-xs font-semibold transition-all shadow-sm group whitespace-nowrap"
+                title={`Mở chi tiết từ "${primaryMatch.word.word}" (${MATCH_TYPE_LABELS[primaryMatch.matchType]}: "${primaryMatch.matchedTerm}") (Phím 8)`}
+              >
+                <Sparkles className="w-3.5 h-3.5 text-teal-300 group-hover:scale-110 transition-transform" />
+                <span>{primaryMatch.word.word}</span>
+                {primaryMatch.matchType !== 'headword' && (
+                  <span className="text-[10px] text-teal-300/85 font-normal">
+                    ({MATCH_TYPE_LABELS[primaryMatch.matchType]})
+                  </span>
+                )}
+                <ArrowUpRight className="w-3 h-3 text-teal-300/80 group-hover:text-teal-200" />
+                <kbd className="hidden sm:inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-mono font-medium rounded bg-teal-900/50 text-teal-200 border border-teal-600/40 ml-0.5">
+                  8
+                </kbd>
+              </Link>
+            )
+          )}
+
           <div className="w-px h-4 bg-slate-700/80 hidden sm:block" />
 
           {/* Close menu (No shortcut number 9, dismissable by click or Escape) */}
@@ -755,12 +968,32 @@ export function SelectionTranslator() {
             onClick={() => {
               setState((prev) => ({ ...prev, visible: false }));
               setAiMenuOpen(false);
+              setVocabMenuOpen(false);
             }}
             className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
             title="Đóng menu (Esc)"
           >
             <X className="w-3.5 h-3.5" />
           </button>
+          </div>
+
+          {/* Expandable System Vocabulary Matches Panel inside floating menu */}
+          {vocabMenuOpen && vocabMatches.length > 0 && (
+            <div className="pt-2 border-t border-slate-800/90 space-y-2 animate-in fade-in duration-150">
+              <div className="flex items-center justify-between gap-2 px-1">
+                <span className="text-[11px] font-bold text-teal-300 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-teal-400" />
+                  <span>Từ vựng hệ thống ({totalVocabMatches})</span>
+                </span>
+                {showNormalizedHint && vocabSearch && (
+                  <span className="text-[10px] text-slate-400 font-mono truncate">
+                    nguyên mẫu: &ldquo;{vocabSearch.normalizedBase}&rdquo;
+                  </span>
+                )}
+              </div>
+              {renderSystemVocabMatchesList(true)}
+            </div>
+          )}
         </>
       ) : (
         /* Translation Details Card */
@@ -809,6 +1042,7 @@ export function SelectionTranslator() {
                 onClick={() => {
                   setState((prev) => ({ ...prev, visible: false }));
                   setAiMenuOpen(false);
+                  setVocabMenuOpen(false);
                 }}
                 className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
                 title="Đóng cửa sổ dịch (Esc)"
@@ -871,6 +1105,24 @@ export function SelectionTranslator() {
               </a>
             </div>
           </div>
+
+          {/* System Vocabulary Matches (including Mind Map scope) */}
+          {vocabMatches.length > 0 && (
+            <div className="p-2.5 rounded-xl bg-teal-950/20 border border-teal-500/30 mb-2.5 space-y-2">
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-[11px] font-bold text-teal-300 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-teal-400" />
+                  <span>Từ vựng hệ thống ({totalVocabMatches})</span>
+                </span>
+                {showNormalizedHint && vocabSearch && (
+                  <span className="text-[10px] text-teal-300/80 font-mono truncate">
+                    nguyên mẫu: &ldquo;{vocabSearch.normalizedBase}&rdquo;
+                  </span>
+                )}
+              </div>
+              {renderSystemVocabMatchesList(false)}
+            </div>
+          )}
 
           {/* Translated Vietnamese result */}
           <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 mb-2.5">
@@ -1148,6 +1400,7 @@ export function SelectionTranslator() {
                   if (!next) {
                     setState((prev) => ({ ...prev, visible: false }));
                     setAiMenuOpen(false);
+                    setVocabMenuOpen(false);
                   }
                 }}
                 className="text-slate-400 hover:text-indigo-400 transition-colors underline"
@@ -1156,7 +1409,7 @@ export function SelectionTranslator() {
               </button>
             </div>
             <p className="text-[10px] text-slate-500 text-center font-mono">
-              Phím tắt: [1] Chép • [2] Cambridge • [3] Oxford • [4] Dịch/Chép • [5] Loa • [6] AI • [7] Sổ tay • [Esc] Đóng
+              Phím tắt: [1] Chép • [2] Cambridge • [3] Oxford • [4] Dịch/Chép • [5] Loa • [6] AI • [7] Sổ tay{vocabMatches.length > 0 ? ' • [8] Chi tiết' : ''} • [Esc] Đóng
             </p>
           </div>
         </>

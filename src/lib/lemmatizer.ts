@@ -89,7 +89,7 @@ export function lemmatizeWord(rawWord: string): string {
   if (!cleaned) return '';
 
   // 1. Direct dictionary lookup for irregular verbs, nouns, adjectives
-  if (LEMMA_EXCEPTIONS[cleaned]) {
+  if (Object.prototype.hasOwnProperty.call(LEMMA_EXCEPTIONS, cleaned)) {
     return LEMMA_EXCEPTIONS[cleaned];
   }
 

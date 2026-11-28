@@ -1,16 +1,19 @@
-import { AutoChatSettings, DEFAULT_AUTO_CHAT_SETTINGS } from '@/types/auto-chat';
+import {
+  AutoChatSettings,
+  DEFAULT_AUTO_CHAT_SETTINGS,
+  normalizeIntervalMinutes,
+} from '@/types/auto-chat';
 
 const STORAGE_KEY = 'toeic_auto_chat_settings';
 export const AUTO_CHAT_SETTINGS_EVENT = 'auto-chat-settings-updated';
 
-function sanitizeSettings(raw: Partial<AutoChatSettings>): AutoChatSettings {
+export function sanitizeSettings(raw: Partial<AutoChatSettings>): AutoChatSettings {
   const merged = { ...DEFAULT_AUTO_CHAT_SETTINGS, ...raw };
-  const interval = Number(merged.intervalMinutes);
   return {
     ...merged,
     enabled: Boolean(merged.enabled),
     pushEnabled: merged.pushEnabled !== false,
-    intervalMinutes: Number.isFinite(interval) && interval >= 10 ? interval : 30,
+    intervalMinutes: normalizeIntervalMinutes(merged.intervalMinutes),
     lastSentAt: merged.lastSentAt ?? null,
   };
 }

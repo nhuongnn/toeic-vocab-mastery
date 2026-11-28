@@ -1,15 +1,83 @@
 import { CharacterRole } from './roleplay';
 
+export const MIN_INTERVAL_MINUTES = 10;
+export const MAX_INTERVAL_MINUTES = 1440;
+export const DEFAULT_INTERVAL_MINUTES = 30;
+
 export interface AutoChatSettings {
   enabled: boolean;
   pushEnabled: boolean;
   startTime: string; // "HH:mm" (e.g. "08:00")
   endTime: string; // "HH:mm" (e.g. "22:00")
-  intervalMinutes: number; // >= 10 (10 | 15 | 20 | 30 | 45 | 60 | 120)
+  intervalMinutes: number; // >= 10 && <= 1440 (presets or custom integer minutes)
   characterRole: CharacterRole | 'random';
   scenarioId: string | 'random';
   timezone: string;
   lastSentAt?: string | null;
+}
+
+/**
+ * Normalize an untrusted interval value to an integer within [MIN_INTERVAL_MINUTES, MAX_INTERVAL_MINUTES].
+ */
+export function normalizeIntervalMinutes(
+  value: unknown,
+  fallback: number = DEFAULT_INTERVAL_MINUTES
+): number {
+  const num = typeof value === 'number' ? value : Number(value);
+  if (!Number.isFinite(num)) return fallback;
+  const rounded = Math.round(num);
+  if (rounded < MIN_INTERVAL_MINUTES) return fallback;
+  return Math.min(MAX_INTERVAL_MINUTES, rounded);
+}
+
+/**
+ * Validate raw user text input for custom message interval in minutes.
+ */
+export function parseCustomIntervalMinutes(raw: string): {
+  valid: boolean;
+  value?: number;
+  error?: string;
+} {
+  const trimmed = raw.trim();
+  if (!trimmed) {
+    return {
+      valid: false,
+      error: `Vui lòng nhập số phút (từ ${MIN_INTERVAL_MINUTES} đến ${MAX_INTERVAL_MINUTES} phút).`,
+    };
+  }
+  if (!/^\d+$/.test(trimmed)) {
+    return {
+      valid: false,
+      error: 'Vui lòng nhập số nguyên hợp lệ (ví dụ: 25, 90).',
+    };
+  }
+  const parsed = Number.parseInt(trimmed, 10);
+  if (!Number.isFinite(parsed) || parsed < MIN_INTERVAL_MINUTES) {
+    return {
+      valid: false,
+      error: `Khoảng thời gian tối thiểu là ${MIN_INTERVAL_MINUTES} phút.`,
+    };
+  }
+  if (parsed > MAX_INTERVAL_MINUTES) {
+    return {
+      valid: false,
+      error: `Khoảng thời gian tối đa là ${MAX_INTERVAL_MINUTES} phút (24 giờ).`,
+    };
+  }
+  return { valid: true, value: parsed };
+}
+
+/**
+ * Format minute count into a concise Vietnamese duration label.
+ */
+export function formatIntervalDuration(minutes: number): string {
+  const safe = normalizeIntervalMinutes(minutes);
+  if (safe < 60) {
+    return `${safe} phút`;
+  }
+  const hours = Math.floor(safe / 60);
+  const mins = safe % 60;
+  return mins > 0 ? `${hours} giờ ${mins} phút` : `${hours} giờ`;
 }
 
 export const DEFAULT_AUTO_CHAT_SETTINGS: AutoChatSettings = {
@@ -17,7 +85,7 @@ export const DEFAULT_AUTO_CHAT_SETTINGS: AutoChatSettings = {
   pushEnabled: true,
   startTime: '08:00',
   endTime: '22:00',
-  intervalMinutes: 30,
+  intervalMinutes: DEFAULT_INTERVAL_MINUTES,
   characterRole: 'random',
   scenarioId: 'random',
   timezone:

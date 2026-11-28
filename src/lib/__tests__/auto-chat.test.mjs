@@ -21,7 +21,15 @@ import {
   TODAY_CONV_KEY,
 } from '../auto-chat/conversation-manager.ts';
 import { saveChatRoomConversation } from '../roleplay/history.ts';
-import { DEFAULT_AUTO_CHAT_SETTINGS } from '../../types/auto-chat.ts';
+import {
+  DEFAULT_AUTO_CHAT_SETTINGS,
+  MAX_INTERVAL_MINUTES,
+  MIN_INTERVAL_MINUTES,
+  formatIntervalDuration,
+  normalizeIntervalMinutes,
+  parseCustomIntervalMinutes,
+} from '../../types/auto-chat.ts';
+import { sanitizeSettings } from '../auto-chat/settings.ts';
 import { formatMessageFullTime, formatMessageTime } from '../utils.ts';
 
 class MockLocalStorage {
@@ -361,5 +369,35 @@ describe('Auto-Chat Prompt & Conversation Context', () => {
     const earlierYear = new Date(2024, 2, 7, 14, 22, 9); // 07/03/2024 14:22:09
     assert.strictEqual(formatMessageTime(earlierYear.getTime()), '14:22 07/03/2024');
     assert.strictEqual(formatMessageFullTime(earlierYear.getTime()), '14:22:09 07/03/2024');
+  });
+
+  it('normalizes, validates, and formats custom message interval minutes', () => {
+    assert.strictEqual(normalizeIntervalMinutes(25), 25);
+    assert.strictEqual(normalizeIntervalMinutes('90'), 90);
+    assert.strictEqual(normalizeIntervalMinutes(14.6), 15);
+    assert.strictEqual(normalizeIntervalMinutes(5), 30);
+    assert.strictEqual(normalizeIntervalMinutes('abc'), 30);
+    assert.strictEqual(normalizeIntervalMinutes(MAX_INTERVAL_MINUTES + 500), MAX_INTERVAL_MINUTES);
+
+    assert.deepStrictEqual(parseCustomIntervalMinutes('25'), { valid: true, value: 25 });
+    assert.deepStrictEqual(parseCustomIntervalMinutes(`${MIN_INTERVAL_MINUTES}`), {
+      valid: true,
+      value: MIN_INTERVAL_MINUTES,
+    });
+    assert.deepStrictEqual(parseCustomIntervalMinutes(`${MAX_INTERVAL_MINUTES}`), {
+      valid: true,
+      value: MAX_INTERVAL_MINUTES,
+    });
+    assert.strictEqual(parseCustomIntervalMinutes('').valid, false);
+    assert.strictEqual(parseCustomIntervalMinutes('9').valid, false);
+    assert.strictEqual(parseCustomIntervalMinutes('12.5').valid, false);
+    assert.strictEqual(parseCustomIntervalMinutes(`${MAX_INTERVAL_MINUTES + 1}`).valid, false);
+
+    assert.strictEqual(formatIntervalDuration(25), '25 phút');
+    assert.strictEqual(formatIntervalDuration(60), '1 giờ');
+    assert.strictEqual(formatIntervalDuration(95), '1 giờ 35 phút');
+
+    const sanitized = sanitizeSettings({ intervalMinutes: 75 });
+    assert.strictEqual(sanitized.intervalMinutes, 75);
   });
 });

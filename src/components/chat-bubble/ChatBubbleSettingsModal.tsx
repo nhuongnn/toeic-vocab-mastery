@@ -7,10 +7,10 @@ import { useAuth } from '@/contexts/AuthContext';
 import { subscribeToPush } from '@/lib/notifications/pushManager';
 import {
   AutoChatSettings,
-  INTERVAL_OPTIONS,
   CHARACTER_ROLE_OPTIONS,
 } from '@/types/auto-chat';
 import { PRESET_SCENARIOS } from '@/lib/roleplay/scenarios';
+import { IntervalSelector } from './IntervalSelector';
 
 interface ChatBubbleSettingsModalProps {
   isOpen: boolean;
@@ -28,6 +28,7 @@ export function ChatBubbleSettingsModal({
   const { user } = useAuth();
   const [draft, setDraft] = useState<AutoChatSettings>(settings);
   const [isSaving, setIsSaving] = useState(false);
+  const [isIntervalValid, setIsIntervalValid] = useState(true);
 
   const filteredScenarios = useMemo(() => {
     if (draft.characterRole === 'random') {
@@ -55,6 +56,7 @@ export function ChatBubbleSettingsModal({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isIntervalValid) return;
     setIsSaving(true);
     try {
       if (draft.enabled && draft.pushEnabled && user?.id) {
@@ -200,35 +202,18 @@ export function ChatBubbleSettingsModal({
           </div>
 
           {/* Interval Options */}
-          <div className="space-y-2.5">
-            <label className="text-xs font-bold text-slate-300 block">
-              Tần suất gửi tin (tối thiểu 10 phút)
-            </label>
-            <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
-              {INTERVAL_OPTIONS.map((opt) => {
-                const active = draft.intervalMinutes === opt.value;
-                return (
-                  <button
-                    key={opt.value}
-                    type="button"
-                    onClick={() =>
-                      setDraft((prev) => ({
-                        ...prev,
-                        intervalMinutes: opt.value,
-                      }))
-                    }
-                    className={`px-3 py-2 rounded-xl text-xs font-semibold border transition-all ${
-                      active
-                        ? 'bg-indigo-600 text-white border-indigo-500 shadow-md shadow-indigo-600/25'
-                        : 'bg-slate-950 text-slate-300 border-slate-800 hover:border-slate-700'
-                    }`}
-                  >
-                    {opt.label}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+          <IntervalSelector
+            value={draft.intervalMinutes}
+            onChange={(minutes) =>
+              setDraft((prev) => ({
+                ...prev,
+                intervalMinutes: minutes,
+              }))
+            }
+            onValidityChange={setIsIntervalValid}
+            label="Tần suất gửi tin (tối thiểu 10 phút)"
+            compact
+          />
 
           {/* Character Role */}
           <div className="space-y-2.5">
@@ -295,7 +280,7 @@ export function ChatBubbleSettingsModal({
             </button>
             <button
               type="submit"
-              disabled={isSaving}
+              disabled={isSaving || !isIntervalValid}
               className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold shadow-lg shadow-indigo-600/25 transition-colors disabled:opacity-60"
             >
               {isSaving ? (

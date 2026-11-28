@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase, supabaseAdmin } from '@/lib/supabase';
+import { normalizeIntervalMinutes } from '@/types/auto-chat';
 
 const dbClient = supabaseAdmin || supabase;
 
@@ -28,7 +29,7 @@ export async function GET(req: NextRequest) {
     pushEnabled: data.push_enabled ?? true,
     startTime: data.start_time,
     endTime: data.end_time,
-    intervalMinutes: data.interval_minutes,
+    intervalMinutes: normalizeIntervalMinutes(data.interval_minutes),
     characterRole: data.character_role,
     scenarioId: data.scenario_id,
     timezone: data.timezone,
@@ -47,8 +48,7 @@ export async function PUT(req: NextRequest) {
   }
 
   const body = await req.json();
-  const rawInterval = Number(body.intervalMinutes ?? 30);
-  const intervalMinutes = Number.isFinite(rawInterval) && rawInterval >= 10 ? rawInterval : 30;
+  const intervalMinutes = normalizeIntervalMinutes(body.intervalMinutes);
 
   const { error } = await dbClient
     .from('auto_chat_settings')

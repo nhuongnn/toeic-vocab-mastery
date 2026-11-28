@@ -13,7 +13,10 @@ import {
   RoleplayMessage,
 } from '@/types/roleplay';
 import { UserProgressData } from '@/types/progress';
-import { AutoChatSettings } from '@/types/auto-chat';
+import {
+  AutoChatSettings,
+  normalizeIntervalMinutes,
+} from '@/types/auto-chat';
 import { routeHybridRoleplayChat } from '@/lib/roleplay/router';
 import { buildAutoChatTurnPrompt } from '@/lib/roleplay/ai-prompt';
 import {
@@ -155,7 +158,7 @@ async function handleAutoChatCron(req: NextRequest) {
         continue;
       }
 
-      const intervalMs = Math.max(10, Number(row.interval_minutes || 30)) * 60 * 1000;
+      const intervalMs = normalizeIntervalMinutes(row.interval_minutes) * 60 * 1000;
       if (!force && row.last_sent_at) {
         const elapsed = now.getTime() - new Date(row.last_sent_at).getTime();
         if (elapsed < intervalMs) {

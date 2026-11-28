@@ -17,7 +17,6 @@ import { subscribeToPush } from '@/lib/notifications/pushManager';
 import {
   AutoChatSettings,
   DEFAULT_AUTO_CHAT_SETTINGS,
-  INTERVAL_OPTIONS,
   CHARACTER_ROLE_OPTIONS,
 } from '@/types/auto-chat';
 import {
@@ -26,6 +25,7 @@ import {
   updateAutoChatSettings,
 } from '@/lib/auto-chat/settings';
 import { PRESET_SCENARIOS } from '@/lib/roleplay/scenarios';
+import { IntervalSelector } from './IntervalSelector';
 
 interface AutoChatSettingsSectionProps {
   onShowToast: (msg: string) => void;
@@ -39,10 +39,16 @@ export function AutoChatSettingsSection({
     getLocalAutoChatSettings()
   );
   const [isSaving, setIsSaving] = useState(false);
+  const [isIntervalValid, setIsIntervalValid] = useState(true);
+  const [intervalResetKey, setIntervalResetKey] = useState(0);
 
   useEffect(() => {
     if (!user?.id) return;
-    fetchAutoChatSettings(user.id, user.email ?? undefined).then(setSettings);
+    fetchAutoChatSettings(user.id, user.email ?? undefined).then((loaded) => {
+      setSettings(loaded);
+      setIsIntervalValid(true);
+      setIntervalResetKey((k) => k + 1);
+    });
   }, [user?.id, user?.email]);
 
   const filteredScenarios = useMemo(() => {
@@ -227,35 +233,17 @@ export function AutoChatSettingsSection({
         </div>
 
         {/* Interval Selector */}
-        <div className="space-y-3">
-          <label className="text-xs font-bold text-slate-300 block">
-            Khoảng thời gian giữa các tin nhắn (tối thiểu 10 phút)
-          </label>
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5">
-            {INTERVAL_OPTIONS.map((opt) => {
-              const active = settings.intervalMinutes === opt.value;
-              return (
-                <button
-                  key={opt.value}
-                  type="button"
-                  onClick={() =>
-                    setSettings((prev) => ({
-                      ...prev,
-                      intervalMinutes: opt.value,
-                    }))
-                  }
-                  className={`p-3 rounded-2xl border text-center text-xs font-bold transition-all ${
-                    active
-                      ? 'bg-indigo-600 text-white border-indigo-500 shadow-md shadow-indigo-600/25'
-                      : 'bg-slate-950 border-slate-800 text-slate-300 hover:border-slate-700'
-                  }`}
-                >
-                  {opt.label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
+        <IntervalSelector
+          key={intervalResetKey}
+          value={settings.intervalMinutes}
+          onChange={(minutes) =>
+            setSettings((prev) => ({
+              ...prev,
+              intervalMinutes: minutes,
+            }))
+          }
+          onValidityChange={setIsIntervalValid}
+        />
 
         {/* Character Role Selector */}
         <div className="space-y-3">
@@ -313,14 +301,18 @@ export function AutoChatSettingsSection({
         <div className="pt-4 border-t border-slate-800 flex items-center justify-between gap-4">
           <button
             type="button"
-            onClick={() => setSettings(DEFAULT_AUTO_CHAT_SETTINGS)}
+            onClick={() => {
+              setSettings(DEFAULT_AUTO_CHAT_SETTINGS);
+              setIsIntervalValid(true);
+              setIntervalResetKey((k) => k + 1);
+            }}
             className="text-xs font-semibold text-slate-400 hover:text-slate-200 transition-colors"
           >
             Khôi phục mặc định
           </button>
           <button
             type="button"
-            disabled={isSaving}
+            disabled={isSaving || !isIntervalValid}
             onClick={() => handleSave(settings)}
             className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold shadow-lg shadow-indigo-600/25 transition-colors disabled:opacity-60"
           >

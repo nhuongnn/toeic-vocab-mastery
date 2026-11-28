@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Briefcase, MessageSquare, Coffee, Bookmark, Volume2, Languages, Loader2 } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
 import { useSpeech } from '@/hooks/useSpeech';
+import { useTranslate } from '@/hooks/useTranslate';
 
 interface SentenceExamplesProps {
   examples: VocabularyWord['examples'];
@@ -14,6 +15,7 @@ export function SentenceExamples({ examples, word }: SentenceExamplesProps) {
   const [activeTab, setActiveTab] = useState<'business' | 'daily' | 'conversation'>('business');
   const [translations, setTranslations] = useState<Record<string, string>>({});
   const { speak } = useSpeech();
+  const { translate } = useTranslate();
 
   const highlightWord = (sentence: string) => {
     const regex = new RegExp(`(${word}[a-z]*)`, 'gi');
@@ -45,9 +47,7 @@ export function SentenceExamples({ examples, word }: SentenceExamplesProps) {
 
     try {
       const cleanSentence = sentence.replace(/^["']|["']$/g, '');
-      const res = await fetch(`/api/translate?text=${encodeURIComponent(cleanSentence)}&from=en&to=vi`);
-      if (!res.ok) throw new Error('Dịch thất bại');
-      const data = await res.json();
+      const data = await translate(cleanSentence, { from: 'en', to: 'vi' });
       setTranslations((prev) => ({
         ...prev,
         [sentence]: data.translatedText || 'Không có bản dịch',

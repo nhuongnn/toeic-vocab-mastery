@@ -28,8 +28,10 @@ import {
   Compass,
   Cpu,
   MessageCircle,
+  Languages,
 } from 'lucide-react';
 import { WordLevel } from '@/types/vocabulary';
+import { TranslationProvider } from '@/types/progress';
 import { LEVEL_CONFIG } from '@/lib/vocabulary-helpers';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useTheme, ThemeMode } from '@/contexts/ThemeContext';
@@ -133,6 +135,17 @@ export default function SettingsPage() {
         ? 'Đã chọn từ điển mặc định: Cambridge Advanced Learner\'s'
         : 'Đã chọn từ điển mặc định: Oxford Advanced Learner\'s (OALD)'
     );
+  };
+
+  const handleTranslationProviderChange = (provider: TranslationProvider) => {
+    updatePreferences({ translationProvider: provider });
+    const labels: Record<TranslationProvider, string> = {
+      mymemory: 'MyMemory (Miễn phí, nhanh)',
+      gemini: 'Google Gemini AI (Theo ngữ cảnh TOEIC)',
+      cloudflare: 'Cloudflare Workers AI (Llama 3.1)',
+      auto: 'Tự động (AI ưu tiên → MyMemory dự phòng)',
+    };
+    showToast(`Đã chọn nhà cung cấp dịch Tiếng Việt: ${labels[provider]}`);
   };
 
   // 2. Speech settings
@@ -590,6 +603,90 @@ export default function SettingsPage() {
                   oxfordlearnersdictionaries.com
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Translation Provider Preference Section */}
+          <div className="p-6 sm:p-7 rounded-3xl bg-slate-900 border border-slate-800 space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                <Languages className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-white">Nhà Cung Cấp Dịch Tiếng Việt (Translation Provider)</h3>
+                <p className="text-xs text-slate-400">
+                  Chọn công cụ dịch mặc định cho tài khoản của bạn khi bôi đen dịch nhanh, dịch câu ví dụ, tư duy bản xứ và hội thoại Roleplay.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+              {(
+                [
+                  {
+                    id: 'mymemory' as TranslationProvider,
+                    title: 'MyMemory (Mặc định)',
+                    badge: 'Không tốn quota AI',
+                    desc: 'Dịch nhanh các cụm từ và câu ngắn qua API công cộng miễn phí, không tiêu tốn hạn mức AI hàng ngày.',
+                    accentBorder: 'border-slate-500 bg-slate-800/40 ring-2 ring-slate-500/30',
+                    dot: 'bg-slate-400',
+                    badgeClass: 'text-slate-200 bg-slate-700/60 border-slate-600/60',
+                  },
+                  {
+                    id: 'gemini' as TranslationProvider,
+                    title: 'Google Gemini AI',
+                    badge: 'Ngữ cảnh chuẩn nhất',
+                    desc: 'Hiểu sắc thái tiếng Anh thương mại/TOEIC và dịch tự nhiên. Tự động chuyển dự phòng nếu hết hạn mức AI.',
+                    accentBorder: 'border-emerald-500 bg-emerald-500/10 ring-2 ring-emerald-500/30',
+                    dot: 'bg-emerald-400',
+                    badgeClass: 'text-emerald-300 bg-emerald-500/20 border-emerald-500/30',
+                  },
+                  {
+                    id: 'cloudflare' as TranslationProvider,
+                    title: 'Cloudflare Workers AI',
+                    badge: 'Edge Llama 3.1',
+                    desc: 'Mô hình LLM chạy trên hạ tầng Edge của Cloudflare. Tự động chuyển dự phòng nếu gặp sự cố hoặc hết quota.',
+                    accentBorder: 'border-amber-500 bg-amber-500/10 ring-2 ring-amber-500/30',
+                    dot: 'bg-amber-400',
+                    badgeClass: 'text-amber-300 bg-amber-500/20 border-amber-500/30',
+                  },
+                  {
+                    id: 'auto' as TranslationProvider,
+                    title: 'Tự Động (Auto Hybrid)',
+                    badge: 'Thông minh + Dự phòng',
+                    desc: 'Ưu tiên Gemini → Cloudflare AI khi còn hạn mức; tự động chuyển về MyMemory khi hết quota hoặc AI tạm tắt.',
+                    accentBorder: 'border-indigo-500 bg-indigo-500/10 ring-2 ring-indigo-500/30',
+                    dot: 'bg-indigo-400',
+                    badgeClass: 'text-indigo-300 bg-indigo-500/20 border-indigo-500/30',
+                  },
+                ] as const
+              ).map((item) => {
+                const currentProvider = progress.preferences.translationProvider || 'mymemory';
+                const isSelected = currentProvider === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => handleTranslationProviderChange(item.id)}
+                    className={`text-left rounded-2xl p-5 border transition-all space-y-2.5 ${
+                      isSelected
+                        ? item.accentBorder
+                        : 'border-slate-800 bg-slate-950 hover:border-slate-700'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2">
+                        <span className={`w-2.5 h-2.5 rounded-full ${item.dot}`} />
+                        <span className="font-bold text-sm text-white">{item.title}</span>
+                      </div>
+                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${item.badgeClass}`}>
+                        {isSelected ? '✓ Đang chọn' : item.badge}
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>

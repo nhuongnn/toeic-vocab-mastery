@@ -17,12 +17,18 @@ import {
   ChevronDown,
 } from 'lucide-react';
 import { useSpeech } from '@/hooks/useSpeech';
+import { useTranslate } from '@/hooks/useTranslate';
 import { useChat } from '@/contexts/ChatContext';
 import { getCambridgeUrl, getOxfordUrl, getBaseFormInfo } from '@/lib/dictionary';
+import { TranslationProvider } from '@/types/progress';
+import { TRANSLATION_PROVIDER_LABELS } from '@/lib/translate-client';
 
 interface SelectionState {
   originalText: string;
   translatedText: string | null;
+  providerUsed: 'mymemory' | 'gemini' | 'cloudflare' | null;
+  fallback: boolean;
+  fallbackReason: string | null;
   loading: boolean;
   error: string | null;
   x: number;
@@ -55,10 +61,14 @@ const copyToClipboard = async (text: string): Promise<boolean> => {
 export function SelectionTranslator() {
   const { addSnippetContext } = useChat();
   const { speak } = useSpeech();
+  const { translate, translationProvider, setTranslationProvider } = useTranslate();
 
   const [state, setState] = useState<SelectionState>({
     originalText: '',
     translatedText: null,
+    providerUsed: null,
+    fallback: false,
+    fallbackReason: null,
     loading: false,
     error: null,
     x: 0,
@@ -81,46 +91,53 @@ export function SelectionTranslator() {
   const tooltipRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
 
-  const translateText = useCallback(async (text: string) => {
-    if (!text || text.length < 2) return;
+  const translateText = useCallback(
+    async (text: string, overrideProvider?: TranslationProvider) => {
+      if (!text || text.length < 2) return;
 
-    if (abortControllerRef.current) {
-      abortControllerRef.current.abort();
-    }
-    const controller = new AbortController();
-    abortControllerRef.current = controller;
-
-    setState((prev) => ({
-      ...prev,
-      loading: true,
-      error: null,
-      translatedText: null,
-    }));
-
-    try {
-      const res = await fetch(`/api/translate?text=${encodeURIComponent(text)}&from=en&to=vi`, {
-        signal: controller.signal,
-      });
-
-      if (!res.ok) {
-        throw new Error('Không thể dịch nội dung');
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
       }
+      const controller = new AbortController();
+      abortControllerRef.current = controller;
 
-      const data = await res.json();
       setState((prev) => ({
         ...prev,
-        loading: false,
-        translatedText: data.translatedText || 'Không có bản dịch',
+        loading: true,
+        error: null,
+        translatedText: null,
+        providerUsed: null,
+        fallback: false,
+        fallbackReason: null,
       }));
-    } catch (err: unknown) {
-      if (err instanceof Error && err.name === 'AbortError') return;
-      setState((prev) => ({
-        ...prev,
-        loading: false,
-        error: 'Lỗi kết nối dịch tự động',
-      }));
-    }
-  }, []);
+
+      try {
+        const data = await translate(text, {
+          from: 'en',
+          to: 'vi',
+          provider: overrideProvider,
+          signal: controller.signal,
+        });
+
+        setState((prev) => ({
+          ...prev,
+          loading: false,
+          translatedText: data.translatedText || 'Không có bản dịch',
+          providerUsed: data.provider || null,
+          fallback: Boolean(data.fallback),
+          fallbackReason: data.fallbackReason || null,
+        }));
+      } catch (err: unknown) {
+        if (err instanceof Error && err.name === 'AbortError') return;
+        setState((prev) => ({
+          ...prev,
+          loading: false,
+          error: 'Lỗi kết nối dịch tự động',
+        }));
+      }
+    },
+    [translate]
+  );
 
   const handleSelection = useCallback(() => {
     if (!isEnabled) return;
@@ -182,6 +199,9 @@ export function SelectionTranslator() {
       setState({
         originalText: rawText,
         translatedText: null,
+        providerUsed: null,
+        fallback: false,
+        fallbackReason: null,
         loading: false,
         error: null,
         x,
@@ -775,7 +795,39 @@ export function SelectionTranslator() {
                 <p className="text-sm font-medium text-emerald-300 leading-relaxed selection:bg-emerald-500/30">
                   {state.translatedText}
                 </p>
-                <div className="flex items-center justify-end pt-1">
+                <div className="flex items-center justify-between gap-2 pt-1 flex-wrap">
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    {state.providerUsed && (
+                      <span
+                        className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-md border ${
+                          state.providerUsed === 'gemini'
+                            ? 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300'
+                            : state.providerUsed === 'cloudflare'
+                            ? 'bg-amber-500/15 border-amber-500/30 text-amber-300'
+                            : 'bg-slate-800 border-slate-700 text-slate-300'
+                        }`}
+                        title={state.fallbackReason || `Dịch bởi ${TRANSLATION_PROVIDER_LABELS[state.providerUsed]}`}
+                      >
+                        {TRANSLATION_PROVIDER_LABELS[state.providerUsed]}
+                        {state.fallback ? ' (dự phòng)' : ''}
+                      </span>
+                    )}
+                    <select
+                      value={translationProvider}
+                      onChange={(e) => {
+                        const next = e.target.value as TranslationProvider;
+                        setTranslationProvider(next);
+                        translateText(state.originalText, next);
+                      }}
+                      aria-label="Chọn nhà cung cấp dịch"
+                      className="bg-slate-900 border border-slate-700/80 rounded-md px-1.5 py-0.5 text-[10px] text-slate-300 focus:outline-none focus:border-indigo-500"
+                    >
+                      <option value="mymemory">MyMemory</option>
+                      <option value="gemini">Gemini AI</option>
+                      <option value="cloudflare">Cloudflare AI</option>
+                      <option value="auto">Tự động</option>
+                    </select>
+                  </div>
                   {/* 4. Copy translation in details card */}
                   <button
                     type="button"

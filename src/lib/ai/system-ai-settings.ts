@@ -1,11 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 import { supabaseAdmin } from '@/lib/supabase';
+import { TranslationProvider } from '@/types/progress';
 
 export interface UserQuotaOverride {
   identifier: string; // email (lowercased) or user_id
   email?: string;
   dailyLimit: number;
+  translationProvider?: TranslationProvider;
   note?: string;
   updatedAt: number;
 }
@@ -717,12 +719,41 @@ export function recordUserAIUsage({
 }
 
 /**
+ * Get optional per-user translation provider override configured by Admin.
+ */
+export async function getUserTranslationProviderOverride({
+  userId,
+  userEmail,
+}: {
+  userId?: string | null;
+  userEmail?: string | null;
+}): Promise<TranslationProvider | undefined> {
+  const emailKey = userEmail?.trim().toLowerCase() || '';
+  const userIdKey = userId?.trim().toLowerCase() || '';
+  if (!emailKey && !userIdKey) return undefined;
+
+  const settings = await getSystemAISettingsAsync();
+  const overrides = settings.userOverrides || [];
+  const match = overrides.find((o) => {
+    const oId = (o.identifier || '').trim().toLowerCase();
+    const oEmail = (o.email || '').trim().toLowerCase();
+    return (
+      (emailKey && (oId === emailKey || oEmail === emailKey)) ||
+      (userIdKey && oId === userIdKey)
+    );
+  });
+
+  return match?.translationProvider;
+}
+
+/**
  * Add or update a specific user override in settings.
  */
 export async function setUserQuotaOverride(override: {
   identifier: string;
   email?: string;
   dailyLimit: number;
+  translationProvider?: TranslationProvider;
   note?: string;
 }): Promise<SystemAISettings> {
   const current = await getSystemAISettingsAsync();
@@ -738,6 +769,7 @@ export async function setUserQuotaOverride(override: {
     identifier: cleanId,
     email: cleanEmail,
     dailyLimit: Math.max(1, override.dailyLimit),
+    ...(override.translationProvider ? { translationProvider: override.translationProvider } : {}),
     note: override.note?.trim() || '',
     updatedAt: Date.now(),
   };

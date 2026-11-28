@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { isGeminiConfigured, getGeminiModel, generateContentGemini } from '@/lib/ai/gemini-provider';
 import { isCloudflareChatConfigured, getCloudflareChatModel, streamCloudflare } from '@/lib/ai/cloudflare-provider';
 import { canUseProvider, checkUserAIQuota, recordUserAIUsage } from '@/lib/ai/system-ai-settings';
+import { translateViaMyMemory } from '@/lib/translate-server';
 import { CustomItemType } from '@/types/custom-vocab';
 
 interface RequestBody {
@@ -86,21 +87,13 @@ async function generateSmartFallback(
 
   let translatedMeaning = '';
   try {
-    const res = await fetch(
-      `https://api.mymemory.translated.net/get?q=${encodeURIComponent(trimmed)}&langpair=en|vi`,
-      { headers: { 'User-Agent': 'Mozilla/5.0' }, next: { revalidate: 3600 } }
-    );
-    if (res.ok) {
-      const data = await res.json();
-      translatedMeaning = data?.responseData?.translatedText || '';
-    }
+    translatedMeaning = await translateViaMyMemory(trimmed, 'en', 'vi');
   } catch {
     // ignore
   }
 
-  const cleanTranslation = translatedMeaning
-    ? translatedMeaning.replace(/&#39;/g, "'").replace(/&quot;/g, '"')
-    : 'Nghĩa của từ / mẫu câu trong ngữ cảnh công sở.';
+  const cleanTranslation =
+    translatedMeaning || 'Nghĩa của từ / mẫu câu trong ngữ cảnh công sở.';
 
   if (inferredType === 'vocabulary') {
     return {

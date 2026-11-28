@@ -19,6 +19,7 @@ import {
   POPULAR_GEMINI_MODELS,
   POPULAR_CLOUDFLARE_MODELS,
 } from '@/lib/ai/test-model';
+import { TranslationProvider } from '@/types/progress';
 
 export async function GET(request: Request) {
   try {
@@ -116,6 +117,7 @@ export async function POST(request: Request) {
         identifier: string;
         email?: string;
         dailyLimit: number;
+        translationProvider?: TranslationProvider;
         note?: string;
       };
       identifier?: string;
@@ -154,10 +156,17 @@ export async function POST(request: Request) {
         );
       }
 
+      const validProviders = new Set(['mymemory', 'gemini', 'cloudflare', 'auto']);
+      const translationProvider =
+        override.translationProvider && validProviders.has(override.translationProvider)
+          ? override.translationProvider
+          : undefined;
+
       const updated = await setUserQuotaOverride({
         identifier: override.identifier.trim(),
         email: override.email?.trim() || override.identifier.trim(),
         dailyLimit: override.dailyLimit,
+        translationProvider,
         note: override.note?.trim(),
       });
 

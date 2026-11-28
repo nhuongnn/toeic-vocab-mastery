@@ -1,82 +1,89 @@
 import { NextResponse } from 'next/server';
+import { translateTextServer } from '@/lib/translate-server';
 
-// In-memory cache to avoid redundant API requests
-const translationCache = new Map<string, string>();
-
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const rawText = searchParams.get('text');
-  const from = searchParams.get('from') || 'en';
-  const to = searchParams.get('to') || 'vi';
+async function handleTranslateRequest(params: {
+  rawText?: string | null;
+  from?: string | null;
+  to?: string | null;
+  provider?: string | null;
+  userId?: string | null;
+  userEmail?: string | null;
+  guestId?: string | null;
+}) {
+  const { rawText, from, to, provider, userId, userEmail, guestId } = params;
 
   if (!rawText || !rawText.trim()) {
-    return NextResponse.json({ error: 'Text parameter is required' }, { status: 400 });
-  }
-
-  const text = rawText.trim().slice(0, 1000);
-  const cacheKey = `${from}:${to}:${text.toLowerCase()}`;
-
-  // Check memory cache
-  if (translationCache.has(cacheKey)) {
-    return NextResponse.json({
-      originalText: text,
-      translatedText: translationCache.get(cacheKey),
-      cached: true,
-    });
+    return NextResponse.json(
+      { error: 'Text parameter is required' },
+      { status: 400 }
+    );
   }
 
   try {
-    const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; ToeicVocabMastery/1.0)',
-      },
-      next: { revalidate: 86400 },
+    const result = await translateTextServer({
+      text: rawText,
+      from: from || 'en',
+      to: to || 'vi',
+      provider,
+      userId,
+      userEmail,
+      guestId,
     });
-
-    if (!res.ok) {
-      throw new Error(`Translation API returned status: ${res.status}`);
-    }
-
-    const data = await res.json();
-    let translated = data?.responseData?.translatedText;
-
-    if (!translated || data.responseStatus !== 200) {
-      // Check alternative matches if responseData translation is empty
-      if (Array.isArray(data?.matches) && data.matches.length > 0) {
-        translated = data.matches[0].translation;
-      }
-    }
-
-    if (!translated) {
-      throw new Error('Translation not available');
-    }
-
-    // Clean up HTML entities if returned (e.g. &#39; -> ')
-    translated = translated
-      .replace(/&#39;/g, "'")
-      .replace(/&quot;/g, '"')
-      .replace(/&amp;/g, '&')
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>');
-
-    // Store in cache (limit cache size to 2000 entries)
-    if (translationCache.size > 2000) {
-      const firstKey = translationCache.keys().next().value;
-      if (firstKey) translationCache.delete(firstKey);
-    }
-    translationCache.set(cacheKey, translated);
-
-    return NextResponse.json({
-      originalText: text,
-      translatedText: translated,
-      cached: false,
-    });
+    return NextResponse.json(result);
   } catch (error) {
     console.error('Translation error:', error);
     return NextResponse.json(
-      { error: 'Failed to translate content', originalText: text },
+      {
+        error: 'Failed to translate content',
+        originalText: rawText.trim().slice(0, 1500),
+      },
       { status: 500 }
+    );
+  }
+}
+
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  return handleTranslateRequest({
+    rawText: searchParams.get('text'),
+    from: searchParams.get('from'),
+    to: searchParams.get('to'),
+    provider:
+      searchParams.get('provider') ||
+      request.headers.get('x-translation-provider'),
+    userId: searchParams.get('userId') || request.headers.get('x-user-id'),
+    userEmail:
+      searchParams.get('userEmail') || request.headers.get('x-user-email'),
+    guestId: searchParams.get('guestId') || request.headers.get('x-guest-id'),
+  });
+}
+
+export async function POST(request: Request) {
+  try {
+    const body = (await request.json()) as {
+      text?: string;
+      from?: string;
+      to?: string;
+      targetLang?: string;
+      provider?: string;
+      userId?: string;
+      userEmail?: string;
+      guestId?: string;
+    };
+
+    return handleTranslateRequest({
+      rawText: body.text,
+      from: body.from,
+      to: body.to || body.targetLang,
+      provider: body.provider || request.headers.get('x-translation-provider'),
+      userId: body.userId || request.headers.get('x-user-id'),
+      userEmail: body.userEmail || request.headers.get('x-user-email'),
+      guestId: body.guestId || request.headers.get('x-guest-id'),
+    });
+  } catch {
+    return NextResponse.json(
+      { error: 'Invalid JSON request body' },
+      { status: 400 }
     );
   }
 }

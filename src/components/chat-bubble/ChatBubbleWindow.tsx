@@ -23,6 +23,7 @@ import { MarkdownMessage } from '@/components/chat/MarkdownMessage';
 import { useAuth } from '@/contexts/AuthContext';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useSpeech } from '@/hooks/useSpeech';
+import { useTranslate } from '@/hooks/useTranslate';
 import {
   getChatRoomHistory,
   saveChatRoomConversation,
@@ -51,6 +52,7 @@ export function ChatBubbleWindow({
   const { user } = useAuth();
   const { progress, syncChatRoomHistory } = useProgress();
   const { speak, stop, isPlaying } = useSpeech();
+  const { translate } = useTranslate();
 
   const [input, setInput] = useState('');
   const [isStreaming, setIsStreaming] = useState(false);
@@ -88,25 +90,20 @@ export function ChatBubbleWindow({
 
     setTranslatingIds((prev) => ({ ...prev, [id]: true }));
     try {
-      const res = await fetch(
-        `/api/translate?text=${encodeURIComponent(text)}&from=en&to=vi`
-      );
-      if (res.ok) {
-        const data = await res.json();
-        if (data.translatedText) {
-          const updatedConv: RoleplayConversation = {
-            ...conversation,
-            translations: {
-              ...translations,
-              [id]: data.translatedText,
-            },
-          };
-          const updatedHistory = saveChatRoomConversation(updatedConv);
-          syncChatRoomHistory(
-            updatedHistory.length ? updatedHistory : getChatRoomHistory()
-          );
-          onUpdateConversation(updatedConv);
-        }
+      const data = await translate(text, { from: 'en', to: 'vi' });
+      if (data.translatedText) {
+        const updatedConv: RoleplayConversation = {
+          ...conversation,
+          translations: {
+            ...translations,
+            [id]: data.translatedText,
+          },
+        };
+        const updatedHistory = saveChatRoomConversation(updatedConv);
+        syncChatRoomHistory(
+          updatedHistory.length ? updatedHistory : getChatRoomHistory()
+        );
+        onUpdateConversation(updatedConv);
       }
     } catch (err) {
       console.warn('Bubble translate failed:', err);

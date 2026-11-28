@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Brain, Eye, CheckCircle2, XCircle, Globe2, Languages, Loader2 } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
+import { useTranslate } from '@/hooks/useTranslate';
 
 interface NativeMindsetProps {
   nativeMindset: VocabularyWord['nativeMindset'];
@@ -13,6 +14,7 @@ export function NativeMindset({ nativeMindset, deepMeaning }: NativeMindsetProps
   const [showTranslations, setShowTranslations] = useState(false);
   const [loading, setLoading] = useState(false);
   const [translations, setTranslations] = useState<Record<string, string>>({});
+  const { translate } = useTranslate();
 
   const toggleAllTranslations = async () => {
     if (showTranslations) {
@@ -43,11 +45,8 @@ export function NativeMindset({ nativeMindset, deepMeaning }: NativeMindsetProps
       entries.map(async ([key, text]) => {
         if (!text) return;
         try {
-          const res = await fetch(`/api/translate?text=${encodeURIComponent(text)}&from=en&to=vi`);
-          if (res.ok) {
-            const data = await res.json();
-            results[key] = data.translatedText;
-          }
+          const data = await translate(text, { from: 'en', to: 'vi' });
+          results[key] = data.translatedText;
         } catch (err) {
           console.error(`Failed to translate ${key}:`, err);
         }

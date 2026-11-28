@@ -11,6 +11,7 @@ import {
   Camera,
 } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
+import { useTranslate } from '@/hooks/useTranslate';
 
 interface VisualAssociationProps {
   visual: VocabularyWord['visual'];
@@ -21,6 +22,7 @@ interface VisualAssociationProps {
 export type ImageVisualPreset = '3d' | 'realistic';
 
 export function VisualAssociation({ visual, word }: VisualAssociationProps) {
+  const { translate } = useTranslate();
   const [style, setStyle] = useState<ImageVisualPreset>('3d');
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [photographer, setPhotographer] = useState<string | null>(null);
@@ -96,15 +98,8 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
 
     setSceneTranslation('loading');
     try {
-      const res = await fetch(
-        `/api/translate?text=${encodeURIComponent(visual.imageDescription)}&from=en&to=vi`
-      );
-      if (res.ok) {
-        const data = await res.json();
-        setSceneTranslation(data.translatedText || 'Không có bản dịch');
-      } else {
-        setSceneTranslation('Lỗi tải bản dịch');
-      }
+      const data = await translate(visual.imageDescription, { from: 'en', to: 'vi' });
+      setSceneTranslation(data.translatedText || 'Không có bản dịch');
     } catch {
       setSceneTranslation('Lỗi kết nối dịch tự động');
     }

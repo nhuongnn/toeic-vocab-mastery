@@ -35,6 +35,8 @@ export interface ExerciseSessionResult {
   wordsPracticed: string[];
 }
 
+export type TranslationProvider = 'mymemory' | 'gemini' | 'cloudflare' | 'auto';
+
 export interface UserPreferences {
   dailyGoal: number;
   immersiveOnly: boolean;       // strictly no translation
@@ -44,6 +46,7 @@ export interface UserPreferences {
   theme: 'light' | 'dark' | 'system';
   language?: 'vi' | 'en';
   preferredDictionary?: 'cambridge' | 'oxford';
+  translationProvider?: TranslationProvider;
 }
 
 export interface RoleplayPreferences {

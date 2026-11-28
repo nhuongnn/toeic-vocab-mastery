@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { Film, Play, ExternalLink, Sparkles, Volume2, Globe, RefreshCw, Languages, X, Search } from 'lucide-react';
 import { useSpeech } from '@/hooks/useSpeech';
+import { useTranslate } from '@/hooks/useTranslate';
 import { getCambridgeUrl, getOxfordUrl } from '@/lib/dictionary';
 
 interface VideoSectionProps {
@@ -34,6 +35,7 @@ export function VideoSection({ video, word }: VideoSectionProps) {
   const prevPathnameRef = useRef(pathname);
 
   const { speak } = useSpeech();
+  const { translate } = useTranslate();
 
   // Safely and completely stop the playing video/audio
   const stopVideo = useCallback(() => {
@@ -134,12 +136,7 @@ export function VideoSection({ video, word }: VideoSectionProps) {
 
     setIsTranslating(true);
     try {
-      const res = await fetch('/api/translate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: video.description, targetLang: 'vi' }),
-      });
-      const data = await res.json();
+      const data = await translate(video.description, { from: 'en', to: 'vi' });
       if (data.translatedText) {
         setTranslatedDesc(data.translatedText);
       }

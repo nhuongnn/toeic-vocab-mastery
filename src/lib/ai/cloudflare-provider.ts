@@ -15,6 +15,87 @@ export function getCloudflareChatModel(): string {
 }
 
 /**
+ * Non-streaming text generation from Cloudflare Workers AI
+ */
+export async function generateContentCloudflare(
+  messages: Array<Pick<ChatMessage, 'role' | 'content'>>,
+  systemPrompt: string,
+  options?: { maxTokens?: number; timeoutMs?: number }
+): Promise<string> {
+  const accountId = process.env.CLOUDFLARE_ACCOUNT_ID?.trim();
+  const apiToken = process.env.CLOUDFLARE_API_TOKEN?.trim();
+
+  if (!accountId || !apiToken) {
+    throw new Error('Cloudflare Workers AI credentials missing (CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN).');
+  }
+
+  const model = getCloudflareChatModel();
+  const endpoint = `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${model}`;
+
+  const payloadMessages = [
+    { role: 'system', content: systemPrompt },
+    ...messages
+      .filter((m) => m.role !== 'system' && m.content?.trim())
+      .map((m) => ({
+        role: m.role,
+        content: m.content.trim(),
+      })),
+  ];
+
+  const timeoutMs = options?.timeoutMs ?? 25000;
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        messages: payloadMessages,
+        stream: false,
+        max_tokens: options?.maxTokens ?? 1000,
+      }),
+      signal: controller.signal,
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!res.ok) {
+      let errDetails = '';
+      try {
+        const errJson = await res.json();
+        errDetails = JSON.stringify(errJson.errors || errJson.messages || errJson);
+      } catch {
+        errDetails = await res.text().catch(() => res.statusText);
+      }
+      throw new Error(`Cloudflare Workers AI HTTP ${res.status}: ${errDetails}`);
+    }
+
+    const data = await res.json();
+    const text =
+      data?.result?.response?.trim() ||
+      data?.choices?.[0]?.message?.content?.trim() ||
+      (typeof data?.result === 'string' ? data.result.trim() : '');
+
+    if (!text) {
+      throw new Error('Cloudflare Workers AI returned empty response');
+    }
+
+    return text;
+  } catch (err: unknown) {
+    clearTimeout(timeoutId);
+    if (err instanceof Error && err.name === 'AbortError') {
+      throw new Error(`Cloudflare Workers AI request timed out after ${Math.round(timeoutMs / 1000)}s`);
+    }
+    const msg = err instanceof Error ? err.message : String(err);
+    throw new Error(`Cloudflare AI Error: ${msg}`);
+  }
+}
+
+/**
  * Stream responses from Cloudflare Workers AI Text Generation
  */
 export async function* streamCloudflare(

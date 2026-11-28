@@ -23,6 +23,7 @@ export const DEFAULT_PROGRESS: UserProgressData = {
     speechAccent: 'en-US',
     theme: 'dark',
     preferredDictionary: 'cambridge',
+    translationProvider: 'mymemory',
   },
   bookmarkedWordIds: [],
   customItems: [],

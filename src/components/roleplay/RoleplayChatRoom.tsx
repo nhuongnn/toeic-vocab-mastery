@@ -65,6 +65,7 @@ import {
   renameChatRoomConversation,
 } from '@/lib/roleplay/history';
 import { useSpeech } from '@/hooks/useSpeech';
+import { useTranslate } from '@/hooks/useTranslate';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useAuth } from '@/contexts/AuthContext';
 import { getGuestId } from '@/lib/ai/guest-id';
@@ -78,6 +79,7 @@ interface RoleplayChatRoomProps {
 export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   const { progress, saveRoleplaySettings, syncChatRoomHistory } = useProgress();
   const { user, openAuthModal } = useAuth();
+  const { translate } = useTranslate();
   const mounted = useMounted();
 
   const [guestLimitInfo, setGuestLimitInfo] = useState<{
@@ -589,15 +591,12 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
     // Fetch translation from /api/translate
     setIsTranslatingId(id);
     try {
-      const res = await fetch(`/api/translate?text=${encodeURIComponent(text)}&from=en&to=vi`);
-      if (res.ok) {
-        const data = await res.json();
-        if (data.translatedText) {
-          const nextTranslations = { ...translations, [id]: data.translatedText };
-          setTranslations(nextTranslations);
-          setShowTranslations((prev) => ({ ...prev, [id]: true }));
-          autoSaveConversation(messages, undefined, nextTranslations);
-        }
+      const data = await translate(text, { from: 'en', to: 'vi' });
+      if (data.translatedText) {
+        const nextTranslations = { ...translations, [id]: data.translatedText };
+        setTranslations(nextTranslations);
+        setShowTranslations((prev) => ({ ...prev, [id]: true }));
+        autoSaveConversation(messages, undefined, nextTranslations);
       }
     } catch (e) {
       console.warn('Failed to translate:', e);

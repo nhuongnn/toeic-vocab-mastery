@@ -20,7 +20,7 @@ export function getCloudflareChatModel(): string {
 export async function generateContentCloudflare(
   messages: Array<Pick<ChatMessage, 'role' | 'content'>>,
   systemPrompt: string,
-  options?: { maxTokens?: number; timeoutMs?: number }
+  options?: { maxTokens?: number; timeoutMs?: number; model?: string }
 ): Promise<string> {
   const accountId = process.env.CLOUDFLARE_ACCOUNT_ID?.trim();
   const apiToken = process.env.CLOUDFLARE_API_TOKEN?.trim();
@@ -29,7 +29,7 @@ export async function generateContentCloudflare(
     throw new Error('Cloudflare Workers AI credentials missing (CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN).');
   }
 
-  const model = getCloudflareChatModel();
+  const model = options?.model?.trim() || getCloudflareChatModel();
   const endpoint = `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${model}`;
 
   const payloadMessages = [

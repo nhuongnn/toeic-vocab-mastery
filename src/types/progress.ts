@@ -47,6 +47,8 @@ export interface UserPreferences {
   language?: 'vi' | 'en';
   preferredDictionary?: 'cambridge' | 'oxford';
   translationProvider?: TranslationProvider;
+  translationGeminiModel?: string;
+  translationCloudflareModel?: string;
 }
 
 export interface RoleplayPreferences {

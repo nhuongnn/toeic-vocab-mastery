@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Briefcase, MessageSquare, Coffee, Bookmark, Volume2, Languages, Loader2 } from 'lucide-react';
+import { Briefcase, MessageSquare, Coffee, Bookmark, Volume2, Languages, Loader2, RefreshCw } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
 import { useSpeech } from '@/hooks/useSpeech';
 import { useTranslate } from '@/hooks/useTranslate';
@@ -14,6 +14,7 @@ interface SentenceExamplesProps {
 export function SentenceExamples({ examples, word }: SentenceExamplesProps) {
   const [activeTab, setActiveTab] = useState<'business' | 'daily' | 'conversation'>('business');
   const [translations, setTranslations] = useState<Record<string, string>>({});
+  const [translationErrors, setTranslationErrors] = useState<Record<string, boolean>>({});
   const { speak } = useSpeech();
   const { translate } = useTranslate();
 
@@ -31,10 +32,43 @@ export function SentenceExamples({ examples, word }: SentenceExamplesProps) {
     );
   };
 
-  const toggleTranslate = async (sentence: string) => {
-    if (translations[sentence]) {
-      // Toggle off if already showing
+  const runTranslate = async (sentence: string, skipCache = false) => {
+    setTranslationErrors((prev) => {
+      const next = { ...prev };
+      delete next[sentence];
+      return next;
+    });
+    setTranslations((prev) => ({ ...prev, [sentence]: 'loading' }));
+
+    try {
+      const cleanSentence = sentence.replace(/^["']|["']$/g, '');
+      const data = await translate(cleanSentence, {
+        from: 'en',
+        to: 'vi',
+        skipCache,
+      });
+      setTranslations((prev) => ({
+        ...prev,
+        [sentence]: data.translatedText || 'Không có bản dịch',
+      }));
+    } catch {
       setTranslations((prev) => {
+        const next = { ...prev };
+        delete next[sentence];
+        return next;
+      });
+      setTranslationErrors((prev) => ({ ...prev, [sentence]: true }));
+    }
+  };
+
+  const toggleTranslate = async (sentence: string) => {
+    if (translations[sentence] || translationErrors[sentence]) {
+      setTranslations((prev) => {
+        const next = { ...prev };
+        delete next[sentence];
+        return next;
+      });
+      setTranslationErrors((prev) => {
         const next = { ...prev };
         delete next[sentence];
         return next;
@@ -42,22 +76,7 @@ export function SentenceExamples({ examples, word }: SentenceExamplesProps) {
       return;
     }
 
-    // Set loading
-    setTranslations((prev) => ({ ...prev, [sentence]: 'loading' }));
-
-    try {
-      const cleanSentence = sentence.replace(/^["']|["']$/g, '');
-      const data = await translate(cleanSentence, { from: 'en', to: 'vi' });
-      setTranslations((prev) => ({
-        ...prev,
-        [sentence]: data.translatedText || 'Không có bản dịch',
-      }));
-    } catch {
-      setTranslations((prev) => ({
-        ...prev,
-        [sentence]: 'Lỗi tải bản dịch',
-      }));
-    }
+    await runTranslate(sentence, false);
   };
 
   return (
@@ -109,8 +128,9 @@ export function SentenceExamples({ examples, word }: SentenceExamplesProps) {
       {/* Sentence Cards */}
       <div className="space-y-3">
         {examples[activeTab].map((sentence, index) => {
-          const isTranslated = !!translations[sentence];
           const translationText = translations[sentence];
+          const hasError = !!translationErrors[sentence];
+          const isTranslated = !!translationText || hasError;
 
           return (
             <div
@@ -157,14 +177,38 @@ export function SentenceExamples({ examples, word }: SentenceExamplesProps) {
                       <Loader2 className="w-3.5 h-3.5 animate-spin text-indigo-400" />
                       <span>Đang tự động dịch sang tiếng Việt...</span>
                     </div>
+                  ) : hasError ? (
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-rose-400 font-medium">Lỗi tải bản dịch tiếng Việt</span>
+                      <button
+                        type="button"
+                        onClick={() => runTranslate(sentence, true)}
+                        className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-rose-500/15 hover:bg-rose-500/25 border border-rose-500/30 text-rose-200 text-[11px] font-semibold transition-colors"
+                        title="Thử dịch lại câu này"
+                      >
+                        <RefreshCw className="w-3 h-3" />
+                        <span>Thử lại</span>
+                      </button>
+                    </div>
                   ) : (
-                    <div className="flex items-start gap-2">
-                      <span className="px-1.5 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-semibold text-[10px] uppercase tracking-wider flex-shrink-0 mt-0.5">
-                        🇻🇳 Tiếng Việt
-                      </span>
-                      <p className="text-emerald-300 font-medium text-sm leading-relaxed">
-                        {translationText}
-                      </p>
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex items-start gap-2">
+                        <span className="px-1.5 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-semibold text-[10px] uppercase tracking-wider flex-shrink-0 mt-0.5">
+                          🇻🇳 Tiếng Việt
+                        </span>
+                        <p className="text-emerald-300 font-medium text-sm leading-relaxed">
+                          {translationText}
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => runTranslate(sentence, true)}
+                        className="inline-flex items-center gap-1 text-[11px] text-slate-400 hover:text-indigo-300 transition-colors shrink-0 mt-0.5"
+                        title="Dịch lại câu này (bỏ qua cache)"
+                      >
+                        <RefreshCw className="w-3 h-3" />
+                        <span className="hidden sm:inline">Dịch lại</span>
+                      </button>
                     </div>
                   )}
                 </div>

@@ -15,6 +15,7 @@ import {
   MessageSquare,
   MessageSquarePlus,
   ChevronDown,
+  RefreshCw,
 } from 'lucide-react';
 import { useSpeech } from '@/hooks/useSpeech';
 import { useTranslate } from '@/hooks/useTranslate';
@@ -22,6 +23,11 @@ import { useChat } from '@/contexts/ChatContext';
 import { getCambridgeUrl, getOxfordUrl, getBaseFormInfo } from '@/lib/dictionary';
 import { TranslationProvider } from '@/types/progress';
 import { TRANSLATION_PROVIDER_LABELS } from '@/lib/translate-client';
+import {
+  TRANSLATION_GEMINI_MODELS,
+  TRANSLATION_CLOUDFLARE_MODELS,
+  formatShortModelName,
+} from '@/lib/translate-models';
 
 interface SelectionRect {
   top: number;
@@ -34,6 +40,7 @@ interface SelectionState {
   originalText: string;
   translatedText: string | null;
   providerUsed: 'mymemory' | 'gemini' | 'cloudflare' | null;
+  modelUsed: string | null;
   fallback: boolean;
   fallbackReason: string | null;
   loading: boolean;
@@ -66,12 +73,21 @@ const copyToClipboard = async (text: string): Promise<boolean> => {
 export function SelectionTranslator() {
   const { addSnippetContext } = useChat();
   const { speak } = useSpeech();
-  const { translate, translationProvider, setTranslationProvider } = useTranslate();
+  const {
+    translate,
+    translationProvider,
+    setTranslationProvider,
+    geminiModel,
+    setGeminiModel,
+    cloudflareModel,
+    setCloudflareModel,
+  } = useTranslate();
 
   const [state, setState] = useState<SelectionState>({
     originalText: '',
     translatedText: null,
     providerUsed: null,
+    modelUsed: null,
     fallback: false,
     fallbackReason: null,
     loading: false,
@@ -95,7 +111,15 @@ export function SelectionTranslator() {
   const abortControllerRef = useRef<AbortController | null>(null);
 
   const translateText = useCallback(
-    async (text: string, overrideProvider?: TranslationProvider) => {
+    async (
+      text: string,
+      options?: {
+        provider?: TranslationProvider;
+        geminiModel?: string;
+        cloudflareModel?: string;
+        skipCache?: boolean;
+      }
+    ) => {
       if (!text || text.length < 2) return;
 
       if (abortControllerRef.current) {
@@ -110,6 +134,7 @@ export function SelectionTranslator() {
         error: null,
         translatedText: null,
         providerUsed: null,
+        modelUsed: null,
         fallback: false,
         fallbackReason: null,
       }));
@@ -118,7 +143,10 @@ export function SelectionTranslator() {
         const data = await translate(text, {
           from: 'en',
           to: 'vi',
-          provider: overrideProvider,
+          provider: options?.provider,
+          geminiModel: options?.geminiModel,
+          cloudflareModel: options?.cloudflareModel,
+          skipCache: options?.skipCache,
           signal: controller.signal,
         });
 
@@ -127,6 +155,7 @@ export function SelectionTranslator() {
           loading: false,
           translatedText: data.translatedText || 'Không có bản dịch',
           providerUsed: data.provider || null,
+          modelUsed: data.model || null,
           fallback: Boolean(data.fallback),
           fallbackReason: data.fallbackReason || null,
         }));
@@ -188,6 +217,7 @@ export function SelectionTranslator() {
         originalText: rawText,
         translatedText: null,
         providerUsed: null,
+        modelUsed: null,
         fallback: false,
         fallbackReason: null,
         loading: false,
@@ -850,13 +880,87 @@ export function SelectionTranslator() {
                 <span>Đang dịch tự động sang tiếng Việt...</span>
               </div>
             ) : state.error ? (
-              <p className="text-xs text-rose-400">{state.error}</p>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-xs text-rose-400">{state.error}</p>
+                  <button
+                    type="button"
+                    onClick={() => translateText(state.originalText, { skipCache: true })}
+                    className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-rose-500/15 hover:bg-rose-500/25 border border-rose-500/30 text-rose-200 text-[11px] font-semibold transition-colors shrink-0"
+                    title="Thử dịch lại"
+                  >
+                    <RefreshCw className="w-3 h-3" />
+                    <span>Thử lại</span>
+                  </button>
+                </div>
+                <div className="flex items-center gap-1.5 flex-wrap pt-1 border-t border-slate-800/60">
+                  <select
+                    value={translationProvider}
+                    onChange={(e) => {
+                      const next = e.target.value as TranslationProvider;
+                      setTranslationProvider(next);
+                      translateText(state.originalText, { provider: next, skipCache: true });
+                    }}
+                    aria-label="Chọn nhà cung cấp dịch"
+                    className="bg-slate-900 border border-slate-700/80 rounded-md px-1.5 py-0.5 text-[10px] text-slate-300 focus:outline-none focus:border-indigo-500"
+                  >
+                    <option value="mymemory">MyMemory</option>
+                    <option value="gemini">Gemini AI</option>
+                    <option value="cloudflare">Cloudflare AI</option>
+                    <option value="auto">Tự động</option>
+                  </select>
+                  {(translationProvider === 'gemini' || translationProvider === 'auto') && (
+                    <select
+                      value={geminiModel}
+                      onChange={(e) => {
+                        const nextModel = e.target.value;
+                        setGeminiModel(nextModel);
+                        translateText(state.originalText, {
+                          provider: translationProvider,
+                          geminiModel: nextModel,
+                          skipCache: true,
+                        });
+                      }}
+                      aria-label="Chọn AI model Gemini"
+                      className="bg-slate-900 border border-emerald-500/40 rounded-md px-1.5 py-0.5 text-[10px] text-emerald-300 focus:outline-none focus:border-emerald-400 max-w-[140px]"
+                    >
+                      {TRANSLATION_GEMINI_MODELS.map((m) => (
+                        <option key={m.id} value={m.id}>
+                          {m.id}
+                        </option>
+                      ))}
+                    </select>
+                  )}
+                  {translationProvider === 'cloudflare' && (
+                    <select
+                      value={cloudflareModel}
+                      onChange={(e) => {
+                        const nextModel = e.target.value;
+                        setCloudflareModel(nextModel);
+                        translateText(state.originalText, {
+                          provider: 'cloudflare',
+                          cloudflareModel: nextModel,
+                          skipCache: true,
+                        });
+                      }}
+                      aria-label="Chọn AI model Cloudflare"
+                      className="bg-slate-900 border border-amber-500/40 rounded-md px-1.5 py-0.5 text-[10px] text-amber-300 focus:outline-none focus:border-amber-400 max-w-[140px]"
+                    >
+                      {TRANSLATION_CLOUDFLARE_MODELS.map((m) => (
+                        <option key={m.id} value={m.id}>
+                          {formatShortModelName(m.id)}
+                        </option>
+                      ))}
+                    </select>
+                  )}
+                </div>
+              </div>
             ) : (
               <div className="space-y-2">
                 <p className="text-sm font-medium text-emerald-300 leading-relaxed selection:bg-emerald-500/30">
                   {state.translatedText}
                 </p>
-                <div className="flex items-center justify-between gap-2 pt-1 flex-wrap">
+                <div className="flex items-center justify-between gap-2 pt-1.5 border-t border-slate-800/60 flex-wrap">
                   <div className="flex items-center gap-1.5 flex-wrap">
                     {state.providerUsed && (
                       <span
@@ -867,9 +971,15 @@ export function SelectionTranslator() {
                             ? 'bg-amber-500/15 border-amber-500/30 text-amber-300'
                             : 'bg-slate-800 border-slate-700 text-slate-300'
                         }`}
-                        title={state.fallbackReason || `Dịch bởi ${TRANSLATION_PROVIDER_LABELS[state.providerUsed]}`}
+                        title={
+                          state.fallbackReason ||
+                          `Dịch bởi ${TRANSLATION_PROVIDER_LABELS[state.providerUsed]}${
+                            state.modelUsed ? ` (${state.modelUsed})` : ''
+                          }`
+                        }
                       >
                         {TRANSLATION_PROVIDER_LABELS[state.providerUsed]}
+                        {state.modelUsed ? ` · ${formatShortModelName(state.modelUsed)}` : ''}
                         {state.fallback ? ' (dự phòng)' : ''}
                       </span>
                     )}
@@ -878,7 +988,10 @@ export function SelectionTranslator() {
                       onChange={(e) => {
                         const next = e.target.value as TranslationProvider;
                         setTranslationProvider(next);
-                        translateText(state.originalText, next);
+                        translateText(state.originalText, {
+                          provider: next,
+                          skipCache: true,
+                        });
                       }}
                       aria-label="Chọn nhà cung cấp dịch"
                       className="bg-slate-900 border border-slate-700/80 rounded-md px-1.5 py-0.5 text-[10px] text-slate-300 focus:outline-none focus:border-indigo-500"
@@ -888,14 +1001,72 @@ export function SelectionTranslator() {
                       <option value="cloudflare">Cloudflare AI</option>
                       <option value="auto">Tự động</option>
                     </select>
+                    {(translationProvider === 'gemini' || translationProvider === 'auto') && (
+                      <select
+                        value={geminiModel}
+                        onChange={(e) => {
+                          const nextModel = e.target.value;
+                          setGeminiModel(nextModel);
+                          translateText(state.originalText, {
+                            provider: translationProvider,
+                            geminiModel: nextModel,
+                            skipCache: true,
+                          });
+                        }}
+                        aria-label="Chọn AI model Gemini"
+                        title="Chọn model Gemini để dịch"
+                        className="bg-slate-900 border border-emerald-500/40 rounded-md px-1.5 py-0.5 text-[10px] text-emerald-300 focus:outline-none focus:border-emerald-400 max-w-[140px]"
+                      >
+                        {TRANSLATION_GEMINI_MODELS.map((m) => (
+                          <option key={m.id} value={m.id}>
+                            {m.id}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+                    {translationProvider === 'cloudflare' && (
+                      <select
+                        value={cloudflareModel}
+                        onChange={(e) => {
+                          const nextModel = e.target.value;
+                          setCloudflareModel(nextModel);
+                          translateText(state.originalText, {
+                            provider: 'cloudflare',
+                            cloudflareModel: nextModel,
+                            skipCache: true,
+                          });
+                        }}
+                        aria-label="Chọn AI model Cloudflare"
+                        title="Chọn model Cloudflare AI để dịch"
+                        className="bg-slate-900 border border-amber-500/40 rounded-md px-1.5 py-0.5 text-[10px] text-amber-300 focus:outline-none focus:border-amber-400 max-w-[140px]"
+                      >
+                        {TRANSLATION_CLOUDFLARE_MODELS.map((m) => (
+                          <option key={m.id} value={m.id}>
+                            {formatShortModelName(m.id)}
+                          </option>
+                        ))}
+                      </select>
+                    )}
                   </div>
-                  {/* 4. Copy translation in details card */}
-                  <button
-                    type="button"
-                    onClick={handleCopyTranslation}
-                    className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-400 hover:text-slate-200 transition-colors"
-                    title="Sao chép bản dịch tiếng Việt (Phím 4)"
-                  >
+                  <div className="flex items-center gap-2.5 ml-auto">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        translateText(state.originalText, { skipCache: true })
+                      }
+                      className="flex items-center gap-1 text-[11px] font-semibold text-indigo-300 hover:text-indigo-200 transition-colors"
+                      title="Dịch lại (bỏ qua cache)"
+                    >
+                      <RefreshCw className="w-3 h-3" />
+                      <span>Dịch lại</span>
+                    </button>
+                    {/* 4. Copy translation in details card */}
+                    <button
+                      type="button"
+                      onClick={handleCopyTranslation}
+                      className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-400 hover:text-slate-200 transition-colors"
+                      title="Sao chép bản dịch tiếng Việt (Phím 4)"
+                    >
                     {copiedTranslation ? (
                       <>
                         <Check className="w-3 h-3 text-emerald-400" />
@@ -910,7 +1081,8 @@ export function SelectionTranslator() {
                     <kbd className="hidden sm:inline-flex items-center justify-center min-w-3.5 h-3.5 px-1 text-[9px] font-mono font-medium rounded bg-slate-800 text-slate-400 border border-slate-700">
                       4
                     </kbd>
-                  </button>
+                    </button>
+                  </div>
                 </div>
               </div>
             )}

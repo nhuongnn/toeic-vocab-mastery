@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Brain, Eye, CheckCircle2, XCircle, Globe2, Languages, Loader2 } from 'lucide-react';
+import { Brain, Eye, CheckCircle2, XCircle, Globe2, Languages, Loader2, RefreshCw } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
 import { useTranslate } from '@/hooks/useTranslate';
 
@@ -13,21 +13,13 @@ interface NativeMindsetProps {
 export function NativeMindset({ nativeMindset, deepMeaning }: NativeMindsetProps) {
   const [showTranslations, setShowTranslations] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const [translations, setTranslations] = useState<Record<string, string>>({});
   const { translate } = useTranslate();
 
-  const toggleAllTranslations = async () => {
-    if (showTranslations) {
-      setShowTranslations(false);
-      return;
-    }
-
-    setShowTranslations(true);
-
-    // If already translated, no need to re-fetch
-    if (Object.keys(translations).length > 0) return;
-
+  const runTranslateAll = async (skipCache = false) => {
     setLoading(true);
+    setHasError(false);
     const textsToTranslate = {
       coreConcept: deepMeaning.coreConcept,
       mentalImage: nativeMindset.mentalImage,
@@ -40,21 +32,38 @@ export function NativeMindset({ nativeMindset, deepMeaning }: NativeMindsetProps
 
     const results: Record<string, string> = {};
     const entries = Object.entries(textsToTranslate);
+    let failedCount = 0;
 
     await Promise.all(
       entries.map(async ([key, text]) => {
         if (!text) return;
         try {
-          const data = await translate(text, { from: 'en', to: 'vi' });
+          const data = await translate(text, { from: 'en', to: 'vi', skipCache });
           results[key] = data.translatedText;
         } catch (err) {
+          failedCount += 1;
           console.error(`Failed to translate ${key}:`, err);
         }
       })
     );
 
-    setTranslations(results);
+    setTranslations((prev) => ({ ...prev, ...results }));
+    setHasError(failedCount > 0);
     setLoading(false);
+  };
+
+  const toggleAllTranslations = async () => {
+    if (showTranslations) {
+      setShowTranslations(false);
+      return;
+    }
+
+    setShowTranslations(true);
+
+    // If already translated without errors, no need to re-fetch
+    if (Object.keys(translations).length > 0 && !hasError) return;
+
+    await runTranslateAll(false);
   };
 
   return (
@@ -68,27 +77,44 @@ export function NativeMindset({ nativeMindset, deepMeaning }: NativeMindsetProps
           </h3>
         </div>
 
-        <button
-          onClick={toggleAllTranslations}
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all self-start sm:self-auto border ${
-            showTranslations
-              ? 'bg-purple-950/60 border-purple-500/50 text-purple-300 shadow-sm'
-              : 'bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-200 hover:border-slate-700'
-          }`}
-          title="Bật/Tắt hiển thị bản dịch tiếng Việt cho toàn bộ mục tư duy bản xứ"
-        >
-          {loading ? (
-            <>
-              <Loader2 className="w-3.5 h-3.5 animate-spin text-purple-400" />
-              <span>Đang dịch tiếng Việt...</span>
-            </>
-          ) : (
-            <>
-              <Languages className="w-3.5 h-3.5 text-purple-400" />
-              <span>{showTranslations ? 'Ẩn dịch tiếng Việt' : '🇻🇳 Dịch tiếng Việt'}</span>
-            </>
+        <div className="flex items-center gap-2 self-start sm:self-auto">
+          {showTranslations && !loading && (
+            <button
+              type="button"
+              onClick={() => runTranslateAll(true)}
+              className={`flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-semibold transition-all border ${
+                hasError
+                  ? 'bg-rose-500/15 border-rose-500/40 text-rose-300 hover:bg-rose-500/25'
+                  : 'bg-slate-950 border-slate-800 text-slate-400 hover:text-purple-300 hover:border-purple-500/40'
+              }`}
+              title={hasError ? 'Một số mục dịch lỗi — bấm để thử lại' : 'Dịch lại toàn bộ mục này'}
+            >
+              <RefreshCw className="w-3.5 h-3.5" />
+              <span>{hasError ? 'Thử lại' : 'Dịch lại'}</span>
+            </button>
           )}
-        </button>
+          <button
+            onClick={toggleAllTranslations}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all border ${
+              showTranslations
+                ? 'bg-purple-950/60 border-purple-500/50 text-purple-300 shadow-sm'
+                : 'bg-slate-950 border-slate-800 text-slate-400 hover:text-slate-200 hover:border-slate-700'
+            }`}
+            title="Bật/Tắt hiển thị bản dịch tiếng Việt cho toàn bộ mục tư duy bản xứ"
+          >
+            {loading ? (
+              <>
+                <Loader2 className="w-3.5 h-3.5 animate-spin text-purple-400" />
+                <span>Đang dịch tiếng Việt...</span>
+              </>
+            ) : (
+              <>
+                <Languages className="w-3.5 h-3.5 text-purple-400" />
+                <span>{showTranslations ? 'Ẩn dịch tiếng Việt' : '🇻🇳 Dịch tiếng Việt'}</span>
+              </>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Core Concept Banner */}

@@ -32,6 +32,12 @@ import {
 } from 'lucide-react';
 import { WordLevel } from '@/types/vocabulary';
 import { TranslationProvider } from '@/types/progress';
+import {
+  TRANSLATION_GEMINI_MODELS,
+  TRANSLATION_CLOUDFLARE_MODELS,
+  DEFAULT_TRANSLATION_GEMINI_MODEL,
+  DEFAULT_TRANSLATION_CLOUDFLARE_MODEL,
+} from '@/lib/translate-models';
 import { LEVEL_CONFIG } from '@/lib/vocabulary-helpers';
 import { useProgress } from '@/contexts/ProgressContext';
 import { useTheme, ThemeMode } from '@/contexts/ThemeContext';
@@ -146,6 +152,16 @@ export default function SettingsPage() {
       auto: 'Tự động (AI ưu tiên → MyMemory dự phòng)',
     };
     showToast(`Đã chọn nhà cung cấp dịch Tiếng Việt: ${labels[provider]}`);
+  };
+
+  const handleTranslationGeminiModelChange = (model: string) => {
+    updatePreferences({ translationGeminiModel: model });
+    showToast(`Đã chọn model Gemini cho dịch nhanh: ${model}`);
+  };
+
+  const handleTranslationCloudflareModelChange = (model: string) => {
+    updatePreferences({ translationCloudflareModel: model });
+    showToast(`Đã chọn model Cloudflare AI cho dịch nhanh: ${model}`);
   };
 
   // 2. Speech settings
@@ -687,6 +703,74 @@ export default function SettingsPage() {
                   </button>
                 );
               })}
+            </div>
+
+            {/* AI Model Selection for Translation */}
+            <div className="pt-4 border-t border-slate-800/80 space-y-3">
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <div>
+                  <h4 className="text-xs font-bold text-slate-200 uppercase tracking-wider">
+                    Chọn AI Model Cho Dịch Nhanh
+                  </h4>
+                  <p className="text-[11px] text-slate-400 mt-0.5">
+                    Áp dụng khi bạn chọn dịch bằng Gemini AI, Cloudflare Workers AI hoặc chế độ Tự động.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-2">
+                  <label
+                    htmlFor="translation-gemini-model"
+                    className="text-xs font-bold text-emerald-300 flex items-center gap-1.5"
+                  >
+                    <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Model Google Gemini</span>
+                  </label>
+                  <select
+                    id="translation-gemini-model"
+                    value={
+                      progress.preferences.translationGeminiModel ||
+                      DEFAULT_TRANSLATION_GEMINI_MODEL
+                    }
+                    onChange={(e) => handleTranslationGeminiModelChange(e.target.value)}
+                    className="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
+                  >
+                    {TRANSLATION_GEMINI_MODELS.map((m) => (
+                      <option key={m.id} value={m.id}>
+                        {m.name} — {m.note}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-2">
+                  <label
+                    htmlFor="translation-cloudflare-model"
+                    className="text-xs font-bold text-amber-300 flex items-center gap-1.5"
+                  >
+                    <Cpu className="w-3.5 h-3.5 text-amber-400" />
+                    <span>Model Cloudflare Workers AI</span>
+                  </label>
+                  <select
+                    id="translation-cloudflare-model"
+                    value={
+                      progress.preferences.translationCloudflareModel ||
+                      DEFAULT_TRANSLATION_CLOUDFLARE_MODEL
+                    }
+                    onChange={(e) =>
+                      handleTranslationCloudflareModelChange(e.target.value)
+                    }
+                    className="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500"
+                  >
+                    {TRANSLATION_CLOUDFLARE_MODELS.map((m) => (
+                      <option key={m.id} value={m.id}>
+                        {m.name} — {m.note}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
         </div>

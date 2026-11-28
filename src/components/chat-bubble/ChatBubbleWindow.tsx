@@ -57,6 +57,7 @@ export function ChatBubbleWindow({
   const [input, setInput] = useState('');
   const [isStreaming, setIsStreaming] = useState(false);
   const [translatingIds, setTranslatingIds] = useState<Record<string, boolean>>({});
+  const [translateErrorIds, setTranslateErrorIds] = useState<Record<string, boolean>>({});
   const [speakingId, setSpeakingId] = useState<string | null>(null);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [suggestions, setSuggestions] = useState<RoleplaySuggestion[]>([]);
@@ -85,12 +86,17 @@ export function ChatBubbleWindow({
     speak(text, 'en-US', 0.9);
   };
 
-  const handleTranslate = async (id: string, text: string) => {
-    if (translations[id] || translatingIds[id]) return;
+  const handleTranslate = async (id: string, text: string, forceRetry = false) => {
+    if ((!forceRetry && translations[id]) || translatingIds[id]) return;
 
     setTranslatingIds((prev) => ({ ...prev, [id]: true }));
+    setTranslateErrorIds((prev) => {
+      const next = { ...prev };
+      delete next[id];
+      return next;
+    });
     try {
-      const data = await translate(text, { from: 'en', to: 'vi' });
+      const data = await translate(text, { from: 'en', to: 'vi', skipCache: forceRetry });
       if (data.translatedText) {
         const updatedConv: RoleplayConversation = {
           ...conversation,
@@ -107,6 +113,7 @@ export function ChatBubbleWindow({
       }
     } catch (err) {
       console.warn('Bubble translate failed:', err);
+      setTranslateErrorIds((prev) => ({ ...prev, [id]: true }));
     } finally {
       setTranslatingIds((prev) => ({ ...prev, [id]: false }));
     }
@@ -427,17 +434,33 @@ export function ChatBubbleWindow({
                     </button>
                     <button
                       type="button"
-                      onClick={() => handleTranslate(msg.id, msg.content)}
+                      onClick={() => handleTranslate(msg.id, msg.content, Boolean(translation || translateErrorIds[msg.id]))}
                       disabled={isTranslating}
-                      className="inline-flex items-center gap-1 text-[10px] font-medium text-slate-400 hover:text-slate-200 transition-colors disabled:opacity-50"
-                      title="Dịch tiếng Việt"
+                      className={`inline-flex items-center gap-1 text-[10px] font-medium transition-colors disabled:opacity-50 ${
+                        translateErrorIds[msg.id]
+                          ? 'text-rose-400 hover:text-rose-300'
+                          : 'text-slate-400 hover:text-slate-200'
+                      }`}
+                      title={
+                        translateErrorIds[msg.id]
+                          ? 'Lỗi dịch — bấm để thử lại'
+                          : translation
+                          ? 'Dịch lại tiếng Việt'
+                          : 'Dịch tiếng Việt'
+                      }
                     >
-                      <Languages className="w-3 h-3" />
+                      {translateErrorIds[msg.id] || translation ? (
+                        <RefreshCw className="w-3 h-3" />
+                      ) : (
+                        <Languages className="w-3 h-3" />
+                      )}
                       <span>
                         {isTranslating
                           ? 'Đang dịch...'
+                          : translateErrorIds[msg.id]
+                          ? 'Thử lại'
                           : translation
-                          ? 'Đã dịch'
+                          ? 'Dịch lại'
                           : 'Dịch'}
                       </span>
                     </button>

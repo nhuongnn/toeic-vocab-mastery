@@ -41,17 +41,21 @@ export function getGeminiApiKey(): string {
   return key;
 }
 
+type GenerateContentParams = Parameters<GoogleGenAI['models']['generateContent']>[0];
+
 /**
  * Reusable helper to generate content with automatic model fallback
  */
 export async function generateContentGemini(params: {
-  contents: unknown;
-  config?: unknown;
+  contents: GenerateContentParams['contents'];
+  config?: GenerateContentParams['config'];
+  model?: string;
 }): Promise<string> {
   const apiKey = getGeminiApiKey();
   const ai = new GoogleGenAI({ apiKey });
 
-  const primaryModel = getGeminiModel();
+  const requestedModel = params.model?.trim().replace(/^models\//, '');
+  const primaryModel = requestedModel || getGeminiModel();
   const modelsToTry = [
     primaryModel,
     ...FALLBACK_GEMINI_MODELS.filter((m) => m !== primaryModel),
@@ -60,11 +64,10 @@ export async function generateContentGemini(params: {
   let lastError: unknown = null;
   for (const currentModel of modelsToTry) {
     try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const response = await ai.models.generateContent({
         model: currentModel,
-        contents: params.contents as any,
-        config: params.config as any,
+        contents: params.contents,
+        config: params.config,
       });
 
       const text = response.text?.trim();

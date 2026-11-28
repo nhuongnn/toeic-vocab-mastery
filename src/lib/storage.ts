@@ -24,6 +24,8 @@ export const DEFAULT_PROGRESS: UserProgressData = {
     theme: 'dark',
     preferredDictionary: 'cambridge',
     translationProvider: 'mymemory',
+    translationGeminiModel: 'gemini-flash-lite-latest',
+    translationCloudflareModel: '@cf/meta/llama-3.1-8b-instruct',
   },
   bookmarkedWordIds: [],
   customItems: [],

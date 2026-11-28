@@ -9,6 +9,7 @@ import {
   Languages,
   Loader2,
   Camera,
+  RefreshCw,
 } from 'lucide-react';
 import { VocabularyWord } from '@/types/vocabulary';
 import { useTranslate } from '@/hooks/useTranslate';
@@ -31,6 +32,7 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
   const [hasImgError, setHasImgError] = useState<boolean>(false);
   const [showSceneTranslation, setShowSceneTranslation] = useState<boolean>(false);
   const [sceneTranslation, setSceneTranslation] = useState<string | null>(null);
+  const [sceneTranslationError, setSceneTranslationError] = useState<boolean>(false);
 
   const fetchImage = useCallback(
     async (isRefresh = false, activeStyle: ImageVisualPreset = style) => {
@@ -88,21 +90,31 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
     fetchImage(false, newStyle);
   };
 
+  const runTranslateScene = async (skipCache = false) => {
+    setSceneTranslationError(false);
+    setSceneTranslation('loading');
+    try {
+      const data = await translate(visual.imageDescription, {
+        from: 'en',
+        to: 'vi',
+        skipCache,
+      });
+      setSceneTranslation(data.translatedText || 'Không có bản dịch');
+    } catch {
+      setSceneTranslationError(true);
+      setSceneTranslation('Lỗi kết nối dịch tự động');
+    }
+  };
+
   const toggleTranslateScene = async () => {
     if (showSceneTranslation) {
       setShowSceneTranslation(false);
       return;
     }
     setShowSceneTranslation(true);
-    if (sceneTranslation) return;
+    if (sceneTranslation && !sceneTranslationError) return;
 
-    setSceneTranslation('loading');
-    try {
-      const data = await translate(visual.imageDescription, { from: 'en', to: 'vi' });
-      setSceneTranslation(data.translatedText || 'Không có bản dịch');
-    } catch {
-      setSceneTranslation('Lỗi kết nối dịch tự động');
-    }
+    await runTranslateScene(false);
   };
 
   return (
@@ -262,15 +274,38 @@ export function VisualAssociation({ visual, word }: VisualAssociationProps) {
               {visual.imageDescription}
             </p>
             {showSceneTranslation && (
-              <p className="text-xs text-emerald-300/90 pt-1.5 border-t border-slate-800/80 leading-relaxed animate-in fade-in">
+              <div className="text-xs text-emerald-300/90 pt-1.5 border-t border-slate-800/80 leading-relaxed animate-in fade-in">
                 {sceneTranslation === 'loading' ? (
                   <span className="flex items-center gap-1.5 text-indigo-300">
                     <Loader2 className="w-3 h-3 animate-spin" /> Đang dịch...
                   </span>
+                ) : sceneTranslationError ? (
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-rose-400">{sceneTranslation}</span>
+                    <button
+                      type="button"
+                      onClick={() => runTranslateScene(true)}
+                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-rose-500/15 hover:bg-rose-500/25 border border-rose-500/30 text-rose-200 text-[11px] font-semibold"
+                    >
+                      <RefreshCw className="w-3 h-3" />
+                      <span>Thử lại</span>
+                    </button>
+                  </div>
                 ) : (
-                  <span>🇻🇳 {sceneTranslation}</span>
+                  <div className="flex items-start justify-between gap-2">
+                    <span>🇻🇳 {sceneTranslation}</span>
+                    <button
+                      type="button"
+                      onClick={() => runTranslateScene(true)}
+                      className="inline-flex items-center gap-1 text-[11px] text-slate-400 hover:text-indigo-300 shrink-0"
+                      title="Dịch lại (bỏ qua cache)"
+                    >
+                      <RefreshCw className="w-3 h-3" />
+                      <span>Dịch lại</span>
+                    </button>
+                  </div>
                 )}
-              </p>
+              </div>
             )}
           </div>
 

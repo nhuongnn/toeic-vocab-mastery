@@ -144,6 +144,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isTranslatingId, setIsTranslatingId] = useState<string | null>(null);
+  const [translateErrorIds, setTranslateErrorIds] = useState<Record<string, boolean>>({});
   const [translations, setTranslations] = useState<Record<string, string>>({});
   const [showTranslations, setShowTranslations] = useState<Record<string, boolean>>({});
 
@@ -577,21 +578,26 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
   };
 
   // Toggle Vietnamese Translation
-  const handleToggleTranslation = async (id: string, text: string) => {
-    if (showTranslations[id]) {
+  const handleToggleTranslation = async (id: string, text: string, forceRetry = false) => {
+    if (!forceRetry && showTranslations[id]) {
       setShowTranslations((prev) => ({ ...prev, [id]: false }));
       return;
     }
 
-    if (translations[id]) {
+    if (!forceRetry && translations[id]) {
       setShowTranslations((prev) => ({ ...prev, [id]: true }));
       return;
     }
 
     // Fetch translation from /api/translate
     setIsTranslatingId(id);
+    setTranslateErrorIds((prev) => {
+      const next = { ...prev };
+      delete next[id];
+      return next;
+    });
     try {
-      const data = await translate(text, { from: 'en', to: 'vi' });
+      const data = await translate(text, { from: 'en', to: 'vi', skipCache: forceRetry });
       if (data.translatedText) {
         const nextTranslations = { ...translations, [id]: data.translatedText };
         setTranslations(nextTranslations);
@@ -600,6 +606,7 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
       }
     } catch (e) {
       console.warn('Failed to translate:', e);
+      setTranslateErrorIds((prev) => ({ ...prev, [id]: true }));
     } finally {
       setIsTranslatingId(null);
     }
@@ -1608,22 +1615,44 @@ export function RoleplayChatRoom({ userContext }: RoleplayChatRoomProps) {
 
                       {/* Translation Toggle */}
                       <button
-                        onClick={() => handleToggleTranslation(msg.id, msg.content)}
+                        onClick={() => handleToggleTranslation(msg.id, msg.content, Boolean(translateErrorIds[msg.id]))}
                         disabled={isTranslatingId === msg.id}
                         className={`inline-flex items-center gap-1 transition-colors disabled:opacity-50 ${
-                          isUser ? 'hover:text-white text-indigo-100/90' : 'hover:text-white'
+                          translateErrorIds[msg.id]
+                            ? 'text-rose-400 hover:text-rose-300 font-semibold'
+                            : isUser
+                            ? 'hover:text-white text-indigo-100/90'
+                            : 'hover:text-white'
                         }`}
-                        title="Dịch nghĩa tiếng Việt"
+                        title={translateErrorIds[msg.id] ? 'Lỗi dịch — bấm để thử lại' : 'Dịch nghĩa tiếng Việt'}
                       >
-                        <Languages className="w-3.5 h-3.5" />
+                        {translateErrorIds[msg.id] ? (
+                          <RefreshCw className="w-3.5 h-3.5" />
+                        ) : (
+                          <Languages className="w-3.5 h-3.5" />
+                        )}
                         <span>
                           {isTranslatingId === msg.id
                             ? 'Đang dịch...'
+                            : translateErrorIds[msg.id]
+                            ? 'Lỗi · Thử lại'
                             : showTranslations[msg.id]
                             ? 'Ẩn bản dịch'
                             : 'Xem bản dịch'}
                         </span>
                       </button>
+                      {showTranslations[msg.id] && isTranslatingId !== msg.id && (
+                        <button
+                          type="button"
+                          onClick={() => handleToggleTranslation(msg.id, msg.content, true)}
+                          className={`inline-flex items-center gap-1 transition-colors ${
+                            isUser ? 'hover:text-white text-indigo-200/80' : 'text-slate-400 hover:text-indigo-300'
+                          }`}
+                          title="Dịch lại bản dịch này (bỏ qua cache)"
+                        >
+                          <RefreshCw className="w-3 h-3" />
+                        </button>
+                      )}
 
                       {/* AI Provider Info Badge for Assistant */}
                       {!isUser && (

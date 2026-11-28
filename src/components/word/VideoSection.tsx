@@ -27,6 +27,7 @@ export function VideoSection({ video, word }: VideoSectionProps) {
   const [customUrl, setCustomUrl] = useState('');
   const [customVideoId, setCustomVideoId] = useState<string | null>(video?.youtubeId || null);
   const [translatedDesc, setTranslatedDesc] = useState<string | null>(null);
+  const [translateError, setTranslateError] = useState<string | null>(null);
   const [isTranslating, setIsTranslating] = useState(false);
   const [iframeKey, setIframeKey] = useState(0);
 
@@ -127,24 +128,36 @@ export function VideoSection({ video, word }: VideoSectionProps) {
     }
   };
 
-  const handleTranslateDescription = async () => {
+  const runTranslateDescription = async (skipCache = false) => {
     if (!video?.description) return;
-    if (translatedDesc) {
-      setTranslatedDesc(null); // toggle off
-      return;
-    }
-
     setIsTranslating(true);
+    setTranslateError(null);
     try {
-      const data = await translate(video.description, { from: 'en', to: 'vi' });
+      const data = await translate(video.description, {
+        from: 'en',
+        to: 'vi',
+        skipCache,
+      });
       if (data.translatedText) {
         setTranslatedDesc(data.translatedText);
       }
     } catch (err) {
       console.error('Translation error:', err);
+      setTranslateError('Lỗi dịch tiếng Việt');
     } finally {
       setIsTranslating(false);
     }
+  };
+
+  const handleTranslateDescription = async () => {
+    if (!video?.description) return;
+    if (translatedDesc) {
+      setTranslatedDesc(null); // toggle off
+      setTranslateError(null);
+      return;
+    }
+
+    await runTranslateDescription(false);
   };
 
   // Clean word for YouGlish lookup
@@ -404,25 +417,46 @@ export function VideoSection({ video, word }: VideoSectionProps) {
                 <Sparkles className="w-4 h-4 flex-shrink-0" />
                 <span>Mục tiêu lắng nghe (Listening Focus):</span>
               </div>
-              <button
-                onClick={handleTranslateDescription}
-                disabled={isTranslating}
-                className="inline-flex items-center gap-1 text-[11px] text-slate-400 hover:text-indigo-300 transition-colors disabled:opacity-50"
-              >
-                <Languages className="w-3 h-3 text-indigo-400" />
-                <span>
-                  {isTranslating
-                    ? 'Đang dịch...'
-                    : translatedDesc
-                    ? 'Hiện tiếng Anh'
-                    : 'Dịch tiếng Việt'}
-                </span>
-              </button>
+              <div className="flex items-center gap-2.5">
+                {(translatedDesc || translateError) && !isTranslating && (
+                  <button
+                    type="button"
+                    onClick={() => runTranslateDescription(true)}
+                    className={`inline-flex items-center gap-1 text-[11px] transition-colors ${
+                      translateError
+                        ? 'text-rose-400 hover:text-rose-300 font-semibold'
+                        : 'text-slate-400 hover:text-indigo-300'
+                    }`}
+                    title={translateError ? 'Thử dịch lại' : 'Dịch lại (bỏ qua cache)'}
+                  >
+                    <RefreshCw className="w-3 h-3" />
+                    <span>{translateError ? 'Thử lại' : 'Dịch lại'}</span>
+                  </button>
+                )}
+                <button
+                  onClick={handleTranslateDescription}
+                  disabled={isTranslating}
+                  className="inline-flex items-center gap-1 text-[11px] text-slate-400 hover:text-indigo-300 transition-colors disabled:opacity-50"
+                >
+                  <Languages className="w-3 h-3 text-indigo-400" />
+                  <span>
+                    {isTranslating
+                      ? 'Đang dịch...'
+                      : translatedDesc
+                      ? 'Hiện tiếng Anh'
+                      : 'Dịch tiếng Việt'}
+                  </span>
+                </button>
+              </div>
             </div>
 
-            <p className="text-slate-300 pl-6 leading-relaxed">
-              {translatedDesc || video.description}
-            </p>
+            {translateError ? (
+              <p className="text-rose-400 pl-6 leading-relaxed">{translateError}</p>
+            ) : (
+              <p className="text-slate-300 pl-6 leading-relaxed">
+                {translatedDesc || video.description}
+              </p>
+            )}
           </div>
         )}
 

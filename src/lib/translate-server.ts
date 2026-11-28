@@ -24,6 +24,10 @@ export interface ServerTranslateParams {
   from?: string;
   to?: string;
   provider?: string | null;
+  geminiModel?: string | null;
+  cloudflareModel?: string | null;
+  skipCache?: boolean;
+  retries?: number;
   userId?: string | null;
   userEmail?: string | null;
   guestId?: string | null;
@@ -36,6 +40,7 @@ export interface ServerTranslateResult {
   requestedProvider: TranslationProvider;
   overriddenByAdmin?: boolean;
   model?: string;
+  attempts?: number;
   cached: boolean;
   fallback: boolean;
   fallbackReason?: string;
@@ -53,7 +58,7 @@ const LANGUAGE_NAMES: Record<string, string> = {
   en: 'English',
 };
 
-// In-memory cache keyed by `${provider}:${from}:${to}:${text.toLowerCase()}`
+// In-memory cache keyed by `${provider}:${model}:${from}:${to}:${text.toLowerCase()}`
 const translationCache = new Map<string, string>();
 const MAX_CACHE_ENTRIES = 2000;
 
@@ -114,10 +119,31 @@ Rules:
   return { systemInstruction, userPrompt };
 }
 
+async function withRetry<T>(
+  fn: () => Promise<T>,
+  maxAttempts: number,
+  delayMs = 250
+): Promise<{ result: T; attempts: number }> {
+  let lastErr: unknown;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const result = await fn();
+      return { result, attempts: attempt };
+    } catch (err) {
+      lastErr = err;
+      if (attempt < maxAttempts) {
+        await new Promise((resolve) => setTimeout(resolve, delayMs * attempt));
+      }
+    }
+  }
+  throw lastErr;
+}
+
 export async function translateViaMyMemory(
   text: string,
   from = 'en',
-  to = 'vi'
+  to = 'vi',
+  skipCache = false
 ): Promise<string> {
   const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(
     text
@@ -127,7 +153,7 @@ export async function translateViaMyMemory(
     headers: {
       'User-Agent': 'Mozilla/5.0 (compatible; ToeicVocabMastery/1.0)',
     },
-    next: { revalidate: 86400 },
+    ...(skipCache ? { cache: 'no-store' as const } : { next: { revalidate: 86400 } }),
   });
 
   if (!res.ok) {
@@ -153,41 +179,46 @@ export async function translateViaMyMemory(
 async function translateViaGemini(
   text: string,
   from: string,
-  to: string
+  to: string,
+  preferredModel?: string | null
 ): Promise<{ translatedText: string; model: string }> {
   const { systemInstruction, userPrompt } = buildTranslationPrompt(text, from, to);
+  const modelToUse = preferredModel?.trim() || getGeminiModel();
   const raw = await generateContentGemini({
     contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
     config: {
       systemInstruction,
       temperature: 0.1,
     },
+    model: modelToUse,
   });
 
   const translatedText = cleanAiTranslationOutput(raw, text);
   if (!translatedText) {
     throw new Error('Gemini returned empty translation');
   }
-  return { translatedText, model: getGeminiModel() };
+  return { translatedText, model: modelToUse };
 }
 
 async function translateViaCloudflare(
   text: string,
   from: string,
-  to: string
+  to: string,
+  preferredModel?: string | null
 ): Promise<{ translatedText: string; model: string }> {
   const { systemInstruction, userPrompt } = buildTranslationPrompt(text, from, to);
+  const modelToUse = preferredModel?.trim() || getCloudflareChatModel();
   const raw = await generateContentCloudflare(
     [{ role: 'user', content: userPrompt }],
     systemInstruction,
-    { maxTokens: 800, timeoutMs: 25000 }
+    { maxTokens: 800, timeoutMs: 25000, model: modelToUse }
   );
 
   const translatedText = cleanAiTranslationOutput(raw, text);
   if (!translatedText) {
     throw new Error('Cloudflare Workers AI returned empty translation');
   }
-  return { translatedText, model: getCloudflareChatModel() };
+  return { translatedText, model: modelToUse };
 }
 
 function getCandidateChain(
@@ -216,7 +247,7 @@ function storeInCache(cacheKey: string, value: string): void {
 
 /**
  * Translate text using the requested (or Admin-overridden) provider with caching,
- * AI quota checks, and automatic fallback.
+ * AI model selection, retry support, AI quota checks, and automatic fallback.
  */
 export async function translateTextServer(
   params: ServerTranslateParams
@@ -224,6 +255,8 @@ export async function translateTextServer(
   const text = params.text.trim().slice(0, 1500);
   const from = (params.from || 'en').trim();
   const to = (params.to || 'vi').trim();
+  const skipCache = Boolean(params.skipCache);
+  const maxAttempts = Math.min(3, Math.max(1, params.retries ?? 2));
   const { userId, userEmail, guestId } = params;
 
   const adminOverride = await getUserTranslationProviderOverride({
@@ -243,10 +276,10 @@ export async function translateTextServer(
 
   let fallbackReason: string | undefined;
   let lastError: unknown = null;
+  let totalAttempts = 0;
 
   for (const candidate of candidates) {
     const isFallbackAttempt = candidate !== primaryCandidate;
-    const cacheKey = `${candidate}:${from}:${to}:${text.toLowerCase()}`;
 
     if (candidate === 'gemini' || candidate === 'cloudflare') {
       const configured =
@@ -265,19 +298,28 @@ export async function translateTextServer(
         continue;
       }
 
-      const cachedVal = translationCache.get(cacheKey);
-      if (cachedVal) {
-        return {
-          originalText: text,
-          translatedText: cachedVal,
-          provider: candidate,
-          requestedProvider,
-          overriddenByAdmin,
-          model: candidate === 'gemini' ? getGeminiModel() : getCloudflareChatModel(),
-          cached: true,
-          fallback: isFallbackAttempt,
-          fallbackReason: isFallbackAttempt ? fallbackReason : undefined,
-        };
+      const effectiveModel =
+        candidate === 'gemini'
+          ? params.geminiModel?.trim() || getGeminiModel()
+          : params.cloudflareModel?.trim() || getCloudflareChatModel();
+      const cacheKey = `${candidate}:${effectiveModel}:${from}:${to}:${text.toLowerCase()}`;
+
+      if (!skipCache) {
+        const cachedVal = translationCache.get(cacheKey);
+        if (cachedVal) {
+          return {
+            originalText: text,
+            translatedText: cachedVal,
+            provider: candidate,
+            requestedProvider,
+            overriddenByAdmin,
+            model: effectiveModel,
+            attempts: totalAttempts,
+            cached: true,
+            fallback: isFallbackAttempt,
+            fallbackReason: isFallbackAttempt ? fallbackReason : undefined,
+          };
+        }
       }
 
       const quotaCheck = await checkUserAIQuota({ userId, userEmail, guestId });
@@ -289,10 +331,14 @@ export async function translateTextServer(
       }
 
       try {
-        const result =
-          candidate === 'gemini'
-            ? await translateViaGemini(text, from, to)
-            : await translateViaCloudflare(text, from, to);
+        const { result, attempts } = await withRetry(
+          () =>
+            candidate === 'gemini'
+              ? translateViaGemini(text, from, to, effectiveModel)
+              : translateViaCloudflare(text, from, to, effectiveModel),
+          maxAttempts
+        );
+        totalAttempts += attempts;
 
         recordUserAIUsage({ userId, userEmail, guestId, provider: candidate });
         storeInCache(cacheKey, result.translatedText);
@@ -304,14 +350,16 @@ export async function translateTextServer(
           requestedProvider,
           overriddenByAdmin,
           model: result.model,
+          attempts: totalAttempts,
           cached: false,
           fallback: isFallbackAttempt,
           fallbackReason: isFallbackAttempt ? fallbackReason : undefined,
         };
       } catch (err: unknown) {
+        totalAttempts += maxAttempts;
         lastError = err;
         const msg = err instanceof Error ? err.message : String(err);
-        console.warn(`[Translate] ${candidate} failed:`, msg);
+        console.warn(`[Translate] ${candidate} failed after ${maxAttempts} attempts:`, msg);
         if (!fallbackReason) {
           fallbackReason = `${candidate === 'gemini' ? 'Gemini' : 'Cloudflare AI'} gặp lỗi, đã chuyển dự phòng.`;
         }
@@ -320,22 +368,30 @@ export async function translateTextServer(
     }
 
     // MyMemory candidate
-    const cachedMyMemory = translationCache.get(cacheKey);
-    if (cachedMyMemory) {
-      return {
-        originalText: text,
-        translatedText: cachedMyMemory,
-        provider: 'mymemory',
-        requestedProvider,
-        overriddenByAdmin,
-        cached: true,
-        fallback: isFallbackAttempt,
-        fallbackReason: isFallbackAttempt ? fallbackReason : undefined,
-      };
+    const cacheKey = `mymemory:default:${from}:${to}:${text.toLowerCase()}`;
+    if (!skipCache) {
+      const cachedMyMemory = translationCache.get(cacheKey);
+      if (cachedMyMemory) {
+        return {
+          originalText: text,
+          translatedText: cachedMyMemory,
+          provider: 'mymemory',
+          requestedProvider,
+          overriddenByAdmin,
+          attempts: totalAttempts,
+          cached: true,
+          fallback: isFallbackAttempt,
+          fallbackReason: isFallbackAttempt ? fallbackReason : undefined,
+        };
+      }
     }
 
     try {
-      const translatedText = await translateViaMyMemory(text, from, to);
+      const { result: translatedText, attempts } = await withRetry(
+        () => translateViaMyMemory(text, from, to, skipCache),
+        maxAttempts
+      );
+      totalAttempts += attempts;
       storeInCache(cacheKey, translatedText);
 
       return {
@@ -344,13 +400,15 @@ export async function translateTextServer(
         provider: 'mymemory',
         requestedProvider,
         overriddenByAdmin,
+        attempts: totalAttempts,
         cached: false,
         fallback: isFallbackAttempt,
         fallbackReason: isFallbackAttempt ? fallbackReason : undefined,
       };
     } catch (err: unknown) {
+      totalAttempts += maxAttempts;
       lastError = err;
-      console.warn('[Translate] mymemory failed:', err);
+      console.warn(`[Translate] mymemory failed after ${maxAttempts} attempts:`, err);
     }
   }
 

@@ -22,6 +22,7 @@ export const TRANSLATION_CLOUDFLARE_MODELS: TranslationModelOption[] = [
 
 export const DEFAULT_TRANSLATION_GEMINI_MODEL = 'gemini-flash-lite-latest';
 export const DEFAULT_TRANSLATION_CLOUDFLARE_MODEL = '@cf/meta/llama-3.1-8b-instruct';
+export const MAX_TRANSLATE_TEXT_LENGTH = 5000;
 
 export function formatShortModelName(model?: string): string {
   if (!model) return '';

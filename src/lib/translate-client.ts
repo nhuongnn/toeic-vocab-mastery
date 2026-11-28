@@ -127,6 +127,7 @@ export async function fetchTranslation(
   if (guestId) headers['x-guest-id'] = guestId;
 
   const totalAttempts = Math.max(1, maxRetries + 1);
+  const usePost = text.length > 800;
   let lastError: unknown;
 
   for (let attempt = 1; attempt <= totalAttempts; attempt++) {
@@ -135,10 +136,31 @@ export async function fetchTranslation(
     }
 
     try {
-      const res = await fetch(`/api/translate?${params.toString()}`, {
-        headers,
-        signal,
-      });
+      const res = usePost
+        ? await fetch('/api/translate', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              ...headers,
+            },
+            body: JSON.stringify({
+              text,
+              from,
+              to,
+              provider,
+              geminiModel: geminiModel || undefined,
+              cloudflareModel: cloudflareModel || undefined,
+              skipCache,
+              userId,
+              userEmail,
+              guestId,
+            }),
+            signal,
+          })
+        : await fetch(`/api/translate?${params.toString()}`, {
+            headers,
+            signal,
+          });
 
       if (!res.ok) {
         const errBody = await res.json().catch(() => ({}));

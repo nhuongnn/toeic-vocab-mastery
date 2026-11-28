@@ -30,6 +30,7 @@ import { TRANSLATION_PROVIDER_LABELS } from '@/lib/translate-client';
 import {
   TRANSLATION_GEMINI_MODELS,
   TRANSLATION_CLOUDFLARE_MODELS,
+  MAX_TRANSLATE_TEXT_LENGTH,
   formatShortModelName,
 } from '@/lib/translate-models';
 import { allVocabularyWords } from '@/data/vocabulary';
@@ -214,8 +215,8 @@ export function SelectionTranslator() {
     }
 
     const rawText = selection.toString().trim();
-    // Only trigger for meaningful text (2 to 500 characters)
-    if (!rawText || rawText.length < 2 || rawText.length > 500) {
+    // Only trigger for meaningful text (2 to MAX_TRANSLATE_TEXT_LENGTH characters)
+    if (!rawText || rawText.length < 2 || rawText.length > MAX_TRANSLATE_TEXT_LENGTH) {
       return;
     }
 
@@ -715,7 +716,9 @@ export function SelectionTranslator() {
           ? vocabMenuOpen
             ? 'flex flex-col gap-2 p-2 rounded-2xl bg-slate-900/95 border border-indigo-500/40 shadow-2xl backdrop-blur-xl w-[min(24rem,calc(100vw-24px))] max-w-[calc(100vw-24px)]'
             : 'flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 p-1.5 rounded-2xl bg-slate-900/95 border border-indigo-500/40 shadow-2xl backdrop-blur-xl max-w-[calc(100vw-24px)]'
-          : 'w-88 sm:w-96 max-w-[calc(100vw-24px)] max-h-[calc(100vh-24px)] overflow-y-auto rounded-2xl bg-slate-900/95 border border-indigo-500/40 p-4 shadow-2xl backdrop-blur-xl'
+          : `${
+              state.originalText.length > 250 ? 'w-88 sm:w-[28rem]' : 'w-88 sm:w-96'
+            } max-w-[calc(100vw-24px)] max-h-[calc(100vh-24px)] overflow-y-auto rounded-2xl bg-slate-900/95 border border-indigo-500/40 p-4 shadow-2xl backdrop-blur-xl`
       }`}
     >
       {state.mode === 'menu' ? (
@@ -1054,7 +1057,7 @@ export function SelectionTranslator() {
 
           {/* Selected English text snippet */}
           <div className="mb-2.5">
-            <p className="text-xs text-slate-300 italic line-clamp-3 leading-relaxed bg-slate-950/40 p-2 rounded-lg border border-slate-800/50">
+            <p className="text-xs text-slate-300 italic max-h-24 overflow-y-auto leading-relaxed bg-slate-950/40 p-2 rounded-lg border border-slate-800/50">
               &ldquo;{state.originalText}&rdquo;
             </p>
 

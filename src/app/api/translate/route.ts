@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { translateTextServer } from '@/lib/translate-server';
+import { MAX_TRANSLATE_TEXT_LENGTH } from '@/lib/translate-models';
 
 function parseBoolParam(val?: string | boolean | null): boolean {
   if (typeof val === 'boolean') return val;
@@ -62,7 +63,7 @@ async function handleTranslateRequest(params: {
     return NextResponse.json(
       {
         error: 'Failed to translate content',
-        originalText: rawText.trim().slice(0, 1500),
+        originalText: rawText.trim().slice(0, MAX_TRANSLATE_TEXT_LENGTH),
       },
       { status: 500 }
     );

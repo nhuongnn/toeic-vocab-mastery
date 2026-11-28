@@ -1,4 +1,5 @@
 import { TranslationProvider } from '@/types/progress';
+import { MAX_TRANSLATE_TEXT_LENGTH } from '@/lib/translate-models';
 import {
   isGeminiConfigured,
   getGeminiModel,
@@ -139,14 +140,80 @@ async function withRetry<T>(
   throw lastErr;
 }
 
-export async function translateViaMyMemory(
-  text: string,
-  from = 'en',
-  to = 'vi',
-  skipCache = false
+const MYMEMORY_MAX_CHUNK_CHARS = 450;
+
+/**
+ * Splits a long text into <= maxLen chunks along sentence, clause, or word boundaries.
+ */
+function splitTextForMyMemory(text: string, maxLen = MYMEMORY_MAX_CHUNK_CHARS): string[] {
+  const trimmed = text.trim();
+  if (!trimmed) return [];
+  if (trimmed.length <= maxLen) return [trimmed];
+
+  const sentences = trimmed.match(/[^.!?]+[.!?]+(?=\s|$)|[^.!?]+$/g) || [trimmed];
+  const chunks: string[] = [];
+  let current = '';
+
+  const pushPiece = (piece: string) => {
+    const p = piece.trim();
+    if (!p) return;
+    if (current && current.length + 1 + p.length <= maxLen) {
+      current = `${current} ${p}`;
+    } else {
+      if (current) chunks.push(current);
+      if (p.length <= maxLen) {
+        current = p;
+      } else {
+        // Split oversized sentence by words (or hard slice for single giant token)
+        const words = p.split(/\s+/);
+        let sub = '';
+        for (const w of words) {
+          if (w.length > maxLen) {
+            if (sub) {
+              chunks.push(sub);
+              sub = '';
+            }
+            for (let i = 0; i < w.length; i += maxLen) {
+              chunks.push(w.slice(i, i + maxLen));
+            }
+          } else if (sub && sub.length + 1 + w.length <= maxLen) {
+            sub = `${sub} ${w}`;
+          } else {
+            if (sub) chunks.push(sub);
+            sub = w;
+          }
+        }
+        current = sub;
+      }
+    }
+  };
+
+  for (const sentence of sentences) {
+    const s = sentence.trim();
+    if (!s) continue;
+    if (s.length <= maxLen) {
+      pushPiece(s);
+    } else {
+      // Try splitting long sentences at clause punctuation first
+      const clauses = s.match(/[^,;:]+[,;:]+(?=\s|$)|[^,;:]+$/g) || [s];
+      for (const clause of clauses) {
+        pushPiece(clause);
+      }
+    }
+  }
+
+  if (current) chunks.push(current);
+  return chunks.length > 0 ? chunks : [trimmed.slice(0, maxLen)];
+}
+
+async function fetchMyMemoryChunk(
+  chunk: string,
+  from: string,
+  to: string,
+  skipCache: boolean
 ): Promise<string> {
   const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(
-    text
+    chunk
   )}&langpair=${encodeURIComponent(from)}|${encodeURIComponent(to)}`;
 
   const res = await fetch(url, {
@@ -161,19 +228,49 @@ export async function translateViaMyMemory(
   }
 
   const data = await res.json();
-  let translated = data?.responseData?.translatedText;
+  const status = Number(data?.responseStatus);
+  let translated = status === 200 ? data?.responseData?.translatedText : undefined;
 
-  if (!translated || data.responseStatus !== 200) {
-    if (Array.isArray(data?.matches) && data.matches.length > 0) {
-      translated = data.matches[0].translation;
-    }
+  if (!translated && status === 200 && Array.isArray(data?.matches) && data.matches.length > 0) {
+    translated = data.matches[0].translation;
   }
 
   if (!translated || typeof translated !== 'string') {
-    throw new Error('MyMemory translation not available');
+    const detail =
+      data?.responseDetails ||
+      (status !== 200 && typeof data?.responseData?.translatedText === 'string'
+        ? data.responseData.translatedText
+        : 'MyMemory translation not available');
+    throw new Error(detail);
   }
 
   return decodeHtmlEntities(translated).trim();
+}
+
+export async function translateViaMyMemory(
+  text: string,
+  from = 'en',
+  to = 'vi',
+  skipCache = false
+): Promise<string> {
+  const paragraphs = text
+    .split(/\n+/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+
+  if (paragraphs.length === 0) return '';
+
+  const translatedParagraphs: string[] = [];
+  for (const paragraph of paragraphs) {
+    const chunks = splitTextForMyMemory(paragraph, MYMEMORY_MAX_CHUNK_CHARS);
+    const translatedChunks: string[] = [];
+    for (const chunk of chunks) {
+      translatedChunks.push(await fetchMyMemoryChunk(chunk, from, to, skipCache));
+    }
+    translatedParagraphs.push(translatedChunks.join(' '));
+  }
+
+  return translatedParagraphs.join('\n');
 }
 
 async function translateViaGemini(
@@ -208,10 +305,12 @@ async function translateViaCloudflare(
 ): Promise<{ translatedText: string; model: string }> {
   const { systemInstruction, userPrompt } = buildTranslationPrompt(text, from, to);
   const modelToUse = preferredModel?.trim() || getCloudflareChatModel();
+  const maxTokens = Math.min(4096, Math.max(800, Math.ceil(text.length * 0.9)));
+  const timeoutMs = text.length > 1500 ? 40000 : 25000;
   const raw = await generateContentCloudflare(
     [{ role: 'user', content: userPrompt }],
     systemInstruction,
-    { maxTokens: 800, timeoutMs: 25000, model: modelToUse }
+    { maxTokens, timeoutMs, model: modelToUse }
   );
 
   const translatedText = cleanAiTranslationOutput(raw, text);
@@ -252,7 +351,7 @@ function storeInCache(cacheKey: string, value: string): void {
 export async function translateTextServer(
   params: ServerTranslateParams
 ): Promise<ServerTranslateResult> {
-  const text = params.text.trim().slice(0, 1500);
+  const text = params.text.trim().slice(0, MAX_TRANSLATE_TEXT_LENGTH);
   const from = (params.from || 'en').trim();
   const to = (params.to || 'vi').trim();
   const skipCache = Boolean(params.skipCache);
